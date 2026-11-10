@@ -31,7 +31,7 @@ Related articles
 
   Sep 23, 2026
 
-  [Claude discovers a novel enzyme system with CRISPR-like repeats](claude-discovers-novel-enzyme-system.md)
+  [Claude discovers a novel enzyme system with CRISPR-like repeats](research-claude-discovers-novel-enzyme-system.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 

@@ -2,7 +2,7 @@
 title: "Anthropic Economic Index report: Cadences \\ Anthropic"
 source_url: "https://www.anthropic.com/research/economic-index-june-2026-report"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:24Z"
+fetched_at: "2026-10-24T06:26:37Z"
 tags: ["news-research"]
 ---
 
@@ -269,7 +269,7 @@ Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/03ed1410f
 
 27While this could be due to substitution between chat/Cowork and Claude Code, the pattern holds even when controlling for Claude Code session share. These patterns also survive controlling for occupation fixed effects.[](#footnote-ref-27)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

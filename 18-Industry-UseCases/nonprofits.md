@@ -2,291 +2,209 @@
 title: "Nonprofits | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/nonprofits"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-23T06:30:00Z"
-tags: ["case-studies", "enterprise", "security"]
+fetched_at: "2026-11-09T06:26:42Z"
+tags: ["case-studies"]
 ---
 
-# Accelerate the work that matters most
+# Claude for Nonprofits
 
-Claude helps nonprofits turn limited resources into lasting impact. Generate grant proposals in hours, track program outcomes across hundreds of participants, and free your team to focus on serving your community.
+## Ask more of what’s possible
+
+Claude helps nonprofits turn limited resources into lasting impact. Fund your mission, change how your organization runs, and build new tools or services for the communities you serve, with the security and trust your work depends on.
+
+[Get started](#pricing)[Get help choosing a plan](https://claude.ai/buying-specialist?src=dotcom_nonprofit_enterprise)
+
+## Trusted by more than 25,000 nonprofits
+
+> “For Start Early, AI is a tool that supports the people who carry out our mission. Claude first helped our staff save time on tasks like formatting. The nonprofit skills take that further, offering a vision of how AI can support whole workflows instead of single tasks. That gives our teams a strong starting point and opportunity for more time to focus on advancing outcomes for children and families.”
+
+Stella Owings, Senior Project Manager, Start Early
+
+> “Good investor engagement starts with understanding what a funder is working toward. The nonprofit skills in Claude have been a helpful administrative tool, helping us find funding opportunities, connect a funder’s goals to our programmatic work and pull relationship history from our CRM. This allows our team to spend more time on strengthening the relationships that advance StriveTogether’s mission of helping every child succeed from cradle to career.”
+
+Amanda Jenkins, Senior Manager, Development, StriveTogether
+
+> “We built Rumi with Claude so every teacher can have a coach in their pocket. Turning a national curriculum into a year of daily lessons used to take expert teams years. Our agents now do this in a week, then coach teachers daily in their own language. 95% of teachers rate the lesson plans as useful. We support 16,000 teachers and 418,000 learners across 6 countries, and Rumi is open source so others can use it too.”
+
+Haroon Yasin, CEO, Taleemabad
+
+> “We think of Claude as a research fellow who never gets tired. With its help, our one-person government affairs team has turned our analysis of more than 750 state anti-trafficking policies into recommendations local advocates can take to their legislators to close gaps that leave people vulnerable.”
+
+John Nehme, President & CEO, Allies Against Slavery
+
+> “At Best Friends, we’re always looking for ways to remove barriers so our teams can focus on saving lives. Being part of Anthropic’s design partner circle gave us the opportunity to help shape tools around real nonprofit challenges, and I was impressed by how quickly Anthropic incorporated feedback and translated it into practical improvements that can help organizations increase their impact.”
+
+Marc Peralta, Chief Program Officer, Best Friends Animal Society
+
+> “We want to use AI effectively at Braven, and Claude is a key lever in how we’re getting there. Everyone has access, we ran our own training, and our IT team built Claude skills the whole organization now shares. We believe the best way to harness AI for good is to use it ourselves and constantly test and learn what works and what doesn’t.”
+
+Alina Yang, Head of Transformation, Braven
+
+> “With a team smaller than a soccer squad, turning thousands of citizen suggestions into credible government policy is no easy feat. Claude Code helped us rapidly prototype and iterate on a tool that turns feedback from WhatsApp, voice notes and forms into traceable, clustered reports—so governments can see not just aggregated suggestions, but the voices that ultimately shape public policy.”
+
+Antaraa Vasudev, CEO & Founder, Civis
+
+> “Claude turned our staff retention report into a polished board deck, and the process of refining it felt collaborative and engaging. When the board came back with follow-up questions, we had clear answers ready in about 15 minutes, work that would otherwise have taken far longer.”
+
+Lucy Martinez, Chief Operating Officer, Code the Dream
+
+> “At Colnodo, we use Claude to build a platform containing global information on Community-Centered Connectivity Initiatives, to improve the monitoring of our projects, and to take on much more than we were previously able to, all while helping to bring internet access to rural communities in Colombia.”
+
+Julián Casasbuenas G., Director, Colnodo
+
+> “Claude Code has helped me pull trustworthy information on crises and our response into up-to-date documents. These are being incorporated in our operational decision-making and have contributed to significant fundraising successes.”
+
+Mila Dorji, Public Health Data Scientist, Direct Relief
+
+> “The donor correspondence sounded like us. Rather than repeating the same proposal a third time, Claude suggested a more accessible starting point for the partnership. We also value the option to tailor a skill to how our organization works, which addresses the concern that AI doesn’t know us.”
+
+Krystal Brooks, Senior Director, Career Success and Business Development, Forté
+
+> “We connected 25 years of grantmaking into one knowledge graph that anyone across the foundation can explore using conversational AI.”
+
+Mike Phipps, Lead AI Engineer, Gates Foundation
+
+> “Claude helps us find savings we’d never have spotted on our own. We used it to show one of our partner agencies what it was paying at retail compared with buying through us, and that agency now spends 40% less to feed the same neighbors. Claude is making us a much better steward of every dollar.”
+
+Scott Burns, President & CEO, Montgomery County Food Bank
+
+> “Claude gives us in half an hour what once took an analyst ten days, finding the needles in our haystack of data, like where women are having to cross borders to access care. These insights reveal unmet need and help us bring high-quality, life-changing care closer to the women who need it most.”
+
+Helen Davies, COO, Operation Fistula
+
+> “We tested every skill and gave Anthropic candid feedback, including that the first version assumed a small US charity. The next version handled a job posting for a role in Bogotá with Colombia’s context in mind. Seeing our input reflected so quickly matters to a global organization like ours.”
+
+Nayid Orozco, AI Solutions and Delivery Manager, Prosper Global
+
+> “For Start Early, AI is a tool that supports the people who carry out our mission. Claude first helped our staff save time on tasks like formatting. The nonprofit skills take that further, offering a vision of how AI can support whole workflows instead of single tasks. That gives our teams a strong starting point and opportunity for more time to focus on advancing outcomes for children and families.”
+
+Stella Owings, Senior Project Manager, Start Early
+
+> “Good investor engagement starts with understanding what a funder is working toward. The nonprofit skills in Claude have been a helpful administrative tool, helping us find funding opportunities, connect a funder’s goals to our programmatic work and pull relationship history from our CRM. This allows our team to spend more time on strengthening the relationships that advance StriveTogether’s mission of helping every child succeed from cradle to career.”
+
+Amanda Jenkins, Senior Manager, Development, StriveTogether
+
+> “We built Rumi with Claude so every teacher can have a coach in their pocket. Turning a national curriculum into a year of daily lessons used to take expert teams years. Our agents now do this in a week, then coach teachers daily in their own language. 95% of teachers rate the lesson plans as useful. We support 16,000 teachers and 418,000 learners across 6 countries, and Rumi is open source so others can use it too.”
+
+Haroon Yasin, CEO, Taleemabad
+
+> “We think of Claude as a research fellow who never gets tired. With its help, our one-person government affairs team has turned our analysis of more than 750 state anti-trafficking policies into recommendations local advocates can take to their legislators to close gaps that leave people vulnerable.”
+
+John Nehme, President & CEO, Allies Against Slavery
+
+> “At Best Friends, we’re always looking for ways to remove barriers so our teams can focus on saving lives. Being part of Anthropic’s design partner circle gave us the opportunity to help shape tools around real nonprofit challenges, and I was impressed by how quickly Anthropic incorporated feedback and translated it into practical improvements that can help organizations increase their impact.”
+
+Marc Peralta, Chief Program Officer, Best Friends Animal Society
+
+> “We want to use AI effectively at Braven, and Claude is a key lever in how we’re getting there. Everyone has access, we ran our own training, and our IT team built Claude skills the whole organization now shares. We believe the best way to harness AI for good is to use it ourselves and constantly test and learn what works and what doesn’t.”
+
+Alina Yang, Head of Transformation, Braven
+
+1/15
+
+## Built with the people closest to the cause
+
+Designed in collaboration with nonprofits, so you can accelerate the work that matters most on day one.
+
+### More for the mission
+
+Get Team and Enterprise plans for collaboration at nonprofit rates, with the deepest discounts for nonprofits in low and middle-income countries.
+
+### Expertise, now in reach
+
+With Claude, small teams can bring expertise in-house, take on problems you used to pass up or pass along, and focus on work only you can do.
+
+### Safe for the people you serve
+
+Keep the trust your community places in you: advanced permissions, no training on data by default, security compliance, and decisions that stay with your team.
+
+[Visit trust center (opens in new tab)](https://trust.anthropic.com/)
+
+## Tailor Claude to the work you do every day
+
+The Claude for Nonprofits plugin comes installed for every verified nonprofit. Start by giving Claude your organization’s context, then use ready-made skills for marketing, hiring, fundraising, and donor relations.
 
 [Get started](#pricing)
 
-> “We've deployed Claude across strategic finance—lease analysis, reporting, reconciliations, audit summarization. Claude excels at strategic analysis compared to other LLMs, making it uniquely suited to our mission-critical work.”
+### Set up Claude responsibly with security, governance, and context
 
-Rebecca Glover, Global Director, Finance
+Map where files and records live, teach Claude how your organization writes, and tell staff what your AI policy allows. Your data isn’t used to train our models by default.
 
-> “From tracking financial services pricing across 18 countries to helping ministries in Rwanda, Peru, and the Philippines make sense of siloed data, Claude is integral to how we support governments in delivering more impactful services to their citizens.”
+[Set up your Claude (opens in new tab)](https://academy.claude.com/tutorials/claude-for-nonprofits-in-action-getting-started)[Start the AI policy tutorial (opens in new tab)](https://academy.claude.com/tutorials/claude-for-nonprofits-in-action-ai-policy)
 
-Niall Keleher, Senior Director of Global Research and Data Science
+### Reach more people, in your voice
 
-> “SkillUp is building complex AI systems a normal company would need 20+ engineers for. Claude Code helps level the playing field for organizations that must be efficient, allowing them to build more with the team theywe have.”
+Plan a campaign for the team you have, draft in your organization’s voice, turn a report into a deck, and get a second read before anything goes out.
 
-Steve Lee, CEO
+[Start the campaign tutorial (opens in new tab)](https://academy.claude.com/tutorials/claude-for-nonprofits-in-action-marketing)
 
-> “Our partnership with Anthropic has enabled our team and grantees to use AI to better understand the impacts of our grants, get more done faster, and explore new ways to tell our story to donors and the community.”
+### Build the team behind the mission
 
-Andrew Dayton, Founder and CEO
+Write the job post, interview guide, and scoring rubric, plan a new hire’s onboarding, and answer staff questions from your own handbook.
 
-> “At a time when AI could divide or unite communities, we're choosing to lead with our values—using Claude to strengthen human connection and advance wellbeing for all communities.”
+[Start the hiring tutorial (opens in new tab)](https://academy.claude.com/tutorials/claude-for-nonprofits-in-action-people)
 
-Carlos Sanvee, World YMCA Secretary General
+### Manage funding
 
-> “With global health funding shrinking, smart targeting is essential. Claude helped us build an interactive geospatial tool in three days versus weeks, mapping at-risk populations to identify where Guatemala's Ministry of Health could most cost-effectively deploy dengue prevention.”
+Find funders, get a breakdown of any grant call, and draft proposals from your own material, then follow through with meeting prep, thank-yous, and reports.
 
-Justin Cohen, VP Malaria & NTDs
+[Start the fundraising tutorial (opens in new tab)](https://academy.claude.com/tutorials/fundraising-with-claude-for-nonprofits)
 
-> “Claude enables 4× faster implementation, helping MyFriendBen connect families to unclaimed benefits and tax credits. Our Claude-powered agents track up to 40+ programs per state, identifying over \$1.2 billion in value for 70,000+ households.”
+Case study
 
-Sekhar Paladugu, CEO
+Montgomery County Food Bank extends a small team’s reach across the county with Claude
 
-> “With AWS and Claude, we built Sage—an AI companion trained on 25,000+ pages of epilepsy expertise, now available 24/7 in 5 languages to 3.4 million Americans living with epilepsy. It embodies our promise that no one should ever have to face epilepsy alone.”
+[Read story](montgomery-county-food-bank.md)
 
-David Jost, Chief Technology Operations Officer
+Case study
 
-> “With Claude Enterprise, we're equipping teams to work more efficiently—from streamlining data analysis to accelerating support for local partners building lasting, community-led solutions to humanitarian crises.”
+Mid-Ohio Food Collective rebuilds the software behind 2,500 food pantries with Claude
 
-Jeannie Annan, Chief Research & Innovation Officer
+[Read story](mid-ohio-food-collective.md)
 
-> “With more than 2 million New Yorkers living in poverty, we and our partners need to move at the speed of crisis. Claude helps us build that muscle—to move through grant recommendations more efficiently and to direct resources where they'll make the greatest difference when every day matters.”
+1 of 2
 
-Matt Klein, Chief Program & Impact Officer
+Webinar
 
-> “IDinsight helps global development leaders use data and evidence to maximize social impact. With Claude, our teams get surveys field-ready 16× faster, prototype dashboards in hours instead of weeks, and draft documentation 5× faster—spending less time on tedious tasks and more time driving impact that matters.”
+An Admin’s Guide to Data Handling and AI Use Policy. For admins, on November 10.
 
-Rob Sampson, Senior Director of Transformation
+[Register now](https://www.claude.com/resources/webinars/claude-for-nonprofits-admin-guide-to-data-handling-ai-policy)
 
-> “We've deployed Claude across strategic finance—lease analysis, reporting, reconciliations, audit summarization. Claude excels at strategic analysis compared to other LLMs, making it uniquely suited to our mission-critical work.”
+Webinar
 
-Rebecca Glover, Global Director, Finance
+A Staff Guide to Making Claude Useful on Day One. On November 12.
 
-> “From tracking financial services pricing across 18 countries to helping ministries in Rwanda, Peru, and the Philippines make sense of siloed data, Claude is integral to how we support governments in delivering more impactful services to their citizens.”
+[Register now](https://www.claude.com/resources/webinars/claude-for-nonprofits-a-staff-guide-to-making-claude-useful-on-day-one)
 
-Niall Keleher, Senior Director of Global Research and Data Science
+1 of 2
 
-> “SkillUp is building complex AI systems a normal company would need 20+ engineers for. Claude Code helps level the playing field for organizations that must be efficient, allowing them to build more with the team theywe have.”
+## Connect Claude to the tools you already use
 
-Steve Lee, CEO
-
-> “Our partnership with Anthropic has enabled our team and grantees to use AI to better understand the impacts of our grants, get more done faster, and explore new ways to tell our story to donors and the community.”
-
-Andrew Dayton, Founder and CEO
-
-> “At a time when AI could divide or unite communities, we're choosing to lead with our values—using Claude to strengthen human connection and advance wellbeing for all communities.”
-
-Carlos Sanvee, World YMCA Secretary General
-
-> “With global health funding shrinking, smart targeting is essential. Claude helped us build an interactive geospatial tool in three days versus weeks, mapping at-risk populations to identify where Guatemala's Ministry of Health could most cost-effectively deploy dengue prevention.”
-
-Justin Cohen, VP Malaria & NTDs
-
-> “Claude enables 4× faster implementation, helping MyFriendBen connect families to unclaimed benefits and tax credits. Our Claude-powered agents track up to 40+ programs per state, identifying over \$1.2 billion in value for 70,000+ households.”
-
-Sekhar Paladugu, CEO
-
-> “With AWS and Claude, we built Sage—an AI companion trained on 25,000+ pages of epilepsy expertise, now available 24/7 in 5 languages to 3.4 million Americans living with epilepsy. It embodies our promise that no one should ever have to face epilepsy alone.”
-
-David Jost, Chief Technology Operations Officer
-
-1/11
-
-## Made for mission-driven work
-
-### Enterprise AI at nonprofit pricing
-
-Choose from the Claude Team and Enterprise plans at rates built for nonprofit budgets. Plans include collaborative workspaces, advanced permissions, and enterprise-grade security.
-
-### Built for your workflows
-
-Claude connects directly to the platforms you rely on, like Blackbaud, Benevity, and Candid. Pull donor data, generate reports, and research foundations without switching systems.
-
-### Security for sensitive work
-
-We offer plans that are configurable to meet SOC 2 Type II, ISO 27001, ISO 42001, and CSA Star compliance needs.
-
-### AI Fluency for your whole team
-
-Our free AI Fluency for nonprofits course helps every team member, from executive directors to program coordinators, use AI confidently.
-
-[Learn more (opens in new tab)](https://anthropic.skilljar.com/ai-fluency-for-nonprofits)
-
-## How nonprofits use Claude
-
-Grantwriting
-
-Fundraising
-
-Program design
-
-Volunteer management
-
-Data visualization
-
-Prompt
-
-Generate a proposal for a youth innovation grant (\$75,000). Include an executive summary, problem statement with community data, program approach, budget narrative, and evaluation metrics. Emphasize “innovation” and “youth voice” to align with funder priorities.
-
-Attachments
-
-- Community needs data850 KBPDF
-- Program budget52 kbCSV
-
-### Youth Innovation Lab
-
-*Empowering young people as architects of community change*
-
-##### Proposal to the Westbrook Foundation
-
-Youth Innovation Grant Program  
-Requested amount: \$75,000
-
- 
-Submitted by:
-
-##### Community Pathways Initiative
-
-123 Community Drive, Metro City, ST 12345  
-Contact: Maria Rodriguez, Executive Director  
-mrodriguez@communitypathways.org \| (555) 234-5678*  
-March 15, 2025*
-
- 
-#### Executive summary
-
-Community Pathways Initiative requests \$75,000 from the Westbrook Foundation to launch the *Youth Innovation Lab*—a transformative program empowering 150 young people ages 14-19 to design and deploy community solutions using human-centered design and emerging technologies.
-
-Metro County youth face compounding barriers: 42% unemployment among 16-19 year olds, 67% lacking reliable technology access, and limited pathways to leadership. Yet these same young people possess intimate knowledge of their communities and untapped capacity for innovation. The Youth Innovation Lab transforms this potential into action.
-
-Our youth-driven model distinguishes this program from traditional youth services. Participants don't simply receive programming—they design it. Youth hold 50% of advisory committee seats, co-facilitate workshops, and make decisions about resource allocation. Over nine intensive months, they progress from community researchers to solution architects to change agents.
-
-Innovation is embedded throughout: Youth learn ethnographic research methods, prototype with 3D printers and digital tools, and iterate solutions based on community feedback. Last year's pilot yielded twelve youth-designed projects including a multilingual resource app and peer mental health platform—concrete innovations addressing real needs.
-
-With Westbrook Foundation support, we will scale this proven approach, engage diverse youth populations, and create a replicable model demonstrating that young people aren't just the future—they're essential partners in solving today's challenges.
-
- 
-#### Problem statement: The youth opportunity crisis
-
-##### The compounding challenge
-
-Metro County's young people stand at a critical juncture where economic, educational, and social barriers converge to limit their potential and silence their voices. The data paints a stark picture: Bureau of Labor Statistics reports 42% unemployment among 16-19 year olds—triple the adult rate and the highest in our region's history. This isn't simply an employment problem; it's a symptom of systemic exclusion from opportunity pathways.
-
-The Metro Digital Equity Study (2024) reveals that 67% of low-income youth lack reliable internet access at home. In an increasingly digital economy, this gap doesn't just limit homework completion—it excludes young people from the tools, platforms, and networks that drive modern innovation.
-
-Perhaps most troubling is the leadership vacuum. Our Youth Voice Survey (n=450) found that 78% of young people desire leadership opportunities but see no viable pathways in their communities.
-
-##### The cycle of exclusion
-
-These barriers create a devastating cycle. Without early exposure to problem-solving methodologies, technology tools, and professional networks, young people enter adulthood without competitive advantages. They lack professional soft skills, technical competencies, social capital, and a sense of agency that comes from seeing their ideas valued and implemented.
-
-##### The innovation imperative
-
-What's needed isn't another youth program—it's a fundamental shift in how we engage young people. Stanford Social Innovation Review's recent analysis found that youth-led initiatives achieve 47% higher community adoption rates than adult-designed programs addressing identical issues.
-
- 
-#### Proposed program: The Youth Innovation Lab
-
-##### Program overview
-
-The Youth Innovation Lab is a nine-month intensive program that positions 150 diverse young people ages 14-19 as community innovators. Through rigorous training in design thinking, technology tools, and collaborative problem-solving, participants identify pressing neighborhood challenges and develop evidence-based solutions.
-
-##### Three-phase curriculum
-
-Phase 1: Discovery (Months 1-3) — Youth become community researchers, learning ethnographic methods to deeply understand neighborhood challenges. Activities include conducting resident interviews, asset mapping, data visualization workshops, and ethics training.
-
-Phase 2: Design (Months 4-6) — Armed with community insights, youth enter our Innovation Studio equipped with 3D printers, coding workstations, and digital fabrication tools. Using human-centered design principles, they generate and test solution concepts with mentor guidance.
-
-Phase 3: Deployment (Months 7-9) — Solutions move from prototype to implementation. Youth pilot solutions with community partners, collect impact data, iterate based on testing, and present at the annual Community Solutions Showcase.
-
-##### Innovation through youth governance
-
-Central to our approach is the Youth Advisory Committee, where participants hold 50% of seats on the program governance body. Youth voice directly shapes curriculum modifications, mentor selection, resource allocation, and community partnership development.
-
- 
-#### Budget narrative
-
-The requested \$75,000 represents a strategic investment in youth capacity-building, with 78% of funds supporting direct program delivery.
-
-- Personnel: \$32,500 (43% of total)
-- Fringe benefits: \$8,125 (11% of total)
-- Technology & supplies: \$11,500 (15% of total)
-- Participant stipends: \$13,500 (18% of total)
-- Indirect costs: \$9,375 (13% of total)
-- Total request: \$75,000
-
-Personnel (43%): Includes 0.5 FTE Program Director providing strategic oversight and 1.0 FTE Program Coordinator managing daily operations.
-
-Participant stipends (18%): Youth receive \$200 stipends recognizing their labor as community researchers and innovators.
-
- 
-#### Evaluation plan
-
-Our evaluation framework measures both individual youth development and community-level impact.
-
-##### Theory of change
-
-If we provide young people with design thinking skills, technology tools, mentorship, and authentic decision-making power, then they will develop agency, technical competencies, and community connections that translate to academic success and career readiness.
-
-##### Outcome metrics
-
-- Program completion: 90% of enrolled youth complete all three phases
-- Leadership development: 85% report increased confidence in problem-solving abilities
-- Technical skill acquisition: 80% demonstrate proficiency in design thinking methodology
-- Community impact: Minimum 10 youth-designed solutions advance to implementation
-- Long-term pathways: 70% of graduates pursue STEM, social innovation, or civic engagement within 12 months
-
- 
-#### Conclusion
-
-The Youth Innovation Lab represents more than a program—it's an investment in redefining how communities engage their youngest members. With Westbrook Foundation support, we will demonstrate that young people aren't problems to be solved but essential partners in building more resilient, innovative, and equitable communities.
-
-We welcome the opportunity to discuss this proposal further and thank the Westbrook Foundation for considering this partnership in youth-driven community innovation.
-
- 
-### Grant proposals
-
-Draft foundation proposals in hours instead of days. Claude pulls from your existing content, customizes language to funder priorities, and creates budgets, logic models, and evaluation plans.
-
-[Learn more](https://academy.claude.com/use-cases/grant-proposal-assembly-line)
-
-### Fundraising campaigns
-
-Build complete year-end campaigns with donor segmentation, email sequences, and thank-you templates. Track performance across channels to see which investments drive the best returns.
-
-[Learn more](https://academy.claude.com/use-cases/build-a-fundraising-campaign)
-
-### Program design
-
-Develop complete program frameworks with logic models, evaluation plans, and resource guides. Transform concepts into implementation-ready documentation that demonstrates strategic thinking to funders.
-
-[Learn more](https://academy.claude.com/use-cases/develop-a-program-toolkit)
-
-### Volunteer management
-
-Generate role descriptions, onboarding guides, and hour tracking systems in one conversation. Build recruitment materials and recognition messages that scale with you.
-
-[Learn more](https://academy.claude.com/use-cases/create-a-volunteer-management-system)
-
-### Data visualization
-
-Transform satisfaction surveys and program statistics into board presentations. Analyze participation patterns and outcome measurements across quarters.
-
-[Learn more](https://academy.claude.com/use-cases/visualize-program-data)
-
-## Claude connects to your tools
-
-Work across your donor database, productivity suite, and research tools all in one place.
+Work across Salesforce, your productivity suite, and nonprofit-specific connectors like Blackbaud, Benevity, and Candid, all in one place.
 
 [Explore connectors](../04-API-Reference/Other/partners-mcp.md)
 
-## AI Fluency for nonprofits
+Get hands-on help accelerating Claude adoption across your organization
 
-This free course will help anyone on your team feel confident with AI. No technical background required.
+Explore the Claude Partner Network for support.
 
-[View course (opens in new tab)](https://anthropic.skilljar.com/ai-fluency-for-nonprofits)
+[See partner directory](../04-API-Reference/Other/partners.md)
+
+## AI fluency for nonprofits
+
+Help your team feel confident using AI, no technical background required. Explore courses and tutorials for nonprofits, free of charge.
+
+[View course (opens in new tab)](https://anthropic.skilljar.com/ai-fluency-for-nonprofits)[View more courses for nonprofits (opens in new tab)](https://academy.claude.com/collections/nonprofits)
+
+Find funders and report on grants with Claude for Nonprofits
+
+Set up a map of where your records live and a voice guide, then follow a nonprofit as it finds funders who fit and drafts a grant report. Made for beginners.
+
+[Start the tutorial (opens in new tab)](https://academy.claude.com/tutorials/fundraising-with-claude-for-nonprofits)
 
 ## Get started with Claude
 
-If your organization has fewer than 20 people, get started by verifying your nonprofit status with our partner Goodstack. For larger organizations, reach out to our sales team.
+Organizations with up to 150 seats can get started now by verifying nonprofit status with Goodstack. Larger organizations can get help from our team.
 
 ### Team
 
@@ -306,33 +224,14 @@ Nonprofit access
 
 Per month. For nonprofits based in [low- or middle-income countries (opens in new tab)](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
 
-- 
-
-  Nonprofit connectors
-
-- 
-
-  Single sign-on (SSO) and domain capture
-
-- 
-
-  Includes Claude and Claude Code
-
-- 
-
-  Access to file creation (docs, slides, spreadsheets, and PDFs)
-
-- 
-
-  Central billing and administration
-
-- 
-
-  Nonprofit guides and docs
-
-- 
-
-  Minimum 2 seats
+- Claude for Nonprofits skills, pre-installed
+- Nonprofit connectors
+- Single sign-on (SSO) and domain capture
+- Includes Claude and Claude Code
+- Access to file creation (docs, slides, spreadsheets, and PDFs)
+- Central billing and administration
+- Nonprofit guides and docs
+- Minimum 2 seats
 
 ### Enterprise
 
@@ -342,54 +241,59 @@ For organizations operating at scale
 
 Everything in Team, plus:
 
-- 
+- More usage\*
+- Enhanced context window
+- Compliance API for observability and monitoring
+- Single sign-on (SSO) and domain capture
+- System for Cross-domain Identity Management (SCIM)
+- Custom data retention controls
 
-  More usage\*
-
-- 
-
-  Enhanced context window
-
-- 
-
-  Compliance API for observability and monitoring
-
-- 
-
-  Single sign-on (SSO) and domain capture
-
-- 
-
-  System for Cross-domain Identity Management (SCIM)
-
-- 
-
-  Custom data retention controls
-
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic’s discretion.
 
 [Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
 
-## FAQ
+## More products for nonprofits
 
-### What is Claude for Nonprofits?
+### Claude for Microsoft 365
 
-Claude for Nonprofits brings AI assistance directly into the tools mission-driven teams already rely on — donor management systems, grant research databases, and everyday collaboration platforms. Instead of switching between apps, your team gets connected insights across your whole operation, helping you move faster on mission work without sacrificing the transparency funders and boards expect.
+Claude works in Excel, Word, and PowerPoint. Turn a program budget into a board deck, or a grant report draft into a finished document, inside the files your team uses every day.
 
-### Which organizations qualify for Claude for Nonprofits?
+[Learn more](https://www.claude.com/claude-for-microsoft-365)
 
-Nonprofit pricing is open to registered 501(c)(3) organizations and their international equivalents, as well as K-12 public and private schools. Certain mission-based healthcare providers are also eligible — including independent Critical Access Hospitals, Rural Emergency Hospitals, Federally Qualified Health Centers, and Rural Health Clinics. Full eligibility details [here](../01-Getting-Started/getting-started-with-claude-for-nonprofits.md#h_0a76495cb3).
+### Claude for Google Workspace
 
-### How does my nonprofit get verified?
+Bring Claude into Docs, Sheets, and Slides to build grant budgets, draft appeals, and update board slides where your team already collaborates.
 
-It depends on your plan. Enterprise customers are verified directly by our nonprofit sales team during the sales process. Team plan customers complete a quick (~2-3 minute) verification through our partner [Goodstack](https://validate.poweredbypercent.com/anthropic) — once approved, you'll get an email to finish setup with the discount already applied.
+[Learn more](https://www.claude.com/claude-for-google-workspace)
 
-## Nonprofit case studies
+### Claude Code
+
+Nonprofits with data and tech teams can clean up datasets, update older systems, or build dashboards with the coding tool developers at Code the Dream and Direct Relief use.
+
+[Learn more](../15-Claude-AI-Features/product-claude-code.md)
+
+### Claude Platform
+
+Build new tools and services for the people you serve, like a curriculum coach for teachers or round-the-clock support for patients, on the Claude Platform.
+
+[Learn more](https://www.claude.com/platform/api)
+
+## Nonprofit resources
 
 
-Brian Impact Foundation powers their search for the next generation of social innovators with Claude
+The Epilepsy Foundation turns years of expert content into a personal epilepsy assistant with Claude
 
 Case study
+
+
+The International Rescue Committee turns fragmented health data into faster decisions with Claude
+
+Case study
+
+
+Building dignity-driven AI: A conversation with the National Domestic Workers Alliance
+
+Q&A
 
 
 The Patrick J. McGovern Foundation standardizes grant evaluation with Claude
@@ -401,233 +305,43 @@ Rising Academies’ chatbot tutors reach 150,000+ students across Sub-Saharan Af
 
 Case study
 
-[](https://www.claude.com/)
 
-© 2026 Anthropic PBC
+Prosper Global accelerates global humanitarian response to community feedback with Claude
 
-## Products
+Case study
 
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
 
-## Capabilities
+Brian Impact Foundation powers their search for the next generation of social innovators with Claude
 
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
+Case study
 
-## Extensions
 
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
+A conversation with IRC on turning frontline health data into action in Burkina Faso
 
-## Models
+Q&A
 
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
+## FAQ
 
-## Enterprise
+### What is Claude for Nonprofits?
 
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
+Claude for Nonprofits is more than discounted access to Claude. It’s the same frontier AI the world’s largest organizations run, set up for how nonprofits work and built with nonprofits. It brings together nonprofit pricing, skills and connectors for work like fundraising, marketing and hiring, free training, and a network of partners, so your team has a clear path from first login to real impact on your mission.
 
-## Departments
+### What’s in the Claude for Nonprofits plugin?
 
-- [Customer support](customer-support.md)
-- [Cybersecurity](cybersecurity.md)
-- [Legal](legal.md)
-- [Sales](sales.md)
+The plugin is a set of skills and connectors built with ~30 nonprofits in our design partner circle, and it comes pre-installed for every verified nonprofit. Its 14 skills cover four areas. Knowing your organization: a map of where your records live, your voice guide, and answers from your AI policy. Marketing: campaign planning, content review, and decks. Your team: job posts and interview guides, new-hire onboarding, HR policy answers, and board recruitment. Fundraising: funder and grant research, proposal writing, grant reporting, and donor and funder relations.
 
-## Industries
+### Which organizations qualify for Claude for Nonprofits?
 
-- [Financial advisors](financial-advisors.md)
-- [Financial services](finance.md)
-- [Government](government.md)
-- [Healthcare](healthcare.md)
-- [Higher education](education.md)
-- [K-12 teachers](teachers.md)
-- [Life sciences](life-sciences.md)
-- [Nonprofits](nonprofits.md)
-- [Small business](small-business.md)
+Nonprofit pricing is open to registered 501(c)(3) organizations and their international equivalents, as well as K-12 public and private schools. Certain mission-based healthcare providers are also eligible, including independent Critical Access Hospitals, Rural Emergency Hospitals, Federally Qualified Health Centers, and Rural Health Clinics.
 
-## Programs
+### How does my nonprofit get verified?
 
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
+It depends on your plan. Enterprise customers are verified directly by our nonprofit sales team during the sales process. Team plan customers complete a quick (~2-3 minute) verification through our partner [Goodstack](https://validate.poweredbypercent.com/anthropic). Once approved, you’ll get an email to finish setup with the discount already applied.
 
-## Developers
+### Is Claude for Nonprofits secure?
 
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
+Claude for Nonprofits plans include advanced permissions that help you protect who can access data, and enterprise-grade security. Plans are configurable to meet SOC 2 Type II, ISO 27001, ISO 42001, and CSA Star compliance needs. For more details, visit [trust.anthropic.com (opens in new tab)](https://trust.anthropic.com/).
 
-## Platform
+## Put Claude to work for your mission
 
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-## Company
-
-- [Anthropic](https://www.anthropic.com/)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [Anthropic news](../19-Reference/news.md)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Transparency](https://anthropic.com/transparency)
-
-## Terms and policies
-
-- Privacy choices
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
-- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
-- [Usage Policy](https://www.anthropic.com/legal/aup)
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](customer-support.md)
-- [Cybersecurity](cybersecurity.md)
-- [Legal](legal.md)
-- [Sales](sales.md)
-
-## Industries
-
-- [Financial advisors](financial-advisors.md)
-- [Financial services](finance.md)
-- [Government](government.md)
-- [Healthcare](healthcare.md)
-- [Higher education](education.md)
-- [K-12 teachers](teachers.md)
-- [Life sciences](life-sciences.md)
-- [Nonprofits](nonprofits.md)
-- [Small business](small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+[Get started](#pricing)[Get help choosing a plan](https://claude.ai/buying-specialist?src=dotcom_nonprofit_enterprise)

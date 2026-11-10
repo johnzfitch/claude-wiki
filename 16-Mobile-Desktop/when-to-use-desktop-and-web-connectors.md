@@ -2,7 +2,7 @@
 title: "When to use desktop and web connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-23T06:28:51Z"
+fetched_at: "2026-11-09T06:25:36Z"
 tags: ["connectors", "desktop", "plugins"]
 ---
 
@@ -41,8 +41,8 @@ A plugin can bundle either remote or local MCP servers (or both). Adding a plugi
 
 ## Get started
 
-- Browse and add remote connectors: **[Settings → Connectors](https://claude.ai/settings/connectors)** or the **[Connectors Directory](https://claude.ai/directory)**
+- Browse and add remote connectors: **Customize → Connectors** or the **Connectors Directory**
 
-- Install a desktop extension: Open Claude Desktop → Settings → Extensions
+- Install a desktop extension: Open Claude Desktop → Settings → Desktop app → "Manage" next to Extensions (or Settings → Extensions in the older Settings layout)
 
 - Building your own? See the **[connector building docs](https://claude.com/docs/connectors/building)** for remote connectors or the **[MCPB guide](https://claude.com/docs/connectors/building/mcpb)** for local ones.

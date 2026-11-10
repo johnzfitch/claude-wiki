@@ -2,18 +2,16 @@
 title: "Use Claude with Android apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11869629-using-claude-with-android-apps"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-23T06:28:52Z"
+fetched_at: "2026-11-09T06:25:48Z"
 tags: ["desktop"]
 ---
 
 # Use Claude with Android apps
 
-August 25, 2026
-
 
 Claude can now connect with your Android device's system apps to help you take action directly from your conversations. When you chat with Claude, it can draft messages, emails, calendar events, set alarms and timers, find locations, and more—all through your everyday apps without copy-paste.
 
-This feature is supported on all Claude plans and works with your device's native and third-party apps, including messaging, email, calendar, alarms, timers, location services, maps, and Health Connect (in beta on Pro and Max plans only).
+This feature is supported on all Claude plans and works with your device's native and third-party apps, including messaging, email, calendar, alarms, timers, location services, maps, and Health Connect (in beta on Pro, Max, and Ultra plans only).
 
 ## What can Claude do with Android apps?
 
@@ -45,7 +43,7 @@ Claude can help you:
 
 - **Contacts:** Claude does not have direct access to your contacts.
 
-- **Health:** Available on Pro and Max plans only. Requires Android 14 or later and Health Connect. Currently limited to users in the US. Claude can read health data but cannot write or modify entries in Health Connect.
+- **Health:** Available on Pro, Max, and Ultra plans only. Requires Android 14 or later and Health Connect. Currently limited to users in the US. Claude can read health data but cannot write or modify entries in Health Connect.
 
 ------------------------------------------------------------------------
 
@@ -131,7 +129,7 @@ When Claude determines that using one of these features would be helpful, it wil
 
 ## Access and analyze your health data
 
-**Note:** Health features are available in beta on Pro and Max plans only, require Android 14 or later, and are limited to users in the US.
+**Note:** Health features are available in beta on Pro, Max, and Ultra plans only, require Android 14 or later, and are limited to users in the US.
 
 Claude can read your health and fitness data from Health Connect to help you understand patterns, track progress, and make informed decisions about your wellbeing. When you ask Claude about your health data, it can display insights using native charts that feel integrated with Android.
 
@@ -294,7 +292,7 @@ Health Connect permissions are managed separately from other app permissions. Wh
 
 ### Health data isn't appearing or seems incomplete
 
-- Verify that you have a Pro or Max plan and are located in the US.
+- Verify that you have a Pro, Max, or Ultra plan and are located in the US.
 
 - Ensure you're running Android 14 or later.
 

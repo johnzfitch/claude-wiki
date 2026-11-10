@@ -2,7 +2,7 @@
 title: "Project Vend: Can Claude run a small shop? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-vend-1"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:44Z"
+fetched_at: "2026-10-24T06:27:02Z"
 tags: ["news-research"]
 ---
 
@@ -153,7 +153,7 @@ This experiment has already shown us a world—co-created by Claudius and its cu
 
 06For example, see the section on “high-agency behavior” beginning on p.44 of the [Claude 4 system card](https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf).[](#footnote-ref-6)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

@@ -2,245 +2,11 @@
 title: "List RBAC Role Permissions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_roles/permissions/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-20T06:38:39Z"
+fetched_at: "2026-11-05T06:36:00Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Frbac_roles%2Fpermissions%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-
-List RBAC Roles
-
-
-Get RBAC Role
-
-Permissions
-
-
-List RBAC Role Permissions
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](../Endpoints/opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
@@ -254,7 +20,9 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/rbac_roles/{rbac_role_id}/permissions
 
@@ -334,7 +102,7 @@ action: string
 
 Action the permission grants on the resource.
 
-The vocabulary follows the resource: an `organization` grant carries a product-feature entitlement (for example `chat`), an admin-panel permission entitlement (`permission_*`), or a blanket capability-access mode — `capability_access_all` grants every product-feature entitlement, and `capability_access_all_ga` grants the generally-available subset as it stands at permission-check time; neither mode grants model-access entitlements. A consumer enumerating a role's per-feature grants should treat a blanket row as granting every product-feature entitlement it covers, or it will under-report the role's effective access. A `connector_tool` grant carries a tool-access action (`use` or `always_allow`); a `connector_scope` grant carries the scope action `grant` (the role may receive the named OAuth scope when tokens are minted for the connector); `connector` and `all_connectors` grants carry a tool-access action, the scope action, or an authentication-method action (`interactive` or `managed`).
+The vocabulary follows the resource: an `organization` grant carries a product-feature entitlement (for example `chat`), an admin-panel permission entitlement (`permission_*`), or a blanket capability-access mode — `capability_access_all` grants every product-feature entitlement except `inference_hooks_inspection`, which a role holds only through its own row, and `capability_access_all_ga` grants the generally-available subset of those as it stands at permission-check time; neither mode grants model-access entitlements. A consumer enumerating a role's per-feature grants should treat a blanket row as granting every product-feature entitlement it covers, or it will under-report the role's effective access. A `connector_tool` grant carries a tool-access action (`use` or `always_allow`); a `connector_scope` grant carries the scope action `grant` (the role may receive the named OAuth scope when tokens are minted for the connector); `connector` and `all_connectors` grants carry a tool-access action, the scope action, or an authentication-method action (`interactive` or `managed`).
 
 
 
@@ -492,8 +260,8 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/organizations/rbac_roles/$RBAC_ROLE_ID/permissions \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY"
 ```
 
 Response 200

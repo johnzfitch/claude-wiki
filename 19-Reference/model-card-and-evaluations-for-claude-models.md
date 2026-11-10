@@ -1,8 +1,9 @@
 ---
 title: "Model Card and Evaluations for Claude Models"
-source_url: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf"
+source_url: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-3.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:41:20Z"
+fetched_at: "2026-10-28T06:37:48Z"
+last_modified: "Fri, 08 Dec 2023 20:11:40 GMT"
 tags: ["evaluation", "news-research"]
 ---
 

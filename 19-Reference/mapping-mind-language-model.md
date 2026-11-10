@@ -96,4 +96,4 @@ For full details, please read our paper, "[Scaling Monosemanticity: Extracting I
 ### Policy Memo
 
 [Mapping the Mind of a Large Language Model  
-](https://www-cdn.anthropic.com/files/4zrzovbb/website/e2ae0c997653dfd8a7cf23d06f5f06fd84ccfd58.pdf)
+](files-4zrzovbb-website-e2ae0c997653dfd8a7cf23d06f5f06fd84ccfd58-pdf-4697af85f5.md)

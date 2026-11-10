@@ -2,11 +2,14 @@
 title: "CLI client - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector/cli"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:28Z"
+fetched_at: "2026-11-01T06:24:21Z"
+last_modified: "Sat, 31 Oct 2026 20:30:14 GMT"
 tags: ["cli", "mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Choosing a server](#choosing-a-server)
 - [Methods](#methods)
@@ -66,32 +69,32 @@ When the server comes from a file, its per-server settings (headers, timeouts, O
 
 **The config file is the only durable way to give a run its [roots](../Spec/draft-client-roots.md):** there is no roots flag, and the CLI has no `roots/set` method. Roots configured for a server are advertised at connect, so a server that calls `roots/list` (as `@modelcontextprotocol/server-filesystem` does, to learn its allowed directories) gets them.
 
-See [Configuration and flags](2026-07-28-tools-inspector-configuration.md) for `--catalog` vs. `--config`, the `--` separator, and the shared server-selection flags.
+See [Configuration and flags](draft-tools-inspector-configuration.md) for `--catalog` vs. `--config`, the `--` separator, and the shared server-selection flags.
 
 
 [​](#methods)
 
 Methods
 
-| `--method`                 | Required companions                                            | Notes                                                                                   |
-|----------------------------|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| `initialize`               | None                                                           | Connect-only probe: `{serverInfo, protocolVersion, capabilities, instructions}`.        |
-| `tools/list`               | None                                                           | `--strict` turns its schema portability check into a gate (see [CI gates](#ci-gates)).  |
-| `tools/call`               | `--tool-name`, plus optional `--tool-arg` / `--tool-args-json` |                                                                                         |
-| `resources/list`           | None                                                           |                                                                                         |
-| `resources/read`           | `--uri`                                                        |                                                                                         |
-| `resources/templates/list` | None                                                           |                                                                                         |
-| `resources/directory/read` | `--uri`, plus optional `--cursor`                              | One page at a time; pass back the previous page’s `nextCursor`.                         |
-| `prompts/list`             | None                                                           |                                                                                         |
-| `prompts/get`              | `--prompt-name`, plus optional `--prompt-args`                 |                                                                                         |
-| `logging/setLevel`         | `--log-level`                                                  | Legacy era only; modern servers opt in per request instead.                             |
-| `skills/list`              | None                                                           | `--verify` checks the skills returned (see [CI gates](#ci-gates)).                      |
-| `skills/get`               | `--uri`                                                        | Same `--verify` option.                                                                 |
-| `servers/list`             | None                                                           | Read the catalog **without connecting** to anything.                                    |
-| `servers/show`             | `--server`                                                     | Same, for one entry.                                                                    |
-| `servers/add`              | `--server`, plus a positional target or `--server-url`         | Write the catalog without connecting (see [Editing the catalog](#editing-the-catalog)). |
-| `servers/edit`             | `--server`, plus what to change                                | Same.                                                                                   |
-| `servers/remove`           | `--server`                                                     | Same.                                                                                   |
+| `--method` | Required companions | Notes |
+|----|----|----|
+| `initialize` | None | Connect-only probe: `{serverInfo, protocolVersion, capabilities, instructions}`. |
+| `tools/list` | None | `--strict` turns its schema portability check into a gate (see [CI gates](#ci-gates)). |
+| `tools/call` | `--tool-name`, plus optional `--tool-arg` / `--tool-args-json` |  |
+| `resources/list` | None |  |
+| `resources/read` | `--uri` |  |
+| `resources/templates/list` | None |  |
+| `resources/directory/read` | `--uri`, plus optional `--cursor` | One page at a time; pass back the previous page’s `nextCursor`. |
+| `prompts/list` | None |  |
+| `prompts/get` | `--prompt-name`, plus optional `--prompt-args` |  |
+| `logging/setLevel` | `--log-level` | Legacy era only; modern servers opt in per request instead. |
+| `skills/list` | None | `--verify` checks the skills returned (see [CI gates](#ci-gates)). |
+| `skills/get` | `--uri` | Same `--verify` option. |
+| `servers/list` | None | Read the catalog **without connecting** to anything. |
+| `servers/show` | `--server` | Same, for one entry. |
+| `servers/add` | `--server`, plus a positional target or `--server-url` | Write the catalog without connecting (see [Editing the catalog](#editing-the-catalog)). |
+| `servers/edit` | `--server`, plus what to change | Same. |
+| `servers/remove` | `--server` | Same. |
 
 Stream- or session-only methods (`logging/tail`, for example) are rejected, since a process that exits can’t hold a stream open.
 
@@ -152,18 +155,20 @@ Exit codes and error envelopes
 
 Every non-zero exit maps to a stable failure class, so a caller can branch on *why* without scraping prose:
 
-| Code | Meaning                                                                                              |
-|------|------------------------------------------------------------------------------------------------------|
-| `0`  | Success.                                                                                             |
-| `1`  | Usage or unexpected error (the catch-all), including an unreadable secret store or OAuth state file. |
-| `2`  | No MCP App found on the tool (`--app-info` probe).                                                   |
-| `3`  | Server requires authentication (HTTP 401/403, or an SDK authorization error).                        |
-| `4`  | Server unreachable (DNS, connection refused, timeout, `fetch failed`).                               |
-| `5`  | Tool error: `tools/call` returned `isError: true`, or the tool wasn’t found.                         |
-| `6`  | `--strict` found an error-severity tool-schema portability problem.                                  |
-| `7`  | `--verify` found a skill that violates SEP-2640 (conformance, digest, or size mismatch).             |
-| `8`  | `--verify` couldn’t check every skill within its read bounds.                                        |
-| `9`  | `--verify --require-digests` found a skill that advertises no digests.                               |
+| Code | Meaning |
+|----|----|
+| `0` | Success. |
+| `1` | Usage or unexpected error (the catch-all), including an unreadable secret store or OAuth state file. |
+| `2` | No MCP App found on the tool (`--app-info` probe). |
+| `3` | Server requires authentication (HTTP 401/403, or an SDK authorization error). |
+| `4` | Server unreachable (DNS, connection refused, timeout, `fetch failed`). |
+| `5` | Tool error: `tools/call` returned `isError: true`, or the tool wasn’t found. |
+| `6` | `--strict` found an error-severity tool-schema portability problem. |
+| `7` | `--verify` found a skill that violates SEP-2640 (conformance, digest, or size mismatch). |
+| `8` | `--verify` couldn’t check every skill within its read bounds. |
+| `9` | `--verify --require-digests` found a skill that advertises no digests. |
+| `10` | A `--load` run breached a `--load-max-error-rate` or `--load-max-p99` threshold. The summary is printed first, and the envelope `code` names the threshold: `load_error_rate_exceeded` or `load_p99_exceeded`. |
+| `11` | The server answered HTTP 429 (envelope `code` `rate_limited`). The envelope also carries `method`, plus `retryAfter` (the `Retry-After` header as sent) and `retryAfterMs` when the server sent one that parses. |
 
 On any non-zero exit the CLI also writes a **single JSON line to stderr**:
 
@@ -178,7 +183,7 @@ On any non-zero exit the CLI also writes a **single JSON line to stderr**:
 }
 ```
 
-The envelope carries `code` and `message` always, plus `cause` (the underlying error, such as a DNS failure), `status` (the HTTP status) and `url` when known. Query-string secrets in a URL are redacted. `code` is a stable name for the failure: `auth_required`, `unreachable`, `tool_not_found`, `tool_is_error`, `no_app`, `schema_unportable`, `store_unavailable`, `oauth_state_unrecognized`, or the catch-all `error`, among others. Because it’s one line, a caller can parse it with `2>&1 | tail -1 | jq .error`. A `tools/call` that returns `isError: true` still prints its payload, but exits `5`, so an `&&` chain doesn’t proceed on a failed call.
+The envelope carries `code` and `message` always, plus `cause` (the underlying error, such as a DNS failure), `status` (the HTTP status) and `url` when known. Query-string secrets in a URL are redacted. `code` is a stable name for the failure: `auth_required`, `unreachable`, `tool_not_found`, `tool_is_error`, `no_app`, `schema_unportable`, `store_unavailable`, `oauth_state_unrecognized`, `rate_limited`, or the catch-all `error`, among others. Because it’s one line, a caller can parse it with `2>&1 | tail -1 | jq .error`. A `tools/call` that returns `isError: true` still prints its payload, but exits `5`, so an `&&` chain doesn’t proceed on a failed call.
 
 
 [​](#authorization-in-scripts)
@@ -216,15 +221,17 @@ mcp-inspector --cli --config ./ci-servers.json --server my-server \
 
 CI gates
 
-Three flags turn a check into a non-zero exit, each with its own code so a job can tell the failures apart:
+These flags turn a check into a non-zero exit, each with its own code so a job can tell the failures apart:
 
 - `--strict` (with `tools/list`): reports tool-schema portability problems in full on stderr (path, issue, suggested fix) and exits `6` if any is error-severity. Without it, `tools/list` prints only a one-line count. Under `--format json` the findings are folded into the output as `schemaFindings`.
 - `--verify` (with `skills/list` or `skills/get`): runs the SEP-2640 conformance and digest checks, writes one JSON report per skill on stdout, and exits `7` on a violation or `8` when the read bounds stopped it before every skill was checked. `--skill-catalog-max-skills` and `--skill-catalog-max-bytes` set those bounds.
 - `--require-digests` (with `--verify`): exits `9` for a skill that advertises no digests, instead of reporting it as unverifiable and exiting `0`.
+- `--load-max-error-rate <fraction>` and `--load-max-p99 <ms>` (with `--load`): turn a load run into a gate. The run prints its summary, then exits `10` when the share of failed calls is above the fraction (`0` to `1`, so `0` fails on any failed call), when the p99 latency is above the given milliseconds, or when no call completed. `--load` (with `tools/call --tool-name`) calls the tool repeatedly and concurrently and prints a latency and error-rate summary instead of a result, bounded by `--load-duration <sec>` (default `10` when `--load-requests` is not set) and `--load-requests <n>`, with in-flight calls still finishing. `--load-concurrency <n>` (default `10`) caps the calls in flight, `--load-connections <n>` (default `1`, at most `--load-concurrency`, HTTP and SSE servers only) spreads them over independent sessions opened before timing starts, and `--load-rate <n>` (default unlimited) caps the calls started per second.
 
 ```python
 mcp-inspector --cli <server> --method tools/list --strict > /dev/null
 mcp-inspector --cli <server> --method skills/list --verify --require-digests
+mcp-inspector --cli <server> --method tools/call --tool-name get_weather --load --load-requests 200 --load-max-p99 500
 ```
 
 
@@ -271,7 +278,7 @@ mcp-inspector --cli --catalog ~/.mcp-inspector/mcp.json --method servers/show --
 
 Editing the catalog
 
-`servers/add`, `servers/edit`, and `servers/remove` write the catalog without connecting to anything. They go through the same code as the web client’s server list, so `env` values and client secrets land in the [secret store](2026-07-28-tools-inspector-configuration.md#where-secrets-are-stored) exactly as they would from the UI, and a running web client picks up the change.
+`servers/add`, `servers/edit`, and `servers/remove` write the catalog without connecting to anything. They go through the same code as the web client’s server list, so `env` values and client secrets land in the [secret store](draft-tools-inspector-configuration.md#where-secrets-are-stored) exactly as they would from the UI, and a running web client picks up the change.
 
 ```python
 # Add: the positional target or --server-url describes the entry, not a server to connect to

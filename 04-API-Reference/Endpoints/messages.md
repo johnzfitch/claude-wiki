@@ -2,234 +2,11 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:40:04Z"
+fetched_at: "2026-11-06T06:27:11Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 
 
@@ -243,7 +20,9 @@ A beta version of this API exists and may have additional functionality. [View t
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create a Message](https://platform.claude.com/docs/en/api/http/messages/create)
 
@@ -258,6 +37,24 @@ Send a structured list of input messages with text and/or image content, and the
 Count the number of tokens in a Message.
 
 ##### Models
+
+
+
+AssistantMessageParam object{ content, role }
+
+
+
+
+
+content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
+
+
+
+One of the following:
+
+role: "assistant"
+
+
 
 
 
@@ -2628,6 +2425,10 @@ CacheMissMessagesChanged object{ type: "messages_changed", cache_missed_input_to
 
 
 
+A `cache_miss_reason` for a request whose `messages` differ from the previous request's in an earlier entry, instead of only having entries appended. The `model`, `system`, and `tools` match.
+
+See the [cache diagnostics guide](../Guides/build-with-claude-cache-diagnostics.md#cache-miss-reason-types) to learn what to change for each reason.
+
 
 
 type: "messages_changed"
@@ -2648,6 +2449,10 @@ CacheMissModelChanged object{ type: "model_changed", cache_missed_input_tokens 
 
 
 
+A `cache_miss_reason` for a request whose `model` or `speed` differs from the previous request's.
+
+See the [cache diagnostics guide](../Guides/build-with-claude-cache-diagnostics.md#cache-miss-reason-types) to learn what to change for each reason.
+
 
 
 type: "model_changed"
@@ -2667,6 +2472,12 @@ Approximate number of input tokens that would have been read from cache had the 
 CacheMissPreviousMessageNotFound object{ type: "previous_message_not_found" }
 
 
+
+A `cache_miss_reason` for when the API doesn't have a stored record of the request that `diagnostics.previous_message_id` references.
+
+This doesn't mean that this request changed.
+
+See the [cache diagnostics guide](../Guides/build-with-claude-cache-diagnostics.md#cache-miss-reason-types) to learn what to change for each reason.
 
 
 
@@ -2690,6 +2501,10 @@ CacheMissSystemChanged object{ type: "system_changed", cache_missed_input_tokens
 
 
 
+A `cache_miss_reason` for a request whose `system` differs from the previous request's.
+
+See the [cache diagnostics guide](../Guides/build-with-claude-cache-diagnostics.md#cache-miss-reason-types) to learn what to change for each reason.
+
 
 
 type: "system_changed"
@@ -2710,6 +2525,10 @@ CacheMissToolsChanged object{ type: "tools_changed", cache_missed_input_tokens 
 
 
 
+A `cache_miss_reason` for a request whose `tools` differ from the previous request's, for example because tools were added, removed, or reordered.
+
+See the [cache diagnostics guide](../Guides/build-with-claude-cache-diagnostics.md#cache-miss-reason-types) to learn what to change for each reason.
+
 
 
 type: "tools_changed"
@@ -2729,6 +2548,12 @@ Approximate number of input tokens that would have been read from cache had the 
 CacheMissUnavailable object{ type: "unavailable" }
 
 
+
+A `cache_miss_reason` for when the API can't give a diagnosis. The request itself was processed normally.
+
+This includes a request whose `model`, `system`, and `tools` match the previous request's but whose other prompt-affecting parameters, such as `thinking` or `tool_choice`, differ.
+
+See the [cache diagnostics guide](../Guides/build-with-claude-cache-diagnostics.md#cache-miss-reason-types) to learn what to change for each reason.
 
 
 
@@ -3390,7 +3215,11 @@ CodeExecutionTool20260120 object{ type: "code_execution_20260120", name, allowed
 
 
 
-Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+A `tools` entry for the code execution tool, version `code_execution_20260120`. It adds REPL state persistence to version `code_execution_20250825`.
+
+REPL state persistence applies with programmatic tool calling. With it, the Python interpreter state, such as variable bindings, persists across requests that reuse the container.
+
+See the [code execution tool guide](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md#tool-versions) to learn what each tool version adds.
 
 
 
@@ -4872,7 +4701,11 @@ EncryptedCodeExecutionResultBlock object{ type: "encrypted_code_execution_result
 
 
 
-Code execution result with encrypted stdout for PFC + web_search results.
+The output and exit code of Python code that Claude ran with the code execution tool, with standard output in encrypted form.
+
+The API returns this block in place of `code_execution_result` when the code called the web search tool.
+
+See the [programmatic tool calling guide](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md) to learn more about programmatic tool calling.
 
 
 
@@ -4918,7 +4751,7 @@ EncryptedCodeExecutionResultBlockParam object{ type: "encrypted_code_execution_r
 
 
 
-Code execution result with encrypted stdout for PFC + web_search results.
+The output and exit code of Python code that Claude ran with the code execution tool, with standard output in encrypted form, sent back in a later request.
 
 type: "encrypted_code_execution_result"
 
@@ -5058,6 +4891,14 @@ Message object{ type: "message", id, container, 8 more }
 
 
 
+MessageContentParam = string or array of [ContentBlockParam](https://platform.claude.com/docs/en/api/http/messages#content_block_param)
+
+
+
+One of the following:
+
+
+
 MessageCountTokensTool = [Tool](https://platform.claude.com/docs/en/api/http/messages#tool) or [ToolBash20250124](https://platform.claude.com/docs/en/api/http/messages#tool_bash_20250124) or [CodeExecutionTool20250522](https://platform.claude.com/docs/en/api/http/messages#code_execution_tool_20250522) or 18 more
 
 
@@ -5152,7 +4993,51 @@ MessageDeltaUsage object{ cache_creation_input_tokens, cache_read_input_tokens, 
 
 
 
-MessageParam object{ content, role }
+MessageParam = [UserMessageParam](https://platform.claude.com/docs/en/api/http/messages#user_message_param) or [AssistantMessageParam](https://platform.claude.com/docs/en/api/http/messages#assistant_message_param) or [SystemMessageParam](https://platform.claude.com/docs/en/api/http/messages#system_message_param)
+
+
+
+One of the following:
+
+
+
+UserMessageParam object{ content, role }
+
+
+
+
+
+content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
+
+
+
+One of the following:
+
+role: "user"
+
+
+
+
+
+AssistantMessageParam object{ content, role }
+
+
+
+
+
+content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
+
+
+
+One of the following:
+
+role: "assistant"
+
+
+
+
+
+SystemMessageParam object{ content, role }
 
 
 
@@ -5268,7 +5153,7 @@ thinking_tokens: number
 
 Number of output tokens the model generated as internal reasoning, including the thinking-block delimiter tokens.
 
-Reflects the raw reasoning the model produced, not the (possibly shorter) summarized thinking text returned in the response body. Computed by re-tokenizing the raw reasoning text, so it may differ from the model's exact generation count by a small number of tokens. Always ≤ `output_tokens`; `output_tokens - thinking_tokens` approximates the non-reasoning output.
+Reflects the raw reasoning the model produced, not the (possibly shorter) summarized thinking text returned in the response body. It may differ from the model's exact generation count by a small number of tokens. Always ≤ `output_tokens`; `output_tokens - thinking_tokens` approximates the non-reasoning output.
 
 default0
 
@@ -5620,7 +5505,7 @@ SkillParams object{ type, skill_id, version }
 
 
 
-Specification for a skill to be loaded in a container (request model).
+Specification for a skill to be loaded in a container.
 
 
 
@@ -5697,6 +5582,12 @@ One of the following:
 
 
 "model_context_window_exceeded"
+
+
+
+
+
+SystemMessageParam object{ content, role }
 
 
 
@@ -6818,6 +6709,24 @@ The [IANA timezone](https://nodatime.org/TimeZones) of the user.
 minLength1
 
 maxLength255
+
+
+
+UserMessageParam object{ content, role }
+
+
+
+
+
+content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
+
+
+
+One of the following:
+
+role: "user"
+
+
 
 
 

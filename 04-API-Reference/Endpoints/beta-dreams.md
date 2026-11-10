@@ -2,249 +2,11 @@
 title: "Dreams - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/dreams"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:37:01Z"
+fetched_at: "2026-11-05T06:35:21Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fdreams)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Create a Dream
-
-
-List Dreams
-
-
-Get a Dream
-
-
-Cancel a Dream
-
-
-Archive a Dream
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -255,11 +17,15 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create a Dream](https://platform.claude.com/docs/en/api/http/beta/dreams/create)
 
 POST/v1/dreams
+
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
 
 Start an asynchronous job that uses past sessions to produce a reorganized version of a memory store and get back the dream to poll for the result.
 
@@ -267,11 +33,15 @@ Start an asynchronous job that uses past sessions to produce a reorganized versi
 
 GET/v1/dreams
 
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+
 List the dreams in the workspace, newest first.
 
 ##### [Get a Dream](https://platform.claude.com/docs/en/api/http/beta/dreams/retrieve)
 
 GET/v1/dreams/{dream_id}
+
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
 
 Get a dream by ID to check its status, output memory store, and token usage.
 
@@ -279,11 +49,15 @@ Get a dream by ID to check its status, output memory store, and token usage.
 
 POST/v1/dreams/{dream_id}/cancel
 
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+
 Stop a `pending` or `running` dream.
 
 ##### [Archive a Dream](https://platform.claude.com/docs/en/api/http/beta/dreams/archive)
 
 POST/v1/dreams/{dream_id}/archive
+
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
 
 Hide a `completed`, `failed`, or `canceled` dream from the default list of dreams.
 
@@ -385,8 +159,6 @@ The IDs of the sessions whose transcripts the dream reads (`sesn_...`).
 
 Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.
 
-The [limits table in the Dreams guide](../Other/managed-agents-dreams.md#limits) lists all the limits on a dream.
-
 
 
 BetaDreamMemoryStoreInput object{ type: "memory_store", memory_store_id }
@@ -461,6 +233,10 @@ maxLength256
 
 speed: optional "standard" or "fast"
 
+⁠
+
+
+
 
 
 How fast the model generates output for the dream. Always `standard`.
@@ -493,7 +269,7 @@ The ID of the model to run the dream with.
 
 The ID can be 1 to 256 characters long.
 
-The [limits table in the Dreams guide](../Other/managed-agents-dreams.md#limits) lists the supported models.
+The [Availability section of the Dreams guide](../Other/managed-agents-dreams.md#feature-availability) lists the supported models.
 
 minLength1
 
@@ -562,8 +338,6 @@ session_ids: array of string
 The IDs of the sessions whose transcripts the dream reads (`sesn_...`).
 
 Give 1 to 100 IDs, with no duplicates. Each session must be in the same workspace as the dream. Responses list the IDs in sorted order.
-
-The [limits table in the Dreams guide](../Other/managed-agents-dreams.md#limits) lists all the limits on a dream.
 
 
 

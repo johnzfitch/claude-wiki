@@ -2,11 +2,14 @@
 title: "Share session output as artifacts - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/artifacts"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-22T06:29:18Z"
+fetched_at: "2026-11-06T06:26:37Z"
+last_modified: "Fri, 06 Nov 2026 05:17:47 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [When to use an artifact](#when-to-use-an-artifact)
   - [What an artifact is not](#what-an-artifact-is-not)
@@ -58,7 +61,7 @@ Artifacts turn Claude Code’s work into live, interactive pages on claude.ai th
 
 Copy pageCopy page
 
-Artifacts are available on Pro, Max, Team, and Enterprise plans and require a session signed in with [`/login`](../01-Getting-Started/setup.md#authenticate). See [Availability](#availability) for the full set of requirements.
+Artifacts are available on Pro, Max, Ultra, Team, and Enterprise plans and require a session signed in with [`/login`](../01-Getting-Started/setup.md#authenticate). See [Availability](#availability) for the full set of requirements.
 
 An [artifact](https://claude.com/features/artifacts) is a live, interactive web page that Claude Code publishes from your session to a private URL on claude.ai. You open it in a browser, and it updates in place as the session continues. Share it from the page header when you want someone else to see it too.
 
@@ -116,13 +119,13 @@ When Claude Code asks before publishing
 
 A new artifact that Claude publishes in response to a prompt you type goes through without a permission prompt or classifier review. In these cases Claude Code asks you first, or in [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) has the classifier review the publish:
 
-| When                                                                                                                                                                                       | What Claude Code does                                                                                                                              |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
-| The session is in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode)                                                                                            | Asks before the first publish of each artifact                                                                                                     |
-| The publish declares runtime capabilities for the page, such as [connector calls](#pull-live-data-with-mcp-connectors) or [file downloads](#offer-a-file-download)                         | Asks before that publish                                                                                                                           |
-| You shared the artifact publicly                                                                                                                                                           | Asks once per conversation before changing it                                                                                                      |
-| Claude publishes in a turn that a [session-scoped scheduled task](scheduled-tasks.md) firing in your session started, rather than a prompt you typed                                 | Asks before the first publish of each artifact                                                                                                     |
-| Claude can’t read the file without your approval                                                                                                                                           | Asks before publishing it. An allow rule for the `Artifact` tool doesn’t skip this prompt                                                          |
+| When | What Claude Code does |
+|:---|:---|
+| The session is in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode) | Asks before the first publish of each artifact |
+| The publish declares runtime capabilities for the page, such as [connector calls](#pull-live-data-with-mcp-connectors) or [file downloads](#offer-a-file-download) | Asks before that publish |
+| You shared the artifact publicly | Asks once per conversation before changing it |
+| Claude publishes in a turn that a [session-scoped scheduled task](scheduled-tasks.md) firing in your session started, rather than a prompt you typed | Asks before the first publish of each artifact |
+| Claude can’t read the file without your approval | Asks before publishing it. An allow rule for the `Artifact` tool doesn’t skip this prompt |
 | In [Manual](permission-modes.md) or `acceptEdits` mode, Claude makes a small change to an artifact’s file it can’t edit without your approval, such as a project file in Manual mode | Asks before publishing the change. You’re asked even if an allow rule covers the `Artifact` tool, because the edit to the file needs your approval |
 
 To let Claude read a file outside your [working directories](permissions.md#working-directories) without your approval, add its folder as a working directory with [`--add-dir`](cli-reference.md#cli-flags) at launch or `/add-dir` during the session. Claude already reads files in those directories, and in the temporary directory it writes pages to, without asking. If a publish prompt includes a sentence such as `Also makes 1 edit to that file on disk.`, Claude is changing the artifact’s file and publishing it in one step. When you approve the prompt, Claude Code publishes the page, then writes the change to your file.
@@ -151,7 +154,7 @@ Find an artifact again
 
 Run `/artifacts` in Claude Code to list the artifacts you own and the ones shared with you. The current session’s artifacts come first, under **This session**. Select an artifact, then press one of these keys:
 
-- **`Enter`**: opens it in your browser when it’s already attached to the current session, and attaches it when it isn’t. Before v2.1.216, `Enter` opened it in your browser
+- **`Enter`**: opens it in your browser when it’s already attached to the current session, and attaches it when it isn’t
 - **`o`**: opens it in your browser
 - **`c`**: copies its link
 - **`d`**: outside a [cloud session](claude-code-on-the-web.md), permanently deletes an artifact you own after you confirm. Its link stops working for everyone, including you
@@ -197,7 +200,7 @@ When someone shares an artifact with you, you can have Claude read it: give Clau
 
 - **Cloud session without network access**: for a [cloud environment](cloud-environments.md#access-levels), that’s the **None** level. In [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode), the classifier can approve instead; in a [Cowork](../15-Claude-AI-Features/product-cowork.md) session, the approval is yours alone.
 - **Another organization’s public artifact**: Claude Code asks you first, even in auto mode. Where Claude Code can’t ask you, such as in `bypassPermissions` mode, Claude can’t read the artifact. Claude can read these artifacts only while [feature-flag fetching](env-vars.md#features-that-need-feature-flag-fetching) is on.
-- **Unconfirmed owner or network setting**: when Claude Code can’t confirm who made the artifact, or can’t confirm a cloud session’s network setting, it asks, and your approval covers that one request.
+- **Unconfirmed owner or network setting**: when Claude Code can’t confirm who made the artifact, or can’t confirm a cloud session’s network setting, it asks, and your approval covers that one request. In [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode), the classifier can approve or block the read instead of asking you.
 - **Plan mode**: in [plan mode](permission-modes.md#analyze-before-you-edit-with-plan-mode), Claude Code asks before the Artifact tool reads an artifact someone else in your organization made.
 
 When Claude reads the artifact with WebFetch, WebFetch’s own [prompting rules](tools-reference.md#webfetch-tool-behavior) still apply.
@@ -248,7 +251,7 @@ A watch that Claude Code started on its own can end after the artifact goes seve
 
 Pull live data with MCP connectors
 
-An artifact can call [MCP connectors](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) each time someone views it, so the page shows current data rather than a snapshot from the session that built it. Connector calls from artifacts are available on Pro, Max, Team, and Enterprise plans and require Claude Code v2.1.209 or later. On earlier versions, Claude publishes the page with whatever data the session gathered while building it. To create a connector-backed page, name the connector and the data you want in your prompt:
+An artifact can call [MCP connectors](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) each time someone views it, so the page shows current data rather than a snapshot from the session that built it. Connector calls from artifacts are available on Pro, Max, Ultra, Team, and Enterprise plans and require Claude Code v2.1.209 or later. On earlier versions, Claude publishes the page with whatever data the session gathered while building it. To create a connector-backed page, name the connector and the data you want in your prompt:
 
 ```python
 Build a dashboard artifact of our open pull requests that pulls the live list through my GitHub connector when the page loads.
@@ -276,7 +279,7 @@ The page shows no live data for a viewer
 
 When a connector-backed page renders but its live sections stay empty for a viewer in your organization, work through these causes:
 
-- **The viewer hasn’t connected the connector**: connectors are per-account, so each viewer needs their own connection to every connector the page calls. They can add one under **Settings \> Connectors** on claude.ai, then reload the page.
+- **The viewer hasn’t connected the connector**: connectors are per-account, so each viewer needs their own connection to every connector the page calls. They can add one under [**Customize \> Connectors**](https://claude.ai/customize/connectors) on claude.ai, then reload the page.
 - **The viewer declined the permission ask**: a denial lasts for the rest of that page load. Reloading the page brings the permission ask back.
 - **Connector calls are turned off for the organization**: an Owner controls the [**Enable artifact connectors** toggle](#control-connector-calls-from-artifacts) in admin settings.
 - **The page calls tool names the connector doesn’t expose**: the affected sections stay empty for everyone, including you. This can happen when a page names the individual tools behind a gateway-style connector that exposes only a few tools of its own. Ask Claude to fix the tool names the page calls and publish it again. When Claude publishes the page and that connector’s tools are available in your session, Claude Code checks the tool names the page declares against them, warns Claude about names that don’t match, and refuses the publish when none do. Before v2.1.265, it published the page without checking them.
@@ -378,9 +381,9 @@ Claude treats your design system as higher precedence than its own choices, and 
 
 Start from a Slides, Design, or Docs template
 
-Instead of building a page from scratch, Claude can start an artifact from one of the templates on your claude.ai account: [Claude Slides](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_11d5a9a5fa) for a presentation, [Claude Design](../15-Claude-AI-Features/get-started-with-claude-design.md) for a visual design, or [Claude Docs](https://support.claude.com/en/articles/16923645-get-started-with-claude-docs) for a document other people will read and edit. Each opens in its own editor on claude.ai, where you and your teammates change it directly or ask Claude to, and export it to formats such as PowerPoint, PDF, or Word. To start from a template, describe what you want, such as “turn the migration notes into a deck for Thursday’s review” or “write this plan up as a doc for the team”. Claude picks the matching template, fills it from your request and from what the session already has, and gives you the link. For a deck or a design you can also run `/slides` or `/design` with a brief.
+Instead of building a page from scratch, Claude can start an artifact from one of the templates on your claude.ai account: [Claude Slides](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_11d5a9a5fa) for a presentation, [Claude Design](../15-Claude-AI-Features/get-started-with-claude-design.md) for a visual design, or [Claude Docs](../15-Claude-AI-Features/get-started-with-claude-docs.md) for a document other people will read and edit. Each opens in its own editor on claude.ai, where you and your teammates change it directly or ask Claude to, and export it to formats such as PowerPoint, PDF, or Word. To start from a template, describe what you want, such as “turn the migration notes into a deck for Thursday’s review” or “write this plan up as a doc for the team”. Claude picks the matching template, fills it from your request and from what the session already has, and gives you the link. For a deck or a design you can also run `/slides` or `/design` with a brief.
 
-Templates are in beta. They’re on by default on Pro, Max, and Team plans. On Enterprise plans, an Owner [turns each template on](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md) under **Organization settings \> Artifacts**. If your organization has the Slides template turned off, `/slides` doesn’t appear; if it has the Design template turned off, `/design` doesn’t draft designs. Both commands require Claude Code v2.1.265 or later and a session where [artifacts are available](#availability).
+Templates are in beta. They’re on by default on Pro, Max, Ultra, and Team plans. On Enterprise plans, an Owner [turns each template on](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md) under **Organization settings \> Artifacts**. If your organization has the Slides template turned off, `/slides` doesn’t appear; if it has the Design template turned off, `/design` doesn’t draft designs. Both commands require Claude Code v2.1.265 or later and a session where [artifacts are available](#availability).
 
 
 [​](#make-a-slide-deck)
@@ -413,7 +416,7 @@ Open the published artifact in a desktop browser to review the artboards. Select
 
 Write a document with Claude Docs
 
-Claude Docs reaches Claude Code as a claude.ai [connector](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) rather than a command. When it’s connected, `/mcp` lists it as `claude.ai Claude Docs`. A request for a document meant for other people then goes to Claude Docs instead of an artifact page: a spec, a proposal, or a write-up of the plan you worked through in the session. Claude gives you the doc’s link when it’s drafted. A document that belongs in the codebase, such as a README, stays a file. To get a file for something Claude would otherwise put in Claude Docs, name the format, such as `.docx` or a Markdown file in the repository. To turn the connector off, add `claude.ai Claude Docs` to `deniedMcpServers` or use the `/mcp` toggle, both described in [Disable claude.ai connectors](../06-MCP-Tools/General/mcp.md#disable-claude-ai-connectors).
+Claude Docs reaches Claude Code as a claude.ai [connector](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) rather than a command. When it’s connected, `/mcp` lists it as `claude.ai Claude Docs`. A request for a document meant for other people then goes to Claude Docs instead of an artifact page: a spec, a proposal, or a write-up of the plan you worked through in the session. Claude gives you the doc’s link when it’s drafted. A document that belongs in the codebase, such as a README, stays a file. To get a file for something Claude would otherwise put in Claude Docs, name the format, such as `.docx` or a Markdown file in the repository. To turn off only the `claude.ai Claude Docs` connector, see [Disable claude.ai connectors](../06-MCP-Tools/General/mcp.md#disable-claude-ai-connectors).
 
 
 [​](#page-constraints)
@@ -422,15 +425,15 @@ Page constraints
 
 Each artifact is one self-contained page. Claude Code wraps the file you publish in an HTML document shell and serves it under a strict Content Security Policy (CSP), which shapes what the page can do.
 
-| Constraint        | Effect                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|:------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Constraint | Effect |
+|:---|:---|
 | External requests | The page can load typefaces from Google Fonts, and scripts from [five public CDN hosts](#allowlist-the-viewer-domain): cdnjs, unpkg, the Tailwind and jQuery CDNs, and selected paths on jsDelivr such as `/npm/`. The CSP blocks every external image and all other external scripts, stylesheets, and fonts, and lets `fetch`, XHR, and WebSocket calls reach only the page’s own origin and the Google Fonts hosts. Claude therefore loads any library the page needs from one of those CDNs, inlines all other CSS and JavaScript, and embeds images as data URIs. [Connector calls](#pull-live-data-with-mcp-connectors) go through claude.ai, which makes the network call itself. |
-| No backend        | An artifact is a static page. It can’t authenticate viewers itself.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Downloads         | The page can’t start a download itself. To let viewers save a file the page generates, Claude declares the downloads capability. See [Offer a file download](#offer-a-file-download).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Single page       | Relative links do not resolve, because nothing is deployed alongside the page. For multi-section content, Claude uses in-page anchors rather than separate files.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| Source file types | The published file must be `.html`, `.htm`, or `.md`, and must decode as UTF-8, or as little-endian UTF-16 by its byte-order mark. Markdown files render as styled document pages with syntax-highlighted code. A file that doesn’t decode, or that contains the replacement character `U+FFFD`, is [refused with the line and column to fix](errors.md#the-source-file-is-not-valid-utf-8-text).                                                                                                                                                                                                                                                                                  |
-| Source location   | A file at a path that names a network host is refused without being read. See [Not published: that file is on a network share](errors.md#not-published-that-file-is-on-a-network-share) for which paths are refused and the mapped-drive exception on Windows.                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Rendered size     | The rendered page must be 16 MiB or smaller. Large embedded images are the usual cause when a publish fails for size.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| No backend | An artifact is a static page. It can’t authenticate viewers itself. |
+| Downloads | The page can’t start a download itself. To let viewers save a file the page generates, Claude declares the downloads capability. See [Offer a file download](#offer-a-file-download). |
+| Single page | Relative links do not resolve, because nothing is deployed alongside the page. For multi-section content, Claude uses in-page anchors rather than separate files. |
+| Source file types | The published file must be `.html`, `.htm`, or `.md`, and must decode as UTF-8, or as little-endian UTF-16 by its byte-order mark. Markdown files render as styled document pages with syntax-highlighted code. A file that doesn’t decode, or that contains the replacement character `U+FFFD`, is [refused with the line and column to fix](errors.md#the-source-file-is-not-valid-utf-8-text). |
+| Source location | A file at a path that names a network host is refused without being read. See [Not published: that file is on a network share](errors.md#not-published-that-file-is-on-a-network-share) for which paths are refused and the mapped-drive exception on Windows. |
+| Rendered size | The rendered page must be 16 MiB or smaller. Large embedded images are the usual cause when a publish fails for size. |
 
 Generating an artifact uses output tokens like any other response, and a styled page is more token-intensive than the same content as terminal text. Inline CSS, JavaScript for interactive controls, and especially images embedded as data URIs are the main contributors. To reduce an artifact’s token cost:
 
@@ -445,13 +448,13 @@ Availability
 
 Artifacts require every condition below. When one is not met, Claude writes a local HTML file or says it cannot publish instead.
 
-| Requirement         | Available when                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|:--------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Plan                | Pro, Max, Team, or Enterprise. On Pro and Max plans, artifacts are private to you until you share them, and no admin management applies. On Team and Enterprise plans, artifacts are on by default, and an Owner can [turn them off for the organization](#manage-artifacts-for-your-organization) in claude.ai admin settings.                                                                                                                                                                                                                                                                                                                                                                              |
-| Authentication      | The session is backed by a claude.ai account: sign in with `/login` in the CLI or desktop app. Claude Tag sessions are signed in through the agent’s identity, so no step is needed there. Sessions using an API key, [gateway token](../13-Enterprise-Admin/llm-gateway.md), or cloud-provider credential cannot publish.                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Model provider      | Anthropic API. Not available on [Amazon Bedrock](amazon-bedrock.md), [Google Cloud’s Agent Platform](google-vertex-ai.md), or [Microsoft Foundry](microsoft-foundry.md).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Organization policy | Customer-managed encryption keys (CMEK), HIPAA, and [Zero Data Retention](zero-data-retention.md) are not enabled for the organization.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Surface             | Claude Code CLI, or the Claude desktop app version 1.13576.0 or later. [Claude Tag](https://claude.com/docs/claude-tag/overview) sessions can also publish artifacts when both Claude Tag and artifacts are enabled for the organization. Sessions served by [`claude remote-control`](remote-control.md) can publish artifacts when you started the session yourself. Requires Claude Code v2.1.281 or later. Off by default in the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md), the GitHub Action, and MCP-server contexts, when you run Claude Code with [`-p`](headless.md) from your own terminal or scripts, and when [`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`](env-vars.md) is set. |
+| Requirement | Available when |
+|:---|:---|
+| Plan | Pro, Max, Ultra, Team, or Enterprise. On Pro, Max, and Ultra plans, artifacts are private to you until you share them, and no admin management applies. On Team and Enterprise plans, artifacts are on by default, and an Owner can [turn them off for the organization](#manage-artifacts-for-your-organization) in claude.ai admin settings. |
+| Authentication | The session is backed by a claude.ai account: sign in with `/login` in the CLI or desktop app. Claude Tag sessions need no sign-in step. Sessions using an API key, [gateway token](../13-Enterprise-Admin/llm-gateway.md), or cloud-provider credential cannot publish. |
+| Model provider | Anthropic API. Not available on [Amazon Bedrock](amazon-bedrock.md), [Google Cloud’s Agent Platform](google-vertex-ai.md), or [Microsoft Foundry](microsoft-foundry.md). |
+| Organization policy | Customer-managed encryption keys (CMEK), HIPAA, and [Zero Data Retention](zero-data-retention.md) are not enabled for the organization. |
+| Surface | Claude Code CLI, or the Claude desktop app version 1.13576.0 or later. [Claude Tag](https://claude.com/docs/claude-tag/overview) sessions can also publish artifacts when both Claude Tag and artifacts are enabled for the organization. Sessions served by [`claude remote-control`](remote-control.md) can publish artifacts when you started the session yourself. Requires Claude Code v2.1.281 or later. Off by default in the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md), the GitHub Action, and MCP-server contexts, when you run Claude Code with [`-p`](headless.md) from your own terminal or scripts, and when [`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`](env-vars.md) is set. |
 
 Whether artifacts are allowed for your organization comes from your organization’s policy, which Claude Code loads from `api.anthropic.com`. When Claude Code can’t load the policy, artifacts are unavailable. When you ask for one, Claude says why. If a proxy, VPN, or web filter is involved, ask your IT admin to let `api.anthropic.com` through. Claude Code keeps retrying in the background, and artifacts become available once the policy loads and allows them.
 
@@ -462,12 +465,12 @@ Disable artifacts
 
 To turn artifacts off for your own sessions regardless of your organization’s setting, use any of:
 
-| Where                                     | What to do                                                                                                                                 |
-|:------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| [`/config`](commands.md)            | Turn the **Artifacts** row off, which writes [`"enableArtifact": false`](settings-reference.md#enableartifact) to your user settings |
-| [Settings file](settings.md)        | Set `"enableArtifact": false`. The deprecated `"disableArtifact": true` also turns artifacts off                                           |
-| [Environment variable](env-vars.md) | Set `CLAUDE_CODE_DISABLE_ARTIFACT=1`                                                                                                       |
-| [Permission rule](permissions.md)   | Add `Artifact` to `permissions.deny`                                                                                                       |
+| Where | What to do |
+|:---|:---|
+| [`/config`](commands.md) | Turn the **Artifacts** row off, which writes [`"enableArtifact": false`](settings-reference.md#enableartifact) to your user settings |
+| [Settings file](settings.md) | Set `"enableArtifact": false`. The deprecated `"disableArtifact": true` also turns artifacts off |
+| [Environment variable](env-vars.md) | Set `CLAUDE_CODE_DISABLE_ARTIFACT=1` |
+| [Permission rule](permissions.md) | Add `Artifact` to `permissions.deny` |
 
 Once you turn artifacts off in a [`--settings`](cli-reference.md#cli-flags) file or with `CLAUDE_CODE_DISABLE_ARTIFACT`, or your administrator turns them off in [managed settings](../13-Enterprise-Admin/server-managed-settings.md), no settings file turns them back on. You can also set `"enableArtifact": false` in a project’s `.claude/settings.json` or `.claude/settings.local.json` to turn artifacts off for sessions in that project. An `"enableArtifact": true` in either file doesn’t turn them back on. Honoring the key in project and local settings requires Claude Code v2.1.242 or later. If you add a `WebFetch` deny or ask rule with no `domain:` part, it doesn’t turn artifacts off or block artifact reads. A [`WebFetch(domain:claude.ai)` rule in `deny` or `ask` does apply to artifact reads](permissions.md#allow-or-deny-every-fetch).
 
@@ -527,11 +530,11 @@ List and delete artifacts with the Compliance API
 
 The [Compliance API](https://docs.claude.com/en/api/compliance) provides endpoints to list an organization’s artifacts, retrieve a specific version’s content, and delete an artifact:
 
-| Method   | Endpoint                                                                 |
-|:---------|:-------------------------------------------------------------------------|
-| `GET`    | `/v1/compliance/apps/code/artifacts`                                     |
-| `GET`    | `/v1/compliance/apps/code/artifacts/{artifact_id}/versions/{version_id}` |
-| `DELETE` | `/v1/compliance/apps/code/artifacts/{artifact_id}`                       |
+| Method | Endpoint |
+|:---|:---|
+| `GET` | `/v1/compliance/apps/code/artifacts` |
+| `GET` | `/v1/compliance/apps/code/artifacts/{artifact_id}/versions/{version_id}` |
+| `DELETE` | `/v1/compliance/apps/code/artifacts/{artifact_id}` |
 
 For the request and response schemas, see the [Compliance API reference](../04-API-Reference/Admin/compliance-apps-code-artifacts.md).
 

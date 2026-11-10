@@ -2,11 +2,14 @@
 title: "Overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:13Z"
+fetched_at: "2026-10-31T06:25:28Z"
+last_modified: "Fri, 30 Oct 2026 20:37:09 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Messages](#messages)
 - [Request Metadata](#request-metadata)
@@ -62,4 +65,4 @@ Clients and servers **MAY** implement additional custom transport mechanisms to 
 
 Backward Compatibility
 
-Earlier protocol revisions established a connection-scoped session with an `initialize` handshake and allowed servers to initiate JSON-RPC requests. Clients and servers that interoperate with those revisions detect the counterpart’s era and fall back as described in [Versioning: Backward Compatibility](2026-07-28-basic-versioning.md#backward-compatibility-with-initialization-based-versions), which includes a compatibility matrix for implementors. Each binding page describes its transport-specific detection mechanics.
+Earlier protocol revisions established a connection-scoped session with an `initialize` handshake and allowed servers to initiate JSON-RPC requests. Clients and servers that interoperate with those revisions detect the counterpart’s era and fall back as described in [Versioning: Backward Compatibility](draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions), which includes a compatibility matrix for implementors. Each binding page describes its transport-specific detection mechanics.

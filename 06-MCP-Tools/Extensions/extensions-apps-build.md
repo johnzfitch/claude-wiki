@@ -2,11 +2,14 @@
 title: "Build an MCP App - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/apps/build"
 category: "06-MCP-Tools/Extensions"
-fetched_at: "2026-08-02T05:36:58Z"
+fetched_at: "2026-10-31T06:24:49Z"
+last_modified: "Fri, 30 Oct 2026 20:54:08 GMT"
 tags: ["api", "git", "github", "mcp", "mcp-extensions"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Prerequisites](#prerequisites)
 - [Getting started](#getting-started)
@@ -36,7 +39,7 @@ Copy pageCopy page
 
 Prerequisites
 
-You’ll need [Node.js](https://nodejs.org/en/download) 18 or higher. Familiarity with [MCP tools](https://modelcontextprotocol.io/specification/latest/server/tools) and [resources](https://modelcontextprotocol.io/specification/latest/server/resources) is recommended since MCP Apps combine both primitives. Experience with the [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) will help you better understand the server-side patterns.
+You’ll need [Node.js](https://nodejs.org/en/download) 20 or higher. Familiarity with [MCP tools](https://modelcontextprotocol.io/specification/latest/server/tools) and [resources](https://modelcontextprotocol.io/specification/latest/server/resources) is recommended since MCP Apps combine both primitives. Experience with the [MCP TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) will help you better understand the server-side patterns.
 
 
 [​](#getting-started)
@@ -77,15 +80,15 @@ git clone https://github.com/modelcontextprotocol/ext-apps.git
 
 And then copying the skill to the appropriate location for your agent:
 
-| Agent                                                                                                                                                                        | Skills directory (macOS/Linux) | Skills directory (Windows)            |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|---------------------------------------|
-| [Claude Code](https://docs.anthropic.com/en/docs/claude-code/skills)                                                                                                         | `~/.claude/skills/`            | `%USERPROFILE%\.claude\skills\`       |
-| [VS Code](https://code.visualstudio.com/docs/copilot/customization/agent-skills) and [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) | `~/.copilot/skills/`           | `%USERPROFILE%\.copilot\skills\`      |
-| [Gemini CLI](https://geminicli.com/docs/cli/skills/)                                                                                                                         | `~/.gemini/skills/`            | `%USERPROFILE%\.gemini\skills\`       |
-| [Cline](https://cline.bot/blog/cline-3-48-0-skills-and-websearch-make-cline-smarter)                                                                                         | `~/.cline/skills/`             | `%USERPROFILE%\.cline\skills\`        |
-| [Goose](https://goose-docs.ai/docs/guides/context-engineering/using-skills/)                                                                                                 | `~/.config/goose/skills/`      | `%USERPROFILE%\.config\goose\skills\` |
-| [Codex](https://developers.openai.com/codex/skills/)                                                                                                                         | `~/.codex/skills/`             | `%USERPROFILE%\.codex\skills\`        |
-| [Cursor](https://cursor.com/docs/context/skills)                                                                                                                             | `~/.cursor/skills/`            | `%USERPROFILE%\.cursor\skills\`       |
+| Agent | Skills directory (macOS/Linux) | Skills directory (Windows) |
+|----|----|----|
+| [Claude Code](https://docs.anthropic.com/en/docs/claude-code/skills) | `~/.claude/skills/` | `%USERPROFILE%\.claude\skills\` |
+| [VS Code](https://code.visualstudio.com/docs/copilot/customization/agent-skills) and [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills) | `~/.copilot/skills/` | `%USERPROFILE%\.copilot\skills\` |
+| [Gemini CLI](https://geminicli.com/docs/cli/skills/) | `~/.gemini/skills/` | `%USERPROFILE%\.gemini\skills\` |
+| [Cline](https://cline.bot/blog/cline-3-48-0-skills-and-websearch-make-cline-smarter) | `~/.cline/skills/` | `%USERPROFILE%\.cline\skills\` |
+| [Goose](https://goose-docs.ai/docs/guides/context-engineering/using-skills/) | `~/.config/goose/skills/` | `%USERPROFILE%\.config\goose\skills\` |
+| [Codex](https://developers.openai.com/codex/skills/) | `~/.codex/skills/` | `%USERPROFILE%\.codex\skills\` |
+| [Cursor](https://cursor.com/docs/context/skills) | `~/.cursor/skills/` | `%USERPROFILE%\.cursor\skills\` |
 
 This list is not comprehensive. Other agents may support skills in different locations; check your agent’s documentation.
 

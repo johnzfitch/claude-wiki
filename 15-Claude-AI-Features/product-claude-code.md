@@ -1,16 +1,17 @@
 ---
-title: "Claude Code by Anthropic | AI Coding Agent, Terminal, IDE"
+title: "Claude Code by Anthropic | AI coding agent and assistant"
 source_url: "https://www.anthropic.com/product/claude-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T07:11:10Z"
+fetched_at: "2026-11-09T06:26:52Z"
+last_modified: "Mon, 09 Nov 2026 06:24:53 GMT"
 tags: ["agents", "claude-ai", "claude-code", "slack"]
 ---
 
 # Claude Code
 
-Work with Claude directly in your codebase. Build, debug, and ship from your terminal, IDE, Slack, web, and more.
+Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
 
-[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
+[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](../01-Getting-Started/overview.md)
 
 (opens in new tab)
 
@@ -27,13 +28,67 @@ Other ways to use Claude Code:
 - [JetBrains (opens in new tab)](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
 - [Slack (opens in new tab)](https://slack.com/oauth/v2/authorize?client_id=1601185624273.8899143856786&scope=app_mentions:read,assistant:write,channels:history,channels:read,chat:write,files:read,files:write,groups:history,groups:read,im:history,im:read,im:write,mpim:history,reactions:write,users:read,users:read.email,commands,search:read.public&user_scope=bookmarks:read,channels:history,channels:read,chat:write,emoji:read,files:read,groups:history,groups:read,groups:write,im:history,im:read,im:write,links:read,mpim:history,mpim:read,mpim:write,mpim:write.topic,pins:read,reactions:read,reactions:write,remote_files:read,team:read,users:read,users:read.email,search:read.public,search:read.private,search:read.im,search:read.mpim,search:read.files,search:read.users,canvases:read,canvases:write)
 
-Home
+New
 
-Code
+ProjectsNew
 
-New session
+Artifacts
 
-Routines
+Customize
+
+More
+
+Pinned
+
+Add a dark mode toggle to settings
+
+Scheduled
+
+Weekly dependency audit
+
+Recents
+
+Fix the double-charge bug in checkout
+
+Write tests for the payments module
+
+Explain what this repo does
+
+Layout's broken on mobile
+
+Debug flaky CI tests
+
+Susan Sample
+
+acme-storefront/Fix the double-charge bug in checkout
+
+We're seeing duplicate charges when customers double-click the pay button. Can you find and fix it?
+
+I can reproduce it: the checkout form fires two `POST /charges` requests when the button is clicked twice before the first response lands. Tracing where the idempotency key should be.
+
+just now
+
+Read 3 files, searched the checkout flow
+
+Ran agent · Reproduce the double-submit against a test charge
+
+Root cause: `createCharge()` generates a new idempotency key per call instead of per checkout session, so the gateway treats the second click as a fresh charge. Fixing that and disabling the button while a charge is in flight.
+
+just now
+
+Edited **charges.ts** +9 -3
+
+Auto
+
+Opus
+
+Extra high
+
+New
+
+ProjectsNew
+
+Artifacts
 
 Customize
 
@@ -179,71 +234,65 @@ Disable animations and transitions.
 
 ## Get started with Claude Code
 
-Individual
-
 Team & Enterprise
 
-### Pro
+Individual
 
-Claude Code is included in your Pro plan. Perfect for short coding sprints in small codebases.
+### Team
 
-\$17
+Claude Code for every seat, with self-serve seat management and up to \$500 per month in pooled API credits.
 
-Per month with annual subscription discount (\$200 billed up front). \$20 if billed monthly.
+\$20
 
-[Try Claude (opens in new tab)](https://claude.ai/login?plan=pro)
+Per seat / month if billed annually. For teams of 2 to 150.
 
-### Max 5x
+[Get Team plan (opens in new tab)](https://claude.ai/upgrade?initialPlanType=team)
 
-Claude Code is included in your Max plan. Great value for everyday use in larger codebases.
+### Enterprise
 
-\$100
+Everything in Team, plus Claude Security, usage and ROI analytics, role-based access, spend limits, and custom data controls. [Learn more](https://www.anthropic.com/product/claude-code/enterprise)
 
-Per month
+[Get Enterprise plan (opens in new tab)](https://claude.ai/create/enterprise)
 
-[Try Claude (opens in new tab)](https://claude.ai/login?plan=max)
+### Available on Team and Enterprise
 
-### Max 20x
+[See all features and pricing](https://www.anthropic.com/pricing#team-&-enterprise)
 
-Even more Claude Code included in your Max plan. Great value for power users with the most access to Claude models.
+- Code Review
+- Claude Code on web and mobile
+- Claude Cowork
+- Claude Design, Slides, and Docs
 
-\$200
+Deploying through the API or a cloud provider? [See your options](../02-Claude-Code-CLI/third-party-integrations.md)
 
-Per month
+[Usage limits apply](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Try Claude (opens in new tab)](https://claude.ai/login?plan=max)
-
-[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Prices shown don't include applicable tax. Price and plans are subject to change at Anthropic's discretion.
-
-[Usage limits apply](../17-Billing-Plans/usage-limit-best-practices.md). Price and plans are subject to change at Anthropic's discretion.
+[Usage limits apply](https://support.claude.com/en/articles/11647753-how-do-usage-and-length-limits-work). Price and plans are subject to change at Anthropic's discretion.
 
 ## Latest feature announcements
 
 
-### **Dynamic workflows:** Tackle the most challenging tasks by executing across 10s to 100s of parallel subagents, and checking its work before anything reaches you.
+### **Code Review:** Catch more bugs before they reach production. Now generally available for Team and Enterprise.
 
-BlogMay 28, 2026
-
-
-### **Agent view:** One place to manage all your Claude Code sessions.
-
-BlogMay 11, 2026
+BlogOct 15, 2026
 
 
-### **Routines:** Configure a routine once, and it can run on a schedule, from an API call, or in response to an event.
+### **Mods:** Change how Claude Code behaves and looks with a few lines of TypeScript. Available in the CLI and desktop app.
 
-BlogApr 14, 2026
+BlogOct 1, 2026
 
 
-### **Computer use:** Claude now opens your apps, navigates your browser, and runs your dev tools to complete tasks.
+### **Projects:** Group related coding sessions so you can run and easily supervise multiple Claude agents at once. Available on Claude Code Desktop.
 
-BlogMar 23, 2026
+BlogSep 17, 2026
 
-[View changelog](https://www.anthropic.com/19-Reference/changelog-claude-code-docs-3d68ad8e13.md)
+[View changelog](../02-Claude-Code-CLI/changelog.md)
 
 (opens in new tab)
 
-## What could you do with Claude Code?
+## What Claude Code can take on
+
+Claude Code builds the plan, asks clarifying questions, and handles work that runs for hours or days.
 
 Get Claude Code
 
@@ -255,22 +304,22 @@ Get Claude Code
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
+Or read the [documentation](../01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](https://www.anthropic.com/01-Getting-Started/overview.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../01-Getting-Started/overview.md)
 
 Onboarding
 
 Triage issues
 
-Refactor code
+Migrate code
 
 ``` Terminal-module-scss-module__gNncDq__pre
 I'm new to this codebase. Can you explain it to me?
 
-⏺ I'll analyze the Excalidraw codebase structure and provide a high-level overview.
+⏺︎ I'll analyze the Excalidraw codebase structure and provide a high-level overview.
 
-⏺ Analyze(what: "Excalidraw codebase structure and provide a high-level overview of what it is, its main components, and how they're organized. Focus on understanding the project's purpose, architecture, and key features.")
+⏺︎ Analyze(what: "Excalidraw codebase structure and provide a high-level overview of what it is, its main components, and how they're organized. Focus on understanding the project's purpose, architecture, and key features.")
 
 Excalidraw is an open-source virtual whiteboard application with a hand-drawn style. It's designed for creating diagrams, wireframes, and collaborative drawings.
 
@@ -332,27 +381,27 @@ The architecture allows for both using Excalidraw as a component in other applic
 
 - ### Code onboarding
 
-  Claude Code maps and explains entire codebases in a few seconds. It uses agentic search to understand project structure and dependencies without you having to manually select context files.
+  Claude Code maps and explains large codebases in a few seconds. It uses agentic search to understand project structure and dependencies without you having to manually select context files.
 
 - ### Turn issues into PRs
 
-  Stop bouncing between tools. Claude Code integrates with GitHub, GitLab, and your command line tools to handle the entire workflow—reading issues, writing code, running tests, and submitting PRs—all from your terminal.
+  Stop bouncing between tools. Claude Code works with GitHub, GitLab, and your command line tools to read issues, write code, run tests, and open pull requests.
 
-- ### Make powerful edits
+- ### Run multi-hour refactors and migrations
 
-  Claude Code's understanding of your codebase and dependencies enables it to make powerful, multi-file edits that work.
+  Claude Code follows imports across the repo, runs your tests, and keeps going when something breaks.
 
 ## Meets you where you code
 
 ### Start in your terminal
 
-Super powerful terminal integration. Works with all your CLI tools alongside any IDE.
+Super powerful terminal integration. Works with all your CLI tools alongside popular IDEs.
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
+Or read the [documentation](../01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](https://www.anthropic.com/01-Getting-Started/overview.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../01-Getting-Started/overview.md)
 
 ### Integrate with your editor
 
@@ -434,11 +483,13 @@ Your terminal is where real work happens. Claude Code connects with the tools th
 
 ### How do I get started with Claude?
 
-You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan premium seat, or a Claude Console account. [Download Claude Code](https://www.anthropic.com/01-Getting-Started/overview.md) and sign in with your respective Claude or Console credentials.
+You can access Claude Code with a Claude Pro, Max, or Ultra plan, a Team or Enterprise plan, or a Claude Console account. [Download Claude Code](../01-Getting-Started/overview.md) and sign in with your respective Claude or Console credentials.
 
-### What kinds of tasks can Claude Code handle?
+### What kind of tasks can Claude Code handle?
 
-Claude Code excels at both routine development tasks like bug fixes and testing, as well as transformative work like refactors and feature implementation that require deep codebase understanding.
+Claude Code can handle routine work like bug fixes and testing, and larger jobs like refactors and new features that are long-running and asynchronous.
+
+You set the direction as the architect and orchestrator, and Claude Code does the work. Describe what you want and it plans, writes code, runs tests, and opens pull requests. It can work on several tasks at once, and surface decisions you need to make for it to keep going.
 
 ### How does Claude Code work with my existing tools?
 
@@ -446,11 +497,11 @@ Claude Code runs in your terminal and works alongside your preferred IDE and dev
 
 ### Is Claude Code secure?
 
-Yes. Claude Code runs locally in your terminal and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
+Claude Code is designed with security in mind. When used in your terminal, Claude Code runs locally and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
 
 ### What are the system requirements to run Claude Code?
 
-Claude Code works on macOS, Linux, and Windows. [See full system requirements](https://docs.claude.com/en/docs/claude-code/setup#system-requirements).
+Claude Code works on macOS, Linux, and Windows. [See full system requirements](../01-Getting-Started/setup.md#system-requirements).
 
 ### How much does Claude Code cost?
 
@@ -458,13 +509,13 @@ When used with a Claude Console account, Claude Code consumes API tokens at [sta
 
 ### Does Claude Code work with the Claude desktop app?
 
-Yes. Max, Pro, Team, and Enterprise users can access Claude Code on the [Claude desktop app](https://claude.com/download).
+Yes. Pro, Max, Ultra, Team, and Enterprise users can access Claude Code on the [Claude desktop app](https://claude.com/download).
 
 ### What is fast mode on Claude Code?
 
-Fast mode is a high-speed configuration for Opus 5, making the model 2.5x faster at a higher cost per token. Fast mode is available:
+Fast mode is a high-speed configuration for Opus 5.5, delivering lower-latency responses at a higher cost per token. Fast mode is available:
 
-- In research preview on Claude Code, and is priced at \$10/\$50 per million tokens.
+- In research preview on Claude Code, and is priced at \$8/\$40 per million tokens.
 - On consumption-based plans.
 - Via usage credits for users on subscription plans.
 
@@ -500,7 +551,7 @@ Blog
 
 Blog
 
-## Create what's exciting. Maintain what's essential.
+## Create what’s exciting. Maintain what’s essential.
 
 Use Claude Code where you work
 
@@ -514,6 +565,6 @@ Get Claude Code
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](https://www.anthropic.com/01-Getting-Started/overview.md)
+Or read the [documentation](../01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](https://www.anthropic.com/01-Getting-Started/overview.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../01-Getting-Started/overview.md)

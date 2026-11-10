@@ -2,11 +2,14 @@
 title: "Prompts - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:14Z"
+fetched_at: "2026-10-31T06:25:29Z"
+last_modified: "Fri, 30 Oct 2026 20:39:03 GMT"
 tags: ["mcp", "mcp-spec", "prompting"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -169,7 +172,7 @@ To retrieve a specific prompt, clients send a `prompts/get` request. Arguments m
 }
 ```
 
-Servers **MAY** also respond to `prompts/get` with an [`InputRequiredResult`](2026-07-28-basic-patterns-mrtr.md#inputrequiredresult) to indicate that additional input is needed before the prompt can be resolved. This follows the [multi round-trip requests](2026-07-28-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. When retrying the request, clients include `inputResponses` and, if provided by the server, `requestState` in the request parameters.
+Servers **MAY** also respond to `prompts/get` with an [`InputRequiredResult`](draft-basic-patterns-mrtr.md#inputrequiredresult) to indicate that additional input is needed before the prompt can be resolved. This follows the [multi round-trip requests](draft-basic-patterns-mrtr.md#multi-round-trip-requests) mechanism. When retrying the request, clients include `inputResponses` and, if provided by the server, `requestState` in the request parameters.
 
 
 [​](#list-changed-notification)

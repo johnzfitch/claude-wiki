@@ -2,11 +2,14 @@
 title: "Resources - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/server/resources"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:19Z"
+fetched_at: "2026-10-31T06:25:34Z"
+last_modified: "Fri, 30 Oct 2026 20:42:25 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -254,7 +257,7 @@ When the list of available resources changes, servers that declared the `listCha
 
 Subscriptions
 
-Clients subscribe to change notifications for specific resources by sending a [`subscriptions/listen`](2026-07-28-schema.md#subscriptionslistenrequest) request with the resource URIs listed in `notifications.resourceSubscriptions`. The server delivers `notifications/resources/updated` on the resulting stream whenever a watched resource changes.
+Clients subscribe to change notifications for specific resources by sending a [`subscriptions/listen`](draft-schema.md#subscriptionslistenrequest) request with the resource URIs listed in `notifications.resourceSubscriptions`. The server delivers `notifications/resources/updated` on the resulting stream whenever a watched resource changes.
 
 ```python
 {

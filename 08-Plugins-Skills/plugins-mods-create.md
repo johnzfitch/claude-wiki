@@ -2,11 +2,13 @@
 title: "Create a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/create"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-20T06:38:49Z"
+fetched_at: "2026-10-26T06:30:20Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Ask Claude for a mod](#ask-claude-for-a-mod)
   - [Use the mod in other sessions](#use-the-mod-in-other-sessions)
@@ -74,7 +76,7 @@ Run `/plugin` at the Claude Code prompt and press Tab until the **Installed** ta
 
 Try the mod
 
-Use what you asked for. For the example prompt, the current branch name appears above the prompt box. If the mod doesn’t do what you wanted, tell Claude what to change. The mod reloads at the end of each turn that changes its files, so you can try the change as soon as Claude finishes.
+Use what you asked for. For the example prompt, the current branch name appears above the prompt box. If the mod doesn’t do what you wanted, tell Claude what to change. The mod reloads at the end of each turn that changes its files, so you can try the change as soon as Claude finishes.If a transcript line that starts with the mod’s name says the [change didn’t load](plugins-mods-troubleshoot.md#this-mods-change-didnt-load), paste that line into your next message when you ask Claude for a fix. Claude doesn’t see the line unless you paste it.
 
 
 [​](#use-the-mod-in-other-sessions)
@@ -316,13 +318,13 @@ Get type definitions for your version
 
 When Claude Code loads a mod from `--plugin-dir` in an interactive session, or a mod [Claude wrote for you](#ask-claude-for-a-mod), it writes TypeScript declaration files into the mod’s `.claude-plugin/types/` directory. They describe the exact events, mods API methods, and elements in the Claude Code version you’re running, so your editor can autocomplete and type-check your hooks. The directory holds these files:
 
-| Path                                           | What it declares                                                                                                            |
-|:-----------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------|
-| `claude-code/index.d.ts`                       | Every event and its input and result, every mods API namespace and method, and the elements each surface can draw           |
-| `claude-code-tools/index.d.ts`                 | The built-in tools’ inputs and results, so that checking `e.tool === 'Bash'` narrows `e`                                    |
-| `claude-code-mcp/index.d.ts`                   | The inputs of the MCP tools that were connected the last time you saved a file in the mod                                   |
+| Path | What it declares |
+|:---|:---|
+| `claude-code/index.d.ts` | Every event and its input and result, every mods API namespace and method, and the elements each surface can draw |
+| `claude-code-tools/index.d.ts` | The built-in tools’ inputs and results, so that checking `e.tool === 'Bash'` narrows `e` |
+| `claude-code-mcp/index.d.ts` | The inputs of the MCP tools that were connected the last time you saved a file in the mod |
 | `index.d.ts` in a directory named for a plugin | What that plugin adds to the mods API. There’s one directory for each plugin your `plugin.json` lists under `dependencies`. |
-| `tsconfig.json`                                | Compiler options that fit a hooks module                                                                                    |
+| `tsconfig.json` | Compiler options that fit a hooks module |
 
 If your mod has no `tsconfig.json` of its own, Claude Code adds one at the mod’s root that extends the generated one, so your editor and `tsc -p ./first-mod` type-check the mod without more setup. The events and methods can change between releases, so trust these files over any page, this one included, when they disagree. `claude-code/index.d.ts` is the fullest reference for your build, with a comment and an example for every mods API method. To look something up, search the file for its name, such as `'tool.call'`.
 

@@ -2,13 +2,11 @@
 title: "Claude Code Wrap-Up Allowance | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17040437"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:15Z"
+fetched_at: "2026-11-09T06:26:10Z"
 tags: ["claude-code"]
 ---
 
 # Claude Code Wrap-Up Allowance
-
-September 22, 2026
 
 
 ## What it is
@@ -17,13 +15,13 @@ If Claude Code reaches your plan’s five-hour usage limit partway through a res
 
 The Wrap-Up Allowance is a small, capped amount of additional usage that varies by plan. It is not unlimited, and it may not be enough to complete the task Claude was working on. When it runs out, the response ends and your plan’s normal usage limits apply until they reset.
 
-These terms supplement the **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)** (for Pro and Max subscribers) or the **[Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms)** (for Team subscribers), which continue to apply to your use of Claude Code.
+These terms supplement the **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)** (for Pro, Max, and Ultra subscribers) or the **[Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms)** (for Team subscribers), which continue to apply to your use of Claude Code.
 
 ## Who is eligible
 
 The Wrap-Up Allowance is available only when all of the following are true:
 
-1.  You’re on a Pro or Max plan, or on a Team plan with a Premium seat, and your account is in good standing.
+1.  You’re on a Pro or Max plan, an Ultra plan with a temporary limit, or a Team plan with a Premium seat, and your account is in good standing.
 
 2.  You’re using Claude Code version 2.1.277 or later (in the terminal, an IDE extension, or the Code tab in the Claude desktop app), signed in with your Claude account.
 
@@ -41,7 +39,7 @@ The Wrap-Up Allowance does not apply when you use Claude Code with an API key or
 
   - **Pro:** Up to once per weekly usage period, whether or not the full allowance is used that time.
 
-  - **Max and Team (Premium seats):** When you reach a five-hour usage limit, within your weekly limit.
+  - **Max, unverified Ultra users, and Team (Premium seats):** When you reach a five-hour usage limit, within your weekly limit.
 
 - **How it counts.** Usage during wrap-up counts toward your weekly usage limit like any other usage. It does not increase your weekly limit.
 
@@ -51,7 +49,7 @@ The Wrap-Up Allowance does not apply when you use Claude Code with an API key or
 
 ## If you have usage credits turned on
 
-The included Wrap-Up Allowance is used first. After that, the response continues on usage credits at your standard rates, subject to your usage settings and any spend limit you or your admin have set. The Wrap-Up Allowance does not turn on usage credits or change your usage settings. Usage credits are governed by the **[Usage Credit Terms](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md)** and, where applicable, the **[Supplemental Credit Terms](https://www.anthropic.com/legal/credit-terms)**. The included amount may differ when usage credits are enabled.
+The included Wrap-Up Allowance is used first. After that, the response continues on usage credits at your standard rates, subject to your usage settings and any spend limit you or your admin have set. The Wrap-Up Allowance does not turn on usage credits or change your usage settings. Usage credits are governed by the **[Usage Credit Terms](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans)** and, where applicable, the **[Supplemental Credit Terms](https://www.anthropic.com/legal/credit-terms)**. The included amount may differ when usage credits are enabled.
 
 ## What it is not
 

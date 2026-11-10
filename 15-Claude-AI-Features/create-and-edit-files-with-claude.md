@@ -2,18 +2,16 @@
 title: "Create and edit files with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:53Z"
+fetched_at: "2026-11-09T06:25:38Z"
 tags: ["claude-ai", "enterprise", "security"]
 ---
 
 # Create and edit files with Claude
 
-August 6, 2026
-
 
 Claude can execute code to create and work with files directly in your conversations. Prompt Claude using natural language to generate Excel spreadsheets, PowerPoint presentations, Word documents, and PDF files that you can download and use immediately.
 
-Code execution and file creation is available to all Claude users (Free, Pro, Max, Team, and Enterprise) on the web, Claude Desktop, and Claude Mobile.
+Code execution and file creation is available to all Claude users (Free, Pro, Max, Ultra, Team, and Enterprise) on the web, Claude Desktop, and Claude Mobile.
 
 These capabilities make it easy to produce professional documents by simply chatting with Claude. You can create financial models in Excel with working formulas, perform advanced analyses on uploaded data, produce reports with charts and visualizations, and generate presentations from your documents—all without specialized software skills.
 
@@ -21,7 +19,7 @@ These capabilities make it easy to produce professional documents by simply chat
 
 ## Availability
 
-**Free, Pro, and Max plans:**
+**Free, Pro, Max, and Ultra plans:**
 
 - Code execution and file creation is enabled by default
 
@@ -55,7 +53,7 @@ These capabilities make it easy to produce professional documents by simply chat
 
 **Team plans:** This capability is enabled by default at the organization level with **Allow network egress** toggled on with access to package managers only. An organization owner can manually disable this for the organization in **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** if needed.
 
-**Free, Pro, and Max plans:** Enable file creation from **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** by toggling **Code execution and file creation** on.
+**Free, Pro, Max, and Ultra plans:** Enable file creation from **Settings \> Capabilities** by toggling **Code execution and file creation** (called **Create and edit files** in the updated Settings layout) on.
 
 To give Claude access to external data sources, toggle **Allow network egress** on:
 
@@ -190,7 +188,7 @@ In line with our **[safe and trustworthy agents framework](../19-Reference/our-f
 
 - Given you the ability to review and audit actions taken by Claude within the sandbox environment.
 
-- Disabled public sharing of conversations that include any file artifacts from the code execution and file creation feature for free, Pro, and Max users.
+- Disabled public sharing of conversations that include any file artifacts from the code execution and file creation feature for Free, Pro, Max, and Ultra users.
 
 - Limited the duration of tasks that can be completed by Claude and the length of time you can use a single sandbox container to avoid loops of malicious activity.
 
@@ -244,7 +242,7 @@ When network access is enabled, Claude can access the following approved domains
 
 Generate spreadsheets with working formulas and calculations by describing your needs. Try:
 
-    Create a monthly budget tracker with income, expenses categories, and 
+    Create a monthly budget tracker with income, expense categories, and 
     automatic calculations for savings.
 
 Claude will produce an Excel file with proper formulas, formatting, and even charts to visualize your data.
@@ -303,6 +301,10 @@ Claude can handle multiple files in a single chat, allowing you to create compre
 
 File creation is supported on Claude for iOS and Android. Note that when you tap "Download" on Claude Mobile, the file will open in either the system preview or a separate app (for example, the Word app for .docx files).
 
+### Can Claude create files in a chat that uses my linked accounts?
+
+Claude can make plain text files (such as .csv, .md, and .html) and show text and tables in the chat. After Claude uses your linked accounts in Personal Finance in a chat, it may not be able to run code, make other files (Word, Excel, PowerPoint, or PDF), or publish an artifact. Learn more in **[Use Personal Finance in Claude](use-personal-finance-with-claude.md)**.
+
 ### Do artifacts work with file creation?
 
-Yes you are still able to create artifacts (e.g., HTML or react apps, markdown documents, mermaid diagrams, SVGs) with file creation on. Claude now uses the computing environment to create artifacts so the user experience may look slightly different than users are used to. Please report any issues or feedback using the thumbs up/down functionality when chatting with Claude.
+Yes, you are still able to create artifacts (e.g., HTML or react apps, markdown documents, mermaid diagrams, SVGs) with file creation on. Claude now uses the computing environment to create artifacts so the user experience may look slightly different than users are used to. Please report any issues or feedback using the thumbs up/down functionality when chatting with Claude.

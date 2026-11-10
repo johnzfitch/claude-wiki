@@ -2,11 +2,14 @@
 title: "Troubleshoot a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/troubleshoot"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-23T06:28:43Z"
+fetched_at: "2026-11-04T06:23:54Z"
+last_modified: "Wed, 04 Nov 2026 06:23:17 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Find out why a mod does nothing](#find-out-why-a-mod-does-nothing)
 - [Check whether mods can load](#check-whether-mods-can-load)
@@ -30,6 +33,7 @@ tags: ["claude-code", "plugins"]
   - [no command.run hook answered it](#no-command-run-hook-answered-it)
   - [it crashed the hooks worker](#it-crashed-the-hooks-worker)
   - [its session.start ran again in a fresh copy](#its-session-start-ran-again-in-a-fresh-copy)
+  - [This mod's change didn't load or the earlier version is no longer running](#this-mods-change-didnt-load)
   - [\$.agent.register refused: the hooks module that made the call is no longer loaded](#%24-agent-register-refused-the-hooks-module-that-made-the-call-is-no-longer-loaded)
   - [mods that run in the hooks worker are off for this session](#mods-that-run-in-the-hooks-worker-are-off-for-this-session)
 - [A tool call is denied](#a-tool-call-is-denied)
@@ -39,7 +43,9 @@ tags: ["claude-code", "plugins"]
   - [Stopped: type a message to continue; a mod cannot resume work after Stop](#stopped-type-a-message-to-continue)
 - [A drawing doesn’t appear or respond](#a-drawing-doesn%E2%80%99t-appear-or-respond)
   - [Another mod’s band shows and yours doesn’t](#another-mods-band-shows-and-yours-doesnt)
-  - [A pane or band is empty or shows Claude Code’s usual content](#a-pane-or-band-is-empty-or-shows-claude-code%E2%80%99s-usual-content)
+  - [A pane or band is empty or shows Claude Code’s usual content](#a-pane-or-band-is-empty)
+  - [A ui.render line says refused](#ui-render-refused)
+  - [needs a key, is drawn twice, or key each once](#needs-a-key)
   - [A ui.render line says threw while drawn](#a-ui-render-line-says-threw-while-drawn)
   - [the module failed without a message](#the-module-failed-without-a-message)
   - [\$.ui.open runs and no pane appears](#%24-ui-open-runs-and-no-pane-appears)
@@ -51,6 +57,9 @@ tags: ["claude-code", "plugins"]
   - [Your edits don’t take effect](#your-edits-don%E2%80%99t-take-effect)
   - [A value resets when the module reloads](#a-value-resets-when-the-module-reloads)
   - [A value resets after /clear, /resume, or /branch](#a-value-resets-after-%2Fclear-%2Fresume-or-%2Fbranch)
+  - [A key your settings.read hook returns doesn’t take effect](#settings-read-key-no-effect)
+  - [the answer for \<key\> is no value the key can hold](#settings-read-key-refused)
+  - [settings.read: refused to the engine](#settings-read-refused)
 - [Read the debug log](#read-the-debug-log)
 - [Next steps](#next-steps)
 
@@ -84,11 +93,11 @@ Check whether mods can load
 
 To check whether your setup lets mods load at all, without installing one, run `claude plugin test` in your shell, from a directory that doesn’t hold a mod. You don’t need a session. The message it prints tells you the state:
 
-| Message includes                                                                                       | What it means                                                                                                                               |
-|:-------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| `no hooks module to load`                                                                              | Mods can load. The command found no mod to test in this directory.                                                                          |
-| `hooks modules are turned off here`                                                                    | A setting is blocking your mods: `disableAllHooks` in your own settings, or your organization’s policy                                      |
-| `hooks modules are turned off in this process: the rollout switch served off`                          | Anthropic has turned installed mods off remotely.                                                                                           |
+| Message includes | What it means |
+|:---|:---|
+| `no hooks module to load` | Mods can load. The command found no mod to test in this directory. |
+| `hooks modules are turned off here` | A setting is blocking your mods: `disableAllHooks` in your own settings, or your organization’s policy |
+| `hooks modules are turned off in this process: the rollout switch served off` | Anthropic has turned installed mods off remotely. |
 | `hooks modules are turned off in this process: the rollout switch was saved off by an earlier session` | The command used a value an earlier session saved, which may be out of date. Start `claude` once to refresh it, then run the command again. |
 
 An organization can also set `allowManagedModsOnly` to allow only its own mods, which this command doesn’t report. In that case Claude Code refuses a mod you install, and [a message says why](plugins-mods-troubleshoot.md#messages-from-the-built-in-guard).
@@ -128,14 +137,14 @@ Refusal messages
 
 Each of these follows `hooks module`, the mod’s name, and `not loaded:` in the debug log.
 
-| Message starts with                                                                                                          | What it means                                                                                                                                                                      |
-|:-----------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `hooks modules are turned off for installed plugins in this process: the rollout switch served off`                          | Anthropic has turned installed mods off remotely.                                                                                                                                  |
-| `hooks modules are turned off for installed plugins in this process: the rollout switch was saved off by an earlier session` | The session used a value an earlier session saved, which may be out of date. Start Claude Code again to refresh it.                                                                |
-| `disableAllHooks in managed settings`                                                                                        | Your organization turned off hooks from installed plugins                                                                                                                          |
-| `only managed plugins and built-in plugins run`                                                                              | `allowManagedHooksOnly` is set, or `disableAllHooks` is set in a settings file other than managed settings                                                                         |
-| `installed plugins that are not managed load no hooks module in this mode (--bare)`                                          | You started Claude Code with `--bare`                                                                                                                                              |
-| `another plugin of that name loads first`                                                                                    | Another enabled plugin has the same name as your mod and [holds the name](plugins-loading.md#hooks-when-two-enabled-plugins-share-a-name), so your hooks module doesn’t load |
+| Message starts with | What it means |
+|:---|:---|
+| `hooks modules are turned off for installed plugins in this process: the rollout switch served off` | Anthropic has turned installed mods off remotely. |
+| `hooks modules are turned off for installed plugins in this process: the rollout switch was saved off by an earlier session` | The session used a value an earlier session saved, which may be out of date. Start Claude Code again to refresh it. |
+| `disableAllHooks in managed settings` | Your organization turned off hooks from installed plugins |
+| `only managed plugins and built-in plugins run` | `allowManagedHooksOnly` is set, or `disableAllHooks` is set in a settings file other than managed settings |
+| `installed plugins that are not managed load no hooks module in this mode (--bare)` | You started Claude Code with `--bare` |
+| `another plugin of that name loads first` | Another enabled plugin has the same name as your mod and [holds the name](plugins-loading.md#hooks-when-two-enabled-plugins-share-a-name), so your hooks module doesn’t load |
 
 
 [​](#messages-from-the-built-in-guard)
@@ -144,11 +153,11 @@ Messages from the built-in guard
 
 On a machine with managed settings, or in a session whose credential is a Team or Enterprise `/login`, the [built-in guard](plugins-mods-admin.md#know-what-happens-by-default) can refuse a mod or one of its answers. Each message names the option your organization’s administrator sets to change the rule.
 
-| Message contains                                                                       | What it means                                                                                                                            | Where it appears                                                                                                       |
-|:---------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|
-| `mods are limited to your organization's by policy (allowManagedModsOnly)`             | Your organization allows only [its own mods](plugins-mods-admin.md#install-your-organizations-mods), so yours was refused          | The debug log, and the transcript in a [session that hot-reloads a plugin directory](#find-out-why-a-mod-does-nothing) |
-| `tried to lift a deny rule in your settings`                                           | Your mod’s [`tool.check`](plugins-mods-reference.md#tools) hook approved a call that a `deny` rule refuses. The call stays denied. | The transcript and the debug log, once for each mod in a session. In a `claude -p` run, the debug log only.            |
-| `the deny rules in your settings could not be checked for this call, so it is refused` | The guard failed while checking a call that a mod approved, so it refused the call                                                       | The reason Claude reads for the denied call                                                                            |
+| Message contains | What it means | Where it appears |
+|:---|:---|:---|
+| `mods are limited to your organization's by policy (allowManagedModsOnly)` | Your organization allows only [its own mods](plugins-mods-admin.md#install-your-organizations-mods), so yours was refused | The debug log, and the transcript in a [session that hot-reloads a plugin directory](#find-out-why-a-mod-does-nothing) |
+| `tried to lift a deny rule in your settings` | Your mod’s [`tool.check`](plugins-mods-reference.md#tools) hook approved a call that a `deny` rule refuses. The call stays denied. | The transcript and the debug log, once for each mod in a session. In a `claude -p` run, the debug log only. |
+| `the deny rules in your settings could not be checked for this call, so it is refused` | The guard failed while checking a call that a mod approved, so it refused the call | The reason Claude reads for the denied call |
 
 
 [​](#validate-passes-and-lists-no-hooks-line)
@@ -183,7 +192,7 @@ The line starts with the mod’s name, then `hooks module did not load:`, the fi
 
 `the engine ran out of stack linking the file and its imports`
 
-Code in the hooks module is nested too deeply, or its chain of imports is too long, for Claude Code to load it. The line starts with the mod’s name and `hooks module did not load:`, then gives a file’s name and this reason. Look through that file and the files reached through its imports for the most deeply nested part and rewrite it to nest less, or shorten the chain of imports. If you installed the mod and didn’t write it, ask its author to.
+Code in the hooks module is nested too deeply, or its chain of imports is too long, for Claude Code to load it. The line starts with the mod’s name and `hooks module did not load:`, then gives a file’s name and this reason. In that file and the files its imports reach, find the most deeply nested code and rewrite it to nest less, or shorten the chain of imports. If you didn’t write the mod, ask its author to fix it.
 
 
 [​](#the-parser-stopped-or-the-engine-ran-out-of-stack-loading-the-file)
@@ -259,6 +268,18 @@ The line starts with the mod’s name, as in `first-mod was unloaded: it crashed
 The line starts with the mod’s name and names a `$.prompt.submit`, `$.command.run`, or `$.agent.spawn` call, as in `first-mod: its session.start ran again in a fresh copy; the $.prompt.submit call it had already made was not made again`. Claude Code loaded the mod’s module again, for example after the hooks worker crashed and was replaced, and the fresh copy’s [`session.start`](plugins-mods-reference.md#session) hook ran. The call the line names resolved with the result of its first run instead of running again, so your mod doesn’t submit the prompt, run the command, or start the subagent twice. The rest of the hook ran as usual. There’s nothing to fix. Before v2.1.292, the call ran a second time, so the prompt was submitted, the command run, or the subagent started twice.
 
 
+[​](#this-mods-change-didnt-load)
+
+`This mod's change didn't load` or `the earlier version is no longer running`
+
+A change to a [mod Claude wrote in this session](plugins-mods-create.md#ask-claude-for-a-mod) couldn’t load. The transcript line starts with the mod’s name and ends with the reason:
+
+- `This mod's change didn't load, so the earlier version is still running: <reason>.`
+- `This mod didn't load, and the earlier version is no longer running: <reason>.`
+
+Claude doesn’t see this line, so paste it into your next message when you ask Claude for a fix.
+
+
 [​](#$-agent-register-refused-the-hooks-module-that-made-the-call-is-no-longer-loaded)
 
 `$.agent.register refused: the hooks module that made the call is no longer loaded`
@@ -285,6 +306,8 @@ The mod loaded and its hooks run, and a tool call it touched is refused.
 `a hook changed this call's input after the model wrote it`
 
 In auto mode, a denied tool call gives this reason. A hook changed the tool call’s input after the [server-side classifier](../02-Claude-Code-CLI/permission-modes.md#server-side-classifier-review) reviewed it, so that review doesn’t cover what would run. The hook can be a mod’s [`tool.call`](plugins-mods-reference.md#tools) or [`turn.step`](plugins-mods-reference.md#turns) hook, or a [`PreToolUse`](../07-Hooks/hooks.md#pretooluse) settings hook. The message doesn’t say which. The message tells Claude to issue the call once more as recorded. If that’s denied too, the hook changes the input every time, so turn off the mod or hook, or leave auto mode and approve the call yourself.
+
+In [some interactive terminal sessions and VS Code sessions](../07-Hooks/hooks.md#pretooluse-updatedinput-in-auto-mode), the same denial gives the reason `a hook changed this call's input after auto mode reviewed it`. The repeated call there carries the mod’s first change, and a `tool.call` hook still runs on it, but a further change is dropped. You don’t need to change your mod unless Claude tells you in its reply that [auto mode couldn’t check the call](../02-Claude-Code-CLI/errors.md#hook-changed-input-after-review).
 
 
 [​](#a-message-about-the-deny-rules-in-your-settings)
@@ -322,14 +345,45 @@ There is one band above the prompt, and every mod shares it. A mod that runs [be
 - **Keep the bands after it**: put the result of `await next(e)` among the children of a `Box` in its tree, as in the Band above the prompt tab of [Pick where to draw](plugins-mods-interface.md#pick-where-to-draw)
 - **Keep the tree valid**: don’t give that `Box`, or any `Box` around it, a `width`, `height`, `minWidth`, `minHeight`, `position`, `top`, `left`, `right`, `bottom`, `display`, or `overflow` prop
 
-To find that mod, [write a debug log](#read-the-debug-log) and search it for `answered ui.render without next()`. A line such as `other-mod (user) answered ui.render without next()` names a mod that returned its tree without calling `next(e)`. It doesn’t name the [render site](plugins-mods-reference.md#render-sites), so a pane-only mod can appear too. A mod that calls `next(e)` and drops the result gets no line, so check the hooks before yours too. After the change, you see nothing in the band if any of the mods returns a tree that doesn’t validate. To read the reason, look for a `ui.render (AbovePrompt) refused:` line in the transcript of a `--plugin-dir` session, or search the debug log for `does not validate`. With several mods in the band, neither line names a mod, so check each mod’s tree.
+To find that mod, [write a debug log](#read-the-debug-log) and search it for `answered ui.render without next()`. A line such as `other-mod (user) answered ui.render without next()` names a mod that returned its tree without calling `next(e)`. It doesn’t name the [render site](plugins-mods-reference.md#render-sites), so a pane-only mod can appear too. A mod that calls `next(e)` and drops the result gets no line, so check the hooks before yours too. A mod’s band is also missing when the tree its own hook returned doesn’t validate, and the other mods’ bands stay. To find which mod and why, [write a debug log](#read-the-debug-log) and search it for [`ui.render hook skipped`](#a-pane-or-band-is-empty).
 
 
-[​](#a-pane-or-band-is-empty-or-shows-claude-code’s-usual-content)
+[​](#a-pane-or-band-is-empty)
 
 A pane or band is empty or shows Claude Code’s usual content
 
-The [tree](plugins-mods-interface.md#build-a-tree-from-elements) your hook returned didn’t validate. With `--plugin-dir`, the transcript says `ui.render (Pane) refused:` with the reason, as in `first-mod: ui.render (Pane) refused: Box prop "flexDirection" must be one of row, column, row-reverse, column-reverse; the engine drew its own`. The debug log has `a hook returned a tree that does not validate` with the same reason. Read the reason on that line. Common causes are a prop the element doesn’t take and an element the app doesn’t have.
+The [tree](plugins-mods-interface.md#build-a-tree-from-elements) your hook returned didn’t validate. A [`hook skipped`](#hook-skipped) line [in the transcript or the debug log](#find-out-why-a-mod-does-nothing) names your mod and the reason, as in this one for a `Box` in a pane:
+
+```python
+first-mod: ui.render hook skipped: returned the wrong shape (a tree Pane refuses: Box prop "flexDirection" must be one of row, column, row-reverse, column-reverse)
+```
+
+Fix what the reason names. If the reason is cut short, [write a debug log](#read-the-debug-log) and search it for `a hook returned a tree that does not validate` to read the rest. If the line instead says `refused:` right after the site’s name, as in `ui.render (Pane) refused:`, see [A `ui.render` line says `refused`](#ui-render-refused).
+
+
+[​](#ui-render-refused)
+
+A `ui.render` line says `refused`
+
+`ui.render (<site>) refused:`, or `ui.render (<site>): the chain settled on a tree that does not validate` in the [debug log](#read-the-debug-log), means the [tree](plugins-mods-interface.md#build-a-tree-from-elements) at that site exceeds a [size limit](plugins-mods-reference.md#limits). Either line names the [render site](plugins-mods-reference.md#render-sites) and then the reason, and the reason names the limit. Change the mods that draw at that site so their [`ui.render`](plugins-mods-reference.md#interface) hooks return smaller trees, or ask their authors to. If the transcript line starts with `hooks`, more than one loaded mod has a `ui.render` hook for that site, so check each of those mods’ trees. For several mods whose bands above the prompt nest into a tree more than 32 levels deep, the line reads:
+
+```python
+hooks: ui.render (AbovePrompt) refused: deeper than 32; nothing was drawn
+```
+
+Before v2.1.307, a `refused:` line for any site reported any tree that didn’t validate, and for `Pane` and `AbovePrompt` it ended `; the engine drew its own`. On those releases, fix what the reason names.
+
+
+[​](#needs-a-key)
+
+`needs a key`, `is drawn twice`, or `key each once`
+
+An element in the tree your `ui.render` hook returns has no valid [`key`](plugins-mods-interface.md#which-controls-need-a-key), or two elements share one. Find the message you got:
+
+- **`<Input> needs a key` or `<Select> needs a key`**: the element has no `key` prop, or its `key` is empty or isn’t a string, as in `key: 3`. Give it a non-empty string as its `key`.
+- **`<Button> needs a key`**: give the button a non-empty string as its `key`
+- **`is drawn twice; each takes its own key`**: two elements of the kind the message names have the same `key`, as in `Input "size" is drawn twice; each takes its own key`. Give each element its own `key`.
+- **`key each once` from `press` in a [test](plugins-mods-test.md#test-a-drawing)**: the drawing has more than one button with the key you passed. Buttons with the same label and no `key` prop share that label as their key. Give each button its own `key`.
 
 
 [​](#a-ui-render-line-says-threw-while-drawn)
@@ -425,6 +479,62 @@ A value resets after `/clear`, `/resume`, or `/branch`
 A value resets, or a saved value is replaced by its default. Each of those commands resets `$.state` to its defaults, and `session.start` doesn’t fire again. [Load the saved value again](plugins-mods-interface.md#load-a-saved-value-again-after-clear) in a `classic.SessionStart` hook.
 
 
+[​](#settings-read-key-no-effect)
+
+A key your `settings.read` hook returns doesn’t take effect
+
+If you return permission rules or `env` on [Claude Code’s own read](plugins-mods-events.md#settings-read-hook), the rules aren’t checked on tool calls and the `env` entries don’t become environment variables. Use a [settings file](../02-Claude-Code-CLI/settings.md) for both, or [`$.env.set`](plugins-mods-api.md#reach-files-processes-and-the-network) for `env`. For another key, check [which mods get `settings.read` and from which version](plugins-mods-events.md#settings-read-hook), then search the [debug log](#read-the-debug-log) for `settings.read` and look for one of these lines:
+
+| Log line | Meaning and step |
+|:---|:---|
+| `settings.read hook skipped`, after your mod’s name | Your hook failed. [Fix the error the line reports](#hook-skipped). |
+| `settings.read bypassed by cc-plugin-sec-default`, on a line that names your mod ahead of it | The [built-in guard](plugins-mods-admin.md#know-what-happens-by-default) skipped your hook. Ask your organization’s administrator to [install the mod as one of the organization’s mods](plugins-mods-admin.md#install-your-organizations-mods). |
+| `settings.read: the answer for <key> is no value the key can hold` | Claude Code refused the value a hook returned for that key. The hook may be yours or another mod’s. Follow [the step for your case](#settings-read-key-refused). |
+| `settings.read: the merge never settles for <key>` | The keys the line names keep the settings sources’ values. Set them in a settings file. |
+| `answered settings.read without next()`, after a mod’s name | Your hook is affected if the named mod [runs before yours](plugins-mods-events.md#the-order-mods-run-in). Then your hook didn’t run on that read. [Turn that mod off](plugins-mods-overview.md#turn-mods-on-or-off), or if your organization deployed it, ask its administrator to. |
+| `settings.read: refused to the engine` | Your value didn’t apply because Claude Code’s own read was refused. [Find what refused it](#settings-read-refused). |
+
+If no line explains the key, check the mods that run before yours for a `settings.read` hook that [changes the key](plugins-mods-events.md#settings-read-example). Turn that mod off, or ask your organization’s administrator to. If no hook does, set the key in a settings file.
+
+
+[​](#settings-read-key-refused)
+
+`the answer for <key> is no value the key can hold`
+
+This [debug log](#read-the-debug-log) line means Claude Code refused the value a [`settings.read`](plugins-mods-events.md#settings-read-hook) hook returned for the named key, and that key alone:
+
+```python
+settings.read: the answer for <key> is no value the key can hold; the settings' own value stands
+```
+
+The value returned for the named key didn’t fit that key’s schema, for example by type or by range.
+
+- **Your value doesn’t fit the key’s schema**: return one the key’s [settings reference](../02-Claude-Code-CLI/settings-reference.md) entry allows.
+- **Your value fits**: the value that doesn’t fit came from another mod’s `settings.read` hook. To find that mod, follow [the steps to turn off mods one at a time](#settings-read-refused). Search each new log for this line instead of `refused to the engine`.
+
+While the value doesn’t fit, the key keeps the value merged from the settings sources before any hook answered. The line calls it the settings’ own value.
+
+
+[​](#settings-read-refused)
+
+`settings.read: refused to the engine`
+
+You see this line in the [debug log](#read-the-debug-log) when [Claude Code’s own read](plugins-mods-events.md#settings-read-hook) is refused, and Claude Code drops every hook’s value. When a `settings.read` hook refuses that read with [`{ deny: reason }`](plugins-mods-events.md#settings-read-returns), the line carries that hook’s reason:
+
+```python
+settings.read: refused to the engine (engine: $.settings.read: <reason>); the settings' own values stand
+```
+
+Search your code for the reason in the parentheses:
+
+- **Your code has it**: your hook refused the read. Make it return `{ value }` when [`next.origin`](plugins-mods-events.md#settings-read-origin) shows Claude Code’s own read.
+- **Your code doesn’t have it**: [turn off](plugins-mods-overview.md#turn-mods-on-or-off) your other mods one at a time. If your organization deployed a mod, ask its administrator to turn it off. After each:
+  1.  Start the session from your shell with `claude --debug-file ./settings-read-2.log`, followed by the flags it started with. Use a new path each time.
+  2.  Search that file for `refused to the engine`. If the line is there, turn off the next mod. If not, the last mod you turned off refused the read, so keep it off.
+
+If the line stays with no other mod left, set the keys your hook returns in a [settings file](../02-Claude-Code-CLI/settings.md). Its values hold while the read is refused.
+
+
 [​](#read-the-debug-log)
 
 Read the debug log
@@ -447,7 +557,7 @@ A mod that loaded has a line that names it and lists the events it handles. A mo
 hooks module first-mod@inline loaded (worker, environment 2, tier user); events: session.start,tool.call,command.run,ui.render
 ```
 
-A drawing that didn’t validate counts as a refused result and gets a line too. To write your own lines in the log, call [`$.ui.log`](plugins-mods-api.md#show-something-without-starting-a-turn) with a second argument, as in `$.ui.log('message', { to: 'debug' })`. Without the second argument, `$.ui.log` adds a dim line to the transcript. While you edit a mod loaded with `--plugin-dir`, the transcript shows a line for each reload that names the mod and lists its hooks. If a save breaks the module, the line says `reload failed, the previous version stays loaded:` with the reason, and the last working version keeps running until Claude Code next reloads plugins, such as when you run `/reload-plugins`.
+To write your own lines in the log, call [`$.ui.log`](plugins-mods-api.md#show-something-without-starting-a-turn) with a second argument, as in `$.ui.log('message', { to: 'debug' })`. Without the second argument, `$.ui.log` adds a dim line to the transcript. While you edit a mod loaded with `--plugin-dir`, the transcript shows a line for each reload that names the mod and lists its hooks. If a save breaks the module, the line says `reload failed, the previous version stays loaded:` with the reason, and the last working version keeps running until Claude Code next reloads plugins, such as when you run `/reload-plugins`.
 
 
 [​](#next-steps)

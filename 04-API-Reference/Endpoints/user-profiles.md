@@ -2,241 +2,11 @@
 title: "User Profiles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/user_profiles"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-21T06:29:35Z"
+fetched_at: "2026-11-06T06:26:55Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fuser_profiles)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-Webhooks
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Delete User Profile
-
-
-Create Enrollment URL
-
-Action URLs
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 
 
@@ -250,7 +20,9 @@ A beta version of this API exists and may have additional functionality. [View t
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create User Profile](https://platform.claude.com/docs/en/api/http/user_profiles/create)
 
@@ -294,7 +66,7 @@ Identifier of the deleted user profile, prefixed `uprof_`.
 
 
 
-UserProfile object{ type: "user_profile", id, access_type, 6 more }
+UserProfile object{ type: "user_profile", id, access_type, 8 more }
 
 
 
@@ -465,6 +237,168 @@ The profile is not in the program yet, and something is still awaited.
 
 
 The profile is not in the program and nothing is awaited: Anthropic has declined, or has withdrawn an earlier approval.
+
+
+
+UserProfileEnforcementAction = [UserProfileEnforcementActionRestriction](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_action_restriction) or [UserProfileEnforcementActionBan](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_action_ban)
+
+
+
+A limit Anthropic has placed on the entity this profile represents and not yet resolved, discriminated by `type`: `restriction` or `ban`. More types may be added; read a `type` you do not recognize as `restriction`.
+
+One of the following:
+
+
+
+UserProfileEnforcementActionBan object{ type: "ban", id, action, 3 more }
+
+
+
+Anthropic has stopped serving the end user where the ban applies and does not plan to serve them there again.
+
+type: "ban"
+
+
+
+id: string
+
+
+
+The action's ID (`enac_...`), stable while the action is open.
+
+action: [UserProfileEnforcementActionNextStep](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_action_next_step) or null
+
+
+
+Always `null`: the end user cannot clear a ban.
+
+
+
+expires_at: string or null
+
+
+
+Always `null`: a ban has no end date.
+
+formatdate-time
+
+
+
+opened_at: string
+
+
+
+When Anthropic opened the action, in RFC 3339 format.
+
+formatdate-time
+
+
+
+reason: [UserProfileEnforcementActionReason](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_action_reason)
+
+
+
+Why Anthropic placed the limit: `unsupported_region`, `fraud_or_abuse`, `high_harm`, `usage_policy_violation`, `account_compromise` or `unspecified`.
+
+One of the following:
+
+"unsupported_region"
+
+
+
+"fraud_or_abuse"
+
+
+
+"high_harm"
+
+
+
+"usage_policy_violation"
+
+
+
+"account_compromise"
+
+
+
+"unspecified"
+
+
+
+UserProfileEnforcementActionNextStep = "verify"
+
+
+
+The next step on this enforcement action: `verify` means the end user can clear the action by passing an identity check. More values may be added; read a value you do not recognize as `null`.
+
+
+
+UserProfileEnforcementActionReason = "unsupported_region" or "fraud_or_abuse" or "high_harm" or 3 more
+
+
+
+Why Anthropic placed this enforcement action: `unsupported_region`, `fraud_or_abuse`, `high_harm`, `usage_policy_violation`, `account_compromise` or `unspecified`. More values may be added; read a value you do not recognize as `unspecified`.
+
+One of the following:
+
+"unsupported_region"
+
+
+
+"fraud_or_abuse"
+
+
+
+"high_harm"
+
+
+
+"usage_policy_violation"
+
+
+
+"account_compromise"
+
+
+
+"unspecified"
+
+
+
+
+
+UserProfileEnforcementActionRestriction object{ type: "restriction", id, action, 3 more }
+
+
+
+Anthropic has limited how it serves the end user until the action is resolved. The end user may still be served in part.
+
+
+
+UserProfileEnforcementStatus = "unrestricted" or "pending" or "restricted" or "banned"
+
+
+
+Anthropic's enforcement status of this profile: `unrestricted`, `pending`, `restricted` or `banned`. More values may be added; read a value you do not recognize as `restricted`.
+
+One of the following:
+
+"unrestricted"
+
+
+
+"pending"
+
+
+
+"restricted"
+
+
+
+"banned"
+
+
 
 
 

@@ -2,67 +2,9 @@
 title: "Spend Limits API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/spend-limits-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:39:33Z"
+fetched_at: "2026-11-05T06:36:41Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fspend-limits-api)
-
-
-
-
-
-SearchCtrlK
-
-Organization
-
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
-
-Authentication
-
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
-
-Identity providers
-
-Monitoring
-
-[Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
-
-[OpenTelemetry](manage-claude-opentelemetry.md)
-
-Data & compliance
-
-[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
-
-[Access Transparency](manage-claude-access-transparency.md)
-
-[Encryption keys (CMEK)](manage-claude-cmek.md)
-
-[Inference hooks](manage-claude-inference-hooks.md)
-
-Compliance API
-
-[Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
-
-[Console](playground.md)
-
-[Admin](manage-claude-admin-api.md)Monitoring
 
 # Spend Limits API
 
@@ -70,15 +12,15 @@ Compliance API
 
 
 
-Set a spend limit on each Claude Enterprise member, see where each member's spend limit is inherited from, and review or act on members' requests for a higher limit.
+Set a spend limit on each Claude Enterprise member, see where each member’s spend limit is inherited from, and review or act on members’ requests for a higher limit.
 
 Copy page
 
 
 
-The Spend Limits API lets you set a spend limit on each Claude Enterprise member, see where each member's spend limit is inherited from, and review or act on members' requests for a higher limit.
+The Spend Limits API lets you set a spend limit on each Claude Enterprise member, see where each member’s spend limit is inherited from, and review or act on members’ requests for a higher limit.
 
-For per-user and time-bucketed usage and cost *reporting*, see [Analytics APIs](manage-claude-analytics-api.md).
+For per-user and time-bucketed usage and cost *reporting*, see [Analytics APIs](manage-claude-analytics-api.md) or the [Usage and Cost Analytics API](manage-claude-usage-cost-analytics-api.md).
 
 
 
@@ -96,7 +38,7 @@ The API exposes eight endpoints across two resources:
 
 [TABLE]
 
-Use the **spend limits** endpoints to answer "what spend limit applies to each member, where does it come from, and how close are they to it?" and to set a per-user override. Use the **spend limit increase requests** endpoints to work the queue of member-submitted requests.
+Use the **spend limits** endpoints to answer “what spend limit applies to each member, where does it come from, and how close are they to it?” and to set a per-user override. Use the **spend limit increase requests** endpoints to work the queue of member-submitted requests.
 
 ## Prerequisites
 
@@ -107,7 +49,7 @@ The SDK exposes these endpoints under `client.beta.organization.spend_limits`, a
 
 ## Quick start
 
-List every member's effective monthly spend limit and period-to-date spend:
+List every member’s effective monthly spend limit and period-to-date spend:
 
 cURL
 
@@ -147,11 +89,11 @@ for effective_limit in effective_limits:
 
 ### The spend limit hierarchy
 
-An **effective spend limit** applies to each member's spend, resolved from a hierarchy of scope levels. When a member has no per-user override, they inherit the spend limit configured for their group (if your organization uses group-based limits), their seat tier, or the organization-wide default. A group spend limit is a per-member default: each member inheriting it is gated against their own spend, not a pooled group budget.
+An **effective spend limit** applies to each member’s spend, resolved from a hierarchy of scope levels. When a member has no per-user override, they inherit the spend limit configured for their group (if your organization uses group-based limits), their seat tier, or the organization-wide default. A group spend limit is a per-member default: each member inheriting it is gated against their own spend, not a pooled group budget.
 
 Reading `GET /v1/organizations/spend_limits/effective` returns every current member with their resolved effective spend limit, where that limit was resolved from (`source`), and their period-to-date spend. Setting a per-user override with `POST /v1/organizations/spend_limits` pins a member to a specific spend limit regardless of what they would otherwise inherit. Deleting the override returns them to the inherited spend limit (or leaves them unlimited if none exists).
 
-The `source` field on each member's row tells you which level their spend limit resolved from: `user` (a per-user override), `seat_tier`, `rbac_group`, or `organization`. Treat scope types as an open set; fall through on unknown values rather than failing.
+The `source` field on each member’s row tells you which level their spend limit resolved from: `user` (a per-user override), `seat_tier`, `rbac_group`, or `organization`. Treat scope types as an open set; fall through on unknown values rather than failing.
 
 ### Period
 
@@ -159,21 +101,21 @@ The `source` field on each member's row tells you which level their spend limit 
 
 ### Amounts and currency
 
-All monetary values are strings in **minor units of the organization's billing currency** (cents, for USD). For example, `"50000"` represents 500.00 USD. Parse as a decimal and divide by 100 to display dollars; avoid binary floating-point for large values.
+All monetary values are strings in **minor units of the organization’s billing currency** (cents, for USD). For example, `"50000"` represents \$500.00 USD. Parse as a decimal and divide by 100 to display dollars; avoid binary floating-point for large values.
 
-`amount` is **nullable**. In a member's effective row, `null` means **unlimited** (no spend limit) and `"0"` means the member cannot use Claude beyond their plan's included usage. On a configured spend-limit row (as returned by `GET /v1/organizations/spend_limits/{id}`), `null` only means no numeric spend limit is set; read the member's effective row to distinguish unlimited from included-usage-only.
+`amount` is **nullable**. In a member’s effective row, `null` means **unlimited** (no spend limit) and `"0"` means the member cannot use Claude beyond their plan’s included usage. On a configured spend-limit row (as returned by `GET /v1/organizations/spend_limits/{id}`), `null` only means no numeric spend limit is set; read the member’s effective row to distinguish unlimited from included-usage-only.
 
-`period_to_date_spend` is the member's spend accrued since the start of the current `period`, in the same minor-unit format; it may include a fractional part (for example, `"41280.125"`). It may read as `"0"` if the spend reading is temporarily unavailable; treat it as informational, not transactional.
+`period_to_date_spend` is the member’s spend accrued since the start of the current `period`, in the same minor-unit format; it might include a fractional part (for example, `"41280.125"`). It might read as `"0"` if the spend reading is temporarily unavailable; treat it as informational, not transactional.
 
 ### Increase request lifecycle
 
-A **spend limit increase request** is created when a member clicks **Request more usage** in claude.ai. Requests are not created through this API. A request's `status` is one of:
+A **spend limit increase request** is created when a member clicks **Request more usage** in claude.ai. Requests are not created through this API. A request’s `status` is one of:
 
-| Status     | Meaning                                                                                                                                                                                                                                  |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `pending`  | Awaiting admin action. The request normally carries a live `spend_summary` so you can see the member's current effective spend limit and period-to-date spend while deciding; `spend_summary` may be `null` if it could not be computed. |
-| `approved` | The request was resolved with approval: either an admin approved it explicitly, another admin action raised the member's spend limit, or Anthropic support raised a spend limit on the organization's behalf. `spend_summary` is `null`. |
-| `denied`   | An admin declined. `spend_summary` is `null`. The member can send a new request right away; only a `pending` request blocks a new one. An admin can still raise the member's spend limit directly at any time.                           |
+| Status | Meaning |
+|----|----|
+| `pending` | Awaiting admin action. The request normally carries a live `spend_summary` so you can see the member’s current effective spend limit and period-to-date spend while deciding; `spend_summary` might be `null` if it could not be computed. |
+| `approved` | The request was resolved with approval: either an admin approved it explicitly, another admin action raised the member’s spend limit, or Anthropic support raised a spend limit on the organization’s behalf. `spend_summary` is `null`. |
+| `denied` | An admin declined. `spend_summary` is `null`. The member can send a new request right away; only a `pending` request blocks a new one. An admin can still raise the member’s spend limit directly at any time. |
 
 Both `approved` and `denied` are terminal. A member has at most one `pending` request at a time.
 
@@ -193,7 +135,7 @@ All eight endpoints share a single per-organization limit of **60 requests per m
 
 `GET /v1/organizations/spend_limits/effective` and `GET /v1/organizations/spend_limit_increase_requests` are paginated with an **opaque cursor**. The first request returns up to `limit` rows plus a `next_page` cursor; pass that cursor unchanged as the `page` parameter on the next request, and repeat until `next_page` is `null`.
 
-**Do not change query parameters mid-sequence.** Cursors are bound to the filters that issued them. If you change `user_ids[]`, `period[]`, `status[]`, or `actor_ids[]` and pass an old cursor, you'll get a 400 with *"cursor does not match current query parameters"*. Start a new sequence from the first page instead.
+**Do not change query parameters mid-sequence.** Cursors are bound to the filters that issued them. If you change `user_ids[]`, `period[]`, `status[]`, or `actor_ids[]` and pass an old cursor, you’ll get a 400 with *“cursor does not match current query parameters”*. Start a new sequence from the first page instead.
 
 ## Serializing list parameters
 
@@ -207,13 +149,13 @@ user_ids[]=user_01AbCdEfGh&user_ids[]=user_01JkLmNoPq
 
 ## Error responses
 
-Error responses follow the standard shape documented in [Errors](../Endpoints/errors.md). Quote the `request_id` from the response body when contacting support.
+Error responses follow the standard shape documented in [Claude API errors](../Endpoints/errors.md). Quote the `request_id` from the response body when contacting support.
 
 ## Spend limits
 
-### List each member's effective spend limit
+### List each member’s effective spend limit
 
-`GET /v1/organizations/spend_limits/effective` returns one row per current member, reflecting each member's effective spend limit, its `source` in the scope hierarchy, and their `period_to_date_spend`. Requires the `read:spend_limits` scope.
+`GET /v1/organizations/spend_limits/effective` returns one row per current member, reflecting each member’s effective spend limit, its `source` in the scope hierarchy, and their `period_to_date_spend`. Requires the `read:spend_limits` scope.
 
 For complete parameter details and response schemas, see [List effective spend limits](../Admin/beta-organization-spend-limits-effective-list.md) in the API reference.
 
@@ -450,7 +392,7 @@ for increase_request in increase_requests:
     print(f"{increase_request.id}: {increase_request.status}")
 ```
 
-Each pending request carries a live `spend_summary` showing the requester's current effective spend limit and period-to-date spend, enough to decide without a separate lookup.
+Each pending request carries a live `spend_summary` showing the requester’s current effective spend limit and period-to-date spend, enough to decide without a separate lookup.
 
 ### Get a single increase request
 
@@ -571,13 +513,13 @@ print(f"status: {increase_request.status}")
 
 ## Example workflows
 
-Some of these workflows combine the Spend Limits API with the [Analytics APIs](manage-claude-analytics-api.md) cost endpoints. The Analytics cost endpoints are designed for organization-wide spend reporting across a date range. `GET /spend_limits/effective` returns the cap that currently applies to each member. Start a sweep with Analytics to discover which members to look at, then read their current caps with `/effective`.
+Some of these workflows combine the Spend Limits API with the cost endpoint of the [Usage and Cost Analytics API](manage-claude-usage-cost-analytics-api.md). The cost endpoint is designed for organization-wide spend reporting across a date range. `GET /spend_limits/effective` returns the cap that currently applies to each member. Start a sweep with the cost endpoint to discover which members to look at, then read their current caps with `/effective`.
 
-Spend Limits endpoints require the `spend_limits` scopes and Analytics cost endpoints require `read:analytics`; see [Analytics APIs](manage-claude-analytics-api.md) for how to provision access. The examples use one Admin API key that has the scopes of every API they call. A primary owner [selects these scopes when creating the key](manage-claude-admin-api-keys.md#choose-scopes-for-a-claude-enterprise-key). All monetary values on both are decimal strings in minor units (cents). Both APIs paginate with an opaque cursor. Set an explicit `limit` and page through `next_page` until it's `null` to cover the whole organization.
+Spend Limits endpoints require the `spend_limits` scopes and the cost endpoint requires `read:analytics`. The examples use one Admin API key that has the scopes of every API they call. A primary owner [selects these scopes when creating the key](manage-claude-admin-api-keys.md#choose-scopes-for-a-claude-enterprise-key). All monetary values on both are decimal strings in minor units (cents). Both APIs paginate with an opaque cursor. Set an explicit `limit` and page through `next_page` until it’s `null` to cover the whole organization.
 
 ### Automate the increase-request review flow
 
-Run a scheduled job that fetches pending requests, applies your organization's approval policy, and resolves each one.
+Run a scheduled job that fetches pending requests, applies your organization’s approval policy, and resolves each one.
 
 1.  List pending requests:
 
@@ -606,9 +548,9 @@ Run a scheduled job that fetches pending requests, applies your organization's a
         print(f"{increase_request.id}: {increase_request.status}")
     ```
 
-    Each request carries the requester's `actor.user_id` and a live `spend_summary` with their current effective `amount` and `period_to_date_spend`, enough to decide without a separate lookup.
+    Each request carries the requester’s `actor.user_id` and a live `spend_summary` with their current effective `amount` and `period_to_date_spend`, enough to decide without a separate lookup.
 
-2.  Apply your policy. For example, auto-approve when the member's current `amount` is below a threshold, and route larger caps for manual review.
+2.  Apply your policy. For example, auto-approve when the member’s current `amount` is below a threshold, and route larger caps for manual review.
 
 3.  Resolve each request. To approve, supply the new cap:
 
@@ -641,9 +583,9 @@ Run a scheduled job that fetches pending requests, applies your organization's a
 
 ### Identify members close to their spend limit
 
-Find members approaching their cap so you can raise it before they're blocked.
+Find members approaching their cap so you can raise it before they’re blocked.
 
-1.  Pull each member's month-to-date spend from the Analytics API (one row per member, highest spend first by default):
+1.  Pull each member’s month-to-date spend from the Usage and Cost Analytics API (one row for each member, highest spend first by default):
 
     cURL
     CLI
@@ -662,15 +604,20 @@ Find members approaching their cap so you can raise it before they're blocked.
     ``` shiki
     client = anthropic.Anthropic()
 
-    cost_rows = client.beta.organization.analytics.user_cost_report.list(
-        starting_at="2026-06-01T00:00:00Z", limit=1000
+    cost_rows = client.beta.organization.analytics.cost.list(
+        starting_at="2026-06-01T00:00:00Z",
+        actor_types=["user_actor"],
+        group_by=["actor"],
+        limit=1000,
     )
 
     for cost_row in cost_rows:
-        print(f"{cost_row.actor.user_id}: {cost_row.amount}")
+        actor = cost_row.group.actor
+        if actor is not None and actor.type == "user_actor":
+            print(f"{actor.user_id}: {cost_row.cost.amount}")
     ```
 
-    Each row contains `actor.user_id`, `actor.email_address`, and `amount` (the member's spend in cents). Page through `next_page` to cover the whole organization.
+    Each row contains `group.actor.user_id`, `group.actor.email_address`, and `cost.amount` (the member’s spend in cents). Page through `next_page` to cover the whole organization.
 
 2.  For the top spenders (or everyone above a dollar threshold), fetch effective caps in batches:
 
@@ -706,13 +653,13 @@ Find members approaching their cap so you can raise it before they're blocked.
 
 3.  For each member with a positive cap, compute `period_to_date_spend / amount` and flag those at or above your threshold (for example, 80 percent). Treat a `"0"` cap as already at-limit. There is no server-side filter for this ratio.
 
-4.  Act on flagged members: raise the cap with `POST /v1/organizations/spend_limits`, approve a pending increase request if one exists, or reach out to the member.
+4.  Act on flagged members: raise the cap with `POST /v1/organizations/spend_limits`, approve a pending increase request if one exists, or contact the member.
 
 ### Find members with rapidly changing usage
 
 Surface members whose spend has jumped week over week.
 
-1.  Pull per-member daily cost for the trailing two weeks from the Analytics API:
+1.  Pull per-member daily cost for the trailing 2 weeks from the Usage and Cost Analytics API:
 
     cURL
     CLI
@@ -731,28 +678,32 @@ Surface members whose spend has jumped week over week.
     ``` shiki
     client = anthropic.Anthropic()
 
-    cost_rows = client.beta.organization.analytics.user_cost_report.list(
+    cost_rows = client.beta.organization.analytics.cost.list(
         starting_at="2026-06-09T00:00:00Z",
         ending_at="2026-06-23T00:00:00Z",
-        bucket_width="1d",
+        time_bucket_width="1d",
+        actor_types=["user_actor"],
+        group_by=["actor"],
         limit=1000,
     )
 
     for cost_row in cost_rows:
-        print(f"{cost_row.actor.user_id} {cost_row.starting_at}: {cost_row.amount}")
+        actor = cost_row.group.actor
+        if actor is not None and actor.type == "user_actor":
+            print(f"{actor.user_id} {cost_row.starting_at}: {cost_row.cost.amount}")
     ```
 
-    With `bucket_width` set, each member spans one row per day with usage. Page through `next_page` to collect every member's full series.
+    With `time_bucket_width` set, each member spans one row for each day with usage. Page through `next_page` to collect every member’s full series.
 
-2.  Group rows by `actor.user_id`. For each member, sum the most recent seven days and the prior seven days. Flag members whose recent week exceeds the prior week by your chosen multiple (for example, three). Recent-day cost is provisional and can be revised upward; for repeatable comparisons, set `ending_at` at or before a previously returned `data_refreshed_at` (see [Data availability and freshness](manage-claude-analytics-api.md#data-availability-and-freshness)).
+2.  Group rows by `group.actor.user_id`. For each member, sum the most recent 7 days and the prior 7 days. Flag members whose recent week exceeds the prior week by your chosen multiple (for example, three). Cost for recent days can still change. For repeatable comparisons, set `ending_at` at or before a `data_refreshed_at` you have already seen (see [Data freshness](manage-claude-usage-cost-analytics-api.md#data-freshness)).
 
-3.  Act on flagged members: adjust the cap with `POST /v1/organizations/spend_limits`, or reach out.
+3.  Act on flagged members: adjust the cap with `POST /v1/organizations/spend_limits`, or contact the member.
 
-### Temporarily raise a member's spend limit during an incident
+### Temporarily raise a member’s spend limit during an incident
 
-Give an incident responder room to work while an incident is open: raise their spend cap when the incident starts, and roll it back after the incident closes. Gate the raise on your incident management system, for example by requiring a live incident ID with the member assigned to it.
+Give an incident responder room to work while an incident is open: raise their spend cap when the incident starts, and roll it back after the incident closes. Gate the raise on your incident management system, for example, by requiring a live incident ID with the member assigned to it.
 
-1.  Read the member's current cap, and record it for the rollback:
+1.  Read the member’s current cap, and record it for the rollback:
 
     cURL
     CLI
@@ -844,13 +795,13 @@ Give an incident responder room to work while an incident is open: raise their s
 
 ## Frequently asked questions
 
-### Does setting a spend limit directly resolve a member's pending increase request?
+### Does setting a spend limit directly resolve a member’s pending increase request?
 
 No. `POST /v1/organizations/spend_limits` writes the override but leaves the pending request untouched. Use `POST /v1/organizations/spend_limit_increase_requests/{id}/approve` to resolve the request and write the override in one call.
 
 ### What happens when I delete a per-user override?
 
-The member falls back to whatever they'd inherit from the hierarchy: their group, seat-tier, or organization default. If no default exists at any level, the member is unlimited.
+The member falls back to whatever they’d inherit from the hierarchy: their group, seat-tier, or organization default. If no default exists at any level, the member is unlimited.
 
 ### Can I set a seat-tier or organization-wide default through this API?
 
@@ -870,6 +821,6 @@ Generated request and response schemas for every Spend Limits API endpoint.
 
 Generated request and response schemas for the increase-request endpoints.
 
-[Analytics APIs](manage-claude-analytics-api.md)
+[Usage and Cost Analytics API](manage-claude-usage-cost-analytics-api.md)
 
-Per-user and time-bucketed usage and cost reporting for Claude Enterprise.
+Track token usage and costs for your organization.

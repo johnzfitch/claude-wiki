@@ -2,14 +2,14 @@
 title: "Use Claude Code in the cloud | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12618689-use-claude-code-in-the-cloud"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:56Z"
+fetched_at: "2026-11-09T06:26:16Z"
 tags: ["claude-code"]
 ---
 
 # Use Claude Code in the cloud
 
 
-A cloud session is a Claude Code session that runs on cloud infrastructure instead of on your machine, working with code from your GitHub repositories. You can start one from Claude Code on the web at claude.ai/code, from Claude Mobile, from Claude Desktop, or from your terminal with `claude --cloud`. This article explains how cloud sessions work, when to use them instead of a local session in your terminal or IDE, and what workflows they enable.
+A cloud session is a Claude Code session that runs on cloud infrastructure instead of on your machine, working with code from your GitHub repositories. You can start one from Claude Desktop, from Claude Code on the web at claude.ai/code, from Claude Mobile, or from your terminal with `claude --cloud`. This article explains how cloud sessions work, when to use them instead of a local session in Claude Desktop, your terminal, or your IDE, and what workflows they enable.
 
 ## What cloud sessions provide
 
@@ -42,7 +42,7 @@ Each task runs in complete isolation. The virtual machine exists only for that s
 
 ## When to use cloud sessions vs. local sessions
 
-Some tasks are well suited to running asynchronously in the cloud, while others are best run locally in your terminal or IDE.
+Some tasks are well suited to running asynchronously in the cloud, while others are best run locally in Claude Desktop, your terminal, or your IDE.
 
 ### Use cloud sessions for:
 
@@ -54,15 +54,15 @@ Some tasks are well suited to running asynchronously in the cloud, while others 
 
 - **Tasks you want to queue up:** When you have a list of changes to make but don't want to work on them right now, you can start them in the cloud and review the results later. This lets you batch similar work or delegate tasks during times when you're focused on something else.
 
-### Use local sessions in your terminal or IDE for:
+### Use local sessions in Claude Desktop, your terminal, or your IDE for:
 
-- **Tasks needing frequent course correction:** When you're not sure exactly what the right approach is or expect you'll need to redirect Claude based on what you see, working in your terminal gives you immediate feedback. You can adjust direction as Claude works rather than waiting for a complete result.
+- **Tasks needing frequent course correction:** When you're not sure exactly what the right approach is or expect you'll need to redirect Claude based on what you see, a local session gives you immediate feedback. You can adjust direction as Claude works rather than waiting for a complete result.
 
-- **Exploratory work with unclear requirements:** If you're figuring out how to solve a problem or investigating different approaches, the terminal lets you refine your request as you learn. The back-and-forth helps clarify requirements that weren't obvious at the start.
+- **Exploratory work with unclear requirements:** If you're figuring out how to solve a problem or investigating different approaches, a local session lets you refine your request as you learn. The back-and-forth helps clarify requirements that weren't obvious at the start.
 
-- **Local development with uncommitted changes:** When you're actively developing and have uncommitted work in your local repository, using Claude Code in your terminal keeps everything in one place. You can iterate quickly on changes without needing to commit or push work that isn't ready yet.
+- **Local development with uncommitted changes:** When you're actively developing and have uncommitted work in your local repository, using Claude Code locally keeps everything in one place. You can iterate quickly on changes without needing to commit or push work that isn't ready yet.
 
-- **Tasks requiring immediate feedback:** If you need to see results quickly and want to iterate rapidly, the terminal provides lower latency. You can watch Claude work in real-time and stop or redirect if something goes wrong early in the process.
+- **Tasks requiring immediate feedback:** If you need to see results quickly and want to iterate rapidly, a local session provides lower latency. You can watch Claude work in real-time and stop or redirect if something goes wrong early in the process.
 
 ------------------------------------------------------------------------
 
@@ -133,6 +133,6 @@ Restructure code to improve organization or readability when you can define clea
 
 - Scope tasks with clear boundaries so Claude doesn't need guidance mid-task
 
-- If you're thinking "I'll need to see how this goes first," consider using your terminal instead
+- f you’re thinking “I’ll need to see how this goes first,” consider a local session instead
 
 - Use "Open in CLI" if you realize mid-task that you need to provide guidance

@@ -2,101 +2,9 @@
 title: "Cloud sandbox reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/cloud-sandboxes-reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:37:58Z"
+fetched_at: "2026-11-05T06:36:46Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fcloud-sandboxes-reference)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Overview](managed-agents-overview.md)[Quickstart](managed-agents-quickstart.md)[Build in Console](managed-agents-onboarding.md)[Migration](managed-agents-migration.md)
-
-Define your agent
-
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
-
-Configure agent environment
-
-[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
-
-[Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
-
-Delegate work to your agent
-
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
-
-Manage agent context
-
-[Access GitHub](managed-agents-github.md)[Attach and download files](managed-agents-files.md)
-
-Build persistent memory
-
-Advanced orchestration
-
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
-
-Security
-
-[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
-
-Reference
-
-[Managed Agents reference](managed-agents-reference.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-
-[Console](playground.md)
-
-[Managed Agents](managed-agents-overview.md)Configure agent environment
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 # Cloud sandbox reference
 
@@ -110,6 +18,21 @@ Pre-installed packages, databases, and utilities available in cloud sandboxes.
 
 
 
+[Cloud sandboxes](managed-agents-environments.md)
+
+Feature of  
+[Managed Agents](managed-agents-overview.md)
+
+[Cloud platforms](managed-agents-environments.md#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+
+[Beta header](managed-agents-environments.md#feature-beta-headers)  
+- `managed-agents-2026-04-01`
+  
+
+[Data handling](managed-agents-environments.md#feature-data-handling)  
+Not ZDR eligibleNot HIPAA eligible
+
 Cloud sandboxes run as isolated Linux containers on Anthropic-managed infrastructure. They come pre-installed with a comprehensive set of programming languages, databases, and utilities. The agent can use these immediately without any installation steps.
 
 These specifications apply to `cloud` environments. Self-hosted sandboxes run on your infrastructure with whatever your worker provides.
@@ -120,7 +43,7 @@ These specifications apply to `cloud` environments. Self-hosted sandboxes run on
 |----------|-----------------------------|----------------------|
 | Python   | 3.10, 3.11, 3.12, and 3.13  | pip, uv, poetry      |
 | Node.js  | 20, 21, and 22 (default)    | npm, yarn, pnpm, bun |
-| Go       | 1.24 (default) and 1.25     | go modules           |
+| Go       | 1.24 (default) and 1.25     | Go modules           |
 | Rust     | Stable toolchain (rustup)   | cargo                |
 | Java     | OpenJDK 21                  | maven, gradle        |
 | Ruby     | 3.1, 3.2, and 3.3 (default) | bundler, gem         |
@@ -131,11 +54,11 @@ Common Python data and document libraries, including NumPy, pandas, Matplotlib, 
 
 ## Databases
 
-| Database      | Description                                                                   |
-|---------------|-------------------------------------------------------------------------------|
+| Database | Description |
+|----|----|
 | PostgreSQL 16 | Server and `psql` client are installed. The server is not running by default. |
-| Redis 7       | Server and `redis-cli` are installed. The server is not running by default.   |
-| SQLite        | Available through language bindings, such as Python's `sqlite3` module.       |
+| Redis 7 | Server and `redis-cli` are installed. The server is not running by default. |
+| SQLite | Available through language bindings, such as Python’s `sqlite3` module. |
 
 ## Utilities
 
@@ -178,10 +101,10 @@ The sandbox sets `PLAYWRIGHT_BROWSERS_PATH` to `/opt/pw-browsers`, so the pre-in
 
 ## Sandbox specifications
 
-| Property         | Value                                                                                                                                                                              |
-|------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Operating system | Ubuntu 24.04 LTS                                                                                                                                                                   |
-| Architecture     | x86_64 (amd64)                                                                                                                                                                     |
-| Memory           | Up to 8 GB                                                                                                                                                                         |
-| Disk space       | Up to 10 GB                                                                                                                                                                        |
-| Network          | API-created environments default to [`unrestricted` networking](managed-agents-environments.md#networking); sandboxes provisioned through Claude Studio default to `limited` |
+| Property | Value |
+|----|----|
+| Operating system | Ubuntu 24.04 LTS |
+| Architecture | x86_64 (amd64) |
+| Memory | Up to 8 GB |
+| Disk space | Up to 10 GB |
+| Network | API-created environments default to [`unrestricted` networking](managed-agents-environments.md#networking); sandboxes provisioned through Claude Studio default to `limited` |

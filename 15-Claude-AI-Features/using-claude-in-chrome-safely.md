@@ -2,7 +2,7 @@
 title: "Use Claude in Chrome safely | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902428-using-claude-in-chrome-safely"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:59Z"
+fetched_at: "2026-11-09T06:25:43Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["claude-ai", "enterprise"]
 
 This article explains the risks of using Claude in Chrome and provides best practices for protecting yourself and your data.
 
-Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's available in Claude Cowork and Claude Code, and in beta in the Chrome browser. On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans in the coming weeks. On Enterprise plans, the side panel runs as a Cowork session once your admin has enabled Cowork in the cloud; until then, it uses the classic experience.
+Claude in Chrome is available for all paid plans (Pro, Max, Team, Ultra, and Enterprise). It's available in Claude Cowork and Claude Code, and in beta in the Chrome browser. On Max, Ultra, and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans in the coming weeks. On Enterprise plans, the side panel runs as a Cowork session once your admin has enabled Cowork in the cloud; until then, it uses the classic experience.
 
 Claude in Chrome allows Claude to interact directly with websites on your behalf, which is guarded by our safety classifiers but still carries inherent risks. Understanding these risks helps you use the extension safely.
 
@@ -69,7 +69,7 @@ For your safety, Claude cannot access sensitive, high-risk sites such as:
 
 Claude asks for permission before accessing financial sites.
 
-It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#cbbeb8aeb9b8aaadaebfb28baaa5bfa3b9a4bba2a8e5a8a4a6).
+It’s unlikely that we’ve captured all sites in these categories, so please report any omissions to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#5f2a2c3a2d2c3e393a2b261f3e312b372d302f363c713c3032).
 
 ------------------------------------------------------------------------
 

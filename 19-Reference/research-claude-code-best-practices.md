@@ -2,9 +2,11 @@
 title: "Claude Code Best Practices \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-code-best-practices"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:01Z"
+fetched_at: "2026-10-30T06:27:26Z"
 tags: ["claude-code", "news-research"]
 ---
+
+### Chapter 01: Customize your setup
 
 # **Claude Code: **Best practices for agentic coding
 
@@ -35,7 +37,7 @@ tags: ["claude-code", "news-research"]
 
 Related articles
 
-- Product
+- Features
 
   Feb 23, 2026
 
@@ -80,7 +82,7 @@ There’s no required format for `CLAUDE.md` files. We recommend keeping them co
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 # Bash commands
 - npm run build: Build the project
 - npm run typecheck: Run the typechecker
@@ -158,7 +160,7 @@ For example, here’s a slash command that you could use to automatically pull a
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 Please analyze and fix the GitHub issue: $ARGUMENTS.
 
 Follow these steps:
@@ -423,8 +425,8 @@ For both of these use cases, it can be helpful to use the `--verbose` flag for d
 
 What are your tips and best practices for working with Claude Code? Tag @AnthropicAI so we can see what you're building!
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 
-Written by Boris Cherny. This work draws upon best practices from across the broader Claude Code user community, whose creative approaches and workflows continue to inspire us. Special thanks also to Daisy Hollman, Ashwin Bhat, Cat Wu, Sid Bidasaria, Cal Rueb, Nodir Turakulov, Barry Zhang, Drew Hodun and many other Anthropic engineers whose valuable insights and practical experience with Claude Code helped shape these recommendations.
+Written by Boris Cherny. This work draws upon best practices from across the broader Claude Code user community, whose creative approaches and workflows continue to inspire us. Special thanks also to Daisy Hollman, Ashwin Bhat, Cat Wu, Sid Bidasaria, Cal Rueb, N.T.A., Barry Zhang, Drew Hodun and many other Anthropic engineers whose valuable insights and practical experience with Claude Code helped shape these recommendations.

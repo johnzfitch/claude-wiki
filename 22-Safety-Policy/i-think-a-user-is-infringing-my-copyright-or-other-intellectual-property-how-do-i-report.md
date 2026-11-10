@@ -2,7 +2,7 @@
 title: "I think a user is infringing my copyright or other intellectual property. How do I report it? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10023646-i-think-a-user-is-infringing-my-copyright-or-other-intellectual-property-how-do-i-report-it"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:28:46Z"
+fetched_at: "2026-11-09T06:25:29Z"
 tags: ["safety"]
 ---
 
@@ -37,4 +37,4 @@ Written claims concerning copyright infringement must contain the following info
 
 - A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner’s behalf.
 
-For questions, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#c6a2aba5a786a7a8b2aeb4a9b6afa5e8a5a9ab) or call (415) 326-6303.
+For questions, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#680c050b092809061c001a0718010b460b0705) or call (415) 326-6303.

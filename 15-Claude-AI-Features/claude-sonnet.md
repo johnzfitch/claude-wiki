@@ -85,7 +85,7 @@ Sonnet 5 delivers strong results across the benchmarks that matter most for real
 
 ## Trust & Safety
 
-We’ve conducted extensive testing and evaluation of Sonnet 5, working with external experts to ensure it meets our standards for safety, security, and reliability. The accompanying [system card](../19-Reference/added-a-footnote-in-8-9-2-browsecomp-with-a-reproduction-recipe-via-public.md) covers safety results in depth.
+We’ve conducted extensive testing and evaluation of Sonnet 5, working with external experts to ensure it meets our standards for safety, security, and reliability. The accompanying [system card](claude-sonnet-5-system-card.md) covers safety results in depth.
 
 ## Hear from our customers
 
@@ -191,7 +191,7 @@ Pricing depends on how you want to use Sonnet 5. To learn more, check out our [p
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
+- [Claude Code](product-claude-code.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
 - [@Claude](product-tag.md)
@@ -220,7 +220,7 @@ Pricing depends on how you want to use Sonnet 5. To learn more, check out our [p
 - [Coding](../18-Industry-UseCases/coding.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Enterprise](../18-Industry-UseCases/enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)

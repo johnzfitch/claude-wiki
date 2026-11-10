@@ -2,11 +2,13 @@
 title: "Browse skills, connectors, and plugins in one directory | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:29:05Z"
+fetched_at: "2026-11-09T06:26:05Z"
 tags: ["connectors", "plugins", "skills"]
 ---
 
 # Browse skills, connectors, and plugins in one directory
+
+September 25, 2026
 
 
 Our unified directory brings skills, connectors, and plugins together in one place so you can find and install everything that customizes Claude without switching between separate menus. On Team and Enterprise plans, the directory is also where skills and plugins published to your organization appear.

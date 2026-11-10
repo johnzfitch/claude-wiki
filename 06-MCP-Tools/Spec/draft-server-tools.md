@@ -1,12 +1,15 @@
 ---
 title: "Tools - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/server/tools"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/tools"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:18Z"
+fetched_at: "2026-10-31T06:24:56Z"
+last_modified: "Fri, 30 Oct 2026 20:37:09 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -46,7 +49,7 @@ Copy pageCopy page
 
 The Model Context Protocol (MCP) allows servers to expose tools that can be invoked by language models. Tools enable models to interact with external systems, such as querying databases, calling APIs, or performing computations. Each tool is uniquely identified by a name and includes metadata describing its schema.
 
-For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/draft/basic/index#meta).
+For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta).
 
 
 [​](#user-interaction-model)
@@ -279,7 +282,7 @@ A tool definition includes:
 - `description`: Human-readable description of functionality
 - `icons`: Optional array of icons for display in user interfaces
 - `inputSchema`: JSON Schema defining expected parameters
-  - Follows the [JSON Schema usage guidelines](draft-basic.md#json-schema-usage)
+  - Follows the [JSON Schema usage guidelines](2026-07-28-basic.md#json-schema-usage)
   - Defaults to 2020-12 if no `$schema` field is present
   - **MUST** be a valid JSON Schema object (not `null`)
   - For tools with no parameters, use one of these valid approaches:
@@ -287,7 +290,7 @@ A tool definition includes:
     - `{ "type": "object" }` - accepts any object (including with properties)
   - Properties **MAY** include an [`x-mcp-header`](#x-mcp-header) annotation to expose parameter values as HTTP headers
 - `outputSchema`: Optional JSON Schema defining expected output structure
-  - Follows the [JSON Schema usage guidelines](draft-basic.md#json-schema-usage)
+  - Follows the [JSON Schema usage guidelines](2026-07-28-basic.md#json-schema-usage)
   - Defaults to 2020-12 if no `$schema` field is present
 - `annotations`: Optional properties describing tool behavior
 
@@ -315,14 +318,14 @@ Tool name uniqueness is scoped to a single server. Clients or proxies that aggre
 
 x-mcp-header
 
-The `x-mcp-header` extension property allows servers to designate specific tool parameters to be mirrored into HTTP headers when using the [Streamable HTTP transport](draft-basic-transports-streamable-http.md#custom-headers-from-tool-parameters). This enables network intermediaries (load balancers, proxies, WAFs) to route and process requests based on parameter values without parsing the request body. The `x-mcp-header` property is placed directly within the JSON Schema of the property to be mirrored. Its value specifies the name portion of the resulting `Mcp-Param-{name}` HTTP header. **Constraints on `x-mcp-header` values:**
+The `x-mcp-header` extension property allows servers to designate specific tool parameters to be mirrored into HTTP headers when using the [Streamable HTTP transport](2026-07-28-basic-transports-streamable-http.md#custom-headers-from-tool-parameters). This enables network intermediaries (load balancers, proxies, WAFs) to route and process requests based on parameter values without parsing the request body. The `x-mcp-header` property is placed directly within the JSON Schema of the property to be mirrored. Its value specifies the name portion of the resulting `Mcp-Param-{name}` HTTP header. **Constraints on `x-mcp-header` values:**
 
 - **MUST NOT** be empty
 - **MUST** match HTTP field-name token syntax (`1*tchar`, [RFC 9110 Section 5.1](https://datatracker.ietf.org/doc/html/rfc9110#section-5.1))
 - **MUST NOT** contain control characters, including carriage return (CR, `\r`) or line feed (LF, `\n`)
 - **MUST** be case-insensitively unique among all `x-mcp-header` values in the `inputSchema`
 - **MUST** only be applied to parameters with primitive types (integer, string, boolean). Parameters with type `number` are not permitted. Integer values **MUST** be within the safe range for integers represented using IEEE754 double-precision floating point numbers (−2⁵³+1 to 2⁵³−1)
-- **MUST** only be applied to properties that are *statically reachable* from the schema root, as defined in [Custom Headers from Tool Parameters](draft-basic-transports-streamable-http.md#custom-headers-from-tool-parameters), which also defines how header values are extracted from call arguments
+- **MUST** only be applied to properties that are *statically reachable* from the schema root, as defined in [Custom Headers from Tool Parameters](2026-07-28-basic-transports-streamable-http.md#custom-headers-from-tool-parameters), which also defines how header values are extracted from call arguments
 
 Clients using the Streamable HTTP transport **MUST** reject tool definitions where any `x-mcp-header` value violates these constraints. Rejection means the client **MUST** exclude the invalid tool from the result of `tools/list`. Clients **SHOULD** log a warning when rejecting a tool definition, including the tool name and the reason for rejection. This ensures that a single malformed tool definition does not prevent other valid tools from being used. Clients using other transports (e.g., stdio) **MAY** ignore `x-mcp-header` annotations entirely. **Example tool definition with `x-mcp-header`:**
 
@@ -437,12 +440,12 @@ Embedded Resources
   "resource": {
     "uri": "file:///project/src/main.rs",
     "mimeType": "text/x-rust",
-    "text": "fn main() {\n    println!(\"Hello world!\");\n}",
-    "annotations": {
-      "audience": ["user", "assistant"],
-      "priority": 0.7,
-      "lastModified": "2025-05-03T14:30:00Z"
-    }
+    "text": "fn main() {\n    println!(\"Hello world!\");\n}"
+  },
+  "annotations": {
+    "audience": ["user", "assistant"],
+    "priority": 0.7,
+    "lastModified": "2025-05-03T14:30:00Z"
   }
 }
 ```
@@ -743,6 +746,6 @@ Security Considerations
     - Prompt for user confirmation on sensitive operations
     - Show tool inputs to the user before calling the server, to avoid malicious or accidental data exfiltration
     - Validate tool results before passing to LLM
-    - Follow the [`$ref` resolution requirements](https://modelcontextprotocol.io/specification/draft/basic/index#ref-resolution) when validating tool inputs and outputs against `inputSchema` and `outputSchema`
+    - Follow the [`$ref` resolution requirements](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#ref-resolution) when validating tool inputs and outputs against `inputSchema` and `outputSchema`
     - Implement timeouts for tool calls
     - Log tool usage for audit purposes

@@ -2,18 +2,16 @@
 title: "Claude Enterprise Admin API reference guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15330651-claude-enterprise-admin-api-reference-guide"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:11Z"
+fetched_at: "2026-11-09T06:26:30Z"
 tags: ["api", "authentication", "enterprise"]
 ---
 
 # Claude Enterprise Admin API reference guide
 
-June 24, 2026
-
 
 This guide covers **spend limits** and **spend limit increase requests** for your Claude Enterprise organization using the Claude Enterprise Admin API. Spend limits let you cap each member's usage credit spending over a recurring period, see where each member's limit is inherited from, and review or act on members' requests for a higher limit.
 
-For per-user and time-bucketed usage and cost reporting, see the **[Analytics API reference guide](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics.md)**.
+For per-user and time-bucketed usage and cost reporting, see the **[Analytics API reference guide](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics.md)**. To set project tags (beta) with the Admin API, see **[Track spend by cost code with project tags](../15-Claude-AI-Features/track-spend-by-project-with-tags.md)**.
 
 Claude Enterprise Admin API is currently in public beta and available to organizations on Enterprise plans with usage credits enabled.
 

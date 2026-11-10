@@ -2,11 +2,14 @@
 title: "Glossary - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/glossary"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:40Z"
+fetched_at: "2026-10-31T06:25:10Z"
+last_modified: "Sat, 31 Oct 2026 01:06:35 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [A](#a)
   - [AGENTS.md](#agents-md)
@@ -149,7 +152,12 @@ Notes Claude writes for itself based on your corrections and preferences, stored
 
 Auto mode
 
-A [permission mode](#permission-mode) where a separate classifier model reviews actions instead of you, so Claude Code runs most of them without asking you. Claude Code still asks you before actions your explicit ask rules match. With Claude Code v2.1.283 or later, auto mode is the [built-in starting permission mode](permission-modes.md#which-mode-a-session-starts-in) for interactive terminal and VS Code sessions, and on earlier versions only on Pro, Max, and Team plans. The classifier blocks scope escalation, untrusted infrastructure, and [prompt injection](#prompt-injection). Tool results are stripped from what it sees, so hostile content in a file or web page can’t manipulate it directly. Learn more: [Eliminate prompts with auto mode](permission-modes.md#eliminate-prompts-with-auto-mode)
+A [permission mode](#permission-mode) where a separate classifier model reviews actions instead of you, so Claude Code runs most of them without asking you. Claude Code still asks you before actions your explicit ask rules match. The classifier blocks scope escalation, untrusted infrastructure, and [prompt injection](#prompt-injection). Tool results are stripped from what it sees, so hostile content in a file or web page can’t manipulate it directly.
+
+- **Claude Code v2.1.283 or later**: auto mode is the [built-in starting permission mode](permission-modes.md#which-mode-a-session-starts-in) for interactive terminal and VS Code sessions
+- **Earlier versions**: auto mode is the built-in starting permission mode only on Pro, Max, Ultra, and Team plans
+
+Learn more: [Eliminate prompts with auto mode](permission-modes.md#eliminate-prompts-with-auto-mode)
 
 
 [​](#b)
@@ -222,7 +230,7 @@ A reusable instruction you invoke by typing `/name` in the prompt. Built-in comm
 
 Compaction
 
-Automatic summarization of your conversation when the [context window](#context-window) approaches its limit. Older tool outputs are cleared first, then the conversation is summarized. Project-root CLAUDE.md and auto memory survive compaction and reload from disk; instructions given only in conversation may be lost. Run `/compact` to trigger manually, optionally with a focus like `/compact focus on the API changes`. Learn more: [What survives compaction](context-window.md#what-survives-compaction) · [When context fills up](how-claude-code-works.md#when-context-fills-up)
+Automatic summarization of your conversation when the [context window](#context-window) approaches its limit. Project-root CLAUDE.md and auto memory survive compaction, but instructions given only in conversation may not. Run `/compact` to trigger manually, optionally with a focus like `/compact focus on the API changes`. Learn more: [What survives compaction](context-window.md#what-survives-compaction) · [When context fills up](how-claude-code-works.md#when-context-fills-up) · [When Claude Code compacts a conversation you leave idle](settings-reference.md#idlecompaction)
 
 
 [​](#connector)
@@ -248,7 +256,7 @@ D
 
 Dispatch
 
-A phone-initiated task router that spawns a Claude Code session in the Desktop app when you send a coding task from the Claude mobile app. Your prompt routes to the right tool automatically. Available on Pro and Max plans. Learn more: [Sessions from Dispatch](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch)
+A phone-initiated task router that spawns a Claude Code session in the Desktop app when you send a coding task from the Claude mobile app. Your prompt routes to the right tool automatically. Available on Pro, Max, and Ultra plans. Learn more: [Sessions from Dispatch](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch)
 
 
 [​](#e)
@@ -535,7 +543,7 @@ V
 
 Verification loop
 
-How a session knows the work is actually done instead of accepting a result that looks plausible. You give Claude a check it can run, such as a test suite, a build, or a screenshot comparison, and Claude iterates until the check passes instead of stopping after one attempt. A verification loop is the prerequisite for [`/goal`](goal.md), unattended runs, and [dynamic workflows](workflows.md): without one, the only thing deciding the agent is finished is the agent itself. Learn more: [Give Claude a way to verify its work](best-practices.md#give-claude-a-way-to-verify-its-work)
+How a session knows the work is actually done instead of accepting a result that looks plausible. You give Claude a check it can run, such as a test suite, a build, or a screenshot comparison, and Claude iterates until the check passes instead of stopping after one attempt. A verification loop is the prerequisite for [`/goal`](goal.md), unattended runs, and [dynamic workflows](workflows.md): without one, the only thing deciding the agent is finished is the agent itself. Learn more: [Give Claude a check to run](best-practices.md#give-claude-a-check-to-run)
 
 
 [​](#w)
@@ -558,9 +566,9 @@ Deprecated and renamed terms
 
 These terms appear in older docs, blog posts, and community content. Use the current name when searching this site.
 
-| Old term                                                                | Now called                                    | Notes                                                                         |
-|-------------------------------------------------------------------------|-----------------------------------------------|-------------------------------------------------------------------------------|
-| Headless mode                                                           | [Non-interactive mode](#non-interactive-mode) | Same `-p` flag, same behavior                                                 |
-| Web session; “Claude Code on the web” as the name for any cloud session | [Cloud session](#cloud-session)               | ”Claude Code on the web” now names only the browser surface at claude.ai/code |
-| Custom commands                                                         | [Skills](#skill)                              | `.claude/commands/` files still work                                          |
-| Slash commands                                                          | Commands                                      | ”Slash” dropped from product copy                                             |
+| Old term | Now called | Notes |
+|----|----|----|
+| Headless mode | [Non-interactive mode](#non-interactive-mode) | Same `-p` flag, same behavior |
+| Web session; “Claude Code on the web” as the name for any cloud session | [Cloud session](#cloud-session) | ”Claude Code on the web” now names only the browser surface at claude.ai/code |
+| Custom commands | [Skills](#skill) | `.claude/commands/` files still work |
+| Slash commands | Commands | ”Slash” dropped from product copy |

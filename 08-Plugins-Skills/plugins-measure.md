@@ -2,11 +2,14 @@
 title: "Measure plugin cost and usage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/measure"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-26T06:38:06Z"
+fetched_at: "2026-10-31T06:24:43Z"
+last_modified: "Sat, 31 Oct 2026 02:23:18 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Measure what a plugin costs](#measure-what-a-plugin-costs)
   - [Lower the always-on figure](#lower-the-always-on-figure)
@@ -148,7 +151,7 @@ The `/doctor` checkup lists each user-installed skill, MCP server, and plugin, a
 
 Usage share in `/usage`
 
-On a Pro, Max, Team, or Enterprise plan, the `/usage` breakdown attributes recent usage to skills, subagents, plugins, and MCP servers as a share of the total. See [Using the `/usage` command](../17-Billing-Plans/costs.md#using-the-/usage-command).
+On a Pro, Max, Ultra, Team, or Enterprise plan, the `/usage` breakdown attributes recent usage to skills, subagents, plugins, and MCP servers as a share of the total. See [Using the `/usage` command](../17-Billing-Plans/costs.md#using-the-/usage-command).
 
 
 [​](#measure-across-a-fleet)
@@ -167,13 +170,13 @@ OpenTelemetry events for plugin installs and use
 
 These OpenTelemetry events and attributes answer each plugin question from your backend:
 
-| Question                                          | OpenTelemetry event or attribute                                                                                                                              |
-|:--------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Which plugins get installed, and from where       | [`claude_code.plugin_installed`](../13-Enterprise-Admin/monitoring-usage.md#plugin-installed-event), one per install                                                           |
-| Which plugins are active in how many sessions     | [`claude_code.plugin_loaded`](../13-Enterprise-Admin/monitoring-usage.md#plugin-loaded-event), one per enabled plugin at session start                                         |
-| Which skills activate, and which plugin owns them | [`claude_code.skill_activated`](../13-Enterprise-Admin/monitoring-usage.md#skill-activated-event), with `plugin.name` and `marketplace.name` for plugin skills                 |
-| What a plugin’s hooks report                      | [`claude_code.hook_plugin_metrics`](../13-Enterprise-Admin/monitoring-usage.md#hook-plugin-metrics-event), emitted only for hooks in official-marketplace plugins              |
-| What a plugin costs in API spend                  | `plugin.name` and `marketplace.name` on the [cost counter](../13-Enterprise-Admin/monitoring-usage.md#cost-counter), set when the active skill or subagent belongs to a plugin |
+| Question | OpenTelemetry event or attribute |
+|:---|:---|
+| Which plugins get installed, and from where | [`claude_code.plugin_installed`](../13-Enterprise-Admin/monitoring-usage.md#plugin-installed-event), one per install |
+| Which plugins are active in how many sessions | [`claude_code.plugin_loaded`](../13-Enterprise-Admin/monitoring-usage.md#plugin-loaded-event), one per enabled plugin at session start |
+| Which skills activate, and which plugin owns them | [`claude_code.skill_activated`](../13-Enterprise-Admin/monitoring-usage.md#skill-activated-event), with `plugin.name` and `marketplace.name` for plugin skills |
+| What a plugin’s hooks report | [`claude_code.hook_plugin_metrics`](../13-Enterprise-Admin/monitoring-usage.md#hook-plugin-metrics-event), emitted only for hooks in official-marketplace plugins |
+| What a plugin costs in API spend | `plugin.name` and `marketplace.name` on the [cost counter](../13-Enterprise-Admin/monitoring-usage.md#cost-counter), set when the active skill or subagent belongs to a plugin |
 
 
 [​](#redacted-plugin-names-in-your-backend)
@@ -182,11 +185,11 @@ Redacted plugin names in your backend
 
 Plugins from the official marketplace report their plugin name and marketplace name to your backend verbatim. Every other plugin’s name is redacted or omitted by default, including a plugin from your organization’s own marketplace. The plugin’s [trust tier](plugins-security.md#find-plugins-in-telemetry) decides which. To get real names on some events, set the [`OTEL_LOG_TOOL_DETAILS`](../13-Enterprise-Admin/monitoring-usage.md#common-configuration-variables) environment variable to `1` on the machines that export telemetry, for example in the `env` block of the same [managed settings](../13-Enterprise-Admin/monitoring-usage.md#administrator-configuration) that configure the exporter:
 
-| Event                                 | Default                                                                                            | With `OTEL_LOG_TOOL_DETAILS=1`                      |
-|:--------------------------------------|:---------------------------------------------------------------------------------------------------|:----------------------------------------------------|
-| `plugin_loaded`                       | `plugin.name` and `marketplace.name` are the literal string `third-party`                          | Real names                                          |
-| `plugin_installed`, `skill_activated` | `plugin.name` and `marketplace.name` omitted; on `skill_activated`, `skill.name` is `custom_skill` | Real names                                          |
-| Cost counter                          | `plugin.name` is `third-party`; `marketplace.name` absent                                          | Real `plugin.name`; `marketplace.name` still absent |
+| Event | Default | With `OTEL_LOG_TOOL_DETAILS=1` |
+|:---|:---|:---|
+| `plugin_loaded` | `plugin.name` and `marketplace.name` are the literal string `third-party` | Real names |
+| `plugin_installed`, `skill_activated` | `plugin.name` and `marketplace.name` omitted; on `skill_activated`, `skill.name` is `custom_skill` | Real names |
+| Cost counter | `plugin.name` is `third-party`; `marketplace.name` absent | Real `plugin.name`; `marketplace.name` still absent |
 
 On `plugin_loaded`, `plugin_id_hash` still identifies each plugin by default, so you can count distinct third-party plugins.
 

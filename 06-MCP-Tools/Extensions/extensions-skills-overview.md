@@ -2,11 +2,14 @@
 title: "Skills - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/skills/overview"
 category: "06-MCP-Tools/Extensions"
-fetched_at: "2026-09-19T06:28:59Z"
+fetched_at: "2026-11-08T06:24:48Z"
+last_modified: "Sun, 08 Nov 2026 05:06:18 GMT"
 tags: ["mcp", "mcp-extensions", "skills"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -131,11 +134,11 @@ To discover available skills, clients send a `skills/list` request. This operati
 
 Each entry contains:
 
-| Field         | Meaning                                                                     |
-|---------------|-----------------------------------------------------------------------------|
-| `uri`         | The resource URI of the skill’s `SKILL.md`.                                 |
+| Field | Meaning |
+|----|----|
+| `uri` | The resource URI of the skill’s `SKILL.md`. |
 | `frontmatter` | All YAML frontmatter fields, unchanged, including `name` and `description`. |
-| `resources`   | The complete file manifest, or `"dynamic"` for generated content.           |
+| `resources` | The complete file manifest, or `"dynamic"` for generated content. |
 
 A manifest **MUST** include `SKILL.md` and every supporting file, with each file’s URI, SHA-256 digest, and byte size. Each entry returned by `skills/list` is complete; clients do not need to call `skills/get` for additional metadata. When a response includes `nextCursor`, clients pass it as `params.cursor` to retrieve the next page. List and get results **MUST** include `resultType: "complete"`, `ttlMs`, and `cacheScope`. The cache fields describe freshness and sharing; they do not provide content integrity. Skill identity consists of the originating server’s identity and the skill URI. Names are labels and are not guaranteed to be unique. Hosts **MUST** preserve both server identity and URI in registries, approvals, and caches. Servers **SHOULD** use the `skill://` scheme, but **MAY** use another scheme. Hosts **MUST NOT** identify a resource as a skill solely by its URI scheme.
 
@@ -240,7 +243,9 @@ To list a directory’s direct children, clients send a `resources/directory/rea
         "name": "checklist.md",
         "mimeType": "text/markdown"
       }
-    ]
+    ],
+    "ttlMs": 300000,
+    "cacheScope": "public"
   }
 }
 ```
@@ -300,17 +305,17 @@ Hosts **MUST**:
 - Treat skill content as untrusted input. Host-side code execution and permission grants such as `allowed-tools` require explicit per-skill user approval.
 - Obtain fresh user consent before activating a nested skill. Reading its `SKILL.md` as supporting content does not activate it or its frontmatter.
 
-See the [security requirements](https://github.com/modelcontextprotocol/ext-skills/blob/main/specification/stable/skills.mdx#security-considerations) for the full approval, origin, and cache rules.
+See the [security requirements](https://github.com/modelcontextprotocol/ext-skills/blob/main/specification/beta/skills.mdx#security-considerations) for the full approval, origin, and cache rules.
 
 
 [​](#error-handling)
 
 Error Handling
 
-| Condition                                       | Handling                                      |
-|-------------------------------------------------|-----------------------------------------------|
-| Unknown skill/file, or invalid directory URI    | JSON-RPC `-32602` (Invalid params).           |
-| Internal server failure                         | JSON-RPC `-32603` (Internal error).           |
+| Condition | Handling |
+|----|----|
+| Unknown skill/file, or invalid directory URI | JSON-RPC `-32602` (Invalid params). |
+| Internal server failure | JSON-RPC `-32603` (Internal error). |
 | Digest, size, frontmatter, or manifest mismatch | Host rejects content and refreshes the entry. |
 
 Verification failures are host-side conditions rather than protocol errors. They are handled as described in [Integrity and Verification](#integrity-and-verification).
@@ -327,4 +332,4 @@ See the [client matrix](extensions-client-matrix.md) for Skills support and link
 
 Specification
 
-The full specification is in the [ext-skills repository](https://github.com/modelcontextprotocol/ext-skills/blob/main/specification/stable/skills.mdx). Development is coordinated by the [Skills Over MCP Working Group](../Community/community-working-groups-skills-over-mcp.md).
+The full specification is in the [ext-skills repository](https://github.com/modelcontextprotocol/ext-skills/blob/main/specification/beta/skills.mdx). Development is coordinated by the [Skills Over MCP Working Group](../Community/community-working-groups-skills-over-mcp.md).

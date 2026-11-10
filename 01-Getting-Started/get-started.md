@@ -2,85 +2,9 @@
 title: "Get started with Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/get-started"
 category: "01-Getting-Started"
-fetched_at: "2026-10-20T06:37:51Z"
+fetched_at: "2026-11-05T06:37:12Z"
 tags: ["api", "getting-started"]
 ---
-
-- [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md)
-
-- [Admin](../04-API-Reference/Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../20-Models/release-notes-overview.md)
-
-[API reference](../04-API-Reference/Endpoints/overview.md)
-
-
-
-
-[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-started)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](intro.md)[Get your API key](../04-API-Reference/Other/get-api-key.md)[Quickstart](get-started.md)[Authentication](../04-API-Reference/Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../04-API-Reference/Guides/build-with-claude-overview.md)[Using the Messages API](../04-API-Reference/Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../04-API-Reference/Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../04-API-Reference/Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
-
-[Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../04-API-Reference/Guides/build-with-claude-context-windows.md)[Context editing](../04-API-Reference/Guides/build-with-claude-context-editing.md)[Prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../04-API-Reference/Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../04-API-Reference/Guides/build-with-claude-cache-diagnostics.md)[Token counting](../04-API-Reference/Guides/build-with-claude-token-counting.md)
-
-[Compaction](../04-API-Reference/Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../04-API-Reference/Guides/build-with-claude-files.md)[PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../04-API-Reference/Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../04-API-Reference/Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../04-API-Reference/Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../04-API-Reference/Other/playground.md)
-
-[Messages](intro.md)First steps
 
 # Get started with Claude
 
@@ -94,10 +18,104 @@ Make your first API call to Claude and build a simple web search assistant.
 
 
 
-## Prerequisites
+## Before you begin
 
-- A [Claude Console account](../04-API-Reference/Other/playground.md)
-- An [API key](../04-API-Reference/Other/get-api-key.md)
+1.  1
+
+    ### Create a Claude Console account
+
+    [Sign up](../04-API-Reference/Other/playground.md) for a Claude Console account, or sign in to the one you have.
+
+2.  2
+
+    ### Choose how to authenticate
+
+    Signing in with the CLI is recommended for local development.
+
+    CLIAPI key
+
+1.  3
+
+    ### Install the CLI
+
+    Homebrew (macOS)
+    curl (Linux/WSL)
+    go install
+
+    Homebrew (macOS)
+
+    ``` shiki
+    brew install anthropics/tap/ant
+    ```
+
+    
+
+    curl (Linux/WSL)
+
+    For Linux environments, download the release binary directly.
+
+    ``` shiki
+    VERSION=2.6.0
+    OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+    case $(uname -m) in
+      x86_64) ARCH=amd64 ;;
+      aarch64) ARCH=arm64 ;;
+    esac
+    curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${VERSION}/ant_${VERSION}_${OS}_${ARCH}.tar.gz" \
+      | sudo tar -xz -C /usr/local/bin ant
+    ```
+
+    
+
+    You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
+
+    go install
+
+    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+
+    ``` shiki
+    go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
+    ```
+
+    
+
+    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+
+    ``` shiki
+    export PATH="$PATH:$(go env GOPATH)/bin"
+    ```
+
+    
+
+2.  4
+
+    ### Sign in
+
+    ``` shiki
+    ant auth login
+    ```
+
+    
+
+    Once login is completed, the SDKs and CLI will pick up your credentials automatically.
+
+1.  3
+
+    ### Create an API key
+
+    Create an [API key](../04-API-Reference/Other/playground.md) in the Claude Console.
+
+2.  4
+
+    ### Set the environment variable
+
+    The SDKs and CLI read your key from `ANTHROPIC_API_KEY`:
+
+    ``` shiki
+    export ANTHROPIC_API_KEY="your-api-key-here"
+    ```
+
+    
 
 ## Call the API
 
@@ -121,19 +139,7 @@ Ruby
 
 Python
 
-1.  1
-
-    ### Set your API key
-
-    Export your API key as an environment variable. The SDK reads `ANTHROPIC_API_KEY` automatically.
-
-    ``` shiki
-    export ANTHROPIC_API_KEY="your-api-key-here"
-    ```
-
-    
-
-2.  2
+1.  5
 
     ### Create a project and install the SDK
 
@@ -145,7 +151,7 @@ Python
 
     
 
-3.  3
+2.  6
 
     ### Create your code
 
@@ -176,7 +182,7 @@ Python
             print(block.text)
     ```
 
-4.  4
+3.  7
 
     ### Run your code
 
@@ -200,7 +206,7 @@ Python
 
 ## Next steps
 
-You made your first API call. Next, learn the Messages API patterns you'll use in every Claude integration.
+You made your first API call. Next, learn the Messages API patterns you’ll use in every Claude integration.
 
 
 
@@ -208,7 +214,7 @@ You made your first API call. Next, learn the Messages API patterns you'll use i
 
 Learn multi-turn conversations, system prompts, stop reasons, and other core patterns.
 
-Once you're comfortable with the basics, explore further:
+Once you’re comfortable with the basics, explore further:
 
 
 

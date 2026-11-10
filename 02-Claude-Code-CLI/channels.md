@@ -2,11 +2,14 @@
 title: "Push events into a running session with channels - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/channels"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-20T06:37:47Z"
+fetched_at: "2026-11-06T06:33:07Z"
+last_modified: "Fri, 06 Nov 2026 05:17:59 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Supported channels](#supported-channels)
 - [Quickstart](#quickstart)
@@ -337,12 +340,12 @@ Admins control availability through two [managed settings](settings.md) that use
 
 In all cases, no channel runs until a user opts it in for the session with `--channels`.
 
-| Setting                 | Purpose                                                                                                                                                                                                              | When not configured                                                                                                                                                                    |
-|:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `channelsEnabled`       | Master switch. Must be `true` for any channel to deliver messages. Blocks all channels including the development flag when off. See [Enable channels for your organization](#enable-channels-for-your-organization). | claude.ai Team and Enterprise: channels blocked. Console: channels allowed unless your organization deploys managed settings, in which case channels are blocked until this key is set |
-| `allowedChannelPlugins` | Which plugins can register once channels are enabled. Replaces the Anthropic-maintained list when set.                                                                                                               | Anthropic default list applies                                                                                                                                                         |
+| Setting | Purpose | When not configured |
+|:---|:---|:---|
+| `channelsEnabled` | Master switch. Must be `true` for any channel to deliver messages. Blocks all channels including the development flag when off. See [Enable channels for your organization](#enable-channels-for-your-organization). | claude.ai Team and Enterprise: channels blocked. Console: channels allowed unless your organization deploys managed settings, in which case channels are blocked until this key is set |
+| `allowedChannelPlugins` | Which plugins can register once channels are enabled. Replaces the Anthropic-maintained list when set. | Anthropic default list applies |
 
-Pro and Max users without an organization skip these checks entirely: channels are available and users opt in per session with `--channels`.
+Pro, Max, and Ultra users without an organization skip these checks entirely: channels are available and users opt in per session with `--channels`.
 
 
 [​](#enable-channels-for-your-organization)
@@ -385,12 +388,12 @@ How channels compare
 
 Several Claude Code features connect to systems outside the terminal, each suited to a different kind of work:
 
-| Feature                                           | What it does                                                            | Good for                                                  |
-|---------------------------------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------|
-| [Cloud sessions](claude-code-on-the-web.md) | Run tasks in a fresh cloud sandbox, cloned from GitHub                  | Delegating self-contained async work you check on later   |
-| [Claude in Slack](../14-Connectors/slack.md)                 | Spawns a cloud session from an `@Claude` mention in a channel or thread | Starting tasks directly from team conversation context    |
-| Standard [MCP server](../06-MCP-Tools/General/mcp.md)               | Claude queries it during a task; nothing is pushed to the session       | Giving Claude on-demand access to read or query a system  |
-| [Remote Control](remote-control.md)         | You drive your local session from claude.ai or the Claude mobile app    | Steering an in-progress session while away from your desk |
+| Feature | What it does | Good for |
+|----|----|----|
+| [Cloud sessions](claude-code-on-the-web.md) | Run tasks in a fresh cloud sandbox, cloned from GitHub | Delegating self-contained async work you check on later |
+| [Claude in Slack](../14-Connectors/slack.md) | Spawns a cloud session from an `@Claude` mention in a channel or thread | Starting tasks directly from a team conversation |
+| Standard [MCP server](../06-MCP-Tools/General/mcp.md) | Claude queries it during a task; nothing is pushed to the session | Giving Claude on-demand access to read or query a system |
+| [Remote Control](remote-control.md) | You drive your local session from claude.ai or the Claude mobile app | Steering an in-progress session while away from your desk |
 
 Channels fill the gap in that list by pushing events from non-Claude sources into your already-running local session.
 

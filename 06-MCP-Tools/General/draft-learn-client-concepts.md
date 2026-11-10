@@ -2,11 +2,14 @@
 title: "Understanding MCP clients - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/learn/client-concepts"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-21T06:29:03Z"
+fetched_at: "2026-11-01T06:24:48Z"
+last_modified: "Sat, 31 Oct 2026 18:10:30 GMT"
 tags: ["cli", "mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Core Client Features](#core-client-features)
   - [Elicitation](#elicitation)
@@ -40,11 +43,11 @@ Core Client Features
 
 In addition to making use of context provided by servers, clients may provide several features to servers. These client features allow server authors to build richer interactions.
 
-| Feature         | Explanation                                                                                                                                                                                                                                                   | Example                                                                                                                                |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| **Elicitation** | Elicitation enables servers to request specific information from users during interactions, providing a structured way for servers to gather information on demand.                                                                                           | A server booking travel may ask for the user’s preferences on airplane seats, room type or their contact number to finalize a booking. |
-| **Roots**       | Roots allow clients to specify which directories servers should focus on, communicating intended scope through a coordination mechanism. Roots are [deprecated](../Spec/draft-deprecated.md) as of protocol version `2026-07-28`.                         | A server for booking travel may be given access to a specific directory, from which it can read a user’s calendar.                     |
-| **Sampling**    | Sampling allows servers to request LLM completions through the client, enabling an agentic workflow. This approach puts the client in complete control of user permissions and security measures. Sampling is deprecated as of protocol version `2026-07-28`. | A server for booking travel may send a list of flights to an LLM and request that the LLM pick the best flight for the user.           |
+| Feature | Explanation | Example |
+|----|----|----|
+| **Elicitation** | Elicitation enables servers to request specific information from users during interactions, providing a structured way for servers to gather information on demand. | A server booking travel may ask for the user’s preferences on airplane seats, room type or their contact number to finalize a booking. |
+| **Roots** | Roots allow clients to specify which directories servers should focus on, communicating intended scope through a coordination mechanism. Roots are [deprecated](../Spec/2026-07-28-deprecated.md) as of protocol version `2026-07-28`. | A server for booking travel may be given access to a specific directory, from which it can read a user’s calendar. |
+| **Sampling** | Sampling allows servers to request LLM completions through the client, enabling an agentic workflow. This approach puts the client in complete control of user permissions and security measures. Sampling is deprecated as of protocol version `2026-07-28`. | A server for booking travel may send a list of flights to an LLM and request that the LLM pick the best flight for the user. |
 
 
 [​](#elicitation)
@@ -119,7 +122,7 @@ Elicitation interactions are designed to be clear, contextual, and respectful of
 
 Roots
 
-Roots are [deprecated](../Spec/draft-deprecated.md) as of protocol version `2026-07-28` and scheduled for removal. New implementations should pass directories or files via tool parameters, resource URIs, or server configuration instead.
+Roots are [deprecated](../Spec/2026-07-28-deprecated.md) as of protocol version `2026-07-28` and scheduled for removal. New implementations should pass directories or files via tool parameters, resource URIs, or server configuration instead.
 
 Roots define filesystem boundaries for server operations, allowing clients to specify which directories servers should focus on.
 
@@ -171,7 +174,7 @@ Roots are typically managed automatically by host applications based on user act
 
 Sampling
 
-Sampling is [deprecated](../Spec/draft-deprecated.md) as of protocol version `2026-07-28` and scheduled for removal. New implementations should integrate directly with LLM provider APIs instead.
+Sampling is [deprecated](../Spec/2026-07-28-deprecated.md) as of protocol version `2026-07-28` and scheduled for removal. New implementations should integrate directly with LLM provider APIs instead.
 
 Sampling allows servers to request language model completions through the client, enabling agentic behaviors while maintaining security and user control.
 
@@ -197,7 +200,7 @@ Sampling enables servers to perform AI-dependent tasks without directly integrat
   ],
   modelPreferences: {
     hints: [{
-      name: "claude-sonnet-4-20250514"  // Suggested model
+      name: "claude-sonnet" // Prefer Sonnet-class models
     }],
     costPriority: 0.3,      // Less concerned about API cost
     speedPriority: 0.2,     // Can wait for thorough analysis

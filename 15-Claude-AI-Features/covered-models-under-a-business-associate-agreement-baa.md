@@ -2,14 +2,14 @@
 title: "Covered Models under a Business Associate Agreement (BAA) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15455031-covered-models-under-a-business-associate-agreement-baa"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:11Z"
+fetched_at: "2026-11-09T06:26:31Z"
 tags: ["claude-ai", "rag"]
 ---
 
 # Covered Models under a Business Associate Agreement (BAA)
 
 
-This article is for organizations that use Anthropic's HIPAA-ready services under a Business Associate Agreement (BAA). It explains which configurations are Eligible Services under the BAA and whether you can access Covered Models. **Your organization is responsible for ensuring its use of these services complies with applicable legal obligations.** Learn about **[Business Associate Agreements (BAA) for Commercial Customers](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md)** and **[Covered Models](covered-models.md)**.
+This article is for organizations that use Anthropic's HIPAA-ready services under a Business Associate Agreement (BAA). It explains which configurations are Eligible Services under the BAA and whether you can access Covered Models. **Your organization is responsible for ensuring its use of these services complies with applicable legal obligations.** Learn about **[Business Associate Agreements (BAA) for Commercial Customers](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md)** and **[Covered Models](https://support.claude.com/en/articles/15425695-covered-models)**.
 
 **Important:** You can access Covered Models under Anthropic's BAA in these ways:
 
@@ -21,7 +21,7 @@ This article is for organizations that use Anthropic's HIPAA-ready services unde
 
 ## Covered Models and data retention
 
-Covered Models, like Claude Fable 5, require 30-day data retention on every platform where they're offered, as part of our safety work, and they can't be accessed from organizations or workspaces with zero data retention (ZDR) enabled. Learn about **[data retention practices for Mythos-class models](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models)**.
+Covered Models, like Claude Fable 5, require 30-day data retention on every platform where they're offered, as part of our safety work, and they can't be accessed from organizations or workspaces with zero data retention (ZDR) enabled. Learn about **[data retention practices for Mythos-class models](../20-Models/data-retention-practices-for-mythos-class-models.md)**.
 
 Access to newly released Covered Models rolls out in stages on subscription and seat-based Enterprise plans, so a model may not appear for your organization right away—no configuration change is needed. Some Covered Models are available only to approved partners under limited access programs.
 
@@ -56,7 +56,7 @@ To access Covered Models in configurations that aren't covered under the BAA:
 
 - **On a 1P API organization with zero data retention enabled, you have two options:**
 
-  - Enable standard retention in a dedicated workspace: go to the **Data retention** page (platform.claude.com/settings/privacy) and select the workspace from the dropdown menu at the top of the page. Your other workspaces keep ZDR. See **[Data retention practices for Mythos-class models](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models#h_7008995545)** for instructions.
+  - Enable standard retention in a dedicated workspace: go to the **Data retention** page (platform.claude.com/settings/privacy) and select the workspace from the dropdown menu at the top of the page. Your other workspaces keep ZDR. See **[Data retention practices for Mythos-class models](../20-Models/data-retention-practices-for-mythos-class-models.md#h_7008995545)** for instructions.
 
   - Contact your Anthropic account team to remove ZDR from the organization entirely.
 

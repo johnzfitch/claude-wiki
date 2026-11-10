@@ -2,7 +2,7 @@
 title: "Project Swap: What happens when agents trade for us? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-swap"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:51Z"
+fetched_at: "2026-10-24T06:26:21Z"
 tags: ["agents", "news-research"]
 ---
 
@@ -310,7 +310,7 @@ Zhu, Shenzhe, Jiao Sun, Yi Nian, Tobin South, Alex Pentland, and Jiaxin Pei, “
 
 27[Hadfield and Koh (2026)](https://www.nber.org/books-and-chapters/economics-transformative-ai/economy-ai-agents) and [Shahidi et al. (2026)](https://www.nber.org/system/files/chapters/c15309/c15309.pdf) offer useful overviews of these design questions from an economic perspective. [Chan et al. (2025)](https://arxiv.org/abs/2501.10114) contains a useful framework for technical governance.[](#footnote-ref-27)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

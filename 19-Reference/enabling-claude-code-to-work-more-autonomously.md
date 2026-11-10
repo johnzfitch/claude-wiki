@@ -35,7 +35,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=claude-code)
 
-We’re introducing several upgrades to [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md): a native VS Code extension, version 2.0 of our terminal interface, and checkpoints for autonomous operation. Powered by [Sonnet 4.5](claude-sonnet-4-5.md), Claude Code now handles longer, more complex development tasks in your terminal and IDE.
+We’re introducing several upgrades to [Claude Code](../15-Claude-AI-Features/product-claude-code.md): a native VS Code extension, version 2.0 of our terminal interface, and checkpoints for autonomous operation. Powered by [Sonnet 4.5](claude-sonnet-4-5.md), Claude Code now handles longer, more complex development tasks in your terminal and IDE.
 
 ### Claude Code on more surfaces
 

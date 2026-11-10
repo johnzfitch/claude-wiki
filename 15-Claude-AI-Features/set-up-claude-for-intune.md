@@ -2,7 +2,7 @@
 title: "Set up Claude for Intune | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17203415-set-up-claude-for-intune"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:13Z"
+fetched_at: "2026-11-09T06:26:12Z"
 tags: ["claude-ai"]
 ---
 

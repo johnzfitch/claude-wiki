@@ -2,85 +2,9 @@
 title: "Using the Messages API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/working-with-messages"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-20T06:40:19Z"
+fetched_at: "2026-11-05T06:36:11Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fworking-with-messages)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Building with Claude
 
 # Using the Messages API
 
@@ -94,24 +18,28 @@ Practical patterns and examples for using the Messages API effectively
 
 
 
+Messages API
+
+[Cloud platforms](#availability-feature-support)  
+All platforms
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
+
 Anthropic offers two ways to build with Claude, each suited to different use cases:
 
-|                | Messages API                                | Claude Managed Agents                                                     |
-|----------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **What it is** | Direct model prompting access               | Pre-built, configurable agent harness that runs in managed infrastructure |
-| **Best for**   | Custom agent loops and fine-grained control | Long-running tasks and asynchronous work                                  |
+|  | Messages API | Claude Managed Agents |
+|----|----|----|
+| **What it is** | Direct model prompting access | Pre-built, configurable agent harness that runs in managed infrastructure |
+| **Best for** | Custom agent loops and fine-grained control | Long-running tasks and asynchronous work |
 
 This guide covers common patterns for working with the Messages API, including basic requests, multi-turn conversations, prefill techniques, and vision capabilities. For complete API specifications, see the [Messages API reference](../Endpoints/messages-create.md). For the managed agent harness instead, see the [Claude Managed Agents overview](../Other/managed-agents-overview.md).
-
-
-
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 ## Basic request and response
 
 
 
-The `temperature`, `top_p`, and `top_k` sampling parameters are not supported on Claude 4.7 and later models and Claude Mythos Preview. Setting them to a non-default value returns a 400 error. Omit them from request payloads and use prompting to guide the model's behavior instead. See the [migration guide](../../20-Models/models-opus-5-5-migration-guide.md#opus-46-breaking-changes).
+The `temperature`, `top_p`, and `top_k` sampling parameters are not supported on Claude 4.7 and later models and Claude Mythos Preview, or on any model starting with [API version `2026-10-21`](../Endpoints/migration-2026-10-21.md#sampling-parameters). Setting them to a non-default value returns a 400 error, and starting with `2026-10-21` any value does. Omit them from request payloads and use prompting to guide the model’s behavior instead. See the [breaking changes in the migration guide](../../20-Models/models-opus-5-5-migration-guide.md#opus-46-breaking-changes).
 
 cURL
 
@@ -173,7 +101,9 @@ Refusal responses (`stop_reason: "refusal"`) also include a `stop_details` objec
 
 ## Multiple conversational turns
 
-The Messages API is stateless, which means that you always send the full conversational history to the API. You can use this pattern to build up a conversation over time. Earlier conversational turns don't necessarily need to actually originate from Claude. You can use synthetic `assistant` messages.
+The Messages API is stateless, which means that you always send the full conversational history to the API. You can use this pattern to build up a conversation over time. Earlier conversational turns don’t necessarily need to actually originate from Claude. You can use synthetic `assistant` messages.
+
+With [message threads](build-with-claude-message-threads.md), in beta, the API can keep the conversation, so that each later request sends only the new messages. A thread expires 5 minutes after its last request and is deleted no more than 1 hour after its last use.
 
 cURL
 
@@ -243,9 +173,9 @@ A mid-conversation system message has the same authority as the top-level `syste
 
 See [Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) for the complete guide, including how to combine it with [prompt caching](build-with-claude-prompt-caching.md).
 
-## Prefilling Claude's response
+## Prefilling Claude’s response
 
-You can pre-fill part of Claude's response in the last position of the input messages list. Use this technique to shape Claude's response. The following example uses `"max_tokens": 1` to get a single multiple choice answer from Claude.
+You can prefill part of Claude’s response in the last position of the input messages list. Use this technique to shape Claude’s response. The following example uses `"max_tokens": 1` to get a single multiple choice answer from Claude.
 
 
 
@@ -315,7 +245,7 @@ Output
 
 ## Vision
 
-Claude can read both text and images in requests. You can supply images using the `base64`, `url`, or `file` source types. The `file` source type references an image uploaded through the [Files API](build-with-claude-files.md). Supported media types are `image/jpeg`, `image/png`, `image/gif`, and `image/webp`. See the [vision guide](build-with-claude-vision.md) for more details.
+Claude can read both text and images in requests. You can supply images using the `base64`, `url`, or `file` source types. The `file` source type references an image uploaded through the [Files API](build-with-claude-files.md). Supported media types are `image/jpeg`, `image/png`, `image/gif`, and `image/webp`. See the [Vision](build-with-claude-vision.md) guide for more details.
 
 cURL
 
@@ -343,7 +273,7 @@ Python
 import base64
 import httpx2
 
-# Option 1: Base64-encoded image
+# Option 1: base64-encoded image
 image_url = "https://platform.claude.com/docs/images/vision-example.jpg"
 image_media_type = "image/jpeg"
 image_data = base64.standard_b64encode(httpx2.get(image_url).content).decode("utf-8")
@@ -453,3 +383,27 @@ Get guaranteed, schema-validated JSON output from Claude.
 [Task budgets](build-with-claude-task-budgets.md)
 
 Set an advisory token budget across a full agentic loop with `output_config.task_budget`.
+
+## Availability
+
+The Messages API is available on every model and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+StatusAvailable
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages`
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+Standard API calls for generating Claude responses.
+
+HIPAAEligible

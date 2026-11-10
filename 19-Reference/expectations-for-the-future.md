@@ -2,7 +2,7 @@
 title: "Working at the frontier shapes expectations for the future \\ Anthropic"
 source_url: "https://www.anthropic.com/research/expectations-for-the-future"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:04Z"
+fetched_at: "2026-10-24T06:27:00Z"
 tags: ["news-research"]
 ---
 

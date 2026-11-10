@@ -2,7 +2,7 @@
 title: "Understanding your Team plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607668-understanding-your-team-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:13Z"
+fetched_at: "2026-11-09T06:26:08Z"
 tags: ["billing"]
 ---
 
@@ -21,7 +21,7 @@ This article covers Team plans purchased directly on the web.
 
 Learn more about **[how your Team plan bill is calculated](https://support.claude.com/en/articles/9267289)**.
 
-**Usage credit receipts.** If your organization has enabled usage credits, each purchase of funds is charged separately from your subscription and has its own receipt. This includes purchases made automatically by auto-reload and any usage bundles an owner buys.
+**Usage credit receipts.** If your organization has enabled usage credits, each usage credit purchase is charged separately from your subscription and has its own receipt. This includes purchases made automatically by auto-reload and any usage bundles an owner buys.
 
 Learn more about **[managing usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970)**.
 
@@ -85,4 +85,4 @@ No. Issued invoices can't be changed. An owner can update your billing details i
 
 ### Where can I see our team’s monthly API credits?
 
-In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.

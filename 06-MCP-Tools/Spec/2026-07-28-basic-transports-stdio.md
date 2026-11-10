@@ -2,11 +2,14 @@
 title: "stdio - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/transports/stdio"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:16Z"
+fetched_at: "2026-10-31T06:25:30Z"
+last_modified: "Fri, 30 Oct 2026 21:05:02 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Sending Messages](#sending-messages)
 - [Receiving Messages](#receiving-messages)
@@ -52,7 +55,7 @@ The client reads server messages from `stdout`, one message per line. All messag
 
 1.  *Responses* to client requests, correlated by JSON-RPC `id`.
 2.  *Notifications* that relate to an in-flight request, such as `notifications/progress` and `notifications/message`.
-3.  *Notifications* delivered for an active [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md) request. Clients **MUST** correlate these using the `io.modelcontextprotocol/subscriptionId` field in `_meta`; see [`SubscriptionsListenRequest`](2026-07-28-schema.md#subscriptionslistenrequest).
+3.  *Notifications* delivered for an active [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md) request. Clients **MUST** correlate these using the `io.modelcontextprotocol/subscriptionId` field in `_meta`; see [`SubscriptionsListenRequest`](draft-schema.md#subscriptionslistenrequest).
 
 The server **MUST NOT** write JSON-RPC *requests* to `stdout`. Server-to-client interactions are carried in [`InputRequiredResult`](draft-basic-patterns-mrtr.md#inputrequiredresult) replies; see [Multi Round-Trip Requests](draft-basic-patterns-mrtr.md).
 
@@ -95,10 +98,10 @@ If the server process exits unexpectedly, the client **SHOULD** restart it. Beca
 
 Backward Compatibility
 
-A client that supports both modern (per-request-metadata) MCP versions and a legacy version that requires an `initialize` handshake **SHOULD** probe with [`server/discover`](2026-07-28-schema.md#discoverrequest) before sending any other request, setting its preferred modern version in `_meta`. The probe has three possible outcomes:
+A client that supports both modern (per-request-metadata) MCP versions and a legacy version that requires an `initialize` handshake **SHOULD** probe with [`server/discover`](draft-schema.md#discoverrequest) before sending any other request, setting its preferred modern version in `_meta`. The probe has three possible outcomes:
 
 - The server returns a `DiscoverResult`: the server is modern. Select a mutually supported version from `supportedVersions` and continue.
-- The server returns a recognized modern JSON-RPC error such as [`UnsupportedProtocolVersionError`](2026-07-28-schema.md#unsupportedprotocolversionerror): the server is modern but does not support the requested version. Use one of the versions in its advertised `supported` list. Do **not** fall back to `initialize`.
+- The server returns a recognized modern JSON-RPC error such as [`UnsupportedProtocolVersionError`](draft-schema.md#unsupportedprotocolversionerror): the server is modern but does not support the requested version. Use one of the versions in its advertised `supported` list. Do **not** fall back to `initialize`.
 - The server returns any other error, or does not respond within a reasonable timeout: the server is legacy. Fall back to the `initialize` handshake.
 
 The fallback **MUST NOT** be keyed to one specific error code: legacy servers respond to unknown pre-`initialize` requests with implementation-defined errors (commonly `-32601` or `-32602`) or not at all. A client that only supports modern versions does not need to probe, but probing is still **RECOMMENDED**: some legacy servers do not validate that a request arrives after `initialize` and would process an era-ambiguous method (such as `tools/call`) under legacy semantics. Probing yields a deterministic failure instead. See [Versioning: Backward Compatibility](draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions) for the era model and a compatibility matrix for implementors.

@@ -251,7 +251,7 @@ Send a structured list of input messages with text and/or image content, and the
 
 Count the number of tokens in a Message.
 
-#### [Models](https://platform.claude.com/docs/en/api/http/models)
+#### [Models](models.md)
 
 ##### [List Models](https://platform.claude.com/docs/en/api/http/models/list)
 

@@ -2,7 +2,7 @@
 title: "Claude Fable 5 one-time free credits promotion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15862783"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:13Z"
+fetched_at: "2026-11-06T06:34:32Z"
 tags: ["billing"]
 ---
 

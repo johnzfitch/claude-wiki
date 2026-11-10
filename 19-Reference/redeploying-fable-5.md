@@ -47,7 +47,7 @@ On Friday, June 12, the US government applied export controls to our newest mode
 
 **As of today, June 30, the export controls on Fable 5 and Mythos 5 [have been lifted](https://x.com/howardlutnick/status/2072100729603452965).**
 
-Fable 5 will be available starting tomorrow, Wednesday, July 1, to users globally on the Claude Platform, Claude.ai, Claude Code, and Claude Cowork. For Pro, Max, Team, and select Enterprise plans,^([1](#footnote-1)) Fable 5 will be included for up to 50% of weekly usage limits through July 7, after which it will be available via [usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans). We will re-enable access on AWS, Google Cloud, and Microsoft Foundry as quickly as possible.
+Fable 5 will be available starting tomorrow, Wednesday, July 1, to users globally on the Claude Platform, Claude.ai, Claude Code, and Claude Cowork. For Pro, Max, Team, and select Enterprise plans,^([1](#footnote-1)) Fable 5 will be included for up to 50% of weekly usage limits through July 7, after which it will be available via [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md). We will re-enable access on AWS, Google Cloud, and Microsoft Foundry as quickly as possible.
 
 We have also restored access to Mythos 5 for a set of US organizations, following the US government’s approval on [June 26](https://x.com/AnthropicAI/status/2070665903440871779). We continue to coordinate with the government to [expand](expanding-project-glasswing.md) access to the broader set of domestic and international partners in the Glasswing program.
 

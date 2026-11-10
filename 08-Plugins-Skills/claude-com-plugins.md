@@ -2,8 +2,8 @@
 title: "Plugins | Claude Marketplace | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-23T06:28:35Z"
-tags: ["enterprise", "plugins", "security"]
+fetched_at: "2026-11-09T06:25:41Z"
+tags: ["plugins"]
 ---
 
 # Add new capabilities to Claude
@@ -20,63 +20,73 @@ Claude
 
 Claude Code
 
-342 plugins
+529 plugins
 
 ### [Frontend Design](https://www.claude.com/marketplace/plugins/frontend-design)
 
 Anthropic verified
 
-Craft production-grade frontends with distinctive design. Generates polished code that avoids generic AI aesthetics.
+Frontend design skill for UI/UX implementation
 
 ### [Superpowers](https://www.claude.com/marketplace/plugins/superpowers)
 
-Claude learns brainstorming, subagent development with code review, debugging, TDD, and skill authoring through Superpowers.
+Anthropic verified
+
+Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques
 
 ### [Code Review](https://www.claude.com/marketplace/plugins/code-review)
 
 Anthropic verified
 
-AI code review with specialized agents and confidence-based filtering for pull requests
+Automated code review for pull requests using multiple specialized agents with confidence-based scoring
 
 ### [Context7](https://www.claude.com/marketplace/plugins/context7)
 
-Upstash Context7 MCP server for live docs lookup. Pull version-specific docs and code examples from source repos into LLM context.
+Anthropic verified
+
+Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) — no local Node.js or npx required — to pull version-specific documentation and code examples directly from source repositories into your LLM context. Authenticate with Context7 when prompted.
 
 ### [Code Simplifier](https://www.claude.com/marketplace/plugins/code-simplifier)
 
 Anthropic verified
 
-Code clarity agent: simplifies and refines recently modified code while preserving functionality and consistency.
+Agent that simplifies and refines code for clarity, consistency, and maintainability while preserving functionality
 
 ### [Playwright](https://www.claude.com/marketplace/plugins/playwright)
 
-Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, and automate testing workflows.
+Anthropic verified
+
+Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.
 
 ### [GitHub](https://www.claude.com/marketplace/plugins/github)
 
-Official GitHub MCP server for repo management. Create issues, manage PRs, review code, search repos, and access GitHub's API from Claude Code.
+Anthropic verified
+
+Official GitHub MCP server for repository management. Create issues, manage pull requests, review code, search repositories, and interact with GitHub's full API directly from Claude Code.
 
 ### [CLAUDE.md Management](https://www.claude.com/marketplace/plugins/claude-md-management)
 
 Anthropic verified
 
-Tools to maintain CLAUDE.md - audit quality, capture learnings, and keep project memory current.
+Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.
 
 ### [Feature Dev](https://www.claude.com/marketplace/plugins/feature-dev)
 
 Anthropic verified
 
-Feature development workflow with agents for exploration, design, and review
+Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review
 
 ### [Security Guidance](https://www.claude.com/marketplace/plugins/security-guidance)
 
 Anthropic verified
 
-Security hook warns about command injection, XSS, and unsafe code patterns when editing files
+Security review for Claude-generated code. Pattern-based warnings on edits, LLM-powered diff review on Stop, and an agentic commit reviewer that catches injection, XSS, SSRF, hardcoded secrets, and 25+ other vulnerability classes.
 
 ### [Vercel](https://www.claude.com/marketplace/plugins/vercel)
 
-Vercel integration for Claude Code. Manage deployments, builds, logs, domains, and frontend infrastructure directly.
+Anthropic verified
+
+Build and deploy web apps and agents
 
 ### [TypeScript LSP](https://www.claude.com/marketplace/plugins/typescript-lsp)
 
@@ -88,7 +98,7 @@ TypeScript/JavaScript language server for enhanced code intelligence
 
 Anthropic verified
 
-Interactive AI loops for iterative development using the Ralph Wiggum technique: Claude works on tasks repeatedly, seeing prior work until completion.
+Continuous self-referential AI loops for interactive iterative development, implementing the Ralph Wiggum technique. Run Claude in a while-true loop with the same prompt until task completion.
 
 ### [Claude Code Setup](https://www.claude.com/marketplace/plugins/claude-code-setup)
 
@@ -100,7 +110,7 @@ Analyze codebases and recommend tailored Claude Code automations such as hooks, 
 
 Anthropic verified
 
-Commands for git commit workflows including commit, push, and PR creation
+Streamline your git workflow with simple commands for committing, pushing, and creating pull requests
 
 ### [Figma](https://www.claude.com/marketplace/plugins/figma)
 
@@ -108,13 +118,15 @@ Figma integration: access design files, extract components, read tokens, transla
 
 ### [Supabase](https://www.claude.com/marketplace/plugins/supabase)
 
-Supabase MCP: Database ops, auth, storage, real-time. Manage projects, run SQL, interact with your backend.
+Anthropic verified
+
+Official Supabase plugin for Claude Code with bundled Supabase skills and MCP access for project management, database work, auth, storage, and Postgres best practices.
 
 ### [PR Review Toolkit](https://www.claude.com/marketplace/plugins/pr-review-toolkit)
 
 Anthropic verified
 
-PR review agents for comments, tests, errors, types, quality, and simplification
+Comprehensive PR review agents specializing in comments, tests, error handling, type design, code quality, and code simplification
 
 ### [Pyright LSP](https://www.claude.com/marketplace/plugins/pyright-lsp)
 
@@ -126,253 +138,28 @@ Python language server (Pyright) for type checking and code intelligence
 
 Control and inspect a live Chrome browser from your coding agent. Record performance traces, analyze network requests...
 
-### [telegram](https://www.claude.com/marketplace/plugins/telegram)
+### [Telegram](https://www.claude.com/marketplace/plugins/telegram)
 
-Telegram messaging bridge with built-in access control. Manage pairing, allowlists, and policy via /telegram:access.
+Anthropic verified
 
-### [Atlassian](https://www.claude.com/marketplace/plugins/atlassian)
+Telegram channel for Claude Code — messaging bridge with built-in access control. Manage pairing, allowlists, and policy via /telegram:access.
 
-Connect to Jira & Confluence. Search/create issues, access docs, manage sprints, integrate development workflows.
+### [Atlassian MCP](https://www.claude.com/marketplace/plugins/atlassian)
+
+Anthropic verified
+
+Connect to Atlassian products including Jira and Confluence. Search and create issues, access documentation, manage sprints, and integrate your development workflow with Atlassian's collaboration tools.
 
 ### [Slack](https://www.claude.com/marketplace/plugins/slack)
 
 Anthropic verified
 
-Official Slack MCP server for interactive and collaborative workflows. Surface insights, draft messages, and engage teams directly within Slack from Claude Cowork.
+Slack AI tools for users and developers: interact with your workspace via the Slack MCP server and use skills to develop Slack apps.
 
 ### [Serena](https://www.claude.com/marketplace/plugins/serena)
 
-Semantic code analysis MCP server for intelligent code understanding, refactoring, and navigation via language server protocol.
+Anthropic verified
+
+Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.
 
 View more
-
-[](https://www.claude.com/)
-
-© 2026 Anthropic PBC
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-
-## Industries
-
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-## Company
-
-- [Anthropic](https://www.anthropic.com/)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [Anthropic news](../19-Reference/news.md)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Transparency](https://anthropic.com/transparency)
-
-## Terms and policies
-
-- Privacy choices
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
-- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
-- [Usage Policy](https://www.anthropic.com/legal/aup)
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-
-## Industries
-
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

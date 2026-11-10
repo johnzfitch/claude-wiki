@@ -2,7 +2,7 @@
 title: "Using Claude to reduce the attack surface of code \\ Anthropic"
 source_url: "https://www.anthropic.com/research/attack-surface-reduction"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:40Z"
+fetched_at: "2026-10-24T06:26:32Z"
 tags: ["news-research"]
 ---
 
@@ -15,6 +15,25 @@ tags: ["news-research"]
 - Team
 
   [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+  - [Beneficial Deployments](https://www.anthropic.com/search?topic=beneficial-deployments)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Oct 22, 2026
+
+  [LLMs are making formal software verification feasible at a much larger scale](formal-verification.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 *Chris Rohlf*
 

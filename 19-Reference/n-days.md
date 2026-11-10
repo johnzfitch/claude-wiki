@@ -2,7 +2,7 @@
 title: "Measuring LLMs' impact on N-day exploits \\ Anthropic"
 source_url: "https://www.anthropic.com/research/n-days"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:49Z"
+fetched_at: "2026-10-24T06:26:20Z"
 tags: ["news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Moral self-correction in large language models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/the-capacity-for-moral-self-correction-in-large-language-models"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:46Z"
+fetched_at: "2026-10-24T06:27:02Z"
 tags: ["news-research"]
 ---
 

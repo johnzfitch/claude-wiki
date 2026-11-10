@@ -2,9 +2,11 @@
 title: "Scaling Managed Agents with stable interfaces \\ Anthropic"
 source_url: "https://www.anthropic.com/research/managed-agents"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:06Z"
+fetched_at: "2026-10-31T06:25:54Z"
 tags: ["agents", "news-research"]
 ---
+
+### Chapter 01: Don’t adopt a pet
 
 # **Scaling Managed Agents: **Decoupling the brain from the hands
 
@@ -106,8 +108,8 @@ Managed Agents is a meta-harness in the same spirit, unopinionated about the *sp
 
 Meta-harness design means being opinionated about the interfaces around Claude: we expect that Claude will need the ability to manipulate state (the session) and perform computation (the sandbox). We also expect that Claude will require the ability to scale to many brains and many hands. We designed the interfaces so that these can be run reliably and securely over long time horizons. But we make no assumptions about the number or location of brains or hands that Claude will need.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 
-Written by Lance Martin, Gabe Cemaj, and Michael Cohen. Thanks to Nodir Turakulov and Jeremy Fox for helpful conversations on these topics. Special thanks to the Agents API team and Jake Eaton for their contributions.
+Written by Lance Martin, Gabe Cemaj, and Michael Cohen. Thanks to N.T.A. and Jeremy Fox for helpful conversations on these topics. Special thanks to the Agents API team and Jake Eaton for their contributions.

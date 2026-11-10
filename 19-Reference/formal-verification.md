@@ -2,7 +2,7 @@
 title: "LLMs are making formal software verification feasible at a much larger scale \\ Anthropic"
 source_url: "https://www.anthropic.com/research/formal-verification"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:23Z"
+fetched_at: "2026-10-24T06:26:35Z"
 tags: ["news-research"]
 ---
 
@@ -22,6 +22,25 @@ tags: ["news-research"]
 - Team
 
   [Frontier Red Team](team-frontier-red-team.md)
+
+- Topics
+
+  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+  - [Coding](https://www.anthropic.com/search?topic=coding)
+  - [Open source](https://www.anthropic.com/search?topic=open-source)
+  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+
+  See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Oct 20, 2026
+
+  [Using Claude to reduce the attack surface of code](attack-surface-reduction.md)
+
+[View more](https://www.anthropic.com/search?topic=cybersecurity)
 
 *Keane Lucas, Aengus Lynch, Luna Tong, Luke Champine, Zygi Straznickas, Dino Distefano, Harshikaa Agrawal  
 Evyatar Ben Asher, Ava Howell, Sami Jawhar, Chris Rohlf, Nickolai Zeldovich  
@@ -59,7 +78,7 @@ To find all the bugs that would’ve been surfaced by a fuzz test, we turned the
 
 We did this for hundreds of projects in Google’s [OSS-Fuzz](https://github.com/google/oss-fuzz) initiative, which provides continuous fuzz testing for qualifying open-source projects. OSS-Fuzz contains thousands of developer-authored entry points that look for broken code properties by crashing (for example, on a failed assertion). OSS-Fuzz automatically instruments C and C++ programs with AddressSanitizer^([4](#footnote-4)) (ASan), causing them to crash whenever memory is accessed improperly (which is a [leading cause of software vulnerabilities](https://www.cisa.gov/news-events/news/cisa-nsa-fbi-and-international-cybersecurity-authorities-publish-guide-case-memory-safe-roadmaps)). Broad-spectrum specifications like memory safety apply to almost all software.
 
-Over the span of a few weeks, **Claude successfully patched the bugs it found and then proved that there are no crashes on any input (up to 64 MB) for 239 entry points across 123 different OSS-Fuzz libraries.** These proofs operate on the compiled RISC-V instructions (i.e., executable binaries), and they comprise about 180 million lines of Rocq, with a typical proof running to about 600,000 lines to provide security guarantees on binaries with a median length of 18,000 RISC-V instructions. These proofs are built by translating the RISC-V assembly code to a mathematical model using Theorem’s RISC-V instruction and Linux process semantics. This means these proofs currently assume that the program runs as a single-threaded static binary with a fixed memory budget on a RISC-V CPU using Linux OS. Expanding the scope of these proofs is well within reach, as it would involve standardizing semantics for more assembly architectures and other operating system processes. See [an expert’s take](https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf) on the proofs Claude wrote.
+Over the span of a few weeks, **Claude successfully patched the bugs it found and then proved that there are no crashes on any input (up to 64 MB) for 239 entry points across 123 different OSS-Fuzz libraries.** These proofs operate on the compiled RISC-V instructions (i.e., executable binaries), and they comprise about 180 million lines of Rocq, with a typical proof running to about 600,000 lines to provide security guarantees on binaries with a median length of 18,000 RISC-V instructions. These proofs are built by translating the RISC-V assembly code to a mathematical model using Theorem’s RISC-V instruction and Linux process semantics. This means these proofs currently assume that the program runs as a single-threaded static binary with a fixed memory budget on a RISC-V CPU using Linux OS. Expanding the scope of these proofs is well within reach, as it would involve standardizing semantics for more assembly architectures and other operating system processes. See [an expert’s take](what-our-oss-fuzz-proofs-prove.md) on the proofs Claude wrote.
 
 While this is an enormous volume of proof code, virtually none of it needs to be manually reviewed. The Rocq proof checker ensures that the spec is correctly satisfied by the proof. As a result, the only artifacts that a developer needs to trust are:
 
@@ -97,7 +116,7 @@ In another experiment, we asked Claude to develop an interpreter for a large sub
 
 We also found issues in several widely used and critical applications via formal verification attempts of simple security properties. In one of them, we discovered a previously unknown logic bug that had been latent for more than a decade. During an effort to verify a widely used PDF reader, we found as many security bugs in one week as are typically reported in a year.
 
-See [the Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf) for more details on some of these efforts.
+See [the Appendix](what-our-oss-fuzz-proofs-prove.md) for more details on some of these efforts.
 
 ## This is just the beginning
 
@@ -105,7 +124,7 @@ One of the key limitations of LLM-assisted formal verification is that the proof
 
 ### Newer models need fewer tokens
 
-We built 36 small verification tasks [from real OSS-Fuzz code](https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf). Opus 5.5 proves half of them with about 40% fewer tokens than Opus 5. We expect this trend to continue as models are trained on long verification tasks.
+We built 36 small verification tasks [from real OSS-Fuzz code](what-our-oss-fuzz-proofs-prove.md). Opus 5.5 proves half of them with about 40% fewer tokens than Opus 5. We expect this trend to continue as models are trained on long verification tasks.
 
 ### Proofs can be reused
 
@@ -137,7 +156,7 @@ The trajectory is clear: formal verification, which was historically practical o
 
 In today’s world—where LLMs automatically scan for and find increasingly more code vulnerabilities—we must use processes that can *guarantee* code security properties. LLM-scaled formal verification is a promising approach toward securing these guarantees at a scope and scale that were previously unattainable. We encourage others to experiment so we can collectively build a world in which robust software has proliferated very widely and software bugs are a well-understood and quickly addressable rarity.
 
-[Read the full appendix.](https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf)
+[Read the full appendix.](what-our-oss-fuzz-proofs-prove.md)
 
 ## Footnotes
 

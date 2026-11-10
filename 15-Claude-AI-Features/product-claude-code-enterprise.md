@@ -1,9 +1,9 @@
 ---
-title: "Claude Code for Enterprise | Claude by Anthropic"
+title: "Claude Code for Enterprise | The AI coding agent for businesses"
 source_url: "https://www.claude.com/product/claude-code/enterprise"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:50Z"
-tags: ["claude-ai", "claude-code", "enterprise", "security"]
+fetched_at: "2026-11-09T06:26:47Z"
+tags: ["agents", "claude-ai", "claude-code", "enterprise", "security"]
 ---
 
 # The enterprise coding agent for every environment
@@ -221,7 +221,7 @@ Claude Code is included with Team plan. Includes self-serve seat management and 
 
 Per person / month. Minimum 2 members.
 
-[Get Team plan](https://claude.ai/upgrade?initialPlanType=team)[Learn more](https://www.claude.com/archive/team)
+[Get Team plan](https://claude.ai/upgrade?initialPlanType=team)[Learn more](../17-Billing-Plans/pricing.md#team-&-enterprise)
 
 [Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
@@ -290,7 +290,7 @@ Enterprise plans include dedicated support, custom deployment guidance, onboardi
 
 ### How do you handle data privacy and training?
 
-We do not train Claude on your Enterprise data. Your code, conversations, and proprietary information remain private and are not used to improve our models.
+By default, we don't train our models on your Enterprise data, including your code, conversations, and proprietary information. The exception is feedback you choose to send us, such as thumbs up/down ratings. Like all Claude services, Enterprise usage is subject to automated safety monitoring to detect misuse.
 
 ### What are the deployment options?
 

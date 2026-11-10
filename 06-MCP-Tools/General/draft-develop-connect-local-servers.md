@@ -2,11 +2,14 @@
 title: "Connect to local MCP servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/develop/connect-local-servers"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-11T06:35:04Z"
+fetched_at: "2026-10-31T06:24:47Z"
+last_modified: "Fri, 30 Oct 2026 20:34:31 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Prerequisites](#prerequisites)
   - [Claude Desktop](#claude-desktop)
@@ -97,6 +100,7 @@ This action creates a new configuration file if one doesn’t exist, or opens yo
 
 - **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+- **Linux**: `~/.config/Claude/claude_desktop_config.json`
 
 3
 
@@ -203,7 +207,7 @@ Server not showing up in Claude / hammer icon missing
 1.  Restart Claude Desktop completely
 2.  Check your `claude_desktop_config.json` file syntax
 3.  Make sure the file paths included in `claude_desktop_config.json` are valid and that they are absolute and not relative
-4.  Look at [logs](#getting-logs-from-claude-for-desktop) to see why the server is not connecting
+4.  Look at [logs](#getting-logs-from-claude-desktop) to see why the server is not connecting
 5.  In your command line, try manually running the server (replacing `username` as you did in `claude_desktop_config.json`) to see if you get any errors:
 
 macOS/Linux
@@ -224,17 +228,24 @@ Claude.app logging related to MCP is written to log files in:
 
 - macOS: `~/Library/Logs/Claude`
 - Windows: `%APPDATA%\Claude\logs`
+- Linux: `~/.config/Claude/logs`
 - `mcp.log` will contain general logging about MCP connections and connection failures.
 - Files named `mcp-server-SERVERNAME.log` will contain the stderr output from the named server. Stdio servers may use stderr for all their logging, so these files are not limited to errors.
 
 You can run the following command to list recent logs and follow along with any new ones (on Windows, it will only show recent logs):
 
-macOS/Linux
+macOS
+
+Linux
 
 Windows
 
 ```python
 tail -n 20 -f ~/Library/Logs/Claude/mcp*.log
+```
+
+```python
+tail -n 20 -f ~/.config/Claude/logs/mcp*.log
 ```
 
 ```python

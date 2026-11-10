@@ -2,11 +2,14 @@
 title: "Use Claude for Excel - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/12650343-using-claude-in-excel"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:57Z"
+fetched_at: "2026-11-09T06:26:17Z"
+last_modified: "Mon, 09 Nov 2026 01:19:30 GMT"
 tags: ["claude-ai"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What you can do](#what-you-can-do)
 - [Get started with Claude for Excel](#get-started-with-claude-for-excel)
@@ -38,6 +41,8 @@ Copy pageCopy page
 An Excel add-in that integrates Claude into your spreadsheet workflow, for Pro, Max, Team, and Enterprise plans.
 
 Copy pageCopy page
+
+After the September and October 2026 Microsoft 365 updates on Windows, some users are missing their chat history and uploaded skills in the Claude add-in. Anthropic is working with Microsoft to solve this issue. In the meantime, see [what you and your IT team can do](https://support.claude.com/docs/office-agents/data-storage#chat-history-and-skills-missing-after-a-microsoft-365-update-on-windows).
 
 Claude for Excel is an add-in that brings Claude into Excel. Ask questions about open workbooks, adjust assumptions while preserving formula relationships, debug errors, and build or populate models, all without leaving Excel.
 
@@ -229,14 +234,14 @@ Your use of Claude for Excel is associated with your existing Claude account and
 
 Models available
 
-Claude for M365 offers a curated subset of the Claude models: the ones that work best for Office tasks, so the list you see in the add-in can be shorter than what you see in Claude.ai. Your organization’s model access settings also apply, and a model appears here only if your role permits it. See [Manage model access for your organization](../13-Enterprise-Admin/manage-model-access-for-your-organization.md) for how those settings interact with each product. If you connect through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway, the available models come from that platform and your admin’s configuration instead of your Claude.ai model access settings. See [Use Claude for M365 with third-party platforms](https://support.claude.com/docs/office-agents/third-party-platforms) for details.
+Claude for M365 offers a curated subset of the Claude models: the ones that work best for Office tasks, so the list you see in the add-in can be shorter than what you see in Claude.ai. Your organization’s model access settings also apply, and a model appears here only if your role permits it. See [Manage model access for your organization](https://support.claude.com/en/articles/15694740-manage-model-access-for-your-organization) for how those settings interact with each product. If you connect through Amazon Bedrock, Google Cloud Vertex AI, Azure AI Foundry, or an LLM gateway, the available models come from that platform and your admin’s configuration instead of your Claude.ai model access settings. See [Use Claude for M365 with third-party platforms](https://support.claude.com/docs/office-agents/third-party-platforms) for details.
 
 
 [​](#data-handling)
 
 Data handling
 
-Inputs and outputs are deleted on the backend within 30 days of receipt or generation, except in cases outlined in [How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data). Data is cached for a number of hours after deletion so users can access context in recently closed workbooks. Chat history is stored locally in your browser using IndexedDB. Conversations are not stored on Anthropic’s servers, are not synced across devices, and can be cleared from Settings at any time. Reinstalling the add-in or switching between Claude add-ins does not remove it. See [Data storage and retention](https://support.claude.com/docs/office-agents/data-storage) for where it sits on disk and how long it is kept. Claude for Excel does not inherit custom data retention settings your organization might have set. Activity is not included in Enterprise audit logs. For Enterprise organizations with the [Compliance API](../04-API-Reference/Other/manage-claude-compliance-api.md) enabled, Claude for Excel sessions are included in the Compliance API. This coverage is in public beta and requires no additional setup: the same Compliance Access Keys apply.
+Inputs and outputs are deleted on the backend within 30 days of receipt or generation, except in cases outlined in [How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data). Data is cached for a number of hours after deletion so users can access context in recently closed workbooks. Chat history is stored locally in your browser using IndexedDB. It is not synced across devices and can be cleared from Settings at any time. Reinstalling the add-in or switching between Claude add-ins does not remove it. See [Data storage and retention](https://support.claude.com/docs/office-agents/data-storage) for where it sits on disk and how long it is kept. When you sign in with a Claude account, the add-in sends your conversations to Anthropic, including the content Claude reads from your workbook and any files you attach. Clearing chat history removes only the copy in your browser. It does not delete the messages or attached files that Anthropic keeps. Claude for Excel does not inherit custom data retention settings your organization might have set. Activity is not included in Enterprise audit logs. For Enterprise organizations with the [Compliance API](../04-API-Reference/Other/manage-claude-compliance-api.md) enabled, Claude for Excel sessions are included in the Compliance API. This coverage requires no additional setup: the same Compliance Access Keys apply.
 
 
 [​](#current-limitations)

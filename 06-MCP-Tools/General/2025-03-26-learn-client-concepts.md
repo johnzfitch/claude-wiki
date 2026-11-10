@@ -2,11 +2,14 @@
 title: "Understanding MCP clients - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-03-26/learn/client-concepts"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-21T06:28:41Z"
+fetched_at: "2026-10-31T06:24:30Z"
+last_modified: "Fri, 30 Oct 2026 23:20:20 GMT"
 tags: ["cli", "mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Core Client Features](#core-client-features)
   - [Roots](#roots)
@@ -36,9 +39,9 @@ Core Client Features
 
 In addition to making use of context provided by servers, clients may provide several features to servers. These client features allow server authors to build richer interactions.
 
-| Feature      | Explanation                                                                                                                                                                                       | Example                                                                                                                      |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| **Roots**    | Roots allow clients to specify which directories servers should focus on, communicating intended scope through a coordination mechanism.                                                          | A server for booking travel may be given access to a specific directory, from which it can read a user’s calendar.           |
+| Feature | Explanation | Example |
+|----|----|----|
+| **Roots** | Roots allow clients to specify which directories servers should focus on, communicating intended scope through a coordination mechanism. | A server for booking travel may be given access to a specific directory, from which it can read a user’s calendar. |
 | **Sampling** | Sampling allows servers to request LLM completions through the client, enabling an agentic workflow. This approach puts the client in complete control of user permissions and security measures. | A server for booking travel may send a list of flights to an LLM and request that the LLM pick the best flight for the user. |
 
 

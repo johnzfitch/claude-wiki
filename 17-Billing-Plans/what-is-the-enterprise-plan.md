@@ -2,7 +2,7 @@
 title: "What is the Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:42Z"
+fetched_at: "2026-11-09T06:26:05Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["billing", "claude-code", "enterprise"]
 September 1, 2026
 
 
-The **[Enterprise plan](pricing-enterprise.md)** is designed for organizations that need advanced security, compliance controls, and scalable AI across their teams. It includes everything in the **[Team plan](what-is-the-team-plan.md)**, plus additional security and compliance features. Enterprise plan pricing works differently than Team plans: the seat fee covers access only, and all usage is billed separately at API rates.
+The **[Enterprise plan](../18-Industry-UseCases/enterprise.md)** is designed for organizations that need advanced security, compliance controls, and scalable AI across their teams. It includes everything in the **[Team plan](what-is-the-team-plan.md)**, plus additional security and compliance features. Enterprise plan pricing works differently than Team plans: the seat fee covers access only, and all usage is billed separately at API rates.
 
 For more information on Enterprise plan pricing, refer to **[our pricing page](pricing-enterprise.md)**.
 
@@ -139,7 +139,7 @@ Some existing usage-based Enterprise organizations currently have two seat types
 
 Your current seat types and pricing will remain in place until your next contract renewal. At renewal, your plan will automatically transition to the single Enterprise seat model described above—all users will move to the all-inclusive **Enterprise seat** **priced** **per user per month**, which includes Claude Code access.
 
-For details on how seat management works on your current plan, see **[Purchase and manage seats on Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md#h_2673e097fb)**.
+For details on how seat management works on your current plan, see **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans#h_2673e097fb)**.
 
 ------------------------------------------------------------------------
 

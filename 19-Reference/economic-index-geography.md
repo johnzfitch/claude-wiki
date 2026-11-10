@@ -2,7 +2,7 @@
 title: "Economic Index: AI's role in the US and global economy \\ Anthropic"
 source_url: "https://www.anthropic.com/research/economic-index-geography"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:03Z"
+fetched_at: "2026-10-24T06:27:00Z"
 tags: ["news-research"]
 ---
 

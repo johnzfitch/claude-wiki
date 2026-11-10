@@ -2,22 +2,20 @@
 title: "Claude Cowork and chat are one Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:14Z"
+fetched_at: "2026-11-09T06:26:08Z"
 tags: ["claude-ai"]
 ---
 
 # Claude Cowork and chat are one Claude
 
-Updated today
-
 
 We’re introducing a new way to use both Claude Cowork and chat that removes the distinction between the two products: in the new experience, these are merged into a single conversation, so you don’t need to decide which option better suits your task before getting started. Ask Claude for what you need, and it can decide which tool to use. Claude can answer a quick question, and it can also take on more complex work, like research, reports, spreadsheets, and presentations, and hand it back as finished files you can edit. With the new Claude experience, you ask for all of it in the same conversation, with no mode to choose. What you could previously only do in Claude Cowork is available from any conversation.
 
-The new Claude experience is rolling out gradually, starting with Pro and Max plans on web, desktop, and mobile. More plans will follow soon, and Enterprise admins will hear from us at least 30 days before anything changes for their organization.
+The new Claude experience is rolling out gradually, starting with Pro, Max, and Ultra plans on web, desktop, and mobile. On Team plans (in beta) and Enterprise plans, it's available where **Chat and Cowork unified** is turned on.
 
 ## Why you might not have it yet
 
-We're rolling this new experience out in stages, so even accounts on the same plan will see the changes at different times. You don't need to do anything to enable the new experience. If you're on a Pro or Max plan and your message box still shows "Chat" and "Cowork" options, you don't have it yet. Until then, keep using chat and Claude Cowork as you do today, where you can do most of what's in this article. Your chats, tasks, projects, and settings come with you when your account moves over. Once your account has the new experience, you can't switch back to separate "Chat" and "Cowork" options.
+We're rolling this new experience out in stages, so even accounts on the same plan will see the changes at different times. You don't need to do anything to enable the new experience. If you're on a Pro, Max, or Ultra plan and your message box still shows "Chat" and "Cowork" options, you don't have it yet. Until then, keep using chat and Claude Cowork as you do today, where you can do most of what's in this article. Your chats, tasks, projects, and settings come with you when your account moves over. Once your account has the new experience, you can't switch back to separate "Chat" and "Cowork" options.
 
 ## What Claude can do
 
@@ -41,7 +39,7 @@ Claude can create documents, spreadsheets with working formulas, and presentatio
 
 ### Create designs, decks, and docs
 
-Claude can build charts, diagrams, and interactive visuals right in the conversation. Learn more in **[Custom visuals in chat and Cowork](https://support.claude.com/en/articles/13979539)**. On paid plans, you can also ask for a design, deck, or doc for work you'll put in front of others. Claude Design makes on-brand visuals and mockups, Claude Slides makes presentations, and Claude Docs makes living documents you write with Claude and your team (Claude Design, Claude Slides, and Claude Docs are in beta.) Edit the result yourself or tell Claude what to change, then share it by link or export it. Learn more in **[What are artifacts and how do I use them?](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md)**
+Claude can build charts, diagrams, and interactive visuals right in the conversation. Learn more in **[Custom visuals in chat and Cowork](custom-visuals-in-chat-and-cowork-claude-help-center.md)**. On paid plans, you can also ask for a design, deck, or doc for work you'll put in front of others. Claude Design makes on-brand visuals and mockups, Claude Slides makes presentations, and Claude Docs makes living documents you write with Claude and your team (Claude Design, Claude Slides, and Claude Docs are in beta.) Edit the result yourself or tell Claude what to change, then share it by link or export it. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
 
 *Try: "Make a one-page visual summary of this launch plan."*
 
@@ -55,9 +53,9 @@ Apps you've connected to Claude (like Google Drive, Gmail, Microsoft 365, or Sla
 
 - **Files and folders:** In Claude Desktop, give Claude access to a folder on your computer so it can read, organize, and create files there.
 
-- **Browsing:** Claude can open sites, read pages, click, and fill in forms, using the browser built into Claude Desktop or your own Chrome browser through Claude in Chrome. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
+- **Browsing:** Claude can open sites, read pages, click, and fill in forms, using the browser built into Claude Desktop or your own Chrome browser through Claude in Chrome. Learn more in **[Use the built-in browser in Claude Cowork](use-the-built-in-browser-in-claude-cowork-claude-help-center.md)**.
 
-- **Computer use:** In beta on Pro and Max plans, Claude can use apps on your computer directly by clicking, typing, and navigating your screen. Learn more in **Let Claude use your computer in Cowork**.
+- **Computer use:** In beta on Pro, Max, and Ultra plans, Claude can use apps on your computer directly by clicking, typing, and navigating your screen. Learn more in **Let Claude use your computer in Cowork**.
 
 Claude reaches your local files, the built-in browser, and computer use only while Claude Desktop is open, and by default it asks before permanently deleting any files.
 
@@ -75,19 +73,19 @@ A task you start at your desk shows up in Claude Mobile too, so you can see how 
 
 ### Make Claude your own
 
-- **Skills:** Teach Claude how you like a task done, and it follows those steps whenever the task comes up. Learn more in **[Use skills in Claude](https://support.claude.com/en/articles/12512180)**.
+- **Skills:** Teach Claude how you like a task done, and it follows those steps whenever the task comes up. Learn more in **[Use skills in Claude](../02-Claude-Code-CLI/use-skills-in-claude-claude-help-center.md)**.
 
-- **Plugins:** Add plugins that bundle skills and connectors for your role. Learn more in **[Use plugins in Claude](use-plugins-in-claude-claude-help-center.md)**.
+- **Plugins:** Add plugins that bundle skills and connectors for your role. Learn more in **[Use plugins in Claude](https://support.claude.com/en/articles/13837440)**.
 
 ### Choose how much Claude checks with you
 
 A permission setting in the message box controls how independently Claude works:
 
-- **Auto (default on Pro, Max, and Team plans):** Claude keeps working without stopping to ask about each step, and automated safety checks run before it takes an action.
+- **Auto (default on Pro, Max, Ultra, and Team plans):** Claude keeps working without stopping to ask about each step, and automated safety checks run before it takes an action.
 
 - **Manual (default on Enterprise plans):** Claude asks before it takes actions, and you choose whether to allow each one.
 
-You can change the setting at any time, and you can stop or redirect Claude while it works. The setting applies to the whole conversation. For work with real consequences, like sending messages or changing important files, stay close and review what Claude does. Learn more in **[Use Claude Cowork safely](use-claude-cowork-safely-claude-help-center.md)**.
+You can change the setting at any time, and you can stop or redirect Claude while it works. The setting applies to the whole conversation. For work with real consequences, like sending messages or changing important files, stay close and review what Claude does. Learn more in **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
 
 ## Pick up where you left off
 
@@ -97,7 +95,7 @@ You can change the setting at any time, and you can stop or redirect Claude whil
 
 - **Projects:** Keep files, instructions, and context together for related work. Projects work in every conversation.
 
-- **Instructions for Claude:** Set preferences that apply to every conversation in **[Settings \> General](https://claude.ai/chats#settings/general)**.
+- **Instructions for Claude:** Set preferences that apply to every conversation in **Settings \> Your Claude** (or **Settings \> Account** in the older Settings layout).
 
 ## What happened to Claude Cowork?
 
@@ -107,7 +105,7 @@ In the new experience, everything Claude Cowork does is available from any conve
 
 - **Cowork tasks:** Together with your chats in **[Recents](https://claude.ai/chats)**.
 
-- **Global instructions:** The Cowork **Global instructions** setting is now part of **Instructions for Claude** in **[Settings \> General](https://claude.ai/chats#settings/general)**. Check that your instructions are what you want.
+- **Global instructions:** The Cowork **Global instructions** setting is now part of **Instructions for Claude** in **Settings \> Your Claude** (or **Settings \> Account** in the older Settings layout). Check that your instructions are what you want.
 
 - **Web search:** There's no web search toggle. Claude searches the web when it helps.
 

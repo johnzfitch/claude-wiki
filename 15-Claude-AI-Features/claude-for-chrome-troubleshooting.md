@@ -2,30 +2,28 @@
 title: "Claude in Chrome troubleshooting | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:59Z"
+fetched_at: "2026-11-09T06:25:43Z"
 tags: ["claude-ai", "claude-code", "desktop"]
 ---
 
 # Claude in Chrome troubleshooting
 
-Updated today
-
 
 This article helps you resolve common issues with Claude in Chrome and explains how to provide feedback.
 
-Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's generally available in Claude Cowork and Claude Code, and in beta in the Chrome browser. On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans in the coming weeks. On Enterprise plans, the side panel runs as a Cowork session once your admin has enabled Cowork in the cloud; until then, it uses the classic experience.
+## Availability
+
+Claude in Chrome is available on paid plans (Pro, Max, Ultra, Team, and Enterprise), in the Chrome side panel, Claude Cowork, and Claude Code. The side panel runs as a Claude Cowork session. On Enterprise plans, this requires an owner to enable Claude in Chrome and Cowork in the cloud; until then, the side panel uses the classic experience.
 
 ## The side panel looks different than it used to
 
-On Max and Team plans, on Pro plans as the rollout reaches you, and on Enterprise plans where an admin has enabled it, the side panel now runs as a Claude Cowork session, so it uses the same interface as Cowork on the web and desktop. Your conversations are saved to your history and can be reopened on your other devices. The Cowork side panel also defaults to "Automatically approve" mode, so Claude works continuously and pauses only when an action needs your approval.
+On Pro, Max, Ultra, and Team plans, and on Enterprise plans where an admin has enabled it, the side panel now runs as a Claude Cowork session, so it uses the same interface as Cowork on the web and desktop. Your conversations are saved to your history and can be reopened on your other devices. The Cowork side panel also defaults to "Automatically approve" mode, so Claude works continuously and pauses only when an action needs your approval.
 
-If you'd rather use the previous side panel, click the three dots in the upper right corner and select "Switch back to classic." For details, see **[Get started with Claude in Chrome](get-started-with-claude-in-chrome-claude-help-center.md)**.
+If you'd rather use the previous side panel, click the three dots in the upper right corner and select "Switch back to classic." For details, see **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173)**.
 
 ## I don't see the Cowork side panel
 
-- If you're on an Enterprise plan, the Cowork side panel requires your admin to enable Cowork in the cloud and Claude in Chrome for your organization. Contact your admin, or see **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128)**.
-
-- If you're on a Pro plan, the Cowork side panel may not have reached your account yet. The rollout is in progress.
+If you're on an Enterprise plan, the Cowork side panel requires your admin to enable Cowork in the cloud and Claude in Chrome for your organization. Contact your admin, or see **[Claude in Chrome admin controls](https://support.claude.com/en/articles/13065128)**.
 
 ## Claude can't see the webpage
 
@@ -45,7 +43,7 @@ If you'd rather use the previous side panel, click the three dots in the upper r
 
 ## Extension won't install or sign in
 
-- Verify you have an active paid plan subscription (Pro, Max, Team, or Enterprise).
+- Verify you have an active paid plan subscription (Pro, Max, Ultra, Team, or Enterprise).
 
 - If you're on a Team or Enterprise plan, confirm with your admin that the extension is enabled for your organization.
 
@@ -93,9 +91,9 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#cbbeb8aeb9b8aaadaebfb28baaa5bfa3b9a4bba2a8e5a8a4a6)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#bbcec8dec9c8dadddecfc2fbdad5cfd3c9d4cbd2d895d8d4d6)** to report any safety issues or unexpected behaviors.
 
-- **[Contact Support](how-to-get-support.md)** for technical issues or account problems.
+- **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
 
 ### What we're learning
 

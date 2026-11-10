@@ -2,57 +2,9 @@
 title: "Increase output consistency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-10-20T06:40:42Z"
+fetched_at: "2026-11-05T06:37:21Z"
 tags: ["api", "prompting"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Ftest-and-evaluate%2Fstrengthen-guardrails%2Fincrease-consistency)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](../About/about-claude-use-case-guides-overview.md)[Ticket routing](../About/about-claude-use-case-guides-ticket-routing.md)[Customer support agent](../About/about-claude-use-case-guides-customer-support-chat.md)[Content moderation](../About/about-claude-use-case-guides-content-moderation.md)[Legal summarization](../About/about-claude-use-case-guides-legal-summarization.md)[Commerce agent](../About/about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](test-and-evaluate-develop-tests.md)[Reducing latency](test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](../About/about-claude-glossary.md)[Additional resources](../About/about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](../About/about-claude-use-case-guides-overview.md)Strengthen guardrails
 
 # Increase output consistency
 
@@ -60,7 +12,7 @@ Reference
 
 
 
-Make Claude's outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.
+Make Claude’s outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.
 
 Copy page
 
@@ -74,11 +26,11 @@ If you need Claude to always output valid JSON that conforms to a specific schem
 
 The techniques below are useful for general output consistency or when you need flexibility beyond strict JSON schemas.
 
-Here's how to make Claude's responses more consistent:
+Here’s how to make Claude’s responses more consistent:
 
-## Specify the desired output format
+## Specify the output format you want
 
-Precisely define your desired output format using JSON, XML, or custom templates so that Claude follows every output formatting element you require.
+Precisely define the output format you want using JSON, XML, or custom templates so that Claude follows every output formatting element you require.
 
 ### Example: Standardizing customer feedback
 
@@ -125,13 +77,13 @@ Assistant
 }
 ```
 
-## Prefill Claude's response
+## Prefill Claude’s response
 
 
 
 Prefilling is not supported on Claude 4.6 and later models and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md). Use [structured outputs](../Guides/build-with-claude-structured-outputs.md) on models that support it, or system prompt instructions, instead.
 
-Prefill the `Assistant` turn with your desired format. This trick bypasses Claude's friendly preamble and enforces your structure.
+Prefill the `Assistant` turn with the format you want. This trick bypasses Claude’s friendly preamble and enforces your structure.
 
 ### Example: Daily sales report
 
@@ -236,7 +188,7 @@ Assistant
 
 ## Constrain with examples
 
-Provide examples of your desired output. This is more effective than abstract instructions.
+Provide examples of the output you want. This is more effective than abstract instructions.
 
 ### Example: Generating consistent market intelligence
 
@@ -331,7 +283,7 @@ Assistant
 
 ## Use retrieval for contextual consistency
 
-For tasks requiring consistent context (for example, chatbots, knowledge bases), use retrieval to ground Claude's responses in a fixed information set.
+For tasks requiring consistent context (for example, chatbots, knowledge bases), use retrieval to ground Claude’s responses in a fixed information set.
 
 ### Example: Enhancing IT support consistency
 
@@ -406,16 +358,16 @@ Once connected, you'll have secure access to all internal resources as if you we
 
 ## Chain prompts for complex tasks
 
-Break down complex tasks into smaller, consistent subtasks. Each subtask gets Claude's full attention, reducing inconsistency errors across scaled workflows.
+Break down complex tasks into smaller, consistent subtasks. Each prompt then covers a single subtask, reducing inconsistency errors across scaled workflows.
 
 ## Keep Claude in character
 
 For role-based applications, maintaining consistent character requires deliberate prompting.
 
-- **Use system prompts to set the role:** Use [system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role) to define Claude's role and personality. This sets a strong foundation for consistent responses.
+- **Use system prompts to set the role:** Use [system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role) to define Claude’s role and personality. This sets a strong foundation for consistent responses.
   
-  When setting up the character, provide detailed information about the personality, background, and any specific traits or quirks. This helps the model better emulate and generalize the character's traits.
-- **Prepare Claude for possible scenarios:** Provide a list of common scenarios and expected responses in your prompts. This "trains" Claude to handle diverse situations without breaking character.
+  When setting up the character, provide detailed information about the personality, background, and any specific traits or quirks. This helps the model better emulate and generalize the character’s traits.
+- **Prepare Claude for possible scenarios:** Provide a list of common scenarios and expected responses in your prompts. This “trains” Claude to handle diverse situations without breaking character.
 
 ### Example: Enterprise chatbot for role prompting
 

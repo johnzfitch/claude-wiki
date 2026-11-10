@@ -2,85 +2,9 @@
 title: "Get started with Agent Skills in the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-20T06:39:03Z"
+fetched_at: "2026-11-05T06:35:27Z"
 tags: ["agents", "api", "skills"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fagent-skills%2Fquickstart)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
-
-[Thinking](../Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](agents-and-tools-tool-use-tool-reference.md)[Manage tool context](agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
-
-[Compaction](../Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](agents-and-tools-agent-skills-overview.md)[Quickstart](agents-and-tools-agent-skills-quickstart.md)[Best practices](agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](agents-and-tools-remote-mcp-servers.md)[MCP connector](agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Skills
 
 # Get started with Agent Skills in the API
 
@@ -94,17 +18,165 @@ Learn how to use Agent Skills to create documents with the Claude API in under 1
 
 
 
-This tutorial shows you how to use Agent Skills to create a PowerPoint presentation. You'll learn how to enable Skills, make a request, and access the generated file.
+This tutorial shows you how to use Agent Skills to create a PowerPoint presentation. You’ll learn how to enable Skills, make a request, and access the generated file.
 
-## Prerequisites
+## Before you begin
 
-- A [Claude API key](../Other/playground.md) from the Claude Console, or a logged-in [ant CLI](../Other/cli-sdks-libraries-cli-authentication.md)
-- A [client SDK](../Other/cli-sdks-libraries-overview.md) for your language, or `curl` and `jq`
-- Basic familiarity with making API requests
+You need a [client SDK](../Other/cli-sdks-libraries-overview.md) for your language, or `curl` and `jq`, and basic familiarity with making API requests.
+
+1.  1
+
+    ### Create a Claude Console account
+
+    [Sign up](../Other/playground.md) for a Claude Console account, or sign in to the one you have.
+
+2.  2
+
+    ### Choose how to authenticate
+
+    Signing in with the CLI is recommended for local development.
+
+    CLIAPI key
+
+1.  3
+
+    ### Install the CLI
+
+    Homebrew (macOS)
+    curl (Linux/WSL)
+    go install
+
+    Homebrew (macOS)
+
+    ``` shiki
+    brew install anthropics/tap/ant
+    ```
+
+    
+
+    curl (Linux/WSL)
+
+    For Linux environments, download the release binary directly.
+
+    ``` shiki
+    VERSION=2.6.0
+    OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+    case $(uname -m) in
+      x86_64) ARCH=amd64 ;;
+      aarch64) ARCH=arm64 ;;
+    esac
+    curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${VERSION}/ant_${VERSION}_${OS}_${ARCH}.tar.gz" \
+      | sudo tar -xz -C /usr/local/bin ant
+    ```
+
+    
+
+    You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
+
+    go install
+
+    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+
+    ``` shiki
+    go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
+    ```
+
+    
+
+    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+
+    ``` shiki
+    export PATH="$PATH:$(go env GOPATH)/bin"
+    ```
+
+    
+
+2.  4
+
+    ### Sign in
+
+    ``` shiki
+    ant auth login
+    ```
+
+    
+
+    Once login is completed, the SDKs and CLI will pick up your credentials automatically.
+
+1.  3
+
+    ### Create an API key
+
+    Create an [API key](../Other/playground.md) in the Claude Console.
+
+2.  4
+
+    ### Set the environment variable
+
+    The SDKs and CLI read your key from `ANTHROPIC_API_KEY`:
+
+    ``` shiki
+    export ANTHROPIC_API_KEY="your-api-key-here"
+    ```
+
+    
+
+To run the CLI examples, install the CLI:
+
+Homebrew (macOS)
+
+curl (Linux/WSL)
+
+go install
+
+Homebrew (macOS)
+
+```python
+brew install anthropics/tap/ant
+```
+
+
+
+curl (Linux/WSL)
+
+For Linux environments, download the release binary directly.
+
+```python
+VERSION=2.6.0
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+case $(uname -m) in
+  x86_64) ARCH=amd64 ;;
+  aarch64) ARCH=arm64 ;;
+esac
+curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${VERSION}/ant_${VERSION}_${OS}_${ARCH}.tar.gz" \
+  | sudo tar -xz -C /usr/local/bin ant
+```
+
+
+
+You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
+
+go install
+
+You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+
+```python
+go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
+```
+
+
+
+The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+
+```python
+export PATH="$PATH:$(go env GOPATH)/bin"
+```
+
+
 
 ## Agent Skills overview
 
-Pre-built Agent Skills extend Claude's capabilities with specialized expertise for tasks such as creating documents, analyzing data, and processing files. Anthropic provides the following pre-built Agent Skills in the API:
+Pre-built Agent Skills extend Claude’s capabilities with specialized expertise for tasks such as creating documents, analyzing data, and processing files. Anthropic provides the following pre-built Agent Skills in the API:
 
 - **PowerPoint (pptx):** Create and edit presentations
 - **Excel (xlsx):** Create and analyze spreadsheets
@@ -117,7 +189,7 @@ To create custom Skills, see the [Agent Skills Cookbook](https://platform.claude
 
 ## Step 1: List available Skills
 
-First, check what Skills are available. Use the Skills API to list all Anthropic-managed Skills. Each language tab is an excerpt from one continuous script, with any imports and client setup at the top:
+First, check what Skills are available. Use the Skills API to list all Anthropic-managed Skills. The example is an excerpt from one continuous script, with any imports and client setup at the top:
 
 cURL
 
@@ -151,7 +223,7 @@ for skill in skills.data:
 
 You see the following Skills: `pptx`, `xlsx`, `docx`, and `pdf`.
 
-This API returns each Skill's metadata: its name and description. Claude loads this metadata at startup to determine which Skills are available. This is the first level of **progressive disclosure**, where Claude discovers Skills without loading their full instructions yet.
+This API returns each Skill’s metadata: its name and description. Claude loads this metadata at startup to determine which Skills are available. This is the first level of **progressive disclosure**, where Claude discovers Skills without loading their full instructions yet.
 
 ## Step 2: Create a presentation
 
@@ -201,7 +273,7 @@ print(f"stop_reason={response.stop_reason}, blocks={len(response.content)}")
 
 The request includes the following parts:
 
-- **`model`:** A [model that supports the code execution tool](agents-and-tools-tool-use-code-execution-tool.md#compatibility)
+- **`model`:** A [model that supports the code execution tool](agents-and-tools-tool-use-code-execution-tool.md#availability-feature-support)
 - **`container.skills`:** Specifies which Skills Claude can use
 - **`type: "anthropic"`:** Indicates this is an Anthropic-managed Skill
 - **`skill_id: "pptx"`:** The PowerPoint Skill identifier
@@ -210,9 +282,9 @@ The request includes the following parts:
 
 
 
-The examples use the `code_execution_20260521` tool version, and the Step 3 code parses the result types that current tool versions return. Skills also work with older [code execution tool](agents-and-tools-tool-use-code-execution-tool.md) versions such as `code_execution_20250825`: any current code execution tool version satisfies the Skills requirement. If you use a different version, use the tool `type` listed on the code execution tool page.
+The examples use the `code_execution_20260521` tool version, and the Step 3 code parses the result types that current tool versions return. Skills also work with other [code execution tool](agents-and-tools-tool-use-code-execution-tool.md) versions such as `code_execution_20250825`: any current code execution tool version satisfies the Skills requirement. If you use a different version, use the tool `type` listed on the code execution tool page.
 
-When you make this request, Claude automatically matches your task to the relevant Skill. Because you asked for a presentation, Claude determines the PowerPoint Skill is relevant and loads its full instructions: the second level of progressive disclosure. Then Claude runs the Skill's code to create your presentation.
+When you make this request, Claude automatically matches your task to the relevant Skill. Because you asked for a presentation, Claude determines the PowerPoint Skill is relevant and loads its full instructions: the second level of progressive disclosure. Then Claude runs the Skill’s code to create your presentation.
 
 ## Step 3: Download the created file
 
@@ -402,7 +474,7 @@ Learn how to write effective Skills that Claude can discover and use successfull
 
 [Using Agent Skills with the API](../Guides/build-with-claude-skills-guide.md)
 
-Learn how to use Agent Skills to extend Claude's capabilities through the API.
+Learn how to use Agent Skills to extend Claude’s capabilities through the API.
 
 
 

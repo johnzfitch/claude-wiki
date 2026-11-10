@@ -2,13 +2,11 @@
 title: "Share and unshare chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10593882-sharing-and-unsharing-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:48Z"
+fetched_at: "2026-11-09T06:25:44Z"
 tags: ["claude-ai"]
 ---
 
 # Share and unshare chats
-
-June 15, 2026
 
 
 Learn how to create shareable links to your chats with Claude. While chats are always private by default, you can easily create snapshots of your conversations to share via direct link. This guide walks you through the process of sharing and unsharing chats.
@@ -33,7 +31,9 @@ When sharing chats that include uploaded files or MCP (Model Context Protocol) i
 
 **MCP tool calls:** When sharing chats that use MCP integrations, the raw data retrieved from MCP tool calls remains hidden in the shared snapshot. Only the final chat output and conversation will be visible to viewers. The underlying tool call data stays private.
 
-This ensures that sensitive information from your files and connected tools is protected, even when you share a chat snapshot.
+This keeps your attached files and raw tool data out of the snapshot.
+
+If Claude used your linked accounts in Personal Finance, the snapshot shows your messages and Claude’s responses, including any figures from your accounts. It can also show a chart or artifact that Claude made, figures included. Learn more in **[Use Personal Finance in Claude](use-personal-finance-with-claude.md)**.
 
 ## Unshare chats
 
@@ -47,7 +47,7 @@ To unshare a chat:
 
 ## Manage shared chats
 
-Users on free, Pro, or Max plans can review a log of shared chats by navigating to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. Find the **Privacy settings** section and click “Manage” next to **Shared chats:**
+Users on Free, Pro, Max, or Ultra plans can review a log of shared chats by navigating to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. Find the **Privacy settings** section and click “Manage” next to **Shared chats:**
 
 
 This will open a **Shared chats** modal listing the title, date shared, and link to each chat, allowing you to easily review and access all your previously-shared content. From here, you also have the option to click “Unshare” next to each listed chat to revoke access to the last snapshot you shared:

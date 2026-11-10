@@ -2,11 +2,14 @@
 title: "Frequently Asked Questions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/faq"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-21T06:28:44Z"
+fetched_at: "2026-10-31T06:24:35Z"
+last_modified: "Fri, 30 Oct 2026 21:26:43 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
 ## On this page
+
+Back to top
 
 - [General](#general)
   - [What is the difference between “Official MCP Registry”, “MCP Registry”, “MCP registry”, “MCP Registry API”, etc?](#what-is-the-difference-between-%E2%80%9Cofficial-mcp-registry%E2%80%9D-%E2%80%9Cmcp-registry%E2%80%9D-%E2%80%9Cmcp-registry%E2%80%9D-%E2%80%9Cmcp-registry-api%E2%80%9D-etc)

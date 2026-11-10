@@ -2,259 +2,11 @@
 title: "Create External Key - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/external_keys/create"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-21T06:29:01Z"
+fetched_at: "2026-11-06T06:33:25Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fexternal_keys%2Fcreate)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-
-Create External Key
-
-
-List External Keys
-
-
-Get External Key
-
-
-Update External Key
-
-
-Delete External Key
-
-
-Validate External Key
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-Webhooks
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Delete User Profile
-
-
-Create Enrollment URL
-
-Action URLs
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](../Endpoints/opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
@@ -267,7 +19,9 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/organizations/external_keys
 
@@ -313,7 +67,7 @@ kms_arn: string
 
 
 
-Full ARN of the AWS KMS key. On Claude Platform on AWS the key must be a single-Region key in your organization's own AWS account; cross-account keys, multi-Region keys, and alias ARNs are rejected.
+Full ARN of the AWS KMS key. On Claude Platform on AWS, alias ARNs are rejected, and your organization's own key must be a single-Region key in your organization's AWS account.
 
 maxLength2048
 
@@ -327,7 +81,7 @@ role_arn: optional string or null⁠Deprecated
 
 
 
-IAM role ARN. Deprecated — Anthropic reaches the KMS key through its own intermediate role (or, on Claude Platform on AWS, with credentials AWS issues for the Workspace); this field is ignored.
+IAM role ARN. Deprecated; this field is ignored.
 
 
 
@@ -399,11 +153,17 @@ geo: optional "us"
 
 Data residency geo. Only `us` is supported.
 
+user_profile_id: optional string or null
+
+
+
+ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+
 ##### Returns
 
 
 
-BetaExternalKey object{ type: "external_key", id, attachment, 5 more }
+BetaExternalKey object{ type: "external_key", id, attachment, 6 more }
 
 
 
@@ -420,13 +180,14 @@ cURL
 ```python
 curl https://api.anthropic.com/v1/organizations/external_keys \
     -H 'Content-Type: application/json' \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY" \
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY" \
     -d '{
           "provider_config": {
             "kms_arn": "arn:aws:kms:us-east-1:111122223333:key/abcd1234-5678-90ab-cdef-000011112222",
             "type": "aws"
-          }
+          },
+          "user_profile_id": "uprof_01SDCCSbTxrXDpWc1phhtcfK"
         }'
 ```
 
@@ -450,7 +211,8 @@ Response 200
     "role_arn": "arn:aws:iam::111122223333:role/anthropic-cmek"
   },
   "type": "external_key",
-  "updated_at": "2024-10-30T23:58:27.427722Z"
+  "updated_at": "2024-10-30T23:58:27.427722Z",
+  "user_profile_id": "uprof_01SDCCSbTxrXDpWc1phhtcfK"
 }
 ```
 
@@ -476,4 +238,5 @@ Response 200
     "role_arn": "arn:aws:iam::111122223333:role/anthropic-cmek"
   },
   "type": "external_key",
-  "updated_at": "2024-10-30T23:58:27.427722Z"
+  "updated_at": "2024-10-30T23:58:27.427722Z",
+  "user_profile_id": "uprof_01SDCCSbTxrXDpWc1phhtcfK"

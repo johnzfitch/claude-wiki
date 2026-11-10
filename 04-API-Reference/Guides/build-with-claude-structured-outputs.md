@@ -2,93 +2,9 @@
 title: "Structured outputs - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-20T06:40:09Z"
+fetched_at: "2026-11-05T06:37:05Z"
 tags: ["api", "sdk"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fstructured-outputs)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Model capabilities
-
-Structured outputs
-
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
-
-Eligible
-
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 # Structured outputs
 
@@ -102,16 +18,30 @@ Get validated JSON results from agent workflows
 
 
 
-Structured outputs constrain Claude's responses to follow a specific schema, ensuring valid, parseable output for downstream processing. Structured outputs provide two complementary features:
+Structured outputs
 
-- **JSON outputs** (`output_config.format`): Get Claude's response in a specific JSON format, for example to extract data from images or text, generate structured reports, or format API responses. This page covers JSON outputs.
+Feature of  
+[Messages API](build-with-claude-working-with-messages.md)
+
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsNot available
+
+[Cloud platforms](#availability-feature-support)  
+All platforms
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleQualifiedHIPAA eligible
+
+Structured outputs constrain Claude’s responses to follow a specific schema, ensuring valid, parseable output for downstream processing. Structured outputs provide two complementary features:
+
+- **JSON outputs** (`output_config.format`): Get Claude’s response in a specific JSON format, for example to extract data from images or text, generate structured reports, or format API responses. This page covers JSON outputs.
 - **Strict tool use** (`strict: true`): Guarantee schema validation on tool names and inputs. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
 
 You can use these features independently or [together in the same request](#using-both-features-together).
 
 ## Why use structured outputs
 
-Without structured outputs, Claude can generate malformed JSON responses or invalid tool inputs that break your applications. Even with careful prompting, you may encounter:
+Without structured outputs, Claude can generate malformed JSON responses or invalid tool inputs that break your applications. Even with careful prompting, you might encounter:
 
 - Parsing errors from invalid JSON syntax
 - Missing required fields
@@ -142,7 +72,7 @@ Structured outputs guarantee schema-compliant responses through constrained deco
 
     ### Read the response
 
-    Claude returns valid JSON that matches your schema in the response's text content block. SDK helpers parse it into your type.
+    Claude returns valid JSON that matches your schema in the response’s text content block. SDK helpers parse it into your type.
 
 ## Usage
 
@@ -201,9 +131,9 @@ print(response.parsed_output)
 
 
 
-Pass a [Pydantic](https://docs.pydantic.dev/) model to `client.messages.parse()`, the recommended method, as `output_format`. The SDK transforms the model's schema, sends it as `output_config.format`, validates the response, and returns the parsed model in `parsed_output`.
+Pass a [Pydantic](https://docs.pydantic.dev/) model to `client.messages.parse()`, the recommended method, as `output_format`. The SDK transforms the model’s schema, sends it as `output_config.format`, validates the response, and returns the parsed model in `parsed_output`.
 
-The example above outputs:
+The previous example outputs:
 
 Output
 
@@ -218,14 +148,14 @@ name='John Smith' email='john@example.com' plan_interest='Enterprise' demo_reque
 Most SDK helpers transform schemas that use unsupported features. The transformation steps:
 
 1.  **Remove unsupported constraints** (for example, `minimum`, `maximum`, `minLength`, `maxLength`)
-2.  **Update descriptions** by adding each unsupported constraint to the field's description (for example, `{minimum: 100}`)
+2.  **Update descriptions** by adding each unsupported constraint to the field’s description (for example, `{minimum: 100}`)
 3.  **Add `additionalProperties: false`** to all objects
-4.  **Filter string formats** to supported list only
+4.  **Filter string formats** to the supported list only
 5.  **Validate responses** against your original schema and all its constraints, if the helper validates responses
 
 Claude receives a simplified schema, but a helper that validates responses still enforces every constraint in your code.
 
-**Example:** A field with `minimum: 100` becomes a plain integer in the sent schema, and the SDK adds `{minimum: 100}` to the field's description. A helper that validates responses still checks the response against `minimum: 100`.
+**Example:** A field with `minimum: 100` becomes a plain integer in the sent schema, and the SDK adds `{minimum: 100}` to the field’s description. A helper that validates responses still checks the response against `minimum: 100`.
 
 ## Using a raw JSON schema
 
@@ -291,7 +221,7 @@ print(contact)
 
 
 
-The example above outputs:
+The previous example outputs:
 
 Output
 
@@ -465,8 +395,8 @@ To enforce JSON Schema compliance on tool inputs with grammar-constrained sampli
 
 JSON outputs and strict tool use solve different problems and work together:
 
-- **JSON outputs** control Claude's response format (what Claude says)
-- **Strict tool use** validates tool parameters (how Claude calls your functions)
+- **JSON outputs** control Claude’s response format (what Claude says).
+- **Strict tool use** validates tool parameters (how Claude calls your functions).
 
 When combined, Claude can call tools with guaranteed-valid parameters AND return structured JSON responses. This is useful for agentic workflows where you need both reliable tool calls and structured final outputs.
 
@@ -493,6 +423,8 @@ Python
 
 
 ```python
+client = anthropic.Anthropic()
+
 response = client.messages.create(
     model="claude-opus-5-5",
     max_tokens=1024,
@@ -544,20 +476,17 @@ print(response)
 
 Structured outputs use constrained sampling with compiled grammar artifacts. This introduces some performance characteristics to be aware of:
 
-- **First request latency:** The first time you use a specific schema, there is additional latency while the grammar compiles
-- **Automatic caching:** Compiled grammars are cached for 24 hours from last use, making subsequent requests much faster
-- **Cache invalidation:** The cache is invalidated if you change:
-  - The JSON schema structure
-  - The set of tools in your request (when using both structured outputs and tool use)
-  - Changing only `name` or `description` fields does not invalidate the cache
+- **First request latency:** The first time you use a specific schema, there is additional latency while the grammar compiles.
+- **Automatic caching:** Compiled grammars are cached for 24 hours from last use, making subsequent requests much faster.
+- **Cache invalidation:** The cache is invalidated if you change the JSON schema structure or, when using both structured outputs and tool use, the set of tools in your request. Changing only `name` or `description` fields does not invalidate the cache.
 
 ### Prompt modification and token costs
 
 When using structured outputs, Claude automatically receives an additional system prompt explaining the expected output format. This means:
 
-- Your input token count is slightly higher
-- The injected prompt costs you tokens like any other system prompt
-- Changing the `output_config.format` parameter will invalidate any [prompt cache](build-with-claude-prompt-caching.md) for that conversation thread
+- Your input token count is slightly higher.
+- The injected prompt costs you tokens like any other system prompt.
+- Changing the `output_config.format` parameter will invalidate any [prompt cache](build-with-claude-prompt-caching.md) for that conversation thread.
 
 ### JSON Schema limitations
 
@@ -566,9 +495,9 @@ Structured outputs support standard JSON Schema with some limitations. Both JSON
 ### Supported features
 
 - All basic types: object, array, string, integer, number, boolean, null
-- `enum` (strings, numbers, bools, or nulls only - no complex types). For a capitalization caveat, see [Invalid outputs](#invalid-outputs).
+- `enum` (strings, numbers, booleans, or nulls only, no complex types). For a capitalization caveat, see [Invalid outputs](#invalid-outputs).
 - `const`
-- `anyOf` and `allOf` (with limitations - `allOf` with `$ref` not supported)
+- `anyOf` and `allOf` (with limitations: `allOf` with `$ref` not supported)
 - `$ref`, `$def`, and `definitions` (external `$ref` not supported)
 - `default` property for all supported types
 - `required` and `additionalProperties` (must be set to `false` for objects)
@@ -585,7 +514,7 @@ Structured outputs support standard JSON Schema with some limitations. Both JSON
 - Array constraints beyond `minItems` of 0 or 1
 - `additionalProperties` set to anything other than `false`
 
-If you use an unsupported feature, you'll receive a 400 error with details.
+If you use an unsupported feature, you’ll receive a 400 error with details.
 
 ### Pattern support (regex)
 
@@ -603,7 +532,7 @@ If you use an unsupported feature, you'll receive a 400 error with details.
 - Word boundaries: `\b`, `\B`
 - Complex `{n,m}` quantifiers with large ranges
 
-Simple regex patterns work well. Complex patterns may result in 400 errors.
+Simple regex patterns work well. Complex patterns might result in 400 errors.
 
 
 
@@ -655,30 +584,30 @@ If property order in the output is important to your application, mark all prope
 
 ### Invalid outputs
 
-While structured outputs guarantee schema compliance in most cases, there are scenarios where the output may not match your schema:
+Although structured outputs guarantee schema compliance in most cases, there are scenarios where the output might not match your schema:
 
 **Refusals** (`stop_reason: "refusal"`)
 
 Claude maintains its safety and helpfulness properties even when using structured outputs. If Claude refuses a request for safety reasons:
 
-- The response has `stop_reason: "refusal"`
-- You'll receive a 200 status code
-- You'll be billed for the tokens generated
-- The output may not match your schema because the refusal message takes precedence over schema constraints
+- The response has `stop_reason: "refusal"`.
+- You’ll receive a 200 status code.
+- You’ll be billed for the tokens generated.
+- The output might not match your schema because the refusal message takes precedence over schema constraints.
 
-A property that asks for the model's thinking or step-by-step reasoning may lead to a `reasoning_extraction` refusal. Ask for a short explanation instead. See [Keep reasoning in thinking blocks](build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
+A property that asks for the model’s thinking or step-by-step reasoning might lead to a `reasoning_extraction` refusal. Ask for a short explanation instead. See [Keep reasoning in thinking blocks](build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 **Token limit reached** (`stop_reason: "max_tokens"`)
 
-If the response is cut off due to reaching the `max_tokens` limit:
+If the response is cut off because it reached the `max_tokens` limit:
 
-- The response has `stop_reason: "max_tokens"`
-- The output may be incomplete and not match your schema
-- Retry with a higher `max_tokens` value to get the complete structured output
+- The response has `stop_reason: "max_tokens"`.
+- The output might be incomplete and not match your schema.
+- Retry with a higher `max_tokens` value to get the complete structured output.
 
 **Enum value casing**
 
-Structured outputs don't guarantee the capitalization of string `enum` and `const` values: Claude may return a value that differs from your schema only in capitalization, typically in the first letter of a word following a space. For example, given this schema:
+Structured outputs don’t guarantee the capitalization of string `enum` and `const` values: Claude might return a value that differs from your schema only in capitalization, typically in the first letter of a word following a space. For example, given this schema:
 
 ```python
 {
@@ -689,77 +618,113 @@ Structured outputs don't guarantee the capitalization of string `enum` and `cons
 
 
 
-The output may contain `"Conversation Topic 3"` (capital "T") even though that exact value isn't in the enum. The response completes normally, with no error and no special `stop_reason`. This applies to both JSON outputs and strict tool use. Compare enum values case-insensitively, and avoid enum values that differ only in capitalization.
+The output might contain `"Conversation Topic 3"` (capital “T”) even though that exact value isn’t in the enum. The response completes normally, with no error and no special `stop_reason`. This applies to both JSON outputs and strict tool use. Compare enum values case-insensitively, and avoid enum values that differ only in capitalization.
 
 ### Schema complexity limits
 
-Structured outputs work by compiling your JSON schemas into a grammar that constrains Claude's output. More complex schemas produce larger grammars that take longer to compile. To protect against excessive compilation times, the API enforces several complexity limits.
+Structured outputs work by compiling your JSON schemas into a grammar that constrains Claude’s output. More complex schemas produce larger grammars that take longer to compile. To protect against excessive compilation times, the API enforces several complexity limits.
 
 #### Explicit limits
 
 The following limits apply to all requests with `output_config.format` or `strict: true`:
 
-| Limit                       | Value | Description                                                                                                                                                                                              |
-|-----------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Strict tools per request    | 20    | Maximum number of tools with `strict: true`. Non-strict tools don't count toward this limit.                                                                                                             |
-| Optional parameters         | 24    | Total optional parameters across all strict tool schemas and JSON output schemas. Each parameter not listed in `required` counts toward this limit.                                                      |
-| Parameters with union types | 16    | Total parameters that use `anyOf` or type arrays (for example, `"type": ["string", "null"]`) across all strict schemas. These are especially expensive because they create exponential compilation cost. |
+| Limit | Value | Description |
+|----|----|----|
+| Strict tools per request | 20 | Maximum number of tools with `strict: true`. Non-strict tools don’t count toward this limit. |
+| Optional parameters | 24 | Total optional parameters across all strict tool schemas and JSON output schemas. Each parameter not listed in `required` counts toward this limit. |
+| Parameters with union types | 16 | Total parameters that use `anyOf` or type arrays (for example, `"type": ["string", "null"]`) across all strict schemas. These are especially expensive because they create exponential compilation cost. |
 
 
 
-These limits apply to the combined total across all strict schemas in a single request. For example, if you have 4 strict tools with 6 optional parameters each, you'll reach the 24-parameter limit even though no single tool seems complex.
+These limits apply to the combined total across all strict schemas in a single request. For example, if you have 4 strict tools with 6 optional parameters each, you’ll reach the 24-parameter limit even though no single tool seems complex.
 
 #### Additional internal limits
 
-Beyond the explicit limits in the preceding table, there are additional internal limits on the compiled grammar size. These limits exist because schema complexity doesn't reduce to a single dimension: features like optional parameters, union types, nested objects, and number of tools interact with each other in ways that can make the compiled grammar disproportionately large.
+Beyond the explicit limits in the preceding table, there are additional internal limits on the compiled grammar size. These limits exist because schema complexity doesn’t reduce to a single dimension: features such as optional parameters, union types, nested objects, and number of tools interact with each other in ways that can make the compiled grammar disproportionately large.
 
-When these limits are exceeded, you'll receive a 400 error with the message "Schema is too complex for compilation." These errors mean the combined complexity of your schemas exceeds what can be efficiently compiled, even if each individual limit in the preceding table is satisfied. As a final stop-gap, the API also enforces a **compilation timeout of 180 seconds**. Schemas that pass all explicit checks but produce very large compiled grammars may hit this timeout.
+When these limits are exceeded, you’ll receive a 400 error with the message “Schema is too complex for compilation.” These errors mean the combined complexity of your schemas exceeds what can be efficiently compiled, even if each individual limit in the preceding table is satisfied. As a final stop-gap, the API also enforces a **compilation timeout of 180 seconds**. Schemas that pass all explicit checks but produce very large compiled grammars might hit this timeout.
 
 #### Tips for reducing schema complexity
 
-If you're hitting complexity limits, try these strategies in order:
+If you’re hitting complexity limits, try these strategies in order:
 
-1.  **Mark only critical tools as strict.** If you have many tools, reserve it for tools where schema violations cause real problems, and rely on Claude's natural adherence for simpler tools.
+1.  **Mark only critical tools as strict.** If you have many tools, reserve strict tool use for those where schema violations cause real problems, and rely on Claude’s natural adherence for simpler tools.
 
-2.  **Reduce optional parameters.** Make parameters `required` where possible. Each optional parameter roughly doubles a portion of the grammar's state space. If a parameter always has a reasonable default, consider making it required and having Claude provide that default explicitly.
+2.  **Reduce optional parameters.** Make parameters `required` where possible. Each optional parameter roughly doubles a portion of the grammar’s state space. If a parameter always has a reasonable default, consider making it required and having Claude provide that default explicitly.
 
 3.  **Simplify nested structures.** Deeply nested objects with optional fields compound the complexity. Flatten structures where possible.
 
-4.  **Split into multiple requests.** If you have many strict tools, consider splitting them across separate requests or sub-agents.
+4.  **Split into multiple requests.** If you have many strict tools, consider splitting them across separate requests or subagents.
 
-For persistent issues with valid schemas, [contact support](../../15-Claude-AI-Features/how-to-get-support.md) with your schema definition.
+For persistent issues with valid schemas, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support) with your schema definition.
 
 ## Migrating from the beta
 
-The `output_format` parameter has moved to `output_config.format`, and beta headers are no longer required. The `output_format` parameter is deprecated and will be removed in the future. To use it anyway, add the `structured-outputs-2025-11-13` beta header. Without it, the API returns a 400 error.
+The `output_format` parameter has moved to `output_config.format`, and beta headers are no longer required. The `output_format` parameter is deprecated. To use it anyway, add the `structured-outputs-2025-11-13` beta header. Without it, the API returns a 400 error.
 
 The Python SDK (v1.0 and later) does not accept `output_format={...}` on `client.beta.messages.create()` or `count_tokens()` and raises a `TypeError`. Use `output_config` instead. See [Using a raw JSON schema](#using-a-raw-json-schema) for the updated API shape.
-
-## Data retention
-
-Prompts and responses are processed with ZDR when using structured outputs. However, the JSON schema itself is temporarily cached for up to 24 hours since last use for optimization purposes. No prompt or response data is retained beyond the API response.
-
-Structured outputs are HIPAA eligible, but **PHI must not be included in JSON schema definitions**. The API compiles JSON schemas into grammars that are cached separately from message content, and these cached schemas do not receive the same PHI protections as prompts and responses. Do not include PHI in schema property names, `enum` values, `const` values, or `pattern` regular expressions. PHI should only appear in message content (prompts and responses), where it is protected under HIPAA safeguards.
-
-For ZDR and HIPAA eligibility across all features, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
 ## Feature compatibility
 
 **Works with:**
 
-- **[Batch processing](build-with-claude-batch-processing.md):** Process structured outputs at scale with 50% discount
+- **[Batch processing](build-with-claude-batch-processing.md):** Process structured outputs at scale with a 50 percent discount
 - **[Token counting](build-with-claude-token-counting.md):** Count tokens without compilation
 - **[Streaming](build-with-claude-streaming.md):** Stream structured outputs like normal responses
 - **[Combined usage](#using-both-features-together):** Use JSON outputs (`output_config.format`) and strict tool use (`strict: true`) together in the same request
 
 **Incompatible with:**
 
-- **[Citations](build-with-claude-citations.md):** Citations require interleaving citation blocks with text, which conflicts with strict JSON schema constraints. Returns 400 error if citations enabled with `output_config.format`.
-- **Message Prefilling:** Incompatible with JSON outputs
+- **[Citations](build-with-claude-citations.md):** Citations require interleaving citation blocks with text, which conflicts with strict JSON schema constraints. The API returns a 400 error if citations are enabled with `output_config.format`. To extract structured data with a citation for each value, see [Get structured data with citations](build-with-claude-citations.md#get-structured-data-with-citations).
+- **Message prefilling:** Prefilling is incompatible with JSON outputs.
 
 
 
-**Grammar scope:** Grammars apply only to Claude's direct output, not to tool use calls, tool results, or thinking tags (when using [thinking](build-with-claude-thinking.md)). Grammar state resets between sections, allowing Claude to think freely while still producing structured output in the final response.
+**Grammar scope:** Grammars apply only to Claude’s direct output, not to tool use calls, tool results, or thinking tags (when using [thinking](build-with-claude-thinking.md)). Grammar state resets between sections, allowing Claude to think freely while still producing structured output in the final response.
+
+## Availability
+
+Structured outputs are available on every model and eligible for HIPAA readiness.
+
+### API support
+
+[Messages API](build-with-claude-working-with-messages.md)
+
+StatusAvailable
+
+Cloud platforms
+
+- All supported platforms
+
+Models
+
+- [All models](../../20-Models/about-claude-models-overview.md)
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+StatusNot available
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages`
+
+Zero data retentionEligible (qualified)
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+Your prompts and Claude’s outputs are not stored. Only the JSON schema is cached, for up to 24 hours since last use. This also covers strict tool use (`strict: true` on tools), which uses the same grammar pipeline. [Learn more](build-with-claude-structured-outputs.md#data-retention)
+
+HIPAAEligible
+
+PHI must not be included in JSON schema definitions; see PHI handling guidelines. [Learn more](../Other/manage-claude-api-and-data-retention.md#phi-handling-guidelines)
+
+Prompts and responses are processed with ZDR when using structured outputs. However, the JSON schema itself is temporarily cached for up to 24 hours since last use for optimization purposes. No prompt or response data is retained beyond the API response.
+
+Structured outputs are HIPAA eligible, but **PHI must not be included in JSON schema definitions**. The API compiles JSON schemas into grammars that are cached separately from message content, and these cached schemas do not receive the same PHI protections as prompts and responses. Do not include PHI in schema property names, `enum` values, `const` values, or `pattern` regular expressions. PHI should only appear in message content (prompts and responses), where it is protected under HIPAA safeguards.
 
 ## Next steps
 
@@ -771,30 +736,14 @@ Have Claude cite its sources when answering questions about provided documents.
 
 [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)
 
-Enforce JSON Schema compliance on Claude's tool inputs with grammar-constrained sampling.
+Enforce JSON Schema compliance on Claude’s tool inputs with grammar-constrained sampling.
 
 
 
 [Tool use with Claude](../Agents-Tools/agents-and-tools-tool-use-overview.md)
 
-Connect Claude to external tools and APIs. Learn where tools execute and how the agentic loop works.
+Connect Claude to external tools and APIs. Learn where tools run and how the agentic loop works.
 
 [Pricing](../../17-Billing-Plans/about-claude-pricing.md)
 
-Learn about Anthropic's pricing structure for models and features.
-
-## Compatibility
-
-Supported models  
-- Fable 5 and 5.1
-- Mythos 5, 5.1, and Preview
-- Opus 4.5, 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.5, 4.6, 5, and 5.5
-- Haiku 4.5 and 5.5
-
-Supported platforms  
-- Claude API
-- Claude Platform on AWS
-- Amazon Bedrock
-- Google Cloud
-- Microsoft Foundry
+Learn about Anthropic’s pricing structure for models and features.

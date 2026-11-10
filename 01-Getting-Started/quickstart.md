@@ -2,11 +2,14 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/quickstart"
 category: "01-Getting-Started"
-fetched_at: "2026-10-08T06:25:00Z"
+fetched_at: "2026-10-31T06:24:22Z"
+last_modified: "Sat, 31 Oct 2026 01:06:48 GMT"
 tags: ["claude-code", "getting-started"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Before you begin](#before-you-begin)
 - [Step 1: Install Claude Code](#step-1-install-claude-code)
@@ -44,12 +47,12 @@ Make sure you have:
 
 - A terminal or command prompt open
 - A code project to work with
-- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/playground.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
+- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Ultra, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/playground.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
 
 These cases are covered on other pages:
 
 - **Never used a terminal before**: start with the [terminal guide](../02-Claude-Code-CLI/terminal-guide.md)
-- **Want Claude Code somewhere other than the terminal**: Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/vs-code.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains.md), in [Slack](../14-Connectors/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) and [GitLab](../02-Claude-Code-CLI/gitlab-ci-cd.md). See [all interfaces](../02-Claude-Code-CLI/code-home.md#use-claude-code-everywhere).
+- **Want Claude Code somewhere other than the terminal**: Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/vs-code.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains.md), in [Slack](../14-Connectors/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) and [GitLab](../02-Claude-Code-CLI/gitlab-ci-cd.md). See [all interfaces](overview.md#use-claude-code-everywhere).
 
 
 [​](#step-1-install-claude-code)
@@ -122,7 +125,7 @@ claude
 
 Replace `/path/to/your/project` with the path to the project you want to work on. Claude Code prompts you to log in on first use. For Claude subscription or Console accounts, follow the prompts to complete authentication in your browser. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. You can log in using any of these account types:
 
-- [Claude Pro, Max, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
+- [Claude Pro, Max, Ultra, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
 - [Claude Console](../04-API-Reference/Other/playground.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
 - [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](../02-Claude-Code-CLI/third-party-integrations.md) (enterprise cloud providers)
 - A self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
@@ -268,13 +271,13 @@ Shell commands
 
 Run these from your terminal to start or resume Claude Code.
 
-| Command             | What it does                                           | Example                             |
-|---------------------|--------------------------------------------------------|-------------------------------------|
-| `claude`            | Start interactive mode                                 | `claude`                            |
-| `claude "task"`     | Start interactive mode with an initial prompt          | `claude "fix the build error"`      |
-| `claude -p "query"` | Run one-off query, then exit                           | `claude -p "explain this function"` |
-| `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
-| `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
+| Command | What it does | Example |
+|----|----|----|
+| `claude` | Start interactive mode | `claude` |
+| `claude "task"` | Start interactive mode with an initial prompt | `claude "fix the build error"` |
+| `claude -p "query"` | Run one-off query, then exit | `claude -p "explain this function"` |
+| `claude -c` | Continue most recent conversation in current directory | `claude -c` |
+| `claude -r` | Resume a previous conversation | `claude -r` |
 
 See the [CLI reference](../02-Claude-Code-CLI/cli-reference.md) for the complete list of shell commands.
 

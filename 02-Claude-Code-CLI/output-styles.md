@@ -2,11 +2,13 @@
 title: "Output styles - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/output-styles"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:40Z"
+fetched_at: "2026-10-28T06:35:11Z"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Built-in output styles](#built-in-output-styles)
   - [Default](#default)
@@ -49,12 +51,12 @@ Built-in output styles
 
 Claude Code starts in the [**Default**](#default) style, its standard instructions for completing software engineering tasks. Each of the four other built-in styles keeps those instructions and adds its own. This table shows what each style changes about a session and when it fits:
 
-| Style                       | What changes                                                                                              | Use it when                                                                                                    |
-|:----------------------------|:----------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------|
-| [Proactive](#proactive)     | Claude starts work right away and makes reasonable assumptions rather than asking about routine decisions | You want Claude to keep working through routine decisions, and you’ll correct course if an assumption is wrong |
-| [Concise](#concise)         | Responses lead with the result and leave out preamble, narration, and recaps                              | Default responses are longer than you want                                                                     |
-| [Explanatory](#explanatory) | Claude adds short `Insight` blocks that explain the choices behind the code it writes                     | You’re getting to know a codebase or want the reasoning along with the change                                  |
-| [Learning](#learning)       | Claude explains its choices and leaves small pieces of code for you to write yourself                     | You want hands-on coding practice while the task still gets done                                               |
+| Style | What changes | Use it when |
+|:---|:---|:---|
+| [Proactive](#proactive) | Claude starts work right away and makes reasonable assumptions rather than asking about routine decisions | You want Claude to keep working through routine decisions, and you’ll correct course if an assumption is wrong |
+| [Concise](#concise) | Responses lead with the result and leave out preamble, narration, and recaps | Default responses are longer than you want |
+| [Explanatory](#explanatory) | Claude adds short `Insight` blocks that explain the choices behind the code it writes | You’re getting to know a codebase or want the reasoning along with the change |
+| [Learning](#learning) | Claude explains its choices and leaves small pieces of code for you to write yourself | You want hands-on coding practice while the task still gets done |
 
 
 [​](#default)
@@ -123,7 +125,7 @@ Pick a style with the command, a menu, or a settings file. The command and both 
 - **`/output-style` command**: run `/output-style <style>` to switch, for example `/output-style concise`. With no argument, the command lists the styles you can pick and marks the current one. The command also works in [non-interactive mode](headless.md) and Agent SDK sessions, and from the mobile app or web via [Remote Control](remote-control.md#limitations), where you can list and select only [built-in styles](#built-in-output-styles). Requires Claude Code v2.1.269 or later.
 - **Terminal menu**: run `/config` and select **Output style** to pick a style from a menu.
 - **VS Code extension**: open the [command menu](../03-IDE-Integrations/vs-code.md#use-the-prompt-box) with `/` and select **Output styles** to pick a style, including your custom styles. Requires Claude Code v2.1.257 or later.
-- **Desktop app**: set the `outputStyle` field in a settings file, for example `.claude/settings.local.json`, the file the terminal menu writes. When you run `/config` there, Claude Code [opens **Settings \> Claude Code**](../16-Mobile-Desktop/desktop.md#what%E2%80%99s-not-available-in-desktop) rather than a menu.
+- **Desktop app**: set the `outputStyle` field in a settings file, for example `.claude/settings.local.json`, the file the terminal menu writes. When you run `/config` there, Claude Code [opens **Settings \> Code** or **Settings \> Claude Code**](../16-Mobile-Desktop/desktop.md#what%E2%80%99s-not-available-in-desktop) rather than a menu.
 
 To set a style without the menu, edit the `outputStyle` field directly in a settings file:
 
@@ -189,12 +191,12 @@ Frontmatter reference
 
 Configure an output style with YAML [frontmatter](glossary.md#frontmatter) between `---` markers at the top of the file. All fields are optional, and field names use lowercase words separated by hyphens. A misspelled field is ignored without an error. If the YAML doesn’t parse, the style still loads under its file name with no fields set; run `claude --debug` to see the parse error.
 
-| Field                      | Required | Description                                                                                                                                                                                                                                                                                |
-|:---------------------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`                     | No       | Name of the output style, shown in the `/config` picker. Default: the file name                                                                                                                                                                                                            |
-| `description`              | No       | Description of the output style, shown in the `/config` picker                                                                                                                                                                                                                             |
-| `keep-coding-instructions` | No       | Set to `true` to keep Claude Code’s section of built-in software engineering instructions, which only the full system prompt includes, alongside your style. See [How output styles work](#how-output-styles-work). Default: `false`                                                       |
-| `force-for-plugin`         | No       | Plugin output styles only. Set to `true` to apply this style automatically whenever the plugin is enabled, without requiring users to select it. Overrides the user’s `outputStyle` setting. If multiple enabled plugins set this, Claude Code uses the first one loaded. Default: `false` |
+| Field | Required | Description |
+|:---|:---|:---|
+| `name` | No | Name of the output style, shown in the `/config` picker. Default: the file name |
+| `description` | No | Description of the output style, shown in the `/config` picker |
+| `keep-coding-instructions` | No | Set to `true` to keep Claude Code’s section of built-in software engineering instructions, which only the full system prompt includes, alongside your style. See [How output styles work](#how-output-styles-work). Default: `false` |
+| `force-for-plugin` | No | Plugin output styles only. Set to `true` to apply this style automatically whenever the plugin is enabled, without requiring users to select it. Overrides the user’s `outputStyle` setting. If multiple enabled plugins set this, Claude Code uses the first one loaded. Default: `false` |
 
 
 [​](#choose-between-an-output-style-and-other-features)
@@ -203,14 +205,14 @@ Choose between an output style and other features
 
 An output style applies to every response in a session. It’s an instruction Claude follows, so nothing enforces it. When what you want is narrower than every response, or has to happen without fail, another feature fits better. This table matches what you want to the feature that does it:
 
-| You want                                                                                                   | Use                                                                    | Why it fits                                                                                                  |
-|:-----------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------|
-| Every response in a certain voice, length, or format, or Claude in a different role                        | An output style                                                        | It applies to the whole session, and you switch styles with one command                                      |
-| Claude to know your project’s conventions, commands, and structure                                         | [CLAUDE.md](memory.md)                                           | It holds what Claude should know about the codebase, and it stays loaded whichever style you pick            |
-| Instructions for one kind of task, such as a release checklist or a review procedure                       | A [skill](../08-Plugins-Skills/skills.md)                                             | Claude loads it only when you invoke it or the task matches, so it doesn’t shape unrelated responses         |
-| Something to happen every time without exception, such as formatting after each edit or blocking a command | A [hook](../07-Hooks/hooks-guide.md)                                         | Claude Code runs a hook itself at a lifecycle event, so it doesn’t depend on Claude following an instruction |
-| A helper with its own instructions, model, and tools for a focused task                                    | A [subagent](../09-Agents-Patterns/sub-agents.md)                                      | It runs in a separate context with its own system prompt and returns a summary to your conversation          |
-| An addition to Claude’s instructions that you pass when you start Claude Code                              | [`--append-system-prompt`](cli-reference.md#system-prompt-flags) | It appends to the system prompt without removing anything                                                    |
+| You want | Use | Why it fits |
+|:---|:---|:---|
+| Every response in a certain voice, length, or format, or Claude in a different role | An output style | It applies to the whole session, and you switch styles with one command |
+| Claude to know your project’s conventions, commands, and structure | [CLAUDE.md](memory.md) | It holds what Claude should know about the codebase, and it stays loaded whichever style you pick |
+| Instructions for one kind of task, such as a release checklist or a review procedure | A [skill](../08-Plugins-Skills/skills.md) | Claude loads it only when you invoke it or the task matches, so it doesn’t shape unrelated responses |
+| Something to happen every time without exception, such as formatting after each edit or blocking a command | A [hook](../07-Hooks/hooks-guide.md) | Claude Code runs a hook itself at a lifecycle event, so it doesn’t depend on Claude following an instruction |
+| A helper with its own instructions, model, and tools for a focused task | A [subagent](../09-Agents-Patterns/sub-agents.md) | It runs in a separate context with its own system prompt and returns a summary to your conversation |
+| An addition to Claude’s instructions that you pass when you start Claude Code | [`--append-system-prompt`](cli-reference.md#system-prompt-flags) | It appends to the system prompt without removing anything |
 
 These features combine. For example, you can use CLAUDE.md for what Claude should know, an output style for how it responds, and a hook for anything that has to be guaranteed. [Extend Claude Code](features-overview.md) compares the rest of the extension features.
 

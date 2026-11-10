@@ -2,11 +2,13 @@
 title: "Configure your agent - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/configuration"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-22T06:31:30Z"
+fetched_at: "2026-10-28T06:35:08Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Pass options to a session](#pass-options-to-a-session)
 - [Load settings files](#load-settings-files)
@@ -126,7 +128,7 @@ options = ClaudeAgentOptions(
 )
 ```
 
-The [Messages API](https://code.claude.com/docs/en/04-API-Reference/Other/api-messages-2dd213ca95.md) request parameters `temperature`, `top_p`, and `max_tokens` have no fields on the options object in either language. Set the [effort level](agent-sdk-agent-loop.md#effort-level) or a [spend cap](#limit-turns-and-spend) instead, or call the Messages API when you need those parameters directly.
+The [Messages API](../04-API-Reference/Endpoints/messages.md) request parameters `temperature`, `top_p`, and `max_tokens` have no fields on the options object in either language. Set the [effort level](agent-sdk-agent-loop.md#effort-level) or a [spend cap](#limit-turns-and-spend) instead, or call the Messages API when you need those parameters directly.
 
 
 [​](#set-environment-variables)
@@ -200,7 +202,7 @@ When you start a session with [streaming input](agent-sdk-streaming-vs-single-mo
 
 Both languages have the same setters:
 
-- **`setModel()` / `set_model()`**: switches the model. Call it with no model to switch to [Claude Code’s default model](../02-Claude-Code-CLI/model-config.md#default-model-setting) rather than the `model` you passed in options.
+- **`setModel()` / `set_model()`**: switches the model. Call it with no model to switch to [Claude Code’s default model](../02-Claude-Code-CLI/model-config.md#default-model-setting) rather than the `model` you passed in options. If the session is in auto mode and you switch to a model that auto mode doesn’t support, the session changes to `default` mode. To return to auto mode, see [Auto mode (`auto`)](agent-sdk-permissions.md#auto-mode-auto).
 - **`setPermissionMode()` / `set_permission_mode()`**: switches the permission mode
 
 TypeScript also has `applyFlagSettings()` and `updateSettings()`:
@@ -304,25 +306,25 @@ Configure specific features
 
 The table below maps each option to the feature it configures. For options this page doesn’t cover, see the [TypeScript](agent-sdk-typescript.md#options) and [Python](agent-sdk-python.md#claudeagentoptions) references. If you know your goal but not which option serves it, start from [Choose the right feature](agent-sdk-claude-code-features.md#choose-the-right-feature).
 
-| TypeScript                | Python                      | Controls                                 | Covered in                                                                                                                                                                                                                       |
-|---------------------------|-----------------------------|------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `permissionMode`          | `permission_mode`           | What the agent can do without approval   | [Configure permissions](agent-sdk-permissions.md)                                                                                                                                                                          |
-| `allowedTools`            | `allowed_tools`             | Which tool calls are pre-approved        | [Configure permissions](agent-sdk-permissions.md)                                                                                                                                                                          |
-| `canUseTool`              | `can_use_tool`              | Your approval callback for tool calls    | [Handle tool approval requests](agent-sdk-user-input.md#handle-tool-approval-requests)                                                                                                                                     |
-| `systemPrompt`            | `system_prompt`             | The agent’s instructions                 | [Modifying system prompts](agent-sdk-modifying-system-prompts.md)                                                                                                                                                          |
-| `settingSources`          | `setting_sources`           | Which filesystem settings load           | [Use Claude Code features in the SDK](agent-sdk-claude-code-features.md)                                                                                                                                                   |
-| `mcpServers`              | `mcp_servers`               | External tool servers                    | [Connect to external tools with MCP](agent-sdk-mcp.md)                                                                                                                                                                     |
-| `agents`                  | `agents`                    | Subagent definitions                     | [Subagents](agent-sdk-subagents.md)                                                                                                                                                                                        |
-| `hooks`                   | `hooks`                     | Callbacks at lifecycle points            | [Hooks](agent-sdk-hooks.md)                                                                                                                                                                                                |
-| `skills`                  | `skills`                    | Which skills load                        | [Extend agents with skills](agent-sdk-skills.md)                                                                                                                                                                           |
-| `plugins`                 | `plugins`                   | Which plugins load                       | [Plugins](agent-sdk-plugins.md)                                                                                                                                                                                            |
-| `outputFormat`            | `output_format`             | Structured output schemas                | [Structured outputs](agent-sdk-structured-outputs.md)                                                                                                                                                                      |
-| `resume`                  | `resume`                    | Continuing a stored session              | [Sessions](agent-sdk-sessions.md)                                                                                                                                                                                          |
-| `forkSession`             | `fork_session`              | Branching a session                      | [Sessions](agent-sdk-sessions.md)                                                                                                                                                                                          |
-| `sessionStore`            | `session_store`             | External session persistence             | [Session storage](agent-sdk-session-storage.md)                                                                                                                                                                            |
-| `enableFileCheckpointing` | `enable_file_checkpointing` | Rewindable file edits                    | [File checkpointing](agent-sdk-file-checkpointing.md)                                                                                                                                                                      |
-| `effort`                  | `effort`                    | How much work Claude puts into responses | [Effort level](agent-sdk-agent-loop.md#effort-level)                                                                                                                                                                       |
-| `sandbox`                 | `sandbox`                   | Sandbox behavior for tool execution      | [TypeScript](agent-sdk-typescript.md#sandbox-configuration) and [Python](agent-sdk-python.md#sandbox-configuration) references, with deployment context in [Secure deployment](agent-sdk-secure-deployment.md) |
+| TypeScript | Python | Controls | Covered in |
+|----|----|----|----|
+| `permissionMode` | `permission_mode` | What the agent can do without approval | [Configure permissions](agent-sdk-permissions.md) |
+| `allowedTools` | `allowed_tools` | Which tool calls are pre-approved | [Configure permissions](agent-sdk-permissions.md) |
+| `canUseTool` | `can_use_tool` | Your approval callback for tool calls | [Handle tool approval requests](agent-sdk-user-input.md#handle-tool-approval-requests) |
+| `systemPrompt` | `system_prompt` | The agent’s instructions | [Modifying system prompts](agent-sdk-modifying-system-prompts.md) |
+| `settingSources` | `setting_sources` | Which filesystem settings load | [Use Claude Code features in the SDK](agent-sdk-claude-code-features.md) |
+| `mcpServers` | `mcp_servers` | External tool servers | [Connect to external tools with MCP](agent-sdk-mcp.md) |
+| `agents` | `agents` | Subagent definitions | [Subagents](agent-sdk-subagents.md) |
+| `hooks` | `hooks` | Callbacks at lifecycle points | [Hooks](agent-sdk-hooks.md) |
+| `skills` | `skills` | Which skills load | [Extend agents with skills](agent-sdk-skills.md) |
+| `plugins` | `plugins` | Which plugins load | [Plugins](agent-sdk-plugins.md) |
+| `outputFormat` | `output_format` | Structured output schemas | [Structured outputs](agent-sdk-structured-outputs.md) |
+| `resume` | `resume` | Continuing a stored session | [Sessions](agent-sdk-sessions.md) |
+| `forkSession` | `fork_session` | Branching a session | [Sessions](agent-sdk-sessions.md) |
+| `sessionStore` | `session_store` | External session persistence | [Session storage](agent-sdk-session-storage.md) |
+| `enableFileCheckpointing` | `enable_file_checkpointing` | Rewindable file edits | [File checkpointing](agent-sdk-file-checkpointing.md) |
+| `effort` | `effort` | How much work Claude puts into responses | [Effort level](agent-sdk-agent-loop.md#effort-level) |
+| `sandbox` | `sandbox` | Sandbox behavior for tool execution | [TypeScript](agent-sdk-typescript.md#sandbox-configuration) and [Python](agent-sdk-python.md#sandbox-configuration) references, with deployment context in [Secure deployment](agent-sdk-secure-deployment.md) |
 
 
 [​](#next-steps)

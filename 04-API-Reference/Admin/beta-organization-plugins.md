@@ -2,267 +2,11 @@
 title: "Plugins - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugins"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-17T06:26:11Z"
+fetched_at: "2026-11-02T06:26:35Z"
 tags: ["api", "plugins"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fplugins)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-
-Create Plugin
-
-
-Get Plugin
-
-
-Update Plugin
-
-
-List Plugins
-
-
-Delete Plugin
-
-Versions
-
-Installation Settings
-
-Shares
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-
-List organizations
-
-Users
-
-Roles
-
-Settings
-
-
-Plugins
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](../Endpoints/opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
@@ -274,7 +18,9 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create Plugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/create)
 
@@ -422,7 +168,7 @@ assessment: "fail" or "pass" or "unknown" or "warn" or null
 
 
 
-The scan's verdict; set only when `status` is `completed`.
+The scan's verdict; set only when `status` is `completed`. A `warn` can mean a `fail` that was allowed in claude.ai.
 
 One of the following:
 
@@ -454,7 +200,7 @@ status: "completed" or "errored" or "processing"
 
 
 
-`processing` while a scan runs, `completed` when it ran to completion, `errored` when it could not run or its outcome cannot be read.
+`processing` while a scan runs, `completed` when it ran to completion, `errored` when it could not run. Once a scan of the version has completed, `content_scan` describes the newest completed scan, even while a later scan runs. While the scan outcome cannot be read, `status` is `errored` instead.
 
 One of the following:
 

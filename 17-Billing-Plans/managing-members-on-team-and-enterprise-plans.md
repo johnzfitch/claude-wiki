@@ -2,7 +2,7 @@
 title: "Manage members on Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:00Z"
+fetched_at: "2026-11-09T06:25:55Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -13,7 +13,7 @@ This guide covers how to add, remove, and manage the people on your Team or Ente
 
 **Permissions note:** Organization Admins can manage members in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**, but only Owners and Primary Owners can access **[Organization settings \> Billing](https://claude.ai/admin-settings/billing)**. For more information, see our article about **[roles and permissions](../13-Enterprise-Admin/roles-and-permissions.md)**.
 
-For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)**.
+For information on purchasing seats or adjusting your plan's seat allocation, see our guides for **[Team plans](purchasing-and-managing-seats.md)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**.
 
 ------------------------------------------------------------------------
 
@@ -73,7 +73,7 @@ Organizations with single sign-on (SSO) configured can automate member provision
 
 - **SCIM provisioning (Enterprise plan only):** With SCIM directory sync enabled, members assigned to the Anthropic app in your Identity Provider are provisioned automatically, up to the number of total seats on your plan. On plans with multiple seat types, seat types are distributed from highest to lowest available. On single-seat Enterprise plans, all users are automatically assigned the Enterprise seat. Admins and above can manually reassign seat types afterward in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
 
-**Important:** An Owner or Primary Owner must ensure seats are available before new users can be provisioned. We recommend monitoring your seat usage and adding seats proactively to ensure uninterrupted access for your team. You can **[enable group mappings with JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_adee31eeba) to provision users directly to a specific role and seat tier**.
+**Important:** An Owner or Primary Owner must ensure seats are available before new users can be provisioned. We recommend monitoring your seat usage and adding seats proactively to ensure uninterrupted access for your team. You can **[enable group mappings with JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_adee31eeba)** to provision users directly to a specific role and seat tier.
 
 ------------------------------------------------------------------------
 
@@ -117,7 +117,7 @@ When a member is removed:
 
 - If you re-add the member later using the same email address, their account history will be maintained.
 
-Removing a member frees up their seat for reassignment, but does not automatically reduce your plan's total seat count. See our guides for **[Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)** and **[Enterprise plans](purchasing-and-managing-seats-on-enterprise-plans.md)** for information on reducing seats.
+Removing a member frees up their seat for reassignment, but does not automatically reduce your plan's total seat count. See our guides for **[Team plans](purchasing-and-managing-seats.md)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)** for information on reducing seats.
 
 **Note:** If you're on a Team plan, the option to remove members from **[Organization settings \> Members](https://claude.ai/admin-settings/members)** will no longer be available after you cancel your plan. For more information, see **[Cancel your organization's Team plan subscription](https://support.claude.com/en/articles/9267323)**.
 
@@ -151,11 +151,33 @@ You can revoke a pending invite from **[Organization settings \> Members](https:
 
 ------------------------------------------------------------------------
 
+## Sign a member out everywhere (beta)
+
+If a member loses a device or their account may be compromised, you can end their sign-in sessions right away without removing them from your organization. There are two ways:
+
+- **In Organization settings:** Go to **[Organization settings \> Members](https://claude.ai/admin-settings/members)**, click the three-dot “...” menu to the right of the member, then select "Sign out everywhere."
+
+- **Via the Admin API (Claude Enterprise, beta):** the Primary Owner creates an API key with the `write:members` scope, then calls `POST /v1/organizations/users/{user_id}/sign_out`. Visit the Claude Platform Docs to learn more about **[signing a member out everywhere using the Admin API](../04-API-Reference/Other/manage-claude-user-management.md#sign-a-member-out-everywhere)**.
+
+This ends the member's sessions on every device and revokes their trusted devices. Claude Code and Claude Desktop sessions authorized for your organization need to sign in again on next use. The member stays in your organization and keeps their role, and their chats and projects aren't deleted.
+
+Before you use it:
+
+- Sessions and trusted devices belong to the person's account, so this also signs them out of any other organization or individual plan they use.
+
+- Scheduled Claude Code routines keep running. It also doesn't unlink computers connected to Cowork.
+
+- The member can sign in again right after. To keep them out, also remove them from your organization or from your identity provider.
+
+- You can't use it on yourself or on the Primary Owner, and only Owners can sign out other Owners.
+
+------------------------------------------------------------------------
+
 ## Frequently asked questions
 
 ### Can I invite someone who already uses Claude personally with their work email?
 
-Yes. Once they join your team, they'll have both a personal account and a Team or Enterprise plan account. They can toggle between accounts through the menu by clicking their initials or name in the lower left corner.
+Yes. Once they join your team, they'll have both a personal account and a Team or Enterprise plan account. They can toggle between accounts through the menu by clicking their initials or name in the lower left corner. They can keep both accounts (unless your organization has claimed their account) or close the personal one. Not everything moves. Learn more in **[Move your personal Claude account to a Team or Enterprise organization](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
 
 ### How do I add a member that I previously removed?
 

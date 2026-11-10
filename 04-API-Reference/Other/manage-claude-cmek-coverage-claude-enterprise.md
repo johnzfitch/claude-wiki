@@ -1,0 +1,70 @@
+---
+title: "What CMEK covers on Claude Enterprise - Claude Platform Docs"
+source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-enterprise"
+category: "04-API-Reference/Other"
+fetched_at: "2026-11-09T06:25:28Z"
+tags: ["api", "enterprise"]
+---
+
+# What CMEK covers on Claude Enterprise
+
+Copy page
+
+
+
+Look up which Claude Enterprise data your key encrypts, what turns off or changes, and what stays under Anthropic’s key.
+
+Copy page
+
+
+
+For Claude Platform, see [What CMEK covers on Claude Platform](manage-claude-cmek-coverage-claude-platform.md).
+
+## Encrypted with your key
+
+- Chat content, including skills and plugins.
+- Chat attachments and project attachments.
+- Artifacts, including Claude Design, Claude Slides, and Claude Docs in conversations and the **Artifacts** tab.
+- Claude Code on the CLI, including message content.
+- Cowork in Claude Desktop.
+- Office agents, including Claude for Outlook (beta).
+- Claude in Chrome.
+- Claude Science, which is in beta.
+- [Plugins API](manage-claude-plugins-api.md#customer-managed-encryption-keys) (beta) plugin versions: each version’s description, release notes, components, and files. That page lists which requests still work while your key can’t be used.
+- Compliance API [local session transcripts](manage-claude-compliance-sessions.md#retrieve-local-sessions) from sessions on users’ machines. If your key can’t be used, the messages endpoint returns [503 Service Unavailable](manage-claude-compliance-errors.md#local-sessions-temporarily-unavailable) instead of transcript content. Session metadata is still listed.
+- Backups and snapshots, which inherit the key.
+
+## Turned off or changed
+
+Beta and research preview features might not be covered by customer-managed encryption keys (CMEK) and can break in CMEK organizations.
+
+This list is not exhaustive. Review it with your team before you set up CMEK.
+
+| Feature | What people see |
+|----|----|
+| Claude Code on the web | Off. New sessions can’t be started, even if an admin turns the product on. |
+| Claude Code Desktop | Off until an admin turns it on. Available for local sessions once turned on under [claude.ai \> Organization settings \> Claude Code](https://claude.ai/admin-settings/claude-code). |
+| [Code Review](../../02-Claude-Code-CLI/code-review.md) | Off. Code Review doesn’t run on pull requests. |
+| Artifacts | Changed. For organizations that use Claude Code ZDR: Artifacts, including Claude Design, Claude Slides, and Claude Docs in conversations and the **Artifacts** tab, cannot be turned on. |
+| Artifact publishing and sharing | Changed. Artifacts can be shared within your organization, but not publicly. |
+| Analytics: skills and connectors | Changed. Admin analytics for skills and connectors, in the claude.ai analytics dashboard and through the [Claude Enterprise Analytics API](manage-claude-analytics-api.md), don’t include usage in chat, and hide the names of custom skills, plugins, and connectors. |
+| Response ratings: thumbs up and thumbs down | Off. Members can’t rate Claude’s responses. |
+| [Skill and plugin security scanning](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md#skill-content-scanning) | Off. The setting can’t be turned on, and skills and plugins are installed without a scan. |
+| Claude in Slack (beta) | Off. Claude declines requests, even if an admin turns the product on. |
+| Analytics: smart reports and contribution metrics | Off. Certain analytics are disabled, regardless of admin settings: Claude smart reports (under claude.ai/analytics/insights) and Claude Code contribution metrics from GitHub (beta, under claude.ai/analytics/claude-code). |
+| Claude Security (beta) | Off. Beta feature, turned off regardless of admin settings. |
+| Cloud scheduled tasks (research preview) | Off. Research preview feature, turned off regardless of admin settings. |
+| Standalone Claude Design app (being deprecated) | Not supported. See [Encrypted with Anthropic’s key](#encrypted-with-anthropics-key). |
+
+## Encrypted with Anthropic’s key
+
+The features that store this data stay available, but the data isn’t encrypted with your key. You can turn off some of these features in **Settings**.
+
+| Data | Details |
+|----|----|
+| Existing data before key setup | Written before [your key takes effect](manage-claude-cmek-how-it-works.md#when-your-key-takes-effect). |
+| Standalone Claude Design app (being deprecated) | The standalone Claude Design app at claude.ai/design is not supported with CMEK, and its data might not be encrypted under your key. The standalone app is closing. Claude Design in conversations and the **Artifacts** tab is encrypted under your key, as listed under [Encrypted with your key](#encrypted-with-your-key). |
+| Personal preferences and Cowork Global instructions | [Personal preferences - Instructions for Claude section](https://claude.ai/new#settings/account) and Cowork Global instructions. These are set at the account level and shared across all of a user’s organizations. |
+| Account data for users in your organization | Includes names, email addresses, and profile pictures. |
+| Preserved records | Anthropic can preserve specific records [in three narrow cases](manage-claude-cmek-data-retention.md#limited-preservation-outside-your-key). |
+| Claude Code telemetry | When Claude Code connects through an LLM gateway or proxy (a custom `ANTHROPIC_BASE_URL`), CMEK does not apply to Claude Code’s operational telemetry. To turn this telemetry off, set the `DISABLE_TELEMETRY` environment variable to `1`, as described under [Telemetry services](../../13-Enterprise-Admin/data-usage.md#telemetry-services) in the Claude Code documentation. |

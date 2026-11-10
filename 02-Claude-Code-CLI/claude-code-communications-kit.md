@@ -2,15 +2,13 @@
 title: "Claude Code communications kit | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14555877-claude-code-communications-kit"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:06Z"
+fetched_at: "2026-11-09T06:26:06Z"
 tags: ["claude-code"]
 ---
 
 # Claude Code communications kit
 
 Ready-to-send messages for Slack, Teams, and email — Enterprise admin enablement
-
-September 22, 2026
 
 
 This kit covers launch communications, a twenty-message "tips and tricks" drip campaign, and a quick-reference FAQ for the questions you’ll get asked most. Each message links out to a docs page developers can go deeper on.
@@ -33,7 +31,7 @@ One announcement in two formats, plus two optional variants. Pick whichever fits
 
 ### 1.2 The announcement
 
-Use this as your standard org-wide rollout message. It covers what Claude Code is, gives a two-minute install, hands readers one concrete task to try, and answers “where does my code go?” before anyone has to ask.
+Use this as your standard org-wide rollout message. It covers what Claude Code is, gets readers running in two minutes, hands them one concrete task to try, and answers “where does my code go?” before anyone has to ask.
 
 **Email**
 

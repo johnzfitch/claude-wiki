@@ -2,255 +2,11 @@
 title: "List Workspaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-17T06:26:22Z"
+fetched_at: "2026-11-02T06:26:46Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-
-List Workspaces
-
-
-Create Workspace
-
-
-Get Workspace
-
-
-Update Workspace
-
-
-Archive Workspace
-
-Rate Limits
-
-Members
-
-Service Accounts
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 
 
@@ -266,7 +22,9 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/workspaces
 
@@ -338,7 +96,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-data: array of [Workspace](https://platform.claude.com/docs/en/api/http/organization/workspaces#workspace) { type: "workspace", id, archived_at, 7 more }
+data: array of [Workspace](https://platform.claude.com/docs/en/api/http/organization/workspaces#workspace) { type: "workspace", id, archived_at, 8 more }
 
 
 
@@ -374,7 +132,7 @@ compartment_id: string
 
 
 
-Identifier for this Workspace's encryption compartment. When you configure a customer-managed encryption key (CMEK) on AWS, reference this value in your KMS key-policy condition so the key is scoped to this compartment. On GCP and Azure, Anthropic enforces the compartment binding automatically; you do not need to reference this value in your key configuration. See the CMEK integration guide for the required key configuration; unless your organization is on Claude Platform on AWS, it includes a separate value used during key validation. On Claude Platform on AWS there is no separate validation value: the key is validated against this Workspace's own value when it is attached, so if your key policy uses the compartment condition, add this value to it before attaching the key.
+Identifier for this Workspace's encryption compartment. When you configure an AWS KMS customer-managed encryption key (CMEK) that isn't bound to a user profile, reference this value in your KMS key-policy condition so the key is scoped to this compartment. On GCP and Azure, Anthropic enforces the compartment binding automatically; you do not need to reference this value in your key configuration. See the CMEK integration guide for the required key configuration; unless your organization is on Claude Platform on AWS, it includes a separate value used during key validation. On Claude Platform on AWS there is no separate validation value: your organization's own key is validated against this Workspace's own value when it is attached, so if its key policy uses the compartment condition, add this value to it before attaching the key.
 
 
 
@@ -458,7 +216,7 @@ external_key_id: string or null
 
 
 
-ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. On Claude Platform on AWS the value is the AWS KMS key ARN, and the key must be a single-Region key in the same AWS account and Region as the Workspace. On that platform the key is validated against this Workspace when it is attached, so a key-policy problem is reported as an error on this request. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
+ID of the customer-managed encryption key (CMEK) configuration to use for this Workspace. Setting this field requires CMEK to be enabled for your organization. When set, data stored for this Workspace is encrypted with the referenced key. Create key configurations with the External Keys API. On Claude Platform on AWS the value for an AWS KMS key is the key's ARN, and your organization's own key must be a single-Region key in the same AWS account and Region as the Workspace. On that platform the key is validated against this Workspace when it is attached, so a key-policy problem is reported as an error on this request. This field is write-once: once a key is attached to a Workspace it cannot be detached or replaced. To rotate key material, rotate the underlying key on your cloud KMS; the `external_key_id` stays the same.
 
 name: string
 
@@ -471,6 +229,12 @@ tags: map\[string\]
 
 
 User-defined tags as string key-value pairs. Keys may not begin with `anthropic`.
+
+user_profile_id: string or null
+
+
+
+ID of the user profile attached to the Workspace, or null if it has none. Every inference request through a Workspace that has a user profile must name that profile.
 
 first_id: string or null
 
@@ -498,8 +262,8 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/organizations/workspaces \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY"
 ```
 
 Response 200
@@ -526,7 +290,8 @@ Response 200
         "env": "prod",
         "team": "platform"
       },
-      "type": "workspace"
+      "type": "workspace",
+      "user_profile_id": "uprof_01SDCCSbTxrXDpWc1phhtcfK"
     }
   ],
   "first_id": "first_id",
@@ -556,3 +321,10 @@ Response 200
       },
       "display_color": "#6C5BB9",
       "external_key_id": "ekey_01SDCCSbTxrXDpWc1phhtcfK",
+      "name": "Workspace Name",
+      "tags": {
+        "env": "prod",
+        "team": "platform"
+      },
+      "type": "workspace",
+      "user_profile_id": "uprof_01SDCCSbTxrXDpWc1phhtcfK"

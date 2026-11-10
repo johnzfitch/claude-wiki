@@ -2,13 +2,11 @@
 title: "How to redeem a Claude gift subscription | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:28:59Z"
+fetched_at: "2026-11-09T06:26:19Z"
 tags: ["billing", "mobile"]
 ---
 
 # How to redeem a Claude gift subscription
-
-March 16, 2026
 
 
 Someone sent you a Claude gift subscription—here's how to redeem it and start using Claude.
@@ -35,13 +33,13 @@ Your experience depends on your current subscription status:
 
 **If you're a Pro subscriber (web) and receive a Pro gift:** Your Pro subscription is extended by the gift duration.
 
-**If you're a Pro subscriber (web) and receive a Max gift:** You're upgraded to the Max plan for the gift duration. When the gift ends, your Pro subscription resumes. Any unused time from your Pro billing cycle is added as account credit.
+**If you're a Pro subscriber (web) and receive a Max or Ultra gift:** You're upgraded to the Max or Ultra plan for the gift duration. When the gift ends, your Pro subscription resumes. Any unused time from your Pro billing cycle is added as account credit.
 
-**If you're a Max subscriber (web) and receive a lower-tier gift:** The gift value is converted to account credit, which is automatically applied to your future invoices.
+**If you're a Max or Ultra subscriber (web) and receive a lower-tier gift:** The gift value is converted to account credit, which is automatically applied to your future invoices.
 
-**If you're a Max subscriber (web) and receive the same or higher Max tier:** Your Max subscription is extended or upgraded accordingly.
+**If you're a Max subscriber (web) and receive a Max or Ultra gift:** Your Max subscription is extended or upgraded to Ultra accordingly.
 
-## Mobile Subscribers
+## Mobile subscribers
 
 If you have an active subscription through the iOS App Store or Google Play Store, you'll need to wait until that subscription ends before you can redeem a gift subscription. Gift subscriptions can only be redeemed on the web.
 

@@ -2,11 +2,14 @@
 title: "Auto mode classifier request charges - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/auto-mode-classifier-billing"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-17T06:25:34Z"
+fetched_at: "2026-11-07T06:23:11Z"
+last_modified: "Sat, 07 Nov 2026 04:14:10 GMT"
 tags: ["billing", "claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Respond to the notice](#respond-to-the-notice)
 - [Make the session eligible](#make-the-session-eligible)
@@ -48,7 +51,12 @@ To stop using auto mode instead, switch permission modes with `Shift+Tab` after 
 
 Make the session eligible
 
-If a gateway is the cause, ask your company’s admin or your gateway provider to pass requests and replies through unchanged. That means forwarding request headers and body fields as they are, including ones the gateway doesn’t recognize such as the `safeguards` request field, and returning responses and streaming events without dropping keys such as the `safeguard_results` field or rewriting tool-use IDs, as the [gateway compatibility guide](../13-Enterprise-Admin/llm-gateway-protocol.md#feature-pass-through) describes. A gateway that passes traffic through this way keeps working with this feature and with future ones. New sessions then use the server’s checks again. If you already know that your gateway can’t provide the server’s checks, tell Claude Code not to ask for them there by setting `CLAUDE_CODE_AUTO_MODE_SERVER` to `0` before you start the session, in your shell or in the [`env` settings key](../02-Claude-Code-CLI/settings-reference.md#env):
+If a gateway keeps auto mode’s server-side checks from reaching your sessions and you don’t run it, send the requirements below to your company’s admin or your gateway provider. Where [the upstream accepts the format that the gateway receives](../13-Enterprise-Admin/llm-gateway-protocol.md#format-mismatch-with-the-upstream), Claude Code expects the gateway to pass requests and responses through unchanged, as the [gateway compatibility guide](../13-Enterprise-Admin/llm-gateway-protocol.md#feature-pass-through) describes:
+
+- **Requests**: to let the checks through, the gateway forwards both the `anthropic-beta` header and the `safeguards` body field unchanged, because [the two travel as a pair](../13-Enterprise-Admin/llm-gateway-protocol.md#beta-header-and-body-field-pairs). On the [Amazon Bedrock InvokeModel format](../13-Enterprise-Admin/llm-gateway-protocol.md#api-formats), it forwards the `anthropic_beta` body field in place of the header.
+- **Responses**: the gateway returns responses and streaming events without dropping fields or rewriting tool-use IDs. To let the checks’ results through, it keeps the `safeguard_results` field.
+
+A gateway that passes traffic through this way keeps working with this feature and with future ones. New sessions then use the server’s checks again. If you already know that your gateway can’t provide the server’s checks, tell Claude Code not to ask for them there by setting `CLAUDE_CODE_AUTO_MODE_SERVER` to `0` before you start the session, in your shell or in the [`env` settings key](../02-Claude-Code-CLI/settings-reference.md#env):
 
 ```python
 export CLAUDE_CODE_AUTO_MODE_SERVER=0
@@ -61,7 +69,7 @@ Classifier requests are then always Claude Code’s own, billed the same way, an
 
 Why the notice appears
 
-[Server-side classifier review](../02-Claude-Code-CLI/permission-modes.md#server-side-classifier-review) lists which sessions ask the server for the classifier checks. Pro, Max, and Team plans never show the notice. When it appears, the usual causes are:
+On a Pro, Max, Ultra, or Team plan, you never see the notice. To find out which sessions ask the server for the classifier checks, see [Server-side classifier review](../02-Claude-Code-CLI/permission-modes.md#server-side-classifier-review). If you see the notice, check for these usual causes:
 
 - **An LLM gateway or proxy is in the path**: one that strips or rewrites request headers, drops request fields it doesn’t recognize, or edits responses. The server then never receives the request for checks, or Claude Code never receives the results. When your configuration or the responses identify the gateway, the notice names it.
 - **Server-side checks haven’t reached your platform, region, or credential yet**: whether a platform or region performs them depends on that platform’s rollout. If you see the notice with no gateway or proxy in the path and it keeps appearing, this is the likely cause. To confirm, contact support or your company’s admin, or report it with `/feedback`.

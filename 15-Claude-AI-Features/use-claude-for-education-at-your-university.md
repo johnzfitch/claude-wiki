@@ -2,7 +2,7 @@
 title: "Use Claude for Education at your university | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11139144-use-claude-for-education-at-your-university"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:49Z"
+fetched_at: "2026-11-09T06:25:34Z"
 tags: ["claude-ai"]
 ---
 
@@ -137,11 +137,11 @@ Review the following resources to help you get the most out of your usage with C
 
 - **[What are projects?](https://support.claude.com/en/articles/9517075)**
 
-- **[How can I create and manage projects?](../22-Safety-Policy/how-can-i-create-and-manage-projects-claude-help-center.md)**
+- **[How can I create and manage projects?](https://support.claude.com/en/articles/9519177)**
 
 - **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189)**
 
-- **[What are artifacts and how do I use them?](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md)**
+- **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
 
 - **[Usage limit best practices](https://support.claude.com/en/articles/9797557)**
 
@@ -151,9 +151,9 @@ Review the following resources to help you get the most out of your usage with C
 
 - **[Use Google Workspace connectors](https://support.claude.com/en/articles/10166901)**
 
-- **[Understanding Claude's personalization features](understanding-claude-s-personalization-features-claude-help-center.md)**
+- **[Understanding Claude's personalization features](https://support.claude.com/en/articles/10185728)**
 
-- **[Enable and use web search](https://support.claude.com/en/articles/10684626)**
+- **[Enable and use web search](enable-and-use-web-search-claude-help-center.md)**
 
 - **[How to use Claude in your preferred language](https://support.claude.com/en/articles/10769299)**
 
@@ -181,7 +181,7 @@ This appears when your prompt exceeds Claude's available context window. When th
 
 ### I already have a Claude account using my university email
 
-When you log in, you can select between your previous account and the new university-sponsored account. You can't migrate data between accounts, but you can **[export data](https://support.claude.com/en/articles/9450526)** from your existing account and upload the conversation data (JSON format) to your new account.
+When you log in, you can select between your previous account and the new university-sponsored account. You can't migrate data between accounts, but you can **[export data](../22-Safety-Policy/export-your-claude-data-claude-help-center.md)** from your existing account and upload the conversation data (JSON format) to your new account.
 
 ------------------------------------------------------------------------
 
@@ -193,7 +193,7 @@ Review these resources and visit the **[Privacy Center](https://privacy.claude.c
 
 - **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866)**
 
-- **[Can you delete data that I sent via Claude?](https://support.claude.com/en/articles/9796617)**
+- **[Can you delete data that I sent via Claude?](../17-Billing-Plans/can-you-delete-data-that-i-sent-via-team-and-enterprise-plans-claude-help-center.md)**
 
 - **[How can I delete or rename a conversation?](https://privacy.claude.com/en/articles/11117329)**
 

@@ -2,11 +2,14 @@
 title: "Review locally with /code-review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-local"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-20T06:37:48Z"
+fetched_at: "2026-11-04T06:23:30Z"
+last_modified: "Wed, 04 Nov 2026 02:01:01 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Choose what to review](#choose-what-to-review)
 - [What the review reads and edits](#what-the-review-reads-and-edits)
@@ -55,7 +58,7 @@ With no target, the review covers the changes on your current branch. To point t
 
 Keep working
 
-The review runs as a background [subagent](../09-Agents-Patterns/sub-agents.md) with its own context window, so it doesn’t fill your conversation. The findings arrive in your conversation when the review completes.
+In a terminal session, the review runs as a background [subagent](../09-Agents-Patterns/sub-agents.md) with its own context window, so it doesn’t fill your conversation. The findings arrive in your conversation when the review completes.
 
 3
 
@@ -70,14 +73,14 @@ Choose what to review
 
 To review something other than your current branch, type a target after the effort level and any flags. Claude receives that text as the review target. A target can be a pull request number, a branch name, a file path, or a Git revision range. Find what you want reviewed in the first column and type what the second column shows:
 
-| To point the review at                                | Type                             |
-|:------------------------------------------------------|:---------------------------------|
-| Your current branch and uncommitted changes           | `/code-review`                   |
-| Your last 15 commits                                  | `/code-review HEAD~15..HEAD`     |
-| One branch against another                            | `/code-review main...my-feature` |
+| To point the review at | Type |
+|:---|:---|
+| Your current branch and uncommitted changes | `/code-review` |
+| Your last 15 commits | `/code-review HEAD~15..HEAD` |
+| One branch against another | `/code-review main...my-feature` |
 | A single commit, where `abc1234` is the commit’s hash | `/code-review abc1234^..abc1234` |
-| A pull request by number                              | `/code-review 1234`              |
-| A file or directory path                              | `/code-review src/auth`          |
+| A pull request by number | `/code-review 1234` |
+| A file or directory path | `/code-review src/auth` |
 
 With no target, `/code-review` reviews your branch’s commits ahead of its upstream branch plus your uncommitted changes. If the branch has no upstream, Claude compares against `main`, or against the previous commit. With `ultra`, Claude Code reads the target differently, as [Text after the effort level and flags](#text-after-the-effort-level-and-flags) describes.
 
@@ -102,7 +105,7 @@ Claude reports the findings as text in the reply in both of these runs:
 - In a terminal session, where `/code-review` runs the review as a [forked subagent](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent)
 - In a `-p` run with text or JSON output
 
-In a host application that requests the findings list, such as the [desktop app](../16-Mobile-Desktop/desktop.md#review-your-code), Claude reports the review’s findings through the [`ReportFindings` tool](tools-reference.md) instead. The report appears as a findings list, and each entry shows the file location, a one-sentence summary, and a category tag such as `correctness` when the finding carries one. A host request applies at every effort level and requires Claude Code v2.1.218 or later. When Claude fixes reported findings later in the session, it reports them again. Claude Code then marks each finding in the updated findings list as fixed, skipped, or no change needed.
+In a host application that requests the findings list, such as the [desktop app](../16-Mobile-Desktop/desktop.md#review-your-code), Claude reports the review’s findings through the [`ReportFindings` tool](tools-reference.md) instead. The report appears as a findings list, and each entry shows the file location, a one-sentence summary, and a category tag such as `correctness` when the finding carries one. A host request applies at every effort level. When Claude fixes reported findings later in the session, it reports them again. Claude Code then marks each finding in the updated findings list as fixed, skipped, or no change needed.
 
 
 [​](#tune-effort-and-arguments)
@@ -138,7 +141,7 @@ Text after the effort level and flags
 After the effort level and flags, Claude Code reads the rest of the line as the review target. The `ultra` argument changes that reading:
 
 - **With `ultra`**: Claude Code reads a single word as a base branch or PR number. Longer text that doesn’t name a branch or PR becomes [a note attached to the review](ultrareview.md#pass-a-request-in-plain-words). `/code-review ultra check my auth changes` reviews your current branch, and Claude relates the findings to your note.
-- **Without `ultra`**: everything left is the review target, even when it starts with another command name. `/code-review /fix-issue 123` reviews with `/fix-issue 123` as target text instead of loading `/fix-issue` as a second [stacked skill](../08-Plugins-Skills/skills.md#stack-several-skills-in-one-message). Before v2.1.218, a command stacked after `/code-review` expanded as its own skill.
+- **Without `ultra`**: everything left is the review target, even when it starts with another command name. `/code-review /fix-issue 123` reviews with `/fix-issue 123` as target text instead of loading `/fix-issue` as a second [stacked skill](../08-Plugins-Skills/skills.md#stack-several-skills-in-one-message).
 
 
 [​](#run-in-the-foreground)
@@ -148,10 +151,8 @@ Run in the foreground
 To make the review run in the foreground, do one of these:
 
 - Run it in non-interactive mode, with the `-p` flag or the Agent SDK. Claude Code waits for the review and includes the findings in the response, except for `ultra`, which [doesn’t wait for the cloud review](ultrareview.md#run-ultrareview-non-interactively).
-- Set [`CLAUDE_CODE_DISABLE_BACKGROUND_TASKS`](env-vars.md) to `1`, which also turns off every other background task feature
+- Set [`CLAUDE_CODE_DISABLE_BACKGROUND_TASKS`](env-vars.md) to `1`, which also turns off other background task features
 - Run `/code-review` again while an earlier review is still in progress
-
-Before v2.1.218, the review ran inside your conversation.
 
 
 [​](#let-claude-start-the-review)

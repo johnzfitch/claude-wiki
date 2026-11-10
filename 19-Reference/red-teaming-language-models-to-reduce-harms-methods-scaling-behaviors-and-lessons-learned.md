@@ -2,7 +2,7 @@
 title: "Red teaming language models to reduce harms \\ Anthropic"
 source_url: "https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:29Z"
+fetched_at: "2026-10-24T06:26:36Z"
 tags: ["news-research"]
 ---
 
@@ -35,7 +35,7 @@ Related articles
 
   Nov 13, 2025
 
-  [Measuring political bias in Claude](political-even-handedness.md)
+  [Measuring political bias in Claude](research-political-even-handedness.md)
 
 [View more](https://www.anthropic.com/search?topic=red-teaming)
 

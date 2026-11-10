@@ -2,85 +2,9 @@
 title: "Text editor tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-20T06:38:14Z"
+fetched_at: "2026-11-05T06:35:32Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Ftext-editor-tool)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
-
-[Thinking](../Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](agents-and-tools-tool-use-tool-reference.md)[Manage tool context](agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
-
-[Compaction](../Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](agents-and-tools-agent-skills-overview.md)[Quickstart](agents-and-tools-agent-skills-quickstart.md)[Best practices](agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](agents-and-tools-remote-mcp-servers.md)[MCP connector](agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Tools
 
 # Text editor tool
 
@@ -94,9 +18,16 @@ Give Claude the Anthropic-defined text editor tool to view, create, and edit fil
 
 
 
-
+Text editor tool
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+Feature of  
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
 
 Claude can use an Anthropic-schema text editor tool to view and modify text files, helping you debug, fix, and improve your code or other text documents. This allows Claude to directly interact with your files, providing hands-on assistance rather than just suggesting changes.
 
@@ -173,45 +104,45 @@ Use the text editor tool in the following way:
 
     ### Provide Claude with the text editor tool and a user prompt
 
-    - Include the text editor tool in your API request
-    - Provide a user prompt that may require examining or modifying files, such as "Can you fix the syntax error in my code?"
+    - Include the text editor tool in your API request.
+    - Provide a user prompt that might require examining or modifying files, such as “Can you fix the syntax error in my code?”
 
 2.  2
 
     ### Claude uses the tool to examine files or directories
 
-    - Claude assesses what it needs to look at and uses the `view` command to examine file contents or list directory contents
-    - The API response will contain a `tool_use` content block with the `view` command
+    - Claude assesses what it needs to look at and uses the `view` command to examine file contents or list directory contents.
+    - The API response contains a `tool_use` content block with the `view` command.
 
 3.  3
 
-    ### Execute the view command and return results
+    ### Run the view command and return results
 
-    - Extract the file or directory path from Claude's tool use request
-    - Read the file's contents or list the directory contents
-    - If a `max_characters` parameter was specified in the tool configuration, truncate the file contents to that length
-    - Return the results to Claude by continuing the conversation with a new `user` message containing a `tool_result` content block
+    - Extract the file or directory path from Claude’s tool use request.
+    - Read the file’s contents or list the directory contents.
+    - If you specified a `max_characters` parameter in the tool configuration, truncate the file contents to that length.
+    - Return the results to Claude by continuing the conversation with a new `user` message containing a `tool_result` content block.
 
 4.  4
 
     ### Claude uses the tool to modify files
 
-    - After examining the file or directory, Claude may use a command such as `str_replace` to make changes or `insert` to add text at a specific line number.
-    - If Claude uses the `str_replace` command, Claude constructs a properly formatted tool use request with the old text and new text to replace it with
+    - After examining the file or directory, Claude might use a command such as `str_replace` to make changes or `insert` to add text at a specific line number.
+    - If Claude uses the `str_replace` command, Claude constructs a properly formatted tool use request with the old text and new text to replace it with.
 
 5.  5
 
-    ### Execute the edit and return results
+    ### Make the edit and return results
 
-    - Extract the file path, old text, and new text from Claude's tool use request
-    - Perform the text replacement in the file
-    - Return the results to Claude
+    - Extract the file path, old text, and new text from Claude’s tool use request.
+    - Perform the text replacement in the file.
+    - Return the results to Claude.
 
 6.  6
 
     ### Claude provides its analysis and explanation
 
-    - After examining and possibly editing the files, Claude provides a complete explanation of what it found and what changes it made
+    - After examining and possibly editing the files, Claude provides a complete explanation of what it found and what changes it made.
 
 ### Text editor tool commands
 
@@ -223,7 +154,7 @@ The `view` command allows Claude to examine the contents of a file or list the c
 
 Parameters:
 
-- `command`: Must be "view"
+- `command`: Must be `view`
 - `path`: The path to the file or directory to view
 - `view_range` (optional): An array of two integers specifying the start and end line numbers to view. Line numbers are 1-indexed, and -1 for the end line means read to the end of the file. This parameter only applies when viewing files, not directories.
 
@@ -267,7 +198,7 @@ The `str_replace` command allows Claude to replace a specific string in a file w
 
 Parameters:
 
-- `command`: Must be "str_replace"
+- `command`: Must be `str_replace`
 - `path`: The path to the file to modify
 - `old_str`: The text to replace (must match exactly, including whitespace and indentation)
 - `new_str`: The new text to insert in place of the old text
@@ -296,7 +227,7 @@ The `create` command allows Claude to create a new file with specified content.
 
 Parameters:
 
-- `command`: Must be "create"
+- `command`: Must be `create`
 - `path`: The path where the new file should be created
 - `file_text`: The content to write to the new file
 
@@ -323,7 +254,7 @@ The `insert` command allows Claude to insert text at a specific location in a fi
 
 Parameters:
 
-- `command`: Must be "insert"
+- `command`: Must be `insert`
 - `path`: The path to the file to modify
 - `insert_line`: The line number after which to insert the text (0 for beginning of file)
 - `insert_text`: The text to insert
@@ -491,7 +422,7 @@ print(response)
 
 **Line numbers**
 
-In the preceding example, the `view` tool result includes file contents with line numbers prepended to each line (for example, "1: def is_prime(n):"). Line numbers are not required, but they are essential for successfully using the `view_range` parameter to examine specific sections of files and the `insert_line` parameter to add content at precise locations.
+In the preceding example, the `view` tool result includes file contents with line numbers prepended to each line (for example, “1: def is_prime(n):”). Line numbers are not required, but they are essential for successfully using the `view_range` parameter to examine specific sections of files and the `insert_line` parameter to add content at precise locations.
 
 Claude identifies the syntax error and uses the `str_replace` command to fix it:
 
@@ -615,7 +546,7 @@ Output
 
 ## Implement the text editor tool
 
-The text editor tool is implemented as a schema-less tool. When using this tool, you don't need to provide an input schema as with other tools; the schema is built into Claude's model and can't be modified.
+The text editor tool is implemented as a schema-less tool. When using this tool, you don’t need to provide an input schema as with other tools; the schema is built into Claude’s model and can’t be modified.
 
 The tool type is `type: "text_editor_20250728"` for Claude 4 and later models.
 
@@ -623,7 +554,7 @@ The tool type is `type: "text_editor_20250728"` for Claude 4 and later models.
 
     ### Initialize your editor implementation
 
-    Create helper functions to handle file operations like reading, writing, and modifying files. Consider implementing backup functionality to recover from mistakes.
+    Create helper functions to handle file operations such as reading, writing, and modifying files. Consider implementing backup functionality to recover from mistakes.
 
 2.  2
 
@@ -677,9 +608,9 @@ The tool type is `type: "text_editor_20250728"` for Claude 4 and later models.
 
 4.  4
 
-    ### Process Claude's responses
+    ### Process Claude’s responses
 
-    Extract and handle tool calls from Claude's responses:
+    Extract and handle tool calls from Claude’s responses:
 
     Python
     TypeScript
@@ -697,7 +628,7 @@ The tool type is `type: "text_editor_20250728"` for Claude 4 and later models.
     # Process tool use in Claude's response
     for content in response.content:
         if content.type == "tool_use":
-            # Execute the tool based on command
+            # Run the tool based on command
             result = handle_editor_tool(content)
 
             # Return result to Claude
@@ -719,11 +650,11 @@ When implementing the text editor tool, keep in mind:
 
 ### Handle errors
 
-When using the text editor tool, various errors may occur. Here is guidance on how to handle them:
+When using the text editor tool, various errors might occur. Here is guidance on how to handle them:
 
 ### File not found
 
-If Claude tries to view or modify a file that doesn't exist, return an appropriate error message in the `tool_result`:
+If Claude attempts to view or modify a file that doesn’t exist, return an appropriate error message in the `tool_result`:
 
 ```python
 {
@@ -743,7 +674,7 @@ If Claude tries to view or modify a file that doesn't exist, return an appropria
 
 ### Multiple matches for replacement
 
-If Claude's `str_replace` command matches multiple locations in the file, return an appropriate error message:
+If Claude’s `str_replace` command matches multiple locations in the file, return an appropriate error message:
 
 ```python
 {
@@ -763,7 +694,7 @@ If Claude's `str_replace` command matches multiple locations in the file, return
 
 ### No matches for replacement
 
-If Claude's `str_replace` command doesn't match any text in the file, return an appropriate error message:
+If Claude’s `str_replace` command doesn’t match any text in the file, return an appropriate error message:
 
 ```python
 {
@@ -805,19 +736,19 @@ If there are permission issues with creating, reading, or modifying files, retur
 
 ### Provide clear context
 
-When asking Claude to fix or modify code, be specific about what files need to be examined or what issues need to be addressed. Clear context helps Claude identify the right files and make appropriate changes.
+When asking Claude to fix or modify code, be specific about what files to examine or what issues to address. Clear context helps Claude identify the right files and make appropriate changes.
 
-**Less helpful prompt:** "Can you fix my code?"
+**Less helpful prompt:** “Can you fix my code?”
 
-**Better prompt:** "There's a syntax error in my primes.py file that prevents it from running. Can you fix it?"
+**Better prompt:** “There’s a syntax error in my primes.py file that prevents it from running. Can you fix it?”
 
 ### Be explicit about file paths
 
-Specify file paths clearly when needed, especially if you're working with multiple files or files in different directories.
+Specify file paths clearly when needed, especially if you’re working with multiple files or files in different directories.
 
-**Less helpful prompt:** "Review my helper file"
+**Less helpful prompt:** “Review my helper file”
 
-**Better prompt:** "Can you check my utils/helpers.py file for any performance issues?"
+**Better prompt:** “Can you check my utils/helpers.py file for any performance issues?”
 
 ### Create backups before editing
 
@@ -931,14 +862,14 @@ def verify_changes(file_path):
 
 ## Pricing and token usage
 
-The text editor tool uses the same pricing structure as other tools used with Claude. It follows the standard input and output token pricing based on the Claude model you're using.
+The text editor tool uses the same pricing structure as other tools used with Claude. It follows the standard input and output token pricing based on the Claude model you’re using.
 
 In addition to the base tokens, the following additional input tokens are needed for the text editor tool:
 
-| Tool                                                                           | Additional input tokens |
-|--------------------------------------------------------------------------------|-------------------------|
-| `text_editor_20250728` (Claude 4.7 and later models and Claude Mythos Preview) | 974 tokens              |
-| `text_editor_20250728` (Claude 4.6 and earlier models)                         | 745 tokens              |
+| Tool | Additional input tokens |
+|----|----|
+| `text_editor_20250728` (Claude 4.7 and later models and Claude Mythos Preview) | 974 tokens |
+| `text_editor_20250728` (Claude 4.6 and earlier models) | 745 tokens |
 
 For more detailed information about tool pricing, see [Tool use pricing](agents-and-tools-tool-use-overview.md#pricing).
 
@@ -946,29 +877,29 @@ For more detailed information about tool pricing, see [Tool use pricing](agents-
 
 You can use the text editor tool alongside other Claude tools. When combining tools, ensure you:
 
-- Match the tool version with the model you're using
+- Match the tool version with the model you’re using
 - Account for the additional token usage for all tools included in your request
 
 ## Change log
 
-| Date             | Version                | Changes                                                                                                                                                                                                                                                                                       |
-|------------------|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| July 28, 2025    | `text_editor_20250728` | Release of an updated text editor tool that fixes some issues and adds an optional `max_characters` parameter. It is otherwise identical to `text_editor_20250429`.                                                                                                                           |
-| April 29, 2025   | `text_editor_20250429` | Release of the text editor tool for Claude 4. This version removes the `undo_edit` command but maintains all other capabilities. The tool name has been updated to reflect its str_replace-based architecture.                                                                                |
-| March 13, 2025   | `text_editor_20250124` | Introduction of standalone text editor tool documentation. This version is optimized for Claude Sonnet 3.7 but has identical capabilities to the previous version.                                                                                                                            |
+| Date | Version | Changes |
+|----|----|----|
+| July 28, 2025 | `text_editor_20250728` | Release of an updated text editor tool that fixes some issues and adds an optional `max_characters` parameter. It is otherwise identical to `text_editor_20250429`. |
+| April 29, 2025 | `text_editor_20250429` | Release of the text editor tool for Claude 4. This version removes the `undo_edit` command but maintains all other capabilities. The tool name has been updated to reflect its `str_replace`-based architecture. |
+| March 13, 2025 | `text_editor_20250124` | Introduction of standalone text editor tool documentation. This version is optimized for Claude Sonnet 3.7 but has identical capabilities to the previous version. |
 | October 22, 2024 | `text_editor_20241022` | Initial release of the text editor tool with Claude Sonnet 3.5 (retired; see [Model deprecations](../../20-Models/about-claude-model-deprecations.md)). Provides capabilities for viewing, creating, and editing files through the `view`, `create`, `str_replace`, `insert`, and `undo_edit` commands. |
 
 ## Next steps
 
 Here are some ideas for how to use the text editor tool in more convenient and powerful ways:
 
-- **Integrate with your development workflow**: Build the text editor tool into your development tools or IDE
-- **Create a code review system**: Have Claude review your code and make improvements
-- **Build a debugging assistant**: Create a system where Claude can help you diagnose and fix issues in your code
-- **Implement file format conversion**: Let Claude help you convert files from one format to another
-- **Automate documentation**: Set up workflows for Claude to automatically document your code
+- **Integrate with your development workflow:** Build the text editor tool into your development tools or IDE.
+- **Create a code review system:** Have Claude review your code and make improvements.
+- **Build a debugging assistant:** Create a system where Claude can help you diagnose and fix issues in your code.
+- **Implement file format conversion:** Let Claude help you convert files from one format to another.
+- **Automate documentation:** Set up workflows for Claude to automatically document your code.
 
-The text editor tool enables Claude to work directly with your code base, supporting workflows from debugging to automated documentation.
+The text editor tool allows Claude to work directly with your code base, supporting workflows from debugging to automated documentation.
 
 
 
@@ -980,4 +911,37 @@ Learn how to implement tool workflows for use with Claude.
 
 [Bash tool](agents-and-tools-tool-use-bash-tool.md)
 
-Execute shell commands with Claude.
+Run shell commands with Claude.
+
+## Availability
+
+Text editor tool is available on every model and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages` with `text_editor` tool
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+Client-side tool run in your environment.
+
+HIPAAEligible

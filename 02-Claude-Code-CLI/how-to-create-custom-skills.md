@@ -2,14 +2,14 @@
 title: "How to create custom skills | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:15Z"
+fetched_at: "2026-11-09T06:25:51Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
 # How to create custom skills
 
 
-Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](../15-Claude-AI-Features/create-and-edit-files-with-claude.md#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
+Skills are available for users on Free, Pro, Max, Ultra, Team, and Enterprise plans. This feature requires **[code execution to be enabled](../15-Claude-AI-Features/create-and-edit-files-with-claude.md#h_1c99382190)**. Skills are also available in beta for Claude Code users and for all API users using the code execution tool.
 
 Custom skills let you enhance Claude with specialized knowledge and workflows specific to your organization or personal work style. This article explains how to create, structure, and test your own skills.
 
@@ -29,7 +29,7 @@ Skills can be as simple as a few lines of instructions or as complex as multi-fi
 
 ## Record a skill
 
-Recording a skill is available on Pro, Max, and Team plans, in Cowork in Claude for Mac. It isn't available in chat, on Windows, or on Free and Enterprise plans.
+Recording a skill is available on Pro, Max, Ultra, and Team plans, in Cowork in Claude for Mac. It isn't available in chat, on Windows, or on Free and Enterprise plans.
 
 Instead of writing a skill by hand, you can record yourself doing a task and let Claude build the skill from what it observes. You send Claude a video of your screen, clicks, typing, and voice, and Claude proposes a skill for you to review before you save it.
 
@@ -225,7 +225,7 @@ my-skill.zip
 
 4\. Iterate on the description if Claude isn't using it when expected.
 
-When you're iterating on a skill with Claude in chat, you can edit the skill files directly where they open beside the conversation. Highlight the text you want changed, click "Edit with Claude," and type your request. For skills with multiple files, leave edit requests across the files and send them together, and Claude applies them in one pass. Learn more about **[editing artifacts](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them#h_9cbf05e668)**.
+When you're iterating on a skill with Claude in chat, you can edit the skill files directly where they open beside the conversation. Highlight the text you want changed, click "Edit with Claude," and type your request. For skills with multiple files, leave edit requests across the files and send them together, and Claude applies them in one pass. Learn more about **[editing artifacts](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_9cbf05e668)**.
 
 **Note for Team and Enterprise plans:** To make a skill available to all users in your organization, see **[Provision and manage skills for your organization](../15-Claude-AI-Features/provisioning-and-managing-skills-for-your-organization.md)**.
 

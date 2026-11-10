@@ -2,7 +2,7 @@
 title: "An opt-in vulnerability-finding service for open-source software \\ Anthropic"
 source_url: "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
 category: "19-Reference"
-fetched_at: "2026-10-22T06:30:49Z"
+fetched_at: "2026-10-24T06:26:35Z"
 tags: ["news-research"]
 ---
 
@@ -33,11 +33,11 @@ tags: ["news-research"]
 
 Related articles
 
-- Security
+- Frontier Red Team
 
-  Oct 8, 2026
+  Oct 22, 2026
 
-  [Introducing the Anthropic Cyber Mission](anthropic-cyber-mission.md)
+  [LLMs are making formal software verification feasible at a much larger scale](formal-verification.md)
 
 [View more](https://www.anthropic.com/search?topic=cybersecurity)
 

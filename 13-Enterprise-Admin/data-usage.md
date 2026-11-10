@@ -2,11 +2,14 @@
 title: "Data usage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/data-usage"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-09-28T06:32:59Z"
+fetched_at: "2026-10-31T06:24:38Z"
+last_modified: "Sat, 31 Oct 2026 02:20:10 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Data policies](#data-policies)
   - [Data training policy](#data-training-policy)
@@ -41,7 +44,7 @@ Data policies
 
 Data training policy
 
-**Consumer users (Free, Pro, and Max plans)**: We give you the choice to allow your data to be used to improve future Claude models. We will train new models using data from Free, Pro, and Max accounts when this setting is on (including when you use Claude Code from these accounts). **Commercial users**: (Team and Enterprise plans, API, 3rd-party platforms, and Claude Gov) maintain existing policies: Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms, unless the customer has chosen to provide their data to us for model improvement (for example, the [Developer Partner Program](../15-Claude-AI-Features/about-the-development-partner-program.md)).
+**Consumer users (Free, Pro, Max, and Ultra plans)**: We give you the choice to allow your data to be used to improve future Claude models. We will train new models using data from Free, Pro, Max, and Ultra accounts when this setting is on (including when you use Claude Code from these accounts). **Commercial users**: (Team and Enterprise plans, API, 3rd-party platforms, and Claude Gov) maintain existing policies: Anthropic does not train generative models using code or prompts sent to Claude Code under commercial terms, unless the customer has chosen to provide their data to us for model improvement (for example, the [Developer Partner Program](../15-Claude-AI-Features/about-the-development-partner-program.md)).
 
 
 [​](#development-partner-program)
@@ -75,7 +78,7 @@ Nothing is uploaded unless you explicitly select **Yes**. Organizations with [ze
 
 Data retention
 
-Anthropic retains Claude Code data based on your account type and preferences. **Consumer users (Free, Pro, and Max plans)**:
+Anthropic retains Claude Code data based on your account type and preferences. **Consumer users (Free, Pro, Max, and Ultra plans)**:
 
 - Users who allow data use for model improvement: 5-year retention period to support model development and safety improvements
 - Users who don’t allow data use for model improvement: 30-day retention period
@@ -87,7 +90,7 @@ Anthropic retains Claude Code data based on your account type and preferences. *
 - [Zero data retention](../02-Claude-Code-CLI/zero-data-retention.md): available to qualified accounts for Claude Code on Claude for Enterprise. ZDR is not included in the standard Enterprise plan; it is enabled on a per-organization basis by your account team after confirming eligibility
 - Local caching: Claude Code clients store session transcripts locally in plaintext under `~/.claude/projects/` for 30 days by default to enable session resumption. Adjust the period with `cleanupPeriodDays`. See [application data](../02-Claude-Code-CLI/claude-directory.md#application-data) for what’s stored and how to clear it. Transcripts of sessions started or most recently continued in Claude Desktop or Cowork are [exempt from that limit by default](../02-Claude-Code-CLI/claude-directory.md#cleaned-up-automatically).
 
-You can delete individual cloud sessions at any time. Deleting a session permanently removes the session’s event data. For instructions on how to delete sessions, see [Delete sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md#delete-sessions). Learn more about data retention practices in our [Privacy Center](https://privacy.anthropic.com/). For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
+You can delete individual cloud sessions at any time. Deleting a session permanently removes the session’s event data. For instructions on how to delete sessions, see [Delete sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md#delete-sessions). Learn more about data retention practices in our [Privacy Center](https://privacy.anthropic.com/). For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, Max, and Ultra users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
 
 
 [​](#data-access)
@@ -105,12 +108,12 @@ The diagram below shows how Claude Code connects to external services during ins
 
 Claude Code runs locally. To interact with the LLM, Claude Code sends data over the network. This data includes all user prompts and model outputs, encrypted in transit via TLS 1.2+. Claude Code is compatible with most popular VPNs and LLM proxies. Encryption at rest depends on your model provider:
 
-| Provider                      | Encryption at rest                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Anthropic API                 | Infrastructure-level disk encryption (AES-256). Enable [Zero Data Retention](../02-Claude-Code-CLI/zero-data-retention.md) for no server-side persistence.                                                                                                                                                                                                                                                                                              |
-| Amazon Bedrock                | AES-256 with AWS-managed keys. Customer-managed keys available via AWS KMS.                                                                                                                                                                                                                                                                                                                                                             |
-| Google Cloud’s Agent Platform | Google-managed encryption keys. CMEK available.                                                                                                                                                                                                                                                                                                                                                                                         |
-| Microsoft Foundry             | Depends on the deployment’s [hosting option](https://code.claude.com/docs/20-Models/build-with-claude-claude-in-microsoft-foundry-cac680095c.md#hosting-options). For Hosted on Azure deployments, prompts and completions remain within Azure; only usage metadata and content flagged by Anthropic’s safety systems egress to Anthropic. For Hosted on Anthropic deployments, requests route to Anthropic infrastructure with AES-256 disk encryption. |
+| Provider | Encryption at rest |
+|----|----|
+| Anthropic API | Infrastructure-level disk encryption (AES-256). Enable [Zero Data Retention](../02-Claude-Code-CLI/zero-data-retention.md) for no server-side persistence. |
+| Amazon Bedrock | AES-256 with AWS-managed keys. Customer-managed keys available via AWS KMS. |
+| Google Cloud’s Agent Platform | Google-managed encryption keys. CMEK available. |
+| Microsoft Foundry | Depends on the deployment’s [hosting option](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md#hosting-options). For Hosted on Azure deployments, prompts and completions remain within Azure; only usage metadata and content flagged by Anthropic’s safety systems egress to Anthropic. For Hosted on Anthropic deployments, requests route to Anthropic infrastructure with AES-256 disk encryption. |
 
 Claude Code is built on Anthropic’s APIs. For details on API security controls, including API logging procedures, see the compliance artifacts in the [Anthropic Trust Center](https://trust.anthropic.com).
 
@@ -135,7 +138,7 @@ Telemetry services
 
 Claude Code sends two kinds of operational telemetry: usage metrics and error reports. You can turn each off individually with the environment variables below, or disable all non-essential traffic at once by setting `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`. Setting `DISABLE_TELEMETRY` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` also disables feature-flag evaluation, which can make [Remote Control](../02-Claude-Code-CLI/remote-control.md#requirements) unavailable; `DISABLE_ERROR_REPORTING` doesn’t. **Metrics**: latency, reliability, and usage patterns, sent to Anthropic and to third-party logging infrastructure over TLS. Metrics never include your code, prompts, or file paths. Set `DISABLE_TELEMETRY=1` to opt out. **Error reports**: error messages and stack traces from Claude Code’s own internals, sent to a third-party error tracking service over TLS. Claude Code redacts known patterns of secrets, file paths, email addresses, and other personal information before anything leaves your machine. Set `DISABLE_ERROR_REPORTING=1` to opt out. Error reporting is on only when all of these apply:
 
-- you sign in with a Claude Pro or Max subscription
+- you sign in with a Claude Pro, Max, or Ultra subscription
 - you’re running Claude Code v2.1.198 or later
 - you’re connecting directly to the Claude API
 - your organization doesn’t have a zero data retention or HIPAA agreement

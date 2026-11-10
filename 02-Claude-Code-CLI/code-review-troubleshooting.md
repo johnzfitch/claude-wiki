@@ -2,7 +2,7 @@
 title: "Troubleshoot Code Review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-troubleshooting"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:23Z"
+fetched_at: "2026-10-25T06:26:22Z"
 tags: ["claude-code"]
 ---
 
@@ -39,16 +39,16 @@ Check how far the review got
 
 Find the **Claude Code Review** check run on your pull request, then match its title to one of these common ones:
 
-| Check run title                                            | What it means                                                                                                     | What to do                                                                                                                                                                                   |
-|:-----------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Code review queued…** or **Code review in progress…**    | The review hasn’t finished                                                                                        | Wait for the title to change                                                                                                                                                                 |
-| **Code review found no issues**                            | The review finished and found nothing to flag                                                                     | Nothing                                                                                                                                                                                      |
-| A title that says issues were found                        | The review finished with findings                                                                                 | If you don’t see them on the diff, see [Find issues that aren’t showing as inline comments](#find-issues-that-aren%E2%80%99t-showing-as-inline-comments)                                     |
-| **Code review skipped — no new changes**                   | An automatic review didn’t run on your latest push                                                                | To get a review anyway, comment `@claude review`                                                                                                                                             |
-| **Code review not repeated — earlier findings still open** | An automatic review didn’t run on your latest push, and Important findings from the earlier review are still open | Push a fix, or to get a review anyway, comment `@claude review`. See [When a push keeps the earlier result](code-review-pull-requests.md#when-a-push-keeps-the-earlier-result)         |
-| **Code review failed** or **Code review timed out**        | The review didn’t finish                                                                                          | To run it again, see [Retrigger a failed or timed-out review](#retrigger-a-failed-or-timed-out-review)                                                                                       |
-| **Code review declined**                                   | The review didn’t run                                                                                             | Read the check run’s summary. If it names a budget or a spend limit, see [Review didn’t run and the PR shows a budget message](#review-didn%E2%80%99t-run-and-the-pr-shows-a-budget-message) |
-| No check run                                               | No review started                                                                                                 | Comment `@claude review`. If no check run appears after that, see [A comment command didn’t start a review](#a-comment-command-didn%E2%80%99t-start-a-review)                                |
+| Check run title                                            | What it means                                                                                                     | What to do                                                                                                                                                                                              |
+|:-----------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Code review queued…** or **Code review in progress…**    | The review hasn’t finished                                                                                        | Wait for the title to change                                                                                                                                                                            |
+| **Code review found no issues**                            | The review finished and posted no findings                                                                        | If this isn’t the pull request’s first review, look in the review body for a count of [findings the review left out](code-review-pull-requests.md#what-a-later-review-covers). Otherwise, nothing |
+| A title that says issues were found                        | The review finished with findings                                                                                 | If you don’t see them on the diff, see [Find issues that aren’t showing as inline comments](#find-issues-that-aren%E2%80%99t-showing-as-inline-comments)                                                |
+| **Code review skipped — no new changes**                   | An automatic review didn’t run on your latest push                                                                | To get a review anyway, comment `@claude review`                                                                                                                                                        |
+| **Code review not repeated — earlier findings still open** | An automatic review didn’t run on your latest push, and Important findings from the earlier review are still open | Push a fix, or to get a review anyway, comment `@claude review`. See [When a push keeps the earlier result](code-review-pull-requests.md#when-a-push-keeps-the-earlier-result)                    |
+| **Code review failed** or **Code review timed out**        | The review didn’t finish                                                                                          | To run it again, see [Retrigger a failed or timed-out review](#retrigger-a-failed-or-timed-out-review)                                                                                                  |
+| **Code review declined**                                   | The review didn’t run                                                                                             | Read the check run’s summary. If it names a budget or a spend limit, see [Review didn’t run and the PR shows a budget message](#review-didn%E2%80%99t-run-and-the-pr-shows-a-budget-message)            |
+| No check run                                               | No review started                                                                                                 | Comment `@claude review`. If no check run appears after that, see [A comment command didn’t start a review](#a-comment-command-didn%E2%80%99t-start-a-review)                                           |
 
 
 [​](#a-review-didn’t-start)
@@ -77,7 +77,7 @@ Review didn’t run and the PR shows a budget message
 When your organization’s budget can’t cover a review, Code Review skips the review and Claude posts a comment on the pull request that begins with “⚠️ Code review skipped”. In some of these cases a check run titled **Code review declined** also appears. The comment links [claude.ai/admin-settings/usage](https://claude.ai/admin-settings/usage), where an admin restores the budget. Its wording tells you which limit was reached:
 
 - **“has reached its monthly code review spending cap”**: the [monthly spend limit for Code Review](code-review-costs.md#limit-your-spend) was reached. Reviews resume at the start of the next billing period. To get them sooner, ask an admin to raise the limit.
-- **“has no extra usage available to pay for this review”**: your organization’s [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md) balance is empty, or its overall monthly spend limit was reached. Ask an admin to add usage credits or raise that limit.
+- **“has no extra usage available to pay for this review”**: your organization’s [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) balance is empty, or its overall monthly spend limit was reached. Ask an admin to add usage credits or raise that limit.
 - **“is too low to start another review”**: what’s left of the budget or balance is less than the expected cost of one review. Ask an admin to raise the limit or add usage credits.
 
 After the budget is restored, comment `@claude review` on the pull request to get the review that was skipped. The [conditions for comment commands](code-review-pull-requests.md#comment-commands) apply, so the commenter needs write access.
@@ -108,7 +108,7 @@ If the check run title says issues were found but you don’t see inline review 
 
 The check run mentions REVIEW.md
 
-These are three of the messages a check run can carry about `REVIEW.md`:
+These are four of the messages a check run can carry about `REVIEW.md`:
 
 - **“This review applied the repository’s review instructions (REVIEW.md) from its default branch, which is not protected against direct pushes.”**: the review read the root file only. See [Which branch REVIEW.md is read from](code-review-customize.md#which-branch-review-md-is-read-from) for what protecting the branch changes.
 - **“were not applied to this review: branch protection could not be confirmed”**: the review read no `REVIEW.md`.
@@ -116,6 +116,7 @@ These are three of the messages a check run can carry about `REVIEW.md`:
   - **Too many links**: it carries more than 64 Markdown links. Cut links to [64 or fewer](code-review-customize.md#include-other-files-in-review-md).
   - **A link the review can’t parse**: it has a malformed Markdown link. Fix or remove the link.
   - **A link to a changed file**: it links to a file or folder this pull request changes, and the review couldn’t leave out only the lines with that link. Write the rule in `REVIEW.md` itself.
+- **“include line(s) in the root REVIEW.md were skipped on this review”**: your root `REVIEW.md` applied, but the files those lines name didn’t. Check the lists under [Include other files in REVIEW.md](code-review-customize.md#include-other-files-in-review-md) and, for a skill, under [Include a skill file](code-review-customize.md#include-a-skill-file).
 
 
 [​](#setup-problems)

@@ -2,7 +2,7 @@
 title: "Commerce agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/commerce-agents"
 category: "04-API-Reference/About"
-fetched_at: "2026-10-20T06:36:49Z"
+fetched_at: "2026-11-05T06:35:04Z"
 tags: ["agents", "api", "claude-code"]
 ---
 
@@ -18,7 +18,11 @@ Build a shopping agent and a merchant agent on Claude using Claude for commerce,
 
 
 
-This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business's own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint with a working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), and [Claude Managed Agents](../Other/managed-agents-overview.md), runnable examples for retail, travel, telecom, and entertainment, and a Claude Code plugin that scaffolds the same design against your own systems.
+This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business’s own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint that includes the following:
+
+- A working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), and [Claude Managed Agents](../Other/managed-agents-overview.md)
+- Runnable examples for retail, travel, telecom, and entertainment
+- A Claude Code plugin that scaffolds the same design against your own systems
 
 The code, setup instructions, and safety documentation are in the [Claude for commerce repository on GitHub](https://github.com/anthropics/commerce-agents). For how the agents are built and why, including the single-agent-with-skills design, UI components as tools, harness-enforced safety, prompt caching, memory, and evals, read the engineering post [A guide to the anatomy of effective commerce agents](https://claude.com/blog/the-anatomy-of-effective-commerce-agents).
 
@@ -48,7 +52,7 @@ The merchant agent supports the people running the store. It reaches your analyt
 - Explain how the business is doing: why a metric moved, which segment drove it, and pace against a comparable period. An optional analysis delegate runs read-only queries under a time and size budget.
 - Present a daily digest of what needs attention, including low stock, slow movers, and order exceptions.
 - Improve listing content and fix catalog data from material the operator supplies.
-- Recommend price changes and promotions within the store's guardrails, with a margin preview.
+- Recommend price changes and promotions within the store’s guardrails, with a margin preview.
 - Draft marketing campaigns with audiences, placements, and budget.
 
 Its five skills cover performance insights, inventory and operations, catalog and listings, pricing and promotions, and marketing campaigns.
@@ -59,31 +63,31 @@ Every write the merchant agent proposes, whether a listing update, a price chang
 
 Each example includes a customer storefront and a merchant portal over fictional data.
 
-| Vertical      | Storefront                                                                         | Merchant portal                                                                            |
-|---------------|------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| Retail        | Search, comparison, plans, cart, checkout, and memory over the built-in components | Daily digest, staged restocks and listing fixes, and the analysis delegate over a SQL view |
-| Travel        | Date-bound inventory and an itinerary component                                    | Occupancy calendar and date-window rate moves                                              |
-| Telecom       | Account context, a plan matrix, and server-authored fee disclosures                | Plan mix, price moves that state the lines affected, and protected regulated fees          |
-| Entertainment | Timed holds, waitlists, transfers, a venue map, and all-in fee disclosures         | Event pacing, hold releases that add real capacity, and fee-preserving price moves         |
+| Vertical | Storefront | Merchant portal |
+|----|----|----|
+| Retail | Search, comparison, plans, cart, checkout, and memory over the built-in components | Daily digest, staged restocks and listing fixes, and the analysis delegate over a SQL view |
+| Travel | Date-bound inventory and an itinerary component | Occupancy calendar and date-window rate moves |
+| Telecom | Account context, a plan matrix, and server-authored fee disclosures | Plan mix, price moves that state the lines affected, and protected regulated fees |
+| Entertainment | Timed holds, waitlists, transfers, a venue map, and all-in fee disclosures | Event pacing, hold releases that add real capacity, and fee-preserving price moves |
 
 ## Where it runs
 
-The Messages API and Agent SDK runtimes run against the Claude API, [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md), [Google Cloud's Agent Platform](../Guides/build-with-claude-claude-on-vertex-ai.md), or [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), or through your own gateway. The Claude Managed Agents path runs on the Claude API. The repository's deployment guide shows where each path selects its platform and which model ID format each expects.
+The Messages API and Agent SDK runtimes run against the Claude API, [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md), or [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), or through your own gateway. The Claude Managed Agents path runs on the Claude API. The repository’s deployment guide shows where each path selects its platform and which model ID format each expects.
 
 ## Build your own with the Claude Code plugin
 
-The blueprint ships with a [Claude Code](../../02-Claude-Code-CLI/code-home.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
+The blueprint ships with a [Claude Code](../../01-Getting-Started/overview.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
 
-| Command                    | What it does                                                                                                                              |
-|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| Command | What it does |
+|----|----|
 | `/scaffold-commerce-agent` | Interviews you about your stack, plays the plan back, and scaffolds a shopping agent, a merchant agent, or both on the reference packages |
-| `/add-commerce-flow`       | Adds one flow to an existing agent by copying its skill, wiring the tools it calls, and writing its first eval cases                      |
-| `/author-commerce-evals`   | Builds an eval suite with a runner, the first cases against your own catalog, and a replay gate for CI                                    |
-| `/review-commerce-agent`   | Maps an agent you already run, compares it with the reference, and converts the parts you pick                                            |
+| `/add-commerce-flow` | Adds one flow to an existing agent by copying its skill, wiring the tools it calls, and writing its first eval cases |
+| `/author-commerce-evals` | Builds an eval suite with a runner, the first cases against your own catalog, and a replay gate for CI |
+| `/review-commerce-agent` | Maps an agent you already run, compares it with the reference, and converts the parts you pick |
 
 The plugin also carries six skills on the architecture, prompt caching, UI as tools, trust and safety, evals, and merchant operations, which load whenever a Claude Code conversation matches them. Installation instructions are in the repository README.
 
-To adapt the reference by hand instead, implement the shopping or merchant backend interface over your services, switch off the systems you don't have with the configuration flags so their tools and prompt lines drop out, and set your brand name, assistant name, and voice. The repository's backend guide walks through identity and credentials, ordered flows, checkout hand-off, and products with options. A pilot can implement search and product details and stub the rest.
+To adapt the reference by hand instead, implement the shopping or merchant backend interface over your services, switch off the systems you don’t have with the configuration flags so their tools and prompt lines drop out, and set your brand name, assistant name, and voice. The repository’s backend guide walks through identity and credentials, ordered flows, checkout hand-off, and products with options. A pilot can implement search and product details and stub the rest.
 
 ## Get started
 

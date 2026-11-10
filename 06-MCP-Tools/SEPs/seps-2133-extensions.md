@@ -2,11 +2,14 @@
 title: "SEP-2133: Extensions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2133-extensions"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-08-02T05:38:44Z"
+fetched_at: "2026-10-31T06:24:36Z"
+last_modified: "Sat, 31 Oct 2026 05:35:44 GMT"
 tags: ["mcp", "mcp-seps"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Abstract](#abstract)
 - [Motivation](#motivation)
@@ -52,16 +55,16 @@ FinalStandards Track
 
 This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not reflected here. Refer to the [current specification](https://modelcontextprotocol.io/specification/latest) and its changelog for authoritative requirements.
 
-| Field         | Value                                                                            |
-|---------------|----------------------------------------------------------------------------------|
-| **SEP**       | 2133                                                                             |
-| **Title**     | Extensions                                                                       |
-| **Status**    | Final                                                                            |
-| **Type**      | Standards Track                                                                  |
-| **Created**   | 2025-01-21                                                                       |
-| **Author(s)** | Peter Alexander ([@pja-ant](https://github.com/pja-ant))                         |
-| **Sponsor**   | None (seeking sponsor)                                                           |
-| **PR**        | [\#2133](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2133) |
+| Field | Value |
+|----|----|
+| **SEP** | 2133 |
+| **Title** | Extensions |
+| **Status** | Final |
+| **Type** | Standards Track |
+| **Created** | 2025-01-21 |
+| **Author(s)** | Peter Alexander ([@pja-ant](https://github.com/pja-ant)) |
+| **Sponsor** | None (seeking sponsor) |
+| **PR** | [\#2133](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2133) |
 
 ------------------------------------------------------------------------
 
@@ -102,7 +105,7 @@ Official extensions live inside the MCP github org at [https://github.com/modelc
 - A repository has a set of maintainers (identified by MAINTAINERS.md) appointed by the core maintainers that are responsible for the repository and extensions within it (e.g. [ext-auth MAINTAINERS.md](https://github.com/modelcontextprotocol/ext-auth/blob/main/MAINTAINERS.md), [ext-apps MAINTAINERS.md](https://github.com/modelcontextprotocol/ext-apps/blob/main/MAINTAINERS.md)).
 - Extensions SHOULD have an associated working group or interest group to guide their development and gather community input.
 
-An *extension* is a versioned specification document within an extension repository, e.g. [https://github.com/modelcontextprotocol/ext-auth/blob/main/specification/draft/oauth-client-credentials.mdx](https://github.com/modelcontextprotocol/ext-auth/blob/main/specification/draft/oauth-client-credentials.mdx)
+An *extension* is a versioned specification document within an extension repository, e.g. [https://github.com/modelcontextprotocol/ext-auth/blob/main/specification/stable/oauth-client-credentials/2026-07-28/oauth-client-credentials.mdx](https://github.com/modelcontextprotocol/ext-auth/blob/main/specification/stable/oauth-client-credentials/2026-07-28/oauth-client-credentials.mdx)
 
 - Extension specifications MUST use the same language as the core specification (i.e. \[[BCP 14](https://www.rfc-editor.org/info/bcp14)\] \[[RFC2119](https://datatracker.ietf.org/doc/html/rfc2119)\] \[[RFC8174](https://datatracker.ietf.org/doc/html/rfc8174)\]) and SHOULD be worded as if they were part of the core specification.
 
@@ -161,7 +164,7 @@ Eventually, some extensions MAY transition to being core protocol features. This
 
 Spec Recommendation
 
-Extensions will be referenced from a new page on the MCP website at [modelcontextprotocol.io/extensions](../Extensions/extensions.md) (to be created) with links to their specification. Links to relevant extensions MAY also be added to the core specification as appropriate (e.g. [https://modelcontextprotocol.io/specification/draft/basic/authorization](../Spec/2026-07-28-basic-authorization.md) may link to ext-auth extensions), but they MUST be clearly advertised as optional extensions and SHOULD be links only (not copies of specification text).
+Extensions will be referenced from a new page on the MCP website at [modelcontextprotocol.io/extensions](../Extensions/extensions.md) (to be created) with links to their specification. Links to relevant extensions MAY also be added to the core specification as appropriate (e.g. [https://modelcontextprotocol.io/specification/draft/basic/authorization](../Spec/draft-basic-authorization.md) may link to ext-auth extensions), but they MUST be clearly advertised as optional extensions and SHOULD be links only (not copies of specification text).
 
 
 [​](#sdk-implementation)

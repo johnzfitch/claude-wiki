@@ -2,230 +2,9 @@
 title: "Beta headers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/beta-headers"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:38:17Z"
+fetched_at: "2026-11-05T06:35:35Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta-headers)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-[API reference](overview.md)Using the API
 
 # Beta headers
 
@@ -233,7 +12,7 @@ Claude Code
 
 
 
-Access experimental features before they become part of the standard API with the `anthropic-beta` header or the SDK's `betas` parameter.
+Access experimental features before they become part of the standard API with the `anthropic-beta` header or the SDK’s `betas` parameter.
 
 Copy page
 
@@ -252,16 +31,16 @@ To access beta features, include the `anthropic-beta` header in your API request
 ```python
 POST /v1/messages
 Authorization: Bearer YOUR_API_KEY
-anthropic-version: 2023-06-01
+anthropic-version: 2026-10-21
 anthropic-beta: BETA_FEATURE_NAME
 content-type: application/json
 ```
 
 
 
-Each feature's documentation states the exact beta name to send. The [API overview](overview.md) lists the APIs currently in beta.
+Each feature’s documentation states the exact beta name to send. The [API overview](overview.md) lists the APIs in beta.
 
-The following examples show the same request with cURL, the `ant` CLI, and the SDK, using the [context editing](../Guides/build-with-claude-context-editing.md) beta as the example. The SDK takes beta names through `betas` and sends the `anthropic-beta` header for you:
+The following example sends a request with the [context editing](../Guides/build-with-claude-context-editing.md) beta. The SDK takes beta names through `betas` and sends the `anthropic-beta` header for you:
 
 cURL
 
@@ -331,26 +110,26 @@ With the SDK, list each feature (for example, `betas=["feature1", "feature2"]`).
 
 ### Beta features on other platforms
 
-Beta names are the same on every platform that accepts them, but not every platform accepts every beta. [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), and [Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md) take beta names in the `anthropic-beta` header, as the Claude API does. To send several betas, put their names in one header, separated by commas: Google Cloud reads only one `anthropic-beta` header and ignores the rest, so betas in the others don't take effect.
+Beta names are the same on every platform that accepts them, but not every platform accepts every beta. [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md), [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), and [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md) take beta names in the `anthropic-beta` header, as the Claude API does. To send several betas, put their names in one header, separated by commas: Claude Models on Google Cloud (Google managed) reads only one `anthropic-beta` header and ignores the rest, so betas in the others don’t take effect.
 
 On Amazon Bedrock, where beta names go depends on the API you call:
 
 - [Claude in Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md) (`bedrock-mantle` endpoints) takes them in the `anthropic-beta` header.
-- The [InvokeModel API](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) reads them from the request body, not from a header. List them in the body's `anthropic_beta` array, one name per element, for example `"anthropic_beta": ["feature1", "feature2"]`.
+- The [InvokeModel API](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) reads them from the request body, not from a header. List them in the body’s `anthropic_beta` array, one name for each element, for example `"anthropic_beta": ["feature1", "feature2"]`.
 
 ### Endpoint-specific headers
 
 Some beta APIs are scoped to specific endpoints and require a feature-specific beta header on every request:
 
-| Endpoints                                        | Beta header                 |
-|--------------------------------------------------|-----------------------------|
+| Endpoints | Beta header |
+|----|----|
 | `/v1/agents`, `/v1/sessions`, `/v1/environments` | `managed-agents-2026-04-01` |
-| `/v1/tunnels`                                    | `mcp-tunnels-2026-06-22`    |
-| `/v1/memory_stores` and sub-resources            | `agent-memory-2026-07-22`   |
+| `/v1/tunnels` | `mcp-tunnels-2026-06-22` |
+| `/v1/memory_stores` and sub-resources | `agent-memory-2026-07-22` |
 
-The SDK's `client.beta` namespace adds these headers automatically. Add them yourself only when making raw HTTP requests. See the [Managed Agents overview](../Other/managed-agents-overview.md), [Using agent memory](../Other/managed-agents-memory.md), and the [MCP tunnels reference](../Agents-Tools/agents-and-tools-mcp-tunnels-reference.md#tunnels-api) for details.
+The SDK’s `client.beta` namespace adds these headers automatically. Add them yourself only when making raw HTTP requests. See the [Managed Agents overview](../Other/managed-agents-overview.md), [Using agent memory](../Other/managed-agents-memory.md), and the [MCP tunnels reference](../Agents-Tools/agents-and-tools-mcp-tunnels-reference.md#tunnels-api) for details.
 
-Endpoint-specific headers that apply to the same endpoint aren't always combinable. On memory store endpoints, `agent-memory-2026-07-22` replaces `managed-agents-2026-04-01`: sending both on the same request returns a `400` error. The SDK sends the correct header for each endpoint automatically.
+Endpoint-specific headers that apply to the same endpoint aren’t always combinable. On memory store endpoints, `agent-memory-2026-07-22` replaces `managed-agents-2026-04-01`: sending both on the same request returns a `400` error. The SDK sends the correct header for each endpoint automatically.
 
 ### Version naming conventions
 
@@ -358,7 +137,7 @@ Beta feature names typically follow the pattern `feature-name-YYYY-MM-DD`, where
 
 ## Error handling
 
-If you use an invalid beta name, or a beta your organization doesn't have access to, you'll receive a `400` error response:
+If you use an invalid beta name, or a beta your organization doesn’t have access to, you’ll receive a `400` error response:
 
 Output
 
@@ -385,8 +164,8 @@ For updates to beta features, see the [release notes](../../20-Models/release-no
 
 [Errors](errors.md)
 
-Understand the HTTP status codes, error response shape, and request IDs the Claude API returns, and handle errors with the SDK's typed exceptions.
+Understand the HTTP status codes, error response shape, and request IDs the Claude API returns, and handle errors with the SDK’s typed exceptions.
 
 [API overview](overview.md)
 
-Explore the Claude API's features, including the APIs currently in beta.
+Explore the Claude API’s features, including the APIs in beta.

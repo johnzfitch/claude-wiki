@@ -2,11 +2,13 @@
 title: "Get started with Claude Motion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:13Z"
+fetched_at: "2026-11-09T06:26:36Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with Claude Motion
+
+October 8, 2026
 
 
 Claude Motion turns your content into short animations, like an explainer for an all-hands, an animated chart for a board deck, or a product walkthrough for customer onboarding. This guide covers creating an animation, editing it, and exporting or sharing it.
@@ -55,7 +57,7 @@ Say who will watch it, where it will play, and roughly how long it should be. At
 
 ## Export and share
 
-To download an animation, click "Export" and choose MP4. Animations start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
+To download an animation, click "Export" and choose MP4. Animations start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](share-artifacts-claude-help-center.md)**.
 
 ## Usage
 

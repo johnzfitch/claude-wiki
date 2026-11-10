@@ -2,267 +2,11 @@
 title: "Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/events"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:38:43Z"
+fetched_at: "2026-11-05T06:36:04Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions%2Fevents)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-
-Create Session
-
-
-List Sessions
-
-
-Get Session
-
-
-Update Session
-
-
-Delete Session
-
-
-Archive Session
-
-Events
-
-
-List Events
-
-
-Send Events
-
-
-Stream Events
-
-Resources
-
-Threads
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -274,19 +18,27 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [List Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/list)
 
 GET/v1/sessions/{session_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Send Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/send)
 
 POST/v1/sessions/{session_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Stream Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/stream)
 
 GET/v1/sessions/{session_id}/events/stream
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### Models
 
@@ -661,6 +413,14 @@ BetaManagedAgentsBillingError object{ type: "billing_error", message, retry_stat
 
 
 The caller's organization or workspace cannot make model requests — out of credits or spend limit reached. Retrying with the same credentials will not succeed; the caller must resolve the billing state.
+
+
+
+BetaManagedAgentsCompactionLimitReachedError object{ type: "compaction_limit_reached_error", message, retry_status }
+
+
+
+The turn stopped because the context was compacted the maximum number of times in a row without the model producing a message or a tool call, not because a request failed. The thread goes idle with `stop_reason: retries_exhausted` (a child thread then terminates); the next `user.message` starts a new turn.
 
 
 
@@ -1863,6 +1623,14 @@ message: string
 
 
 Short explanation written by the server. It never contains content from the run or its agents.
+
+
+
+BetaManagedAgentsToolUseLimitReachedError object{ type: "tool_use_limit_reached_error", message, retry_status }
+
+
+
+The turn stopped because the agent loop reached its limit on tool-use rounds (one model response that calls tools, plus running those tools, is one round), not because a request failed. The thread goes idle with `stop_reason: retries_exhausted` (a child thread then terminates); the next `user.message` starts a new turn.
 
 
 

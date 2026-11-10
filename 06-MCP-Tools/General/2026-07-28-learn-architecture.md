@@ -1,12 +1,15 @@
 ---
 title: "Architecture overview - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/draft/learn/architecture"
+source_url: "https://modelcontextprotocol.io/docs/2026-07-28/learn/architecture"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-21T06:29:04Z"
+fetched_at: "2026-10-31T06:25:16Z"
+last_modified: "Fri, 30 Oct 2026 20:35:25 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Scope](#scope)
 - [Concepts of MCP](#concepts-of-mcp)
@@ -99,7 +102,7 @@ The data layer implements a [JSON-RPC 2.0](https://www.jsonrpc.org/) based excha
 
 - **Discovery**: Lets clients query a server’s supported protocol versions, capabilities, and identity through the `server/discover` request
 - **Server features**: Enables servers to provide core functionality including tools for AI actions, resources for context data, and prompts for interaction templates from and to the client
-- **Client features**: Enables servers to elicit input from the user. Sampling is [deprecated](../Spec/draft-deprecated.md) as of protocol version `2026-07-28`.
+- **Client features**: Enables servers to elicit input from the user. Sampling is [deprecated](../Spec/2026-07-28-deprecated.md) as of protocol version `2026-07-28`.
 - **Utility features**: Supports additional capabilities like notifications for real-time updates and progress tracking for long-running operations
 
 
@@ -134,7 +137,7 @@ stateless protocol
 
 capabilities
 
-relevant to that request in its `_meta` field, so the server can process each request on its own. Clients should also identify themselves in the same field unless configured not to. Servers advertise their supported versions and capabilities through the mandatory [`server/discover`](../Spec/2026-07-28-server-discover.md) request, which clients may send before any other request. Detailed information can be found in the [specification](https://modelcontextprotocol.io/specification/draft/basic/index#statelessness), and the [example](#example) showcases the per-request metadata and the discovery sequence.
+relevant to that request in its `_meta` field, so the server can process each request on its own. Clients should also identify themselves in the same field unless configured not to. Servers advertise their supported versions and capabilities through the mandatory [`server/discover`](../Spec/2026-07-28-server-discover.md) request, which clients may send before any other request. Detailed information can be found in the [specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#statelessness), and the [example](#example) showcases the per-request metadata and the discovery sequence.
 
 
 [​](#primitives)

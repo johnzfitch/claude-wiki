@@ -2,11 +2,14 @@
 title: "Plugin security and trust - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/security"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-21T06:28:34Z"
+fetched_at: "2026-10-29T06:25:36Z"
+last_modified: "Thu, 29 Oct 2026 03:31:54 GMT"
 tags: ["claude-code", "plugins", "security"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Understand what a plugin can do](#understand-what-a-plugin-can-do)
 - [Identify Anthropic’s marketplaces by name](#marketplace-tiers)
@@ -69,11 +72,11 @@ Identify Anthropic’s marketplaces by name
 
 A marketplace’s name places it in one of three tiers: official, community, or third-party. Claude Code accepts the official and community names only for marketplaces sourced from `github.com/anthropics/` repositories, so a third-party marketplace can’t present itself as an Anthropic one. A marketplace that a coworker or your organization publishes is third-party. The table lists which names fall in each tier:
 
-| Tier        | Which marketplaces                                                                               |
-|:------------|:-------------------------------------------------------------------------------------------------|
-| Official    | The [official marketplace names](#official-marketplace-names), such as `claude-plugins-official` |
-| Community   | `claude-community`, `claude-plugins-community`, and `healthcare`                                 |
-| Third-party | Every other marketplace                                                                          |
+| Tier | Which marketplaces |
+|:---|:---|
+| Official | The [official marketplace names](#official-marketplace-names), such as `claude-plugins-official` |
+| Community | `claude-community`, `claude-plugins-community`, and `healthcare` |
+| Third-party | Every other marketplace |
 
 Where the `claude-community` catalog pins a plugin to a commit SHA, which it does for nearly every entry, Claude Code refuses to install a different commit.
 
@@ -99,7 +102,7 @@ These marketplace names make up the official tier:
 - `first-party-plugins`
 - `claude-tag-plugins`
 
-For how the official, community, and demo marketplaces differ and where to browse what each one lists, see [Anthropic’s marketplaces](plugins-anthropic-marketplaces.md).
+For how the official and community marketplaces differ and where to browse what each one lists, see [Anthropic’s marketplaces](plugins-anthropic-marketplaces.md).
 
 
 [​](#review-a-plugin-before-you-install)

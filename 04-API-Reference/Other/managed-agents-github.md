@@ -2,101 +2,9 @@
 title: "Accessing GitHub - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/github"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:39:37Z"
+fetched_at: "2026-11-05T06:37:21Z"
 tags: ["api", "git", "github", "mcp"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fgithub)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Overview](managed-agents-overview.md)[Quickstart](managed-agents-quickstart.md)[Build in Console](managed-agents-onboarding.md)[Migration](managed-agents-migration.md)
-
-Define your agent
-
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
-
-Configure agent environment
-
-[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
-
-[Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
-
-Delegate work to your agent
-
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
-
-Manage agent context
-
-[Access GitHub](managed-agents-github.md)[Attach and download files](managed-agents-files.md)
-
-Build persistent memory
-
-Advanced orchestration
-
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
-
-Security
-
-[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
-
-Reference
-
-[Managed Agents reference](managed-agents-reference.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-
-[Console](playground.md)
-
-[Managed Agents](managed-agents-overview.md)Manage agent context
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 # Accessing GitHub
 
@@ -109,6 +17,23 @@ Connect your agent to GitHub repositories for cloning, reading, and creating pul
 Copy page
 
 
+
+
+Feature of  
+[Managed Agents](managed-agents-overview.md)
+
+[Status](#availability-feature-support)  
+Beta
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+
+[Beta header](#feature-beta-headers)  
+- `managed-agents-2026-04-01`
+  
+
+[Data handling](#feature-data-handling)  
+Not ZDR eligibleNot HIPAA eligible
 
 You can mount a GitHub repository to your session sandbox and connect to the GitHub MCP for making pull requests.
 
@@ -159,6 +84,11 @@ mcp_servers:
     url: https://api.githubcopilot.com/mcp/
 tools:
   - type: agent_toolset_20260401
+    configs:
+      - name: web_search
+        enabled: false
+      - name: web_fetch
+        enabled: false
   - type: mcp_toolset
     mcp_server_name: github
 ---
@@ -166,7 +96,7 @@ tools:
 You are a code review assistant with access to GitHub.
 ```
 
-Then create a session that mounts the GitHub repository. With a `limited` [environment](managed-agents-environments.md#networking), session creation fails with a 400 error when the agent declares an MCP server whose host is not in `allowed_hosts`. Setting `allow_mcp_servers` to `true` in the environment's networking turns this check off.
+Then create a session that mounts the GitHub repository. With a `limited` [environment](managed-agents-environments.md#networking), session creation fails with a 400 error when the agent declares an MCP server whose host is not in `allowed_hosts`. Setting `allow_mcp_servers` to `true` in the environment’s networking turns this check off.
 
 cURL
 
@@ -207,15 +137,15 @@ session = client.beta.sessions.create(
 
 A `github_repository` resource accepts the following fields:
 
-| Field                 | Description                                                                                                                                                                                   |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`                | Required. Must be `"github_repository"`.                                                                                                                                                      |
-| `url`                 | Required. The repository's HTTPS URL in the form `https://github.com/<owner>/<repo>`, without a `.git` suffix. Other forms, including SSH URLs, are rejected with an `invalid_request_error`. |
-| `authorization_token` | Required. The GitHub token used to clone the repository. It is not echoed in API responses. See [Token permissions](#token-permissions).                                                      |
-| `mount_path`          | Optional. The directory under `/workspace` to clone the repository into. Defaults to `/workspace/<repo-name>`.                                                                                |
-| `checkout`            | Optional. A branch (`{"type": "branch", "name": "main"}`) or commit (`{"type": "commit", "sha": "..."}`) to check out. Defaults to the repository's default branch.                           |
+| Field | Description |
+|----|----|
+| `type` | Required. Must be `"github_repository"`. |
+| `url` | Required. The repository’s HTTPS URL in the form `https://github.com/<owner>/<repo>`, without a `.git` suffix. Other forms, including SSH URLs, are rejected with an `invalid_request_error`. |
+| `authorization_token` | Optional. The GitHub token used to clone the repository and to push to it. Without a token, a private repository fails to clone after the session is created. A public repository clones without a token, and the agent can commit in its clone, but `git push` fails. It is not echoed in API responses. See [Token permissions](#token-permissions). |
+| `mount_path` | Optional. The directory under `/workspace` to clone the repository into. Defaults to `/workspace/<repo-name>`. |
+| `checkout` | Optional. A branch (`{"type": "branch", "name": "main"}`) or commit (`{"type": "commit", "sha": "..."}`) to check out. Defaults to the repository’s default branch. |
 
-Mounting a repository also loads any skills stored in its root `.claude/skills` directory. Skills are discovered once per session, from the repository state checked out at session start. See [Load skills from a GitHub repository](managed-agents-skills.md#load-skills-from-a-github-repository).
+Mounting a repository also loads any skills stored in its root `.claude/skills` directory. Skills are discovered once for each session, from the repository state checked out at session start. See [Load skills from a GitHub repository](managed-agents-skills.md#load-skills-from-a-github-repository).
 
 ## Token permissions
 
@@ -377,3 +307,43 @@ Connect more MCP servers to give the agent additional tools
 [Adding files](managed-agents-files.md)
 
 Mount files in the sandbox alongside your repositories
+
+## Availability
+
+
+### API support
+
+StatusBeta
+
+Cloud platforms
+
+- All supported platforms
+
+### Required beta headers
+
+[Beta headers overview](../Endpoints/beta-headers.md)
+
+Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+
+Header
+
+- `managed-agents-2026-04-01`
+  
+
+### Data handling
+
+[Data handling overview](manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/agents`
+- `/v1/sessions`
+- `/v1/environments`
+
+Zero data retentionNot eligible
+
+Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+
+HIPAANot eligible
+
+Applies to all Managed Agents sub-features, including Self-hosted sandboxes.

@@ -2,14 +2,14 @@
 title: "How large is the context window on paid Claude plans? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:17Z"
+fetched_at: "2026-11-09T06:26:16Z"
 tags: ["billing", "claude-code"]
 ---
 
 # How large is the context window on paid Claude plans?
 
 
-This article explains how large the context window is on paid Claude plans (Pro, Max, Team, Enterprise) when you chat with Claude, or use Claude Code or Claude Cowork.
+This article explains how large the context window is on paid Claude plans (Pro, Max, Ultra, Team, Enterprise) when you chat with Claude, or use Claude Code or Claude Cowork.
 
 ## Chatting with Claude
 
@@ -33,7 +33,7 @@ Your full chat history is preserved so Claude can reference it, even after earli
 
 **Note:** Code execution must be enabled for automatic context management to work. In rare edge cases (such as very large first messages or system errors), you may still encounter context window limits.
 
-## Maximizing your context window
+## Maximize your context window
 
 While context is managed automatically for most conversations, you can still optimize how you use your available context space:
 

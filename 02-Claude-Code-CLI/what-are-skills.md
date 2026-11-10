@@ -2,18 +2,16 @@
 title: "What are skills? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:15Z"
+fetched_at: "2026-11-09T06:25:51Z"
 tags: ["agents", "claude-code", "skills"]
 ---
 
 # What are skills?
 
-September 22, 2026
-
 
 Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
 
-Skills are available for users on Free, Pro, Max, Team, and Enterprise plans. This feature requires **[code execution to be enabled](../15-Claude-AI-Features/create-and-edit-files-with-claude.md#h_1c99382190)**. Skills are also available in Claude Code, and in beta for all API users using the code execution tool.
+Skills are available for users on Free, Pro, Max, Ultra, Team, and Enterprise plans. This feature requires **[code execution to be enabled](../15-Claude-AI-Features/create-and-edit-files-with-claude.md#h_1c99382190)**. Skills are also available in Claude Code, and in beta for all API users using the code execution tool.
 
 ------------------------------------------------------------------------
 
@@ -95,7 +93,7 @@ MCP connects Claude to external services and data sources. Skills provide proced
 
 ### Skills vs. custom instructions
 
-**[Custom instructions](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)** apply broadly to all your conversations. Skills are task-specific and only load when relevant, making them better for specialized workflows.
+**[Custom instructions](../15-Claude-AI-Features/understanding-claude-s-personalization-features.md)** apply broadly to all your conversations. Skills are task-specific and only load when relevant, making them better for specialized workflows.
 
 ------------------------------------------------------------------------
 

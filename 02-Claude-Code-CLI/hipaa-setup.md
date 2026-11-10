@@ -2,11 +2,14 @@
 title: "Set up Claude Code (local mode) for a HIPAA-ready organization - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/hipaa-setup"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-21T06:28:29Z"
+fetched_at: "2026-10-30T06:25:14Z"
+last_modified: "Fri, 30 Oct 2026 01:24:56 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Prepare computers before the HIPAA configuration is applied](#prepare-computers-before-the-hipaa-configuration-is-applied)
   - [Check how developers sign in and connect](#check-how-developers-sign-in-and-connect)
@@ -18,6 +21,7 @@ tags: ["claude-code"]
   - [What each key does](#what-each-key-does)
   - [Confirm the settings loaded](#confirm-the-settings-loaded)
   - [Sessions the managed settings keys don’t block](#sessions-the-managed-settings-keys-don%E2%80%99t-block)
+  - [Restrict Claude Desktop sign-in](#restrict-claude-desktop-sign-in)
 - [Confirm the configuration on a computer](#confirm-the-configuration-on-a-computer)
 - [What developers see in Claude Code](#what-developers-see-in-claude-code)
   - [Anthropic credentials in commands, hooks, and MCP servers](#anthropic-credentials-in-commands-hooks-and-mcp-servers)
@@ -51,11 +55,11 @@ The Claude Code extensions for VS Code and JetBrains aren’t part of (local mod
 
 This page is for the IT or security administrator who prepares developers’ computers. The Primary Owner of your Claude organization applies the configuration itself. [Use Claude Code (local mode) and Cowork (local mode) on a HIPAA-ready Enterprise plan](https://support.claude.com/en/articles/17318731) explains what your BAA includes, how the configuration is applied, and how to schedule the date it’s applied. If members of your organization also use Cowork, follow [Set up Cowork (local mode) for a HIPAA-ready organization](https://claude.com/docs/cowork/hipaa-setup) as well. It covers the Claude Desktop policy and Cowork’s local data. The table shows when to do each part of the setup:
 
-| When                                | What to do                                                                                                                                                                          |
-|:------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Before the configuration is applied | [Prepare computers](#prepare-computers-before-the-hipaa-configuration-is-applied): check how developers connect, update the apps, allow network access, and deploy managed settings |
-| After it’s applied                  | The Code tab is off until an Owner turns it back on. [Confirm the configuration on a computer](#confirm-the-configuration-on-a-computer)                                            |
-| Ongoing                             | [Manage local session data](#manage-local-session-data)                                                                                                                             |
+| When | What to do |
+|:---|:---|
+| Before the configuration is applied | [Prepare computers](#prepare-computers-before-the-hipaa-configuration-is-applied): check how developers connect, update the apps, allow network access, deploy managed settings, and restrict Claude Desktop sign-in |
+| After it’s applied | The Code tab is off until an Owner turns it back on. [Confirm the configuration on a computer](#confirm-the-configuration-on-a-computer) |
+| Ongoing | [Manage local session data](#manage-local-session-data) |
 
 
 [​](#prepare-computers-before-the-hipaa-configuration-is-applied)
@@ -71,13 +75,13 @@ Check how developers sign in and connect
 
 The HIPAA configuration takes effect only in sessions where a developer signs in with a Claude Enterprise account and Claude Code connects directly to the Claude API. On any other connection, developers can keep using Claude Code, but it doesn’t apply the [HIPAA configuration](#what-developers-see-in-claude-code). The table shows which connections are eligible. To find out whether your BAA covers a session in a “No” row, see [Use Claude Code (local mode) and Cowork (local mode) on a HIPAA-ready Enterprise plan](https://support.claude.com/en/articles/17318731).
 
-| How Claude Code connects                                                                                                                           | Eligible for the HIPAA configuration                                                                 |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------|
-| A Claude Enterprise account, connecting directly to the Claude API                                                                                 | Yes                                                                                                  |
-| Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, Claude Platform on AWS, or a [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md) | No                                                                                                   |
-| An [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) or any other custom `ANTHROPIC_BASE_URL`                                                                    | No                                                                                                   |
-| `ANTHROPIC_AUTH_TOKEN` or `apiKeyHelper`, on a computer with no Claude Enterprise sign-in                                                          | No                                                                                                   |
-| A Claude Console API key or [federation credentials](authentication.md#anthropic-profiles-and-federation-credentials)                        | No. These sessions belong to a Claude Console organization, which has its own agreement and settings |
+| How Claude Code connects | Eligible for the HIPAA configuration |
+|:---|:---|
+| A Claude Enterprise account, connecting directly to the Claude API | Yes |
+| Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, Claude Platform on AWS, or a [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md) | No |
+| An [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) or any other custom `ANTHROPIC_BASE_URL` | No |
+| `ANTHROPIC_AUTH_TOKEN` or `apiKeyHelper`, on a computer with no Claude Enterprise sign-in | No |
+| A Claude Console API key or [federation credentials](authentication.md#anthropic-profiles-and-federation-credentials) | No. These sessions belong to a Claude Console organization, which has its own agreement and settings |
 
 
 [​](#check-how-a-computer-connects)
@@ -86,11 +90,11 @@ Check how a computer connects
 
 Open a terminal on the computer, run `claude`, and enter `/status` at the prompt. The **Status** tab shows these lines:
 
-| Line                              | When it appears                                                                                                                                                                 |
-|:----------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Line | When it appears |
+|:---|:---|
 | `Login method` and `Organization` | The session is signed in with a claude.ai account. For a Claude Enterprise account, `Login method` reads `Claude Enterprise account` and `Organization` shows your organization |
-| `API provider`                    | Only when the session uses a cloud provider or a Claude apps gateway                                                                                                            |
-| `Anthropic base URL`              | Only when `ANTHROPIC_BASE_URL` is set                                                                                                                                           |
+| `API provider` | Only when the session uses a cloud provider or a Claude apps gateway |
+| `Anthropic base URL` | Only when `ANTHROPIC_BASE_URL` is set |
 
 If a computer uses a connection that isn’t eligible for the HIPAA configuration, you can use [managed settings](#deploy-managed-settings) to block cloud providers, gateways, and credentials set with `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, or `apiKeyHelper`.
 
@@ -114,10 +118,10 @@ What developers see on an older version
 
 For organizations with the HIPAA configuration, Anthropic’s servers reject requests from versions older than the minimum version. Anthropic raises the minimum version over time, and there’s nothing for you to configure.
 
-| App            | What a developer sees on an older version                                                                                                                                                     |
-|:---------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Claude Code    | Each request fails with an [`API Error`](errors.md#claude-code-does-not-support-this-model) that says the version is older than the minimum version your organization’s policy requires |
-| Claude Desktop | An **Update required** dialog that tells the developer to update Claude Desktop to continue using the **Code** tab                                                                            |
+| App | What a developer sees on an older version |
+|:---|:---|
+| Claude Code | Each request fails with an [`API Error`](errors.md#claude-code-does-not-support-this-model) that says the version is older than the minimum version your organization’s policy requires |
+| Claude Desktop | An **Update required** dialog that tells the developer to update Claude Desktop to continue using the **Code** tab |
 
 To keep developers on a supported version, [keep Claude Code updated](../01-Getting-Started/setup.md#update-claude-code). For Claude Desktop, see [Update Claude Desktop](https://claude.com/docs/cowork/hipaa-setup#update-claude-desktop).
 
@@ -128,13 +132,13 @@ Allow network access
 
 Allow the hosts in this table through your proxy and firewall, over HTTPS on port 443. Allow each whole host, not individual paths.
 
-| Host                                             | Needed for                                                                                                       |
-|:-------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|
-| `api.anthropic.com`                              | Claude API requests, telemetry, and the organization policy that tells Claude Code the HIPAA configuration is on |
-| `claude.ai`, `claude.com`, `platform.claude.com` | Sign-in and token refresh                                                                                        |
-| `sso.claude.com`                                 | Sign-in, when your organization uses single sign-on                                                              |
-| `downloads.claude.ai`                            | The native installer and its updates                                                                             |
-| `mcp-proxy.anthropic.com`                        | [Connectors from claude.ai](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai)                                         |
+| Host | Needed for |
+|:---|:---|
+| `api.anthropic.com` | Claude API requests, telemetry, and the organization policy that tells Claude Code the HIPAA configuration is on |
+| `claude.ai`, `claude.com`, `platform.claude.com` | Sign-in and token refresh |
+| `sso.claude.com` | Sign-in, when your organization uses single sign-on |
+| `downloads.claude.ai` | The native installer and its updates |
+| `mcp-proxy.anthropic.com` | [Connectors from claude.ai](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai) |
 
 This table lists the hosts a native install of Claude Code needs in the terminal to sign in, run, and update. These pages list the rest:
 
@@ -169,12 +173,12 @@ What each key does
 
 The table shows what to set each key to and what Claude Code enforces for it.
 
-| Key                                                                  | Set it to                                                                                                                                                                       | What Claude Code enforces                                                               |
-|:---------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------|
-| [`forceLoginMethod`](settings-reference.md#forceloginmethod)   | `"claudeai"`                                                                                                                                                                    | Claude Code directs developers to claude.ai sign-in instead of Claude Console           |
+| Key | Set it to | What Claude Code enforces |
+|:---|:---|:---|
+| [`forceLoginMethod`](settings-reference.md#forceloginmethod) | `"claudeai"` | Claude Code directs developers to claude.ai sign-in instead of Claude Console |
 | [`forceLoginOrgUUID`](settings-reference.md#forceloginorguuid) | Your organization ID, which an [Owner](../13-Enterprise-Admin/server-managed-settings.md#access-control) can copy from [claude.ai admin settings](https://claude.ai/admin-settings/organization) | Claude Code exits at startup when the claude.ai sign-in belongs to another organization |
-| [`allowedProviders`](settings-reference.md#allowedproviders)   | `["anthropic"]`                                                                                                                                                                 | Claude Code refuses to start on a cloud provider or a gateway                           |
-| [`cleanupPeriodDays`](settings-reference.md#cleanupperioddays) | The number of days your records policy lets a computer keep session data                                                                                                        | Every computer deletes old session data after the same number of days                   |
+| [`allowedProviders`](settings-reference.md#allowedproviders) | `["anthropic"]` | Claude Code refuses to start on a cloud provider or a gateway |
+| [`cleanupPeriodDays`](settings-reference.md#cleanupperioddays) | The number of days your records policy lets a computer keep session data | Every computer deletes old session data after the same number of days |
 
 Check the `forceLoginOrgUUID` value before you deploy it. If it doesn’t match your organization ID, Claude Code exits at startup for every developer who signs in with a claude.ai account.
 
@@ -199,6 +203,13 @@ Even with these keys deployed, some sessions can still run without the HIPAA con
 - **Versions older than v2.1.285**: these versions ignore `allowedProviders`, so they can still start on a cloud provider or a gateway. To make v2.1.163 through v2.1.284 refuse to start, you can add [`requiredMinimumVersion`](settings-reference.md#requiredminimumversion) set to `"2.1.285"` to the same managed settings as the [sample keys](#deploy-managed-settings). Versions before v2.1.163 ignore `requiredMinimumVersion` as well as `allowedProviders`, so [update those computers](#update-claude-code-and-claude-desktop).
 
 To find out whether your BAA covers a session that runs without the HIPAA configuration, see [Use Claude Code (local mode) and Cowork (local mode) on a HIPAA-ready Enterprise plan](https://support.claude.com/en/articles/17318731).
+
+
+[​](#restrict-claude-desktop-sign-in)
+
+Restrict Claude Desktop sign-in
+
+If developers use the Code tab of Claude Desktop, also set `forceLoginOrgUUID` in the Claude Desktop policy, as [Restrict sign-in to your organization](../16-Mobile-Desktop/desktop.md#restrict-sign-in-to-your-organization) describes. Deploying `forceLoginMethod` and `forceLoginOrgUUID` in managed settings doesn’t change the Claude Desktop sign-in screen.
 
 
 [​](#confirm-the-configuration-on-a-computer)
@@ -250,15 +261,15 @@ What developers see in Claude Code
 
 With the HIPAA configuration applied, some Claude Code features are off or behave differently in the terminal. The table lists the changes developers are most likely to ask you about. The [HIPAA feature availability table](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md) lists every Claude Code and Cowork feature, including the ones an Owner can turn back on.
 
-| What a developer notices                                                          | Why                                                                                                                                |
-|:----------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|
-| The WebFetch tool is unavailable                                                  | WebFetch is off. Web search still works                                                                                            |
-| `--cloud`, `/teleport`, and [Remote Control](remote-control.md) are refused | [Cloud sessions](claude-code-on-the-web.md) and Remote Control are off                                                       |
-| `/feedback` and `/bug` are unavailable                                            | Feedback submission is off                                                                                                         |
-| Claude can’t publish an [artifact](artifacts.md)                            | Artifact publishing is off                                                                                                         |
-| MCP tools load into context upfront                                               | [MCP tool search](../06-MCP-Tools/General/mcp.md#configure-tool-search) is off. Neither `ENABLE_TOOL_SEARCH` nor managed settings turns it back on   |
-| An MCP server or hook that reads `ANTHROPIC_API_KEY` stops authenticating         | Claude Code [removes Anthropic credentials](#anthropic-credentials-in-commands-hooks-and-mcp-servers) from the processes it starts |
-| Restrictions remain after `/login` to a different organization                    | The HIPAA status lasts until Claude Code restarts                                                                                  |
+| What a developer notices | Why |
+|:---|:---|
+| The WebFetch tool is unavailable | WebFetch is off. Web search still works |
+| `--cloud`, `/teleport`, and [Remote Control](remote-control.md) are refused | [Cloud sessions](claude-code-on-the-web.md) and Remote Control are off |
+| `/feedback` and `/bug` are unavailable | Feedback submission is off |
+| Claude can’t publish an [artifact](artifacts.md) | Artifact publishing is off |
+| MCP tools load into context upfront | [MCP tool search](../06-MCP-Tools/General/mcp.md#configure-tool-search) is off. Neither `ENABLE_TOOL_SEARCH` nor managed settings turns it back on |
+| An MCP server or hook that reads `ANTHROPIC_API_KEY` stops authenticating | Claude Code [removes Anthropic credentials](#anthropic-credentials-in-commands-hooks-and-mcp-servers) from the processes it starts |
+| Restrictions remain after `/login` to a different organization | The HIPAA status lasts until Claude Code restarts |
 
 
 [​](#anthropic-credentials-in-commands-hooks-and-mcp-servers)

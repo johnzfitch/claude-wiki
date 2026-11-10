@@ -2,7 +2,7 @@
 title: "Prompt caching with Claude | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/prompt-caching"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:25Z"
+fetched_at: "2026-11-09T06:26:50Z"
 tags: ["news-research", "prompting"]
 ---
 
@@ -12,7 +12,7 @@ Claude caches frequently used context between API calls, reducing costs and late
 
 - 
 
-  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
+  Category[Product updates](https://www.anthropic.com/resources/product-updates)
 - 
 
   ProductClaude Platform
@@ -43,11 +43,11 @@ Prompt caching can be effective in situations where you want to send a large amo
 
 Early customers have seen substantial speed and cost improvements with prompt caching for a variety of use cases—from including a full knowledge base to 100-shot examples to including each turn of a conversation in their prompt.
 
-| **Use case**                                                            | **Latency w/o caching (time to first token)** | **Latency w/ caching (time to first token)** | **Cost reduction** |
-|-------------------------------------------------------------------------|-----------------------------------------------|----------------------------------------------|--------------------|
-| Chat with a book (100,000 token cached prompt) \[1\]                    | 11.5s                                         | 2.4s (-79%)                                  | -90%               |
-| Many-shot prompting (10,000 token prompt) \[1\]                         | 1.6s                                          | 1.1s (-31%)                                  | -86%               |
-| Multi-turn conversation (10-turn convo with a long system prompt) \[2\] | ~10s                                          | ~2.5s (-75%)                                 | -53%               |
+| **Use case** | **Latency w/o caching (time to first token)** | **Latency w/ caching (time to first token)** | **Cost reduction** |
+|----|----|----|----|
+| Chat with a book (100,000 token cached prompt) \[1\] | 11.5s | 2.4s (-79%) | -90% |
+| Many-shot prompting (10,000 token prompt) \[1\] | 1.6s | 1.1s (-31%) | -86% |
+| Multi-turn conversation (10-turn convo with a long system prompt) \[2\] | ~10s | ~2.5s (-75%) | -53% |
 
 Prompt caching
 
@@ -74,33 +74,29 @@ To start using the prompt caching public beta on the Anthropic API, explore our 
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 22, 2026
+ArticleNov 5, 2026
 
-### The full Claude Platform, available on Google Cloud
+### Introducing Personal Finance in Claude
 
-Use Claude Models on Google Cloud (Anthropic managed) to access Claude Platform features with Google Cloud authentication, billing, and commitment retirement.
+Ask Claude about your money and get straight answers from the accounts you connect.
+
+
+ArticleNov 5, 2026
+
+### More visibility and control over Claude Enterprise for security teams
+
+Claude EnterpriseClaude apps
+
+
+ArticleNov 4, 2026
+
+### New agents and products for security, productivity, and creative work on Claude Marketplace
+
+
+ArticleNov 2, 2026
+
+### Make long-running agents faster with message threads
+
+New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
 
 Claude Platform
-
-
-ArticleOct 21, 2026
-
-### HCLTech joins the Claude Partner Network as a Global Premier partner
-
-HCLTech will bring Claude into the solutions it provides for banks, hospitals, telecom companies, and manufacturers.
-
-
-ArticleOct 21, 2026
-
-### Introducing Claude Duet
-
-A research preview is available by waitlist today, starting with US Pro and Max subscribers.
-
-
-ArticleOct 21, 2026
-
-### Claude Security now scans continuously and tracks fixes
-
-Claude Security now keeps up with your repositories as code changes, tracks findings until they’re fixed, learns from the context your team adds, and connects to your tools through an API and MCP. Available in public beta for Claude Enterprise customers.
-
-Claude Security

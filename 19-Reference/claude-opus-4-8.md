@@ -148,7 +148,7 @@ Opus 4.8 defaults to high effort, which we judge to be the best overall balance 
 
 Users will find Opus 4.8 to be a modest but tangible improvement on its predecessor. There’s still more to be done: we’re working on developing and releasing models that provide many of the same capabilities as Opus at a lower cost.
 
-Not only that, but we plan to release a new class of model with even higher intelligence than Opus. As part of [Project Glasswing](glasswing-initial-update.md), a small number of organizations are currently using Claude Mythos Preview for cybersecurity work. Models of this capability level require stronger cyber safeguards before they can be generally released. We’re making swift progress on developing these safeguards and expect to be able to bring Mythos-class models to all our customers in the coming weeks.
+Not only that, but we plan to release a new class of model with even higher intelligence than Opus. As part of [Project Glasswing](research-glasswing-initial-update.md), a small number of organizations are currently using Claude Mythos Preview for cybersecurity work. Models of this capability level require stronger cyber safeguards before they can be generally released. We’re making swift progress on developing these safeguards and expect to be able to bring Mythos-class models to all our customers in the coming weeks.
 
 ## Availability
 

@@ -2,53 +2,9 @@
 title: "Go SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/go"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:39:27Z"
+fetched_at: "2026-11-05T06:36:57Z"
 tags: ["api", "cli", "sdk"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fgo)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
 # Go SDK
 
@@ -72,7 +28,7 @@ For API feature documentation with code examples, see the [API reference](../End
 
 ```python
 import (
-    "github.com/anthropics/anthropic-sdk-go" // imported as anthropic
+    "github.com/anthropics/anthropic-sdk-go/v2" // imported as anthropic
 )
 ```
 
@@ -81,14 +37,14 @@ import (
 Install with `go get`:
 
 ```python
-go get github.com/anthropics/anthropic-sdk-go
+go get github.com/anthropics/anthropic-sdk-go/v2
 ```
 
 
 
 ## Requirements
 
-This library requires Go 1.24+.
+This library requires Go 1.25+.
 
 ## Usage
 
@@ -99,8 +55,8 @@ import (
     "context"
     "fmt"
 
-    "github.com/anthropics/anthropic-sdk-go"
-    "github.com/anthropics/anthropic-sdk-go/option"
+    "github.com/anthropics/anthropic-sdk-go/v2"
+    "github.com/anthropics/anthropic-sdk-go/v2/option"
 )
 
 func main() {
@@ -127,7 +83,7 @@ func main() {
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](manage-claude-authentication.md). If your API key is a [personal or service account key](manage-claude-authentication.md#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](manage-claude-authentication.md#select-a-workspace) shows the per-request option for this SDK.
+For authentication options including Workload Identity Federation, see [Authentication](manage-claude-authentication.md). If your API key is a [personal or service account key](manage-claude-authentication.md#key-types) that isn’t scoped to a workspace, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](manage-claude-authentication.md#select-a-workspace) shows the per-request option for this SDK.
 
 ### Conversations
 
@@ -351,7 +307,7 @@ param.IsNull(p.Point) // true
 
 
 
-Request structs contain a `.SetExtraFields(map[string]any)` method which can send non-conforming fields in the request body. Extra fields overwrite any struct fields with a matching key.
+Request structs contain a `.SetExtraFields(map[string]any)` method that can send non-conforming fields in the request body. Extra fields overwrite any struct fields with a matching key.
 
 
 
@@ -374,9 +330,9 @@ custom := param.Override[anthropic.FooParams](12)
 
 ### Request unions
 
-Unions are represented as a struct with fields prefixed by "Of" for each of its variants. Only one field can be non-zero. The non-zero field will be serialized.
+Unions are represented as a struct with fields prefixed by “Of” for each of its variants. Only one field can be non-zero. The non-zero field is serialized.
 
-Subproperties of the union can be accessed through methods on the union struct. These methods return a mutable pointer to the underlying data, if present.
+Subproperties of the union can be accessed through methods on the union struct. These methods return a pointer to the value, if present.
 
 ```python
 // Only one field can be non-zero, use param.IsOmitted() to check if a field is set
@@ -402,15 +358,15 @@ if address := animal.GetOwner().GetAddress(); address != nil {
 
 
 
-### Deserializing params
+### Deserializing parameters
 
 
 
 `param.SetJSON` requires SDK v1.20.0 or later.
 
-Param types (types ending in `Param`, such as `MessageNewParams` or `ToolUnionParam`) are designed for outgoing requests only. They marshal correctly to JSON but do not fully support round-trip deserialization. If you unmarshal raw JSON into a param struct, typed union fields like `OfBashTool20250124` will be nil even when the underlying JSON is valid.
+Parameter types (types ending in `Param`, such as `MessageNewParams` or `ToolUnionParam`) are designed for outgoing requests only. They marshal correctly to JSON but do not fully support round-trip deserialization. If you unmarshal raw JSON into a parameter struct, typed union fields such as `OfBashTool20250124` will be nil even when the underlying JSON is valid.
 
-If you need to reconstruct params from raw JSON (for example, from a database, middleware, or a previous request), call `UnmarshalJSON` to populate non-union fields, then use `param.SetJSON` to attach the raw bytes for correct re-serialization:
+If you need to reconstruct parameters from raw JSON (for example, from a database, middleware, or a previous request), call `UnmarshalJSON` to populate non-union fields, then use `param.SetJSON` to attach the raw bytes for correct re-serialization:
 
 ```python
 // Serialize params (for example, for storage or forwarding)
@@ -436,7 +392,7 @@ fmt.Println(string(b) == string(b2)) // true
 
 
 
-For this use case, `param.SetJSON` (available since v1.20.0) is preferred over the more general `param.Override[T](https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/any)` because it doesn't require spelling out the type parameter and makes the round-trip intent explicit.
+For this use case, `param.SetJSON` (available since v1.20.0) is preferred over the more general `param.Override[T](https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/any)` because it doesn’t require spelling out the type parameter and makes the round-trip intent explicit.
 
 ## Response objects
 
@@ -501,7 +457,7 @@ body := res.JSON.ExtraFields["my_unexpected_field"].Raw()
 
 ### Response unions
 
-In responses, unions are represented by a flattened struct containing all possible fields from each of the object variants. To convert it to a variant use the `.AsFooVariant()` method or the `.AsAny()` method if present.
+In responses, unions are represented by a flattened struct containing all possible fields from each of the object variants. To convert it to a variant, use the `.AsFooVariant()` method or the `.AsAny()` method if present.
 
 If a response value union contains primitive values, primitive fields will be alongside the properties but prefixed with `Of` and feature the tag `json:"...,inline"`.
 
@@ -546,14 +502,9 @@ To handle errors, use the `errors.As` pattern:
 ```python
 _, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
     MaxTokens: 1024,
-    Messages: []anthropic.MessageParam{{
-        Content: []anthropic.ContentBlockParamUnion{{
-            OfText: &anthropic.TextBlockParam{
-                Text: "What is a quaternion?",
-            },
-        }},
-        Role: anthropic.MessageParamRoleUser,
-    }},
+    Messages: []anthropic.MessageParam{
+        anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
+    },
     Model: anthropic.ModelClaudeOpus5_5,
 })
 if err != nil {
@@ -573,7 +524,7 @@ When other errors occur, they are returned unwrapped; for example, if HTTP trans
 
 ## Retries
 
-Certain errors will be automatically retried 2 times by default, with a short exponential backoff. The SDK retries by default all connection errors, 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors.
+Certain errors are automatically retried 2 times by default, with a short exponential backoff. The SDK retries by default all connection errors, 408 Request Timeout, 409 Conflict, 429 Rate Limit, and \>=500 Internal errors.
 
 You can use the `WithMaxRetries` option to configure or disable this:
 
@@ -589,14 +540,9 @@ client := anthropic.NewClient(
         context.TODO(),
         anthropic.MessageNewParams{
             MaxTokens: 1024,
-            Messages: []anthropic.MessageParam{{
-                Content: []anthropic.ContentBlockParamUnion{{
-                    OfText: &anthropic.TextBlockParam{
-                        Text: "What is a quaternion?",
-                    },
-                }},
-                Role: anthropic.MessageParamRoleUser,
-            }},
+            Messages: []anthropic.MessageParam{
+                anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
+            },
             Model: anthropic.ModelClaudeOpus5_5,
         },
         option.WithMaxRetries(5),
@@ -620,14 +566,9 @@ defer cancel()
         ctx,
         anthropic.MessageNewParams{
             MaxTokens: 1024,
-            Messages: []anthropic.MessageParam{{
-                Content: []anthropic.ContentBlockParamUnion{{
-                    OfText: &anthropic.TextBlockParam{
-                        Text: "What is a quaternion?",
-                    },
-                }},
-                Role: anthropic.MessageParamRoleUser,
-            }},
+            Messages: []anthropic.MessageParam{
+                anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
+            },
             Model: anthropic.ModelClaudeOpus5_5,
         },
         // This sets the per-retry timeout
@@ -641,18 +582,18 @@ defer cancel()
 
 
 
-Consider using the streaming Messages API for longer running requests.
+Consider using the streaming Messages API for longer-running requests.
 
-Avoid setting a large `MaxTokens` value without using streaming as some networks may drop idle connections after a certain period of time, which can cause the request to fail or [time out](#timeouts) without receiving a response from Anthropic.
+Avoid setting a large `MaxTokens` value without using streaming as some networks might drop idle connections after a certain period of time, which can cause the request to fail or [time out](#timeouts) without receiving a response from Anthropic.
 
 This SDK will also return an error if a non-streaming request is expected to be above roughly 10 minutes long. Calling `.Messages.NewStreaming()` or [setting a custom timeout](#timeouts) disables this error.
 
 ## File uploads
 
-Request parameters that correspond to file uploads in multipart requests are typed as `io.Reader`. The contents of the `io.Reader` will by default be sent as a multipart form part with the file name of `anonymous_file` and content type of `application/octet-stream`, so the recommended approach is to specify a custom content type with the `anthropic.File(reader io.Reader, filename string, contentType string)` helper, which wraps any `io.Reader` with the appropriate file name and content type.
+Request parameters that correspond to file uploads in multipart requests are typed as `io.Reader`. The contents of the `io.Reader` are sent by default as a multipart form part with the file name of `anonymous_file` and content type of `application/octet-stream`. For this reason, the recommended approach is to specify a custom content type with the `anthropic.File(reader io.Reader, filename string, contentType string)` helper. This helper wraps any `io.Reader` with the appropriate file name and content type.
 
 ```python
-// A file from the file system
+// A file from the filesystem
 file, err := os.Open("/path/to/file.json")
 anthropic.FileUploadParams{
     File: anthropic.File(file, "custom-name.json", "application/json"),
@@ -666,7 +607,7 @@ anthropic.FileUploadParams{
 
 
 
-The file name and content type can also be customized by implementing `Name() string` or `ContentType() string` on the run-time type of `io.Reader`. Note that `os.File` implements `Name() string`, so a file returned by `os.Open` will be sent with the file name on disk.
+The file name and content type can also be customized by implementing `Name() string` or `ContentType() string` on the runtime type of `io.Reader`. Note that `os.File` implements `Name() string`, so a file returned by `os.Open` is sent with the file name on disk.
 
 ## Pagination
 
@@ -690,7 +631,7 @@ if err := iter.Err(); err != nil {
 
 
 
-Or you can use simple `.List()` methods to fetch a single page and receive a standard response object with additional helper methods like `.GetNextPage()`:
+Or you can use simple `.List()` methods to fetch a single page and receive a standard response object with additional helper methods such as `.GetNextPage()`:
 
 ```python
 page, err := client.Messages.Batches.List(context.TODO(), anthropic.MessageBatchListParams{
@@ -729,9 +670,9 @@ client.Messages.New(context.TODO(), // ...,
 
 
 
-The request option `option.WithDebugLog(nil)` may be helpful while debugging.
+The request option `option.WithDebugLog(nil)` might be helpful while debugging.
 
-See the [full list of request options](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go/option).
+See the [full list of request options](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go/v2/option).
 
 ## HTTP client customization
 
@@ -746,17 +687,21 @@ For detailed platform setup guides with code examples, see:
 - [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
 - [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)
+- [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+
+See also [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md).
 
 The Go SDK supports the following platforms:
 
-- **Agent Platform:** `import "github.com/anthropics/anthropic-sdk-go/vertex"`. Use `vertex.WithGoogleAuth(ctx, region, projectID)` or `vertex.WithCredentials(ctx, region, projectID, creds)`.
-- **Bedrock:** `import "github.com/anthropics/anthropic-sdk-go/bedrock"`. Use `bedrock.NewMantleClient` for the Messages-API Bedrock endpoint (streams over SSE), or `bedrock.WithLoadDefaultConfig(ctx)` / `bedrock.WithConfig(cfg)` (`bedrock-runtime` path). Importing the `bedrock` package globally registers a decoder for `application/vnd.amazon.eventstream` with the SDK's streaming layer (through package `init()`). This applies whether you use the `bedrock-runtime` `WithConfig`/`WithLoadDefaultConfig` path or `NewMantleClient`.
-- **Claude Platform on AWS:** `import anthropicaws "github.com/anthropics/anthropic-sdk-go/aws"`. Use `anthropicaws.NewClient(ctx, cfg)` with an `anthropicaws.ClientConfig` value to construct a client; set `WorkspaceID` on the config or the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable. The `anthropicaws` import alias avoids a name collision with `github.com/aws/aws-sdk-go-v2/aws` when both are imported. Available in beta.
-- **Foundry:** `import "github.com/anthropics/anthropic-sdk-go/foundry"`. Use `foundry.NewClient(cfg)` with a `foundry.ClientConfig` value to construct a client; set `APIKey` (or `AzureADTokenProvider` for Microsoft Entra ID) and `Resource` on the config, or the `ANTHROPIC_FOUNDRY_API_KEY` and `ANTHROPIC_FOUNDRY_RESOURCE` environment variables.
+- **Claude Models on Google Cloud (Google managed):** `import "github.com/anthropics/anthropic-sdk-go/v2/vertex"`. Use `vertex.WithGoogleAuth(ctx, region, projectID)` or `vertex.WithCredentials(ctx, region, projectID, creds)`.
+- **Bedrock:** `import "github.com/anthropics/anthropic-sdk-go/v2/bedrock"`. Use `bedrock.NewMantleClient` for the Messages-API Bedrock endpoint (streams over SSE), or `bedrock.WithLoadDefaultConfig(ctx)` / `bedrock.WithConfig(cfg)` (`bedrock-runtime` path). Importing the `bedrock` package globally registers a decoder for `application/vnd.amazon.eventstream` with the SDK’s streaming layer (through package `init()`). This applies whether you use the `bedrock-runtime` `WithConfig`/`WithLoadDefaultConfig` path or `NewMantleClient`.
+- **Claude Platform on AWS:** `import anthropicaws "github.com/anthropics/anthropic-sdk-go/v2/aws"`. Use `anthropicaws.NewClient(ctx, cfg)` with an `anthropicaws.ClientConfig` value to construct a client; set `WorkspaceID` on the config or the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable. The `anthropicaws` import alias avoids a name collision with `github.com/aws/aws-sdk-go-v2/aws` when both are imported. Available in beta.
+- **Foundry:** `import "github.com/anthropics/anthropic-sdk-go/v2/foundry"`. Use `foundry.NewClient(cfg)` with a `foundry.ClientConfig` value to construct a client; set `APIKey` (or `AzureADTokenProvider` for Microsoft Entra ID) and `Resource` on the config, or the `ANTHROPIC_FOUNDRY_API_KEY` and `ANTHROPIC_FOUNDRY_RESOURCE` environment variables.
 
 Use `bedrock.NewMantleClient` for new projects; `bedrock.WithLoadDefaultConfig`/`WithConfig` remain for existing applications using the Bedrock `InvokeModel` API.
+
+The Go SDK also supports Claude Models on Google Cloud (Anthropic managed) through the `github.com/anthropics/anthropic-sdk-go/v2/googlecloud` package. To construct a client, call `googlecloud.NewClient(ctx, cfg)` with a `googlecloud.ClientConfig` value. This client is in beta. Set `WorkspaceID` on the config or set the `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID` environment variable. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution) for how the client resolves the workspace ID.
 
 ## Advanced usage
 
@@ -771,14 +716,9 @@ message, err := client.Messages.New(
     context.TODO(),
     anthropic.MessageNewParams{
         MaxTokens: 1024,
-        Messages: []anthropic.MessageParam{{
-            Content: []anthropic.ContentBlockParamUnion{{
-                OfText: &anthropic.TextBlockParam{
-                    Text: "What is a quaternion?",
-                },
-            }},
-            Role: anthropic.MessageParamRoleUser,
-        }},
+        Messages: []anthropic.MessageParam{
+            anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
+        },
         Model: anthropic.ModelClaudeOpus5_5,
     },
     option.WithResponseInto(&response),
@@ -794,13 +734,17 @@ fmt.Printf("Headers: %+#v\n", response.Header)
 
 
 
+### OpenTelemetry tracing
+
+When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
+
 ### Making custom/undocumented requests
 
-This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, params, or response properties, the library can still be used.
+This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, parameters, or response properties, the library can still be used.
 
 #### Undocumented endpoints
 
-To make requests to undocumented endpoints, you can use `client.Get`, `client.Post`, and other HTTP verbs. `RequestOptions` on the client, such as retries, will be respected when making these requests.
+To make requests to undocumented endpoints, you can use `client.Get`, `client.Post`, and other HTTP verbs. `RequestOptions` on the client, such as retries, are respected when making these requests.
 
 ```python
 var (
@@ -820,9 +764,9 @@ if err != nil {
 
 
 
-#### Undocumented request params
+#### Undocumented request parameters
 
-To make requests using undocumented parameters, you may use either the `option.WithQuerySet()` or the `option.WithJSONSet()` methods.
+To make requests using undocumented parameters, you can use either the `option.WithQuerySet()` or the `option.WithJSONSet()` function.
 
 ```python
 params := FooNewParams{
@@ -838,7 +782,7 @@ client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name"
 
 #### Undocumented response properties
 
-To access undocumented response properties, you may either access the raw JSON of the response as a string with `result.JSON.RawJSON()`, or get the raw JSON of a particular field on the result with `result.JSON.Foo.Raw()`.
+To access undocumented response properties, you can either access the raw JSON of the response as a string with `result.JSON.RawJSON()`, or get the raw JSON of a particular field on the result with `result.JSON.Foo.Raw()`.
 
 Any fields that are not present on the response struct are saved and can be accessed through `result.JSON.ExtraFields`, which is a `map[string]respjson.Field`.
 
@@ -847,15 +791,17 @@ Any fields that are not present on the response struct are saved and can be acce
 This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes to library internals that are technically public but not intended or documented for external use.
-2.  Changes that aren't expected to impact the vast majority of users in practice.
+2.  Changes that aren’t expected to impact the vast majority of users in practice.
 
 Backward compatibility is taken seriously to ensure you can rely on a smooth upgrade experience.
+
+Every request to the Claude API uses an API version. With this SDK, your requests use the API version that was current when your SDK’s major version was released, so you move to a new API version by upgrading to a new major version. Version 2.0.0 is the first to use `2026-10-21`. Its module path is `github.com/anthropics/anthropic-sdk-go/v2`. See [Migrating to API version 2026-10-21](../Endpoints/migration-2026-10-21.md#upgrade) for how to upgrade.
 
 Your feedback is welcome; open an [issue](https://github.com/anthropics/anthropic-sdk-go/issues) with questions, bugs, or suggestions.
 
 ## Additional resources
 
 - [GitHub repository](https://github.com/anthropics/anthropic-sdk-go)
-- [Go package documentation](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go)
+- [Go package documentation](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go/v2)
 - [API reference](../Endpoints/overview.md)
 - [Streaming Messages](../Guides/build-with-claude-streaming.md)

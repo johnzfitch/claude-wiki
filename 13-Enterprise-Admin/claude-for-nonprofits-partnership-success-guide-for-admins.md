@@ -2,7 +2,7 @@
 title: "Claude for nonprofits partnership success guide for admins · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:28:58Z"
+fetched_at: "2026-11-07T06:22:26Z"
 tags: ["enterprise"]
 ---
 
@@ -27,9 +27,9 @@ The framework below is flexible and self-paced. Move through the phases at whate
 
 #### Recommended actions
 
-1.  Complete user management and technical configuration (SSO, SCIM)
+1.  Complete user management and technical configuration (SSO, plus SCIM on Enterprise plans)
 2.  Set data retention and sharing policies
-3.  Define success metrics using audit log data and surveys
+3.  Define success metrics using your usage analytics dashboard and surveys
 4.  Plan your change management strategy with success criteria
 
 #### Implementation tips
@@ -73,15 +73,14 @@ The framework below is flexible and self-paced. Move through the phases at whate
 #### Key resources
 
 - [Use case library(opens in new tab)](https://support.claude.com/all?kind=use-case)
-- [How to access audit logs(opens in new tab)](how-to-access-audit-logs.md)
+- [View usage analytics for Team and Enterprise plans(opens in new tab)](../17-Billing-Plans/view-usage-analytics-for-team-and-enterprise-plans.md)
 - [MCP connector directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md)
 
 #### Recommended actions
 
 1.  Build a weekly use case spotlight schedule
-2.  Track activity metrics via audit logs and surveys
+2.  Track activity metrics in your usage analytics dashboard and with surveys
 3.  Enable appropriate connectors and capabilities in admin settings
-4.  Participate in monthly webinars (third week of each month)
 
 #### Implementation tips
 

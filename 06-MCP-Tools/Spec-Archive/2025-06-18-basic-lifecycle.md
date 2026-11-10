@@ -2,11 +2,14 @@
 title: "Lifecycle - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/basic/lifecycle"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:07Z"
+fetched_at: "2026-10-31T06:24:39Z"
+last_modified: "Fri, 30 Oct 2026 20:52:44 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Lifecycle Phases](#lifecycle-phases)
   - [Initialization](#initialization)
@@ -137,18 +140,18 @@ Capability Negotiation
 
 Client and server capabilities establish which optional protocol features will be available during the session. Key capabilities include:
 
-| Category | Capability     | Description                                                                               |
-|----------|----------------|-------------------------------------------------------------------------------------------|
-| Client   | `roots`        | Ability to provide filesystem [roots](2024-11-05-client-roots.md)             |
-| Client   | `sampling`     | Support for LLM [sampling](2025-06-18-client-sampling.md) requests            |
-| Client   | `elicitation`  | Support for server [elicitation](2025-06-18-client-elicitation.md) requests   |
-| Client   | `experimental` | Describes support for non-standard experimental features                                  |
-| Server   | `prompts`      | Offers [prompt templates](2025-06-18-server-prompts.md)                       |
-| Server   | `resources`    | Provides readable [resources](2025-06-18-server-resources.md)                 |
-| Server   | `tools`        | Exposes callable [tools](2025-06-18-server-tools.md)                          |
-| Server   | `logging`      | Emits structured [log messages](2025-03-26-server-utilities-logging.md)       |
-| Server   | `completions`  | Supports argument [autocompletion](2025-06-18-server-utilities-completion.md) |
-| Server   | `experimental` | Describes support for non-standard experimental features                                  |
+| Category | Capability | Description |
+|----|----|----|
+| Client | `roots` | Ability to provide filesystem [roots](2024-11-05-client-roots.md) |
+| Client | `sampling` | Support for LLM [sampling](2025-06-18-client-sampling.md) requests |
+| Client | `elicitation` | Support for server [elicitation](2025-06-18-client-elicitation.md) requests |
+| Client | `experimental` | Describes support for non-standard experimental features |
+| Server | `prompts` | Offers [prompt templates](2025-06-18-server-prompts.md) |
+| Server | `resources` | Provides readable [resources](2025-06-18-server-resources.md) |
+| Server | `tools` | Exposes callable [tools](2025-06-18-server-tools.md) |
+| Server | `logging` | Emits structured [log messages](2025-03-26-server-utilities-logging.md) |
+| Server | `completions` | Supports argument [autocompletion](2025-06-18-server-utilities-completion.md) |
+| Server | `experimental` | Describes support for non-standard experimental features |
 
 Capability objects can describe sub-capabilities like:
 

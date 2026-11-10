@@ -2,7 +2,7 @@
 title: "Patterns and problems in multiagent systems \\ Anthropic"
 source_url: "https://www.anthropic.com/research/multiagent-systems"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:06Z"
+fetched_at: "2026-10-24T06:26:39Z"
 tags: ["agents", "news-research"]
 ---
 
@@ -51,7 +51,7 @@ Agents are unlike people in many ways. They can work for longer, instantly grasp
 
 True multiagent systems are still in their infancy. For some time now, agents have excelled at tool use, and insofar as they are able to treat other agents as tool invocations—that is, with well-defined inputs (prompts) and outputs (responses and artifacts)—they can work together efficiently. Where agents currently stumble, however, is in treating each other as more like distinct, long-lived peers, with their own goals and behaviors, and no clear hierarchy between them. As autonomous agents become more and more prevalent in the world and operate in ever-more demanding settings, it is crucial that they learn how to effectively coordinate.
 
-There are situations where we can make good use of simple multiagent swarms today. This is particularly true for problems that are highly parallelizable by default (i.e., problems that can be broken into many independent sub-problems) but where agents still have opportunities to specialize or learn from each other. One such problem is software vulnerability detection. The easiest way to use agents to find software vulnerabilities is to point individual agents at individual codebases (or individual files or modules within codebases), and ask them to find vulnerabilities in the code. This can then be run in parallel for many independent agents. This is an approach we use ourselves—in, for example, our [work scanning open-source software](glasswing-initial-update.md) as part of Project Glasswing.
+There are situations where we can make good use of simple multiagent swarms today. This is particularly true for problems that are highly parallelizable by default (i.e., problems that can be broken into many independent sub-problems) but where agents still have opportunities to specialize or learn from each other. One such problem is software vulnerability detection. The easiest way to use agents to find software vulnerabilities is to point individual agents at individual codebases (or individual files or modules within codebases), and ask them to find vulnerabilities in the code. This can then be run in parallel for many independent agents. This is an approach we use ourselves—in, for example, our [work scanning open-source software](research-glasswing-initial-update.md) as part of Project Glasswing.
 
 But could multiagent cooperation make this process more effective? To find out, we tried a different approach: we initiated 45 different agents and gave each one its own virtual machine, a shared forum on which they could coordinate, and an identical prompt that asked them to find vulnerabilities in a set of 15 open-source software projects. We asked the agents to peer-review each other's findings, and initiated a separate arbiter agent to make final decisions on whether or not a vulnerability submitted by the agent team was both new and valid.
 

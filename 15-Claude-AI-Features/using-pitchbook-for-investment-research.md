@@ -2,7 +2,7 @@
 title: "Using PitchBook for investment research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:58Z"
+fetched_at: "2026-11-07T06:24:14Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -134,3 +134,4 @@ If you are having trouble completing the PitchBook Premium integration, you can 
 - [Competitive Analysis](#competitive-analysis)
 - [Relationship Mapping](#relationship-mapping)
 - [Tips for Using PitchBook's Data](#tips-for-using-pitchbooks-data)
+- [Contact](#contact)

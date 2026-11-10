@@ -2,11 +2,14 @@
 title: "Advanced setup - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/setup"
 category: "01-Getting-Started"
-fetched_at: "2026-10-21T06:28:59Z"
+fetched_at: "2026-11-07T06:22:07Z"
+last_modified: "Sat, 07 Nov 2026 04:12:23 GMT"
 tags: ["claude-code", "getting-started"]
 ---
 
 ## On this page
+
+Back to top
 
 - [System requirements](#system-requirements)
   - [Additional dependencies](#additional-dependencies)
@@ -75,6 +78,7 @@ Claude Code runs on the following platforms and configurations:
 Additional dependencies
 
 - **ripgrep**: usually included with Claude Code. If search fails, see [search troubleshooting](../02-Claude-Code-CLI/troubleshooting.md#search-and-discovery-issues).
+- **Git**: optional. If git is installed, [`claude plugin eval`](../08-Plugins-Skills/plugin-evals.md#requirements) requires 2.31 or later. [Uploads of a local repository to a cloud session](../02-Claude-Code-CLI/claude-code-on-the-web.md#send-local-repositories-without-github) from macOS, Linux, or WSL need git 2.31 or later. Run `git --version` to see your version.
 
 
 [​](#install-claude-code)
@@ -142,11 +146,11 @@ Set up on Windows
 
 You can run Claude Code natively on Windows or inside WSL. Pick based on where your projects are located and which features you need:
 
-| Option                                       | Requires                                                               | [Sandboxing](../02-Claude-Code-CLI/sandboxing.md) | When to use                                     |
-|----------------------------------------------|------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------|
-| [Native Windows](#install-on-native-windows) | None; [Git for Windows](https://git-scm.com/downloads/win) is optional | Not supported                     | Windows-native projects and tools               |
-| [WSL 2](#install-in-wsl)                     | WSL 2 enabled                                                          | Supported                         | Linux toolchains or sandboxed command execution |
-| [WSL 1](#install-in-wsl)                     | WSL 1 enabled                                                          | Not supported                     | If WSL 2 is unavailable                         |
+| Option | Requires | [Sandboxing](../02-Claude-Code-CLI/sandboxing.md) | When to use |
+|----|----|----|----|
+| [Native Windows](#install-on-native-windows) | None; [Git for Windows](https://git-scm.com/downloads/win) is optional | Not supported | Windows-native projects and tools |
+| [WSL 2](#install-in-wsl) | WSL 2 enabled | Supported | Linux toolchains or sandboxed command execution |
+| [WSL 1](#install-in-wsl) | WSL 1 enabled | Not supported | If WSL 2 is unavailable |
 
 
 [​](#install-on-native-windows)
@@ -226,7 +230,7 @@ claude doctor
 
 Authenticate
 
-Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](../02-Claude-Code-CLI/amazon-bedrock.md), [Google Cloud’s Agent Platform](../02-Claude-Code-CLI/google-vertex-ai.md), or [Microsoft Foundry](../02-Claude-Code-CLI/microsoft-foundry.md). After installing, log in by running `claude` and following the browser prompts. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. See [Authentication](../02-Claude-Code-CLI/authentication.md) for all account types and team setup options.
+Claude Code requires a Pro, Max, Ultra, Team, Enterprise, or Console account. The free claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](../02-Claude-Code-CLI/amazon-bedrock.md), [Google Cloud’s Agent Platform](../02-Claude-Code-CLI/google-vertex-ai.md), or [Microsoft Foundry](../02-Claude-Code-CLI/microsoft-foundry.md). After installing, log in by running `claude` and following the browser prompts. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. See [Authentication](../02-Claude-Code-CLI/authentication.md) for all account types and team setup options.
 
 
 [​](#update-claude-code)
@@ -417,7 +421,7 @@ If this download fails, `apt update` later fails with `NO_PUBKEY BAA929FF1A7ECAC
 gpg --show-keys /etc/apt/keyrings/claude-code.asc
 ```
 
-The fingerprint gpg prints should be `31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE`. If gpg reports that the file can’t be opened or contains no valid OpenPGP data, the download failed or returned the wrong content: confirm your network can reach `downloads.claude.ai`, then rerun the download command.Register the repository on the `stable` channel and install:
+The only fingerprint gpg prints should be `31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE`. If gpg reports that the file can’t be opened or contains no valid OpenPGP data, the download failed or returned the wrong content. Confirm your network can reach `downloads.claude.ai`, then rerun the download command.Register the repository on the `stable` channel and install:
 
 ```python
 echo "deb [signed-by=/etc/apt/keyrings/claude-code.asc] https://downloads.claude.ai/claude-code/apt/stable stable main" \
@@ -479,6 +483,8 @@ Verify the downloaded key with `sha256sum /etc/apk/keys/claude-code.rsa.pub`, wh
 [​](#install-with-npm)
 
 Install with npm
+
+If `npm --version` prints a version starting with `12` in your shell, follow [Fix an npm 12 install](../02-Claude-Code-CLI/troubleshoot-install.md#fix-an-npm-12-install) instead. Don’t install with `sudo`. Claude Code runs npm without `sudo` when it updates itself, so an install that needs `sudo` can’t update automatically.
 
 You can also install Claude Code as a global npm package. The npm package requires [Node.js 22 or later](https://nodejs.org/en/download). On an older Node.js version, npm prints an `EBADENGINE` warning during install rather than failing; the install completes and `claude` still runs, since the package downloads a native binary that doesn’t use your Node.js at runtime.
 
@@ -560,10 +566,10 @@ Verify the signature
 Verify the detached signature against the manifest.
 
 ```python
-gpg --verify manifest.json.sig manifest.json
+gpg --with-fingerprint --verify manifest.json.sig manifest.json
 ```
 
-A valid result reports `Good signature from "Anthropic Claude Code Release Signing <security@anthropic.com>"`.`gpg` also prints `WARNING: This key is not certified with a trusted signature!` for any freshly imported key. This is expected. The `Good signature` line confirms the cryptographic check passed. The fingerprint comparison in Step 1 confirms the key itself is authentic.
+A valid result reports `Good signature from "Anthropic Claude Code Release Signing <security@anthropic.com>"`. With default settings, `gpg` also prints `WARNING: This key is not certified with a trusted signature!` for a freshly imported key. This is expected. The `Good signature` line confirms the cryptographic check passed.To check that Anthropic’s key signed the manifest, compare the `Primary key fingerprint` line at the end of the output with the fingerprint this page lists in Step 1. If they match and the output shows no `BAD signature`, continue to Step 4. Otherwise, don’t use this manifest.
 
 4
 

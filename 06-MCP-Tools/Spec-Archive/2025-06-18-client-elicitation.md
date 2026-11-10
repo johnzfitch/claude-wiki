@@ -2,11 +2,14 @@
 title: "Elicitation - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:28:49Z"
+fetched_at: "2026-10-31T06:24:51Z"
+last_modified: "Fri, 30 Oct 2026 20:34:24 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)

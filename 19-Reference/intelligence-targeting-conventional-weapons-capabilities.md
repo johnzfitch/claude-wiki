@@ -2,7 +2,7 @@
 title: "Measuring AI capabilities in intelligence targeting and conventional weapons \\ Anthropic"
 source_url: "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities"
 category: "19-Reference"
-fetched_at: "2026-10-22T06:30:49Z"
+fetched_at: "2026-10-24T06:26:20Z"
 tags: ["news-research"]
 ---
 

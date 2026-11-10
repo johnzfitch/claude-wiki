@@ -1,283 +1,33 @@
 ---
-title: "List memory versions - Claude API Reference"
+title: "List Memory Versions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:37:08Z"
+fetched_at: "2026-11-05T06:35:31Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemory_versions%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-
-Create a memory store
-
-
-List memory stores
-
-
-Retrieve a memory store
-
-
-Update a memory store
-
-
-Delete a memory store
-
-
-Archive a memory store
-
-Memories
-
-Memory Versions
-
-
-List memory versions
-
-
-Retrieve a memory version
-
-
-Redact a memory version
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores)
 4.  [Memory Versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions)
 
-# List memory versions
+# List Memory Versions
 
 Copy page
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions
 
-List memory versions
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+List Memory Versions
 
 ##### Path parameters
 
@@ -321,7 +71,9 @@ limit: optional number
 
 
 
-The maximum number of versions to return per page. Defaults to 20.
+The maximum number of versions to return per page, from 1 to 100. Defaults to 20.
+
+With `view=full`, a page holds at most 20 versions.
 
 formatint32
 
@@ -333,7 +85,7 @@ memory_id: optional string
 
 Return only versions of the memory with this ID (`mem_...`).
 
-The filter still works after the memory is deleted. The results then include the version whose `operation` is `deleted`.
+The filter still works after the memory is deleted. While that memory's versions are retained, the results include the version whose `operation` is `deleted`.
 
 
 
@@ -387,7 +139,9 @@ view: optional [BetaManagedAgentsMemoryView](https://platform.claude.com/docs/en
 
 
 
-Selects which projection of a `memory` or `memory_version` the server returns. `basic` returns the object with `content` set to `null`; `full` populates `content`. When omitted, the default is endpoint-specific: retrieve operations default to `full`; list, create, and update operations default to `basic`. Listing with `view=full` caps `limit` at 20.
+Whether a `memory` or `memory_version` in the response includes its `content`. Defaults to `full` on retrieve operations and to `basic` on list, create, and update operations.
+
+With `full`, list operations return at most 20 items per page.
 
 One of the following:
 
@@ -633,6 +387,22 @@ string
 
 
 
+"webhooks-2026-10-07"
+
+
+
+"message-threads-2026-08-12"
+
+
+
+"analytics-usage-cost-2026-08-24"
+
+
+
+"experimental-claude-tag-2026-10-21"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -673,11 +443,15 @@ When this version was written, in RFC 3339 format.
 
 formatdate-time
 
+
+
 memory_id: string
 
 
 
-ID of the memory this version snapshots (a `mem_...` value). Remains valid after the memory is deleted; pass it as `memory_id` to [List memory versions](beta-memory-stores-memory-versions-list.md) to retrieve the memory's retained versions, including the `deleted` row while the lineage is retained.
+The ID of the memory that this version belongs to (`mem_...`).
+
+The ID stays valid after the memory is deleted. Pass it as `memory_id` to [List Memory Versions](beta-memory-stores-memory-versions-list.md) to get the memory's retained versions, including its `deleted` version while the lineage is retained.
 
 memory_store_id: string
 
@@ -741,7 +515,11 @@ created_by: optional [BetaManagedAgentsActor](https://platform.claude.com/docs/e
 
 
 
-Who performed this write: one of `session_actor`, `api_actor`, `user_actor`, or `service_account_actor`; `null` when no writer is recorded. Captured at write time and preserved through redaction. A `session_actor` is an agent writing through the store's mounted filesystem at `/mnt/memory/`. The API key that created that session is not recorded on agent writes, so attribution names who made the write, not who is ultimately responsible; look up session provenance via the [Sessions API](beta-sessions-retrieve.md).
+Who made this change to the memory, or `null` if the author wasn't recorded.
+
+Redacting the version doesn't change this field. A `session_actor` here is an agent that wrote through the store's mounted filesystem at `/mnt/memory/`. The version doesn't record the API key that created that session. So the author in `created_by` is who made the change, not who is ultimately responsible for it.
+
+You can [retrieve the session](beta-sessions-retrieve.md) to learn more about where the change came from.
 
 One of the following:
 
@@ -757,7 +535,11 @@ redacted_at: optional string or null
 
 
 
-When this version was redacted, in RFC 3339 format, or `null` if it has not been redacted. When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are all `null`. See [Redact a memory version](beta-memory-stores-memory-versions-redact.md).
+When the version was redacted, in RFC 3339, or `null` if it hasn't been.
+
+When set, `content`, `path`, `content_size_bytes`, and `content_sha256` are `null`.
+
+See the [memory guide](../Other/managed-agents-memory.md#redact-a-version) to learn more about redaction.
 
 formatdate-time
 
@@ -775,9 +557,9 @@ next_page: optional string or null
 
 
 
-Opaque cursor for the next page (a `page_...` value), or `null` if there are no more results. Pass as `page` on the next request.
+The value to pass as `page` to get the next page, or `null` if there are no more results.
 
-List memory versions
+List Memory Versions
 
 cURL
 
@@ -785,9 +567,9 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/memory_stores/$MEMORY_STORE_ID/memory_versions \
-    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-version: 2026-10-21' \
     -H 'anthropic-beta: agent-memory-2026-07-22' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY"
 ```
 
 Response 200

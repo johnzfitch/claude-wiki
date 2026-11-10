@@ -2,7 +2,7 @@
 title: "Values in the wild \\ Anthropic"
 source_url: "https://www.anthropic.com/research/values-wild"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:32Z"
+fetched_at: "2026-10-24T06:26:37Z"
 tags: ["news-research"]
 ---
 

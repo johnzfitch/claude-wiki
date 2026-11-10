@@ -2,7 +2,7 @@
 title: "Create and manage Workspaces in the Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9796807-creating-and-managing-workspaces-in-the-claude-console"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:24Z"
+fetched_at: "2026-11-09T06:26:19Z"
 tags: ["api", "enterprise"]
 ---
 
@@ -53,7 +53,7 @@ Your new Workspace will now appear in the list of Workspaces.
 
 ## Add members to a Workspace
 
-**Note:** You must add members to your Console organization by following **[these instructions](../04-API-Reference/Other/inviting-members-to-the-claude-console.md)** before you can add them to a Workspace.
+**Note:** You must add members to your Console organization by following **[these instructions](https://support.claude.com/en/articles/13443764-inviting-members-to-the-claude-console)** before you can add them to a Workspace.
 
 1.  Go to the **Members** page (platform.claude.com/settings/members).
 

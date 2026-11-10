@@ -2,7 +2,7 @@
 title: "Manage project visibility and sharing | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519189-project-visibility-and-sharing"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:23Z"
+fetched_at: "2026-11-09T06:26:18Z"
 tags: ["claude-ai"]
 ---
 
@@ -53,7 +53,7 @@ Click “Only people invited” under General access and select “Everyone at \
 
     - **Can view:** Members can see project contents, knowledge, and instructions, and chat within the project, but cannot edit it.
 
-    - **Can edit:** Members can modify project instructions and knowledge, update member settings, and actively contribute to the project.
+    - **Can edit:** Members can modify project instructions and knowledge, update member settings, add project tags (beta) on Enterprise plans, and actively contribute to the project. Tag names and values are visible to all users in your organization, so keep sensitive information out of them.
 
 This will share the project and knowledge base with the member, but your chats will remain private unless you choose to share them.
 

@@ -17,7 +17,7 @@ Company size:
 Large
 
 Product:  
-[Claude for Nonprofits](nonprofits.md)[Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+[Claude for Nonprofits](nonprofits.md)[Claude Enterprise](enterprise.md)
 
 Location:  
 North America
@@ -119,7 +119,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
 - [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
@@ -151,7 +151,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 
 ## Enterprise
 
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Overview](enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -182,7 +182,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 
 ## Developers
 
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer docs](../01-Getting-Started/overview.md)
 - [Developer blog](https://claude.dev)
 - [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)
@@ -243,7 +243,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
 - [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
@@ -275,7 +275,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 
 ## Enterprise
 
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Overview](enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -306,7 +306,7 @@ Next comes moving CARM from testing into a real rollout, taking the shared proje
 
 ## Developers
 
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer docs](../01-Getting-Started/overview.md)
 - [Developer blog](https://claude.dev)
 - [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)

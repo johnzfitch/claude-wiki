@@ -180,7 +180,7 @@ Path: 01-Getting-Started/financial-analysis-workflows-with-claude.md
 
 Learn complete financial analysis workflows using a three-phase approach: retrieving data, analyzing information, and creating professional deliverables.
 
-20 minClaude
+7 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -351,7 +351,7 @@ Create an interactive artifact showing: portfolio summary with weighted returns 
 
 Open in Claude
 
-[Artifacts can be shared(opens in new tab)](../15-Claude-AI-Features/share-artifacts.md) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
+[Artifacts can be shared(opens in new tab)](https://support.claude.com/en/articles/9547008-share-artifacts) with other members of your organization. The interactive nature allows stakeholders to explore the data without requiring multiple static reports.
 
 ## Next Steps[](#next-steps)
 
@@ -364,17 +364,358 @@ Create an interactive artifact showing: portfolio summary with weighted returns 
 - [Workflow 1: Single Company Investment Memo](#workflow-1-single-company-investment-memo)
 - [Workflow 2: Competitive Analysis Presentation](#workflow-2-competitive-analysis-presentation)
 - [Workflow 3: Portfolio Performance Review](#workflow-3-portfolio-performance-review)
+- [Next Steps](#next-steps)
+
+---
+
+## Get started with Claude - Claude Platform Docs
+
+Source: https://platform.claude.com/docs/en/get-started
+Path: 01-Getting-Started/get-started.md
+
+# Get started with Claude
+
+Copy page
+
+
+
+Make your first API call to Claude and build a simple web search assistant.
+
+Copy page
+
+
+
+## Before you begin
+
+1.  1
+
+    ### Create a Claude Console account
+
+    [Sign up](../04-API-Reference/Other/playground.md) for a Claude Console account, or sign in to the one you have.
+
+2.  2
+
+    ### Choose how to authenticate
+
+    Signing in with the CLI is recommended for local development.
+
+    CLIAPI key
+
+1.  3
+
+    ### Install the CLI
+
+    Homebrew (macOS)
+    curl (Linux/WSL)
+    go install
+
+    Homebrew (macOS)
+
+    ``` shiki
+    brew install anthropics/tap/ant
+    ```
+
+    
+
+    curl (Linux/WSL)
+
+    For Linux environments, download the release binary directly.
+
+    ``` shiki
+    VERSION=2.6.0
+    OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+    case $(uname -m) in
+      x86_64) ARCH=amd64 ;;
+      aarch64) ARCH=arm64 ;;
+    esac
+    curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${VERSION}/ant_${VERSION}_${OS}_${ARCH}.tar.gz" \
+      | sudo tar -xz -C /usr/local/bin ant
+    ```
+
+    
+
+    You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
+
+    go install
+
+    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+
+    ``` shiki
+    go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
+    ```
+
+    
+
+    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+
+    ``` shiki
+    export PATH="$PATH:$(go env GOPATH)/bin"
+    ```
+
+    
+
+2.  4
+
+    ### Sign in
+
+    ``` shiki
+    ant auth login
+    ```
+
+    
+
+    Once login is completed, the SDKs and CLI will pick up your credentials automatically.
+
+1.  3
+
+    ### Create an API key
+
+    Create an [API key](../04-API-Reference/Other/playground.md) in the Claude Console.
+
+2.  4
+
+    ### Set the environment variable
+
+    The SDKs and CLI read your key from `ANTHROPIC_API_KEY`:
+
+    ``` shiki
+    export ANTHROPIC_API_KEY="your-api-key-here"
+    ```
+
+    
+
+## Call the API
+
+cURL
+
+CLI
+
+Python
+
+TypeScript
+
+C#
+
+Go
+
+Java
+
+PHP
+
+Ruby
+
+Python
+
+1.  5
+
+    ### Create a project and install the SDK
+
+    ``` shiki
+    mkdir claude-quickstart && cd claude-quickstart
+    python3 -m venv .venv && source .venv/bin/activate
+    pip install anthropic
+    ```
+
+    
+
+2.  6
+
+    ### Create your code
+
+    Create a file called `quickstart.py`:
+
+    Python
+
+    
+
+    ``` shiki
+    import anthropic
+
+    client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-opus-5-5",
+        max_tokens=1000,
+        messages=[
+            {
+                "role": "user",
+                "content": "What should I search for to find the latest developments in renewable energy?",
+            }
+        ],
+    )
+
+    for block in message.content:
+        if block.type == "text":
+            print(block.text)
+    ```
+
+3.  7
+
+    ### Run your code
+
+    ``` shiki
+    python quickstart.py
+    ```
+
+    
+
+    Output
+
+    
+
+    ``` block
+    Here are some effective search strategies to find the latest developments in renewable energy:
+
+    ## General Search Terms
+    - "Renewable energy news 2025"
+    - ...
+    ```
+
+## Next steps
+
+You made your first API call. Next, learn the Messages API patterns you’ll use in every Claude integration.
+
+
+
+[Working with the Messages API](../04-API-Reference/Guides/build-with-claude-working-with-messages.md)
+
+Learn multi-turn conversations, system prompts, stop reasons, and other core patterns.
+
+Once you’re comfortable with the basics, explore further:
+
+
+
+[Models overview](../20-Models/about-claude-models-overview.md)
+
+Compare Claude models by capability and cost.
+
+
+
+[Features overview](../04-API-Reference/Guides/build-with-claude-overview.md)
+
+Browse all Claude capabilities: tools, context management, structured outputs, and more.
+
+
+
+[Client SDKs](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
+
+Reference documentation for Python, TypeScript, C#, and other client libraries.
+
+
+
+[Authentication](../04-API-Reference/Other/manage-claude-authentication.md)
+
+Compare API keys and Workload Identity Federation, and set key expiration.
+
+---
+
+## Getting started with Claude for nonprofits · Claude Academy
+
+Source: https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits
+Path: 01-Getting-Started/getting-started-with-claude-for-nonprofits.md
+
+# Getting started with Claude for nonprofits
+
+Learn how to access Claude's nonprofit pricing, connect to fundraising and donor management tools, and get your team started.
+
+3 minClaude
+
+[Open Claude](https://claude.ai/new)
+
+Claude for nonprofits enhances mission-driven organizations with specialized capabilities, connecting to donor management platforms, foundation research databases, and collaboration tools while maintaining transparency and accountability. Learn more on the [nonprofit solutions page(opens in new tab)](../18-Industry-UseCases/nonprofits.md).
+
+## How to access nonprofit tools and features[](#how-to-access-nonprofit-tools-and-features)
+
+Claude for nonprofits is available on the Team and Enterprise plans at nonprofit pricing. See current prices on the [nonprofit solutions page(opens in new tab)](../18-Industry-UseCases/nonprofits.md).
+
+Both plans include access to the same models as our standard Team and Enterprise plans, with a minimum of 2 seats for teams under 150.
+
+To get started, verify your nonprofit status through our partner Goodstack by completing [this short form(opens in new tab)](https://validate.poweredbypercent.com/anthropic). The verification process takes 2–3 minutes for Team plans. For Enterprise pricing, [contact our sales team(opens in new tab)](https://claude.com/contact-sales/nonprofits).
+
+## Nonprofit operations and fundraising connectors[](#nonprofit-operations-and-fundraising-connectors)
+
+Claude connects to nonprofit platforms through the Model Context Protocol (MCP). Nonprofit connectors include:
+
+- [**Benevity**(opens in new tab)](https://benevity.com/)**:** Access a database of validated nonprofits for cause discovery and research
+- [**Blackbaud**(opens in new tab)](https://www.blackbaud.com/)**:** Connect to Raiser's Edge NXT for donor records, gift history, events, and personalized communications
+- [**Candid**(opens in new tab)](https://candid.org/)**:** Search nonprofits and foundations with detailed profiles, financials, and grant data
+
+Additional connectors include Microsoft 365, Gmail, Google Drive, Asana, Slack, and HubSpot. Browse all available connectors in the [connector directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md).
+
+## AI fluency for nonprofits[](#ai-fluency-for-nonprofits)
+
+The [AI fluency for nonprofits course(opens in new tab)](https://support.claude.com/courses/ai-fluency-for-nonprofits) covers responsible AI adoption, practical use examples, and organizational implementation guidance. Includes a shareable completion badge.
+
+## Common nonprofit use cases[](#common-nonprofit-use-cases)
+
+Explore the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) for inspiration, including:
+
+- Program design and evaluation
+- AI policy templates for your organization
+- Data visualization and reporting
+- Grant writing and donor communications
+- Research and landscape analysis
+
+## Frequently asked questions[](#frequently-asked-questions)
+
+#### Who is eligible?
+
+501(c)(3) organizations and their international equivalents, K–12 schools, and qualifying healthcare organizations.
+
+#### Who is not eligible?
+
+Government agencies, political campaigns, higher education institutions, and healthcare systems.
+
+#### How does validation work?
+
+We partner with [Goodstack(opens in new tab)](https://validate.poweredbypercent.com/anthropic) for nonprofit verification. Team plan validation takes 2–3 minutes. If you have issues with verification, [contact Goodstack(opens in new tab)](https://help.goodstack.org/).
+
+#### How long does the discount last?
+
+The nonprofit discount remains active as long as your organization maintains its nonprofit status.
+
+#### What if I already have a full-priced account?
+
+Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
+
+#### Is my data used for training?
+
+*Note: By default, Anthropic does not use data from Team or Enterprise accounts to train models.* Learn more at our [Privacy Center(opens in new tab)](https://privacy.claude.com/en/collections/10672411-data-handling-retention) and [Trust Center(opens in new tab)](https://trust.anthropic.com/).
+
+#### Can I get a tax exemption?
+
+Submit your tax exemption certificate through [support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) to receive a refund and apply the exemption to future invoices.
+
+#### What about organizations with fewer than five employees?
+
+The Team plan at nonprofit pricing has a minimum of 2 seats, so small organizations can use it too. Individual users can access Claude Pro at \$20/month. Explore the [AI fluency for nonprofits course(opens in new tab)](https://support.claude.com/courses/ai-fluency-for-nonprofits) and the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) to get started.
+
+#### What support and training is available?
+
+Visit the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) and [help center(opens in new tab)](https://support.claude.com/en/) for resources and guidance.
+
+## Troubleshooting[](#troubleshooting)
+
+- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
+- **Team plan option greyed out:** Make sure you're signed in to the correct account and have admin permissions
+- **Email domain questions:** All team members don't need the same domain. Learn about [allowed email domains(opens in new tab)](../21-Account-Support/account-management-faqs.md#h_b54c41c86c).
+- **Connecting tools:** Learn how to [browse and connect tools from the directory(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
+
+- [How to access nonprofit tools and features](#how-to-access-nonprofit-tools-and-features)
+- [Nonprofit operations and fundraising connectors](#nonprofit-operations-and-fundraising-connectors)
+- [AI fluency for nonprofits](#ai-fluency-for-nonprofits)
+- [Common nonprofit use cases](#common-nonprofit-use-cases)
+- [Frequently asked questions](#frequently-asked-questions)
+- [Troubleshooting](#troubleshooting)
 
 ---
 
 ## Get started with Claude | Claude Help Center
 
-Source: https://support.claude.com/en/articles/8114491-get-started-with-claude
-Path: 01-Getting-Started/get-started-with-claude.md
+Source: https://support.claude.com/en/articles/8114491-getting-started-with-claude
+Path: 01-Getting-Started/getting-started-with-claude.md
 
 # Get started with Claude
-
-September 16, 2026
 
 
 ## What is Claude?
@@ -422,7 +763,7 @@ Type your prompt into the chat interface and click the submit button to start a 
 
 The model you're currently chatting with is displayed either below your text input (on web and desktop) or at the top of your screen (on mobile). You can click on the model you're using to open the model selector and switch to another available model.
 
-You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings-claude-help-center.md)**.
+You can also choose how much effort Claude puts into each response and whether it uses extended thinking. Learn more about **[changing the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
 
 ### Can I chat with Claude in different languages?
 
@@ -442,7 +783,7 @@ We also have several paid subscriptions that offer additional usage. For more in
 
 ### Can I import my conversation history from another AI provider?
 
-No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, and Max users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)**.
+No, it's not possible to import conversation history from another AI provider into Claude at this time. However, Free, Pro, Max, and Ultra users can use the memory import feature to transfer memory from other AI providers into Claude. For more information, see **[Import and export your memory from Claude](https://support.claude.com/en/articles/12123587-import-and-export-your-memory-from-claude)**.
 
 ------------------------------------------------------------------------
 
@@ -464,7 +805,7 @@ Once you've started using Claude, you can:
 
 - **[Customize your appearance settings](../15-Claude-AI-Features/customizing-your-appearance-settings.md)**
 
-- **[Explore Claude’s personalization features](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features)**
+- **[Explore Claude’s personalization features](../15-Claude-AI-Features/understanding-claude-s-personalization-features.md)**
 
 - Learn more about designing effective prompts in our **[prompt engineering documentation](../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)**.
 
@@ -472,425 +813,10 @@ Once you've started using Claude, you can:
 
 ---
 
-## Get started with Claude - Claude Platform Docs
-
-Source: https://platform.claude.com/docs/en/get-started
-Path: 01-Getting-Started/get-started.md
-
-- [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md)
-
-- [Admin](../04-API-Reference/Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../20-Models/release-notes-overview.md)
-
-[API reference](../04-API-Reference/Endpoints/overview.md)
-
-
-
-
-[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fget-started)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](intro.md)[Get your API key](../04-API-Reference/Other/get-api-key.md)[Quickstart](get-started.md)[Authentication](../04-API-Reference/Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../04-API-Reference/Guides/build-with-claude-overview.md)[Using the Messages API](../04-API-Reference/Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../04-API-Reference/Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../04-API-Reference/Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
-
-[Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../04-API-Reference/Guides/build-with-claude-context-windows.md)[Context editing](../04-API-Reference/Guides/build-with-claude-context-editing.md)[Prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../04-API-Reference/Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../04-API-Reference/Guides/build-with-claude-cache-diagnostics.md)[Token counting](../04-API-Reference/Guides/build-with-claude-token-counting.md)
-
-[Compaction](../04-API-Reference/Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../04-API-Reference/Guides/build-with-claude-files.md)[PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../04-API-Reference/Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../04-API-Reference/Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../04-API-Reference/Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../04-API-Reference/Other/playground.md)
-
-[Messages](intro.md)First steps
-
-# Get started with Claude
-
-Copy page
-
-
-
-Make your first API call to Claude and build a simple web search assistant.
-
-Copy page
-
-
-
-## Prerequisites
-
-- A [Claude Console account](../04-API-Reference/Other/playground.md)
-- An [API key](../04-API-Reference/Other/get-api-key.md)
-
-## Call the API
-
-cURL
-
-CLI
-
-Python
-
-TypeScript
-
-C#
-
-Go
-
-Java
-
-PHP
-
-Ruby
-
-Python
-
-1.  1
-
-    ### Set your API key
-
-    Export your API key as an environment variable. The SDK reads `ANTHROPIC_API_KEY` automatically.
-
-    ``` shiki
-    export ANTHROPIC_API_KEY="your-api-key-here"
-    ```
-
-    
-
-2.  2
-
-    ### Create a project and install the SDK
-
-    ``` shiki
-    mkdir claude-quickstart && cd claude-quickstart
-    python3 -m venv .venv && source .venv/bin/activate
-    pip install anthropic
-    ```
-
-    
-
-3.  3
-
-    ### Create your code
-
-    Create a file called `quickstart.py`:
-
-    Python
-
-    
-
-    ``` shiki
-    import anthropic
-
-    client = anthropic.Anthropic()
-
-    message = client.messages.create(
-        model="claude-opus-5-5",
-        max_tokens=1000,
-        messages=[
-            {
-                "role": "user",
-                "content": "What should I search for to find the latest developments in renewable energy?",
-            }
-        ],
-    )
-
-    for block in message.content:
-        if block.type == "text":
-            print(block.text)
-    ```
-
-4.  4
-
-    ### Run your code
-
-    ``` shiki
-    python quickstart.py
-    ```
-
-    
-
-    Output
-
-    
-
-    ``` block
-    Here are some effective search strategies to find the latest developments in renewable energy:
-
-    ## General Search Terms
-    - "Renewable energy news 2025"
-    - ...
-    ```
-
-## Next steps
-
-You made your first API call. Next, learn the Messages API patterns you'll use in every Claude integration.
-
-
-
-[Working with the Messages API](../04-API-Reference/Guides/build-with-claude-working-with-messages.md)
-
-Learn multi-turn conversations, system prompts, stop reasons, and other core patterns.
-
-Once you're comfortable with the basics, explore further:
-
-
-
-[Models overview](../20-Models/about-claude-models-overview.md)
-
-Compare Claude models by capability and cost.
-
-
-
-[Features overview](../04-API-Reference/Guides/build-with-claude-overview.md)
-
-Browse all Claude capabilities: tools, context management, structured outputs, and more.
-
-
-
-[Client SDKs](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-
-Reference documentation for Python, TypeScript, C#, and other client libraries.
-
-
-
-[Authentication](../04-API-Reference/Other/manage-claude-authentication.md)
-
-Compare API keys and Workload Identity Federation, and set key expiration.
-
----
-
-## Getting started with Claude for nonprofits · Claude Academy
-
-Source: https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits
-Path: 01-Getting-Started/getting-started-with-claude-for-nonprofits.md
-
-# Getting started with Claude for nonprofits
-
-Learn how to access Claude's nonprofit pricing, connect to fundraising and donor management tools, and get your team started.
-
-3 minClaude
-
-[Open Claude](https://claude.ai/new)
-
-Claude for nonprofits enhances mission-driven organizations with specialized capabilities, connecting to donor management platforms, foundation research databases, and collaboration tools while maintaining transparency and accountability. Learn more on the [nonprofit solutions page(opens in new tab)](../18-Industry-UseCases/nonprofits.md).
-
-## How to access nonprofit tools and features[](#how-to-access-nonprofit-tools-and-features)
-
-Claude for nonprofits is available on two plans:
-
-- **Team plan:** \$8/user/month
-- **Enterprise plan:** \$10/user/month
-
-Both plans include access to the same models as our standard Team and Enterprise plans, with a minimum of 2 seats for teams under 150.
-
-To get started, verify your nonprofit status through our partner Goodstack by completing [this short form(opens in new tab)](https://validate.poweredbypercent.com/anthropic). The verification process takes 2–3 minutes for Team plans. For Enterprise pricing, [contact our sales team(opens in new tab)](https://claude.com/contact-sales/nonprofits).
-
-## Nonprofit operations and fundraising connectors[](#nonprofit-operations-and-fundraising-connectors)
-
-Claude connects to three nonprofit-specific connectors through the Model Context Protocol (MCP):
-
-- [**Benevity**(opens in new tab)](https://benevity.com/)**:** Access a database of 2.4M+ validated nonprofits for cause discovery and research
-- [**Blackbaud**(opens in new tab)](https://www.blackbaud.com/)**:** Connect to Raiser's Edge NXT for donor records, gift history, events, and personalized communications
-- [**Candid**(opens in new tab)](https://candid.org/)**:** Search 1.9M+ nonprofits and foundations with detailed profiles, financials, and grant data
-
-Additional connectors include Microsoft 365, Gmail, Google Drive, Asana, Slack, and HubSpot. Browse all available connectors in the [connector directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md).
-
-## AI fluency for nonprofits[](#ai-fluency-for-nonprofits)
-
-The [AI fluency for nonprofits course(opens in new tab)](https://support.claude.com/courses/ai-fluency-for-nonprofits) covers responsible AI adoption, practical use examples, and organizational implementation guidance. Includes a shareable completion badge.
-
-## Common nonprofit use cases[](#common-nonprofit-use-cases)
-
-Explore the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) for inspiration, including:
-
-- Program design and evaluation
-- AI policy templates for your organization
-- Data visualization and reporting
-- Grant writing and donor communications
-- Research and landscape analysis
-
-## Frequently asked questions[](#frequently-asked-questions)
-
-#### Who is eligible?
-
-501(c)(3) organizations, K–12 schools, and qualifying healthcare organizations.
-
-#### Who is not eligible?
-
-Government agencies, political campaigns, higher education institutions, and healthcare systems.
-
-#### How does validation work?
-
-We partner with [Goodstack(opens in new tab)](https://validate.poweredbypercent.com/anthropic) for nonprofit verification. Team plan validation takes 2–3 minutes. If you have issues with verification, [contact Goodstack(opens in new tab)](https://help.goodstack.org/).
-
-#### How long does the discount last?
-
-The nonprofit discount remains active as long as your organization maintains its nonprofit status.
-
-#### What if I already have a full-priced account?
-
-Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
-
-#### Is my data used for training?
-
-*Note: By default, Anthropic does not use data from Team or Enterprise accounts to train models.* Learn more at our [Privacy Center(opens in new tab)](https://privacy.claude.com/en/collections/10672411-data-handling-retention) and [Trust Center(opens in new tab)](https://trust.anthropic.com/).
-
-#### Can I get a tax exemption?
-
-Submit your tax exemption certificate through [support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md) to receive a refund and apply the exemption to future invoices.
-
-#### What about organizations with fewer than five employees?
-
-Individual users can access Claude Pro at \$20/month. Explore the [AI fluency for nonprofits course(opens in new tab)](https://support.claude.com/courses/ai-fluency-for-nonprofits) and the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) to get started.
-
-#### What support and training is available?
-
-Visit the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) and [help center(opens in new tab)](https://support.claude.com/en/) for resources and guidance.
-
-## Troubleshooting[](#troubleshooting)
-
-- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
-- **Team plan option greyed out:** Make sure you're signed in to the correct account and have admin permissions
-- **Email domain questions:** All team members don't need the same domain. Learn about [allowed email domains(opens in new tab)](../21-Account-Support/account-management-faqs.md#h_b54c41c86c).
-- **Connecting tools:** Learn how to [browse and connect tools from the directory(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
-
-- [How to access nonprofit tools and features](#how-to-access-nonprofit-tools-and-features)
-- [Nonprofit operations and fundraising connectors](#nonprofit-operations-and-fundraising-connectors)
-- [AI fluency for nonprofits](#ai-fluency-for-nonprofits)
-- [Common nonprofit use cases](#common-nonprofit-use-cases)
-- [Frequently asked questions](#frequently-asked-questions)
-- [Troubleshooting](#troubleshooting)
-
----
-
 ## Intro to Claude - Claude Platform Docs
 
 Source: https://platform.claude.com/docs/en/intro
 Path: 01-Getting-Started/intro.md
-
-- [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md)
-
-- [Admin](../04-API-Reference/Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../20-Models/release-notes-overview.md)
-
-[API reference](../04-API-Reference/Endpoints/overview.md)
-
-
-
-
-[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fintro)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](intro.md)[Get your API key](../04-API-Reference/Other/get-api-key.md)[Quickstart](get-started.md)[Authentication](../04-API-Reference/Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../04-API-Reference/Guides/build-with-claude-overview.md)[Using the Messages API](../04-API-Reference/Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../04-API-Reference/Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../04-API-Reference/Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md)[Task budgets (beta)](../04-API-Reference/Guides/build-with-claude-task-budgets.md)[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md)[Structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md)[Citations](../04-API-Reference/Guides/build-with-claude-citations.md)[Streaming Messages](../04-API-Reference/Guides/build-with-claude-streaming.md)[Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md)[Search results](../04-API-Reference/Guides/build-with-claude-search-results.md)[Streaming refusals](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../04-API-Reference/Guides/build-with-claude-multilingual-support.md)[Embeddings](../04-API-Reference/Guides/build-with-claude-embeddings.md)
-
-[Thinking](../04-API-Reference/Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../04-API-Reference/Guides/build-with-claude-context-windows.md)[Context editing](../04-API-Reference/Guides/build-with-claude-context-editing.md)[Prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../04-API-Reference/Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../04-API-Reference/Guides/build-with-claude-cache-diagnostics.md)[Token counting](../04-API-Reference/Guides/build-with-claude-token-counting.md)
-
-[Compaction](../04-API-Reference/Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../04-API-Reference/Guides/build-with-claude-files.md)[PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../04-API-Reference/Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../04-API-Reference/Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../04-API-Reference/Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../04-API-Reference/Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../04-API-Reference/Other/playground.md)
-
-MessagesFirst steps
 
 # Intro to Claude
 
@@ -910,16 +836,16 @@ Looking to chat with Claude? Visit [claude.ai](https://claude.ai).
 
 Anthropic offers two ways to build with Claude, each suited to different use cases:
 
-|                | Messages API                                | Claude Managed Agents                                                     |
-|----------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **What it is** | Direct model prompting access               | Pre-built, configurable agent harness that runs in managed infrastructure |
-| **Best for**   | Custom agent loops and fine-grained control | Long-running tasks and asynchronous work                                  |
+|  | Messages API | Claude Managed Agents |
+|----|----|----|
+| **What it is** | Direct model prompting access | Pre-built, configurable agent harness that runs in managed infrastructure |
+| **Best for** | Custom agent loops and fine-grained control | Long-running tasks and asynchronous work |
 
 To learn more about each, see [Using the Messages API](../04-API-Reference/Guides/build-with-claude-working-with-messages.md) and the [Claude Managed Agents overview](../04-API-Reference/Other/managed-agents-overview.md).
 
 ## Explore the latest generation of Claude models
 
-If you're unsure which model to use, start with [Claude Opus 5.5](../20-Models/models-opus-5-5-overview.md) for most workloads. Use [Claude Fable 5.1](../20-Models/models-fable-5-1-overview.md) for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use. Each model's page lists the platforms it's available on.
+If you’re unsure which model to use, start with [Claude Opus 5.5](../20-Models/models-opus-5-5-overview.md) for most workloads. Use [Claude Fable 5.1](../20-Models/models-fable-5-1-overview.md) for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use. Each model’s page lists the platforms it’s available on.
 
 ### [Fable 5.1](../20-Models/models-fable-5-1-overview.md)
 
@@ -959,7 +885,7 @@ For high-volume, latency-sensitive tasks such as classification, extraction, and
 
 ## Recommended path for new developers
 
-Follow these steps to go from zero to a working Claude integration.
+Follow these steps to build a working Claude integration.
 
 1.  1
 
@@ -1015,7 +941,7 @@ Explore and understand the API in your browser with playground.
 
 
 
-[API Reference](../04-API-Reference/Endpoints/overview.md)
+[API reference](../04-API-Reference/Endpoints/overview.md)
 
 Explore the full Claude API and client SDK documentation.
 
@@ -1027,7 +953,7 @@ Learn with interactive Jupyter notebooks covering PDFs, embeddings, and more.
 
 ## Key capabilities
 
-Claude can assist with many tasks that involve text, code, and images.
+Claude can help with many tasks that involve text, code, and images.
 
 
 
@@ -1053,9 +979,238 @@ Find answers to frequently asked account and billing questions.
 
 
 
-[Service Status](https://status.claude.com)
+[Service status](https://status.claude.com)
 
 Check the status of Anthropic services.
+
+---
+
+## Overview - Claude Code Docs
+
+Source: https://code.claude.com/docs/en/overview
+Path: 01-Getting-Started/overview.md
+
+## On this page
+
+- [Get started](#get-started)
+- [What you can do](#what-you-can-do)
+- [Use Claude Code everywhere](#use-claude-code-everywhere)
+- [Next steps](#next-steps)
+
+Getting started
+
+# Overview
+
+Copy pageCopy page
+
+Claude Code is an agentic coding tool that reads your codebase, edits files, runs commands, and integrates with your development tools. Available in your terminal, IDE, desktop app, and browser.
+
+Copy pageCopy page
+
+Claude Code is an AI-powered coding assistant that helps you build features, fix bugs, and automate development tasks. It understands your entire codebase and can work across multiple files and tools to get things done.
+
+
+[​](#get-started)
+
+Get started
+
+Claude Code runs on several surfaces: the terminal, IDE extensions, a desktop app, and the web. Choose one from the tabs below to get started. Most surfaces require a [Claude subscription](../17-Billing-Plans/pricing.md) or [Anthropic Console](../04-API-Reference/Other/playground.md) account. The Terminal CLI, VS Code, and JetBrains also support [third-party providers](../02-Claude-Code-CLI/third-party-integrations.md).
+
+- Terminal
+
+- VS Code
+
+- Desktop app
+
+- Web
+
+- JetBrains
+
+The full-featured CLI for working with Claude Code directly in your terminal. Edit files, run commands, and manage your entire project from the command line.To install Claude Code, open a terminal and run the command for your system. If you haven’t used a terminal before, the [terminal guide](../02-Claude-Code-CLI/terminal-guide.md) shows how to open one and paste the command.
+
+- Native Install (Recommended)
+
+- Homebrew
+
+- WinGet
+
+**macOS, Linux, WSL:**
+
+```python
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+On Windows, your prompt shows `PS C:\` when you’re in PowerShell and `C:\` without the `PS` when you’re in CMD.**Windows PowerShell:**
+
+```python
+irm https://claude.ai/install.ps1 | iex
+```
+
+**Windows CMD:**
+
+```python
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+The install command shows no progress while it downloads Claude Code. When the installer finishes, open a new terminal window and run `claude --version`. A working installation prints a version number. If your shell says `claude` isn’t found or isn’t recognized, the install directory isn’t on your PATH yet: see [Fix your PATH](../02-Claude-Code-CLI/troubleshoot-install.md#command-not-found-claude-after-installation).If you see `The token '&&' is not a valid statement separator`, you’re in PowerShell, not CMD. If you see `'irm' is not recognized as an internal or external command`, you’re in CMD, not PowerShell.If the install command fails with `syntax error near unexpected token '<'`, a `403`, or any other error, see [Troubleshoot installation](../02-Claude-Code-CLI/troubleshoot-install.md#find-your-error) to match the error to a fix and for alternative install methods.[Git for Windows](https://git-scm.com/downloads/win) is recommended on native Windows so Claude Code can use the Bash tool. If Git for Windows is not installed, Claude Code uses PowerShell as the shell tool instead. WSL setups do not need Git for Windows.
+
+Native installations automatically update in the background to keep you on the latest version.
+
+```python
+brew install --cask claude-code
+```
+
+Homebrew offers two casks. `claude-code` tracks the stable release channel, which is typically about a week behind and skips releases with major regressions. `claude-code@latest` tracks the latest channel and receives new versions as soon as they ship.
+
+Homebrew installations do not auto-update. Run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed, to get the latest features and security fixes.
+
+```python
+winget install Anthropic.ClaudeCode
+```
+
+WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
+
+You can also install with [apt, dnf, or apk](setup.md#install-with-linux-package-managers) on Debian, Fedora, RHEL, and Alpine.Then start Claude Code in any project. Replace `your-project` with the path to a project directory on your machine:
+
+```python
+cd your-project
+claude
+```
+
+Claude Code prompts you to log in on first use. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. [Continue with the Quickstart →](quickstart.md)
+
+See [advanced setup](setup.md) for installation options, manual updates, or uninstallation instructions. Visit [installation troubleshooting](../02-Claude-Code-CLI/troubleshoot-install.md) if you hit issues.
+
+The VS Code extension provides inline diffs, @-mentions, plan review, and conversation history directly in your editor.
+
+- [Install for VS Code](vscode:extension/anthropic.claude-code)
+- [Install for Cursor](cursor:extension/anthropic.claude-code)
+
+Or search for “Claude Code” in the Extensions view (`Cmd+Shift+X` on Mac, `Ctrl+Shift+X` on Windows/Linux). After installing, open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`), type “Claude Code”, and select **Open in New Tab**.[Get started with VS Code →](../03-IDE-Integrations/vs-code.md#get-started)
+
+A standalone app for running Claude Code outside your IDE or terminal. Review diffs visually, run multiple sessions side by side, schedule recurring tasks, and start cloud sessions.Download and install:
+
+- [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs) (Intel and Apple Silicon)
+- [Windows](https://claude.ai/api/desktop/win32/x64/setup/latest/redirect?utm_source=claude_code&utm_medium=docs) (x64)
+- [Windows ARM64](https://claude.ai/api/desktop/win32/arm64/setup/latest/redirect?utm_source=claude_code&utm_medium=docs)
+- On Ubuntu or Debian, where the app is in beta, install it with apt by following the [Linux install instructions](../16-Mobile-Desktop/desktop-linux.md)
+
+After installing, launch Claude, sign in, and click the **Code** tab to start coding. The app includes Claude Code, so you don’t need to install the CLI separately. A [paid subscription](../17-Billing-Plans/pricing.md) is required.[Learn more about the desktop app →](../16-Mobile-Desktop/desktop-quickstart.md)
+
+Run Claude Code in your browser with no local setup. Kick off long-running tasks and check back when they’re done, work on repos you don’t have locally, or run multiple tasks in parallel. For a longer body of work, create a [project](../02-Claude-Code-CLI/claude-projects.md) and let Claude coordinate the parallel sessions for you. Available on desktop browsers and [the Claude app for iOS and Android](../16-Mobile-Desktop/mobile.md).Start coding at [claude.ai/code](https://claude.ai/code).[Get started →](../02-Claude-Code-CLI/web-quickstart.md)
+
+A plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with interactive diff viewing and selection context sharing.Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE. The plugin requires the Claude Code CLI, installed separately; see the [JetBrains setup steps](../03-IDE-Integrations/jetbrains.md#installation).[Get started with JetBrains →](../03-IDE-Integrations/jetbrains.md)
+
+
+[​](#what-you-can-do)
+
+What you can do
+
+Here are some of the ways you can use Claude Code:
+
+Automate the work you keep putting off
+
+Claude Code handles the tedious tasks that eat up your day: writing tests for untested code, fixing lint errors across a project, resolving merge conflicts, updating dependencies, and writing release notes.
+
+```python
+claude "write tests for the auth module, run them, and fix any failures"
+```
+
+Build features and fix bugs
+
+Describe what you want in plain language. Claude Code plans the approach, writes the code across multiple files, and verifies it works.For bugs, paste an error message or describe the symptom. Claude Code traces the issue through your codebase, identifies the root cause, and implements a fix. See [common workflows](../02-Claude-Code-CLI/common-workflows.md) for more examples.
+
+Create commits and pull requests
+
+Claude Code works directly with git. It stages changes, writes commit messages, creates branches, and opens pull requests.
+
+```python
+claude "commit my changes with a descriptive message"
+```
+
+In CI, you can automate code review and issue triage with [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) or [GitLab CI/CD](../02-Claude-Code-CLI/gitlab-ci-cd.md).
+
+Connect your tools with MCP
+
+The [Model Context Protocol (MCP)](../06-MCP-Tools/General/mcp.md) is an open standard for connecting AI tools to external data sources. With MCP, Claude Code can read your design docs in Google Drive, update tickets in Jira, pull data from Slack, or use your own custom tooling. The [MCP quickstart](../06-MCP-Tools/General/mcp-quickstart.md) connects your first server end to end.
+
+Customize with instructions, skills, and hooks
+
+[`CLAUDE.md`](../02-Claude-Code-CLI/memory.md) is a markdown file you add to your project root that Claude Code reads at the start of every session. Use it to set coding standards, architecture decisions, preferred libraries, and review checklists. If your repository already has an `AGENTS.md` for other coding agents, Claude Code [can read that](../02-Claude-Code-CLI/memory.md#agents-md) in place of a `CLAUDE.md`. Claude also builds [auto memory](../02-Claude-Code-CLI/memory.md#auto-memory) as it works, saving learnings across sessions without you writing anything.Create [skills](../08-Plugins-Skills/skills.md) to package repeatable workflows your team can share, like `/review-pr` or `/deploy-staging`.[Hooks](../07-Hooks/hooks.md) let you run shell commands before or after Claude Code actions, like auto-formatting after every file edit or running lint before a commit.
+
+Run agents in parallel and build custom agents
+
+Spawn [multiple Claude Code agents](../09-Agents-Patterns/sub-agents.md) that work on different parts of a task simultaneously. A lead agent coordinates the work, assigns subtasks, and merges results.To run several full sessions in parallel and watch them from one screen, use [background agents](../09-Agents-Patterns/agent-view.md). For fully custom workflows, the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) lets you build your own agents powered by Claude Code’s tools and capabilities, with full control over orchestration, tool access, and permissions.
+
+Pipe, script, and automate with the CLI
+
+Claude Code is composable and follows the Unix philosophy. Pipe logs into it, run it in CI, or chain it with other tools:
+
+```python
+# Analyze recent log output
+tail -200 app.log | claude -p "Slack me if you see any anomalies"
+
+# Automate translations in CI
+claude -p "translate new strings into French and raise a PR for review"
+
+# Bulk operations across files
+git diff main --name-only | claude -p "review these changed files for security issues"
+```
+
+See the [CLI reference](../02-Claude-Code-CLI/cli-reference.md) for the full set of commands and flags.
+
+Schedule recurring tasks
+
+Run Claude on a schedule to automate work that repeats: morning PR reviews, overnight CI failure analysis, weekly dependency audits, or syncing docs after PRs merge.
+
+- [Cloud scheduled tasks](../02-Claude-Code-CLI/web-scheduled-tasks.md), formerly routines, run in the cloud, so they keep running even when your computer is off. They can also trigger on API calls or GitHub events. Create them from the web, the Desktop app, or by running `/schedule` in the CLI.
+- [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md) run on your machine, with direct access to your local files and tools
+- [`/loop`](../02-Claude-Code-CLI/scheduled-tasks.md) repeats a prompt within a CLI session for quick polling
+
+Work from anywhere
+
+Sessions aren’t tied to a single surface. Move work between them as your context changes:
+
+- Step away from your desk and keep working from your phone or any browser with [Remote Control](../02-Claude-Code-CLI/remote-control.md)
+- Message [Dispatch](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch) a task from your phone and open the Desktop session it creates
+- Start a long-running task on the [web](../02-Claude-Code-CLI/claude-code-on-the-web.md) or the [Claude mobile app](../16-Mobile-Desktop/mobile.md), then pull it into your terminal with `claude --teleport`. Teleport requires a claude.ai subscription.
+- Run `/desktop` to continue your current terminal session in the [Desktop app](../16-Mobile-Desktop/desktop.md), where you can review diffs visually. The `/desktop` handoff requires a claude.ai subscription. Available on macOS and x64 Windows.
+- Route tasks from team chat: mention `@Claude` in [Slack](../14-Connectors/slack.md) with a bug report and get a pull request back
+
+
+[​](#use-claude-code-everywhere)
+
+Use Claude Code everywhere
+
+Each [surface](../02-Claude-Code-CLI/glossary.md#surface) connects to the same underlying Claude Code engine, so your repo’s CLAUDE.md files, settings, and MCP servers work across all of them. Beyond the [Terminal](quickstart.md), [VS Code](../03-IDE-Integrations/vs-code.md), [JetBrains](../03-IDE-Integrations/jetbrains.md), [Desktop](../16-Mobile-Desktop/desktop.md), and [Web](../02-Claude-Code-CLI/claude-code-on-the-web.md) surfaces above, Claude Code integrates with CI/CD, chat, and browser workflows:
+
+| What I want to do                                                               | Best option                                                                                                               |
+|---------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| Continue a local session from my phone or another device                        | [Remote Control](../02-Claude-Code-CLI/remote-control.md)                                                                                 |
+| Push events from Telegram, Discord, iMessage, or my own webhooks into a session | [Channels](../02-Claude-Code-CLI/channels.md)                                                                                             |
+| Start a task locally, continue on mobile                                        | [`claude --cloud`](../02-Claude-Code-CLI/claude-code-on-the-web.md#from-terminal-to-cloud), then the [Claude mobile app](../16-Mobile-Desktop/mobile.md) |
+| Run Claude on a recurring schedule                                              | [Cloud scheduled tasks](../02-Claude-Code-CLI/web-scheduled-tasks.md) or [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md)                 |
+| Automate PR reviews and issue triage                                            | [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) or [GitLab CI/CD](../02-Claude-Code-CLI/gitlab-ci-cd.md)                                        |
+| Get automatic code review on every PR                                           | [GitHub Code Review](../02-Claude-Code-CLI/code-review.md)                                                                                |
+| Route bug reports from Slack to pull requests                                   | [Slack](../14-Connectors/slack.md)                                                                                                   |
+| Debug live web applications                                                     | [Chrome](../03-IDE-Integrations/chrome.md)                                                                                                 |
+| Build custom agents for your own workflows                                      | [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md)                                                                                  |
+
+
+[​](#next-steps)
+
+Next steps
+
+Once you’ve installed Claude Code, these guides help you go deeper.
+
+- [Quickstart](quickstart.md): walk through your first real task, from exploring a codebase to committing a fix
+- [Store instructions and memories](../02-Claude-Code-CLI/memory.md): give Claude persistent instructions with CLAUDE.md files and auto memory
+- [Common workflows](../02-Claude-Code-CLI/common-workflows.md) and [best practices](../02-Claude-Code-CLI/best-practices.md): patterns for getting the most out of Claude Code
+- [Claude Academy](https://academy.claude.com/): free self-paced courses, including [Claude Code 101](https://academy.claude.com/courses/claude-code-101) and [Claude Code in Action](https://academy.claude.com/courses/claude-code-in-action)
+- [A harness for every task](https://claude.com/blog/a-harness-for-every-task-dynamic-workflows-in-claude-code): how the Claude Code team uses [dynamic workflows](../02-Claude-Code-CLI/workflows.md) to orchestrate many subagents at once
+- [Settings](../02-Claude-Code-CLI/settings.md): customize Claude Code for your workflow
+- [Troubleshooting](../02-Claude-Code-CLI/troubleshooting.md): solutions for common issues
+- [code.claude.com](../15-Claude-AI-Features/product-claude-code.md): demos, pricing, and product details
 
 ---
 
@@ -1065,6 +1220,8 @@ Source: https://code.claude.com/docs/en/quickstart
 Path: 01-Getting-Started/quickstart.md
 
 ## On this page
+
+Back to top
 
 - [Before you begin](#before-you-begin)
 - [Step 1: Install Claude Code](#step-1-install-claude-code)
@@ -1102,12 +1259,12 @@ Make sure you have:
 
 - A terminal or command prompt open
 - A code project to work with
-- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/playground.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
+- A [Claude subscription](../17-Billing-Plans/pricing.md) (Pro, Max, Ultra, Team, or Enterprise), [Claude Console](../04-API-Reference/Other/playground.md) account, or access through a [supported cloud provider](../02-Claude-Code-CLI/third-party-integrations.md)
 
 These cases are covered on other pages:
 
 - **Never used a terminal before**: start with the [terminal guide](../02-Claude-Code-CLI/terminal-guide.md)
-- **Want Claude Code somewhere other than the terminal**: Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/vs-code.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains.md), in [Slack](../14-Connectors/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) and [GitLab](../02-Claude-Code-CLI/gitlab-ci-cd.md). See [all interfaces](../02-Claude-Code-CLI/code-home.md#use-claude-code-everywhere).
+- **Want Claude Code somewhere other than the terminal**: Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](../16-Mobile-Desktop/desktop.md), in [VS Code](../03-IDE-Integrations/vs-code.md) and [JetBrains IDEs](../03-IDE-Integrations/jetbrains.md), in [Slack](../14-Connectors/slack.md), and in CI/CD with [GitHub Actions](../02-Claude-Code-CLI/github-actions.md) and [GitLab](../02-Claude-Code-CLI/gitlab-ci-cd.md). See [all interfaces](overview.md#use-claude-code-everywhere).
 
 
 [​](#step-1-install-claude-code)
@@ -1180,7 +1337,7 @@ claude
 
 Replace `/path/to/your/project` with the path to the project you want to work on. Claude Code prompts you to log in on first use. For Claude subscription or Console accounts, follow the prompts to complete authentication in your browser. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. You can log in using any of these account types:
 
-- [Claude Pro, Max, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
+- [Claude Pro, Max, Ultra, Team, or Enterprise](../17-Billing-Plans/pricing.md) (recommended)
 - [Claude Console](../04-API-Reference/Other/playground.md) (API access with pre-paid credits). On first login, a “Claude Code” workspace is automatically created in the Console for centralized cost tracking.
 - [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry](../02-Claude-Code-CLI/third-party-integrations.md) (enterprise cloud providers)
 - A self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
@@ -1326,13 +1483,13 @@ Shell commands
 
 Run these from your terminal to start or resume Claude Code.
 
-| Command             | What it does                                           | Example                             |
-|---------------------|--------------------------------------------------------|-------------------------------------|
-| `claude`            | Start interactive mode                                 | `claude`                            |
-| `claude "task"`     | Start interactive mode with an initial prompt          | `claude "fix the build error"`      |
-| `claude -p "query"` | Run one-off query, then exit                           | `claude -p "explain this function"` |
-| `claude -c`         | Continue most recent conversation in current directory | `claude -c`                         |
-| `claude -r`         | Resume a previous conversation                         | `claude -r`                         |
+| Command | What it does | Example |
+|----|----|----|
+| `claude` | Start interactive mode | `claude` |
+| `claude "task"` | Start interactive mode with an initial prompt | `claude "fix the build error"` |
+| `claude -p "query"` | Run one-off query, then exit | `claude -p "explain this function"` |
+| `claude -c` | Continue most recent conversation in current directory | `claude -c` |
+| `claude -r` | Resume a previous conversation | `claude -r` |
 
 See the [CLI reference](../02-Claude-Code-CLI/cli-reference.md) for the complete list of shell commands.
 
@@ -1431,81 +1588,105 @@ Courses on working with AI, building with Claude, and the Model Context Protocol
 
 ### Claude 101
 
-13 lessons · 1 quiz·2.5 hr·Completion badge
+·13 lessons · 1 quiz·2.5 hr·Completion badge
+
+·13 lessons · 1 quiz·2.5 hr
 
 
 ### Claude Code 101
 
-12 lessons · 1 quiz·1.5 hr·Completion badge
+·12 lessons · 1 quiz·1.5 hr·Completion badge
+
+·12 lessons · 1 quiz·1.5 hr
 
 
 ### Introduction to Claude Cowork
 
-14 lessons · 1 quiz·2.5 hr·Completion badge
+·14 lessons · 1 quiz·2.5 hr·Completion badge
+
+·14 lessons · 1 quiz·2.5 hr
 
 
 ### Introduction to Claude Tag
 
-11 lessons · 1 quiz·2.5 hr·Completion badge
+·11 lessons · 1 quiz·2.5 hr·Completion badge
+
+·11 lessons · 1 quiz·2.5 hr
 
 
 ### Claude Platform 101
 
-13 lessons · 1 quiz·1.5 hr·Completion badge
+·13 lessons · 1 quiz·1.5 hr·Completion badge
+
+·13 lessons · 1 quiz·1.5 hr
 
 ## Learn the products
 
 
 ### Claude Code in action
 
-9 lessons · 1 quiz·1 hr·Completion badge
+·9 lessons · 1 quiz·1 hr·Completion badge
+
+·9 lessons · 1 quiz·1 hr
 
 
 ### Introduction to Model Context Protocol
 
-10 lessons · 1 quiz·1 hr·Completion badge
+·10 lessons · 1 quiz·1 hr·Completion badge
+
+·10 lessons · 1 quiz·1 hr
 
 
 ### Model Context Protocol: Advanced topics
 
-11 lessons · 1 quiz·1.5 hr·Completion badge
+·11 lessons · 1 quiz·1.5 hr·Completion badge
+
+·11 lessons · 1 quiz·1.5 hr
 
 
 ### Introduction to subagents
 
-4 lessons·45 min
+·4 lessons·45 min
 
 
 ### Introduction to agent skills
 
-6 lessons·1 hr
+·6 lessons·1 hr
 
 
 ### The AI-native SDLC playbook
 
-14 lessons·1 hr
+·14 lessons·1 hr
 
 
 ### Deploying Claude Enterprise with confidence: The five decisions that shape your rollout
 
-14 lessons · 1 quiz·2.5 hr·Completion badge
+·14 lessons · 1 quiz·2.5 hr·Completion badge
+
+·14 lessons · 1 quiz·2.5 hr
 
 ## Become AI fluent
 
 
 ### AI Fluency: Framework and foundations
 
-14 lessons · 1 quiz·4 hr·Completion badge
+·14 lessons · 1 quiz·4 hr·Completion badge
+
+·14 lessons · 1 quiz·4 hr
 
 
 ### AI capabilities and limitations
 
-13 lessons · 1 quiz·3.5 hr·Completion badge
+·13 lessons · 1 quiz·3.5 hr·Completion badge
+
+·13 lessons · 1 quiz·3.5 hr
 
 
 ### Building effective human-agent teams (beta)
 
-5 lessons · 1 quiz·45 min·Completion badge
+·5 lessons · 1 quiz·45 min·Completion badge
+
+·5 lessons · 1 quiz·45 min
 
 ### AI Fluency, for your world
 
@@ -1516,17 +1697,37 @@ Courses on working with AI, building with Claude, and the Model Context Protocol
 
 ### Building with the Claude API
 
-67 lessons · 8 quizzes·9 hr·Completion badge
+·67 lessons · 8 quizzes·9 hr·Completion badge
+
+·67 lessons · 8 quizzes·9 hr
+
+
+### Tool use with the Messages API
+
+·9 lessons · 1 quiz·1.5 hr·Completion badge
+
+·9 lessons · 1 quiz·1.5 hr
+
+
+### Introduction to evals
+
+·4 lessons · 1 quiz·1 hr·Completion badge
+
+·4 lessons · 1 quiz·1 hr
 
 
 ### Claude with Amazon Bedrock
 
-65 lessons · 8 quizzes·8 hr·Completion badge
+·65 lessons · 8 quizzes·8 hr·Completion badge
+
+·65 lessons · 8 quizzes·8 hr
 
 
 ### Claude on Google Cloud
 
-66 lessons · 9 quizzes·8.5 hr·Completion badge
+·66 lessons · 9 quizzes·8.5 hr·Completion badge
+
+·66 lessons · 9 quizzes·8.5 hr
 
 ---
 
@@ -1553,7 +1754,7 @@ The visual streams in alongside the text and the conversation keeps going. You c
 
 ### What this is, practically[](#what-this-is-practically)
 
-- **Appears as part of Claude's answer** — in the flow of the conversation, not a side panel. If you've used [Artifacts(opens in new tab)](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them), this is the lighter version.
+- **Appears as part of Claude's answer** — in the flow of the conversation, not a side panel. If you've used [Artifacts(opens in new tab)](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md), this is the lighter version.
 - **Interactive, often.** Sliders, draggable points, buttons, interactive elements, and even sound.
 - **Built from what you gave it** — can use context from the conversation, files you uploaded, or what Claude knows about you.
 - **Diagrams, charts, tools** — not image generation.
@@ -1692,6 +1893,8 @@ Path: 01-Getting-Started/setup.md
 
 ## On this page
 
+Back to top
+
 - [System requirements](#system-requirements)
   - [Additional dependencies](#additional-dependencies)
 - [Install Claude Code](#install-claude-code)
@@ -1759,6 +1962,7 @@ Claude Code runs on the following platforms and configurations:
 Additional dependencies
 
 - **ripgrep**: usually included with Claude Code. If search fails, see [search troubleshooting](../02-Claude-Code-CLI/troubleshooting.md#search-and-discovery-issues).
+- **Git**: optional. If git is installed, [`claude plugin eval`](../08-Plugins-Skills/plugin-evals.md#requirements) requires 2.31 or later. [Uploads of a local repository to a cloud session](../02-Claude-Code-CLI/claude-code-on-the-web.md#send-local-repositories-without-github) from macOS, Linux, or WSL need git 2.31 or later. Run `git --version` to see your version.
 
 
 [​](#install-claude-code)
@@ -1826,11 +2030,11 @@ Set up on Windows
 
 You can run Claude Code natively on Windows or inside WSL. Pick based on where your projects are located and which features you need:
 
-| Option                                       | Requires                                                               | [Sandboxing](../02-Claude-Code-CLI/sandboxing.md) | When to use                                     |
-|----------------------------------------------|------------------------------------------------------------------------|-----------------------------------|-------------------------------------------------|
-| [Native Windows](#install-on-native-windows) | None; [Git for Windows](https://git-scm.com/downloads/win) is optional | Not supported                     | Windows-native projects and tools               |
-| [WSL 2](#install-in-wsl)                     | WSL 2 enabled                                                          | Supported                         | Linux toolchains or sandboxed command execution |
-| [WSL 1](#install-in-wsl)                     | WSL 1 enabled                                                          | Not supported                     | If WSL 2 is unavailable                         |
+| Option | Requires | [Sandboxing](../02-Claude-Code-CLI/sandboxing.md) | When to use |
+|----|----|----|----|
+| [Native Windows](#install-on-native-windows) | None; [Git for Windows](https://git-scm.com/downloads/win) is optional | Not supported | Windows-native projects and tools |
+| [WSL 2](#install-in-wsl) | WSL 2 enabled | Supported | Linux toolchains or sandboxed command execution |
+| [WSL 1](#install-in-wsl) | WSL 1 enabled | Not supported | If WSL 2 is unavailable |
 
 
 [​](#install-on-native-windows)
@@ -1910,7 +2114,7 @@ claude doctor
 
 Authenticate
 
-Claude Code requires a Pro, Max, Team, Enterprise, or Console account. The free claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](../02-Claude-Code-CLI/amazon-bedrock.md), [Google Cloud’s Agent Platform](../02-Claude-Code-CLI/google-vertex-ai.md), or [Microsoft Foundry](../02-Claude-Code-CLI/microsoft-foundry.md). After installing, log in by running `claude` and following the browser prompts. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. See [Authentication](../02-Claude-Code-CLI/authentication.md) for all account types and team setup options.
+Claude Code requires a Pro, Max, Ultra, Team, Enterprise, or Console account. The free claude.ai plan does not include Claude Code access. You can also use Claude Code with a third-party API provider like [Amazon Bedrock](../02-Claude-Code-CLI/amazon-bedrock.md), [Google Cloud’s Agent Platform](../02-Claude-Code-CLI/google-vertex-ai.md), or [Microsoft Foundry](../02-Claude-Code-CLI/microsoft-foundry.md). After installing, log in by running `claude` and following the browser prompts. If you’ve set the `ANTHROPIC_API_KEY` environment variable and you approve the key when Claude Code asks whether to use it, Claude Code skips the login prompt. See [Authentication](../02-Claude-Code-CLI/authentication.md) for all account types and team setup options.
 
 
 [​](#update-claude-code)
@@ -2101,7 +2305,7 @@ If this download fails, `apt update` later fails with `NO_PUBKEY BAA929FF1A7ECAC
 gpg --show-keys /etc/apt/keyrings/claude-code.asc
 ```
 
-The fingerprint gpg prints should be `31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE`. If gpg reports that the file can’t be opened or contains no valid OpenPGP data, the download failed or returned the wrong content: confirm your network can reach `downloads.claude.ai`, then rerun the download command.Register the repository on the `stable` channel and install:
+The only fingerprint gpg prints should be `31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE`. If gpg reports that the file can’t be opened or contains no valid OpenPGP data, the download failed or returned the wrong content. Confirm your network can reach `downloads.claude.ai`, then rerun the download command.Register the repository on the `stable` channel and install:
 
 ```python
 echo "deb [signed-by=/etc/apt/keyrings/claude-code.asc] https://downloads.claude.ai/claude-code/apt/stable stable main" \
@@ -2163,6 +2367,8 @@ Verify the downloaded key with `sha256sum /etc/apk/keys/claude-code.rsa.pub`, wh
 [​](#install-with-npm)
 
 Install with npm
+
+If `npm --version` prints a version starting with `12` in your shell, follow [Fix an npm 12 install](../02-Claude-Code-CLI/troubleshoot-install.md#fix-an-npm-12-install) instead. Don’t install with `sudo`. Claude Code runs npm without `sudo` when it updates itself, so an install that needs `sudo` can’t update automatically.
 
 You can also install Claude Code as a global npm package. The npm package requires [Node.js 22 or later](https://nodejs.org/en/download). On an older Node.js version, npm prints an `EBADENGINE` warning during install rather than failing; the install completes and `claude` still runs, since the package downloads a native binary that doesn’t use your Node.js at runtime.
 
@@ -2244,10 +2450,10 @@ Verify the signature
 Verify the detached signature against the manifest.
 
 ```python
-gpg --verify manifest.json.sig manifest.json
+gpg --with-fingerprint --verify manifest.json.sig manifest.json
 ```
 
-A valid result reports `Good signature from "Anthropic Claude Code Release Signing <security@anthropic.com>"`.`gpg` also prints `WARNING: This key is not certified with a trusted signature!` for any freshly imported key. This is expected. The `Good signature` line confirms the cryptographic check passed. The fingerprint comparison in Step 1 confirms the key itself is authentic.
+A valid result reports `Good signature from "Anthropic Claude Code Release Signing <security@anthropic.com>"`. With default settings, `gpg` also prints `WARNING: This key is not certified with a trusted signature!` for a freshly imported key. This is expected. The `Good signature` line confirms the cryptographic check passed.To check that Anthropic’s key signed the manifest, compare the `Primary key fingerprint` line at the end of the output with the fingerprint this page lists in Step 1. If they match and the output shows no `BAD signature`, continue to Step 4. Otherwise, don’t use this manifest.
 
 4
 

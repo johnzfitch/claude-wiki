@@ -1,8 +1,8 @@
 ---
 title: "Focus areas for The Anthropic Institute \\ Anthropic"
-source_url: "https://www.anthropic.com/research/anthropic-institute-agenda"
+source_url: "https://www.anthropic.com/news/anthropic-institute-agenda"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:45Z"
+fetched_at: "2026-10-21T06:29:44Z"
 tags: ["news-research"]
 ---
 

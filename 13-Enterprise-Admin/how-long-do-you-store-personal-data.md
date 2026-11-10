@@ -37,7 +37,7 @@ Incognito chats are automatically deleted within 30 days unless flagged as a Usa
 
 ## **Covered Models**
 
-Additionally, for Covered Models, we require limited data retention and review as a part of our safety work. To learn more about Covered Models and these requirements, see [here](../20-Models/data-retention-practices-for-covered-models-claude-help-center.md).
+Additionally, for Covered Models, we require limited data retention and review as a part of our safety work. To learn more about Covered Models and these requirements, see [here](../20-Models/data-retention-practices-for-mythos-class-models.md).
 
 ## Usage Policy Violations
 

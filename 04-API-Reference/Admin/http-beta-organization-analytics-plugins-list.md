@@ -2,259 +2,11 @@
 title: "Get Plugin Usage - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/plugins/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-20T06:38:34Z"
+fetched_at: "2026-11-05T06:35:15Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Fanalytics%2Fplugins%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Summaries
-
-Users
-
-Apps
-
-Connectors
-
-Plugins
-
-
-Get Plugin Usage
-
-Skills
-
-Artifacts
-
-Usage Report
-
-User Usage Report
-
-Cost Report
-
-User Cost Report
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](../Endpoints/opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
@@ -268,7 +20,9 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/analytics/plugins
 
@@ -310,7 +64,7 @@ maxItems100
 
 
 
-group_by: optional array of "product" or "rbac_group_id" or "user_id"
+group_by: optional array of [BetaAnalyticsPluginGroupBy](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_plugin_group_by)
 
 
 
@@ -346,7 +100,7 @@ maximum1000
 
 
 
-order: optional "asc" or "desc"
+order: optional [BetaAnalyticsOrder](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_order)
 
 
 
@@ -450,6 +204,12 @@ invocation_count: number
 
 Number of plugin invocations on the requested day
 
+plugin_id: string or null
+
+
+
+Stable plugin identifier when available (e.g. `serena@claude-plugins-official`). Null for third-party Claude Code plugins (redacted at the source) and Cowork slash commands that carry only a hashed id.
+
 plugin_name: string
 
 
@@ -458,7 +218,7 @@ Name of the plugin
 
 
 
-chat_cowork_unified_metrics: optional object{ distinct_session_plugin_used_count } or null
+chat_cowork_unified_metrics: optional [BetaAnalyticsPluginChatCoworkUnifiedMetrics](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_plugin_chat_cowork_unified_metrics) { distinct_session_plugin_used_count } or null
 
 
 
@@ -469,12 +229,6 @@ distinct_session_plugin_used_count: number or null
 
 
 Same measure as `cowork_metrics.distinct_session_plugin_used_count`, for activity recorded while members had Chat and Cowork unified turned on. Null on aggregated rows where a distinct count cannot be computed.
-
-plugin_id: optional string or null
-
-
-
-Stable plugin identifier when available (e.g. `serena@claude-plugins-official`). Null for third-party Claude Code plugins (redacted at the source) and Cowork slash commands that carry only a hashed id.
 
 product: optional string or null
 
@@ -514,8 +268,8 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/organizations/analytics/plugins \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY"
 ```
 
 Response 200
@@ -535,11 +289,11 @@ Response 200
       "distinct_user_count": 0,
       "install_count": 0,
       "invocation_count": 0,
+      "plugin_id": "plugin_id",
       "plugin_name": "plugin_name",
       "chat_cowork_unified_metrics": {
         "distinct_session_plugin_used_count": 0
       },
-      "plugin_id": "plugin_id",
       "product": "product",
       "rbac_group_id": "rbac_group_id",
       "rbac_group_name": "rbac_group_name",
@@ -569,11 +323,11 @@ Response 200
       "distinct_user_count": 0,
       "install_count": 0,
       "invocation_count": 0,
+      "plugin_id": "plugin_id",
       "plugin_name": "plugin_name",
       "chat_cowork_unified_metrics": {
         "distinct_session_plugin_used_count": 0
       },
-      "plugin_id": "plugin_id",
       "product": "product",
       "rbac_group_id": "rbac_group_id",
       "rbac_group_name": "rbac_group_name",

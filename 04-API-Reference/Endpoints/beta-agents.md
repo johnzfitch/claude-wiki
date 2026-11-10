@@ -2,251 +2,11 @@
 title: "Agents - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/agents"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:36:58Z"
+fetched_at: "2026-11-05T06:35:17Z"
 tags: ["agents", "api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fagents)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-
-Create Agent
-
-
-List Agents
-
-
-Get Agent
-
-
-Update Agent
-
-
-Archive Agent
-
-Versions
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -257,27 +17,39 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create Agent](https://platform.claude.com/docs/en/api/http/beta/agents/create)
 
 POST/v1/agents
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Agents](https://platform.claude.com/docs/en/api/http/beta/agents/list)
 
 GET/v1/agents
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Get Agent](https://platform.claude.com/docs/en/api/http/beta/agents/retrieve)
 
 GET/v1/agents/{agent_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update Agent](https://platform.claude.com/docs/en/api/http/beta/agents/update)
 
 POST/v1/agents/{agent_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive Agent](https://platform.claude.com/docs/en/api/http/beta/agents/archive)
 
 POST/v1/agents/{agent_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### Models
 
@@ -661,6 +433,8 @@ The IAM role's ARN, e.g. "arn:aws:iam::123456789012:role/my-agent-runner". Maxim
 
 maxLength2048
 
+pattern^arn:aws(-\[a-z\]+)\*:iam::\[0-9\]{12}:role/\[\w+=,.@/-\]+\$
+
 
 
 BetaManagedAgentsBashToolConfig object{ type: "bash", enabled, name, permission_policy }
@@ -847,6 +621,8 @@ minLength1
 
 maxLength128
 
+pattern^\[a-zA-Z0-9\_-\]{1,128}\$
+
 
 
 BetaManagedAgentsEditToolConfig object{ type: "edit", enabled, name, permission_policy }
@@ -994,6 +770,8 @@ role_arn: string
 The IAM role's ARN, e.g. "arn:aws:iam::123456789012:role/my-agent-runner". Maximum 2048 characters.
 
 maxLength2048
+
+pattern^arn:aws(-\[a-z\]+)\*:iam::\[0-9\]{12}:role/\[\w+=,.@/-\]+\$
 
 
 
@@ -1823,11 +1601,15 @@ minLength1
 
 maxLength255
 
+
+
 country: optional string or null
 
 
 
 Two-letter ISO 3166-1 country code, uppercase.
+
+pattern^\[A-Z\]{2}\$
 
 
 
@@ -2210,3 +1992,5 @@ Configuration override for the write tool.
 ##### [List Agent Versions](https://platform.claude.com/docs/en/api/http/beta/agents/versions/list)
 
 GET/v1/agents/{agent_id}/versions
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)

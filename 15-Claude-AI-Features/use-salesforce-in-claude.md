@@ -2,11 +2,13 @@
 title: "Use Salesforce in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:12Z"
+fetched_at: "2026-11-09T06:26:11Z"
 tags: ["claude-ai"]
 ---
 
 # Use Salesforce in Claude
+
+September 25, 2026
 
 
 Salesforce in Claude is a plugin that brings your Salesforce accounts, opportunities, and pipeline into Claude. It bundles sales skills built by Salesforce along with the Salesforce and Slack connectors, so you can research an account, prep for a call, review your pipeline, and update Salesforce without leaving Claude.

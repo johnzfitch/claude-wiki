@@ -2,7 +2,7 @@
 title: "Claude Partner Network Directory"
 source_url: "https://www.claude.com/partners/services"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-23T06:29:49Z"
+fetched_at: "2026-11-09T06:26:46Z"
 tags: ["api"]
 ---
 
@@ -18,79 +18,354 @@ Languages
 
 All
 
-AfrikaansArabicBahasaBengaliChineseCzechDutchDutch - FlemishEnglishFarsiFinnishFrenchGermanGreekHebrewHindiIndonesianItalianJapaneseJavaneseKoreanMarathiNdebeleNorwegianPolishPortuguesePunjabiRussianShonaSlovakSpanishSwahiliSwedishTagalogTamilTeluguThaiTurkishUkrainianUkranianUrduVietnamese
+Afrikaans
+
+Arabic
+
+Bahasa
+
+Bengali
+
+Chinese
+
+Czech
+
+Dutch
+
+Dutch - Flemish
+
+
+Farsi
+
+Finnish
+
+French
+
+German
+
+Greek
+
+Hebrew
+
+Hindi
+
+Indonesian
+
+Italian
+
+Japanese
+
+Javanese
+
+Korean
+
+Marathi
+
+Ndebele
+
+Norwegian
+
+Polish
+
+Portuguese
+
+Punjabi
+
+Russian
+
+Shona
+
+Slovak
+
+Spanish
+
+Swahili
+
+Swedish
+
+Tagalog
+
+Tamil
+
+Telugu
+
+Thai
+
+Turkish
+
+Ukrainian
+
+Ukranian
+
+Urdu
+
+Vietnamese
 
 Anthropic Products
 
 All
 
-APIClaude CodeClaude CoworkClaude for Teams / EnterpriseOther
+API
+
+Claude Code
+
+Claude Cowork
+
+Claude for Teams / Enterprise
+
+Other
 
 Budget
 
 All
 
-\$100K – \$500K\$25K – \$100K\$2M+\$500K – \$2M\< \$25K
+\$100K – \$500K
+
+\$25K – \$100K
+
+\$2M+
+
+\$500K – \$2M
+
+\< \$25K
 
 Claude Use Cases
 
 All
 
-Business Process & OperationsCompliance & RegulatoryContent Creation & CopywritingConversation & Meeting IntelligenceCustomer Support & Service OperationsCybersecurity & Threat DetectionData Analysis & Business IntelligenceDevOps & Infrastructure OperationsDocument Processing & ExtractionEducation & LearningKnowledge Retrieval & Enterprise SearchResearch & IntelligenceSales & Revenue OperationsSoftware DevelopmentTrust & Safety / Platform Integrity
+Business Process & Operations
+
+Compliance & Regulatory
+
+Content Creation & Copywriting
+
+Conversation & Meeting Intelligence
+
+Customer Support & Service Operations
+
+Cybersecurity & Threat Detection
+
+Data Analysis & Business Intelligence
+
+DevOps & Infrastructure Operations
+
+Document Processing & Extraction
+
+Education & Learning
+
+Knowledge Retrieval & Enterprise Search
+
+Research & Intelligence
+
+Sales & Revenue Operations
+
+Software Development
+
+Trust & Safety / Platform Integrity
 
 Customer Size Served
 
 All
 
-Enterprise (2,500–10,000 employees)Large Enterprise (10,000+ employees)Micro SMB (\<100 employees)Mid-Market (500–2,500 employees)Public SectorSMB (100–500 employees)
+Enterprise (2,500–10,000 employees)
+
+Large Enterprise (10,000+ employees)
+
+Micro SMB (\<100 employees)
+
+Mid-Market (500–2,500 employees)
+
+Public Sector
+
+SMB (100–500 employees)
 
 Deployment Surface
 
 All
 
-Amazon BedrockClaude API (direct)Google VertexMicrosoft Foundry
+Amazon Bedrock
+
+Claude API (direct)
+
+Google Vertex
+
+Microsoft Foundry
 
 Engagement Type
 
 All
 
-Assessment / DiscoveryManaged / RecurringPilot / POCProject / ProgramStaff AugmentationTraining Package
+Assessment / Discovery
+
+Managed / Recurring
+
+Pilot / POC
+
+Project / Program
+
+Staff Augmentation
+
+Training Package
 
 Industry Expertise
 
 All
 
-EducationEnergy & UtilitiesFinancial Services & InsuranceHealthcare & Life SciencesHorizontal / Cross-industryManufacturing & IndustrialProfessional & Legal ServicesPublic Sector / GovernmentRetail & Consumer GoodsTechnology & SoftwareTelecom & MediaTravel & Hospitality
+Education
+
+Energy & Utilities
+
+Financial Services & Insurance
+
+Healthcare & Life Sciences
+
+Horizontal / Cross-industry
+
+Manufacturing & Industrial
+
+Professional & Legal Services
+
+Public Sector / Government
+
+Retail & Consumer Goods
+
+Technology & Software
+
+Telecom & Media
+
+Travel & Hospitality
 
 Office Locations (On-Site Services)
 
 All
 
-ANZCanadaDACH (Germany, Austria, Switzerland)France & BeneluxGreater ChinaIndiaJapanLatin AmericaMiddle East & AfricaNordicsSouth KoreaSoutheast AsiaSouthern EuropeUnited Kingdom & IrelandUnited States
+ANZ
+
+Canada
+
+DACH (Germany, Austria, Switzerland)
+
+France & Benelux
+
+Greater China
+
+India
+
+Japan
+
+Latin America
+
+Middle East & Africa
+
+Nordics
+
+South Korea
+
+Southeast Asia
+
+Southern Europe
+
+United Kingdom & Ireland
+
+United States
 
 Partner Tier
 
 All
 
-Global PremierPreferredSelect
+Global Premier
+
+Preferred
+
+Select
 
 Remote Service Coverage
 
 All
 
-ANZCanadaDACH (Germany, Austria, Switzerland)France & BeneluxGlobal (any region)Greater ChinaIndiaJapanLatin AmericaMiddle East & AfricaNordicsSouth KoreaSoutheast AsiaSouthern EuropeUnited Kingdom & IrelandUnited States
+ANZ
+
+Canada
+
+DACH (Germany, Austria, Switzerland)
+
+France & Benelux
+
+Global (any region)
+
+Greater China
+
+India
+
+Japan
+
+Latin America
+
+Middle East & Africa
+
+Nordics
+
+South Korea
+
+Southeast Asia
+
+Southern Europe
+
+United Kingdom & Ireland
+
+United States
 
 Service Delivery Location
 
 All
 
-Hybrid (on-site + remote)On-siteRemote — nearshoreRemote — same timezone
+Hybrid (on-site + remote)
+
+On-site
+
+Remote — nearshore
+
+Remote — same timezone
 
 Services Offered
 
 All
 
-AI Readiness & Governance Assessment / DesignAI Strategy & RoadmapBuild Prototype / POCClaude Consumption / FinOps OptimisationClaude Training SessionsConnectors, plugins and API integrationsCustomer-Facing AI Product BuildIndustry Solution Accelerator DeploymentInternal Agentic Platform BuildJumpstart for SMBLegal Team SupportManaged AI OperationsOngoing Cowork / Claude Code Scaled User SupportPlatform Migration to ClaudeProcess RedesignRollout & ActivationSustained Adoption / CoE ProgramUse-Case Portfolio & Business Case
+AI Readiness & Governance Assessment / Design
+
+AI Strategy & Roadmap
+
+Build Prototype / POC
+
+Claude Consumption / FinOps Optimisation
+
+Claude Training Sessions
+
+Connectors, plugins and API integrations
+
+Customer-Facing AI Product Build
+
+Industry Solution Accelerator Deployment
+
+Internal Agentic Platform Build
+
+Jumpstart for SMB
+
+Legal Team Support
+
+Managed AI Operations
+
+Ongoing Cowork / Claude Code Scaled User Support
+
+Platform Migration to Claude
+
+Process Redesign
+
+Rollout & Activation
+
+Sustained Adoption / CoE Program
+
+Use-Case Portfolio & Business Case
 
 Clear all
 
@@ -142,11 +417,11 @@ Global Premier
 
 Fujitsu is a global leader in technology and business solutions that transform organizations and the world around us. For over 90 years, we have brought innovation and expertise, continuously working to contribute to the growth of society and our customers.
 
-[Hitachi](https://www.claude.com/directory/partner/hitachi-ltd)
+[HCLTech](https://www.claude.com/directory/partner/hcl-technologies-limited-partner)
 
 Global Premier
 
-Global group in digital systems, energy and mobility that solves customer and social challenges with data and technology.
+Global technology company delivering digital, engineering, cloud, AI and software services to enterprises worldwide.
 
 View more
 
@@ -155,5 +430,3 @@ No partners found
 Try a different search term, or clear your filters to see every partner in the directory.
 
 Clear search & filters
-
-© 2026 Anthropic PBC

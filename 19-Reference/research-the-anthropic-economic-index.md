@@ -2,7 +2,7 @@
 title: "Introducing the Anthropic Economic Index \\ Anthropic"
 source_url: "https://www.anthropic.com/research/the-anthropic-economic-index"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:53Z"
+fetched_at: "2026-10-24T06:26:21Z"
 tags: ["news-research", "search"]
 ---
 
@@ -130,7 +130,7 @@ If you’re interested in working at Anthropic to research the effects of AI on 
 
 01Clio takes large numbers of conversations and aggregates them into higher-level categories for analysis. Importantly, for the preservation of user privacy it does so without human researchers being able to see the original conversations. You can read more about Clio [here](clio.md).[](#footnote-ref-1)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

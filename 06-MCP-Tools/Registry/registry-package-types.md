@@ -2,11 +2,14 @@
 title: "MCP Registry Supported Package Types - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/package-types"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-21T06:28:38Z"
+fetched_at: "2026-10-31T06:25:20Z"
+last_modified: "Fri, 30 Oct 2026 23:26:23 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Package Types](#package-types)
 - [npm Packages](#npm-packages)

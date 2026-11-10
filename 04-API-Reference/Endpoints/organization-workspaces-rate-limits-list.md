@@ -2,258 +2,11 @@
 title: "List Workspace Rate Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces/rate_limits/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-17T06:26:23Z"
+fetched_at: "2026-11-02T06:26:47Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Frate_limits%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-
-List Workspaces
-
-
-Create Workspace
-
-
-Get Workspace
-
-
-Update Workspace
-
-
-Archive Workspace
-
-Rate Limits
-
-
-List Workspace Rate Limits
-
-Members
-
-Service Accounts
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 
 
@@ -270,7 +23,9 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/workspaces/{workspace_id}/rate_limits
 
@@ -370,7 +125,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-data: array of [WorkspaceRateLimit](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits#workspace_rate_limit) { type: "workspace_rate_limit", group, group_type, 4 more }
+data: array of [WorkspaceRateLimit](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits#workspace_rate_limit) { type: "workspace_rate_limit", group, limits, 3 more }
 
 
 
@@ -392,7 +147,7 @@ group: [OrganizationRateLimitModelGroup](https://platform.claude.com/docs/en/api
 
 
 
-The rate-limit group this entry's limits apply to. Its `type` equals `group_type`.
+The rate-limit group this entry's limits apply to.
 
 One of the following:
 
@@ -606,7 +361,7 @@ models: array of string or null
 
 
 
-Model names this entry's limits apply to, including aliases. `null` when `group_type` is not `"model_group"`.
+Model names this entry's limits apply to, including aliases. `null` when `group.type` is not `"model_group"`. The list covers the models this workspace has access to, so it can differ between workspaces.
 
 rate_limit_id: string
 
@@ -619,42 +374,6 @@ workspace_id: string
 
 
 ID of the Workspace this entry applies to.
-
-
-
-group_type: "batch" or "files" or "model_group" or 3 more⁠Deprecated
-
-
-
-Deprecated: use `group.type` instead. The kind of rate-limit group this entry represents. `model_group` entries apply to a family of models (listed in `models`); other values apply to an API-surface category and have `models` set to `null`. Always equal to `group.type`.
-
-Use \`group.type\` instead. \`group_type\` is still returned and always equals \`group.type\`.
-
-One of the following:
-
-"batch"
-
-
-
-"files"
-
-
-
-"model_group"
-
-
-
-"skills"
-
-
-
-"token_count"
-
-
-
-"web_search"
-
-
 
 next_page: string or null
 
@@ -670,8 +389,8 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID/rate_limits \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY"
 ```
 
 Response 200
@@ -687,7 +406,6 @@ Response 200
         "display_name": "display_name",
         "type": "model_group"
       },
-      "group_type": "batch",
       "limits": [
         {
           "org_limit": 0,
@@ -725,7 +443,6 @@ Response 200
         "display_name": "display_name",
         "type": "model_group"
       },
-      "group_type": "batch",
       "limits": [
         {
           "org_limit": 0,

@@ -2,101 +2,9 @@
 title: "Adding files - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/files"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:32Z"
+fetched_at: "2026-11-05T06:37:10Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Ffiles)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Overview](managed-agents-overview.md)[Quickstart](managed-agents-quickstart.md)[Build in Console](managed-agents-onboarding.md)[Migration](managed-agents-migration.md)
-
-Define your agent
-
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
-
-Configure agent environment
-
-[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
-
-[Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
-
-Delegate work to your agent
-
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
-
-Manage agent context
-
-[Access GitHub](managed-agents-github.md)[Attach and download files](managed-agents-files.md)
-
-Build persistent memory
-
-Advanced orchestration
-
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
-
-Security
-
-[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
-
-Reference
-
-[Managed Agents reference](managed-agents-reference.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-
-[Console](playground.md)
-
-[Managed Agents](managed-agents-overview.md)Manage agent context
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 # Adding files
 
@@ -110,7 +18,22 @@ Upload files and mount them in your sandbox for reading and processing.
 
 
 
-You can provide files to your agent by uploading them through the Files API and mounting them in the session's sandbox.
+[Managed Agents](managed-agents-overview.md)
+
+[Status](managed-agents-overview.md#availability-feature-support)  
+Beta
+
+[Cloud platforms](managed-agents-overview.md#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+
+[Beta header](managed-agents-overview.md#feature-beta-headers)  
+- `managed-agents-2026-04-01`
+  
+
+[Data handling](managed-agents-overview.md#feature-data-handling)  
+Not ZDR eligibleNot HIPAA eligible
+
+You can provide files to your agent by uploading them through the Files API and mounting them in the session’s sandbox.
 
 ## Uploading files
 
@@ -225,7 +148,7 @@ resources = [
 ]
 ```
 
-A maximum of 500 files is supported per session.
+A maximum of 500 files is supported for each session.
 
 ## Managing files on a running session
 
@@ -296,7 +219,7 @@ client.beta.sessions.resources.delete(resource.id, session_id=session.id)
 
 ## Listing and downloading session files
 
-Use the [Files API](../Guides/build-with-claude-files.md) to list files scoped to a session and download them. Files the agent writes to `/mnt/session/outputs/` appear in the list shortly after the agent finishes writing them, sometimes a few seconds after the session goes idle. If an output file you expect is missing, list again after a short delay; once it appears in the list, its upload has finished.
+Use the [Files API](../Guides/build-with-claude-files.md) to list files scoped to a session and download them. Files the agent writes to `/mnt/session/outputs/` appear in the list shortly after the agent finishes writing them, sometimes a few seconds after the session goes idle. If an output file you expect is missing, list again after a short delay; once it appears in the list, its upload is complete.
 
 Filtering by `scope_id` requires the `managed-agents-2026-04-01` beta header, so the list examples call `client.beta.files.list()` and pass that header explicitly.
 
@@ -352,8 +275,8 @@ The agent can work with any file type, including:
 
 Files mounted in the sandbox are read-only copies. The agent can read them but cannot modify the original uploaded file. To work with modified versions, the agent writes to new paths within the sandbox.
 
-- The path you specify is rooted under the session's uploads directory: a `mount_path` of `/data.csv` places the file at `/mnt/session/uploads/data.csv` in the sandbox
-- If you omit `mount_path`, the file is placed at `/mnt/session/uploads/<file_id>`
-- Parent directories are created automatically
-- Paths should be absolute (starting with `/`)
-- Files the agent writes to `/mnt/session/outputs/` become available through the Files API, scoped to the session; see [Listing and downloading session files](#listing-and-downloading-session-files)
+- The path you specify is rooted under the session’s uploads directory: a `mount_path` of `/data.csv` places the file at `/mnt/session/uploads/data.csv` in the sandbox.
+- If you omit `mount_path`, the file is placed at `/mnt/session/uploads/<file_id>`.
+- Parent directories are created automatically.
+- Paths should be absolute (starting with `/`).
+- Files the agent writes to `/mnt/session/outputs/` become available through the Files API, scoped to the session; see [Listing and downloading session files](#listing-and-downloading-session-files).

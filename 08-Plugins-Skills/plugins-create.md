@@ -2,11 +2,14 @@
 title: "Create a Claude Code plugin - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/create"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-22T06:29:31Z"
+fetched_at: "2026-10-29T06:26:44Z"
+last_modified: "Thu, 29 Oct 2026 03:23:35 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Decide when to use a plugin](#decide-when-to-use-a-plugin)
 - [Create your first plugin](#create-your-first-plugin)
@@ -188,14 +191,14 @@ Plugin layout
 
 Each kind of [component](plugins-components.md), such as skills, agents, hooks, and MCP servers, goes in a fixed directory under the plugin root, which is the directory you pass to `--plugin-dir`. Add only the directories you use. To click through a complete plugin directory and read what each file does, open the [plugin explorer](plugins-components.md#explore-the-plugin-directory). The table lists the directories most plugins start with, and the [full layout](plugins-reference.md#standard-layout) lists the rest.
 
-| Location                     | Contents                                                                                                                          |
-|:-----------------------------|:----------------------------------------------------------------------------------------------------------------------------------|
+| Location | Contents |
+|:---|:---|
 | `.claude-plugin/plugin.json` | The manifest. When you load a plugin with `--plugin-dir` and it has no manifest, Claude Code names the plugin after its directory |
-| `skills/`                    | One `<name>/SKILL.md` directory per skill                                                                                         |
-| `commands/`                  | Flat Markdown files, the older form of skills. Use `skills/` for new plugins                                                      |
-| `agents/`                    | One Markdown file per subagent                                                                                                    |
-| `hooks/hooks.json`           | Hook configuration: a top-level `"hooks"` key whose value has the same shape as `hooks` in a settings file                        |
-| `.mcp.json`                  | MCP server definitions                                                                                                            |
+| `skills/` | One `<name>/SKILL.md` directory per skill |
+| `commands/` | Flat Markdown files, the older form of skills. Use `skills/` for new plugins |
+| `agents/` | One Markdown file per subagent |
+| `hooks/hooks.json` | Hook configuration: a top-level `"hooks"` key whose value has the same shape as `hooks` in a settings file |
+| `.mcp.json` | MCP server definitions |
 
 Only `plugin.json` goes inside `.claude-plugin/`. Components saved there don’t load.The plugin root is the plugin’s own directory, not `~/.claude/` itself. A `.mcp.json` saved at `~/.claude/.mcp.json` doesn’t load.
 
@@ -465,4 +468,4 @@ Next steps
 - [Plugin structure and testing](https://claude.com/docs/plugins/build): the same plugin folder installs on claude.ai and in Cowork. Some components are Claude Code-only, and the [component support table](https://claude.com/docs/plugins/platform-support#compare-component-support-by-app) lists which load on each surface
 - [Plugin manifest reference](plugins-reference.md): every `plugin.json` field, path rule, and directory
 - [Skills](skills.md): write the skills your plugin provides
-- [Anthropic’s plugins in the claude-code repository](https://github.com/anthropics/claude-code/tree/main/plugins): complete worked examples of the layout on this page, such as `feature-dev` and `code-review`
+- [Anthropic’s plugins in the claude-plugins-official repository](https://github.com/anthropics/claude-plugins-official/tree/main/plugins): complete worked examples of the layout on this page, such as `feature-dev` and `code-review`

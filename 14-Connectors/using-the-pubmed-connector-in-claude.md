@@ -2,7 +2,7 @@
 title: "Using the PubMed Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614801-using-the-pubmed-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:29:16Z"
+fetched_at: "2026-11-09T06:25:57Z"
 tags: ["api", "connectors", "mcp"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["api", "connectors", "mcp"]
 
 Set up and use Claude's PubMed integration for access to millions of biomedical research articles and clinical studies.
 
-25 minClaude
+8 minClaude
 
 [Open Claude](https://claude.ai/new)
 
@@ -50,10 +50,11 @@ Learn about [finding and connecting tools(opens in new tab)](browse-skills-conne
 
 **For Claude Code Users**
 
-1.  Command: `/plugin marketplace add anthropics/life-sciences`
-2.  Command: `/plugin install pubmed@life-sciences`
-3.  Restart Claude Code
-4.  Verify that the server is connected with `/mcp`
+1.  Connect **PubMed** in Claude by following the steps above
+2.  Sign in to Claude Code with the same Claude account (run `/login` to switch accounts), then restart Claude Code
+3.  Run `/mcp` and check that the connector appears in the claude.ai section of the list (if it isn't shown, select **Show unused connectors** at the end of that section)
+
+Learn about [using connectors from Claude in Claude Code(opens in new tab)](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai).
 
 ## Using the PubMed MCP with the Messages API[](#using-the-pubmed-mcp-with-the-messages-api)
 
@@ -85,8 +86,8 @@ import anthropic
 client = anthropic.Anthropic()
 
 response = client.beta.messages.create(
-    model="claude-sonnet-4-5",
-    max_tokens=1000,
+    model="claude-sonnet-5-5",
+    max_tokens=4096,
     messages=[{"role": "user", "content": "Find recent papers on CRISPR gene editing in cancer treatment"}],
     mcp_servers=[{"type": "url", "url": "https://pubmed.mcp.claude.com/mcp", "name": "pubmed"}],
     tools=[{"type": "mcp_toolset", "mcp_server_name": "pubmed"}],
@@ -275,7 +276,7 @@ All data comes from official NCBI sources, but may not reflect the most current/
 
 ## Need More Help?[](#need-more-help)
 
-If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md) or visit our help center for additional troubleshooting guides.
+If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) or visit our help center for additional troubleshooting guides.
 
 - [What this integration provides](#what-this-integration-provides)
 - [Setting up the PubMed integration](#setting-up-the-pubmed-integration)

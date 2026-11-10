@@ -2,7 +2,7 @@
 title: "Using Daloopa for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:54Z"
+fetched_at: "2026-11-09T06:25:40Z"
 tags: ["claude-ai"]
 ---
 

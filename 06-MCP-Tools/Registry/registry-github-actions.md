@@ -2,11 +2,14 @@
 title: "How to Automate Publishing with GitHub Actions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/github-actions"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-21T06:29:04Z"
+fetched_at: "2026-10-31T06:24:49Z"
+last_modified: "Sat, 31 Oct 2026 01:21:44 GMT"
 tags: ["git", "github", "mcp", "mcp-registry"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Step 1: Create a Workflow File](#step-1-create-a-workflow-file)
 - [Step 2: Add Secrets](#step-2-add-secrets)
@@ -243,7 +246,7 @@ The workflow will run tests, build the package, publish the package to npm, and 
 
 Troubleshooting
 
-| Error Message               | Action                                                                                                                                                                     |
-|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ”Authentication failed”     | Ensure `id-token: write` permission is set for OIDC, or check secrets.                                                                                                     |
-| ”Package validation failed” | Verify your package successfully published to the package registry (e.g., npm, PyPI), and that your package has the [necessary verification information](https://modelcontextprotocol.io/registry/package-types). |
+| Error Message | Action |
+|----|----|
+| ”Authentication failed” | Ensure `id-token: write` permission is set for OIDC, or check secrets. |
+| ”Package validation failed” | Verify your package successfully published to the package registry (e.g., npm, PyPI), and that your package has the [necessary verification information](registry-package-types.md). |

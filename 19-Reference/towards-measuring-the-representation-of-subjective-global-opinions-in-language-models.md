@@ -2,7 +2,7 @@
 title: "Measuring subjective global opinions in LLMs \\ Anthropic"
 source_url: "https://www.anthropic.com/research/towards-measuring-the-representation-of-subjective-global-opinions-in-language-models"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:31Z"
+fetched_at: "2026-10-24T06:26:37Z"
 tags: ["news-research"]
 ---
 

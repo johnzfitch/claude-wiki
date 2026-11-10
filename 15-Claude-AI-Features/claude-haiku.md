@@ -130,7 +130,7 @@ On the Claude Platform, Haiku 5.5 costs \$0.10 per million input tokens and \$0.
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
+- [Claude Code](product-claude-code.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
 - [@Claude](product-tag.md)
@@ -160,7 +160,7 @@ On the Claude Platform, Haiku 5.5 costs \$0.10 per million input tokens and \$0.
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Enterprise](../18-Industry-UseCases/enterprise.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)
 - [Healthcare](../18-Industry-UseCases/healthcare.md)

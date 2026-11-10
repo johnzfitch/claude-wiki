@@ -2,8 +2,8 @@
 title: "Doctolib Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/doctolib"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-23T06:29:36Z"
-tags: ["case-studies", "claude-code", "enterprise", "security"]
+fetched_at: "2026-11-09T06:27:01Z"
+tags: ["case-studies", "claude-code"]
 ---
 
 # Doctolib accelerates developer productivity with Claude Code
@@ -22,63 +22,68 @@ Claude Code
 Location:  
 Europe
 
-Hours instead of weeks
+47% more pull requests per engineer
 
-to migrate and replace legacy testing infrastructure
+handled on average between January and September 2026
 
-Self-service onboarding
+25% shorter change lead time
 
-to unfamiliar codebases and technology stacks
+across Doctolib engineering over the same period
 
-Since 2013, Doctolib has been transforming healthcare across Europe, serving 420,000 health professionals and 90 million patients. The platform provides practitioners with an operating system that streamlines workflows through electronic health records, diagnostic support, prescription management, and AI-powered clinical solutions. Patient management tools handle scheduling, teleconsultation, and practice operations. For patients, Doctolib simplifies access to care with secure, proactive health management.
+Since 2013, Doctolib has been transforming healthcare across Europe, serving 580,000 health professionals and 90 million patients. The platform provides practitioners with an operating system that organizes their workflows through electronic health records, diagnostic support, prescription management, and AI-powered clinical solutions. Patient management tools handle scheduling, teleconsultation, and practice operations. For patients, Doctolib simplifies access to care with secure, proactive health management.
 
-**With Claude Code, Doctolib:**
+### With Claude, Doctolib:
 
-- Maintains technical documentation automatically with every code change
-- Onboards engineers to unfamiliar codebases in days instead of weeks
-- Reviews pull requests instantly without waiting for team availability
-- Migrated their entire visual regression testing tool in hours rather than weeks
-- Tackles technical debt systematically through reusable prompts and automated CI workflows
+- Raised the average number of pull requests each engineer handles by 47% between January and September 2026
+- Cut change lead time by 25% over the same period
+- Has about 90% of its roughly 900 tech and product staff using Claude every day
+- Runs its own remote coding agents, built on Claude Code and powered by Claude Opus 5.5, which now open 10% of all pull requests
+- Found in A/B tests that Opus 5.5 produced better results at 2.5 times lower cost per pull request than its previous default model
+- Roughly halved the share of engineers’ time spent writing code over about a year, by internal estimates, shifting that time toward review and specifications
+- Lets product managers and designers ship changes by describing what they want, with the agents handling the code
+- Keeps technical documentation current automatically with every code change
 
-## The problem
+## The challenge
 
-Doctolib’s engineering team faced a productivity paradox. As Europe’s leading healthcare technology Operating System serving 420,000 health professionals and 90 million patients, the company needed to ship features faster while maintaining reliability for critical healthcare workflows. But administrative tasks consumed significant engineering time—writing documentation, creating tests, reviewing pull requests, and addressing technical debt pulled developers away from solving complex healthcare challenges.
+### Keeping review up with the pace of code
 
-“Engineers were spending valuable time on repeatable tasks instead of solving complex healthcare challenges,” said Julien Tanay, Staff Engineer leading Doctolib’s AI tooling program alongside Platform Product Manager Thomas Bentkowski.
+Doctolib first brought in Claude Code to take repeatable work off engineers’ plates. Documentation, tests, pull request reviews, and technical debt kept pulling developers away from the problems that matter most on a healthcare platform. “Engineers were spending valuable time on repeatable tasks instead of solving complex healthcare challenges,” said Jean-Claude Kuo, Staff Product Manager at Doctolib.
 
-The team needed to address three specific challenges: First, new engineers took weeks to contribute meaningfully to unfamiliar parts of the codebase. Second, pull request reviews created bottlenecks, with engineers waiting hours or days for teammate availability. Third, technical debt accumulated faster than the team could address it—migrations and documentation updates fell behind as engineers prioritized feature work.
+That rollout worked, and it moved the bottleneck. Once writing code got faster, the hard part became everything around it: reviewing each change with the care healthcare software demands, checking it for privacy and security risk, and confirming it behaves once it ships. Those checks protect 580,000 health professionals and their patients, so cutting corners was never an option. Running every check on every change by hand was not realistic either. “Our goal is to implement comprehensive checks that humans cannot consistently perform due to time constraints,” said Nicolas Klarman, Staff Engineer at Doctolib.
 
-## Doctolib pilots AI-assisted development with 30 engineers
+## The solution
 
-After piloting Claude Code with 30 engineers and seeing promising productivity gains, Doctolib rolled out the tool to their entire development team.
+### Opus 5.5 for the work where quality is not negotiable
 
-Engineers could self-onboard in under five minutes across any IDE—VSCode, JetBrains, or CLI-based workflows. The team chose Claude Code specifically for its documentation, hands-on training courses through Anthropic’s Skilljar platform, and flexible features including slash commands, subagents, and plan mode. The license-free, pay-as-you-go billing model allowed them to scale adoption without upfront commitments.
+The foundation was already in place. After a pilot with 30 engineers, Doctolib rolled Claude Code out to its whole development team, and engineers self-onboard in under five minutes from VS Code, JetBrains, or the command line. The platform team maintains a shared repository of prompts, custom commands, and subagents that every engineer pulls at setup. Today, about 90% of Doctolib’s roughly 900 tech and product staff use Claude every day, and Claude Code remains the most-used AI tool in Doctolib engineering.
 
-## Doctolib creates reusable AI workflows for common development tasks
+The team revisits its default configuration as new models arrive. “The Opus plan mode currently brings the best setup possible between quality of results and cost optimization,” Klarman noted.
 
-Doctolib’s platform team created a centralized repository of prompts, custom commands, and subagents that all developers pull during their initial Claude Code setup. Every engineer starts with proven, reusable workflows on day one—writing documentation, creating tests, reviewing code, and debugging common issues.
+The bigger decision concerned Doctolib’s remote coding agents, which handle pull request reviews, risk analysis, security checks, post-merge checks, and implementation. “For these tasks, the quality of the final result is not negotiable,” Kuo said. “We want to push adoption of the remote agents as the new default for delivery.”
 
-“Engineers can now start contributing to unfamiliar codebases immediately,” said Tanay. “Instead of waiting weeks to understand a new service or library, they start a conversation with the code and begin making changes within days.”
+To pick the model behind them, the team ran A/B tests across a set of real tasks. Opus 5.5 produced clearly better results than Sonnet 5.0, the agents’ previous default, at 2.5 times lower cost per pull request. Doctolib made Opus 5.5 the default for its remote agents and now favors it for high-impact tasks.
 
-The team embedded Claude Code into their daily development workflow across several critical areas. Engineers write documentation and tests, review pull requests, and address technical debt through repeatable prompts for migrations and debugging. The tool’s headless mode runs directly in their CI pipeline, automatically opening pull requests for routine maintenance tasks.
+### Agents that carry a ticket from first change to production check
 
-One project demonstrated the velocity gains: replacing the entire legacy visual regression testing infrastructure. “We completed the migration in hours, not weeks,” said Tanay. “It’s now in production handling all our screenshot comparisons.”
+Doctolib’s own remote agents run on Claude Code in headless mode through GitHub Actions, and they work as a connected system rather than a set of single-purpose bots. Starting from one ticket, they generate a code change with the right context, update the pull request, work through feedback left in review comments, and run a full check once the code is in production. Their scope covers code review, risk assessment, documentation, and bug resolution. They now account for 10% of all pull requests at Doctolib, and for every bug identified, an agent proposes a fix. Half of those fixes are accepted and merged by the team that owns the affected product.
 
-The automated documentation workflow changed their maintenance burden. Every code change triggers a CI job that updates technical documentation automatically. This documentation-as-code approach keeps their technical docs current with very rare intervention.
+Review is changing shape too. Instead of one review agent, Doctolib is building a multi-agent risk assessment framework, with agents covering privacy, security, and other critical dimensions, to decide how much attention each change needs. “This approach allows us to collect concrete evidence of what works in practice, while progressively strengthening the security and reliability of our entire system,” Klarman explained.
 
-Pull request reviews, previously a bottleneck requiring hours or days of wait time, now happen instantly. Their main infrastructure repository features automated Claude-powered reviews, catching issues earlier in the development cycle.
+The agents build on workflows that have run for more than a year. A scheduled job updates technical documentation with every code change, and automated Claude reviews run on Doctolib’s main infrastructure repository. Early on, the team used Claude Code to replace its entire legacy visual regression testing infrastructure. “We completed the migration in hours, not weeks,” Klarman said.
+
+The agents are also opening delivery to people outside engineering. Because a pull request no longer has to belong to the person who writes the code, product managers and designers can ship changes by stating clearly what they want. The agent breaks the work down and adjusts the requirements to fit the codebase, best practices, and guardrails. It opens the pull request, keeps it current, and folds in feedback from human reviewers and review agents. Once the change is approved, the agent merges it and runs checks to confirm the outcome.
 
 ## The outcome
 
-Claude Code has become the most-used AI tool on Doctolib’s engineering team. Engineers self-onboard to the platform and start seeing productivity gains within minutes.
+### More changes, moving faster, with closer review
 
-Teams now self-onboard to new projects on unfamiliar technology stacks—reducing ramp-up time from weeks to days.
+Between January and September 2026, the average Doctolib engineer handled 47% more pull requests, while change lead time fell by 25%. Teams are shipping more, and each change spends less time waiting.
 
-“Engineers can now contribute to areas outside their expertise much faster,” said Tanay. “This fundamentally changes our development velocity.”
+The work itself looks different. By Doctolib’s own estimates, writing code took 40 to 45% of an engineer’s time before AI. About a year later, it takes roughly 20%, and the time spent on review and specifications has grown. “Overall, this shift illustrates how Claude is helping our teams move from execution-heavy workflows toward more thoughtful, review-driven, and cross-functional ways of working,” Kuo said.
 
-Doctolib plans to expand autonomous coding agents in Q1, moving from tickets directly to pull requests through GitHub Actions. They’re also developing tailored AI-assisted reviews for triage and code quality, and implementing specs-driven development with Claude.
+Doctolib’s next priorities follow the bottleneck. The team is replacing line-by-line code review with a risk-based model, where AI assesses how much scrutiny each change requires, and then turning to the stages after review: deploying and validating code.
 
-“We want to help shape the roadmap of Claude Code and explore what’s possible with autonomous agents,” said Tanay.
+“Our vision is a software factory where engineers build and maintain the agentic loops,” said Mike Aidane, VP of Platform Engineering at Doctolib. “Agents write most of the code. Engineers decide when to step in, steer, or raise a concern. The next step is focusing human attention where it matters most.”
 
 ## Related stories
 
@@ -93,234 +98,3 @@ Doctolib plans to expand autonomous coding agents in Q1, moving from tickets dir
 
 
 ### How Zingage automates care coordination for 400+ home care agencies with Claude
-
-[](https://www.claude.com/)
-
-© 2026 Anthropic PBC
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](customer-support.md)
-- [Cybersecurity](cybersecurity.md)
-- [Legal](legal.md)
-- [Sales](sales.md)
-
-## Industries
-
-- [Financial advisors](financial-advisors.md)
-- [Financial services](finance.md)
-- [Government](government.md)
-- [Healthcare](healthcare.md)
-- [Higher education](education.md)
-- [K-12 teachers](teachers.md)
-- [Life sciences](life-sciences.md)
-- [Nonprofits](nonprofits.md)
-- [Small business](small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-## Company
-
-- [Anthropic](https://www.anthropic.com/)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [Anthropic news](../19-Reference/news.md)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Transparency](https://anthropic.com/transparency)
-
-## Terms and policies
-
-- Privacy choices
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
-- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
-- [Usage Policy](https://www.anthropic.com/legal/aup)
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](customer-support.md)
-- [Cybersecurity](cybersecurity.md)
-- [Legal](legal.md)
-- [Sales](sales.md)
-
-## Industries
-
-- [Financial advisors](financial-advisors.md)
-- [Financial services](finance.md)
-- [Government](government.md)
-- [Healthcare](healthcare.md)
-- [Higher education](education.md)
-- [K-12 teachers](teachers.md)
-- [Life sciences](life-sciences.md)
-- [Nonprofits](nonprofits.md)
-- [Small business](small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

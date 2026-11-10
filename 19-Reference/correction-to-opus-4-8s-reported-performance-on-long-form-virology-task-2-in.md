@@ -1,9 +1,8 @@
 ---
-title: "●​ Correction to Opus 4.8’s reported performance on Long-form virology task 2 in"
-source_url: "https://www-cdn.anthropic.com/0f0c97ad20d8005706296bd92aa1c27c6b2f4f61/Claude-Opus-4.8-System-Card.pdf"
+title: "Claude Opus 4 8 System Card E3783Fada3"
+source_url: "https://www.anthropic.com/claude-opus-4-8-system-card"
 category: "19-Reference"
-fetched_at: "2026-10-14T06:27:30Z"
-last_modified: "Wed, 17 Jun 2026 21:06:35 GMT"
+fetched_at: "2026-11-09T06:26:07Z"
 tags: ["news-research"]
 ---
 

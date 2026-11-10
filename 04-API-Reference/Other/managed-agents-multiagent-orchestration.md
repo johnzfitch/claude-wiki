@@ -2,7 +2,7 @@
 title: "Multiagent orchestration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:39:38Z"
+fetched_at: "2026-11-05T06:37:22Z"
 tags: ["agents", "api", "subagents"]
 ---
 
@@ -18,6 +18,24 @@ Coordinate multiple agents within a single session.
 
 
 
+Multiagent orchestration
+
+Feature of  
+[Managed Agents](managed-agents-overview.md)
+
+[Status](#availability-feature-support)  
+Beta
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+
+[Beta header](#feature-beta-headers)  
+- `managed-agents-2026-04-01`
+  
+
+[Data handling](#feature-data-handling)  
+Not ZDR eligibleNot HIPAA eligible
+
 Multiagent orchestration lets one agent coordinate with others to complete complex work. Agents can act in parallel with their own isolated context, which helps improve output quality and can also improve time to completion.
 
 Not sure a multiagent setup fits your problem? See [when to use multiagent systems (and when not to)](https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-them).
@@ -28,15 +46,15 @@ The agent that a session runs can hand work to other agents in two ways. With **
 
 You decide which of these the agent can use, and the agent determines when to use them. To guide that choice, tell the agent in its system prompt when to use a workflow run. See [Tell the agent when to use a run](#tell-the-agent-when-to-use-a-run). You can also limit the agent to agents that you list.
 
-With subagents, the agent itself determines what happens next. A [subagent's thread](managed-agents-session-threads.md) stays available until you archive it, so the agent can send it follow-up messages. With dynamic workflows, Claude writes a program to orchestrate agents without Claude's direct involvement. Context and results are passed programmatically from one agent to another, freeing up the main session thread to communicate with the user and check in on one or several running workflows to report on progress. The agent can't send follow-up messages to a run's threads, and the server archives each one by the end of its run.
+With subagents, the agent itself determines what happens next. A [subagent’s thread](managed-agents-session-threads.md) stays available until you archive it, so the agent can send it follow-up messages. With dynamic workflows, Claude writes a program to orchestrate agents without Claude’s direct involvement. Context and results are passed programmatically from one agent to another, freeing up the main session thread to communicate with the user and check in on one or several running workflows to report on progress. The agent can’t send follow-up messages to a run’s threads, and the server archives each one by the end of its run.
 
-| Approach                                                    | What happens                                                                                                                                                                                                                                           | Use it when                                                                                                                                                                                   | Consider                                                                                                                                                                                                                                                          |
-|-------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Subagents](#delegate-to-subagents)                         | The agent delegates tasks to its subagents. Each subagent works in its own [session thread](managed-agents-session-threads.md), which you can list and stream.                                                                                   | The agent should follow up with a subagent after it reports, or it needs specialists that you list, with their own system prompts and tools.                                                  | Delegation is one level deep, and a session can have at most 25 child threads at a time, idle ones included. Advisor threads and a workflow run's threads don't count.                                                                                            |
-| [Dynamic workflows](#dynamic-workflows)                     | The agent writes a workflow: a program that runs many agents in phases and combines their results. The server runs it in the background as one workflow run, which you can follow. The workflow defines the agents or picks them from a list you give. | Most work that needs more than one agent: work with many pieces, parallel work, or a long task that should finish sooner. Examples are audits, migrations, deep research, and cross-checking. | Every agent in a run uses tokens, so set a [session budget](managed-agents-budgets.md) to cap the session's spend, runs included. Tell the agent in its system prompt when to use a run. You follow the run by its phases and can read each of its threads. |
-| [Give the session an advisor](#give-the-session-an-advisor) | The session's [primary thread](#how-it-works) consults an advisor model mid-turn for guidance, such as planning an approach or reviewing work, and keeps doing the work itself.                                                                        | One agent should do the work, with an advisor model's judgment at key moments such as planning or a final review.                                                                             | Only the primary thread can consult the advisor, and consultations are billed at the advisor model's rates.                                                                                                                                                       |
+| Approach | What happens | Use it when | Consider |
+|----|----|----|----|
+| [Delegate to subagents](#delegate-to-subagents) | The agent delegates tasks to its subagents. Each subagent works in its own [session thread](managed-agents-session-threads.md), which you can list and stream. | The agent should follow up with a subagent after it reports, or it needs specialists that you list, with their own system prompts and tools. | Delegation is one level deep, and a session can have at most 25 child threads at a time, idle ones included. Advisor threads and a workflow run’s threads don’t count. |
+| [Dynamic workflows](#dynamic-workflows) | The agent writes a workflow: a program that runs many agents in phases and combines their results. The server runs it in the background as one workflow run, which you can follow. The workflow defines the agents or picks them from a list you give. | Most work that needs more than one agent: work with many pieces, parallel work, or a long task that should complete sooner. Examples are audits, migrations, deep research, and cross-checking. | Every agent in a run uses tokens, so set a [session budget](managed-agents-budgets.md) to cap the session’s spend, runs included. Tell the agent in its system prompt when to use a run. You follow the run by its phases and can read each of its threads. |
+| [Give the session an advisor](#give-the-session-an-advisor) | The session’s [primary thread](#how-it-works) consults an advisor model mid-turn for guidance, such as planning an approach or reviewing work, and keeps doing the work itself. | One agent should do the work, with an advisor model’s judgment at key moments such as planning or a final review. | Only the primary thread can consult the advisor, and consultations are billed at the advisor model’s rates. |
 
-You set these up in the `multiagent` block of the agent's definition, which has a `type`. With the `multiagent_20261001` type, an agent can use all three together, and you can turn each one on or off. By default, `subagents` and `workflows` are both enabled. `subagents` and `workflows` each have `inline_agents` enabled, the setting for [agents that the agent or a workflow defines itself](#predefined-and-inline-agents):
+You set these up in the `multiagent` block of the agent’s definition, which has a `type`. With the `multiagent_20261001` type, an agent can use all three together, and you can turn each one on or off. By default, `subagents` and `workflows` are both enabled. `subagents` and `workflows` each have `inline_agents` enabled, the setting for [agents that the agent or a workflow defines itself](#predefined-and-inline-agents):
 
 ```python
 {
@@ -53,18 +71,18 @@ To set which agents the agent can call, see [Predefined and inline agents](#pred
 Every subagent, and every agent in a workflow run, is one of two kinds:
 
 - **Predefined agent:** An agent that you have already [created](managed-agents-agent-setup.md), and that you list in the `multiagent` block. It uses its own configuration: model, system prompt, tools, MCP servers, and skills.
-- **Inline agent:** An agent that is not saved. The agent that the session runs, or a workflow, defines it when it hands out the work. It uses that agent's model, tools, MCP servers, and skills.
+- **Inline agent:** An agent that is not saved. The agent that the session runs, or a workflow, defines it when it hands out the work. It uses that agent’s model, tools, MCP servers, and skills.
 
 Both kinds work under `subagents` and under `workflows`:
 
-| Kind of agent | Under `subagents`                                                                                       | Under `workflows`                                                                                                            |
-|---------------|---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| Predefined    | The agent can delegate to the agents that you list in `subagents.predefined_agents`.                    | A workflow can use the agents that you list in `workflows.predefined_agents`.                                                |
-| Inline        | The agent can define an inline agent when it delegates. `subagents.inline_agents` turns this on or off. | A workflow can define inline agents, and it writes a system prompt for each. `workflows.inline_agents` turns this on or off. |
+| Kind of agent | Under `subagents` | Under `workflows` |
+|----|----|----|
+| Predefined | The agent can delegate to the agents that you list in `subagents.predefined_agents`. | A workflow can use the agents that you list in `workflows.predefined_agents`. |
+| Inline | The agent can define an inline agent when it delegates. `subagents.inline_agents` turns this on or off. | A workflow can define inline agents, and it writes a system prompt for each. `workflows.inline_agents` turns this on or off. |
 
 `subagents.predefined_agents` and `workflows.predefined_agents` are two separate lists. An agent in one list is not added to the other. Both lists are empty by default. An entry of either list takes one of these forms:
 
-- `{"type": "agent", "id": agent.id}` references a previously created `agent` by ID. If no `version` is specified, the reference is pinned to the agent's latest version when the agent that lists it is created, or when an update sends the list.
+- `{"type": "agent", "id": agent.id}` references a previously created `agent` by ID. If no `version` is specified, the reference is pinned to the agent’s latest version when the agent that lists it is created, or when an update sends the list.
 - `{"type": "agent", "id": agent.id, "version": agent.version}` pins a specific agent version.
 - `agent.id` alone, as a string, is short for `{"type": "agent", "id": agent.id}`.
 - `{"type": "self"}` lists the agent itself, so that copies of it can do the work. If the session was created with [agent configuration overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session), those overrides also apply to these copies. Entries referenced by ID are unaffected.
@@ -101,7 +119,7 @@ The following agent allows only the agents that it lists. It can delegate to one
 
 ### What to delegate
 
-Multiagent coordination is best suited for complex tasks that either require work across a variety of surfaces, or where multiple well-scoped tasks contribute to an overall goal.
+Multiagent coordination is best suited for complex tasks that either require work across a variety of surfaces or consist of multiple well-scoped tasks that contribute to an overall goal.
 
 Patterns that work well:
 
@@ -113,7 +131,7 @@ Patterns that work well:
 
 All agents share the same sandbox, filesystem, and [vault credentials](managed-agents-vaults.md), but each agent runs in its own **session thread**, a context-isolated event stream with its own conversation history. The agent that the session runs reports activity in the **primary thread**, which is the session-level [event stream](managed-agents-events-and-streaming.md). Additional threads are spawned at runtime when it delegates work. A workflow run also creates threads.
 
-A subagent's thread is persistent. The agent can send a follow-up to a subagent it called earlier, and that subagent retains everything from its previous turns.
+A subagent’s thread is persistent. The agent can send a follow-up to a subagent it called earlier, and that subagent retains everything from its previous turns.
 
 Which configuration a subagent uses depends on whether it is a [predefined or an inline agent](#predefined-and-inline-agents). Session-level [agent configuration overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session) apply to the agent that the session runs and to its `self` copies. Each agent keeps its own conversation history.
 
@@ -204,15 +222,15 @@ You write unit tests.
 
 The agent can also delegate to inline agents unless you turn them off. For that setting, and for the forms that an entry of the `predefined_agents` list of `subagents` takes, see [Predefined and inline agents](#predefined-and-inline-agents).
 
-`"advisor": {"type": "enabled", "model": "<model id>"}` gives the session's primary thread an advisor it can consult mid-turn. The advisor is a setting in the `multiagent` block, not an entry in this list. See [Give the session an advisor](#give-the-session-an-advisor).
+`"advisor": {"type": "enabled", "model": "<model id>"}` gives the session’s primary thread an advisor it can consult mid-turn. The advisor is a setting in the `multiagent` block, not an entry in this list. See [Give the session an advisor](#give-the-session-an-advisor).
 
 Dynamic workflows are also enabled by default with this type, so this agent can plan large work that runs many agents in the background. To turn them off, or to list agents that a workflow can use, see [Turn on dynamic workflows](#turn-on-dynamic-workflows).
 
 The following rules apply to the agents you list in the `predefined_agents` list of `subagents`, and also to the agents you list in the `predefined_agents` list of `workflows`:
 
-- **Pinning:** The agent's configuration, including the `predefined_agents` list of `subagents`, is snapshotted when the agent is created or updated. Referenced agents stay pinned to the versions resolved then and don't pick up later updates to their definitions. An update that doesn't send the list keeps the versions that are already pinned. To delegate to a newer version of a referenced agent, [update the agent](managed-agents-agent-setup.md#update-an-agent) so the `predefined_agents` list of `subagents` references that version.
+- **Pinning:** The agent’s configuration, including the `predefined_agents` list of `subagents`, is snapshotted when the agent is created or updated. Referenced agents stay pinned to the versions resolved then and don’t pick up later updates to their definitions. An update that doesn’t send the list keeps the versions that are already pinned. To delegate to a newer version of a referenced agent, [update the agent](managed-agents-agent-setup.md#update-an-agent) so the `predefined_agents` list of `subagents` references that version.
 - **One level:** The agent can delegate to only one level of agents. Referencing another agent that has `multiagent` set fails the create or update request with a 400 validation error.
-- **Up to 20 agents:** The `predefined_agents` list of `subagents` can list up to 20 unique agents. The limit is per list: the `predefined_agents` list of `workflows` can also list up to 20. The agent can call multiple copies of each subagent, within the session's [thread limit](managed-agents-session-threads.md).
+- **Up to 20 agents:** The `predefined_agents` list of `subagents` can list up to 20 unique agents. The limit is for each list: the `predefined_agents` list of `workflows` can also list up to 20. The agent can call multiple copies of each subagent, within the session’s [thread limit](managed-agents-session-threads.md).
 - **Inference geography:** The agent and every agent that you list, in the `predefined_agents` list of `subagents` or of `workflows`, must pin the same [inference geography](manage-claude-data-residency.md) (`inference_geo` in the `model` of the [agent definition](managed-agents-agent-setup.md)), or none of them can pin one. A mismatch in either list is rejected with a 400 validation error. That check runs both when the agent is saved and when a [session-create override](managed-agents-sessions.md#override-agent-configuration-for-a-session) changes any of the pins.
 
 ### Create the session
@@ -253,11 +271,11 @@ session = client.beta.sessions.create(
 MCP servers are agent-scoped: each agent definition declares its own servers and tools. An inline agent has no agent definition, so it uses the MCP servers and tools of the agent that the session runs. Vault credentials are session-scoped: `vault_ids` passed at session creation apply to every thread. Two implications for your integration:
 
 - To authenticate MCP servers, include a vault credential for every MCP server used across all agents.
-- To limit an agent's access, declare only the servers it needs in its agent definition. You can't limit an inline agent this way. To allow only the agents you list, disable `inline_agents` in both `subagents` and `workflows`, and list at least one agent in each. See [Predefined and inline agents](#predefined-and-inline-agents).
+- To limit an agent’s access, declare only the servers it needs in its agent definition. You can’t limit an inline agent this way. To allow only the agents you list, disable `inline_agents` in both `subagents` and `workflows`, and list at least one agent in each. See [Predefined and inline agents](#predefined-and-inline-agents).
 
 [Agent configuration overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session) at session creation can replace the MCP servers of the agent that the session runs and those of its `self` copies.
 
-With a `limited` [environment](managed-agents-environments.md#networking), session creation fails with a 400 error when the agent, or an agent you list in the `predefined_agents` list of `subagents` or `workflows`, declares an MCP server whose host is not in `allowed_hosts`. Setting `allow_mcp_servers` to `true` in the environment's networking turns this check off.
+With a `limited` [environment](managed-agents-environments.md#networking), session creation fails with a 400 error when the agent, or an agent you list in the `predefined_agents` list of `subagents` or `workflows`, declares an MCP server whose host is not in `allowed_hosts`. Setting `allow_mcp_servers` to `true` in the environment’s networking turns this check off.
 
 Create the researcher, which declares the GitHub MCP server, and the agent that delegates to the researcher:
 
@@ -361,29 +379,31 @@ session = client.beta.sessions.create(
 print(session.id)
 ```
 
-In this example, only the researcher declares the GitHub MCP server, so the agent that the session runs does not have access. The session's `vault_ids` supply the GitHub credential to the researcher's thread.
+In this example, only the researcher declares the GitHub MCP server, so the agent that the session runs does not have access. The session’s `vault_ids` supply the GitHub credential to the researcher’s thread.
 
 
 
-If an agent's MCP calls fail to authenticate after you declare the server, confirm the credential's `mcp_server_url` refers to the same server as the agent's `mcp_servers[].url`. Both URLs are normalized before matching (scheme and host lowercased, default ports and trailing slashes stripped), so differences in host casing, a default port, or a trailing slash don't prevent a match; a different path, subdomain, or non-default port does.
+If an agent’s MCP calls fail to authenticate after you declare the server, confirm the credential’s `mcp_server_url` refers to the same server as the agent’s `mcp_servers[].url`. Both URLs are normalized before matching (scheme and host lowercased, default ports and trailing slashes stripped), so differences in host casing, a default port, or a trailing slash don’t prevent a match; a different path, subdomain, or non-default port does.
 
 ### Threads
 
-Each agent's session thread has its own event stream. To list, interrupt, or archive threads, read their events, and handle tool permissions across them, see [Session threads](managed-agents-session-threads.md).
+Each agent’s session thread has its own event stream. To list, interrupt, or archive threads, read their events, and handle tool permissions across them, see [Session threads](managed-agents-session-threads.md).
 
 ## Dynamic workflows
 
-With dynamic workflows, an agent can take on work with many pieces, such as reviewing hundreds of documents or cross-checking many sources. The agent writes a **workflow**: a program that runs many agents in phases and combines what they return. The server runs it in the background as a **workflow run**, while the agent keeps working or ends its turn. You turn dynamic workflows on or off with the `workflows` setting in the agent's `multiagent` block. A run's agents can work at the same time, so a long task can finish sooner than if one agent did each piece in turn.
+With dynamic workflows, an agent can take on work with many pieces, such as reviewing hundreds of documents or cross-checking many sources. The agent writes a **workflow:** a program that runs many agents in phases and combines what they return. The server runs it in the background as a **workflow run**, while the agent keeps working or ends its turn. You turn dynamic workflows on or off with the `workflows` setting in the agent’s `multiagent` block. A run’s agents can work at the same time, so a long task can complete sooner than if one agent did each piece in turn.
 
-- **How a run starts:** You describe the work in a `user.message`. From that, the agent determines whether and when to start a run, so there's no additional API call. Instead, you influence the agent's determination by describing when to use a run in `user.message` or in the agent's system prompt. (Permission policies apply to the tools that a run's agents call, not to starting the run.)
+- **How a run starts:** You describe the work in a `user.message`. From that, the agent determines whether and when to start a run, so there’s no additional API call. Instead, you influence the agent’s determination by describing when to use a run in `user.message` or in the agent’s system prompt. (Permission policies apply to the tools that a run’s agents call, not to starting the run.)
 - **Which agents it uses:** [Inline agents](#predefined-and-inline-agents) that the workflow defines, predefined agents that you list in the `predefined_agents` list of `workflows`, or both. If you list none, the workflow defines them all. An inline agent uses the model of the agent that the session runs. To let a run use another model for some of its agents, create them as agents and list them in the `predefined_agents` list of `workflows`.
-- **How you follow it:** Run events arrive on the session's event stream, and each agent in the run works in a [session thread](managed-agents-session-threads.md) that you can list, read, and stream. See [Workflow runs](managed-agents-workflow-runs.md) for the events, interrupts, [limits](managed-agents-workflow-runs.md#limits), and [what a run's threads show](managed-agents-workflow-runs.md#a-runs-threads).
+- **How you follow it:** Run events arrive on the session’s event stream, and each agent in the run works in a [session thread](managed-agents-session-threads.md) that you can list, read, and stream. See [Workflow runs](managed-agents-workflow-runs.md) for the events, interrupts, [limits](managed-agents-workflow-runs.md#limits), and [what a run’s threads show](managed-agents-workflow-runs.md#a-runs-threads).
 
 ### Turn on dynamic workflows
 
-When [defining your agent](managed-agents-agent-setup.md), set `multiagent.type` to `"multiagent_20261001"` and enable `workflows`. Dynamic workflows and delegating (`subagents`) are both on by default with this type. For dynamic workflows only, add `"subagents": {"type": "disabled"}`.
+When [defining your agent](managed-agents-agent-setup.md), set `multiagent.type` to `"multiagent_20261001"` and enable `workflows`. Dynamic workflows and delegating (`subagents`) are both on by default with this type. For dynamic workflows only, also set `subagents` to `{"type": "disabled"}`.
 
-Before you change an existing agent's `multiagent.type`, see [how to move an agent to this type](#move-from-the-coordinator-type).
+Before you change an existing agent’s `multiagent.type`, see [how to move an agent to this type](#move-from-the-coordinator-type).
+
+This example also disables web search and web fetch, because reviewing contracts doesn’t use the web:
 
 cURL
 
@@ -423,6 +443,11 @@ name: Contract Reviewer
 model: claude-opus-5-5
 tools:
   - type: agent_toolset_20260401
+    configs:
+      - name: web_search
+        enabled: false
+      - name: web_fetch
+        enabled: false
 multiagent:
   type: multiagent_20261001
   workflows:
@@ -432,7 +457,7 @@ multiagent:
 You review contracts. When you're asked to review more than a few contracts, start a workflow run that reads them in parallel and combines the findings. Review one or two contracts yourself, without a run.
 ```
 
-To let a workflow use agents you've already created, list them in `workflows.predefined_agents`. The `subagents` and `advisor` settings go in the same `multiagent` block. To list subagents, see [Delegate to subagents](#delegate-to-subagents). To set an advisor, see [Give the session an advisor](#give-the-session-an-advisor). This agent lets a workflow use one agent you created, lists two subagents, and has an advisor:
+To let a workflow use agents you’ve already created, list them in `workflows.predefined_agents`. The `subagents` and `advisor` settings go in the same `multiagent` block. To list subagents, see [Delegate to subagents](#delegate-to-subagents). To set an advisor, see [Give the session an advisor](#give-the-session-an-advisor). This agent lets a workflow use one agent you created, lists two subagents, and has an advisor:
 
 ```python
 {
@@ -458,11 +483,11 @@ To let a workflow use agents you've already created, list them in `workflows.pre
 
 Each setting is enabled or disabled on its own:
 
-| Setting     | What it turns on                                                                  | Agents go in                            | Default  |
-|-------------|-----------------------------------------------------------------------------------|-----------------------------------------|----------|
-| `workflows` | Dynamic workflows                                                                 | `workflows.predefined_agents`, up to 20 | Enabled  |
-| `subagents` | Delegating to subagents: the agents you list, and agents the agent defines itself | `subagents.predefined_agents`, up to 20 | Enabled  |
-| `advisor`   | An advisor model                                                                  | None. Set `model`.                      | Disabled |
+| Setting | What it turns on | Agents go in | Default |
+|----|----|----|----|
+| `workflows` | Dynamic workflows | `workflows.predefined_agents`, up to 20 | Enabled |
+| `subagents` | Delegating to subagents: the agents you list, and agents the agent defines itself | `subagents.predefined_agents`, up to 20 | Enabled |
+| `advisor` | An advisor model | None. Set `model`. | Disabled |
 
 For what goes in each list, and for how to allow only the agents that you list, see [Predefined and inline agents](#predefined-and-inline-agents).
 
@@ -475,14 +500,14 @@ Keep the following in mind:
   - A setting you send with a different `type` replaces the stored setting, and the fields you leave out of it take their defaults.
   - Every object you send needs its `type`, and an enabled `advisor` needs its `model`.
 - **Turning it off:** Set `workflows` to `{"type": "disabled"}`. It stays off until an update turns it on again. Sending `null` turns it on, because its default is enabled. The same applies to `subagents`.
-- **Existing sessions:** A session copies the setting when it is created, so changing the agent later doesn't change a session that already exists.
-- **Agents you can list:** An agent that has `multiagent` set can't be listed as a subagent of another agent, or in the `predefined_agents` list of `workflows` in another agent. An agent can list itself in either list with `{"type": "self"}`, which reads back as its own `id` and `version`.
+- **Existing sessions:** A session copies the setting when it is created, so changing the agent later doesn’t change a session that already exists.
+- **Agents you can list:** An agent that has `multiagent` set can’t be listed as a subagent of another agent, or in the `predefined_agents` list of `workflows` in another agent. An agent can list itself in either list with `{"type": "self"}`, which reads back as its own `id` and `version`.
 - **Tool names:** The `ant__` prefix is reserved. If your agent already has a custom tool whose name starts with `ant__`, an update fails with a 400 error until you send `tools` without that name. A new session is refused with a 400 error too if its agent, or an agent in either list, has such a tool. Rename or remove the tool in the same update that turns dynamic workflows on. See [Custom tools](managed-agents-tools.md#custom-tools).
-- **Budget:** Set a [session budget](managed-agents-budgets.md) when you create the session to cap the session's spend, runs included; you can't add one to an existing session. Runs pause when the session reaches the budget, and runs that the budget paused resume when you raise or remove it, unless an interrupt also paused them. See [Cost and budgets](managed-agents-workflow-runs.md#cost-and-budgets).
+- **Budget:** Set a [session budget](managed-agents-budgets.md) when you create the session to cap the session’s spend, runs included; you can’t add one to an existing session. Runs pause when the session reaches the budget, and runs that the budget paused resume when you raise or remove it, unless an interrupt also paused them. See [Cost and budgets](managed-agents-workflow-runs.md#cost-and-budgets).
 
 ### Tell the agent when to use a run
 
-Turning dynamic workflows on gives the agent the ability to start workflow runs. The agent determines when to start one. To guide that choice, add an instruction like the following to the agent's system prompt. The contract-review agent in [Turn on dynamic workflows](#turn-on-dynamic-workflows) uses this system prompt:
+Turning dynamic workflows on gives the agent the ability to start workflow runs. The agent determines when to start one. To guide that choice, add an instruction such as the following to the agent’s system prompt. The contract-review agent in [Turn on dynamic workflows](#turn-on-dynamic-workflows) uses this system prompt:
 
 ``` block
 You review contracts. When you're asked to review more than a few contracts, start a workflow run that reads them in parallel and combines the findings. Review one or two contracts yourself, without a run.
@@ -490,22 +515,22 @@ You review contracts. When you're asked to review more than a few contracts, sta
 
 
 
-To adapt it, name the tasks in your agent's domain that call for a run, and the small tasks the agent should do itself. You can also guide how a run does the work, as in these examples:
+To adapt it, name the tasks in your agent’s domain that call for a run, and the small tasks the agent should do itself. You can also guide how a run does the work, as in these examples:
 
-- **How to split the work:** "In a run, use one agent per contract. Then have a second agent review every contract, not only the ones where the first agent found something, and look for what the first agent missed. Anything that fails the review gets redone and reviewed again."
-- **What to do when an agent fails:** "One agent failing must not fail the run. If an agent fails to read a contract, list that contract as not covered. When the run ends, tell me which contracts weren't covered."
-- **A time limit:** "Give the run a one-hour time limit."
-- **Plan first:** "Before you start a run, describe its phases and how many agents each one runs. Then wait for my go-ahead." There's no approval step before a run starts, so nothing enforces this.
+- **How to split the work:** “In a run, use one agent per contract. Then have a second agent review every contract, not only the ones where the first agent found something, and look for what the first agent missed. Anything that fails the review gets redone and reviewed again.”
+- **What to do when an agent fails:** “One agent failing must not fail the run. If an agent fails to read a contract, list that contract as not covered. When the run ends, tell me which contracts weren’t covered.”
+- **A time limit:** “Give the run a one-hour time limit.”
+- **Plan first:** “Before you start a run, describe its phases and how many agents each one runs. Then wait for my go-ahead.” There’s no approval step before a run starts, so nothing enforces this.
 
 Keep runs to the tasks that need them, because every agent in a run uses tokens.
 
 Then [create a session](managed-agents-sessions.md) with the agent, as you would with any agent, and describe the work in a `user.message`. You can also ask for a run in that message.
 
-For a run's events, interrupting a session with runs open, what changes while a run is open, and budgets and limits, see [Workflow runs](managed-agents-workflow-runs.md).
+For a run’s events, interrupting a session with runs open, what changes while a run is open, and budgets and limits, see [Workflow runs](managed-agents-workflow-runs.md).
 
 ## Give the session an advisor
 
-An enabled `advisor` setting in the agent's `multiagent` block gives the session's primary thread an **advisor**: a model it can consult mid-turn for strategic guidance, such as planning an approach, getting unstuck, or reviewing work before finishing. The setting is disabled by default. To enable it, set `advisor` to `{"type": "enabled", "model": "..."}`, which has exactly two fields, `type` and `model`:
+An enabled `advisor` setting in the agent’s `multiagent` block gives the session’s primary thread an **advisor:** a model it can consult mid-turn for strategic guidance, such as planning an approach, moving past an obstacle, or reviewing work before finishing. The setting is disabled by default. To enable it, set `advisor` to `{"type": "enabled", "model": "..."}`, which has exactly two fields, `type` and `model`:
 
 cURL
 
@@ -555,9 +580,9 @@ You implement backend features end to end. Consult the advisor before major back
 
 This example sets only `advisor`. The other two settings, `subagents` and `workflows`, keep their defaults, so both are enabled, and the agent can also delegate to inline agents and start workflow runs. For an agent that consults an advisor and does all the work itself, set both to `{"type": "disabled"}`.
 
-You can't list the advisor in the `predefined_agents` list of `subagents` or `workflows`. An enabled `advisor` reserves the name `anthropic.advisor`. While it is enabled, neither list can hold an agent literally named `anthropic.advisor`: the request is rejected with a 400 validation error.
+You can’t list the advisor in the `predefined_agents` list of `subagents` or `workflows`. An enabled `advisor` reserves the name `anthropic.advisor`. While it is enabled, neither list can hold an agent literally named `anthropic.advisor`: the request is rejected with a 400 validation error.
 
-The advisor model must meet a minimum capability bar, and the agent's own model must not be more capable than its advisor; models of equal capability can pair. An invalid pairing is rejected with a 400 validation error when the agent is saved, and again when a session is created. The pairing is also checked when each consultation starts: if it's no longer valid, that consultation fails and the session continues. Valid pairings follow the advisor tool's [model compatibility](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility) table.
+The advisor model must meet a minimum capability level, and the agent’s own model must not be more capable than its advisor; models of equal capability can pair. An invalid pairing is rejected with a 400 validation error when the agent is saved, and again when a session is created. The pairing is also checked when each consultation starts: if it’s no longer valid, that consultation fails and the session continues. Valid pairings follow the advisor tool’s [model compatibility](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility) table.
 
 The advisor is also available as a [server tool on the Messages API](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md). The Managed Agents surface differs in configuration and delivery: the `advisor` setting has no `max_uses`, `max_tokens`, or `caching` fields, and advice arrives through thread events rather than `advisor_tool_result` blocks.
 
@@ -571,33 +596,33 @@ Each consultation runs as a platform-spawned thread named `anthropic.advisor` th
 4.  `session.thread_status_idle` (`stop_reason: end_turn`)
 5.  `session.thread_status_terminated`
 
-No `agent.tool_use` events are emitted for a consultation, and no `agent.thread_message_sent` event appears on the session's event stream, because the consultation input is composed by the platform rather than sent by the agent. If you list the advisor thread's own events, the advice also appears there as an `agent.thread_message_sent` event. The advice delivery (event 3) is not guaranteed to arrive before the advisor thread's idle and terminated events, so don't treat those as a signal that the advice has already been delivered.
+No `agent.tool_use` events are emitted for a consultation, and no `agent.thread_message_sent` event appears on the session’s event stream, because the consultation input is composed by the platform rather than sent by the agent. If you list the advisor thread’s own events, the advice also appears there as an `agent.thread_message_sent` event. The advice delivery (event 3) is not guaranteed to arrive before the advisor thread’s idle and terminated events, so don’t treat those as a signal that the advice has already been delivered.
 
-Whether your client can read the advice is the advisor model's policy. It mirrors the [result variants](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#result-variants) split on the Messages API advisor tool. An advisor model that returns plaintext results there delivers readable text here. One that returns redacted results delivers a `[{"type": "redacted"}]` placeholder on every client surface, while the agent still reads the full advice server-side. The preceding example uses the newest Opus model available to you as the advisor. Claude Opus 5.5 returns redacted results, so your client sees only the placeholder. To read the advice on the event stream, use an advisor that returns plaintext, such as Claude Opus 4.8. A model's policy can change with no change to the API, so handle both `text` and `redacted` blocks. Some agent models pair only with redacted-result advisors; see the advisor tool's [compatibility table](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility). Advisor thinking is never surfaced. Clients cannot send `redacted` blocks themselves; an event containing one is rejected with a 400 validation error.
+Whether your client can read the advice is the advisor model’s policy. It mirrors the [result variants](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#result-variants) split on the Messages API advisor tool. An advisor model that returns plaintext results there delivers readable text here. One that returns redacted results delivers a `[{"type": "redacted"}]` placeholder on every client surface, while the agent still reads the full advice server-side. The preceding example uses the newest Opus model available to you as the advisor. It returns redacted results, so your client sees only the placeholder. To read the advice on the event stream, use an advisor that returns plaintext, such as Claude Opus 4.8. A model’s policy can change with no change to the API, so handle both `text` and `redacted` blocks. Some agent models pair only with redacted-result advisors; see the advisor tool’s [Model compatibility](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility) section. Advisor thinking is never surfaced. Clients cannot send `redacted` blocks themselves; an event containing one is rejected with a 400 validation error.
 
-A failed or interrupted consultation never fails the agent's turn: the agent continues after a generic notice that the consultation failed. A session-level `user.interrupt` during a consultation terminates the advisor thread with no advice delivered; a `user.interrupt` with the advisor thread's `session_thread_id` abandons only that consultation.
+A failed or interrupted consultation never fails the agent’s turn: the agent continues after a generic notice that the consultation failed. A session-level `user.interrupt` during a consultation terminates the advisor thread with no advice delivered; a `user.interrupt` with the advisor thread’s `session_thread_id` abandons only that consultation.
 
 ### Advisor threads
 
-The advisor is not a subagent. The agent's `list_agents` tool doesn't show it, and `send_to_agent`, which sends a subagent a follow-up message, can't reach it. Only the session's primary thread can consult it; subagents can't.
+The advisor is not a subagent. The agent’s `list_agents` tool doesn’t show it, and `send_to_agent`, which sends a subagent a follow-up message, can’t reach it. Only the session’s primary thread can consult it; subagents can’t.
 
-Advisor threads are exempt from the 25-child-thread limit. They appear in the session's [thread list](managed-agents-session-threads.md). Their `agent` is the advisor form, `{"type": "advisor", "model": ...}`, with the model you configured, and their `parent_thread_id` is the primary thread.
+Advisor threads are exempt from the 25-child-thread limit. They appear in the session’s [thread list](managed-agents-session-threads.md). Their `agent` is the advisor form, `{"type": "advisor", "model": ...}`, with the model you configured, and their `parent_thread_id` is the primary thread.
 
-Prompt caching on the advisor's side is automatic; there is nothing to configure. Consultations are billed at the advisor model's rates, and their tokens appear in the advisor thread's usage and in the session's usage totals. They also count against a [session budget](managed-agents-budgets.md), at the advisor model's list price. Each consultation sends the advisor the primary thread's conversation so far, so consultations late in a long session use more input tokens.
+Prompt caching on the advisor’s side is automatic; there is nothing to configure. Consultations are billed at the advisor model’s rates, and their tokens appear in the advisor thread’s usage and in the session’s usage totals. They also count against a [session budget](managed-agents-budgets.md), at the advisor model’s list price. Each consultation sends the advisor the primary thread’s conversation so far, so consultations late in a long session use more input tokens.
 
 ### Removing the advisor
 
-To remove the advisor, [update the agent](managed-agents-agent-setup.md#update-an-agent) with `advisor` set to `{"type": "disabled"}`. On an agent that already has the `multiagent_20261001` type, a setting that the update leaves out keeps its stored value, so you don't need to send `subagents` or `workflows` again. For the same reason, an update that leaves `advisor` out keeps the advisor. Before you change an existing agent's `multiagent.type`, see [how to move an agent to this type](#move-from-the-coordinator-type).
+To remove the advisor, [update the agent](managed-agents-agent-setup.md#update-an-agent) with `advisor` set to `{"type": "disabled"}`. On an agent that already has the `multiagent_20261001` type, a setting that the update leaves out keeps its stored value, so you don’t need to send `subagents` or `workflows` again. For the same reason, an update that leaves `advisor` out keeps the advisor. Before you change an existing agent’s `multiagent.type`, see [how to move an agent to this type](#move-from-the-coordinator-type).
 
 ## Move from the `coordinator` type
 
-Like `multiagent_20261001`, the `coordinator` type lets an agent delegate to subagents that you list and consult an advisor model. With the `coordinator` type, the agent can't start workflow runs or define subagents itself. The API accepts both types.
+Like `multiagent_20261001`, the `coordinator` type lets an agent delegate to subagents that you list and consult an advisor model. With the `coordinator` type, the agent can’t start workflow runs or define subagents itself. The API accepts both types.
 
 To move an agent to `multiagent_20261001`, [update the agent](managed-agents-agent-setup.md#update-an-agent) with a `multiagent` block of that type:
 
 1.  Set `type` to `"multiagent_20261001"`.
 2.  List the agents that the agent can call in `subagents.predefined_agents`. The entries keep the form that they have now.
-3.  If the agent has an advisor, set `advisor` to `{"type": "enabled", "model": "..."}` with the advisor's model.
+3.  If the agent has an advisor, set `advisor` to `{"type": "enabled", "model": "..."}` with the advisor’s model.
 4.  Send the whole block in one update.
 
 For example, this block gives an agent two subagents and an advisor:
@@ -631,4 +656,45 @@ The update replaces the whole `multiagent` block, so send the list of agents and
 
 Once the agent has the `multiagent_20261001` type, a setting that a later update leaves out keeps its stored value.
 
-The update doesn't change sessions that already exist. To use the new block, create a session after the update.
+The update doesn’t change sessions that already exist. To use the new block, create a session after the update.
+
+## Availability
+
+Multiagent orchestration is in beta on every model.
+
+### API support
+
+StatusBeta
+
+Cloud platforms
+
+- All supported platforms
+
+### Required beta headers
+
+[Beta headers overview](../Endpoints/beta-headers.md)
+
+Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+
+Header
+
+- `managed-agents-2026-04-01`
+  
+
+### Data handling
+
+[Data handling overview](manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/agents`
+- `/v1/sessions`
+- `/v1/environments`
+
+Zero data retentionNot eligible
+
+Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+
+HIPAANot eligible
+
+Applies to all Managed Agents sub-features, including Self-hosted sandboxes.

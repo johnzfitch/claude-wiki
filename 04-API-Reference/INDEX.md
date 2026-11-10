@@ -1,505 +1,533 @@
 # API Reference
 
-2027 pages. The full text of every page is in [llms.txt](llms.txt).
+2107 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## About
 
 - [Additional resources - Claude Platform Docs](About/about-claude-additional-resources.md) — Learning resources and documentation formats optimized for AI ingestion.
-- [API credits for Max and Team plans - Claude Platform Docs](About/about-claude-api-credits-for-subscribers.md) — Claim the monthly Claude Platform credits included with Claude Max and Team plans, and learn what they cover.
+- [API credits for Max, Ultra, and Team plans - Claude Platform Docs](About/about-claude-api-credits-for-subscribers.md) — Claim the monthly Claude Platform credits included with Claude Max, Ultra, and Team plans, and learn what they cover.
 - [Classification - Claude Platform Docs](About/about-claude-use-case-guides-classification.md) — Claude excels at processing, understanding, and recognizing patterns in text, images, and data. These capabilities make Claude especially powerful for…
 - [Commerce agent - Claude Platform Docs](About/about-claude-use-case-guides-commerce-agents.md) — Build a shopping agent and a merchant agent on Claude using Claude for commerce, an open-source blueprint with working implementations on the Messages API, the…
 - [Content moderation - Claude Platform Docs](About/about-claude-use-case-guides-content-moderation.md) — Content moderation is a critical aspect of maintaining a safe, respectful, and productive environment in digital applications. This guide discusses how Claude…
 - [Customer support agent - Claude Platform Docs](About/about-claude-use-case-guides-customer-support-chat.md) — Build a customer support chatbot with Claude that answers product questions, stays on topic, and generates quotes through tool use.
 - [Glossary - Claude Platform Docs](About/about-claude-glossary.md) — These concepts are not unique to Claude. This page presents a brief summary of key terms.
 - [Guides to common use cases - Claude Platform Docs](About/about-claude-use-case-guides-overview.md) — Explore production guides for building common Claude use cases: ticket routing, customer support agents, content moderation, legal summarization, and commerce…
-- [Legal summarization - Claude Platform Docs](About/about-claude-use-case-guides-legal-summarization.md) — This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key…
-- [Ticket routing - Claude Platform Docs](About/about-claude-use-case-guides-ticket-routing.md) — This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale based on…
+- [Legal summarization - Claude Platform Docs](About/about-claude-use-case-guides-legal-summarization.md) — This guide walks through how to use Claude’s advanced natural language processing capabilities to efficiently summarize legal documents, extracting key…
+- [Ticket routing - Claude Platform Docs](About/about-claude-use-case-guides-ticket-routing.md) — This guide walks through how to use Claude’s advanced natural language understanding capabilities to classify customer support tickets at scale based on…
 
 ## Admin
 
-- [Activities - Claude API Reference](Admin/compliance-activities.md) — Count tokens in a Message
-- [Add a Telemetry Destination Workspace - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Activities - Claude API Reference](Admin/compliance-activities.md) — To enable the Compliance API, see the setup guide.
+- [Add a Telemetry Destination Workspace - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Add Federation Rule Workspace - Claude API Reference](Admin/admin-federation-rules-workspaces-create.md) — Count tokens in a Message
-- [Add Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-add.md) — Count tokens in a Message
+- [Add Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Add RBAC Group Member - Claude API Reference](Admin/admin-rbac-groups-members-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Add RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-add.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Add RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Add RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-create.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Add Workspace To Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-create.md) — Count tokens in a Message
-- [Add Workspace To Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-add.md) — Count tokens in a Message
+- [Add Workspace To Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Admin - Claude API Reference](Admin/http-admin.md) — Count tokens in a Message
 - [Analytics - Claude API Reference](Admin/http-admin-analytics.md) — Count tokens in a Message
-- [Analytics - Claude API Reference](Admin/http-beta-organization-analytics.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Analytics - Claude API Reference](Admin/http-beta-organization-analytics.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Analytics - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [API Keys - Claude API Reference](Admin/admin-api-keys.md) — Count tokens in a Message
-- [API Keys - Claude API Reference](Admin/beta-organization-api-keys.md) — Count tokens in a Message
+- [API Keys - Claude API Reference](Admin/beta-organization-api-keys.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Approve Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-approve.md) — Count tokens in a Message
-- [Approve Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-approve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Apps - Claude API Reference](Admin/beta-organization-analytics-apps.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Apps - Claude API Reference](Admin/compliance-apps.md) — Count tokens in a Message
+- [Approve Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-approve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Apps - Claude API Reference](Admin/beta-organization-analytics-apps.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Apps - Claude API Reference](Admin/compliance-apps.md) — To enable the Compliance API, see the setup guide.
 - [Archive Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-archive.md) — Count tokens in a Message
-- [Archive Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-archive.md) — Count tokens in a Message
+- [Archive Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Archive Federation Rule - Claude API Reference](Admin/admin-federation-rules-archive.md) — Count tokens in a Message
-- [Archive Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-archive.md) — Count tokens in a Message
+- [Archive Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Archive Service Account - Claude API Reference](Admin/admin-service-accounts-archive.md) — Count tokens in a Message
-- [Archive Service Account - Claude API Reference](Admin/beta-organization-service-accounts-archive.md) — Count tokens in a Message
+- [Archive Service Account - Claude API Reference](Admin/beta-organization-service-accounts-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Archive Tunnel - Claude API Reference](Admin/admin-mcp-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Archive Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Archive Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Archive Workspace - Claude API Reference](Admin/admin-workspaces-archive.md) — Count tokens in a Message
-- [Archive Workspace - Claude API Reference](Admin/beta-organization-workspaces-archive.md) — Count tokens in a Message
-- [Artifacts - Claude API Reference](Admin/beta-organization-analytics-artifacts.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Artifacts - Claude API Reference](Admin/compliance-apps-artifacts.md) — Count tokens in a Message
-- [Artifacts - Claude API Reference](Admin/compliance-apps-code-artifacts.md) — Count tokens in a Message
+- [Archive Workspace - Claude API Reference](Admin/beta-organization-workspaces-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Artifacts - Claude API Reference](Admin/beta-organization-analytics-artifacts.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Artifacts - Claude API Reference](Admin/compliance-apps-artifacts.md) — To enable the Compliance API, see the setup guide.
+- [Artifacts - Claude API Reference](Admin/compliance-apps-code-artifacts.md) — To enable the Compliance API, see the setup guide.
 - [Artifacts - Claude API Reference](Admin/compliance-code-artifacts.md) — Count tokens in a Message
 - [Artifacts - Claude API Reference](Admin/http-admin-analytics-artifacts.md) — Count tokens in a Message
 - [Artifacts - Claude API Reference](Admin/http-beta-organization-analytics-artifacts.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Attachments - Claude API Reference](Admin/compliance-apps-projects-attachments.md) — Count tokens in a Message
-- [Chat - Claude API Reference](Admin/beta-organization-analytics-apps-chat.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Attach Bundle - Claude API Reference](Admin/beta-organization-claude-tag-bundles-targets-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Attachments - Claude API Reference](Admin/compliance-apps-projects-attachments.md) — To enable the Compliance API, see the setup guide.
+- [Bundles - Claude API Reference](Admin/beta-organization-claude-tag-bundles.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Chat - Claude API Reference](Admin/beta-organization-analytics-apps-chat.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Chat Projects - Claude API Reference](Admin/http-admin-analytics-chat-projects.md) — Count tokens in a Message
 - [Chat Projects - Claude API Reference](Admin/http-beta-organization-analytics-chat-projects.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Chats - Claude API Reference](Admin/compliance-apps-chats.md) — Count tokens in a Message
-- [Code - Claude API Reference](Admin/compliance-apps-code.md) — Count tokens in a Message
+- [Chats - Claude API Reference](Admin/compliance-apps-chats.md) — To enable the Compliance API, see the setup guide.
+- [Claude Tag - Claude API Reference](Admin/beta-organization-claude-tag.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Code - Claude API Reference](Admin/compliance-apps-code.md) — To enable the Compliance API, see the setup guide.
 - [Code - Claude API Reference](Admin/compliance-code.md) — Count tokens in a Message
-- [Collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators.md) — Count tokens in a Message
-- [Compliance API - Claude API Reference](Admin/compliance.md) — Count tokens in a Message
-- [Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings.md) — Count tokens in a Message
-- [Connectors - Claude API Reference](Admin/beta-organization-analytics-connectors.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators.md) — To enable the Compliance API, see the setup guide.
+- [Compliance API - Claude API Reference](Admin/compliance.md) — To enable the Compliance API, see the setup guide.
+- [Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Connectors - Claude API Reference](Admin/beta-organization-analytics-connectors.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Connectors - Claude API Reference](Admin/http-admin-analytics-connectors.md) — Count tokens in a Message
 - [Connectors - Claude API Reference](Admin/http-beta-organization-analytics-connectors.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Cost - Claude API Reference](Admin/http-admin-analytics-cost.md) — Count tokens in a Message
-- [Cost - Claude API Reference](Admin/http-beta-organization-analytics-cost.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Cost - Claude API Reference](Admin/http-beta-organization-analytics-cost.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Cost - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-cost.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Cost Report - Claude API Reference](Admin/admin-cost-report.md) — Count tokens in a Message
-- [Cost Report - Claude API Reference](Admin/beta-organization-analytics-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Cost Report - Claude API Reference](Admin/beta-organization-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Cost Report - Claude API Reference](Admin/beta-organization-analytics-cost-report.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Cost Report - Claude API Reference](Admin/beta-organization-cost-report.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Cost Report - Claude API Reference](Admin/http-beta-organization-analytics-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create External Key - Claude API Reference](Admin/admin-external-keys-create.md) — Count tokens in a Message
-- [Create External Key - Claude API Reference](Admin/beta-organization-external-keys-create.md) — Count tokens in a Message
+- [Create External Key - Claude API Reference](Admin/beta-organization-external-keys-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-create.md) — Count tokens in a Message
-- [Create Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-create.md) — Count tokens in a Message
+- [Create Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Federation Rule - Claude API Reference](Admin/admin-federation-rules-create.md) — Count tokens in a Message
-- [Create Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-create.md) — Count tokens in a Message
+- [Create Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Invite - Claude API Reference](Admin/beta-organization-invites-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Invite - Claude API Reference](Admin/platform-claude-com-beta-organization-invites-create.md) — Count tokens in a Message
-- [Create Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Plugin - Claude API Reference](Admin/beta-organization-plugins-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Plugin Version - Claude API Reference](Admin/beta-organization-plugins-versions-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Invite - Claude API Reference](Admin/platform-claude-com-beta-organization-invites-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Plugin - Claude API Reference](Admin/beta-organization-plugins-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Plugin Version - Claude API Reference](Admin/beta-organization-plugins-versions-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create RBAC Group - Claude API Reference](Admin/admin-rbac-groups-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Service Account - Claude API Reference](Admin/admin-service-accounts-create.md) — Count tokens in a Message
-- [Create Service Account - Claude API Reference](Admin/beta-organization-service-accounts-create.md) — Count tokens in a Message
+- [Create Service Account - Claude API Reference](Admin/beta-organization-service-accounts-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-create.md) — Count tokens in a Message
-- [Create Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-add.md) — Count tokens in a Message
+- [Create Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Workspace - Claude API Reference](Admin/admin-workspaces-create.md) — Count tokens in a Message
-- [Create Workspace - Claude API Reference](Admin/beta-organization-workspaces-create.md) — Count tokens in a Message
+- [Create Workspace - Claude API Reference](Admin/beta-organization-workspaces-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Workspace Member - Claude API Reference](Admin/admin-workspaces-members-create.md) — Count tokens in a Message
-- [Create Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-add.md) — Count tokens in a Message
-- [Delete a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete chat - Claude API Reference](Admin/compliance-apps-chats-delete.md) — Count tokens in a Message
-- [Delete Code Artifact - Claude API Reference](Admin/compliance-apps-code-artifacts-delete.md) — Count tokens in a Message
+- [Create Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete chat - Claude API Reference](Admin/compliance-apps-chats-delete.md) — To enable the Compliance API, see the setup guide.
+- [Delete Code Artifact - Claude API Reference](Admin/compliance-apps-code-artifacts-delete.md) — To enable the Compliance API, see the setup guide.
 - [Delete Code Artifact - Claude API Reference](Admin/compliance-code-artifacts-delete.md) — Count tokens in a Message
 - [Delete External Key - Claude API Reference](Admin/admin-external-keys-delete.md) — Count tokens in a Message
-- [Delete External Key - Claude API Reference](Admin/beta-organization-external-keys-delete.md) — Count tokens in a Message
-- [Delete file - Claude API Reference](Admin/compliance-apps-chats-files-delete.md) — Count tokens in a Message
+- [Delete External Key - Claude API Reference](Admin/beta-organization-external-keys-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete file - Claude API Reference](Admin/compliance-apps-chats-files-delete.md) — To enable the Compliance API, see the setup guide.
 - [Delete Invite - Claude API Reference](Admin/beta-organization-invites-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete Invite - Claude API Reference](Admin/platform-claude-com-beta-organization-invites-delete.md) — Count tokens in a Message
-- [Delete Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete Plugin - Claude API Reference](Admin/beta-organization-plugins-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete project - Claude API Reference](Admin/compliance-apps-projects-delete.md) — Count tokens in a Message
-- [Delete project document - Claude API Reference](Admin/compliance-apps-projects-documents-delete.md) — Count tokens in a Message
+- [Delete Invite - Claude API Reference](Admin/platform-claude-com-beta-organization-invites-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Plugin - Claude API Reference](Admin/beta-organization-plugins-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete project - Claude API Reference](Admin/compliance-apps-projects-delete.md) — To enable the Compliance API, see the setup guide.
+- [Delete project document - Claude API Reference](Admin/compliance-apps-projects-documents-delete.md) — To enable the Compliance API, see the setup guide.
 - [Delete RBAC Group - Claude API Reference](Admin/admin-rbac-groups-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Delete Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-delete.md) — Count tokens in a Message
-- [Delete Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-remove.md) — Count tokens in a Message
+- [Delete Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Delete Spend Limit - Claude API Reference](Admin/admin-spend-limits-delete.md) — Count tokens in a Message
-- [Delete Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Delete Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Delete Workspace Member - Claude API Reference](Admin/admin-workspaces-members-delete.md) — Count tokens in a Message
-- [Delete Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-remove.md) — Count tokens in a Message
+- [Delete Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Deny Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-deny.md) — Count tokens in a Message
-- [Deny Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-deny.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Documents - Claude API Reference](Admin/compliance-apps-projects-documents.md) — Count tokens in a Message
-- [Download a Claude-generated file - Claude API Reference](Admin/compliance-apps-chats-generated-files-download.md) — Count tokens in a Message
-- [Download artifact content - Claude API Reference](Admin/compliance-apps-artifacts-download.md) — Count tokens in a Message
-- [Download Code Artifact Content - Claude API Reference](Admin/compliance-apps-code-artifacts-download.md) — Count tokens in a Message
-- [Download Code Artifact Version Content - Claude API Reference](Admin/compliance-apps-code-artifacts-retrieve-version.md) — Count tokens in a Message
+- [Deny Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-deny.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Detach Bundle - Claude API Reference](Admin/beta-organization-claude-tag-bundles-targets-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Documents - Claude API Reference](Admin/compliance-apps-projects-documents.md) — To enable the Compliance API, see the setup guide.
+- [Download a Claude-generated file - Claude API Reference](Admin/compliance-apps-chats-generated-files-download.md) — To enable the Compliance API, see the setup guide.
+- [Download artifact content - Claude API Reference](Admin/compliance-apps-artifacts-download.md) — To enable the Compliance API, see the setup guide.
+- [Download Code Artifact Content - Claude API Reference](Admin/compliance-apps-code-artifacts-download.md) — To enable the Compliance API, see the setup guide.
+- [Download Code Artifact Version Content - Claude API Reference](Admin/compliance-apps-code-artifacts-retrieve-version.md) — To enable the Compliance API, see the setup guide.
 - [Download Code Artifact Version Content - Claude API Reference](Admin/compliance-code-artifacts-retrieve-version.md) — Count tokens in a Message
-- [Download file content - Claude API Reference](Admin/compliance-apps-chats-files-download.md) — Count tokens in a Message
-- [Download Plugin Version Archive - Claude API Reference](Admin/beta-organization-plugins-versions-download.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Effective - Claude API Reference](Admin/beta-organization-spend-limits-effective.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Download file content - Claude API Reference](Admin/compliance-apps-chats-files-download.md) — To enable the Compliance API, see the setup guide.
+- [Download Plugin Version Archive - Claude API Reference](Admin/beta-organization-plugins-versions-download.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Effective - Claude API Reference](Admin/beta-organization-spend-limits-effective.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [External Keys - Claude API Reference](Admin/admin-external-keys.md) — Count tokens in a Message
-- [External Keys - Claude API Reference](Admin/beta-organization-external-keys.md) — Count tokens in a Message
-- [Federation - Claude API Reference](Admin/beta-organization-federation.md) — Count tokens in a Message
+- [External Keys - Claude API Reference](Admin/beta-organization-external-keys.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Federation - Claude API Reference](Admin/beta-organization-federation.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Federation Issuers - Claude API Reference](Admin/admin-federation-issuers.md) — Count tokens in a Message
 - [Federation Rules - Claude API Reference](Admin/admin-federation-rules.md) — Count tokens in a Message
-- [Files - Claude API Reference](Admin/compliance-apps-chats-files.md) — Count tokens in a Message
-- [Generated Files - Claude API Reference](Admin/compliance-apps-chats-generated-files.md) — Count tokens in a Message
-- [Get Activity Summaries - Claude API Reference](Admin/beta-organization-analytics-summaries-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Files - Claude API Reference](Admin/compliance-apps-chats-files.md) — To enable the Compliance API, see the setup guide.
+- [Generated Files - Claude API Reference](Admin/compliance-apps-chats-generated-files.md) — To enable the Compliance API, see the setup guide.
+- [Get Activity Summaries - Claude API Reference](Admin/beta-organization-analytics-summaries-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Activity Summaries - Claude API Reference](Admin/http-admin-analytics-retrieve-summaries.md) — Count tokens in a Message
 - [Get Activity Summaries - Claude API Reference](Admin/http-beta-organization-analytics-retrieve-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Activity Summaries - Claude API Reference](Admin/http-beta-organization-analytics-summaries-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Artifact Activity - Claude API Reference](Admin/http-admin-analytics-artifacts-list.md) — Count tokens in a Message
-- [Get Artifact Activity - Claude API Reference](Admin/http-beta-organization-analytics-artifacts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Artifact Activity - Claude API Reference](Admin/http-beta-organization-analytics-artifacts-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Artifact Activity - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-artifacts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get artifact metadata - Claude API Reference](Admin/compliance-apps-artifacts-retrieve.md) — Count tokens in a Message
-- [Get chat messages - Claude API Reference](Admin/compliance-apps-chats-messages-list.md) — Count tokens in a Message
-- [Get Chat Project Usage - Claude API Reference](Admin/beta-organization-analytics-apps-chat-projects-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get artifact metadata - Claude API Reference](Admin/compliance-apps-artifacts-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Get Bundle - Claude API Reference](Admin/beta-organization-claude-tag-bundles-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Bundle Target - Claude API Reference](Admin/beta-organization-claude-tag-bundles-targets-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get chat messages - Claude API Reference](Admin/compliance-apps-chats-messages-list.md) — To enable the Compliance API, see the setup guide.
+- [Get Chat Project Usage - Claude API Reference](Admin/beta-organization-analytics-apps-chat-projects-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Chat Project Usage - Claude API Reference](Admin/http-admin-analytics-chat-projects-list.md) — Count tokens in a Message
 - [Get Chat Project Usage - Claude API Reference](Admin/http-beta-organization-analytics-apps-chat-projects-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Chat Project Usage - Claude API Reference](Admin/http-beta-organization-analytics-chat-projects-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Claude Code Usage Report - Claude API Reference](Admin/admin-usage-report-retrieve-claude-code.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Claude Code Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-claude-code.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Claude-generated file metadata - Claude API Reference](Admin/compliance-apps-chats-generated-files-retrieve.md) — Count tokens in a Message
-- [Get Compliance Group - Claude API Reference](Admin/compliance-groups-retrieve.md) — Count tokens in a Message
-- [Get Compliance Role - Claude API Reference](Admin/compliance-organizations-roles-retrieve.md) — Count tokens in a Message
-- [Get Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-retrieve.md) — Count tokens in a Message
+- [Get Claude Code Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-claude-code.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Claude-generated file metadata - Claude API Reference](Admin/compliance-apps-chats-generated-files-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Get Compliance Group - Claude API Reference](Admin/compliance-groups-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Get Compliance Role - Claude API Reference](Admin/compliance-organizations-roles-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Get Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Connector Usage - Claude API Reference](Admin/http-admin-analytics-connectors-list.md) — Count tokens in a Message
-- [Get Connector Usage - Claude API Reference](Admin/http-beta-organization-analytics-connectors-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Connector Usage - Claude API Reference](Admin/http-beta-organization-analytics-connectors-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Connector Usage - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-connectors-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Cost Over Time - Claude API Reference](Admin/beta-organization-analytics-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Cost By Dimension - Claude API Reference](Admin/http-beta-organization-analytics-cost-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Cost Over Time - Claude API Reference](Admin/beta-organization-analytics-cost-report-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Cost Over Time - Claude API Reference](Admin/http-admin-analytics-cost-list.md) — Count tokens in a Message
-- [Get Cost Over Time - Claude API Reference](Admin/http-beta-organization-analytics-cost-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Cost Over Time - Claude API Reference](Admin/http-beta-organization-analytics-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Cost Over Time - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-cost-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Cost Report - Claude API Reference](Admin/admin-cost-report-retrieve.md) — Count tokens in a Message
-- [Get Cost Report - Claude API Reference](Admin/beta-organization-cost-report-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Cost Report - Claude API Reference](Admin/beta-organization-cost-report-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Current Organization - Claude API Reference](Admin/admin-organizations-me.md) — Count tokens in a Message
-- [Get Current Organization - Claude API Reference](Admin/beta-organization-retrieve.md) — Count tokens in a Message
+- [Get Current Organization - Claude API Reference](Admin/beta-organization-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Current Organization - Claude API Reference](Admin/http-beta-organization-retrieve.md) — Count tokens in a Message
-- [Get effective organization settings - Claude API Reference](Admin/compliance-organizations-settings-retrieve.md) — Count tokens in a Message
+- [Get effective organization settings - Claude API Reference](Admin/compliance-organizations-settings-retrieve.md) — To enable the Compliance API, see the setup guide.
 - [Get External Key - Claude API Reference](Admin/admin-external-keys-retrieve.md) — Count tokens in a Message
-- [Get External Key - Claude API Reference](Admin/beta-organization-external-keys-retrieve.md) — Count tokens in a Message
+- [Get External Key - Claude API Reference](Admin/beta-organization-external-keys-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-retrieve.md) — Count tokens in a Message
-- [Get Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-retrieve.md) — Count tokens in a Message
+- [Get Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Federation Rule - Claude API Reference](Admin/admin-federation-rules-retrieve.md) — Count tokens in a Message
-- [Get Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-retrieve.md) — Count tokens in a Message
-- [Get file metadata - Claude API Reference](Admin/compliance-apps-chats-files-retrieve.md) — Count tokens in a Message
-- [Get Invite - Claude API Reference](Admin/beta-organization-invites-retrieve.md) — Count tokens in a Message
+- [Get Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get file metadata - Claude API Reference](Admin/compliance-apps-chats-files-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Get Invite - Claude API Reference](Admin/beta-organization-invites-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Messages Usage Report - Claude API Reference](Admin/admin-usage-report-retrieve-messages.md) — Count tokens in a Message
-- [Get Messages Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-messages.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Messages Usage Report - Claude API Reference](Admin/beta-organization-usage-report-retrieve-messages.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Per-User Cost - Claude API Reference](Admin/beta-organization-analytics-cost-list-by-user.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Per-User Cost - Claude API Reference](Admin/beta-organization-analytics-user-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Per-User Cost - Claude API Reference](Admin/beta-organization-analytics-user-cost-report-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Per-User Cost - Claude API Reference](Admin/http-admin-analytics-cost-list-by-user.md) — Count tokens in a Message
 - [Get Per-User Cost - Claude API Reference](Admin/http-beta-organization-analytics-user-cost-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Per-User Token Usage - Claude API Reference](Admin/beta-organization-analytics-usage-list-by-user.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Per-User Token Usage - Claude API Reference](Admin/beta-organization-analytics-user-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Per-User Token Usage - Claude API Reference](Admin/beta-organization-analytics-user-usage-report-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Per-User Token Usage - Claude API Reference](Admin/http-admin-analytics-usage-list-by-user.md) — Count tokens in a Message
 - [Get Per-User Token Usage - Claude API Reference](Admin/http-beta-organization-analytics-user-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Plugin - Claude API Reference](Admin/beta-organization-plugins-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Plugin Marketplace - Claude API Reference](Admin/beta-organization-plugin-marketplaces-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Plugin - Claude API Reference](Admin/beta-organization-plugins-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Plugin Marketplace - Claude API Reference](Admin/beta-organization-plugin-marketplaces-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Plugin Usage - Claude API Reference](Admin/http-admin-analytics-plugins-list.md) — Count tokens in a Message
-- [Get Plugin Usage - Claude API Reference](Admin/http-beta-organization-analytics-plugins-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Plugin Usage - Claude API Reference](Admin/http-beta-organization-analytics-plugins-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Plugin Usage - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-plugins-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Plugin Version - Claude API Reference](Admin/beta-organization-plugins-versions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get project details - Claude API Reference](Admin/compliance-apps-projects-retrieve.md) — Count tokens in a Message
-- [Get project document content - Claude API Reference](Admin/compliance-apps-projects-documents-retrieve.md) — Count tokens in a Message
-- [Get project document metadata - Claude API Reference](Admin/compliance-apps-projects-documents-metadata.md) — Count tokens in a Message
+- [Get Plugin Version - Claude API Reference](Admin/beta-organization-plugins-versions-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get project details - Claude API Reference](Admin/compliance-apps-projects-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Get project document content - Claude API Reference](Admin/compliance-apps-projects-documents-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Get project document metadata - Claude API Reference](Admin/compliance-apps-projects-documents-metadata.md) — To enable the Compliance API, see the setup guide.
 - [Get RBAC Group - Claude API Reference](Admin/admin-rbac-groups-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get RBAC Role - Claude API Reference](Admin/admin-rbac-roles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get RBAC Role - Claude API Reference](Admin/beta-organization-rbac-roles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get RBAC Role - Claude API Reference](Admin/beta-organization-rbac-roles-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Service Account - Claude API Reference](Admin/admin-service-accounts-retrieve.md) — Count tokens in a Message
-- [Get Service Account - Claude API Reference](Admin/beta-organization-service-accounts-retrieve.md) — Count tokens in a Message
+- [Get Service Account - Claude API Reference](Admin/beta-organization-service-accounts-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-retrieve.md) — Count tokens in a Message
-- [Get Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-retrieve.md) — Count tokens in a Message
+- [Get Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Skill Usage - Claude API Reference](Admin/http-admin-analytics-skills-list.md) — Count tokens in a Message
-- [Get Skill Usage - Claude API Reference](Admin/http-beta-organization-analytics-skills-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Skill Usage - Claude API Reference](Admin/http-beta-organization-analytics-skills-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Skill Usage - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-skills-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Slack Channel - Claude API Reference](Admin/beta-organization-claude-tag-slack-channels-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Slack Workspace - Claude API Reference](Admin/beta-organization-claude-tag-slack-workspaces-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Spend Limit - Claude API Reference](Admin/admin-spend-limits-retrieve.md) — Count tokens in a Message
-- [Get Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Spend Limit Increase Request - Claude API Reference](Admin/admin-spend-limits-increase-requests-retrieve.md) — Count tokens in a Message
-- [Get Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Token Usage Over Time - Claude API Reference](Admin/beta-organization-analytics-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Spend Limit Increase Request - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Token Usage By Dimension - Claude API Reference](Admin/http-beta-organization-analytics-usage-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Token Usage Over Time - Claude API Reference](Admin/beta-organization-analytics-usage-report-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Token Usage Over Time - Claude API Reference](Admin/http-admin-analytics-usage-list.md) — Count tokens in a Message
-- [Get Token Usage Over Time - Claude API Reference](Admin/http-beta-organization-analytics-usage-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Token Usage Over Time - Claude API Reference](Admin/http-beta-organization-analytics-usage-report-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Token Usage Over Time - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-usage-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Tunnel - Claude API Reference](Admin/admin-mcp-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Tunnel - Claude API Reference](Admin/beta-organization-mcp-tunnels-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Tunnel Certificate - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get User - Claude API Reference](Admin/beta-organization-users-retrieve.md) — Count tokens in a Message
+- [Get Tunnel Certificate - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get User - Claude API Reference](Admin/beta-organization-users-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Workspace - Claude API Reference](Admin/admin-workspaces-retrieve.md) — Count tokens in a Message
-- [Get Workspace - Claude API Reference](Admin/beta-organization-workspaces-retrieve.md) — Count tokens in a Message
+- [Get Workspace - Claude API Reference](Admin/beta-organization-workspaces-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Workspace Member - Claude API Reference](Admin/admin-workspaces-members-retrieve.md) — Count tokens in a Message
-- [Get Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-retrieve.md) — Count tokens in a Message
-- [Groups - Claude API Reference](Admin/compliance-groups.md) — Count tokens in a Message
+- [Get Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Groups - Claude API Reference](Admin/compliance-groups.md) — To enable the Compliance API, see the setup guide.
 - [Increase Requests - Claude API Reference](Admin/admin-spend-limits-increase-requests.md) — Count tokens in a Message
-- [Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Installation Settings - Claude API Reference](Admin/beta-organization-plugins-installation-settings.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Installation Settings - Claude API Reference](Admin/beta-organization-plugins-installation-settings.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Invites - Claude API Reference](Admin/admin-invites.md) — Count tokens in a Message
-- [Invites - Claude API Reference](Admin/beta-organization-invites.md) — Count tokens in a Message
-- [Issuers - Claude API Reference](Admin/beta-organization-federation-issuers.md) — Count tokens in a Message
+- [Invites - Claude API Reference](Admin/beta-organization-invites.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Issuers - Claude API Reference](Admin/beta-organization-federation-issuers.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List API Keys - Claude API Reference](Admin/admin-api-keys-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List API Keys - Claude API Reference](Admin/beta-organization-api-keys-list.md) — Count tokens in a Message
-- [List chats - Claude API Reference](Admin/compliance-apps-chats-list.md) — Count tokens in a Message
-- [List Code Artifacts - Claude API Reference](Admin/compliance-apps-code-artifacts-list.md) — Count tokens in a Message
+- [List API Keys - Claude API Reference](Admin/beta-organization-api-keys-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Bundle Targets - Claude API Reference](Admin/beta-organization-claude-tag-bundles-targets-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Bundles - Claude API Reference](Admin/beta-organization-claude-tag-bundles-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List chats - Claude API Reference](Admin/compliance-apps-chats-list.md) — To enable the Compliance API, see the setup guide.
+- [List Code Artifacts - Claude API Reference](Admin/compliance-apps-code-artifacts-list.md) — To enable the Compliance API, see the setup guide.
 - [List Code Artifacts - Claude API Reference](Admin/compliance-code-artifacts-list.md) — Count tokens in a Message
-- [List Compliance Group Members - Claude API Reference](Admin/compliance-groups-members-list.md) — Count tokens in a Message
-- [List Compliance Groups - Claude API Reference](Admin/compliance-groups-list.md) — Count tokens in a Message
-- [List Compliance Role Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions-list.md) — Count tokens in a Message
-- [List Compliance Roles - Claude API Reference](Admin/compliance-organizations-roles-list.md) — Count tokens in a Message
+- [List Compliance Group Members - Claude API Reference](Admin/compliance-groups-members-list.md) — To enable the Compliance API, see the setup guide.
+- [List Compliance Groups - Claude API Reference](Admin/compliance-groups-list.md) — To enable the Compliance API, see the setup guide.
+- [List Compliance Role Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions-list.md) — To enable the Compliance API, see the setup guide.
+- [List Compliance Roles - Claude API Reference](Admin/compliance-organizations-roles-list.md) — To enable the Compliance API, see the setup guide.
 - [List Effective Spend Limits - Claude API Reference](Admin/admin-spend-limits-list-effective.md) — Count tokens in a Message
-- [List Effective Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-effective-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Effective Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-effective-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Effective Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-list-effective.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List External Keys - Claude API Reference](Admin/admin-external-keys-list.md) — Count tokens in a Message
-- [List External Keys - Claude API Reference](Admin/beta-organization-external-keys-list.md) — Count tokens in a Message
+- [List External Keys - Claude API Reference](Admin/beta-organization-external-keys-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Federation Issuers - Claude API Reference](Admin/admin-federation-issuers-list.md) — Count tokens in a Message
-- [List Federation Issuers - Claude API Reference](Admin/beta-organization-federation-issuers-list.md) — Count tokens in a Message
+- [List Federation Issuers - Claude API Reference](Admin/beta-organization-federation-issuers-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Federation Rule Workspaces - Claude API Reference](Admin/admin-federation-rules-workspaces-list.md) — Count tokens in a Message
-- [List Federation Rule Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-list.md) — Count tokens in a Message
+- [List Federation Rule Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Federation Rules - Claude API Reference](Admin/admin-federation-rules-list.md) — Count tokens in a Message
-- [List Federation Rules - Claude API Reference](Admin/beta-organization-federation-rules-list.md) — Count tokens in a Message
+- [List Federation Rules - Claude API Reference](Admin/beta-organization-federation-rules-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Invites - Claude API Reference](Admin/admin-invites-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Invites - Claude API Reference](Admin/beta-organization-invites-list.md) — Count tokens in a Message
-- [List local sessions - Claude API Reference](Admin/compliance-apps-sessions-local-list.md) — Count tokens in a Message
-- [List organization members' personal preferences - Claude API Reference](Admin/compliance-organizations-user-preferences-list.md) — Count tokens in a Message
+- [List Invites - Claude API Reference](Admin/beta-organization-invites-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List local sessions - Claude API Reference](Admin/compliance-apps-sessions-local-list.md) — To enable the Compliance API, see the setup guide.
+- [List organization members' personal preferences - Claude API Reference](Admin/compliance-organizations-user-preferences-list.md) — To enable the Compliance API, see the setup guide.
 - [List Organization Rate Limits - Claude API Reference](Admin/admin-rate-limits-list.md) — Count tokens in a Message
-- [List Organization Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits-list.md) — Count tokens in a Message
-- [List organization users - Claude API Reference](Admin/compliance-organizations-users-list.md) — Count tokens in a Message
-- [List Organization Webhook Endpoints - Claude API Reference](Admin/beta-organization-webhooks-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List organizations - Claude API Reference](Admin/compliance-organizations-list.md) — Count tokens in a Message
-- [List Plugin Installation Settings - Claude API Reference](Admin/beta-organization-plugins-installation-settings-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Plugin Marketplaces - Claude API Reference](Admin/beta-organization-plugin-marketplaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Plugin Shares - Claude API Reference](Admin/beta-organization-plugins-shares-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Plugin Versions - Claude API Reference](Admin/beta-organization-plugins-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Plugins - Claude API Reference](Admin/beta-organization-plugins-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List project attachments - Claude API Reference](Admin/compliance-apps-projects-attachments-list.md) — Count tokens in a Message
-- [List project collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators-list.md) — Count tokens in a Message
-- [List projects - Claude API Reference](Admin/compliance-apps-projects-list.md) — Count tokens in a Message
+- [List Organization Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List organization users - Claude API Reference](Admin/compliance-organizations-users-list.md) — To enable the Compliance API, see the setup guide.
+- [List Organization Webhook Endpoints - Claude API Reference](Admin/beta-organization-webhooks-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List organizations - Claude API Reference](Admin/compliance-organizations-list.md) — To enable the Compliance API, see the setup guide.
+- [List Plugin Installation Settings - Claude API Reference](Admin/beta-organization-plugins-installation-settings-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Plugin Marketplaces - Claude API Reference](Admin/beta-organization-plugin-marketplaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Plugin Shares - Claude API Reference](Admin/beta-organization-plugins-shares-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Plugin Versions - Claude API Reference](Admin/beta-organization-plugins-versions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Plugins - Claude API Reference](Admin/beta-organization-plugins-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List project attachments - Claude API Reference](Admin/compliance-apps-projects-attachments-list.md) — To enable the Compliance API, see the setup guide.
+- [List project collaborators - Claude API Reference](Admin/compliance-apps-projects-collaborators-list.md) — To enable the Compliance API, see the setup guide.
+- [List projects - Claude API Reference](Admin/compliance-apps-projects-list.md) — To enable the Compliance API, see the setup guide.
 - [List RBAC Group Members - Claude API Reference](Admin/admin-rbac-groups-members-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List RBAC Group Members - Claude API Reference](Admin/beta-organization-rbac-groups-members-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Group Members - Claude API Reference](Admin/beta-organization-rbac-groups-members-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List RBAC Groups - Claude API Reference](Admin/admin-rbac-groups-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List RBAC Groups - Claude API Reference](Admin/beta-organization-rbac-groups-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Groups - Claude API Reference](Admin/beta-organization-rbac-groups-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List RBAC Role Permissions - Claude API Reference](Admin/admin-rbac-roles-permissions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List RBAC Role Permissions - Claude API Reference](Admin/beta-organization-rbac-roles-permissions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List RBAC Role Permissions - Claude API Reference](Admin/beta-organization-rbac-roles-permissions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List RBAC Roles - Claude API Reference](Admin/admin-rbac-roles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List remote sessions - Claude API Reference](Admin/compliance-apps-sessions-remote-list.md) — Count tokens in a Message
+- [List RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List remote sessions - Claude API Reference](Admin/compliance-apps-sessions-remote-list.md) — To enable the Compliance API, see the setup guide.
 - [List Service Account Workspace Members - Claude API Reference](Admin/admin-workspaces-service-accounts-list.md) — Count tokens in a Message
-- [List Service Account Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-list.md) — Count tokens in a Message
+- [List Service Account Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Service Accounts - Claude API Reference](Admin/admin-service-accounts-list.md) — Count tokens in a Message
-- [List Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts-list.md) — Count tokens in a Message
+- [List Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Slack Channels - Claude API Reference](Admin/beta-organization-claude-tag-slack-channels-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Slack Workspaces - Claude API Reference](Admin/beta-organization-claude-tag-slack-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Spend Limit Increase Requests - Claude API Reference](Admin/admin-spend-limits-increase-requests-list.md) — Count tokens in a Message
-- [List Spend Limit Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Telemetry Destination Workspaces - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Telemetry Destinations - Claude API Reference](Admin/beta-organization-telemetry-destinations-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Spend Limit Increase Requests - Claude API Reference](Admin/beta-organization-spend-limits-increase-requests-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Telemetry Destination Workspaces - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Telemetry Destinations - Claude API Reference](Admin/beta-organization-telemetry-destinations-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Tunnel Certificates - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Tunnels - Claude API Reference](Admin/admin-mcp-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Tunnels - Claude API Reference](Admin/beta-organization-mcp-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Tunnels - Claude API Reference](Admin/beta-organization-mcp-tunnels-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List User Activity - Claude API Reference](Admin/http-admin-analytics-users-list.md) — Count tokens in a Message
-- [List User Activity - Claude API Reference](Admin/http-beta-organization-analytics-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List User Activity - Claude API Reference](Admin/http-beta-organization-analytics-users-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List User Activity - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [List Users - Claude API Reference](Admin/admin-users-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Users - Claude API Reference](Admin/beta-organization-users-list.md) — Count tokens in a Message
+- [List Users - Claude API Reference](Admin/beta-organization-users-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Workspace Members - Claude API Reference](Admin/admin-workspaces-members-list.md) — Count tokens in a Message
-- [List Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-members-list.md) — Count tokens in a Message
+- [List Workspace Members - Claude API Reference](Admin/beta-organization-workspaces-members-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Workspace Rate Limits - Claude API Reference](Admin/admin-workspaces-rate-limits-list.md) — Count tokens in a Message
-- [List Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-list.md) — Count tokens in a Message
+- [List Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Workspaces - Claude API Reference](Admin/admin-workspaces-list.md) — Count tokens in a Message
-- [List Workspaces - Claude API Reference](Admin/beta-organization-workspaces-list.md) — Count tokens in a Message
+- [List Workspaces - Claude API Reference](Admin/beta-organization-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Workspaces For Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-list.md) — Count tokens in a Message
-- [List Workspaces For Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-list.md) — Count tokens in a Message
-- [Local - Claude API Reference](Admin/compliance-apps-sessions-local.md) — Count tokens in a Message
+- [List Workspaces For Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Local - Claude API Reference](Admin/compliance-apps-sessions-local.md) — To enable the Compliance API, see the setup guide.
 - [MCP Tunnels - Claude API Reference](Admin/admin-mcp-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [MCP Tunnels - Claude API Reference](Admin/beta-organization-mcp-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [MCP Tunnels - Claude API Reference](Admin/beta-organization-mcp-tunnels.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Members - Claude API Reference](Admin/admin-rbac-groups-members.md) — Count tokens in a Message
 - [Members - Claude API Reference](Admin/admin-workspaces-members.md) — Count tokens in a Message
-- [Members - Claude API Reference](Admin/beta-organization-rbac-groups-members.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Members - Claude API Reference](Admin/beta-organization-workspaces-members.md) — Count tokens in a Message
-- [Members - Claude API Reference](Admin/compliance-groups-members.md) — Count tokens in a Message
-- [Messages - Claude API Reference](Admin/compliance-apps-chats-messages.md) — Count tokens in a Message
-- [Messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages.md) — Count tokens in a Message
-- [Messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages.md) — Count tokens in a Message
+- [Members - Claude API Reference](Admin/beta-organization-rbac-groups-members.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Members - Claude API Reference](Admin/beta-organization-workspaces-members.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Members - Claude API Reference](Admin/compliance-groups-members.md) — To enable the Compliance API, see the setup guide.
+- [Messages - Claude API Reference](Admin/compliance-apps-chats-messages.md) — To enable the Compliance API, see the setup guide.
+- [Messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages.md) — To enable the Compliance API, see the setup guide.
+- [Messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages.md) — To enable the Compliance API, see the setup guide.
 - [Organization - Claude API Reference](Admin/admin.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Organization - Claude API Reference](Admin/http-beta-organization.md) — Count tokens in a Message
+- [Organization - Claude API Reference](Admin/http-beta-organization.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Organization - Claude API Reference](Admin/platform-claude-com-http-beta-organization.md) — Count tokens in a Message
 - [Organizations - Claude API Reference](Admin/admin-organizations.md) — Count tokens in a Message
-- [Organizations - Claude API Reference](Admin/compliance-organizations.md) — Count tokens in a Message
+- [Organizations - Claude API Reference](Admin/compliance-organizations.md) — To enable the Compliance API, see the setup guide.
 - [Permissions - Claude API Reference](Admin/admin-rbac-roles-permissions.md) — Count tokens in a Message
-- [Permissions - Claude API Reference](Admin/beta-organization-rbac-roles-permissions.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions.md) — Count tokens in a Message
-- [Plugin Marketplaces - Claude API Reference](Admin/beta-organization-plugin-marketplaces.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Plugins - Claude API Reference](Admin/beta-organization-plugins.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Permissions - Claude API Reference](Admin/beta-organization-rbac-roles-permissions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Permissions - Claude API Reference](Admin/compliance-organizations-roles-permissions.md) — To enable the Compliance API, see the setup guide.
+- [Plugin Marketplaces - Claude API Reference](Admin/beta-organization-plugin-marketplaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Plugins - Claude API Reference](Admin/beta-organization-plugins.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Plugins - Claude API Reference](Admin/http-admin-analytics-plugins.md) — Count tokens in a Message
-- [Plugins - Claude API Reference](Admin/http-beta-organization-analytics-plugins.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Plugins - Claude API Reference](Admin/http-beta-organization-analytics-plugins.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Plugins - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-plugins.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Projects - Claude API Reference](Admin/beta-organization-analytics-apps-chat-projects.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Projects - Claude API Reference](Admin/compliance-apps-projects.md) — Count tokens in a Message
+- [Projects - Claude API Reference](Admin/beta-organization-analytics-apps-chat-projects.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Projects - Claude API Reference](Admin/compliance-apps-projects.md) — To enable the Compliance API, see the setup guide.
 - [Projects - Claude API Reference](Admin/http-beta-organization-analytics-apps-chat-projects.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Query compliance activities - Claude API Reference](Admin/compliance-activities-list.md) — Count tokens in a Message
+- [Query compliance activities - Claude API Reference](Admin/compliance-activities-list.md) — To enable the Compliance API, see the setup guide.
 - [Rate Limits - Claude API Reference](Admin/admin-rate-limits.md) — Count tokens in a Message
 - [Rate Limits - Claude API Reference](Admin/admin-workspaces-rate-limits.md) — Count tokens in a Message
-- [Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits.md) — Count tokens in a Message
-- [Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits.md) — Count tokens in a Message
+- [Rate Limits - Claude API Reference](Admin/beta-organization-rate-limits.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [RBAC Groups - Claude API Reference](Admin/admin-rbac-groups.md) — Count tokens in a Message
-- [RBAC Groups - Claude API Reference](Admin/beta-organization-rbac-groups.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [RBAC Groups - Claude API Reference](Admin/beta-organization-rbac-groups.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [RBAC Roles - Claude API Reference](Admin/admin-rbac-roles.md) — Count tokens in a Message
-- [RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Regenerate Organization Webhook Endpoint Signing Secret - Claude API Reference](Admin/beta-organization-webhooks-regenerate-signing-secret.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Remote - Claude API Reference](Admin/compliance-apps-sessions-remote.md) — Count tokens in a Message
-- [Remove a Telemetry Destination Workspace - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [RBAC Roles - Claude API Reference](Admin/beta-organization-rbac-roles.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Regenerate Organization Webhook Endpoint Signing Secret - Claude API Reference](Admin/beta-organization-webhooks-regenerate-signing-secret.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Remote - Claude API Reference](Admin/compliance-apps-sessions-remote.md) — To enable the Compliance API, see the setup guide.
+- [Remove a Telemetry Destination Workspace - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Remove Federation Rule Workspace - Claude API Reference](Admin/admin-federation-rules-workspaces-delete.md) — Count tokens in a Message
-- [Remove Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-remove.md) — Count tokens in a Message
-- [Remove Plugin Installation Setting - Claude API Reference](Admin/beta-organization-plugins-installation-settings-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove Federation Rule Workspace - Claude API Reference](Admin/beta-organization-federation-rules-workspaces-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Remove Plugin Installation Setting - Claude API Reference](Admin/beta-organization-plugins-installation-settings-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Remove RBAC Group Member - Claude API Reference](Admin/admin-rbac-groups-members-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Remove RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Remove RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove RBAC Group Member - Claude API Reference](Admin/beta-organization-rbac-groups-members-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Remove Slack Channel - Claude API Reference](Admin/beta-organization-claude-tag-slack-channels-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Remove User - Claude API Reference](Admin/beta-organization-users-remove.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Remove User - Claude API Reference](Admin/platform-claude-com-beta-organization-users-remove.md) — Count tokens in a Message
+- [Remove User - Claude API Reference](Admin/platform-claude-com-beta-organization-users-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Remove Workspace From Service Account - Claude API Reference](Admin/admin-service-accounts-workspaces-delete.md) — Count tokens in a Message
-- [Remove Workspace From Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-remove.md) — Count tokens in a Message
-- [Retrieve a local session - Claude API Reference](Admin/compliance-apps-sessions-local-retrieve.md) — Count tokens in a Message
-- [Retrieve a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Remove Workspace From Service Account - Claude API Reference](Admin/beta-organization-service-accounts-workspaces-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a local session - Claude API Reference](Admin/compliance-apps-sessions-local-retrieve.md) — To enable the Compliance API, see the setup guide.
+- [Retrieve a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Retrieve API Key (Admin API) - Claude API Reference](Admin/admin-api-keys-retrieve.md) — Count tokens in a Message
-- [Retrieve API Key (Admin API) - Claude API Reference](Admin/beta-organization-api-keys-retrieve.md) — Count tokens in a Message
-- [Retrieve local session messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages-list.md) — Count tokens in a Message
-- [Retrieve remote session messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages-list.md) — Count tokens in a Message
+- [Retrieve API Key (Admin API) - Claude API Reference](Admin/beta-organization-api-keys-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve local session messages - Claude API Reference](Admin/compliance-apps-sessions-local-messages-list.md) — To enable the Compliance API, see the setup guide.
+- [Retrieve remote session messages - Claude API Reference](Admin/compliance-apps-sessions-remote-messages-list.md) — To enable the Compliance API, see the setup guide.
 - [Reveal Tunnel Token - Claude API Reference](Admin/admin-mcp-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Reveal Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Roles - Claude API Reference](Admin/compliance-organizations-roles.md) — Count tokens in a Message
+- [Reveal Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-reveal-token.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Roles - Claude API Reference](Admin/compliance-organizations-roles.md) — To enable the Compliance API, see the setup guide.
 - [Rotate Tunnel Token - Claude API Reference](Admin/admin-mcp-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Rotate Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Rules - Claude API Reference](Admin/beta-organization-federation-rules.md) — Count tokens in a Message
+- [Rotate Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-rotate-token.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Rules - Claude API Reference](Admin/beta-organization-federation-rules.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Service Accounts - Claude API Reference](Admin/admin-service-accounts.md) — Count tokens in a Message
 - [Service Accounts - Claude API Reference](Admin/admin-workspaces-service-accounts.md) — Count tokens in a Message
-- [Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts.md) — Count tokens in a Message
-- [Service Accounts - Claude API Reference](Admin/beta-organization-workspaces-service-accounts.md) — Count tokens in a Message
-- [Sessions - Claude API Reference](Admin/compliance-apps-sessions.md) — Count tokens in a Message
-- [Set Plugin Installation Setting - Claude API Reference](Admin/beta-organization-plugins-installation-settings-set.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Service Accounts - Claude API Reference](Admin/beta-organization-workspaces-service-accounts.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Sessions - Claude API Reference](Admin/compliance-apps-sessions.md) — To enable the Compliance API, see the setup guide.
+- [Set Plugin Installation Setting - Claude API Reference](Admin/beta-organization-plugins-installation-settings-set.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Set Spend Limit - Claude API Reference](Admin/admin-spend-limits-create.md) — Count tokens in a Message
 - [Set Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Set Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-set.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Set Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-update.md) — Count tokens in a Message
-- [Settings - Claude API Reference](Admin/compliance-organizations-settings.md) — Count tokens in a Message
-- [Shares - Claude API Reference](Admin/beta-organization-plugins-shares.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Skills - Claude API Reference](Admin/beta-organization-analytics-skills.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Set Spend Limit - Claude API Reference](Admin/beta-organization-spend-limits-set.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Set Up Slack Channel - Claude API Reference](Admin/beta-organization-claude-tag-slack-channels-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Set Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Settings - Claude API Reference](Admin/compliance-organizations-settings.md) — To enable the Compliance API, see the setup guide.
+- [Shares - Claude API Reference](Admin/beta-organization-plugins-shares.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Skills - Claude API Reference](Admin/beta-organization-analytics-skills.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Skills - Claude API Reference](Admin/http-admin-analytics-skills.md) — Count tokens in a Message
 - [Skills - Claude API Reference](Admin/http-beta-organization-analytics-skills.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Slack Channels - Claude API Reference](Admin/beta-organization-claude-tag-slack-channels.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Slack Workspaces - Claude API Reference](Admin/beta-organization-claude-tag-slack-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Spend Limits - Claude API Reference](Admin/admin-spend-limits.md) — Count tokens in a Message
-- [Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Summaries - Claude API Reference](Admin/beta-organization-analytics-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Spend Limits - Claude API Reference](Admin/beta-organization-spend-limits.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Summaries - Claude API Reference](Admin/beta-organization-analytics-summaries.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Summaries - Claude API Reference](Admin/http-beta-organization-analytics-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Telemetry Destinations - Claude API Reference](Admin/beta-organization-telemetry-destinations.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Test a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-test.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Targets - Claude API Reference](Admin/beta-organization-claude-tag-bundles-targets.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Telemetry Destinations - Claude API Reference](Admin/beta-organization-telemetry-destinations.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Test a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-test.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Tunnel Certificates - Claude API Reference](Admin/admin-mcp-tunnels-tunnel-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Tunnel Certificates - Claude API Reference](Admin/beta-organization-mcp-tunnels-tunnel-certificates.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update API Key - Claude API Reference](Admin/admin-api-keys-update.md) — Count tokens in a Message
-- [Update API Key - Claude API Reference](Admin/beta-organization-api-keys-update.md) — Count tokens in a Message
-- [Update Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-update.md) — Count tokens in a Message
+- [Update API Key - Claude API Reference](Admin/beta-organization-api-keys-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update External Key - Claude API Reference](Admin/admin-external-keys-update.md) — Count tokens in a Message
-- [Update External Key - Claude API Reference](Admin/beta-organization-external-keys-update.md) — Count tokens in a Message
+- [Update External Key - Claude API Reference](Admin/beta-organization-external-keys-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update Federation Issuer - Claude API Reference](Admin/admin-federation-issuers-update.md) — Count tokens in a Message
-- [Update Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-update.md) — Count tokens in a Message
+- [Update Federation Issuer - Claude API Reference](Admin/beta-organization-federation-issuers-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update Federation Rule - Claude API Reference](Admin/admin-federation-rules-update.md) — Count tokens in a Message
-- [Update Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-update.md) — Count tokens in a Message
-- [Update Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update Plugin - Claude API Reference](Admin/beta-organization-plugins-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update Plugin Marketplace - Claude API Reference](Admin/beta-organization-plugin-marketplaces-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update Federation Rule - Claude API Reference](Admin/beta-organization-federation-rules-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Organization Webhook Endpoint - Claude API Reference](Admin/beta-organization-webhooks-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Plugin - Claude API Reference](Admin/beta-organization-plugins-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Plugin Marketplace - Claude API Reference](Admin/beta-organization-plugin-marketplaces-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update RBAC Group - Claude API Reference](Admin/admin-rbac-groups-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update RBAC Group - Claude API Reference](Admin/beta-organization-rbac-groups-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update Service Account - Claude API Reference](Admin/admin-service-accounts-update.md) — Count tokens in a Message
-- [Update Service Account - Claude API Reference](Admin/beta-organization-service-accounts-update.md) — Count tokens in a Message
+- [Update Service Account - Claude API Reference](Admin/beta-organization-service-accounts-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update Service Account Workspace Member - Claude API Reference](Admin/admin-workspaces-service-accounts-update.md) — Count tokens in a Message
-- [Update Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-update.md) — Count tokens in a Message
+- [Update Service Account Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-service-accounts-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Slack Channel - Claude API Reference](Admin/beta-organization-claude-tag-slack-channels-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Slack Workspace - Claude API Reference](Admin/beta-organization-claude-tag-slack-workspaces-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update User - Claude API Reference](Admin/beta-organization-users-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update User - Claude API Reference](Admin/platform-claude-com-beta-organization-users-update.md) — Count tokens in a Message
+- [Update User - Claude API Reference](Admin/platform-claude-com-beta-organization-users-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update Workspace - Claude API Reference](Admin/admin-workspaces-update.md) — Count tokens in a Message
-- [Update Workspace - Claude API Reference](Admin/beta-organization-workspaces-update.md) — Count tokens in a Message
+- [Update Workspace - Claude API Reference](Admin/beta-organization-workspaces-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update Workspace Member - Claude API Reference](Admin/admin-workspaces-members-update.md) — Count tokens in a Message
-- [Update Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-update.md) — Count tokens in a Message
+- [Update Workspace Member - Claude API Reference](Admin/beta-organization-workspaces-members-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Usage - Claude API Reference](Admin/http-admin-analytics-usage.md) — Count tokens in a Message
-- [Usage - Claude API Reference](Admin/http-beta-organization-analytics-usage.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Usage - Claude API Reference](Admin/http-beta-organization-analytics-usage.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Usage - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-usage.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Usage Report - Claude API Reference](Admin/admin-usage-report.md) — Count tokens in a Message
-- [Usage Report - Claude API Reference](Admin/beta-organization-analytics-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Usage Report - Claude API Reference](Admin/beta-organization-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Usage Report - Claude API Reference](Admin/beta-organization-analytics-usage-report.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Usage Report - Claude API Reference](Admin/beta-organization-usage-report.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Usage Report - Claude API Reference](Admin/http-beta-organization-analytics-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [User Cost Report - Claude API Reference](Admin/beta-organization-analytics-user-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [User Cost Report - Claude API Reference](Admin/beta-organization-analytics-user-cost-report.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [User Cost Report - Claude API Reference](Admin/http-beta-organization-analytics-user-cost-report.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [User Preferences - Claude API Reference](Admin/compliance-organizations-user-preferences.md) — Count tokens in a Message
-- [User Usage Report - Claude API Reference](Admin/beta-organization-analytics-user-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [User Preferences - Claude API Reference](Admin/compliance-organizations-user-preferences.md) — To enable the Compliance API, see the setup guide.
+- [User Usage Report - Claude API Reference](Admin/beta-organization-analytics-user-usage-report.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [User Usage Report - Claude API Reference](Admin/http-beta-organization-analytics-user-usage-report.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Users - Claude API Reference](Admin/admin-users.md) — Count tokens in a Message
-- [Users - Claude API Reference](Admin/beta-organization-users.md) — Count tokens in a Message
-- [Users - Claude API Reference](Admin/compliance-organizations-users.md) — Count tokens in a Message
+- [Users - Claude API Reference](Admin/beta-organization-users.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Users - Claude API Reference](Admin/compliance-organizations-users.md) — To enable the Compliance API, see the setup guide.
 - [Users - Claude API Reference](Admin/http-admin-analytics-users.md) — Count tokens in a Message
-- [Users - Claude API Reference](Admin/http-beta-organization-analytics-users.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Users - Claude API Reference](Admin/http-beta-organization-analytics-users.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Users - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-users.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Validate External Key - Claude API Reference](Admin/admin-external-keys-validate.md) — Count tokens in a Message
-- [Validate External Key - Claude API Reference](Admin/beta-organization-external-keys-validate.md) — Count tokens in a Message
-- [Validate Plugin Marketplace Archive - Claude API Reference](Admin/beta-organization-plugin-marketplaces-validate-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Validate Plugin Marketplace Repository - Claude API Reference](Admin/beta-organization-plugin-marketplaces-validate-repository.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Versions - Claude API Reference](Admin/beta-organization-plugins-versions.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Webhooks - Claude API Reference](Admin/beta-organization-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Validate External Key - Claude API Reference](Admin/beta-organization-external-keys-validate.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Validate Plugin Marketplace Archive - Claude API Reference](Admin/beta-organization-plugin-marketplaces-validate-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Validate Plugin Marketplace Repository - Claude API Reference](Admin/beta-organization-plugin-marketplaces-validate-repository.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Versions - Claude API Reference](Admin/beta-organization-plugins-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Webhooks - Claude API Reference](Admin/beta-organization-webhooks.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Workspaces - Claude API Reference](Admin/admin-federation-rules-workspaces.md) — Count tokens in a Message
 - [Workspaces - Claude API Reference](Admin/admin-service-accounts-workspaces.md) — Count tokens in a Message
 - [Workspaces - Claude API Reference](Admin/admin-workspaces.md) — Count tokens in a Message
-- [Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces.md) — Count tokens in a Message
-- [Workspaces - Claude API Reference](Admin/beta-organization-service-accounts-workspaces.md) — Count tokens in a Message
-- [Workspaces - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Workspaces - Claude API Reference](Admin/beta-organization-workspaces.md) — Count tokens in a Message
+- [Workspaces - Claude API Reference](Admin/beta-organization-federation-rules-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Workspaces - Claude API Reference](Admin/beta-organization-service-accounts-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Workspaces - Claude API Reference](Admin/beta-organization-telemetry-destinations-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Workspaces - Claude API Reference](Admin/beta-organization-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ## Agents Tools
 
-- [Advisor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-advisor-tool.md) — Claude on cloud platforms
-- [Agent Skills - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-overview.md) — Claude on cloud platforms
-- [Architecture and components - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-concepts.md) — Claude on cloud platforms
-- [Bash tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-bash-tool.md) — Claude on cloud platforms
-- [Browser and computer use with the SDK toolsets - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md) — Claude on cloud platforms
-- [Browser use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) — Claude on cloud platforms
+- [Advisor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-advisor-tool.md) — Pair a faster executor model with a higher-intelligence advisor model that provides strategic guidance mid-generation.
+- [Agent Skills - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-overview.md) — Agent Skills are modular capabilities that extend Claude’s functionality. Each Skill packages instructions, metadata, and optional resources (scripts…
+- [Architecture and components - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-concepts.md) — Canonical names for the parts of an MCP tunnel deployment, the two credential-provisioning modes, and the connection model.
+- [Bash tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-bash-tool.md) — Let Claude request shell commands that your application runs in a persistent bash session and returns as tool results.
+- [Browser and computer use with the SDK toolsets - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md) — Run the browser use tool or the computer use tool from the Python or TypeScript SDK. The SDK runs the loop and the checks you configure, and you supply the…
+- [Browser use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) — Let Claude navigate, read, and interact with webpages in your own browser environment with the browser use tool.
 - [Claude API skill - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md) — An open-source Agent Skill that provides Claude with up-to-date API reference material, SDK documentation, and best practices for building applications with…
-- [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) — Claude on cloud platforms
-- [Computer use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) — Claude on cloud platforms
-- [Define tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md) — Claude on cloud platforms
-- [Deploy MCP tunnels with Docker Compose - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-compose.md) — Claude on cloud platforms
-- [Deploy MCP tunnels with Helm - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-helm.md) — Claude on cloud platforms
-- [Fine-grained tool streaming - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md) — Claude on cloud platforms
-- [Get started with Agent Skills in the API - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-quickstart.md) — Claude on cloud platforms
-- [Handle tool calls - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md) — Claude on cloud platforms
-- [How tool use works - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md) — Claude on cloud platforms
-- [Manage tool context - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md) — Claude on cloud platforms
-- [Manage tunnels in the Console - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-console.md) — Claude on cloud platforms
-- [MCP connector - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-connector.md) — Claude on cloud platforms
-- [MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) — Claude on cloud platforms
-- [MCP tunnels quickstart - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-quickstart.md) — Claude on cloud platforms
-- [MCP tunnels reference - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-reference.md) — Claude on cloud platforms
-- [MCP tunnels security - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-security.md) — Claude on cloud platforms
-- [Memory tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-memory-tool.md) — Claude on cloud platforms
-- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-how-tool-use-works.md) — The requested page could not be found.
+- [Code execution tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) — Run Python and Bash code in a sandboxed container to analyze data, generate files, and iterate on solutions.
+- [Computer use tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) — Give Claude screenshot, mouse, and keyboard control of a desktop environment with the computer use tool, the computertoolset20260801 client toolset.
+- [Define tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md) — Specify tool schemas, write effective descriptions, and control when Claude calls your tools.
+- [Deploy MCP tunnels with Docker Compose - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-compose.md) — Install the MCP tunnel stack on a VM using Docker Compose.
+- [Deploy MCP tunnels with Helm - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-deploy-helm.md) — Install the tunnel stack on a Kubernetes cluster using the Anthropic Helm chart.
+- [Fine-grained tool streaming - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md) — Stream tool inputs without server-side JSON buffering for latency-sensitive applications.
+- [Get started with Agent Skills in the API - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-quickstart.md) — Learn how to use Agent Skills to create documents with the Claude API in under 10 minutes.
+- [Handle tool calls - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md) — Parse tooluse blocks, format toolresult responses, and handle errors with iserror.
+- [How tool use works - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md) — Understand the tool use loop, where tools run, and when to use tools instead of prose.
+- [Manage tool context - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md) — Choose among tool search, programmatic tool calling, prompt caching, and context editing to manage context bloat.
+- [Manage tunnels in the Claude Console - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-console.md) — Create tunnels, register CA certificates, retrieve the tunnel token, and attach tunneled MCP servers to agents from the Claude Console.
+- [MCP connector - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-connector.md) — Connect to remote MCP servers directly from the Messages API without an MCP client, and allowlist, denylist, or configure individual tools.
+- [MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) — Securely connect Claude to MCP servers running in your private network without opening inbound ports or exposing services to the public internet.
+- [MCP tunnels quickstart - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-quickstart.md) — Connect Claude to a private MCP server using a local Docker Compose deployment.
+- [MCP tunnels reference - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-reference.md) — Proxy configuration fields, the Tunnels REST API, certificate requirements, and the setup component.
+- [MCP tunnels security - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-security.md) — Hardening guidance, credential rotation, breach response, and teardown for MCP tunnel deployments.
+- [Memory tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-memory-tool.md) — Let Claude store and retrieve information across conversations by implementing the memory tool’s file operations in your application.
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-fine-grained-tool-streaming.md) — The requested page could not be found. These pages are close:
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-how-tool-use-works.md) — The requested page could not be found. These pages are close:
 - [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-memory-tool.md) — The requested page could not be found. These pages are close:
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-text-editor-tool.md) — The requested page could not be found. These pages are close:
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-search-tool.md) — The requested page could not be found. These pages are close:
 - [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-web-fetch-tool.md) — The requested page could not be found. These pages are close:
-- [Parallel tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md) — Claude on cloud platforms
+- [Not Found - Claude Platform Docs](Agents-Tools/agents-and-tools-web-search-tool.md) — The requested page could not be found. These pages are close:
+- [Parallel tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md) — Enable, format, and disable parallel tool calls, with message-history guidance and troubleshooting.
 - [Programmatic tool calling - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md) — Let Claude call your tools from code in the code execution container, cutting model round trips and token use in multi-tool workflows.
-- [Remote MCP servers - Claude Platform Docs](Agents-Tools/agents-and-tools-remote-mcp-servers.md) — Claude on cloud platforms
-- [Server tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-server-tools.md) — Claude on cloud platforms
-- [Skill authoring best practices - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-best-practices.md) — Claude on cloud platforms
-- [Skills for enterprise - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-enterprise.md) — Claude on cloud platforms
-- [Strict tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) — Claude on cloud platforms
-- [Text editor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md) — Claude on cloud platforms
-- [Tool combinations - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-combinations.md) — Claude on cloud platforms
-- [Tool reference - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-reference.md) — Claude on cloud platforms
-- [Tool runner (SDK) - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-runner.md) — Claude on cloud platforms
-- [Tool search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md) — Claude on cloud platforms
-- [Tool use with Claude - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-overview.md) — Claude on cloud platforms
-- [Tool use with prompt caching - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md) — Claude on cloud platforms
-- [Troubleshoot MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-troubleshooting.md) — Claude on cloud platforms
-- [Troubleshooting tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md) — Claude on cloud platforms
-- [Tutorial: Build a tool-using agent - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md) — Claude on cloud platforms
-- [Web fetch tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md) — Claude on cloud platforms
-- [Web search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-search-tool.md) — Claude on cloud platforms
+- [Remote MCP servers - Claude Platform Docs](Agents-Tools/agents-and-tools-remote-mcp-servers.md) — Connect Claude to third-party remote MCP servers through the MCP connector API. Browse example servers and review the steps to connect.
+- [Server tools - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-server-tools.md) — Work with tools that Anthropic runs: servertooluse blocks, pauseturn continuation, mixed server and client tool turns, and domain filtering.
+- [Skill authoring best practices - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-best-practices.md) — Learn how to write effective Skills that Claude can discover and use successfully.
+- [Skills for enterprise - Claude Platform Docs](Agents-Tools/agents-and-tools-agent-skills-enterprise.md) — Governance, security review, evaluation, and organizational guidance for deploying Agent Skills at enterprise scale.
+- [Strict tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) — Enforce JSON Schema compliance on Claude’s tool inputs with grammar-constrained sampling.
+- [Text editor tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md) — Give Claude the Anthropic-defined text editor tool to view, create, and edit files, and handle its view, strreplace, create, and insert commands.
+- [Tool combinations - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-combinations.md) — Common Anthropic tool pairings for research agents, coding agents, and long-running agents.
+- [Tool reference - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-reference.md) — Directory of Anthropic-provided server tools, client tools, and client toolsets, plus reference for optional tool definition properties.
+- [Tool runner (SDK) - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-runner.md) — Use the SDK’s tool runner to handle the agentic loop, error wrapping, and type safety automatically.
+- [Tool search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md) — Scale to hundreds or thousands of tools by letting Claude search your tool catalog and load only the tools it needs.
+- [Tool use with Claude - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-overview.md) — Connect Claude to external tools and APIs. See where tools run, when Claude calls them, and which tool fits your task.
+- [Tool use with prompt caching - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md) — Cache tool definitions across turns and understand what invalidates your cache.
+- [Troubleshoot MCP tunnels - Claude Platform Docs](Agents-Tools/agents-and-tools-mcp-tunnels-troubleshooting.md) — Diagnose connectivity, TLS, IP validation, and OAuth routing issues in a tunnel stack.
+- [Troubleshooting tool use - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md) — Fix the most common tool-use errors with symptom-to-fix diagnostic tables.
+- [Tutorial: Build a tool-using agent - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md) — A guided walkthrough from a single tool call to a production-ready agentic loop.
+- [Web fetch tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md) — Fetch and read content from specific URLs to augment Claude’s context with live web content.
+- [Web search tool - Claude Platform Docs](Agents-Tools/agents-and-tools-tool-use-web-search-tool.md) — Give Claude access to current web content with cited sources, optional dynamic filtering, and domain controls.
 
 ## Endpoints
 
-- [Acknowledge Work - Claude API Reference](Endpoints/beta-environments-work-ack.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Action URLs - Claude API Reference](Endpoints/beta-user-profiles-action-urls.md) — Count tokens in a Message
-- [Action URLs - Claude API Reference](Endpoints/user-profiles-action-urls.md) — Count tokens in a Message
-- [Add Federation Rule Workspace - Claude API Reference](Endpoints/organization-federation-rules-workspaces-add.md) — Count tokens in a Message
-- [Add Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-add.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Add Workspace To Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-add.md) — Count tokens in a Message
+- [Acknowledge Work - Claude API Reference](Endpoints/beta-environments-work-ack.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Action URLs - Claude API Reference](Endpoints/beta-user-profiles-action-urls.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Action URLs - Claude API Reference](Endpoints/user-profiles-action-urls.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Add Federation Rule Workspace - Claude API Reference](Endpoints/organization-federation-rules-workspaces-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Add RBAC Group Member - Claude API Reference](Endpoints/organization-rbac-groups-members-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Add Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Add Workspace To Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Agents](Endpoints/cli-beta-agents.md) — - --model: BetaManagedAgentsModelConfigParams
 - [Agents](Endpoints/csharp-beta-agents.md) — BetaManagedAgentsAgent Beta.Agents.Create(AgentCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Agents](Endpoints/go-beta-agents.md) — client.Beta.Agents.New(ctx, params) (BetaManagedAgentsAgent, error)
@@ -507,7 +535,8 @@
 - [Agents](Endpoints/python-beta-agents.md) — beta.agents.create(AgentCreateParamskwargs)  -> BetaManagedAgentsAgent
 - [Agents](Endpoints/ruby-beta-agents.md) — beta.agents.create(kwargs) -> BetaManagedAgentsAgent
 - [Agents](Endpoints/typescript-beta-agents.md) — client.beta.agents.create(AgentCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsAgent
-- [Agents - Claude API Reference](Endpoints/beta-agents.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Agents - Claude API Reference](Endpoints/beta-agents.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Analytics - Claude API Reference](Endpoints/organization-analytics.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Api Beta Agents Delete B1F73666B6](Endpoints/beta-agents-delete.md)
 - [Api Cli Beta Agents Archive F66Ba0A22F](Endpoints/cli-beta-agents-archive.md) — $ ant beta:agents archive
 - [Api Cli Beta Agents Create Cca558Fd89](Endpoints/cli-beta-agents-create.md) — - --model: BetaManagedAgentsModelConfigParams
@@ -857,8 +886,8 @@
 - [Api Java Messages Create 08A0E124Cd](Endpoints/java-messages-create.md) — Message messages().create(MessageCreateParamsparams, RequestOptionsrequestOptions = RequestOptions.none())
 - [Api Java Models List 25D15Be48F](Endpoints/java-models-list.md) — ModelListPage models().list(ModelListParamsparams = ModelListParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
 - [Api Java Models Retrieve 57894Cb23E](Endpoints/java-models-retrieve.md) — ModelInfo models().retrieve(ModelRetrieveParamsparams = ModelRetrieveParams.none(), RequestOptionsrequestOptions = RequestOptions.none())
-- [API Keys - Claude API Reference](Endpoints/organization-api-keys.md) — Count tokens in a Message
-- [API overview - Claude Platform Docs](Endpoints/overview.md) — Count tokens in a Message
+- [API Keys - Claude API Reference](Endpoints/organization-api-keys.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [API overview - Claude Platform Docs](Endpoints/overview.md) — Understand the Claude API’s available endpoints, authentication headers, client SDKs, pagination, rate limits, and cloud platform access options.
 - [Api Php Beta Agents Archive C8F4Ff6Fe2](Endpoints/php-beta-agents-archive.md)
 - [Api Php Beta Agents C52F409D40](Endpoints/php-beta-agents.md)
 - [Api Php Beta Agents Create 73D8765D97](Endpoints/php-beta-agents-create.md)
@@ -1344,22 +1373,25 @@
 - [Api Typescript Messages Create D3193B53Fa](Endpoints/typescript-messages-create.md) — client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>
 - [Api Typescript Models List E65Ad3192F](Endpoints/typescript-models-list.md) — client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>
 - [Api Typescript Models Retrieve A0206D3Dca](Endpoints/typescript-models-retrieve.md) — client.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): ModelInfo
-- [Archive a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive a Dream - Claude API Reference](Endpoints/beta-dreams-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive a memory store - Claude API Reference](Endpoints/beta-memory-stores-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive a Vault - Claude API Reference](Endpoints/beta-vaults-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Agent - Claude API Reference](Endpoints/beta-agents-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Deployment - Claude API Reference](Endpoints/beta-deployments-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Environment - Claude API Reference](Endpoints/beta-environments-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-archive.md) — Count tokens in a Message
-- [Archive Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-archive.md) — Count tokens in a Message
-- [Archive Service Account - Claude API Reference](Endpoints/organization-service-accounts-archive.md) — Count tokens in a Message
-- [Archive Session - Claude API Reference](Endpoints/beta-sessions-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Approve Spend Limit Increase Request - Claude API Reference](Endpoints/organization-spend-limits-increase-requests-approve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Apps - Claude API Reference](Endpoints/organization-analytics-apps.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive a Dream - Claude API Reference](Endpoints/beta-dreams-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive a Memory Store - Claude API Reference](Endpoints/beta-memory-stores-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive a Vault - Claude API Reference](Endpoints/beta-vaults-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Agent - Claude API Reference](Endpoints/beta-agents-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Deployment - Claude API Reference](Endpoints/beta-deployments-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Environment - Claude API Reference](Endpoints/beta-environments-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Service Account - Claude API Reference](Endpoints/organization-service-accounts-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Session - Claude API Reference](Endpoints/beta-sessions-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Archive Tunnel - Claude API Reference](Endpoints/platform-claude-com-http-beta-tunnels-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-archive.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Archive Workspace - Claude API Reference](Endpoints/organization-workspaces-archive.md) — Count tokens in a Message
+- [Archive Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Archive Workspace - Claude API Reference](Endpoints/organization-workspaces-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Artifacts - Claude API Reference](Endpoints/organization-analytics-artifacts.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Batches](Endpoints/cli-beta-messages-batches.md) — $ ant beta:messages:batches create
 - [Batches](Endpoints/cli-messages-batches.md) — $ ant messages:batches create
 - [Batches](Endpoints/csharp-beta-messages-batches.md) — BetaMessageBatch Beta.Messages.Batches.Create(BatchCreateParamsparameters, CancellationTokencancellationToken = default)
@@ -1374,8 +1406,8 @@
 - [Batches](Endpoints/ruby-messages-batches.md) — messages.batches.create(kwargs) -> MessageBatch
 - [Batches](Endpoints/typescript-beta-messages-batches.md) — client.beta.messages.batches.create(BatchCreateParamsparams, RequestOptionsoptions?): BetaMessageBatch
 - [Batches](Endpoints/typescript-messages-batches.md) — client.messages.batches.create(BatchCreateParamsbody, RequestOptionsoptions?): MessageBatch
-- [Batches - Claude API Reference](Endpoints/beta-messages-batches.md) — Count tokens in a Message
-- [Batches - Claude API Reference](Endpoints/messages-batches.md) — Count tokens in a Message
+- [Batches - Claude API Reference](Endpoints/beta-messages-batches.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Batches - Claude API Reference](Endpoints/messages-batches.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Beta](Endpoints/cli-beta.md) — - betaapierror: object { message, type }
 - [Beta](Endpoints/csharp-beta.md) — - required string Message
 - [Beta](Endpoints/go-beta.md) — - type AnthropicBeta interface{…}
@@ -1383,15 +1415,16 @@
 - [Beta](Endpoints/python-beta.md) — - Union[str, Literal["message-batches-2024-09-24", "prompt-caching-2024-07-31", "computer-use-2024-10-22", 19 more]]
 - [Beta](Endpoints/ruby-beta.md) — - AnthropicBeta = String | :"message-batches-2024-09-24" | :"prompt-caching-2024-07-31" | :"computer-use-2024-10-22" | 19 more
 - [Beta](Endpoints/typescript-beta.md) — - AnthropicBeta = (string & {}) | "message-batches-2024-09-24" | "prompt-caching-2024-07-31" | "computer-use-2024-10-22" | 19 more
-- [Beta - Claude API Reference](Endpoints/http-beta.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Beta - Claude API Reference](Endpoints/http-beta.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Beta - Claude API Reference](Endpoints/platform-claude-com-http-beta.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Beta headers - Claude Platform Docs](Endpoints/beta-headers.md) — Count tokens in a Message
+- [Beta headers - Claude Platform Docs](Endpoints/beta-headers.md) — Access experimental features before they become part of the standard API with the anthropic-beta header or the SDK’s betas parameter.
 - [C# SDK](Endpoints/sdks-csharp.md) — Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
-- [Cancel a Dream - Claude API Reference](Endpoints/beta-dreams-cancel.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Cancel a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-cancel.md) — Count tokens in a Message
-- [Cancel a Message Batch - Claude API Reference](Endpoints/messages-batches-cancel.md) — Count tokens in a Message
-- [Certificates - Claude API Reference](Endpoints/beta-tunnels-certificates.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Claude API errors - Claude Platform Docs](Endpoints/errors.md) — Count tokens in a Message
+- [Cancel a Dream - Claude API Reference](Endpoints/beta-dreams-cancel.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Cancel a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-cancel.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Cancel a Message Batch - Claude API Reference](Endpoints/messages-batches-cancel.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Certificates - Claude API Reference](Endpoints/beta-tunnels-certificates.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Chat - Claude API Reference](Endpoints/organization-analytics-apps-chat.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Claude API errors - Claude Platform Docs](Endpoints/errors.md) — Understand the HTTP status codes, error response shape, and request IDs the Claude API returns, and handle errors with the SDK’s typed exceptions.
 - [CLI](Endpoints/sdks-cli.md) — Interact with the Claude API directly from your terminal with the ant command-line tool
 - [Client SDKs](Endpoints/client-sdks.md) — Official SDKs for building with the Claude API in Python, TypeScript, Java, Go, Ruby, C#, PHP, and the command line.
 - [Completions](Endpoints/cli-completions.md) — The Text Completions API is a legacy API. We recommend using the Messages API going forward.
@@ -1401,54 +1434,56 @@
 - [Completions](Endpoints/python-completions.md) — completions.create(CompletionCreateParamskwargs)  -> Completion
 - [Completions](Endpoints/ruby-completions.md) — completions.create(kwargs) -> Completion
 - [Completions](Endpoints/typescript-completions.md) — client.completions.create(CompletionCreateParamsparams, RequestOptionsoptions?): Completion | Stream<Completion>
-- [Completions - Claude API Reference](Endpoints/http-completions.md) — Count tokens in a Message
+- [Completions - Claude API Reference](Endpoints/http-completions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Completions - Claude API Reference](Endpoints/platform-claude-com-http-completions.md) — Count tokens in a Message
 - [Compliance API - Claude API Reference](Endpoints/http-compliance.md) — Count tokens in a Message
-- [Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings.md) — Count tokens in a Message
-- [Count tokens in a Message - Claude API Reference](Endpoints/http-beta-messages-count-tokens.md) — Count tokens in a Message
+- [Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Connectors - Claude API Reference](Endpoints/organization-analytics-connectors.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Count tokens in a Message - Claude API Reference](Endpoints/http-beta-messages-count-tokens.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Count tokens in a Message - Claude API Reference](Endpoints/messages-count-tokens.md) — Count tokens in a Message
 - [Count tokens in a Message - Claude API Reference](Endpoints/platform-claude-com-http-beta-messages-count-tokens.md) — Count tokens in a Message
-- [Count tokens in a Message - Claude API Reference](Endpoints/platform-claude-com-messages-count-tokens.md) — Count tokens in a Message
-- [Create a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create a Dream - Claude API Reference](Endpoints/beta-dreams-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create a memory store - Claude API Reference](Endpoints/beta-memory-stores-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create a Message - Claude API Reference](Endpoints/beta-messages-create.md) — Count tokens in a Message
+- [Count tokens in a Message - Claude API Reference](Endpoints/platform-claude-com-messages-count-tokens.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Dream - Claude API Reference](Endpoints/beta-dreams-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Memory - Claude API Reference](Endpoints/beta-memory-stores-memories-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Memory Store - Claude API Reference](Endpoints/beta-memory-stores-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Message - Claude API Reference](Endpoints/beta-messages-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create a Message - Claude API Reference](Endpoints/http-beta-messages-create.md) — Count tokens in a Message
-- [Create a Message - Claude API Reference](Endpoints/messages-create.md) — Count tokens in a Message
-- [Create a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-create.md) — Count tokens in a Message
-- [Create a Message Batch - Claude API Reference](Endpoints/messages-batches-create.md) — Count tokens in a Message
-- [Create a Text Completion - Claude API Reference](Endpoints/http-completions-create.md) — Count tokens in a Message
+- [Create a Message - Claude API Reference](Endpoints/messages-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Message Batch - Claude API Reference](Endpoints/messages-batches-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create a Text Completion - Claude API Reference](Endpoints/http-completions-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create a Text Completion - Claude API Reference](Endpoints/platform-claude-com-http-completions-create.md) — Count tokens in a Message
-- [Create a Vault - Claude API Reference](Endpoints/beta-vaults-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Action URL - Claude API Reference](Endpoints/beta-user-profiles-action-urls-create.md) — Count tokens in a Message
-- [Create Action URL - Claude API Reference](Endpoints/user-profiles-action-urls-create.md) — Count tokens in a Message
-- [Create Agent - Claude API Reference](Endpoints/beta-agents-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Deployment - Claude API Reference](Endpoints/beta-deployments-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Enrollment URL - Claude API Reference](Endpoints/http-beta-user-profiles-create-enrollment-url.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create a Vault - Claude API Reference](Endpoints/beta-vaults-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Action URL - Claude API Reference](Endpoints/beta-user-profiles-action-urls-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Action URL - Claude API Reference](Endpoints/user-profiles-action-urls-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Agent - Claude API Reference](Endpoints/beta-agents-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Deployment - Claude API Reference](Endpoints/beta-deployments-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Enrollment URL - Claude API Reference](Endpoints/http-beta-user-profiles-create-enrollment-url.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Enrollment URL - Claude API Reference](Endpoints/platform-claude-com-http-beta-user-profiles-create-enrollment-url.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Environment - Claude API Reference](Endpoints/beta-environments-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create External Key - Claude API Reference](Endpoints/organization-external-keys-create.md) — Count tokens in a Message
-- [Create Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-create.md) — Count tokens in a Message
-- [Create Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-create.md) — Count tokens in a Message
-- [Create Invite - Claude API Reference](Endpoints/organization-invites-create.md) — Count tokens in a Message
-- [Create Service Account - Claude API Reference](Endpoints/organization-service-accounts-create.md) — Count tokens in a Message
-- [Create Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-add.md) — Count tokens in a Message
-- [Create Session - Claude API Reference](Endpoints/beta-sessions-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Skill - Claude API Reference](Endpoints/http-beta-skills-create.md) — Count tokens in a Message
+- [Create Environment - Claude API Reference](Endpoints/beta-environments-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create External Key - Claude API Reference](Endpoints/organization-external-keys-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Invite - Claude API Reference](Endpoints/organization-invites-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create RBAC Group - Claude API Reference](Endpoints/organization-rbac-groups-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Service Account - Claude API Reference](Endpoints/organization-service-accounts-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Session - Claude API Reference](Endpoints/beta-sessions-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Skill - Claude API Reference](Endpoints/http-beta-skills-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Skill - Claude API Reference](Endpoints/platform-claude-com-http-beta-skills-create.md) — Count tokens in a Message
 - [Create Skill - Claude API Reference](Endpoints/skills-create-skill.md) — Count tokens in a Message
-- [Create Skill - Claude API Reference](Endpoints/skills-create.md) — Count tokens in a Message
-- [Create Skill Version - Claude API Reference](Endpoints/beta-skills-versions-create.md) — Count tokens in a Message
-- [Create Skill Version - Claude API Reference](Endpoints/skills-versions-create.md) — Count tokens in a Message
-- [Create Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Skill - Claude API Reference](Endpoints/skills-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Skill Version - Claude API Reference](Endpoints/beta-skills-versions-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Skill Version - Claude API Reference](Endpoints/skills-versions-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create Tunnel - Claude API Reference](Endpoints/platform-claude-com-http-beta-tunnels-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-create.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Create Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Create User Profile - Claude API Reference](Endpoints/platform-claude-com-http-beta-user-profiles-create.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Create User Profile - Claude API Reference](Endpoints/user-profiles-create.md) — Count tokens in a Message
-- [Create Workspace - Claude API Reference](Endpoints/organization-workspaces-create.md) — Count tokens in a Message
-- [Create Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-add.md) — Count tokens in a Message
+- [Create User Profile - Claude API Reference](Endpoints/user-profiles-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Workspace - Claude API Reference](Endpoints/organization-workspaces-create.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Create Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-add.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Credentials](Endpoints/cli-beta-vaults-credentials.md) — $ ant beta:vaults:credentials create
 - [Credentials](Endpoints/csharp-beta-vaults-credentials.md) — BetaManagedAgentsCredential Beta.Vaults.Credentials.Create(CredentialCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Credentials](Endpoints/go-beta-vaults-credentials.md) — client.Beta.Vaults.Credentials.New(ctx, vaultID, params) (BetaManagedAgentsCredential, error)
@@ -1456,37 +1491,40 @@
 - [Credentials](Endpoints/python-beta-vaults-credentials.md) — beta.vaults.credentials.create(strvaultid, CredentialCreateParamskwargs)  -> BetaManagedAgentsCredential
 - [Credentials](Endpoints/ruby-beta-vaults-credentials.md) — beta.vaults.credentials.create(vaultid, kwargs) -> BetaManagedAgentsCredential
 - [Credentials](Endpoints/typescript-beta-vaults-credentials.md) — client.beta.vaults.credentials.create(stringvaultID, CredentialCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsCredential
-- [Credentials - Claude API Reference](Endpoints/beta-vaults-credentials.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete a memory store - Claude API Reference](Endpoints/beta-memory-stores-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-delete.md) — Count tokens in a Message
-- [Delete a Message Batch - Claude API Reference](Endpoints/messages-batches-delete.md) — Count tokens in a Message
-- [Delete a Vault - Claude API Reference](Endpoints/beta-vaults-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete Environment - Claude API Reference](Endpoints/beta-environments-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete External Key - Claude API Reference](Endpoints/organization-external-keys-delete.md) — Count tokens in a Message
-- [Delete File - Claude API Reference](Endpoints/files-delete.md) — Count tokens in a Message
-- [Delete File - Claude API Reference](Endpoints/http-beta-files-delete.md) — Count tokens in a Message
+- [Credentials - Claude API Reference](Endpoints/beta-vaults-credentials.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete a Memory - Claude API Reference](Endpoints/beta-memory-stores-memories-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete a Memory Store - Claude API Reference](Endpoints/beta-memory-stores-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete a Message Batch - Claude API Reference](Endpoints/messages-batches-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete a Vault - Claude API Reference](Endpoints/beta-vaults-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Environment - Claude API Reference](Endpoints/beta-environments-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete External Key - Claude API Reference](Endpoints/organization-external-keys-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete File - Claude API Reference](Endpoints/files-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete File - Claude API Reference](Endpoints/http-beta-files-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Delete File - Claude API Reference](Endpoints/platform-claude-com-http-beta-files-delete.md) — Count tokens in a Message
-- [Delete Invite - Claude API Reference](Endpoints/organization-invites-delete.md) — Count tokens in a Message
-- [Delete Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-remove.md) — Count tokens in a Message
-- [Delete Session - Claude API Reference](Endpoints/beta-sessions-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-delete.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Delete Skill - Claude API Reference](Endpoints/http-beta-skills-delete.md) — Count tokens in a Message
+- [Delete Invite - Claude API Reference](Endpoints/organization-invites-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete RBAC Group - Claude API Reference](Endpoints/organization-rbac-groups-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Session - Claude API Reference](Endpoints/beta-sessions-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Skill - Claude API Reference](Endpoints/http-beta-skills-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Delete Skill - Claude API Reference](Endpoints/platform-claude-com-http-beta-skills-delete.md) — Count tokens in a Message
-- [Delete Skill - Claude API Reference](Endpoints/skills-delete.md) — Count tokens in a Message
-- [Delete Skill Version - Claude API Reference](Endpoints/beta-skills-versions-delete.md) — Count tokens in a Message
-- [Delete Skill Version - Claude API Reference](Endpoints/skills-versions-delete.md) — Count tokens in a Message
-- [Delete User Profile - Claude API Reference](Endpoints/beta-user-profiles-delete.md) — Count tokens in a Message
-- [Delete User Profile - Claude API Reference](Endpoints/user-profiles-delete.md) — Count tokens in a Message
-- [Delete Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-remove.md) — Count tokens in a Message
-- [Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Deployments - Claude API Reference](Endpoints/beta-deployments.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Download File - Claude API Reference](Endpoints/files-download.md) — Count tokens in a Message
-- [Download File - Claude API Reference](Endpoints/http-beta-files-download.md) — Count tokens in a Message
+- [Delete Skill - Claude API Reference](Endpoints/skills-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Skill Version - Claude API Reference](Endpoints/beta-skills-versions-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Skill Version - Claude API Reference](Endpoints/skills-versions-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete User Profile - Claude API Reference](Endpoints/beta-user-profiles-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete User Profile - Claude API Reference](Endpoints/user-profiles-delete.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Delete Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Deny Spend Limit Increase Request - Claude API Reference](Endpoints/organization-spend-limits-increase-requests-deny.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Deployments - Claude API Reference](Endpoints/beta-deployments.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Download File - Claude API Reference](Endpoints/files-download.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Download File - Claude API Reference](Endpoints/http-beta-files-download.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Download File - Claude API Reference](Endpoints/platform-claude-com-http-beta-files-download.md) — Count tokens in a Message
-- [Download Skill Version Content - Claude API Reference](Endpoints/beta-skills-versions-download.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Dreams - Claude API Reference](Endpoints/beta-dreams.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Download Skill Version Content - Claude API Reference](Endpoints/beta-skills-versions-download.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Dreams - Claude API Reference](Endpoints/beta-dreams.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Effective - Claude API Reference](Endpoints/organization-spend-limits-effective.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Environments](Endpoints/cli-beta-environments.md) — $ ant beta:environments create
 - [Environments](Endpoints/csharp-beta-environments.md) — BetaEnvironment Beta.Environments.Create(EnvironmentCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Environments](Endpoints/go-beta-environments.md) — client.Beta.Environments.New(ctx, params) (BetaEnvironment, error)
@@ -1494,7 +1532,7 @@
 - [Environments](Endpoints/python-beta-environments.md) — beta.environments.create(EnvironmentCreateParamskwargs)  -> BetaEnvironment
 - [Environments](Endpoints/ruby-beta-environments.md) — beta.environments.create(kwargs) -> BetaEnvironment
 - [Environments](Endpoints/typescript-beta-environments.md) — client.beta.environments.create(EnvironmentCreateParamsparams, RequestOptionsoptions?): BetaEnvironment
-- [Environments - Claude API Reference](Endpoints/beta-environments.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Environments - Claude API Reference](Endpoints/beta-environments.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Events](Endpoints/cli-beta-sessions-events.md) — $ ant beta:sessions:events list
 - [Events](Endpoints/csharp-beta-sessions-events.md) — EventListPageResponse Beta.Sessions.Events.List(EventListParamsparameters, CancellationTokencancellationToken = default)
 - [Events](Endpoints/go-beta-sessions-events.md) — client.Beta.Sessions.Events.List(ctx, sessionID, params) (PageCursor[BetaManagedAgentsSessionEventUnion], error)
@@ -1502,10 +1540,10 @@
 - [Events](Endpoints/python-beta-sessions-events.md) — beta.sessions.events.list(strsessionid, EventListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsSessionEvent]
 - [Events](Endpoints/ruby-beta-sessions-events.md) — beta.sessions.events.list(sessionid, kwargs) -> PageCursor<BetaManagedAgentsSessionEvent>
 - [Events](Endpoints/typescript-beta-sessions-events.md) — client.beta.sessions.events.list(stringsessionID, EventListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsSessionEvent>
-- [Events - Claude API Reference](Endpoints/beta-sessions-events.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Events - Claude API Reference](Endpoints/beta-sessions-threads-events.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [External Keys - Claude API Reference](Endpoints/organization-external-keys.md) — Count tokens in a Message
-- [Federation - Claude API Reference](Endpoints/organization-federation.md) — Count tokens in a Message
+- [Events - Claude API Reference](Endpoints/beta-sessions-events.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Events - Claude API Reference](Endpoints/beta-sessions-threads-events.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [External Keys - Claude API Reference](Endpoints/organization-external-keys.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Federation - Claude API Reference](Endpoints/organization-federation.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Files](Endpoints/cli-beta-files.md) — Body param: The file to upload
 - [Files](Endpoints/csharp-beta-files.md) — FileMetadata Beta.Files.Upload(FileUploadParamsparameters, CancellationTokencancellationToken = default)
 - [Files](Endpoints/go-beta-files.md) — client.Beta.Files.Upload(ctx, params) (FileMetadata, error)
@@ -1513,110 +1551,128 @@
 - [Files](Endpoints/python-beta-files.md) — beta.files.upload(FileUploadParamskwargs)  -> FileMetadata
 - [Files](Endpoints/ruby-beta-files.md) — beta.files.upload(kwargs) -> FileMetadata
 - [Files](Endpoints/typescript-beta-files.md) — client.beta.files.upload(FileUploadParamsparams, RequestOptionsoptions?): FileMetadata
-- [Files - Claude API Reference](Endpoints/files.md) — Count tokens in a Message
-- [Files - Claude API Reference](Endpoints/http-beta-files.md) — Count tokens in a Message
+- [Files - Claude API Reference](Endpoints/files.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Files - Claude API Reference](Endpoints/http-beta-files.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Files - Claude API Reference](Endpoints/platform-claude-com-http-beta-files.md) — Count tokens in a Message
-- [Get a Dream - Claude API Reference](Endpoints/beta-dreams-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get a Model - Claude API Reference](Endpoints/http-beta-models-retrieve.md) — Count tokens in a Message
-- [Get a Model - Claude API Reference](Endpoints/models-retrieve.md) — Count tokens in a Message
+- [Get a Dream - Claude API Reference](Endpoints/beta-dreams-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get a Model - Claude API Reference](Endpoints/http-beta-models-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get a Model - Claude API Reference](Endpoints/models-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get a Model - Claude API Reference](Endpoints/platform-claude-com-http-beta-models-retrieve.md) — Count tokens in a Message
-- [Get Agent - Claude API Reference](Endpoints/beta-agents-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings-retrieve.md) — Count tokens in a Message
+- [Get Activity Summaries - Claude API Reference](Endpoints/organization-analytics-summaries-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Agent - Claude API Reference](Endpoints/beta-agents-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Artifact Activity - Claude API Reference](Endpoints/organization-analytics-artifacts-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Chat Project Usage - Claude API Reference](Endpoints/organization-analytics-apps-chat-projects-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Connector Usage - Claude API Reference](Endpoints/organization-analytics-connectors-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Current Organization - Claude API Reference](Endpoints/admin-api-organization-get-me.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Current Organization - Claude API Reference](Endpoints/organization-retrieve.md) — Count tokens in a Message
-- [Get Deployment - Claude API Reference](Endpoints/beta-deployments-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Deployment Run - Claude API Reference](Endpoints/beta-deployment-runs-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Environment - Claude API Reference](Endpoints/beta-environments-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get External Key - Claude API Reference](Endpoints/organization-external-keys-retrieve.md) — Count tokens in a Message
-- [Get Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-retrieve.md) — Count tokens in a Message
-- [Get Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-retrieve.md) — Count tokens in a Message
-- [Get File Metadata - Claude API Reference](Endpoints/files-retrieve-metadata.md) — Count tokens in a Message
-- [Get File Metadata - Claude API Reference](Endpoints/http-beta-files-retrieve-metadata.md) — Count tokens in a Message
+- [Get Current Organization - Claude API Reference](Endpoints/organization-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Deployment - Claude API Reference](Endpoints/beta-deployments-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Deployment Run - Claude API Reference](Endpoints/beta-deployment-runs-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Environment - Claude API Reference](Endpoints/beta-environments-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get External Key - Claude API Reference](Endpoints/organization-external-keys-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get File Metadata - Claude API Reference](Endpoints/files-retrieve-metadata.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get File Metadata - Claude API Reference](Endpoints/http-beta-files-retrieve-metadata.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get File Metadata - Claude API Reference](Endpoints/platform-claude-com-http-beta-files-retrieve-metadata.md) — Count tokens in a Message
 - [Get Invite - Claude API Reference](Endpoints/admin-api-invites-get-invite.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Invite - Claude API Reference](Endpoints/organization-invites-retrieve.md) — Count tokens in a Message
-- [Get Queue Statistics - Claude API Reference](Endpoints/beta-environments-work-stats.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Service Account - Claude API Reference](Endpoints/organization-service-accounts-retrieve.md) — Count tokens in a Message
-- [Get Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-retrieve.md) — Count tokens in a Message
-- [Get Session - Claude API Reference](Endpoints/beta-sessions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Skill - Claude API Reference](Endpoints/http-beta-skills-retrieve.md) — Count tokens in a Message
+- [Get Invite - Claude API Reference](Endpoints/organization-invites-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Plugin Usage - Claude API Reference](Endpoints/organization-analytics-plugins-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Queue Statistics - Claude API Reference](Endpoints/beta-environments-work-stats.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get RBAC Group - Claude API Reference](Endpoints/organization-rbac-groups-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get RBAC Role - Claude API Reference](Endpoints/organization-rbac-roles-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Service Account - Claude API Reference](Endpoints/organization-service-accounts-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Session - Claude API Reference](Endpoints/beta-sessions-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Session Thread - Claude API Reference](Endpoints/beta-sessions-threads-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Skill - Claude API Reference](Endpoints/http-beta-skills-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Skill - Claude API Reference](Endpoints/platform-claude-com-http-beta-skills-retrieve.md) — Count tokens in a Message
-- [Get Skill - Claude API Reference](Endpoints/skills-retrieve.md) — Count tokens in a Message
-- [Get Skill Version - Claude API Reference](Endpoints/beta-skills-versions-retrieve.md) — Count tokens in a Message
-- [Get Skill Version - Claude API Reference](Endpoints/skills-versions-retrieve.md) — Count tokens in a Message
-- [Get Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Skill - Claude API Reference](Endpoints/skills-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Skill Usage - Claude API Reference](Endpoints/organization-analytics-skills-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Skill Version - Claude API Reference](Endpoints/beta-skills-versions-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Skill Version - Claude API Reference](Endpoints/skills-versions-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Spend Limit Increase Request - Claude API Reference](Endpoints/organization-spend-limits-increase-requests-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Tunnel - Claude API Reference](Endpoints/http-beta-tunnels-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Tunnel - Claude API Reference](Endpoints/platform-claude-com-http-beta-tunnels-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get Tunnel Certificate - Claude API Reference](Endpoints/beta-tunnels-certificates-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get User - Claude API Reference](Endpoints/admin-api-users-get-user.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get User - Claude API Reference](Endpoints/organization-users-retrieve.md) — Count tokens in a Message
-- [Get User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get User - Claude API Reference](Endpoints/organization-users-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get User Profile - Claude API Reference](Endpoints/platform-claude-com-http-beta-user-profiles-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get User Profile - Claude API Reference](Endpoints/user-profiles-retrieve.md) — Count tokens in a Message
-- [Get Work Item - Claude API Reference](Endpoints/beta-environments-work-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Workspace - Claude API Reference](Endpoints/organization-workspaces-retrieve.md) — Count tokens in a Message
+- [Get User Profile - Claude API Reference](Endpoints/user-profiles-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Work Item - Claude API Reference](Endpoints/beta-environments-work-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Get Workspace - Claude API Reference](Endpoints/organization-workspaces-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Workspace Member - Claude API Reference](Endpoints/admin-api-workspace-members-get-workspace-member.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Get Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-retrieve.md) — Count tokens in a Message
+- [Get Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Go SDK](Endpoints/sdks-go.md) — Install and configure the Anthropic Go SDK with context-based cancellation and functional options
 - [HTTP API reference - Claude API Reference](Endpoints/http.md) — Count tokens in a Message
-- [IAM actions for Claude Platform on AWS - Claude Platform Docs](Endpoints/claude-platform-on-aws-iam-actions.md) — Count tokens in a Message
-- [IAM permissions for Claude Models on Google Cloud (Anthropic managed) - Claude Platform Docs](Endpoints/claude-models-on-google-cloud-anthropic-managed-iam-permissions.md) — Count tokens in a Message
-- [Invites - Claude API Reference](Endpoints/organization-invites.md) — Count tokens in a Message
-- [IP addresses - Claude Platform Docs](Endpoints/ip-addresses.md) — Count tokens in a Message
-- [Issuers - Claude API Reference](Endpoints/organization-federation-issuers.md) — Count tokens in a Message
+- [IAM actions for Claude Platform on AWS - Claude Platform Docs](Endpoints/claude-platform-on-aws-iam-actions.md) — IAM action reference for controlling access to Claude Platform on AWS through AWS policies.
+- [IAM permissions for Claude Models on Google Cloud (Anthropic managed) - Claude Platform Docs](Endpoints/claude-models-on-google-cloud-anthropic-managed-iam-permissions.md) — Look up Google Cloud IAM permissions, predefined roles, and audit log types for Claude Models on Google Cloud (Anthropic managed).
+- [Increase Requests - Claude API Reference](Endpoints/organization-spend-limits-increase-requests.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Invites - Claude API Reference](Endpoints/organization-invites.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [IP addresses - Claude Platform Docs](Endpoints/ip-addresses.md) — Anthropic services use fixed IP addresses for both inbound and outbound connections. You can use these addresses to configure your firewall rules for secure…
+- [Issuers - Claude API Reference](Endpoints/organization-federation-issuers.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Java SDK](Endpoints/sdks-java.md) — Install and configure the Anthropic Java SDK with builder patterns and async support
-- [List Agent Versions - Claude API Reference](Endpoints/beta-agents-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Agents - Claude API Reference](Endpoints/beta-agents-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List API Keys - Claude API Reference](Endpoints/organization-api-keys-list.md) — Count tokens in a Message
-- [List Credentials - Claude API Reference](Endpoints/beta-vaults-credentials-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Deployments - Claude API Reference](Endpoints/beta-deployments-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Dreams - Claude API Reference](Endpoints/beta-dreams-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Environments - Claude API Reference](Endpoints/beta-environments-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Events - Claude API Reference](Endpoints/beta-sessions-events-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List External Keys - Claude API Reference](Endpoints/organization-external-keys-list.md) — Count tokens in a Message
-- [List Federation Issuers - Claude API Reference](Endpoints/organization-federation-issuers-list.md) — Count tokens in a Message
-- [List Federation Rule Workspaces - Claude API Reference](Endpoints/organization-federation-rules-workspaces-list.md) — Count tokens in a Message
-- [List Federation Rules - Claude API Reference](Endpoints/organization-federation-rules-list.md) — Count tokens in a Message
-- [List Files - Claude API Reference](Endpoints/files-list.md) — Count tokens in a Message
-- [List Files - Claude API Reference](Endpoints/http-beta-files-list.md) — Count tokens in a Message
+- [List Agent Versions - Claude API Reference](Endpoints/beta-agents-versions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Agents - Claude API Reference](Endpoints/beta-agents-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List API Keys - Claude API Reference](Endpoints/organization-api-keys-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Credentials - Claude API Reference](Endpoints/beta-vaults-credentials-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Deployment Runs - Claude API Reference](Endpoints/beta-deployment-runs-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Deployments - Claude API Reference](Endpoints/beta-deployments-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Dreams - Claude API Reference](Endpoints/beta-dreams-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Effective Spend Limits - Claude API Reference](Endpoints/organization-spend-limits-effective-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Environments - Claude API Reference](Endpoints/beta-environments-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Events - Claude API Reference](Endpoints/beta-sessions-events-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List External Keys - Claude API Reference](Endpoints/organization-external-keys-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Federation Issuers - Claude API Reference](Endpoints/organization-federation-issuers-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Federation Rule Workspaces - Claude API Reference](Endpoints/organization-federation-rules-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Federation Rules - Claude API Reference](Endpoints/organization-federation-rules-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Files - Claude API Reference](Endpoints/files-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Files - Claude API Reference](Endpoints/http-beta-files-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Files - Claude API Reference](Endpoints/platform-claude-com-http-beta-files-list.md) — Count tokens in a Message
-- [List Invites - Claude API Reference](Endpoints/organization-invites-list.md) — Count tokens in a Message
-- [List memories - Claude API Reference](Endpoints/beta-memory-stores-memories-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List memory stores - Claude API Reference](Endpoints/beta-memory-stores-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List memory versions - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Message Batches - Claude API Reference](Endpoints/beta-messages-batches-list.md) — Count tokens in a Message
-- [List Message Batches - Claude API Reference](Endpoints/messages-batches-list.md) — Count tokens in a Message
-- [List Models - Claude API Reference](Endpoints/http-beta-models-list.md) — Count tokens in a Message
-- [List Models - Claude API Reference](Endpoints/models-list.md) — Count tokens in a Message
+- [List Invites - Claude API Reference](Endpoints/organization-invites-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Memories - Claude API Reference](Endpoints/beta-memory-stores-memories-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Memory Stores - Claude API Reference](Endpoints/beta-memory-stores-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Memory Versions - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Message Batches - Claude API Reference](Endpoints/beta-messages-batches-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Message Batches - Claude API Reference](Endpoints/messages-batches-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Models - Claude API Reference](Endpoints/http-beta-models-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Models - Claude API Reference](Endpoints/models-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Models - Claude API Reference](Endpoints/platform-claude-com-http-beta-models-list.md) — Count tokens in a Message
-- [List Organization Rate Limits - Claude API Reference](Endpoints/organization-rate-limits-list.md) — Count tokens in a Message
-- [List Service Account Workspace Members - Claude API Reference](Endpoints/organization-workspaces-service-accounts-list.md) — Count tokens in a Message
-- [List Service Accounts - Claude API Reference](Endpoints/organization-service-accounts-list.md) — Count tokens in a Message
-- [List Session Resources - Claude API Reference](Endpoints/beta-sessions-resources-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Session Thread Events - Claude API Reference](Endpoints/beta-sessions-threads-events-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Session Threads - Claude API Reference](Endpoints/beta-sessions-threads-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Sessions - Claude API Reference](Endpoints/beta-sessions-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Skill Versions - Claude API Reference](Endpoints/beta-skills-versions-list.md) — Count tokens in a Message
-- [List Skill Versions - Claude API Reference](Endpoints/skills-versions-list.md) — Count tokens in a Message
-- [List Skills - Claude API Reference](Endpoints/http-beta-skills-list.md) — Count tokens in a Message
+- [List Organization Rate Limits - Claude API Reference](Endpoints/organization-rate-limits-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List RBAC Group Members - Claude API Reference](Endpoints/organization-rbac-groups-members-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List RBAC Groups - Claude API Reference](Endpoints/organization-rbac-groups-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List RBAC Role Permissions - Claude API Reference](Endpoints/organization-rbac-roles-permissions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List RBAC Roles - Claude API Reference](Endpoints/organization-rbac-roles-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Service Account Workspace Members - Claude API Reference](Endpoints/organization-workspaces-service-accounts-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Service Accounts - Claude API Reference](Endpoints/organization-service-accounts-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Session Resources - Claude API Reference](Endpoints/beta-sessions-resources-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Session Thread Events - Claude API Reference](Endpoints/beta-sessions-threads-events-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Session Threads - Claude API Reference](Endpoints/beta-sessions-threads-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Sessions - Claude API Reference](Endpoints/beta-sessions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Skill Versions - Claude API Reference](Endpoints/beta-skills-versions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Skill Versions - Claude API Reference](Endpoints/skills-versions-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Skills - Claude API Reference](Endpoints/http-beta-skills-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Skills - Claude API Reference](Endpoints/platform-claude-com-http-beta-skills-list.md) — Count tokens in a Message
-- [List Skills - Claude API Reference](Endpoints/skills-list.md) — Count tokens in a Message
-- [List Tunnel Certificates - Claude API Reference](Endpoints/beta-tunnels-certificates-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Tunnels - Claude API Reference](Endpoints/http-beta-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List Skills - Claude API Reference](Endpoints/skills-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Spend Limit Increase Requests - Claude API Reference](Endpoints/organization-spend-limits-increase-requests-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Tunnel Certificates - Claude API Reference](Endpoints/beta-tunnels-certificates-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Tunnels - Claude API Reference](Endpoints/http-beta-tunnels-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List Tunnels - Claude API Reference](Endpoints/platform-claude-com-http-beta-tunnels-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [List User Activity - Claude API Reference](Endpoints/organization-analytics-users-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [List User Profiles - Claude API Reference](Endpoints/platform-claude-com-http-beta-user-profiles-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List User Profiles - Claude API Reference](Endpoints/user-profiles-list.md) — Count tokens in a Message
-- [List Users - Claude API Reference](Endpoints/organization-users-list.md) — Count tokens in a Message
-- [List Vaults - Claude API Reference](Endpoints/beta-vaults-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Work Items - Claude API Reference](Endpoints/beta-environments-work-list.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [List Workspace Members - Claude API Reference](Endpoints/organization-workspaces-members-list.md) — Count tokens in a Message
-- [List Workspace Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits-list.md) — Count tokens in a Message
-- [List Workspaces - Claude API Reference](Endpoints/organization-workspaces-list.md) — Count tokens in a Message
-- [List Workspaces For Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-list.md) — Count tokens in a Message
-- [Members - Claude API Reference](Endpoints/organization-workspaces-members.md) — Count tokens in a Message
+- [List User Profiles - Claude API Reference](Endpoints/user-profiles-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Users - Claude API Reference](Endpoints/organization-users-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Vaults - Claude API Reference](Endpoints/beta-vaults-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Work Items - Claude API Reference](Endpoints/beta-environments-work-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Workspace Members - Claude API Reference](Endpoints/organization-workspaces-members-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Workspace Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Workspaces - Claude API Reference](Endpoints/organization-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [List Workspaces For Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Members - Claude API Reference](Endpoints/organization-rbac-groups-members.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Members - Claude API Reference](Endpoints/organization-workspaces-members.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Memories](Endpoints/cli-beta-memory-stores-memories.md) — $ ant beta:memory-stores:memories create
 - [Memories](Endpoints/csharp-beta-memory-stores-memories.md) — BetaManagedAgentsMemory Beta.MemoryStores.Memories.Create(MemoryCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Memories](Endpoints/go-beta-memory-stores-memories.md) — client.Beta.MemoryStores.Memories.New(ctx, memoryStoreID, params) (BetaManagedAgentsMemory, error)
@@ -1624,7 +1680,7 @@
 - [Memories](Endpoints/python-beta-memory-stores-memories.md) — beta.memorystores.memories.create(strmemorystoreid, MemoryCreateParamskwargs)  -> BetaManagedAgentsMemory
 - [Memories](Endpoints/ruby-beta-memory-stores-memories.md) — beta.memorystores.memories.create(memorystoreid, kwargs) -> BetaManagedAgentsMemory
 - [Memories](Endpoints/typescript-beta-memory-stores-memories.md) — client.beta.memoryStores.memories.create(stringmemoryStoreID, MemoryCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemory
-- [Memories - Claude API Reference](Endpoints/beta-memory-stores-memories.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Memories - Claude API Reference](Endpoints/beta-memory-stores-memories.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Memory Stores](Endpoints/cli-beta-memory-stores.md) — $ ant beta:memory-stores create
 - [Memory Stores](Endpoints/csharp-beta-memory-stores.md) — BetaManagedAgentsMemoryStore Beta.MemoryStores.Create(MemoryStoreCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Memory Stores](Endpoints/go-beta-memory-stores.md) — client.Beta.MemoryStores.New(ctx, params) (BetaManagedAgentsMemoryStore, error)
@@ -1632,7 +1688,7 @@
 - [Memory Stores](Endpoints/python-beta-memory-stores.md) — beta.memorystores.create(MemoryStoreCreateParamskwargs)  -> BetaManagedAgentsMemoryStore
 - [Memory Stores](Endpoints/ruby-beta-memory-stores.md) — beta.memorystores.create(kwargs) -> BetaManagedAgentsMemoryStore
 - [Memory Stores](Endpoints/typescript-beta-memory-stores.md) — client.beta.memoryStores.create(MemoryStoreCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsMemoryStore
-- [Memory Stores - Claude API Reference](Endpoints/beta-memory-stores.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Memory Stores - Claude API Reference](Endpoints/beta-memory-stores.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Memory Versions](Endpoints/cli-beta-memory-stores-memory-versions.md) — $ ant beta:memory-stores:memory-versions list
 - [Memory Versions](Endpoints/csharp-beta-memory-stores-memory-versions.md) — MemoryVersionListPageResponse Beta.MemoryStores.MemoryVersions.List(MemoryVersionListParamsparameters, CancellationTokencancellationToken = default)
 - [Memory Versions](Endpoints/go-beta-memory-stores-memory-versions.md) — client.Beta.MemoryStores.MemoryVersions.List(ctx, memoryStoreID, params) (PageCursor[BetaManagedAgentsMemoryVersion], error)
@@ -1640,7 +1696,7 @@
 - [Memory Versions](Endpoints/python-beta-memory-stores-memory-versions.md) — beta.memorystores.memoryversions.list(strmemorystoreid, MemoryVersionListParamskwargs)  -> SyncPageCursor[BetaManagedAgentsMemoryVersion]
 - [Memory Versions](Endpoints/ruby-beta-memory-stores-memory-versions.md) — beta.memorystores.memoryversions.list(memorystoreid, kwargs) -> PageCursor<BetaManagedAgentsMemoryVersion>
 - [Memory Versions](Endpoints/typescript-beta-memory-stores-memory-versions.md) — client.beta.memoryStores.memoryVersions.list(stringmemoryStoreID, MemoryVersionListParamsparams?, RequestOptionsoptions?)…
-- [Memory Versions - Claude API Reference](Endpoints/beta-memory-stores-memory-versions.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Memory Versions - Claude API Reference](Endpoints/beta-memory-stores-memory-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Messages](Endpoints/cli-beta-messages.md) — $ ant beta:messages create
 - [Messages](Endpoints/cli-messages.md) — Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.
 - [Messages](Endpoints/csharp-beta-messages.md) — BetaMessage Beta.Messages.Create(MessageCreateParamsparameters, CancellationTokencancellationToken = default)
@@ -1655,10 +1711,10 @@
 - [Messages](Endpoints/ruby-messages.md) — messages.create(kwargs) -> Message
 - [Messages](Endpoints/typescript-beta-messages.md) — client.beta.messages.create(MessageCreateParamsparams, RequestOptionsoptions?): BetaMessage | Stream<BetaRawMessageStreamEvent>
 - [Messages](Endpoints/typescript-messages.md) — client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>
-- [Messages - Claude API Reference](Endpoints/http-beta-messages.md) — Count tokens in a Message
-- [Messages - Claude API Reference](Endpoints/messages.md) — Count tokens in a Message
+- [Messages - Claude API Reference](Endpoints/http-beta-messages.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Messages - Claude API Reference](Endpoints/messages.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Messages - Claude API Reference](Endpoints/platform-claude-com-http-beta-messages.md) — Count tokens in a Message
-- [Migrating to API version 2026-10-21 - Claude Platform Docs](Endpoints/migration-2026-10-21.md) — Count tokens in a Message
+- [Migrating to API version 2026-10-21 - Claude Platform Docs](Endpoints/migration-2026-10-21.md) — Upgrade a Claude API integration from API version 2023-06-01 to 2026-10-21: the SDK version to install and the code changes to make.
 - [Models](Endpoints/cli-beta-models.md) — The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
 - [Models](Endpoints/cli-models.md) — The Models API response can be used to determine which models are available for use in the API. More recently released models are listed first.
 - [Models](Endpoints/csharp-beta-models.md) — ModelListPageResponse Beta.Models.List(ModelListParams?parameters, CancellationTokencancellationToken = default)
@@ -1673,25 +1729,31 @@
 - [Models](Endpoints/ruby-models.md) — models.list(kwargs) -> Page<ModelInfo>
 - [Models](Endpoints/typescript-beta-models.md) — client.beta.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<BetaModelInfo>
 - [Models](Endpoints/typescript-models.md) — client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>
-- [Models - Claude API Reference](Endpoints/http-beta-models.md) — Count tokens in a Message
-- [Models - Claude API Reference](Endpoints/models.md) — Count tokens in a Message
+- [Models - Claude API Reference](Endpoints/http-beta-models.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Models - Claude API Reference](Endpoints/models.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Models - Claude API Reference](Endpoints/platform-claude-com-http-beta-models.md) — Count tokens in a Message
 - [OpenAI SDK compatibility](Endpoints/openai-sdk.md) — Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evaluate…
-- [OpenTelemetry span reference - Claude Platform Docs](Endpoints/opentelemetry-spans.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Organization - Claude API Reference](Endpoints/organization.md) — Count tokens in a Message
+- [OpenTelemetry span reference - Claude Platform Docs](Endpoints/opentelemetry-spans.md) — The OpenTelemetry spans and span attributes that the Claude API and the Claude SDK emit.
+- [Organization - Claude API Reference](Endpoints/organization.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Parse Unverified - Claude API Reference](Endpoints/http-beta-webhooks-parse-unverified.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Pause Deployment - Claude API Reference](Endpoints/beta-deployments-pause.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Pause Deployment - Claude API Reference](Endpoints/beta-deployments-pause.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Permissions - Claude API Reference](Endpoints/organization-rbac-roles-permissions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [PHP SDK](Endpoints/sdks-php.md) — Install and configure the Anthropic PHP SDK with value objects and builder patterns
-- [Poll for Work - Claude API Reference](Endpoints/beta-environments-work-poll.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Plugins - Claude API Reference](Endpoints/organization-analytics-plugins.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Poll for Work - Claude API Reference](Endpoints/beta-environments-work-poll.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Projects - Claude API Reference](Endpoints/organization-analytics-apps-chat-projects.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Python SDK](Endpoints/sdks-python.md) — Install and configure the Anthropic Python SDK with sync and async client support
-- [Rate Limits - Claude API Reference](Endpoints/organization-rate-limits.md) — Count tokens in a Message
-- [Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits.md) — Count tokens in a Message
-- [Rate limits - Claude Platform Docs](Endpoints/rate-limits.md) — Count tokens in a Message
-- [Record Heartbeat - Claude API Reference](Endpoints/beta-environments-work-heartbeat.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Redact a memory version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-redact.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Remove Federation Rule Workspace - Claude API Reference](Endpoints/organization-federation-rules-workspaces-remove.md) — Count tokens in a Message
-- [Remove User - Claude API Reference](Endpoints/organization-users-remove.md) — Count tokens in a Message
-- [Remove Workspace From Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-remove.md) — Count tokens in a Message
+- [Rate Limits - Claude API Reference](Endpoints/organization-rate-limits.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Rate limits - Claude Platform Docs](Endpoints/rate-limits.md) — To mitigate misuse and manage capacity on the API, limits are in place on how much an organization can use the Claude API.
+- [RBAC Groups - Claude API Reference](Endpoints/organization-rbac-groups.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [RBAC Roles - Claude API Reference](Endpoints/organization-rbac-roles.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Record Heartbeat - Claude API Reference](Endpoints/beta-environments-work-heartbeat.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Redact a Memory Version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-redact.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Remove Federation Rule Workspace - Claude API Reference](Endpoints/organization-federation-rules-workspaces-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Remove RBAC Group Member - Claude API Reference](Endpoints/organization-rbac-groups-members-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Remove User - Claude API Reference](Endpoints/organization-users-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Remove Workspace From Service Account - Claude API Reference](Endpoints/organization-service-accounts-workspaces-remove.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Resources](Endpoints/cli-beta-sessions-resources.md) — $ ant beta:sessions:resources add
 - [Resources](Endpoints/csharp-beta-sessions-resources.md) — BetaManagedAgentsFileResource Beta.Sessions.Resources.Add(ResourceAddParamsparameters, CancellationTokencancellationToken = default)
 - [Resources](Endpoints/go-beta-sessions-resources.md) — client.Beta.Sessions.Resources.Add(ctx, sessionID, params) (BetaManagedAgentsFileResource, error)
@@ -1699,28 +1761,28 @@
 - [Resources](Endpoints/python-beta-sessions-resources.md) — beta.sessions.resources.add(strsessionid, ResourceAddParamskwargs)  -> BetaManagedAgentsFileResource
 - [Resources](Endpoints/ruby-beta-sessions-resources.md) — beta.sessions.resources.add(sessionid, kwargs) -> BetaManagedAgentsFileResource
 - [Resources](Endpoints/typescript-beta-sessions-resources.md) — client.beta.sessions.resources.add(stringsessionID, ResourceAddParamsparams, RequestOptionsoptions?): BetaManagedAgentsFileResource
-- [Resources - Claude API Reference](Endpoints/beta-sessions-resources.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Retrieve a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Retrieve a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Retrieve a memory store - Claude API Reference](Endpoints/beta-memory-stores-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Retrieve a memory version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Retrieve a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-retrieve.md) — Count tokens in a Message
-- [Retrieve a Message Batch - Claude API Reference](Endpoints/messages-batches-retrieve.md) — Count tokens in a Message
-- [Retrieve a Vault - Claude API Reference](Endpoints/beta-vaults-retrieve.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Retrieve API Key (Admin API) - Claude API Reference](Endpoints/organization-api-keys-retrieve.md) — Count tokens in a Message
-- [Retrieve Message Batch results - Claude API Reference](Endpoints/beta-messages-batches-results.md) — Count tokens in a Message
-- [Retrieve Message Batch results - Claude API Reference](Endpoints/messages-batches-results.md) — Count tokens in a Message
-- [Reveal Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Resources - Claude API Reference](Endpoints/beta-sessions-resources.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a Memory - Claude API Reference](Endpoints/beta-memory-stores-memories-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a Memory Store - Claude API Reference](Endpoints/beta-memory-stores-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a Memory Version - Claude API Reference](Endpoints/beta-memory-stores-memory-versions-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a Message Batch - Claude API Reference](Endpoints/beta-messages-batches-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a Message Batch - Claude API Reference](Endpoints/messages-batches-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve a Vault - Claude API Reference](Endpoints/beta-vaults-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve API Key (Admin API) - Claude API Reference](Endpoints/organization-api-keys-retrieve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve Message Batch results - Claude API Reference](Endpoints/beta-messages-batches-results.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Retrieve Message Batch results - Claude API Reference](Endpoints/messages-batches-results.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Reveal Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-reveal-token.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Reveal Tunnel Token - Claude API Reference](Endpoints/platform-claude-com-http-beta-tunnels-reveal-token.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Rotate Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Rotate Tunnel Token - Claude API Reference](Endpoints/http-beta-tunnels-rotate-token.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Rotate Tunnel Token - Claude API Reference](Endpoints/platform-claude-com-http-beta-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Ruby SDK](Endpoints/sdks-ruby.md) — Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
-- [Rules - Claude API Reference](Endpoints/organization-federation-rules.md) — Count tokens in a Message
-- [Run Deployment Now - Claude API Reference](Endpoints/beta-deployments-run.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Send Events - Claude API Reference](Endpoints/beta-sessions-events-send.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Service Accounts - Claude API Reference](Endpoints/organization-service-accounts.md) — Count tokens in a Message
-- [Service Accounts - Claude API Reference](Endpoints/organization-workspaces-service-accounts.md) — Count tokens in a Message
-- [Service tiers - Claude Platform Docs](Endpoints/service-tiers.md) — Count tokens in a Message
+- [Rules - Claude API Reference](Endpoints/organization-federation-rules.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Run Deployment Now - Claude API Reference](Endpoints/beta-deployments-run.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Send Events - Claude API Reference](Endpoints/beta-sessions-events-send.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Service Accounts - Claude API Reference](Endpoints/organization-service-accounts.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Service Accounts - Claude API Reference](Endpoints/organization-workspaces-service-accounts.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Service tiers - Claude Platform Docs](Endpoints/service-tiers.md) — Different tiers of service allow you to balance availability, performance, and predictable costs based on your application’s needs.
 - [Sessions](Endpoints/cli-beta-sessions.md) — $ ant beta:sessions create
 - [Sessions](Endpoints/csharp-beta-sessions.md) — BetaManagedAgentsSession Beta.Sessions.Create(SessionCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Sessions](Endpoints/go-beta-sessions.md) — client.Beta.Sessions.New(ctx, params) (BetaManagedAgentsSession, error)
@@ -1728,8 +1790,8 @@
 - [Sessions](Endpoints/python-beta-sessions.md) — beta.sessions.create(SessionCreateParamskwargs)  -> BetaManagedAgentsSession
 - [Sessions](Endpoints/ruby-beta-sessions.md) — beta.sessions.create(kwargs) -> BetaManagedAgentsSession
 - [Sessions](Endpoints/typescript-beta-sessions.md) — client.beta.sessions.create(SessionCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsSession
-- [Sessions - Claude API Reference](Endpoints/beta-sessions.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Set Workspace Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits-update.md) — Count tokens in a Message
+- [Sessions - Claude API Reference](Endpoints/beta-sessions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Set Workspace Rate Limits - Claude API Reference](Endpoints/organization-workspaces-rate-limits-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Skills](Endpoints/cli-beta-skills.md) — - --display-title: optional string
 - [Skills](Endpoints/csharp-beta-skills.md) — SkillCreateResponse Beta.Skills.Create(SkillCreateParams?parameters, CancellationTokencancellationToken = default)
 - [Skills](Endpoints/go-beta-skills.md) — client.Beta.Skills.New(ctx, params) (BetaSkillNewResponse, error)
@@ -1737,52 +1799,57 @@
 - [Skills](Endpoints/python-beta-skills.md) — beta.skills.create(SkillCreateParamskwargs)  -> SkillCreateResponse
 - [Skills](Endpoints/ruby-beta-skills.md) — beta.skills.create(kwargs) -> SkillCreateResponse
 - [Skills](Endpoints/typescript-beta-skills.md) — client.beta.skills.create(SkillCreateParamsparams?, RequestOptionsoptions?): SkillCreateResponse
-- [Skills - Claude API Reference](Endpoints/http-beta-skills.md) — Count tokens in a Message
+- [Skills - Claude API Reference](Endpoints/http-beta-skills.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Skills - Claude API Reference](Endpoints/organization-analytics-skills.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Skills - Claude API Reference](Endpoints/platform-claude-com-http-beta-skills.md) — Count tokens in a Message
-- [Skills - Claude API Reference](Endpoints/skills.md) — Count tokens in a Message
-- [Stop Work - Claude API Reference](Endpoints/beta-environments-work-stop.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Stream Events - Claude API Reference](Endpoints/beta-sessions-events-stream.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Stream Session Thread Events - Claude API Reference](Endpoints/beta-sessions-threads-events-stream.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Supported regions - Claude Platform Docs](Endpoints/supported-regions.md) — Count tokens in a Message
-- [Threads - Claude API Reference](Endpoints/beta-sessions-threads.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Trigger a routine through the API - Claude Platform Docs](Endpoints/claude-code-routines-fire.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Tunnels - Claude API Reference](Endpoints/http-beta-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Skills - Claude API Reference](Endpoints/skills.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Spend Limits - Claude API Reference](Endpoints/organization-spend-limits.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Stop Work - Claude API Reference](Endpoints/beta-environments-work-stop.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Stream Events - Claude API Reference](Endpoints/beta-sessions-events-stream.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Stream Session Thread Events - Claude API Reference](Endpoints/beta-sessions-threads-events-stream.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Summaries - Claude API Reference](Endpoints/organization-analytics-summaries.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Supported regions - Claude Platform Docs](Endpoints/supported-regions.md) — Here are the countries, regions, and territories Anthropic can support access from:
+- [Threads - Claude API Reference](Endpoints/beta-sessions-threads.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Trigger a routine through the API - Claude Platform Docs](Endpoints/claude-code-routines-fire.md) — Start a Claude Code routine session on demand by sending an authenticated POST request.
+- [Tunnels - Claude API Reference](Endpoints/http-beta-tunnels.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Tunnels - Claude API Reference](Endpoints/platform-claude-com-http-beta-tunnels.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [TypeScript SDK](Endpoints/sdks-typescript.md) — Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
-- [Unpause Deployment - Claude API Reference](Endpoints/beta-deployments-unpause.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Unpause Deployment - Claude API Reference](Endpoints/beta-deployments-unpause.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Unwrap - Claude API Reference](Endpoints/http-beta-webhooks-unwrap.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update a memory - Claude API Reference](Endpoints/beta-memory-stores-memories-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update a memory store - Claude API Reference](Endpoints/beta-memory-stores-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update a Vault - Claude API Reference](Endpoints/beta-vaults-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update Agent - Claude API Reference](Endpoints/beta-agents-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update API Key - Claude API Reference](Endpoints/organization-api-keys-update.md) — Count tokens in a Message
-- [Update Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings-update.md) — Count tokens in a Message
-- [Update Deployment - Claude API Reference](Endpoints/beta-deployments-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update Environment - Claude API Reference](Endpoints/beta-environments-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update External Key - Claude API Reference](Endpoints/organization-external-keys-update.md) — Count tokens in a Message
-- [Update Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-update.md) — Count tokens in a Message
-- [Update Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-update.md) — Count tokens in a Message
-- [Update Service Account - Claude API Reference](Endpoints/organization-service-accounts-update.md) — Count tokens in a Message
-- [Update Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-update.md) — Count tokens in a Message
-- [Update Session - Claude API Reference](Endpoints/beta-sessions-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update User - Claude API Reference](Endpoints/organization-users-update.md) — Count tokens in a Message
-- [Update User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-update.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Update a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update a Memory - Claude API Reference](Endpoints/beta-memory-stores-memories-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update a Memory Store - Claude API Reference](Endpoints/beta-memory-stores-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update a Vault - Claude API Reference](Endpoints/beta-vaults-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Agent - Claude API Reference](Endpoints/beta-agents-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update API Key - Claude API Reference](Endpoints/organization-api-keys-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Compliance Settings - Claude API Reference](Endpoints/organization-compliance-settings-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Deployment - Claude API Reference](Endpoints/beta-deployments-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Environment - Claude API Reference](Endpoints/beta-environments-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update External Key - Claude API Reference](Endpoints/organization-external-keys-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Federation Issuer - Claude API Reference](Endpoints/organization-federation-issuers-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Federation Rule - Claude API Reference](Endpoints/organization-federation-rules-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update RBAC Group - Claude API Reference](Endpoints/organization-rbac-groups-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Service Account - Claude API Reference](Endpoints/organization-service-accounts-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Service Account Workspace Member - Claude API Reference](Endpoints/organization-workspaces-service-accounts-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Session - Claude API Reference](Endpoints/beta-sessions-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Session Resource - Claude API Reference](Endpoints/beta-sessions-resources-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update User - Claude API Reference](Endpoints/organization-users-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update User Profile - Claude API Reference](Endpoints/http-beta-user-profiles-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update User Profile - Claude API Reference](Endpoints/platform-claude-com-http-beta-user-profiles-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update User Profile - Claude API Reference](Endpoints/user-profiles-update.md) — Count tokens in a Message
-- [Update Work Item - Claude API Reference](Endpoints/beta-environments-work-update.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Update Workspace - Claude API Reference](Endpoints/organization-workspaces-update.md) — Count tokens in a Message
-- [Update Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-update.md) — Count tokens in a Message
-- [Upload File - Claude API Reference](Endpoints/files-upload.md) — Count tokens in a Message
-- [Upload File - Claude API Reference](Endpoints/http-beta-files-upload.md) — Count tokens in a Message
+- [Update User Profile - Claude API Reference](Endpoints/user-profiles-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Work Item - Claude API Reference](Endpoints/beta-environments-work-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Workspace - Claude API Reference](Endpoints/organization-workspaces-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Workspace Member - Claude API Reference](Endpoints/organization-workspaces-members-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Upload File - Claude API Reference](Endpoints/files-upload.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Upload File - Claude API Reference](Endpoints/http-beta-files-upload.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Upload File - Claude API Reference](Endpoints/platform-claude-com-http-beta-files-upload.md) — Count tokens in a Message
-- [User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [User Profiles - Claude API Reference](Endpoints/http-beta-user-profiles.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [User Profiles - Claude API Reference](Endpoints/platform-claude-com-http-beta-user-profiles.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [User Profiles - Claude API Reference](Endpoints/user-profiles.md) — Count tokens in a Message
-- [Users - Claude API Reference](Endpoints/organization-users.md) — Count tokens in a Message
-- [Validate an MCP OAuth Credential - Claude API Reference](Endpoints/beta-vaults-credentials-mcp-oauth-validate.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Validate External Key - Claude API Reference](Endpoints/organization-external-keys-validate.md) — Count tokens in a Message
+- [User Profiles - Claude API Reference](Endpoints/user-profiles.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Users - Claude API Reference](Endpoints/organization-analytics-users.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Users - Claude API Reference](Endpoints/organization-users.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Validate an MCP OAuth Credential - Claude API Reference](Endpoints/beta-vaults-credentials-mcp-oauth-validate.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Validate External Key - Claude API Reference](Endpoints/organization-external-keys-validate.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Vaults](Endpoints/cli-beta-vaults.md) — Body param: Human-readable name for the vault. 1-255 characters.
 - [Vaults](Endpoints/csharp-beta-vaults.md) — BetaManagedAgentsVault Beta.Vaults.Create(VaultCreateParamsparameters, CancellationTokencancellationToken = default)
 - [Vaults](Endpoints/go-beta-vaults.md) — client.Beta.Vaults.New(ctx, params) (BetaManagedAgentsVault, error)
@@ -1790,7 +1857,7 @@
 - [Vaults](Endpoints/python-beta-vaults.md) — beta.vaults.create(VaultCreateParamskwargs)  -> BetaManagedAgentsVault
 - [Vaults](Endpoints/ruby-beta-vaults.md) — beta.vaults.create(kwargs) -> BetaManagedAgentsVault
 - [Vaults](Endpoints/typescript-beta-vaults.md) — client.beta.vaults.create(VaultCreateParamsparams, RequestOptionsoptions?): BetaManagedAgentsVault
-- [Vaults - Claude API Reference](Endpoints/beta-vaults.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Vaults - Claude API Reference](Endpoints/beta-vaults.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Versions](Endpoints/cli-beta-agents-versions.md) — $ ant beta:agents:versions list
 - [Versions](Endpoints/cli-beta-skills-versions.md) — $ ant beta:skills:versions create
 - [Versions](Endpoints/csharp-beta-agents-versions.md) — VersionListPageResponse Beta.Agents.Versions.List(VersionListParamsparameters, CancellationTokencancellationToken = default)
@@ -1805,212 +1872,222 @@
 - [Versions](Endpoints/ruby-beta-skills-versions.md) — beta.skills.versions.create(skillid, kwargs) -> VersionCreateResponse
 - [Versions](Endpoints/typescript-beta-agents-versions.md) — client.beta.agents.versions.list(stringagentID, VersionListParamsparams?, RequestOptionsoptions?): PageCursor<BetaManagedAgentsAgent>
 - [Versions](Endpoints/typescript-beta-skills-versions.md) — client.beta.skills.versions.create(stringskillID, VersionCreateParamsparams?, RequestOptionsoptions?): VersionCreateResponse
-- [Versions - Claude API Reference](Endpoints/beta-agents-versions.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Versions - Claude API Reference](Endpoints/beta-skills-versions.md) — Count tokens in a Message
-- [Versions - Claude API Reference](Endpoints/skills-versions.md) — Count tokens in a Message
-- [Versions - Claude Platform Docs](Endpoints/versioning.md) — Count tokens in a Message
-- [Webhooks - Claude API Reference](Endpoints/beta-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Versions - Claude API Reference](Endpoints/beta-agents-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Versions - Claude API Reference](Endpoints/beta-skills-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Versions - Claude API Reference](Endpoints/skills-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Versions - Claude Platform Docs](Endpoints/versioning.md) — When making API requests, you must send an anthropic-version request header. For example, anthropic-version: 2026-10-21. If you are using the client SDKs, this…
+- [Webhooks - Claude API Reference](Endpoints/beta-webhooks.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Webhooks - Claude API Reference](Endpoints/http-beta-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Work - Claude API Reference](Endpoints/beta-environments-work.md) — Include beta APIsThe API you’re viewing is only available in beta
-- [Workspaces - Claude API Reference](Endpoints/organization-federation-rules-workspaces.md) — Count tokens in a Message
-- [Workspaces - Claude API Reference](Endpoints/organization-service-accounts-workspaces.md) — Count tokens in a Message
-- [Workspaces - Claude API Reference](Endpoints/organization-workspaces.md) — Count tokens in a Message
+- [Work - Claude API Reference](Endpoints/beta-environments-work.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Workspaces - Claude API Reference](Endpoints/organization-federation-rules-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Workspaces - Claude API Reference](Endpoints/organization-service-accounts-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Workspaces - Claude API Reference](Endpoints/organization-workspaces.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ## Guides
 
 - [Admin API overview](Guides/build-with-claude-administration-api.md) — The Admin API is unavailable for individual accounts. To collaborate with teammates and add members, set up your organization in Console → Settings →…
 - [API and data retention - Claude Platform Docs](Guides/build-with-claude-api-and-data-retention.md) — Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
-- [Batch processing - Claude Platform Docs](Guides/build-with-claude-batch-processing.md) — Claude on cloud platforms
-- [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example.md) — Claude on cloud platforms
-- [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics.md) — Claude on cloud platforms
-- [Citations - Claude Platform Docs](Guides/build-with-claude-citations.md) — Claude on cloud platforms
+- [Batch processing - Claude Platform Docs](Guides/build-with-claude-batch-processing.md) — Process large volumes of Messages requests asynchronously with the Message Batches API, cutting costs by 50 percent and increasing throughput.
+- [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example.md) — Build a session-level mode that grants standing consent for multiagent fan-out, switched on and off with mid-conversation system messages.
+- [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics.md) — Diagnose unexpected prompt cache misses by comparing consecutive requests and identifying exactly where the prompt prefix diverged.
+- [Citations - Claude Platform Docs](Guides/build-with-claude-citations.md) — Ground Claude’s responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources…
 - [Claude Code Analytics API - Claude Platform Docs](Guides/build-with-claude-claude-code-analytics-api.md) — Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
-- [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](Guides/build-with-claude-claude-in-amazon-bedrock.md) — Claude on cloud platforms
-- [Claude in Microsoft Foundry - Claude Platform Docs](Guides/build-with-claude-claude-in-microsoft-foundry.md) — Claude on cloud platforms
-- [Claude Models on Google Cloud (Anthropic managed) - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md) — Claude on cloud platforms
-- [Claude Models on Google Cloud (Google managed) - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md) — Claude on cloud platforms
-- [Claude Models on Google Cloud - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-overview.md) — Claude on cloud platforms
-- [Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs](Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) — Claude on cloud platforms
+- [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](Guides/build-with-claude-claude-in-amazon-bedrock.md) — Access Claude models through Amazon Bedrock with AWS-native authentication, billing, and security boundaries.
+- [Claude in Microsoft Foundry - Claude Platform Docs](Guides/build-with-claude-claude-in-microsoft-foundry.md) — Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
+- [Claude Models on Google Cloud (Anthropic managed) - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md) — Claude Models on Google Cloud (Anthropic managed) is the Claude API, run by Anthropic and reached through your Google Cloud project.
+- [Claude Models on Google Cloud (Google managed) - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md) — Google operates Claude Models on Google Cloud (Google managed) as part of Google Cloud’s Agent Platform. You can call Claude with Anthropic’s client SDKs.
+- [Claude Models on Google Cloud - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-overview.md) — Compare Claude Models on Google Cloud (Anthropic managed) and Claude Models on Google Cloud (Google managed), and find out which one you use.
+- [Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs](Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) — The legacy Amazon Bedrock integration for Claude models, using InvokeModel and Converse APIs with ARN-versioned model identifiers.
 - [Claude on Amazon Bedrock - Claude API Docs](Guides/build-with-claude-claude-on-amazon-bedrock.md) — Anthropic's Claude models are now generally available through Amazon Bedrock.
 - [Claude on Google Cloud - Claude Platform Docs](Guides/build-with-claude-claude-on-vertex-ai.md) — Claude on cloud platforms
-- [Claude Platform on AWS - Claude Platform Docs](Guides/build-with-claude-claude-platform-on-aws.md) — Claude on cloud platforms
-- [Compaction and preserved thinking - Claude Platform Docs](Guides/build-with-claude-compaction-thinking-blocks.md) — Claude on cloud platforms
-- [Compaction at a token threshold - Claude Platform Docs](Guides/build-with-claude-compaction-threshold.md) — Claude on cloud platforms
-- [Compaction in the background - Claude Platform Docs](Guides/build-with-claude-compaction-background.md) — Claude on cloud platforms
-- [Compaction on demand - Claude Platform Docs](Guides/build-with-claude-compaction-on-demand.md) — Claude on cloud platforms
-- [Compaction overview - Claude Platform Docs](Guides/build-with-claude-compaction.md) — Claude on cloud platforms
-- [Compaction that keeps recent turns - Claude Platform Docs](Guides/build-with-claude-compaction-keep-recent-turns.md) — Claude on cloud platforms
-- [Context editing - Claude Platform Docs](Guides/build-with-claude-context-editing.md) — Claude on cloud platforms
-- [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows.md) — Claude on cloud platforms
-- [Coordinates and bounding boxes - Claude Platform Docs](Guides/build-with-claude-vision-coordinates.md) — Claude on cloud platforms
-- [Effort - Claude Platform Docs](Guides/build-with-claude-effort.md) — Claude on cloud platforms
-- [Embeddings - Claude Platform Docs](Guides/build-with-claude-embeddings.md) — Claude on cloud platforms
-- [Extended thinking - Claude Platform Docs](Guides/build-with-claude-extended-thinking.md) — Claude on cloud platforms
-- [Fallback credit - Claude Platform Docs](Guides/build-with-claude-fallback-credit.md) — Claude on cloud platforms
-- [Fast mode - Claude Platform Docs](Guides/build-with-claude-fast-mode.md) — Claude on cloud platforms
-- [Features overview - Claude Platform Docs](Guides/build-with-claude-overview.md) — Claude on cloud platforms
-- [Files API - Claude Platform Docs](Guides/build-with-claude-files.md) — Claude on cloud platforms
-- [Mid-conversation system messages and tool changes - Claude Platform Docs](Guides/build-with-claude-mid-conversation-system-messages.md) — Claude on cloud platforms
-- [Multilingual support - Claude Platform Docs](Guides/build-with-claude-multilingual-support.md) — Claude on cloud platforms
-- [PDF support - Claude Platform Docs](Guides/build-with-claude-pdf-support.md) — Claude on cloud platforms
-- [Preserved thinking - Claude Platform Docs](Guides/build-with-claude-preserved-thinking.md) — Claude on cloud platforms
-- [Prompt caching - Claude Platform Docs](Guides/build-with-claude-prompt-caching.md) — Claude on cloud platforms
+- [Claude Platform on AWS - Claude Platform Docs](Guides/build-with-claude-claude-platform-on-aws.md) — Access Claude’s full platform capabilities through AWS with Anthropic-managed infrastructure.
+- [Compaction and preserved thinking - Claude Platform Docs](Guides/build-with-claude-compaction-thinking-blocks.md) — When thinking blocks in turns kept after on-demand compaction stay valid on models with preserved thinking, and how to check.
+- [Compaction at a token threshold - Claude Platform Docs](Guides/build-with-claude-compaction-threshold.md) — Have the API summarize older context automatically, inside an ordinary request, when the conversation reaches a token threshold you set.
+- [Compaction in the background - Claude Platform Docs](Guides/build-with-claude-compaction-background.md) — Request an on-demand compaction summary while the conversation continues on its full history, then swap the block in when it arrives.
+- [Compaction on demand - Claude Platform Docs](Guides/build-with-claude-compaction-on-demand.md) — Ask Claude to summarize a conversation when your application chooses, then continue from the summary.
+- [Compaction overview - Claude Platform Docs](Guides/build-with-claude-compaction.md) — Learn what compaction does, how compaction on demand and compaction at a token threshold differ, and which page covers your task.
+- [Compaction that keeps recent turns - Claude Platform Docs](Guides/build-with-claude-compaction-keep-recent-turns.md) — Summarize the older turns of a conversation with on-demand compaction and send the most recent turns after the summary, word for word.
+- [Context editing - Claude Platform Docs](Guides/build-with-claude-context-editing.md) — Automatically manage conversation context as it grows with context editing.
+- [Context windows - Claude Platform Docs](Guides/build-with-claude-context-windows.md) — Understand how the context window works, how extended thinking and tool use count toward it, and how to manage context as conversations grow.
+- [Coordinates and bounding boxes - Claude Platform Docs](Guides/build-with-claude-vision-coordinates.md) — How Claude resizes images, and how to work with the pixel coordinates it returns for bounding boxes, points, and UI elements.
+- [Effort - Claude Platform Docs](Guides/build-with-claude-effort.md) — Control how many tokens Claude uses when responding with the effort parameter, trading off between response thoroughness and token efficiency.
+- [Embeddings - Claude Platform Docs](Guides/build-with-claude-embeddings.md) — Text embeddings are numerical representations of text that let you measure semantic similarity. This guide introduces embeddings, their applications, and how…
+- [Extended thinking - Claude Platform Docs](Guides/build-with-claude-extended-thinking.md) — Configure manual extended thinking with a fixed budgettokens budget on Claude models that support it, and migrate to adaptive thinking.
+- [Fallback credit - Claude Platform Docs](Guides/build-with-claude-fallback-credit.md) — Avoid paying the prompt-cache cost twice when you retry a refused request on another model.
+- [Fast mode - Claude Platform Docs](Guides/build-with-claude-fast-mode.md) — Get up to 2.5x higher output tokens per second from supported Claude models.
+- [Features overview - Claude Platform Docs](Guides/build-with-claude-overview.md) — Explore Claude’s advanced features and capabilities.
+- [Files API - Claude Platform Docs](Guides/build-with-claude-files.md) — Upload files once, reference them by fileid in Messages requests, and download outputs created by skills or the code execution tool.
+- [Message threads - Claude Platform Docs](Guides/build-with-claude-message-threads.md) — Give long-running agents a faster time to first token, especially in long conversations, by sending only the new messages on each request.
+- [Mid-conversation system messages and tool changes - Claude Platform Docs](Guides/build-with-claude-mid-conversation-system-messages.md) — Change system instructions or tool availability partway through a conversation without invalidating the cached prefix that came before them.
+- [Multilingual support - Claude Platform Docs](Guides/build-with-claude-multilingual-support.md) — Claude excels at tasks across multiple languages, maintaining strong cross-lingual performance relative to English.
+- [PDF support - Claude Platform Docs](Guides/build-with-claude-pdf-support.md) — Process PDFs with Claude: extract text, analyze charts, and understand visual content from your documents.
+- [Preserved thinking - Claude Platform Docs](Guides/build-with-claude-preserved-thinking.md) — Preserved thinking lets a model use a thinking block from an earlier turn only if that model or one of a fixed set of other models produced it and nothing…
+- [Prompt caching - Claude Platform Docs](Guides/build-with-claude-prompt-caching.md) — Cache prompt prefixes with cachecontrol to cut costs and latency, using automatic caching or explicit breakpoints with 5-minute or 1-hour TTLs.
 - [Rate Limits API](Guides/build-with-claude-rate-limits-api.md) — Programmatically query your organization's API rate limits with the Rate Limits API.
-- [Refusals and fallback - Claude Platform Docs](Guides/build-with-claude-refusals-and-fallback.md) — Claude on cloud platforms
-- [Search results - Claude Platform Docs](Guides/build-with-claude-search-results.md) — Claude on cloud platforms
-- [Steering thinking - Claude Platform Docs](Guides/build-with-claude-thinking-steering-and-cost.md) — Claude on cloud platforms
-- [Stop reasons and fallback - Claude Platform Docs](Guides/build-with-claude-handling-stop-reasons.md) — Claude on cloud platforms
-- [Streaming messages - Claude Platform Docs](Guides/build-with-claude-streaming.md) — Claude on cloud platforms
-- [Structured outputs - Claude Platform Docs](Guides/build-with-claude-structured-outputs.md) — Claude on cloud platforms
-- [Task budgets - Claude Platform Docs](Guides/build-with-claude-task-budgets.md) — Claude on cloud platforms
-- [Thinking - Claude Platform Docs](Guides/build-with-claude-thinking.md) — Claude on cloud platforms
-- [Thinking in tool and multi-turn workflows - Claude Platform Docs](Guides/build-with-claude-thinking-tool-workflows.md) — Claude on cloud platforms
-- [Token counting - Claude Platform Docs](Guides/build-with-claude-token-counting.md) — Claude on cloud platforms
-- [Troubleshooting thinking - Claude Platform Docs](Guides/build-with-claude-thinking-troubleshooting.md) — Claude on cloud platforms
+- [Refusals and fallback - Claude Platform Docs](Guides/build-with-claude-refusals-and-fallback.md) — How Claude Fable models, Claude Opus models, Claude Sonnet 5.5, and Claude Haiku 5.5 return classifier refusals and how to retry refused requests on a fallback…
+- [Search results - Claude Platform Docs](Guides/build-with-claude-search-results.md) — Get natural citations for RAG applications by providing search results with source attribution
+- [Steering thinking - Claude Platform Docs](Guides/build-with-claude-thinking-steering-and-cost.md) — Steer how often and how deeply Claude thinks with effort levels, system prompt guidance, and per-message steering, and understand thinking’s cost and pricing.
+- [Stop reasons and fallback - Claude Platform Docs](Guides/build-with-claude-handling-stop-reasons.md) — Learn what each stopreason value means and how to handle truncation, tool use, paused turns, and refusals in your application.
+- [Streaming messages - Claude Platform Docs](Guides/build-with-claude-streaming.md) — Stream Messages API responses incrementally with server-sent events, including text, tool use, and thinking deltas.
+- [Structured outputs - Claude Platform Docs](Guides/build-with-claude-structured-outputs.md) — Get validated JSON results from agent workflows
+- [Task budgets - Claude Platform Docs](Guides/build-with-claude-task-budgets.md) — Give Claude an advisory token budget for the full agentic loop to help the model self-regulate on long agentic tasks.
+- [Text watermark - Claude Platform Docs](Guides/build-with-claude-text-watermark.md) — What Anthropic’s text watermark leaves unchanged, where to find the models and platforms it covers, and which sampling parameters to omit if you rely on it.
+- [Thinking - Claude Platform Docs](Guides/build-with-claude-thinking.md) — Understand how Claude’s thinking works: turn it on, read thinking output, steer thinking depth with effort, and use thinking with tools, caching, and streaming.
+- [Thinking in tool and multi-turn workflows - Claude Platform Docs](Guides/build-with-claude-thinking-tool-workflows.md) — Walk through a complete two-turn tool-use round trip that preserves thinking blocks correctly, and see how interleaved thinking changes the flow.
+- [Token counting - Claude Platform Docs](Guides/build-with-claude-token-counting.md) — Count the tokens in a message before you send it to Claude. Use token counts to manage rate limits and costs, make model routing decisions, and fit prompts to…
+- [Troubleshooting thinking - Claude Platform Docs](Guides/build-with-claude-thinking-troubleshooting.md) — Diagnose and fix the most common thinking failures: configuration 400 errors, empty or missing thinking blocks, maxtokens stops, and cache misses.
 - [Usage and Cost API - Claude Platform Docs](Guides/build-with-claude-usage-cost-api.md) — Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
-- [Using Agent Skills with the API - Claude Platform Docs](Guides/build-with-claude-skills-guide.md) — Claude on cloud platforms
-- [Using the Messages API - Claude Platform Docs](Guides/build-with-claude-working-with-messages.md) — Claude on cloud platforms
-- [Vision - Claude Platform Docs](Guides/build-with-claude-vision.md) — Claude on cloud platforms
+- [Using Agent Skills with the API - Claude Platform Docs](Guides/build-with-claude-skills-guide.md) — Learn how to use Agent Skills to extend Claude’s capabilities through the API.
+- [Using the Messages API - Claude Platform Docs](Guides/build-with-claude-working-with-messages.md) — Practical patterns and examples for using the Messages API effectively
+- [Vision - Claude Platform Docs](Guides/build-with-claude-vision.md) — Claude’s vision capabilities allow it to process and analyze images, opening up exciting possibilities for multimodal interaction.
 - [Workspaces - Claude Platform Docs](Guides/build-with-claude-workspaces.md) — Organize API keys, manage team access, and control costs with workspaces.
 
 ## Other
 
-- [Access Transparency - Claude Platform Docs](Other/manage-claude-access-transparency.md) — Receive an audit record of human access to your organization's data by Anthropic personnel through the Compliance API.
-- [Accessing GitHub - Claude Platform Docs](Other/managed-agents-github.md) — Configure agent environment
-- [Adding files - Claude Platform Docs](Other/managed-agents-files.md) — Configure agent environment
+- [Access Transparency - Claude Platform Docs](Other/manage-claude-access-transparency.md) — Receive an audit record of human access to your organization’s data by Anthropic personnel through the Compliance API.
+- [Accessing GitHub - Claude Platform Docs](Other/managed-agents-github.md) — Connect your agent to GitHub repositories for cloning, reading, and creating pull requests.
+- [Add and attach an encryption key with the Admin API - Claude Platform Docs](Other/manage-claude-cmek-admin-api.md) — Create, validate, and attach a customer-managed encryption key with three Admin API calls.
+- [Adding files - Claude Platform Docs](Other/managed-agents-files.md) — Upload files and mount them in your sandbox for reading and processing.
 - [Admin API - Claude Platform Docs](Other/manage-claude-admin-api.md) — Manage organization members, workspaces, invites, and API keys programmatically with the Admin API, using an Admin API key, an org:admin OAuth token, or a…
 - [Analytics APIs - Claude Platform Docs](Other/manage-claude-analytics-api.md) — Understand which analytics API and API key your organization needs, then provision access to Claude Code productivity metrics or Claude Enterprise engagement…
-- [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention.md) — Learn about how Anthropic's APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
+- [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention.md) — Learn about how Anthropic’s APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
 - [API key best practices: keep your keys safe and secure | Claude Help Center](Other/api-key-best-practices-keeping-your-keys-safe-and-secure.md) — API keys enable access to the Claude API, but they can pose significant security risks if not handled properly. Your API key is a digital key to your account…
 - [API Safeguards Tools | Claude Help Center](Other/api-safeguards-tools.md) — Whether you are just starting the process of setting up safeguards for your API deployment of Claude, or your deployment is already running, here are some…
 - [API usage primer for Claude - Claude Platform Docs](Other/claude-api-primer.md) — This guide is designed to give Claude the basics of using the Claude API. It gives explanation and examples of model IDs/the basic messages API, tool use…
-- [App Attest for iOS and macOS apps - Claude Platform Docs](Other/manage-claude-app-attest.md) — Let genuine installations of your iOS or macOS app call the Claude API without shipping an API key or running a proxy, using Apple's App Attest service.
-- [Apple Foundation Models - Claude Platform Docs](Other/cli-sdks-libraries-libraries-apple-foundation-models.md) — Libraries and integrations
-- [Authenticate with vaults - Claude Platform Docs](Other/managed-agents-vaults.md) — Configure agent environment
-- [Authentication - Claude Platform Docs](Other/manage-claude-authentication.md) — Claude on cloud platforms
+- [App Attest for iOS and macOS apps - Claude Platform Docs](Other/manage-claude-app-attest.md) — Let genuine installations of your iOS or macOS app call the Claude API without shipping an API key or running a proxy, using Apple’s App Attest service.
+- [Apple Foundation Models - Claude Platform Docs](Other/cli-sdks-libraries-libraries-apple-foundation-models.md) — Use Claude on Apple platforms through the Foundation Models framework with the Claude for Foundation Models Swift package.
+- [Authenticate with vaults - Claude Platform Docs](Other/managed-agents-vaults.md) — Register per-user credentials when creating sessions.
+- [Authentication - Claude Platform Docs](Other/manage-claude-authentication.md) — Authenticate to the Claude API with API keys, Workload Identity Federation, or App Attest.
 - [Batch Processing with Message Batches API](Other/claude-cookbooks-misc-batch-processing.md) — Message Batches allow you to process large volumes of Messages requests
-- [Build in Console - Claude Platform Docs](Other/managed-agents-onboarding.md) — Configure agent environment
-- [C# SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-csharp.md) — Libraries and integrations
+- [Build in Console - Claude Platform Docs](Other/managed-agents-onboarding.md) — Create, test, and iterate on agents visually in the Claude Console, then run them from your code with the API.
+- [C# SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-csharp.md) — Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
 - [Can I use the Claude API for individual use? | Claude Help Center](Other/can-i-use-the-claude-api-for-individual-use.md) — Yes, individuals and hobbyists are welcome to use the Claude API. However, please note that use of the API is subject to our Commercial Terms of Service…
-- [Choosing an agent environment - Claude Platform Docs](Other/managed-agents-choosing-an-environment.md) — Configure agent environment
-- [Claude Code Analytics API - Claude Platform Docs](Other/manage-claude-claude-code-analytics-api.md) — Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
+- [Choosing an agent environment - Claude Platform Docs](Other/managed-agents-choosing-an-environment.md) — Decide whether Claude Managed Agents tools and code run in an Anthropic-managed cloud environment or a self-hosted sandbox, and see what changes if you switch.
+- [Claude Code Analytics API - Claude Platform Docs](Other/manage-claude-claude-code-analytics-api.md) — Programmatically access your organization’s Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude in Microsoft Foundry | Claude by Anthropic](Other/partners-microsoft-foundry.md) — Deploy frontier AI solutions safely and simply, using your existing Azure ecosystem.
-- [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview.md) — Configure agent environment
+- [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview.md) — Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.
 - [Claude on AWS | Claude by Anthropic](Other/partners-claude-on-aws.md) — Give your team a thinking partner, build agents, and ship AI products to customers in your AWS environment.
 - [Claude Partner Network Directory](Other/partners-services.md) — Find a Claude certified consulting partner or system integrator to help you build your AI strategy and successfully implement Claude.
-- [CLI authentication options - Claude Platform Docs](Other/cli-sdks-libraries-cli-authentication.md) — Libraries and integrations
-- [CLI quickstart - Claude Platform Docs](Other/cli-sdks-libraries-cli-quickstart.md) — Libraries and integrations
-- [CLI scripting and automation - Claude Platform Docs](Other/cli-sdks-libraries-cli-scripting.md) — Libraries and integrations
-- [Cloud environment setup - Claude Platform Docs](Other/managed-agents-environments.md) — Configure agent environment
-- [Cloud sandbox reference - Claude Platform Docs](Other/managed-agents-cloud-sandboxes-reference.md) — Configure agent environment
-- [Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api.md) — Programmatic access to your organization's Claude activity, chats, files, projects, sessions in Claude apps, and users for compliance, audit, and governance.
+- [Claude Tag API - Claude Platform Docs](Other/manage-claude-claude-tag-api.md) — Manage Claude Tag in Slack for your Claude Enterprise organization from your own systems: read and change settings on Slack channels and workspaces, see which…
+- [CLI authentication options - Claude Platform Docs](Other/cli-sdks-libraries-cli-authentication.md) — Authenticate the ant CLI with interactive login, API keys, named profiles, and Workload Identity Federation.
+- [CLI quickstart - Claude Platform Docs](Other/cli-sdks-libraries-cli-quickstart.md) — Install the ant command-line tool, authenticate, and send your first request to the Claude API.
+- [CLI scripting and automation - Claude Platform Docs](Other/cli-sdks-libraries-cli-scripting.md) — Version-control API resources as files with ant apply, chain ant CLI commands in scripts, operate on resources from Claude Code, and authenticate curl calls…
+- [Cloud environment setup - Claude Platform Docs](Other/managed-agents-environments.md) — Customize cloud sandboxes for your sessions.
+- [Cloud sandbox reference - Claude Platform Docs](Other/managed-agents-cloud-sandboxes-reference.md) — Pre-installed packages, databases, and utilities available in cloud sandboxes.
+- [CMEK, data retention, and ZDR - Claude Platform Docs](Other/manage-claude-cmek-data-retention.md) — Why a workspace with a key retains data, what that means for ZDR, and what Anthropic can preserve outside your key.
+- [Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api.md) — Programmatic access to your organization’s Claude activity, chats, files, projects, sessions in Claude apps, and users for compliance, audit, and governance.
 - [Compliance API FAQ - Claude Platform Docs](Other/manage-claude-compliance-faq.md) — Answers to common questions about Compliance API access, scopes, retention, and integration.
-- [Configure AWS KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-aws-kms.md) — Use AWS KMS to provide an encryption key for your organization.
-- [Configure Azure Key Vault for CMEK - Claude Platform Docs](Other/manage-claude-cmek-azure-key-vault.md) — Use Azure Key Vault to provide an encryption key for your organization.
-- [Configure Google Cloud KMS for CMEK - Claude Platform Docs](Other/manage-claude-cmek-google-cloud-kms.md) — Use Google Cloud KMS to provide an encryption key for your organization.
 - [Configure Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks-configuration.md) — Allow Inference hooks for your Claude Enterprise organization, connect your AI security server, and control enforcement, failure handling, and rollout.
-- [Connect to a Managed Agents session from your terminal - Claude Platform Docs](Other/cli-sdks-libraries-cli-sessions-connect.md) — Libraries and integrations
+- [Connect to a Managed Agents session from your terminal - Claude Platform Docs](Other/cli-sdks-libraries-cli-sessions-connect.md) — Attach the ant CLI to a Claude Managed Agents session to follow its transcript live, send messages, allow or deny tool calls, or open the session viewer in…
 - [Connectors and plugins | Claude Marketplace | Claude by Anthropic](Other/partners-mcp.md) — Bring the tools you already use into every Claude conversation.
 - [Container reference](Other/managed-agents-cloud-containers.md) — Pre-installed packages, databases, and utilities available in cloud containers.
 - [Create an Admin API key - Claude Platform Docs](Other/manage-claude-admin-api-keys.md) — Create an Admin API key for your Claude Console or Claude Enterprise organization.
-- [Credential vaults | Claude Platform](Other/playground.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
-- [Custom tools in self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-custom-tools.md) — Configure agent environment
-- [Customer-managed encryption keys - Claude Platform Docs](Other/manage-claude-cmek.md) — Encrypt Claude workspace data at rest with a key you control.
+- [Custom tools in self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-custom-tools.md) — Serve custom tools from a self-hosted sandbox worker, and wrap an MCP server inside your network as custom tools without running a tunnel.
+- [Customer-managed encryption keys - Claude Platform Docs](Other/manage-claude-cmek.md) — Use a key you hold in your own cloud to encrypt data that Claude stores.
 - [Data residency - Claude Platform Docs](Other/manage-claude-data-residency.md) — Manage where model inference runs and where data is stored with geographic controls.
 - [Define outcomes](Other/managed-agents-output-patterns.md) — Tell the agent what 'done' looks like, and let it iterate until it gets there.
-- [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes.md) — Configure agent environment
-- [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup.md) — Configure agent environment
-- [Deploy self-hosted workers - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-workers.md) — Configure agent environment
+- [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes.md) — Tell the agent what ‘done’ looks like, and let it iterate until it gets there.
+- [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup.md) — Create a reusable, versioned agent configuration.
+- [Deploy self-hosted workers - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-workers.md) — Choose how self-hosted sandbox workers claim work and where sessions run: always-on or webhook-triggered, in one process or one sandbox per session.
 - [Design your compliance integration - Claude Platform Docs](Other/manage-claude-compliance-integration-patterns.md) — Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.
 - [Develop an Inference hooks integration - Claude Platform Docs](Other/manage-claude-inference-hooks-endpoint.md) — Build the AI security server that receives signed Inference hooks requests, verifies them, and returns allow or deny verdicts.
 - [Documentation - Claude Platform Docs](Other/home.md) — Everything you need to integrate Claude into your applications. From first API call to production.
-- [Dreams - Claude Platform Docs](Other/managed-agents-dreams.md) — Configure agent environment
-- [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart.md) — Configure agent environment
-- [Get your Claude API key - Claude Platform Docs](Other/get-api-key.md) — Claude on cloud platforms
-- [Go SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-go.md) — Libraries and integrations
+- [Dreams - Claude Platform Docs](Other/managed-agents-dreams.md) — Let Claude review past sessions to curate an agent’s memory and surface new insights.
+- [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart.md) — Create your first autonomous agent.
+- [Get your Claude API key - Claude Platform Docs](Other/get-api-key.md) — Find, create, and manage your API keys for the Claude API in the Claude Console.
+- [Go SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-go.md) — Install and configure the Anthropic Go SDK with context-based cancellation and functional options
 - [Google Cloud | Claude by Anthropic](Other/partners-google-cloud.md) — Build advanced AI agents with Claude on Google Cloud.
 - [Handle Compliance API errors - Claude Platform Docs](Other/manage-claude-compliance-errors.md) — Compliance API error responses by HTTP status code, with the cause and fix for each.
 - [How can I access the Claude API? | Claude Help Center](Other/how-can-i-access-the-claude-api.md) — Organizations interested in building with the Claude API can create a Claude Console account. The Claude Console is where you can create API keys, add users to…
 - [How can I check connectivity to the Claude API? | Claude Help Center](Other/how-can-i-check-connectivity-to-the-claude-api.md) — You can programmatically verify your connection to the Claude API by following these steps:
-- [How can I get higher rate limits on the Claude API? | Claude Help Center](Other/how-can-i-get-higher-rate-limits-on-the-claude-api.md) — Usage tiers are assigned automatically. There's no deposit or purchase that moves you up, and you don't need to take any action.
+- [How can I get higher rate limits on the Claude API? | Claude Help Center](Other/how-can-i-advance-my-claude-api-usage-to-tier-2.md) — Usage tiers are assigned automatically. There's no deposit or purchase that moves you up, and you don't need to take any action.
+- [How CMEK works - Claude Platform Docs](Other/manage-claude-cmek-how-it-works.md) — How your key protects stored data, what one key covers, when it takes effect, and what you can see.
 - [How do I get access to Claude in Amazon Bedrock? | Claude Help Center](Other/how-do-i-get-access-to-claude-in-amazon-bedrock.md) — Get started with Claude in Amazon Bedrock by visiting the Amazon Bedrock console. For a step-by-step walkthrough on how to request Claude model access in the…
 - [How will I be billed for Claude API use? | Anthropic Help Center](Other/how-will-i-be-billed-for-claude-api-use.md) — Note: If you have received access to the Claude Console on or after 2/13/24, you will pay via our prepaid billing process. Refer to this article for more…
 - [I created a Claude Console organization - how do I start using the Claude API? | Claude Help Center](Other/i-created-a-claude-console-organization-how-do-i-start-using-the-claude-api.md) — To use the Claude API and the playground, add usage credits to your organization's balance. You’ll need to fill out some additional information about your…
 - [I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries? | Claude Help Center](Other/i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries.md) — If you're using Claude through AWS Bedrock, your usage is non-refundable. If you are a customer with a private offer and direct contract with Anthropic for…
 - [I'm getting an API connection error. How can I fix it? | Claude Help Center](Other/i-m-getting-an-api-connection-error-how-can-i-fix-it.md) — This error usually indicates an issue on your end, potentially related to your firewall, network, or VPN. Try these steps:
-- [Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks.md) — Send each governed prompt to your organization's AI security server for an allow or deny verdict before inference proceeds.
-- [Inspect sessions and track usage - Claude Platform Docs](Other/managed-agents-session-observability.md) — Configure agent environment
+- [Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks.md) — Send each governed prompt to your organization’s AI security server for an allow or deny verdict before inference proceeds.
+- [Inspect sessions and track usage - Claude Platform Docs](Other/managed-agents-session-observability.md) — Inspect a session in the Claude Console, read its token usage and list cost, and debug unexpected agent behavior.
 - [Intro to Claude - Claude Platform Docs](Other/welcome.md) — Claude on cloud platforms
-- [Invite members to the Claude Console | Claude Help Center](Other/inviting-members-to-the-claude-console.md) — The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: Create…
-- [Java SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-java.md) — Libraries and integrations
+- [Invite members to the Claude Console | Claude Help Center](Other/invite-members-to-the-claude-console.md) — The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: Create…
+- [IP allowlisting - Claude Platform Docs](Other/manage-claude-ip-allowlist.md) — Secure your organization by limiting access to specific IP addresses that you trust.
+- [Java SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-java.md) — Install and configure the Anthropic Java SDK with builder patterns and async support
 - [Legal summarization](Other/build-use-case-legal-summarization.md) — This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key…
-- [List organizations, users, roles, groups, and settings - Claude Platform Docs](Other/manage-claude-compliance-org-data.md) — Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization's effective settings through the Compliance…
-- [Manage resources as code with ant apply - Claude Platform Docs](Other/cli-sdks-libraries-cli-apply.md) — Libraries and integrations
+- [Limit an AWS KMS key to specific workspaces - Claude Platform Docs](Other/manage-claude-cmek-aws-kms-workspaces.md) — Add a key policy condition that names the workspaces allowed to use your AWS KMS key.
+- [List organizations, users, roles, groups, and settings - Claude Platform Docs](Other/manage-claude-compliance-org-data.md) — Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization’s effective settings through the Compliance…
+- [Manage resources as code with ant apply - Claude Platform Docs](Other/cli-sdks-libraries-cli-apply.md) — Declare agents, environments, skills, memory stores, deployments, and vaults as files in your repository and keep the API’s resources in sync with them using…
 - [Manage WIF with the Admin API - Claude Platform Docs](Other/manage-claude-wif-admin-api.md) — Create and manage Workload Identity Federation service accounts, issuers, and rules programmatically for infrastructure-as-code and CI workflows.
 - [MCP connector](Other/agents-mcp-connector.md) — Claude's Model Context Protocol (MCP) connector feature enables you to connect to remote MCP servers directly from the Messages API without a separate MCP…
 - [MCP connector](Other/managed-agents-custom-mcp-servers.md) — Connect MCP servers to your agents for access to external tools and data sources.
-- [MCP connector - Claude Platform Docs](Other/managed-agents-mcp-connector.md) — Configure agent environment
-- [Memory stores in self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-memory.md) — Configure agent environment
-- [Migration - Claude Platform Docs](Other/managed-agents-migration.md) — Configure agent environment
+- [MCP connector - Claude Platform Docs](Other/managed-agents-mcp-connector.md) — Connect MCP servers to your agents for access to external tools and data sources.
+- [Memory stores in self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-memory.md) — Attach memory stores to Claude Managed Agents sessions that run in self-hosted sandboxes: prepare the host, configure sync, and handle read-only stores and…
+- [Migration - Claude Platform Docs](Other/managed-agents-migration.md) — Move an existing agent built on the Messages API or the Claude Agent SDK to Claude Managed Agents.
 - [Model cards - Claude Platform Docs](Other/resources-overview.md) — Model cards with detailed documentation for Claude models.
 - [Models overview - Claude Platform Docs](Other/how-large-is-the-claude-api-s-context-window.md) — Claude is a family of state-of-the-art large language models developed by Anthropic. Compare the current lineup, find the model ID for every platform, and open…
-- [Monitor and troubleshoot self-hosted workers - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-operations.md) — Configure agent environment
+- [Monitor and troubleshoot self-hosted workers - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-operations.md) — Read queue depth, stop sessions and workers without losing work, and fix common self-hosted sandbox failures.
 - [Multiagent orchestration - Claude Platform Docs](Other/managed-agents-multiagent-orchestration.md) — Coordinate multiple agents within a single session.
 - [Multiagent sessions](Other/managed-agents-multi-agent.md) — Coordinate multiple agents within a single session.
 - [Not Found - Claude Platform Docs](Other/features-adaptive-thinking.md) — The requested page could not be found. These pages are close:
 - [Not Found - Claude Platform Docs](Other/features-api-fast-mode.md) — The requested page could not be found. These pages are close:
-- [OpenAI SDK compatibility - Claude Platform Docs](Other/cli-sdks-libraries-libraries-openai-sdk.md) — Libraries and integrations
-- [OpenTelemetry for the Claude API - Claude Platform Docs](Other/manage-claude-opentelemetry.md) — Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Claude SDK and the Claude API.
-- [Organization webhooks - Claude Platform Docs](Other/manage-claude-organization-webhooks.md) — Register webhook endpoints for events about enforcement actions on your organization's user profiles.
+- [OpenAI SDK compatibility - Claude Platform Docs](Other/cli-sdks-libraries-libraries-openai-sdk.md) — Anthropic provides a compatibility layer that lets you use the OpenAI SDK to test the Claude API. With a few code changes, you can evaluate Anthropic model…
+- [OpenTelemetry tracing for the Claude API - Claude Platform Docs](Other/manage-claude-opentelemetry.md) — Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Claude SDK and the Claude API.
+- [Organization webhooks - Claude Platform Docs](Other/manage-claude-organization-webhooks.md) — Register webhook endpoints for events about enforcement actions on your organization’s user profiles.
 - [Partners | Claude by Anthropic](Other/partners.md) — Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
-- [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies.md) — Configure agent environment
-- [PHP SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-php.md) — Libraries and integrations
+- [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies.md) — Control when agent and MCP tools run.
+- [PHP SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-php.md) — Install and configure the Anthropic PHP SDK with value objects and builder patterns
+- [Playground | Claude Platform](Other/playground.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [Plugins API - Claude Platform Docs](Other/manage-claude-plugins-api.md) — Inventory and manage the plugins in your Claude Enterprise organization: upload plugins and versions, choose the version members are served, control who can…
 - [Powered by Claude | Claude by Anthropic](Other/partners-powered-by-claude.md) — A curated list of businesses that use Claude to build better, faster, and safer.
 - [Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center](Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) — We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce…
-- [Preview responses with event deltas - Claude Platform Docs](Other/managed-agents-event-deltas.md) — Configure agent environment
+- [Preview responses with event deltas - Claude Platform Docs](Other/managed-agents-event-deltas.md) — Render the agent’s response text as a live preview while the model is still generating it.
 - [Programatic Tool Calling (PTC) with the Claude API](Other/claude-cookbooks-tool-use-programmatic-tool-calling-ptc.md) — Programmatic Tool Calling (PTC) allows Claude to write code that calls
 - [Prompt caching through the Claude API](Other/claude-cookbooks-misc-prompt-caching.md) — Prompt caching allows you to store and reuse context within your prompt.
-- [Python SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-python.md) — Libraries and integrations
-- [Query the Activity Feed - Claude Platform Docs](Other/manage-claude-compliance-activity-feed.md) — Retrieve, filter, and paginate your organization's Compliance API Activity Feed.
-- [Rate Limits API - Claude Platform Docs](Other/manage-claude-rate-limits-api.md) — Programmatically query your organization's API rate limits with the Rate Limits API.
-- [Reference - Claude Platform Docs](Other/managed-agents-reference.md) — Configure agent environment
+- [Python SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-python.md) — Install and configure the Anthropic Python SDK with sync and async client support
+- [Query the Activity Feed - Claude Platform Docs](Other/manage-claude-compliance-activity-feed.md) — Retrieve, filter, and paginate your organization’s Compliance API Activity Feed.
+- [Rate Limits API - Claude Platform Docs](Other/manage-claude-rate-limits-api.md) — Programmatically read your organization’s API rate limits and set workspace rate limits with the Rate Limits API.
+- [Reference - Claude Platform Docs](Other/managed-agents-reference.md) — Event types, self-hosted worker CLI flags, supported MCP server types, rate limits, and branding guidelines for Claude Managed Agents.
 - [Remote MCP servers](Other/agents-remote-mcp-servers.md) — Several companies have deployed remote MCP servers that developers can connect to via the Anthropic MCP connector API. These servers expand the capabilities…
-- [Restrict web search and web fetch domains - Claude Platform Docs](Other/managed-agents-tools-web-restrictions.md) — Configure agent environment
+- [Restrict web search and web fetch domains - Claude Platform Docs](Other/managed-agents-tools-web-restrictions.md) — Control which sites an agent’s web search and web fetch tools can reach, cap fetched content, and localize search results.
 - [Retrieve and delete chats, files, and projects - Claude Platform Docs](Other/manage-claude-compliance-content-data.md) — Access chat content, file attachments, and projects for claude.ai organizations through the Compliance API.
 - [Retrieve session transcripts - Claude Platform Docs](Other/manage-claude-compliance-sessions.md) — List the sessions your users run in Claude apps and agents, such as Claude Cowork and Claude Code, and retrieve their transcripts through the Compliance API.
-- [Review and monitor agent sessions - Claude Platform Docs](Other/managed-agents-secure-deployment-monitoring.md) — Configure agent environment
-- [Ruby SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-ruby.md) — Libraries and integrations
+- [Review and monitor agent sessions - Claude Platform Docs](Other/managed-agents-secure-deployment-monitoring.md) — Optionally review each session’s events with an offline job. Watch webhooks for sessions that need attention, and see what Managed Agents keeps and for how…
+- [Ruby SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-ruby.md) — Install and configure the Anthropic Ruby SDK with Sorbet types, streaming helpers, and connection pooling
 - [Scheduled deployments - Claude Platform Docs](Other/managed-agents-scheduled-deployments.md) — Create and manage deployments with the Claude API: run an agent on a recurring cron schedule and inspect its run history.
-- [SDK middleware - Claude Platform Docs](Other/cli-sdks-libraries-middleware.md) — Libraries and integrations
-- [SDKs, CLI, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview.md) — Libraries and integrations
-- [Secure your Managed Agents deployment - Claude Platform Docs](Other/managed-agents-secure-deployment.md) — Configure agent environment
-- [Security model - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-security.md) — Configure agent environment
-- [Security risks and sandbox boundaries - Claude Platform Docs](Other/managed-agents-secure-deployment-risks.md) — Configure agent environment
-- [Self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes.md) — Configure agent environment
-- [Self-hosted worker reference - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-reference.md) — Configure agent environment
+- [SDK middleware - Claude Platform Docs](Other/cli-sdks-libraries-middleware.md) — Intercept and modify the SDK’s requests and responses.
+- [SDKs, CLI, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview.md) — Official tools for building with the Claude API: client SDKs in seven languages, the ant CLI, and framework-specific libraries.
+- [Secure your Managed Agents deployment - Claude Platform Docs](Other/managed-agents-secure-deployment.md) — The settings that limit what your agents can reach and do, most important first.
+- [Security model - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-security.md) — Shared responsibility model for self-hosted sandbox environments.
+- [Security risks and sandbox boundaries - Claude Platform Docs](Other/managed-agents-secure-deployment-risks.md) — Why an agent’s settings matter for security, and what the Managed Agents sandbox can and cannot do.
+- [Self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes.md) — Run Claude Managed Agents sessions in self-hosted sandboxes, keeping tool execution, files, and network egress in your own infrastructure.
+- [Self-hosted worker reference - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-reference.md) — Reference for self-hosted sandbox workers: ant CLI flags, environment variables, host requirements, filesystem paths, and SDK helper options.
 - [Send an end customer a link to the Verification Portal - Claude Platform Docs](Other/manage-claude-user-profiles-verification-portal.md) — Create an enrollment link for a user profile, see what your end customer does in the Verification Portal, and check which programs apply to the profile…
-- [Session budgets - Claude Platform Docs](Other/managed-agents-budgets.md) — Configure agent environment
+- [Session budgets - Claude Platform Docs](Other/managed-agents-budgets.md) — Cap a session’s spend with a hard dollar budget enforced at public list rates.
 - [Session event stream](Other/managed-agents-how-managed-agents-work.md) — Send events, stream responses, and interrupt or redirect your session mid-execution.
-- [Session event stream - Claude Platform Docs](Other/managed-agents-events-and-streaming.md) — Configure agent environment
-- [Session operations - Claude Platform Docs](Other/managed-agents-session-operations.md) — Configure agent environment
-- [Session threads - Claude Platform Docs](Other/managed-agents-session-threads.md) — Configure agent environment
+- [Session event stream - Claude Platform Docs](Other/managed-agents-events-and-streaming.md) — Send events, stream responses, and interrupt or redirect your session while it runs.
+- [Session operations - Claude Platform Docs](Other/managed-agents-session-operations.md) — Retrieve, list, update, archive, and delete Claude Managed Agents sessions.
+- [Session threads - Claude Platform Docs](Other/managed-agents-session-threads.md) — List, interrupt, and archive the threads of a multiagent session, read their events, and handle tool permissions across them.
 - [Session tracing](Other/managed-agents-observability.md) — Monitor and debug your sessions using the Console timeline and raw event views.
-- [Set up CMEK on Claude Platform on AWS - Claude Platform Docs](Other/manage-claude-cmek-claude-platform-on-aws.md) — Use an AWS KMS key as a customer-managed encryption key on Claude Platform on AWS.
-- [Set up OpenTelemetry with the Claude API - Claude Platform Docs](Other/manage-claude-opentelemetry-api.md) — Only for features that are themselves ZDR eligible, such as the Messages API. Claude Managed Agents isn't ZDR eligible.
-- [Set up OpenTelemetry with the Claude SDK - Claude Platform Docs](Other/manage-claude-opentelemetry-sdk.md) — Trace each request that the Claude SDK sends and each tool that its tool runner runs, and send the spans to your observability platform.
+- [Set up CMEK on Claude Platform on AWS - Claude Platform Docs](Other/manage-claude-cmek-claude-platform-on-aws.md) — Create an AWS KMS key in your AWS account and attach it to a workspace on Claude Platform on AWS.
+- [Set up CMEK with AWS KMS - Claude Platform Docs](Other/manage-claude-cmek-aws-kms.md) — Create an AWS KMS key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.
+- [Set up CMEK with Azure Key Vault - Claude Platform Docs](Other/manage-claude-cmek-azure-key-vault.md) — Create an Azure Key Vault key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.
+- [Set up CMEK with Google Cloud KMS - Claude Platform Docs](Other/manage-claude-cmek-google-cloud-kms.md) — Create a Google Cloud KMS key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.
+- [Set up OpenTelemetry with the Claude API - Claude Platform Docs](Other/manage-claude-opentelemetry-api.md) — Add a destination in the Claude Console to send OpenTelemetry traces of your Messages API requests and Managed Agents sessions to your observability platform.
+- [Set up OpenTelemetry with the Claude SDK - Claude Platform Docs](Other/manage-claude-opentelemetry-sdk.md) — Trace the Claude SDK’s requests and tool uses in Python, TypeScript, C#, Go, Java, PHP, or Ruby, and send the spans to your observability platform.
 - [Set up the Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-access.md) — Enable the Compliance API for your organization, then create a Compliance Access Key (with scoped permissions) or an Admin API key, and learn which to use.
-- [Skills - Claude Platform Docs](Other/managed-agents-skills.md) — Configure agent environment
-- [Spend Limits API - Claude Platform Docs](Other/manage-claude-spend-limits-api.md) — Set a spend limit on each Claude Enterprise member, see where each member's spend limit is inherited from, and review or act on members' requests for a higher…
-- [Start a session - Claude Platform Docs](Other/managed-agents-sessions.md) — Configure agent environment
-- [Subscribe to webhooks - Claude Platform Docs](Other/managed-agents-webhooks.md) — Configure agent environment
+- [Skills - Claude Platform Docs](Other/managed-agents-skills.md) — Attach pre-built or custom skills to an agent in Claude Managed Agents to give it reusable, filesystem-based expertise for domain-specific workflows.
+- [Spend Limits API - Claude Platform Docs](Other/manage-claude-spend-limits-api.md) — Set a spend limit on each Claude Enterprise member, see where each member’s spend limit is inherited from, and review or act on members’ requests for a higher…
+- [Start a session - Claude Platform Docs](Other/managed-agents-sessions.md) — Create a session to run your agent and start running tasks.
+- [Subscribe to webhooks - Claude Platform Docs](Other/managed-agents-webhooks.md) — Get notified when major events occur without polling.
 - [Tools](Other/managed-agents-tool-use.md) — Configure tools available to your agent.
-- [Tools - Claude Platform Docs](Other/managed-agents-tools.md) — Configure agent environment
-- [TypeScript SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-typescript.md) — Libraries and integrations
+- [Tools - Claude Platform Docs](Other/managed-agents-tools.md) — Configure tools available to your agent.
+- [Troubleshoot CMEK - Claude Platform Docs](Other/manage-claude-cmek-troubleshooting.md) — Find the cause and fix for a CMEK error message, a failed verification, or an unexpected log entry.
+- [TypeScript SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-typescript.md) — Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
 - [Understanding your Claude API invoices | Claude Help Center](Other/understanding-your-claude-api-invoices.md) — This article explains the invoices and receipts you'll receive for Claude API and Console usage, where to find them, and how to read the line items on them.
 - [Uploading" PDFs to Claude Via the API](Other/claude-cookbooks-misc-pdf-upload-summarization.md) — ::: {.cell .markdown id="pOwrbbrDBmn"}
 - [Usage & Cost Admin API Cookbook](Other/claude-cookbooks-observability-usage-cost-api.md) — ::: {#9610be80 .cell .markdown id="9610be80"}
-- [Usage and Cost API - Claude Platform Docs](Other/manage-claude-usage-cost-api.md) — Programmatically access your organization's API usage and cost data with the Usage and Cost Admin API.
+- [Usage and Cost Analytics API - Claude Platform Docs](Other/manage-claude-usage-cost-analytics-api.md) — Query token usage and cost for your Claude Console or Claude Enterprise organization by model, workspace, API key, actor, and more.
+- [Usage and Cost API - Claude Platform Docs](Other/manage-claude-usage-cost-api.md) — The legacy Admin API usage and cost report endpoints for Claude Console organizations. For new integrations, use the Usage and Cost Analytics API.
 - [Use WIF with AWS - Claude Platform Docs](Other/manage-claude-wif-providers-aws.md) — Authenticate AWS workloads on Lambda, EC2, ECS, or EKS to the Claude API with Workload Identity Federation and STS-issued identity tokens.
 - [Use WIF with GitHub Actions - Claude Platform Docs](Other/manage-claude-wif-providers-github-actions.md) — Authenticate GitHub Actions workflows to the Claude API with short-lived identity tokens instead of long-lived API keys.
 - [Use WIF with Google Cloud - Claude Platform Docs](Other/manage-claude-wif-providers-gcp.md) — Federate Google Cloud workloads (Cloud Run, Cloud Functions, App Engine, GCE, GKE) to the Claude API using Google-signed identity tokens instead of static API…
@@ -2020,10 +2097,13 @@
 - [Use WIF with SPIFFE - Claude Platform Docs](Other/manage-claude-wif-providers-spiffe.md) — Authenticate SPIFFE workloads to the Claude API using JWT-SVIDs from SPIRE or any other SPIFFE-conformant issuer.
 - [User management - Claude Platform Docs](Other/manage-claude-user-management.md) — Manage the people in your Claude Enterprise organization with the Admin API: list members and change roles, send and withdraw invites, manage groups, and read…
 - [User profiles for end-customer attribution - Claude Platform Docs](Other/manage-claude-user-profiles.md) — Attribute API requests to the end customers your platform serves, so a safety enforcement action can apply to one profile instead of your whole organization.
-- [Using agent memory - Claude Platform Docs](Other/managed-agents-memory.md) — Configure agent environment
-- [Using the CLI - Claude Platform Docs](Other/cli-sdks-libraries-cli-using.md) — Libraries and integrations
+- [Using agent memory - Claude Platform Docs](Other/managed-agents-memory.md) — Give your agents persistent memory that survives across sessions using memory stores.
+- [Using the CLI - Claude Platform Docs](Other/cli-sdks-libraries-cli-using.md) — Command structure, output formats, GJSON transforms, request bodies, and debugging for the ant CLI.
 - [Using the Wolfram Alpha LLM API as a Tool with Claude](Other/claude-cookbooks-third-party-wolframalpha-using-llm-api.md) — In this recipe, we\'ll show you how to integrate the Wolfram Alpha LLM
-- [Verify Access Transparency events with the transparency log - Claude Platform Docs](Other/manage-claude-access-transparency-log.md) — Verify Access Transparency events with the transparency log
+- [Verify Access Transparency events with the transparency log - Claude Platform Docs](Other/manage-claude-access-transparency-log.md) — Use signed checkpoints and Merkle proofs from the Compliance API to verify that no Access Transparency event was removed or altered after it was committed to…
+- [What CMEK covers on Claude Enterprise - Claude Platform Docs](Other/manage-claude-cmek-coverage-claude-enterprise.md) — Look up which Claude Enterprise data your key encrypts, what turns off or changes, and what stays under Anthropic’s key.
+- [What CMEK covers on Claude Platform - Claude Platform Docs](Other/manage-claude-cmek-coverage-claude-platform.md) — Look up which Claude Platform data your key encrypts, what turns off or changes, and what stays under Anthropic’s key.
+- [What happens when you rotate, disable, or delete your encryption key - Claude Platform Docs](Other/manage-claude-cmek-key-lifecycle.md) — What each action on your key does to your data, how soon, and whether you can undo it.
 - [What is Amazon Bedrock? | Claude Help Center](Other/what-is-amazon-bedrock.md) — Amazon Bedrock is a fully managed service that offers a choice of high-performing
 - [What should I do if I suspect my API key has been compromised? | Claude Help Center](Other/what-should-i-do-if-i-suspect-my-api-key-has-been-compromised.md) — If you suspect that your API key may be compromised, we recommend revoking the key immediately. You can do so by logging into your Claude Console account…
 - [Where can I find full receipts and invoices for my Claude API and Console payments? | Anthropic Help Center](Other/where-can-i-find-full-receipts-and-invoices-for-my-claude-api-and-console-payments.md) — Invoices are visible to Console Billing and Admin roles.
@@ -2032,7 +2112,7 @@
 - [Where do I find Claude in Amazon Bedrock documentation? | Claude Help Center](Other/where-do-i-find-claude-in-amazon-bedrock-documentation.md) — Visit the Claude in Amazon Bedrock user guide.
 - [Where is the Claude API supported? | Claude Help Center](Other/where-is-the-claude-api-supported.md) — We support using the Claude API in a number of locations. Please check our website in the future for updates.
 - [WIF reference - Claude Platform Docs](Other/manage-claude-wif-reference.md) — Environment variables, validation rules, profile configuration, and error reference for Workload Identity Federation.
-- [Workflow runs - Claude Platform Docs](Other/managed-agents-workflow-runs.md) — Configure agent environment
+- [Workflow runs - Claude Platform Docs](Other/managed-agents-workflow-runs.md) — Follow an agent’s workflow runs: their states and events, when the work is done, requests while a run is open, budgets, and limits.
 - [Workload Identity Federation - Claude Platform Docs](Other/manage-claude-workload-identity-federation.md) — Authenticate workloads to the Claude API with short-lived identity tokens from your own identity provider instead of long-lived static API keys.
 - [Workspaces - Claude Platform Docs](Other/manage-claude-workspaces.md) — Organize API keys, manage team access, and control costs with workspaces.
 
@@ -2040,12 +2120,12 @@
 
 - [Define success criteria and build evaluations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-develop-tests.md) — Define measurable success criteria for your LLM application and build evaluations to test it, from exact match checks to LLM-based grading.
 - [Define your success criteria - Claude API Docs](Test-Evaluate/test-and-evaluate-define-success.md) — Building a successful LLM-based application starts with clearly defining your success criteria. How will you know when your application is good enough to…
-- [Handle streaming refusals - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md) — Claude on cloud platforms
-- [Increase output consistency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md) — Make Claude's outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.
+- [Handle streaming refusals - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md) — Detect and handle refusal stop reasons in streaming responses, and retry refused requests on a fallback model.
+- [Increase output consistency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md) — Make Claude’s outputs more consistent by specifying exact formats, prefilling responses, constraining with examples, and grounding answers in retrieval.
 - [Keep Claude in character with role prompting and prefilling - Claude API Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-keep-claude-in-character.md) — This guide provides actionable tips to keep Claude in character, even during long, complex interactions.
 - [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/platform-claude-com-test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) — Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.
 - [Mitigate jailbreaks and prompt injections - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md) — Defend your application against jailbreaks and prompt injection with input screening, hardened system prompts, and safe handling of untrusted tool content.
-- [Reduce hallucinations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md) — Minimize hallucinations in Claude's outputs by allowing uncertainty, grounding responses in direct quotes, and verifying claims with citations.
-- [Reduce prompt leak - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md) — Reduce the risk of prompt leaks by separating context from user queries, filtering Claude's outputs, and auditing prompts, without degrading task performance.
-- [Reducing latency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md) — Reduce Claude's response latency by choosing a faster model like Claude Haiku 5.5, trimming prompt and output tokens, and streaming responses.
+- [Reduce hallucinations - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md) — Minimize hallucinations in Claude’s outputs by allowing uncertainty, grounding responses in direct quotes, and verifying claims with citations.
+- [Reduce prompt leak - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md) — Reduce the risk of prompt leaks by separating context from user queries, filtering Claude’s outputs, and auditing prompts, without degrading task performance.
+- [Reducing latency - Claude Platform Docs](Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md) — Reduce Claude’s response latency by choosing a faster model such as Claude Haiku 5.5, trimming prompt and output tokens, and streaming responses.
 - [Using the Evaluation Tool](Test-Evaluate/test-and-evaluate-eval-tool.md) — The Claude Console features an Evaluation tool that allows you to test your prompts under various scenarios.

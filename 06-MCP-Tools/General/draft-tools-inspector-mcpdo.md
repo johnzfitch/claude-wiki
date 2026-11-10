@@ -2,11 +2,14 @@
 title: "mcpdo connection client - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector/mcpdo"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:30Z"
+fetched_at: "2026-11-01T06:24:25Z"
+last_modified: "Sat, 31 Oct 2026 18:11:02 GMT"
 tags: ["cli", "mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Install](#install)
 - [Quickstart](#quickstart)
@@ -34,11 +37,11 @@ Copy pageCopy page
 
 `mcpdo` is an **experimental** command-line client that ships in the `@modelcontextprotocol/inspector` package alongside `mcp-inspector`. Where the [CLI client](draft-tools-inspector-cli.md) connects, runs one `--method` and disconnects, `mcpdo` **connects once** and keeps the connection open, so you can run many commands against it from any shell, the way `ssh-agent` keeps keys loaded.
 
-|               | `mcp-inspector --cli`                | `mcpdo`                                                                                                   |
-|---------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------|
-| **Lifecycle** | Connect, one `--method`, disconnect  | Connect once, many commands                                                                               |
-| **State**     | None between runs                    | Named connections held by a daemon                                                                        |
-| **Best for**  | CI assertions, one JSON blob per run | Exploring a server, agent tool use, multi-step flows over one session (tasks, subscriptions, elicitation) |
+|  | `mcp-inspector --cli` | `mcpdo` |
+|----|----|----|
+| **Lifecycle** | Connect, one `--method`, disconnect | Connect once, many commands |
+| **State** | None between runs | Named connections held by a daemon |
+| **Best for** | CI assertions, one JSON blob per run | Exploring a server, agent tool use, multi-step flows over one session (tasks, subscriptions, elicitation) |
 
 Connections are held by a local background daemon, `mcpdod`, which `mcpdo` starts on demand and stops after its last connection closes. You never start it by hand. What it exposes, and how it is protected, is described under [The mcpdo connection daemon](2026-07-28-tools-inspector-security.md#the-mcpdo-connection-daemon). Watch the [mcpdo tutorial video](https://www.youtube.com/watch?v=_a6eG0y156k).
 
@@ -108,17 +111,17 @@ mcpdo @my-server tools/list
 mcpdo --conn my-server tools/list
 ```
 
-Omitting the name falls back to the most recently used connection, but only on an interactive TTY. From a script or an agent, where stdin is not a TTY, an unqualified command is an error, so that a background job never acts on whichever server you last used. Set `MCP_ALLOW_DEFAULT_CONNECTION=1` to allow the fallback anyway. Connections **self-heal**: a dropped transport (an expired HTTP session, an exited stdio child) is re-dialed transparently on next use with the stored credentials. Only an `auth_required` error needs you to run `connect` again. A connection runs **one call at a time**. Commands against it from other shells queue behind the call in flight, and while a call is parked on an [elicitation](#elicitation), new calls on that connection are refused until it is answered. A long call does not block other connections.
+Omitting the name falls back to the most recently used connection, but only on an interactive TTY. From a script or an agent, where stdin is not a TTY, an unqualified command is an error, so that a background job never acts on whichever server you last used. Set `MCP_ALLOW_DEFAULT_CONNECTION=1` to allow the fallback anyway. `mcpdo connections/use <name>` sets the most recently used connection without sending anything to the server. Connections **self-heal**: a dropped transport (an expired HTTP session, an exited stdio child) is re-dialed transparently on next use with the stored credentials. Only an `auth_required` error needs you to run `connect` again. A connection runs **one call at a time**. Commands against it from other shells queue behind the call in flight, and while a call is parked on an [elicitation](#elicitation), new calls on that connection are refused until it is answered. A long call does not block other connections. `tools/call` also accepts the one-shot CLI’s `--load` family (`--load`, `--load-concurrency`, `--load-connections`, `--load-duration`, `--load-requests`, `--load-rate`, `--load-max-error-rate`, `--load-max-p99`), with the same defaults and the same summary, run inside the daemon against the connection (see [CI gates](draft-tools-inspector-cli.md#ci-gates)). `--load-connections` opens its extra sessions with stored credentials only. Later commands on the connection wait until the run ends.
 
 
 [​](#tasks)
 
 Tasks
 
-A tool that requires task support is refused by a plain `tools/call`; add `--task` to make a task-augmented call. It still **blocks** until the task finishes, then prints the final result:
+On a legacy connection, a plain `tools/call` refuses a tool that requires task support. Add `--task` to make a task-augmented call. `--task` applies to legacy servers only. On a modern connection the server decides per request whether to return a task, and the flag changes nothing on the wire. The call still **blocks** until the task finishes, then prints the final result:
 
 ```python
-mcpdo @my-server tools/call --task start_job size:=large
+mcpdo @my-server tools/call --task start_job size:=large   # task-augmented call on a legacy connection
 ```
 
 If the task reaches `input_required`, its question is handled like any other [elicitation](#elicitation).
@@ -128,10 +131,10 @@ If the task reaches `input_required`, its question is handled like any other [el
 
 Output
 
-| Flag                      | Output                                                                             |
-|---------------------------|------------------------------------------------------------------------------------|
-| `--format text` (default) | Human-readable, with ANSI styling on a TTY unless `--plain` or `NO_COLOR` is set.  |
-| `--format json`           | The pretty-printed payload, with no `{ result }` envelope. For scripts and agents. |
+| Flag | Output |
+|----|----|
+| `--format text` (default) | Human-readable, with ANSI styling on a TTY unless `--plain` or `NO_COLOR` is set. |
+| `--format json` | The pretty-printed payload, with no `{ result }` envelope. For scripts and agents. |
 
 The global flags are `--format`, `--plain`, `--connection` / `--conn`, `--catalog` / `--config`, and `--stored-auth-only`. They may go before or after the subcommand, but before any `--`. The `@name` shorthand must come before the subcommand. Terminal-bound text (results, elicitation prompts, daemon errors) has control characters stripped, so a server cannot rewrite your terminal. `--format json` stays verbatim.
 
@@ -142,13 +145,13 @@ Authorization
 
 `mcpdo` shares `oauth.json` and the secret store with the other Inspector clients, so a server you have already authorized elsewhere connects without a prompt. OAuth runs at **connect time**. Mid-session step-up is handled by the one-shot CLI, not by `mcpdo`.
 
-| Command                                                        | Effect                                                                                                                                   |
-|----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `mcpdo connect <name> --relogin` (`-r`)                        | Clear this server’s stored tokens before connecting (HTTP/SSE only), so it signs in fresh if the server requires auth.                   |
-| `mcpdo disconnect <name> --clear-auth` (`-c`)                  | Close the connection **and** clear its stored tokens, so the next `connect` signs in fresh.                                              |
-| `mcpdo auth/list`                                              | Stored credentials, each annotated with the catalog or connection names it is “known as”, and `● live` when an open connection holds it. |
-| `mcpdo auth/clear <url-or-name>`                               | Clear one stored credential, by store URL or friendly name. `--all --yes` clears every one.                                              |
-| `mcpdo auth/ema-login` / `auth/ema-status` / `auth/ema-logout` | Enterprise-managed authorization: sign in to the IdP once, then connect to EMA servers silently.                                         |
+| Command | Effect |
+|----|----|
+| `mcpdo connect <name> --relogin` (`-r`) | Clear this server’s stored tokens before connecting (HTTP/SSE only), so it signs in fresh if the server requires auth. |
+| `mcpdo disconnect <name> --clear-auth` (`-c`) | Close the connection **and** clear its stored tokens, so the next `connect` signs in fresh. |
+| `mcpdo auth/list` | Stored credentials, each annotated with the catalog or connection names it is “known as”, and `● live` when an open connection holds it. |
+| `mcpdo auth/clear <url-or-name>` | Clear one stored credential, by store URL or friendly name. `--all --yes` clears every one. |
+| `mcpdo auth/ema-login` / `auth/ema-status` / `auth/ema-logout` | Enterprise-managed authorization: sign in to the IdP once, then connect to EMA servers silently. `mcpdo connect <name> --ema` treats a catalog entry as enterprise-managed for that connect, overriding its `oauth.enterpriseManaged`. It needs the entry’s OAuth client ID and secret, so it cannot be used with an ad-hoc target. |
 
 When a browser sign-in is needed and neither stdin nor stderr is a TTY (and `MCP_AUTO_OPEN_ENABLED` is not forced on), `connect` exits `0` immediately with `pendingAuth: true` and an `authUrl`. Relay that URL to whoever will sign in. The connection completes on its own once they do: the next real command against it finishes the connection, and `connections/list` reports `pendingAuthSignedIn` in the meantime. Don’t reconnect to fix a pending sign-in. On a host with no OS keychain, `mcpdo` stores tokens in the shared `secrets.json` file, never in memory, because its commands and the daemon are separate processes. That file is plaintext unless you supply a key; see [Where secrets are stored](draft-tools-inspector-configuration.md#where-secrets-are-stored).
 
@@ -183,11 +186,11 @@ Protocol eras
 
 The daemon
 
-| Command                   | Effect                                                               |
-|---------------------------|----------------------------------------------------------------------|
-| `mcpdo daemon status`     | Whether a daemon is running, and its connections and idle countdown. |
-| `mcpdo daemon stop`       | Close every connection and stop the daemon.                          |
-| `eval "$(mcpdo private)"` | Give this shell its own daemon and connections.                      |
+| Command | Effect |
+|----|----|
+| `mcpdo daemon status` | Whether a daemon is running, and its connections and idle countdown. |
+| `mcpdo daemon stop` | Close every connection and stop the daemon. |
+| `eval "$(mcpdo private)"` | Give this shell its own daemon and connections. |
 
 By default every shell you run `mcpdo` from shares one daemon, so a connection opened in one terminal is usable in another. `mcpdo private` exports `MCP_INSPECTOR_DAEMON_DIR` and `MCP_INSPECTOR_DAEMON_TOKEN` so the current shell gets a separate daemon. That keeps connections apart; it is not a security boundary against other processes running as you. The daemon exits about a minute after its last connection closes. A daemon started before an upgrade keeps running the old code until then, so run `mcpdo daemon stop` after upgrading the package.
 
@@ -211,15 +214,15 @@ Environment variables
 
 `mcpdo` reads the same catalog, storage and secret-store variables as the other clients (see [Environment variables](draft-tools-inspector-configuration.md#environment-variables)), plus these:
 
-| Variable                       | Effect                                                                                                                                                                                 |
-|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `MCP_INSPECTOR_DAEMON_DIR`     | Directory holding the daemon’s socket, lock, token and log. Defaults to `MCP_STORAGE_DIR` when set, else `~/.mcp-inspector`. Set by `mcpdo private`.                                   |
-| `MCP_INSPECTOR_DAEMON_TOKEN`   | IPC token to present to, or start, the daemon. Unset, the `mcpdo` command that starts the daemon generates one, and the daemon publishes it to `mcpdod.token`. Set by `mcpdo private`. |
-| `MCP_ALLOW_DEFAULT_CONNECTION` | `1` lets a command without `@name` / `--connection` use the most recently used connection even when stdin is not a TTY.                                                                |
+| Variable | Effect |
+|----|----|
+| `MCP_INSPECTOR_DAEMON_DIR` | Directory holding the daemon’s socket, lock, token and log. Defaults to `MCP_STORAGE_DIR` when set, else `~/.mcp-inspector`. Set by `mcpdo private`. |
+| `MCP_INSPECTOR_DAEMON_TOKEN` | IPC token to present to, or start, the daemon. Unset, the `mcpdo` command that starts the daemon generates one, and the daemon publishes it to `mcpdod.token`. Set by `mcpdo private`. |
+| `MCP_ALLOW_DEFAULT_CONNECTION` | `1` lets a command without `@name` / `--connection` use the most recently used connection even when stdin is not a TTY. |
 
 
 [​](#using-mcpdo-from-a-coding-agent)
 
 Using mcpdo from a coding agent
 
-The package ships an agent skill that teaches an agent to drive `mcpdo`: connections it holds then extend the agent’s toolset, and it knows to relay sign-in URLs and answer parked elicitations. `mcpdo agent-help` prints the guide, `mcpdo agent-help --skill-path` prints the path of the installable skill file, and `mcpdo agent-help --instructions` prints a block to append to a project’s `CLAUDE.md` or `AGENTS.md`.
+The package ships an agent skill that teaches an agent to drive `mcpdo`: connections it holds then extend the agent’s toolset, and it knows to relay sign-in URLs and answer parked elicitations. `mcpdo agent-help` prints the guide, `mcpdo agent-help --skill-path` prints the path of the installable skill file, and `mcpdo agent-help --instructions` prints a block to append to a project’s `CLAUDE.md` or `AGENTS.md`. The skill can also be installed with `npx skills add modelcontextprotocol/inspector --skill mcpdo`.

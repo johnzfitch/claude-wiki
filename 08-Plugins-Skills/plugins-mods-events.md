@@ -2,11 +2,13 @@
 title: "React to events with a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/events"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-21T06:28:55Z"
+fetched_at: "2026-10-28T06:37:36Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [How a hook handles an event](#how-a-hook-handles-an-event)
   - [Observe an event](#observe-an-event)
@@ -21,6 +23,13 @@ tags: ["claude-code", "plugins"]
   - [Filter a tool.check hook by whether the call is read-only](#filter-a-tool-check-hook-by-whether-the-call-is-read-only)
   - [Rewrite or add to a prompt](#rewrite-or-add-to-a-prompt)
   - [Follow a turn](#follow-a-turn)
+  - [Send a request to a different model](#send-a-request-to-a-different-model)
+  - [Change or refuse a settings read](#settings-read-hook)
+  - [What a settings.read hook receives](#settings-read-receives)
+  - [Tell Claude Code’s own read from a mod’s read](#settings-read-origin)
+  - [What a settings.read hook can return](#settings-read-returns)
+  - [What next(e) gives a settings.read hook](#settings-read-next)
+  - [Change one setting from a settings.read hook](#settings-read-example)
   - [Handle the settings hook events](#hook-the-settings-hook-events)
 - [Run alongside other mods](#run-alongside-other-mods)
   - [The order mods run in](#the-order-mods-run-in)
@@ -133,7 +142,7 @@ on('tool.call', { tool: /^mcp__github__/ }, hook)
 
 Hook what Claude is doing
 
-Handle these events to see or change a tool call, a prompt, or a turn as it happens. For every event and what a hook can return, see the [events reference](plugins-mods-reference.md#events).
+Handle these events to see or change a tool call, a prompt, a turn, or a settings read as it happens. For every event and what a hook can return, see the [events reference](plugins-mods-reference.md#events).
 
 
 [​](#guard-or-change-a-tool-call)
@@ -154,7 +163,7 @@ on('tool.call', { tool: 'Bash' }, async ($, e, next) => {
 })
 ```
 
-When Claude tries `git push --force`, the command doesn’t run and no permission prompt appears, because the hook never calls `next`. Claude reads the `deny` text as the tool’s result, so write it as an instruction Claude can act on. Every other Bash command runs as it would without the mod. To act after a tool has run, `await next(e)`, do your work, and return what `next` gave you. This hook logs each `.mdx` file Claude changes, with [`$.ui.log`](plugins-mods-api.md#show-something-without-starting-a-turn), which adds a dim line to the transcript that Claude doesn’t read:
+When Claude tries `git push --force`, the command doesn’t run and no permission prompt appears, because the hook never calls `next`. Claude reads the `deny` text as the tool’s result, so write it as an instruction Claude can act on. Every other Bash command runs as it would without the mod. If this hook throws or times out, Claude Code skips it and the command goes on as it would without the mod. To refuse the command instead, [add a `.catch` handler](#handle-a-hook-that-fails) to the hook. To act after a tool has run, `await next(e)`, do your work, and return what `next` gave you. This hook logs each `.mdx` file Claude changes, with [`$.ui.log`](plugins-mods-api.md#show-something-without-starting-a-turn), which adds a dim line to the transcript that Claude doesn’t read:
 
 ```python
 on('tool.call', { tool: ['Edit', 'Write'] }, async ($, e, next) => {
@@ -215,7 +224,7 @@ When Claude tries a command such as `rm -rf build`, the question appears with th
 - **The user types an answer**: `$.ui.ask` resolves to the typed text. The hook compares it with `Run it`, so any other text refuses the command.
 - **Nobody answers**: `$.ui.ask` rejects when the user dismisses the question or picks **Chat about this**, and in a `claude -p` run, so the `catch` block leaves the answer at `Refuse`
 
-Keep the wait inside a mods API call such as `$.ui.ask`, because that time doesn’t count against the hook’s [time limit](plugins-mods-reference.md#limits). Time spent awaiting a promise of your own does count. Claude Code skips a hook that times out, so the held command would run.
+Keep the wait inside a mods API call such as `$.ui.ask`, because that time doesn’t count against the hook’s [time limit](plugins-mods-reference.md#limits). Time spent awaiting a promise of your own does count. Claude Code skips a hook that times out, so the held command would run. To refuse it instead, chain [a `.catch` handler](#handle-a-hook-that-fails) onto the registration that `on` returns. That handler is separate from the `catch` block inside the hook.
 
 
 [​](#approve-or-refuse-a-tool-call-before-the-user-is-asked)
@@ -246,6 +255,7 @@ The hook denies `git push` on `main` and passes every other call through:
 
 - **On `main`**: the hook returns `deny`, even when a rule allows `git push`
 - **On another branch, and for other commands**: the call gets the decision it would get without the mod
+- **The hook throws or times out**: the call also gets the decision it would get without the mod. To refuse the call instead, [add a `.catch` handler](#handle-a-hook-that-fails) that returns `{ decision: 'deny', reason: 'the reason' }`.
 
 The hook matches the text of the command, so treat it as a reminder for Claude. To block pushes to `main` for everyone, protect the branch on your Git host.
 
@@ -289,11 +299,11 @@ Rewrite or add to a prompt
 
 A `prompt.submit` hook sees each prompt before the turn starts, so it can rewrite the text or add to it. `e.text` is what was typed.
 
-| To do this                                                                                                                 | Return this                                                  |
-|:---------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------|
-| Rewrite the prompt. The transcript and your [prompt history](../02-Claude-Code-CLI/interactive-mode.md#command-history) show the new text. | `next({ ...e, text: newText })`                              |
-| Add text only Claude reads, after the prompt                                                                               | `next({ ...e, context: [...(e.context ?? []), extraText] })` |
-| Stop the prompt from being sent                                                                                            | `{ drop: 'the reason' }`                                     |
+| To do this | Return this |
+|:---|:---|
+| Rewrite the prompt. The transcript and your [prompt history](../02-Claude-Code-CLI/interactive-mode.md#command-history) show the new text. | `next({ ...e, text: newText })` |
+| Add text only Claude reads, after the prompt | `next({ ...e, context: [...(e.context ?? []), extraText] })` |
+| Stop the prompt from being sent | `{ drop: 'the reason' }` |
 
 This hook adds the current branch name for Claude whenever a prompt mentions a pull request:
 
@@ -309,7 +319,12 @@ on('prompt.submit', async ($, e, next) => {
 })
 ```
 
-When you send a prompt such as `open a PR for this change`, your message looks the same in the transcript, and Claude also reads a line such as `Current branch: feature/auth` after it. A prompt that doesn’t mention a pull request goes through unchanged, and `git` doesn’t run. To stop a prompt, return `{ drop: 'the reason' }` without calling `next`. The text goes back into the user’s prompt input, and they see `Prompt dropped by a hook:` followed by your reason, so address the reason to them. If your hook returns a `drop` after its `next(e)` call let the prompt through, the turn still runs, and the hook [fails](#handle-a-hook-that-fails) with a message that includes `a drop after its next() was answered`. [Other events](plugins-mods-reference.md#prompts-and-what-claude-reads) cover the rest of what Claude reads: `prompt.section` for each section of the system prompt, `prompt.context` for the context sent with the first message, and `skill.prompt` for a skill’s text. Text from these hooks that changes between requests [invalidates the prompt cache](../02-Claude-Code-CLI/prompt-caching.md). In a `skill.prompt` hook, you can also read [which plugin or file the skill came from](plugins-mods-reference.md#skill-prompt-fields).
+When you send a prompt such as `open a PR for this change`, your message looks the same in the transcript, and Claude also reads a line such as `Current branch: feature/auth` after it. A prompt that doesn’t mention a pull request goes through unchanged, and `git` doesn’t run. To stop a prompt, return `{ drop: 'the reason' }` without calling `next`. The text goes back into the user’s prompt input, and they see `Prompt dropped by a hook:` followed by your reason, so address the reason to them. The prompt still goes through in these cases:
+
+- **Your hook returns a `drop` after its `next(e)` call let the prompt through**: the turn still runs, and the hook [fails](#handle-a-hook-that-fails) with a message that includes `a drop after its next() was answered`
+- **Your hook throws or times out**: Claude Code skips it and sends the prompt. [Add a `.catch` handler](#handle-a-hook-that-fails) so that a failure doesn’t send a prompt the hook would have stopped.
+
+[Other events](plugins-mods-reference.md#prompts-and-what-claude-reads) cover the rest of what Claude reads: `prompt.section` for each section of the system prompt, `prompt.context` for the context sent with the first message, and `skill.prompt` for a skill’s text. Text from these hooks that changes between requests [invalidates the prompt cache](../02-Claude-Code-CLI/prompt-caching.md). In a `skill.prompt` hook, you can also read [which plugin or file the skill came from](plugins-mods-reference.md#skill-prompt-fields).
 
 
 [​](#follow-a-turn)
@@ -318,11 +333,11 @@ Follow a turn
 
 A turn is everything Claude does in answer to one prompt. Handle `turn.start`, `turn.step`, and `turn.complete` to follow one:
 
-| Event           | When it fires                                                                                                                                                                                                                                     | What a hook can do                                                                                                              |
-|:----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------|
-| `turn.start`    | A turn begins                                                                                                                                                                                                                                     | Observe. `e.turnId` identifies the turn in the other two events.                                                                |
-| `turn.step`     | Claude Code is about to send one request to the model. A turn with tool calls has several. `e.agentId` is set for a subagent’s request.                                                                                                           | Read each request’s token usage, send it to a different model with `next({ ...e, model })`, or answer without calling the model |
-| `turn.complete` | The turn ended, including a turn the user interrupted, where `e.isAborted` is `true`. `e.answer` is Claude’s final text, `e.durationMs` how long it took, and `e.usage` the turn’s token totals. A subagent’s turn fires it with `e.agentId` set. | Observe, or return an object with a `text` field, such as `{ text: 'Done in 12 seconds' }`, to show a line under the answer     |
+| Event | When it fires | What a hook can do |
+|:---|:---|:---|
+| `turn.start` | A turn begins | Observe. `e.turnId` identifies the turn in the other two events. |
+| `turn.step` | Claude Code is about to send one request to the model. A turn with tool calls has several. `e.agentId` is set for a subagent’s request. | Read each request’s token usage, send it to a different model with `next({ ...e, model })`, or answer without calling the model |
+| `turn.complete` | The turn ended, including a turn the user interrupted, where `e.isAborted` is `true`. `e.answer` is Claude’s final text, `e.durationMs` how long it took, and `e.usage` the turn’s token totals. A subagent’s turn fires it with `e.agentId` set. | Observe, or return an object with a `text` field, such as `{ text: 'Done in 12 seconds' }`, to show a line under the answer |
 
 Write a `turn.step` hook as an async generator, because the event streams. `yield* next(e)` forwards the response as it streams and evaluates to the finished result. This hook logs how much of each request the Claude API served from the [prompt cache](../02-Claude-Code-CLI/prompt-caching.md):
 
@@ -343,11 +358,99 @@ on('turn.step', async function* ($, e, next) {
 Claude’s response streams to the screen as it does without the mod. After each request finishes, a dim line in the transcript gives the number of tokens read from the cache and the number written to it. A turn with tool calls has several requests, so it adds several lines. `result.usage` holds the token counts the Claude API reports for a request, plus the `model` that answered: `input_tokens`, `output_tokens`, `cache_read_input_tokens`, and `cache_creation_input_tokens`. The hook runs for subagents’ requests too, so check `e.agentId` when you want only the main conversation. To see the tool calls that the API ran itself during the request, such as calls to the [advisor tool](../02-Claude-Code-CLI/advisor.md), read `result.serverToolUses`. Claude Code doesn’t run these calls, so no `tool.call` or `tool.check` hook fires for them. The field is absent when the response has no such calls, and it requires Claude Code v2.1.290 or later.
 
 
+[​](#send-a-request-to-a-different-model)
+
+Send a request to a different model
+
+If a `turn.step` request fails with a model error when `model` is an alias such as `haiku`, update to Claude Code v2.1.309 or later, or use a full model id. Before v2.1.309, an alias went out as written. To send a request to a different model, pass `next` the event with `model` changed, as in `yield* next({ ...e, model: 'haiku' })`.
+
+
+[​](#settings-read-hook)
+
+Change or refuse a settings read
+
+Use a `settings.read` hook to change or refuse a settings read, either a mod’s or Claude Code’s own:
+
+- **A mod’s read**: a mod calls [`$.settings.read`](plugins-mods-api.md#read-one-source-or-one-key).
+- **Claude Code’s own read**: your hook first runs when Claude Code merges the session’s settings, after the session’s mods have loaded. Your hook runs again when settings or loaded plugins change.
+
+Check which mods get this event and your Claude Code version:
+
+- **The built-in guard**: with managed settings, or with a Team or Enterprise [`/login`](../02-Claude-Code-CLI/authentication.md#authentication-precedence) as the session’s credential, the [built-in guard](plugins-mods-admin.md#know-what-happens-by-default) can skip this hook in a mod you install or load with `--plugin-dir`. To check, search the [debug log](plugins-mods-troubleshoot.md#read-the-debug-log) for `settings.read bypassed by cc-plugin-sec-default`. If a line with that text names your mod, ask your organization’s administrator to [install the mod as one of the organization’s mods](plugins-mods-admin.md#install-your-organizations-mods).
+- **The version**: the event firing on Claude Code’s own read, and the `e.layers` field, require Claude Code v2.1.304 or later.
+
+
+[​](#settings-read-receives)
+
+What a `settings.read` hook receives
+
+| Field | Type | What it holds |
+|:---|:---|:---|
+| `e.layers` | array | One `{ source, settings }` object for each source in use that holds settings, lowest [precedence](../02-Claude-Code-CLI/settings.md#settings-precedence) first: `plugin`, `user`, `project`, `local`, `flag`, `policy`. Empty in `claude plugin test`. |
+| `e.source` | string | The one source a mod asked for, as in `$.settings.read({ source: 'policy' })`. `e.layers` then holds that layer alone. Absent on Claude Code’s own read and on any other read of the merged settings. |
+
+In `e.layers`, `plugin` holds settings that enabled plugins supply, and is a layer name only, not a `source` you can pass to `$.settings.read`. `flag` holds the settings passed with `--settings`, and `policy` holds managed settings.
+
+
+[​](#settings-read-origin)
+
+Tell Claude Code’s own read from a mod’s read
+
+Check [`next.origin`](plugins-mods-reference.md#the-hook-function):
+
+- **Claude Code’s own read**: `{ plugin: 'engine', tier: 'core' }`
+- **A mod’s read**: `plugin` is the calling mod’s name
+
+
+[​](#settings-read-returns)
+
+What a `settings.read` hook can return
+
+Return [`next(e)`](#settings-read-next)’s result unchanged to leave the read as it is, or return one of these:
+
+| Return | On [Claude Code’s own read](#settings-read-hook) | On a mod’s read |
+|:---|:---|:---|
+| `{ value }` | For each key changed, you replace its whole value in the session’s merged settings, if yours [fits the key’s schema](plugins-mods-troubleshoot.md#settings-read-key-refused) | That mod’s call resolves to your `value`, or to the `key` it asked for taken from your `value`, so return a whole object and not an array |
+| `{ deny: reason }` | The session keeps the settings as they were merged before any hook answered, and the [debug log records your `reason`](plugins-mods-troubleshoot.md#settings-read-refused) | That mod’s call rejects with `<calling mod>: $.settings.read: <reason>` |
+
+On Claude Code’s own read, build your `{ value }` from [`next(e)`’s `value`](#settings-read-next), since a key you leave out is unset. Where Claude Code reads a key such as `env` from each source separately, changing it in your `value` [has no effect](plugins-mods-troubleshoot.md#settings-read-key-no-effect).
+
+
+[​](#settings-read-next)
+
+What `next(e)` gives a `settings.read` hook
+
+`next(e)` resolves to `{ value }` or to `{ deny }`:
+
+- **`{ value }`**: `value` is the merged settings, or one source’s settings when [`e.source`](#settings-read-receives) is set. If a hook that [runs after yours](#the-order-mods-run-in) returned a `{ value }` of its own, you get that hook’s `value` instead.
+- **`{ deny }`**: a hook that runs after yours refused the read. Return that `{ deny }` unchanged.
+
+
+[​](#settings-read-example)
+
+Change one setting from a `settings.read` hook
+
+First check [which mods get this event, and from which version](#settings-read-hook). To change one key, spread the `value` from [`next(e)`](plugins-mods-reference.md#the-hook-function) and set that key, as this hook does with [`spinnerTipsEnabled`](../02-Claude-Code-CLI/settings-reference.md#spinnertipsenabled). The hook doesn’t check [`next.origin`](#settings-read-origin), so the hook changes the key on [Claude Code’s own read](#settings-read-hook) and on a mod’s merged read alike:
+
+```python
+on('settings.read', async ($, e, next) => {
+  const read = await next(e)
+  // Pass through a read of one source, so that only the merged settings change.
+  // Pass through a { deny } from a later hook too: it has no value.
+  if (e.source || !read.value) return read
+  // Keep every other key and change this one
+  return { value: { ...read.value, spinnerTipsEnabled: false } }
+})
+```
+
+On Claude Code’s own read, if your hook returns a value outside the key’s schema, such as a string, that key alone keeps the value merged before any hook answered. The debug log then says [`the answer for <key> is no value the key can hold`](plugins-mods-troubleshoot.md#settings-read-key-refused). If your value fits and the key still doesn’t change, see [why a key doesn’t take effect](plugins-mods-troubleshoot.md#settings-read-key-no-effect).
+
+
 [​](#hook-the-settings-hook-events)
 
 Handle the settings hook events
 
-Settings hooks are the command, HTTP, prompt, and agent hooks you configure in settings files. Each [settings hook event](../07-Hooks/hooks.md#hook-events), such as `Stop`, `SessionEnd`, or `PostToolUse`, is also an event named `classic.` followed by the settings hook event’s name, such as `classic.Stop`. `e` is the JSON a settings hook receives on stdin, including `transcript_path`. This hook uses `Stop`, which fires when Claude finishes responding, to log where the session’s transcript is saved:
+Settings hooks are the command, HTTP, prompt, and agent hooks you configure in settings files. Each [settings hook event](../07-Hooks/hooks.md#hook-events), such as `Stop`, `SessionEnd`, or `PostToolUse`, is also an event named `classic.` followed by the settings hook event’s name, such as `classic.Stop`. `e` is the JSON a settings hook receives on stdin, including `transcript_path`. Where the [built-in guard](plugins-mods-admin.md#know-what-happens-by-default) loads, [a hook on these events in a mod you install doesn’t run](plugins-mods-admin.md#hooks-the-guard-passes-over). This hook uses `Stop`, which fires when Claude finishes responding, to log where the session’s transcript is saved:
 
 ```python
 on('classic.Stop', async ($, e, next) => {
@@ -403,7 +506,7 @@ A hook that fails doesn’t break the session, and you can decide what happens i
 - **It failed before calling `next`**: Claude Code skips it, and the next handler runs in its place
 - **It failed after `next` resolved**: that result stands, and nothing runs a second time
 
-One line names the mod, the event, and the reason, such as `my-mod: tool.call hook skipped: threw Error: boom`. Where you read it depends on the session, as [Find out why a mod does nothing](plugins-mods-troubleshoot.md#find-out-why-a-mod-does-nothing) lists. A `ui.render` hook whose drawing doesn’t validate is reported differently, as [Build a tree from elements](plugins-mods-interface.md#build-a-tree-from-elements) describes. To make a hook that blocks calls fail closed, add a `.catch` error handler that answers in its place. Here, `guard` is your hook function, and the handler tests [`next.called`](plugins-mods-reference.md#the-hook-function) to tell whether `guard` had already called `next` when it failed:
+One line names the mod, the event, and the reason, such as `my-mod: tool.call hook skipped: threw Error: boom`. Where you read it depends on the session, as [Find out why a mod does nothing](plugins-mods-troubleshoot.md#find-out-why-a-mod-does-nothing) lists. A `ui.render` hook whose [tree doesn’t validate](plugins-mods-interface.md#build-a-tree-from-elements) counts as one that returned the wrong shape. To make a hook that blocks calls fail closed, add a `.catch` error handler that answers in its place. Here, `guard` is your hook function, and the handler tests [`next.called`](plugins-mods-reference.md#the-hook-function) to tell whether `guard` had already called `next` when it failed:
 
 ```python
 // on returns a registration, and .catch attaches a handler to that one hook

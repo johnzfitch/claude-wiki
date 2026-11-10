@@ -2,11 +2,14 @@
 title: "Use the mods API - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/api"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-21T06:28:31Z"
+fetched_at: "2026-11-03T06:23:00Z"
+last_modified: "Tue, 03 Nov 2026 06:18:13 GMT"
 tags: ["api", "claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Add a command or a tool](#add-a-command-or-a-tool)
   - [Add a command](#add-a-command)
@@ -25,8 +28,11 @@ tags: ["api", "claude-code", "plugins"]
   - [Retry a refused or dropped call](#retry-a-refused-or-dropped-call)
   - [What refused calls return](#what-refused-calls-return)
   - [Work your mod started before the interruption](#work-your-mod-started-before-the-interruption)
+  - [Calls refused in claude -p runs and Agent SDK sessions](#calls-refused-in-non-interactive-runs)
+  - [A claude -p run with your mod never exits](#a-claude-p-run-with-your-mod-never-exits)
 - [Send and receive messages between sessions](#send-and-receive-messages-between-sessions)
 - [Reach files, processes, and the network](#reach-files-processes-and-the-network)
+  - [Read all settings, one source, or one key](#read-one-source-or-one-key)
 - [Next steps](#next-steps)
 
 Build
@@ -110,13 +116,13 @@ Call a model
 
 A mod can send its own requests to a model for a small job such as classifying or summarizing text. `$.model.complete` sends your prompt on its own, and `$.model.fork({ prompt })` sends the current conversation with your prompt at the end. This table compares what each request contains:
 
-| In the request                      | `$.model.complete`                                                                                                             | `$.model.fork`                                                |
-|:------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------|
-| Model                               | The `model` you pass                                                                                                           | The session’s model                                           |
-| System prompt                       | A short [attribution block](../13-Enterprise-Admin/llm-gateway-protocol.md#system-prompt-attribution-block), then your `system` if you pass one | The session’s system prompt                                   |
-| Messages                            | One user message, your `prompt`                                                                                                | The conversation so far, then your `prompt` as a user message |
-| CLAUDE.md and other project context | Not included                                                                                                                   | Included, as in the conversation’s last request               |
-| Tools                               | None                                                                                                                           | Claude’s tools, which the model can’t call                    |
+| In the request | `$.model.complete` | `$.model.fork` |
+|:---|:---|:---|
+| Model | The `model` you pass | The session’s model |
+| System prompt | A short [attribution block](../13-Enterprise-Admin/llm-gateway-protocol.md#system-prompt-attribution-block), then your `system` if you pass one | The session’s system prompt |
+| Messages | One user message, your `prompt` | The conversation so far, then your `prompt` as a user message |
+| CLAUDE.md and other project context | Not included | Included, as in the conversation’s last request |
+| Tools | None | Claude’s tools, which the model can’t call |
 
 A fork repeats the conversation’s last request, so the Claude API serves most of it from the [prompt cache](../02-Claude-Code-CLI/prompt-caching.md) while the conversation is still cached. Both calls use the session’s credentials, so they bill to the user’s plan, API key, or cloud provider. [The types for your build](plugins-mods-create.md#get-the-types-for-your-build) document every `$.model` method.
 
@@ -244,21 +250,21 @@ Show something without starting a turn
 
 A background job can show the user something without starting a turn. Each of these calls puts text in a different place:
 
-| Call                | What the user sees                                                                                                                                                                                                                                                         |
-|:--------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$.ui.status(text)` | One line under the prompt that stays until you change it. It starts with `⚠` and the mod’s name, as in `⚠ my-mod: checks: 3 passing`.                                                                                                                                      |
-| `$.ui.toast(text)`  | A toast notification with the mod’s name that disappears after a few seconds. It’s a box at the top right in [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md), and one line at the right under the prompt in the classic renderer.                                              |
-| `$.ui.log(text)`    | A dim line in the transcript that Claude doesn’t read. It starts with `●` and the mod’s name, as in `● my-mod: build finished`.                                                                                                                                            |
+| Call | What the user sees |
+|:---|:---|
+| `$.ui.status(text)` | One line under the prompt that stays until you change it. It starts with `⚠` and the mod’s name, as in `⚠ my-mod: checks: 3 passing`. |
+| `$.ui.toast(text)` | A toast notification with the mod’s name that disappears after a few seconds. It’s a box at the top right in [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md), and one line at the right under the prompt in the classic renderer. |
+| `$.ui.log(text)` | A dim line in the transcript that Claude doesn’t read. It starts with `●` and the mod’s name, as in `● my-mod: build finished`. |
 | `$.ui.notify(text)` | A notification from their terminal, outside Claude Code, sent the way their [`preferredNotifChannel`](../02-Claude-Code-CLI/settings-reference.md#preferrednotifchannel) setting says. The mod’s name is its title unless you pass a non-empty `{ title }`, which is shown as you give it. |
 
 `$.ui.notify` is the only one of these that answers. It resolves to `{ isSent: true, channel }` when the user’s channel wrote the notification to their terminal. `channel` is the setting’s value that sent it, such as `kitty` or `terminal_bell`. The `terminal_bell` channel rings the bell and shows neither your text nor the title. Otherwise the call resolves to `{ isSent: false, reason }`:
 
-| `reason`     | Meaning                                                                                                                                                                                                                                                        |
-|:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `disabled`   | The user set `preferredNotifChannel` to `notifications_disabled`                                                                                                                                                                                               |
-| `no-channel` | The setting is `auto` and their terminal has no notification Claude Code can send                                                                                                                                                                              |
+| `reason` | Meaning |
+|:---|:---|
+| `disabled` | The user set `preferredNotifChannel` to `notifications_disabled` |
+| `no-channel` | The setting is `auto` and their terminal has no notification Claude Code can send |
 | `no-surface` | The session has no terminal, as in a `-p` run, the Agent SDK, the desktop app, the VS Code extension, or a cloud session. Also the answer to a call made before the session starts, while your mod is loading, and to a call made while Claude Code is exiting |
-| `refused`    | Another mod’s hook on `ui.notify` answered in Claude Code’s place without sending                                                                                                                                                                              |
+| `refused` | Another mod’s hook on `ui.notify` answered in Claude Code’s place without sending |
 
 The call rejects instead of resolving when `text` isn’t a string, when another mod’s hook on `ui.notify` returns `{ deny }`, or when writing to the terminal fails. Your mod can’t choose the channel, and Claude Code doesn’t limit how often a mod notifies. The user’s setting is the only switch. When the call reaches a running session, the user’s [`Notification` hooks](../07-Hooks/hooks.md#notification) run with the type `plugin_notification`. They run even when the answer is `disabled`, and in a session with no terminal, where the answer is `no-surface`. No hook runs for a call made before the session starts or while Claude Code is exiting. The hook your mod called `$.ui.notify` from is left out of that run, so a `classic.Notification` hook that notifies isn’t called again for its own notification. A terminal doesn’t report whether it showed the notification, so `isSent: true` means it was sent, not that the user saw it. This example notifies when the main conversation’s turn ends without an interruption, and falls back to a toast when no notification with text went out. It doesn’t wait for the notification before passing the event on, because the user’s `Notification` hooks run first and can take a while:
 
@@ -290,7 +296,7 @@ When a background job finds something that needs Claude’s attention, it can st
 
 Stop background work
 
-Timers stop when the module reloads. For long-running work inside a hook, [`next.signal`](plugins-mods-reference.md#the-hook-function) is an `AbortSignal` that aborts when the event your hook is handling is abandoned, for example when the user interrupts, so pass it to anything long-running.
+Timers stop after the module reloads. For long-running work inside a hook, [`next.signal`](plugins-mods-reference.md#the-hook-function) is an `AbortSignal` that aborts when the event your hook is handling is abandoned, for example when the user interrupts. Pass it to anything long-running.
 
 
 [​](#calls-and-background-work-after-the-user-interrupts-a-turn)
@@ -350,18 +356,18 @@ Before the user’s next input, `turn.complete` can fire for the interrupted tur
 
 What refused calls return
 
-In the results, `<reason>` stands for `the session was stopped and nobody has sent input since`:
+In the results, `<reason>` stands for the reason the call was refused. After an interruption, that’s `the session was stopped and nobody has sent input since`. For other reasons, see [Calls refused in `claude -p` runs and Agent SDK sessions](#calls-refused-in-non-interactive-runs).
 
-| Some refused calls                                                                                                               | Result until the user’s next input                                                                                                                                                  |
-|:---------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$.prompt.submit`                                                                                                                | Resolves with `{ drop: '<reason>' }` and queues no prompt                                                                                                                           |
-| `$.command.run`                                                                                                                  | Rejects with an error whose message ends with `<reason>`                                                                                                                            |
-| [`$.agent.spawn`](plugins-mods-reference.md#mods-api-methods)                                                              | Resolves with `{ deny: '<reason>' }` and starts no subagent                                                                                                                         |
-| `$.session.send` to a subagent that finished                                                                                     | Resolves with `{ isDelivered: false, reason: 'Agent "<id>" was not resumed: <reason>.' }`, where `<id>` is the subagent’s id. A subagent that’s still running receives the message. |
-| `$.session.send` to an [agent team](../09-Agents-Patterns/agent-teams.md) teammate                                                               | Resolves with `{ isDelivered: false, reason: 'Teammate "<name>" was not messaged: <reason>.' }`, where `<name>` is the teammate’s name                                              |
-| [`$.tool.call`](plugins-mods-reference.md#mods-api-methods) of Bash with `run_in_background: true`, Monitor, or CronCreate | Resolves with `{ deny: '<tool> was not run: it starts background work, a schedule or a goal, and <reason>' }`, where `<tool>` is the tool’s name                                    |
+| Some refused calls | Result |
+|:---|:---|
+| `$.prompt.submit` | Resolves with `{ drop: '<reason>' }` and queues no prompt |
+| `$.command.run` | Rejects with an error whose message ends with `<reason>` |
+| [`$.agent.spawn`](plugins-mods-reference.md#mods-api-methods) | Resolves with `{ deny: '<reason>' }` and starts no subagent |
+| `$.session.send` to a subagent that finished | Resolves with `{ isDelivered: false, reason: 'Agent "<id>" was not resumed: <reason>.' }`, where `<id>` is the subagent’s id. A subagent that’s still running receives the message. |
+| `$.session.send` to an [agent team](../09-Agents-Patterns/agent-teams.md) teammate | Resolves with `{ isDelivered: false, reason: 'Teammate "<name>" was not messaged: <reason>.' }`, where `<name>` is the teammate’s name |
+| [`$.tool.call`](plugins-mods-reference.md#mods-api-methods) of Bash with `run_in_background: true`, Monitor, or CronCreate | Resolves with `{ deny: '<tool> was not run: it starts background work, a schedule or a goal, and <reason>' }`, where `<tool>` is the tool’s name |
 
-Along with these `$.session.send` and `$.tool.call` results, the user can see the [`Stopped:` toast](plugins-mods-troubleshoot.md#stopped-type-a-message-to-continue).
+When one of these `$.session.send` or `$.tool.call` calls is refused after an interruption in an interactive session, the user can see the [`Stopped:` toast](plugins-mods-troubleshoot.md#stopped-type-a-message-to-continue).
 
 
 [​](#work-your-mod-started-before-the-interruption)
@@ -370,16 +376,42 @@ Work your mod started before the interruption
 
 After the user stops a running turn, for example with Esc, some work your mod had already started is dropped and some waits for the user’s next input.
 
-| Work                                                                                                           | What happens until the user’s next input                                                                                                                                  | What to do                                                                                   |
-|:---------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------|
-| A prompt from `$.prompt.submit` still in the queue                                                             | Dropped. The call resolves with `{ drop: 'the prompt was removed from the queue before it ran' }`.                                                                        | Submit it again as [Retry a refused or dropped call](#retry-a-refused-or-dropped-call) shows |
-| A command from `$.command.run` still in the queue                                                              | Dropped. The call rejects with an error whose message includes `the command was removed from the queue before it ran`.                                                    | Run it again as [Retry a refused or dropped call](#retry-a-refused-or-dropped-call) shows    |
-| A one-time job scheduled with a tool such as CronCreate that comes due before the user’s next input            | Starts no turn then, and runs after that input                                                                                                                            | Nothing needed                                                                               |
-| A recurring job scheduled with a tool such as CronCreate that comes due before the user’s next input           | Starts no turn then. The job loses that run and keeps its schedule.                                                                                                       | Nothing needed                                                                               |
-| An event from a monitor your mod started                                                                       | The monitor keeps running. An event the monitor raises before the user’s next input is dropped, except the notice that the monitor ended, which arrives after that input. | Nothing can be done                                                                          |
-| A subagent your mod spawned and later resumed with `$.session.send` that finishes before the user’s next input | Its finish notice waits, and reaches the conversation after that input                                                                                                    | Nothing needed                                                                               |
+| Work | What happens until the user’s next input | What to do |
+|:---|:---|:---|
+| A prompt from `$.prompt.submit` still in the queue | Dropped. The call resolves with `{ drop: 'the prompt was removed from the queue before it ran' }`. | Submit it again as [Retry a refused or dropped call](#retry-a-refused-or-dropped-call) shows |
+| A command from `$.command.run` still in the queue | Dropped. The call rejects with an error whose message includes `the command was removed from the queue before it ran`. | Run it again as [Retry a refused or dropped call](#retry-a-refused-or-dropped-call) shows |
+| A one-time job scheduled with a tool such as CronCreate that comes due before the user’s next input | Starts no turn then, and runs after that input | Nothing needed |
+| A recurring job scheduled with a tool such as CronCreate that comes due before the user’s next input | Starts no turn then. The job loses that run and keeps its schedule. | Nothing needed |
+| An event from a monitor your mod started | The monitor keeps running. An event the monitor raises before the user’s next input is dropped, except the notice that the monitor ended, which arrives after that input. | Nothing can be done |
+| A subagent your mod spawned and later resumed with `$.session.send` that finishes before the user’s next input | Its finish notice waits, and reaches the conversation after that input | Nothing needed |
+| A foreground Bash or PowerShell command from `$.tool.call` that was already running when the user stopped the turn and reaches its timeout before their next input | Stopped at its timeout instead of [moving to the background](../02-Claude-Code-CLI/tools-reference.md#foreground-commands-that-move-to-the-background). The call resolves with `isError` set, and the output includes the line `Ended instead of moving to the background: plugins' input is held, by a Stop or by the host's limits.` | Run it again after the user’s next input, as [Retry a refused or dropped call](#retry-a-refused-or-dropped-call) shows |
 
 When a scheduled job comes due or a monitor raises an event before the user’s next input, the user can see the [`Stopped:` toast](plugins-mods-troubleshoot.md#stopped-type-a-message-to-continue).
+
+
+[​](#calls-refused-in-non-interactive-runs)
+
+Calls refused in `claude -p` runs and Agent SDK sessions
+
+In a `claude -p` run or an [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) session, a result such as `{ drop: 'the run reached its --max-turns limit' }` means the run refused your mod’s call. A refused `$.prompt.submit` resolves with `{ drop: '<reason>' }`. Other refused calls, such as `$.command.run` and `$.agent.spawn`, give the results shown in [What refused calls return](#what-refused-calls-return) with the reason in place of `<reason>`. Find your `<reason>` below for what to do about it:
+
+- **`the run reached its --max-turns limit`**: turns from your mod’s prompts and from subagents it spawns count toward [`--max-turns`](../02-Claude-Code-CLI/cli-reference.md#cli-flags) or the Agent SDK’s [turn limit](../05-Agent-SDK/agent-sdk-configuration.md#limit-turns-and-spend). For more turns, start the run with a higher limit. If you can’t, have your mod stop making the refused call. If the run takes another prompt from the user or the SDK application, the turn count resets and the run accepts calls again.
+- **`the run is past its --max-budget-usd limit`**: start the run with a higher `--max-budget-usd`, or raise the Agent SDK’s [spend limit](../05-Agent-SDK/agent-sdk-configuration.md#limit-turns-and-spend). If you can’t, have your mod stop making the refused call. The limit applies to the run’s total cost so far. That total keeps adding up when the run takes another prompt, so a retry returns the same reason.
+- **`the host has ended its input`**: for example, the SDK application ended its [streaming input](../05-Agent-SDK/agent-sdk-streaming-vs-single-mode.md), or stdin closed on a run started with [`--input-format stream-json`](../02-Claude-Code-CLI/cli-reference.md#cli-flags). The run is ending and takes no more input, so a retry returns the same reason. Have your mod stop making the refused call. If you start the run yourself, next time keep that input open until your mod has no more calls to make.
+- **`the session was stopped and nobody has sent input since`**: the run was [interrupted](#calls-and-background-work-after-the-user-interrupts-a-turn), for example with the Agent SDK’s [`interrupt()`](../05-Agent-SDK/agent-sdk-typescript.md#query-object). To make the call again after the next message from the user or the SDK application, follow [Retry a refused or dropped call](#retry-a-refused-or-dropped-call).
+
+
+[​](#a-claude-p-run-with-your-mod-never-exits)
+
+A `claude -p` run with your mod never exits
+
+If your mod submits a prompt at the end of every turn, each prompt starts another turn. Without [`--max-turns`](../02-Claude-Code-CLI/cli-reference.md#cli-flags) or `--max-budget-usd`, a `claude -p` run that loads the mod goes on until you stop it yourself. To make the run end on its own, add either flag to the command in your shell. If other people start the run, have your mod stop submitting prompts once its work is done. This command adds `--max-turns`:
+
+```python
+claude -p "find the TODOs" --max-turns 5
+```
+
+Once the run reaches that limit, the mod’s next prompt is [refused](#calls-refused-in-non-interactive-runs) instead of starting a turn, and the run ends. If the run still goes past the limit, run `claude --version` in your shell, and [update Claude Code](../01-Getting-Started/setup.md#update-claude-code) if yours is earlier than v2.1.304. The mod’s prompts are refused at the limit from v2.1.299. If your mod spawns subagents, their turns count toward `--max-turns` from v2.1.304.
 
 
 [​](#send-and-receive-messages-between-sessions)
@@ -407,10 +439,10 @@ on('command.run', { command: 'ping' }, async ($, e) => {
 
 When the message is queued, nothing appears in your session, and the other session’s Claude reads `Status? One line.` When nothing was delivered, a toast notification gives the reason. `session.receive` and `session.send` let a mod observe the messages. Return `next(e)` from both to pass each message through unchanged:
 
-| Event             | Fires when                                                      | Useful fields                                                                                                                                                                                         |
-|:------------------|:----------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `session.receive` | A message arrives for this session, before Claude reads it      | `e.text`, and `e.origin.kind`, such as `peer` or `peer-send-message` for another session or agent, `task-notification`, or `scheduled-trigger`. Return `{ consumed: reason }` to keep it from Claude. |
-| `session.send`    | A message is about to leave, from the SendMessage tool or a mod | `e.to`, `e.text`, and `e.origin.kind`, which is `model` or `plugin`                                                                                                                                   |
+| Event | Fires when | Useful fields |
+|:---|:---|:---|
+| `session.receive` | A message arrives for this session, before Claude reads it | `e.text`, and `e.origin.kind`, such as `peer` or `peer-send-message` for another session or agent, `task-notification`, or `scheduled-trigger`. Return `{ consumed: reason }` to keep it from Claude. |
+| `session.send` | A message is about to leave, from the SendMessage tool or a mod | `e.to`, `e.text`, and `e.origin.kind`, which is `model` or `plugin` |
 
 A session set to [refuse inbound messages](../02-Claude-Code-CLI/cross-session-messaging.md#control-inbound-messages) refuses a message before `session.receive` fires, so a hook never sees it. A message that’s held for your approval reaches the hook first, so a mod can read a message you haven’t approved yet. The hook’s `next(e)` rejects when the message isn’t delivered. The sender’s name on a received message is whatever the sender wrote, so don’t base a decision on it.
 
@@ -421,16 +453,16 @@ Reach files, processes, and the network
 
 A mod reaches the file system, processes, and the network through the mods API, with the same permissions as the user running Claude Code. The hooks module itself has no Node.js APIs, no timer globals such as `setTimeout`, and no network or file access of its own. Standard JavaScript and web APIs such as `URL`, `TextEncoder`, `AbortController`, and `crypto.subtle` are available. Each namespace below covers one kind of access:
 
-| Namespace    | What it does                                                                                                                                                                                                                        |
-|:-------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$.fs`       | `read(path)`, `write(path, text)`, `exists(path)`, `stat(path)`, and `list(path)` work on files and directories                                                                                                                     |
-| `$.process`  | `run(['git', 'status'])` starts a command and resolves when it exits. `spawn` streams a long-running command’s output.                                                                                                              |
-| `$.http`     | `fetch(url, init)` over `http` or `https`. It resolves to `{ status, ok, headers, text }` once the body is read.                                                                                                                    |
-| `$.store`    | A JSON key-value store of your plugin’s own, kept between sessions                                                                                                                                                                  |
-| `$.env`      | `get` and `set` environment variables. Write the name as a string literal.                                                                                                                                                          |
-| `$.settings` | `read` what the settings files and managed policy hold                                                                                                                                                                              |
-| `$.session`  | `messages()` returns the transcript as a list of `{ role, text, toolUses }`. Also the working directory, model, and more. [`usage()`](plugins-mods-reference.md#mods-api-methods) returns context window use and plan limits. |
-| `$.mcp`      | `call` a tool on a connected MCP server                                                                                                                                                                                             |
+| Namespace | What it does |
+|:---|:---|
+| `$.fs` | `read(path)`, `write(path, text)`, `exists(path)`, `stat(path)`, and `list(path)` work on files and directories |
+| `$.process` | `run(['git', 'status'])` starts a command and resolves when it exits. `spawn` streams a long-running command’s output. |
+| `$.http` | `fetch(url, init)` over `http` or `https`. It resolves to `{ status, ok, headers, text }` once the body is read. |
+| `$.store` | A JSON key-value store of your plugin’s own, kept between sessions |
+| `$.env` | `get` and `set` environment variables. Write the name as a string literal. |
+| `$.settings` | `read()` resolves to all settings, merged into one object. With `{ source }` or `{ key }`, it resolves to [one source’s settings or one key’s value](#read-one-source-or-one-key) instead. |
+| `$.session` | `messages()` returns the transcript as a list of `{ role, text, toolUses }`. Also the working directory, model, and more. [`usage()`](plugins-mods-reference.md#mods-api-methods) returns context window use and plan limits. |
+| `$.mcp` | `call` a tool on a connected MCP server |
 
 Files, processes, and requests have a few rules of their own:
 
@@ -443,6 +475,30 @@ Every one of these calls is itself an event, named for its namespace and method 
 
 - **`$.process.spawn started, and a plugin withheld its result:`**: the refusing mod hadn’t read the command’s output to the end. Claude Code stops the command if it’s still running.
 - **`$.process.spawn ran, and a plugin withheld its result:`**: the refusing mod had read the command’s output to the end, so the command had exited
+
+
+[​](#read-one-source-or-one-key)
+
+Read all settings, one source, or one key
+
+`$.settings.read()` resolves to one object that holds the settings from all sources in use, merged by [precedence](../02-Claude-Code-CLI/settings.md#settings-precedence). Pass `{ source }` to read one source instead, `{ key }` to read one key, or both:
+
+| Call | Resolves to |
+|:---|:---|
+| `$.settings.read()` | The merged settings as one object. Its top-level keys are those of a `settings.json` file, such as `permissions` and `hooks`. |
+| `$.settings.read({ source: 'policy' })` | That one source’s settings as one object, or `{}` when that source holds no settings |
+| `$.settings.read({ key: 'spinnerTipsEnabled' })` | That key’s value in the merged settings, or `undefined` when the key isn’t set |
+| `$.settings.read({ key: 'spinnerTipsEnabled', source: 'user' })` | That key’s value in that one source, or `undefined` when that source doesn’t set it |
+
+For `source`, pass the name of the one settings source to read:
+
+- **`user`**: `~/.claude/settings.json`
+- **`project`**: `.claude/settings.json`
+- **`local`**: `.claude/settings.local.json`
+- **`flag`**: what you pass with `--settings`, and the SDK’s inline settings
+- **`policy`**: [managed settings](../13-Enterprise-Admin/managed-settings.md#how-claude-code-combines-managed-sources)
+
+For `key`, pass the exact name of one top-level key, not a dotted path into a nested object. The `key` argument requires Claude Code v2.1.304 or later.
 
 
 [​](#next-steps)

@@ -2,57 +2,9 @@
 title: "Ticket routing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing"
 category: "04-API-Reference/About"
-fetched_at: "2026-10-20T06:38:47Z"
+fetched_at: "2026-11-05T06:34:35Z"
 tags: ["api", "prompting"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fticket-routing)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](about-claude-use-case-guides-overview.md)Use cases
 
 # Ticket routing
 
@@ -60,7 +12,7 @@ Reference
 
 
 
-This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale based on customer intent, urgency, prioritization, customer profile, and more.
+This guide walks through how to use Claude’s advanced natural language understanding capabilities to classify customer support tickets at scale based on customer intent, urgency, prioritization, customer profile, and more.
 
 Copy page
 
@@ -74,11 +26,11 @@ This guide walks through how to harness Claude's advanced natural language under
 
 ## Define whether to use Claude for ticket routing
 
-Here are some key indicators that you should use an LLM like Claude instead of traditional ML approaches for your classification task:
+Here are some key indicators that you should use an LLM such as Claude instead of traditional ML approaches for your classification task:
 
 ### You have limited labeled training data available
 
-Traditional ML processes require massive labeled datasets. Claude's pre-trained model can effectively classify tickets with just a few dozen labeled examples, significantly reducing data preparation time and costs.
+Traditional ML processes require massive labeled datasets. Claude’s pre-trained model can effectively classify tickets with just a few dozen labeled examples, significantly reducing data preparation time and costs.
 
 ### Your classification categories are likely to change or evolve over time
 
@@ -86,23 +38,23 @@ Once a traditional ML approach has been established, changing it is a laborious 
 
 ### You need to handle complex, unstructured text inputs
 
-Traditional ML models often struggle with unstructured data and require extensive feature engineering. Claude's advanced language understanding allows for accurate classification based on content and context, rather than relying on strict ontological structures.
+Traditional ML models often struggle with unstructured data and require extensive feature engineering. Claude’s advanced language understanding allows for accurate classification based on content and context, rather than relying on strict ontological structures.
 
 ### Your classification rules are based on semantic understanding
 
-Traditional ML approaches often rely on bag-of-words models or simple pattern matching. Claude excels at understanding and applying underlying rules when classes are defined by conditions rather than examples.
+Traditional ML approaches often rely on bag-of-words models or simple pattern matching. Claude excels at applying underlying rules when classes are defined by conditions rather than examples.
 
-### You require interpretable reasoning for classification decisions
+### You need interpretable reasoning for classification decisions
 
 Many traditional ML models provide little insight into their decision-making process. Claude can provide human-readable explanations for its classification decisions, building trust in the automation system and facilitating easy adaptation if needed.
 
 ### You want to handle edge cases and ambiguous tickets more effectively
 
-Traditional ML systems often struggle with outliers and ambiguous inputs, frequently misclassifying them or defaulting to a catch-all category. Claude's natural language processing capabilities allow it to better interpret context and nuance in support tickets, potentially reducing the number of misrouted or unclassified tickets that require manual intervention.
+Traditional ML systems often struggle with outliers and ambiguous inputs, frequently misclassifying them or defaulting to a catch-all category. Claude’s natural language processing capabilities allow it to better interpret context and nuance in support tickets, potentially reducing the number of misrouted or unclassified tickets that require manual intervention.
 
 ### You need multilingual support without maintaining separate models
 
-Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Claude's multilingual capabilities allow it to classify tickets in various languages without the need for separate models or extensive translation processes, streamlining support for global customer bases.
+Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Claude’s multilingual capabilities allow it to classify tickets in various languages without the need for separate models or extensive translation processes, streamlining support for global customer bases.
 
 ------------------------------------------------------------------------
 
@@ -110,9 +62,9 @@ Traditional ML approaches typically require separate models or extensive transla
 
 ### Understand your current support approach
 
-Before you automate, it's crucial to understand your existing ticketing system. Start by investigating how your support team currently handles ticket routing.
+Before you automate, it’s crucial to understand your existing ticketing system. Start by investigating how your support team currently handles ticket routing.
 
-Consider questions like:
+Consider questions such as:
 
 - What criteria are used to determine what SLA/service offering is applied?
 - Is ticket routing used to determine which tier of support or product specialist a ticket goes to?
@@ -207,7 +159,7 @@ Here are some example user intent categories and subcategories.
 - API usage questions
 - Third-party compatibility inquiries
 
-In addition to intent, ticket routing and prioritization may also be influenced by other factors such as urgency, customer type, SLAs, or language. Be sure to consider other routing criteria when building your automated routing system.
+In addition to intent, ticket routing and prioritization might also be influenced by other factors such as urgency, customer type, SLAs, or language. Be sure to consider other routing criteria when building your automated routing system.
 
 ### Establish success criteria
 
@@ -217,37 +169,37 @@ Here are some standard criteria and benchmarks when using LLMs for support ticke
 
 ### Classification consistency
 
-This metric assesses how consistently Claude classifies similar tickets over time. It's crucial for maintaining routing reliability. Measure this by periodically testing the model with a set of standardized inputs and aiming for a consistency rate of 95% or higher.
+This metric assesses how consistently Claude classifies similar tickets over time. It’s crucial for maintaining routing reliability. Measure this by periodically testing the model with a set of standardized inputs and aiming for a consistency rate of 95 percent or higher.
 
 ### Adaptation speed
 
-This measures how quickly Claude can adapt to new categories or changing ticket patterns. Test this by introducing new ticket types and measuring the time it takes for the model to achieve satisfactory accuracy (for example, \>90%) on these new categories. Aim for adaptation within 50–100 sample tickets.
+This measures how quickly Claude can adapt to new categories or changing ticket patterns. Test this by introducing new ticket types and measuring the time it takes for the model to achieve satisfactory accuracy (for example, more than 90 percent) on these new categories. Aim for adaptation within 50–100 sample tickets.
 
 ### Multilingual handling
 
-This assesses Claude's ability to accurately route tickets in multiple languages. Measure the routing accuracy across different languages, aiming for no more than a 5–10% drop in accuracy for non-primary languages.
+This assesses Claude’s ability to accurately route tickets in multiple languages. Measure the routing accuracy across different languages, aiming for no more than a 5–10 percent drop in accuracy for non-primary languages.
 
 ### Edge case handling
 
-This evaluates Claude's performance on unusual or complex tickets. Create a test set of edge cases and measure the routing accuracy, aiming for at least 80% accuracy on these challenging inputs.
+This evaluates Claude’s performance on unusual or complex tickets. Create a test set of edge cases and measure the routing accuracy, aiming for at least 80 percent accuracy on these challenging inputs.
 
 ### Bias mitigation
 
-This measures Claude's fairness in routing across different customer demographics. Regularly audit routing decisions for potential biases, aiming for consistent routing accuracy (within 2–3%) across all customer groups.
+This measures Claude’s fairness in routing across different customer demographics. Regularly audit routing decisions for potential biases, aiming for consistent routing accuracy (within 2–3 percent) across all customer groups.
 
 ### Prompt efficiency
 
-In situations where minimizing token count is crucial, this criteria assesses how well Claude performs with minimal context. Measure routing accuracy with varying amounts of context provided, aiming for 90%+ accuracy with just the ticket title and a brief description.
+In situations where minimizing token count is crucial, this criterion assesses how well Claude performs with minimal context. Measure routing accuracy with varying amounts of context provided, aiming for at least 90 percent accuracy with just the ticket title and a brief description.
 
 ### Explainability score
 
-This evaluates the quality and relevance of Claude's explanations for its routing decisions. Human raters can score explanations on a scale (for example, 1–5), with the goal of achieving an average score of 4 or higher.
+This evaluates the quality and relevance of Claude’s explanations for its routing decisions. Human raters can score explanations on a scale (for example, 1–5), with the goal of achieving an average score of 4 or higher.
 
-Here are some common success criteria that may be useful regardless of whether an LLM is used:
+Here are some common success criteria that might be useful regardless of whether an LLM is used:
 
 ### Routing accuracy
 
-Routing accuracy measures how often tickets are correctly assigned to the appropriate team or individual on the first try. This is typically measured as a percentage of correctly routed tickets out of total tickets. Industry benchmarks often aim for 90–95% accuracy, though this can vary based on the complexity of the support structure.
+Routing accuracy measures how often tickets are correctly assigned to the appropriate team or individual on the first try. This is typically measured as a percentage of correctly routed tickets out of total tickets. Industry benchmarks often aim for 90–95 percent accuracy, though this can vary based on the complexity of the support structure.
 
 ### Time-to-assignment
 
@@ -255,11 +207,11 @@ This metric tracks how quickly tickets are assigned after being submitted. Faste
 
 ### Rerouting rate
 
-The rerouting rate indicates how often tickets need to be reassigned after initial routing. A lower rate suggests more accurate initial routing. Aim for a rerouting rate below 10%, with top-performing systems achieving rates as low as 5% or less.
+The rerouting rate indicates how often tickets need to be reassigned after initial routing. A lower rate suggests more accurate initial routing. Aim for a rerouting rate below 10 percent, with top-performing systems achieving rates as low as 5 percent or less.
 
 ### First-contact resolution rate
 
-This measures the percentage of tickets resolved during the first interaction with the customer. Higher rates indicate efficient routing and well-prepared support teams. Industry benchmarks typically range from 70–75%, with top performers achieving rates of 80% or higher.
+This measures the percentage of tickets resolved during the first interaction with the customer. Higher rates indicate efficient routing and well-prepared support teams. Industry benchmarks typically range from 70 to 75 percent, with top performers achieving rates of 80 percent or higher.
 
 ### Average handling time
 
@@ -267,29 +219,29 @@ Average handling time measures how long it takes to resolve a ticket from start 
 
 ### Customer satisfaction scores
 
-Often measured through post-interaction surveys, these scores reflect overall customer happiness with the support process. Effective routing contributes to higher satisfaction. Aim for CSAT scores of 90% or higher, with top performers often achieving 95%+ satisfaction rates.
+Often measured through post-interaction surveys, these scores reflect overall customer happiness with the support process. Effective routing contributes to higher satisfaction. Aim for CSAT scores of 90 percent or higher, with top performers often achieving satisfaction rates of at least 95 percent.
 
 ### Escalation rate
 
-This measures how often tickets need to be escalated to higher tiers of support. Lower escalation rates often indicate more accurate initial routing. Strive for an escalation rate below 20%, with best-in-class systems achieving rates of 10% or less.
+This measures how often tickets need to be escalated to higher tiers of support. Lower escalation rates often indicate more accurate initial routing. Strive for an escalation rate below 20 percent, with best-in-class systems achieving rates of 10 percent or less.
 
 ### Agent productivity
 
-This metric looks at how many tickets agents can handle effectively after implementing the routing solution. Improved routing should increase productivity. Measure this by tracking tickets resolved per agent per day or hour, aiming for a 10–20% improvement after implementing a new routing system.
+This metric looks at how many tickets agents can handle effectively after implementing the routing solution. Improved routing should increase productivity. Measure this by tracking tickets resolved per agent per day or hour, aiming for a 10–20 percent improvement after implementing a new routing system.
 
 ### Self-service deflection rate
 
-This measures the percentage of potential tickets resolved through self-service options before entering the routing system. Higher rates indicate effective pre-routing triage. Aim for a deflection rate of 20–30%, with top performers achieving rates of 40% or higher.
+This measures the percentage of potential tickets resolved through self-service options before entering the routing system. Higher rates indicate effective pre-routing triage. Aim for a deflection rate of 20–30 percent, with top performers achieving rates of 40 percent or higher.
 
 ### Cost per ticket
 
-This metric calculates the average cost to resolve each support ticket. Efficient routing should help reduce this cost over time. While benchmarks vary widely, many organizations aim to reduce cost per ticket by 10–15% after implementing an improved routing system.
+This metric calculates the average cost to resolve each support ticket. Efficient routing should help reduce this cost over time. Although benchmarks vary widely, many organizations aim to reduce cost per ticket by 10–15 percent after implementing an improved routing system.
 
 ### Choose the right Claude model
 
-The choice of model depends on the trade-offs between cost, accuracy, and response time.
+The choice of model depends on the trade-offs among cost, accuracy, and response time.
 
-Claude Haiku 5.5 (`claude-haiku-5-5`) suits ticket routing: it's the fastest and most cost-effective current model, and at `low` effort it handles simple, high-volume requests such as classification. If your classification problem requires deep subject matter expertise or a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
+Claude Haiku 5.5 (`claude-haiku-5-5`) suits ticket routing: it’s the fastest and most cost-effective current model, and at `low` effort it handles simple, high-volume requests such as classification. If your classification problem requires deep subject matter expertise, a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
 
 ### Build a strong prompt
 
@@ -301,7 +253,7 @@ Write a ticket classification prompt. The initial prompt should contain the cont
 
 Try the [metaprompt recipe from the Claude Cookbook](https://colab.research.google.com/github/anthropics/claude-cookbooks/blob/main/misc/metaprompt.ipynb) to have Claude write a first draft for you.
 
-Here's an example ticket routing classification prompt:
+Here’s an example ticket routing classification prompt:
 
 cURL
 
@@ -389,9 +341,9 @@ This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On
 Here are the key components of this prompt:
 
 - The prompt template inserts `ticket_contents` into the `<request>` tags.
-- The prompt gives Claude a clearly defined role as a classification system that carefully analyzes the ticket content to determine the customer's core intent and needs.
+- The prompt gives Claude a clearly defined role as a classification system that carefully analyzes the ticket content to determine the customer’s core intent and needs.
 - The prompt instructs Claude on proper output formatting, in this case to provide its reasoning and analysis inside `<reasoning>` tags, followed by the appropriate classification label inside `<intent>` tags.
-- The prompt specifies the valid intent categories: "Support, Feedback, Complaint", "Order Tracking", and "Refund/Exchange".
+- The prompt specifies the valid intent categories: `Support, Feedback, Complaint`, `Order Tracking`, and `Refund/Exchange`.
 - The prompt includes a few examples (a.k.a. few-shot prompting) to illustrate how the output should be formatted, which improves accuracy and consistency.
 
 Having Claude split its response into separate XML tag sections lets you use regular expressions to extract the reasoning and intent from the output independently. This lets you create targeted next steps in the ticket routing workflow, such as using only the intent to decide which person to route the ticket to.
@@ -400,7 +352,7 @@ Having Claude split its response into separate XML tag sections lets you use reg
 
 It’s hard to know how well your prompt works without deploying it in a test production setting and [running evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md).
 
-Build the deployment structure. Start by defining the method signature for wrapping the call to Claude. Extend the method you began writing earlier, which takes `ticket_contents` as input, so that it now returns the reasoning and the intent as output. If you have an existing automation using traditional ML, you'll want to follow that method signature instead.
+Build the deployment structure. Start by defining the function signature for wrapping the call to Claude. Extend the function you started writing earlier, which takes `ticket_contents` as input, so that it now returns the reasoning and the intent as output. If you have an existing automation using traditional ML, you’ll want to follow that signature instead.
 
 cURL
 
@@ -468,9 +420,9 @@ def classify_support_request(ticket_contents):
 This code:
 
 - Creates a client instance using your API key.
-- Defines a `classify_support_request` function that takes a `ticket_contents` string.
+- Defines a `classify_support_request()` function that takes a `ticket_contents` string.
 - Sends the `ticket_contents` to Claude for classification using the `classification_prompt`.
-- Returns the model's reasoning and intent extracted from the response.
+- Returns the model’s reasoning and intent extracted from the response.
 
 Because the entire reasoning and intent text must be generated before parsing, the example does not stream the response.
 
@@ -484,14 +436,14 @@ To run your evaluation, you need test cases to run it on. The rest of this guide
 
 ### Build an evaluation function
 
-The example evaluation for this guide measures Claude’s performance along three key metrics:
+The example evaluation for this guide measures Claude’s performance along two key metrics:
 
 - Accuracy
 - Cost per classification
 
-You may need to assess Claude on other axes depending on what factors that are important to you.
+You might need to assess Claude on other axes depending on which factors are important to you.
 
-To assess this, first modify the script to add a function that compares the predicted intent with the actual intent and calculates the percentage of correct predictions. Then add cost calculation and time measurement functionality.
+To assess this, first modify the script so that it compares the predicted intent with the actual intent. Then have it return the API call’s token usage, from which you can calculate cost.
 
 cURL
 
@@ -525,7 +477,7 @@ client = anthropic.Anthropic()
 DEFAULT_MODEL = "claude-haiku-5-5"
 
 
-def classify_support_request(request, actual_intent):
+def classify_support_request(ticket_contents, actual_intent):
     # Define the prompt for the classification task
     classification_prompt = f"""You will be acting as a customer support ticket classification system.
         […]
@@ -562,36 +514,36 @@ def classify_support_request(request, actual_intent):
 
 Here is a breakdown of the edits:
 
-- The `classify_support_request` method now takes the `actual_intent` from the test cases and compares it against Claude’s intent classification to assess whether they match.
-- The method extracts usage statistics for the API call to calculate cost based on input and output tokens used.
+- The `classify_support_request()` function now takes the `actual_intent` from the test cases and compares it against Claude’s intent classification to assess whether they match.
+- The function extracts usage statistics for the API call to calculate cost based on input and output tokens used.
 
 ### Run your evaluation
 
-A proper evaluation requires clear thresholds and benchmarks to determine what is a good result. The preceding script returns the runtime values for accuracy, response time, and cost per classification, but you still need clearly established thresholds. For example:
+A proper evaluation requires clear thresholds and benchmarks to determine what is a good result. The preceding script returns the values you need to measure accuracy and cost per classification, but you still need clearly established thresholds. For example:
 
 - **Accuracy:** 95% (out of 100 tests)
 - **Cost per classification:** 50% reduction on average (across 100 tests) from current routing method
 
-Having these thresholds allows you to quickly and easily tell at scale, and with impartial empiricism, what method is best for you and what changes might need to be made to better fit your requirements.
+Having these thresholds allows you to tell at scale, and with impartial empiricism, what method is best for you and what changes you might need to make to better fit your requirements.
 
 ------------------------------------------------------------------------
 
 ## Improve performance
 
-In complex scenarios, it may be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) & [guardrail implementation strategies](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md). Here are some common scenarios:
+In complex scenarios, it might be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) and [guardrail implementation strategies](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md). Here are some common scenarios:
 
 ### Use a taxonomic hierarchy for cases with 20+ intent categories
 
 As the number of classes grows, the number of examples required also expands, potentially making the prompt unwieldy. As an alternative, you can consider implementing a hierarchical classification system using a mixture of classifiers.
 
 1.  Organize your intents in a taxonomic tree structure.
-2.  Create a series of classifiers at every level of the tree, enabling a cascading routing approach.
+2.  Create a series of classifiers at every level of the tree to make a cascading routing approach possible.
 
-For example, you might have a top-level classifier that broadly categorizes tickets into "Technical Issues," "Billing Questions," and "General Inquiries." Each of these categories can then have its own sub-classifier to further refine the classification.
+For example, you might have a top-level classifier that broadly categorizes tickets into “Technical Issues,” “Billing Questions,” and “General Inquiries.” Each of these categories can then have its own sub-classifier to further refine the classification.
 
 - **Pros - greater nuance and accuracy:** You can create different prompts for each parent path, allowing for more targeted and context-specific classification. This can lead to improved accuracy and more nuanced handling of customer requests.
 
-- **Cons - increased latency:** Be advised that multiple classifiers can lead to increased latency, and Anthropic recommends implementing this approach with the fastest model, Haiku.
+- **Cons - increased latency:** Multiple classifiers can lead to increased latency, and Anthropic recommends implementing this approach with the fastest model, Haiku.
 
 ### Use vector databases and similarity search retrieval to handle highly variable tickets
 
@@ -599,27 +551,27 @@ Despite providing examples being the most effective way to improve performance, 
 
 In this scenario, you could employ a vector database to do similarity searches from a dataset of examples and retrieve the most relevant examples for a given query.
 
-This approach, outlined in detail in the [classification recipe](https://platform.claude.com/cookbook/capabilities-classification-guide), has been shown to improve performance from 71% accuracy to 93% accuracy.
+This approach, outlined in detail in the [classification recipe](https://platform.claude.com/cookbook/capabilities-classification-guide), has been shown to improve performance from 71 percent accuracy to 93 percent accuracy.
 
 ### Account specifically for expected edge cases
 
-Here are some scenarios where Claude may misclassify tickets (there may be others that are unique to your situation). In these scenarios, consider providing explicit instructions or examples in the prompt of how Claude should handle the edge case:
+Here are some scenarios where Claude might misclassify tickets (there might be others that are unique to your situation). In these scenarios, consider providing explicit instructions or examples in the prompt of how Claude should handle the edge case:
 
 ### Customers make implicit requests
 
-Customers often express needs indirectly. For example, "I've been waiting for my package for over two weeks now" may be an indirect request for order status.
+Customers often express needs indirectly. For example, “I’ve been waiting for my package for over two weeks now” might be an indirect request for order status.
 
 - **Solution:** Provide Claude with some real customer examples of these kinds of requests, along with what the underlying intent is. You can get even better results if you include a classification rationale for particularly nuanced ticket intents, so that Claude can better generalize the logic to other tickets.
 
 ### Claude prioritizes emotion over intent
 
-When customers express dissatisfaction, Claude may prioritize addressing the emotion over solving the underlying problem.
+When customers express dissatisfaction, Claude might prioritize addressing the emotion over solving the underlying problem.
 
-- **Solution:** Provide Claude with directions on when to prioritize customer sentiment or not. It can be something as simple as “Ignore all customer emotions. Focus only on analyzing the intent of the customer’s request and what information the customer might be asking for.”
+- **Solution:** Provide Claude with directions on when to prioritize customer sentiment or not. For example: “Ignore all customer emotions. Focus only on analyzing the intent of the customer’s request and what information the customer might be asking for.”
 
 ### Multiple issues cause issue prioritization confusion
 
-When customers present multiple issues in a single interaction, Claude may have difficulty identifying the primary concern.
+When customers present multiple issues in a single interaction, Claude might have difficulty identifying the primary concern.
 
 - **Solution:** Clarify the prioritization of intents so that Claude can better rank the extracted intents and identify the primary concern.
 
@@ -640,12 +592,12 @@ For either of these approaches, you need to wrap your script in a service. The c
 
 
 
-[Classification cookbook](https://platform.claude.com/cookbook/capabilities-classification-guide)
+[Classification recipe](https://platform.claude.com/cookbook/capabilities-classification-guide)
 
-Visit the classification cookbook for more example code and detailed eval guidance.
+Visit the classification recipe for more example code and detailed eval guidance.
 
 
 
 [Claude Console](https://platform.claude.com/dashboard)
 
-Begin building and evaluating your workflow on the Claude Console.
+Start building and evaluating your workflow on the Claude Console.

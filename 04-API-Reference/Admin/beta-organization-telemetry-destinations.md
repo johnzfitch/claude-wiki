@@ -2,267 +2,11 @@
 title: "Telemetry Destinations - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/telemetry_destinations"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-22T06:29:40Z"
+fetched_at: "2026-11-07T06:23:08Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Forganization%2Ftelemetry_destinations)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Create a Telemetry Destination
-
-
-List Telemetry Destinations
-
-
-Retrieve a Telemetry Destination
-
-
-Update a Telemetry Destination
-
-
-Delete a Telemetry Destination
-
-
-Test a Telemetry Destination
-
-Workspaces
-
-Webhooks
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Delete User Profile
-
-
-Create Enrollment URL
-
-Action URLs
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](../Endpoints/opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[AWS IAM actions](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[Migrating to API version 2026-10-21](../Endpoints/migration-2026-10-21.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-API version 2023-06-01
-
-cURL
-
-
-
-This page documents API version 2023-06-01. [See this page for the newer version, 2026-10-21](beta-organization-telemetry-destinations.md), or read [what changed in 2026-10-21](../Endpoints/migration-2026-10-21.md).
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
@@ -274,13 +18,15 @@ This page documents API version 2023-06-01. [See this page for the newer version
 
 
 
-API version 2023-06-01
+API version 2026-10-21
 
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/create)
 
 POST/v1/organizations/telemetry_destinations
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
 
 Register an OpenTelemetry destination for the organization.
 
@@ -288,11 +34,15 @@ Register an OpenTelemetry destination for the organization.
 
 GET/v1/organizations/telemetry_destinations
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+
 List the organization's destinations, newest first, optionally only those that cover given workspaces.
 
 ##### [Retrieve a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/retrieve)
 
 GET/v1/organizations/telemetry_destinations/{destination_id}
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
 
 Read a destination's configuration, state, and most recent delivery results.
 
@@ -300,17 +50,23 @@ Read a destination's configuration, state, and most recent delivery results.
 
 POST/v1/organizations/telemetry_destinations/{destination_id}
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+
 Change a telemetry destination's settings, its state, or which workspaces it covers.
 
 ##### [Delete a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/delete)
 
 DELETE/v1/organizations/telemetry_destinations/{destination_id}
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+
 Delete a destination and its workspace list.
 
 ##### [Test a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/test)
 
 POST/v1/organizations/telemetry_destinations/{destination_id}/test
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
 
 Send one test span, named `anthropic.test`, to the destination with its registered headers, once and without retries, and report the destination's answer. The response is 200 whether or not the destination answered with a 2xx status: its `result` has the type `success`, or the type `failure` and the reason in `error`. The destination's configuration, `state` and `delivery_health` do not change. A disabled destination can be tested too. Wait 10 seconds between tests of one destination; a request that comes sooner may be answered with status 429.
 
@@ -1048,16 +804,22 @@ One of the following:
 
 GET/v1/organizations/telemetry_destinations/{destination_id}/workspaces
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+
 List the workspaces on a destination's workspace list, newest entry first.
 
 ##### [Add a Telemetry Destination Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/add)
 
 POST/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+
 Add one workspace to a destination's workspace list.
 
 ##### [Remove a Telemetry Destination Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/remove)
 
 DELETE/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
 
 Remove one workspace from a destination's workspace list.

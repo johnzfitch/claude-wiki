@@ -2,7 +2,7 @@
 title: "Economic Index: AI's impact on software development \\ Anthropic"
 source_url: "https://www.anthropic.com/research/impact-software-development"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:26Z"
+fetched_at: "2026-10-24T06:26:35Z"
 tags: ["claude-code", "news-research"]
 ---
 
@@ -129,6 +129,6 @@ Compared to use cases that don’t involve software, software development is mor
 
 01Claude.ai conversations were specifically those from Claude.ai Free and Pro. This sample only includes Claude Code sessions powered by the first-party API (Claude Code can be powered by Anthropic first-party APIs or third party cloud provider APIs). All conversations used in our analysis across Claude.ai and Claude Code were from April 6-13, 2025. The initial sample was split evenly across Claude.ai and Claude Code and for Claude.ai, we applied a Claude-based filter to select conversations related to coding. To account for the filter, we renormalized analyses to equally weight Claude Code and Claude.ai interactions, where applicable.[](#footnote-ref-1)
 
-02The HTML numbers for Claude.ai are likely inflated slightly because [Artifacts](https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) leverage HTML. While we filter out Artifacts that are unrelated to coding, we don’t explicitly filter out Artifacts that contain coding-related content from the analysis because significant coding usage happens within Artifacts.[](#footnote-ref-2)
+02The HTML numbers for Claude.ai are likely inflated slightly because [Artifacts](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md) leverage HTML. While we filter out Artifacts that are unrelated to coding, we don’t explicitly filter out Artifacts that contain coding-related content from the analysis because significant coding usage happens within Artifacts.[](#footnote-ref-2)
 
 03Claude.ai usage does not include Claude For Work (Team and Enterprise plans) usage, which implies that enterprise numbers for Claude.ai specifically are likely undercounted because a significant amount of enterprise usage on Claude.ai occurs within the Claude For Work product.[](#footnote-ref-3)

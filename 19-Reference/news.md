@@ -538,7 +538,7 @@ See more
 
 ### Support
 
-[How to get support](../15-Claude-AI-Features/how-to-get-support.md)
+[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)
 
 ### Media assets
 

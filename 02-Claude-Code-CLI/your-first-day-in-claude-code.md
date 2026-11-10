@@ -2,22 +2,22 @@
 title: "Your first day in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552382-your-first-day-in-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:06Z"
+fetched_at: "2026-11-09T06:25:51Z"
 tags: ["claude-code"]
 ---
 
 # Your first day in Claude Code
 
-April 15, 2026
 
-
-**Goal:** In about 15 minutes, you will install Claude Code, sign in, and complete your first AI-assisted change. This guide covers only what is needed on day one; links to deeper material appear at the end.
+**Goal:** In about 15 minutes, you’ll open Claude Code, sign in, and complete your first AI-assisted change. This guide covers only what you need on day one; links to deeper material appear at the end.
 
 ------------------------------------------------------------------------
 
-## Step 1: Install Claude Code (2 minutes)
+## Step 1: Open Claude Code (2 minutes)
 
-Pick the command that matches your machine and paste it into a terminal.
+**Recommended:** Download **Claude Desktop**, sign in with your paid plan, and open the “Code” tab. Claude Desktop includes Claude Code, so there’s nothing else to install. Follow the **desktop quickstart** in the Claude Code docs for your first session, then skip to Step 3.
+
+To use the terminal instead, pick the command that matches your machine and paste it into a terminal.
 
 [TABLE]
 
@@ -31,7 +31,9 @@ Verify the installation:
 
 ## Step 2: Sign in (2 minutes)
 
-How you authenticate depends on how your organization has provisioned access. Pick one of the following:
+If you’re using Claude Desktop, you’re already signed in and Claude Code uses the same account. Skip to Step 3.
+
+In the terminal, how you authenticate depends on how your organization has provisioned access. Pick one of the following:
 
 [TABLE]
 
@@ -41,9 +43,12 @@ If you are unsure which method applies, check with your administrator or try `/l
 
 ## Step 3: Open a project (1 minute)
 
-    cd path/to/your/project claude
+In Claude Desktop, start a new session in the “Code” tab and choose the folder for the repository you want to work on. In the terminal, start Claude Code from inside the repository:
 
-Claude Code reads your files on demand, so there is nothing to upload or attach. Simply start it from inside the repository you want to work on.
+    cd path/to/your/project
+    claude
+
+Claude Code reads your files on demand, so there’s nothing to upload or attach.
 
 ------------------------------------------------------------------------
 
@@ -109,6 +114,6 @@ This generates a `CLAUDE.md` file at your project root that captures your codeba
 
 ## Next steps
 
-You have now installed Claude Code, authenticated, made an edit, and set up project memory. When you are ready to go further, the official documentation covers **[memory and CLAUDE.md](memory.md)**, **[built-in commands](commands.md)**, and **[interactive-mode shortcuts](interactive-mode.md)** in depth.
+You have now opened Claude Code, signed in, made an edit, and set up project memory. When you are ready to go further, the official documentation covers **[memory and CLAUDE.md](memory.md)**, **[built-in commands](commands.md)**, and **[interactive-mode shortcuts](interactive-mode.md)** in depth.
 
 If you ran into problems during install or login, see the **[troubleshooting guide](troubleshooting.md)**.

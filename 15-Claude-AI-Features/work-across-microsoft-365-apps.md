@@ -2,11 +2,14 @@
 title: "Work across M365 apps - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/13892150-work-across-apps-with-cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:04Z"
+fetched_at: "2026-11-09T06:25:48Z"
+last_modified: "Mon, 09 Nov 2026 01:17:52 GMT"
 tags: ["claude-ai"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Requirements](#requirements)
 - [Enable cross-app mode](#enable-cross-app-mode)
@@ -31,6 +34,8 @@ Copy pageCopy page
 Let Claude read from one Microsoft 365 app and make changes in another in a single conversation.
 
 Copy pageCopy page
+
+After the September and October 2026 Microsoft 365 updates on Windows, some users are missing their chat history and uploaded skills in the Claude add-in. Anthropic is working with Microsoft to solve this issue. In the meantime, see [what you and your IT team can do](https://support.claude.com/docs/office-agents/data-storage#chat-history-and-skills-missing-after-a-microsoft-365-update-on-windows).
 
 Claude can coordinate between the Excel, PowerPoint, Word, and Outlook add-ins in your Microsoft 365 suite. Instead of switching between apps and re-providing context each time, Claude can read from one app and make changes in another.
 
@@ -140,7 +145,7 @@ Admins can also manage member access to the Claude for Excel, PowerPoint, Word, 
 
 Data handling
 
-Inputs and outputs are deleted from Anthropic’s backend within 30 days of receipt or generation, except in cases outlined in [How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data). The Claude for M365 add-ins do not inherit custom data retention settings your organization may have set, and activity is not included in Enterprise audit logs or data exports. For Enterprise organizations with the [Compliance API](../04-API-Reference/Other/manage-claude-compliance-api.md) enabled, add-in sessions are included in the Compliance API. This coverage is in public beta and requires no additional setup: the same Compliance Access Keys apply. Chat history is stored locally in your browser, not on Anthropic’s servers, and can be cleared from Settings at any time.
+Inputs and outputs are deleted from Anthropic’s backend within 30 days of receipt or generation, except in cases outlined in [How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data). The Claude for M365 add-ins do not inherit custom data retention settings your organization may have set, and activity is not included in Enterprise audit logs or data exports. For Enterprise organizations with the [Compliance API](../04-API-Reference/Other/manage-claude-compliance-api.md) enabled, add-in sessions are included in the Compliance API. This coverage requires no additional setup: the same Compliance Access Keys apply. Chat history is stored locally in your browser and can be cleared from Settings at any time. The add-ins also send your conversations to Anthropic, including the content Claude reads from your open workbooks, documents, presentations, email, and calendar, and any files you attach. Clearing chat history removes only the copy in your browser. It does not delete the messages or attached files that Anthropic keeps.
 
 
 [​](#current-limitations)

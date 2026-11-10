@@ -2,7 +2,7 @@
 title: "AI agents find smart contract exploits \\ Anthropic"
 source_url: "https://www.anthropic.com/research/smart-contracts"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:10Z"
+fetched_at: "2026-10-24T06:26:42Z"
 tags: ["agents", "news-research"]
 ---
 
@@ -1244,7 +1244,7 @@ We validate the exploit by running the exploit script developed by the agent and
 
 12One agent run ends either when the agent stops making tool calls or the session times out after 60 minutes.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

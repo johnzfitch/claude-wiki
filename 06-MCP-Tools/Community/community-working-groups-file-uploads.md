@@ -2,11 +2,13 @@
 title: "File Uploads Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/file-uploads"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-09-29T06:30:48Z"
+fetched_at: "2026-10-27T06:26:31Z"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Group Type](#group-type)
 - [Mission Statement](#mission-statement)
@@ -45,7 +47,7 @@ Group Type
 
 Mission Statement
 
-The File Uploads Working Group exists to define how MCP tools and elicitation requests declare file inputs so that hosts can present native file pickers and pass user-selected file content to servers. Today, servers that need a file from the user resort to prose instructions asking for base64 strings or local paths, which produces inconsistent UX and pushes encoding details onto end users. This WG will specify a minimal, schema-level mechanism for declaring file inputs and the wire format for delivering them, anchored on [SEP-2356](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2356).
+The File Uploads Working Group exists to define how MCP tools and elicitation requests declare file inputs so that hosts can present native file pickers and pass user-selected file content to servers. Today, servers that need a file from the user resort to prose instructions asking for base64 strings or local paths, which produces inconsistent UX and pushes encoding details onto end users. This WG will specify a minimal, schema-level mechanism for declaring file inputs and the wire format for delivering them, anchored on [SEP-2356](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2356). As a secondary goal, the WG covers how a tool returns a file that is too large for a JSON-RPC message or that needs authorization to fetch.
 
 
 [​](#scope)
@@ -58,6 +60,7 @@ Scope
 In Scope
 
 - **Specification Work**: SEPs defining declarative file input descriptors on tool input schemas and elicitation request schemas, the wire encoding for file content, and host-side handling requirements.
+- **File Downloads (secondary)**: How a tool returns a file that is too large for a JSON-RPC message or that needs authorization to fetch. Upload work takes priority.
 - **Reference Implementations**: SDK types and helpers for `FileInputDescriptor`, data URI encoding, and a sample host flow demonstrating picker invocation and value substitution.
 - **Cross-Cutting Concerns**: Coordination with the MCP Apps WG where embedded UI surfaces present their own file pickers, and with the Security WG on host-side validation requirements.
 - **Documentation**: Specification sections covering file input declaration and a migration guide for servers currently using ad-hoc base64 instructions.
@@ -67,7 +70,7 @@ In Scope
 
 Out of Scope
 
-- Server-to-client file delivery, which is already covered by Resources and `BlobResourceContents`.
+- Server-to-client delivery of small files, which Resources and `BlobResourceContents` already cover.
 - Changes to the transport layer or session model.
 
 The WG may evaluate approaches such as streaming, chunked transfer, or presigned upload URLs as part of its design work; whether those land in the initial SEP or a follow-up is a WG decision rather than a charter constraint.
@@ -86,9 +89,9 @@ Related Groups
 
 Leadership
 
-| Role | Name           | Organization | GitHub                                   | Term    |
-|------|----------------|--------------|------------------------------------------|---------|
-| Lead | Den Delimarsky | Anthropic    | [@localden](https://github.com/localden) | Initial |
+| Role | Name | Organization | GitHub | Term |
+|----|----|----|----|----|
+| Lead | Den Delimarsky | Anthropic | [@localden](https://github.com/localden) | Initial |
 
 Sponsored by Den Delimarsky ([@localden](https://github.com/localden)) and Nick Cooper ([@nickcoai](https://github.com/nickcoai)).
 
@@ -97,27 +100,27 @@ Sponsored by Den Delimarsky ([@localden](https://github.com/localden)) and Nick 
 
 Authority & Decision Rights
 
-| Decision Type                       | Authority Level                                        |
-|-------------------------------------|--------------------------------------------------------|
-| Meeting logistics & scheduling      | WG Leads (autonomous)                                  |
-| Proposal prioritization within WG   | WG Leads (autonomous)                                  |
-| SEP triage & closure (in scope)     | WG Leads (autonomous, with documented rationale)       |
-| Technical design within scope       | WG consensus                                           |
-| Spec changes (additive)             | WG consensus → Core Maintainer approval                |
+| Decision Type | Authority Level |
+|----|----|
+| Meeting logistics & scheduling | WG Leads (autonomous) |
+| Proposal prioritization within WG | WG Leads (autonomous) |
+| SEP triage & closure (in scope) | WG Leads (autonomous, with documented rationale) |
+| Technical design within scope | WG consensus |
+| Spec changes (additive) | WG consensus → Core Maintainer approval |
 | Spec changes (breaking/fundamental) | WG consensus → Core Maintainer approval + wider review |
-| Scope expansion                     | Core Maintainer approval required                      |
-| WG Member approval                  | WG Member sponsors                                     |
+| Scope expansion | Core Maintainer approval required |
+| WG Member approval | WG Member sponsors |
 
 
 [​](#membership)
 
 Membership
 
-| Name           | Organization | GitHub                                   | Discord | Level     |
-|----------------|--------------|------------------------------------------|---------|-----------|
-| Den Delimarsky | Anthropic    | [@localden](https://github.com/localden) |         | Lead      |
-| Nick Cooper    | OpenAI       | [@nickcoai](https://github.com/nickcoai) |         | WG Member |
-| Olivier Chafik | Anthropic    | [@ochafik](https://github.com/ochafik)   |         | WG Member |
+| Name | Organization | GitHub | Discord | Level |
+|----|----|----|----|----|
+| Den Delimarsky | Anthropic | [@localden](https://github.com/localden) |  | Lead |
+| Nick Cooper | OpenAI | [@nickcoai](https://github.com/nickcoai) |  | WG Member |
+| Olivier Chafik | Anthropic | [@ochafik](https://github.com/ochafik) |  | WG Member |
 
 
 [​](#operations)
@@ -140,11 +143,11 @@ Deliverables & Success Metrics
 
 Active Work Items
 
-| Item                                                                                                        | Status | Target Date | Champion                               |
-|-------------------------------------------------------------------------------------------------------------|--------|-------------|----------------------------------------|
-| [SEP-2356: Declarative file inputs](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2356) | Draft  | End May     | [@ochafik](https://github.com/ochafik) |
-| TypeScript SDK reference implementation                                                                     | —      | End May     | [@ochafik](https://github.com/ochafik) |
-| Reference implementation in a second Tier-1 SDK                                                             | —      | End June    | TBD                                    |
+| Item | Status | Target Date | Champion |
+|----|----|----|----|
+| [SEP-2356: Declarative file inputs](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2356) | Draft | End May | [@ochafik](https://github.com/ochafik) |
+| TypeScript SDK reference implementation | — | End May | [@ochafik](https://github.com/ochafik) |
+| Reference implementation in a second Tier-1 SDK | — | End June | TBD |
 
 
 [​](#success-criteria)
@@ -161,6 +164,7 @@ Success Criteria
 
 Changelog
 
-| Date       | Change          |
-|------------|-----------------|
-| 2026-04-23 | Initial charter |
+| Date       | Change                                          |
+|------------|-------------------------------------------------|
+| 2026-04-23 | Initial charter                                 |
+| 2026-10-21 | Add file downloads to scope as a secondary item |

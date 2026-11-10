@@ -188,7 +188,7 @@ For [Claude in Excel](../15-Claude-AI-Features/using-claude-in-excel.md) users, 
 
 ## How to use Claude Sonnet 4.6
 
-Claude Sonnet 4.6 is available now on all [Claude plans](../17-Billing-Plans/pricing.md), [Claude Cowork](../15-Claude-AI-Features/product-cowork.md), [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), our API, and all major cloud platforms. We’ve also upgraded our free tier to Sonnet 4.6 by default—it now includes file creation, connectors, skills, and compaction.
+Claude Sonnet 4.6 is available now on all [Claude plans](../17-Billing-Plans/pricing.md), [Claude Cowork](../15-Claude-AI-Features/product-cowork.md), [Claude Code](../15-Claude-AI-Features/product-claude-code.md), our API, and all major cloud platforms. We’ve also upgraded our free tier to Sonnet 4.6 by default—it now includes file creation, connectors, skills, and compaction.
 
 If you’re a developer, you can get started quickly by using `claude-sonnet-4-6` via the [Claude API](../20-Models/about-claude-models-overview.md).
 

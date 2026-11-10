@@ -2,7 +2,7 @@
 title: "How enterprises are building AI agents in 2026 | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/how-enterprises-are-building-ai-agents-in-2026"
 category: "09-Agents-Patterns"
-fetched_at: "2026-10-23T06:28:10Z"
+fetched_at: "2026-11-09T06:25:35Z"
 tags: ["agents", "enterprise"]
 ---
 
@@ -65,6 +65,14 @@ We're also finding that while coding has been the proving ground for AI agents,
 Explore more product news and best practices for teams building with Claude.
 
 
+ArticleOct 22, 2026
+
+### LLMs are making formal software verification feasible at a much larger scale
+
+We need ways to prove that code is free of bugs. Formal software verification could provide this guarantee.
+
+(opens in new tab)[](https://claude.dev/blog/what-a-task-costs-on-opus-5-5/)
+
 ArticleSep 25, 2026
 
 ### What a task costs on Opus 5.5
@@ -91,12 +99,3 @@ ArticleSep 2, 2026
 Retailers running shopping agents on Claude have seen carts up to 35% larger and shoppers 60% more likely to complete a purchase.
 
 Claude Platform
-
-
-ArticleJul 7, 2026
-
-### How people are using Claude Cowork
-
-In a sample of Claude Cowork sessions, we found that roughly half of all usage comprises “the work around the work”—tasks that are part of a broad swath of jobs, but are rarely a person’s core responsibility.
-
-Claude Cowork

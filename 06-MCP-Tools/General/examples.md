@@ -2,17 +2,19 @@
 title: "Example Servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/examples"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-09-29T06:29:43Z"
+fetched_at: "2026-10-31T06:24:34Z"
+last_modified: "Fri, 30 Oct 2026 21:02:58 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
 
+Back to top
+
 - [Reference implementations](#reference-implementations)
   - [Current reference servers](#current-reference-servers)
   - [Additional example servers (archived)](#additional-example-servers-archived)
-- [Official integrations](#official-integrations)
-- [Community implementations](#community-implementations)
+- [More servers](#more-servers)
 - [Getting started](#getting-started)
   - [Using reference servers](#using-reference-servers)
   - [Configuring with Claude](#configuring-with-claude)
@@ -58,18 +60,11 @@ Additional example servers (archived)
 Visit the [servers-archived repository](https://github.com/modelcontextprotocol/servers-archived) to get access to archived example servers that are no longer actively maintained. They are provided for historical reference only.
 
 
-[​](#official-integrations)
+[​](#more-servers)
 
-Official integrations
+More servers
 
-Visit the [MCP Servers Repository (Official Integrations section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#%EF%B8%8F-official-integrations) for a list of MCP servers maintained by companies for their platforms.
-
-
-[​](#community-implementations)
-
-Community implementations
-
-Visit the [MCP Servers Repository (Community section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) for a list of MCP servers maintained by community members.
+Visit the MCP Registry at [registry.modelcontextprotocol.io](https://registry.modelcontextprotocol.io/) for servers published by companies and community members.
 
 
 [​](#getting-started)
@@ -119,13 +114,6 @@ To use an MCP server with Claude, add it to your configuration:
         "@modelcontextprotocol/server-filesystem",
         "/path/to/allowed/files"
       ]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
-      }
     }
   }
 }
@@ -136,4 +124,4 @@ To use an MCP server with Claude, add it to your configuration:
 
 Additional resources
 
-Visit the [MCP Servers Repository (Resources section)](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-resources) for a collection of other resources and projects related to MCP. Visit our [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions) to engage with the MCP community.
+Visit our [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions) to engage with the MCP community.

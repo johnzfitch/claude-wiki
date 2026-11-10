@@ -2,7 +2,7 @@
 title: "How do I sign up for the Max plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:28:48Z"
+fetched_at: "2026-11-09T06:25:34Z"
 tags: ["billing"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["billing"]
 
 This article applies to individual consumers signing up for paid Max plans. If you're part of an organization looking to use Claude with your team, refer to **[Team and Enterprise plans](https://support.claude.com/en/collections/9387370-team-and-enterprise-plans)**.
 
-## Instructions for new users
+## **Instructions for new users**
 
 1.  Visit **[claude.ai](https://claude.ai/)**.
 
@@ -19,11 +19,10 @@ This article applies to individual consumers signing up for paid Max plans. If y
 
 3.  During the onboarding process, select the Max plan option.
 
-4.  Choose your preferred usage tier (5x or 20x).
+4.  Enter your payment information.
 
-5.  Enter your payment information.
-
-6.  Confirm your subscription.
+5.  Confirm your subscription.  
+    ​
 
 ## Instructions for existing free users
 
@@ -33,11 +32,10 @@ This article applies to individual consumers signing up for paid Max plans. If y
 
 3.  Select "Upgrade to Max."
 
-4.  Choose your preferred usage tier (5x or 20x).
+4.  Enter your payment information.
 
-5.  Enter your payment information.
-
-6.  Confirm your subscription.
+5.  Confirm your subscription.  
+    ​
 
 ## Instructions for existing Pro users
 
@@ -47,9 +45,7 @@ This article applies to individual consumers signing up for paid Max plans. If y
 
 3.  Select "Upgrade to Max."
 
-4.  Choose your preferred usage tier (5x or 20x).
-
-5.  Confirm your upgrade.
+4.  Confirm your upgrade.
 
 Your Pro plan is upgraded to Max immediately. Your billing cycle restarts on the day you upgrade: you're charged for a full billing cycle of Max, minus a prorated credit for the unused time left on your Pro plan. Your usage also starts fresh on the Max limits right away, so if you've reached your Pro limit, you can keep using Claude without waiting for your session to reset.
 
@@ -59,4 +55,4 @@ If you're moving from an annual Pro plan to a Max plan and the remaining balance
 
 ## How does subscription renewal work for Max plans?
 
-After subscribing for a Max plan, your subscription will be set to automatically renew at the end of each billing period by default. This ensures uninterrupted access to Max features. However, you have the flexibility to **[cancel your paid plan](https://support.claude.com/en/articles/8325617)** at any time if you choose not to continue.
+After subscribing for a Max plan, your subscription will be set to automatically renew at the end of each billing period by default. This ensures uninterrupted access to Max features. However, you have the flexibility to **[cancel your paid plan](cancel-your-pro-max-or-ultra-subscription-claude-help-center.md)** at any time if you choose not to continue.

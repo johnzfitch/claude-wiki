@@ -2,7 +2,7 @@
 title: "How employment is changing at Anthropic \\ Anthropic"
 source_url: "https://www.anthropic.com/research/employment-at-anthropic"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:44Z"
+fetched_at: "2026-10-24T06:26:34Z"
 tags: ["news-research"]
 ---
 
@@ -209,7 +209,7 @@ Roodman, David, and Maxim Massenkoff. 2026. “An Evidence Review of Subsidized 
 
 01Anthropic estimates come from internal financial and headcount records for the twelve months to April 2026 (approximately five years after founding). Google and Meta employment and revenue figures based on Form 10-K filings at 5 years after founding (2003 and 2009, respectively). All figures are deflated to 2025 dollars.[](#footnote-ref-1)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

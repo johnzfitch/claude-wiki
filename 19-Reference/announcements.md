@@ -2,13 +2,13 @@
 title: "Announcements \\ Anthropic"
 source_url: "https://www.anthropic.com/news/announcements"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:23Z"
+fetched_at: "2026-11-09T06:26:48Z"
 tags: ["news-research"]
 ---
 
 # Announcements
 
-75
+77
 
 ARTICLES
 
@@ -26,6 +26,30 @@ Title
 Description
 
 
+  ### AI for Science expands to foundations and research institutions
+
+  We’re highlighting 20 scientific foundations, institutions, and research groups around the world that we’ve partnered with in an expansion of our AI for Science program.
+
+  Oct 28, 2026
+
+  Oct 28, 2026
+
+  ### AI for Science expands to foundations and research institutions
+
+  We’re highlighting 20 scientific foundations, institutions, and research groups around the world that we’ve partnered with in an expansion of our AI for Science program.
+
+  ### Anthropic files S-1 with the SEC for proposed initial public offering
+
+  Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A common stock.
+
+  Oct 26, 2026
+
+  Oct 26, 2026
+
+  ### Anthropic files S-1 with the SEC for proposed initial public offering
+
+  Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A common stock.
+
   ### Open call for guest investigators in the life sciences
 
   Today, we’re inviting members of the life sciences community to apply to work with us on special projects.
@@ -289,30 +313,6 @@ Description
   ### Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem
 
   Anthropic opens in Seoul and announces new partnerships across the Korean AI ecosystem.
-
-  ### Introducing Claude Corps
-
-  We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
-
-  Jun 11, 2026
-
-  Jun 11, 2026
-
-  ### Introducing Claude Corps
-
-  We’re launching Claude Corps, a national fellowship program for people early in their careers who are passionate about extending the benefits of AI to communities across America.
-
-  ### Anthropic confidentially submits draft S-1 to the SEC
-
-  Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
-
-  Jun 1, 2026
-
-  Jun 1, 2026
-
-  ### Anthropic confidentially submits draft S-1 to the SEC
-
-  Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission
 
 See more
 
@@ -324,7 +324,7 @@ See more
 
 ### Support
 
-[How to get support](../15-Claude-AI-Features/how-to-get-support.md)
+[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)
 
 ### Media assets
 

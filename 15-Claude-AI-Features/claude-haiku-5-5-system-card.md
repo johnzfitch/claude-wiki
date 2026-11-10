@@ -2,8 +2,7 @@
 title: "Claude Haiku 5 5 System Card 64F682D56D"
 source_url: "https://www.anthropic.com/claude-haiku-5-5-system-card"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-08T06:25:28Z"
-last_modified: "Wed, 07 Oct 2026 17:34:59 GMT"
+fetched_at: "2026-11-09T06:26:22Z"
 tags: ["claude-ai"]
 ---
 

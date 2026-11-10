@@ -2,11 +2,13 @@
 title: "Hosting the Agent SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/hosting"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-28T06:33:02Z"
+fetched_at: "2026-10-28T06:37:23Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [The subprocess model](#the-subprocess-model)
   - [State that lives on local disk](#state-that-lives-on-local-disk)
@@ -41,7 +43,7 @@ Deploy the Agent SDK in production: subprocess architecture, session persistence
 
 Copy pageCopy page
 
-The Agent SDK spawns and supervises a `claude` CLI subprocess that owns a shell, a working directory, and session files on disk. Hosting it is not like hosting a stateless API wrapper. Every running agent is a long-lived process tied to local state, which shapes how you allocate resources, persist sessions, and scale across tenants. This page covers self-hosting on your own infrastructure. For deployable Dockerfiles and Kubernetes manifests, see the [hosting cookbook](https://github.com/anthropics/claude-cookbooks/tree/main/claude_agent_sdk/hosting). If you don’t need to run the agent loop itself on your own infrastructure, consider [Managed Agents](https://code.claude.com/docs/en/04-API-Reference/Other/managed-agents-overview-b12cd03916.md) instead. Anthropic hosts the agent loop, and your application sends events and receives streamed results through the client SDKs or the REST API. Tool execution runs in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure.
+The Agent SDK spawns and supervises a `claude` CLI subprocess that owns a shell, a working directory, and session files on disk. Hosting it is not like hosting a stateless API wrapper. Every running agent is a long-lived process tied to local state, which shapes how you allocate resources, persist sessions, and scale across tenants. This page covers self-hosting on your own infrastructure. For deployable Dockerfiles and Kubernetes manifests, see the [hosting cookbook](https://github.com/anthropics/claude-cookbooks/tree/main/claude_agent_sdk/hosting). If you don’t need to run the agent loop itself on your own infrastructure, consider [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md) instead. Anthropic hosts the agent loop, and your application sends events and receives streamed results through the client SDKs or the REST API. Tool execution runs in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure.
 
 
 [​](#the-subprocess-model)
@@ -93,11 +95,11 @@ State that lives on local disk
 
 Three kinds of agent state live on the container’s filesystem by default. None of them survive a container restart, a scale-down, or a move to a different node.
 
-| State                       | Default location                                                                                 |
-|-----------------------------|--------------------------------------------------------------------------------------------------|
-| Session transcripts         | `~/.claude/projects/`, or the `projects/` directory under `CLAUDE_CONFIG_DIR` if set             |
-| `CLAUDE.md` memory files    | `~/.claude/CLAUDE.md` for the user tier and the session’s working directory for the project tier |
-| Working-directory artifacts | The session’s working directory                                                                  |
+| State | Default location |
+|----|----|
+| Session transcripts | `~/.claude/projects/`, or the `projects/` directory under `CLAUDE_CONFIG_DIR` if set |
+| `CLAUDE.md` memory files | `~/.claude/CLAUDE.md` for the user tier and the session’s working directory for the project tier |
+| Working-directory artifacts | The session’s working directory |
 
 To persist transcripts across hosts, configure a [`SessionStore` adapter](agent-sdk-session-storage.md). Memory files and other working-directory artifacts need their own storage strategy, such as a mounted volume or an object-store sync. For how sessions, resumption, and forking work at the API level, see [Sessions](agent-sdk-sessions.md).
 
@@ -243,7 +245,7 @@ Runtime dependencies
 
 The container needs your SDK’s language runtime:
 
-- Python 3.10+ for the Python SDK, or Node.js 18+ for the TypeScript SDK
+- Python 3.10+ for the Python SDK, or Node.js 18.14+ for the TypeScript SDK
 - Both the TypeScript and Python SDKs bundle a native Claude Code binary for most installs, and the spawned CLI needs no separate Node.js install. See the [quickstart’s install note](agent-sdk-quickstart.md) for the installs that need a separate native Claude Code install.
 
 The bundled binary is pinned to the SDK package version, so updating the SDK is how you update the CLI. The SDK follows semver: take patch releases continuously and review the [TypeScript](https://github.com/anthropics/claude-agent-sdk-typescript/blob/main/CHANGELOG.md) or [Python](https://github.com/anthropics/claude-agent-sdk-python/blob/main/CHANGELOG.md) changelog before taking a minor.
@@ -408,12 +410,12 @@ Known limitations
 
 Plan around these in your deployment design.
 
-| Limitation                                          | What to do                                                                                                                                                                                                                                    |
-|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| No top-level session timeout                        | A session does not time out on its own. Set `maxTurns` in TypeScript or `max_turns` in Python to bound how many tool-use round trips the agent takes before stopping.                                                                         |
-| Memory growth over long sessions                    | Cap session length or recycle subprocesses periodically. See [Scaling and concurrency](#scaling-and-concurrency).                                                                                                                             |
-| Large parallel-subagent fanouts can hit rate limits | Break work into smaller batches rather than issuing one wide dispatch.                                                                                                                                                                        |
-| No per-subagent wall-clock deadline                 | Cap each [subagent](agent-sdk-subagents.md) with `maxTurns` in its `AgentDefinition`. `CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS` sets a stall watchdog that fires when a subagent stops producing output; it isn’t a total-runtime deadline. |
+| Limitation | What to do |
+|----|----|
+| No top-level session timeout | A session doesn’t time out on its own. Set `maxTurns` in TypeScript or `max_turns` in Python to bound how many [turns](agent-sdk-agent-loop.md#turns-and-messages) the agent takes before stopping. |
+| Memory growth over long sessions | Cap session length or recycle subprocesses periodically. See [Scaling and concurrency](#scaling-and-concurrency). |
+| Large parallel-subagent fanouts can hit rate limits | Break work into smaller batches rather than issuing one wide dispatch. |
+| No per-subagent wall-clock deadline | Cap each [subagent](agent-sdk-subagents.md) with `maxTurns` in its `AgentDefinition`. `CLAUDE_ASYNC_AGENT_STALL_TIMEOUT_MS` sets a stall watchdog that fires when a subagent stops producing output; it isn’t a total-runtime deadline. |
 
 
 [​](#troubleshoot-deployment-failures)

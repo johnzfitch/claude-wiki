@@ -2,53 +2,9 @@
 title: "CLI scripting and automation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:39:26Z"
+fetched_at: "2026-11-05T06:36:55Z"
 tags: ["api", "claude-code", "cli"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fscripting)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
 # CLI scripting and automation
 
@@ -147,14 +103,12 @@ The CLI is designed to compose with standard shell tooling.
 
 ### Chain list output into a second command
 
-`--transform id --raw-output` on a list endpoint emits one bare ID per line, so standard tools such as `head` and `xargs` apply directly. Capture the first result, then pass it to a follow-up command:
+`--transform id --raw-output` on a list endpoint emits one bare ID on each line, so standard tools such as `head` and `xargs` apply directly. Capture the first result, then pass it to a follow-up command:
 
 ```python
 FIRST_AGENT=$(ant beta:agents list --transform id --raw-output | head -1)
 
-ant beta:agents:versions list \
-  --agent-id "$FIRST_AGENT" \
-  --format jsonl
+ant beta:agents:versions list --agent-id "$FIRST_AGENT" --format jsonl
 ```
 
 
@@ -181,19 +135,19 @@ Agent not found.
 
 ## Use the CLI from Claude Code
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
+[Claude Code](../../01-Getting-Started/overview.md) can use the `ant` CLI out of the box. With the CLI installed and authenticated, you can ask Claude Code to operate on your API resources directly. For example:
 
-- "List my recent agent sessions and summarize which ones errored."
-- "Upload every PDF in `./reports` to the Files API and print the resulting IDs."
-- "Pull the events for session `session_01...` and tell me where the agent got stuck."
+- “List my recent agent sessions and summarize which ones errored.”
+- “Upload every PDF in `./reports` to the Files API and print the resulting IDs.”
+- “Pull the events for session `session_01...` and tell me where the agent got stuck.”
 
-Claude Code shells out to `ant`, parses the structured output, and reasons over the results (no custom integration code required).
+Claude Code runs `ant` commands, parses the structured output, and reasons over the results (no custom integration code required).
 
 ## Authenticate curl requests with CLI credentials
 
 Scripts that call the API with `curl` or another HTTP client can use the credentials stored by [`ant auth login`](cli-sdks-libraries-cli-quickstart.md#authentication) instead of a static API key. The OAuth access token goes in the `Authorization` header as a bearer token; the `x-api-key` header is only for static API keys.
 
-`ant auth print-credentials --access-token` prints the active profile's access token, refreshing it first if it is expired or near expiry:
+`ant auth print-credentials --access-token` prints the active profile’s access token, refreshing it first if it is expired or near expiry:
 
 cURL
 
@@ -202,7 +156,7 @@ cURL
 ```python
 curl https://api.anthropic.com/v1/messages \
   -H "Authorization: Bearer $(ant auth print-credentials --access-token)" \
-  -H "anthropic-version: 2023-06-01" \
+  -H "anthropic-version: 2026-10-21" \
   -H "content-type: application/json" \
   -d '{
     "model": "claude-opus-5-5",
@@ -211,8 +165,4 @@ curl https://api.anthropic.com/v1/messages \
   }'
 ```
 
-
-
-Keep `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` unset when working from a CLI login. Either variable takes precedence over the login for `ant` commands (see [Credential precedence](manage-claude-wif-reference.md#credential-precedence)) and can silently route them to a different organization or workspace.
-
-Run [`ant auth status`](cli-sdks-libraries-cli-authentication.md#check-authentication-status) to confirm which organization and workspace you are logged in to; it warns when an environment variable is overriding your login.
+Run [`ant auth status`](cli-sdks-libraries-cli-authentication.md#check-authentication-status) to confirm which organization and workspace you are logged in to; it warns when an environment variable is overriding your login. For the full ordering of credential sources, see [Credential precedence](manage-claude-wif-reference.md#credential-precedence).

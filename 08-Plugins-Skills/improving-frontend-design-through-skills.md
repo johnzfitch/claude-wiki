@@ -2,7 +2,7 @@
 title: "Improving frontend design through Skills | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/improving-frontend-design-through-skills"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-23T06:28:16Z"
+fetched_at: "2026-11-09T06:25:25Z"
 tags: ["plugins", "prompting", "skills"]
 ---
 
@@ -29,11 +29,11 @@ You might notice that when you ask an LLM to build a landing page without guidan
 
 The issue? [Distributional convergence.](https://en.wikipedia.org/wiki/Convergence_of_random_variables) During sampling, models predict tokens based on statistical patterns in training data. Safe design choices–those that work universally and offend no one–dominate web training data. Without direction, Claude samples from this high-probability center.
 
-For developers building customer-facing products, this generic aesthetic undermines brand identity and makes AI-generated interfaces immediately recognizable—and dismissible.
+For developers building customer-facing products, this generic aesthetic undermines [brand identity](https://claude.com/resources/articles/claude-design-stays-on-brand-for-daily-work) and makes AI-generated interfaces immediately recognizable—and dismissible.
 
 ### The steerability challenge
 
-The good news is that Claude is highly steerable with the right prompting. Tell Claude to "avoid Inter and Roboto" or "use atmospheric backgrounds instead of solid colors," and results improve immediately. This sensitivity to guidance is a feature; it means Claude can adapt to different design contexts, constraints, and aesthetic preferences.
+The good news is that Claude is highly steerable with [the right prompting](https://claude.com/resources/articles/best-practices-for-prompt-engineering). Tell Claude to "avoid Inter and Roboto" or "use atmospheric backgrounds instead of solid colors," and results improve immediately. This sensitivity to guidance is a feature; it means Claude can adapt to different design contexts, constraints, and aesthetic preferences.
 
 But this creates a practical challenge: the more specialized the task, the more context you need to provide. For frontend design, effective guidance spans typography principles, color theory, animation patterns, and background treatment. You need to specify which defaults to avoid and which alternatives to prefer across multiple dimensions.
 
@@ -41,7 +41,7 @@ You could pack all this into a system prompt, but then every request–debugging
 
 ## **Skills: dynamic context loading**
 
-This is precisely what [Skills](../19-Reference/skills.md) were designed for: delivering specialized context on demand without permanent overhead. A skill is a document (often markdown) containing instructions, constraints, and domain knowledge, stored in a designated directory that Claude can access through simple file-reading tools. Claude can leverage these skills to dynamically load in information it needs at runtime, progressively enhancing its context instead of loading everything upfront.
+This is precisely what [Skills](../19-Reference/skills.md) were designed for: delivering specialized context on demand without permanent overhead. [A skill](https://claude.com/resources/articles/skills-explained) is a document (often markdown) containing instructions, constraints, and domain knowledge, stored in a designated directory that Claude can access through simple file-reading tools. Claude can leverage these skills to dynamically load in information it needs at runtime, progressively enhancing its context instead of loading everything upfront.
 
 When equipped with these skills and the necessary tools to read them, Claude can autonomously identify and load relevant skills based on the task at hand. For instance, when asked to build a landing page or create a React component, Claude can load a frontend design skill and apply its instructions just-in-time. This is the essential mental model: skills are prompts and contextual resources that activate on demand, providing specialized guidance for specific task types without incurring permanent context overhead.
 
@@ -154,7 +154,7 @@ With this skill active, Claude's output improves across several types of fronten
 
 ## **Improving artifact quality in [claude.ai](http://claude.ai) with Skills**
 
-Design taste isn't the only limitation. Claude also faces architectural constraints when building artifacts. [Artifacts](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) are interactive, editable content (like code or documents) that Claude creates and displays alongside your chat.
+Design taste isn't the only limitation. Claude also faces architectural constraints when building artifacts. [Artifacts](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md) are interactive, editable content (like code or documents) that Claude creates and displays alongside your chat.
 
 In addition to the issue with design taste explored above, Claude has another default behavior that limits its ability to generate fantastic frontend artifacts in [claude.ai](http://claude.ai). Currently, when asked to create a frontend, Claude just builds a single HTML file with CSS and JS. This is because Claude understands that frontends must be single HTML files to be properly rendered as artifacts.
 
@@ -208,6 +208,15 @@ Start using Skills with Claude to build more powerful applications today.
 Explore more product news and best practices for teams building with Claude.
 
 
+ArticleOct 27, 2026
+
+### Manage costs and demonstrate ROI for Claude Code on Google Cloud
+
+Best practices for managing costs and measuring return on investment for Claude Code on Google Cloud.
+
+Claude Code
+
+
 ArticleOct 22, 2026
 
 ### Building agents: When to fold subagents into your main agent loop
@@ -234,14 +243,3 @@ ArticleOct 16, 2026
 How one business development representative clears his inbound queue and drafts bilingual customer emails with Claude Managed Agents and Claude Tag.
 
 Claude Managed Agents
-
-
-ArticleOct 16, 2026
-
-### How the Claude Code team does code review
-
-How do you review code at the volume agents produce it? The Claude Code team shares its review process, from Claude verifying its own work to risk-tiered human approval, plus a checklist for adopting it.
-
-Claude Code
-
-(opens in new tab)

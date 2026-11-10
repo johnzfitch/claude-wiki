@@ -2,7 +2,7 @@
 title: "Getting Started with Claude for Life Sciences · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614768-getting-started-with-claude-for-life-sciences"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:56Z"
+fetched_at: "2026-11-08T06:25:16Z"
 tags: ["claude-ai", "connectors", "search"]
 ---
 
@@ -20,7 +20,7 @@ Claude for Life Sciences enhances Claude with specialized capabilities for life 
 
 ## How do I access life sciences tools and features?[](#how-do-i-access-life-sciences-tools-and-features)
 
-Individuals can access Claude for Life Sciences features and tools from a [Claude Pro(opens in new tab)](../17-Billing-Plans/pricing.md) or [Claude Max(opens in new tab)](../17-Billing-Plans/pricing.md) account, and teams can access through [Claude for Work(opens in new tab)](https://www.claude.com/pricing/team). For questions about Claude for Life Sciences for enterprise contact our [Sales team(opens in new tab)](https://claude.com/contact-sales/life-sciences).
+Individuals can access Claude for Life Sciences features and tools from a [Claude Pro(opens in new tab)](../17-Billing-Plans/pricing.md), [Claude Max(opens in new tab)](../17-Billing-Plans/pricing.md), or [Claude Ultra(opens in new tab)](../17-Billing-Plans/pricing.md) account, and teams can access through [Claude for Work(opens in new tab)](https://www.claude.com/pricing/team). For questions about Claude for Life Sciences for enterprise contact our [Sales team(opens in new tab)](https://claude.com/contact-sales/life-sciences).
 
 ## **Connectors for the life sciences development cycle**[](#connectors-for-the-life-sciences-development-cycle)
 

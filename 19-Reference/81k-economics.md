@@ -2,7 +2,7 @@
 title: "What 81,000 people told us about AI economics \\ Anthropic"
 source_url: "https://www.anthropic.com/research/81k-economics"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:33Z"
+fetched_at: "2026-10-24T06:26:32Z"
 tags: ["news-research"]
 ---
 
@@ -67,7 +67,7 @@ Respondents’ perceived threat from AI was correlated with our [own measure of 
 
 We show this in Figure 1 below. The y-axis is the percentage of respondents in a given occupation who said that AI is already replacing their role or is likely to do so soon. The x-axis is observed exposure. The plot shows that, on average, people in more exposed occupations tended to express more concern about their jobs being automated away. For every 10-percentage-point increase in exposure, perceived job threat increased by 1.3 percentage points. People in the top 25% of exposure mentioned the worry three times as often as those in the bottom 25%.
 
-Another important worker characteristic is career stage. In previous research, we reported [tentative signs](https://www-cdn.anthropic.com/files/4zrzovbb/website/a42bc3fc08283562f08fd8bdee8f6f9a3d506e87.pdf) of a slowdown in the hiring of recent graduates and early-career workers in the United States. For about half of respondents in this survey, we were able to infer career stage from their answers.^([2](#footnote-2)) We found that early-career respondents were much more likely to express concern about job displacement than senior workers.
+Another important worker characteristic is career stage. In previous research, we reported [tentative signs](march-5-2026.md) of a slowdown in the hiring of recent graduates and early-career workers in the United States. For about half of respondents in this survey, we were able to infer career stage from their answers.^([2](#footnote-2)) We found that early-career respondents were much more likely to express concern about job displacement than senior workers.
 
 ## Who benefits from AI?
 
@@ -121,7 +121,7 @@ See the final section of the [linked PDF](https://www-cdn.anthropic.com/files/4z
 
 05A major caveat, however, is that this survey went out to people with personal Claude accounts. A more representative picture would also include enterprise users, who may be more likely to say the value accrues to their employers.[](#footnote-ref-5)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

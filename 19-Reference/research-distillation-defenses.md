@@ -98,7 +98,7 @@ Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at
 ### Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
 - [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
 - [@Claude](../15-Claude-AI-Features/product-tag.md)
@@ -128,7 +128,7 @@ Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Enterprise](../18-Industry-UseCases/enterprise.md)
 - [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)

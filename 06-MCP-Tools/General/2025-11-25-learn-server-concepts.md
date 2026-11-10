@@ -2,11 +2,14 @@
 title: "Understanding MCP servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-11-25/learn/server-concepts"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-21T06:29:03Z"
+fetched_at: "2026-10-31T06:24:46Z"
+last_modified: "Sat, 31 Oct 2026 02:28:17 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Core Server Features](#core-server-features)
   - [Tools](#tools)
@@ -61,10 +64,10 @@ How Tools Work
 
 Tools are schema-defined interfaces that LLMs can invoke. MCP uses JSON Schema for validation. Each tool performs a single operation with clearly defined inputs and outputs. Tools may require user consent prior to execution, helping to ensure users maintain control over actions taken by a model. **Protocol operations:**
 
-| Method       | Purpose                  | Returns                                |
-|--------------|--------------------------|----------------------------------------|
+| Method | Purpose | Returns |
+|----|----|----|
 | `tools/list` | Discover available tools | Array of tool definitions with schemas |
-| `tools/call` | Execute a specific tool  | Tool execution result                  |
+| `tools/call` | Execute a specific tool | Tool execution result |
 
 **Example tool definition:**
 
@@ -142,12 +145,12 @@ Resources expose data from files, APIs, databases, or any other source that an A
 
 Resource Templates include metadata such as title, description, and expected MIME type, making them discoverable and self-documenting. **Protocol operations:**
 
-| Method                     | Purpose                         | Returns                                |
-|----------------------------|---------------------------------|----------------------------------------|
-| `resources/list`           | List available direct resources | Array of resource descriptors          |
-| `resources/templates/list` | Discover resource templates     | Array of resource template definitions |
-| `resources/read`           | Retrieve resource contents      | Resource data with metadata            |
-| `resources/subscribe`      | Monitor resource changes        | Subscription confirmation              |
+| Method | Purpose | Returns |
+|----|----|----|
+| `resources/list` | List available direct resources | Array of resource descriptors |
+| `resources/templates/list` | Discover resource templates | Array of resource template definitions |
+| `resources/read` | Retrieve resource contents | Resource data with metadata |
+| `resources/subscribe` | Monitor resource changes | Subscription confirmation |
 
 
 [​](#example-getting-travel-planning-context)
@@ -222,10 +225,10 @@ How Prompts Work
 
 Prompts are structured templates that define expected inputs and interaction patterns. They are user-controlled, requiring explicit invocation rather than automatic triggering. Prompts can be context-aware, referencing available resources and tools to create comprehensive workflows. Similar to resources, prompts support parameter completion to help users discover valid argument values. **Protocol operations:**
 
-| Method         | Purpose                    | Returns                               |
-|----------------|----------------------------|---------------------------------------|
-| `prompts/list` | Discover available prompts | Array of prompt descriptors           |
-| `prompts/get`  | Retrieve prompt details    | Full prompt definition with arguments |
+| Method | Purpose | Returns |
+|----|----|----|
+| `prompts/list` | Discover available prompts | Array of prompt descriptors |
+| `prompts/get` | Retrieve prompt details | Full prompt definition with arguments |
 
 
 [​](#example-streamlined-workflows)

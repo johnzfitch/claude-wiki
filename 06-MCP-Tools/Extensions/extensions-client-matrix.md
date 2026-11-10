@@ -2,11 +2,14 @@
 title: "Extension Support Matrix - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/client-matrix"
 category: "06-MCP-Tools/Extensions"
-fetched_at: "2026-09-29T06:30:20Z"
+fetched_at: "2026-11-03T06:23:27Z"
+last_modified: "Tue, 03 Nov 2026 00:42:46 GMT"
 tags: ["mcp", "mcp-extensions"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Extension overview](#extension-overview)
 - [Support matrix](#support-matrix)
@@ -29,34 +32,37 @@ This list is maintained by the community. If you notice any inaccuracies or woul
 
 Extension overview
 
-| Extension                                                                             | Identifier                                                 | Description                                                      |
-|---------------------------------------------------------------------------------------|------------------------------------------------------------|------------------------------------------------------------------|
-| [MCP Apps](extensions-apps-overview.md)                                                 | `io.modelcontextprotocol/ui`                               | Interactive HTML interfaces rendered inline in the conversation  |
-| [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md)                 | `io.modelcontextprotocol/oauth-client-credentials`         | Machine-to-machine auth without interactive user login           |
-| [Enterprise-Managed Authorization](extensions-auth-enterprise-managed-authorization.md) | `io.modelcontextprotocol/enterprise-managed-authorization` | Centralized access control via enterprise IdP                    |
-| [Skills over MCP](extensions-skills-overview.md)                                        | `io.modelcontextprotocol/skills`                           | Discover skills and read their instructions and supporting files |
+| Extension | Identifier | Description |
+|----|----|----|
+| [MCP Apps](extensions-apps-overview.md) | `io.modelcontextprotocol/ui` | Interactive HTML interfaces rendered inline in the conversation |
+| [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md) | `io.modelcontextprotocol/oauth-client-credentials` | Machine-to-machine auth without interactive user login |
+| [Enterprise-Managed Authorization](extensions-auth-enterprise-managed-authorization.md) | `io.modelcontextprotocol/enterprise-managed-authorization` | Centralized access control via enterprise IdP |
+| [Skills over MCP](extensions-skills-overview.md) | `io.modelcontextprotocol/skills` | Discover skills and read their instructions and supporting files |
 
 
 [​](#support-matrix)
 
 Support matrix
 
-| Client                                                                   | [MCP Apps](extensions-apps-overview.md) | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md) | [Enterprise Auth](extensions-auth-enterprise-managed-authorization.md) |                                          [Skills](extensions-skills-overview.md)                                           |
-|--------------------------------------------------------------------------|:-------------------------------------:|:---------------------------------------------------------------------:|:--------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
-| [Claude (web)](https://claude.ai)                                        |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [Claude Desktop](https://claude.ai/download)                             |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [VS Code GitHub Copilot](https://code.visualstudio.com/)                 |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [Microsoft 365 Copilot](https://www.microsoft.com/microsoft-365-copilot) |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [Goose](https://block.github.io/goose/)                                  |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [Postman](https://postman.com)                                           |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [MCPJam](https://www.mcpjam.com/)                                        |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [ChatGPT](https://chatgpt.com/)                                          |                                       |                                                                       |                                                                      |           [Partial](https://developers.openai.com/plugins/build/mcp-server#import-skills-from-the-mcp-server)            |
-| [Cursor](https://cursor.com/)                                            |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [Archestra.AI](https://www.archestra.ai/)                                |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [PostHog Code](https://posthog.com/code/)                                |                                       |                                                                       |                                                                      |                                                                                                                          |
-| [fast-agent](https://github.com/evalstate/fast-agent)                    |                                       |                                                                       |                                                                      |              [Partial](https://github.com/evalstate/fast-agent/blob/main/docs/docs/mcp/skills-over-mcp.md)               |
-| [MCP Inspector](https://github.com/modelcontextprotocol/inspector)       |                                       |                                                                       |                                                                      | [Partial](https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md#skill-verification---verify) |
-| [mcpc MCP CLI](https://github.com/apify/mcpc)                            |                                       |                                                                       |                                                                      |                                                                                                                          |
+| Client | [MCP Apps](extensions-apps-overview.md) | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md) | [Enterprise Auth](extensions-auth-enterprise-managed-authorization.md) | [Skills](extensions-skills-overview.md) | [Tasks](extensions-tasks-overview.md) |
+|----|:--:|:--:|:--:|:--:|:--:|
+| [Claude (web)](https://claude.ai) |  |  |  |  |  |
+| [Claude Desktop](https://claude.ai/download) |  |  |  |  |  |
+| [Claude Code](https://claude.com/claude-code) |  |  |  |  |  |
+| [VS Code GitHub Copilot](https://code.visualstudio.com/) |  |  |  |  |  |
+| [Microsoft 365 Copilot](https://www.microsoft.com/microsoft-365-copilot) |  |  |  |  |  |
+| [Goose](https://block.github.io/goose/) |  |  |  |  |  |
+| [Postman](https://postman.com) |  |  |  |  |  |
+| [MCPJam](https://www.mcpjam.com/) |  |  |  |  |  |
+| [ChatGPT](https://chatgpt.com/) |  |  |  | [Partial](https://developers.openai.com/plugins/build/mcp-server#import-skills-from-the-mcp-server) |  |
+| [Cursor](https://cursor.com/) |  |  |  |  |  |
+| [Archestra.AI](https://www.archestra.ai/) |  |  |  |  |  |
+| [PostHog Code](https://posthog.com/code/) |  |  |  |  |  |
+| [Kiro Crew](https://kiro.dev/crew/) |  |  |  |  |  |
+| [fast-agent](https://github.com/evalstate/fast-agent) |  |  |  | [Partial](https://github.com/evalstate/fast-agent/blob/main/docs/docs/mcp/skills-over-mcp.md) |  |
+| [MCP Inspector](https://github.com/modelcontextprotocol/inspector) |  |  |  | [Partial](https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md#skill-verification---verify) |  |
+| [mcpc MCP CLI](https://github.com/apify/mcpc) |  |  |  |  |  |
+| [Glean](https://www.glean.com/) |  |  |  |  |  |
 
 Auth extension support (OAuth Client Credentials and Enterprise-Managed Authorization) is tracked separately from the core MCP authorization features (DCR, CIMD). Check each extension’s specification and the [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth) for the latest implementation status.
 

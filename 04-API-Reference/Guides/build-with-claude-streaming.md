@@ -2,85 +2,9 @@
 title: "Streaming messages - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/streaming"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-20T06:37:47Z"
+fetched_at: "2026-11-05T06:36:50Z"
 tags: ["api", "sdk"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fstreaming)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Model capabilities
 
 # Streaming messages
 
@@ -93,6 +17,14 @@ Stream Messages API responses incrementally with server-sent events, including t
 Copy page
 
 
+
+Message streaming
+
+Feature of  
+[Messages API](build-with-claude-working-with-messages.md)
+
+[Cloud platforms](#availability-feature-support)  
+All platforms
 
 When creating a Message, you can set `"stream": true` to incrementally stream the response using [server-sent events](https://developer.mozilla.org/en-US/Web/API/Server-sent%5Fevents/Using%5Fserver-sent%5Fevents) (SSE).
 
@@ -134,7 +66,7 @@ with client.messages.stream(
 
 ## Get the final message without handling events
 
-If you don't need to process text as it arrives, the SDK provides a way to use streaming internally while returning the complete `Message` object, identical to what `client.messages.create()` returns. This is especially useful for requests with large `max_tokens` values, where the SDK requires streaming to avoid HTTP timeouts.
+If you don’t need to process text as it arrives, the SDK provides a way to use streaming internally while returning the complete `Message` object, identical to what `client.messages.create()` returns. This is especially useful for requests with large `max_tokens` values, where the SDK requires streaming to avoid HTTP timeouts.
 
 CLI
 
@@ -171,7 +103,7 @@ for block in message.content:
         print(block.text)
 ```
 
-The `.stream()` call keeps the HTTP connection alive with server-sent events, then the SDK's message-accumulation helper, `stream.get_final_message()`, collects all events into the complete `Message` object.
+The `.stream()` call keeps the HTTP connection alive with server-sent events, and then the SDK’s message-accumulation helper, `stream.get_final_message()`, collects all events into the complete `Message` object.
 
 ## Event types
 
@@ -179,7 +111,7 @@ Each server-sent event includes a named event type and associated JSON data. Eac
 
 Each stream uses the following event flow:
 
-1.  `message_start`: contains a `Message` object with empty `content`. Under the [`thinking-binding-controls-2026-08-01`](build-with-claude-thinking.md#preserved-thinking-controls) beta header, this `Message` object also carries the `input_transformations` array. After a mid-stream [server-side fallback](build-with-claude-refusals-and-fallback.md#server-side-fallback), the final `message_delta` event carries the array again with the serving model's entries.
+1.  `message_start`: contains a `Message` object with empty `content`. Under the [`thinking-binding-controls-2026-08-01`](build-with-claude-thinking.md#preserved-thinking-controls) beta header, this `Message` object also carries the `input_transformations` array. After a mid-stream [server-side fallback](build-with-claude-refusals-and-fallback.md#server-side-fallback), the final `message_delta` event carries the array again with the serving model’s entries.
 2.  A series of content blocks, each of which has a `content_block_start`, one or more `content_block_delta` events, and a `content_block_stop` event. Each content block has an `index` that corresponds to its index in the final Message `content` array. One exception: during [server-side fallback](build-with-claude-refusals-and-fallback.md#server-side-fallback) responses, a `fallback` content block arrives at each model boundary as a `content_block_start` and `content_block_stop` pair with no deltas in between.
 3.  One or more `message_delta` events, indicating top-level changes to the final `Message` object.
 4.  A final `message_stop` event.
@@ -190,11 +122,11 @@ The token counts shown in the `usage` field of the `message_delta` event are *cu
 
 ### Ping events
 
-Event streams may also include any number of `ping` events.
+Event streams might also include any number of `ping` events.
 
 ### Error events
 
-The API may occasionally send [errors](../Endpoints/errors.md) in the event stream. For example, during periods of high usage, you may receive an `overloaded_error`, which would normally correspond to an HTTP 529 in a non-streaming context:
+The API might occasionally send [errors](../Endpoints/errors.md) in the event stream. For example, during periods of high usage, you might receive an `overloaded_error`, which would normally correspond to an HTTP 529 in a non-streaming context:
 
 Example error
 
@@ -230,7 +162,7 @@ data: {"type": "content_block_delta","index": 0,"delta": {"type": "text_delta", 
 
 The deltas for `tool_use` content blocks correspond to updates for the `input` field of the block. To support maximum granularity, the deltas are *partial JSON strings*, whereas the final `tool_use.input` is always an *object*.
 
-You can accumulate the string deltas and parse the JSON once you receive a `content_block_stop` event, by using a library like [Pydantic](https://docs.pydantic.dev/latest/concepts/json/#partial-json-parsing) to do partial JSON parsing, or by using the SDK's [streaming helpers](#streaming-with-sdks). In the Python and TypeScript SDKs, these helpers also give you access to the parsed `input` incrementally, as it streams.
+You can accumulate the string deltas and parse the JSON once you receive a `content_block_stop` event, by using a library such as [Pydantic](https://docs.pydantic.dev/latest/concepts/json/#partial-json-parsing) to do partial JSON parsing, or by using the SDK’s [streaming helpers](#streaming-with-sdks). In the Python and TypeScript SDKs, these helpers also give you access to the parsed `input` incrementally, as it streams.
 
 A `tool_use` content block delta looks like:
 
@@ -243,11 +175,11 @@ event: content_block_delta
 data: {"type": "content_block_delta","index": 1,"delta": {"type": "input_json_delta","partial_json": "{\"location\": \"San Fra"}}}
 ```
 
-Note: Current models only support emitting one complete key and value property from `input` at a time. As such, when using tools, there may be delays between streaming events while the model is working. Once an `input` key and value are accumulated, they are emitted as multiple `content_block_delta` events with chunked partial JSON so that the format can automatically support finer granularity in future models.
+Note: Current models only support emitting one complete key and value property from `input` at a time. As such, when using tools, there might be delays between streaming events while the model is working. Once an `input` key and value are accumulated, they are emitted as multiple `content_block_delta` events with chunked partial JSON so that the format can automatically support finer granularity in future models.
 
 ### Thinking delta
 
-When using [thinking](build-with-claude-thinking.md#streaming-thinking) with streaming enabled, you'll receive thinking content through `thinking_delta` events. These deltas correspond to the `thinking` field of the `thinking` content blocks.
+When using [thinking with streaming enabled](build-with-claude-thinking.md#streaming-thinking), you’ll receive thinking content through `thinking_delta` events. These deltas correspond to the `thinking` field of the `thinking` content blocks.
 
 For thinking content, a special `signature_delta` event is sent just before the `content_block_stop` event. This signature is used to verify the integrity of the thinking block.
 
@@ -289,7 +221,7 @@ A stream response consists of:
 3.  One or more `message_delta` events
 4.  A `message_stop` event
 
-There may be `ping` events dispersed throughout the response as well. See [Event types](#event-types) for more details on the format.
+There might be `ping` events dispersed throughout the response as well. See [Event types](#event-types) for more details on the format.
 
 ### Basic streaming request
 
@@ -361,7 +293,7 @@ data: {"type": "message_stop"}
 
 
 
-Tool use supports [fine-grained streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md) for parameter values. Enable it per tool with `eager_input_streaming`.
+Tool use supports [fine-grained streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md) for parameter values. Enable it on individual tools with `eager_input_streaming`.
 
 This request asks Claude to use a tool to report the weather.
 
@@ -509,7 +441,7 @@ data: {"type":"message_stop"}
 
 ### Streaming request with thinking
 
-This request enables thinking with streaming. The `display: "summarized"` setting streams a condensed summary of Claude's reasoning rather than the full chain of thought.
+This request enables thinking with streaming. The `display: "summarized"` setting streams a condensed summary of Claude’s reasoning rather than the full chain of thought.
 
 cURL
 
@@ -758,7 +690,7 @@ For Claude 4.6 and later models, the same capture-and-resume strategy applies, b
 
 ### Error recovery best practices
 
-1.  **Use SDK features:** Leverage the SDK's built-in message accumulation and error handling capabilities.
+1.  **Use SDK features:** Rely on the SDK’s built-in message accumulation and error handling capabilities.
 2.  **Handle content types:** Be aware that messages can contain multiple content blocks (`text`, `tool_use`, `thinking`). Tool use and thinking blocks cannot be partially recovered. You can resume streaming from the most recent text block.
 
 ## Next steps
@@ -791,4 +723,29 @@ Use the official SDKs, which handle streaming, accumulation, and reconnection fo
 
 [Batch processing](build-with-claude-batch-processing.md)
 
-Process large volumes of requests asynchronously when you don't need real-time responses.
+Process large volumes of requests asynchronously when you don’t need real-time responses.
+
+## Availability
+
+Message streaming is available on every model.
+
+### API support
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
+- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+
+StatusAvailable
+
+Cloud platforms
+
+- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+
+The older Amazon Bedrock InvokeModel integration does not stream plain server-sent events.

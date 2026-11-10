@@ -1,8 +1,8 @@
 ---
 title: "What are artifacts and how do I use them? | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/9487310"
+source_url: "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:23Z"
+fetched_at: "2026-11-09T06:26:10Z"
 tags: ["claude-ai", "claude-code"]
 ---
 
@@ -11,13 +11,13 @@ tags: ["claude-ai", "claude-code"]
 
 An **[artifact](https://claude.com/features/artifacts)** is anything Claude makes for you that you'd put in front of someone: a design, a deck, a document, a dashboard, or a small interactive tool. It opens beside your conversation, and you can edit it, come back to it, and share it with others. Ask for one in any conversation with Claude, including in Claude Code, or start from a template in the “Artifacts” tab.
 
-Artifacts are available on Free, Pro, Max, Team, and Enterprise plans, and in Claude Code on every plan that includes Claude Code. The Docs, Slides, and Design templates are available on all plans and are on by default. On Enterprise plans, they turn on by default on October 15, 2026, and owners can turn them on before then.
+Artifacts are available on Free, Pro, Max, Ultra, Team, and Enterprise plans, and in Claude Code on every plan that includes Claude Code. The Docs, Slides, and Design templates are available on all plans and are on by default. On Enterprise plans, they turn on by default on October 15, 2026, and owners can turn them on before then.
 
-The Dashboards template is in beta on Pro, Max, Team, and Enterprise plans. On Enterprise plans, it's off by default until an owner turns it on. The Motion template is in beta on Team and Enterprise plans. It's on by default on Team plans and off on Enterprise plans until an owner turns it on.
+The Dashboards template is in beta on Pro, Max, Ultra, Team, and Enterprise plans. On Enterprise plans, it's off by default until an owner turns it on. The Motion template is in beta on Team and Enterprise plans. It's on by default on Team plans and off on Enterprise plans until an owner turns it on.
 
 [TABLE]
 
-**Important:** Artifacts require **Cloud code execution and file creation** to be turned on in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)** (Free, Pro, Max) or **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)** (Team, Enterprise).
+**Important:** Artifacts require **Cloud code execution and file creation** (called **Create and edit files** in the updated Settings layout) to be turned on in **Settings \> Capabilities** (Free, Pro, Max, Ultra) or **Organization settings \> Capabilities** (Team, Enterprise).
 
 ------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ Claude can make an artifact out of almost anything, including documents, code sn
 
 - **Claude on the web and Claude Desktop:** Create, edit, and share artifacts, and start from a template.
 
-- **Claude Code:** Publish session output as an artifact, or make designs and docs. See **[Artifacts in Claude Code](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them#h_dca5623bec)** below.
+- **Claude Code:** Publish session output as an artifact, or make designs and docs. See **[Artifacts in Claude Code](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_dca5623bec)** below.
 
 - **Claude for iOS and Claude for Android:** Ask for a design, deck, or doc in any chat, view the result in the **Artifacts** tab, and edit the artifact. To change sharing settings, use Claude on the web or Claude Desktop.
 
@@ -49,7 +49,7 @@ Claude can make an artifact out of almost anything, including documents, code sn
 
 Templates are starting points for work you'll share with others. Ask for one in any chat, select "Output" in the message box and choose a template, or pick one in the **Artifacts** tab.
 
-- **Docs:** Living documents you write with Claude and your team in real time. Learn more in **[Get started with Claude Docs](get-started-with-claude-docs-claude-help-center.md)**.
+- **Docs:** Living documents you write with Claude and your team in real time. Learn more in **[Get started with Claude Docs](https://support.claude.com/en/articles/16923645)**.
 
 - **Slides:** Presentations built from your notes, reports, or the work already in your chat. Edit any slide directly, present without leaving Claude, and export to PowerPoint or PDF. To edit and present with a keyboard or screen reader, see **[Use Claude Slides with a keyboard](#h_11975db891)** below.
 
@@ -61,7 +61,7 @@ Templates are starting points for work you'll share with others. Ask for one in 
 
 Whichever template you start from, the artifact works the same way: edit it by talking to Claude or directly in the artifact, and it updates live as you work. When it's ready, share it or export it.
 
-Designs and decks can use a design system, so new work picks up your colors, fonts, and components. Learn more about **[setting up your design system](../21-Account-Support/set-up-your-design-system-in-claude-design-claude-help-center.md)**.
+Designs and decks can use a design system, so new work picks up your colors, fonts, and components. Learn more about **[setting up your design system](https://support.claude.com/en/articles/14604397)**.
 
 ## Find your artifacts
 
@@ -91,7 +91,7 @@ An artifact opens in its own window beside your conversation. Artifacts made fro
 
 ## Build on a published artifact
 
-Available on Free, Pro, and Max plans, for legacy artifacts published from a chat.
+Available on Free, Pro, Max, and Ultra plans, for legacy artifacts published from a chat.
 
 If someone publishes an artifact you like, you can use it as a starting point for your own version. Your version is separate, so nothing you do affects the original.
 
@@ -111,7 +111,7 @@ If an artifact generates an error, look for the "Try fixing with Claude" button 
 
 ## Use Claude Slides with a keyboard
 
-To get into and out of the artifact panel, and to comment from the panel's header, see **[Use artifacts with a keyboard or screen reader](use-artifacts-with-a-keyboard-or-screen-reader-claude-help-center.md)**. That article also explains what focus means, what to do on a Mac laptop or in Safari, and how the tables show keys.
+To get into and out of the artifact panel, and to comment from the panel's header, see **[Use artifacts with a keyboard or screen reader](https://support.claude.com/en/articles/17457950)**. That article also explains what focus means, what to do on a Mac laptop or in Safari, and how the tables show keys.
 
 The editor is divided into areas: the toolbar at the top, the slide you're editing, a formatting toolbar that floats over whatever is selected, the list of slide thumbnails, and the properties panel.
 
@@ -161,7 +161,7 @@ While you're presenting, press the Right arrow key or Space for the next slide, 
 
 ### Comment on a slide
 
-To comment on a slide or on something on it, see "Comment on a deck or a design" in **[Use artifacts with a keyboard or screen reader](use-artifacts-with-a-keyboard-or-screen-reader-claude-help-center.md)**.
+To comment on a slide or on something on it, see "Comment on a deck or a design" in **[Use artifacts with a keyboard or screen reader](https://support.claude.com/en/articles/17457950)**.
 
 ### Get an overview of a deck
 
@@ -197,15 +197,15 @@ Describe what you want, Claude writes the code, and the app runs on Anthropic's 
 
 No API keys are required, and there's no cost to you. Whether your artifact helps 10 people or 10,000, sharing is free, and usage counts against each person's own plan limits rather than yours. On Team and Enterprise plans, people in your organization can use what you share without adding cost for you.
 
-For legacy artifacts, you can turn this off with the **AI-powered artifacts** setting in **[Settings \> Capabilities](https://claude.ai/settings/capabilities)**. New artifacts ask you for permission the first time they want to use Claude.
+For legacy artifacts, you can turn this off with the **AI-powered artifacts** setting (called **Artifacts that use Claude** in the updated Settings layout) in **Settings \> Capabilities**. New artifacts ask you for permission the first time they want to use Claude.
 
 ------------------------------------------------------------------------
 
 ## Connect your apps to an artifact
 
-Available on Pro, Max, Team, and Enterprise plans, on Claude on web and desktop.
+Available on Pro, Max, Ultra, Team, and Enterprise plans, on Claude on web and desktop.
 
-Artifacts can connect to the apps you've connected to Claude, so they can read from and write to tools like Asana, Google Calendar, and Slack. They can also connect to any **[custom connectors](https://support.claude.com/en/articles/11175166)** you've set up.
+Artifacts can connect to the apps you've connected to Claude, so they can read from and write to tools like Asana, Google Calendar, and Slack. They can also connect to any **[custom connectors](../14-Connectors/get-started-with-custom-connectors-using-remote-mcp-claude-help-center.md)** you've set up.
 
 The first time an artifact needs a connected app, Claude shows which apps and tools it will use and asks you to approve them. You can turn individual tools off, and your choice carries over to later uses of that artifact. Connector tools that need approval for each action aren't available to artifacts.
 
@@ -215,7 +215,7 @@ The first time an artifact needs a connected app, Claude shows which apps and to
 
 ## Store data in an artifact
 
-Available on Pro, Max, Team, and Enterprise plans, on Claude on the web and Claude Desktop.
+Available on Pro, Max, Ultra, Team, and Enterprise plans, on Claude on the web and Claude Desktop.
 
 Artifacts can store data between sessions, so you can build things like journals, trackers, and collaborative tools. Storage is either personal or shared:
 
@@ -253,4 +253,4 @@ Artifacts made in Claude Cowork before August 19, 2026 are live artifacts. They 
 
 ## Share an artifact
 
-Artifacts start private to you. Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**, including who can open them and what they see.
+Artifacts start private to you. Learn more about **[sharing artifacts](share-artifacts-claude-help-center.md)**, including who can open them and what they see.

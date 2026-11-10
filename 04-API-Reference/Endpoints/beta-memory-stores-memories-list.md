@@ -1,289 +1,33 @@
 ---
-title: "List memories - Claude API Reference"
+title: "List Memories - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memories/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:37:07Z"
+fetched_at: "2026-11-05T06:35:30Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemories%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-
-Create a memory store
-
-
-List memory stores
-
-
-Retrieve a memory store
-
-
-Update a memory store
-
-
-Delete a memory store
-
-
-Archive a memory store
-
-Memories
-
-
-Create a memory
-
-
-List memories
-
-
-Retrieve a memory
-
-
-Update a memory
-
-
-Delete a memory
-
-Memory Versions
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
 3.  [Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores)
 4.  [Memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories)
 
-# List memories
+# List Memories
 
 Copy page
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/memory_stores/{memory_store_id}/memories
 
-List memories
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+List Memories
 
 ##### Path parameters
 
@@ -299,9 +43,15 @@ The ID of the memory store to list memories from (`memstore_...`).
 
 depth: optional number
 
+⁠
+
+
+
 
 
-`0` (or omitted) returns all descendants below `path_prefix` (recursive). `1` returns immediate children only; deeper entries roll up as `memory_prefix` items. `depth=1` behaves like `ls`; omitting `depth` behaves like `find`.
+How far below `path_prefix` to list. Defaults to `0`, which lists every memory below the prefix.
+
+Pass `1` to list only the direct children. Deeper memories are then grouped into `memory_prefix` items.
 
 formatint32
 
@@ -309,31 +59,55 @@ formatint32
 
 limit: optional number
 
+⁠
+
+
+
 
 
-Maximum number of items to return per page. Must be between 1 and 100. Defaults to 20 when omitted. Capped at 20 when `view=full`. Both `memory` and `memory_prefix` items count toward the limit.
+The maximum number of items to return per page, from 1 to 100. Defaults to 20.
+
+With `view=full`, a page holds at most 20 items. `memory` and `memory_prefix` items both count toward the limit.
 
 formatint32
 
 page: optional string
 
+⁠
+
+
+
 
 
-Opaque pagination cursor (a `page_...` value). Pass the `next_page` value from a previous response to fetch the next page; omit for the first page.
+The `next_page` value from a previous response, to get the next page. Omit it to get the first page.
+
+
 
 path_prefix: optional string
 
+⁠
+
+
+
 
 
-Optional path prefix filter. Must end with `/` (segment-aligned), e.g., `/notes/`. This value appears in request URLs. Do not include secrets or personally identifiable information.
+Return only memories whose path starts with this prefix, such as `/notes/`. This value appears in request URLs. Do not include secrets or personally identifiable information.
+
+Omit it to list the whole store. The prefix must end with `/` and matches whole segments, so `/notes/` matches `/notes/todo.md` but not `/notes-archive/todo.md`.
 
 
 
 view: optional [BetaManagedAgentsMemoryView](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories#beta_managed_agents_memory_view)
 
+⁠
+
+
+
 
 
-Which projection of each `memory` to return. Defaults to `basic` (content omitted). `full` populates `content` on each item and caps `limit` at 20; use this as the bulk-read path for export and sync.
+Whether each memory in the response includes `content`. Defaults to `basic`, which sets it to `null`.
+
+With `full`, a page holds at most 20 items.
 
 One of the following:
 
@@ -579,6 +353,22 @@ string
 
 
 
+"webhooks-2026-10-07"
+
+
+
+"message-threads-2026-08-12"
+
+
+
+"analytics-usage-cost-2026-08-24"
+
+
+
+"experimental-claude-tag-2026-10-21"
+
+
+
 
 
 "anthropic-workspace-id": optional string
@@ -607,7 +397,11 @@ BetaManagedAgentsMemory object{ type: "memory", id, content_sha256, 7 more }
 
 
 
-A `memory` object: a single text document at a hierarchical path inside a memory store. The `content` field is populated when `view=full` and `null` when `view=basic`; the `content_size_bytes` and `content_sha256` fields are always populated so sync clients can diff without fetching content. Memories are addressed by their `mem_...` ID; the path is the create key and can be changed via update.
+A text document at a path inside a memory store.
+
+`content` is `null` when the response uses `view=basic`. `content_size_bytes` and `content_sha256` are always set, so you can detect changes without fetching the content. To retrieve, update, or delete a memory, pass its ID, which stays the same when its path changes.
+
+See the [memory guide](../Other/managed-agents-memory.md#view-and-edit-memories) to learn more about working with memories.
 
 
 
@@ -615,7 +409,9 @@ BetaManagedAgentsMemoryPrefix object{ type: "memory_prefix", path }
 
 
 
-A rolled-up directory marker returned by [List memories](beta-memory-stores-memories-list.md) when `depth` is set. Indicates that one or more memories exist deeper than the requested depth under this prefix. This is a list-time rollup, not a stored resource; it has no ID and no lifecycle. Each prefix counts toward the page `limit` and interleaves with `memory` items in path order.
+A directory marker that [List Memories](beta-memory-stores-memories-list.md) returns instead of the memories below the requested `depth`.
+
+It stands for one or more memories whose paths start with `path`. It isn't a stored object and doesn't have an ID. Each marker counts toward the page `limit`.
 
 type: "memory_prefix"
 
@@ -631,9 +427,9 @@ next_page: optional string or null
 
 
 
-Opaque cursor for the next page (a `page_...` value), or `null` if there are no more results. Pass as `page` on the next request.
+The value to pass as `page` to get the next page, or `null` if there are no more results.
 
-List memories
+List Memories
 
 cURL
 
@@ -641,9 +437,9 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/memory_stores/$MEMORY_STORE_ID/memories \
-    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-version: 2026-10-21' \
     -H 'anthropic-beta: agent-memory-2026-07-22' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY"
 ```
 
 Response 200

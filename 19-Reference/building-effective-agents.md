@@ -2,9 +2,11 @@
 title: "Building effective AI agents \\ Anthropic"
 source_url: "https://www.anthropic.com/news/building-effective-agents"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:20Z"
+fetched_at: "2026-11-09T06:26:25Z"
 tags: ["agents", "news-research", "prompting"]
 ---
+
+### 01What are agents?
 
 # Building effective agents
 
@@ -17,22 +19,19 @@ tags: ["agents", "news-research", "prompting"]
 - [07Appendix 1: Agents in practice](#appendix-1-agents-in-practice)
 - [08Appendix 2: Prompt engineering your tools](#appendix-2-prompt-engineering-your-tools)
 
-- Published
+Published  
+Dec 19, 2024
 
-  Dec 19, 2024
+Team  
+[Engineering](https://www.anthropic.com/engineering)
 
-- Team
+Topics  
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Tool use](https://www.anthropic.com/search?topic=tool-use)
+- [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
+- [Coding](https://www.anthropic.com/search?topic=coding)
 
-  [Engineering](https://www.anthropic.com/engineering)
-
-- Topics
-
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
-  - [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-
-  See more...
+See more...
 
 Related articles
 
@@ -234,7 +233,7 @@ One rule of thumb is to think about how much effort goes into human-computer int
 
 While building our agent for [SWE-bench](swe-bench-sonnet.md), we actually spent more time optimizing our tools than the overall prompt. For example, we found that the model would make mistakes with tools using relative filepaths after the agent had moved out of the root directory. To fix this, we changed the tool to always require absolute filepaths—and we found that the model used this method flawlessly.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

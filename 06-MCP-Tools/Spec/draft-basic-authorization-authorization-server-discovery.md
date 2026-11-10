@@ -2,11 +2,14 @@
 title: "Authorization Server Discovery - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/authorization-server-discovery"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:13Z"
+fetched_at: "2026-10-31T06:25:28Z"
+last_modified: "Fri, 30 Oct 2026 20:37:09 GMT"
 tags: ["authorization", "mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Authorization Server Location](#authorization-server-location)
 - [Protected Resource Metadata Discovery Requirements](#protected-resource-metadata-discovery-requirements)

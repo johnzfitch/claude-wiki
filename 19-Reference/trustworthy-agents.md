@@ -2,7 +2,7 @@
 title: "Trustworthy agents in practice \\ Anthropic"
 source_url: "https://www.anthropic.com/research/trustworthy-agents"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:13Z"
+fetched_at: "2026-10-24T06:26:42Z"
 tags: ["agents", "news-research"]
 ---
 
@@ -40,7 +40,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=agents)
 
-AI “agents” represent the latest major shift in how people and organizations are using AI. A couple of years ago, AI models were only broadly available as chatbots—simple question-and-answer machines. Now, through products like [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) and [Claude Cowork](../15-Claude-AI-Features/product-cowork.md), AI models can do much more: they can write and execute code, manage files, and complete tasks that span multiple applications. This represents a new frontier for governance.
+AI “agents” represent the latest major shift in how people and organizations are using AI. A couple of years ago, AI models were only broadly available as chatbots—simple question-and-answer machines. Now, through products like [Claude Code](../15-Claude-AI-Features/product-claude-code.md) and [Claude Cowork](../15-Claude-AI-Features/product-cowork.md), AI models can do much more: they can write and execute code, manage files, and complete tasks that span multiple applications. This represents a new frontier for governance.
 
 Agents are already making real productivity gains [for](../18-Industry-UseCases/freedom-forever.md) [our](../18-Industry-UseCases/binti.md) [customers](../18-Industry-UseCases/spotify.md) and [inside Anthropic](how-ai-is-transforming-work-at-anthropic.md). But the autonomy that makes agents useful also introduces a range of new risks. Agents act with less human oversight, so there is more room for them to misread users’ intent and take actions with unintended consequences. Agents are also targets for “prompt injection” cyberattacks, which try to trick models into taking costly actions that they otherwise wouldn’t. As agents become more capable and as businesses trust them with more consequential actions, we expect both of these risks to intensify.
 

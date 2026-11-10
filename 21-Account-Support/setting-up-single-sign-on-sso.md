@@ -2,7 +2,7 @@
 title: "Set up single sign-on (SSO) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso"
 category: "21-Account-Support"
-fetched_at: "2026-10-23T06:29:01Z"
+fetched_at: "2026-11-09T06:25:44Z"
 tags: ["account", "cli"]
 ---
 
@@ -173,7 +173,7 @@ When your Identity Provider’s X.509 signing certificate (SAML) or client secre
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
-**Important:** If **Require SSO** is turned on and your certificate or client secret has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](https://support.claude.com/en/articles/9015913)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update it. To avoid this, note the expiry date of your certificate or client secret in your Identity Provider and rotate it ahead of time.
+**Important:** If **Require SSO** is turned on and your certificate or client secret has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update it. To avoid this, note the expiry date of your certificate or client secret in your Identity Provider and rotate it ahead of time.
 
 ------------------------------------------------------------------------
 

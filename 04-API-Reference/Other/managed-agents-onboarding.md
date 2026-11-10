@@ -2,101 +2,9 @@
 title: "Build in Console - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/onboarding"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:37:59Z"
+fetched_at: "2026-11-05T06:36:47Z"
 tags: ["agents", "api", "testing"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fonboarding)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Overview](managed-agents-overview.md)[Quickstart](managed-agents-quickstart.md)[Build in Console](managed-agents-onboarding.md)[Migration](managed-agents-migration.md)
-
-Define your agent
-
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
-
-Configure agent environment
-
-[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
-
-[Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
-
-Delegate work to your agent
-
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
-
-Manage agent context
-
-[Access GitHub](managed-agents-github.md)[Attach and download files](managed-agents-files.md)
-
-Build persistent memory
-
-Advanced orchestration
-
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
-
-Security
-
-[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
-
-Reference
-
-[Managed Agents reference](managed-agents-reference.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-
-[Console](playground.md)
-
-[Managed Agents](managed-agents-overview.md)First steps
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 # Build in Console
 
@@ -104,30 +12,48 @@ managed-agents-2026-04-01
 
 
 
-Create, test, and iterate on agents visually in Console, then run them from your code with the API.
+Create, test, and iterate on agents visually in the Claude Console, then run them from your code with the API.
 
 Copy page
 
 
 
-[Console](https://platform.claude.com/workspaces/default/agent-quickstart/) provides a visual interface for creating and configuring agents. It lets you iterate on configuration interactively before writing code.
+Console agent builder
+
+Feature of  
+[Managed Agents](managed-agents-overview.md)
+
+[Status](#availability-feature-support)  
+Beta
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailable
+
+[Beta header](#feature-beta-headers)  
+- `managed-agents-2026-04-01`
+  
+
+[Data handling](#feature-data-handling)  
+Not ZDR eligibleNot HIPAA eligible
+
+The [Claude Console](https://platform.claude.com/workspaces/default/agent-quickstart) provides a visual interface for creating and configuring agents. It lets you iterate on configuration interactively before writing code.
 
 ## How to build an agent
 
-The [visual interface](https://platform.claude.com/workspaces/default/agent-quickstart/) in the Claude Console walks you through each field of an agent definition:
+The [visual interface](https://platform.claude.com/workspaces/default/agent-quickstart) in the Claude Console walks you through each field of an agent definition:
 
 - **Model and system prompt:** Pick a model and write the system prompt in a full-width editor.
 - **MCP servers:** Add remote MCP servers by URL and authenticate your agent to take action on your behalf.
-- **Tools:** Extend your agent's capabilities using a pre-built agent toolset and MCP tools.
-- **Skills:** Attach Anthropic or custom skills from your organization's library.
+- **Tools:** Extend your agent’s capabilities using a pre-built agent toolset and MCP tools.
+- **Skills:** Attach Anthropic or custom skills from your organization’s library.
 
-As you configure, Console shows the equivalent API request so you can copy it into your code once you're satisfied.
+As you configure, Console shows the equivalent API request so you can copy it into your code once you’re satisfied.
 
 ## Testing an agent
 
 Console includes an inline session runner. After configuring your agent, you can start a test session directly, send messages, and watch the event stream without leaving the page. This is the fastest way to check that your system prompt and tool selection produce the behavior you expect.
 
-## From Console to your codebase
+## From Console to your code base
 
 Once your agent works as expected:
 
@@ -163,3 +89,45 @@ session = client.beta.sessions.create(
     title="My first session",
 )
 ```
+
+## Availability
+
+Console agent builder is in beta on every model.
+
+### API support
+
+StatusBeta
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+
+### Required beta headers
+
+[Beta headers overview](../Endpoints/beta-headers.md)
+
+Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+
+Header
+
+- `managed-agents-2026-04-01`
+  
+
+### Data handling
+
+[Data handling overview](manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/agents`
+- `/v1/sessions`
+- `/v1/environments`
+
+Zero data retentionNot eligible
+
+Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+
+HIPAANot eligible
+
+Applies to all Managed Agents sub-features, including Self-hosted sandboxes.

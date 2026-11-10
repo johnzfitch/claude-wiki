@@ -2,11 +2,13 @@
 title: "How to get support for Claude for Government | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13047024-how-to-get-support-for-claude-for-government"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:19Z"
+fetched_at: "2026-11-09T06:25:59Z"
 tags: ["claude-ai"]
 ---
 
 # How to get support for Claude for Government
+
+October 8, 2026
 
 
 **Please note:** This page is hosted outside of Claude for Government's FedRAMP boundary. Don't share sensitive information with our AI support bot.

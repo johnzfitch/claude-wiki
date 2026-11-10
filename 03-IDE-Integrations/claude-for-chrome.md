@@ -2,8 +2,8 @@
 title: "Claude in Chrome | Claude by Anthropic"
 source_url: "https://www.claude.com/claude-for-chrome"
 category: "03-IDE-Integrations"
-fetched_at: "2026-10-23T06:28:11Z"
-tags: ["claude-code", "enterprise", "ide", "security"]
+fetched_at: "2026-11-09T06:25:36Z"
+tags: ["claude-code", "ide"]
 ---
 
 # Claude in Chrome
@@ -20,7 +20,7 @@ Available on all paid plans. Not on a paid plan? [Upgrade now](../17-Billing-Pla
 
 No more copying, pasting, and switching tabs.
 
-Claude Cowork
+Claude
 
 Claude Code
 
@@ -30,7 +30,7 @@ Background tasks
 
 ### From browser research to finished deliverables
 
-Pair Claude in Chrome with Claude Cowork to turn web research into polished content. Chrome navigates and gathers information, Claude Cowork produces Excel models, comparison decks, and reports without having to copy and paste.
+Claude researches and takes action in Chrome. It can click, type, and navigate websites. And it hands back deliverables like Excel models, comparison decks, and reports without having to copy and paste.
 
 ### Works with Claude Code
 
@@ -66,7 +66,7 @@ Claude can read your calendar, pull context from email threads, flag which meeti
 
 ### Research competitors, get a comparison deck
 
-Claude in Chrome visits competitor sites and pulls pricing, features, and positioning. Claude Cowork compiles everything into a formatted PowerPoint ready for your next strategy meeting.
+Claude in Chrome visits competitor sites and pulls pricing, features, and positioning. Claude compiles everything into a formatted PowerPoint ready for your next strategy meeting.
 
 [Learn more (opens in new tab)](https://academy.claude.com/use-cases/size-a-market-using-your-research)
 
@@ -90,7 +90,7 @@ Access internal tools, legacy portals, admin consoles, and invoice systems. Clau
 
 Your whole setup, in the side panel
 
-The side panel now runs a full [Claude Cowork](../15-Claude-AI-Features/product-cowork.md) session. The [skills](https://claude.com/skills), [plugins](../08-Plugins-Skills/claude-com-plugins.md), and [connectors](../04-API-Reference/Other/partners-mcp.md) you've already built are there, with nothing to set up in the browser.
+The [skills](https://claude.com/skills), [plugins](../08-Plugins-Skills/claude-com-plugins.md), and [connectors](../04-API-Reference/Other/partners-mcp.md) you've already built are available in your side panel session, with nothing to set up in the browser.
 
 ### Your session follows you
 
@@ -98,31 +98,73 @@ Every conversation saves to your history. Sessions live with your account, not t
 
 ### Three ways to access the extension
 
-Access Claude in Chrome through the side panel when the work is on the page in front of you and nothing else needs to be open, in Claude Cowork when the browser is one step in a longer job, or in Claude Code when you’re building the site you’re testing.
+Access Claude in Chrome through the side panel when the work is on the page in front of you, and nothing else needs to be open. You can also access it in Claude when the browser is just one step in a longer job, or in Claude Code when you’re building the site you’re testing.
 
 ## Stay in control
 
-Hidden instructions on a page can try to redirect Claude’s actions. Though Claude in Chrome has built-in defenses that have been tested against real attacks, we recommend the habits below as a best practice.
+Pages can hide instructions meant to redirect Claude. Here’s how we defend against that, and what you can do too.
 
 [Read the safety blog (opens in new tab)](https://www.anthropic.com/news/prompt-injection-defenses)
 
-### What we built
+Built-in safeguards
 
-#### Automatically approve actions with guardrails
+Habits that help
 
-If you choose to, Claude can work through a task without asking you to approve each step. Before it acts on a page, a separate safety check reviews the action for risk and for instructions hidden by the site. It will surface to you if anything seems off.
+#### Choose how Claude gets approval
 
-#### Give permissions, site by site
+Let Claude work with a safety check on each action, or approve one site at a time in Permissions Mode.
 
-If you prefer more control, switch to Permissions Mode. You grant access one site at a time.
+#### Claude asks before sensitive actions
 
-#### Claude stops before taking sensitive actions
+Purchases, financial actions, and anything you can’t undo wait for you.
 
-Purchases, financial actions, and other one-way doors wait for you.
+#### Admins set org-wide rules
 
-#### Admins decide for the organization
+Team and Enterprise admins control access and set site allowlists and blocklists.
 
-On Team and Enterprise, admins turn the extension on or off org-wide and set site allowlists and blocklists.
+#### Skip sensitive workflows
+
+Avoid banking, health records, and anything involving credentials.
+
+#### Review requests before approving
+
+Read each one closely, especially for financial, personal, or work actions.
+
+#### Pause and report unusual behavior
+
+A site may be hiding instructions. Your reports help us catch new attacks.
+
+## FAQ
+
+### What is Claude in Chrome and how does it work?
+
+Claude in Chrome is a browser extension that lets Claude work on the web pages you have open. Claude can read a page, then click, type, or fill forms on the sites you’re already signed in to. You choose whether Claude asks before it acts or works through a task with a safety check before each action. Common use cases include testing web pages during development, gathering research from across the web, and helping with repetitive tasks like data entry. Open it from the Chrome side panel, from Claude, or from Claude Code.
+
+### What are the ways that Claude uses a browser?
+
+Claude uses a browser two ways:
+
+If you already use Claude in Chrome, that stays your default and Claude keeps working in your Chrome browser, where you're already signed in. Switch anytime in Settings → Capabilities → Preferred browser.
+
+Claude now includes its own built-in browser, so it can spin up work on its own without taking over your screen, and your work stays safe. There’s nothing to install. If you're new to browser use, Claude uses the built-in browser by default.
+
+### What browser activity is not recommended?
+
+Avoid financial transactions, password management, or anything involving sensitive personal data. Start with trusted sites and familiar workflows where you're comfortable having Claude take actions. Make sure your use complies with our [acceptable use policy](../22-Safety-Policy/using-agents-according-to-our-usage-policy.md). [Learn more.](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)
+
+### What are the security risks?
+
+Browser AI faces unique security risks, like prompt injection attacks, where malicious actors might try to trick Claude into unintended actions, such as sharing your bank information or deleting important files. While we’ve implemented protections, they aren’t foolproof. Attack vectors are constantly evolving and Claude may hallucinate, leading to actions that you did not intend. We’ve shared our testing results, including possible attack scenarios, so you can make informed decisions, and strongly encourage you to [read about the risks (opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) before using this product. [Read blog post. (opens in new tab)](../19-Reference/prompt-injection-defenses.md)
+
+### Does it work with Claude or Claude Cowork?
+
+Claude Cowork is now just Claude, so you don't have to choose where to get work done. The update is rolling out to Pro and Max plans, with more to follow. If you're on a different plan, you'll be walked through the update in the product. We hope you enjoy the simpler experience. [Read what changed](https://claude.com/blog/cowork-is-now-claude)
+
+Claude in Chrome Troubleshooting
+
+This article helps you resolve common issues with Claude in Chrome and explains how to provide feedback.
+
+[Read more (opens in new tab)](https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting)
 
 Guide
 
@@ -144,291 +186,32 @@ Claude in Chrome Permissions Guide
 
 1 of 3
 
-### What we recommend
-
-#### Don’t use on sensitive workflows
-
-Skip banking, health records, and anything with credentials you wouldn't share. Start with workflows you already know well.
-
-#### Review Claude prompts
-
-Claude asks before financial, personal, or work-critical actions. Review its prompts carefully.
-
-#### Watch for unusual behavior
-
-Some sites hide instructions that override yours. Our classifiers provide a defense, but if Claude acts unexpectedly, pause and review.
-
-#### Tell us when something looks wrong
-
-Report issues through the feedback options. It’s how we catch attacks we haven’t seen.
-
-## FAQ
-
-### How does Claude Cowork work with the Chrome extension?
-
-Claude Cowork now includes its own built-in browser — nothing to install, and fully separate from your own browsing. If you're new to browser use, Claude uses the built-in browser by default. If you already use Claude in Chrome, that stays your default and Claude keeps working in your browser, where you're already signed in. Switch anytime in Settings → Cowork → Preferred browser.
-
-### Can Enterprise plans enable Claude Cowork in the panel for Claude in Chrome?
-
-Yes. [Learn how to set up in Enterprise plans](../13-Enterprise-Admin/claude-for-chrome-admin-controls.md).
-
-### What browser activity is not recommended?
-
-Avoid financial transactions, password management, or anything involving sensitive personal data. Start with trusted sites and familiar workflows where you're comfortable having Claude take actions. Make sure your use complies with our [acceptable use policy](../22-Safety-Policy/using-agents-according-to-our-usage-policy.md). [Learn more.](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)
-
-### What are the security risks?
-
-Browser AI faces unique security risks, like prompt injection attacks, where malicious actors might try to trick Claude into unintended actions, such as sharing your bank information or deleting important files. While we’ve implemented protections, they aren’t foolproof. Attack vectors are constantly evolving and Claude may hallucinate, leading to actions that you did not intend. We’ve shared our testing results, including possible attack scenarios, so you can make informed decisions, and strongly encourage you to [read about the risks (opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) before using this product. [Read blog post. (opens in new tab)](../19-Reference/prompt-injection-defenses.md)
-
-### What’s the difference between using Claude in Chrome alone vs. with Claude Cowork?
-
-On its own, Claude in Chrome helps you navigate, extract information, and take actions in your browser. Paired with Claude Cowork, Chrome becomes the research layer for larger tasks. Claude gathers information from the web, then Claude Cowork produces finished files like Excel workbooks, PowerPoint decks, and formatted reports. Both remain available in Cowork. Claude uses the built-in browser by default unless you already use Claude in Chrome; you can pick your default in Settings → Cowork → Preferred browser.
-
 Claude in Chrome Troubleshooting
 
 This article helps you resolve common issues with Claude in Chrome and explains how to provide feedback.
 
 [Read more (opens in new tab)](https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting)
 
-Claude in Chrome Troubleshooting
+Guide
 
-This article helps you resolve common issues with Claude in Chrome and explains how to provide feedback.
+Mitigating the risk of prompt injections in browser use
 
-[Read more (opens in new tab)](https://support.claude.com/en/articles/12902405-claude-for-chrome-troubleshooting)
+[Read more (opens in new tab)](../19-Reference/prompt-injection-defenses.md)
+
+Guide
+
+Using Claude in Chrome Safely
+
+[Read more (opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely)
+
+Guide
+
+Claude in Chrome Permissions Guide
+
+[Read more (opens in new tab)](https://support.claude.com/en/articles/12902446-claude-for-chrome-permissions-guide)
 
 Start on the page you’re already on
 
 [Add to Chrome (opens in new tab)](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn)
 
 This is a Google extension. The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.
-
-[](https://www.claude.com/)
-
-© 2026 Anthropic PBC
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-
-## Industries
-
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-## Company
-
-- [Anthropic](https://www.anthropic.com/)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [Anthropic news](../19-Reference/news.md)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Transparency](https://anthropic.com/transparency)
-
-## Terms and policies
-
-- Privacy choices
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
-- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
-- [Usage Policy](https://www.anthropic.com/legal/aup)
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-
-## Industries
-
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

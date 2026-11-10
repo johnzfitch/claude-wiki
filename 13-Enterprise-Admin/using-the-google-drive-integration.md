@@ -2,7 +2,7 @@
 title: "Use Google Workspace connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10166901-using-the-google-drive-integration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:28:46Z"
+fetched_at: "2026-11-09T06:25:30Z"
 tags: ["connectors", "enterprise"]
 ---
 
@@ -121,7 +121,7 @@ Google Docs added to chats and projects sync directly from Google Drive, so you'
 
 3.  The file opens in a pane next to the conversation, and you can keep working in it while Claude edits.
 
-    1.  The pane works on Claude on the web in Chrome, and on Claude Desktop when the **[built-in browser](https://support.claude.com/en/articles/16607400)** is turned on. On Enterprise plans, the built-in browser is off by default. If the pane isn't available, select “Open in Google” on the file card to open the file in your regular browser.
+    1.  The pane works on Claude on the web in Chrome, and on Claude Desktop when the **[built-in browser](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork-claude-help-center.md)** is turned on. If the pane isn't available, select “Open in Google” on the file card to open the file in your regular browser.
 
 4.  Use the pane header to copy the file's Google link or open it directly in Google.
 
@@ -159,7 +159,7 @@ Live editing uses separate Google Docs, Google Sheets, and Google Slides connect
 
 - We do not train our models on your Gmail, Drive, or Calendar connector data, ensuring your private information remains private.
 
-  - **Note**: If you are using our consumer products (e.g. Claude Free, Pro, and Max (when using Claude Code with those accounts) and you have chosen to allow us to use your chats and coding sessions for model training, then any content you copy/paste from your Gmail, Drive, Calendar, or Claude's responses which include specific information from these connectors may be used to improve our models. For more information, refer to **[Is my data used for model training?](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training)**
+  - **Note**: If you are using our consumer products (e.g. Claude Free, Pro, Max, Ultra, and when using Claude Code with those accounts) and you have chosen to allow us to use your chats and coding sessions for model training, then any content you copy/paste from your Gmail, Drive, Calendar, or Claude's responses which include specific information from these connectors may be used to improve our models. For more information, refer to **[Is my data used for model training?](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training)**
 
 - Data is encrypted at rest and in transit.
 

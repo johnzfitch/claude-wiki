@@ -2,11 +2,14 @@
 title: "Publishing Remote Servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/remote-servers"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-21T06:29:04Z"
+fetched_at: "2026-10-31T06:24:48Z"
+last_modified: "Fri, 30 Oct 2026 20:34:13 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Transport Type](#transport-type)
 - [URL Template Variables](#url-template-variables)
@@ -50,7 +53,7 @@ A remote server **MUST** be publicly accessible at its specified URL.
 
 Transport Type
 
-Remote servers should use the Streamable HTTP transport. The SSE transport is [deprecated](../Spec/draft-deprecated.md), so publish an `"sse"` remote only to support existing clients. Remote servers can also support both transports simultaneously at different URLs. Specify the transport by setting the `type` property of the `remotes` entry to either `"streamable-http"` or `"sse"`:
+Remote servers should use the Streamable HTTP transport. The SSE transport is [deprecated](../Spec/2026-07-28-deprecated.md), so publish an `"sse"` remote only to support existing clients. Remote servers can also support both transports simultaneously at different URLs. Specify the transport by setting the `type` property of the `remotes` entry to either `"streamable-http"` or `"sse"`:
 
 server.json
 

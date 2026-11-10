@@ -2,11 +2,14 @@
 title: "Track team usage with analytics - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/analytics"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-16T06:24:36Z"
+fetched_at: "2026-11-03T06:22:56Z"
+last_modified: "Tue, 03 Nov 2026 06:22:12 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Access analytics for Team and Enterprise](#access-analytics-for-team-and-enterprise)
   - [Enable contribution metrics](#enable-contribution-metrics)
@@ -42,10 +45,10 @@ Copy pageCopy page
 
 Claude Code provides analytics dashboards to help organizations understand developer usage patterns, track contribution metrics, and measure how Claude Code impacts engineering velocity. Access the dashboard for your plan:
 
-| Plan                          | Dashboard URL                                                              | Includes                                                                              | Read more                                            |
-|-------------------------------|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------------------------------|
+| Plan | Dashboard URL | Includes | Read more |
+|----|----|----|----|
 | Claude for Teams / Enterprise | [claude.ai/analytics/claude-code](https://claude.ai/analytics/claude-code) | Usage metrics, contribution metrics with GitHub integration, leaderboard, data export | [Details](#access-analytics-for-team-and-enterprise) |
-| API (Claude Console)          | [platform.claude.com/claude-code](../04-API-Reference/Other/playground.md) | Usage metrics, spend tracking, team insights                                          | [Details](#access-analytics-for-api-customers)       |
+| API (Claude Console) | [platform.claude.com/claude-code](../04-API-Reference/Other/playground.md) | Usage metrics, spend tracking, team insights | [Details](#access-analytics-for-api-customers) |
 
 Code Review has its own dashboard. For review activity and spend, see [View usage](../02-Claude-Code-CLI/code-review-costs.md#view-usage).
 
@@ -118,7 +121,7 @@ The dashboard displays these summary metrics at the top:
 - **Lines of code with CC**: total lines of code across all merged PRs that were written with Claude Code assistance. Only “effective lines” are counted: lines with more than 3 characters after normalization, excluding empty lines and lines with only brackets or trivial punctuation.
 - **PRs with Claude Code (%)**: percentage of all merged PRs that contain Claude Code-assisted code
 - **Suggestion accept rate**: percentage of times users accept Claude Code’s code editing suggestions, including Edit, Write, and NotebookEdit tool usage
-- **Lines of code accepted**: total lines of code written by Claude Code that users have accepted in their sessions. This excludes rejected suggestions and does not track subsequent deletions.
+- **Lines of code accepted**: total lines of code that Claude Code’s Edit and Write tools added or removed in accepted edits. This excludes rejected suggestions, and lines deleted later don’t reduce the total.
 
 
 [​](#explore-the-charts)
@@ -277,29 +280,29 @@ On the Enterprise plan, the [Claude Enterprise Analytics API](../04-API-Referenc
 
 Access analytics for API customers
 
-API customers using the Claude Console can access analytics at [platform.claude.com/claude-code](../04-API-Reference/Other/playground.md). You need the UsageView permission to access the dashboard, which is granted to Developer, Billing, Admin, Owner, and Primary Owner roles. To pull the same daily per-user metrics programmatically, use the [Claude Code Analytics API](../04-API-Reference/Guides/build-with-claude-claude-code-analytics-api.md) with an Admin API key.
+API customers using the Claude Console can access analytics at [platform.claude.com/claude-code](../04-API-Reference/Other/playground.md). You need the UsageView permission to access the dashboard. The Developer, Billing, Admin, Owner, and Primary Owner roles have this permission. To pull daily per-user metrics programmatically, use the [Claude Code Analytics API](../04-API-Reference/Guides/build-with-claude-claude-code-analytics-api.md) with an Admin API key.
 
 Contribution metrics with GitHub integration are not currently available for API customers. The Console dashboard shows usage and spend metrics only.
 
 The Console dashboard displays:
 
-- **Lines of code accepted**: total lines of code written by Claude Code that users have accepted in their sessions. This excludes rejected suggestions and does not track subsequent deletions.
+- **Lines of code accepted**: total lines of code that Claude Code’s Edit and Write tools added or removed in accepted edits. This excludes rejected suggestions, and lines deleted later don’t reduce the total.
 - **Suggestion accept rate**: percentage of times users accept code editing tool usage, including Edit, Write, and NotebookEdit tools.
-- **Activity**: daily active users and sessions shown on a chart.
-- **Spend**: daily API costs in dollars alongside user count.
+- **Active users** and **Sessions**: daily counts of active users and Claude Code sessions.
+- **Spend**: daily API costs in dollars.
 
 
 [​](#view-team-insights)
 
 View team insights
 
-The team insights table shows per-user metrics:
+The team insights table shows these per-user columns for the date range you select at the top of the dashboard, by default the last 30 days:
 
-- **Members**: all users who have authenticated to Claude Code. API key users display by key identifier, OAuth users display by email address.
-- **Spend this month**: per-user total API costs for the current month.
-- **Lines this month**: per-user total of accepted code lines for the current month.
+- **Members**: users and API keys with reported Claude Code usage in that range. API key users display by key name, and OAuth users by email address.
+- **Spend**: per-user total API costs.
+- **Lines accepted**: per-user total of lines that the Edit and Write tools added or removed in accepted edits.
 
-Spend figures in the Console dashboard are estimates for analytics purposes. For actual costs, refer to your billing page.
+Spend figures in the Console dashboard are estimates for analytics purposes. For actual costs, refer to the [Cost page](../04-API-Reference/Other/playground.md).
 
 
 [​](#related-resources)

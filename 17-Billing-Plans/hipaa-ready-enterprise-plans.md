@@ -2,7 +2,7 @@
 title: "HIPAA-ready Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13296973-hipaa-ready-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:00Z"
+fetched_at: "2026-11-09T06:25:55Z"
 tags: ["api", "billing", "enterprise"]
 ---
 
@@ -59,7 +59,7 @@ Eligible Enterprise organizations can enable HIPAA directly from organization se
 
 ### Eligibility
 
-You can enable HIPAA from organization settings if your organization is on an Enterprise plan. Team plans and individual plans (Free, Pro, and Max) can't enable HIPAA.
+You can enable HIPAA from organization settings if your organization is on an Enterprise plan. Team plans and individual plans (Free, Pro, Max, and Ultra) can't enable HIPAA.
 
 Only the **Primary Owner** of the organization can accept the BAA and enable HIPAA. Other Owners or Admins can't complete this flow on the org's behalf. If you're an admin but not the Primary Owner of the Enterprise organization, ask your Primary Owner to sign in and complete enablement.
 
@@ -95,7 +95,7 @@ Once enabled, you'll see a checkmark in the **HIPAA Compliance** section of orga
 
 The onboarding modal will guide you through next steps for your team.
 
-For help with the BAA, the Implementation Guide, or post-enablement questions, reach out to your Anthropic account team or **[our support team](../15-Claude-AI-Features/how-to-get-support.md)**.
+For help with the BAA, the Implementation Guide, or post-enablement questions, reach out to your Anthropic account team or **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ------------------------------------------------------------------------
 

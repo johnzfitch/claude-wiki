@@ -154,7 +154,7 @@ Jan 15, 2026
 
 Jan 15, 2026
 
-### [Anthropic Economic Index: New building blocks for understanding AI use](economic-index-primitives.md)
+### [Anthropic Economic Index: New building blocks for understanding AI use](research-economic-index-primitives.md)
 
 Nov 25, 2025
 

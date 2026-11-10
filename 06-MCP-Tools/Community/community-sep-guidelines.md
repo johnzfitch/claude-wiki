@@ -2,11 +2,14 @@
 title: "SEP Guidelines - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/sep-guidelines"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-09-29T06:30:22Z"
+fetched_at: "2026-11-07T06:23:32Z"
+last_modified: "Fri, 06 Nov 2026 21:30:42 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What is a SEP?](#what-is-a-sep)
 - [When to Write a SEP](#when-to-write-a-sep)
@@ -81,7 +84,7 @@ There are four kinds of SEP:
 1.  **Standards Track** - Describes a new feature or implementation for the Model Context Protocol, or an interoperability standard supported outside the core specification.
 2.  **Informational** - Describes a design issue or provides guidelines/information to the community without proposing a new feature.
 3.  **Process** - Describes a process surrounding MCP or proposes a change to a process (like this document).
-4.  **Extensions Track** - Describes a protocol extension. Follows the same review and acceptance process as Standards Track SEPs, but indicates that the proposal is for an extension rather than a protocol addition. See [Creating Extensions](../Extensions/extensions-overview.md#creating-extensions) for the extension lifecycle.
+4.  **Extensions Track** - Describes a protocol extension. Follows the same review and acceptance process as Standards Track SEPs, but indicates that the proposal is for an extension rather than a protocol addition. An accepted Extensions Track SEP moves an extension to Beta, and a second one moves it to Stable. See [Extension Lifecycle](../Extensions/extensions-overview.md#extension-lifecycle) for the stages.
 
 
 [​](#sep-workflow)
@@ -99,8 +102,8 @@ To improve your chances of a SEP being accepted, check alignment with [Core Main
 
 1.  **Discuss with the relevant group**: Bring your idea to the matching [working or interest group](community-working-interest-groups.md) and refine it there. Keep a link to the discussion (a Discord thread, meeting notes, or a GitHub Discussion) so you can include it in the PR description.
 2.  **Draft your SEP** as a markdown file named `0000-your-feature-title.md`, using `0000` as a placeholder. Follow the [SEP format](#sep-format) below.
-3.  **Create a pull request** adding your SEP file to the `seps/` directory in the [specification repository](https://github.com/modelcontextprotocol/modelcontextprotocol). The repository accepts pull requests from collaborators only.
-4.  **Update the SEP number**: Once your PR is created, rename the file using the PR number (e.g., PR \#1850 becomes `1850-your-feature-title.md`) and update the SEP header.
+3.  **Create a pull request** adding your SEP file to the `seps/` directory in the [specification repository](https://github.com/modelcontextprotocol/modelcontextprotocol). Use a title such as `sep: propose task cancellation`, following the [PR title guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md#pull-request-titles). The repository accepts pull requests from collaborators only.
+4.  **Update the SEP number**: Once your PR is created, rename the file using the PR number (e.g., PR \#1850 becomes `1850-your-feature-title.md`) and update the SEP header. Rename the PR title to `sep(SEP-1850): describe the proposal`. A follow-up commit is sufficient; you do not need to amend or force-push. Follow-up PRs about this SEP retain `SEP-1850` as their scope and link to the original SEP in the description.
 5.  **Find a Sponsor**: Tag a Core Maintainer or Maintainer from [the maintainer list](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md). Choose someone whose area relates to your proposal. Tips:
     - Tag 1-2 relevant maintainers, not everyone
     - Share your PR in the relevant Discord channel

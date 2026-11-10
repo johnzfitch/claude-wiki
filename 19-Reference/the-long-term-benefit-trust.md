@@ -2,7 +2,7 @@
 title: "The Long-Term Benefit Trust \\ Anthropic"
 source_url: "https://www.anthropic.com/news/the-long-term-benefit-trust"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:15Z"
+fetched_at: "2026-11-06T06:27:55Z"
 tags: ["news-research"]
 ---
 
@@ -29,9 +29,9 @@ Related articles
 
 - Announcements
 
-  Mar 11, 2026
+  Oct 21, 2026
 
-  [Introducing The Anthropic Institute](the-anthropic-institute.md)
+  [Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust](christopher-stubbs-joins-long-term-benefit-trust.md)
 
 [View more](https://www.anthropic.com/search?topic=leadership)
 
@@ -107,6 +107,6 @@ The Anthropic board chose these initial Trustees after a year-long search and in
 
 Since this page was originally published, there have been several changes to the composition of the Long-Term Benefit Trust.
 
-In December 2023, Jason Matheny stepped down from the Trust to preempt any potential conflicts of interest that might arise with [RAND Corporation's](https://www.rand.org/) policy-related initiatives. Paul Christiano stepped down in April 2024 to take a new role as the Head of AI Safety at the [U.S. AI Safety Institute](https://www.nist.gov/news-events/news/2024/04/us-commerce-secretary-gina-raimondo-announces-expansion-us-ai-safety). In January 2026, Kanika Bahl stepped down to begin a new nonprofit, the [AI Access Initiative](https://www.aiaccessinitiative.org/), and Zach Robinson stepped down to focus on non-profit and philanthropic work.
+As of October 2026, the current Trustees are Neil Buddy Shah (Chair), CEO of the Clinton Health Access Initiative; Richard Fontaine, CEO of the Center for a New American Security; Dr. Ben Bernanke, Distinguished Fellow at the Brookings Institution and former Chair of the Federal Reserve; and Dr. Christopher Stubbs, Samuel C. Moncher Professor of Physics and of Astronomy at Harvard University.
 
-Richard Fontaine, CEO of the Center for a New American Security, joined the LTBT in May 2025; Mariano-Florentino (Tino) Cuéllar, President of the Carnegie Endowment for International Peace, joined in January 2026; and Dr. Ben Bernanke, Distinguished Fellow at the Brookings Institution and former Chair of the Federal Reserve, joined in July 2026.
+Previous Trustees, with the dates they stepped down, are Jason Matheny (December 2023), Paul Christiano (April 2024), Kanika Bahl (January 2026), Zach Robinson (January 2026) and Tino Cuéllar, who stepped down in August 2026 to join Anthropic as Chief Global Affairs Officer.

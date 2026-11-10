@@ -2,7 +2,7 @@
 title: "Enterprise configuration for Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12622667-enterprise-configuration-for-claude-desktop"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:28:56Z"
+fetched_at: "2026-11-09T06:26:16Z"
 tags: ["desktop", "enterprise"]
 ---
 
@@ -10,6 +10,8 @@ tags: ["desktop", "enterprise"]
 
 
 Administrators on Team or Enterprise plans can control Claude Desktop through system policies.
+
+On the Enterprise plan, owners can set several of these controls in Organization settings (beta), with no MDM tool. See **[Manage Claude Desktop from Organization settings](#h_21135034c8)**.
 
 **Note:** Enterprise policy controls at the user-machine level will override the in-app **[allowlist](../16-Mobile-Desktop/enabling-and-using-the-desktop-extension-allowlist.md)**. If you want to use the allowlist, ensure `isDesktopExtensionEnabled` and `isDesktopExtensionDirectoryEnabled` are not set to "false" so the allowlist can populate the available registry.
 
@@ -47,6 +49,28 @@ Deploy configuration settings through your enterprise management solution using 
 ## Enterprise policy options
 
 [TABLE]
+
+------------------------------------------------------------------------
+
+## Manage Claude Desktop from Organization settings (beta)
+
+On the Enterprise plan, owners can set these Claude Desktop controls in Organization settings (beta), with no MDM tool needed, unless you need what an MDM key adds.
+
+- **Turn on “Limit Claude Desktop to allowed organizations (shadow IT)” under “Security” in [Organization settings \> Organization and access](https://claude.ai/admin-settings/organization):** After a member signs in to your organization in Claude Desktop on a computer, the app on that computer blocks personal accounts and other organizations you haven't allowed, starting the next time it opens. To block them before anyone signs in, set `forceLoginOrgUUID` through MDM.
+
+  - **Limitations:** This block isn’t permanent. It ends if a member doesn’t use your organization on that computer for 30 days, and anyone using the computer can remove it. If you allow more than one organization, set the same list of allowed organizations in each organization.
+
+- **Turn off “Auto-updates” in [Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities):** Claude Desktop stops checking for and downloading updates. Users can still update from the app menu, and a downloaded update still installs.
+
+- **Allow workspace folders in [Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities):** Choose “Allow only the folders on the list,” or turn it off to allow none. Mark a folder “Read only” and Claude’s file tools can’t change files there.
+
+  - **Limitations:** “Read only” covers Claude’s file tools only. In the Code tab, commands, MCP servers, and hooks can still change those folders and reach others, and it’s ignored on folders holding Claude Desktop’s own data, such as a home folder. It doesn’t apply over SSH to Windows. Each computer uses its own OS list, and SSH sessions use the list of the computer they start from. WSL and localhost SSH are blocked when folders are limited. Missing folders aren’t created.
+
+- **Turn off “Allow local MCP servers” ([Organization settings \> Plugins \> Connectors](https://claude.ai/admin-settings/connectors)):** Local MCP servers that users add don’t start. Desktop extensions can still run local servers, so also choose “Block all desktop extensions” to stop those.
+
+- **Choose “Block all desktop extensions” ([Organization settings \> Plugins \> Connectors](https://claude.ai/admin-settings/connectors)):** Installed extensions stop working and none can be installed.
+
+If a policy on the computer sets the matching key, the policy wins on that computer, even if it’s less strict. For Auto-updates, `autoUpdaterEnforcementHours` counts too. These settings follow the account, so they don’t apply to a personal account. These settings need Claude Desktop 4.29.0 or later.
 
 ------------------------------------------------------------------------
 

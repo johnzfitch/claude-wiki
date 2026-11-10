@@ -2,57 +2,9 @@
 title: "Prompting Claude Opus 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-10-20T06:40:07Z"
+fetched_at: "2026-11-05T06:37:03Z"
 tags: ["agents", "prompting", "subagents"]
 ---
-
-- [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md)
-
-- [Admin](../04-API-Reference/Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../20-Models/release-notes-overview.md)
-
-[API reference](../04-API-Reference/Endpoints/overview.md)
-
-
-
-
-[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-engineering%2Fprompting-claude-opus-5)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](../04-API-Reference/About/about-claude-use-case-guides-overview.md)[Ticket routing](../04-API-Reference/About/about-claude-use-case-guides-ticket-routing.md)[Customer support agent](../04-API-Reference/About/about-claude-use-case-guides-customer-support-chat.md)[Content moderation](../04-API-Reference/About/about-claude-use-case-guides-content-moderation.md)[Legal summarization](../04-API-Reference/About/about-claude-use-case-guides-legal-summarization.md)[Commerce agent](../04-API-Reference/About/about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../04-API-Reference/Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](../04-API-Reference/About/about-claude-glossary.md)[Additional resources](../04-API-Reference/About/about-claude-additional-resources.md)
-
-[Console](../04-API-Reference/Other/playground.md)
-
-[Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)Prompt engineering
 
 # Prompting Claude Opus 5
 
@@ -66,7 +18,7 @@ Behavioral differences and prompting patterns for Claude Opus 5, covering respon
 
 
 
-This guide covers the prompting patterns specific to Claude Opus 5. For the model's specifications, see [Claude Opus 5](../20-Models/models-opus-5-overview.md). For techniques that apply across all current Claude models, see [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
+This guide covers the prompting patterns specific to Claude Opus 5. For the model’s specifications, see [Claude Opus 5](../20-Models/models-opus-5-overview.md). For techniques that apply across all current Claude models, see [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
 
 Claude Opus 5 is built for complex agentic coding and enterprise work, with particular strengths in long-horizon agentic tasks. It performs well out of the box on existing Claude Opus 4.8 prompts. The following patterns cover the behaviors that most often require tuning.
 
@@ -74,17 +26,17 @@ Claude Opus 5 is built for complex agentic coding and enterprise work, with part
 
 Compared with Claude Opus 4.8, the improvements most relevant to prompting are:
 
-- **Agentic coding:** Claude Opus 5 is strongest on difficult coding tasks: multi-file features, larger refactors, and end-to-end feature work. It completes full tasks rather than leaving stubs or placeholders, and it performs best when given the complete task specification up front and left to run. It also performs well on easier tasks like single-turn edits, where the difference from prior models is smaller.
-- **Code review and bug-finding:** Claude Opus 5 reviews code with high precision and recall: it finds real bugs at a high rate per pass, and its additional findings are mostly real issues rather than false positives. Accuracy holds at lower effort settings, which supports a fast pass at review time and a more thorough pass later. If your review prompt says "only report high-severity issues" or "be conservative," the model may follow that instruction literally and report less; ask it to report everything and filter in a separate pass instead.
-- **Efficiency at lower effort:** `low` and `medium` [effort](../04-API-Reference/Guides/build-with-claude-effort.md) produce strong quality at a fraction of the tokens and latency of higher settings. Start with the default (`high`) and adjust based on your evals: use `low` and `medium` liberally as your primary control for token cost and response time wherever quality holds, and step up to `xhigh` for demanding coding and agentic work. If you carried effort defaults over from a prior model, re-run an effort sweep on your own evals. See [Effort](../04-API-Reference/Guides/build-with-claude-effort.md#recommended-effort-levels-for-claude-opus-5) for the full recommendations.
-- **Vision:** Claude Opus 5 is strong on chart, document, and diagram understanding, and on UI and frontend visual replication. Re-validate any prompt-side vision workarounds you tuned for prior models; they may no longer be needed. Vision performance is strongest when the model has tools to iteratively analyze, crop, and visually verify its work, and tool use is a more cost-effective lever than thinking alone.
+- **Agentic coding:** Claude Opus 5 is strongest on difficult coding tasks: multifile features, larger refactors, and end-to-end feature work. It completes full tasks rather than leaving stubs or placeholders, and it performs best when given the complete task specification up front and left to run. It also performs well on easier tasks such as single-turn edits, where the difference from prior models is smaller.
+- **Code review and bug-finding:** Claude Opus 5 reviews code with high precision and recall: it finds real bugs at a high rate per pass, and its additional findings are mostly real issues rather than false positives. Accuracy holds at lower effort settings, which supports a fast pass at review time and a more thorough pass later. If your review prompt says “only report high-severity issues” or “be conservative,” the model might follow that instruction literally and report less; ask it to report everything and filter in a separate pass instead.
+- **Efficiency at lower effort:** `low` and `medium` [effort](../04-API-Reference/Guides/build-with-claude-effort.md) produce strong quality at a fraction of the tokens and latency of higher settings. Start with the default (`high`) and adjust based on your evals: use `low` and `medium` liberally as your primary control for token cost and response time wherever quality holds, and step up to `xhigh` for demanding coding and agentic work. If you carried effort defaults over from a prior model, re-run an effort sweep on your own evals. See [recommended effort levels](../04-API-Reference/Guides/build-with-claude-effort.md#recommended-effort-levels-for-claude-opus-5) for the full guidance.
+- **Vision:** Claude Opus 5 is strong on chart, document, and diagram understanding, and on UI and frontend visual replication. Re-validate any prompt-side vision workarounds you tuned for prior models; they might no longer be needed. Vision performance is strongest when the model has tools to iteratively analyze, crop, and visually verify its work, and tool use is a more cost-effective lever than thinking alone.
 - **Long-context work:** Claude Opus 5 has a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) as both the default and the maximum, and its instruction following, tool calling, and reasoning stay consistent throughout the window.
-- **Office and document tasks:** Claude Opus 5 generates and works with complex, multi-sheet spreadsheets with non-trivial formulas, and it produces well-structured slide decks. Prompt it with any specific styles or templates it needs to follow.
-- **Multi-agent coordination:** Claude Opus 5 coordinates teams of subagents well, with effective writer-verifier patterns and few cases of agents overwriting each other's work. For cost-sensitive workloads, cap delegation; see [Controlling subagent spawning](#controlling-subagent-spawning).
+- **Office and document tasks:** Claude Opus 5 generates and works with complex, multisheet spreadsheets with non-trivial formulas, and it produces well-structured slide decks. Prompt it with any specific styles or templates it needs to follow.
+- **Multiagent coordination:** Claude Opus 5 coordinates teams of subagents well, with effective writer-verifier patterns and few cases of agents overwriting each other’s work. For cost-sensitive workloads, cap delegation; see [Controlling subagent spawning](#controlling-subagent-spawning).
 
 ## Response length and verbosity
 
-Claude Opus 5's default user-facing responses run longer than prior Opus models'. The [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md) controls how much the model [thinks](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md) rather than how much it says: lowering effort can reduce thinking volume without reliably shortening the visible response. To control response length, prompt for it explicitly.
+Claude Opus 5’s default user-facing responses run longer than prior Opus models’. The [effort parameter](../04-API-Reference/Guides/build-with-claude-effort.md) controls how much the model [thinks](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md) rather than how much it says: lowering effort can reduce thinking volume without reliably shortening the visible response. To control response length, prompt for it explicitly.
 
 A short conciseness instruction is effective. For example, for a user-facing multi-turn product:
 
@@ -106,7 +58,7 @@ Keep outputs reasonably concise.
 
 ## User-facing progress updates
 
-Claude Opus 5 narrates readily during agentic work: it tends to announce what it is about to do, and its per-message output in agentic sessions is often longer than prior models'. It benefits from explicit guidance on how to communicate with the user during a task. To tune narration down, describe the cadence and shape you want:
+Claude Opus 5 narrates readily during agentic work: it tends to announce what it is about to do, and its per-message output in agentic sessions is often longer than prior models’. It benefits from explicit guidance on how to communicate with the user during a task. To tune narration down, describe the cadence and shape you want:
 
 ``` block
 Before your first tool call, say in one sentence what you're about to do. While working, give a brief update only when you find something important or change direction. When you finish, lead with the outcome: your first sentence should answer "what happened" or "what did you find," with supporting detail after it for readers who want it.
@@ -128,9 +80,9 @@ Match the length of written documents to what the task needs: cover the substanc
 
 ## Task scope and over-verification
 
-Claude Opus 5 verifies its own work without being told to. If your prompt contains explicit verification instructions ("include a final verification step for any non-trivial task," "use a subagent to verify"), remove them: instructions like these cause over-verification on Claude Opus 5, and removing them reduces wasted tokens with no loss in quality. The same applies to legacy harness scaffolding that adds separate verification steps.
+Claude Opus 5 verifies its own work without being told to. If your prompt contains explicit verification instructions (“include a final verification step for any non-trivial task,” “use a subagent to verify”), remove them: instructions like these cause over-verification on Claude Opus 5, and removing them reduces wasted tokens with no loss in quality. The same applies to legacy harness scaffolding that adds separate verification steps.
 
-Claude Opus 5 can also expand the scope of a task, adding steps that weren't requested or applying its own judgment about what the task should be. For narrow tasks, constrain scope explicitly:
+Claude Opus 5 can also expand the scope of a task, adding steps that weren’t requested or applying its own judgment about what the task should be. For narrow tasks, constrain scope explicitly:
 
 ``` block
 Deliver what was asked, at the scope intended. Make routine judgment calls yourself, and check in only when different readings of the request would lead to materially different work. If the request seems mistaken or a better approach exists, say so in a sentence and continue with the task as asked rather than quietly narrowing, widening, or transforming it. Finish the whole task, and stop short of actions that are clearly beyond what was asked.
@@ -140,7 +92,7 @@ Deliver what was asked, at the scope intended. Make routine judgment calls yours
 
 ## Controlling subagent spawning
 
-Claude Opus 5 delegates to subagents more readily than prior models. Delegation pays off on genuinely independent, sizeable tracks of work, but it multiplies cost and time when applied to small tasks. If your harness supports subagents, give explicit guidance on which scenarios warrant delegation, or set deterministic caps on how many agents can be launched. For example:
+Claude Opus 5 delegates to subagents more readily than prior models. Delegation is worthwhile for genuinely independent, sizeable tracks of work, but it multiplies cost and time when applied to small tasks. If your harness supports subagents, give explicit guidance on which scenarios warrant delegation, or set deterministic caps on how many agents can be launched. For example:
 
 ```python
 Delegate to a subagent only for large tasks that are genuinely independent and parallelizable, such as a wide multi-file investigation. Do not delegate work you can finish yourself in a handful of tool calls, and do not use subagents to verify or double-check your own work. If one subagent can complete the task, use one rather than several, and keep spawn counts low.
@@ -148,11 +100,11 @@ Delegate to a subagent only for large tasks that are genuinely independent and p
 
 
 
-If your harness is Claude Code or the Claude Agent SDK, the deterministic caps are the `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` and `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` environment variables and the SDK's `max_budget_usd` option. They require Claude Code 2.1.217 or later, so update a pinned SDK before pointing it at Claude Opus 5. Claude Code adds a delegation instruction of its own on Claude Opus 5 only when you use its `claude_code` system prompt preset; with a custom or omitted system prompt, add a delegation instruction such as the example in this section yourself. See [Cap subagent depth, concurrency, and spend](../05-Agent-SDK/agent-sdk-subagents.md#cap-subagent-depth-concurrency-and-spend) in the Agent SDK docs.
+If your harness is Claude Code or the Claude Agent SDK, the deterministic caps are the `CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH` and `CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS` environment variables and the SDK’s `max_budget_usd` option. Older versions of Claude Code don’t have them, so update Claude Code and any pinned SDK before pointing your harness at Claude Opus 5. Claude Code adds a delegation instruction of its own on Claude Opus 5 only when you use its `claude_code` system prompt preset; with a custom or omitted system prompt, add a delegation instruction such as the example in this section yourself. See [Cap subagent depth, concurrency, and spend](../05-Agent-SDK/agent-sdk-subagents.md#cap-subagent-depth-concurrency-and-spend) in the Agent SDK docs.
 
 ## Self-correction
 
-Claude Opus 5 catches and fixes its own mistakes well without prompting. Avoid instructing re-checks it already performs ("double-check your answer," "re-verify before responding"); like verification instructions, these compound with the model's own behavior and add cost without improving results.
+Claude Opus 5 catches and fixes its own mistakes well without prompting. Avoid instructing re-checks it already performs (“double-check your answer,” “re-verify before responding”); like verification instructions, these compound with the model’s own behavior and add cost without improving results.
 
 The model also narrates corrections to its earlier statements more than prior models do, which can be undesirable in user-facing products. To limit correction narration to corrections that matter:
 
@@ -164,7 +116,7 @@ Only correct an earlier statement when the error would change the user's code, c
 
 ## Running with thinking disabled
 
-Claude Opus 5 runs with [thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) on by default, and thinking can be disabled only at [effort](../04-API-Reference/Guides/build-with-claude-effort.md) `high` or below. A request that combines `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. With thinking disabled, two artifacts can occasionally appear in the model's visible output. The primary mitigation for both is to keep thinking enabled and control token cost with lower effort levels instead of disabling thinking: for most tasks, thinking enabled at `low` effort performs better than thinking disabled at similar cost.
+Claude Opus 5 runs with [thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) on by default, and thinking can be disabled only at [effort](../04-API-Reference/Guides/build-with-claude-effort.md) `high` or below. A request that combines `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error. With thinking disabled, two artifacts can occasionally appear in the model’s visible output. The primary mitigation for both is to keep thinking enabled and control token cost with lower effort levels instead of disabling thinking: for most tasks, thinking enabled at `low` effort performs better than thinking disabled at similar cost.
 
 **Tool calls as text.** With thinking disabled, the model occasionally writes a tool call into its user-facing text instead of emitting a structured `tool_use` block. The turn completes normally and the call never runs, and in agentic loops the leaked text stays in the conversation history, so later turns are affected as well. This is most common on tool-heavy workloads such as search.
 
@@ -182,4 +134,4 @@ Instructions that call out thinking tags by name are less effective than the gen
 
 ## Reasoning in the response
 
-Prompts, skills, and tool descriptions that ask Claude Opus 5 to write out its thinking or reasoning, verbatim or in a fixed format, may be declined with the `reasoning_extraction` [refusal category](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response). Ask for a short explanation of the answer or a summary of the actions taken instead, and, if you need the reasoning, keep thinking on and read the [summarized thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#summarized-thinking) blocks (`display: "summarized"`). See [Keep reasoning in thinking blocks](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
+Prompts, skills, and tool descriptions that ask Claude Opus 5 to write its thinking or reasoning, verbatim or in a fixed format, might be declined with the `reasoning_extraction` [refusal category](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response). Ask for a short explanation of the answer or a summary of the actions taken instead, and, if you need the reasoning, keep thinking on and read the [summarized thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#summarized-thinking) blocks (`display: "summarized"`). See [Keep reasoning in thinking blocks](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).

@@ -252,7 +252,7 @@ cURL
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
 3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
-5.  [Cost](http-beta-organization-analytics-cost.md)
+5.  [Cost](platform-claude-com-http-beta-organization-analytics-cost.md)
 
 # Get Per-User Cost
 

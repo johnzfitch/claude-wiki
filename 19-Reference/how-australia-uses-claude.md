@@ -2,7 +2,7 @@
 title: "How Australia uses Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-australia-uses-claude"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:26Z"
+fetched_at: "2026-10-24T06:26:35Z"
 tags: ["news-research"]
 ---
 
@@ -91,7 +91,7 @@ Where Australia is more distinctive is in the breadth of what Claude is used for
 
 Within Australia, adoption is concentrated in New South Wales and Victoria, and the state-level variation tracks workforce composition rather than income per capita—consistent with the pattern across US states but in contrast to the income gradient across countries.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

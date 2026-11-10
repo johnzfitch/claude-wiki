@@ -2,11 +2,14 @@
 title: "Cancellation - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/cancellation"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:10Z"
+fetched_at: "2026-10-31T06:25:25Z"
+last_modified: "Fri, 30 Oct 2026 22:08:22 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Cancellation Flow](#cancellation-flow)
 - [Behavior Requirements](#behavior-requirements)
@@ -54,7 +57,7 @@ Behavior Requirements
     - Were previously issued in the same direction
     - Are believed to still be in-progress
 2.  The `initialize` request **MUST NOT** be cancelled by clients
-3.  For [task-augmented requests](https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks), the `tasks/cancel` request **MUST** be used instead of the `notifications/cancelled` notification. Tasks have their own dedicated cancellation mechanism that returns the final task state.
+3.  For [task-augmented requests](2025-11-25-basic-utilities-tasks.md), the `tasks/cancel` request **MUST** be used instead of the `notifications/cancelled` notification. Tasks have their own dedicated cancellation mechanism that returns the final task state.
 4.  Receivers of cancellation notifications **SHOULD**:
     - Stop processing the cancelled request
     - Free associated resources

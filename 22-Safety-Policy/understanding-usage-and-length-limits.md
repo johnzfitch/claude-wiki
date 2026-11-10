@@ -2,30 +2,58 @@
 title: "How do usage and length limits work? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:28:51Z"
+fetched_at: "2026-11-09T06:25:36Z"
 tags: ["safety"]
 ---
 
 # How do usage and length limits work?
 
 
-When working with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively.
+When working with Claude, you may encounter two different types of limits that work in distinct ways: **usage limits** and **length limits**. Understanding the difference between these can help you use Claude more effectively. For more information on your plan’s usage, refer to the following resources.
+
+- **[Free Claude](../01-Getting-Started/getting-started-with-claude.md#h_57262af5ae)**
+
+- **[Pro plan](../17-Billing-Plans/what-is-the-pro-plan.md#h_62ccc00135)**
+
+- **[Max plan](../17-Billing-Plans/what-is-the-max-plan.md#h_cfd2904008)**
+
+- **[Ultra plan](../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**
+
+- **[Team plan](../17-Billing-Plans/what-is-the-team-plan.md#h_b59203dff2)**
+
+- **[Enterprise plan](../17-Billing-Plans/what-is-the-enterprise-plan.md#h_8294bce903)**
 
 ## What are usage limits?
 
 Usage limits control how much you can interact with Claude over a specific time period. Think of this as your "conversation budget" that determines how many messages you can send to Claude, or how long you can work with Claude Code, before needing to wait for your limit to reset. Paid plans have two types of usage limits: a session limit that resets every five hours, and weekly limits that reset once every week.
 
-Your usage is affected by several factors, including the length and complexity of your conversations, the features you use, which Claude model you're chatting with, and the effort level you've selected. Different subscription plans (Pro, Max, Team, etc.) have different usage allowances, with paid plans offering higher limits.
+Your usage is affected by several factors, including the length and complexity of your conversations, the features you use, which Claude model you're chatting with, and the effort level you've selected. Different subscription plans (Pro, Max, Ultra, Team, etc.) have different usage allowances, with paid plans offering higher limits.
 
 Note that your usage of all different Claude product surfaces (claude.ai, Claude Code, Claude Desktop) counts towards the same usage limit.
 
-Learn more about **[changing the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings-claude-help-center.md)**.
+Learn more about **[changing model, effort, and thinking settings](https://support.claude.com/en/articles/8664678)**.
+
+### How does the five-hour limit work?
+
+The five-hour limit controls how much you can use Claude within a five-hour period. The period starts when you send your first message, and your limit resets in full five hours later. If you reach the limit before then, you can use Claude again once it resets.
+
+You can see how much you've used and the time remaining under Current session in **[Settings \> Usage](https://claude.ai/settings/usage)**.
+
+Verified Ultra accounts don't have a five-hour limit. Learn more about **[verified Ultra accounts](../17-Billing-Plans/what-is-the-ultra-plan.md#h_ff4fcea367)**.
+
+### How do weekly limits work?
+
+Weekly limits apply across all models, and some plans also have a separate weekly limit for Fable. Weekly limits reset at a fixed time each week that is assigned to your account. Your reset day and time stay the same regardless of when you start using Claude or when your subscription begins, and you receive your full weekly allowance each cycle. You can see your next reset time in **[Settings \> Usage](https://claude.ai/settings/usage)**.
+
+### Can usage limits change?
+
+Yes. We may adjust usage limits at our discretion to manage capacity and ensure fair access to all users. For example, we may limit your usage with weekly and monthly caps or model and feature usage. We don't guarantee uninterrupted service.
 
 ## How can I get unlimited usage?
 
 There are a couple of different ways to increase your usage depending on your plan:
 
-- If you're using a paid plan, including Pro, Max, Team, or seat-based Enterprise plans, see these articles for details about purchasing usage credits:
+- If you're using a paid plan, including Pro, Max, Ultra, Team, or seat-based Enterprise plans, see these articles for details about purchasing usage credits:
 
   - **[Manage usage credits for paid Claude plans](https://support.claude.com/en/articles/12429409-)**
 
@@ -61,7 +89,7 @@ While you can't increase the fixed context window size for your plan, you can us
 
 - **Remove unused project files:** Regularly clean up files you're no longer actively using in your projects.
 
-- **Toggle extended thinking off:** Turn off this feature when you don't need Claude's enhanced reasoning for a particular task.
+- **Turn thinking off:** On models that offer a thinking toggle, turn it off when you don’t need Claude’s enhanced reasoning. On models where thinking is always on, such as Claude Opus 5.5 and Sonnet 5.5, choose a lower effort level instead.
 
 - **Lower the effort level:** Choose a lower effort level for routine tasks that don't need Claude's most thorough responses. Higher effort uses more tokens.
 

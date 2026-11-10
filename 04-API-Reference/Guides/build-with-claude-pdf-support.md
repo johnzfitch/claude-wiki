@@ -2,93 +2,9 @@
 title: "PDF support - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/pdf-support"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-20T06:39:20Z"
+fetched_at: "2026-11-05T06:36:05Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fpdf-support)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Working with files
-
-PDF support
-
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
-
-Eligible
-
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 # PDF support
 
@@ -102,24 +18,35 @@ Process PDFs with Claude: extract text, analyze charts, and understand visual co
 
 
 
+PDF support
+
+[APIs](#feature-availability)  
+Messages APIAlways onManaged AgentsAlways on
+
+[Cloud platforms](#availability-feature-support)  
+All platforms
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
+
 You can ask Claude about any text, pictures, charts, and tables in PDFs you provide. Some sample use cases:
 
 - Analyzing financial reports and understanding charts/tables
 - Extracting key information from legal documents
-- Assisting with document translation
+- Helping with document translation
 - Converting document information into structured formats
 
-## Before you begin
+## Before you start
 
 ### Check PDF requirements
 
 Claude works with any standard PDF. Ensure your request size meets these requirements:
 
-| Requirement               | Limit                                                                   |
-|---------------------------|-------------------------------------------------------------------------|
-| Maximum request size      | 32 MB ([varies by platform](../Endpoints/overview.md#request-size-limits)) |
-| Maximum pages per request | 600 (100 when the request's context window is under 1M tokens)          |
-| Format                    | Standard PDF (no passwords/encryption)                                  |
+| Requirement | Limit |
+|----|----|
+| Maximum request size | 128 MB on the first-party Claude API (varies by platform; see [request size limits](../Endpoints/overview.md#request-size-limits)) |
+| Maximum pages per request | 600 (100 when the request’s context window is under 1M tokens) |
+| Format | Standard PDF (no passwords/encryption) |
 
 Both limits are on the entire request payload, including any other content sent alongside PDFs. For large PDFs, consider uploading with the [Files API](build-with-claude-files.md) and referencing by `file_id` to keep request payloads small.
 
@@ -127,53 +54,15 @@ Both limits are on the entire request payload, including any other content sent 
 
 Dense PDFs (many small-font pages, complex tables, or heavy graphics) can fill the context window before reaching the page limit. Requests with large PDFs can also fail before reaching the page limit, even when using the Files API. Try splitting the document into sections; for large files, because each page is processed as an image, downsampling embedded images can also help.
 
-Because PDF support relies on Claude's vision capabilities, it is subject to the same [limitations and considerations](build-with-claude-vision.md#limitations) as other vision tasks.
+Because PDF support relies on Claude’s vision capabilities, it is subject to the same [limitations and considerations](build-with-claude-vision.md#limitations) as other vision tasks.
 
 ### Supported platforms and models
 
-All [active models](../../20-Models/about-claude-models-overview.md) support PDF processing. For PDF support through Amazon Bedrock's Converse API, see [Amazon Bedrock PDF support](#amazon-bedrock-pdf-support).
-
-### Amazon Bedrock PDF support
-
-When using PDF support through the Converse API, part of [Claude on Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md), there are two distinct document processing modes:
+All [active models](../../20-Models/about-claude-models-overview.md) support PDF processing.
 
 
 
-**Important:** To access Claude's full visual PDF understanding capabilities in the Converse API, you must enable citations. Without citations enabled, the API falls back to basic text extraction only. Learn more about [working with citations](build-with-claude-citations.md).
-
-#### Document processing modes
-
-1.  **Converse Document Chat** (Original mode - Text extraction only)
-
-    - Provides basic text extraction from PDFs
-    - Cannot analyze images, charts, or visual layouts within PDFs
-    - Uses approximately 1,000 tokens for a 3-page PDF
-    - Automatically used when citations are not enabled
-
-2.  **Claude PDF Chat** (New mode - Full visual understanding)
-
-    - Provides complete visual analysis of PDFs
-    - Can understand and analyze charts, graphs, images, and visual layouts
-    - Processes each page as both text and image for comprehensive understanding
-    - Uses approximately 7,000 tokens for a 3-page PDF
-    - **Requires citations to be enabled** in the Converse API
-
-#### Key limitations
-
-- **Converse API:** Visual PDF analysis requires citations to be enabled. There is currently no option to use visual analysis without citations (unlike the InvokeModel API).
-- **InvokeModel API:** Provides full control over PDF processing without forced citations.
-
-#### Common issues
-
-If Claude isn't seeing images or charts in your PDFs when using the Converse API, you likely need to enable the citations flag. Without it, Converse falls back to basic text extraction only.
-
-
-
-This is a known constraint with the Converse API. For applications that require visual PDF analysis without citations, consider using the InvokeModel API instead.
-
-
-
-Plain text files such as .txt, .csv, or .md can be used directly in document blocks: upload them to the Files API with MIME type `text/plain` and reference them by `file_id`. Binary formats such as .xlsx or .docx are not supported in document blocks and must be converted to text or PDF first. See [Working with other file formats](build-with-claude-files.md#working-with-other-file-formats).
+Plain text files such as .txt, .csv, or .md can be used directly in document blocks: upload them to the Files API with MIME type `text/plain` and reference them by `file_id`. Binary formats such as .xlsx or .docx are not supported in document blocks, so convert them to text or PDF first. See [Working with other file formats](build-with-claude-files.md#working-with-other-file-formats).
 
 ## Process PDFs with Claude
 
@@ -187,7 +76,7 @@ Start with a simple example using the Messages API. You can provide PDFs to Clau
 
 
 
-On Amazon Bedrock and Google Cloud, only base64-encoded sources are currently available. On Microsoft Foundry, the Files API is not supported for deployments hosted on Azure.
+On Claude Models on Google Cloud (Google managed) and Amazon Bedrock, only base64-encoded sources are available. On Microsoft Foundry, the Files API is not supported for deployments hosted on Azure.
 
 #### Option 1: URL-based PDF document
 
@@ -240,7 +129,7 @@ message = client.messages.create(
 print(message.content)
 ```
 
-The response returns Claude's analysis as text blocks in `content`, with token consumption in `usage`:
+The response returns Claude’s analysis as text blocks in `content`, with token consumption in `usage`:
 
 Output
 
@@ -268,7 +157,7 @@ Output
 
 #### Option 2: Base64-encoded PDF document
 
-If you need to send PDFs from your local system or when a URL isn't available:
+If you need to send PDFs from your local system or when a URL isn’t available:
 
 cURL
 
@@ -334,7 +223,7 @@ print(message.content)
 
 #### Option 3: Files API
 
-For PDFs you'll use repeatedly, or when you want to avoid encoding overhead, use the [Files API](build-with-claude-files.md):
+For PDFs you’ll use repeatedly, or when you want to avoid encoding overhead, use the [Files API](build-with-claude-files.md):
 
 cURL
 
@@ -395,30 +284,30 @@ When you send a PDF to Claude, the following steps occur:
     ### The system extracts the contents of the document.
 
     - The system converts each page of the document into an image.
-    - The text from each page is extracted and provided alongside each page's image.
+    - The text from each page is extracted and provided alongside each page’s image.
 
 2.  2
 
-    ### Claude analyzes both the text and images to better understand the document.
+    ### Claude analyzes both the text and images.
 
     - Documents are provided as a combination of text and images for analysis.
     - This allows users to ask for insights on visual elements of a PDF, such as charts, diagrams, and other non-textual content.
 
 3.  3
 
-    ### Claude responds, referencing the PDF's contents if relevant.
+    ### Claude responds, referencing the PDF’s contents if relevant.
 
     Claude can reference both textual and visual content when it responds. You can further improve performance by integrating PDF support with:
 
     - [Use prompt caching](#use-prompt-caching): To improve performance for repeated analysis.
-    - [Process document batches](#process-document-batches): For high-volume document processing.
+    - [Process document batches](#process-document-batches): To process documents at high volume.
     - [Tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md): To extract specific information from documents for use as tool inputs.
 
 ### Estimate your costs
 
 The token count of a PDF file depends on the total text extracted from the document and the number of pages:
 
-- Text token costs: Each page typically uses 1,500–3,000 tokens per page depending on content density. Standard API pricing applies with no additional PDF fees.
+- Text token costs: Each page typically uses 1,500–3,000 tokens depending on content density. Standard API pricing applies with no additional PDF fees.
 - Image token costs: Because each page is converted into an image, the same [image-based cost calculations](build-with-claude-vision.md#evaluate-image-size) are applied.
 
 You can use [token counting](build-with-claude-token-counting.md) to estimate costs for your specific PDFs.
@@ -613,7 +502,7 @@ Batches process asynchronously. To check progress and retrieve results once proc
 
 [Vision](build-with-claude-vision.md)
 
-Claude's vision capabilities allow it to understand and analyze images, opening up exciting possibilities for multimodal interaction.
+Claude’s vision capabilities allow it to process and analyze images, opening up exciting possibilities for multimodal interaction.
 
 
 
@@ -627,11 +516,75 @@ Explore practical examples of PDF processing in the Claude Cookbook recipe.
 
 See complete API documentation for PDF support.
 
-## Compatibility
+## Availability
 
-Supported platforms  
-- Claude API
-- Claude Platform on AWS
-- Amazon Bedrock
-- Google Cloud
-- Microsoft Foundry
+PDF support is available on every model and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+[Messages API](build-with-claude-working-with-messages.md)
+
+Usage
+
+Always on
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+
+StatusAvailable
+
+Cloud platforms
+
+- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+
+`file_id` sources need a Hosted on Anthropic deployment.
+
+StatusAvailable
+
+Cloud platforms
+
+- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+
+Base64 sources only.
+
+StatusAvailable
+
+Cloud platforms
+
+- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
+- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+
+Base64 sources only.
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+Usage
+
+Always on
+
+StatusAvailable
+
+Cloud platforms
+
+- All supported platforms
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages`
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+HIPAAEligible
+
+HIPAA eligibility applies to PDFs sent inline through the Messages API, not through the Files API.

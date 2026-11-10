@@ -2,230 +2,9 @@
 title: "Service tiers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/service-tiers"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:39:57Z"
+fetched_at: "2026-11-05T06:36:20Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fservice-tiers)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-[API reference](overview.md)Support & configuration
 
 # Service tiers
 
@@ -233,11 +12,27 @@ Claude Code
 
 
 
-Different tiers of service allow you to balance availability, performance, and predictable costs based on your application's needs.
+Different tiers of service allow you to balance availability, performance, and predictable costs based on your application’s needs.
 
 Copy page
 
 
+
+Service tiers
+
+Feature of  
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+[Status](#availability-feature-support)  
+Legacy
+
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsNot available
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailable
+
+Service tiers are legacy
 
 
 
@@ -255,7 +50,7 @@ The standard tier is the default service tier for all API requests. The API prio
 
 ## Priority Tier
 
-The API prioritizes requests in this tier over all other requests. This prioritization helps minimize ["server overloaded" errors](errors.md#http-errors), even during peak times.
+The API prioritizes requests in this tier over all other requests. This prioritization helps minimize [“server overloaded” errors](errors.md#http-errors), even during peak times.
 
 For more information, see [Existing Priority Tier commitments](#existing-priority-tier-commitments).
 
@@ -271,8 +66,8 @@ Anthropic counts usage against Priority Tier capacity as follows:
 **Input tokens**
 
 - Cache reads as 0.1 tokens per token read from the cache
-- Cache writes as 1.25 tokens per token written to the cache with a 5 minute TTL
-- Cache writes as 2.00 tokens per token written to the cache with a 1 hour TTL
+- Cache writes as 1.25 tokens per token written to the cache with a 5-minute TTL
+- Cache writes as 2.00 tokens per token written to the cache with a 1-hour TTL
 - For [US-only inference](../Other/manage-claude-data-residency.md) (`inference_geo: "us"`) requests on Claude 4.6 and later models, input tokens are 1.1 tokens per token
 - All other input tokens are 1 token per token
 
@@ -324,7 +119,7 @@ message = client.messages.create(
     model="claude-opus-4-8",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Hello, Claude!"}],
-    service_tier="auto",  # Automatically use Priority Tier when available, fallback to standard
+    service_tier="auto",  # Automatically use Priority Tier when available, fall back to standard
 )
 print(message.usage.service_tier)
 ```
@@ -332,7 +127,7 @@ print(message.usage.service_tier)
 The `service_tier` parameter accepts the following values:
 
 - `"auto"` (default) - Uses the Priority Tier capacity if available, falling back to your other capacity if not
-- `"standard_only"` - Only use standard tier capacity, useful if you don't want to use your Priority Tier capacity
+- `"standard_only"` - Uses only standard tier capacity, useful if you don’t want to use your Priority Tier capacity
 
 The response `usage` object also includes the service tier assigned to the request:
 
@@ -376,10 +171,32 @@ A Priority Tier commitment consists of:
 - A commitment duration (1, 3, 6, or 12 months)
 - A specific model version
 
-Priority Tier targets 99.5% uptime with prioritized computational resources. Requests beyond your committed capacity automatically fall back to standard tier.
+Priority Tier targets 99.5 percent uptime with prioritized computational resources. Requests beyond your committed capacity automatically fall back to standard tier.
 
 ### Supported models
 
 Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Haiku 5.5, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Sonnet 5.
 
 Check the [Models overview](../../20-Models/about-claude-models-overview.md) for more details on available models.
+
+## Availability
+
+Service tiers are available on every model.
+
+### API support
+
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+Usage
+
+Needs a Priority Tier commitment, which is no longer sold. With one, requests use Priority Tier by default; set `service_tier` to `"standard_only"` to use only standard capacity.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+StatusNot available

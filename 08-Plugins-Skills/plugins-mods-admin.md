@@ -2,15 +2,18 @@
 title: "Manage mods for your organization - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/admin"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-20T06:36:45Z"
+fetched_at: "2026-10-27T06:26:40Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
 
+Back to top
+
 - [Stop user-installed mods from loading](#stop-user-installed-mods-from-loading)
 - [Know what happens by default](#know-what-happens-by-default)
   - [Know which controls still apply](#know-which-controls-still-apply)
+  - [Know which hooks of a user’s mod don’t run](#hooks-the-guard-passes-over)
 - [Decide whether to leave mods on](#decide-whether-to-leave-mods-on)
   - [Review what a mod can do](#review-what-a-mod-can-do)
 - [Choose how much to allow](#choose-how-much-to-allow)
@@ -120,17 +123,53 @@ Mods don’t replace the controls you already have:
 None of these controls sandboxes a mod. A mod you allow runs as the user, with the user’s access to files, processes, and the network.
 
 
+[​](#hooks-the-guard-passes-over)
+
+Know which hooks of a user’s mod don’t run
+
+Where the [built-in guard](#know-what-happens-by-default) loads, a hook that a user’s mod registers on one of these events never runs, and `/plugin` tells that user so in a note. In the [`session.append`](plugins-mods-reference.md#session) rows, `door` is the kind of stored row the hook is filtered to.
+
+| Hook on | What the event is |
+|:---|:---|
+| [`classic.<Event>`](plugins-mods-events.md#hook-the-settings-hook-events), such as `classic.Stop` | A [settings hook event](../07-Hooks/hooks.md#hook-events) |
+| [`prompt.compose`](plugins-mods-reference.md#prompts-and-what-claude-reads) | The system prompt’s list of sections |
+| `prompt.section` | One section of the system prompt |
+| `prompt.context` | The context sent with a conversation’s first message |
+| `prompt.attachment` | A message Claude Code adds for Claude, such as a reminder |
+| `skill.prompt` | A skill’s text as it’s expanded for Claude |
+| `attribution.text` | Commit or pull request attribution text |
+| [`session.compact`](plugins-mods-reference.md#session) | A compaction of the conversation |
+| `settings.read` | A read of settings, such as a mod’s `$.settings.read` call |
+| `session.append{door=attachment}` | The stored row for a message Claude Code adds for Claude |
+| `session.append{door=hook-context}` | The stored row for context from a settings hook |
+| `session.append{door=compaction}` | The stored rows for a compaction’s summary and boundary |
+
+The guard also passes over a user’s hooks in some other cases, such as the descriptions of your organization’s tools, on [`tool.describe`](plugins-mods-reference.md#tools), and the stored row for a skill’s text. `/plugin` shows no note for those. If a hook on another event does nothing, see [Find out why a mod does nothing](plugins-mods-troubleshoot.md#find-out-why-a-mod-does-nothing). The note appears in the plugin’s details and in the **Errors** tab of `/plugin`. It requires Claude Code v2.1.299 or later. It names each hook from the table as the mod registered it, as in this example:
+
+```python
+Its hooks on classic.Stop, prompt.section do not run here: where an organization manages Claude Code, these events pass over the plugins you install
+Only a plugin that counts as your organization's own runs hooks on these events. An administrator sets that up in managed settings
+```
+
+To let these hooks run, change managed settings in one of two ways:
+
+- **Run the mod as your organization’s**: [install the mod so that it counts as yours](#install-your-organizations-mods). Its hooks on these events then run, and the guard stays loaded for every other mod. The mod turns on for everyone who receives these settings, and it has to sit in a directory you place on each machine. If you list it in `prependPlugins`, keep `sec-default@builtin` in the list.
+- **Remove the guard**: leave `sec-default@builtin` out of `prependPlugins`. An empty list, `"prependPlugins": []`, is enough. You lose the whole guard, not only these events. A user’s mod can then do what [the guard otherwise stops it from doing](#know-what-happens-by-default), and [the guard’s options](#set-options-on-the-built-in-guard) don’t apply.
+
+If you deliver a list without the guard through [server-managed settings](../13-Enterprise-Admin/server-managed-settings.md#fetch-and-caching-behavior), the guard stays loaded until the server confirms the settings for the session. To confirm either change on a machine that runs v2.1.299 or later, open `/plugin` in a session there and check that the note is gone. A `session.append` hook with no `door` filter still runs and gets no note, but the stored rows in the table don’t reach it.
+
+
 [​](#decide-whether-to-leave-mods-on)
 
 Decide whether to leave mods on
 
 A mod can do more than the other parts of a plugin because it runs inside Claude Code. It sees every prompt and tool call, can change them, and can allow or deny a tool call before a permission prompt appears. What a user can load as a mod depends on the plugin controls you already have:
 
-| Your plugin controls today                         | What a user can load as a mod                                                                                                                                                                                                             |
-|:---------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| None                                               | A mod from any marketplace, from any directory with `--plugin-dir`, or that Claude writes during a session                                                                                                                                |
-| A marketplace allowlist                            | A mod from the marketplaces you allow, or from any directory with `--plugin-dir`. A mod Claude writes during a session loads only when the allowlist [includes `skills-dir`](plugins-org.md#keep-skills-directory-plugins-loading). |
-| A marketplace allowlist and `disableSideloadFlags` | A mod from the marketplaces you allow                                                                                                                                                                                                     |
+| Your plugin controls today | What a user can load as a mod |
+|:---|:---|
+| None | A mod from any marketplace, from any directory with `--plugin-dir`, or that Claude writes during a session |
+| A marketplace allowlist | A mod from the marketplaces you allow, or from any directory with `--plugin-dir`. A mod Claude writes during a session loads only when the allowlist [includes `skills-dir`](plugins-org.md#keep-skills-directory-plugins-loading). |
+| A marketplace allowlist and `disableSideloadFlags` | A mod from the marketplaces you allow |
 
 [Manage plugins for your organization](plugins-org.md) lists the ways a plugin loads and the setting that controls each. To check the mods in a marketplace before your users install them, see [Review what a mod can do](#review-what-a-mod-can-do). To keep users’ mods out until you’ve done that, see [Stop user-installed mods from loading](#stop-user-installed-mods-from-loading).
 
@@ -154,19 +193,19 @@ The `hooks:` and `calls:` lines in the output describe the mod’s code:
 
 The `hooks:` line lists the events the mod receives. The `calls:` line lists the mods API methods its code calls. The [mods API](plugins-mods-api.md), written `$` in a mod’s code, is how a mod reaches files, processes, and the network. Claude Code refuses to load a mod that uses the mods API in a way this command can’t read. Look at the `calls:` line for these:
 
-| Call                               | What it means                                                                                                                                                                               |
-|:-----------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$.fs.read`, `$.fs.write`          | Reads or writes files anywhere the user can                                                                                                                                                 |
-| `$.process.run`, `$.process.spawn` | Starts programs as the user                                                                                                                                                                 |
-| `$.http.fetch`                     | Makes network requests                                                                                                                                                                      |
-| `$.env.get`, `$.settings.read`     | Reads environment variables and settings, which can hold API keys. An `env reads:` line in the output names each variable.                                                                  |
-| `$.env.set`                        | Sets an environment variable for Claude Code and for every command and MCP server it starts afterward, which can change what those programs run. An `env writes:` line names each variable. |
-| `$.mcp.call`                       | Calls a tool on a connected MCP server, under the session’s permission rules                                                                                                                |
-| `$.model.complete`                 | Uses the user’s plan or API key for model calls                                                                                                                                             |
-| `$.prompt.submit`                  | Submits a prompt, and can send it as the user’s own words                                                                                                                                   |
-| `$.session.send`                   | Sends a message that another session’s, subagent’s, or [teammate’s](../09-Agents-Patterns/agent-teams.md) Claude reads                                                                                      |
+| Call | What it means |
+|:---|:---|
+| `$.fs.read`, `$.fs.write` | Reads or writes files anywhere the user can |
+| `$.process.run`, `$.process.spawn` | Starts programs as the user |
+| `$.http.fetch` | Makes network requests |
+| `$.env.get`, `$.settings.read` | Reads environment variables and settings, which can hold API keys. An `env reads:` line in the output names each variable. |
+| `$.env.set` | Sets an environment variable for Claude Code and for every command and MCP server it starts afterward, which can change what those programs run. An `env writes:` line names each variable. |
+| `$.mcp.call` | Calls a tool on a connected MCP server, under the session’s permission rules |
+| `$.model.complete` | Uses the user’s plan or API key for model calls |
+| `$.prompt.submit` | Submits a prompt, and can send it as the user’s own words |
+| `$.session.send` | Sends a message that another session’s, subagent’s, or [teammate’s](../09-Agents-Patterns/agent-teams.md) Claude reads |
 
-In the `hooks:` line, [`tool.call`](plugins-mods-reference.md#tools) and [`prompt.submit`](plugins-mods-reference.md#prompts-and-what-claude-reads) mean the mod sees every tool call and every prompt, and can change them. [`session.append`](plugins-mods-reference.md#session) means the mod can rewrite each row of the conversation before it’s stored. [`ui.render{component=AskUserQuestion}`](plugins-mods-interface.md#change-what-claude-code-already-draws) means the mod can redraw the dialog Claude uses to ask the user a question. `tool.check` means the mod can approve or deny a tool call before a permission prompt appears. [Know what happens by default](#know-what-happens-by-default) lists which of your rules and hooks take precedence over its answer.
+In the `hooks:` line, [`tool.call`](plugins-mods-reference.md#tools) and [`prompt.submit`](plugins-mods-reference.md#prompts-and-what-claude-reads) mean the mod sees every tool call and every prompt, and can change them. [`session.append`](plugins-mods-reference.md#session) means the mod can rewrite each row of the conversation before it’s stored, apart from [the rows the guard passes over](#hooks-the-guard-passes-over). [`ui.render{component=AskUserQuestion}`](plugins-mods-interface.md#change-what-claude-code-already-draws) means the mod can redraw the dialog Claude uses to ask the user a question. `tool.check` means the mod can approve or deny a tool call before a permission prompt appears. [Know what happens by default](#know-what-happens-by-default) lists which of your rules and hooks take precedence over its answer.
 
 
 [​](#choose-how-much-to-allow)
@@ -175,13 +214,13 @@ Choose how much to allow
 
 Mod policies range from no installed mods at all to any mod a user chooses, with your own mod checking the others, and each one is a few managed settings. Find the policy you want in the first column and set what the second column names. [Deploy managed settings](../13-Enterprise-Admin/managed-settings.md) covers where managed settings live.
 
-| What you want                                                      | Settings                                                                                                                                                                       |
-|:-------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| No installed mod runs, with settings hooks untouched               | Set [`allowManagedModsOnly`](#set-options-on-the-built-in-guard) and deploy no mods of your own                                                                                |
-| No installed mods and no hooks at all, your managed hooks included | Set `disableAllHooks` to `true`                                                                                                                                                |
-| Only your organization’s mods                                      | Set the guard’s [`allowManagedModsOnly` option](#stop-user-installed-mods-from-loading), and [install your mods](#install-your-organizations-mods) so that they count as yours |
-| Any mod from marketplaces you approve                              | Keep your [marketplace restrictions](plugins-org.md#restrict-what-users-can-install), and set `disableSideloadFlags` to `true`                                           |
-| Any mod, with your own mod checking the others                     | [Install your mod](#install-your-organizations-mods), and list it with `sec-default@builtin` in `prependPlugins`                                                               |
+| What you want | Settings |
+|:---|:---|
+| No installed mod runs, with settings hooks untouched | Set [`allowManagedModsOnly`](#set-options-on-the-built-in-guard) and deploy no mods of your own |
+| No installed mods and no hooks at all, your managed hooks included | Set `disableAllHooks` to `true` |
+| Only your organization’s mods | Set the guard’s [`allowManagedModsOnly` option](#stop-user-installed-mods-from-loading), and [install your mods](#install-your-organizations-mods) so that they count as yours |
+| Any mod from marketplaces you approve | Keep your [marketplace restrictions](plugins-org.md#restrict-what-users-can-install), and set `disableSideloadFlags` to `true` |
+| Any mod, with your own mod checking the others | [Install your mod](#install-your-organizations-mods), and list it with `sec-default@builtin` in `prependPlugins` |
 
 What each setting does:
 
@@ -254,10 +293,10 @@ Set options on the built-in guard
 
 The built-in guard takes options. Set them in managed settings under `pluginConfigs`, keyed by `cc-plugin-sec-default@builtin`, as the example in [Stop user-installed mods from loading](#stop-user-installed-mods-from-loading) does. The table gives what your users get with each option unset and with it set to `true`:
 
-| Option                         | Unset                                       | `true`                                                                                                                                                                                                                 |
-|:-------------------------------|:--------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `allowManagedModsOnly`         | Users’ own mods run                         | Only [your organization’s mods](#install-your-organizations-mods), and mods built into Claude Code, run their hooks. Claude Code refuses every other mod, including one a user installed or named with `--plugin-dir`. |
-| `allowModsToOverrideDenyRules` | Deny rules take precedence over users’ mods | A user’s mod that approves tool calls can approve a call that a `deny` rule refuses                                                                                                                                    |
+| Option | Unset | `true` |
+|:---|:---|:---|
+| `allowManagedModsOnly` | Users’ own mods run | Only [your organization’s mods](#install-your-organizations-mods), and mods built into Claude Code, run their hooks. Claude Code refuses every other mod, including one a user installed or named with `--plugin-dir`. |
+| `allowModsToOverrideDenyRules` | Deny rules take precedence over users’ mods | A user’s mod that approves tool calls can approve a call that a `deny` rule refuses |
 
 These rules decide whether an option takes effect:
 

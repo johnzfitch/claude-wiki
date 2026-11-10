@@ -2,7 +2,7 @@
 title: "Claude Mythos Preview's cybersecurity capabilities \\ Anthropic"
 source_url: "https://www.anthropic.com/research/mythos-preview"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:28Z"
+fetched_at: "2026-10-24T06:26:36Z"
 tags: ["news-research", "security"]
 ---
 

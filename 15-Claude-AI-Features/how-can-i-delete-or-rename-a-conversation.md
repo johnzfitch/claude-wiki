@@ -2,7 +2,7 @@
 title: "Delete or rename a conversation | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8230524-how-can-i-delete-or-rename-a-conversation"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:16Z"
+fetched_at: "2026-11-09T06:26:00Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,11 +2,14 @@
 title: "JetBrains IDEs - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/jetbrains"
 category: "03-IDE-Integrations"
-fetched_at: "2026-10-10T06:24:51Z"
+fetched_at: "2026-11-04T06:23:57Z"
+last_modified: "Wed, 04 Nov 2026 01:45:28 GMT"
 tags: ["claude-code", "ide"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Supported IDEs](#supported-ides)
 - [Features](#features)
@@ -87,7 +90,9 @@ Install the JetBrains plugin
 
 Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE.
 
-If `claude` is installed somewhere your IDE can’t find, set the full path in the plugin’s [Claude command setting](#general-settings). Claude Code works with any paid Claude subscription (Pro, Max, Team, or Enterprise) or a Claude Console account, and no API key is required. You’ll be prompted to [log in](../02-Claude-Code-CLI/authentication.md#log-in-to-claude-code) the first time you run `claude`.
+The JetBrains Marketplace is third-party software, which Anthropic doesn’t endorse, maintain, or audit. Anthropic submits the Claude Code plugin for publication to the JetBrains Marketplace.
+
+If `claude` is installed somewhere your IDE can’t find, set the full path in the plugin’s [Claude command setting](#general-settings). Claude Code works with any paid Claude subscription (Pro, Max, Ultra, Team, or Enterprise) or a Claude Console account, and no API key is required. You’ll be prompted to [log in](../02-Claude-Code-CLI/authentication.md#log-in-to-claude-code) the first time you run `claude`.
 
 
 [​](#usage)
@@ -116,7 +121,7 @@ claude
 /ide
 ```
 
-When the connection succeeds, Claude Code confirms with a message like `Connected to IntelliJ IDEA.` If Claude Code detects a running IDE that doesn’t have the plugin, `/ide` installs the plugin for you and asks you to restart the IDE. If you want Claude to have access to the same files as your IDE, start Claude Code from the same directory as your IDE project root.
+When the connection succeeds, Claude Code confirms with a message like `Connected to IntelliJ IDEA.` If you want Claude to have access to the same files as your IDE, start Claude Code from the same directory as your IDE project root.
 
 
 [​](#configuration)
@@ -298,9 +303,9 @@ The built-in IDE MCP server
 
 When the plugin is active, it runs a local MCP server that the CLI connects to automatically. This is how the CLI opens diffs in the IDE’s native diff viewer, reads your current selection for `@`-mentions, and lets Claude read inspection diagnostics. The server is named `ide` and is hidden from `/mcp` because there’s nothing to configure. If your organization uses a [`PreToolUse` hook](../07-Hooks/hooks.md#pretooluse) to allowlist MCP tools, though, you’ll need to know it exists. **Selection and open-file context.** While connected, the CLI includes your current editor selection and the path of the active file as context on each prompt you send. The transcript shows a `⧉ Selected N lines from <file>` line when this happens. If you [queue a message while Claude works](../02-Claude-Code-CLI/interactive-mode.md#queue-messages-while-claude-works), it keeps the selection you had when you pressed `Enter`, whatever you select afterward. To exclude a sensitive file such as `.env`, add a [`Read` deny rule](../02-Claude-Code-CLI/permissions.md#read-and-edit) for its path. A matching deny rule prevents both the selected text and the open-file notice for that file from reaching Claude. **Transport and authentication.** The server listens on an OS-assigned ephemeral port, and the port is not configurable. The transport is unencrypted `ws://`; on loopback, any process that could capture the traffic can also read the token from the lock file, so TLS would not add protection against a local attacker. Each IDE start generates a fresh random auth token, writes it to a lock file at `~/.claude/ide/<port>.lock`, and the CLI must present it as the `X-Claude-Code-Ide-Authorization` header to connect. If `CLAUDE_CONFIG_DIR` is set, the lock file is written to `$CLAUDE_CONFIG_DIR/ide/` instead. **Tools exposed to the model.** The server hosts several tools, but only one is visible to the model. The rest are internal RPC the CLI uses for its own UI, such as opening diffs and reading selections, and are filtered out before the tool list reaches Claude.
 
-| Tool name (as seen by hooks) | What it does                                                                                                                                                                                                  | Read-only |
-|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| `mcp__ide__getDiagnostics`   | Returns the IDE’s inspection diagnostics, the errors and warnings shown in the editor. Each call covers one file: the file Claude specifies, or the file in your active editor if Claude doesn’t specify one. | Yes       |
+| Tool name (as seen by hooks) | What it does | Read-only |
+|----|----|----|
+| `mcp__ide__getDiagnostics` | Returns the IDE’s inspection diagnostics, the errors and warnings shown in the editor. Each call covers one file: the file Claude specifies, or the file in your active editor if Claude doesn’t specify one. | Yes |
 
 The JetBrains plugin does not expose a code-execution tool to the model. **Listening interface.** Which network interface the server binds to is controlled by **Accept connections from all network interfaces** under **Settings → Tools → Claude Code \[Beta\] → Networking (Advanced)**. With the setting disabled, the server listens on `127.0.0.1` only and is not reachable from other hosts. With it enabled, the port is reachable from your local network. The setting exists for cases where the CLI cannot reach the IDE over loopback, such as WSL2 with default NAT networking or a remote-IDE setup; see [WSL configuration](#wsl-configuration) for that scenario.
 

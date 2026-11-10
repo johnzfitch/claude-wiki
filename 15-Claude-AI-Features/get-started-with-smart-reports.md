@@ -2,28 +2,28 @@
 title: "Get started with smart reports | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16893491-get-started-with-smart-reports"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:11Z"
+fetched_at: "2026-11-09T06:26:34Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with smart reports
 
 
-Smart reports analyze how a team uses Claude and report on the work getting done, what it costs, where sessions run into friction, and which repeated patterns are worth packaging as shared skills. This guide explains how smart reports work, what appears in a smart report, and how to create, share, and delete them.
+Smart reports analyze how a team uses Claude and report on the work getting done, what it costs at list price, where sessions run into friction, and which repeated patterns are worth packaging as shared skills. This guide explains how smart reports work, what appears in a smart report, and how to create, share, and delete them.
 
-During beta, each organization can run up to 10 reports per month for free. Reports that are queued or in progress count toward this limit, and reports that fail don't.
+Each organization can run up to 10 reports per month at no charge. Reports that are queued or in progress count toward this limit, and reports that fail don't.
 
 When your organization reaches its limit, you can’t create new reports. The smart reports page shows the date your limit resets, which is the first day of the next calendar month. If you need more reports before then, contact your account team.
 
-Smart reports are available in beta on Claude Enterprise plans and are off by default, so they must be turned on in your organization's settings. They aren't available on Claude Free, Pro, Max, or Team plans, or for Claude Platform (API) organizations.
+Smart reports are available on Claude Enterprise plans and are off by default, so they must be turned on in your organization's settings.
 
-Claude Enterprise organizations can't use smart reports if they use customer-managed encryption keys (CMEK), a HIPAA configuration, or a hybrid deployment that runs inference on their own cloud provider. If your organization uses zero data retention for Claude Code, smart reports cover chat and Claude Cowork and leave out Claude Code.
+Claude Enterprise organizations can’t use smart reports if they use customer-managed encryption keys (CMEK), a HIPAA configuration, or a hybrid deployment that runs inference on their own cloud provider. If your organization uses zero data retention for Claude Code, smart reports cover chat and Claude Cowork and leave out Claude Code.
 
 **Important:** Smart reports help you understand adoption and plan your investment in Claude. They aren't designed and should not be used for evaluating individual performance or making employment decisions.
 
 ## How smart reports work
 
-First, a Primary Owner, Owner, Admin, or someone with a custom role with analytics view access chooses what the report covers: a team, a time range of up to the last 28 days, one or more products (chat, Claude Code, or Claude Cowork), the focus areas for the analysis, and any custom questions you’d like Claude to answer while analyzing the transcripts.
+First, a Primary Owner, Owner, Admin, or someone with a custom role with analytics view access chooses what the report covers: a team, a time range of up to the last 28 days, one or more products (chat, Claude Code, Claude Cowork, or the unified chat and Cowork experience), the focus areas for the analysis, and any custom questions you’d like Claude to answer while analyzing the transcripts.
 
 Claude then reads a sample of transcripts in that scope, groups them into workstreams and types of outputs, attaches spend to each group, and writes up what it found. Every chart is interactive. Click a workstream to open the sessions inside it, ranked by cost, each with a one-paragraph summary, the product used, the date, and the output type. You can filter by subcategory and download the report as HTML with drilldowns intact.
 
@@ -51,9 +51,9 @@ Cost per session by type of output shows the average spend per session for each 
 
 Task outcomes shows what each session produced.
 
-### Most common frictions
+### Most common pain points
 
-Most common frictions shows what got in the way, by category. For example, a connector that wasn’t set up, output that didn’t match the ask, approval or sign-in gating, tool failures, or rework loops.
+Most common pain points shows what got in the way, by category. For example, a connector that wasn’t set up, output that didn’t match the ask, approval or sign-in gating, tool failures, or rework loops.
 
 
 Click into a category to see more information:
@@ -64,23 +64,37 @@ Click into a category to see more information:
 Inefficiencies counts sessions that produced nothing usable and sessions that were personal or off-topic, with their cost (shown only as an aggregate count and cost, with no summaries or drilldown).
 
 
-### Reusable skills and workflows to build
+### Complex, autonomous work
 
-Reusable skills and workflows to build identifies repeated patterns that could be packaged as a shared skill so the whole team gets the same result faster. For example, turning call notes into follow-ups, building account briefs, and drafting QBR outlines. Each card includes a suggested prompt you can copy to set up the skill.
+Complex, autonomous work shows sessions scoring highest on task complexity, time saved, how long Claude worked on its own, and the expertise required.
+
+
+### New to the organization
+
+This section shows work that was new to your organization.
+
+### Automating their own work
+
+This section shows work that people have automated for themselves.
 
 ### Most expensive sessions
 
 Most expensive sessions lists where spend concentrates.
 
 
-### Complex, autonomous work
-
-Complex, autonomous work shows sessions scoring highest on task complexity, time saved, how long Claude worked on its own, and the expertise required.
-
-
 ### Answers to custom questions
 
-Before running a smart report, you can select specific pre-built templates to steer the analysis towards those questions, and customize those questions to your specific requirements. If you added custom questions, the answers appear in their own section with the sessions that informed them. You can't ask questions about restricted topics (see **[Privacy guardrails](#h_7b22bb48c1)**).
+Before running a smart report, you can select a pre-built template or one you’ve saved to steer the analysis towards those questions, and customize those questions to your specific requirements. If you added custom questions, the answers appear in their own section with the sessions that informed them. You can't ask questions about restricted topics (see **[Privacy guardrails](#h_7b22bb48c1)**).
+
+### Custom insights
+
+Custom insights shows the answers to the questions your organization added, which Claude answers for every analyzed session. Each answer shows its share of sessions and spend. Select a bar to see its sessions.
+
+### Recommendations
+
+Recommendations brings the report's suggestions together in one list, including recurring workflows to turn into skills, examples of complex work from across the team, and rules to add to your code repository. To send a finding to the people who can act on it, share it as an artifact.
+
+This section also identifies people whose work is being held back by their spend limit. If you have billing permission and you're using the report's attributed view, you can raise their spend limit from the report.
 
 ## Before you begin
 
@@ -98,7 +112,7 @@ An Owner or Primary Owner can take the following steps to enable smart reports f
 
 2.  Find the **Analytics** section.
 
-3.  Turn on the "Smart reports (beta)" toggle, which is off by default. This makes smart reports available to your organization’s admins with analytics access.
+3.  Turn on the "Smart reports" toggle, which is off by default. This makes smart reports available to your organization’s admins with analytics access.
 
 4.  (Optional) Turn on the "Allow attribution to individual users" toggle, which is off by default. This toggle controls whether report viewers can ever see who ran a given session, and each time a viewer reveals names, that action is logged.
 
@@ -126,7 +140,7 @@ Once smart reports have been turned on for your organization, Primary Owners, Ow
 
 To create a smart report:
 
-1.  Navigate to **[Analytics \> Smart reports (beta)](https://claude.ai/analytics/insights)**.
+1.  Navigate to **[Analytics \> Smart reports](https://claude.ai/analytics/insights)**.
 
 2.  Click "New report."
 
@@ -138,17 +152,37 @@ To create a smart report:
 
 6.  Select the products to include in your report.
 
-7.  Click "Add files" to add documents to help Claude tailor the report.
+7.  Preview how many sessions will be sampled in your report.
 
-8.  Choose who you want to share the report with.
+8.  Click "Add files" to add documents to help Claude tailor the report.
 
-9.  (Optional) Turn on the "Allow attributed view for people you share with" toggle. Note that this option is only available when the org-level "Allow attribution to individual users" toggle is on.
+9.  Choose who you want to share the report with.
 
-10. Choose a report template and the questions Claude will answer. You can customize the questions to your specific requirements.
+10. (Optional) Turn on the "Allow attributed view for people you share with" toggle. Note that this option is only available when the org-level "Allow attribution to individual users" toggle is on.
 
-11. Click "Create report."
+11. Choose a report template, the questions Claude will answer, and any custom insights. You can customize these to your specific requirements.
 
-Reports usually take a few hours to generate, and they can take longer at busy times. You’ll get an email when the report is ready, and reports also appear in the "Smart reports" list in **[Analytics \> Smart reports (beta)](https://claude.ai/analytics/insights)**.
+12. Click "Create report."
+
+Reports usually take a few hours to generate, and they can take longer at busy times. You’ll get an email when the report is ready, and reports also appear in the "Smart reports" list in **[Analytics \> Smart reports](https://claude.ai/analytics/insights)**.
+
+## Create custom insights and templates
+
+Custom insights are questions Claude answers for every analyzed session, and the report counts the answers. Custom templates save your questions and custom insights so you can reuse them in future reports.
+
+To add a custom insight while creating a report:
+
+1.  Under **Your custom insights**, click "Add custom insight."
+
+2.  Enter a name.
+
+3.  Under **What should Claude look for in each session?**, describe what Claude should check.
+
+4.  Under **Answer**, select "Categories," "Yes or no," or "Scale."
+
+5.  Click "Save."
+
+To save your questions and custom insights as a template, click "Save as template" under **Report template**.
 
 ## Pass department and cost center via SCIM
 
@@ -196,7 +230,7 @@ The report only opens through the sharing link. Only the people it's shared with
 
 To delete a smart report:
 
-1.  Navigate to **[Analytics \> Smart reports (beta)](https://claude.ai/analytics/insights)**.
+1.  Navigate to **[Analytics \> Smart reports](https://claude.ai/analytics/insights)**.
 
 2.  Click on the three-dot menu for your smart report.
 

@@ -2,11 +2,14 @@
 title: "Debugging - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/tools/debugging"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-11T06:35:05Z"
+fetched_at: "2026-11-01T06:24:48Z"
+last_modified: "Sat, 31 Oct 2026 18:10:32 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Debugging tools overview](#debugging-tools-overview)
 - [Implementing logging](#implementing-logging)
@@ -222,13 +225,20 @@ Log files are written to:
 
 - macOS: `~/Library/Logs/Claude`
 - Windows: `%APPDATA%\Claude\logs`
+- Linux: `~/.config/Claude/logs`
 
 macOS
+
+Linux
 
 Windows
 
 ```python
 tail -n 20 -F ~/Library/Logs/Claude/mcp*.log
+```
+
+```python
+tail -n 20 -F ~/.config/Claude/logs/mcp*.log
 ```
 
 ```python
@@ -347,7 +357,7 @@ When debugging:
     - Check authentication
     - Monitor access patterns
 
-For a full treatment of MCP attack vectors and mitigations, see [Security Best Practices](draft-tutorials-security-security-best-practices.md).
+For a full treatment of MCP attack vectors and mitigations, see [Security Best Practices](modelcontextprotocol-io-draft-tutorials-security-security-best-practices.md).
 
 
 [​](#getting-help)

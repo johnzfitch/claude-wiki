@@ -2,7 +2,7 @@
 title: "Understanding your Claude API invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16608069-understanding-your-claude-api-invoices"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-23T06:29:31Z"
+fetched_at: "2026-11-09T06:25:55Z"
 tags: ["api", "billing"]
 ---
 
@@ -33,7 +33,7 @@ Invoices are also available in the Console to users with the Admin or Billing ro
 
 4.  Click "Download" to save the invoice directly, or click "View" to open it in a new Stripe tab and download it from there.
 
-Expired credit grants also appear in **Invoice history**, even though they aren't charges. For help accessing older receipts and invoices that aren't available in the Console, **[contact our Support team](https://support.claude.com/en/articles/9015913)**.
+Expired credit grants also appear in **Invoice history**, even though they aren't charges. For help accessing older receipts and invoices that aren't available in the Console, **[contact our Support team](../../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)**.
 
 ## Read your invoice
 

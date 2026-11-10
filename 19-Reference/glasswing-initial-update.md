@@ -1,8 +1,8 @@
 ---
 title: "Project Glasswing: An initial update \\ Anthropic"
-source_url: "https://www.anthropic.com/research/glasswing-initial-update"
+source_url: "https://www.anthropic.com/news/glasswing-initial-update"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:45Z"
+fetched_at: "2026-10-21T06:30:26Z"
 tags: ["news-research"]
 ---
 
@@ -105,7 +105,7 @@ Many generally-available models can already find large numbers of software vulne
 
 To begin, we’ve released [Claude Security](../15-Claude-AI-Features/product-claude-security.md) in public beta for Claude Enterprise customers. It’s a tool that helps teams scan their codebases for vulnerabilities, and which can generate proposed fixes for them. In the three weeks since launch, Claude Opus 4.7 has been used to patch over 2,100 vulnerabilities. (This is faster than the open-source patching described above in large part because enterprises are fixing their own code, whereas open-source fixes usually require volunteer maintainers who work through coordinated disclosure.)
 
-We’ve also begun our [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude), which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
+We’ve also begun our [Cyber Verification Program](../21-Account-Support/real-time-cyber-safeguards-on-claude.md), which allows security professionals using our models for legitimate cybersecurity purposes (such as vulnerability research, penetration testing, and red-teaming) to do so without certain safeguards designed to prevent cyber misuse.
 
 Now, we’re making the tools that we and our partners have used with Mythos Preview available to qualifying customers’ security teams on request. Our aim is to make it much easier to get the best performance out of highly capable public models without extensive setup. This release includes:
 

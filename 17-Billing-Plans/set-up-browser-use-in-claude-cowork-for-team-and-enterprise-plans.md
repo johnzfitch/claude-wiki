@@ -2,18 +2,20 @@
 title: "Set up browser use in Claude Cowork for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16635803-set-up-browser-use-in-claude-cowork-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:14Z"
+fetched_at: "2026-11-09T06:26:08Z"
 tags: ["billing", "enterprise"]
 ---
 
 # Set up browser use in Claude Cowork for Team and Enterprise plans
 
 
-**Note:** Claude Cowork and chat are now one Claude. Ask for what you need, and Claude decides whether that’s a quick answer or a task. This is rolling out gradually to Pro and Max plans, and it’s in beta for Enterprise plans, where an admin turns it on as **Chat and Cowork unified (beta)**. Team organizations, and Enterprise organizations that haven’t turned it on, keep chat and Claude Cowork as they are today, so everything in this article still applies. If you’re an Enterprise admin, learn more in **[Set up and manage the new unified Claude experience for your Enterprise organization](../13-Enterprise-Admin/set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization.md)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**.
-
 Claude can use the web in Claude Cowork in two ways: a browser built into the Claude Desktop app, or your users' own Chrome browser through the Claude in Chrome extension. This article explains the difference, how to enable each one for your organization, and what your users see when both are on.
 
-Browser controls for Cowork are available on Team and Enterprise plans. The built-in browser is rolling out gradually this week and works in the Claude Desktop app on macOS, Windows, and Linux (beta). The **Built-in browser** setting may not appear in Organization settings until the rollout reaches your organization. When the desktop app is online, the built-in browser is also available in Cowork on web or mobile.
+## Availability
+
+Browser controls for Cowork are available on Team and Enterprise plans. The built-in browser works in the Claude Desktop app on macOS, Windows, and Linux (beta). When the desktop app is online, it's also available in Cowork on web or mobile.
+
+The new Claude experience, which combines chat and Cowork, is rolling out to Pro, Max, and Ultra plans. On Team plans (in beta) and Enterprise plans, it's available where **Chat and Cowork unified** is turned on. Organizations that haven't turned it on keep chat and Cowork as separate options, so this article still applies. Enterprise owners can learn more in **[Set up and manage the new unified Claude experience for your Enterprise organization](https://support.claude.com/en/articles/17444462)**.
 
 ## Two ways for Claude to use the web
 
@@ -21,15 +23,17 @@ Browser controls for Cowork are available on Team and Enterprise plans. The buil
 
 - **Claude in Chrome.** Claude works in the user's own Chrome browser through the Claude in Chrome extension, on the page they're already on, with the accounts they're already signed in to. Your users' browsers need the extension deployed or installed. Cowork sessions on web and mobile can also use Claude in Chrome when it's the user's preferred browser.
 
-Both run the same safety layers: per-site permission prompts before Claude acts on a new site, a blocklist for high-risk sites, and safety checks on every action. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)** and **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)**.
+Both run the same safety layers: per-site permission prompts before Claude acts on a new site, a blocklist for high-risk sites, and safety checks on every action. Learn more in **[Use the built-in browser in Claude Cowork](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork-claude-help-center.md)** and **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)**.
 
 You can enable one, both, or neither.
 
 ## Enable or disable the built-in browser
 
-- **Team plans:** On by default as it rolls out.
+- **Team plans:** On by default.
 
-- **Enterprise plans:** It turns on by default unless you've turned it off. In organizations that have enabled HIPAA, the built-in browser stays off until an Owner turns it on in **Organization settings \> Cowork**. With the **[HIPAA configuration applied to Claude Code (local mode) and Cowork (local mode)](https://support.claude.com/en/articles/17318731)**, the built-in browser isn't available, and no setting turns it on.
+- **Enterprise plans:** On by default unless you've turned it off.
+
+  - In organizations that have enabled HIPAA, the built-in browser stays off until an owner turns it on in **Organization settings \> Cowork**. With the **[HIPAA configuration applied to Claude Code (local mode) and Cowork (local mode)](https://support.claude.com/en/articles/17318731)**, the built-in browser isn't available, and no setting turns it on.
 
 To turn the built-in browser on or off for your organization:
 

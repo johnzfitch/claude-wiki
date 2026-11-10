@@ -2,7 +2,7 @@
 title: "I’m encountering 429 errors, and I’m worried my rate limit is too low. What should I do? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114527-i-m-encountering-429-errors-and-i-m-worried-my-rate-limit-is-too-low-what-should-i-do"
 category: "21-Account-Support"
-fetched_at: "2026-10-23T06:29:19Z"
+fetched_at: "2026-11-09T06:26:39Z"
 tags: ["account"]
 ---
 

@@ -2,11 +2,13 @@
 title: "Give Claude custom tools - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/custom-tools"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-20T06:37:43Z"
+fetched_at: "2026-10-27T06:26:19Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Quick reference](#quick-reference)
 - [Create a custom tool](#create-a-custom-tool)
@@ -17,6 +19,7 @@ tags: ["agents", "claude-code", "sdk"]
   - [Add tool annotations](#add-tool-annotations)
 - [Control tool access](#control-tool-access)
   - [Configure allowed tools](#configure-allowed-tools)
+  - [Require approval for specific tools](#require-approval-for-specific-tools)
 - [Handle errors](#handle-errors)
 - [Return images and resources](#return-images-and-resources)
   - [Images](#images)
@@ -42,18 +45,19 @@ Custom tools extend the Agent SDK by letting you define your own functions that 
 
 Quick reference
 
-| What you want to do                          | Do this                                                                                                                                                                                                                 |
-|:---------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Define a tool                                | Use [`@tool`](agent-sdk-python.md#tool) (Python) or [`tool()`](agent-sdk-typescript.md#tool) (TypeScript) with a name, description, schema, and handler. See [Create a custom tool](#create-a-custom-tool). |
-| Make a parameter optional                    | Declare it optional in the schema and apply the default in the handler. See [Make a parameter optional](#make-a-parameter-optional).                                                                                    |
-| Register a tool with Claude                  | Wrap in `create_sdk_mcp_server` / `createSdkMcpServer` and pass to `mcpServers` in `query()`. See [Call a custom tool](#call-a-custom-tool).                                                                            |
-| Pre-approve a tool                           | Add to your allowed tools. See [Configure allowed tools](#configure-allowed-tools).                                                                                                                                     |
-| Remove a built-in tool from Claude’s context | Pass a `tools` array listing only the built-ins you want. See [Configure allowed tools](#configure-allowed-tools).                                                                                                      |
-| Let Claude call tools in parallel            | Set `readOnlyHint: true` on tools with no side effects. See [Add tool annotations](#add-tool-annotations).                                                                                                              |
-| Control the error message Claude reads       | Return `isError: true` to compose the message instead of surfacing the raw exception. See [Handle errors](#handle-errors).                                                                                              |
-| Return images or files                       | Use `image` or `resource` blocks in the content array. See [Return images and resources](#return-images-and-resources).                                                                                                 |
-| Return a machine-readable JSON result        | Set `structuredContent` on the result. See [Return structured data](#return-structured-data).                                                                                                                           |
-| Scale to many tools                          | Use [tool search](agent-sdk-tool-search.md) to load tools on demand.                                                                                                                                              |
+| What you want to do | Do this |
+|:---|:---|
+| Define a tool | Use [`@tool`](agent-sdk-python.md#tool) (Python) or [`tool()`](agent-sdk-typescript.md#tool) (TypeScript) with a name, description, schema, and handler. See [Create a custom tool](#create-a-custom-tool). |
+| Make a parameter optional | Declare it optional in the schema and apply the default in the handler. See [Make a parameter optional](#make-a-parameter-optional). |
+| Register a tool with Claude | Wrap in `create_sdk_mcp_server` / `createSdkMcpServer` and pass to `mcpServers` in `query()`. See [Call a custom tool](#call-a-custom-tool). |
+| Pre-approve a tool | Add to your allowed tools. See [Configure allowed tools](#configure-allowed-tools). |
+| Require approval for calls to a tool, or block the tool | In the TypeScript SDK, add a `permission_policy` for the tool to the config object that `createSdkMcpServer()` returns. See [Require approval for specific tools](#require-approval-for-specific-tools). |
+| Remove a built-in tool from Claude’s context | Pass a `tools` array listing only the built-ins you want. See [Configure allowed tools](#configure-allowed-tools). |
+| Let Claude call tools in parallel | Set `readOnlyHint: true` on tools with no side effects. See [Add tool annotations](#add-tool-annotations). |
+| Control the error message Claude reads | Return `isError: true` to compose the message instead of surfacing the raw exception. See [Handle errors](#handle-errors). |
+| Return images or files | Use `image` or `resource` blocks in the content array. See [Return images and resources](#return-images-and-resources). |
+| Return a machine-readable JSON result | Set `structuredContent` on the result. See [Return structured data](#return-structured-data). |
+| Scale to many tools | Use [tool search](agent-sdk-tool-search.md) to load tools on demand. |
 
 
 [​](#create-a-custom-tool)
@@ -380,12 +384,12 @@ Add tool annotations
 
 [Tool annotations](https://modelcontextprotocol.io/docs/concepts/tools#tool-annotations) are optional metadata describing how a tool behaves. Pass them as the fifth argument to `tool()` helper in TypeScript or via the `annotations` keyword argument for the `@tool` decorator in Python. All hint fields are Booleans.
 
-| Field             | Default | Meaning                                                                                                               |
-|:------------------|:--------|:----------------------------------------------------------------------------------------------------------------------|
-| `readOnlyHint`    | `false` | Tool does not modify its environment. Controls whether the tool can be called in parallel with other read-only tools. |
-| `destructiveHint` | `true`  | Tool may perform destructive updates. Informational only.                                                             |
-| `idempotentHint`  | `false` | Repeated calls with the same arguments have no additional effect. Informational only.                                 |
-| `openWorldHint`   | `true`  | Tool reaches systems outside your process. Informational only.                                                        |
+| Field | Default | Meaning |
+|:---|:---|:---|
+| `readOnlyHint` | `false` | Tool does not modify its environment. Controls whether the tool can be called in parallel with other read-only tools. |
+| `destructiveHint` | `true` | Tool may perform destructive updates. Set it to `true` explicitly on any tool you [mark `always_ask`](#require-approval-for-specific-tools). |
+| `idempotentHint` | `false` | Repeated calls with the same arguments have no additional effect. Informational only. |
+| `openWorldHint` | `true` | Tool reaches systems outside your process. Informational only. |
 
 Annotations are metadata, not enforcement. A tool marked `readOnlyHint: true` can still write to disk if that’s what the handler does. Keep the annotation accurate to the handler. This example adds `readOnlyHint` to the `get_temperature` tool from the [weather tool example](#weather-tool-example).
 
@@ -438,14 +442,42 @@ Configure allowed tools
 
 The `tools` option and the allowed/disallowed lists affect two layers: availability, which controls whether a tool appears in Claude’s context, and permission, which controls whether a call is approved once Claude attempts it. `tools` and bare-name `disallowedTools` entries change availability. `allowedTools` and scoped `disallowedTools` rules change permission. If you name one of the [task-tracking tools](agent-sdk-todo-tracking.md#model-availability) in `allowedTools`, Claude Code also opts the session in.
 
-| Option                    | Layer        | Effect                                                                                                                                                                                                                                                                |
-|:--------------------------|:-------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `tools: ["Read", "Grep"]` | Availability | Only the listed built-ins are in Claude’s context. Unlisted built-ins are removed. MCP tools are unaffected.                                                                                                                                                          |
-| `tools: []`               | Availability | All built-ins are removed. Claude can only use your MCP tools.                                                                                                                                                                                                        |
-| allowed tools             | Permission   | Listed tools run without a permission prompt. Other unlisted tools remain available; calls go through the [permission flow](agent-sdk-permissions.md).                                                                                                          |
-| disallowed tools          | Both         | A bare tool name such as `"Bash"` removes the tool from Claude’s context, the same as omitting it from `tools`. A scoped rule such as `"Bash(rm *)"` leaves the tool in context and denies only calls that match [as written](../02-Claude-Code-CLI/permissions.md#bash-rule-limits). |
+| Option | Layer | Effect |
+|:---|:---|:---|
+| `tools: ["Read", "Grep"]` | Availability | Only the listed built-ins are in Claude’s context. Unlisted built-ins are removed. MCP tools are unaffected. |
+| `tools: []` | Availability | All built-ins are removed. Claude can only use your MCP tools. |
+| allowed tools | Permission | Listed tools run without a permission prompt. Other unlisted tools remain available; calls go through the [permission flow](agent-sdk-permissions.md). |
+| disallowed tools | Both | A bare tool name such as `"Bash"` removes the tool from Claude’s context, the same as omitting it from `tools`. A scoped rule such as `"Bash(rm *)"` leaves the tool in context and denies only calls that match [as written](../02-Claude-Code-CLI/permissions.md#bash-rule-limits). |
 
 To remove a built-in entirely, omit it from `tools` or list its bare name in `disallowedTools` (Python: `disallowed_tools`); both keep the tool out of context so Claude never attempts it. A scoped `disallowedTools` rule blocks matching calls but leaves the tool visible, so Claude may waste a turn trying it. See [Configure permissions](agent-sdk-permissions.md) for the full evaluation order.
+
+
+[​](#require-approval-for-specific-tools)
+
+Require approval for specific tools
+
+Set a tool’s `permission_policy` to `always_ask`, and `allowedTools` stops approving that tool’s calls, so they can reach your [`canUseTool`](agent-sdk-user-input.md) callback even though the tool is listed. Set `always_deny` instead, and [a call to the tool is denied](agent-sdk-permissions.md#how-permissions-are-evaluated), but a [mod](../08-Plugins-Skills/plugins-mods-overview.md) in a plugin you load [can still approve it](../02-Claude-Code-CLI/permissions.md#precedence-among-rules-hooks-and-mods). The field is TypeScript-only and requires Agent SDK v0.3.301 or later. Put the policy entry in a `tools` array on the config object `createSdkMcpServer()` returns, not in the `tools` option you pass into that function. This example spreads `weatherServer` from the [weather tool example](#weather-tool-example) and adds a `tools` array giving `get_temperature` the `always_ask` policy:
+
+TypeScript
+
+```python
+options: {
+  mcpServers: {
+    weather: {
+      ...weatherServer,
+      tools: [{ name: "get_temperature", permission_policy: "always_ask" as const }]
+    }
+  },
+  allowedTools: ["mcp__weather__get_temperature"],
+  permissionMode: "default",
+  canUseTool: async (toolName, input) => {
+    console.log(`Approval requested for ${toolName}`);
+    return { behavior: "allow", updatedInput: input };
+  }
+}
+```
+
+To try the policy, replace the `options` in the [Call a custom tool](#call-a-custom-tool) script with this example’s `options`, then run that script from your terminal. The script prints `Approval requested for mcp__weather__get_temperature`, followed by Claude’s answer about the temperature. For a complete script, see the [TypeScript reference](agent-sdk-typescript.md#mcpsdkserverconfigwithinstance). If you use `auto` or `plan` [permission mode](agent-sdk-permissions.md#permission-modes), set `destructiveHint: true` in the tool’s [annotations](#add-tool-annotations) so calls to the tool still reach your callback. Otherwise the [auto mode classifier](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) can approve some `always_ask` calls, under [conditions listed in the TypeScript reference](agent-sdk-typescript.md#permission-modes-that-can-approve-an-always_ask-call), and a call it approves doesn’t reach your callback. Set the hint explicitly, because an unset `destructiveHint` counts as `false` for `always_ask` calls rather than defaulting to `true`.
 
 
 [​](#handle-errors)
@@ -454,10 +486,10 @@ Handle errors
 
 A handler error doesn’t stop the agent loop. The SDK’s in-process MCP server catches uncaught exceptions and returns them as error results, so how you report an error determines what Claude reads, not whether the query fails:
 
-| What happens                                                                             | Result                                                                                                                                    |
-|:-----------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------|
-| Handler throws an uncaught exception                                                     | The MCP server converts it to an error result carrying the raw exception message. Claude sees that message, and the agent loop continues. |
-| Handler catches the error and returns `isError: true` (TS) / `"is_error": True` (Python) | Claude sees the message you compose. You can add context the raw exception lacks, such as which request failed or what to try instead.    |
+| What happens | Result |
+|:---|:---|
+| Handler throws an uncaught exception | The MCP server converts it to an error result carrying the raw exception message. Claude sees that message, and the agent loop continues. |
+| Handler catches the error and returns `isError: true` (TS) / `"is_error": True` (Python) | Claude sees the message you compose. You can add context the raw exception lacks, such as which request failed or what to try instead. |
 
 In both cases Claude can retry, try a different tool, or explain the failure. Catch errors yourself when the raw exception message isn’t enough for Claude to act on. The example below catches two kinds of failures inside the handler and composes the error message Claude reads. A non-200 HTTP status is caught from the response and returned as an error result. A network error or invalid JSON is caught by the surrounding `try/except` (Python) or `try/catch` (TypeScript) and also returned as an error result. In both cases Claude receives a message that describes the failure instead of a bare exception string.
 
@@ -573,11 +605,11 @@ Images
 
 An image block carries the image bytes inline, encoded as base64. There is no URL field. To return an image that lives at a URL, fetch it in the handler, read the response bytes, and base64-encode them before returning. A PNG, JPEG, GIF, or WebP image reaches Claude as visual input; an image of any other type is saved to disk and Claude receives its file path as text instead.
 
-| Field      | Type      | Notes                                                                      |
-|:-----------|:----------|:---------------------------------------------------------------------------|
-| `type`     | `"image"` |                                                                            |
-| `data`     | `string`  | Base64-encoded bytes. Raw base64 only, no `data:image/...;base64,` prefix  |
-| `mimeType` | `string`  | Required. For example `image/png`, `image/jpeg`, `image/webp`, `image/gif` |
+| Field | Type | Notes |
+|:---|:---|:---|
+| `type` | `"image"` |  |
+| `data` | `string` | Base64-encoded bytes. Raw base64 only, no `data:image/...;base64,` prefix |
+| `mimeType` | `string` | Required. For example `image/png`, `image/jpeg`, `image/webp`, `image/gif` |
 
 Python
 
@@ -645,13 +677,13 @@ Resources
 
 A resource block embeds a piece of content identified by a URI. The actual content rides in the block’s `text` or `blob` field. Use this when your tool produces a generated file or a record from an external system.
 
-| Field               | Type         | Notes                                                                                                                                      |
-|:--------------------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`              | `"resource"` |                                                                                                                                            |
-| `resource.uri`      | `string`     | Identifier for the content. Any URI scheme                                                                                                 |
-| `resource.text`     | `string`     | The content, if it’s text. Provide this or `blob`, not both                                                                                |
-| `resource.blob`     | `string`     | The content base64-encoded, if it’s binary. TypeScript only: the Python SDK drops binary resources from the tool result and logs a warning |
-| `resource.mimeType` | `string`     | Optional                                                                                                                                   |
+| Field | Type | Notes |
+|:---|:---|:---|
+| `type` | `"resource"` |  |
+| `resource.uri` | `string` | Identifier for the content. Any URI scheme |
+| `resource.text` | `string` | The content, if it’s text. Provide this or `blob`, not both |
+| `resource.blob` | `string` | The content base64-encoded, if it’s binary. TypeScript only: the Python SDK drops binary resources from the tool result and logs a warning |
+| `resource.mimeType` | `string` | Optional |
 
 This example shows a resource block returned from inside a tool handler. The SDK doesn’t read from the example’s URI, `file:///tmp/report.md`.
 

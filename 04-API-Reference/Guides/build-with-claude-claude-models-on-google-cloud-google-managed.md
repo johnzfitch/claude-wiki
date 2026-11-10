@@ -2,89 +2,9 @@
 title: "Claude Models on Google Cloud (Google managed) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/google-managed"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-23T06:28:45Z"
+fetched_at: "2026-11-08T06:24:57Z"
 tags: ["api", "billing"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fclaude-models-on-google-cloud%2Fgoogle-managed)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Google Cloud](build-with-claude-claude-models-on-google-cloud-overview.md)
-
-[Overview](build-with-claude-claude-models-on-google-cloud-overview.md)[Anthropic-managed](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)[Google-managed](build-with-claude-claude-models-on-google-cloud-google-managed.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Google Cloud
 
 # Claude Models on Google Cloud (Google managed)
 
@@ -92,7 +12,7 @@ Claude on cloud platforms
 
 
 
-Google operates Claude Models on Google Cloud (Google managed) as part of Google Cloud's Agent Platform. You can call Claude with Anthropic's client SDKs.
+Google operates Claude Models on Google Cloud (Google managed) as part of Google Cloud’s Agent Platform. You can call Claude with Anthropic’s client SDKs.
 
 Copy page
 
@@ -104,14 +24,14 @@ Google operates Claude Models on Google Cloud (Google managed) as part of Google
 
 To use Claude Models on Google Cloud (Google managed), you need:
 
-1.  A Google Cloud project that can use Agent Platform. For setup steps, see Google Cloud's [Anthropic Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude) page.
+1.  A Google Cloud project that can use Agent Platform. For setup steps, see Google Cloud’s [Anthropic Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude) page.
 2.  The [gcloud CLI](https://cloud.google.com/sdk/docs/install) installed, for local development.
-3.  For the identity making the calls, an IAM role that includes the `aiplatform.endpoints.predict` permission, such as Agent Platform User (`roles/aiplatform.user`). For details, see Google Cloud's [Agent Platform partner models](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/use-partner-models) page.
-4.  Google Cloud credentials for that identity. For the SDK examples, you might need to run `gcloud auth application-default login` to authenticate with Google Cloud. The cURL examples for Claude Models on Google Cloud (Google managed) get their token with `gcloud auth print-access-token`. That command uses the gcloud CLI's own login, not Application Default Credentials. For those examples, run `gcloud auth login` or `gcloud init` first.
+3.  For the identity making the calls, an IAM role that includes the `aiplatform.endpoints.predict` permission, such as Agent Platform User (`roles/aiplatform.user`). For details, see Google Cloud’s [Agent Platform partner models](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/use-partner-models) page.
+4.  Google Cloud credentials for that identity. For the SDK examples, you might need to run `gcloud auth application-default login` to authenticate with Google Cloud. The cURL examples for Claude Models on Google Cloud (Google managed) get their token with `gcloud auth print-access-token`. That command uses the gcloud CLI’s own login, not Application Default Credentials. For those examples, run `gcloud auth login` or `gcloud init` first.
 
 ### Install an SDK
 
-Anthropic's [client SDKs](../Other/cli-sdks-libraries-overview.md) support Claude Models on Google Cloud (Google managed) through `AnthropicVertex`. Install the package that provides it:
+Anthropic’s [client SDKs](../Other/cli-sdks-libraries-overview.md) support Claude Models on Google Cloud (Google managed) through `AnthropicVertex`. Install the package that provides it:
 
 Python
 
@@ -135,13 +55,13 @@ pip install -U "anthropic[vertex]"
 
 
 
-The `ant` CLI doesn't support Claude Models on Google Cloud (Google managed).
+The `ant` CLI doesn’t support Claude Models on Google Cloud (Google managed).
 
 ## Making requests
 
 Requests to Claude Models on Google Cloud (Google managed) go to an Agent Platform endpoint URL that ends in `:rawPredict`. Streaming requests use `:streamRawPredict` instead.
 
-A request is nearly identical to a [Messages API](../Endpoints/messages-create.md) request. It differs in two main ways:
+A request is nearly identical to a [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. request. It differs in two main ways:
 
 - **Model:** The endpoint URL names the model. In a cURL request, leave `model` out of the body.
 - **Version:** In a cURL request, pass `anthropic_version` in the body, not as a header. Set it to `vertex-2023-10-16`, or to [API version `2026-10-21`](../Endpoints/migration-2026-10-21.md).
@@ -193,52 +113,45 @@ print(message)
 
 ### API model IDs
 
-| Model                                                                                                         | Agent Platform API model ID |
-|---------------------------------------------------------------------------------------------------------------|-----------------------------|
-| Claude Fable 5.1                                                                                              | claude-fable-5-1            |
-| Claude Mythos 5.1 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | claude-mythos-5-1           |
-| Claude Fable 5                                                                                                | claude-fable-5              |
-| Claude Mythos 5 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842))   | claude-mythos-5             |
-| Claude Opus 5.5                                                                                               | claude-opus-5-5             |
-| Claude Opus 5                                                                                                 | claude-opus-5               |
-| Claude Opus 4.8                                                                                               | claude-opus-4-8             |
-| Claude Opus 4.7                                                                                               | claude-opus-4-7             |
-| Claude Opus 4.6                                                                                               | claude-opus-4-6             |
-| Claude Opus 4.5                                                                                               | claude-opus-4-5@20251101    |
-| Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                      | claude-opus-4-1@20250805    |
-| Claude Opus 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                        | claude-opus-4@20250514      |
-| Claude Sonnet 5.5                                                                                             | claude-sonnet-5-5           |
-| Claude Sonnet 5                                                                                               | claude-sonnet-5             |
-| Claude Sonnet 4.6                                                                                             | claude-sonnet-4-6           |
-| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                    | claude-sonnet-4-5@20250929  |
-| Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                      | claude-sonnet-4@20250514    |
-| Claude Haiku 5.5                                                                                              | claude-haiku-5-5            |
-| Claude Haiku 4.5                                                                                              | claude-haiku-4-5@20251001   |
-| Claude Haiku 3.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md))                                     | claude-3-5-haiku@20241022   |
+| Model | Agent Platform API model ID |
+|----|----|
+| Claude Fable 5.1 | claude-fable-5-1 |
+| Claude Mythos 5.1 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | claude-mythos-5-1 |
+| Claude Fable 5 | claude-fable-5 |
+| Claude Mythos 5 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | claude-mythos-5 |
+| Claude Opus 5.5 | claude-opus-5-5 |
+| Claude Opus 5 | claude-opus-5 |
+| Claude Opus 4.8 | claude-opus-4-8 |
+| Claude Opus 4.7 | claude-opus-4-7 |
+| Claude Opus 4.6 | claude-opus-4-6 |
+| Claude Opus 4.5 | claude-opus-4-5@20251101 |
+| Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | claude-opus-4-1@20250805 |
+| Claude Opus 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | claude-opus-4@20250514 |
+| Claude Sonnet 5.5 | claude-sonnet-5-5 |
+| Claude Sonnet 5 | claude-sonnet-5 |
+| Claude Sonnet 4.6 | claude-sonnet-4-6 |
+| Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | claude-sonnet-4-5@20250929 |
+| Claude Sonnet 4 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | claude-sonnet-4@20250514 |
+| Claude Haiku 5.5 | claude-haiku-5-5 |
+| Claude Haiku 4.5 | claude-haiku-4-5@20251001 |
 
-Claude Models on Google Cloud (Google managed) offers different Claude models in different regions. To check which models a region offers, search "Claude" in [Model Garden](https://cloud.google.com/model-garden) or see Google Cloud's [Anthropic Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude) page.
+Claude Models on Google Cloud (Google managed) offers different Claude models in different regions. To check which models a region offers, search “Claude” in [Model Garden](https://cloud.google.com/model-garden) or see Google Cloud’s [Anthropic Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude) page.
 
-Google sets the lifecycle dates for the models that Claude Models on Google Cloud (Google managed) serves. These dates can differ from the Claude API schedule. For a model's current retirement date, see Google Cloud's [Anthropic Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude) page. For what Deprecated and Retired mean, see [Model deprecations](../../20-Models/about-claude-model-deprecations.md).
+Google sets the lifecycle dates for the models that Claude Models on Google Cloud (Google managed) serves. These dates can differ from the Claude API schedule. For a model’s current retirement date, see Google Cloud’s [Anthropic Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude) page. For what Deprecated and Retired mean, see [Model deprecations](../../20-Models/about-claude-model-deprecations.md).
 
 
 
 Claude Mythos Preview is a research preview. Claude Models on Google Cloud (Google managed) offers it to invited customers. For more information, see [Project Glasswing](../../22-Safety-Policy/glasswing.md).
 
-
-
-Upgrading to a newer Claude model? The [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md#migrating-to-a-newer-claude-model) in Claude Code applies model ID swaps and breaking parameter changes across your code base:
-
 Claude Code
 
-Let Claude Code migrate your code for you
+Let Claude Code migrate your code to a newer model
 
 Run in
 
 `❯``/claude-api`` migrate this project to the latest Claude Opus model`
 
 
-
-The skill detects which cloud platform your code targets and adjusts model ID formats and feature changes for that platform.
 
 ## Global, multi-region, and regional endpoints
 
@@ -297,7 +210,7 @@ client = AnthropicVertex(project_id=project_id, region=region)
 
 Features supported on Claude Models on Google Cloud (Google managed) include the following:
 
-- [Messages API](../Endpoints/messages-create.md)
+- [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.
 - [Prompt caching](build-with-claude-prompt-caching.md)
 - [Thinking](build-with-claude-thinking.md)
 - [Tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md), including these tools:
@@ -310,11 +223,11 @@ Features supported on Claude Models on Google Cloud (Google managed) include the
 - [Citations](build-with-claude-citations.md)
 - [Structured outputs](build-with-claude-structured-outputs.md)
 
-[Features overview](build-with-claude-overview.md) lists every feature and whether Claude Models on Google Cloud (Google managed) supports it.
+[Features overview](build-with-claude-overview.md) lists every feature. Each feature’s page shows whether Claude Models on Google Cloud (Google managed) supports it.
 
 ### Features not supported
 
-Claude Models on Google Cloud (Google managed) doesn't support the following:
+Claude Models on Google Cloud (Google managed) doesn’t support the following:
 
 - **Input sources:** URL sources for images and documents, and the Files API
 - **Server-side tools:** Code execution, web fetch, and advisor
@@ -349,11 +262,11 @@ Agent Platform limits request payloads to 30 MB. When you send large documents 
 
 ### Rate limits
 
-Google Cloud manages rate limits and quotas for Claude Models on Google Cloud (Google managed). For details, including how to request a quota increase, see Google Cloud's [Quotas for Anthropic Claude models](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/quotas) page.
+Google Cloud manages rate limits and quotas for Claude Models on Google Cloud (Google managed). For details, including how to request a quota increase, see Google Cloud’s [Quotas for Anthropic Claude models](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude/quotas) page.
 
 ### Billing
 
-Google Cloud invoices you for Claude Models on Google Cloud (Google managed). For prices, see Google Cloud's [Generative AI pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing#claude-models) page. Prices also depend on the endpoint type. See [Global, multi-region, and regional endpoints](#global-multi-region-and-regional-endpoints).
+Google Cloud invoices you for Claude Models on Google Cloud (Google managed). For prices, see Google Cloud’s [Generative AI pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing#claude-models) page. Prices also depend on the endpoint type. See [Global, multi-region, and regional endpoints](#global-multi-region-and-regional-endpoints).
 
 ### Data retention
 
@@ -361,13 +274,13 @@ Google Cloud governs data handling for Claude Models on Google Cloud (Google man
 
 ### Monitoring and logging
 
-To log prompts and completions for Claude Models on Google Cloud (Google managed), use Agent Platform's [request-response logging service](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/request-response-logging).
+To log prompts and completions for Claude Models on Google Cloud (Google managed), use Agent Platform’s [request-response logging service](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/request-response-logging).
 
 Anthropic recommends that you keep at least the last 30 days of logs. The logs help you understand your activity and investigate possible misuse.
 
 
 
-Turning on this service doesn't give Google or Anthropic any access to your content.
+Turning on this service doesn’t give Google or Anthropic any access to your content.
 
 ## Migrating from Claude Models on Google Cloud (Anthropic managed)
 
@@ -443,7 +356,7 @@ For what changes when you move, see [How the two Google Cloud offerings differ](
     ### Check model IDs and features
 
     - **Model IDs:** If you use a model earlier than Claude 4.6, replace the hyphen before the snapshot date in its ID with `@`. For example, `claude-haiku-4-5-20251001` becomes `claude-haiku-4-5@20251001`. For the models and their IDs, see [API model IDs](#api-model-ids).
-    - **Features:** Check that the features your code uses aren't listed in [Features not supported](#features-not-supported).
+    - **Features:** Check that the features your code uses aren’t listed in [Features not supported](#features-not-supported).
 
 5.  5
 
@@ -457,7 +370,7 @@ For what changes when you move, see [How the two Google Cloud offerings differ](
 
 [Features overview](build-with-claude-overview.md)
 
-Explore Claude's features.
+Explore Claude’s features.
 
 
 
@@ -469,10 +382,10 @@ Check which Claude models each region offers, and their retirement dates.
 
 [Agent Platform documentation](https://cloud.google.com/vertex-ai/docs)
 
-Read Google Cloud's Agent Platform documentation.
+Read Google Cloud’s Agent Platform documentation.
 
 
 
 [Global endpoint for Claude models](https://cloud.google.com/blog/products/ai-machine-learning/global-endpoint-for-claude-models-generally-available-on-vertex-ai)
 
-Read Google Cloud's blog post about the global endpoint for Claude models.
+Read Google Cloud’s blog post about the global endpoint for Claude models.

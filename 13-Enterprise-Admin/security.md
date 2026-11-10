@@ -2,11 +2,14 @@
 title: "Security - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/security"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-17T06:25:25Z"
+fetched_at: "2026-10-31T06:25:12Z"
+last_modified: "Sat, 31 Oct 2026 01:06:35 GMT"
 tags: ["claude-code", "enterprise", "security"]
 ---
 
 ## On this page
+
+Back to top
 
 - [How we approach security](#how-we-approach-security)
   - [Security foundation](#security-foundation)
@@ -107,7 +110,7 @@ We have implemented several safeguards to protect your data, including:
 - Restricted access to user session data
 - User control over data training preferences. Consumer users can change their [privacy settings](https://claude.ai/settings/privacy) at any time.
 
-For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, and Max users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
+For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, Max, and Ultra users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
 
 
 [​](#additional-safeguards)

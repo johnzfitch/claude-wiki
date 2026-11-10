@@ -2,11 +2,14 @@
 title: "How Claude Code works - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/how-claude-code-works"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:31Z"
+fetched_at: "2026-10-31T06:24:38Z"
+last_modified: "Sat, 31 Oct 2026 01:06:33 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [The agentic loop](#the-agentic-loop)
   - [Models](#models)
@@ -67,12 +70,12 @@ Tools
 
 Tools are what make Claude Code agentic. Without tools, Claude can only respond with text. With tools, Claude can act: read your code, edit files, run commands, search the web, and interact with external services. Each tool use returns information that feeds back into the loop, informing Claude’s next decision. The built-in tools generally fall into five categories, each representing a different kind of agency.
 
-| Category              | What Claude can do                                                                                                                                        |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **File operations**   | Read files, edit code, create new files, rename and reorganize                                                                                            |
-| **Search**            | Find files by pattern, search content with regex, explore codebases                                                                                       |
-| **Execution**         | Run shell commands, start servers, run tests, use git                                                                                                     |
-| **Web**               | Search the web, fetch documentation, look up error messages                                                                                               |
+| Category | What Claude can do |
+|----|----|
+| **File operations** | Read files, edit code, create new files, rename and reorganize |
+| **Search** | Find files by pattern, search content with regex, explore codebases |
+| **Execution** | Run shell commands, start servers, run tests, use git |
+| **Web** | Search the web, fetch documentation, look up error messages |
 | **Code intelligence** | See type errors and warnings after edits, jump to definitions, find references (requires [code intelligence plugins](../08-Plugins-Skills/plugins-code-intelligence.md)) |
 
 These are the primary capabilities. Claude also has tools for spawning subagents, asking you questions, and other orchestration tasks. See [Tools available to Claude](tools-reference.md) for the complete list. Claude chooses which tools to use based on your prompt and what it learns along the way. When you say “fix the failing tests,” Claude might:
@@ -116,18 +119,18 @@ Execution environments
 
 Claude Code runs in three environments, each with different tradeoffs for where your code executes.
 
-| Environment        | Where code runs                                                                                                    | Use case                                                   |
-|--------------------|--------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| **Local**          | Your machine                                                                                                       | Default. Full access to your files, tools, and environment |
-| **Cloud**          | Anthropic-managed VMs, or [self-hosted environments](../13-Enterprise-Admin/self-hosted-environments.md) your organization operates | Offload tasks, work on repos you don’t have locally        |
-| **Remote Control** | Your machine, controlled from a browser                                                                            | Use the web UI while execution and your files stay local   |
+| Environment | Where code runs | Use case |
+|----|----|----|
+| **Local** | Your machine | Default. Full access to your files, tools, and environment |
+| **Cloud** | Anthropic-managed VMs, or [self-hosted environments](../13-Enterprise-Admin/self-hosted-environments.md) your organization operates | Offload tasks, work on repos you don’t have locally |
+| **Remote Control** | Your machine, controlled from a browser | Use the web UI while execution and your files stay local |
 
 
 [​](#interfaces)
 
 Interfaces
 
-You can access Claude Code through the terminal, the [desktop app](../16-Mobile-Desktop/desktop.md), [IDE extensions](../03-IDE-Integrations/vs-code.md), [claude.ai/code](https://claude.ai/code), [Remote Control](remote-control.md), [Slack](../14-Connectors/slack.md), and [CI/CD pipelines](github-actions.md). The interface determines how you see and interact with Claude, but the underlying agentic loop is identical. See [Use Claude Code everywhere](code-home.md#use-claude-code-everywhere) for the full list.
+You can access Claude Code through the terminal, the [desktop app](../16-Mobile-Desktop/desktop.md), [IDE extensions](../03-IDE-Integrations/vs-code.md), [claude.ai/code](https://claude.ai/code), [Remote Control](remote-control.md), [Slack](../14-Connectors/slack.md), and [CI/CD pipelines](github-actions.md). The interface determines how you see and interact with Claude, but the underlying agentic loop is identical. See [Use Claude Code everywhere](../01-Getting-Started/overview.md#use-claude-code-everywhere) for the full list.
 
 
 [​](#work-with-sessions)
@@ -178,7 +181,7 @@ To change or remove the attribution lines, set [`attribution`](settings-referenc
 
 When context fills up
 
-Claude Code manages context automatically as you approach the limit. It clears older tool outputs first, then summarizes the conversation if needed. Your requests and key code snippets are preserved; detailed instructions from early in the conversation may be lost. Put persistent rules in CLAUDE.md rather than relying on conversation history. To control what’s preserved during compaction, add a “Compact Instructions” section to CLAUDE.md or run `/compact` with a focus (like `/compact focus on the API changes`). If a single file or tool output is so large that context refills immediately after each summary, Claude Code stops auto-compacting after a few attempts and shows an error instead of looping. See [Auto-compaction stops with a thrashing error](troubleshooting.md#auto-compaction-stops-with-a-thrashing-error) for recovery steps. Run `/context` to see what’s using space. MCP tool definitions are deferred by default and loaded on demand via [tool search](../06-MCP-Tools/General/mcp.md#scale-with-mcp-tool-search), so only tool names and server instructions consume context until Claude uses a specific tool.
+Claude Code manages context automatically as you approach the limit. It compacts the conversation into a summary. The summary keeps your requests and key code snippets, but detailed instructions from early in the conversation may be lost. Put persistent rules in CLAUDE.md rather than relying on conversation history. To control what’s preserved during compaction, add a “Compact Instructions” section to CLAUDE.md or run `/compact` with a focus (like `/compact focus on the API changes`). If a single file or tool output is so large that context refills immediately after each summary, Claude Code stops auto-compacting after a few attempts and shows an error instead of looping. See [Auto-compaction stops with a thrashing error](troubleshooting.md#auto-compaction-stops-with-a-thrashing-error) for recovery steps. Run `/context` to see what’s using space. MCP tool definitions are deferred by default and loaded on demand via [tool search](../06-MCP-Tools/General/mcp.md#scale-with-mcp-tool-search), so only tool names and server instructions consume context until Claude uses a specific tool.
 
 
 [​](#manage-context-with-skills-and-subagents)
@@ -208,7 +211,7 @@ Control what Claude can do
 
 Choose a permission mode to set what Claude can do without asking you. Press `Shift+Tab` to cycle through the permission modes:
 
-- **Auto**: a classifier reviews most actions in the background and blocks the risky ones instead of asking you. With Claude Code v2.1.283 or later, it’s the [built-in starting permission mode](permission-modes.md#which-mode-a-session-starts-in) for interactive terminal and VS Code sessions, and on earlier versions only on Pro, Max, and Team plans
+- **Auto**: a classifier reviews most actions in the background and blocks the risky ones instead of asking you. With Claude Code v2.1.283 or later, it’s the [built-in starting permission mode](permission-modes.md#which-mode-a-session-starts-in) for interactive terminal and VS Code sessions. On earlier versions, it’s the built-in starting permission mode only on Pro, Max, Ultra, and Team plans.
 - **Manual**: Claude asks before file edits and shell commands
 - **Accept edits**: Claude edits files and runs common filesystem commands like `mkdir` and `mv` without asking, still asks for other commands
 - **Plan**: Claude explores and proposes a plan without editing your source files
@@ -222,7 +225,7 @@ You can also allow specific commands in `.claude/settings.json` so Claude doesn�
 
 Work effectively with Claude Code
 
-These tips help you get better results from Claude Code. For more on specific prompts, verification, and planning, see [Best practices](best-practices.md).
+These tips help you get better results from Claude Code. For more on specific prompts, verification, and the rules worth enforcing rather than prompting for, see [Best practices](best-practices.md).
 
 
 [​](#ask-claude-code-for-help)

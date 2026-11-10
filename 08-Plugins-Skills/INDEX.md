@@ -4,7 +4,7 @@
 
 - [Add components to a plugin - Claude Code Docs](plugins-components.md) — Add skills, hooks, MCP servers, and every other component type to a Claude Code plugin, with an example that validates for each.
 - [Advanced Plugin Example](claude-code-plugins-plugin-dev-skills-plugin-structure-examples-advanced-plugin.md) — A complex, enterprise-grade plugin with MCP integration and advanced organization.
-- [Anthropic's marketplaces - Claude Code Docs](plugins-anthropic-marketplaces.md) — Anthropic’s official, community, and demo plugin marketplaces for Claude Code: their names, repositories, how you add each, and where to browse their plugins.
+- [Anthropic's marketplaces - Claude Code Docs](plugins-anthropic-marketplaces.md) — Anthropic’s official and community plugin marketplaces for Claude Code: their names, repositories, how you add each, and where to browse their plugins.
 - [Best practices for skill creators - Agent Skills](skill-creation-best-practices.md) — How to write skills that are well-scoped and calibrated to the task.
 - [Building Custom Skills for Claude](claude-cookbooks-skills-notebooks-03-skills-custom-development.md) — Learn how to create, deploy, and manage custom skills to extend
 - [Claude Skills for Financial Applications](claude-cookbooks-skills-notebooks-02-skills-financial-applications.md) — Build real-world financial dashboards, portfolio analytics, and
@@ -14,11 +14,11 @@
 - [Code intelligence plugins - Claude Code Docs](plugins-code-intelligence.md) — Install a language server plugin so Claude sees type errors after edits and navigates code by symbol, and answer the LSP plugin recommendation dialog.
 - [Code Review](claude-code-plugins-code-review-commands-code-review.md) — Provide a code review for the given pull request.
 - [Code Review Plugin](claude-code-plugins-code-review-readme.md) — Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives.
-- [Code Review | Claude by Anthropic](plugins-code-review.md) — AI code review with specialized agents and confidence-based filtering for pull requests
+- [Code Review | Claude by Anthropic](plugins-code-review.md) — Automated code review for pull requests using multiple specialized agents with confidence-based scoring
 - [Code Reviewer](claude-code-plugins-feature-dev-agents-code-reviewer.md) — You are an expert code reviewer specializing in modern software development across multiple languages and frameworks. Your primary responsibility is to review…
 - [Code Reviewer2](claude-code-plugins-pr-review-toolkit-agents-code-reviewer.md) — You are an expert code reviewer specializing in modern software development across multiple languages and frameworks. Your primary responsibility is to review…
 - [Code Simplifier](claude-code-plugins-pr-review-toolkit-agents-code-simplifier.md) — You are an expert code simplification specialist focused on enhancing code clarity, consistency, and maintainability while preserving exact functionality. Your…
-- [Code Simplifier | Claude by Anthropic](plugins-code-simplifier.md) — Code clarity agent: simplifies and refines recently modified code while preserving functionality and consistency.
+- [Code Simplifier | Claude by Anthropic](plugins-code-simplifier.md) — Agent that simplifies and refines code for clarity, consistency, and maintainability while preserving functionality
 - [Command Development Skill](claude-code-plugins-plugin-dev-skills-command-development-readme.md) — Comprehensive guidance on creating Claude Code slash commands, including file format, frontmatter options, dynamic arguments, and best practices.
 - [Command Frontmatter Reference](claude-code-plugins-plugin-dev-skills-command-development-references-frontmatter-reference.md) — Complete reference for YAML frontmatter fields in slash commands.
 - [Comment Analyzer](claude-code-plugins-pr-review-toolkit-agents-comment-analyzer.md) — You are a meticulous code comment analyzer with deep expertise in technical documentation and long-term code maintainability. You approach every comment with…
@@ -27,7 +27,7 @@
 - [Commit Push Pr](claude-code-claude-commands-commit-push-pr.md) — - Current git status: !git status
 - [Comprehensive PR Review](claude-code-plugins-pr-review-toolkit-commands-review-pr.md) — Run a comprehensive pull request review using multiple specialized agents, each focusing on a different aspect of code quality.
 - [Constrain plugin dependency versions - Claude Code Docs](plugin-dependencies.md) — Declare version constraints on plugin dependencies, and bundle a curated plugin set behind one install.
-- [Context7 | Claude by Anthropic](plugins-context7.md) — Upstash Context7 MCP server for live docs lookup. Pull version-specific docs and code examples from source repos into LLM context.
+- [Context7 | Claude by Anthropic](plugins-context7.md) — Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) — no local…
 - [Conversation Analyzer](claude-code-plugins-hookify-agents-conversation-analyzer.md) — You are a conversation analysis specialist that identifies problematic behaviors in Claude Code sessions that could be prevented with hooks.
 - [Create a Claude Code plugin - Claude Code Docs](plugins-create.md) — Build your first Claude Code plugin from an empty directory, test it without a marketplace, and convert an existing .claude/ setup.
 - [Create a marketplace - Claude Code Docs](plugin-marketplaces.md) — Build a plugin marketplace from a marketplace.json file and test it locally before you host it.
@@ -37,12 +37,12 @@
 - [Evaluating skill output quality - Agent Skills](skill-creation-evaluating-skills.md) — How to test whether your skill produces good outputs using eval-driven iteration.
 - [Explanatory Output Style Plugin](claude-code-plugins-explanatory-output-style-readme.md) — This plugin recreates the deprecated Explanatory output style as a SessionStart
 - [Extend Claude with skills - Claude Code Docs](skills.md) — Create, manage, and share skills to extend Claude’s capabilities in Claude Code. Includes custom commands and bundled skills.
-- [Feature Dev | Claude by Anthropic](plugins-feature-dev.md) — Feature development workflow with agents for exploration, design, and review
+- [Feature Dev | Claude by Anthropic](plugins-feature-dev.md) — Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review
 - [Feature Development](claude-code-plugins-feature-dev-commands-feature-dev.md) — You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspecified…
 - [Financial Modeling Suite](claude-cookbooks-skills-custom-skills-creating-financial-models-skill.md) — A comprehensive financial modeling toolkit for investment analysis, valuation, and risk assessment using industry-standard methodologies.
 - [Frontend Design Plugin](claude-code-plugins-frontend-design-readme.md) — Generates distinctive, production-grade frontend interfaces that avoid generic AI aesthetics.
-- [Frontend Design | Claude by Anthropic](plugins-frontend-design.md) — Craft production-grade frontends with distinctive design. Generates polished code that avoids generic AI aesthetics.
-- [GitHub | Claude by Anthropic](plugins-github.md) — Official GitHub MCP server for repo management. Create issues, manage PRs, review code, search repos, and access GitHub's API from Claude Code.
+- [Frontend Design | Claude by Anthropic](plugins-frontend-design.md) — Frontend design skill for UI/UX implementation
+- [GitHub | Claude by Anthropic](plugins-github.md) — Official GitHub MCP server for repository management. Create issues, manage pull requests, review code, search repositories, and interact with GitHub's full…
 - [Host and maintain a marketplace - Claude Code Docs](plugins-host-marketplace.md) — Publish a plugin marketplace where users can reach it, grant access to a private one, and release updates and renames without breaking installs.
 - [How to add skills support to your agent - Agent Skills](client-implementation-adding-skills-support.md) — A guide for adding Agent Skills support to an AI agent or development tool.
 - [Improving frontend design through Skills | Claude by Anthropic](improving-frontend-design-through-skills.md) — Best practices for building richer, more customized frontend design with Claude and Skills.
@@ -58,7 +58,7 @@
 - [Mods reference - Claude Code Docs](plugins-mods-reference.md) — Complete reference for Claude Code mods: hooks module layout, events, mods API methods, render sites, elements by surface, limits, and settings.
 - [New Sdk App](claude-code-plugins-agent-sdk-dev-commands-new-sdk-app.md) — You are tasked with helping the user create a new Claude Agent SDK application. Follow these steps carefully:
 - [Optimizing skill descriptions - Agent Skills](skill-creation-optimizing-descriptions.md) — How to improve your skill’s description so it triggers reliably on relevant prompts.
-- [Playwright | Claude by Anthropic](plugins-playwright.md) — Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, and automate…
+- [Playwright | Claude by Anthropic](plugins-playwright.md) — Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and…
 - [Plugin Command Examples](claude-code-plugins-plugin-dev-skills-command-development-examples-plugin-commands.md) — Practical examples of commands designed for Claude Code plugins, demonstrating plugin-specific patterns and features.
 - [Plugin commands reference - Claude Code Docs](plugins-cli-reference.md) — Reference for the claude plugin shell commands, /plugin and /reload-plugins in a session, and the flags that load a plugin for one session.
 - [Plugin Creation Workflow](claude-code-plugins-plugin-dev-commands-create-plugin.md) — Guide the user through creating a complete, high-quality Claude Code plugin from initial concept to tested implementation. Follow a systematic approach…
@@ -76,7 +76,7 @@
 - [Publish and distribute a plugin - Claude Code Docs](plugins-publish.md) — Publish a Claude Code plugin through your own marketplace or Anthropic’s directory, with a pre-release checklist and how users get updates.
 - [Quickstart - Agent Skills](skill-creation-quickstart.md) — Create your first Agent Skill and see it work in VS Code.
 - [Ralph Loop Command](claude-code-plugins-ralph-wiggum-commands-ralph-loop.md) — Execute the setup script to initialize the Ralph loop:
-- [Ralph Loop | Claude by Anthropic](plugins-ralph-loop.md) — Interactive AI loops for iterative development using the Ralph Wiggum technique: Claude works on tasks repeatedly, seeing prior work until completion.
+- [Ralph Loop | Claude by Anthropic](plugins-ralph-loop.md) — Continuous self-referential AI loops for interactive iterative development, implementing the Ralph Wiggum technique. Run Claude in a while-true loop with the…
 - [Ralph Wiggum Plugin](claude-code-plugins-ralph-wiggum-readme.md) — Implementation of the Ralph Wiggum technique for iterative, self-referential AI development loops in Claude Code.
 - [Ralph Wiggum Plugin Help](claude-code-plugins-ralph-wiggum-commands-help.md) — Please explain the following to the user:
 - [React to events with a mod - Claude Code Docs](plugins-mods-events.md) — Handle Claude Code events from a mod: observe, rewrite, or answer tool calls, prompts, and turns, filter which events a hook handles, and plan for other mods.
@@ -91,7 +91,7 @@
 - [Skills Cookbook - Claude Code Guide](claude-cookbooks-skills-claude.md) — This is a comprehensive Jupyter notebook cookbook demonstrating Claude's Skills feature for document generation (Excel, PowerPoint, PDF). It's designed for…
 - [Specification - Agent Skills](specification.md) — The complete format specification for Agent Skills.
 - [Standard Plugin Example](claude-code-plugins-plugin-dev-skills-plugin-structure-examples-standard-plugin.md) — A well-structured plugin with commands, agents, and skills.
-- [Superpowers | Claude by Anthropic](plugins-superpowers.md) — Claude learns brainstorming, subagent development with code review, debugging, TDD, and skill authoring through Superpowers.
+- [Superpowers | Claude by Anthropic](plugins-superpowers.md) — Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques
 - [Test a mod - Claude Code Docs](plugins-mods-test.md) — Write automated tests for a Claude Code mod that fire events, stub Claude Code’s answers, and press buttons, with no session, sign-in, or network.
 - [Test plugins with evals - Claude Code Docs](plugin-evals.md) — Write eval cases for your Claude Code plugin, run them with claude plugin eval, grade the results, compare against a no-plugin baseline, and gate CI on the…
 - [Troubleshoot a mod - Claude Code Docs](plugins-mods-troubleshoot.md) — Find out why a Claude Code mod does nothing: match the symptom or message to its cause, look up refusal messages, and read the debug log.

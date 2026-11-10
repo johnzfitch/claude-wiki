@@ -2,7 +2,7 @@
 title: "Adapt to new model personas after deprecations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12738598-adapting-to-new-model-personas-after-deprecations"
 category: "20-Models"
-fetched_at: "2026-10-23T06:28:57Z"
+fetched_at: "2026-11-09T06:26:18Z"
 tags: ["models"]
 ---
 
@@ -19,9 +19,9 @@ Below are a set of strategies and recommendations for adapting to model transiti
 
 - When a model deprecation is announced, we suggest experimenting with newer models as soon as possible. You can test different models and run side-by-side comparisons with the kinds of prompts and conversations that matter the most to you, to identify the best alternative model prior to retirement.
 
-- **[Enabling memory and allowing Claude to search past chats](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)** can help new models to learn and immediately adapt to your preferences and communication style.
+- **[Enabling memory and allowing Claude to search past chats](../15-Claude-AI-Features/using-claude-s-chat-search-and-memory-to-build-on-previous-context.md)** can help new models to learn and immediately adapt to your preferences and communication style.
 
-- **[Projects](https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects)** offer another means of personalization, and can include custom instructions for Claude as well as custom context, which again can help new models understand and adapt to your needs and preferences.
+- **[Projects](../22-Safety-Policy/how-can-i-create-and-manage-projects.md)** offer another means of personalization, and can include custom instructions for Claude as well as custom context, which again can help new models understand and adapt to your needs and preferences.
 
 - Using these personalization strategies can be thought of as giving feedback to new models. If you find that a new model is more or less talkative than you’d prefer, or has a different tone, you can shape the model’s behavior within a conversation, within a project, or across your entire account using the strategies above. If you’re not sure how to describe the qualities you’re looking for, you can ask Claude to review some of the conversations you’ve most appreciated and to craft instructions for itself based on those.
 
@@ -29,4 +29,4 @@ Below are a set of strategies and recommendations for adapting to model transiti
 
 - Along with these practical strategies, we recommend maintaining a general awareness of the model lifecycle when relating to models; historically Anthropic has deprecated most models around a year after their initial release.
 
-These strategies aren’t perfect and can only go so far toward preserving or replicating the unique experience of interacting with a particular model, which we recognize is intrinsically important to many users. We’re taking **[other early steps](../19-Reference/deprecation-commitments.md)** toward ensuring model preservation post-retirement, and someday aim to make past models publicly available again in some form.
+These strategies aren’t perfect and can only go so far toward preserving or replicating the unique experience of interacting with a particular model, which we recognize is intrinsically important to many users. We’re taking **[other early steps](../19-Reference/research-deprecation-commitments.md)** toward ensuring model preservation post-retirement, and someday aim to make past models publicly available again in some form.

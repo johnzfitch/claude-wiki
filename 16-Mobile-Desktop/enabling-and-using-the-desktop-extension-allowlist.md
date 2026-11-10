@@ -2,13 +2,11 @@
 title: "Enabling and using the desktop extension allowlist | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-23T06:28:57Z"
+fetched_at: "2026-11-09T06:25:52Z"
 tags: ["desktop"]
 ---
 
 # Enabling and using the desktop extension allowlist
-
-March 16, 2026
 
 
 The desktop extension allowlist is available for Owners and Primary Owners of Team and Enterprise plans.
@@ -34,6 +32,8 @@ The desktop extension allowlist is disabled by default, so an organization Owner
 
 5.  Toggle **Allowlist** on:
 
+
+On the Enterprise plan, you can also choose "Block all desktop extensions" under the allowlist switch, which turns off installed extensions, even those on your list, and stops new installs. Learn more in **[Enterprise configuration for Claude Desktop](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md)**.
 
 ## What happens after enabling the allowlist?
 

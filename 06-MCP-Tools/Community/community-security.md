@@ -2,11 +2,14 @@
 title: "Security Policy - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/security"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-02T05:39:04Z"
+fetched_at: "2026-11-01T06:24:21Z"
+last_modified: "Sat, 31 Oct 2026 18:09:57 GMT"
 tags: ["mcp", "mcp-community", "security"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Reporting a vulnerability](#reporting-a-vulnerability)
 - [SDK disclosure and cross-SDK coordination](#sdk-disclosure-and-cross-sdk-coordination)
@@ -59,4 +62,4 @@ When using the stdio transport, the client spawns the server as a local subproce
 
 Security Interest Group
 
-The [Security Interest Group](community-interest-groups-security.md) is the venue for discussing MCP-specific threats, reviewing security-relevant proposals, and routing disclosure questions that don’t fit a single repository.
+The [Security Interest Group](community-interest-groups-security.md) is where you raise MCP-specific security topics, including disclosure questions that don’t fit a single repository, and where facilitators route them to the group that owns the work.

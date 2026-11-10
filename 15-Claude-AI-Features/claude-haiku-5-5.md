@@ -2,7 +2,7 @@
 title: "Introducing Claude Haiku 5.5 \\ Anthropic"
 source_url: "https://www.anthropic.com/claude-haiku-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-20T06:41:17Z"
+fetched_at: "2026-10-31T06:26:45Z"
 tags: ["claude-ai"]
 ---
 
@@ -24,7 +24,7 @@ Claude Haiku 5.5 is designed for high-volume, cost-sensitive tasks. It reliably 
 
 Haiku 5.5 is available at a much lower price than Haiku 4.5. On average, it now costs around 75% less to run.²
 
-Along with this launch, we’re making improvements to the value of our model range. We’re halving the price of Claude Sonnet 5.5’s cache reads, which means Sonnet 5.5 now runs around 20% cheaper on most agentic work. And we’re introducing a new monthly API credit for our Claude Max and Team subscribers, designed to support our users in building new agents and applications that run on the Claude Platform.
+Along with this launch, we’re making improvements to the value of our model range. We’re halving the price of Claude Sonnet 5.5’s cache reads, which means Sonnet 5.5 now runs around 20% cheaper on most agentic work. And we’re introducing a new monthly API credit for our Claude Max, Ultra, and Team subscribers, designed to support our users in building new agents and applications that run on the Claude Platform.
 
 ## Performance
 
@@ -108,7 +108,46 @@ AuthorWalden Yan, Co-Founder & CPO
 
 The table below shows how Claude Haiku 5.5’s pricing compares to our other models. Haiku 5.5 is especially good value when used for tasks with prompts up to 100,000 tokens, which make up around 90% of requests to our previous Haiku model.
 
-[TABLE]
+Price per 1 million tokens
+
+**Haiku 5.5**  
+prompts up to / over 100k
+
+**Haiku 4.5**
+
+**Sonnet 5.5**
+
+Cache reads
+
+\$0.01 / \$0.05
+
+\$0.10
+
+\$0.10
+
+Cache writes
+
+\$0.125 / \$0.625
+
+\$1.25
+
+\$2.50
+
+Input tokens
+
+\$0.10 / \$0.50
+
+\$1.00
+
+\$2.00
+
+Output tokens
+
+\$0.50 / \$2.50
+
+\$5.00
+
+\$10.00
 
 ## Safety
 
@@ -134,7 +173,7 @@ For instance, here’s what the price cut means for Sonnet 5.5’s performance r
 
 This chart illustrates an important difference between Haiku 5.5 and our larger models. Sonnet 5.5 and Opus 5.5 remain better choices for complex agentic coding tasks like those measured by Terminal-Bench 4.0. By contrast, Haiku 5.5 is best suited to more narrowly scoped tasks that might otherwise have been cost-prohibitive with previous versions of Claude—like compaction, summarization, or subagent work.
 
-Second, this week, we’ll roll out **a new monthly API credit to all Max and Team subscribers for use on the Claude Platform**. Max 5x users will get \$100 in credits per month, Max 20x users will get \$200, and Team subscribers will receive up to \$500, pooled across their users. These credits are designed to allow our users to experiment with building tools, apps, and agents that call our API. They can be used on any of our models. For more information, [see our Help Center article](https://support.claude.com/en/articles/17154008).
+Second, this week, we’ll roll out **a new monthly API credit to all Max, Ultra, and Team subscribers for use on the Claude Platform**. Max users will get \$100 in credits per month, Ultra users will get \$200, and Team subscribers will receive up to \$500, pooled across their users. These credits are designed to allow our users to experiment with building tools, apps, and agents that call our API. They can be used on any of our models. For more information, [see our Help Center article](../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md).
 
 For developers, we’re also **updating our Claude Python and TypeScript SDKs to add support for computer use and browser use** in beta. Haiku 5.5 is especially well-suited to these tasks, given its combination of speed, capability, and price. You can read more about this [in our Claude Platform docs](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md).
 
@@ -143,112 +182,3 @@ For developers, we’re also **updating our Claude Python and TypeScript SDKs to
 ¹ Claude Haiku 5.5 is our fastest model to date at each model’s standard speed, although it runs less quickly than our Opus models in Fast Mode.
 
 ² Claude Haiku 5.5 is priced 90% lower than Claude Haiku 4.5 for requests up to 100,000 tokens, and 50% lower for requests over 100,000 tokens. On Haiku 4.5, 90% of requests fell into the former category. This calculation also accounts for changes between Haiku 4.5 and Haiku 5.5 in how many tokens are used to complete a given piece of work: Haiku 5.5 has an updated tokenizer (similar to Sonnet 5.5’s and Opus 5.5’s), which means it uses slightly more tokens per task.
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
-- [Claude Code Enterprise](product-claude-code-enterprise.md)
-- [Claude Cowork](product-cowork.md)
-- [@Claude](product-tag.md)
-- [Claude Design](product-design.md)
-- [Claude Science](product-claude-science.md)
-- [Claude Security](product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](claude-mythos.md)
-- [Fable](claude-fable.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/playground.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Developer blog](https://claude.dev)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Campus](programs-campus.md)
-- [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-team-plan-for-scientists.md)
-- [Startups](programs-startups.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](../19-Reference/company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](../19-Reference/company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [News](../19-Reference/news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

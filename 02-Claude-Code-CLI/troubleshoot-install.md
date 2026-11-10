@@ -2,11 +2,14 @@
 title: "Troubleshoot installation and login - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/troubleshoot-install"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-21T06:28:58Z"
+fetched_at: "2026-11-05T06:35:22Z"
+last_modified: "Thu, 05 Nov 2026 03:51:17 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Find your error](#find-your-error)
 - [Run diagnostic checks](#run-diagnostic-checks)
@@ -47,6 +50,7 @@ tags: ["claude-code"]
   - [npm install errors in WSL](#npm-install-errors-in-wsl)
   - [Permission errors during installation](#permission-errors-during-installation)
   - [Native binary not found after npm install](#native-binary-not-found-after-npm-install)
+  - [Fix an npm 12 install](#fix-an-npm-12-install)
   - [npm ENOTEMPTY error during update or reinstall](#npm-enotempty-during-update-or-reinstall)
 - [Login and authentication](#login-and-authentication)
   - [Reset your login](#reset-your-login)
@@ -56,6 +60,7 @@ tags: ["claude-code"]
   - [This organization has been disabled with an active subscription](#this-organization-has-been-disabled-with-an-active-subscription)
   - [OAuth login fails in WSL2, SSH, or containers](#oauth-login-fails-in-wsl2-ssh-or-containers)
   - [Not logged in or token expired](#not-logged-in-or-token-expired)
+  - [Login fails on a network home directory](#login-fails-on-a-network-home-directory)
   - [Bedrock, Agent Platform, or Foundry credentials not loading](#bedrock-agent-platform-or-foundry-credentials-not-loading)
 - [Still stuck](#still-stuck)
 
@@ -78,56 +83,56 @@ Find your error
 
 Match the error message or symptom you’re seeing to a fix:
 
-| What you see                                                                                               | Solution                                                                                                                                      |
-|:-----------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
-| `command not found: claude` or `'claude' is not recognized`                                                | [Fix your PATH](#command-not-found-claude-after-installation)                                                                                 |
-| `Native installation exists but ... is not in your PATH`                                                   | [Add the install directory to your PATH](#verify-your-path)                                                                                   |
-| `INFO: Could not find files for the given pattern(s).` from `where.exe claude`                             | [Check whether Claude Code is installed](#check-for-conflicting-installations)                                                                |
-| `zsh: permission denied: /Users/you/.zshrc` or `bash: /home/you/.bashrc: Permission denied`                | [Make your shell config file writable](#permission-denied-when-adding-to-your-path)                                                           |
-| `syntax error near unexpected token '<'`                                                                   | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script)                                                         |
-| `< was unexpected at this time` in CMD                                                                     | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script)                                                         |
-| `The term 'System.Xml.XmlDocument' is not recognized`                                                      | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script)                                                         |
-| `curl: (22) The requested URL returned error: 403`                                                         | [Install script returned 403](#install-script-returns-html-instead-of-a-shell-script)                                                         |
-| `curl: (23)` or `curl: (56) Failure writing output to destination`                                         | [Check connectivity or use an alternative installer](#curl-56-failure-writing-output-to-destination)                                          |
-| `Killed` during install on Linux                                                                           | [Free memory or add swap space](#install-killed-on-low-memory-linux-servers)                                                                  |
-| `Installation was killed before it could finish`                                                           | [Free memory, then rerun the installer](#installation-was-killed-before-it-could-finish)                                                      |
-| `Raw mode is not supported` during install                                                                 | [Rerun the installer](#raw-mode-is-not-supported-during-install)                                                                              |
-| `EACCES: permission denied` during install                                                                 | [Fix the install directory’s permissions](#permission-errors-during-installation)                                                             |
-| `TLS connect error` or `SSL/TLS secure channel`                                                            | [Update CA certificates](#tls-or-ssl-connection-errors)                                                                                       |
-| `CRYPT_E_NO_REVOCATION_CHECK` or `CRYPT_E_REVOCATION_OFFLINE`                                              | [Work around blocked revocation checks](#tls-or-ssl-connection-errors)                                                                        |
-| `Failed to fetch version` or can’t reach download server                                                   | [Check network and proxy settings](#check-network-connectivity)                                                                               |
-| `The connection dropped while downloading the update` or `Download timed out: exceeded the total deadline` | [Run the update again or set your proxy](#the-connection-dropped-while-downloading-the-update)                                                |
-| `Release verification failed for Claude Code`                                                              | [Run `claude update` or `claude install` again](#release-verification-failed)                                                                 |
-| `Auto-update failed · Run claude doctor` in red in the session footer                                      | [Run `claude update` from your shell](#auto-update-failed)                                                                                    |
-| `irm is not recognized` or `The token '&&' is not a valid statement separator`                             | [Use the right command for your shell](#wrong-install-command-on-windows)                                                                     |
-| `Cask 'claude-code' is unavailable: No Cask with this name exists`                                         | [Update Homebrew](#homebrew-cask-unavailable-or-outdated)                                                                                     |
-| `Cask 'claude-code@latest' is not installed`                                                               | [Upgrade the cask you installed](#cask-is-not-installed)                                                                                      |
-| `'bash' is not recognized as the name of a cmdlet`                                                         | [Use the Windows installer command](#wrong-install-command-on-windows)                                                                        |
-| `A parameter cannot be found that matches parameter name 'fsSL'`                                           | [Use the Windows installer command](#wrong-install-command-on-windows)                                                                        |
-| `Claude Code on Windows requires either Git for Windows (for bash) or PowerShell`                          | [Install a shell](#claude-code-on-windows-requires-either-git-for-windows-for-bash-or-powershell)                                             |
-| `Claude Code does not support 32-bit Windows`                                                              | [Open Windows PowerShell, not the x86 entry](#claude-code-does-not-support-32-bit-windows)                                                    |
-| `The process cannot access the file ... because it is being used by another process`                       | [Clear the downloads folder and retry](#the-process-cannot-access-the-file-during-windows-install)                                            |
-| `Error loading shared library`                                                                             | [Wrong binary variant for your system](#linux-musl-or-glibc-binary-mismatch)                                                                  |
-| `Illegal instruction`                                                                                      | [Architecture or CPU instruction set mismatch](#illegal-instruction)                                                                          |
-| `cannot execute binary file: Exec format error` in WSL                                                     | [WSL1 native-binary regression](#exec-format-error-on-wsl1)                                                                                   |
-| `Bus error` or `oh no: Bun has crashed` while a session is running                                         | [Keep the executable readable](#bus-error-while-a-session-is-running)                                                                         |
-| PowerShell installer completes but `claude` is not found or shows an old version                           | [Add the install directory to your PATH](#verify-your-path), then open a new terminal                                                         |
-| `dyld: Symbol not found`, `dyld: cannot load`, or `Abort trap` on macOS                                    | [Binary incompatibility](#dyld-cannot-load-on-macos)                                                                                          |
-| `claude update` hangs after `Checking for updates`, or `claude doctor` hangs with no output                | [Move the directory at a shell config path](#claude-update-or-claude-doctor-hangs)                                                            |
-| `Invoke-Expression` or `iex` parse errors quoting HTML tags or CSS, or `ParserError` with `ParseException` | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script)                                                         |
-| `running scripts is disabled on this system` or `PSSecurityException`                                      | [Allow the npm shims to run](#running-scripts-is-disabled-on-this-system)                                                                     |
-| `Error: claude native binary not installed`                                                                | [Complete the npm install](#native-binary-not-found-after-npm-install)                                                                        |
-| `npm error code ENOTEMPTY` during update or reinstall                                                      | [Remove the leftover package directory](#npm-enotempty-during-update-or-reinstall)                                                            |
-| `'claude' is not recognized` right after an update on Windows                                              | [Restore `claude.exe` from its backup](#claude-exe-missing-after-an-update-on-windows)                                                        |
-| On Windows, the install command prints script text and nothing installs                                    | [Run the complete install command](#wrong-install-command-on-windows)                                                                         |
-| `App unavailable in region`                                                                                | Claude Code is not available in your country. See [supported countries](https://www.anthropic.com/supported-countries).                       |
-| `unable to get local issuer certificate`                                                                   | [Configure corporate CA certificates](#tls-or-ssl-connection-errors)                                                                          |
-| `OAuth error` or `403 Forbidden`                                                                           | [Fix authentication](#login-and-authentication)                                                                                               |
-| `Claude Code access has not been granted for this account`                                                 | [Get a role that includes Claude Code](#claude-code-access-has-not-been-granted-for-this-account)                                             |
-| `Unable to connect to Anthropic services` during setup                                                     | See [Unable to connect to Anthropic services](errors.md#unable-to-connect-to-anthropic-services) in the Error reference                 |
-| `Could not load the default credentials` or `Could not load credentials from any providers`                | [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry credentials](#bedrock-agent-platform-or-foundry-credentials-not-loading) |
-| `ChainedTokenCredential authentication failed` or `CredentialUnavailableError`                             | [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry credentials](#bedrock-agent-platform-or-foundry-credentials-not-loading) |
-| `API Error: 500`, `529 Overloaded`, `429`, or other 4xx and 5xx errors not listed above                    | See the [Error reference](errors.md)                                                                                                    |
+| What you see | Solution |
+|:---|:---|
+| `command not found: claude` or `'claude' is not recognized` | [Fix your PATH](#command-not-found-claude-after-installation) |
+| `Native installation exists but ... is not in your PATH` | [Add the install directory to your PATH](#verify-your-path) |
+| `INFO: Could not find files for the given pattern(s).` from `where.exe claude` | [Check whether Claude Code is installed](#check-for-conflicting-installations) |
+| `zsh: permission denied: /Users/you/.zshrc` or `bash: /home/you/.bashrc: Permission denied` | [Make your shell config file writable](#permission-denied-when-adding-to-your-path) |
+| `syntax error near unexpected token '<'` | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script) |
+| `< was unexpected at this time` in CMD | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script) |
+| `The term 'System.Xml.XmlDocument' is not recognized` | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script) |
+| `curl: (22) The requested URL returned error: 403` | [Install script returned 403](#install-script-returns-html-instead-of-a-shell-script) |
+| `curl: (23)` or `curl: (56) Failure writing output to destination` | [Check connectivity or use an alternative installer](#curl-56-failure-writing-output-to-destination) |
+| `Killed` during install on Linux | [Free memory or add swap space](#install-killed-on-low-memory-linux-servers) |
+| `Installation was killed before it could finish` | [Free memory, then rerun the installer](#installation-was-killed-before-it-could-finish) |
+| `Raw mode is not supported` during install | [Rerun the installer](#raw-mode-is-not-supported-during-install) |
+| `EACCES: permission denied` during install | [Fix the install directory’s permissions](#permission-errors-during-installation) |
+| `TLS connect error` or `SSL/TLS secure channel` | [Update CA certificates](#tls-or-ssl-connection-errors) |
+| `CRYPT_E_NO_REVOCATION_CHECK` or `CRYPT_E_REVOCATION_OFFLINE` | [Work around blocked revocation checks](#tls-or-ssl-connection-errors) |
+| `Failed to fetch version` or can’t reach download server | [Check network and proxy settings](#check-network-connectivity) |
+| `The connection dropped while downloading the update` or `Download timed out: exceeded the total deadline` | [Run the update again or set your proxy](#the-connection-dropped-while-downloading-the-update) |
+| `Release verification failed for Claude Code` | [Run `claude update` or `claude install` again](#release-verification-failed) |
+| `Auto-update failed · Run claude doctor` in red in the session footer | [Run `claude update` from your shell](#auto-update-failed) |
+| `irm is not recognized` or `The token '&&' is not a valid statement separator` | [Use the right command for your shell](#wrong-install-command-on-windows) |
+| `Cask 'claude-code' is unavailable: No Cask with this name exists` | [Update Homebrew](#homebrew-cask-unavailable-or-outdated) |
+| `Cask 'claude-code@latest' is not installed` | [Upgrade the cask you installed](#cask-is-not-installed) |
+| `'bash' is not recognized as the name of a cmdlet` | [Use the Windows installer command](#wrong-install-command-on-windows) |
+| `A parameter cannot be found that matches parameter name 'fsSL'` | [Use the Windows installer command](#wrong-install-command-on-windows) |
+| `Claude Code on Windows requires either Git for Windows (for bash) or PowerShell` | [Install a shell](#claude-code-on-windows-requires-either-git-for-windows-for-bash-or-powershell) |
+| `Claude Code does not support 32-bit Windows` | [Open Windows PowerShell, not the x86 entry](#claude-code-does-not-support-32-bit-windows) |
+| `The process cannot access the file ... because it is being used by another process` | [Clear the downloads folder and retry](#the-process-cannot-access-the-file-during-windows-install) |
+| `Error loading shared library` | [Wrong binary variant for your system](#linux-musl-or-glibc-binary-mismatch) |
+| `Illegal instruction` | [Architecture or CPU instruction set mismatch](#illegal-instruction) |
+| `cannot execute binary file: Exec format error` in WSL | [WSL1 native-binary regression](#exec-format-error-on-wsl1) |
+| `Bus error` or `oh no: Bun has crashed` while a session is running | [Keep the executable readable](#bus-error-while-a-session-is-running) |
+| PowerShell installer completes but `claude` is not found or shows an old version | [Add the install directory to your PATH](#verify-your-path), then open a new terminal |
+| `dyld: Symbol not found`, `dyld: cannot load`, or `Abort trap` on macOS | [Binary incompatibility](#dyld-cannot-load-on-macos) |
+| `claude update` hangs after `Checking for updates`, or `claude doctor` hangs with no output | [Move the directory at a shell config path](#claude-update-or-claude-doctor-hangs) |
+| `Invoke-Expression` or `iex` parse errors quoting HTML tags or CSS, or `ParserError` with `ParseException` | [Install script returns HTML](#install-script-returns-html-instead-of-a-shell-script) |
+| `running scripts is disabled on this system` or `PSSecurityException` | [Allow the npm shims to run](#running-scripts-is-disabled-on-this-system) |
+| `Error: claude native binary not installed` | [Complete the npm install](#native-binary-not-found-after-npm-install) |
+| `npm error code ENOTEMPTY` during update or reinstall | [Remove the leftover package directory](#npm-enotempty-during-update-or-reinstall) |
+| `'claude' is not recognized` right after an update on Windows | [Restore `claude.exe` from its backup](#claude-exe-missing-after-an-update-on-windows) |
+| On Windows, the install command prints script text and nothing installs | [Run the complete install command](#wrong-install-command-on-windows) |
+| `App unavailable in region` | Claude Code is not available in your country. See [supported countries](https://www.anthropic.com/supported-countries). |
+| `unable to get local issuer certificate` | [Configure corporate CA certificates](#tls-or-ssl-connection-errors) |
+| `OAuth error` or `403 Forbidden` | [Fix authentication](#login-and-authentication) |
+| `Claude Code access has not been granted for this account` | [Get a role that includes Claude Code](#claude-code-access-has-not-been-granted-for-this-account) |
+| `Unable to connect to Anthropic services` during setup | See [Unable to connect to Anthropic services](errors.md#unable-to-connect-to-anthropic-services) in the Error reference |
+| `Could not load the default credentials` or `Could not load credentials from any providers` | [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry credentials](#bedrock-agent-platform-or-foundry-credentials-not-loading) |
+| `ChainedTokenCredential authentication failed` or `CredentialUnavailableError` | [Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry credentials](#bedrock-agent-platform-or-foundry-credentials-not-loading) |
+| `API Error: 500`, `529 Overloaded`, `429`, or other 4xx and 5xx errors not listed above | See the [Error reference](errors.md) |
 
 If your issue isn’t listed, work through the diagnostic checks below to narrow down the cause.
 
@@ -523,12 +528,12 @@ These all mean the install URL returned a web page, an XML document, or an error
 
 The install finished but `claude` doesn’t work. The exact error varies by platform:
 
-| Platform    | Error message                                                          |
-|:------------|:-----------------------------------------------------------------------|
-| macOS       | `zsh: command not found: claude`                                       |
-| Linux       | `bash: claude: command not found`                                      |
-| Windows CMD | `'claude' is not recognized as an internal or external command`        |
-| PowerShell  | `claude : The term 'claude' is not recognized as the name of a cmdlet` |
+| Platform | Error message |
+|:---|:---|
+| macOS | `zsh: command not found: claude` |
+| Linux | `bash: claude: command not found` |
+| Windows CMD | `'claude' is not recognized as an internal or external command` |
+| PowerShell | `claude : The term 'claude' is not recognized as the name of a cmdlet` |
 
 On Windows, if the error started right after Claude Code updated, see [restore `claude.exe` from its backup](#claude-exe-missing-after-an-update-on-windows). Otherwise, see [Verify your PATH](#verify-your-path) for the fix on each platform.
 
@@ -1045,7 +1050,7 @@ Then run `source ~/.bashrc` and retry `claude`.
 
 npm install errors in WSL
 
-These issues apply if you installed Claude Code with `npm install -g` inside WSL. If you used the [native installer](../01-Getting-Started/setup.md), skip this section. **OS or platform detection issues.** If npm reports a platform mismatch during install, WSL is likely picking up the Windows `npm`. Run `npm config set os linux` first, then install with `npm install -g @anthropic-ai/claude-code --force`. Do not use `sudo`. **`exec: node: not found` when running `claude`.** Your WSL environment is likely using the Windows installation of Node.js. Confirm with `which npm` and `which node`: paths starting with `/mnt/c/` are Windows binaries, while Linux paths start with `/usr/`. To fix this, install Node via your Linux distribution’s package manager or via [`nvm`](https://github.com/nvm-sh/nvm). **nvm version conflicts.** If you have nvm installed in both WSL and Windows, switching Node versions in WSL may break because WSL imports the Windows PATH by default and the Windows nvm takes priority. The most common cause is that nvm isn’t loaded in your shell. Add the nvm loader to `~/.bashrc` or `~/.zshrc`:
+These issues apply if you installed Claude Code with `npm install -g` inside WSL. If you used the [native installer](../01-Getting-Started/setup.md), skip this section. On npm 12, install as [Fix an npm 12 install](#fix-an-npm-12-install) describes. **OS or platform detection issues.** If npm reports a platform mismatch during install, WSL is likely picking up the Windows `npm`. Run `npm config set os linux` first, then install with `npm install -g @anthropic-ai/claude-code --force`. Do not use `sudo`. **`exec: node: not found` when running `claude`.** Your WSL environment is likely using the Windows installation of Node.js. Confirm with `which npm` and `which node`: paths starting with `/mnt/c/` are Windows binaries, while Linux paths start with `/usr/`. To fix this, install Node via your Linux distribution’s package manager or via [`nvm`](https://github.com/nvm-sh/nvm). **nvm version conflicts.** If you have nvm installed in both WSL and Windows, switching Node versions in WSL may break because WSL imports the Windows PATH by default and the Windows nvm takes priority. The most common cause is that nvm isn’t loaded in your shell. Add the nvm loader to `~/.bashrc` or `~/.zshrc`:
 
 ```python
 export NVM_DIR="$HOME/.nvm"
@@ -1083,7 +1088,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 Native binary not found after npm install
 
-The `@anthropic-ai/claude-code` npm package downloads the native binary as a per-platform optional dependency, such as `@anthropic-ai/claude-code-darwin-arm64`. npm then runs the package’s postinstall script, which copies that binary into place as the `claude` command; until it runs, `claude` is a placeholder script. If either the download or the postinstall step is skipped, the placeholder stays in place, and running `claude` on macOS and Linux prints:
+The `@anthropic-ai/claude-code` npm package downloads the native binary as a per-platform optional dependency, such as `@anthropic-ai/claude-code-darwin-arm64`. `claude` is a placeholder script until the `@anthropic-ai/claude-code` package’s postinstall step runs and replaces the placeholder with that binary. If either the download or the postinstall step is skipped, the placeholder stays in place, and running `claude` on macOS and Linux prints:
 
 ```python
 Error: claude native binary not installed.
@@ -1100,10 +1105,37 @@ Or reinstall without --ignore-scripts / --omit=optional.
 
 On Windows, `bin/claude.exe` is that same shell-script placeholder rather than a real executable, so PowerShell and CMD report that they can’t run the file instead of printing this message. Check the following causes:
 
+- **npm 12 skips the postinstall step by default.** When you install or update Claude Code with npm 12, npm still finishes the install without running the step. See [Fix an npm 12 install](#fix-an-npm-12-install).
 - **Optional dependencies are disabled.** Remove `--omit=optional` from your npm install command, `--no-optional` from pnpm, or `--ignore-optional` from yarn, and check that `.npmrc` does not set `optional=false`. Then reinstall. The native binary is delivered only as an optional dependency, so there is no JavaScript fallback if it is skipped, and running `install.cjs` again can’t place a binary that was never downloaded.
 - **Install scripts are disabled.** `--ignore-scripts` and some pnpm configurations skip the postinstall step but still download the platform package. Run `node node_modules/@anthropic-ai/claude-code/install.cjs` as the message suggests, or reinstall without the flag. If postinstall can’t run in your environment at all, `node node_modules/@anthropic-ai/claude-code/cli-wrapper.cjs` finds the downloaded package and launches it, at the cost of an extra Node process on each start. If the wrapper prints `Could not find native binary package` instead, the platform package was never downloaded, so fix the optional-dependencies cause above first.
 - **Unsupported platform.** Prebuilt binaries are published for `darwin-arm64`, `darwin-x64`, `linux-x64`, `linux-arm64`, `linux-x64-musl`, `linux-arm64-musl`, `win32-x64`, and `win32-arm64`. Claude Code does not ship a binary for other platforms; see the [system requirements](../01-Getting-Started/setup.md#system-requirements). On FreeBSD, the installer reports the platform as unsupported. Before v2.1.205, it treated FreeBSD as Linux and downloaded a binary that couldn’t run.
 - **Corporate npm mirror is missing the platform packages.** Ensure your registry mirrors all eight `@anthropic-ai/claude-code-*` platform packages in addition to the meta package.
+
+
+[​](#fix-an-npm-12-install)
+
+Fix an npm 12 install
+
+If `claude` prints `Error: claude native binary not installed.` after an npm install or update, or on Windows the shell can’t run it, run `npm --version`. A version starting with `12` means that, unless your npm config allows it, npm skipped Claude Code’s postinstall step, which puts the binary in place. For any other version, check the [other causes](#native-binary-not-found-after-npm-install). To fix an npm 12 install, switch to the native installer or allow the step:
+
+- **Switch to the native installer**: [install with the native installer](../01-Getting-Started/setup.md#install-claude-code), then [uninstall the npm package](../01-Getting-Started/setup.md#uninstall-with-npm). Updates then don’t use npm, so the error doesn’t come back.
+- **Stay on npm**: for a global npm install, add Claude Code to `allow-scripts` in your user npm config. npm then runs Claude Code’s install scripts on every later install and update, and in project installs whose `package.json` sets no `allowScripts`. Use the native installer for a local install in `~/.claude/local`. Also use it if your `package.json` scripts call `npm install` and you run them with pnpm 9, pnpm 10, Yarn 1 or another tool that passes them this setting. On npm 12.1 and later, those installs can fail with `EALLOWSCRIPTS` once the setting is saved.
+  1.  If `npm --version` printed 12.0.x, update npm to 12.1 or later, for example with `npm install -g npm@latest`. On 12.0.x, project installs that an `npx` tool or an `npm run` script starts can fail with `EALLOWSCRIPTS` once the setting is saved.
+  2.  Run `npm config get allow-scripts` and note any packages it lists, because the next command replaces the whole value. Save the setting with those packages inside the quotes, as in `"allow-scripts=@anthropic-ai/claude-code,<package>"`:
+
+      ``` shiki
+      npm config set "allow-scripts=@anthropic-ai/claude-code" --location=user
+      ```
+  3.  Reinstall:
+
+      ``` shiki
+      npm install -g @anthropic-ai/claude-code
+      ```
+
+      If this or step 1 fails with `EACCES`, switch to the native installer instead of rerunning it with `sudo`. Claude Code runs npm without `sudo` when it updates itself, so automatic updates would fail the same way.
+  4.  If `claude --version` doesn’t print a version number, check the [other causes](#native-binary-not-found-after-npm-install).
+
+  To undo, set the list again without `@anthropic-ai/claude-code`, or remove the whole list with `npm config delete allow-scripts --location=user`. On npm 12, the error then returns after your next update.
 
 
 [​](#npm-enotempty-during-update-or-reinstall)
@@ -1141,7 +1173,7 @@ rm -rf "$(npm root -g)/@anthropic-ai/.claude-code-"*
 Remove-Item -Recurse -Force "$(npm root -g)/@anthropic-ai/claude-code", "$(npm root -g)/@anthropic-ai/.claude-code-*"
 ```
 
-Then reinstall:
+Then reinstall. On npm 12, follow [Fix an npm 12 install](#fix-an-npm-12-install). Otherwise, run:
 
 ```python
 npm install -g @anthropic-ai/claude-code
@@ -1187,7 +1219,7 @@ If you see `OAuth error: Invalid code. Please make sure the full code was copied
 
 If you see `API Error: 403 Request not allowed` after logging in:
 
-- **Claude Pro/Max users**: verify your subscription is active at [claude.ai/settings](https://claude.ai/settings)
+- **Claude Pro/Max/Ultra users**: verify your subscription is active at [claude.ai/settings](https://claude.ai/settings)
 - **Anthropic Console users**: confirm your account has the “Claude Code” or “Developer” role. Admins assign this on the Console’s Members page at [platform.claude.com/settings/members](../04-API-Reference/Other/playground.md).
 - **Behind a proxy**: corporate proxies can interfere with API requests. See [network configuration](../13-Enterprise-Admin/network-config.md) for proxy setup.
 
@@ -1229,20 +1261,38 @@ Check `~/.zshrc`, `~/.bashrc`, or `~/.profile` for `export ANTHROPIC_API_KEY=...
 
 OAuth login fails in WSL2, SSH, or containers
 
-When Claude Code runs in WSL2, on a remote machine over SSH, or inside a container, the browser usually opens on a different host and its redirect can’t reach Claude Code’s local callback server. After you sign in, the browser shows a login code instead of redirecting back automatically. Paste that code into the terminal at the `Paste code here if prompted` prompt to complete login. If the browser doesn’t open at all from WSL2, set the `BROWSER` environment variable to your Windows browser path:
+If no browser opens, or the browser signs you in and then shows a connection error for a `localhost` address, you can finish signing in without fixing either problem. Sign in through the separate login URL that the terminal shows above its paste prompt instead:
 
-```python
-export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
-claude
-```
+1
 
-Alternatively, press `c` at the interactive login prompt to copy the OAuth URL, or copy the URL that `claude auth login` prints, and open it in a browser on your local machine. If pasting the code into the interactive prompt does nothing, your terminal’s paste binding likely isn’t reaching the input field. Try your terminal’s alternate paste shortcut, often right-click or Shift+Insert in Windows Terminal, or use `claude auth login` instead, which reads the pasted code from standard input:
+Copy the login URL
+
+At the interactive login prompt, press `c` to copy the URL, or select it in the terminal. With `claude auth login`, copy the URL that it prints.
+
+2
+
+Sign in through that URL
+
+Open the URL in a browser on your local machine and sign in. The browser then shows a code instead of returning to `localhost`.
+
+3
+
+Paste the code
+
+Paste that code into the terminal at the prompt that begins `Paste code here`.
+
+If pasting the code into the interactive prompt does nothing, your terminal’s paste binding likely isn’t reaching the input field. Try your terminal’s alternate paste shortcut, often right-click or Shift+Insert in Windows Terminal, or use `claude auth login` instead, which reads the pasted code from standard input:
 
 ```python
 claude auth login
 ```
 
-This fallback also applies on native Windows or any terminal where pasting into the interactive prompt fails.
+This fallback also applies on native Windows or any terminal where pasting into the interactive prompt fails. On WSL2, if no browser opened, you can also let Claude Code open your Windows browser next time by setting the `BROWSER` environment variable to that browser’s path:
+
+```python
+export BROWSER="/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
+claude
+```
 
 
 [​](#not-logged-in-or-token-expired)
@@ -1280,6 +1330,27 @@ Log out and back in
 Once the Keychain is writable again, Claude Code moves the credentials back the next time it writes a credential. To force it now, run `/logout` and then `/login`. Logging out removes all stored credentials, including the plaintext file’s contents, saved MCP server logins, and plugin sensitive values, so expect to re-authorize MCP servers and re-enter plugin secrets afterwards. Logging in again stores your login in the Keychain.
 
 
+[​](#login-fails-on-a-network-home-directory)
+
+Login fails on a network home directory
+
+When a request fails with `API Error: 401` and your [configuration directory](claude-directory.md) is on a network filesystem, check whether that filesystem or your quota on it is full. With no room left, Claude Code can’t save a new or renewed login to the plaintext [`.credentials.json` file](authentication.md#credential-management), and `claude auth login` can still print `Login successful.`
+
+1
+
+Make room on the filesystem
+
+Delete files you no longer need on the filesystem that holds `~/.claude`, or the directory you set in [`CLAUDE_CONFIG_DIR`](env-vars.md).
+
+2
+
+Sign in again
+
+Run `/login` at the Claude Code prompt or `claude auth login` in your shell.
+
+Before v2.1.318, when Claude Code saved the login file on a full network filesystem, it could replace a still-valid stored login with an empty file. Later commands then reported `Not logged in`.
+
+
 [​](#bedrock-agent-platform-or-foundry-credentials-not-loading)
 
 Bedrock, Agent Platform, or Foundry credentials not loading
@@ -1314,4 +1385,4 @@ If none of the above resolves your issue:
 1.  Check the [GitHub repository](https://github.com/anthropics/claude-code/issues) for known issues, or open a new one with your operating system, the install command you ran, and the full error output
 2.  If `claude --version` works but something else is wrong, run `claude doctor` for an automated diagnostic report
 3.  If you can start a session, use `/feedback` inside Claude Code to report the problem
-4.  If the problem is with your account rather than the install, such as a login loop, a subscription that isn’t recognized, or a disabled organization, contact Anthropic support: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/playground.md)), click your initials in the lower left, and select **Get help**. See [How to get support](../15-Claude-AI-Features/how-to-get-support.md) for the full flow.
+4.  If the problem is with your account rather than the install, such as a login loop, a subscription that isn’t recognized, or a disabled organization, contact Anthropic support: sign in at [claude.ai](https://claude.ai) (Console users: [platform.claude.com](../04-API-Reference/Other/playground.md)), click your initials in the lower left, and select **Get help**. See [How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support) for the full flow.

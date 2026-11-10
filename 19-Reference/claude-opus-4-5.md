@@ -49,7 +49,7 @@ Claude Opus 4.5 is state-of-the-art on tests of real-world software engineering:
 
 Opus 4.5 is available today on our apps, our API, and on all three major cloud platforms. If you’re a developer, simply use `claude-opus-4-5-20251101` via the [Claude API](../20-Models/about-claude-models-overview.md). Pricing is now \$5/\$25 per million tokens—making Opus-level capabilities accessible to even more users, teams, and enterprises.
 
-Alongside Opus, we’re releasing updates to the [Claude Developer Platform](https://www.claude.com/platform/api), [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), and our [consumer apps](https://www.claude.com/download). There are new tools for longer-running agents and new ways to use Claude in Excel, Chrome, and on desktop. In the Claude apps, lengthy conversations no longer hit a wall. See our product-focused section below for details.
+Alongside Opus, we’re releasing updates to the [Claude Developer Platform](https://www.claude.com/platform/api), [Claude Code](../15-Claude-AI-Features/product-claude-code.md), and our [consumer apps](https://www.claude.com/download). There are new tools for longer-running agents and new ways to use Claude in Excel, Chrome, and on desktop. In the Claude apps, lengthy conversations no longer hit a wall. See our product-focused section below for details.
 
 ## First impressions
 

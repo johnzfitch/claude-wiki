@@ -2,11 +2,14 @@
 title: "Security Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/security"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-26T06:27:45Z"
+fetched_at: "2026-11-01T06:23:59Z"
+last_modified: "Sun, 01 Nov 2026 06:23:32 GMT"
 tags: ["mcp", "mcp-community", "security"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Group Type](#group-type)
 - [Mission Statement](#mission-statement)
@@ -42,7 +45,7 @@ Group Type
 
 Mission Statement
 
-The Security Interest Group catalogs MCP-specific threats, reviews security-relevant proposals, and scopes validated problems into focused Working Groups or [SEPs](community-sep-guidelines.md).
+The Security Interest Group is the first stop for MCP-specific security topics. It vets incoming threats, security-relevant proposals, and disclosure questions, then routes validated work to the Working Group or [SEP](community-sep-guidelines.md) that owns it.
 
 
 [​](#scope)
@@ -54,6 +57,7 @@ Scope
 
 In Scope
 
+- **Triage and routing**: receiving security topics raised on Discord or GitHub and handing them to the owning group (Auth IG, Transports WG, Registry WG, Tool Annotations IG, SDK maintainers)
 - **Threat modeling**: developing and maintaining a shared, layered view of MCP attack surfaces spanning admission and identity, caller governance, runtime behavior, interception and enforcement, and auditability, to give individual proposals a common frame of reference
 - **Server identity, attestation, and admission**: requirements for establishing that a server is what it claims to be before a client dispatches to it, including signed assertions, trust roots, and the boundary between protocol-level and registry-level verification
 - **Supply chain and provenance**: integrity of locally executed server binaries and packages (typosquatting, unpinned dependencies, unsigned artifacts) and how clients can verify what they spawn
@@ -92,35 +96,36 @@ Related Groups
 
 Leadership
 
-| Role        | Name           | Organization | GitHub                                     | Term    |
-|-------------|----------------|--------------|--------------------------------------------|---------|
-| Facilitator | Den Delimarsky | Anthropic    | [@localden](https://github.com/localden)   | Initial |
-| Facilitator | Paul Carleton  | Anthropic    | [@pcarleton](https://github.com/pcarleton) | Initial |
+| Role | Name | Organization | GitHub | Term |
+|----|----|----|----|----|
+| Facilitator | Den Delimarsky | Anthropic | [@localden](https://github.com/localden) | Initial |
+| Facilitator | Paul Carleton | Anthropic | [@pcarleton](https://github.com/pcarleton) | Initial |
 
 
 [​](#membership)
 
 Membership
 
-| Name                     | Organization | GitHub                                               | Discord          | Level       |
-|--------------------------|--------------|------------------------------------------------------|------------------|-------------|
-| Sam Morrow               | GitHub       | [@SamMorrowDrums](https://github.com/SamMorrowDrums) | `sammorrowdrums` | Participant |
-| Ola Hungerford           | Nordstrom    | [@olaservo](https://github.com/olaservo)             | `olaservo`       | Participant |
-| Peder Holdgaard Pedersen | Saxo Bank    | [@PederHP](https://github.com/PederHP)               | `pederhp`        | Participant |
-| Stefano Ortolani         | Broadcom     | [@ostefano](https://github.com/ostefano)             | `ostefano.`      | Participant |
+| Name | Organization | GitHub | Discord | Level |
+|----|----|----|----|----|
+| Sam Morrow | GitHub | [@SamMorrowDrums](https://github.com/SamMorrowDrums) | `sammorrowdrums` | Participant |
+| Ola Hungerford | Nordstrom | [@olaservo](https://github.com/olaservo) | `olaservo` | Participant |
+| Peder Holdgaard Pedersen | Saxo Bank | [@PederHP](https://github.com/PederHP) | `pederhp` | Participant |
+| Stefano Ortolani | Broadcom | [@ostefano](https://github.com/ostefano) | `ostefano.` | Participant |
 
-Open to anyone. Join the `#security-ig` channel on the [MCP Contributors Discord](community-communication.md#discord). Calls are open and active participation is highly encouraged. The group is looking for contributors who will engage with proposals and help drive work forward rather than observe.
+Open to anyone. Join the `#security-ig` channel on the [MCP Contributors Discord](community-communication.md#discord). Discussion runs asynchronously in the channel between calls, and the agenda for each monthly call is assembled there. The group is looking for contributors who will engage with proposals and help drive work forward rather than observe.
 
 
 [​](#operations)
 
 Operations
 
-| Meeting      | Frequency     | Duration | Purpose                                                                 |
-|--------------|---------------|----------|-------------------------------------------------------------------------|
-| Office Hours | Every 2 weeks | 45 min   | Threat review, proposal triage, deployment reports, WG-proposal scoping |
+| Meeting | Frequency | Duration | Purpose |
+|----|----|----|----|
+| Forum call | Monthly | 45 min | Triage and routing of topics on the published agenda, WG proposal scoping |
+| Digest | Monthly | n/a | Summary of routed items, open topics, and advisories |
 
-An agenda is shared in `#security-ig` ahead of each call. Discord: [\#security-ig](https://discord.com/channels/1358869848138059966/1379811011669921883) Meeting notes are posted to the [Meeting Notes - Security IG](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-security-ig) category in GitHub Discussions.
+The facilitators post a call for agenda in `#security-ig` ahead of each monthly call, and anyone can add topics to it. Discord: [\#security-ig](https://discord.com/channels/1358869848138059966/1379811011669921883) Meeting notes are posted to the [Meeting Notes - Security IG](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-security-ig) category in GitHub Discussions.
 
 
 [​](#discussion-topics)
@@ -129,20 +134,21 @@ Discussion Topics
 
 The following items form the IG’s current discussion agenda. This list is not exhaustive and will evolve as the group identifies new areas of interest.
 
-| Item                                                                               | Name                                                                                                                        | Status      | Champion                                                 |
-|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-------------|----------------------------------------------------------|
-| [SEP-2809](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2809) | Attested Tool-Server Admission (ATSA)                                                                                       | Draft       | [@metereconsulting](https://github.com/metereconsulting) |
-| —                                                                                  | SDK vulnerability disclosure                                                                                                | In progress | Facilitators                                             |
-| —                                                                                  | Runtime drift: `list_changed` semantics after approval                                                                      | Open        | —                                                        |
-| —                                                                                  | Supply-chain integrity: protocol, registry, or companion standard                                                           | Open        | —                                                        |
-| —                                                                                  | Tool identity across servers                                                                                                | Open        | —                                                        |
-| —                                                                                  | Capability declarations: hints or contracts (joint with [Tool Annotations IG](community-interest-groups-tool-annotations.md)) | Open        | —                                                        |
+| Item | Name | Status | Champion |
+|----|----|----|----|
+| [SEP-2809](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2809) | Attested Tool-Server Admission (ATSA) | Draft | [@metereconsulting](https://github.com/metereconsulting) |
+| — | SDK vulnerability disclosure | In progress | Facilitators |
+| — | Runtime drift: `list_changed` semantics after approval | Open | — |
+| — | Supply-chain integrity: protocol, registry, or companion standard | Open | — |
+| — | Tool identity across servers | Open | — |
+| — | Capability declarations: hints or contracts (joint with [Tool Annotations IG](community-interest-groups-tool-annotations.md)) | Open | — |
 
 
 [​](#changelog)
 
 Changelog
 
-| Date       | Change          |
-|------------|-----------------|
+| Date | Change |
+|----|----|
+| 2026-08-26 | Restructured as a routing group, replaced biweekly office hours with a monthly agenda-driven call and digest (core maintainer meeting, [discussion \#3316](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/3316)) |
 | 2026-06-13 | Initial charter |

@@ -2,85 +2,9 @@
 title: "Parallel tool use - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-20T06:38:13Z"
+fetched_at: "2026-11-05T06:35:31Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fparallel-tool-use)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
-
-[Thinking](../Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](agents-and-tools-tool-use-tool-reference.md)[Manage tool context](agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
-
-[Compaction](../Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](agents-and-tools-agent-skills-overview.md)[Quickstart](agents-and-tools-agent-skills-quickstart.md)[Best practices](agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](agents-and-tools-remote-mcp-servers.md)[MCP connector](agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Tools
 
 # Parallel tool use
 
@@ -94,11 +18,19 @@ Enable, format, and disable parallel tool calls, with message-history guidance a
 
 
 
+Parallel tool use
+
+[APIs](#feature-availability)  
+Messages APIOn by defaultManaged AgentsAlways on
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
 By default, Claude may call multiple tools in a single response. This page covers how to run those calls, how to format the message history so parallelism keeps working, and how to disable parallel tool use when you need to. For the single-call flow, see [Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md).
 
 ## Execution semantics
 
-When Claude calls tools, the response has a `stop_reason` of `tool_use` and can contain several `tool_use` blocks in a single assistant turn. How you run those calls is your decision. The API doesn't prescribe an execution order: you can run the calls concurrently (`Promise.all`, `asyncio.gather`), sequentially in the order they appear, or in any combination that suits your tools.
+When Claude calls tools, the response has a `stop_reason` of `tool_use` and can contain several `tool_use` blocks in a single assistant turn. How you run those calls is your decision. The API doesn’t prescribe an execution order: you can run the calls concurrently (`Promise.all`, `asyncio.gather`), sequentially in the order they appear, or in any combination that suits your tools.
 
 Choose the strategy based on what your tools do. Independent, read-only operations are usually safe to run in parallel for lower latency. Tools with side effects, shared state, or ordering requirements might be better run sequentially.
 
@@ -121,7 +53,7 @@ The [computer use tool](agents-and-tools-tool-use-computer-use-tool.md#batch-act
 
 
 
-**Use the Tool Runner for most applications:** the SDK [Tool Runner](agents-and-tools-tool-use-tool-runner.md) handles responses with multiple tool calls and formats the results for you, so you don't write this handling yourself. Use the manual pattern on this page when you need direct control over how the calls run, such as custom batching, ordering, or error handling.
+**Use the Tool Runner for most applications:** the SDK [Tool Runner](agents-and-tools-tool-use-tool-runner.md) handles responses with multiple tool calls and formats the results for you, so you don’t write this handling yourself. Use the manual pattern on this page when you need direct control over how the calls run, such as custom batching, ordering, or error handling.
 
 The following script sends a request that should trigger parallel tool calls, verifies the response contains them, and formats the tool results so parallelism keeps working. Run it with `ANTHROPIC_API_KEY` set in your environment:
 
@@ -267,7 +199,7 @@ For maximum efficiency, whenever you need to perform multiple independent operat
 
 
 
-For even stronger parallel tool use (recommended if the default isn't sufficient), use:
+For even stronger parallel tool use (recommended if the default isn’t sufficient), use:
 
 ```python
 <use_parallel_tool_calls>
@@ -306,7 +238,7 @@ Parallel tool use is on by default. To turn it off, set `disable_parallel_tool_u
 
 ### At most one tool call
 
-When `tool_choice` type is `auto` (the default), setting `disable_parallel_tool_use: true` means Claude calls at most one tool per response. Claude can still answer in plain text without calling any tool. The highlighted lines are the only change from a standard tool use request:
+When the `tool_choice` type is `auto` (the default), setting `disable_parallel_tool_use: true` means Claude calls at most one tool in each response. Claude can still answer in plain text without calling any tool. The highlighted lines are the only change from a standard tool use request:
 
 cURL
 
@@ -365,7 +297,7 @@ print(response.content)
 
 ### Exactly one tool call
 
-When `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 don't support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
+When `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 don’t support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
 
 cURL
 
@@ -424,11 +356,11 @@ print(response.content)
 
 ## Troubleshooting
 
-If Claude isn't making parallel tool calls when expected, check these common issues:
+If Claude isn’t making parallel tool calls when expected, check these common issues:
 
 **1. Incorrect tool result formatting**
 
-The most common issue is formatting tool results incorrectly in the conversation history. This "teaches" Claude to avoid parallel calls.
+The most common issue is formatting tool results incorrectly in the conversation history. This “teaches” Claude to avoid parallel calls.
 
 Specifically for parallel tool use:
 
@@ -503,22 +435,58 @@ print(f"Average tools per message: {avg_tools_per_message}")
 
 **4. Calls in a batch appear to depend on each other**
 
-Execution order is your choice. If your tools have ordering dependencies, running the batch sequentially and stopping on the first failure is a valid strategy (and the required one for the [computer use](agents-and-tools-tool-use-computer-use-tool.md#batch-actions) and [browser use](agents-and-tools-tool-use-browser-use-tool.md#batch-actions) tools): return `is_error: true` for any call you didn't run. If you run in parallel and a call fails because its prerequisite hadn't completed, return `is_error: true` with the natural error message. Claude will reissue the call on the next turn. To reduce dependent calls appearing together, add this to your system prompt: "Only batch tool calls that are independent of each other."
+Execution order is your choice. If your tools have ordering dependencies, running the batch sequentially and stopping on the first failure is a valid strategy (and the required one for the [computer use](agents-and-tools-tool-use-computer-use-tool.md#batch-actions) and [browser use](agents-and-tools-tool-use-browser-use-tool.md#batch-actions) tools): return `is_error: true` for any call you didn’t run. If you run in parallel and a call fails because its prerequisite hadn’t completed, return `is_error: true` with the natural error message. Claude will reissue the call on the next turn. To reduce dependent calls appearing together, add this to your system prompt: “Only batch tool calls that are independent of each other.”
 
 ## Next steps
 
 
 
-[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)
+[Tool runner (SDK)](agents-and-tools-tool-use-tool-runner.md)
 
-Use the SDK's Tool Runner abstraction to handle the agentic loop, error wrapping, and type safety automatically.
+Use the SDK’s tool runner abstraction to handle the agentic loop, error wrapping, and type safety automatically.
 
 [Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)
 
-Parse tool_use blocks, format tool_result responses, and handle errors with is_error.
+Parse `tool_use` blocks, format `tool_result` responses, and handle errors with `is_error`.
 
 
 
 [Define tools](agents-and-tools-tool-use-implement-tool-use.md)
 
 Specify tool schemas, write effective descriptions, and control when Claude calls your tools.
+
+## Availability
+
+Parallel tool use is available or in beta, depending on the API.
+
+### API support
+
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+Usage
+
+To turn it off, set `disable_parallel_tool_use: true` inside `tool_choice`.
+
+StatusOn by default
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+Usage
+
+Always on
+
+StatusBeta
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)

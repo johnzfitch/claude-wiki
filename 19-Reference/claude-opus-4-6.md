@@ -60,7 +60,7 @@ Coding
 
 Reasoning
 
-In [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), you can now assemble [*agent teams*](../09-Agents-Patterns/agent-teams.md) to work on tasks together. On the API, Claude can use [*compaction*](../04-API-Reference/Guides/build-with-claude-compaction.md) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](../04-API-Reference/Guides/build-with-claude-effort.md) controls to give developers more control over intelligence, speed, and cost.
+In [Claude Code](../15-Claude-AI-Features/product-claude-code.md), you can now assemble [*agent teams*](../09-Agents-Patterns/agent-teams.md) to work on tasks together. On the API, Claude can use [*compaction*](../04-API-Reference/Guides/build-with-claude-compaction.md) to summarize its own context and perform longer-running tasks without bumping up against limits. We’re also introducing [*adaptive thinking*](../04-API-Reference/Guides/build-with-claude-thinking-steering-and-cost.md), where the model can pick up on contextual clues about how much to use its extended thinking, and new [*effort*](../04-API-Reference/Guides/build-with-claude-effort.md) controls to give developers more control over intelligence, speed, and cost.
 
 We’ve made substantial upgrades to [Claude in Excel](https://claude.com/claude-in-excel), and we’re releasing [Claude in PowerPoint](https://claude.com/claude-in-powerpoint) in a research preview. This makes Claude much more capable for everyday work.
 

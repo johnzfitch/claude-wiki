@@ -2,11 +2,14 @@
 title: "Claude Desktop on Linux (beta) - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-linux"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-22T06:29:22Z"
+fetched_at: "2026-11-07T06:23:39Z"
+last_modified: "Sat, 07 Nov 2026 04:22:00 GMT"
 tags: ["claude-code", "desktop"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Requirements](#requirements)
   - [Cowork requirements](#cowork-requirements)
@@ -88,7 +91,7 @@ The command prints nothing when it succeeds and a `curl:` error when it doesn’
 gpg --show-keys /usr/share/keyrings/claude-desktop-archive-keyring.asc
 ```
 
-The fingerprint gpg prints should be `31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE`. If gpg reports that the file can’t be opened or contains no valid OpenPGP data, the download failed or returned the wrong content: confirm your network can reach `downloads.claude.ai`, then rerun the download command.Register the repository:
+The only fingerprint gpg prints should be `31DDDE24DDFAB679F42D7BD2BAA929FF1A7ECACE`. If gpg reports that the file can’t be opened or contains no valid OpenPGP data, the download failed or returned the wrong content. Confirm your network can reach `downloads.claude.ai`, then rerun the download command.Register the repository:
 
 ```python
 echo "deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/claude-desktop-archive-keyring.asc] https://downloads.claude.ai/claude-desktop/apt/stable stable main" | sudo tee /etc/apt/sources.list.d/claude-desktop.list

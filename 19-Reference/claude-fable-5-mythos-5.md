@@ -67,7 +67,7 @@ Releasing a model this capable comes with risks. Without safeguards, Fable 5’s
 
 For a small group of cyberdefenders and infrastructure providers, we’re also launching **Claude Mythos 5**. It’s the same underlying model as Fable 5, but with the safeguards lifted in some areas.^([2](#footnote-2)) Mythos 5 will initially be deployed through [Project Glasswing](../22-Safety-Policy/glasswing.md), in collaboration with the US government, as an upgrade to Claude Mythos Preview. It has the strongest cybersecurity capabilities of any model in the world. Soon, we intend to expand access to Mythos 5 through a broader trusted access program.
 
-The capabilities of models like Fable 5 and Mythos 5 have the potential to do profound good for the world. We’ve seen the beginnings of this in Project Glasswing, where the models have [helped cyber defenders](glasswing-initial-update.md) secure critically important software. We’ve also seen it in life sciences research, where the models are positing novel hypotheses and speeding up the development of new therapeutics.
+The capabilities of models like Fable 5 and Mythos 5 have the potential to do profound good for the world. We’ve seen the beginnings of this in Project Glasswing, where the models have [helped cyber defenders](research-glasswing-initial-update.md) secure critically important software. We’ve also seen it in life sciences research, where the models are positing novel hypotheses and speeding up the development of new therapeutics.
 
 Fable 5 and Mythos 5 are being offered at \$10 per million input tokens and \$50 per million output tokens—less than half the price of Claude Mythos Preview. Today’s joint launch is another step towards our goal of bringing advanced AI capabilities to as many users as possible, as quickly and as safely as we can.
 
@@ -201,7 +201,7 @@ Mythos-class models have reached a threshold where they present significant risk
 
 Over the past few months we have been improving these safeguards, and they are now robust enough for a general release. Because we have prioritized safety, we’ve deliberately tuned the safeguards to be cautious, and they are still stricter than would be ideal—for example, sometimes benign requests will trigger our classifiers. We recognize that this will be frustrating to some users, and our aim is to reduce false positives as we update and refine the safeguards after launch.
 
-Below we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](../15-Claude-AI-Features/claude-fable-5-mythos-5-system-card.md) and our most recent [risk report](https://www-cdn.anthropic.com/files/4zrzovbb/website/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf).
+Below we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](../15-Claude-AI-Features/claude-fable-5-mythos-5-system-card.md) and our most recent [risk report](www-cdn-anthropic-com-1-introduction-and-executive-summary.md).
 
 ### Safety classifiers
 
@@ -233,7 +233,7 @@ Our priority was to safely release Fable as soon as we could, even at the cost o
 
 ### A new data retention policy
 
-Finally, we’re making a change to the way we handle business customer data for Fable 5, Mythos 5, and future models with similar or higher capability levels. We will require 30-day retention for all traffic on Mythos-class models, on both first- and third-party surfaces. We won’t use this data to train new Claude models, or for any non-safety-related purpose, and we’ve instituted new privacy protections including logging all human access to the data and ensuring its deletion after 30 days in almost all cases (see [this post](../20-Models/data-retention-practices-for-covered-models-claude-help-center.md) for further details). The data will help us defend against complex and novel attacks (including new jailbreaks and attacks that operate across many requests) as well as help us identify and reduce false positives.
+Finally, we’re making a change to the way we handle business customer data for Fable 5, Mythos 5, and future models with similar or higher capability levels. We will require 30-day retention for all traffic on Mythos-class models, on both first- and third-party surfaces. We won’t use this data to train new Claude models, or for any non-safety-related purpose, and we’ve instituted new privacy protections including logging all human access to the data and ensuring its deletion after 30 days in almost all cases (see [this post](https://support.claude.com/en/articles/15425996) for further details). The data will help us defend against complex and novel attacks (including new jailbreaks and attacks that operate across many requests) as well as help us identify and reduce false positives.
 
 ## Claude Mythos 5 and the trusted access program
 
@@ -252,7 +252,7 @@ Pricing for both models is \$10 per million input tokens and \$50 per million ou
 We expect demand for Fable 5 to be very high, and difficult to predict. On the Claude API and consumption-based Enterprise plans, Fable 5 is fully available from today. For subscription plans, we’d rather give access sooner than later, so we’re rolling out more conservatively, in stages:
 
 - From today through June 22, Fable 5 is included on Pro, Max, Team, and seat-based Enterprise plans at no extra cost.
-- On June 23, we’ll remove Fable 5 from those plans. Using it after that will require [usage credits](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans). If capacity allows, we’ll extend the included window.
+- On June 23, we’ll remove Fable 5 from those plans. Using it after that will require [usage credits](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md). If capacity allows, we’ll extend the included window.
 - After this point—when sufficient capacity allows us to do so—we aim to restore Fable 5 as a standard part of subscription plans. We intend to do this as quickly as we can.
 
 Throughout this period, we’ll communicate any changes ahead of time so users know where things stand.

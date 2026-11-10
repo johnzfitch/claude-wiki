@@ -2,11 +2,14 @@
 title: "Recipes - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector/recipes"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:29Z"
+fetched_at: "2026-11-01T06:24:22Z"
+last_modified: "Sat, 31 Oct 2026 23:55:13 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Connecting stdio vs. HTTP servers](#connecting-stdio-vs-http-servers)
   - [stdio](#stdio)
@@ -72,7 +75,7 @@ mcp-inspector --server-url https://api.example.com/mcp --transport http \
 
 Importing an existing client config
 
-On the Servers screen, **Add Servers** can import MCP servers you have already configured elsewhere instead of retyping them. It parses Claude Desktop, Cursor, Cline, and VS Code client configs directly, and it also reads a server’s own [MCP Registry](../Registry/registry-about.md) `server.json`. Import merges into the active [catalog](2026-07-28-tools-inspector-configuration.md#choosing-servers) (the Inspector’s writable server list). When an imported server’s id is already taken, you choose whether to overwrite, skip or rename it. If you’d rather not touch your catalog at all, launch against the foreign file read-only instead:
+On the Servers screen, **Add Servers** can import MCP servers you have already configured elsewhere instead of retyping them. It parses Claude Desktop, Cursor, Cline, and VS Code client configs directly, and it also reads a server’s own [MCP Registry](../Registry/registry-about.md) `server.json`. Import merges into the active [catalog](draft-tools-inspector-configuration.md#choosing-servers) (the Inspector’s writable server list). When an imported server’s id is already taken, you choose whether to overwrite, skip or rename it. If you’d rather not touch your catalog at all, launch against the foreign file read-only instead:
 
 ```python
 mcp-inspector --config ~/Library/Application\ Support/Claude/claude_desktop_config.json
@@ -150,11 +153,11 @@ Wait on a deterministic signal instead of sleeping
 
 The Apps screen exposes a stable automation contract. Poll these attributes instead of sleeping:
 
-| Selector                            | Attribute         | Values                                                                                                  |
-|-------------------------------------|-------------------|---------------------------------------------------------------------------------------------------------|
-| `[data-testid="apps-form"]`         | `data-app-status` | `idle`, then `loading`, then `ready` or `error` (on `error`, `data-app-error` carries the reason)       |
-| `[data-testid="connection-status"]` | `data-status`     | `disconnected`, `connecting`, then `connected` or `error` (`data-error-message` has the detail)         |
-| `[data-testid="connection-status"]` | `data-deeplink`   | `parsed`, `rejected`, or `none` (`none` means no deep link was given, `rejected` means one was refused) |
+| Selector | Attribute | Values |
+|----|----|----|
+| `[data-testid="apps-form"]` | `data-app-status` | `idle`, then `loading`, then `ready` or `error` (on `error`, `data-app-error` carries the reason) |
+| `[data-testid="connection-status"]` | `data-status` | `disconnected`, `connecting`, then `connected` or `error` (`data-error-message` has the detail) |
+| `[data-testid="connection-status"]` | `data-deeplink` | `parsed`, `rejected`, or `none` (`none` means no deep link was given, `rejected` means one was refused) |
 
 
 [​](#docker)
@@ -193,10 +196,10 @@ docker run --rm -p 127.0.0.1:6274:6274 \
 
 A container has no OS keychain, so where secrets go depends on that volume:
 
-| Situation                                    | Secret store                              | Survives a restart? |
-|----------------------------------------------|-------------------------------------------|---------------------|
-| **No volume** on `/home/node/.mcp-inspector` | Memory                                    | No, session only    |
-| **With** that volume                         | `secrets.json` on the volume, mode `0600` | Yes                 |
+| Situation | Secret store | Survives a restart? |
+|----|----|----|
+| **No volume** on `/home/node/.mcp-inspector` | Memory | No, session only |
+| **With** that volume | `secrets.json` on the volume, mode `0600` | Yes |
 
 If you bind-mount a host directory instead of a named volume, it keeps its host ownership, so on Linux add `--user "$(id -u):$(id -g)"` or `chown` it to uid `1000`, or saves fail with `EACCES`. Don’t bind-mount the secrets file on its own: it isn’t recognized as durable, and it can’t be replaced atomically.
 
@@ -239,14 +242,14 @@ volumes:
   mcp-inspector-data:
 ```
 
-Without Swarm, Compose secrets are bind mounts that keep the host file’s owner and mode, so the `0600` key file must be owned by uid `1000`. On a Linux host where your uid is different, run `sudo chown 1000 ~/.config/mcp-inspector/secret-key` rather than loosening its mode. Supply the **same** key on every run. If the key file is missing, unreadable or empty, or both key variables are set, the Inspector **refuses to read or write the secrets file** rather than falling back to plaintext, and says why in the log and in the settings dialogs’ footer. Everything else about the store (selection order, location, permissions) is under [Where secrets are stored](2026-07-28-tools-inspector-configuration.md#where-secrets-are-stored).
+Without Swarm, Compose secrets are bind mounts that keep the host file’s owner and mode, so the `0600` key file must be owned by uid `1000`. On a Linux host where your uid is different, run `sudo chown 1000 ~/.config/mcp-inspector/secret-key` rather than loosening its mode. Supply the **same** key on every run. If the key file is missing, unreadable or empty, or both key variables are set, the Inspector **refuses to read or write the secrets file** rather than falling back to plaintext, and says why in the log and in the settings dialogs’ footer. Everything else about the store (selection order, location, permissions) is under [Where secrets are stored](draft-tools-inspector-configuration.md#where-secrets-are-stored).
 
 
 [​](#health-checks-and-other-modes)
 
 Health checks and other modes
 
-The image’s `HEALTHCHECK` probes the web UI at the address `HOST` binds. `--cli` and `--tui` have no web server, so the probe detects those modes from the container’s arguments and reports healthy while they run. An external orchestrator (a Kubernetes probe, a Compose `healthcheck`) can call `GET /healthz` on the web port, which needs no token and returns only `{"status":"ok"}`. `<target>` below is an [ad-hoc target](2026-07-28-tools-inspector-configuration.md#ad-hoc-targets): a positional stdio command, or `--server-url <url> --transport http`.
+The image’s `HEALTHCHECK` probes the web UI at the address `HOST` binds. `--cli` and `--tui` have no web server, so the probe detects those modes from the container’s arguments and reports healthy while they run. An external orchestrator (a Kubernetes probe, a Compose `healthcheck`) can call `GET /healthz` on the web port, which needs no token and returns only `{"status":"ok"}`. `<target>` below is an [ad-hoc target](draft-tools-inspector-configuration.md#ad-hoc-targets): a positional stdio command, or `--server-url <url> --transport http`.
 
 ```python
 docker run --rm ghcr.io/modelcontextprotocol/inspector --cli <target> --method tools/list
@@ -261,11 +264,11 @@ Hosting on a network
 
 The Inspector binds `127.0.0.1` by default and its backend spawns processes, so treat exposing it to a network as a deliberate decision. The Inspector refuses to bind the **wildcard** all-interfaces addresses (`0.0.0.0`, `::`, and every equivalent spelling) unless you set `DANGEROUSLY_BIND_ALL_INTERFACES=true`. Binding a **specific** address is allowed with no opt-in, because that’s one deliberate exposure rather than every interface at once, which is the shape DNS-rebinding attacks target.
 
-| Goal                                         | What to do                                                                                                                                                                                           |
-|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Reach it from another machine on the LAN** | `HOST=192.168.1.50`. The default origin allow-list follows the bind host, so `http://192.168.1.50:6274` is accepted with no further config.                                                          |
-| **Behind TLS or a reverse proxy**            | The browser’s `Origin` becomes the public origin, which won’t match the bind host. Set `ALLOWED_ORIGINS=https://inspector.example.com`, and for MCP Apps set `MCP_SANDBOX_FULL_ADDRESS` (see below). |
-| **Wildcard bind (containers)**               | Set `DANGEROUSLY_BIND_ALL_INTERFACES=true`. Loopback access still works out of the box; reaching it at a non-loopback address needs `ALLOWED_ORIGINS`.                                               |
+| Goal | What to do |
+|----|----|
+| **Reach it from another machine on the LAN** | `HOST=192.168.1.50`. The default origin allow-list follows the bind host, so `http://192.168.1.50:6274` is accepted with no further config. |
+| **Behind TLS or a reverse proxy** | The browser’s `Origin` becomes the public origin, which won’t match the bind host. Set `ALLOWED_ORIGINS=https://inspector.example.com`, and for MCP Apps set `MCP_SANDBOX_FULL_ADDRESS` (see below). If the proxy rewrites `Host` to a name that is not in `ALLOWED_ORIGINS`, also set `MCP_INSPECTOR_ALLOWED_HOSTS=inspector.example.com` (or `.example.com` for a domain and its subdomains), or the backend answers `403`. Without a proxy, `INSPECTOR_TLS_KEY_PATH` and `INSPECTOR_TLS_CERT_PATH` serve the UI itself over `https`. |
+| **Wildcard bind (containers)** | Set `DANGEROUSLY_BIND_ALL_INTERFACES=true`. Loopback access still works out of the box; reaching it at a non-loopback address needs `ALLOWED_ORIGINS`. |
 
 `ALLOWED_ORIGINS` **replaces** the default list rather than merging with it. List every origin you’ll browse from, including the loopback forms you want to keep:
 
@@ -292,7 +295,7 @@ When an exploration spans many calls (a multi-step flow over one session, a log 
 
 ```python
 mcpdo connect my-server
-mcpdo @my-server tools/call --task start_job size:=large   # task-augmented; blocks until the task finishes
+mcpdo @my-server tools/call --task start_job size:=large   # task-augmented on a legacy connection, blocks until the task finishes
 mcpdo @my-server tools/call get_job_report
 mcpdo @my-server logging/tail          # long-lived; Ctrl-C to stop
 mcpdo disconnect my-server

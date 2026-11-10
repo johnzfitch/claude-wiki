@@ -2,11 +2,14 @@
 title: "Logging - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/server/utilities/logging"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:20Z"
+fetched_at: "2026-10-31T06:25:34Z"
+last_modified: "Sat, 31 Oct 2026 03:59:31 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -27,7 +30,7 @@ Copy pageCopy page
 
 Copy pageCopy page
 
-**Deprecated**: The Logging feature is deprecated as of protocol version `2026-07-28` ([SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577)). Under the [feature lifecycle policy](../Community/community-feature-lifecycle.md), it remains in the specification for at least twelve months after this revision’s release before it becomes eligible for removal. New implementations **SHOULD NOT** adopt it; existing implementations **SHOULD** migrate to logging to `stderr` for stdio transports, or to [OpenTelemetry](https://opentelemetry.io/) for structured observability. See the [deprecated features registry](draft-deprecated.md).
+**Deprecated**: The Logging feature is deprecated as of protocol version `2026-07-28` ([SEP-2577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2577)). Under the [feature lifecycle policy](../Community/community-feature-lifecycle.md), it remains in the specification for at least twelve months after this revision’s release before it becomes eligible for removal. New implementations **SHOULD NOT** adopt it; existing implementations **SHOULD** migrate to logging to `stderr` for stdio transports, or to [OpenTelemetry](https://opentelemetry.io/) for structured observability. See the [deprecated features registry](2026-07-28-deprecated.md).
 
 The Model Context Protocol (MCP) provides a standardized way for servers to send structured log messages to clients. Clients control logging verbosity per-request via `_meta`, with servers sending notifications containing severity levels, optional logger names, and arbitrary JSON-serializable data.
 

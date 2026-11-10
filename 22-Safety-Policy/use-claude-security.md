@@ -2,7 +2,7 @@
 title: "Use Claude Security | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14661296-use-claude-security"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:29:08Z"
+fetched_at: "2026-11-09T06:25:52Z"
 tags: ["safety", "security"]
 ---
 
@@ -115,9 +115,9 @@ The claude.ai/security page runs a per-user check against your own connected Git
 
 - **The connected GitHub account isn’t a member of the GitHub organization** where the app is installed. Connect the account that belongs to that organization.
 
-- **SSO isn't authorized for that organization.** If your GitHub organization requires SSO, you must authorize the Claude app for it separately. Follow the steps in **[Use the GitHub integration](../14-Connectors/use-the-github-integration.md#h_e169a34a57)**.
+- **SSO isn't authorized for that organization.** If your GitHub organization requires SSO, you must authorize the Claude app for it separately. Follow the steps in **[Use the GitHub integration](https://support.claude.com/en/articles/10167454-use-the-github-integration#h_e169a34a57)**.
 
-- **Your GitHub organization's IP allow list is blocking the check.** GitHub's "Enable IP allow list configuration for installed GitHub Apps" setting covers traffic from the App itself, such as Code Review, but it doesn't cover this per-user check. To allow it, manually add 160.79.104.0/21 as an organization-level allow list entry. For the full list of ranges, see **[IP addresses](../04-API-Reference/Endpoints/ip-addresses.md)**.
+- **Your GitHub organization's IP allow list is blocking the check.** GitHub's "Enable IP allow list configuration for installed GitHub Apps" setting covers traffic from the App itself, such as Code Review, but it doesn't cover this per-user check. To allow it, manually add every current IPv4 range, in full, from Anthropic’s **[Outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses)** list to the organization-level allow list, with one entry for each range.
 
 ------------------------------------------------------------------------
 
@@ -139,7 +139,7 @@ Yes. Projects can be created with repositories hosted on GitHub.com and GitHub E
 
 **Which IP addresses do I need to allow?**
 
-Use the **[Anthropic guide for IP address allowlisting](../04-API-Reference/Endpoints/ip-addresses.md)**. If you use GitHub Enterprise Server or another Git provider, your instance must allow inbound traffic from these IP addresses so Claude Security can reach your repositories.
+Use the **[Outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses)** list on Anthropic’s IP addresses page. If you use GitHub Enterprise Server or another Git provider, your instance must allow connections from every current IPv4 range in that list so Claude Security can reach your repositories.
 
 **Does Claude Security support Zero Data Retention (ZDR)?**
 

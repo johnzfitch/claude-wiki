@@ -2,7 +2,7 @@
 title: "Introducing Agent Skills | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/skills"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:57Z"
+fetched_at: "2026-11-09T06:26:51Z"
 tags: ["agents", "news-research", "skills"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["agents", "news-research", "skills"]
 
 - 
 
-  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
+  Category[Product updates](https://www.anthropic.com/resources/product-updates)
 - 
 
   ProductClaude Platform
@@ -27,7 +27,7 @@ tags: ["agents", "news-research", "skills"]
 
 Claude can now use *Skills* to improve how it performs specific tasks. Skills are folders that include instructions, scripts, and resources that Claude can load when needed.
 
-Claude will only access a skill when it's relevant to the task at hand. When used, skills make Claude better at specialized tasks like working with Excel or following your organization's brand guidelines.
+Claude will only access a skill when it's relevant to the task at hand. When used, skills make Claude better at [specialized tasks](https://claude.com/resources/articles/improving-frontend-design-through-skills) like working with Excel or following your organization's brand guidelines.
 
 You've already seen Skills at work in Claude apps, where Claude uses them to create files like spreadsheets and presentations. Now, you can build your own skills and use them across Claude apps, Claude Code, and our API.
 
@@ -48,7 +48,7 @@ Think of Skills as custom onboarding materials that let you package expertise, m
 
 ### **Claude apps**
 
-Skills are available to Pro, Max, Team and Enterprise users. We provide skills for common tasks like document creation, examples you can customize, and the ability to create your own custom skills.
+Skills are available to Pro, Max, Ultra, Team, and Enterprise users. We provide skills for common tasks like document creation, examples you can customize, and the ability to create your own custom skills.
 
 Claude automatically invokes relevant skills based on your task—no manual selection needed. You'll even see skills in Claude's chain of thought as it works.  
   
@@ -124,45 +124,36 @@ Skills extend Claude Code with your team's expertise and workflows. Install skil
 
 We're working toward simplified skill creation workflows and enterprise-wide deployment capabilities, making it easier for organizations to distribute skills across teams.
 
-Keep in mind, this feature gives Claude access to execute code. While powerful, it means being mindful about which skills you use—stick to trusted sources to keep your data safe. [Learn more](../02-Claude-Code-CLI/using-skills-in-claude.md#h_2746475e70).
+Keep in mind, this feature gives Claude access to execute code. While powerful, it means being mindful about which skills you use—stick to trusted sources to keep your data safe. [Learn more](https://support.claude.com/en/articles/12512180-using-skills-in-claude#h_2746475e70).
 
 ## Related articles
 
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 15, 2026
+ArticleNov 5, 2026
 
-### Code Review is now generally available
+### Introducing Personal Finance in Claude
 
-Catch more bugs before they reach production.
-
-Claude Code
+Ask Claude about your money and get straight answers from the accounts you connect.
 
 
-ArticleOct 8, 2026
+ArticleNov 5, 2026
 
-### Build live dashboards and animate explainers with Claude 
+### More visibility and control over Claude Enterprise for security teams
 
-Claude Dashboards and Claude Motion are now in beta. Docs, Slides, and Design are out of beta and on every Claude plan, including Free.
-
-Claude appsClaude Design
-
-2 more: Claude Cowork and Claude CodeClaude CoworkClaude Code
+Claude EnterpriseClaude apps
 
 
-ArticleOct 7, 2026
+ArticleNov 4, 2026
 
-### Claude Haiku 5.5
+### New agents and products for security, productivity, and creative work on Claude Marketplace
 
-Introducing Claude Haiku 5.5: the cheapest, fastest, and most capable small model we’ve ever released.
 
-(opens in new tab)[](https://www.anthropic.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides)
+ArticleNov 2, 2026
 
-ArticleOct 6, 2026
+### Make long-running agents faster with message threads
 
-### Claude now works with Google Docs, Sheets, and Slides
+New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
 
-Teams that run on Google Workspace can now bring Claude into their files or work on their files directly from Claude, with our new add-on and Google Docs, Sheets, and Slides connectors (in beta).
-
-Claude Enterprise
+Claude Platform

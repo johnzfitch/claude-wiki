@@ -2,11 +2,14 @@
 title: "Run Claude Code behind a corporate launcher - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/corporate-launcher"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-20T06:36:41Z"
+fetched_at: "2026-10-29T06:25:58Z"
+last_modified: "Thu, 29 Oct 2026 03:22:14 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What the launcher covers](#what-the-launcher-covers)
   - [Processes that start outside the launcher](#processes-that-start-outside-the-launcher)
@@ -56,7 +59,7 @@ Processes that start outside the launcher
 The following processes don’t start through the launcher:
 
 - A session you start yourself in a terminal, which runs however you invoked it. To cover these sessions, put a script named `claude` in a directory earlier on `PATH` that runs your launcher with the real binary; don’t replace the managed symlink. The background service and its sessions start without a `PATH` lookup, so the two launchers don’t stack there.
-- The first process of a `claude-cli://` deep link, which the operating system’s protocol handler starts directly. Everything that session starts in the background afterward runs through the launcher. To close this path entirely, [prevent handler registration](../02-Claude-Code-CLI/deep-links.md#registration-and-supported-platforms) with the `disableDeepLinkRegistration` setting.
+- A session opened from a `claude-cli://` deep link, which starts in a new terminal without your launcher. To prevent deep links from opening sessions for a new user, set [`disableDeepLinkRegistration`](../02-Claude-Code-CLI/settings-reference.md#disabledeeplinkregistration) to `"disable"` before that user first runs Claude Code. For a user who already has a [registered handler](../02-Claude-Code-CLI/deep-links.md#registration-and-supported-platforms), deep links keep opening sessions, because the setting doesn’t remove the handler.
 - The relaunch that `--worktree` combined with `--tmux` performs: the terminal multiplexer starts that pane, not Claude Code’s binary.
 - The native-messaging host that [Claude in Chrome](../03-IDE-Integrations/chrome.md) registers: the browser starts it, not Claude Code’s binary.
 

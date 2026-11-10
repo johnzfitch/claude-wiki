@@ -2,18 +2,16 @@
 title: "Public links for shared chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16762437-public-links-for-shared-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:32Z"
+fetched_at: "2026-11-09T06:25:56Z"
 tags: ["claude-ai", "search"]
 ---
 
 # Public links for shared chats
 
-September 4, 2026
-
 
 When you share a chat with a public link, anyone who has the link can view a snapshot of that chat. This article covers who can see it, what's included, and how public links interact with search engines like Google.
 
-Public links are available on Free, Pro, and Max plans. Team and Enterprise members can only share chats inside their organization. For how to share and unshare, see **[Share and unshare chats](https://support.claude.com/en/articles/10593882)**.
+Public links are available on Free, Pro, Max, and Ultra plans. Team and Enterprise members can only share chats inside their organization. For how to share and unshare, see **[Share and unshare chats](https://support.claude.com/en/articles/10593882)**.
 
 ## What a public link does
 
@@ -24,6 +22,8 @@ Public links are available on Free, Pro, and Max plans. Team and Enterprise memb
 - It's view only. Viewers can't continue the chat.
 
 - Files you attached to the chat are not included.
+
+- If Claude used your linked accounts in Personal Finance, anyone with the link can see any figures from your accounts in your messages and Claude’s responses. They can also see a chart or artifact that Claude made, figures included. Learn more in **[Use Personal Finance in Claude](use-personal-finance-with-claude.md)**.
 
 - You can turn it off at any time from the "Share" menu, or from **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)** under **Shared chats**. Once it's off, the link stops working.
 

@@ -1058,7 +1058,7 @@ MCP authorization builds on these well-established standards:
 
 For additional details, refer to:
 
-* [Authorization Specification](../Spec/2026-07-28-basic-authorization.md)
+* [Authorization Specification](../Spec/draft-basic-authorization.md)
 * [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
 * [Available MCP SDKs](../General/sdk.md)
 

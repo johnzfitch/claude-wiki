@@ -8,7 +8,7 @@ tags: ["news-research"]
 
 # How Claude designed protein binders against scorpion neurotoxins
 
-[Read the technical report](https://www-cdn.anthropic.com/31ac578806cffd8b3d92d8affe6edc4c04d502e1.pdf)
+[Read the technical report](de-novo-design-of-protein-binders-against-scorpion-toxins-with-claude.md)
 
 - Published
 
@@ -34,7 +34,7 @@ Related articles
 
   Sep 23, 2026
 
-  [Claude discovers a novel enzyme system with CRISPR-like repeats](claude-discovers-novel-enzyme-system.md)
+  [Claude discovers a novel enzyme system with CRISPR-like repeats](research-claude-discovers-novel-enzyme-system.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 
@@ -50,7 +50,7 @@ Claude’s design campaign produced 17 protein binders that each bind to one of 
 
 We sent Claude’s work to two outside experts, Susana Vázquez Torres and Timothy P. Jenkins, who said they felt this work was a promising first step. If AI can now design credible binders against several hard-to-target toxins in days and they can be confirmed in the lab within weeks, this could, in theory, speed up discovery for envenomation and other neglected diseases. The challenge, as always, is turning those binders into safe, affordable, and widely accessible drugs.
 
-We share more detail in our [technical report](https://www-cdn.anthropic.com/31ac578806cffd8b3d92d8affe6edc4c04d502e1.pdf), and are making [all 211 designs and their data available](https://huggingface.co/datasets/Anthropic/scorpion-toxin-binder-design).
+We share more detail in our [technical report](de-novo-design-of-protein-binders-against-scorpion-toxins-with-claude.md), and are making [all 211 designs and their data available](https://huggingface.co/datasets/Anthropic/scorpion-toxin-binder-design).
 
 > Designing a binder against almost any target no longer seems unrealistic. We can now obtain very tight binders remarkably quickly, and binding itself is no longer the main bottleneck. For venomous animals such as snakes and scorpions, whose bites and stings kill or seriously injure large numbers of people, particularly in underserved regions, the real impact will come from tackling the parts of the therapeutic pipeline that go beyond binding. The challenge is to use these extraordinary tools to develop molecules that can become real drugs, ones that are safe, affordable, and widely accessible.
 
@@ -116,7 +116,7 @@ We are releasing [all 211 designs and their binding data](https://huggingface.co
 
 The following resources provide further technical depth and more detailed information about the results described above:
 
-- [Technical report](https://www-cdn.anthropic.com/31ac578806cffd8b3d92d8affe6edc4c04d502e1.pdf);
+- [Technical report](de-novo-design-of-protein-binders-against-scorpion-toxins-with-claude.md);
 - Data release: [all 211 designs, their predicted structures and scores, and experimental data](https://huggingface.co/datasets/Anthropic/scorpion-toxin-binder-design);
 - Our previous posts on [protein design](claude-accelerates-protein-design.md) and [uplifting biomolecular modeling](claude-uplifts-biomolecular-modeling.md).
 

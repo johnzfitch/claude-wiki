@@ -2,7 +2,7 @@
 title: "How is my Team plan bill calculated? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:17Z"
+fetched_at: "2026-11-09T06:26:43Z"
 tags: ["billing"]
 ---
 
@@ -13,7 +13,7 @@ Prices shown are for US customers and exclude applicable taxes. Pricing, currenc
 
 For current pricing by seat type and billing interval, see **[What is the Team plan?](what-is-the-team-plan.md)**
 
-For information on seat types and what's included, see **[Purchasing and managing seats on Team plans](https://support.claude.com/en/articles/12004354-purchasing-and-managing-seats)**.
+For information on seat types and what's included, see **[Purchasing and managing seats on Team plans](purchasing-and-managing-seats.md)**.
 
 ------------------------------------------------------------------------
 
@@ -33,9 +33,9 @@ If usage credits are enabled, your bill may include charges for usage beyond sea
 
 ### Monthly API credits
 
-Claude Max and Team plans include monthly credits for the Claude API. On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500. Usage is never charged to your Claude plan.
+Claude Max, Ultra, and Team plans include monthly credits for the Claude API. On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500. Usage is never charged to your Claude plan.
 
-The pool follows your seat count. It’s calculated from the seats on your plan each time credits are deposited. For example, a team with three Standard seats and two Premium seats receives \$260 a month. Adding another Premium seat would increase the next cycle’s credits to \$360. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
+The pool follows your seat count. It’s calculated from the seats on your plan each time credits are deposited. For example, a team with three Standard seats and two Premium seats receives \$260 a month. Adding another Premium seat would increase the next cycle’s credits to \$360. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 

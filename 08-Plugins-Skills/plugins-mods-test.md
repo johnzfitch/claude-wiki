@@ -2,11 +2,13 @@
 title: "Test a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/test"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-21T06:28:54Z"
+fetched_at: "2026-10-27T06:26:41Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Write a test](#write-a-test)
   - [Stub what Claude Code would answer](#stub-what-claude-code-would-answer)
@@ -195,30 +197,30 @@ Look up what a stub returns
 
 Every mods API call your mod makes in a test needs a stub that answers in Claude Code’s place, except the few the kit answers itself: [`$.ui.invalidate`](plugins-mods-interface.md#redraw-when-something-changes), [`$.state`](plugins-mods-interface.md#keep-state), and `$.session.append` calls. For `$.clock` calls, use `mock.clock(on)`, or your mod’s `$.clock.now()` fails with `no implementation for clock.now`. This table lists the ones mods use most. The first column is the call your mod makes or the event it passes on with `next(e)`. The second is the function to pass to `on` under that name, so the `$.store.get` row becomes `on('store.get', ($, e) => ({ value: saved.get(e.key) }))`. A `'...'` in a stub marks text for you to fill in:
 
-| Your mod calls or passes on                                                                                   | Stub                                                                                                                                                                                                                                      |
-|:--------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `$.command.register`, `$.tool.register`, `$.ui.toast`, `$.ui.log`, `$.ui.status`, `$.ui.close`, `$.store.set` | `() => ({ value: undefined })`. For `ui.toast` and `ui.log`, the text is `e.text`.                                                                                                                                                        |
-| `$.store.get`                                                                                                 | `($, e) => ({ value: saved.get(e.key) })`                                                                                                                                                                                                 |
-| `$.fs.read`                                                                                                   | `($, e) => ({ value: e.path.endsWith('notes.md') ? '# Notes' : '' })`. `e.path` arrives as an absolute path, so compare with `endsWith`.                                                                                                  |
-| `$.ui.open`                                                                                                   | `() => ({ value: { isPlaced: true } })`                                                                                                                                                                                                   |
-| `$.ui.ask`                                                                                                    | A `tool.call` stub, because the question reaches it as a call to the `AskUserQuestion` tool: `($, e) => ({ result: { answers: { [e.questions[0].question]: 'Run it' } } })`. Check `e.tool` first if your mod passes on other tool calls. |
-| `$.model.complete`                                                                                            | `() => ({ value: { isAnswered: true, text: '...', usage } })`                                                                                                                                                                             |
-| `$.process.run`                                                                                               | `($, e) => ({ value: { exitCode: 0, stdout: '...', stderr: '' } })`. `e.argv` is the argument list and `e.init` holds `cwd` and `timeoutMs`.                                                                                              |
-| Any mods API call that should fail                                                                            | `() => ({ deny: 'the reason' })`, which makes the call reject in your mod. A stub that throws is skipped instead.                                                                                                                         |
-| `session.start`                                                                                               | `() => ({ cwd: '/work' })`                                                                                                                                                                                                                |
-| `turn.start`                                                                                                  | `($, e) => ({ turnId: e.turnId })`                                                                                                                                                                                                        |
-| `tool.call`                                                                                                   | `() => ({ result: '...' })`                                                                                                                                                                                                               |
-| `turn.complete`                                                                                               | `() => ({ text: '' })`. Fire it with `$.turn.complete({ turnId, answer, durationMs, isAborted: false, usage: null })`.                                                                                                                    |
-| `prompt.submit`                                                                                               | `($, e) => ({ text: e.text })`                                                                                                                                                                                                            |
-| `prompt.fill`                                                                                                 | `() => ({ isFilled: true })`                                                                                                                                                                                                              |
-| `$.prompt.read`                                                                                               | `() => ({ value: { text: '...', cursor: 0 } })`                                                                                                                                                                                           |
-| `$.ui.copy`                                                                                                   | `() => ({ value: { isCopied: true } })`                                                                                                                                                                                                   |
-| `$.ui.notify`                                                                                                 | `() => ({ value: { isSent: true, channel: 'terminal_bell' } })`. The text is `e.text` and the title is `e.title`.                                                                                                                         |
-| `$.session.messages`                                                                                          | `() => ({ value: [{ role: 'assistant', text: '...', toolUses: [] }] })`                                                                                                                                                                   |
-| `$.session.id`, `$.agent.list`                                                                                | `() => ({ value: 'abc123' })`, `() => ({ value: [] })`                                                                                                                                                                                    |
-| `session.send`                                                                                                | `() => ({ isDelivered: true })`. `e.to` arrives as a string even when your mod passed `{ sessionId }`.                                                                                                                                    |
-| `session.receive`                                                                                             | `($, e) => ({ text: e.text })`. Fire it with `$.session.receive({ origin: { kind: 'peer-send-message' }, text })`.                                                                                                                        |
-| `ui.render`                                                                                                   | `() => ({ type: 'Text', props: {}, children: ['...'] })`                                                                                                                                                                                  |
+| Your mod calls or passes on | Stub |
+|:---|:---|
+| `$.command.register`, `$.tool.register`, `$.ui.toast`, `$.ui.log`, `$.ui.status`, `$.ui.close`, `$.store.set` | `() => ({ value: undefined })`. For `ui.toast` and `ui.log`, the text is `e.text`. |
+| `$.store.get` | `($, e) => ({ value: saved.get(e.key) })` |
+| `$.fs.read` | `($, e) => ({ value: e.path.endsWith('notes.md') ? '# Notes' : '' })`. `e.path` arrives as an absolute path, so compare with `endsWith`. |
+| `$.ui.open` | `() => ({ value: { isPlaced: true } })` |
+| `$.ui.ask` | A `tool.call` stub, because the question reaches it as a call to the `AskUserQuestion` tool: `($, e) => ({ result: { answers: { [e.questions[0].question]: 'Run it' } } })`. Check `e.tool` first if your mod passes on other tool calls. |
+| `$.model.complete` | `() => ({ value: { isAnswered: true, text: '...', usage } })` |
+| `$.process.run` | `($, e) => ({ value: { exitCode: 0, stdout: '...', stderr: '' } })`. `e.argv` is the argument list and `e.init` holds `cwd` and `timeoutMs`. |
+| Any mods API call that should fail | `() => ({ deny: 'the reason' })`, which makes the call reject in your mod. A stub that throws is skipped instead. |
+| `session.start` | `() => ({ cwd: '/work' })` |
+| `turn.start` | `($, e) => ({ turnId: e.turnId })` |
+| `tool.call` | `() => ({ result: '...' })` |
+| `turn.complete` | `() => ({ text: '' })`. Fire it with `$.turn.complete({ turnId, answer, durationMs, isAborted: false, usage: null })`. |
+| `prompt.submit` | `($, e) => ({ text: e.text })` |
+| `prompt.fill` | `() => ({ isFilled: true })` |
+| `$.prompt.read` | `() => ({ value: { text: '...', cursor: 0 } })` |
+| `$.ui.copy` | `() => ({ value: { isCopied: true } })` |
+| `$.ui.notify` | `() => ({ value: { isSent: true, channel: 'terminal_bell' } })`. The text is `e.text` and the title is `e.title`. |
+| `$.session.messages` | `() => ({ value: [{ role: 'assistant', text: '...', toolUses: [] }] })` |
+| `$.session.id`, `$.agent.list` | `() => ({ value: 'abc123' })`, `() => ({ value: [] })` |
+| `session.send` | `() => ({ isDelivered: true })`. `e.to` arrives as a string even when your mod passed `{ sessionId }`. |
+| `session.receive` | `($, e) => ({ text: e.text })`. Fire it with `$.session.receive({ origin: { kind: 'peer-send-message' }, text })`. |
+| `ui.render` | `() => ({ type: 'Text', props: {}, children: ['...'] })` |
 
 `expect` has the assertions `toBe`, `toEqual`, `toMatch`, `toMatchObject`, `toContain`, `toBeDefined`, `toBeUndefined`, and `toThrow`, and `.not` before any of them. When an `expect` fails inside a stub or hook that you passed to `on` as a plain function rather than an async generator, the test fails. The engine skips that hook, and the failure output names it, such as `in the test's store.set hook`.
 
@@ -229,13 +231,13 @@ Test a timer
 
 A mod that runs work on a timer needs a clock the test controls, so the test can move time forward instead of waiting. `const clock = mock.clock(on)` returns a mock clock that starts at `0` and moves only when your test moves it. To start at another time, pass it in milliseconds, as in `mock.clock(on, { now: 5000 })`. The clock has these methods:
 
-| Method                      | What it does                                                                                                                      |
-|:----------------------------|:----------------------------------------------------------------------------------------------------------------------------------|
-| `await clock.advance(1000)` | Moves the time forward by that many milliseconds and runs each timer that comes due                                               |
-| `await clock.set(5000)`     | Moves the time forward to that value, as `advance` would                                                                          |
-| `clock.now()`               | Returns the time, which is what your mod’s `$.clock.now()` resolves to                                                            |
-| `await clock.settle()`      | Runs timers that are already due, such as a chain of zero-delay `$.clock.after` calls, without moving the time                    |
-| `await clock.sleep(2000)`   | Inside a stub, makes that stub answer only once the test has advanced that far, which is how you simulate a slow model or process |
+| Method | What it does |
+|:---|:---|
+| `await clock.advance(1000)` | Moves the time forward by that many milliseconds and runs each timer that comes due |
+| `await clock.set(5000)` | Moves the time forward to that value, as `advance` would |
+| `clock.now()` | Returns the time, which is what your mod’s `$.clock.now()` resolves to |
+| `await clock.settle()` | Runs timers that are already due, such as a chain of zero-delay `$.clock.after` calls, without moving the time |
+| `await clock.sleep(2000)` | Inside a stub, makes that stub answer only once the test has advanced that far, which is how you simulate a slow model or process |
 
 This hook belongs to a mod named `countdown`, and handles a `/countdown` command that takes a number of seconds, starts a one-second `$.clock.every` timer, and shows a toast at zero. As with `grader`, the file holds only the hook under test and doesn’t register the command:
 
@@ -343,15 +345,15 @@ test('the second tab counts presses and saves the count', async ($, on) => {
 
 In your shell, run `claude plugin test` from the `hello-tabs` directory. The test passes when both apps draw the count line and the mod has saved `2`. The count carries over from the first app to the second because both mounts use the same loaded module. The handle that `$.ui.mount` returns has these methods, which address elements by the `key` you gave them:
 
-| Method                                                                | What it does                                                                                                                       |
-|:----------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|
-| `press({ key: 'more' })`                                              | Presses the `Button` with that key                                                                                                 |
-| `input({ key: 'new-note', text: 'buy milk' })`                        | Types the text into the `Input` with that key and presses Enter. Add `kind: 'change'` to type without submitting.                  |
-| `select({ key: 'size', value: 'large' })`                             | Picks the option with that value in the `Select` with that key                                                                     |
+| Method | What it does |
+|:---|:---|
+| `press({ key: 'more' })` | Presses the `Button` with that key |
+| `input({ key: 'new-note', text: 'buy milk' })` | Types the text into the `Input` with that key and presses Enter. Add `kind: 'change'` to type without submitting. For a field with `rows`, the text can hold `\n`. |
+| `select({ key: 'size', value: 'large' })` | Picks the option with that value in the `Select` with that key |
 | `find({ key: 'more' })` or `find({ type: 'Text', text: 'Count: 2' })` | Returns the first matching element as `{ type, props, children }`, or `undefined`. `text` can be a string or a regular expression. |
-| `unmount()`                                                           | Removes the drawing                                                                                                                |
+| `unmount()` | Removes the drawing |
 
-Each method resolves after your handler has finished, so you can check the result on the next line. Set `props` to what Claude Code would pass for that site. The [render sites table](plugins-mods-reference.md#render-sites) lists each site’s props, and [the types for your build](plugins-mods-create.md#get-the-types-for-your-build) have their types. A drawing test checks the tree your hook returns and whether it’s valid for that app. It doesn’t check how the app paints it, so look at a new layout in a real session as well.
+Each method resolves after your handler has finished, so you can check the result on the next line. Set `props` to what Claude Code would pass for that site. The [render sites table](plugins-mods-reference.md#render-sites) lists each site’s props, and [the types for your build](plugins-mods-create.md#get-the-types-for-your-build) have their types. To catch an [element tree](plugins-mods-interface.md#build-a-tree-from-elements) that isn’t valid for the app you named in `surface`, check with `find` for an element your hook adds. The test doesn’t check how the app paints a tree, so look at a new layout in a real session too.
 
 
 [​](#test-a-drawing-after-clear)

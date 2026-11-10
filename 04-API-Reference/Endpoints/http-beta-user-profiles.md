@@ -2,234 +2,11 @@
 title: "User Profiles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/user_profiles"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:39:46Z"
+fetched_at: "2026-11-05T06:35:33Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fuser_profiles)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -240,7 +17,9 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create User Profile](platform-claude-com-http-beta-user-profiles-create.md)
 
@@ -258,11 +37,33 @@ cURL
 
 POST/v1/user_profiles/{user_profile_id}
 
+##### [Delete User Profile](https://platform.claude.com/docs/en/api/http/beta/user_profiles/delete)
+
+DELETE/v1/user_profiles/{user_profile_id}
+
 ##### [Create Enrollment URL](platform-claude-com-http-beta-user-profiles-create-enrollment-url.md)
 
 POST/v1/user_profiles/{user_profile_id}/enrollment_url
 
 ##### Models
+
+
+
+BetaDeletedUserProfile object{ type: "user_profile_deleted", id }
+
+
+
+type: "user_profile_deleted"
+
+
+
+Object type. Always `user_profile_deleted`.
+
+id: string
+
+
+
+Identifier of the deleted user profile, prefixed `uprof_`.
 
 
 
@@ -280,7 +81,7 @@ BetaUserProfileEnrollmentURL object{ type: "enrollment_url", expires_at, url }
 
 
 
-A URL to give to the entity that a user profile represents, so that the entity can enroll for a trust grant.
+A URL to give to the entity that a user profile represents, so that the entity can enroll in a program.
 
 type: "enrollment_url"
 
@@ -333,3 +134,23 @@ status: "active" or "pending" or "rejected"
 
 
 Status of the trust grant.
+
+One of the following:
+
+"active"
+
+
+
+"pending"
+
+
+
+"rejected"
+
+
+
+#### User Profiles[Action URLs](https://platform.claude.com/docs/en/api/http/beta/user_profiles/action_urls)
+
+##### [Create Action URL](https://platform.claude.com/docs/en/api/http/beta/user_profiles/action_urls/create)
+
+POST/v1/user_profiles/{user_profile_id}/action_urls

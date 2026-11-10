@@ -2,7 +2,7 @@
 title: "Manage groups and group spend limits on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13799932-manage-groups-and-group-spend-limits-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:04Z"
+fetched_at: "2026-11-09T06:26:23Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -15,7 +15,7 @@ Groups and group spend limits are available for Enterprise plan organizations. O
 
 Groups let you organize members into logical collections—by team, department, or any other grouping that fits your organization. Once groups are set up, you can:
 
-- **Set spend limits for groups**, so all members of a group share a per-user spend limit, and optionally give the group one shared monthly budget (beta).
+- **Set spend limits for groups**, so all members of a group share a per-user spend limit, and optionally give the group one shared monthly budget.
 
 - **Control member access through group memberships and custom roles**, so their capabilities and permissions are determined entirely by the groups they belong to. For additional details, see **[Manage custom roles on Enterprise plans](manage-custom-roles-on-enterprise-plans.md)**.
 
@@ -23,7 +23,7 @@ Groups let you organize members into logical collections—by team, department, 
 
 Groups can be created manually or synced automatically from your identity provider via SCIM. Each organization can have up to 1000 groups. There's no limit on how many groups a member can belong to, though belonging to more than 250 can slow performance.
 
-In addition to spend limits, Enterprise admins can use groups to control plugin access in chat, Cowork, and Claude Code. Each plugin in your organization's marketplace can have group-level overrides that set it to "Available to install," "Installed by default," "Required," or "Not available" for members of a specific group. For details, see **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization)**.
+In addition to spend limits, Enterprise admins can use groups to control plugin access in chat, Cowork, and Claude Code. Each plugin in your organization's marketplace can have group-level overrides that set it to "Available to install," "Installed by default," "Required," or "Not available" for members of a specific group. For details, see **[Manage plugins for your organization](../22-Safety-Policy/manage-cowork-plugins-for-your-organization.md)**.
 
 ------------------------------------------------------------------------
 
@@ -125,7 +125,7 @@ Owners, Primary Owners, and custom roles with the **User Management** permission
 
 **Important:** If your provisioning mode is SCIM directory sync and group mappings are enabled, each member’s role is set by your IdP group-to-role mapping and managed by the sync, not by the **Members** page. A role that was set to “Custom” before you enabled group mappings (or set another way) is recalculated on the next full sync and reverts to the mapped role. It works until that sync runs, and the reversion isn’t recorded in the audit log, so it can look like custom role permissions stopped applying for no reason.
 
-To keep a member on “Custom,” add them to an IdP group that’s mapped to the “Custom” role in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**, then run a sync. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)** and **[How SCIM sync works for Enterprise organizations](../13-Enterprise-Admin/how-scim-sync-works-for-enterprise-organizations.md)**.
+To keep a member on “Custom,” add them to an IdP group that’s mapped to the “Custom” role in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**, then run a sync. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)** and **[How SCIM sync works for Enterprise organizations](https://support.claude.com/en/articles/14499648-how-scim-sync-works-for-enterprise-organizations)**.
 
 ### Recommended setup
 
@@ -145,7 +145,7 @@ To keep a member on “Custom,” add them to an IdP group that’s mapped to th
 
 The member's effective permissions are now determined by their group memberships and the custom roles assigned to those groups.
 
-**Important:** Always complete steps 1–5 before enabling features at the organization level (step 6). If you enable a feature before changing members' roles to Custom and assigning appropriate custom roles, there's a brief window where some members could access the feature through their previous role. For a detailed walkthrough, see **[Set up role-based permissions on Enterprise plans](set-up-role-based-entitlements-on-enterprise-plans.md)**.
+**Important:** Always complete steps 1–5 before enabling features at the organization level (step 6). If you enable a feature before changing members' roles to Custom and assigning appropriate custom roles, there's a brief window where some members could access the feature through their previous role. For a detailed walkthrough, see **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-entitlements-on-enterprise-plans)**.
 
 ### Invite new members
 
@@ -167,7 +167,7 @@ A pooled budget only starts counting spend after it is created and resets each m
 
 2.  Select the "By group/tier" tab.
 
-3.  Find the group and click the menu button to the right, then "Edit limits."
+3.  Find the group and click the menu button to the right, then "Edit limit."
 
 4.  Select "No member limit" or "Member limit" and enter an amount.
 

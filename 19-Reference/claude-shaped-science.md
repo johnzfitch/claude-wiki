@@ -2,9 +2,11 @@
 title: "Claude-shaped science \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-shaped-science"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:36Z"
+fetched_at: "2026-11-03T06:24:01Z"
 tags: ["news-research"]
 ---
+
+### Chapter 01: Claude, take the wheel!
 
 # Claude-shaped science
 
@@ -31,7 +33,7 @@ tags: ["news-research"]
 
   See more...
 
-*Summary: In this guest post, Prof. Matthew Schwartz returns to describe a new approach to AI-accelerated science. In [Vibe Physics](vibe-physics.md), Schwartz discussed similarities in capability between Claude and a physics graduate student. Here, he describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calculations in quantitative science. Because similar calculations often turn up across very disparate areas of science, Claude found connections to ecology, population genetics, and a dozen other fields. These connections were often technically correct but scientifically unremarkable at first, so Schwartz worked with domain experts to steer BootLoops toward questions those fields care about. Below, we share more about these projects and how BootLoops came about.*
+*In this guest post, Prof. Matthew Schwartz returns to describe a new approach to AI-accelerated science. In [Vibe Physics](vibe-physics.md), Schwartz discussed similarities in capability between Claude and a physics graduate student. Here, he describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calculations in quantitative science. Because similar calculations often turn up across very disparate areas of science, Claude found connections to ecology, population genetics, and a dozen other fields. These connections were often technically correct but scientifically unremarkable at first, so Schwartz worked with domain experts to steer BootLoops toward questions those fields care about. Below, we share more about these projects and how BootLoops came about.*
 
 Related articles
 
@@ -147,7 +149,7 @@ So where does this leave Joe Scientist? If you ask me, in a great place, actuall
 
 Details of the BootLoops harness and the science it has enabled can be found at [www.bootloops.ai](http://www.bootloops.ai). The BootLoops harness is on [GitHub](https://github.com/BootLoops-ai/bootloops/tree/66b680ce742e654cfe86da4f072a69061fe182b1) for anyone to use and contribute to.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

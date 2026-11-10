@@ -2,7 +2,7 @@
 title: "Claude Code on Console to Enterprise migration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14128775-claude-code-on-console-to-enterprise-migration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:07Z"
+fetched_at: "2026-11-09T06:26:26Z"
 tags: ["authentication", "claude-code", "enterprise"]
 ---
 
@@ -27,7 +27,7 @@ Claude Enterprise adds rich analytics and audit logs (including contribution met
 
 [TABLE]
 
-**Docs: [Roles and permissions](roles-and-permissions.md)**, **[Purchasing and managing seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md), [How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**, **[Using Claude Code with your Enterprise plan](https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan)**
+**Docs: [Roles and permissions](roles-and-permissions.md)**, **[Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans), [How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**, **[Using Claude Code with your Enterprise plan](../17-Billing-Plans/using-claude-code-with-your-team-or-enterprise-plan.md)**
 
 ------------------------------------------------------------------------
 
@@ -127,7 +127,7 @@ Pipelines and scripts don't use `/login`. Either keep a Console org (and its API
 
 Remove migrated developers from the Console org (or rotate their keys). Removal revokes their Console login tokens and disables their Claude Code workspace key, stopping further Console billing from interactive use. API keys they created in other Console workspaces are not disabled by removal — review and disable those separately. Don't remove members until you've confirmed Enterprise access works; there is no automated rollback.
 
-**Docs: [Purchasing and managing seats on Enterprise plans](../17-Billing-Plans/purchasing-and-managing-seats-on-enterprise-plans.md)**
+**Docs: [Purchasing and managing seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchasing-and-managing-seats-on-enterprise-plans)**
 
 ------------------------------------------------------------------------
 

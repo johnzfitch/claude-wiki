@@ -2,7 +2,7 @@
 title: "Get started with Claude Dashboards | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17454700-get-started-with-claude-dashboards"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:14Z"
+fetched_at: "2026-11-09T06:26:13Z"
 tags: ["claude-ai"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["claude-ai"]
 
 Claude Dashboards turn questions about your company's data into dashboards. Connect a data warehouse or another app, ask a question in plain language, and Claude writes the queries and builds the dashboard. This guide covers connecting your data, creating and refining a dashboard, and sharing it.
 
-Claude Dashboards is available in beta on Pro, Max, Team, and Enterprise plans. On Enterprise plans, it's off by default until an owner turns it on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**.
+Claude Dashboards is available in beta on Pro, Max, Ultra, Team, and Enterprise plans. On Enterprise plans, it's off by default until an owner turns it on in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**.
 
 ## How Claude Dashboards works
 
@@ -65,7 +65,7 @@ Say what you want to know, not just what to chart. "How do this month's signups 
 
 ## Share and send a dashboard
 
-Dashboards start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
+Dashboards start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](share-artifacts-claude-help-center.md)**.
 
 ## Usage
 

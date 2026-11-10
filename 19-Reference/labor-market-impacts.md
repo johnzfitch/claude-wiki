@@ -2,7 +2,7 @@
 title: "Labor market impacts of AI: A new measure \\ Anthropic"
 source_url: "https://www.anthropic.com/research/labor-market-impacts"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:42Z"
+fetched_at: "2026-10-24T06:27:01Z"
 tags: ["news-research"]
 ---
 
@@ -101,7 +101,7 @@ Our measure qualitatively captures several aspects of AI usage that we think are
 - It has a relatively higher share of automated use patterns or API implementation
 - Its AI-impacted tasks make up a larger share of the overall role^([6](#footnote-6))
 
-We give mathematical details in the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/e5f77fc0e77c0185110b5e4b909602791ae76eae.pdf). We count tasks that are theoretically capable with an LLM as covered if they have seen sufficient work-related usage in Claude traffic. We then adjust for how the task is being carried out: fully automated implementations receive full weight, while augmentative use receives half weight. Finally, the task-level coverage measures are averaged to the occupation level weighted by the fraction of time spent on each task.
+We give mathematical details in the [Appendix](we-begin-at-the-task-level-we-only-consider-a-task-as-covered-if-it-sees.md). We count tasks that are theoretically capable with an LLM as covered if they have seen sufficient work-related usage in Claude traffic. We then adjust for how the task is being carried out: fully automated implementations receive full weight, while augmentative use receives half weight. Finally, the task-level coverage measures are averaged to the occupation level weighted by the fraction of time spent on each task.
 
 Figure 2 shows observed exposure (in red) compared to β from Eloundou et al. (in blue), illustrating the difference between theoretical and actual use on our platform, grouped by broad occupational categories. We calculate this by first averaging to the occupation level weighting by our time fraction measure, then averaging to the occupation category weighting by total employment. For example, the β measure shows scope for LLM penetration in the majority of tasks in Computer & Math (94%) and Office & Admin (90%) occupations.
 
@@ -144,7 +144,7 @@ A smaller but still concerning impact would be a scenario such as a “Great Rec
 
 One group of particular concern is young workers. Brynjolfsson et al. report a 6—16% fall in employment in exposed occupations among workers aged 22 to 25. They attribute this decrease primarily to a slowdown in hiring rather than an increase in separations.^([9](#footnote-9))
 
-We find that the unemployment rate for young workers in the exposed occupations is flat (see [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/e5f77fc0e77c0185110b5e4b909602791ae76eae.pdf)). But slowed hiring may not necessarily manifest as increased unemployment, since many young workers are labor market entrants without a listed occupation in the CPS data and may exit the labor force rather than appear as unemployed. To address hiring directly, we use the panel dimension of the CPS, counting the percent of young (22-25 year old) workers who begin a new job in a more vs. less exposed occupation over time. Figure 7 shows the monthly job finding rate (i.e., when a worker reports a job that they did not have in the previous month) for young workers, split by whether they are entering a high- vs. low-exposure occupation.
+We find that the unemployment rate for young workers in the exposed occupations is flat (see [Appendix](we-begin-at-the-task-level-we-only-consider-a-task-as-covered-if-it-sees.md)). But slowed hiring may not necessarily manifest as increased unemployment, since many young workers are labor market entrants without a listed occupation in the CPS data and may exit the labor force rather than appear as unemployed. To address hiring directly, we use the panel dimension of the CPS, counting the percent of young (22-25 year old) workers who begin a new job in a more vs. less exposed occupation over time. Figure 7 shows the monthly job finding rate (i.e., when a worker reports a job that they did not have in the previous month) for young workers, split by whether they are entering a high- vs. low-exposure occupation.
 
 Apart from some large swings in 2020-2021, these series visually diverge in 2024, with young workers relatively less likely to be hired into exposed occupations. Job finding rates at the less exposed occupations remain stable at 2% per month, while entry into the most exposed jobs decreases by about half a percentage point. The averaged estimate in the post-ChatGPT era is a 14% drop in the job finding rate compared to that in 2022 in the exposed occupations, although this is just barely statistically significant. (There is no such decrease for workers older than 25.)
 
@@ -160,7 +160,7 @@ There are several improvements to be made to the present work. Our usage data wi
 
 ## Appendix
 
-Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/e5f77fc0e77c0185110b5e4b909602791ae76eae.pdf)  
+Available [here.](we-begin-at-the-task-level-we-only-consider-a-task-as-covered-if-it-sees.md)  
 
 ## References
 
@@ -230,7 +230,7 @@ Tomlinson, K., Jaffe, S., Wang, W., Counts, S., & Suri, S. (2025). Working with 
 
 10 See Fujita, et al. (2024).[](#footnote-ref-10)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

@@ -301,7 +301,7 @@ Products
 
 - Claude Code
 
-  [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+  [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
   Claude Code
 
 - Claude Code for Enterprise
@@ -421,7 +421,7 @@ Solutions
 
 - Enterprise
 
-  [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+  [Enterprise](enterprise.md)
   Enterprise
 
 - Financial services

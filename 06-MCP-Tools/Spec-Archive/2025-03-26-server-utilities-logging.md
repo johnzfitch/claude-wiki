@@ -2,11 +2,14 @@
 title: "Logging - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/logging"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:09Z"
+fetched_at: "2026-10-31T06:25:24Z"
+last_modified: "Fri, 30 Oct 2026 22:12:07 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)

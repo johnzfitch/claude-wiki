@@ -2,57 +2,9 @@
 title: "Define success criteria and build evaluations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-10-20T06:38:06Z"
+fetched_at: "2026-11-05T06:36:57Z"
 tags: ["api", "evaluation"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Ftest-and-evaluate%2Fdevelop-tests)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](../About/about-claude-use-case-guides-overview.md)[Ticket routing](../About/about-claude-use-case-guides-ticket-routing.md)[Customer support agent](../About/about-claude-use-case-guides-customer-support-chat.md)[Content moderation](../About/about-claude-use-case-guides-content-moderation.md)[Legal summarization](../About/about-claude-use-case-guides-legal-summarization.md)[Commerce agent](../About/about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](test-and-evaluate-develop-tests.md)[Reducing latency](test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](../About/about-claude-glossary.md)[Additional resources](../About/about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](../About/about-claude-use-case-guides-overview.md)Test and evaluate
 
 # Define success criteria and build evaluations
 
@@ -72,14 +24,14 @@ Building a successful LLM-based application starts with clearly defining your su
 
 Good success criteria are:
 
-- **Specific:** Clearly define what you want to achieve. Instead of "good performance," specify "accurate sentiment classification."
+- **Specific:** Clearly define what you want to achieve. Instead of “good performance,” specify “accurate sentiment classification.”
 
 - **Measurable:** Use quantitative metrics or well-defined qualitative scales. Numbers provide clarity and scalability, but qualitative measures can be valuable if consistently applied *along* with quantitative measures.
 
-  - Even "hazy" topics such as ethics and safety can be quantified:
-    |      | Safety criteria                                                                            |
-    |------|--------------------------------------------------------------------------------------------|
-    | Bad  | Safe outputs                                                                               |
+  - Even “hazy” topics such as ethics and safety can be quantified:
+    |  | Safety criteria |
+    |----|----|
+    | Bad | Safe outputs |
     | Good | Less than 0.1% of outputs out of 10,000 trials flagged for toxicity by the content filter. |
 
   ### Example metrics and measurement methods
@@ -93,23 +45,23 @@ Good success criteria are:
   **Quantitative methods:**
 
   - A/B testing: Compare performance against a baseline model or earlier version.
-  - User feedback: Implicit measures like task completion rates.
+  - User feedback: Implicit measures such as task completion rates.
   - Edge case analysis: Percentage of edge cases handled without errors.
 
   **Qualitative scales:**
 
-  - Likert scales: "Rate coherence from 1 (nonsensical) to 5 (perfectly logical)"
+  - Likert scales: “Rate coherence from 1 (nonsensical) to 5 (perfectly logical)”
   - Expert rubrics: Linguists rating translation quality on defined criteria
 
 - **Achievable:** Base your targets on industry benchmarks, prior experiments, AI research, or expert knowledge. Your success metrics should not be unrealistic to current frontier model capabilities.
 
-- **Relevant:** Align your criteria with your application's purpose and user needs. Strong citation accuracy might be critical for medical apps but less so for casual chatbots.
+- **Relevant:** Align your criteria with your application’s purpose and user needs. Strong citation accuracy might be critical for medical apps but less so for casual chatbots.
 
 ### Example task fidelity criteria for sentiment analysis
 
-|      | Criteria                                                                                                                                                                                                                               |
-|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Bad  | The model should classify sentiments well                                                                                                                                                                                              |
+|  | Criteria |
+|----|----|
+| Bad | The model should classify sentiments well |
 | Good | The sentiment analysis model should achieve an F1 score of at least 0.85 (Measurable, Specific) on a held-out test set\* of 10,000 diverse Twitter posts (Relevant), which is a 5% improvement over the current baseline (Achievable). |
 
 \*More on held-out test sets in the next section.
@@ -120,19 +72,19 @@ Here are some criteria that might be important for your use case. This list is n
 
 ### Task fidelity
 
-How well does the model need to perform on the task? You may also need to consider edge case handling, such as how well the model needs to perform on rare or challenging inputs.
+How well does the model need to perform on the task? You might also need to consider edge case handling, such as how well the model needs to perform on rare or challenging inputs.
 
 ### Consistency
 
-How similar do the model's responses need to be for similar types of input? If a user asks the same question twice, how important is it that they get semantically similar answers?
+How similar do the model’s responses need to be for similar types of input? If a user asks the same question twice, how important is it that they get semantically similar answers?
 
 ### Relevance and coherence
 
-How well does the model directly address the user's questions or instructions? How important is it for the information to be presented in a logical, easy to follow manner?
+How well does the model directly address the user’s questions or instructions? How important is it for the information to be presented in a logical, easy-to-follow manner?
 
 ### Tone and style
 
-How well does the model's output style match expectations? How appropriate is its language for the target audience?
+How well does the model’s output style match expectations? How appropriate is its language for the target audience?
 
 ### Privacy preservation
 
@@ -144,11 +96,11 @@ How effectively does the model use provided context? How well does it reference 
 
 ### Latency
 
-What is the acceptable response time for the model? This depends on your application's real-time requirements and user expectations.
+What is the acceptable response time for the model? This depends on your application’s real-time requirements and user expectations.
 
 ### Price
 
-What is your budget for running the model? Consider factors like the cost for each API call, the size of the model, and the frequency of usage.
+What is your budget for running the model? Consider factors such as the cost for each API call, the size of the model, and the frequency of usage.
 
 Most use cases need multidimensional evaluation along several success criteria.
 
@@ -156,7 +108,7 @@ Most use cases need multidimensional evaluation along several success criteria.
 
 [TABLE]
 
-\*In reality, you would also define what "inconvenience" and "egregious" mean.
+\*In reality, you would also define what “inconvenience” and “egregious” mean.
 
 ------------------------------------------------------------------------
 
@@ -164,7 +116,7 @@ Most use cases need multidimensional evaluation along several success criteria.
 
 ### Eval design principles
 
-1.  **Be task-specific:** Design evals that mirror your real-world task distribution. Don't forget to factor in edge cases!
+1.  **Be task-specific:** Design evals that mirror your real-world task distribution. Don’t forget to factor in edge cases!
     ### Example edge cases
 
     - Irrelevant or nonexistent input data
@@ -176,9 +128,9 @@ Most use cases need multidimensional evaluation along several success criteria.
 
 ### Example evals
 
-### Task fidelity (sentiment analysis) - exact match evaluation
+### Task fidelity (sentiment analysis): exact match evaluation
 
-**What it measures:** Exact match evals measure whether the model's output matches a predefined correct answer, typically after normalizing whitespace and case. It's a simple, unambiguous metric that's perfect for tasks with clear-cut, categorical answers like sentiment analysis (positive, negative, neutral).
+**What it measures:** Exact match evals measure whether the model’s output matches a predefined correct answer, typically after normalizing whitespace and case. It’s a simple, unambiguous metric that’s perfect for tasks with clear-cut, categorical answers such as sentiment analysis (positive, negative, neutral).
 
 **Example eval test cases:** 1,000 tweets with human-labeled sentiments.
 
@@ -244,9 +196,9 @@ accuracy = sum(
 print(f"Sentiment Analysis Accuracy: {accuracy * 100}%")
 ```
 
-### Consistency (FAQ bot) - cosine similarity evaluation
+### Consistency (FAQ bot): cosine similarity evaluation
 
-**What it measures:** Cosine similarity measures the similarity between two vectors (in this case, sentence embeddings of the model's output using [Sentence-BERT (SBERT)](https://sbert.net/)) by computing the cosine of the angle between them. Values closer to 1 indicate higher similarity. It's ideal for evaluating consistency because similar questions should yield semantically similar answers, even if the wording varies.
+**What it measures:** Cosine similarity measures the similarity between two vectors (in this case, sentence embeddings of the model’s output using [Sentence-BERT (SBERT)](https://sbert.net/)) by computing the cosine of the angle between them. Values closer to 1 indicate higher similarity. It’s ideal for evaluating consistency because similar questions should yield semantically similar answers, even if the wording varies.
 
 **Example eval test cases:** 50 groups with a few paraphrased versions each.
 
@@ -325,7 +277,7 @@ for faq in faq_variations:
     print(f"FAQ Consistency Score: {similarity_score * 100}%")
 ```
 
-### Relevance and coherence (summarization) - ROUGE-L evaluation
+### Relevance and coherence (summarization): ROUGE-L evaluation
 
 **What it measures:** ROUGE-L (Recall-Oriented Understudy for Gisting Evaluation - Longest Common Subsequence) evaluates the quality of generated summaries. It measures the length of the longest common subsequence between the candidate and reference summaries. High ROUGE-L scores indicate that the generated summary captures key information in a coherent order.
 
@@ -397,9 +349,9 @@ relevance_scores = [
 print(f"Average ROUGE-L F1 Score: {sum(relevance_scores) / len(relevance_scores)}")
 ```
 
-### Tone and style (customer service) - LLM-based Likert scale
+### Tone and style (customer service): LLM-based Likert scale
 
-**What it measures:** The LLM-based Likert scale is a psychometric scale that uses an LLM to judge subjective attitudes or perceptions. Here, it's used to rate the tone of responses on a scale from 1 to 5. It's ideal for evaluating nuanced aspects like empathy, professionalism, or patience that are difficult to quantify with traditional metrics.
+**What it measures:** The LLM-based Likert scale is a psychometric scale that uses an LLM to judge subjective attitudes or perceptions. Here, it’s used to rate the tone of responses on a scale from 1 to 5. It’s ideal for evaluating nuanced aspects such as empathy, professionalism, or patience that are difficult to quantify with traditional metrics.
 
 **Example eval test cases:** 100 customer inquiries with target tone (empathetic, patient, professional).
 
@@ -457,7 +409,7 @@ def evaluate_likert(model_output, target_tone):
     5: Perfectly {target_tone}
     Output only the number."""
 
-    # Generally best practice to use a different model to evaluate than the model used to generate the evaluated output
+    # Generally best practice to evaluate with a different model from the one used to generate the evaluated output
     response = client.messages.create(
         model="claude-opus-5-5",
         max_tokens=1024,
@@ -479,9 +431,9 @@ tone_scores = [
 print(f"Average Tone Score: {sum(tone_scores) / len(tone_scores)}")
 ```
 
-### Privacy preservation (medical chatbot) - LLM-based binary classification
+### Privacy preservation (medical chatbot): LLM-based binary classification
 
-**What it measures:** Binary classification determines if an input belongs to one of two classes. Here, it's used to classify whether a response contains PHI or not. This method can account for context and identify subtle or implicit forms of PHI that rule-based systems might miss.
+**What it measures:** Binary classification determines if an input belongs to one of two classes. Here, it’s used to classify whether a response contains PHI. This method can account for context and identify subtle or implicit forms of PHI that rule-based systems might miss.
 
 **Example eval test cases:** 500 simulated patient queries, some with PHI.
 
@@ -548,7 +500,7 @@ def evaluate_binary(model_output, query_contains_phi):
     <response>{model_output}</response>
     Output only 'yes' or 'no'."""
 
-    # Generally best practice to use a different model to evaluate than the model used to generate the evaluated output
+    # Generally best practice to evaluate with a different model from the one used to generate the evaluated output
     response = client.messages.create(
         model="claude-opus-5-5",
         max_tokens=1024,
@@ -575,9 +527,9 @@ privacy_scores = [
 print(f"Privacy Preservation Score: {sum(privacy_scores) / len(privacy_scores) * 100}%")
 ```
 
-### Context utilization (conversation assistant) - LLM-based ordinal scale
+### Context utilization (conversation assistant): LLM-based ordinal scale
 
-**What it measures:** Similar to the Likert scale, the ordinal scale measures on a fixed, ordered scale (1–5). It's perfect for evaluating context utilization because it can capture the degree to which the model references and builds upon the conversation history, which is key for coherent, personalized interactions.
+**What it measures:** Similar to the Likert scale, the ordinal scale measures on a fixed, ordered scale (1–5). It’s perfect for evaluating context utilization because it can capture the degree to which the model references and builds upon the conversation history, which is key for coherent, personalized interactions.
 
 **Example eval test cases:** 100 multi-turn conversations with context-dependent questions.
 
@@ -665,7 +617,7 @@ def evaluate_ordinal(model_output, conversation):
     5: Perfectly utilizes context
     Output only the number and nothing else."""
 
-    # Generally best practice to use a different model to evaluate than the model used to generate the evaluated output
+    # Generally best practice to evaluate with a different model from the one used to generate the evaluated output
     response = client.messages.create(
         model="claude-opus-5-5",
         max_tokens=1024,
@@ -690,7 +642,7 @@ Writing hundreds of test cases can be hard to do by hand! Get Claude to help you
 
 
 
-If you don't know what eval methods might be useful to assess for your success criteria, you can also brainstorm with Claude!
+If you don’t know what eval methods might be useful to assess for your success criteria, you can also brainstorm with Claude!
 
 ------------------------------------------------------------------------
 
@@ -705,14 +657,14 @@ When deciding which method to use to grade evals, choose the fastest, most relia
 
 2.  **Human grading:** Most flexible and high quality, but slow and expensive. Avoid if possible.
 
-3.  **LLM-based grading:** Fast and flexible, scalable and suitable for complex judgment. Test to ensure reliability first then scale.
+3.  **LLM-based grading:** Fast and flexible, scalable and suitable for complex judgment. Test to ensure reliability first, then scale.
 
 ### Tips for LLM-based grading
 
-- **Have detailed, clear rubrics:** "The answer should always mention 'Acme Inc.' in the first sentence. If it does not, the answer is automatically graded as 'incorrect.'"
+- **Have detailed, clear rubrics:** “The answer should always mention ‘Acme Inc.’ in the first sentence. If it does not, the answer is automatically graded as ‘incorrect.’”
   
-  A given use case, or even a specific success criteria for that use case, might require several rubrics for holistic evaluation.
-- **Empirical or specific:** For example, instruct the LLM to output only 'correct' or 'incorrect', or to judge from a scale of 1–5. Purely qualitative evaluations are hard to assess quickly and at scale.
+  A given use case, or even a specific success criterion for that use case, might require several rubrics for holistic evaluation.
+- **Be empirical or specific:** For example, instruct the LLM to output only ‘correct’ or ‘incorrect’, or to judge from a scale of 1–5. Purely qualitative evaluations are hard to assess quickly and at scale.
 - **Encourage reasoning:** Use a grader model with [thinking](../Guides/build-with-claude-thinking.md) on, so that it reasons before it produces an evaluation score. This increases evaluation performance, particularly for tasks requiring complex judgment.
 
 ### Example: LLM-based grading
@@ -807,6 +759,6 @@ Brainstorm success criteria for your use case with Claude on claude.ai.
 
 
 
-[Evals cookbook](https://platform.claude.com/cookbook/misc-building-evals)
+[Evals recipe](https://platform.claude.com/cookbook/misc-building-evals)
 
 More code examples of human-, code-, and LLM-graded evals.

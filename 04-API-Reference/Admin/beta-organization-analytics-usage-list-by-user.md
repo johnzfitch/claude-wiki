@@ -252,7 +252,7 @@ cURL
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
 3.  [Organization](platform-claude-com-http-beta-organization.md)
 4.  [Analytics](platform-claude-com-http-beta-organization-analytics.md)
-5.  [Usage](http-beta-organization-analytics-usage.md)
+5.  [Usage](platform-claude-com-http-beta-organization-analytics-usage.md)
 
 # Get Per-User Token Usage
 

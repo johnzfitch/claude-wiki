@@ -2,7 +2,7 @@
 title: "LLMs and biorisk \\ Anthropic"
 source_url: "https://www.anthropic.com/research/biorisk"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:40Z"
+fetched_at: "2026-10-24T06:26:33Z"
 tags: ["news-research"]
 ---
 
@@ -113,7 +113,7 @@ We believe it’s important to support transparency norms—like the push for de
 
 ### Deployment safeguards
 
-We have developed automated deployment safeguards based on our [constitutional classifiers](constitutional-classifiers.md) research. These classifier guards work by monitoring inputs and outputs in real time and blocking a narrow class of potentially harmful information. We apply this protection to models for which we cannot rule out their potential to meaningfully uplift threat actors; to date this is only the Claude Opus 4 family of models, which we did as a [precautionary measure](activating-asl3-protections.md). (For more details on our implementation of ASL-3 protections, see this [report](https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf).)
+We have developed automated deployment safeguards based on our [constitutional classifiers](research-constitutional-classifiers.md) research. These classifier guards work by monitoring inputs and outputs in real time and blocking a narrow class of potentially harmful information. We apply this protection to models for which we cannot rule out their potential to meaningfully uplift threat actors; to date this is only the Claude Opus 4 family of models, which we did as a [precautionary measure](activating-asl3-protections.md). (For more details on our implementation of ASL-3 protections, see this [report](https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf).)
 
 Across all models, our [Safeguards](building-safeguards-for-claude.md) team monitors activity on our platforms for signs of misuse, including dangerous applications of biology. This monitoring provides insight into patterns of misuse and helps us determine if and when to take enforcement action.
 

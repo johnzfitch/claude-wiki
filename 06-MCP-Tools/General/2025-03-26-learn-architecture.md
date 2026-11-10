@@ -2,11 +2,14 @@
 title: "Architecture overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-03-26/learn/architecture"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-21T06:28:36Z"
+fetched_at: "2026-10-31T06:25:15Z"
+last_modified: "Sat, 31 Oct 2026 01:03:17 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Scope](#scope)
 - [Concepts of MCP](#concepts-of-mcp)

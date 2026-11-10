@@ -2,11 +2,13 @@
 title: "Recommend plugins for your org - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/relevance"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-25T06:29:08Z"
+fetched_at: "2026-10-27T06:26:31Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Understand how plugin relevance works](#understand-how-plugin-relevance-works)
 - [Add relevance to a plugin entry](#add-relevance-to-a-plugin-entry)
@@ -31,12 +33,12 @@ Add a relevance block to marketplace plugin entries so Claude Code suggests them
 
 Copy pageCopy page
 
-Claude Code can suggest installing a plugin from your organization’s marketplace when a user’s session matches signals you define for that plugin. Signals include the working directory, files Claude has read, and commands Claude has run. You define them by adding a `relevance` block to the plugin’s entry in `marketplace.json`. A marketplace operator writes the `relevance` entries. An administrator then allowlists the marketplace in managed settings. Users see no suggestions from a marketplace until it’s allowlisted.
+Claude Code can suggest installing a plugin from your organization’s marketplace when a user’s session matches signals you define for that plugin. Signals include the working directory, files Claude has read, and commands Claude has run. You define them by adding a `relevance` block to the plugin’s entry in `marketplace.json`. A marketplace operator writes the `relevance` entries. An administrator then allowlists the marketplace in managed settings. In the terminal, users see no suggestions from a marketplace until it’s allowlisted.
 
 These cases are covered on other pages:
 
 - **You want to install plugins**: see [Install and manage plugins](discover-plugins.md)
-- **You want to turn suggestions off**: see [Understand how plugin relevance works](#understand-how-plugin-relevance-works)
+- **You want to turn suggestions off**: see [Understand how plugin relevance works](#understand-how-plugin-relevance-works), or for the suggestions Claude makes in a cloud session’s conversation, [Turn off plugin suggestions](../02-Claude-Code-CLI/claude-code-on-the-web.md#turn-off-plugin-suggestions)
 
 Start with the sections for your role:
 
@@ -98,9 +100,9 @@ The `relevance` object and its nested `signals` object accept the fields in the 
 
 `relevance`
 
-| Field     | Type   | Description                                                                                                                                                             |
-|:----------|:-------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `topic`   | string | Optional. The phrase that fills “Working with *topic*?” in the spinner tip. Defaults to the plugin name with each hyphen segment capitalized. Maximum 64 characters.    |
+| Field | Type | Description |
+|:---|:---|:---|
+| `topic` | string | Optional. The phrase that fills “Working with *topic*?” in the spinner tip. Defaults to the plugin name with each hyphen segment capitalized. Maximum 64 characters. |
 | `signals` | object | Matchers that determine when the plugin is relevant. Claude Code suggests the plugin only if at least one signal is set. See [`relevance.signals`](#relevance-signals). |
 
 The `topic` is often the product name, for example `Terraform`. Use a domain such as `design` when the plugin name doesn’t sound natural as a topic.
@@ -112,12 +114,12 @@ The `topic` is often the product name, for example `Terraform`. Use a domain suc
 
 The `signals` object accepts the following fields.
 
-| Field          | Type             | Description                                                                                                                                                                                                                                 | Limit                                                                                        |
-|:---------------|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------|
-| `cwd`          | array of strings | Glob patterns matched against the session’s working directory. See [working directory matching](#working-directory-matching).                                                                                                               | 10 patterns of 256 characters each                                                           |
-| `cli`          | array of strings | Command names from shell commands Claude has run this session, for example `["terraform"]`. Exact match. See [command name matching](#command-name-matching).                                                                               | 10 entries of 64 characters each                                                             |
-| `hosts`        | array of strings | Hostnames seen in `http://` or `https://` URLs in Bash commands this session, for example `["registry.terraform.io"]`. Bare lowercase hostname only: no scheme, port, or path. Exact case-insensitive match.                                | 20 entries of 128 characters each                                                            |
-| `filesRead`    | array of strings | Glob patterns matched against the paths of files Claude has read this session, for example `["**/*.tf"]`. Forward-slash normalized and case-insensitive.                                                                                    | 10 patterns of 256 characters each                                                           |
+| Field | Type | Description | Limit |
+|:---|:---|:---|:---|
+| `cwd` | array of strings | Glob patterns matched against the session’s working directory. See [working directory matching](#working-directory-matching). | 10 patterns of 256 characters each |
+| `cli` | array of strings | Command names from shell commands Claude has run this session, for example `["terraform"]`. Exact match. See [command name matching](#command-name-matching). | 10 entries of 64 characters each |
+| `hosts` | array of strings | Hostnames seen in `http://` or `https://` URLs in Bash commands this session, for example `["registry.terraform.io"]`. Bare lowercase hostname only: no scheme, port, or path. Exact case-insensitive match. | 20 entries of 128 characters each |
+| `filesRead` | array of strings | Glob patterns matched against the paths of files Claude has read this session, for example `["**/*.tf"]`. Forward-slash normalized and case-insensitive. | 10 patterns of 256 characters each |
 | `manifestDeps` | array of objects | Dependencies declared in package manifests Claude has read this session. Each entry is `{ "file": "...", "pattern": "..." }`, where both values are regular expressions. See [manifest dependency matching](#manifest-dependency-matching). | 10 entries, each value at most 256 characters. Manifest files larger than 512 KB are skipped |
 
 The `filesRead` and `manifestDeps` signals also match against files Claude has written or edited this session and against the project’s auto-loaded `CLAUDE.md` memory files.
@@ -195,7 +197,7 @@ Each finding prints with the path of the field it concerns, and the output ends 
 
 Enable suggestions in managed settings
 
-Users see no suggestions from a marketplace until an administrator allowlists it in [managed settings](plugins-org.md), even when its `marketplace.json` declares `relevance`. To allowlist a marketplace, edit your managed settings as follows:
+In the terminal, users see no suggestions from a marketplace until an administrator allowlists it in [managed settings](plugins-org.md), even when its `marketplace.json` declares `relevance`. To allowlist a marketplace, edit your managed settings as follows:
 
 - Add the marketplace name to `pluginSuggestionMarketplaces`.
 - For any marketplace other than the official Anthropic marketplace, also declare the marketplace source, either as that name’s entry in [`extraKnownMarketplaces`](plugins-org.md#require-a-marketplace-and-its-plugins) or as an entry in [`strictKnownMarketplaces`](plugins-org.md#allowlist-with-strictknownmarketplaces).

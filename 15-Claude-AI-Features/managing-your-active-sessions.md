@@ -2,13 +2,11 @@
 title: "Managing your active sessions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13124001-managing-your-active-sessions"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:59Z"
+fetched_at: "2026-11-09T06:26:20Z"
 tags: ["claude-ai"]
 ---
 
 # Managing your active sessions
-
-March 16, 2026
 
 
 Claude lets you view and manage all the devices and browsers where you're currently logged in. This helps you stay in control of your account security — if you notice a session you don't recognize, or you want to log out of a device you no longer use, you can terminate that session directly.
@@ -21,7 +19,7 @@ Each active session displays the following information:
 
 - **Location** — The approximate geographic location based on IP address
 
-- **Updated** — When this session was last used or modified by a policy change
+- Updated (called Last active in the updated Settings layout) — When this session was last used or modified by a policy change
 
 - **Current session** — A badge indicating which session you're using right now
 
@@ -31,7 +29,7 @@ Each active session displays the following information:
 
 2.  Navigate to [Settings \> Account](https://claude.ai/settings/account).
 
-3.  Scroll to the **Active sessions** section.
+3.  Scroll to the **Active sessions** section (called **Where you're logged in** in the updated Settings layout).
 
 ## Terminate a session
 

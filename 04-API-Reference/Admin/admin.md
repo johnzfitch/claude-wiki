@@ -764,9 +764,9 @@ Deprecated
 
 Get organization-wide activity summaries for a date range.
 
-#### OrganizationAnalytics[Usage](http-beta-organization-analytics-usage.md)
+#### OrganizationAnalytics[Usage](platform-claude-com-http-beta-organization-analytics-usage.md)
 
-##### [Get Token Usage Over Time](http-beta-organization-analytics-usage-list.md)
+##### [Get Token Usage Over Time](platform-claude-com-http-beta-organization-analytics-usage-list.md)
 
 GET/v1/organizations/analytics/usage_report
 
@@ -778,9 +778,9 @@ Get token usage over time across a date range.
 
 Get per-user token usage across a date range.
 
-#### OrganizationAnalytics[Cost](http-beta-organization-analytics-cost.md)
+#### OrganizationAnalytics[Cost](platform-claude-com-http-beta-organization-analytics-cost.md)
 
-##### [Get Cost Over Time](http-beta-organization-analytics-cost-list.md)
+##### [Get Cost Over Time](platform-claude-com-http-beta-organization-analytics-cost-list.md)
 
 GET/v1/organizations/analytics/cost_report
 

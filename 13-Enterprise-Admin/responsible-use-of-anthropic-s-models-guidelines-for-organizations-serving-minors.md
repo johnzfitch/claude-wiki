@@ -2,7 +2,7 @@
 title: "Responsible Use of Anthropic's Models: Guidelines for Organizations Serving Minors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:17Z"
+fetched_at: "2026-11-09T06:26:43Z"
 tags: ["enterprise"]
 ---
 

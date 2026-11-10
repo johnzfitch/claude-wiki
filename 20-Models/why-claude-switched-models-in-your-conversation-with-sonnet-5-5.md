@@ -2,11 +2,13 @@
 title: "Why Claude switched models in your conversation with Sonnet 5.5 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17161993-why-claude-switched-models-in-your-conversation-with-sonnet-5-5"
 category: "20-Models"
-fetched_at: "2026-10-23T06:29:12Z"
+fetched_at: "2026-11-09T06:26:35Z"
 tags: ["billing", "models", "security"]
 ---
 
 # Why Claude switched models in your conversation with Sonnet 5.5
+
+September 28, 2026
 
 
 This article explains why a request might fall back to another model or be blocked on Claude Sonnet 5.5, what happens when your chat switches models, and how to manage automatic switching.

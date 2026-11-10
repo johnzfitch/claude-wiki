@@ -2,7 +2,7 @@
 title: "Claude Opus 4 1 System Card 702Ace3Ba0"
 source_url: "https://www.anthropic.com/claude-opus-4-1-system-card"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:42:05Z"
+fetched_at: "2026-11-09T06:26:07Z"
 tags: ["claude-ai"]
 ---
 

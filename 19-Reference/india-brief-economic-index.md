@@ -2,7 +2,7 @@
 title: "India Country Brief: Anthropic Economic Index \\ Anthropic"
 source_url: "https://www.anthropic.com/research/india-brief-economic-index"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:41Z"
+fetched_at: "2026-10-24T06:27:00Z"
 tags: ["news-research"]
 ---
 
@@ -101,7 +101,7 @@ This analysis draws on privacy-preserving data from Claude.ai consumer use from 
 
 *For the full methodology, global findings, and time-series analysis, see the [Anthropic Economic Index January 2026 report](anthropic-economic-index-january-2026-report.md).*
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

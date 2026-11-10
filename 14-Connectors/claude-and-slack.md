@@ -2,7 +2,7 @@
 title: "Claude and Slack | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/claude-and-slack"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:28:15Z"
+fetched_at: "2026-11-09T06:25:52Z"
 tags: ["connectors", "slack"]
 ---
 
@@ -12,7 +12,7 @@ Access Claude directly into Slack so you can get help in channels and threads, o
 
 - 
 
-  Category[Announcements](https://www.claude.com/resources/product-announcements)
+  Category[Product updates](https://www.claude.com/resources/product-updates)
 - 
 
   ProductClaude Enterprise
@@ -24,6 +24,8 @@ Access Claude directly into Slack so you can get help in channels and threads, o
   Reading time5 min
 - 
 
+
+*Editor's note: Mentions of Max in this post from before October 30, 2026 include what are now the Max and Ultra plans.*
 
 ***Update:** The Slack connector is now available for Claude Pro and Max subscribers. (January 26, 2026)*
 
@@ -80,33 +82,29 @@ Get started with Claude and Slack.
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 22, 2026
+ArticleNov 5, 2026
 
-### The full Claude Platform, available on Google Cloud
+### Introducing Personal Finance in Claude
 
-Use Claude Models on Google Cloud (Anthropic managed) to access Claude Platform features with Google Cloud authentication, billing, and commitment retirement.
+Ask Claude about your money and get straight answers from the accounts you connect.
+
+
+ArticleNov 5, 2026
+
+### More visibility and control over Claude Enterprise for security teams
+
+Claude EnterpriseClaude apps
+
+
+ArticleNov 4, 2026
+
+### New agents and products for security, productivity, and creative work on Claude Marketplace
+
+
+ArticleNov 2, 2026
+
+### Make long-running agents faster with message threads
+
+New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
 
 Claude Platform
-
-
-ArticleOct 21, 2026
-
-### HCLTech joins the Claude Partner Network as a Global Premier partner
-
-HCLTech will bring Claude into the solutions it provides for banks, hospitals, telecom companies, and manufacturers.
-
-
-ArticleOct 21, 2026
-
-### Introducing Claude Duet
-
-A research preview is available by waitlist today, starting with US Pro and Max subscribers.
-
-
-ArticleOct 21, 2026
-
-### Claude Security now scans continuously and tracks fixes
-
-Claude Security now keeps up with your repositories as code changes, tracks findings until they’re fixed, learns from the context your team adds, and connects to your tools through an API and MCP. Available in public beta for Claude Enterprise customers.
-
-Claude Security

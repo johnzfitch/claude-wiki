@@ -2,7 +2,7 @@
 title: "Measuring the persuasiveness of language models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/measuring-model-persuasiveness"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:27Z"
+fetched_at: "2026-10-24T06:26:35Z"
 tags: ["news-research", "search"]
 ---
 
@@ -171,7 +171,7 @@ url = {https://www.anthropic.com/news/measuring-model-persuasiveness},
 
 ⁶ While our work builds upon the extensive literature on persuasion more broadly, providing a comprehensive review was beyond the scope of this blog post.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

@@ -2,32 +2,32 @@
 title: "Using the Benevity connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:29:18Z"
+fetched_at: "2026-11-07T06:23:42Z"
 tags: ["connectors"]
 ---
 
 # Using the Benevity connector in Claude
 
-Connect Claude to Benevity's database of 2.5M+ nonprofits to discover and research charitable organizations.
+Connect Claude to Benevity's database of nonprofits to discover and research charitable organizations.
 
 9 minClaude
 
 [Open Claude](https://claude.ai/new)
 
-The Benevity connector gives Claude access to a database of 2.5M+ nonprofit organizations. Search by cause, location, or keyword, and get detailed profiles including mission statements, program descriptions, and geographic focus.
+The Benevity connector gives Claude access to a database of nonprofit organizations. Search by cause, location, or keyword, and get detailed profiles including mission statements, program descriptions, and geographic focus.
 
 The Benevity integration relies on Claude's ability to [use remote connectors(opens in new tab)](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities).
 
 ## What this connector provides[](#what-this-connector-provides)
 
-- Access to 2.5M+ nonprofit organizations
+- Access to Benevity's database of verified nonprofit organizations
 - Detailed profiles including mission statements, program descriptions, and geographic focus
 - Keyword search for local and international organizations
 - Direct website links to organizations
 
 ## Who can use this[](#who-can-use-this)
 
-Available to all paid Claude plan users (Pro, Max, Team, or Enterprise). No Benevity account or authentication is required.
+Available to all paid Claude plan users (Pro, Max, Ultra, Team, or Enterprise). No Benevity account or authentication is required.
 
 ## Setting up the connector[](#setting-up-the-connector)
 

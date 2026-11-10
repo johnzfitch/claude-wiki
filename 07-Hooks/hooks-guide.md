@@ -2,11 +2,14 @@
 title: "Automate actions with hooks - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/hooks-guide"
 category: "07-Hooks"
-fetched_at: "2026-10-22T06:29:25Z"
+fetched_at: "2026-11-08T06:24:29Z"
+last_modified: "Sat, 07 Nov 2026 19:45:12 GMT"
 tags: ["claude-code", "hooks"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Set up your first hook](#set-up-your-first-hook)
 - [What you can automate](#what-you-can-automate)
@@ -220,25 +223,26 @@ If no dialog appears
 
 This command opens a dialog box rather than a notification in the corner of your screen, so the dialog can open behind your terminal window. Test the command directly in PowerShell first.If you run Claude Code inside WSL, `powershell.exe` must be available on your `PATH` through Windows interop.
 
-The empty `matcher` fires on all notification types. To fire only on specific events, set it to one of these values:
+The empty `matcher` fires on all notification types. To fire only on specific events, set it to a notification type, such as one of these:
 
-| Matcher                      | Fires when                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|:-----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `permission_prompt`          | Claude needs you to approve a tool use or a sandboxed command’s [network request](../02-Claude-Code-CLI/sandboxing.md#network-isolation), and the prompt has waited about six seconds                                                                                                                                                                                                                                                                                                      |
-| `idle_prompt`                | Claude finished responding about 60 seconds ago and you haven’t typed since                                                                                                                                                                                                                                                                                                                                                                                                |
-| `auth_success`               | Authentication completes                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `elicitation_dialog`         | An MCP server opens an elicitation form and you haven’t typed for about six seconds                                                                                                                                                                                                                                                                                                                                                                                        |
-| `elicitation_url_dialog`     | An MCP server asks you to open a browser URL and you haven’t typed for about six seconds                                                                                                                                                                                                                                                                                                                                                                                   |
-| `elicitation_complete`       | An MCP server reports that a [URL-mode elicitation](hooks.md#elicitation-input) is complete                                                                                                                                                                                                                                                                                                                                                                          |
-| `elicitation_response`       | An MCP elicitation response is sent back to the server                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `agent_needs_input`          | A background session starts waiting on your input while [agent view](../09-Agents-Patterns/agent-view.md) is open. Also fires when a terminal session shows you an [agent team teammate’s terminal setup question](../09-Agents-Patterns/agent-teams.md#choose-a-display-mode) or auto mode’s notice about [classifier request charges](../17-Billing-Plans/auto-mode-classifier-billing.md) and you haven’t typed for about six seconds                                                                                 |
-| `agent_completed`            | A background session finishes or fails. Fires only while [agent view](../09-Agents-Patterns/agent-view.md) is open                                                                                                                                                                                                                                                                                                                                                                         |
-| `quota_auto_resume_fired`    | Claude Code continues your task after a claude.ai usage limit paused it: at the reset, or sooner when something you do in Claude Code during the wait, such as adding usage credits, upgrading your plan, or switching models, makes usage available again, with the [model-setting exception](../02-Claude-Code-CLI/interactive-mode.md#wait-for-a-usage-limit-to-reset)                                                                                                                  |
-| `quota_auto_resume_stale`    | A claude.ai usage limit reset while your computer slept for more than about 30 minutes. Claude Code waits for you to press `Enter` instead of continuing. After a shorter sleep it continues and fires `quota_auto_resume_fired` instead                                                                                                                                                                                                                                   |
+| Matcher | Fires when |
+|:---|:---|
+| `permission_prompt` | Claude needs you to approve a tool use or a sandboxed command’s [network request](../02-Claude-Code-CLI/sandboxing.md#network-isolation), and the prompt has waited about six seconds |
+| `idle_prompt` | Claude finished responding about 60 seconds ago and you haven’t typed since |
+| `auth_success` | Authentication completes |
+| `auth_storage_failure` | Your sign-in completes, but Claude Code can’t save the new credentials to its [credential storage](../02-Claude-Code-CLI/authentication.md#credential-management). Fires in place of `auth_success` |
+| `elicitation_dialog` | An MCP server opens an elicitation form and you haven’t typed for about six seconds |
+| `elicitation_url_dialog` | An MCP server asks you to open a browser URL and you haven’t typed for about six seconds |
+| `elicitation_complete` | An MCP server reports that a [URL-mode elicitation](hooks.md#elicitation-input) is complete |
+| `elicitation_response` | An MCP elicitation response is sent back to the server |
+| `agent_needs_input` | A background session starts waiting on your input while [agent view](../09-Agents-Patterns/agent-view.md) is open. Also fires when a terminal session shows you an [agent team teammate’s terminal setup question](../09-Agents-Patterns/agent-teams.md#choose-a-display-mode) or auto mode’s notice about [classifier request charges](../17-Billing-Plans/auto-mode-classifier-billing.md) and you haven’t typed for about six seconds |
+| `agent_completed` | A background session finishes or fails. Fires only while [agent view](../09-Agents-Patterns/agent-view.md) is open |
+| `quota_auto_resume_fired` | Claude Code continues your task after a claude.ai usage limit paused it: at the reset, or sooner when something you do in Claude Code during the wait, such as adding usage credits, upgrading your plan, or switching models, makes usage available again, with the [model-setting exception](../02-Claude-Code-CLI/interactive-mode.md#wait-for-a-usage-limit-to-reset) |
+| `quota_auto_resume_stale` | A claude.ai usage limit reset while your computer slept for more than about 30 minutes. Claude Code waits for you to press `Enter` instead of continuing. After a shorter sleep it continues and fires `quota_auto_resume_fired` instead |
 | `quota_auto_resume_disabled` | Claude Code ends its wait for a claude.ai usage limit without continuing your task: [`autoContinueAtUsageLimit`](../02-Claude-Code-CLI/settings-reference.md#autocontinueatusagelimit) turned off or the reset moved more than 24 hours away during a wait Claude Code started on its own, the continued task kept hitting the limit, or the continuation was blocked before it reached the model. Doesn’t fire when you press `Esc` or `Ctrl+C`, or pick **Don’t continue automatically** |
-| `plugin_notification`        | A [mod](../08-Plugins-Skills/plugins-mods-api.md#show-something-without-starting-a-turn) raises a notification with `$.ui.notify`. The hook’s `title` is the mod’s name unless the mod set one                                                                                                                                                                                                                                                                                            |
+| `plugin_notification` | A [mod](../08-Plugins-Skills/plugins-mods-api.md#show-something-without-starting-a-turn) raises a notification with `$.ui.notify`. The hook’s `title` is the mod’s name unless the mod set one |
 
-Claude Code times `permission_prompt` differently in a terminal and in Claude Desktop, the VS Code extension, and other hosts that answer permission requests through the Agent SDK. See [when each notification type fires](hooks.md#notification) for both timings. The `quota_auto_resume_fired`, `quota_auto_resume_stale`, and `quota_auto_resume_disabled` matchers require Claude Code v2.1.234 or later. In terminal sessions, `permission_prompt` for a sandboxed command’s network request requires Claude Code v2.1.246 or later. `agent_needs_input` for a teammate’s terminal setup question requires Claude Code v2.1.248 or later. Type `/hooks` at the Claude Code prompt and confirm the hook appears under `Notification`.
+Claude Code times `permission_prompt` differently in a terminal and in Claude Desktop, the VS Code extension, and other hosts that answer permission requests through the Agent SDK. See [when each notification type fires](hooks.md#notification) for both timings. The `quota_auto_resume_fired`, `quota_auto_resume_stale`, and `quota_auto_resume_disabled` matchers require Claude Code v2.1.234 or later. The `auth_storage_failure` matcher requires v2.1.288 or later. In terminal sessions, `permission_prompt` for a sandboxed command’s network request requires Claude Code v2.1.246 or later. `agent_needs_input` for a teammate’s terminal setup question requires Claude Code v2.1.248 or later. Type `/hooks` at the Claude Code prompt and confirm the hook appears under `Notification`.
 
 
 [​](#auto-format-code-after-edits)
@@ -459,7 +463,7 @@ See the [CwdChanged](hooks.md#cwdchanged) and [FileChanged](hooks.md#filechanged
 
 Auto-approve specific permission prompts
 
-Skip the approval dialog for tool calls you always allow. This example auto-approves `ExitPlanMode`, the tool Claude calls when it finishes presenting a plan and asks to proceed, so you aren’t prompted every time a plan is ready. Unlike the exit-code examples above, auto-approval requires your hook to write a JSON decision to stdout. Claude Code runs `PermissionRequest` hooks when it’s about to ask you for permission, and if your hook returns `"behavior": "allow"`, Claude Code answers the request on your behalf. The matcher scopes the hook to `ExitPlanMode` only, so no other prompts are affected. Add this to `~/.claude/settings.json`:
+Skip the approval dialog for tool calls you always allow. This example auto-approves `ExitPlanMode`, the tool Claude calls when it finishes presenting a plan and asks to proceed, so you aren’t prompted every time a plan is ready. Unlike the exit-code examples above, auto-approval requires your hook to write a JSON decision to stdout. Claude Code runs `PermissionRequest` hooks when it’s about to ask you for permission, and if your hook returns `"behavior": "allow"`, Claude Code answers the request on your behalf. For a tool that [requires user interaction](hooks.md#allow-with-updatedinput), such as `ExitPlanMode`, the allow also needs `updatedInput`, or Claude Code ignores it and still shows the prompt. The matcher scopes the hook to `ExitPlanMode` only, so no other prompts are affected. Add this to `~/.claude/settings.json`:
 
 ```python
 {
@@ -470,7 +474,7 @@ Skip the approval dialog for tool calls you always allow. This example auto-appr
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"hookSpecificOutput\": {\"hookEventName\": \"PermissionRequest\", \"decision\": {\"behavior\": \"allow\"}}}'"
+            "command": "jq -c '{hookSpecificOutput: {hookEventName: \"PermissionRequest\", decision: {behavior: \"allow\", updatedInput: .tool_input}}}'"
           }
         ]
       }
@@ -483,20 +487,10 @@ When the hook approves, Claude Code exits plan mode and restores whatever permis
 
 `bypassPermissions` only applies if you started the session with bypass mode already available: `--dangerously-skip-permissions`, `--permission-mode bypassPermissions`, `--allow-dangerously-skip-permissions`, or `permissions.defaultMode: "bypassPermissions"` in [user, `--settings`, or managed settings](../02-Claude-Code-CLI/settings-reference.md#permissions-defaultmode). It doesn’t apply if bypass mode is disabled by [`permissions.disableBypassPermissionsMode`](../02-Claude-Code-CLI/permissions.md#managed-settings), or if you started the session in [restricted mode](../02-Claude-Code-CLI/cli-reference.md#cli-flags).Claude Code never saves it as `defaultMode`.
 
-To switch the session to `acceptEdits`, your hook writes this JSON to stdout:
+To switch the session to `acceptEdits`, replace the `command` line in that hook with this one:
 
 ```python
-{
-  "hookSpecificOutput": {
-    "hookEventName": "PermissionRequest",
-    "decision": {
-      "behavior": "allow",
-      "updatedPermissions": [
-        { "type": "setMode", "mode": "acceptEdits", "destination": "session" }
-      ]
-    }
-  }
-}
+"command": "jq -c '{hookSpecificOutput: {hookEventName: \"PermissionRequest\", decision: {behavior: \"allow\", updatedInput: .tool_input, updatedPermissions: [{type: \"setMode\", mode: \"acceptEdits\", destination: \"session\"}]}}}'"
 ```
 
 Keep the matcher as narrow as possible. Matching on `.*` or leaving the matcher empty would auto-approve every tool permission prompt, including file writes and shell commands. See the [PermissionRequest reference](hooks.md#permissionrequest-decision-control) for the full set of decision fields.
@@ -508,41 +502,41 @@ How hooks work
 
 Claude Code fires hook events at specific points in its lifecycle. When an event fires, Claude Code runs the matching hooks in parallel; see [Hook handler fields](hooks.md#hook-handler-fields) for how duplicate handlers are treated. The table below shows each event and when it triggers:
 
-| Event                 | When it fires                                                                                                                                                                                                                                         |
-|:----------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `SessionStart`        | When a session begins or resumes                                                                                                                                                                                                                      |
-| `Setup`               | When you start Claude Code with `--init-only`, or with `--init` or `--maintenance` in `-p` mode. For one-time preparation in CI or scripts                                                                                                            |
-| `UserPromptSubmit`    | When a prompt is submitted, before Claude processes it. Also fires on [turns Claude Code starts on its own](hooks.md#userpromptsubmit)                                                                                                          |
-| `UserPromptExpansion` | When a user-typed command expands into a prompt, before it reaches Claude. Can block the expansion                                                                                                                                                    |
-| `PreToolUse`          | Before a tool call executes. Can block it                                                                                                                                                                                                             |
-| `PermissionRequest`   | When a tool call needs a permission decision                                                                                                                                                                                                          |
-| `PermissionDenied`    | When auto mode denies a tool call, including denials without a classifier verdict. Use JSON `hookSpecificOutput.retry: true` to tell the model it may retry the denied tool call. Claude Code ignores `retry` when the classifier produced no verdict |
-| `PostToolUse`         | After a tool call succeeds                                                                                                                                                                                                                            |
-| `PostToolUseFailure`  | After a tool call fails                                                                                                                                                                                                                               |
-| `PostToolBatch`       | After a full batch of parallel tool calls resolves, before the next model call                                                                                                                                                                        |
-| `Notification`        | When Claude Code sends a notification                                                                                                                                                                                                                 |
-| `MessageDisplay`      | While assistant message text is displayed                                                                                                                                                                                                             |
-| `SubagentStart`       | When a subagent is spawned                                                                                                                                                                                                                            |
-| `SubagentStop`        | When a subagent finishes                                                                                                                                                                                                                              |
-| `TaskCreated`         | When a task is being created via `TaskCreate`                                                                                                                                                                                                         |
-| `TaskCompleted`       | When a task is being marked as completed                                                                                                                                                                                                              |
-| `Stop`                | When Claude finishes responding                                                                                                                                                                                                                       |
-| `StopFailure`         | When the turn ends due to an API error                                                                                                                                                                                                                |
-| `TeammateIdle`        | When an [agent team](../09-Agents-Patterns/agent-teams.md) teammate is about to go idle                                                                                                                                                                               |
-| `InstructionsLoaded`  | When a CLAUDE.md or `.claude/rules/*.md` file is loaded into context. Fires at session start and when files are lazily loaded during a session                                                                                                        |
-| `ConfigChange`        | When a configuration file changes during a session                                                                                                                                                                                                    |
-| `CwdChanged`          | When the working directory changes, for example when Claude executes a `cd` command. Useful for reactive environment management with tools like direnv                                                                                                |
-| `DirectoryAdded`      | When a working directory is added mid-session via `/add-dir` or the SDK `register_repo_root` control request                                                                                                                                          |
-| `FileChanged`         | When a watched file changes on disk. The `matcher` field specifies which filenames to watch                                                                                                                                                           |
-| `WorktreeCreate`      | When a worktree is being created via `--worktree`, `isolation: "worktree"`, or for a background session. Replaces default git behavior                                                                                                                |
-| `WorktreeRemove`      | When a worktree that a `WorktreeCreate` hook created is being removed                                                                                                                                                                                 |
-| `PreCompact`          | Before context compaction                                                                                                                                                                                                                             |
-| `PostCompact`         | After context compaction completes                                                                                                                                                                                                                    |
-| `PreModelSwitch`      | Before Claude Code applies a model switch that you or a client requested. Can block the switch                                                                                                                                                        |
-| `PostModelSwitch`     | After the session’s model changes, including changes Claude Code makes on its own, such as restoring the model when you resume a session                                                                                                              |
-| `Elicitation`         | When an MCP server requests user input during a tool call                                                                                                                                                                                             |
-| `ElicitationResult`   | After a user responds to an MCP elicitation, before the response is sent back to the server                                                                                                                                                           |
-| `SessionEnd`          | When a session terminates                                                                                                                                                                                                                             |
+| Event | When it fires |
+|:---|:---|
+| `SessionStart` | When a session begins or resumes |
+| `Setup` | When you start Claude Code with `--init-only`, or with `--init` or `--maintenance` in `-p` mode. For one-time preparation in CI or scripts |
+| `UserPromptSubmit` | When a prompt is submitted, before Claude processes it. Also fires on [turns Claude Code starts on its own](hooks.md#userpromptsubmit) |
+| `UserPromptExpansion` | When a user-typed command expands into a prompt, before it reaches Claude. Can block the expansion |
+| `PreToolUse` | Before a tool call executes. Can block it |
+| `PermissionRequest` | When a tool call needs a permission decision |
+| `PermissionDenied` | When auto mode denies a tool call, including denials without a classifier verdict. Use JSON `hookSpecificOutput.retry: true` to tell the model it may retry the denied tool call. Claude Code ignores `retry` when the classifier produced no verdict |
+| `PostToolUse` | After a tool call succeeds |
+| `PostToolUseFailure` | After a tool call fails |
+| `PostToolBatch` | After a full batch of parallel tool calls resolves, before the next model call |
+| `Notification` | When Claude Code sends a notification |
+| `MessageDisplay` | While assistant message text is displayed |
+| `SubagentStart` | When a subagent is spawned |
+| `SubagentStop` | When a subagent finishes |
+| `TaskCreated` | When a task is being created via `TaskCreate` |
+| `TaskCompleted` | When a task is being marked as completed |
+| `Stop` | When Claude finishes responding |
+| `StopFailure` | When the turn ends due to an API error |
+| `TeammateIdle` | When an [agent team](../09-Agents-Patterns/agent-teams.md) teammate is about to go idle |
+| `InstructionsLoaded` | When a CLAUDE.md or `.claude/rules/*.md` file is loaded into context. Fires at session start and when files are lazily loaded during a session |
+| `ConfigChange` | When a configuration file changes during a session |
+| `CwdChanged` | When the working directory changes, for example when Claude executes a `cd` command. Useful for reactive environment management with tools like direnv |
+| `DirectoryAdded` | When a working directory is added mid-session via `/add-dir` or the SDK `register_repo_root` control request |
+| `FileChanged` | When a watched file changes on disk. The `matcher` field specifies which filenames to watch |
+| `WorktreeCreate` | When a worktree is being created via `--worktree`, `isolation: "worktree"`, or for a background session. Replaces default git behavior |
+| `WorktreeRemove` | When a worktree that a `WorktreeCreate` hook created is being removed |
+| `PreCompact` | Before context compaction |
+| `PostCompact` | After context compaction completes |
+| `PreModelSwitch` | Before Claude Code applies a model switch that you or a client requested. Can block the switch |
+| `PostModelSwitch` | After the session’s model changes, including changes Claude Code makes on its own, such as restoring the model when you resume a session |
+| `Elicitation` | When an MCP server requests user input during a tool call |
+| `ElicitationResult` | After a user responds to an MCP elicitation, before the response is sent back to the server |
+| `SessionEnd` | When a session terminates |
 
 Each hook has a `type` that determines how it runs. Most hooks use `"type": "command"`, which runs a shell command. Four other types are available:
 
@@ -670,6 +664,7 @@ With `"deny"`, Claude Code cancels the tool call and feeds `permissionDecisionRe
 
 - Reads from [network paths](../02-Claude-Code-CLI/permissions.md#network-paths)
 - MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool)
+- Calls to [tools an Agent SDK app marks `always_ask`](../05-Agent-SDK/agent-sdk-custom-tools.md#require-approval-for-specific-tools), unless the [permission mode approves the call](../05-Agent-SDK/agent-sdk-typescript.md#permission-modes-that-can-approve-an-always_ask-call)
 - Connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools) in sessions where that setting reaches Claude Code
 
 For what `"allow"` does in plan mode, see [Hook approvals in plan mode](../02-Claude-Code-CLI/permissions.md#hook-approvals-in-plan-mode). A fourth value, `"defer"`, is available in [non-interactive mode](../02-Claude-Code-CLI/headless.md) with the `-p` flag. Returning it ends the turn with the tool call preserved, so an Agent SDK wrapper can collect input and resume. See [Defer a tool call for later](hooks.md#defer-a-tool-call-for-later) in the reference. A `PreModelSwitch` hook returns the same `permissionDecision` field: `"allow"` lets a model switch proceed, and `"deny"` cancels it. `"ask"` has you confirm the switch when you run `/model` in an interactive session; everywhere else, Claude Code treats `"ask"` as a refusal. See [PreModelSwitch decision control](hooks.md#premodelswitch-decision-control). Other events use different decision patterns. For example, `PostToolUse` and `Stop` hooks use a top-level `decision: "block"` field, while `PermissionRequest` uses `hookSpecificOutput.decision.behavior`. See the [summary table](hooks.md#decision-control) in the reference for a full breakdown by event. For `UserPromptSubmit` hooks, use `hookSpecificOutput.additionalContext` instead to inject text into Claude’s context. Nest `additionalContext` inside `hookSpecificOutput`; if you place it at the top level of the JSON, Claude Code silently ignores it. For example, this output adds the current branch state to every prompt:
@@ -713,26 +708,26 @@ Claude can also create or modify files by running shell commands. If your hook m
 
 Each event type matches on a specific field:
 
-| Event                                                                                                                                                           | What the matcher filters                                                                                                | Example matcher values                                                                                                                                                                                                                                                                                |
-|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PermissionRequest`, `PermissionDenied`                                                                      | tool name                                                                                                               | `Bash`, `Edit|Write`, `mcp__.*`                                                                                                                                                                                                                                                                       |
-| `SessionStart`                                                                                                                                                  | how the session started                                                                                                 | `startup`, `resume`, `clear`, `compact`, `fork`                                                                                                                                                                                                                                                       |
-| `Setup`                                                                                                                                                         | which CLI flag triggered setup                                                                                          | `init`, `maintenance`                                                                                                                                                                                                                                                                                 |
-| `SessionEnd`                                                                                                                                                    | why the session ended                                                                                                   | `clear`, `resume`, `logout`, `prompt_input_exit`, `other`                                                                                                                                                                                                                                             |
-| `Notification`                                                                                                                                                  | notification type                                                                                                       | `permission_prompt`, `idle_prompt`, `auth_success`, `elicitation_dialog`, `elicitation_url_dialog`, `elicitation_complete`, `elicitation_response`, `agent_needs_input`, `agent_completed`, `quota_auto_resume_fired`, `quota_auto_resume_stale`, `quota_auto_resume_disabled`, `plugin_notification` |
-| `SubagentStart`                                                                                                                                                 | agent type                                                                                                              | `general-purpose`, `Explore`, `Plan`, or custom agent names                                                                                                                                                                                                                                           |
-| `PreCompact`, `PostCompact`                                                                                                                                     | what triggered compaction                                                                                               | `manual`, `auto`                                                                                                                                                                                                                                                                                      |
-| `PreModelSwitch`, `PostModelSwitch`                                                                                                                             | canonical name of the model the session switches to, as described under [PreModelSwitch](hooks.md#premodelswitch) | `claude-opus-5`, `claude-opus-4-6|claude-opus-5`, `.*opus.*`                                                                                                                                                                                                                                          |
-| `SubagentStop`                                                                                                                                                  | agent type                                                                                                              | same values as `SubagentStart`                                                                                                                                                                                                                                                                        |
-| `ConfigChange`                                                                                                                                                  | configuration source                                                                                                    | `user_settings`, `project_settings`, `local_settings`, `policy_settings`, `skills`                                                                                                                                                                                                                    |
-| `DirectoryAdded`                                                                                                                                                | how the directory was added                                                                                             | `slash_command`, `register_repo_root`                                                                                                                                                                                                                                                                 |
-| `StopFailure`                                                                                                                                                   | error type                                                                                                              | `rate_limit`, `overloaded`, `authentication_failed`, `oauth_org_not_allowed`, `account_on_hold`, `billing_error`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, `cloud_credential_error`, `unknown`                                                                      |
-| `InstructionsLoaded`                                                                                                                                            | load reason                                                                                                             | `session_start`, `nested_traversal`, `path_glob_match`, `include`, `compact`                                                                                                                                                                                                                          |
-| `Elicitation`                                                                                                                                                   | MCP server name                                                                                                         | your configured MCP server names                                                                                                                                                                                                                                                                      |
-| `ElicitationResult`                                                                                                                                             | MCP server name                                                                                                         | same values as `Elicitation`                                                                                                                                                                                                                                                                          |
-| `FileChanged`                                                                                                                                                   | literal filenames to watch (see [FileChanged](hooks.md#filechanged))                                              | `.envrc|.env`                                                                                                                                                                                                                                                                                         |
-| `UserPromptExpansion`                                                                                                                                           | command name                                                                                                            | your skill or command names                                                                                                                                                                                                                                                                           |
-| `UserPromptSubmit`, `PostToolBatch`, `Stop`, `TeammateIdle`, `TaskCreated`, `TaskCompleted`, `WorktreeCreate`, `WorktreeRemove`, `CwdChanged`, `MessageDisplay` | no matcher support                                                                                                      | always fires on every occurrence                                                                                                                                                                                                                                                                      |
+| Event | What the matcher filters | Example matcher values |
+|:---|:---|:---|
+| `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PermissionRequest`, `PermissionDenied` | tool name | `Bash`, `Edit|Write`, `mcp__.*` |
+| `SessionStart` | how the session started | `startup`, `resume`, `clear`, `compact`, `fork` |
+| `Setup` | which CLI flag triggered setup | `init`, `maintenance` |
+| `SessionEnd` | why the session ended | `clear`, `resume`, `logout`, `prompt_input_exit`, `other` |
+| `Notification` | notification type | `permission_prompt`, `idle_prompt`, `auth_success`, `auth_storage_failure`, `elicitation_dialog`, `elicitation_url_dialog`, `elicitation_complete`, `elicitation_response`, `agent_needs_input`, `agent_completed`, `quota_auto_resume_fired`, `quota_auto_resume_stale`, `quota_auto_resume_disabled`, `plugin_notification` |
+| `SubagentStart` | agent type | `general-purpose`, `Explore`, `Plan`, or custom agent names |
+| `PreCompact`, `PostCompact` | what triggered compaction | `manual`, `auto` |
+| `PreModelSwitch`, `PostModelSwitch` | canonical name of the model the session switches to, as described under [PreModelSwitch](hooks.md#premodelswitch) | `claude-opus-5`, `claude-opus-4-6|claude-opus-5`, `.*opus.*` |
+| `SubagentStop` | agent type | same values as `SubagentStart` |
+| `ConfigChange` | configuration source | `user_settings`, `project_settings`, `local_settings`, `policy_settings`, `skills` |
+| `DirectoryAdded` | how the directory was added | `slash_command`, `register_repo_root` |
+| `StopFailure` | error type | `rate_limit`, `overloaded`, `authentication_failed`, `oauth_org_not_allowed`, `account_on_hold`, `billing_error`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, `cloud_credential_error`, `unknown` |
+| `InstructionsLoaded` | load reason | `session_start`, `nested_traversal`, `path_glob_match`, `include`, `compact` |
+| `Elicitation` | MCP server name | your configured MCP server names |
+| `ElicitationResult` | MCP server name | same values as `Elicitation` |
+| `FileChanged` | literal filenames to watch (see [FileChanged](hooks.md#filechanged)) | `.envrc|.env` |
+| `UserPromptExpansion` | command name | your skill or command names |
+| `UserPromptSubmit`, `PostToolBatch`, `Stop`, `TeammateIdle`, `TaskCreated`, `TaskCompleted`, `WorktreeCreate`, `WorktreeRemove`, `CwdChanged`, `MessageDisplay` | no matcher support | always fires on every occurrence |
 
 The tabs below show a few more matchers on different event types.
 
@@ -830,13 +825,13 @@ The `if` field uses [permission rule syntax](../02-Claude-Code-CLI/permissions.m
 
 Whether your hook command runs depends on the shape of your `if` pattern and the Bash command Claude is invoking:
 
-| `if` pattern       | Bash command           | Hook runs? | Why                                                                                                 |
-|:-------------------|:-----------------------|:-----------|:----------------------------------------------------------------------------------------------------|
-| `Bash(git *)`      | `git push`             | yes        | command name matches                                                                                |
-| `Bash(git *)`      | `npm test && git push` | yes        | each subcommand is checked; `git push` matches                                                      |
-| `Bash(git *)`      | `echo $(git log)`      | yes        | commands inside `$()` and backticks are checked; `git log` matches                                  |
-| `Bash(git *)`      | `echo $(date)`         | no         | no subcommand matches `git *`                                                                       |
-| `Bash(git push *)` | `echo $(date)`         | yes        | patterns that specify more than the command name run the hook anyway on `$()`, backticks, or `$VAR` |
+| `if` pattern | Bash command | Hook runs? | Why |
+|:---|:---|:---|:---|
+| `Bash(git *)` | `git push` | yes | command name matches |
+| `Bash(git *)` | `npm test && git push` | yes | each subcommand is checked; `git push` matches |
+| `Bash(git *)` | `echo $(git log)` | yes | commands inside `$()` and backticks are checked; `git log` matches |
+| `Bash(git *)` | `echo $(date)` | no | no subcommand matches `git *` |
+| `Bash(git push *)` | `echo $(date)` | yes | patterns that specify more than the command name run the hook anyway on `$()`, backticks, or `$VAR` |
 
 When Claude Code can’t determine which commands the Bash input runs, it runs your hook regardless of the pattern. The [Bash matching table](hooks.md#bash-if-matching) covers the command shapes Claude Code can and can’t narrow by subcommand. Because the filter is best-effort, use the [permission system](../02-Claude-Code-CLI/permissions.md) rather than a hook to enforce a hard allow or deny. The `if` field accepts the same patterns as permission rules: `"Bash(git *)"`, `"Edit(*.ts)"`, and so on. To match multiple tool names, use separate handlers each with its own `if` value, or match at the `matcher` level where pipe alternation is supported. `if` only works on tool events: `PreToolUse`, `PostToolUse`, `PostToolUseFailure`, `PermissionRequest`, and `PermissionDenied`. Adding it to any other event prevents the hook from running.
 
@@ -847,15 +842,15 @@ Configure hook location
 
 Where you add a hook determines its scope:
 
-| Location                                               | Scope                                                                                                                          | Shareable                                             |
-|:-------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------|
-| `~/.claude/settings.json`                              | All your projects                                                                                                              | No, local to your machine                             |
-| `.claude/settings.json`                                | Single project                                                                                                                 | Yes, can be committed to the repo                     |
-| `.claude/settings.local.json`                          | Single project                                                                                                                 | No, gitignored when Claude Code saves a setting to it |
-| Managed policy settings                                | Organization-wide                                                                                                              | Yes, admin-controlled                                 |
-| [Plugin](../08-Plugins-Skills/plugins.md) `hooks/hooks.json` | When plugin is enabled                                                                                                         | Yes, bundled with the plugin                          |
-| [Skill](../08-Plugins-Skills/skills.md) frontmatter                   | The rest of the session once the skill is invoked. See [Hooks in skills and agents](hooks.md#hooks-in-skills-and-agents) | Yes, defined in the skill file                        |
-| [Subagent](../09-Agents-Patterns/sub-agents.md) frontmatter            | While that subagent is running                                                                                                 | Yes, defined in the subagent file                     |
+| Location | Scope | Shareable |
+|:---|:---|:---|
+| `~/.claude/settings.json` | All your projects | No, local to your machine |
+| `.claude/settings.json` | Single project | Yes, can be committed to the repo |
+| `.claude/settings.local.json` | Single project | No, gitignored when Claude Code saves a setting to it |
+| Managed policy settings | Organization-wide | Yes, admin-controlled |
+| [Plugin](../08-Plugins-Skills/plugins.md) `hooks/hooks.json` | When plugin is enabled | Yes, bundled with the plugin |
+| [Skill](../08-Plugins-Skills/skills.md) frontmatter | The rest of the session once the skill is invoked. See [Hooks in skills and agents](hooks.md#hooks-in-skills-and-agents) | Yes, defined in the skill file |
+| [Subagent](../09-Agents-Patterns/sub-agents.md) frontmatter | While that subagent is running | Yes, defined in the subagent file |
 
 Run [`/hooks`](hooks.md#the-%2Fhooks-menu) in Claude Code to browse all configured hooks grouped by event. To disable hooks, set `"disableAllHooks": true` in your settings file. Claude Code reads the value left after [settings precedence](hooks.md#disable-or-remove-hooks) applies, so a project’s settings file can override yours. Hooks configured in managed settings still run unless `disableAllHooks` is also set there. For the full reach of each level, see [`disableAllHooks`](../02-Claude-Code-CLI/settings-reference.md#disableallhooks). If you edit settings files directly while Claude Code is running, the file watcher normally picks up hook changes automatically.
 
@@ -979,7 +974,7 @@ Keep these constraints in mind when designing hooks:
 - `PostToolUse` hooks can’t undo actions since the tool has already executed.
 - [`PermissionRequest`](hooks.md#permissionrequest) hooks fire when Claude Code is about to ask you for permission, or when it would otherwise auto-deny a call that can’t prompt. In [non-interactive mode](../02-Claude-Code-CLI/headless.md) with the `-p` flag, they still run outside [`dontAsk` mode](../02-Claude-Code-CLI/permission-modes.md#allow-only-pre-approved-tools-with-dontask-mode), and a call that no hook decides and nothing else can answer is denied.
 - `Stop` hooks fire whenever Claude finishes responding, not only at task completion. They don’t fire on user interrupts. API errors fire [StopFailure](hooks.md#stopfailure) instead.
-- When multiple `PreToolUse` hooks return [`updatedInput`](hooks.md#pretooluse) to rewrite a tool’s arguments, the last one to finish takes effect. Since hooks run in parallel, the order is non-deterministic. Avoid having more than one hook modify the same tool’s input.
+- When multiple `PreToolUse` hooks return [`updatedInput`](hooks.md#pretooluse) to rewrite a tool’s input, Claude Code doesn’t merge the rewrites or guarantee which rewrite the tool runs with. Avoid having more than one hook rewrite the same tool’s input.
 
 
 [​](#hooks-and-permission-modes)
@@ -991,6 +986,7 @@ With a hook in a settings file or a plugin’s `hooks/hooks.json` you can’t lo
 - **What still holds over `"allow"`**: a hook returning `"allow"` doesn’t bypass deny rules from settings, and it can’t suppress the prompt for:
   - Reads from [network paths](../02-Claude-Code-CLI/permissions.md#network-paths)
   - MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool)
+  - Calls to [tools an Agent SDK app marks `always_ask`](../05-Agent-SDK/agent-sdk-custom-tools.md#require-approval-for-specific-tools), unless the [permission mode approves the call](../05-Agent-SDK/agent-sdk-typescript.md#permission-modes-that-can-approve-an-always_ask-call)
   - Connector tools [your organization set to `ask`](../06-MCP-Tools/General/mcp.md#organization-controls-on-connector-tools) in sessions where that setting reaches Claude Code
 
   In [plan mode](../02-Claude-Code-CLI/permissions.md#hook-approvals-in-plan-mode), if your `PreToolUse` hook returns `"allow"` for a file edit, you get the same prompt, block, or approval the edit would get with no hook. To lift this limit on hook approvals, [approve the plan](../02-Claude-Code-CLI/permission-modes.md#review-and-approve-a-plan) or switch to another permission mode.

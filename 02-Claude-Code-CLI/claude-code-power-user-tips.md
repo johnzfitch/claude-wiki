@@ -2,7 +2,7 @@
 title: "Claude Code power user tips | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14554000-claude-code-power-user-tips"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:08Z"
+fetched_at: "2026-11-09T06:26:27Z"
 tags: ["agents", "claude-code", "hooks", "mcp", "mobile", "prompting", "sdk", "skills"]
 ---
 
@@ -309,7 +309,7 @@ Move sessions back and forth between mobile, web, desktop, and terminal:
 
 - `/remote-control` lets you control a local session from your phone or the web.
 
-- `claude remote-control` lets you spawn a new local session from the mobile app. *Availability: Pro, Max, Team, and Enterprise plans on CLI v2.1.51+.*
+- `claude remote-control` lets you spawn a new local session from the mobile app. *Availability: Pro, Max, Ultra, Team, and Enterprise plans on CLI v2.1.51+.*
 
 You can also enable **“Enable Remote Control for all sessions”** in `/config`.
 

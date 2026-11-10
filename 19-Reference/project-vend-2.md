@@ -2,7 +2,7 @@
 title: "Project Vend: Phase two \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-vend-2"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:07Z"
+fetched_at: "2026-10-24T06:26:39Z"
 tags: ["news-research", "rag"]
 ---
 
@@ -226,7 +226,7 @@ As society begins to plug AI models into more and more important functions, desi
 
 02This might remind some readers of our discussion of the “spiritual bliss attractor state” from the [Claude 4 system card](../15-Claude-AI-Features/claude-4-system-card.md) (p. 63).[](#footnote-ref-2)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

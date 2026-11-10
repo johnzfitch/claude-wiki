@@ -1,12 +1,15 @@
 ---
 title: "Caching - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/caching"
+source_url: "https://modelcontextprotocol.io/specification/draft/server/utilities/caching"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:28:56Z"
+fetched_at: "2026-10-31T06:24:57Z"
+last_modified: "Fri, 30 Oct 2026 20:37:44 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Cacheable Results](#cacheable-results)
 - [Cache Key](#cache-key)
@@ -43,14 +46,14 @@ Servers MUST include caching hints on results with `resultType: "complete"` retu
 - `resources/templates/list`
 - `resources/read`
 
-Interim results with `resultType: "input_required"` (see [multi round-trip requests](2026-07-28-basic-patterns-mrtr.md)) are not cacheable and carry no caching hints.
+Interim results with `resultType: "input_required"` (see [multi round-trip requests](draft-basic-patterns-mrtr.md)) are not cacheable and carry no caching hints.
 
 
 [​](#cache-key)
 
 Cache Key
 
-A cached response is identified by the request method together with the request parameters that affect the result (for example, the `uri` for `resources/read`, or the `cursor` for paginated list requests). Clients **MUST NOT** serve a cached response for a request whose method or parameters differ from the request that produced it. Results produced by retrying a request through the [multi round-trip requests](2026-07-28-basic-patterns-mrtr.md) mechanism—that is, requests carrying `inputResponses` or `requestState`—**MUST NOT** be cached, as they depend on inputs that are not part of the cache key.
+A cached response is identified by the request method together with the request parameters that affect the result (for example, the `uri` for `resources/read`, or the `cursor` for paginated list requests). Clients **MUST NOT** serve a cached response for a request whose method or parameters differ from the request that produced it. Results produced by retrying a request through the [multi round-trip requests](draft-basic-patterns-mrtr.md) mechanism—that is, requests carrying `inputResponses` or `requestState`—**MUST NOT** be cached, as they depend on inputs that are not part of the cache key.
 
 
 [​](#cacheable-model)
@@ -98,9 +101,9 @@ Cache Scope Field
 
 The `cacheScope` field controls who may cache a response, analogous to HTTP `Cache-Control: public` vs `Cache-Control: private`.
 
-| Value       | Meaning                                                                                                                                                                                                                                                                           |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `"public"`  | The response does not contain user-specific data. Any client, shared gateway, or caching proxy **MAY** store and serve the cached response to any user.                                                                                                                           |
+| Value | Meaning |
+|----|----|
+| `"public"` | The response does not contain user-specific data. Any client, shared gateway, or caching proxy **MAY** store and serve the cached response to any user. |
 | `"private"` | The response contains private data that is not meant to be shared between callers. Cached responses **MAY** be reused for the same authorization context. Caches **MUST NOT** be shared across authorization contexts (e.g. a different access token requires a different cache). |
 
 

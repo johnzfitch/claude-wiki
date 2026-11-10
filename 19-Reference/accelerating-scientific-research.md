@@ -2,9 +2,11 @@
 title: "How scientists use Claude to accelerate research \\ Anthropic"
 source_url: "https://www.anthropic.com/news/accelerating-scientific-research"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:20Z"
+fetched_at: "2026-11-09T06:26:48Z"
 tags: ["agents", "news-research", "search", "testing"]
 ---
+
+### 01Biomni: a general-purpose biomedical agent with access to hundreds of tools and databases
 
 # How scientists are using Claude to accelerate research and discovery
 
@@ -12,31 +14,25 @@ tags: ["agents", "news-research", "search", "testing"]
 - [02Cheeseman Lab: automating the interpretation of large-scale gene knockout experiments](#cheeseman-lab-automating-the-interpretation-of-large-scale-gene-knockout-experiments)
 - [03Lundberg Lab: testing AI-led hypothesis generation for which genes to study](#lundberg-lab-testing-ai-led-hypothesis-generation-for-which-genes-to-study)
 
-- Published
+Published  
+Jan 15, 2026
 
-  Jan 15, 2026
+Topics  
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
+- [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
 
-- Team
-
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-  - [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
-
-  See more...
+See more...
 
 Related articles
 
 - Science
 
-  Oct 20, 2026
+  Nov 6, 2026
 
-  [How Claude designed protein binders against scorpion neurotoxins](claude-scorpion-toxin-binder-design.md)
+  [Teaching AI to build scientific models](teaching-ai-to-build-scientific-models.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 

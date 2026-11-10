@@ -2,7 +2,7 @@
 title: "Economic Index report: Economic primitives \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:00Z"
+fetched_at: "2026-10-24T06:26:59Z"
 tags: ["news-research"]
 ---
 
@@ -471,7 +471,7 @@ Building on prior releases, this edition significantly expands both the scope an
 
 How willing users are to experiment with AI, and whether policymakers create a regulatory context that advances both safety and innovation, will shape how AI transforms economies. For AI to benefit users globally, expanding access alone will not suffice—developing the human capital that enables effective use, particularly in lower-income economies, is essential.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

@@ -2,11 +2,14 @@
 title: "Keep Claude working toward a goal - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/goal"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-20T06:38:44Z"
+fetched_at: "2026-10-30T06:25:55Z"
+last_modified: "Fri, 30 Oct 2026 01:22:40 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Compare ways to keep a session running](#compare-ways-to-keep-a-session-running)
 - [Use /goal](#use-%2Fgoal)
@@ -49,11 +52,11 @@ Compare ways to keep a session running
 
 Three approaches keep the current session running between prompts. Pick based on what should start the next turn:
 
-| Approach                                                                 | Next turn starts when                                                                                                                                                                      | Stops when                                                                                                                                                                                      |
-|:-------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `/goal`                                                                  | The previous turn finishes, or, in an interactive session, an [idle check-in](#background-work-defers-evaluation) or an [automatic retry](#other-errors-retry-or-pause-the-goal) comes due | A model confirms the condition is met or judges it impossible, or a turn fails on [an error you have to fix](#errors-you-have-to-fix-clear-the-goal), or you run [`/goal clear`](#clear-a-goal) |
-| [`/loop`](scheduled-tasks.md#run-a-prompt-repeatedly-with-%2Floop) | A time interval elapses                                                                                                                                                                    | You stop it, or Claude decides the work is done                                                                                                                                                 |
-| [Stop hook](../07-Hooks/hooks-guide.md#prompt-based-hooks)                     | The previous turn finishes                                                                                                                                                                 | Your own script or prompt decides                                                                                                                                                               |
+| Approach | Next turn starts when | Stops when |
+|:---|:---|:---|
+| `/goal` | The previous turn finishes, or, in an interactive session, an [idle check-in](#background-work-defers-evaluation) or an [automatic retry](#other-errors-retry-or-pause-the-goal) comes due | A model confirms the condition is met or judges it impossible, or a turn fails on [an error you have to fix](#errors-you-have-to-fix-clear-the-goal), or you run [`/goal clear`](#clear-a-goal) |
+| [`/loop`](scheduled-tasks.md#run-a-prompt-repeatedly-with-%2Floop) | A time interval elapses | You stop it, or Claude decides the work is done |
+| [Stop hook](../07-Hooks/hooks-guide.md#prompt-based-hooks) | The previous turn finishes | Your own script or prompt decides |
 
 `/goal` and a Stop hook both fire after every turn. `/goal` is a session-scoped shortcut: you type a condition and it’s active for the current session only. A Stop hook lives in your settings file, applies to every session in its scope, and can run a script for deterministic checks or a prompt for model-evaluated ones. [Auto mode](auto-mode-config.md) on its own approves tool calls within a single turn but doesn’t start a new one. Claude stops when it judges the work done. `/goal` adds a separate evaluator that checks your condition after every turn, so completion is decided by a fresh model rather than the one doing the work. The two are complementary: auto mode removes per-tool prompts, and `/goal` removes per-turn prompts.
 
@@ -209,7 +212,7 @@ Evaluation model and cost
 
 To evaluate on a different model, set [`ANTHROPIC_DEFAULT_HAIKU_MODEL`](model-config.md#environment-variables).
 
-Claude Code reads `ANTHROPIC_DEFAULT_HAIKU_MODEL` everywhere it uses the small fast model, not only for `/goal` evaluation. When you set it, Claude Code also resolves the [`haiku` alias](model-config.md#model-aliases) to that model and runs [background functionality](../17-Billing-Plans/costs.md#background-token-usage), such as conversation summarization, on it.
+Claude Code reads `ANTHROPIC_DEFAULT_HAIKU_MODEL` everywhere it uses the small fast model, not only for `/goal` evaluation. When you set it, Claude Code also resolves the [`haiku` alias](model-config.md#model-aliases) to that model and runs session title generation and some other background tasks on it.
 
 The evaluator runs on whichever provider your session is configured for. It does not call tools, so it can only judge what Claude has already surfaced in the conversation.
 

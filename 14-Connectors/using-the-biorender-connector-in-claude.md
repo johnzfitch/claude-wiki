@@ -2,7 +2,7 @@
 title: "Using the BioRender Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614795-using-the-biorender-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:28:57Z"
+fetched_at: "2026-11-07T06:22:24Z"
 tags: ["connectors"]
 ---
 
@@ -59,10 +59,11 @@ Learn about [finding and connecting tools(opens in new tab)](browse-skills-conne
 
 **For Claude Code Users**
 
-1.  Command: `/plugin marketplace add anthropics/life-sciences`
-2.  Command: `/plugin install biorender@life-sciences`
-3.  Restart Claude Code
-4.  Verify that the server is connected with `/mcp`
+1.  Connect **BioRender** in Claude by following the steps above
+2.  Sign in to Claude Code with the same Claude account (run `/login` to switch accounts), then restart Claude Code
+3.  Run `/mcp` and check that the connector appears in the claude.ai section of the list (if it isn't shown, select **Show unused connectors** at the end of that section)
+
+Learn about [using connectors from Claude in Claude Code(opens in new tab)](../06-MCP-Tools/General/mcp.md#use-mcp-servers-from-claude-ai).
 
 Technical details of the BioRender integration can be found in [BioRender’s MCP Server Documentation(opens in new tab)](https://help.biorender.com/hc/en-gb/articles/30870978672157-How-to-use-the-BioRender-MCP-connector).
 

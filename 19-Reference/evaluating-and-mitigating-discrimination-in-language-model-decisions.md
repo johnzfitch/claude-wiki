@@ -2,7 +2,7 @@
 title: "Evaluating discrimination in language model decisions \\ Anthropic"
 source_url: "https://www.anthropic.com/research/evaluating-and-mitigating-discrimination-in-language-model-decisions"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:45Z"
+fetched_at: "2026-10-24T06:26:34Z"
 tags: ["news-research"]
 ---
 
@@ -33,7 +33,7 @@ Related articles
 
   Nov 13, 2025
 
-  [Measuring political bias in Claude](political-even-handedness.md)
+  [Measuring political bias in Claude](research-political-even-handedness.md)
 
 [View more](https://www.anthropic.com/search?topic=bias-and-fairness)
 

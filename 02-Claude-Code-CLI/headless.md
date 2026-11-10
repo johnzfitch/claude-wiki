@@ -2,15 +2,19 @@
 title: "Run Claude Code programmatically - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/headless"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-21T06:28:48Z"
+fetched_at: "2026-11-05T06:35:16Z"
+last_modified: "Thu, 05 Nov 2026 04:11:10 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
 
+Back to top
+
 - [Basic usage](#basic-usage)
   - [Start faster with bare mode](#start-faster-with-bare-mode)
   - [Background tasks at exit](#background-tasks-at-exit)
+  - [MCP work when a non-interactive run ends](#mcp-work-when-a-non-interactive-run-ends)
   - [Stop a run with SIGTERM](#stop-a-run-with-sigterm)
   - [If the working directory is deleted](#if-the-working-directory-is-deleted)
 - [Examples](#examples)
@@ -78,21 +82,21 @@ Add `--bare` to reduce startup time by skipping auto-discovery of hooks, skills,
 claude --bare -p "Summarize README.md" --allowedTools "Read"
 ```
 
-In bare mode, Claude Code never reads OAuth credentials or the system keychain. For the Anthropic API, set `ANTHROPIC_API_KEY` in the environment, with a key created in the [Claude Console](../04-API-Reference/Other/playground.md), or supply an `apiKeyHelper` in the `--settings` JSON. Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry continue to read their own provider credentials as usual. In bare mode Claude has access to the Bash, file read, and file edit tools. Pass any context you need with a flag:
+In bare mode, Claude Code never reads OAuth credentials or the system keychain. For the Anthropic API, set `ANTHROPIC_API_KEY` in the environment, with a key created in the [Claude Console](../04-API-Reference/Other/playground.md), or supply an `apiKeyHelper` in the `--settings` JSON. Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry continue to read their own provider credentials as usual. In bare mode Claude has access to the Bash, file read, and file edit tools. Pass the context you need with a flag:
 
-| To load                                                        | Use                                                     |
-|----------------------------------------------------------------|---------------------------------------------------------|
-| System prompt additions                                        | `--append-system-prompt`, `--append-system-prompt-file` |
-| Settings                                                       | `--settings <file-or-json>`                             |
-| MCP servers                                                    | `--mcp-config <file-or-json>`                           |
-| [Custom agents](../09-Agents-Patterns/sub-agents.md#choose-the-subagent-scope) | `--agents <file-or-json>`                               |
-| A plugin                                                       | `--plugin-dir <path>`, `--plugin-url <url>`             |
+| To load | Use |
+|----|----|
+| System prompt additions | `--append-system-prompt`, `--append-system-prompt-file` |
+| Settings | `--settings <file-or-json>` |
+| MCP servers | `--mcp-config <file-or-json>` |
+| [Custom agents](../09-Agents-Patterns/sub-agents.md#choose-the-subagent-scope) | `--agents <file-or-json>` |
+| A plugin | `--plugin-dir <path>`, `--plugin-url <url>` |
 
-Bare mode also limits what happens while the session runs:
+Hooks still don’t run in bare mode when you pass them with `--settings`, or in the [`hooks/hooks.json`](../08-Plugins-Skills/plugins-components.md#hooks) or [`hooks` manifest key](../08-Plugins-Skills/plugins-reference.md#hooks) of a plugin you load with a flag. Don’t use bare mode for a run that needs them. Bare mode also limits what happens while the session runs:
 
 - **MCP servers**: only servers supplied on the command line connect, for example with `--mcp-config`. In an interactive session, Claude Code also skips the automatic IDE connection unless you pass `--ide`.
 - **System reminders**: Claude gets your prompts and the tool results without the [system reminders](glossary.md#system-reminder) Claude Code would add alongside them. For example, Claude isn’t told when a file it read earlier changes on disk, and it doesn’t get the list of available skills, including skills from an `--add-dir` folder.
-- **Background tasks**: none run. A command that reaches its [timeout](tools-reference.md#timeout-and-output-limits) stops instead of [moving to the background](tools-reference.md#background-commands).
+- **Background tasks**: Claude can’t run background commands or background subagents, and the other features that [`CLAUDE_CODE_DISABLE_BACKGROUND_TASKS`](env-vars.md) turns off are off too. A command that reaches its [timeout](tools-reference.md#timeout-and-output-limits) stops instead of [moving to the background](tools-reference.md#background-commands).
 
 Before v2.1.286, these limits held only partly: an interactive `--bare` session connected the MCP servers that a normal session would, every `--bare` session sent system reminders, and background tasks stayed available.
 
@@ -111,6 +115,16 @@ After Claude finishes its turn and stdin has closed, a `claude -p` run can stay 
 - **Pending wakeups**: in a run whose prompt you passed as text rather than with `--input-format stream-json`, when Claude has scheduled a [self-paced `/loop` wakeup](scheduled-tasks.md#let-claude-choose-the-interval), the run waits for each wakeup to fire and runs its iteration until the [loop ends](scheduled-tasks.md#stop-a-loop), even past the 10-minute cap.
 
 When stderr is a terminal and the run has waited five seconds, Claude Code prints a line to stderr that starts with `Waiting for background work to finish` and names the work. With [`json` or `stream-json` output](#get-structured-output), the line prints only when stdout isn’t a terminal, so the JSON your script reads never carries it. If the run reaches its [`--max-budget-usd`](cli-reference.md#cli-flags) cap, Claude Code stops the remaining background work instead of waiting. When background work starts another turn, the run prints each turn’s result with the default `text` output and the last turn’s result with `json` output. Before v2.1.295, the run printed only the last turn’s result with `text` output too.
+
+
+[​](#mcp-work-when-a-non-interactive-run-ends)
+
+MCP work when a non-interactive run ends
+
+A `claude -p` run doesn’t wait for MCP work in the background:
+
+- **[MCP tasks](../06-MCP-Tools/General/mcp.md#mcp-tasks-that-run-on-the-server)**: on a remote server the job goes on. To follow it again, [resume that session](../06-MCP-Tools/General/mcp.md#exit-clear-or-resume-while-an-mcp-task-runs), not as a one-shot `claude -p "<prompt>"` run.
+- **MCP calls that [automatic backgrounding](../06-MCP-Tools/General/mcp.md#automatic-backgrounding-of-long-tool-calls) moved**: the call’s result is lost.
 
 
 [​](#stop-a-run-with-sigterm)
@@ -244,15 +258,14 @@ Messages from [subagents](../09-Agents-Patterns/sub-agents.md) and from skills t
 
 When you enable either option, Claude Code forwards messages from [subagents at every nesting depth](../09-Agents-Patterns/sub-agents.md#let-subagents-spawn-their-own-subagents), whether each one was spawned with the Agent tool or started as a forked skill. In `parent_tool_use_id`, the nested subagent’s messages carry the ID of the Agent or Skill tool call that started it, so you can rebuild the full nesting tree by following those IDs. A run that Claude starts with a tool call carries that tool call’s ID. A forked skill that you start by passing `/<skill-name>` as the prompt has no tool call, so its messages carry a `forked-command-` value instead and arrive after it finishes. Find how the run started in the first column:
 
-| How the run starts                                                        | `parent_tool_use_id`                       | When its messages arrive                              |
-|:--------------------------------------------------------------------------|:-------------------------------------------|:------------------------------------------------------|
-| Claude calls the Agent tool from the main conversation                    | The ID of that Agent `tool_use` block      | While the subagent works                              |
-| Claude calls the Skill tool for a forked skill from the main conversation | The ID of that Skill `tool_use` block      | While the forked skill works                          |
-| You pass `/<skill-name>` as the prompt                                    | A value that starts with `forked-command-` | Together and in order after the forked skill finishes |
+| How the run starts | `parent_tool_use_id` | When its messages arrive |
+|:---|:---|:---|
+| Claude calls the Agent tool from the main conversation | The ID of that Agent `tool_use` block | While the subagent works |
+| Claude calls the Skill tool for a forked skill from the main conversation | The ID of that Skill `tool_use` block | While the forked skill works |
+| You pass `/<skill-name>` as the prompt | A value that starts with `forked-command-` | Together and in order after the forked skill finishes |
 
 For a forked skill started from the prompt, match `parent_tool_use_id` on the `forked-command-` prefix, because the name after it can differ from the one you typed. If some of these messages are missing from your stream, check your Claude Code version against these minimums:
 
-- **Forwarding at every nesting depth**: v2.1.219 or later
 - **A forked skill that Claude starts with the Skill tool from the main conversation**: v2.1.86 or later for its `tool_use` and `tool_result` blocks, and v2.1.265 or later for its first `user` message and its text and thinking blocks
 - **Messages of subagents that a forked skill spawns, and of forked skills started inside a subagent or another forked skill**: v2.1.275 or later
 - **Messages of a forked skill you start by passing `/<skill-name>` as the prompt**: v2.1.287 or later
@@ -264,18 +277,18 @@ Handle API retries
 
 When an API request fails with a retryable error, Claude Code emits a `system/api_retry` event before retrying. On v2.1.246 or later, when a `401` or `403` rejects an [`apiKeyHelper`](settings-reference.md#apikeyhelper) credential, Claude Code makes the first two retries quietly with no event, then emits the event as usual from the third consecutive retry onward. The quiet retries still count toward `attempt`. You can use the event to show retry progress in your own interface.
 
-| Field            | Type             | Description                                                                                                                                                                                                                                           |
-|------------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`           | `"system"`       | message type                                                                                                                                                                                                                                          |
-| `subtype`        | `"api_retry"`    | identifies this as a retry event                                                                                                                                                                                                                      |
-| `attempt`        | integer          | current attempt number, starting at 1                                                                                                                                                                                                                 |
-| `max_retries`    | integer          | total retries permitted for this failure’s cause                                                                                                                                                                                                      |
-| `retry_delay_ms` | integer          | milliseconds until the next attempt                                                                                                                                                                                                                   |
-| `error_status`   | integer or null  | HTTP status code of the failed attempt, or `null` when the attempt got no HTTP response from the API                                                                                                                                                  |
-| `no_response`    | object, optional | present only when the failed attempt got [no response headers in time](errors.md#no-response-from-api). `waited_ms` is how long that attempt waited and `retry_wait_ms` is how long the retry will wait. Requires Claude Code v2.1.261 or later |
-| `error`          | string           | error category: `authentication_failed`, `oauth_org_not_allowed`, `account_on_hold`, `billing_error`, `rate_limit`, `overloaded`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, `cloud_credential_error`, or `unknown`   |
-| `uuid`           | string           | unique event identifier                                                                                                                                                                                                                               |
-| `session_id`     | string           | session the event belongs to                                                                                                                                                                                                                          |
+| Field | Type | Description |
+|----|----|----|
+| `type` | `"system"` | message type |
+| `subtype` | `"api_retry"` | identifies this as a retry event |
+| `attempt` | integer | current attempt number, starting at 1 |
+| `max_retries` | integer | total retries permitted for this failure’s cause |
+| `retry_delay_ms` | integer | milliseconds until the next attempt |
+| `error_status` | integer or null | HTTP status code of the failed attempt, or `null` when the attempt got no HTTP response from the API |
+| `no_response` | object, optional | present only when the failed attempt got [no response headers in time](errors.md#no-response-from-api). `waited_ms` is how long that attempt waited and `retry_wait_ms` is how long the retry will wait. Requires Claude Code v2.1.261 or later |
+| `error` | string | error category: `authentication_failed`, `oauth_org_not_allowed`, `account_on_hold`, `billing_error`, `rate_limit`, `overloaded`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, `cloud_credential_error`, or `unknown` |
+| `uuid` | string | unique event identifier |
+| `session_id` | string | session the event belongs to |
 
 
 [​](#read-session-metadata)
@@ -296,19 +309,19 @@ Fail CI when a plugin or MCP server doesn’t load
 
 Use the plugin fields in the `system/init` event to catch a plugin that didn’t load:
 
-| Field           | Type  | Description                                                                                                                                                                                                                                                                              |
-|-----------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `plugins`       | array | plugins that loaded successfully, each with `name` and `path`                                                                                                                                                                                                                            |
+| Field | Type | Description |
+|----|----|----|
+| `plugins` | array | plugins that loaded successfully, each with `name` and `path` |
 | `plugin_errors` | array | plugin load-time errors, each with `plugin`, `type`, and `message`. Includes unsatisfied dependency versions and `--plugin-dir` load failures such as a missing path or invalid archive. A plugin that didn’t load is absent from `plugins`. The key is omitted when there are no errors |
 
 When a `--plugin-dir` directory or archive itself fails to load, its `plugin_errors` entry includes the resolved absolute path as `path`. Use it to tell which of several `--plugin-dir` values failed. The `path` field requires Claude Code v2.1.283 or later. Use the MCP server fields the same way. When you pass [`--mcp-config`](cli-reference.md#cli-flags) with `-p`, Claude Code waits for still-pending servers before running the first turn, up to the [`MCP_TIMEOUT`](env-vars.md) startup timeout, 30 seconds by default. A remote server with a [cached tool list](../05-Agent-SDK/agent-sdk-mcp.md#connection-timing) skips the wait, shows `pending` in `system/init`, and connects on its first tool call. In a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments-configuration.md#connection-timing), a shorter wait applies instead. The wait requires Claude Code v2.1.221 or later. Claude Code validates each `--mcp-config` entry at startup and skips entries that fail validation, for example a `url` entry with no `type`. The run continues and exits cleanly, so check these fields to catch a server that never loaded:
 
-| Field               | Type  | Description                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|---------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mcp_servers`       | array | MCP servers in the session, each with `name` and `status`                                                                                                                                                                                                                                                                                                                                                                                     |
-| `mcp_server_errors` | array | `--mcp-config` entries skipped by config validation, each with `name`, `type`, and `message`. `type` is a skip category such as `unknown_type`, `url_missing_type`, `invalid_config`, or `reserved_name`; treat values you don’t recognize as a generic skip. Affected servers are absent from `mcp_servers`. The key is omitted when there are no errors, so a CI gate can fail on a non-empty array. Requires Claude Code v2.1.219 or later |
+| Field | Type | Description |
+|----|----|----|
+| `mcp_servers` | array | MCP servers in the session, each with `name` and `status` |
+| `mcp_server_errors` | array | `--mcp-config` entries skipped by config validation, each with `name`, `type`, and `message`. `type` is a skip category such as `unknown_type`, `url_missing_type`, `invalid_config`, or `reserved_name`; treat values you don’t recognize as a generic skip. Affected servers are absent from `mcp_servers`. The key is omitted when there are no errors, so a CI gate can fail on a non-empty array |
 
-When you run the command by hand in a terminal, Claude Code also prints a startup warning to stderr, such as `Warning: 1 MCP server skipped due to invalid config:`, followed by the reason for each skipped entry. When you redirect stderr, or when a program such as a CI runner or an SDK host captures it, Claude Code prints no warning and reports the skipped entries only in the `mcp_server_errors` field. The warning requires Claude Code v2.1.219 or later.
+When you run the command yourself in a terminal, Claude Code also prints a startup warning to stderr, such as `Warning: 1 MCP server skipped due to invalid config:`, followed by the reason for each skipped entry. When you redirect stderr, or when a program such as a CI runner or an SDK host captures it, Claude Code prints no warning. It reports the skipped entries only in the `mcp_server_errors` field.
 
 
 [​](#track-plugin-installs)
@@ -317,15 +330,15 @@ Track plugin installs
 
 When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](env-vars.md) is set, Claude Code emits `system/plugin_install` events while marketplace plugins install before the first turn. Use these to surface install progress in your own UI.
 
-| Field        | Type                                                     | Description                                                                                                    |
-|--------------|----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| `type`       | `"system"`                                               | message type                                                                                                   |
-| `subtype`    | `"plugin_install"`                                       | identifies this as a plugin install event                                                                      |
-| `status`     | `"started"`, `"installed"`, `"failed"`, or `"completed"` | `started` and `completed` bracket the overall install; `installed` and `failed` report individual marketplaces |
-| `name`       | string, optional                                         | marketplace name, present on `installed` and `failed`                                                          |
-| `error`      | string, optional                                         | failure message, present on `failed`                                                                           |
-| `uuid`       | string                                                   | unique event identifier                                                                                        |
-| `session_id` | string                                                   | session the event belongs to                                                                                   |
+| Field | Type | Description |
+|----|----|----|
+| `type` | `"system"` | message type |
+| `subtype` | `"plugin_install"` | identifies this as a plugin install event |
+| `status` | `"started"`, `"installed"`, `"failed"`, or `"completed"` | `started` and `completed` bracket the overall install; `installed` and `failed` report individual marketplaces |
+| `name` | string, optional | marketplace name, present on `installed` and `failed` |
+| `error` | string, optional | failure message, present on `failed` |
+| `uuid` | string | unique event identifier |
+| `session_id` | string | session the event belongs to |
 
 
 [​](#auto-approve-tools)

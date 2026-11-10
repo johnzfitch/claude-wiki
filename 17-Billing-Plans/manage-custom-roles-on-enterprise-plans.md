@@ -2,7 +2,7 @@
 title: "Manage custom roles on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:04Z"
+fetched_at: "2026-11-09T06:25:49Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -55,11 +55,13 @@ This can be disabled organization-wide via `managed-settings.json` by adding `"d
 
 An owner can turn it off across your entire organization by going to **[Organization settings \> Claude Code](https://claude.ai/admin-settings/claude-code)** and toggling **Workflows** off.
 
-Custom roles also govern admin permissions, connectors, and model access, which are configured on separate **Permissions**, **Connectors**, and **Models** tabs in the role editor. See **[Admin permissions](manage-custom-roles-on-enterprise-plans.md#h_fde60b08bd)**, **[Connector permissions](manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**, and **[Model access](manage-custom-roles-on-enterprise-plans.md#h_fca0f9a6b5)** below.
+Custom roles also govern admin permissions, connectors, and model access, which are configured on separate **Permissions**, **Connectors**, and **Models** tabs in the role editor. See **[Admin permissions](#h_fde60b08bd)**, **[Connector permissions](#h_979e558d00)**, and **[Model access](#h_fca0f9a6b5)** below.
 
 **Note:** Chat is enabled by default for all custom roles, including ones created before this capability was added. If you want to restrict chat for a specific role, toggle it off when editing the role.
 
 Custom roles that already granted Claude Code have Cloud sessions and Claude Code remote control turned on, so users' access doesn't change. To restrict either one, turn it off under **Claude Code** on the role's **Capabilities** tab.
+
+If **Computer access** or **Routines** is on for your organization, custom roles that include Chat, Claude Code, Cowork, Chat and Cowork unified, or Claude in Chrome have that capability turned on, so users’ access doesn’t change. Roles set to “All capabilities” or “All generally available” include both automatically. To restrict either one, turn it off under **Remote sessions** on the role’s **Capabilities** tab.
 
 ### Grant all capabilities at once
 
@@ -259,7 +261,7 @@ A connector or tool passes through several layers before a member can use it, ev
 
 For members using Claude Code, one more layer applies: Managed Settings policies and connector permissions compose by most-restrictive. A tool is callable without a prompt only when both allow it. For more information, see **[Claude Code settings](../02-Claude-Code-CLI/settings.md#settings-files)**.
 
-For members using Claude Cowork, write-capable connector tools pass through one more gate. See **[Cowork approval setting for write tools](manage-custom-roles-on-enterprise-plans.md#h_85bd7c30e9)** below.
+For members using Claude Cowork, write-capable connector tools pass through one more gate. See **[Cowork approval setting for write tools](#h_85bd7c30e9)** below.
 
 This table shows how the organization-wide tool policy and a member’s role grant combine:
 
@@ -291,12 +293,12 @@ Custom roles also control which Claude models a role can use and the maximum eff
 
 The organization-level model setting is the ceiling. A role can't grant a model that's disabled at the organization level. Across a member's roles, model access is additive and effort limits take the highest cap any role allows. Haiku models are always available and can't be disabled.
 
-For setup steps and what members see, see **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**. For default model behavior, see **[Set a default model for your organization](https://support.claude.com/en/articles/15330088)**.
+For setup steps and what members see, see **[Manage model access for your organization](../13-Enterprise-Admin/manage-model-access-for-your-organization-claude-help-center.md)**. For default model behavior, see **[Set a default model for your organization](../13-Enterprise-Admin/set-a-default-model-for-your-organization-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
 ## What members see when capability access is restricted
 
-When a capability is restricted, here’s what members see. For connector and tool restrictions, see **[Connector permissions](manage-custom-roles-on-enterprise-plans.md#h_979e558d00)** above.
+When a capability is restricted, here’s what members see. For connector and tool restrictions, see **[Connector permissions](#h_979e558d00)** above.
 
 [TABLE]

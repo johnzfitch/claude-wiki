@@ -2,18 +2,16 @@
 title: "Get started with 1Password for Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15936181-get-started-with-1password-for-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:11Z"
+fetched_at: "2026-11-09T06:25:55Z"
 tags: ["agents", "claude-ai"]
 ---
 
 # Get started with 1Password for Claude
 
-July 16, 2026
-
 
 1Password for Claude lets Claude complete browser tasks that require signing in, using logins you've stored in 1Password. 1Password fills the credential directly on the page, so Claude never sees your password or one-time code.
 
-1Password for Claude is in beta for paid plans (Pro, Max, Team, Enterprise) using Claude Desktop on macOS. It's available to 1Password customers on individual, family, and business plans, and requires Claude in Chrome. 1Password for Claude is off by default for Team and Enterprise plans.
+1Password for Claude is in beta for paid plans (Pro, Max, Ultra, Team, Enterprise) using Claude Desktop on macOS. It's available to 1Password customers on individual, family, and business plans, and requires Claude in Chrome. 1Password for Claude is off by default for Team and Enterprise plans.
 
 ## How it works
 
@@ -31,7 +29,7 @@ To use 1Password for Claude, you'll need:
 
 - **[Claude Desktop](https://support.claude.com/en/articles/10065433)**
 
-- **[Claude in Chrome](get-started-with-claude-in-chrome-claude-help-center.md)**
+- **[Claude in Chrome](https://support.claude.com/en/articles/12012173)**
 
 - A 1Password account (individual, family, or business plan)
 

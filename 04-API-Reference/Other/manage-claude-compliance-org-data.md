@@ -2,67 +2,9 @@
 title: "List organizations, users, roles, groups, and settings - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-org-data"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:37:54Z"
+fetched_at: "2026-11-05T06:36:40Z"
 tags: ["api", "plugins"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-org-data)
-
-
-
-
-
-SearchCtrlK
-
-Organization
-
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
-
-Authentication
-
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
-
-Identity providers
-
-Monitoring
-
-[Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
-
-[OpenTelemetry](manage-claude-opentelemetry.md)
-
-Data & compliance
-
-[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
-
-[Access Transparency](manage-claude-access-transparency.md)
-
-[Encryption keys (CMEK)](manage-claude-cmek.md)
-
-[Inference hooks](manage-claude-inference-hooks.md)
-
-Compliance API
-
-[Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
-
-[Console](playground.md)
-
-[Admin](manage-claude-admin-api.md)Compliance API
 
 # List organizations, users, roles, groups, and settings
 
@@ -70,7 +12,7 @@ Compliance API
 
 
 
-Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization's effective settings through the Compliance API.
+Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization’s effective settings through the Compliance API.
 
 Copy page
 
@@ -102,7 +44,7 @@ cURL
 curl --fail-with-body -sS \
   "https://api.anthropic.com/v1/compliance/organizations" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  -H "anthropic-version: 2023-06-01"
+  -H "anthropic-version: 2026-10-21"
 ```
 
 Response
@@ -130,13 +72,13 @@ Response
 
 The `uuid` field is the canonical identifier for downstream lookups. The following table maps it to the other organization identifiers across the Compliance API:
 
-| Field                | Where                                                                                                                                                                                                                                                                                                                                                   | Relationship to `uuid`                                                                                                                                    |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `{org_uuid}`         | Path parameter on per-organization endpoints on this page                                                                                                                                                                                                                                                                                               | Same value                                                                                                                                                |
-| `organization_uuid`  | Activity Feed, chat, project, and session records                                                                                                                                                                                                                                                                                                       | Same value; join on these two fields directly                                                                                                             |
-| `organization_id`    | Activity Feed, chat, and project records                                                                                                                                                                                                                                                                                                                | Same organization, `org_`-prefixed. Deprecated on chat and project records; use `organization_uuid` instead.                                              |
-| `organization_ids[]` | Filter on [Query the Activity Feed](manage-claude-compliance-activity-feed.md), [Retrieve chats and messages](manage-claude-compliance-content-data.md#retrieve-chats-and-messages), and the [remote session list](manage-claude-compliance-sessions.md#retrieve-remote-sessions) (the local session list has no organization filter) | Accepts `uuid` or the `org_`-prefixed form                                                                                                                |
-| `organization_id`    | [Effective organization settings](#get-effective-organization-settings) response                                                                                                                                                                                                                                                                        | Same value, bare UUID; this response does **not** use the `org_`-prefixed form that `organization_id` carries on Activity Feed, chat, and project records |
+| Field | Where | Relationship to `uuid` |
+|----|----|----|
+| `{org_uuid}` | Path parameter on per-organization endpoints on this page | Same value |
+| `organization_uuid` | Activity Feed, chat, project, and session records | Same value; join on these two fields directly |
+| `organization_id` | Activity Feed, chat, and project records | Same organization, `org_`-prefixed. Deprecated on chat and project records; use `organization_uuid` instead. |
+| `organization_ids[]` | Filter on [Query the Activity Feed](manage-claude-compliance-activity-feed.md), [Retrieve chats and messages](manage-claude-compliance-content-data.md#retrieve-chats-and-messages), and the [remote session list](manage-claude-compliance-sessions.md#retrieve-remote-sessions) (the local session list has no organization filter) | Accepts `uuid` or the `org_`-prefixed form |
+| `organization_id` | [Effective organization settings](#get-effective-organization-settings) response | Same value, bare UUID; this response does **not** use the `org_`-prefixed form that `organization_id` carries on Activity Feed, chat, and project records |
 
 Most other Anthropic APIs use the `org_`-prefixed form.
 
@@ -150,7 +92,7 @@ This endpoint requires `read:compliance_user_data`, not `read:compliance_org_dat
 
 See [List organization users](../Admin/compliance-organizations-users-list.md) in the API reference for the `limit` and `page` query parameter defaults and ranges.
 
-Results are sorted by organization join date ascending. Unlike the Activity Feed's `before_id`/`after_id` cursors (see [Paginate results](manage-claude-compliance-activity-feed.md#paginate-results)), the directory endpoints paginate with a `next_page` token: when `has_more` is `true`, pass `next_page` back unchanged as the `page` query parameter on the next request.
+Results are sorted by organization join date ascending. Unlike the Activity Feed’s `before_id`/`after_id` cursors (see [Paginate results](manage-claude-compliance-activity-feed.md#paginate-results)), the directory endpoints paginate with a `next_page` token: when `has_more` is `true`, pass `next_page` back unchanged as the `page` query parameter on the next request.
 
 cURL
 
@@ -160,7 +102,7 @@ cURL
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/users" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  -H "anthropic-version: 2023-06-01" \
+  -H "anthropic-version: 2026-10-21" \
   --data-urlencode "limit=500"
 ```
 
@@ -172,7 +114,7 @@ Response
 {
   "data": [
     {
-      "id": "user_01XyDMpzjS89pFZXqSFUBDr6",
+      "id": "user_01WxYzAbCdEfGhJkMnPqRsTu",
       "full_name": "Priya Sharma",
       "email": "priya@example.com",
       "organization_role": "admin",
@@ -184,7 +126,7 @@ Response
 }
 ```
 
-The user IDs returned here are the same `user_...` identifiers accepted by the [Query the Activity Feed](manage-claude-compliance-activity-feed.md) `actor_ids[]` filter and the `user_ids[]` filters on [Retrieve chats and messages](manage-claude-compliance-content-data.md#retrieve-chats-and-messages) and the [remote session list](manage-claude-compliance-sessions.md#retrieve-remote-sessions); the [local session list](manage-claude-compliance-sessions.md#retrieve-local-sessions) has no user filter, so attribute local sessions by the `user.id` on each session object. The `organization_role` field carries the user's built-in membership level within the listed organization (one of `admin`, `billing`, `claude_code_user`, `developer`, `managed`, `membership_admin`, `owner`, `primary_owner`, or `user`), an axis independent of any custom RBAC role assignments returned by [List roles](#list-roles). A typical eDiscovery flow lists users for one or more organizations, filters against your own external records, and feeds the resulting IDs into chat and project queries.
+The user IDs returned here are the same `user_...` identifiers accepted by the [Query the Activity Feed](manage-claude-compliance-activity-feed.md) `actor_ids[]` filter. The `user_ids[]` filters on [Retrieve chats and messages](manage-claude-compliance-content-data.md#retrieve-chats-and-messages) and the [remote session list](manage-claude-compliance-sessions.md#retrieve-remote-sessions) accept the same identifiers. The [local session list](manage-claude-compliance-sessions.md#retrieve-local-sessions) has no user filter, so attribute local sessions by the `user.id` on each session object. The `organization_role` field carries the user’s built-in membership level within the listed organization (one of `admin`, `billing`, `claude_code_user`, `developer`, `managed`, `membership_admin`, `owner`, `primary_owner`, or `user`), an axis independent of any custom RBAC role assignments returned by [List roles](#list-roles). A typical eDiscovery flow lists users for one or more organizations, filters against your own external records, and feeds the resulting IDs into chat and project queries.
 
 A user only appears here while they are an active member of the organization. Removed users are dropped from the list immediately. Their historical activity remains queryable through the Activity Feed for the full retention window, indexed by the same `user_...` ID.
 
@@ -204,7 +146,7 @@ cURL
 curl --fail-with-body -sS \
   "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/user_preferences" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  -H "anthropic-version: 2023-06-01"
+  -H "anthropic-version: 2026-10-21"
 ```
 
 Response
@@ -216,7 +158,7 @@ Response
   "data": [
     {
       "user": {
-        "id": "user_01XyDMpzjS89pFZXqSFUBDr6",
+        "id": "user_01WxYzAbCdEfGhJkMnPqRsTu",
         "email_address": "priya@example.com"
       },
       "conversation_preferences": "Keep answers brief and cite sources.",
@@ -242,7 +184,7 @@ cURL
 curl --fail-with-body -sS \
   "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/roles" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  -H "anthropic-version: 2023-06-01"
+  -H "anthropic-version: 2026-10-21"
 ```
 
 Response
@@ -285,7 +227,7 @@ cURL
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/groups" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  -H "anthropic-version: 2023-06-01"
+  -H "anthropic-version: 2026-10-21"
 ```
 
 Response
@@ -320,7 +262,7 @@ cURL
 curl --fail-with-body -sS -G \
   "https://api.anthropic.com/v1/compliance/groups/rbac_group_01P9qRsTuVwXyZa2BcDeFgHjK/members" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  -H "anthropic-version: 2023-06-01"
+  -H "anthropic-version: 2026-10-21"
 ```
 
 Response
@@ -331,7 +273,7 @@ Response
 {
   "data": [
     {
-      "user_id": "user_01XyDMpzjS89pFZXqSFUBDr6",
+      "user_id": "user_01WxYzAbCdEfGhJkMnPqRsTu",
       "email": "priya@example.com",
       "created_at": "2025-06-01T10:00:00Z",
       "updated_at": "2025-06-15T14:30:00Z"
@@ -342,13 +284,20 @@ Response
 }
 ```
 
-See the [List Compliance Group Members](../Admin/compliance-groups-members-list.md) response schema for the full member record shape. The `user_id` field is the same `user_...` identifier that the Activity Feed, chat list, and remote session list accept; it also matches `user.id` on local session objects and on user-owned remote session objects (agent-owned remote sessions carry the human's ID in `started_by_user.id` instead). To get a member's full name, look it up through the organization users list.
+See the [List Compliance Group Members](../Admin/compliance-groups-members-list.md) response schema for the full member record shape. The `user_id` field is the same `user_...` identifier that the Activity Feed, chat list, and remote session list accept; it also matches `user.id` on local session objects and on user-owned remote session objects (agent-owned remote sessions carry the human’s ID in `started_by_user.id` instead). To get a member’s full name, look it up through the organization users list.
 
 ## Get effective organization settings
 
 The [Get effective organization settings](../Admin/compliance-organizations-settings-retrieve.md) endpoint returns the settings in force for one organization under your parent: the enforced state after regulatory restrictions (such as HIPAA), feature-availability rules, organization-type defaults, and inter-feature dependencies are applied, which can differ from what an administrator configured. Use it to attest that retention windows, content redaction, single sign-on enforcement, the IP allowlist, and session-duration controls match your documented baseline, without administrator Console access.
 
-This endpoint requires `read:compliance_org_data`; a key without that scope returns [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden). The target must be one of the parent's linked organizations: the parent organization itself is not a valid target. An unknown organization, an organization ID that is not a valid UUID, an organization outside your parent's tree, and a parent organization that does not yet have access to this endpoint all return the same [404 Not Found](manage-claude-compliance-errors.md#404-not-found), so a 404 does not reveal whether an organization exists. The settings endpoint is enabled per parent organization separately from the rest of the Compliance API; if every request returns 404, contact your Anthropic representative.
+This endpoint requires `read:compliance_org_data`; a key without that scope returns [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden). The target must be one of the parent’s linked organizations: the parent organization itself is not a valid target. All of the following return the same [404 Not Found](manage-claude-compliance-errors.md#404-not-found):
+
+- An unknown organization
+- An organization ID that is not a valid UUID
+- An organization outside your parent’s tree
+- A parent organization that does not yet have access to this endpoint
+
+A 404 therefore does not reveal whether an organization exists. The settings endpoint is enabled per parent organization separately from the rest of the Compliance API; if every request returns 404, contact your Anthropic representative.
 
 
 
@@ -362,10 +311,10 @@ cURL
 curl --fail-with-body -sS \
   "https://api.anthropic.com/v1/compliance/organizations/91012d09-e48b-438e-a489-1bebfd8fa6f9/settings" \
   -H "x-api-key: $ANTHROPIC_COMPLIANCE_ACCESS_KEY" \
-  -H "anthropic-version: 2023-06-01"
+  -H "anthropic-version: 2026-10-21"
 ```
 
-The response is a list of typed setting rows, and which rows appear varies by organization: a setting the organization's administrators cannot change, because it is controlled by Anthropic policy or not available to the organization, is omitted from the list. Treat a missing row as "not controllable by this organization's administrators", not as "off". The following abridged example shows three of the rows a response can contain:
+The response is a list of typed setting rows, and which rows appear varies by organization: a setting the organization’s administrators cannot change, because it is controlled by Anthropic policy or not available to the organization, is omitted from the list. Treat a missing row as “not controllable by this organization’s administrators”, not as “off”. The following abridged example shows three of the rows a response can contain:
 
 Response
 
@@ -415,26 +364,30 @@ Response
 
 Each row carries `name`, `type`, and `value`; the `type` field (`boolean`, `integer`, `string_list`, `provisioning_mode`, or `data_retention`) tells you the shape of `value`. The full list of setting names, and the `value` schema for each type, is in [Get effective organization settings](../Admin/compliance-organizations-settings-retrieve.md) in the API reference.
 
-The `api_keys` array lists every Compliance Access Key configured for your parent organization, so the same list is returned regardless of which linked organization you query. Each entry carries the key's `type` (`compliance_api_key`), `id`, `name`, `scopes`, `is_active` flag, `created_at` and `expires_at` timestamps, and `created_by_id` (the ID of the user who created the key; may be `null`). The key's secret value is never returned. Deactivated keys are included with `is_active: false` so you can review keys that previously had access, and keys that carry only the retired `read:compliance_org_settings` scope remain in the list for audit and cleanup visibility even though that scope no longer grants access.
+The `api_keys` array lists every Compliance Access Key configured for your parent organization, so the same list is returned regardless of which linked organization you query. Each entry carries the key’s `type` (`compliance_api_key`), `id`, `name`, `scopes`, `is_active` flag, `created_at` and `expires_at` timestamps, and `created_by_id` (the ID of the user who created the key, or `null`). The key’s secret value is never returned. Deactivated keys are included with `is_active: false` so you can review keys that previously had access, and keys that carry only the retired `read:compliance_org_settings` scope remain in the list for audit and cleanup visibility even though that scope no longer grants access.
 
-The top-level `organization_id` is the organization's bare UUID: the same value as `uuid` in the organizations list, not the `org_`-prefixed form that `organization_id` carries on Activity Feed, chat, and project records (see the [organization identifier table](#list-organizations)).
+The top-level `organization_id` is the organization’s bare UUID: the same value as `uuid` in the organizations list, not the `org_`-prefixed form that `organization_id` carries on Activity Feed, chat, and project records (see the [organization identifier table](#list-organizations)).
 
-Rows reflect the enforced state rather than the last-stored configuration: for example, `sso_provisioning_mode` reports a configured SCIM mode only while directory sync is enabled, `ip_allowlist_enabled` is `true` only while the allowlist is on and has at least one active range, and `code_execution_network_egress_enabled` is `false` whenever code execution is off.
+Rows reflect the enforced state rather than the last-stored configuration, as in these examples:
+
+- `sso_provisioning_mode` reports a configured SCIM mode only while directory sync is enabled.
+- `ip_allowlist_enabled` is `true` only while the allowlist is on and has at least one active range.
+- `code_execution_network_egress_enabled` is `false` whenever code execution is off.
 
 The response reflects the state at read time; nothing is snapshotted. Changes to most of these settings surface as events in the [Activity Feed](manage-claude-compliance-activity-feed.md); use this endpoint for the current resolved state and the feed to audit who changed what, and when.
 
 ## Read plugins and plugin marketplaces
 
-Your organization's plugins and plugin marketplaces are part of the [Admin API](manage-claude-plugins-api.md) rather than the Compliance API, but a Compliance Access Key with `read:compliance_org_data` can call the Plugins API's read endpoints directly:
+Your organization’s plugins and plugin marketplaces are part of the [Admin API](manage-claude-plugins-api.md) rather than the Compliance API, but a Compliance Access Key with `read:compliance_org_data` can call the Plugins API’s read endpoints directly:
 
 - List plugins and retrieve a plugin
-- List a plugin's versions, retrieve a version, and download a version's files
-- List a plugin's installation settings and its shares
+- List a plugin’s versions, retrieve a version, and download a version’s files
+- List a plugin’s installation settings and its shares
 - List plugin marketplaces and retrieve a marketplace
 
-Send the `anthropic-beta: ce-plugins-2026-09-01` header on every request; without it these endpoints return [404 Not Found](manage-claude-plugins-api.md#error-responses). Each call reads one organization: a key that covers the parent organization reads the linked organization it was created in unless you pass the `organization_id` query parameter (a linked organization's UUID or its `org_`-prefixed ID) to [read a different one](manage-claude-plugins-api.md#reading-another-organization-under-the-same-parent), and a key restricted to one organization reads only that organization. These calls count against the Admin API's [rate limits](manage-claude-plugins-api.md#rate-limiting), not the Compliance API's.
+Send the `anthropic-beta: ce-plugins-2026-09-01` header on every request; without it these endpoints return [404 Not Found](manage-claude-plugins-api.md#error-responses). Each call reads one organization: a key that covers the parent organization reads the linked organization it was created in unless you pass the `organization_id` query parameter (a linked organization’s UUID or its `org_`-prefixed ID) to [read a different one](manage-claude-plugins-api.md#reading-another-organization-under-the-same-parent), and a key restricted to one organization reads only that organization. These calls count against the Admin API’s [rate limits](manage-claude-plugins-api.md#rate-limiting), not the Compliance API’s.
 
-Creating or changing plugins, their installation settings, or a marketplace's settings requires an Admin API key with `write:plugins`. Of the read calls, only downloading the files of a plugin in a member's personal marketplace records an [Activity Feed](manage-claude-compliance-activity-feed.md) event (`claude_plugin_archive_accessed`). See the [Plugins API guide](manage-claude-plugins-api.md) for each endpoint, request examples, and the [events the API records](manage-claude-plugins-api.md#activity-feed-events).
+Creating or changing plugins, their installation settings, or a marketplace’s settings requires an Admin API key with `write:plugins`. Of the read calls, only downloading the files of a plugin in a member’s personal marketplace records an [Activity Feed](manage-claude-compliance-activity-feed.md) event (`claude_plugin_archive_accessed`). See the [Plugins API guide](manage-claude-plugins-api.md) for each endpoint, request examples, and the [events the API records](manage-claude-plugins-api.md#activity-feed-events).
 
 ## Next steps
 

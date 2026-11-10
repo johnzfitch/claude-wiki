@@ -2,7 +2,7 @@
 title: "Economic Index: Uneven AI adoption \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-september-2025-report"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:19Z"
+fetched_at: "2026-10-24T06:26:35Z"
 tags: ["api", "enterprise", "news-research"]
 ---
 
@@ -440,7 +440,7 @@ History shows that the patterns of technological adoption aren’t fixed: they s
 
 1\. Brynjolfsson, Chandar, and Chen 2025, *Canaries in the Coal Mine? Six Facts about the RecentEmployment Effects of Artificial Intelligence* documents clear evidence that entry-level workers with high AI exposure have had relatively worse employment prospects since late 2022. Setting aside questions of causality, the straightforward interpretation is that this is due to AI substituting for work previously done by early-career workers. An alternative interpretation is presented by Gans 2025, *If AI and workers were strong complements, what would we see?*: That relatively faster employment growth for experienced workers reflects AI making such workers more productive and thus in high demand. Whether AI compliments or substitutes work is perhaps the most important question that we hope our data will help answer.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

@@ -2,7 +2,7 @@
 title: "Economic Index: Insights from Claude 3.7 Sonnet \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-insights-from-claude-sonnet-3-7"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:35Z"
+fetched_at: "2026-10-24T06:26:15Z"
 tags: ["news-research"]
 ---
 

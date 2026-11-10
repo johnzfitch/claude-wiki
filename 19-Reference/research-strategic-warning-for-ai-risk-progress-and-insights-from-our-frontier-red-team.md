@@ -2,7 +2,7 @@
 title: "Progress from our Frontier Red Team \\ Anthropic"
 source_url: "https://www.anthropic.com/research/strategic-warning-for-ai-risk-progress-and-insights-from-our-frontier-red-team"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:10Z"
+fetched_at: "2026-10-24T06:26:42Z"
 tags: ["api", "news-research", "security"]
 ---
 
@@ -70,7 +70,7 @@ Claude’s capabilities in biology remain uneven, though. For example, internal 
 
 To gauge how this improving — but uneven — biological expertise translates to biosecurity risk, we conducted small, controlled studies of weaponization-related tasks and worked with world-class biodefense experts. In one experimental study, we found that [our most recent model](research-visible-extended-thinking.md) provided some amount of uplift to novices compared to other participants who did not have access to a model. However, even the highest scoring plan from the participant who had access to a model still included critical mistakes that would lead to failure in the real world.
 
-Similarly, expert red-teaming conclusions were mixed. Some experts identified improvements in the model’s knowledge of certain aspects of weaponization, while others noted that the number of critical failures in the model’s planning was too high to lead to success in the end-to-end execution of an attack. Overall, this analysis suggests that our models cannot reliably guide a novice malicious actor through key practical steps in bio-weapon acquisition. Given the rapid improvement, though, we continue to invest heavily in monitoring biosecurity risks and developing mitigations, such as our recent work on [constitutional classifiers](constitutional-classifiers.md), so that we are prepared if and when models reach more concerning levels of performance.
+Similarly, expert red-teaming conclusions were mixed. Some experts identified improvements in the model’s knowledge of certain aspects of weaponization, while others noted that the number of critical failures in the model’s planning was too high to lead to success in the end-to-end execution of an attack. Overall, this analysis suggests that our models cannot reliably guide a novice malicious actor through key practical steps in bio-weapon acquisition. Given the rapid improvement, though, we continue to invest heavily in monitoring biosecurity risks and developing mitigations, such as our recent work on [constitutional classifiers](research-constitutional-classifiers.md), so that we are prepared if and when models reach more concerning levels of performance.
 
 ## The benefit of partnering for strategic warning: rapid, responsible development of AI
 

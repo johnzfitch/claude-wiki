@@ -2,11 +2,14 @@
 title: "Configuration and flags - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector/configuration"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:26:57Z"
+fetched_at: "2026-11-01T06:24:48Z"
+last_modified: "Sat, 31 Oct 2026 18:11:08 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [The launcher owns exactly two things](#the-launcher-owns-exactly-two-things)
 - [Choosing servers](#choosing-servers)
@@ -46,10 +49,11 @@ The `mcp-inspector` binary is a launcher: it reads two flags of its own and forw
 
 The launcher owns exactly two things
 
-| Flag                        | Behavior                                                                                                                                                                                                                                                                                         |
-|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Flag | Behavior |
+|----|----|
 | `--web` / `--cli` / `--tui` | Selects the client, `--web` by default. Passing more than one fails with `Specify at most one of --web, --cli, or --tui.` Launcher flags must come first: parsing stops at the first argument the launcher does not own, and everything from that point on is forwarded to the client unchanged. |
-| `-h` / `--help`             | With no mode flag, prints the launcher’s own help and exits. With a mode flag it is forwarded, so `mcp-inspector --cli --help` prints the CLI’s help.                                                                                                                                            |
+| `-h` / `--help` | With no mode flag, prints the launcher’s own help and exits. With a mode flag it is forwarded, so `mcp-inspector --cli --help` prints the CLI’s help. |
+| `-V` / `--version` | Listed in the launcher’s help, but the launcher does not act on it. The flag is forwarded to the selected client, which prints the Inspector version, so `mcp-inspector -V` prints it through the web client and `mcp-inspector --cli -V` through the CLI. |
 
 Everything below belongs to a client.
 
@@ -67,13 +71,13 @@ Choosing servers
 
 The CLI and TUI resolve `--catalog` and `--config` through the same shared code, and the web client applies the same rules, so each flag means the same thing in all three. Where the two differ from each other is the table below.
 
-|                             | `--catalog <path>`                                                           | `--config <path>`                                       |
-|-----------------------------|------------------------------------------------------------------------------|---------------------------------------------------------|
-| **Writable?**               | Yes, the Inspector’s own server list.                                        | No. Served as-is, never written, seeded, or migrated.   |
-| **Missing file?**           | Created and seeded (see below).                                              | **Errors.**                                             |
-| **Default**                 | `~/.mcp-inspector/mcp.json`, or the `MCP_CATALOG_PATH` environment variable. | None; you must pass it.                                 |
-| **Editable in the web UI?** | Yes.                                                                         | No.                                                     |
-| **Use it for**              | Your own working set of servers.                                             | A read-only session against someone else’s config file. |
+|  | `--catalog <path>` | `--config <path>` |
+|----|----|----|
+| **Writable?** | Yes, the Inspector’s own server list. | No. Served as-is, never written, seeded, or migrated. |
+| **Missing file?** | Created and seeded (see below). | **Errors.** |
+| **Default** | `~/.mcp-inspector/mcp.json`, or the `MCP_CATALOG_PATH` environment variable. | None; you must pass it. |
+| **Editable in the web UI?** | Yes. | No. |
+| **Use it for** | Your own working set of servers. | A read-only session against someone else’s config file. |
 
 The two are **mutually exclusive**, and neither combines with an ad-hoc target. Passing both is rejected identically by all three clients. The web client is stricter in one respect: it also rejects `--header` and `--protocol-era` alongside a file, where the CLI and TUI apply them on top of the file’s settings.
 
@@ -123,19 +127,19 @@ Shared server-selection flags
 
 Defined **separately by each of web, CLI, and TUI**, so they’re available in all three, with the divergences noted:
 
-| Flag                                                               | Meaning                                                                                                    | Divergence                                                                                                                                                                                      |
-|--------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--catalog <path>`                                                 | Writable catalog file.                                                                                     | None                                                                                                                                                                                            |
-| `--config <path>`                                                  | Read-only session file.                                                                                    | None                                                                                                                                                                                            |
-| `--server <name>`                                                  | Pick one named server out of the file.                                                                     | **Selects only in the CLI.** The web client accepts it but ignores it with a note, listing every server. The TUI doesn’t define it (an unknown-option error) and lets you choose interactively. |
-| `--transport <type>`                                               | `stdio`, `sse`, or `http`.                                                                                 | Ad-hoc targets only.                                                                                                                                                                            |
-| `--server-url <url>`                                               | Server URL for SSE/HTTP.                                                                                   | Ad-hoc targets only.                                                                                                                                                                            |
-| `--cwd <path>`                                                     | Working directory for a stdio server process.                                                              | None                                                                                                                                                                                            |
-| `-e <KEY=VALUE>`                                                   | Environment variables for a stdio server. Repeatable.                                                      | None                                                                                                                                                                                            |
-| `--header "Name: Value"`                                           | HTTP headers for an HTTP/SSE server. Repeatable.                                                           | Requires an ad-hoc HTTP/SSE server on the web client.                                                                                                                                           |
-| `--protocol-era <era>`                                             | `legacy`, `auto`, or `modern`: the [protocol era](2026-07-28-tools-inspector-protocol-eras.md) to negotiate. | Requires an ad-hoc target on the web client. The CLI and TUI also let it override a file’s `protocolEra`.                                                                                       |
-| `--skill-catalog-max-skills <n>` / `--skill-catalog-max-bytes <n>` | Budget for a skills verification run (most skills, most bytes read).                                       | **CLI and TUI only.** Overrides the file’s `skillCatalogMaxSkills` / `skillCatalogMaxBytes`.                                                                                                    |
-| `[target...]`                                                      | Positional command/URL for one ad-hoc server.                                                              | None                                                                                                                                                                                            |
+| Flag | Meaning | Divergence |
+|----|----|----|
+| `--catalog <path>` | Writable catalog file. | None |
+| `--config <path>` | Read-only session file. | None |
+| `--server <name>` | Pick one named server out of the file. | **Selects only in the CLI.** The web client accepts it but ignores it with a note, listing every server. The TUI doesn’t define it (an unknown-option error) and lets you choose interactively. |
+| `--transport <type>` | `stdio`, `sse`, or `http`. | Ad-hoc targets only. |
+| `--server-url <url>` | Server URL for SSE/HTTP. | Ad-hoc targets only. |
+| `--cwd <path>` | Working directory for a stdio server process. | None |
+| `-e <KEY=VALUE>` | Environment variables for a stdio server. Repeatable. | None |
+| `--header "Name: Value"` | HTTP headers for an HTTP/SSE server. Repeatable. | Requires an ad-hoc HTTP/SSE server on the web client. |
+| `--protocol-era <era>` | `legacy`, `auto`, or `modern`: the [protocol era](2026-07-28-tools-inspector-protocol-eras.md) to negotiate. | Requires an ad-hoc target on the web client. The CLI and TUI also let it override a file’s `protocolEra`. |
+| `--skill-catalog-max-skills <n>` / `--skill-catalog-max-bytes <n>` | Budget for a skills verification run (most skills, most bytes read). | **CLI and TUI only.** Overrides the file’s `skillCatalogMaxSkills` / `skillCatalogMaxBytes`. |
+| `[target...]` | Positional command/URL for one ad-hoc server. | None |
 
 
 [​](#the-separator)
@@ -159,8 +163,8 @@ mcp-inspector --cli node build/index.js --config /etc/myserver.conf --verbose --
 
 Web-only flags
 
-| Flag    | Meaning                                                                                               |
-|---------|-------------------------------------------------------------------------------------------------------|
+| Flag | Meaning |
+|----|----|
 | `--dev` | Run the Vite dev server instead of the pre-built bundle. Useful when working on the Inspector itself. |
 
 
@@ -170,13 +174,13 @@ CLI and TUI: OAuth client flags
 
 These five are defined by the **CLI and TUI** only. The web client obtains the same settings through its Client Settings dialog.
 
-| Flag                          | Environment variable     | Meaning                                                                                                                                                                                                                                                                                                                                                     |
-|-------------------------------|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--client-config <path>`      | `MCP_CLIENT_CONFIG_PATH` | Install-level client config. Default `~/.mcp-inspector/storage/client.json`.                                                                                                                                                                                                                                                                                |
-| `--client-id <id>`            | None                     | OAuth client ID for a static client. Overrides `client.json`.                                                                                                                                                                                                                                                                                               |
-| `--client-secret <secret>`    | None                     | OAuth client secret for confidential clients. Overrides `client.json`.                                                                                                                                                                                                                                                                                      |
-| `--client-metadata-url <url>` | None                     | CIMD metadata URL. Overrides `client.json`.                                                                                                                                                                                                                                                                                                                 |
-| `--callback-url <url>`        | `MCP_OAUTH_CALLBACK_URL` | The redirect URI sent to the authorization server. Default `http://127.0.0.1:6276/oauth/callback`. Must be a loopback host (`localhost`, `127.0.0.1` or any other `127.x.x.x` address, or `[::1]`): the local callback listener receives the authorization code over plaintext `http`, so any other host is rejected and there is no flag to override this. |
+| Flag | Environment variable | Meaning |
+|----|----|----|
+| `--client-config <path>` | `MCP_CLIENT_CONFIG_PATH` | Install-level client config. Default `~/.mcp-inspector/storage/client.json`. |
+| `--client-id <id>` | None | OAuth client ID for a static client. Overrides `client.json`. |
+| `--client-secret <secret>` | None | OAuth client secret for confidential clients. Overrides `client.json`. |
+| `--client-metadata-url <url>` | None | CIMD metadata URL. Overrides `client.json`. |
+| `--callback-url <url>` | `MCP_OAUTH_CALLBACK_URL` | The redirect URI sent to the authorization server. Default `http://127.0.0.1:6276/oauth/callback`. Must be a loopback host (`localhost`, `127.0.0.1` or any other `127.x.x.x` address, or `[::1]`): the local callback listener receives the authorization code over plaintext `http`, so any other host is rejected and there is no flag to override this. |
 
 
 [​](#cli-only-flags)
@@ -185,11 +189,12 @@ CLI-only flags
 
 The whole scripting surface belongs to the CLI. See [CLI client](draft-tools-inspector-cli.md) for usage.
 
-| Group              | Flags                                                                                                                                                                                                              |
-|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **What to invoke** | `--method`, `--tool-name`, `--tool-arg`, `--tool-args-json`, `--uri`, `--cursor`, `--prompt-name`, `--prompt-args`, `--log-level`, `--metadata`, `--tool-metadata`, `--rename`                                     |
-| **How to run it**  | `--connect-timeout`, `--format`, `-q` / `--quiet`, `--output`, `--output-format`, `--app-info`, `--advertise-apps`, `--strict`, `--verify`, `--require-digests`, `--completion <shell>` (`bash`, `zsh`, or `fish`) |
-| **Auth**           | `--use-stored-auth`, `--stored-auth-only`, `--relogin`, `--no-revoke`, `--wait-for-auth`, `--list-stored-auth`, `--print-handoff`                                                                                  |
+| Group | Flags |
+|----|----|
+| **What to invoke** | `--method`, `--tool-name`, `--tool-arg`, `--tool-args-json`, `--uri`, `--cursor`, `--prompt-name`, `--prompt-args`, `--log-level`, `--metadata`, `--tool-metadata`, `--rename` |
+| **How to run it** | `--connect-timeout`, `--format`, `-q` / `--quiet`, `--output`, `--output-format`, `--app-info`, `--advertise-apps`, `--strict`, `--verify`, `--require-digests`, `--completion <shell>` (`bash`, `zsh`, or `fish`) |
+| **Load test** | `--load`, `--load-concurrency`, `--load-connections`, `--load-duration`, `--load-requests`, `--load-rate`, `--load-max-error-rate`, `--load-max-p99` (see [CI gates](draft-tools-inspector-cli.md#ci-gates)) |
+| **Auth** | `--use-stored-auth`, `--stored-auth-only`, `--relogin`, `--no-revoke`, `--wait-for-auth`, `--list-stored-auth`, `--print-handoff` |
 
 
 [​](#environment-variables)
@@ -203,50 +208,58 @@ Environment variables split the same way as flags: two are read by the launcher 
 
 Read by the launcher
 
-| Variable    | Effect                                                                                                                                                                                                                                                                          |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Variable | Effect |
+|----|----|
 | `MCP_DEBUG` | Append the error stack to a top-level `--web` or `--tui` failure (a `--cli` failure always prints its [JSON error envelope](draft-tools-inspector-cli.md#exit-codes-and-error-envelopes) instead). Only when set to a meaningful value: `0`, `false`, and empty read as off. |
-| `DEBUG`     | Same, with the same meaningful-value rule, so a stray `DEBUG=0` doesn’t turn stack traces on and `DEBUG` still works as the npm `debug` package’s namespace filter.                                                                                                             |
+| `DEBUG` | Same, with the same meaningful-value rule, so a stray `DEBUG=0` doesn’t turn stack traces on and `DEBUG` still works as the npm `debug` package’s namespace filter. |
+
+The TUI reads both variables itself, with the same rule, for its own top-level failure.
 
 
 [​](#cli-and-tui)
 
 CLI and TUI
 
-Some of these are read by the web backend too, as the **Read by** column shows.
+Some of these are read by the web backend or by `mcpdo` too, as the **Read by** column shows.
 
-| Variable                         | Read by       | Effect                                                                                                                                                                                                                                                     |
-|----------------------------------|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `MCP_CATALOG_PATH`               | Web, CLI, TUI | Fallback for `--catalog`. The CLI honors it only when no ad-hoc target is given, so a shell that exports it can still run one-off ad-hoc invocations. The web client and TUI apply it regardless, so combining it with an ad-hoc target is rejected there. |
-| `MCP_CLIENT_CONFIG_PATH`         | CLI, TUI      | Fallback for `--client-config`.                                                                                                                                                                                                                            |
-| `MCP_OAUTH_CALLBACK_URL`         | CLI, TUI      | Fallback for `--callback-url`.                                                                                                                                                                                                                             |
-| `MCP_STORAGE_DIR`                | Web, CLI, TUI | Storage directory. Relocates the OAuth state file (`<dir>/oauth.json`) and the secrets file (`<dir>/secrets.json`).                                                                                                                                        |
-| `MCP_INSPECTOR_OAUTH_STATE_PATH` | CLI, TUI      | Per-file override of the OAuth state path. Takes precedence over `MCP_STORAGE_DIR`.                                                                                                                                                                        |
-| `MCP_AUTO_OPEN_ENABLED`          | Web, CLI      | Controls browser auto-open. `false` never opens one. In the CLI, `true` forces auto-open and lets interactive OAuth run without a TTY, and unset opens only on a TTY. In the web client, unset opens the UI at launch. The TUI does not read it.           |
+| Variable | Read by | Effect |
+|----|----|----|
+| `MCP_CATALOG_PATH` | Web, CLI, TUI, mcpdo | Fallback for `--catalog`. The CLI honors it only when no ad-hoc target is given, so a shell that exports it can still run one-off ad-hoc invocations. The web client and TUI apply it regardless, so combining it with an ad-hoc target is rejected there. |
+| `MCP_CLIENT_CONFIG_PATH` | CLI, TUI, mcpdo | Fallback for `--client-config`. |
+| `MCP_OAUTH_CALLBACK_URL` | CLI, TUI, mcpdo | Fallback for `--callback-url`. |
+| `MCP_STORAGE_DIR` | Web, CLI, TUI, mcpdo | Storage directory. Relocates the OAuth state file (`<dir>/oauth.json`) and the secrets file (`<dir>/secrets.json`). |
+| `MCP_INSPECTOR_OAUTH_STATE_PATH` | CLI, TUI, mcpdo | Per-file override of the OAuth state path. Takes precedence over `MCP_STORAGE_DIR`. |
+| `MCP_AUTO_OPEN_ENABLED` | Web, CLI, mcpdo | Controls browser auto-open. `false` never opens one. In the CLI, `true` forces auto-open and lets interactive OAuth run without a TTY, and unset opens only on a TTY. In the web client, unset opens the UI at launch. The TUI does not read it. |
+| `MCP_INSPECTOR_LOG_DIR` | TUI | Directory of the TUI’s `auth.log`. Defaults to `~/.mcp-inspector`. |
+| `LOG_LEVEL` | TUI | Level of that log, as a pino level name. Defaults to `info`. |
+| `NO_COLOR` | CLI, mcpdo | Any non-empty value disables ANSI styling in human-readable output: all of mcpdo’s `--format text` output (the same as `--plain`), and the sign-in prompt the CLI writes to stderr. |
 
 
 [​](#web-backend-environment-variables)
 
 Web backend environment variables
 
-| Variable                                  | Effect                                                                                                                    |
-|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| `MCP_INSPECTOR_API_TOKEN`                 | Pin the [session token](draft-tools-inspector-web.md#the-session-token) instead of generating a random one per launch. |
-| `DANGEROUSLY_OMIT_AUTH`                   | Disable the `/api/*` token check entirely. Only `true` or `1` turn it off.                                                |
-| `HOST`                                    | Bind host. Defaults to `127.0.0.1`.                                                                                       |
-| `CLIENT_PORT`                             | Web UI port. Defaults to `6274`.                                                                                          |
-| `DANGEROUSLY_BIND_ALL_INTERFACES`         | Required opt-in to bind a wildcard host (`0.0.0.0`, `::`, or any equivalent spelling).                                    |
-| `ALLOWED_ORIGINS`                         | Comma-separated origin allow-list. **Replaces** the default list rather than merging.                                     |
-| `MCP_PROXY_AUTH_TOKEN`                    | Deprecated v1 name for `MCP_INSPECTOR_API_TOKEN`, used only when the new name is unset.                                   |
-| `MCP_SANDBOX_PORT`                        | MCP Apps sandbox port. Defaults to `6275`; `0` asks the OS for a free port.                                               |
-| `SERVER_PORT`                             | v1’s proxy port, now only a fallback for the sandbox port when `MCP_SANDBOX_PORT` is unset or invalid.                    |
-| `MCP_APP_ORIGIN_PORT`                     | Port of the app-origin server used by MCP Apps that declare `_meta.ui.domain`. Defaults to `6278`; `0` asks the OS.       |
-| `MCP_SANDBOX_FULL_ADDRESS`                | Public URL of the MCP Apps sandbox proxy, for running behind a reverse proxy.                                             |
-| `MCP_APP_ORIGIN_FULL_ADDRESS`             | Public origin that `_meta.ui.domain` app documents are served from, for running behind a reverse proxy.                   |
-| `MCP_LOG_FILE`                            | Append the backend’s structured (JSON lines) log to this file.                                                            |
-| `MCP_AUTO_OPEN_ENABLED`                   | `false` stops the browser from opening at launch. See [CLI and TUI](#cli-and-tui).                                        |
-| `MCP_CATALOG_PATH`, `MCP_STORAGE_DIR`     | As described under [CLI and TUI](#cli-and-tui).                                                                           |
-| `HTTPS_PROXY` / `HTTP_PROXY` / `NO_PROXY` | Standard proxy routing for outbound MCP connections.                                                                      |
+| Variable | Effect |
+|----|----|
+| `MCP_INSPECTOR_API_TOKEN` | Pin the [session token](draft-tools-inspector-web.md#the-session-token) instead of generating a random one per launch. |
+| `DANGEROUSLY_OMIT_AUTH` | Disable the `/api/*` token check entirely. Only `true` or `1` turn it off. |
+| `HOST` | Bind host. Defaults to `127.0.0.1`. |
+| `CLIENT_PORT` | Web UI port. Defaults to `6274`. |
+| `DANGEROUSLY_BIND_ALL_INTERFACES` | Required opt-in to bind a wildcard host (`0.0.0.0`, `::`, or any equivalent spelling). |
+| `ALLOWED_ORIGINS` | Comma-separated origin allow-list. **Replaces** the default list rather than merging. |
+| `MCP_INSPECTOR_ALLOWED_HOSTS` | Comma-separated extra hostnames accepted in the `Host` header, for a reverse proxy that rewrites `Host`. `localhost` and `*.localhost`, IPv4 and bracketed IPv6 literals, the bind host (unless it is a wildcard), and the hostname of every `ALLOWED_ORIGINS` entry are always accepted. An entry starting with `.` (`.example.com`) admits that domain and its subdomains. An entry with a scheme, port, path, wildcard, or whitespace is dropped with a warning. The port is not compared. Any other `Host` gets a `403`. |
+| `MCP_PROXY_AUTH_TOKEN` | Deprecated v1 name for `MCP_INSPECTOR_API_TOKEN`, used only when the new name is unset. |
+| `MCP_SANDBOX_PORT` | MCP Apps sandbox port. Defaults to `6275`; `0` asks the OS for a free port. |
+| `SERVER_PORT` | v1’s proxy port, now only a fallback for the sandbox port when `MCP_SANDBOX_PORT` is unset or invalid. |
+| `MCP_APP_ORIGIN_PORT` | Port of the app-origin server used by MCP Apps that declare `_meta.ui.domain`. Defaults to `6278`; `0` asks the OS. |
+| `MCP_SANDBOX_FULL_ADDRESS` | Public URL of the MCP Apps sandbox proxy, for running behind a reverse proxy. |
+| `MCP_APP_ORIGIN_FULL_ADDRESS` | Public origin that `_meta.ui.domain` app documents are served from, for running behind a reverse proxy. |
+| `MCP_LOG_FILE` | Append the backend’s structured (JSON lines) log to this file. |
+| `INSPECTOR_TLS_KEY_PATH` | PEM private key for the web UI listener. Set together with `INSPECTOR_TLS_CERT_PATH` to serve the UI over `https`. Setting one without the other, an unreadable file, or a key and certificate that are not a usable pair is a startup error. The listener does not fall back to `http`. A blank value counts as unset. Only the UI listener is covered. The sandbox and app-origin listeners stay `http`. The CLI’s `--print-handoff` emits an `https://` deep link when both are set. |
+| `INSPECTOR_TLS_CERT_PATH` | PEM certificate (or chain) for the key in `INSPECTOR_TLS_KEY_PATH`. |
+| `MCP_AUTO_OPEN_ENABLED` | `false` stops the browser from opening at launch. See [CLI and TUI](#cli-and-tui). |
+| `MCP_CATALOG_PATH`, `MCP_STORAGE_DIR` | As described under [CLI and TUI](#cli-and-tui). |
+| `HTTPS_PROXY` / `HTTP_PROXY` / `NO_PROXY` | Standard proxy routing for outbound MCP connections. |
 
 Never combine `DANGEROUSLY_OMIT_AUTH` and `DANGEROUSLY_BIND_ALL_INTERFACES`. The web backend spawns processes and holds OAuth tokens, so anyone who can reach it can drive it.
 
@@ -259,13 +272,13 @@ Secret store variables
 
 Read by **every** client: web, CLI, TUI, and [mcpdo](draft-tools-inspector-mcpdo.md). How they combine is described under [Where secrets are stored](#where-secrets-are-stored).
 
-| Variable                        | Effect                                                                                                                                                                                                                                          |
-|---------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `MCP_INSPECTOR_SECRET_STORE`    | `keyring`, `file`, or `memory` (case-insensitive) picks the store outright and skips the keychain probe. Empty counts as unset; any other value is ignored with a warning.                                                                      |
-| `MCP_INSPECTOR_SECRET_FILE`     | Path of the file store. Defaults to `secrets.json` in `MCP_STORAGE_DIR` when that is set, else `~/.mcp-inspector/secrets.json`.                                                                                                                 |
+| Variable | Effect |
+|----|----|
+| `MCP_INSPECTOR_SECRET_STORE` | `keyring`, `file`, or `memory` (case-insensitive) picks the store outright and skips the keychain probe. Empty counts as unset; any other value is ignored with a warning. |
+| `MCP_INSPECTOR_SECRET_FILE` | Path of the file store. Defaults to `secrets.json` in `MCP_STORAGE_DIR` when that is set, else `~/.mcp-inspector/secrets.json`. |
 | `MCP_INSPECTOR_SECRET_KEY_FILE` | Path of a file holding the passphrase that encrypts the file store (trailing line breaks removed). **Preferred**, and what Docker and Compose secrets are for. If the file is missing, unreadable or empty, the store refuses to read or write. |
-| `MCP_INSPECTOR_SECRET_KEY`      | The passphrase itself. Use a generated, high-entropy value. Setting both key variables (with a non-blank `MCP_INSPECTOR_SECRET_KEY`) is an error.                                                                                               |
-| `MCP_INSPECTOR_PERSIST_TOKENS`  | Which acquired OAuth tokens are persisted: `all` (default), `access` (no refresh tokens), or `none` (re-authorize every run). Client secrets are always persisted.                                                                              |
+| `MCP_INSPECTOR_SECRET_KEY` | The passphrase itself. Use a generated, high-entropy value. Setting both key variables (with a non-blank `MCP_INSPECTOR_SECRET_KEY`) is an error. |
+| `MCP_INSPECTOR_PERSIST_TOKENS` | Which acquired OAuth tokens are persisted: `all` (default), `access` (no refresh tokens), or `none` (re-authorize every run). Client secrets are always persisted. |
 
 
 [​](#where-secrets-are-stored)
@@ -293,14 +306,14 @@ Each process picks one store, once, the first time it needs it: the web backend 
     - `memory` in a container whose secrets directory is **not** on a mounted volume, because a file in the container’s writable layer would be lost anyway;
     - `file` everywhere else.
 
-| Where you run it                                                 | Store                              | Survives a restart?   |
-|------------------------------------------------------------------|------------------------------------|-----------------------|
-| Desktop macOS or Windows, or Linux with a Secret Service running | OS keychain                        | Yes                   |
-| Linux without libsecret or a Secret Service                      | File (`secrets.json`, mode `0600`) | Yes                   |
-| Headless server or SSH session with no D-Bus session             | File                               | Yes                   |
-| Android/Termux                                                   | File                               | Yes                   |
-| Container with **no volume** on the secrets directory            | Memory                             | No, this session only |
-| Container **with** a volume on the secrets directory             | File                               | Yes                   |
+| Where you run it | Store | Survives a restart? |
+|----|----|----|
+| Desktop macOS or Windows, or Linux with a Secret Service running | OS keychain | Yes |
+| Linux without libsecret or a Secret Service | File (`secrets.json`, mode `0600`) | Yes |
+| Headless server or SSH session with no D-Bus session | File | Yes |
+| Android/Termux | File | Yes |
+| Container with **no volume** on the secrets directory | Memory | No, this session only |
+| Container **with** a volume on the secrets directory | File | Yes |
 
 **With no keychain, secrets go to a plaintext file, and you did not have to ask for it.** On a host where the keychain probe fails (Linux without libsecret or a running Secret Service, a headless server or SSH session with no D-Bus session, Android/Termux), the Inspector **automatically** stores secrets in `~/.mcp-inspector/secrets.json`. Unless you supply a key, that file is **unencrypted**. Mode `0600` keeps out other non-root users, but not root, not backups or copies of your home directory, and not any program running as you, including the stdio servers the Inspector starts.Pick one:
 
@@ -367,4 +380,36 @@ A catalog or config file is the familiar MCP client config shape (a `mcpServers`
 }
 ```
 
-Fields that equal their default are omitted when the Inspector writes the file back, keeping diffs minimal. `protocolEra` (see [Protocol eras](2026-07-28-tools-inspector-protocol-eras.md)) defaults to `legacy` and `modernLogLevel` to `debug`. You do not have to hand-write these; the web client can [import an existing client config](2026-07-28-tools-inspector-recipes.md#importing-an-existing-client-config) from Claude Desktop, Cursor, Cline, or VS Code, or a registry `server.json`.
+Fields that equal their default are omitted when the Inspector writes the file back, keeping diffs minimal. `protocolEra` (see [Protocol eras](2026-07-28-tools-inspector-protocol-eras.md)) defaults to `legacy` and `modernLogLevel` to `debug`. `"type": "http"` is accepted as an alias of `"streamable-http"` and written back in the long form. The Inspector-specific fields and their defaults:
+
+| Field | Default | Meaning |
+|----|----|----|
+| `headers` |  | HTTP headers for an SSE or Streamable HTTP server, as a flat object. |
+| `metadata` |  | Default `_meta` object merged into every outgoing request. Values may be any JSON. |
+| `protocolEra` | `legacy` | `legacy`, `auto`, or `modern`. See [Protocol eras](2026-07-28-tools-inspector-protocol-eras.md). |
+| `elicitCapability` | `both` | Elicitation capability advertised to the server: `off`, `url`, `form`, or `both`. Read by `mcpdo` only. |
+| `modernLogLevel` | `debug` | Per-request log level stamped on modern connections, or `off`. Legacy connections ignore it. |
+| `connectionTimeout` | `30000` | Connect-time timeout in ms. `0` disables it. |
+| `requestTimeout` |  | Per-request timeout in ms. |
+| `taskTtl` | `60000` | TTL in ms for tasks created with **Run as task**. |
+| `autoRefreshOnListChanged` | `false` | Refresh the tools, resources, and prompts lists on `list_changed` instead of only flagging the indicator. |
+| `paginatedLists` | `false` | Fetch the lists one page at a time instead of aggregating every page on load. |
+| `suppressNotificationStream` | `false` | Legacy-era Streamable HTTP only: do not open the standalone `GET` notification stream. |
+| `advertisedExtensions` |  | Per-extension overrides of which extensions the Inspector advertises, keyed by extension id. |
+| `maxFetchRequests` | `1000` | HTTP requests kept in the Network log for this server. `0` means unlimited. |
+| `skillCatalogMaxSkills` | `256` | Most skills read in one skills verification run. A positive integer. |
+| `skillCatalogMaxBytes` | `67108864` | Most bytes read across all skills in one skills verification run (64 MiB). A positive integer. |
+| `roots` |  | Roots advertised through the `roots` capability, each `{ "uri", "name" }`. |
+| `oauth.clientId` |  | OAuth client ID for a static client. |
+| `oauth.clientSecret` |  | OAuth client secret for a confidential client. |
+| `oauth.scopes` |  | Scopes to request, as one string. |
+| `oauth.enterpriseManaged` |  | `true` connects through the enterprise IdP (EMA) instead of standard OAuth. |
+| `oauth.onInsufficientScope` | `reauthorize` | Step-up policy for `403 insufficient_scope`: `reauthorize` or `throw`. |
+| `oauth.requestRefreshToken` | `true` | Whether the client declares the `refresh_token` grant when it registers. Only `false` is written. |
+| `oauth.scopeOnRefresh` | `false` | Whether a refresh-token request carries `scope`. Only `true` is written. |
+| `oauth.revokeOnClear` | `true` | Whether clearing this server’s OAuth state also revokes the grant at the authorization server (RFC 7009). Only `false` is written. |
+| `oauth.authorizationParams` |  | Extra query parameters for the authorization request. Reserved keys are dropped with a warning. |
+| `oauth.authorizationUrl` |  | Overrides the `authorization_endpoint` the authorization server’s metadata advertises. |
+| `oauth.tokenUrl` |  | Overrides the `token_endpoint` the authorization server’s metadata advertises. |
+
+You do not have to hand-write these; the web client can [import an existing client config](2026-07-28-tools-inspector-recipes.md#importing-an-existing-client-config) from Claude Desktop, Cursor, Cline, or VS Code, or a registry `server.json`.

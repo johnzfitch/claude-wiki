@@ -2,7 +2,7 @@
 title: "Education Report: How educators use Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-education-report-how-educators-use-claude"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:39Z"
+fetched_at: "2026-10-24T06:26:32Z"
 tags: ["news-research"]
 ---
 
@@ -211,7 +211,7 @@ Our research captures educators in a moment of active experimentation, building 
 
 \*In cases where the augmentation/automation category could not be identified, we excluded those from the chart. For more information on these categories, please see our Anthropic Economic Index [research](https://arxiv.org/pdf/2503.04761).
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

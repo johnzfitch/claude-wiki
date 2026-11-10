@@ -1,12 +1,15 @@
 ---
 title: "Security - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector/security"
+source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector/security"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:33Z"
+fetched_at: "2026-11-01T06:24:48Z"
+last_modified: "Sat, 31 Oct 2026 18:11:02 GMT"
 tags: ["mcp", "security"]
 ---
 
 ## On this page
+
+Back to top
 
 - [The web backend and its API token](#the-web-backend-and-its-api-token)
   - [Where the backend listens](#where-the-backend-listens)
@@ -48,7 +51,7 @@ The web backend and its API token
 
 The web client is a browser app backed by a Node server that owns the MCP connections. That server can start stdio processes on request, so every `/api/*` route requires a per-launch bearer token (`x-mcp-remote-auth: Bearer <token>`). How the browser obtains it is described under [The session token](draft-tools-inspector-web.md#the-session-token). What the token does and does not protect:
 
-- **The token is the real guard for non-browser clients.** The origin allow-list (`ALLOWED_ORIGINS`) stops other web pages from driving the backend, but a request that arrives with **no** `Origin` header (curl, a script, any non-browser client) skips that check entirely.
+- **The token is the real guard for non-browser clients.** The origin allow-list (`ALLOWED_ORIGINS`) stops other web pages from driving the backend, but a request that arrives with **no** `Origin` header (curl, a script, any non-browser client) skips that check entirely. A `Host` header allow-list runs ahead of every route, including `GET /`, and answers `403` to a request whose `Host` is not a loopback name, an IP literal, the bind host, an `ALLOWED_ORIGINS` hostname, or an entry of `MCP_INSPECTOR_ALLOWED_HOSTS`, so a DNS-rebinding page cannot load the page and read the token (see [Host binding and origins](draft-tools-inspector-web.md#host-binding-and-origins)).
 - **`GET /` discloses the token.** The backend injects it into the served HTML so that a reload or a bookmark keeps working. Anyone who can load the page can therefore read the token, which is why the bind address matters more than the token’s value. Pinning your own `MCP_INSPECTOR_API_TOKEN` does not change this, since a custom token is disclosed exactly like a generated one.
 - **`DANGEROUSLY_OMIT_AUTH=true` removes the guard completely.** Anything that can reach the port can then spawn processes as you and use any OAuth token the Inspector holds. Only `true` or `1` turns auth off; any other value, including `false`, keeps it on.
 - **Only `/api/*` is gated.** The page itself, its static assets and `GET /healthz` are served without the token. `/healthz` returns only `{"status":"ok"}`, for container and orchestrator probes.
@@ -97,12 +100,12 @@ Secret storage
 
 The Inspector keeps credentials out of `mcp.json`, `client.json` and `oauth.json` so that sharing, committing or syncing those files does not leak them. These are stored as secrets:
 
-- acquired OAuth tokens (access, refresh and ID tokens), subject to [`MCP_INSPECTOR_PERSIST_TOKENS`](2026-07-28-tools-inspector-configuration.md#secret-store-variables), and IdP session tokens from enterprise-managed authorization;
+- acquired OAuth tokens (access, refresh and ID tokens), subject to [`MCP_INSPECTOR_PERSIST_TOKENS`](draft-tools-inspector-configuration.md#secret-store-variables), and IdP session tokens from enterprise-managed authorization;
 - each server’s OAuth client secret, and the enterprise IdP client secret;
 - dynamically registered client secrets and their registration access tokens;
 - each stdio server’s `env:` values.
 
-**`headers` are not secrets.** They are saved in `mcp.json` exactly as written, so a header that carries a credential (an API key, a static `Authorization` value) stays in the file. How the store is selected, and how to change it, is under [Where secrets are stored](2026-07-28-tools-inspector-configuration.md#where-secrets-are-stored). This section covers the risks.
+**`headers` are not secrets.** They are saved in `mcp.json` exactly as written, so a header that carries a credential (an API key, a static `Authorization` value) stays in the file. How the store is selected, and how to change it, is under [Where secrets are stored](draft-tools-inspector-configuration.md#where-secrets-are-stored). This section covers the risks.
 
 
 [​](#the-automatic-plaintext-fallback)
@@ -124,22 +127,22 @@ What the file store protects against
 
 The file store exists for machines without a keychain, and it is weaker than one. Treat keeping secrets in it, **even encrypted**, as a moderate risk. **Without a key (plaintext, mode `0600`):**
 
-| Threat                                                                                  | Protected? |
-|-----------------------------------------------------------------------------------------|------------|
-| Other non-root users on the machine, while the mode holds                               | Yes        |
-| Root, and on a container host every member of the `docker` group                        | No         |
-| Anyone with a copy of the file: a backup, a snapshot, a synced home directory, a commit | No         |
-| Any program running as your user, including the stdio servers the Inspector starts      | No         |
+| Threat | Protected? |
+|----|----|
+| Other non-root users on the machine, while the mode holds | Yes |
+| Root, and on a container host every member of the `docker` group | No |
+| Anyone with a copy of the file: a backup, a snapshot, a synced home directory, a commit | No |
+| Any program running as your user, including the stdio servers the Inspector starts | No |
 
 **With a key (AES-256-GCM, key stretched with scrypt against a per-write random salt):**
 
-| Threat                                                                                                                             | Protected? |
-|------------------------------------------------------------------------------------------------------------------------------------|------------|
-| The file leaking on its own (a backup, snapshot, copy or commit), provided the key is high-entropy and did not leak with it        | Yes        |
-| Anyone who can read the key where it lives                                                                                         | No         |
-| Root on the host, or the `docker` group: they can read the file, the key, or the process memory holding decrypted values           | No         |
-| Code running as the same user                                                                                                      | No         |
-| A weak passphrase: anyone holding the file can guess offline, quickly, because the scrypt cost is kept low for per-save derivation | No         |
+| Threat | Protected? |
+|----|----|
+| The file leaking on its own (a backup, snapshot, copy or commit), provided the key is high-entropy and did not leak with it | Yes |
+| Anyone who can read the key where it lives | No |
+| Root on the host, or the `docker` group: they can read the file, the key, or the process memory holding decrypted values | No |
+| Code running as the same user | No |
+| A weak passphrase: anyone holding the file can guess offline, quickly, because the scrypt cost is kept low for per-save derivation | No |
 
 Where the key lives decides the second row. With `MCP_INSPECTOR_SECRET_KEY`, the key is in the Inspector’s environment, readable through `/proc/<pid>/environ` by the same user or root, through `docker inspect` / `docker exec` for a container, and wherever you stored it for launching (a shell profile, an `.env` file, a Compose file). `MCP_INSPECTOR_SECRET_KEY_FILE` narrows that to whoever can read the key file, but the Inspector has to read it, so the same user can too. If the key sits beside the secrets file, in the same backup, volume or repository, encryption buys nothing. In short, encryption turns “the file leaked” into “the file **and** the key leaked”. It does not help against anyone who already has root, or the Inspector’s own user, on the machine or in the container. When that is not acceptable, use a keychain or the memory store. Two failure modes are deliberately loud rather than silent:
 
@@ -170,10 +173,10 @@ The mcpdo connection daemon
 
 How clients reach it, and who else can
 
-| Platform      | Endpoint                                                                                                                                      |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| macOS / Linux | A Unix socket, `mcpdod.sock`, inside the daemon directory (default `~/.mcp-inspector`).                                                       |
-| Windows       | A named pipe, `\\.\pipe\mcp-conn-<hash>`, derived from the daemon directory. No directory permissions surround it, so the token is the guard. |
+| Platform | Endpoint |
+|----|----|
+| macOS / Linux | A Unix socket, `mcpdod.sock`, inside the daemon directory (default `~/.mcp-inspector`). |
+| Windows | A named pipe, `\\.\pipe\mcp-conn-<hash>`, derived from the daemon directory. No directory permissions surround it, so the token is the guard. |
 
 There is **no TCP port**, so nothing off the machine can reach the daemon. On Unix, the daemon directory is created, or tightened if it already exists, to mode `0700`, owned by you, and must be a real directory rather than a symlink. The socket and lock file inside it are `0600`. Other non-root users therefore cannot reach the socket. Root, and any process running as you, can. The directory is chosen in this order: `MCP_INSPECTOR_DAEMON_DIR`, then `MCP_STORAGE_DIR`, then `~/.mcp-inspector`. A socket path longer than the platform’s limit (about 104 bytes on macOS, 108 on Linux) is refused up front with an error naming the variable to shorten.
 
@@ -224,11 +227,11 @@ What it writes to disk
 
 All in the daemon directory, which is `0700`:
 
-| File           | Mode   | Contents                                                                                               |
-|----------------|--------|--------------------------------------------------------------------------------------------------------|
-| `mcpdod.sock`  | `0600` | The IPC socket (Unix only).                                                                            |
-| `mcpdod.lock`  | `0600` | The single-instance lock, holding the daemon’s pid.                                                    |
-| `mcpdod.token` | `0600` | The IPC bearer token. Written at start, removed at clean shutdown.                                     |
-| `mcpdod.log`   | `0600` | The daemon’s stderr, recreated on each start. Startup failures and the secret-store warning land here. |
+| File | Mode | Contents |
+|----|----|----|
+| `mcpdod.sock` | `0600` | The IPC socket (Unix only). |
+| `mcpdod.lock` | `0600` | The single-instance lock, holding the daemon’s pid. |
+| `mcpdod.token` | `0600` | The IPC bearer token. Written at start, removed at clean shutdown. |
+| `mcpdod.log` | `0600` | The daemon’s stderr, recreated on each start. Startup failures and the secret-store warning land here. |
 
 The daemon writes OAuth state and secrets through the same `oauth.json` and secret store as the other clients, so everything under [Secret storage](#secret-storage) applies to it unchanged.

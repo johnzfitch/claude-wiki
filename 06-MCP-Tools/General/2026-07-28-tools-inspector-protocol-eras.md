@@ -1,12 +1,15 @@
 ---
 title: "Protocol eras - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector/protocol-eras"
+source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector/protocol-eras"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:34Z"
+fetched_at: "2026-11-01T06:24:46Z"
+last_modified: "Sat, 31 Oct 2026 18:11:08 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [The Protocol Era setting](#the-protocol-era-setting)
 - [Reproducing each era locally](#reproducing-each-era-locally)
@@ -39,11 +42,11 @@ The `Protocol Era` setting
 
 Each server carries a `protocolEra` of `legacy`, `auto`, or `modern`. In the web client it lives in **Server Settings**; in a catalog or config file it is the `protocolEra` field; the CLI and TUI read it from that same file, and their `--protocol-era <legacy|auto|modern>` flag overrides it for a single run.
 
-| Era      | What the Inspector does at connect                                                      |
-|----------|-----------------------------------------------------------------------------------------|
-| `legacy` | **The default.** Plain `initialize`, no probing at all.                                 |
-| `auto`   | Probe `server/discover` first, and fall back to `initialize` on any non-modern outcome. |
-| `modern` | Pin exactly `2026-07-28`. No fallback, so a non-modern server fails loudly.             |
+| Era | What the Inspector does at connect |
+|----|----|
+| `legacy` | **The default.** Plain `initialize`, no probing at all. |
+| `auto` | Probe `server/discover` first, and fall back to `initialize` on any non-modern outcome. |
+| `modern` | Pin exactly `2026-07-28`. No fallback, so a non-modern server fails loudly. |
 
 **Why `legacy` is the default, and not `auto`.** A debugging tool must not auto-probe. A `server/discover` probe stalls against silent legacy stdio servers, and it pollutes the recorded transcript you came here to read. Opting into `auto` or `modern` is a deliberate act, so what you see in the Protocol tab is what your server would have seen from a client behaving the way you configured.
 
@@ -115,7 +118,7 @@ Tasks change the most between protocol eras, including *how the Inspector UI tab
 
 The **Tasks** tab appears when the server advertises `capabilities.tasks`. Run a tool with **Run as task** enabled and the tab lists it, populated by `tasks/list` and polled with `tasks/get`. The completed payload is fetched with a **blocking `tasks/result`**, and **Cancel** sends `tasks/cancel`.Reproduce with `test-servers/configs/tasks-legacy-http.json`.
 
-Tasks are an **extension** (`io.modelcontextprotocol/tasks`, [SEP-2663](../SEPs/seps-2663-tasks-extension.md)), so the tab is gated on the server *advertising that extension* rather than on `capabilities.tasks`.Run a tool as a task and `tools/call` returns a `CreateTaskResult` (`resultType: "task"`, visible in the Protocol and Network tabs). The Inspector polls **`tasks/get`** only; there is no `tasks/list`, so **Refresh** re-polls the handles the client already knows about. A completed task **inlines its result**, with no blocking `tasks/result` call.A task that needs more information moves to `input_required` and surfaces an embedded [elicitation](../Spec/2026-07-28-client-elicitation.md) in the pending-request modal (the dialog the web client opens whenever a request is waiting on you). Answering it sends **`tasks/update`** carrying the `inputResponses`, and the next poll completes.Reproduce with `test-servers/configs/tasks-modern-http.json` (tools `modern_task` and `modern_input_task`).
+Tasks are an **extension** (`io.modelcontextprotocol/tasks`, [SEP-2663](../SEPs/seps-2663-tasks-extension.md)), so the tab is gated on the server *advertising that extension* rather than on `capabilities.tasks`.There is no **Run as task** control on a modern connection. Task creation is server-directed, so the server decides per request whether `tools/call` returns a `CreateTaskResult` (`resultType: "task"`, visible in the Protocol and Network tabs). The Inspector polls **`tasks/get`** only; there is no `tasks/list`, so **Refresh** re-polls the handles the client already knows about. A completed task **inlines its result**, with no blocking `tasks/result` call.A task that needs more information moves to `input_required` and surfaces an embedded [elicitation](../Spec/2026-07-28-client-elicitation.md) in the pending-request modal (the dialog the web client opens whenever a request is waiting on you). Answering it sends **`tasks/update`** carrying the `inputResponses`, and the next poll completes.Reproduce with `test-servers/configs/tasks-modern-http.json` (tools `modern_task` and `modern_input_task`).
 
 ------------------------------------------------------------------------
 
@@ -126,15 +129,15 @@ Multi-round tool results (MRTR)
 
 On the modern era a tool can return `input_required` instead of a final result, embedding an [elicitation](../Spec/2026-07-28-client-elicitation.md), a [sampling](../Spec/2026-07-28-client-sampling.md) request, or a [`roots/list`](../Spec/draft-client-roots.md) request. The client answers that embedded request and retries the `tools/call` under a fresh JSON-RPC id until the call reaches `complete`. The Inspector drives MRTR **manually**, so each round pauses at the **pending-request modal**, tagged `input_required`, for you to answer. The Protocol view groups the whole exchange as one MRTR conversation rather than as unrelated calls. `test-servers/configs/mrtr-showcase-http.json` bundles every shape in one modern server:
 
-| Tool            | What it exercises                                                                                  |
-|-----------------|----------------------------------------------------------------------------------------------------|
-| `mrtr_confirm`  | A single elicitation round.                                                                        |
-| `mrtr_two_step` | Two elicitation rounds, threaded through `requestState`.                                           |
-| `mrtr_sample`   | An embedded sampling request, routed to the Sampling panel.                                        |
-| `mrtr_roots`    | An embedded `roots/list`, answered silently from configured roots (no modal).                      |
-| `mrtr_edge`     | An `inputRequests`-only round, then a `requestState`-only round.                                   |
-| `mrtr_empty`    | One elicitation round, then completes with an empty result (no `content`, no `structuredContent`). |
-| `mrtr_loop`     | Never completes, so the client stops at its `MRTR_MAX_ROUNDS` limit.                               |
+| Tool | What it exercises |
+|----|----|
+| `mrtr_confirm` | A single elicitation round. |
+| `mrtr_two_step` | Two elicitation rounds, threaded through `requestState`. |
+| `mrtr_sample` | An embedded sampling request, routed to the Sampling panel. |
+| `mrtr_roots` | An embedded `roots/list`, answered silently from configured roots (no modal). |
+| `mrtr_edge` | An `inputRequests`-only round, then a `requestState`-only round. |
+| `mrtr_empty` | One elicitation round, then completes with an empty result (no `content`, no `structuredContent`). |
+| `mrtr_loop` | Never completes, so the client stops at its `MRTR_MAX_ROUNDS` limit. |
 
 The legacy pattern of a server calling `server.elicitInput` (the test servers’ `collect_elicitation` preset) **errors** on a 2026-07-28 connection, because server-to-client requests aren’t allowed there. MRTR is its modern replacement.
 
@@ -180,12 +183,12 @@ The modern era standardizes a set of `Mcp-*` HTTP headers and introduces a riche
 
 `test-servers/configs/modern-network-http.json` serves four tools that produce a real HTTP status plus a JSON-RPC error body, one per class:
 
-| Tool                          | HTTP  | JSON-RPC code | Meaning                                                      |
-|-------------------------------|-------|---------------|--------------------------------------------------------------|
-| `trigger_header_mismatch`     | `400` | `-32020`      | A required mirrored header was missing or wrong.             |
-| `trigger_missing_capability`  | `400` | `-32021`      | The request omitted a client capability the server requires. |
-| `trigger_unsupported_version` | `400` | `-32022`      | Unsupported version; supported versions in `data.supported`. |
-| `trigger_method_not_found`    | `404` | `-32601`      | Method not found.                                            |
+| Tool | HTTP | JSON-RPC code | Meaning |
+|----|----|----|----|
+| `trigger_header_mismatch` | `400` | `-32020` | A required mirrored header was missing or wrong. |
+| `trigger_missing_capability` | `400` | `-32021` | The request omitted a client capability the server requires. |
+| `trigger_unsupported_version` | `400` | `-32022` | Unsupported version; supported versions in `data.supported`. |
+| `trigger_method_not_found` | `404` | `-32601` | Method not found. |
 
 ------------------------------------------------------------------------
 

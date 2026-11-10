@@ -1,252 +1,12 @@
 ---
 title: "Cost - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/cost"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/cost"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:08Z"
+fetched_at: "2026-11-07T06:23:42Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fcost)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-
-Get Activity Summaries
-
-Usage
-
-Cost
-
-
-Get Cost Over Time
-
-
-Get Per-User Cost
-
-Users
-
-Skills
-
-Connectors
-
-Chat Projects
-
-Plugins
-
-Artifacts
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-Code
-
-
-Completions
-
-
-Create a Text Completion
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
@@ -255,26 +15,82 @@ cURL
 
 # Cost
 
-##### [Get Cost Over Time](http-beta-organization-analytics-cost-list.md)
+Copy page
 
-GET/v1/organizations/analytics/cost_report
+
 
-Get cost in USD over time across a date range.
+API version 2026-10-21
 
-##### [Get Per-User Cost](beta-organization-analytics-cost-list-by-user.md)
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
-GET/v1/organizations/analytics/user_cost_report
+##### [Get Cost By Dimension](platform-claude-com-http-beta-organization-analytics-cost-list.md)
 
-Get per-user cost in USD across a date range.
+GET/v1/organizations/analytics/cost
+
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](../Endpoints/beta-headers.md)
+
+Get cost in USD across a date range, broken out by dimension.
 
 ##### Models
 
 
 
-BetaCostBucket object{ data, data_refreshed_at, has_more, 2 more }
+BetaAnalyticsCostGroup object{ actor, actor_type, agent_id, 18 more }
+
+
+
+The dimension values one cost row is broken out by, including `cost_type` and `token_type`.
+
+
+
+BetaAnalyticsCostGroupBy = "actor" or "actor_type" or "agent_id" or 18 more
+
+
+
+One of the following:
+
+
+
+BetaAnalyticsCostItem object{ cost, ending_at, group, starting_at }
 
 
 
 
 
-BetaUserCost object{ data, data_refreshed_at, has_more, 2 more }
+BetaAnalyticsCostMetrics object{ amount, currency, list_amount, requests }
+
+
+
+The cost of one row.
+
+amount: string
+
+
+
+Amount (post-discount, pre-credit) in fractional cents (minor units).
+
+
+
+currency: string
+
+
+
+Currency code for the cost amount. Currently always `"USD"`.
+
+defaultUSD
+
+list_amount: string
+
+
+
+List-price amount (pre-discount) in fractional cents.
+
+requests: number or null
+
+
+
+Number of API requests in this row's scope. Null when `group_by` includes `cost_type` or `token_type` (the count has no per-component attribution; read it from the ungrouped response). For sandbox / code-execution events, this counts execution spans rather than HTTP requests (these rows surface with `product: null`).
+
+
+
+BetaAnalyticsCostOrderBy = "amount" or "list_amount" or "time"

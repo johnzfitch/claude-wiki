@@ -2,9 +2,11 @@
 title: "Constitutional Classifiers \\ Anthropic"
 source_url: "https://www.anthropic.com/news/constitutional-classifiers"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:21Z"
+fetched_at: "2026-11-09T06:26:26Z"
 tags: ["evaluation", "news-research"]
 ---
+
+### 01Results from human red teaming
 
 # **Constitutional Classifiers: **Defending against universal jailbreaks
 
@@ -17,24 +19,21 @@ tags: ["evaluation", "news-research"]
 - [07Change log](#change-log)
 - [08Join our team](#join-our-team)
 
-- Published
+Published  
+Feb 3, 2025
 
-  Feb 3, 2025
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Constitutional AI](https://www.anthropic.com/search?topic=constitutional-ai)
+- [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+- [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+- [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Constitutional AI](https://www.anthropic.com/search?topic=constitutional-ai)
-  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
-  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
-  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
-
-  See more...
+See more...
 
 *A [new paper](https://arxiv.org/abs/2501.18837) from the Anthropic Safeguards Research Team describes a method that defends AI models against universal jailbreaks. A prototype version of the method was robust to thousands of hours of human red teaming for universal jailbreaks, albeit with high overrefusal rates and compute overhead. An updated version achieved similar robustness on synthetic evaluations, and did so with a 0.38% increase in refusal rates and moderate additional compute costs.*
 
@@ -52,7 +51,7 @@ Large language models have extensive safety training to prevent harmful outputs.
 
 Nevertheless, models are still vulnerable to *jailbreaks*: inputs designed to bypass their safety guardrails and force them to produce harmful responses. Some jailbreaks flood the model with [very long prompts](many-shot-jailbreaking.md); others modify the [style of the input](https://arxiv.org/abs/2412.03556), such as uSiNg uNuSuAl cApItALiZaTiOn. Historically, jailbreaks have proved difficult to detect and block: these kinds of attacks were [described over 10 years ago](https://arxiv.org/abs/1312.6199), yet to our knowledge there are still no fully robust deep-learning models in production.
 
-We’re developing better jailbreak defenses so that we can safely deploy increasingly capable models in the future. Under our [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md), we may deploy such models as long as we’re able to mitigate risks to acceptable levels through appropriate safeguards—but jailbreaking lets users bypass these safeguards. In particular, we’re hopeful that a system defended by Constitutional Classifiers could allow us to mitigate jailbreaking risks for models which have passed the CBRN capability threshold outlined in our Responsible Scaling Policy^([1](#footnote-1)).
+We’re developing better jailbreak defenses so that we can safely deploy increasingly capable models in the future. Under our [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md), we may deploy such models as long as we’re able to mitigate risks to acceptable levels through appropriate safeguards—but jailbreaking lets users bypass these safeguards. In particular, we’re hopeful that a system defended by Constitutional Classifiers could allow us to mitigate jailbreaking risks for models which have passed the CBRN capability threshold outlined in our Responsible Scaling Policy^([^1]).
 
 In [**our new paper**](https://arxiv.org/abs/2501.18837), we describe a system based on *Constitutional Classifiers* that guards models against jailbreaks. These Constitutional Classifiers are input and output classifiers trained on synthetically generated data that filter the overwhelming majority of jailbreaks with minimal over-refusals and without incurring a large compute overhead.
 
@@ -64,7 +63,7 @@ First, we developed a prototype version of the system to identify and block spec
 
 Specifically, they were given a list of ten “forbidden” queries, and their task was to use whichever jailbreaking techniques they wanted in order to get one of our current models (in this case, Claude 3.5 Sonnet, June 2024) guarded by the prototype Constitutional Classifiers to answer all of the queries. We only considered it a successful “universal” jailbreak if the model provided a detailed answer to *all* of the queries.
 
-183 active^([2](#footnote-2)) participants spent an estimated \>3,000 hours over a two-month experimental period attempting to jailbreak the model. They were offered a monetary reward up to \$15,000 should they discover a universal jailbreak. Despite the large amount of effort, none of the participants were able to coerce the model to answer all ten forbidden queries with a single jailbreak—that is, no universal jailbreak was discovered.
+183 active^([^2]) participants spent an estimated \>3,000 hours over a two-month experimental period attempting to jailbreak the model. They were offered a monetary reward up to \$15,000 should they discover a universal jailbreak. Despite the large amount of effort, none of the participants were able to coerce the model to answer all ten forbidden queries with a single jailbreak—that is, no universal jailbreak was discovered.
 
 Despite its robustness to jailbreaks, this prototype system had some problems: it refused too many harmless queries and cost a lot of computational resources to run. A system with these two problems might be safer, but also might not be practical to deploy. Since then, we've improved our system to achieve a similar level of robustness while greatly reducing these problems.
 
@@ -106,7 +105,7 @@ The [**demo**](https://claude.ai/constitutional-classifiers) will be live from *
 
 The goal of our demo was to test our system’s robustness to *universal* jailbreaks—prompting strategies that could elicit detailed, harmful information from the system across all eight questions that we provided. By the end of the demo, one jailbreaker was able to get detailed answers from the system for all eight questions using a universal jailbreak.
 
-Our demo generated significant engagement from the AI security community, with 339 jailbreakers^([3](#footnote-3)) attempting to jailbreak our system across more than 300,000 chat interactions, representing approximately 3,700 collective hours of red-teaming effort.
+Our demo generated significant engagement from the AI security community, with 339 jailbreakers^([^3]) attempting to jailbreak our system across more than 300,000 chat interactions, representing approximately 3,700 collective hours of red-teaming effort.
 
 ### Key findings
 
@@ -180,8 +179,14 @@ If you’re interested in working on problems such as jailbreak robustness or on
 
 03We filtered for participants who passed at least one question in the demo to better understand how well our system performed against red teamers with jailbreaking experience. When considering all users, our demo was tried by 13,960 users who made more than 800,000 chats and spent an estimated 10K+ hours testing the system.[](#footnote-ref-3)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 
 We’d like to thank [HackerOne](https://www.hackerone.com/) for supporting our bug-bounty program for red teaming our prototype system. We are also grateful to [Haize Labs](https://www.haizelabs.com/), [Gray Swan](https://www.grayswan.ai/), and the [UK AI Safety Institute](https://www.aisi.gov.uk/) for red teaming other prototype versions of our system.
+
+[^1]:
+
+[^2]:
+
+[^3]:

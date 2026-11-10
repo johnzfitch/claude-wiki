@@ -1,12 +1,15 @@
 ---
 title: "Sampling - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/client/sampling"
+source_url: "https://modelcontextprotocol.io/specification/draft/client/sampling"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:28:55Z"
+fetched_at: "2026-10-31T06:24:57Z"
+last_modified: "Fri, 30 Oct 2026 21:03:19 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Tools in Sampling](#tools-in-sampling)
@@ -127,7 +130,7 @@ Protocol Messages
 
 Creating Messages
 
-To request a language model generation during the processing of a client request, servers send an `InputRequiredResult` containing a `sampling/createMessage` request: **Input request (delivered inside [`InputRequiredResult.inputRequests`](2026-07-28-basic-patterns-mrtr.md#inputrequests)):**
+To request a language model generation during the processing of a client request, servers send an `InputRequiredResult` containing a `sampling/createMessage` request: **Input request (delivered inside [`InputRequiredResult.inputRequests`](draft-basic-patterns-mrtr.md#inputrequests)):**
 
 ```python
 {

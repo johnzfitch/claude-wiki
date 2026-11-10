@@ -1,12 +1,15 @@
 ---
 title: "Security Best Practices - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/draft/tutorials/security/security_best_practices"
+source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-02T05:38:18Z"
+fetched_at: "2026-10-31T06:24:48Z"
+last_modified: "Fri, 30 Oct 2026 20:36:41 GMT"
 tags: ["mcp", "security"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Introduction](#introduction)
   - [Purpose and Scope](#purpose-and-scope)
@@ -130,7 +133,7 @@ When an MCP proxy server uses a static client ID to authenticate with a third-pa
 3.  An attacker later sends the user a malicious link containing a crafted authorization request which contains a malicious redirect URI along with a new dynamically registered client ID
 4.  When the user clicks the link, their browser still has the consent cookie from the previous legitimate request
 5.  The third-party authorization server detects the cookie and skips the consent screen
-6.  The MCP authorization code is redirected to the attacker’s server (specified in the malicious `redirect_uri` parameter during [dynamic client registration](https://modelcontextprotocol.io/specification/latest/basic/authorization#dynamic-client-registration))
+6.  The MCP authorization code is redirected to the attacker’s server (specified in the malicious `redirect_uri` parameter during [dynamic client registration](https://modelcontextprotocol.io/specification/latest/basic/authorization/client-registration#dynamic-client-registration))
 7.  The attacker exchanges the stolen authorization code for access tokens for the MCP server without the user’s explicit approval
 8.  The attacker now has access to the third-party API as the compromised user
 
@@ -302,7 +305,7 @@ Avoid implementing IP validation manually. Attackers exploit encoding tricks (oc
 
 SSRF Against Authorization Servers
 
-SSRF risks are not limited to MCP clients. When an authorization server supports [Client ID Metadata Documents](../Spec/draft-basic-authorization-client-registration.md#client-id-metadata-documents), the authorization server takes a URL as input from an unknown client and fetches that URL. A malicious client could use this to trigger the authorization server to make requests to arbitrary URLs, such as requests to private administration endpoints the authorization server has access to. The mitigations described above, such as blocking private IP ranges and using egress proxies, apply equally to authorization servers fetching client metadata documents. See [Server Side Request Forgery (SSRF) Attacks](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-00#name-server-side-request-forgery) in the Client ID Metadata Document specification for further guidance.
+SSRF risks are not limited to MCP clients. When an authorization server supports [Client ID Metadata Documents](../Spec/2026-07-28-basic-authorization-client-registration.md#client-id-metadata-documents), the authorization server takes a URL as input from an unknown client and fetches that URL. A malicious client could use this to trigger the authorization server to make requests to arbitrary URLs, such as requests to private administration endpoints the authorization server has access to. The mitigations described above, such as blocking private IP ranges and using egress proxies, apply equally to authorization servers fetching client metadata documents. See [Server Side Request Forgery (SSRF) Attacks](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-00#name-server-side-request-forgery) in the Client ID Metadata Document specification for further guidance.
 
 
 [​](#resources-and-tools)
@@ -319,7 +322,7 @@ The following resources can help developers implement SSRF protections in MCP cl
 
 State Handle Hijacking
 
-MCP is [stateless](https://modelcontextprotocol.io/specification/draft/basic/index#statelessness) and has no protocol-level sessions. Servers that need state spanning multiple requests mint an explicit handle, such as a shopping cart ID or a workflow ID, and receive it back as an ordinary tool argument on each request. State handle hijacking is an attack vector where an unauthorized party obtains or guesses such a handle and uses it to access or modify another user’s state.
+MCP is [stateless](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#statelessness) and has no protocol-level sessions. Servers that need state spanning multiple requests mint an explicit handle, such as a shopping cart ID or a workflow ID, and receive it back as an ordinary tool argument on each request. State handle hijacking is an attack vector where an unauthorized party obtains or guesses such a handle and uses it to access or modify another user’s state.
 
 
 [​](#attack-description-3)
@@ -557,7 +560,7 @@ Mitigation
 
 Localhost Redirect URI Impersonation
 
-Native and locally-running MCP clients commonly use `localhost` redirect URIs. When clients identify themselves with [Client ID Metadata Documents](../Spec/draft-basic-authorization-client-registration.md#client-id-metadata-documents), the metadata document proves control of a domain, but it cannot prove which local process is listening on a `localhost` redirect URI.
+Native and locally-running MCP clients commonly use `localhost` redirect URIs. When clients identify themselves with [Client ID Metadata Documents](../Spec/2026-07-28-basic-authorization-client-registration.md#client-id-metadata-documents), the metadata document proves control of a domain, but it cannot prove which local process is listening on a `localhost` redirect URI.
 
 
 [​](#attack-description-8)
@@ -584,7 +587,7 @@ See [Localhost Redirect URI Risks](../Spec/draft-basic-authorization-security-co
 
 CIMD Trust Policies
 
-Authorization servers that accept [Client ID Metadata Documents](../Spec/draft-basic-authorization-client-registration.md#client-id-metadata-documents) can apply domain-based trust policies to decide which URL-based client IDs to accept:
+Authorization servers that accept [Client ID Metadata Documents](../Spec/2026-07-28-basic-authorization-client-registration.md#client-id-metadata-documents) can apply domain-based trust policies to decide which URL-based client IDs to accept:
 
 - Allowlists for trusted domains (for protected servers)
 - Accept any HTTPS `client_id` (for open servers)

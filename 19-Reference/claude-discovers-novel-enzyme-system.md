@@ -2,9 +2,11 @@
 title: "Claude discovers a novel enzyme system \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:27Z"
+fetched_at: "2026-11-09T06:26:09Z"
 tags: ["news-research"]
 ---
+
+### 01About our lab
 
 # Claude discovers a novel enzyme system with CRISPR-like repeats
 
@@ -12,36 +14,30 @@ tags: ["news-research"]
 - [02How we work](#how-we-work)
 - [03Claude finds ART](#claude-finds-art)
 
-- Published
+Published  
+Sep 23, 2026
 
-  Sep 23, 2026
+Topics  
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
 
-- Team
-
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-
-  See more...
+See more...
 
 Related articles
 
 - Science
 
-  Oct 20, 2026
+  Nov 6, 2026
 
-  [How Claude designed protein binders against scorpion neurotoxins](claude-scorpion-toxin-binder-design.md)
+  [Teaching AI to build scientific models](teaching-ai-to-build-scientific-models.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 
 *We’re introducing a new life sciences research group and laboratory at Anthropic. Our focus is on fundamental biology research using Claude: exploring datasets of DNA to identify uncharacterized protein families, generating hypotheses at scale, and testing them through experiments in the lab. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR, with only high-level direction from our scientists.  
-  
-*Many discoveries that have revolutionized biology and medicine started with a scientist noticing something odd in the staggering diversity of molecular machines found in nature. Restriction enzymes*,* proteins that cut DNA at specific short sequences*,* were found in bacterial immune systems, where they destroy the DNA of invading viruses. Researchers realized they could use these enzymes to cut DNA at chosen places and splice genes from one organism into another, which launched the biotechnology industry. Taq polymerase, an enzyme that copies DNA at high temperatures, was identified in a bacterium in a Yellowstone hot spring. It became the basis for PCR, the DNA-copying method used in much of modern diagnostics. CRISPR was first noticed as an unusual repeat sequence in the DNA of certain bacteria, and is now the foundation of gene editing-based medicines.  
+  *
+Many discoveries that have revolutionized biology and medicine started with a scientist noticing something odd in the staggering diversity of molecular machines found in nature. Restriction enzymes*,* proteins that cut DNA at specific short sequences*,* were found in bacterial immune systems, where they destroy the DNA of invading viruses. Researchers realized they could use these enzymes to cut DNA at chosen places and splice genes from one organism into another, which launched the biotechnology industry. Taq polymerase, an enzyme that copies DNA at high temperatures, was identified in a bacterium in a Yellowstone hot spring. It became the basis for PCR, the DNA-copying method used in much of modern diagnostics. CRISPR was first noticed as an unusual repeat sequence in the DNA of certain bacteria, and is now the foundation of gene editing-based medicines.  
   
 In the spring of 2026, we formed a research group to see whether general AI models can systematize and [accelerate such discoveries](https://darioamodei.com/essay/machines-of-loving-grace#1-biology-and-health). We believe that this acceleration will come from establishing a new way of doing biology research, in which agents collaborate with humans in every step of the process. Developing this new way of working required that we build our own lab and a single team working on everything from training Claude in biology to running experiments in the lab.
 
@@ -67,7 +63,7 @@ Our lab, located in the Bay Area, looks like a typical molecular biology lab. We
 
 Many of our workflows involve having Claude search through the vast collection of DNA sequences associated with proteins without a known function. One typical pattern begins with a survey of a given protein family. Claude reads the relevant literature and reproduces the established results from public data to check its methods. It then searches for family members or genomic neighbors that fit no described system, and writes a short, human-readable report for each candidate that proposes a function and describes the evidence supporting its claims. In follow-up analyses, Claude critically evaluates the evidence—typically most candidates are eliminated at this stage. A survey may end with a single candidate worth testing, or with none.
 
-When a candidate survives our review, we test it in the laboratory, expressing the protein in standard laboratory strains and characterizing it biochemically and structurally, with Claude helping to interpret the data. We do our work in [Claude Science](../15-Claude-AI-Features/product-claude-science.md) and [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), the same tools available to any scientist, and sometimes with a harness of our own that coordinates many Claude sessions running in parallel.
+When a candidate survives our review, we test it in the laboratory, expressing the protein in standard laboratory strains and characterizing it biochemically and structurally, with Claude helping to interpret the data. We do our work in [Claude Science](../15-Claude-AI-Features/product-claude-science.md) and [Claude Code](../15-Claude-AI-Features/product-claude-code.md), the same tools available to any scientist, and sometimes with a harness of our own that coordinates many Claude sessions running in parallel.
 
 Because Claude produces hypotheses so prolifically, the hypotheses themselves have become an object of study for us. With hundreds to thousands of candidate reports from a single campaign, we have been asking what distinguishes the proposals we judge worth testing from those we set aside. What we learn goes back into the instructions we give Claude and teaches it to mimic our own scientific taste.
 
@@ -79,8 +75,8 @@ Claude agents gathered over 200,000 RTs, picked out 3,500 new candidate systems,
 
 During the course of its research, Claude noticed an unusual RT family and decided to examine it in greater detail. While combing through the raw DNA sequence near the RT, the agent exclaimed: “\[The DNA next to the RT\] is spectacular: I can see by eye a tandem repeat array … that's a CRISPR-like … repeat array?!”  
 
-*  
-*It then proceeded much as a human scientist would when faced with a potential discovery. It counted the repeats and measured their spacing, compared the layout with the known RT systems, and searched the literature for any previous report of the pattern. After a thorough analysis it was convinced that it had found a new biological system, and filed a report for human review.
+*  *
+It then proceeded much as a human scientist would when faced with a potential discovery. It counted the repeats and measured their spacing, compared the layout with the known RT systems, and searched the literature for any previous report of the pattern. After a thorough analysis it was convinced that it had found a new biological system, and filed a report for human review.
 
 The system it found, ART, is found mainly in bacteriophages and consists of three parts: the RT, a partner gene beside it, and a long array of evenly spaced DNA repeat sequences. The repeat layout resembles a CRISPR array, which holds a bank of different RNA sequences that make CRISPR-Cas systems programmable biotechnological tools. Our first experiments show that the ART array is also expressed as a set of distinct short RNAs, suggesting that something analogous may be at play for this system.
 

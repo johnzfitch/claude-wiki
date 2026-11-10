@@ -2,7 +2,7 @@
 title: "Evaluating feature steering \\ Anthropic"
 source_url: "https://www.anthropic.com/research/evaluating-feature-steering"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:40Z"
+fetched_at: "2026-10-24T06:26:17Z"
 tags: ["news-research"]
 ---
 
@@ -155,7 +155,7 @@ Appendices are available [at this link](https://assets.anthropic.com/m/6a464113e
 - Appendix 3: Additional results (Figures A1-A6);
 - Appendix 4: How does feature steering compare to prompting? (Tables A3-A8).
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

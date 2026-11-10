@@ -2,7 +2,7 @@
 title: "How to use the single-cell-rna-qc skill with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12621831-how-to-use-the-single-cell-rna-qc-skill-with-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:57Z"
+fetched_at: "2026-11-08T06:24:52Z"
 tags: ["claude-ai", "claude-code"]
 ---
 
@@ -24,15 +24,11 @@ This skill is designed for bioinformaticians, computational biologists, single-c
 
 ## How to access the skill in Claude Code[](#how-to-access-the-skill-in-claude-code)
 
-Command
+1.  Download the [ZIP file for the single-cell-rna-qc skill(opens in new tab)](https://github.com/anthropics/life-sciences/releases/download/v1.0.0/single-cell-rna-qc-v1.0.0.zip)
+2.  On your own computer, unzip it into a new folder named `single-cell-rna-qc` inside `~/.claude/skills/`, so that the skill's `SKILL.md` file is at `~/.claude/skills/single-cell-rna-qc/SKILL.md`
+3.  Start Claude Code and run `/skills` to check that **single-cell-rna-qc** is listed
 
-`/plugin marketplace add anthropics/life-sciences`
-
-
-
-`/plugin install single-cell-rna-qc@life-sciences`
-
-
+Learn about [where Claude Code loads skills from(opens in new tab)](../08-Plugins-Skills/skills.md#where-skills-live).
 
 ## How to access the skill in [Claude.ai(opens in new tab)](http://claude.ai/)[](#how-to-access-the-skill-in-claudeai)
 

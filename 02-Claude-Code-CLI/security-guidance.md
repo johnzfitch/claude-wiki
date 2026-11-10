@@ -2,7 +2,7 @@
 title: "Catch security issues as Claude writes code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/security-guidance"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-20T06:38:51Z"
+fetched_at: "2026-10-24T06:26:20Z"
 tags: ["claude-code", "security"]
 ---
 
@@ -225,7 +225,7 @@ The plugin loads all locations that exist and concatenates them, with a combined
 
 Usage cost
 
-The [per-edit pattern check](#on-each-file-edit) makes no model call and adds no cost. The [end-of-turn](#at-the-end-of-each-turn) and [commit](#on-each-commit-or-push-claude-makes) reviews each spend additional model usage that counts toward your [usage](../17-Billing-Plans/costs.md) like any other Claude request. The commit review is agentic and may take several model turns per commit. Expect roughly one review call per turn that changes files and one deeper review per commit, both subject to the caps above. Both model-backed reviews use Claude Opus 4.7 by default. Set `SECURITY_REVIEW_MODEL` to choose a different model for the end-of-turn review and `SG_AGENTIC_MODEL` for the commit review. The plugin is available on all plans.
+The [per-edit pattern check](#on-each-file-edit) makes no model call and adds no cost. The [end-of-turn](#at-the-end-of-each-turn) and [commit](#on-each-commit-or-push-claude-makes) reviews each spend additional model usage that counts toward your [usage](../17-Billing-Plans/costs.md) like any other Claude request. The commit review is agentic and may take several model turns per commit. Expect roughly one review call per turn that changes files and one deeper review per commit, both subject to the caps above. By default, both reviews run on a Claude Opus model. Set `SECURITY_REVIEW_MODEL` to choose a different model for the end-of-turn review and `SG_AGENTIC_MODEL` for the commit review. The plugin is available on all plans.
 
 
 [​](#disable-or-uninstall)

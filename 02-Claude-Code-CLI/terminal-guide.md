@@ -2,11 +2,14 @@
 title: "Terminal guide for new users - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/terminal-guide"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:45Z"
+fetched_at: "2026-11-09T06:25:43Z"
+last_modified: "Sun, 08 Nov 2026 19:55:21 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Install Claude Code on macOS or Linux](#install-claude-code-on-macos-or-linux)
 - [Install Claude Code on Windows](#install-claude-code-on-windows)

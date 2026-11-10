@@ -2,7 +2,7 @@
 title: "Configuring session security settings | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13163631-configuring-session-security-settings"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:29:00Z"
+fetched_at: "2026-11-09T06:25:55Z"
 tags: ["safety", "security"]
 ---
 

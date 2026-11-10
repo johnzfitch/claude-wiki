@@ -2,17 +2,21 @@
 title: "Configure the sandboxed Bash tool - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/sandboxing"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:25Z"
+fetched_at: "2026-11-07T06:22:07Z"
+last_modified: "Sat, 07 Nov 2026 04:12:27 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What the sandbox restricts](#what-the-sandbox-restricts)
   - [What runs outside the sandbox](#what-runs-outside-the-sandbox)
 - [Get started](#get-started)
   - [Confirm commands run inside the sandbox](#confirm-commands-run-inside-the-sandbox)
   - [Set up Linux and WSL2](#set-up-linux-and-wsl2)
+  - [Add an AppArmor profile for bubblewrap](#add-an-apparmor-profile-for-bubblewrap)
   - [Sandbox modes](#sandbox-modes)
   - [Auto-allow mode](#auto-allow-mode)
   - [Regular permissions mode](#regular-permissions-mode)
@@ -32,6 +36,7 @@ tags: ["claude-code"]
 - [How sandboxing works](#how-sandboxing-works)
   - [Filesystem isolation](#filesystem-isolation)
   - [Protected paths](#protected-paths)
+  - [When the sandbox deletes HEAD, objects, or refs](#when-the-sandbox-deletes-head-objects-or-refs)
   - [Denied paths that pass through a symlink](#denied-paths-that-pass-through-a-symlink)
   - [Network isolation](#network-isolation)
   - [Hosts outside your allowed domains](#hosts-outside-your-allowed-domains)
@@ -57,12 +62,16 @@ tags: ["claude-code"]
   - [Chromium or rootless Podman fails inside the sandbox on Linux](#chromium-or-rootless-podman-fails-inside-the-sandbox-on-linux)
   - [pbcopy, xclip, or wl-copy doesn’t update the clipboard](#pbcopy-xclip-or-wl-copy-doesn%E2%80%99t-update-the-clipboard)
   - [A git command fails with unable to unlink old](#a-git-command-fails-with-unable-to-unlink-old)
+  - [A folder named objects or refs disappears after a command](#a-folder-named-objects-or-refs-disappears-after-a-command)
   - [Bubblewrap fails to start inside a container](#bubblewrap-fails-to-start-inside-a-container)
+  - [Ubuntu’s AppArmor restriction stops bubblewrap](#apparmor-restriction-stops-bubblewrap)
+  - [Sandboxed commands fail with bwrap: setting up uid map: Permission denied](#bwrap-uid-map-permission-denied)
   - [0-byte read-only files appear at .claude settings paths, and “Yes, and don’t ask again” doesn’t save](#0-byte-read-only-files-appear-at-claude-settings-paths-and-%E2%80%9Cyes-and-don%E2%80%99t-ask-again%E2%80%9D-doesn%E2%80%99t-save)
   - [git over SSH fails with the sandbox on](#git-over-ssh-fails-with-the-sandbox-on)
   - [A database client or other non-HTTP tool fails to reach an allowed host](#a-database-client-or-other-non-http-tool-fails-to-reach-an-allowed-host)
   - [A command fails to reach a server on localhost](#a-command-fails-to-reach-a-server-on-localhost)
   - [An allowed hostname is refused with resolved to a loopback address](#an-allowed-hostname-is-refused-with-resolved-to-a-loopback-address)
+  - [Commands are refused with Sandbox is required](#commands-refused-with-sandbox-is-required)
   - [/sandbox fails with Sandbox settings are overridden by a higher-priority configuration](#%2Fsandbox-fails-with-sandbox-settings-are-overridden-by-a-higher-priority-configuration)
   - [/sandbox prints Sandbox settings not changed](#%2Fsandbox-prints-sandbox-settings-not-changed)
 - [Limitations](#limitations)
@@ -95,12 +104,12 @@ What the sandbox restricts
 
 While the sandbox is on, the shell commands Claude runs start inside its boundary, and so do the processes they start. The sandbox is off by default. To turn it on, run `/sandbox` in a session, as [Get started](#get-started) shows, or set [`sandbox.enabled`](settings-reference.md#sandbox-enabled) to `true` in a [settings file](settings.md) such as `~/.claude/settings.json`. The table shows what a sandboxed command can reach by default and the settings that change each default.
 
-| Access                | Default                                                                                                                                                                                                                                    | Change it with                                                                                                                                                               |
-|:----------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Writes                | The working directory, a per-user temp directory, and [directories you’ve added](permissions.md#additional-directories-grant-file-access-not-configuration). [Protected paths](#protected-paths) stay write-denied                   | [`filesystem.allowWrite`](settings-reference.md#sandbox-filesystem-allowwrite), [`filesystem.denyWrite`](settings-reference.md#sandbox-filesystem-denywrite)     |
-| Reads                 | Most of the machine, including credential files such as `~/.ssh` and `~/.aws/credentials`                                                                                                                                                  | [`filesystem.denyRead`](settings-reference.md#sandbox-filesystem-denyread), [`credentials`](#protect-credentials)                                                      |
-| Network               | No direct route out. Connections go through a proxy on your machine that checks each host against your allowed domains, which start empty. Your permission mode decides [what happens to other hosts](#hosts-outside-your-allowed-domains) | [`network.allowedDomains`](settings-reference.md#sandbox-network-alloweddomains), [`network.deniedDomains`](settings-reference.md#sandbox-network-denieddomains) |
-| Environment variables | Inherited from Claude Code, including any secrets in its environment                                                                                                                                                                       | [`credentials`](#protect-credentials), [`CLAUDE_CODE_SUBPROCESS_ENV_SCRUB`](env-vars.md)                                                                               |
+| Access | Default | Change it with |
+|:---|:---|:---|
+| Writes | The working directory, a per-user temp directory, and [directories you’ve added](permissions.md#additional-directories-grant-file-access-not-configuration). [Protected paths](#protected-paths) stay write-denied | [`filesystem.allowWrite`](settings-reference.md#sandbox-filesystem-allowwrite), [`filesystem.denyWrite`](settings-reference.md#sandbox-filesystem-denywrite) |
+| Reads | Most of the machine, including credential files such as `~/.ssh` and `~/.aws/credentials` | [`filesystem.denyRead`](settings-reference.md#sandbox-filesystem-denyread), [`credentials`](#protect-credentials) |
+| Network | No direct route out. Connections go through a proxy on your machine that checks each host against your allowed domains, which start empty. Your permission mode decides [what happens to other hosts](#hosts-outside-your-allowed-domains) | [`network.allowedDomains`](settings-reference.md#sandbox-network-alloweddomains), [`network.deniedDomains`](settings-reference.md#sandbox-network-denieddomains) |
+| Environment variables | Inherited from Claude Code, including any secrets in its environment | [`credentials`](#protect-credentials), [`CLAUDE_CODE_SUBPROCESS_ENV_SCRUB`](env-vars.md) |
 
 Claude Code builds the sandbox on the open source [`@anthropic-ai/sandbox-runtime`](https://github.com/anthropics/sandbox-runtime) package.
 
@@ -113,6 +122,7 @@ The sandbox wraps shell commands. These tools and processes run outside it:
 
 - **Built-in file and web tools**: tools such as Read, Edit, Write, WebFetch, and WebSearch follow [permission rules](permissions.md) instead. A `denyRead` entry doesn’t stop the Read tool, and `allowedDomains` doesn’t limit WebFetch
 - **Other processes Claude Code starts**: command [hooks](../07-Hooks/hooks.md), local [MCP servers](../06-MCP-Tools/General/mcp.md), [plugin monitors](../08-Plugins-Skills/plugins-components.md#monitors), [LSP servers](tools-reference.md#lsp-tool-behavior), and helper commands such as your [status line](statusline.md) command and `apiKeyHelper` run with your full access
+- **Mods**: a [mod](../08-Plugins-Skills/plugins-mods-overview.md) runs its own code inside Claude Code, so its file access, network requests, and programs started with [`$.process`](../08-Plugins-Skills/plugins-mods-api.md#reach-files-processes-and-the-network) aren’t sandboxed. See [What a mod can reach](../08-Plugins-Skills/plugins-mods-overview.md#what-a-mod-can-reach)
 
 Some shell commands also run outside the sandbox, depending on your settings:
 
@@ -148,7 +158,7 @@ This opens the sandbox panel with three tabs, plus a Dependencies tab on Linux w
 - **Overrides**: choose whether commands that fail under the sandbox can fall back to running unsandboxed. This is the [`allowUnsandboxedCommands`](settings-reference.md#sandbox-allowunsandboxedcommands) setting
 - **Config**: view the resolved sandbox settings
 
-If the panel shows only a Dependencies tab, a required package is missing. Install it as described in [Set up Linux and WSL2](#set-up-linux-and-wsl2), restart Claude Code, and run `/sandbox` again.
+If the panel shows only a Dependencies tab, the sandbox can’t start yet. Fix what the tab reports as described in [Set up Linux and WSL2](#set-up-linux-and-wsl2), restart Claude Code, and run `/sandbox` again.
 
 2
 
@@ -168,7 +178,7 @@ When you select a mode in the panel, Claude Code saves it to your project’s lo
 claude --settings '{"sandbox": {"enabled": true, "allowUnsandboxedCommands": false}}'
 ```
 
-By default, if the sandbox can’t start because a dependency is missing or the platform is unsupported, Claude Code runs commands without sandboxing. To make Claude Code exit at startup instead, set [`sandbox.failIfUnavailable`](settings-reference.md#sandbox-failifunavailable) to `true`. Managed deployments that require sandboxing as a security gate can use this setting.
+By default, when the platform doesn’t support the sandbox or the dependency check at startup fails, Claude Code runs commands without sandboxing. To make Claude Code exit at startup instead, set [`sandbox.failIfUnavailable`](settings-reference.md#sandbox-failifunavailable) to `true`. Managed deployments that require sandboxing as a security gate can use this setting.
 
 
 [​](#confirm-commands-run-inside-the-sandbox)
@@ -177,9 +187,9 @@ Confirm commands run inside the sandbox
 
 To check that the sandbox is working, ask Claude to run each line in the table. What you type at the [`!` prompt](#what-runs-outside-the-sandbox) usually runs outside the sandbox, so typing a line yourself doesn’t test it.
 
-| Command                                  | Result inside the sandbox                                                                      |
-|:-----------------------------------------|:-----------------------------------------------------------------------------------------------|
-| `touch ~/sandbox-probe`                  | Fails with `Operation not permitted` on macOS, or `Read-only file system` on Linux and WSL2    |
+| Command | Result inside the sandbox |
+|:---|:---|
+| `touch ~/sandbox-probe` | Fails with `Operation not permitted` on macOS, or `Read-only file system` on Linux and WSL2 |
 | `curl --noproxy '*' https://example.com` | Fails with `Could not resolve host`, because the command has no route around the sandbox proxy |
 
 If Claude asks to retry a failed command outside the sandbox, decline the retry. If `touch` succeeds and your home directory isn’t one of the directories the sandbox lets commands write to, delete `~/sandbox-probe`. Then run `/sandbox` to check that the sandbox is on and its dependencies are installed.
@@ -208,11 +218,28 @@ sudo apt-get install bubblewrap socat
 sudo dnf install bubblewrap socat
 ```
 
-When a dependency is missing, the Dependencies tab in `/sandbox` lists which of `ripgrep`, `bubblewrap`, `socat`, and the seccomp filter your platform lacks. If you don’t see the tab after installing and restarting Claude Code, all dependencies are present. Ripgrep is bundled with the native Claude Code binary. The seccomp filter is optional and adds Unix domain socket blocking. Install it with `npm install -g @anthropic-ai/sandbox-runtime` if it is missing. When a required dependency is missing, the Dependencies tab is the only tab shown until you install it. When only the optional seccomp filter is missing, the Dependencies tab appears alongside the other tabs. The dependency check runs at startup, so restart Claude Code after installing packages for `/sandbox` to detect them.
+When a dependency is missing, the Dependencies tab in `/sandbox` lists which of `ripgrep`, `bubblewrap`, `socat`, and the seccomp filter your platform lacks. If you don’t see the tab after installing and restarting Claude Code, all dependencies are present. Ripgrep is bundled with the native Claude Code binary. The seccomp filter is optional and adds Unix domain socket blocking. Install it with `npm install -g @anthropic-ai/sandbox-runtime` if it is missing.
 
-Ubuntu 24.04 and later: allow bubblewrap to create user namespaces
+- **Dependencies is the only tab**: the sandbox can’t start. Install what the tab lists as missing, or if it reports Ubuntu’s AppArmor restriction, [add an AppArmor profile for bubblewrap](#add-an-apparmor-profile-for-bubblewrap)
+- **Dependencies appears beside the other tabs**: the tab lists a missing optional item, such as the seccomp filter. The sandbox can start without it, so install it only if you want what it adds
 
-On Ubuntu 24.04 and later, the default AppArmor policy prevents bubblewrap from creating the user namespaces it needs for isolation.To check whether your environment enforces this restriction, including inside WSL2, run `sysctl kernel.apparmor_restrict_unprivileged_userns`. If the command returns `0`, skip this step. If it prints a `No such file or directory` error, the key doesn’t exist and you can skip this step. If it returns `1`, add an AppArmor profile that grants `bwrap` this capability:
+The dependency check runs at startup, so restart Claude Code after installing packages for `/sandbox` to detect them.
+
+WSL2 notes
+
+Check your WSL version with `wsl -l -v` from PowerShell. If you see `Sandboxing requires WSL2`, your distribution is running WSL1. Upgrade it to WSL2 or run Claude Code without sandboxing.On WSL2, WSL hands a launch of a Windows binary such as `cmd.exe`, `powershell.exe`, or anything under `/mnt/c/` to the Windows host over a Unix socket, so whether a sandboxed command can launch one follows the sandbox’s [Unix-socket settings](settings-reference.md#sandbox-network-allowunixsockets): the optional seccomp filter has to be installed to block the socket in the first place. To allow these launches, set `allowAllUnixSockets`, which opens every Unix socket to sandboxed commands.
+
+
+[​](#add-an-apparmor-profile-for-bubblewrap)
+
+Add an AppArmor profile for bubblewrap
+
+Add the profile if Claude Code runs `/usr/bin/bwrap` and either of these happens:
+
+- Claude Code [reports Ubuntu’s AppArmor restriction on user namespaces](#apparmor-restriction-stops-bubblewrap)
+- Sandboxed commands fail with `bwrap: setting up uid map: Permission denied` or `bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted` while [that restriction is on](#bwrap-uid-map-permission-denied)
+
+Claude Code runs the first `bwrap` on `PATH`, unless managed settings name one in [`sandbox.bwrapPath`](settings-reference.md#sandbox-bwrappath). To see which `bwrap` is first, run `which bwrap` in the shell you start Claude Code from. If Claude Code runs any path other than `/usr/bin/bwrap`, [lift the restriction with `sysctl`](#apparmor-restriction-stops-bubblewrap) instead. To add the profile for `/usr/bin/bwrap`, run this command:
 
 ```python
 sudo tee /etc/apparmor.d/bwrap > /dev/null <<'EOF'
@@ -226,15 +253,13 @@ profile bwrap /usr/bin/bwrap flags=(unconfined) {
 EOF
 ```
 
-The profile applies only to `bwrap` itself, not to the commands it runs inside the sandbox. Reload AppArmor to apply it:
+Reload AppArmor to apply it:
 
 ```python
 sudo systemctl reload apparmor
 ```
 
-WSL2 notes
-
-Check your WSL version with `wsl -l -v` from PowerShell. If you see `Sandboxing requires WSL2`, your distribution is running WSL1. Upgrade it to WSL2 or run Claude Code without sandboxing.On WSL2, WSL hands a launch of a Windows binary such as `cmd.exe`, `powershell.exe`, or anything under `/mnt/c/` to the Windows host over a Unix socket, so whether a sandboxed command can launch one follows the sandbox’s [Unix-socket settings](settings-reference.md#sandbox-network-allowunixsockets): the optional seccomp filter has to be installed to block the socket in the first place. To allow these launches, set `allowAllUnixSockets`, which opens every Unix socket to sandboxed commands.
+Then restart Claude Code and [confirm the sandbox works](#confirm-commands-run-inside-the-sandbox).
 
 
 [​](#sandbox-modes)
@@ -292,6 +317,8 @@ These rules and settings change who approves the retry:
 - **An ask rule for the parameter**: add an [ask rule](permissions.md#match-by-input-parameter) for `Bash(dangerouslyDisableSandbox:true)` to be prompted on Bash retries. You get the prompt in auto mode and `bypassPermissions` mode too, and the rule takes precedence over a matching allow rule
 - **[`permissions.blockReadsOutsideWorkingDirectories`](settings-reference.md#permissions-blockreadsoutsideworkingdirectories)**: [Actions no mode auto-approves](permission-modes.md#actions-no-mode-auto-approves) covers the retries that prompt while it’s on
 
+While commands are refused with a [`Sandbox is required` message](#commands-refused-with-sandbox-is-required), Claude Code ignores the `dangerouslyDisableSandbox` parameter and refuses the retry too.
+
 
 [​](#turn-off-the-retry-with-strict-sandbox-mode)
 
@@ -331,11 +358,11 @@ Customize sandbox behavior through your `settings.json` file. See [Settings](set
 
 These paths are enforced at the OS level, so all commands running inside the sandbox, including their child processes, respect them. This is the recommended approach when a tool needs write access to a specific location, rather than excluding the tool from the sandbox entirely with `excludedCommands`. When you define the same filesystem array in multiple [settings scopes](settings.md#settings-precedence), Claude Code merges them, combining the paths rather than replacing one scope’s array with another’s. Claude Code leaves an entry out of the merge when a lock under [Keep developers from widening the policy](#keep-developers-from-widening-the-policy) covers it. If you exclude a source with [`--setting-sources`](cli-reference.md) on the CLI or [`settingSources`](../05-Agent-SDK/agent-sdk-claude-code-features.md#control-filesystem-settings-with-settingsources) in the Agent SDK, Claude Code ignores its `sandbox.filesystem` entries, its `Edit` permission rules, and its `Read` deny rules when building the sandbox configuration. Requires Claude Code v2.1.246 or later. When you edit these filesystem lists during a session, Claude Code [applies the change to the running session](settings.md#when-edits-take-effect), so the next sandboxed command runs under the new paths. Sandbox filesystem paths use standard conventions: `/tmp/build` is absolute and `~/.kube` is relative to your home directory. This differs from [Read and Edit permission rules](permissions.md#read-and-edit), which use `//path` for absolute and `/path` for project-relative. For relative paths, trailing slashes, and wildcards, see [Sandbox path prefixes](settings-reference.md#sandbox-path-prefixes). You can also deny write or read access using `sandbox.filesystem.denyWrite` and `sandbox.filesystem.denyRead`, and re-allow specific paths within a denied region using `sandbox.filesystem.allowRead`. When read rules overlap, the rule with the narrower path applies:
 
-| Example rules                                           | Result                                                                                                                                                                                                        |
-|:--------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `"denyRead": ["~/"]` with `"allowRead": ["~/projects"]` | `~/projects` is readable and the rest of the home directory stays blocked. The narrower allow re-opens that part of the denied region                                                                         |
-| `"allowRead": ["~/"]` with `"denyRead": ["~/.env"]`     | `~/.env` stays blocked and the rest of the home directory is readable. The deny holds inside a wider allow, so a broad allow can’t silently re-expose a secret                                                |
-| `"allowRead": ["~/"]` with `"denyRead": ["~/**/.env"]`  | Every `.env` under the home directory stays blocked and the rest is readable. A [wildcard deny](settings-reference.md#sandbox-path-prefixes) holds inside a wider allow the same way an exact path does |
+| Example rules | Result |
+|:---|:---|
+| `"denyRead": ["~/"]` with `"allowRead": ["~/projects"]` | `~/projects` is readable and the rest of the home directory stays blocked. The narrower allow re-opens that part of the denied region |
+| `"allowRead": ["~/"]` with `"denyRead": ["~/.env"]` | `~/.env` stays blocked and the rest of the home directory is readable. The deny holds inside a wider allow, so a broad allow can’t silently re-expose a secret |
+| `"allowRead": ["~/"]` with `"denyRead": ["~/**/.env"]` | Every `.env` under the home directory stays blocked and the rest is readable. A [wildcard deny](settings-reference.md#sandbox-path-prefixes) holds inside a wider allow the same way an exact path does |
 
 The example below blocks reading from the entire home directory while still allowing reads from the current project. Place it in your project’s `.claude/settings.json`, because the relative path `.` resolves to the project root when the configuration lives in project settings:
 
@@ -375,6 +402,7 @@ Claude Code checks your entries against each Bash and Monitor call. A call is th
 - **Every command in the call has to match**: `npm ci && docker compose build` stays sandboxed unless another entry covers `npm ci`
 - **Claude Code matches the text of the call**: a script or `make` target that calls `docker` internally doesn’t match, and neither does `/usr/local/bin/docker`
 - **Some calls stay sandboxed**: a redirect to a file, a `cd`, or a command substitution such as `$(...)` keeps the whole call sandboxed. The [reference entry](settings-reference.md#sandbox-excludedcommands) lists more calls that stay sandboxed
+- **A `git clone` needs relative paths**: your entry doesn’t cover a clone that names an absolute path, a path starting with `~`, or one with a `..` segment. If the clone can go inside your working directory, ask Claude to use a relative path with no `..` segment, such as `vendor/lib`
 - **Where you save the entry can matter**: while the sandbox is [admin-required](#repository-settings-under-an-admin-required-sandbox), Claude Code ignores entries in `.claude/settings.json` and `.claude/settings.local.json`
 
 An excluded command goes through the regular permission flow:
@@ -408,7 +436,7 @@ Set `sandbox.filesystem.disabled` to `true` to skip filesystem isolation while k
 }
 ```
 
-The sandbox has two independent layers: [filesystem isolation](#filesystem-isolation) controls which paths sandboxed commands can read and write, and [network isolation](#network-isolation) controls which domains they can reach. With the filesystem layer off, sandboxed commands get unrestricted read and write access to the host filesystem, while their network egress stays confined to your allowed domains. Turn the layer off when you sandbox to control where commands connect rather than what they write. `sandbox.filesystem.disabled` defaults to `false`. Requires Claude Code v2.1.216 or later.
+The sandbox has two independent layers: [filesystem isolation](#filesystem-isolation) controls which paths sandboxed commands can read and write, and [network isolation](#network-isolation) controls which domains they can reach. With the filesystem layer off, sandboxed commands get unrestricted read and write access to the host filesystem, while their network egress stays confined to your allowed domains. Turn the layer off when you sandbox to control where commands connect rather than what they write. `sandbox.filesystem.disabled` defaults to `false`.
 
 With filesystem isolation off and commands auto-allowed, a sandboxed command can write files that later commands run or read, such as shell startup files, executables on `$PATH`, or `~/.claude/settings.json`, and use them to widen its own access on the next run. Set `filesystem.disabled` to `true` only for workloads you trust not to escalate their own access. Locking network domains with [`allowManagedDomainsOnly`](#keep-developers-from-widening-the-policy) narrows the risk but doesn’t remove it, since that lock applies only to commands running inside the sandbox.
 
@@ -432,11 +460,11 @@ What changes when filesystem isolation is off
 
 Setting `filesystem.disabled` lifts the protections the filesystem layer itself enforces. Protections that other layers enforce keep applying:
 
-| Protection                                                                               | With filesystem isolation off                                                                                                                                |
-|------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `filesystem.denyRead` and [`credentials.files`](#protect-credentials) `deny` read blocks | Not enforced. The filesystem layer applies both                                                                                                              |
-| `credentials.envVars` `deny` and `mask` entries                                          | Enforced. Environment variable scrubbing is independent of the filesystem layer                                                                              |
-| [`credentials.files` `mask` entries](#mask-credential-files) applied as masks            | Enforced: masking is independent of the filesystem layer. An entry that [fell back to `deny`](#mask-credential-files) is not enforced, like any `deny` entry |
+| Protection | With filesystem isolation off |
+|----|----|
+| `filesystem.denyRead` and [`credentials.files`](#protect-credentials) `deny` read blocks | Not enforced. The filesystem layer applies both |
+| `credentials.envVars` `deny` and `mask` entries | Enforced. Environment variable scrubbing is independent of the filesystem layer |
+| [`credentials.files` `mask` entries](#mask-credential-files) applied as masks | Enforced: masking is independent of the filesystem layer. An entry that [fell back to `deny`](#mask-credential-files) is not enforced, like any `deny` entry |
 
 Two other things change:
 
@@ -593,7 +621,7 @@ Inside the directories that sandboxed commands can write to, the sandbox still d
 
 - **In your working directory and the directories above it**: the `.claude` settings files, the `.claude/skills`, `.claude/agents`, `.claude/commands`, and `.claude/hooks` directories, `.mcp.json`, and the files Claude Code runs on its own, such as `.claude/workflows` and `.claude/scheduled_tasks.json`
 - **In your working directory only**: shell startup files such as `.bashrc` and `.zshrc`, `.gitconfig`, the `.vscode` and `.idea` directories, and `hooks` and `config` inside `.git`
-- **Files that would turn your working directory into a bare git repository**: `HEAD`, `objects`, and `refs` at the top level, plus existing `config` and `hooks` entries there when a `HEAD` sits beside them. A file named `config` is denied even with no `HEAD`. On Linux and WSL2, the sandbox deletes a top-level `HEAD` file or `objects` or `refs` directory that appears while a sandboxed command is running
+- **Files that would turn your working directory into a bare git repository**: `HEAD`, `objects`, and `refs` at the top level, plus existing `config` and `hooks` entries there when a `HEAD` file or symlink sits beside them. A file named `config` is denied even with no `HEAD`. [A `HEAD`, `objects`, or `refs` that appears later can be deleted](#when-the-sandbox-deletes-head-objects-or-refs). On Linux and WSL2, a sandboxed command can create one where none exists.
 - **In `~/.claude`, or the directory `CLAUDE_CONFIG_DIR` points to**: most of its contents, plus `~/.claude.json` and the `.credentials.json` credential store
 
 If a symlink appears at a protected settings file’s path during the session, the sandbox also denies writes to the file it points to, starting with the next command. If you add an `allowWrite` entry or an `Edit` allow rule that covers one of these paths, the protection still applies. To turn the protection off, set [`filesystem.disabled`](#disable-filesystem-isolation), which also turns off the rest of filesystem isolation.
@@ -603,11 +631,18 @@ If you set [`allowNestedUserNamespaces`](settings-reference.md#sandbox-allownest
 To see most of these paths resolved for your machine, run `/sandbox` and open the **Config** tab, which lists them under **Denied within allowed**, mixed in with your own `denyWrite` entries. If `git merge` or `git checkout` fails with `unable to unlink old` on one of these paths, see [A git command fails with `unable to unlink old`](#a-git-command-fails-with-unable-to-unlink-old).
 
 
+[​](#when-the-sandbox-deletes-head-objects-or-refs)
+
+When the sandbox deletes `HEAD`, `objects`, or `refs`
+
+After a sandboxed command ends, a newer top-level `HEAD`, `objects`, or `refs` entry in your working directory is deleted unless it’s a folder with contents. Newer means the entry wasn’t there when the sandbox last built its configuration: at session start, or after a change such as [`/cd`](commands.md). A newer `objects` or `refs` folder with contents is deleted too, with its contents, when a `HEAD` file or symlink was there the last time the sandbox built its configuration. To keep a folder, see [A folder named `objects` or `refs` disappears after a command](#a-folder-named-objects-or-refs-disappears-after-a-command).
+
+
 [​](#denied-paths-that-pass-through-a-symlink)
 
 Denied paths that pass through a symlink
 
-On macOS, when a denied path passes through a symlink, such as a `~/.claude` that is a link into a dotfiles repository, the sandbox also denies the path’s real location. This covers the sandbox’s own denials and your literal `denyWrite` and `denyRead` entries.
+On macOS, when a denied path passes through a symlink, such as a `~/.claude` that is a link into a dotfiles repository, the sandbox also denies the path’s real location. This covers the sandbox’s own denials and your literal `denyWrite` and `denyRead` entries. A `denyWrite` entry that contains `*`, `?`, or `[` is also covered when a folder before the first of those characters is a symlink. For example, `~/.claude/*.json` is also denied under the real location of `~/.claude`.
 
 
 [​](#network-isolation)
@@ -645,12 +680,12 @@ Hosts outside your allowed domains
 
 When a sandboxed command connects to a host that isn’t in your allowed domains, the command stays in the sandbox and waits for a decision. In an interactive terminal session, the decision depends on your permission mode:
 
-| Permission mode                                                                                                                                    | What happens to the connection                                                                                               |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-| `bypassPermissions` mode, and plan mode with [bypass permissions available](permission-modes.md#skip-all-checks-with-bypasspermissions-mode) | Allowed without a prompt                                                                                                     |
-| Manual mode, `acceptEdits` mode, and plan mode otherwise                                                                                           | You get a prompt                                                                                                             |
-| Auto mode                                                                                                                                          | Refused unless the command [listed the host](#per-command-allowed-domains-in-auto-mode) and the classifier approved the list |
-| `dontAsk` mode                                                                                                                                     | Refused                                                                                                                      |
+| Permission mode | What happens to the connection |
+|:---|:---|
+| `bypassPermissions` mode, and plan mode with [bypass permissions available](permission-modes.md#skip-all-checks-with-bypasspermissions-mode) | Allowed without a prompt |
+| Manual mode, `acceptEdits` mode, and plan mode otherwise | You get a prompt |
+| Auto mode | Refused unless the command [listed the host](#per-command-allowed-domains-in-auto-mode) and the classifier approved the list |
+| `dontAsk` mode | Refused |
 
 With [`strictAllowlist`](settings-reference.md#sandbox-network-strictallowlist) or [`allowManagedDomainsOnly`](settings-reference.md#sandbox-network-allowmanageddomainsonly) on, the built-in sandbox proxy refuses the connection in every permission mode. In `bypassPermissions` mode, hosts outside your allowed domains are allowed unless one of them is on. [The unsandboxed retry escape hatch](#the-unsandboxed-retry-escape-hatch) covers when a command can leave the sandbox in that mode. A connection to a host in [`deniedDomains`](settings-reference.md#sandbox-network-denieddomains) is refused in every permission mode too.
 
@@ -712,17 +747,17 @@ Permission rules and sandboxing control different things:
 
 The two layers also differ in how they are enforced. Claude Code evaluates permission decisions before a command runs, based on the command string and, in auto mode, a separate classifier’s judgment about whether the command is safe. The operating system enforces the sandbox boundary on the running process, so it holds regardless of what the model chose to run and even if an allowed command does more than its name suggests. Filesystem and network restrictions are configured through both sandbox settings and permission rules:
 
-| Setting or rule                                                  | What it does                                                                                      |
-|:-----------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|
-| `sandbox.filesystem.allowWrite`                                  | Grants subprocess write access to paths outside the working directory                             |
-| `sandbox.filesystem.denyWrite` and `sandbox.filesystem.denyRead` | Block subprocess access to specific paths                                                         |
-| `sandbox.filesystem.allowRead`                                   | Re-allows reading specific paths within a `denyRead` region                                       |
-| [`sandbox.filesystem.disabled`](#disable-filesystem-isolation)   | Turns the filesystem layer off entirely while keeping network isolation                           |
-| `Edit` allow rules                                               | Grant write access to specific paths, the same way `sandbox.filesystem.allowWrite` does           |
-| `Read` and `Edit` deny rules                                     | Block access to specific files or directories                                                     |
-| `WebFetch(domain:...)` allow and deny rules                      | Control domain access                                                                             |
-| Sandbox `allowedDomains`                                         | Controls which domains Bash commands can reach                                                    |
-| Sandbox `deniedDomains`                                          | Blocks specific domains even when a broader `allowedDomains` wildcard would otherwise permit them |
+| Setting or rule | What it does |
+|:---|:---|
+| `sandbox.filesystem.allowWrite` | Grants subprocess write access to paths outside the working directory |
+| `sandbox.filesystem.denyWrite` and `sandbox.filesystem.denyRead` | Block subprocess access to specific paths |
+| `sandbox.filesystem.allowRead` | Re-allows reading specific paths within a `denyRead` region |
+| [`sandbox.filesystem.disabled`](#disable-filesystem-isolation) | Turns the filesystem layer off entirely while keeping network isolation |
+| `Edit` allow rules | Grant write access to specific paths, the same way `sandbox.filesystem.allowWrite` does |
+| `Read` and `Edit` deny rules | Block access to specific files or directories |
+| `WebFetch(domain:...)` allow and deny rules | Control domain access |
+| Sandbox `allowedDomains` | Controls which domains Bash commands can reach |
+| Sandbox `deniedDomains` | Blocks specific domains even when a broader `allowedDomains` wildcard would otherwise permit them |
 
 Paths and domains from both sandbox settings and permission rules are merged into the final sandbox configuration. The [claude-code repository’s examples directory](https://github.com/anthropics/claude-code/tree/main/examples/settings) includes starter settings configurations for common deployment scenarios, including sandbox-specific examples. Use these as starting points and adjust them to fit your needs.
 
@@ -733,11 +768,11 @@ Permission modes
 
 `/sandbox` is not a [permission mode](permission-modes.md). Permission modes decide whether a tool call runs and whether you are prompted first, while the sandbox restricts what a Bash command can access once it runs. They differ in what they control and what replaces the per-action prompt:
 
-|                                                                         | What it controls                            | What replaces the prompt                                                                                                                                                                               |
-|:------------------------------------------------------------------------|:--------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `/sandbox`                                                              | What a Bash command can access once it runs | The sandbox boundary itself, in [auto-allow mode](#sandbox-modes)                                                                                                                                      |
-| [Auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) | Whether each tool call runs                 | A classifier that reviews actions                                                                                                                                                                      |
-| `--dangerously-skip-permissions`                                        | Whether each tool call runs                 | Nothing. [Protected path](permission-modes.md#protected-paths) checks are also skipped; the [actions no mode auto-approves](permission-modes.md#actions-no-mode-auto-approves) still apply |
+|  | What it controls | What replaces the prompt |
+|:---|:---|:---|
+| `/sandbox` | What a Bash command can access once it runs | The sandbox boundary itself, in [auto-allow mode](#sandbox-modes) |
+| [Auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) | Whether each tool call runs | A classifier that reviews actions |
+| `--dangerously-skip-permissions` | Whether each tool call runs | Nothing. [Protected path](permission-modes.md#protected-paths) checks are also skipped; the [actions no mode auto-approves](permission-modes.md#actions-no-mode-auto-approves) still apply |
 
 The sandbox’s [auto-allow mode](#sandbox-modes) is separate from [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode): auto-allow approves Bash commands because the sandbox boundary contains them, while auto mode uses a classifier to review actions. The two work independently and can be combined, with the exceptions listed under [Sandbox modes](#sandbox-modes). To choose an isolation boundary for unattended runs, see [Sandbox environments](sandbox-environments.md#how-isolation-relates-to-permission-modes). For a table of common permission mode and sandbox pairings with the flags that start each one, see [Common setups](permission-modes.md#common-setups).
 
@@ -767,7 +802,7 @@ To require the sandbox for every developer, deliver the `sandbox` keys through [
 
 The two keys beyond `enabled` control what happens when the sandbox cannot run a command:
 
-- **`failIfUnavailable`**: a missing dependency such as bubblewrap on Linux blocks Claude Code from starting rather than falling back to unsandboxed execution
+- **`failIfUnavailable`**: when the platform doesn’t support the sandbox or the dependency check at startup fails, Claude Code refuses to start rather than falling back to unsandboxed execution
 - **`allowUnsandboxedCommands: false`**: Claude Code ignores the `dangerouslyDisableSandbox` escape hatch, so when a command fails under the sandbox, Claude can’t retry it unsandboxed
 
 Consider these additions alongside them:
@@ -808,14 +843,14 @@ The sandbox is admin-required while one of these settings is in effect:
 
 These settings don’t turn the sandbox on, so set `enabled` as well. While the sandbox is admin-required, Claude Code takes the settings that loosen it only from managed settings, the `--settings` flag, and each developer’s `~/.claude/settings.json`. It ignores these settings in a repository’s `.claude/settings.json` and `.claude/settings.local.json`:
 
-| Repository setting                                                                                                                                                         | What Claude Code ignores                                                                                                                |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|
-| `excludedCommands`, `ignoreViolations`, `network.allowedDomains`, `network.allowUnixSockets`, `network.allowMachLookup`, `network.httpProxyPort`, `network.socksProxyPort` | Every entry                                                                                                                             |
-| `filesystem.allowWrite`, `Edit(...)` allow rules, `permissions.additionalDirectories`                                                                                      | The write access each entry gives sandboxed commands. Claude’s file tools still follow the `Edit(...)` rules and additional directories |
-| `WebFetch(domain:...)` allow rules                                                                                                                                         | The host each rule adds to the sandbox allowlist. The WebFetch tool still follows the rule                                              |
-| `enableWeakerNestedSandbox`, `enableWeakerNetworkIsolation`, `network.allowAllUnixSockets`, `network.allowLocalBinding`                                                    | `true`. A `false` still applies                                                                                                         |
-| `enabled`, `failIfUnavailable`                                                                                                                                             | `false`, when the developer’s `~/.claude/settings.json` sets `true`                                                                     |
-| `filesystem.allowRead`                                                                                                                                                     | An entry at or under a path that managed settings, `--settings`, or user settings deny reading, or a glob that could match one          |
+| Repository setting | What Claude Code ignores |
+|:---|:---|
+| `excludedCommands`, `ignoreViolations`, `network.allowedDomains`, `network.allowUnixSockets`, `network.allowMachLookup`, `network.httpProxyPort`, `network.socksProxyPort` | Every entry |
+| `filesystem.allowWrite`, `Edit(...)` allow rules, `permissions.additionalDirectories` | The write access each entry gives sandboxed commands. Claude’s file tools still follow the `Edit(...)` rules and additional directories |
+| `WebFetch(domain:...)` allow rules | The host each rule adds to the sandbox allowlist. The WebFetch tool still follows the rule |
+| `enableWeakerNestedSandbox`, `enableWeakerNetworkIsolation`, `network.allowAllUnixSockets`, `network.allowLocalBinding` | `true`. A `false` still applies |
+| `enabled`, `failIfUnavailable` | `false`, when the developer’s `~/.claude/settings.json` sets `true` |
+| `filesystem.allowRead` | An entry at or under a path that managed settings, `--settings`, or user settings deny reading, or a glob that could match one |
 
 These settings still apply while the sandbox is admin-required:
 
@@ -831,11 +866,11 @@ Locks that apply without an admin-required sandbox
 
 Some settings make Claude Code ignore the repository keys that directly override one restriction, even when the sandbox isn’t admin-required. Each one has this effect only when you set it in a file its row names, and the repository’s other sandbox settings still apply. Requires Claude Code v2.1.285 or later.
 
-| Setting                                                                        | Where you set it                              | What Claude Code ignores in a repository’s settings                                                                                                                                                     |
-|:-------------------------------------------------------------------------------|:----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `network.deniedDomains` or a `WebFetch(domain:...)` deny rule                  | Managed settings, `--settings`                | `httpProxyPort` and `socksProxyPort`                                                                                                                                                                    |
-| `network.strictAllowlist`                                                      | Managed settings, `--settings`, user settings | The proxy ports, `allowedDomains`, and `WebFetch(domain:...)` allow rules                                                                                                                               |
-| `filesystem.denyRead`, a `Read(...)` deny rule, or a `credentials.files` entry | Managed settings, `--settings`                | An `allowRead`, `allowWrite`, `Edit(...)` allow, or `additionalDirectories` entry at or under a path that managed settings, `--settings`, or user settings deny reading, or a glob that could match one |
+| Setting | Where you set it | What Claude Code ignores in a repository’s settings |
+|:---|:---|:---|
+| `network.deniedDomains` or a `WebFetch(domain:...)` deny rule | Managed settings, `--settings` | `httpProxyPort` and `socksProxyPort` |
+| `network.strictAllowlist` | Managed settings, `--settings`, user settings | The proxy ports, `allowedDomains`, and `WebFetch(domain:...)` allow rules |
+| `filesystem.denyRead`, a `Read(...)` deny rule, or a `credentials.files` entry | Managed settings, `--settings` | An `allowRead`, `allowWrite`, `Edit(...)` allow, or `additionalDirectories` entry at or under a path that managed settings, `--settings`, or user settings deny reading, or a glob that could match one |
 
 These locks change what sandboxed commands can reach. The WebFetch tool and Claude’s file tools still follow a repository’s rules and additional directories.
 
@@ -949,6 +984,13 @@ A git command fails with `unable to unlink old`
 After the failure, Claude may [offer to rerun the command outside the sandbox](#the-unsandboxed-retry-escape-hatch). Approve that retry, or run the git command yourself in another terminal. If you’ve set `allowUnsandboxedCommands` to `false`, Claude can’t offer the retry, so run the command yourself.
 
 
+[​](#a-folder-named-objects-or-refs-disappears-after-a-command)
+
+A folder named `objects` or `refs` disappears after a command
+
+A top-level `objects` or `refs` folder that appeared during the session can be [deleted after a sandboxed command ends](#when-the-sandbox-deletes-head-objects-or-refs). It doesn’t matter whether a command, Claude, or you created it. To keep a folder, leave something in it. If a `HEAD` file or symlink has been at the top level during the session, move it away, then restart every Claude Code session open there. Before v2.1.307, the folder was deleted even with something in it and no `HEAD`. On an earlier version, [update Claude Code](../01-Getting-Started/setup.md#update-claude-code).
+
+
 [​](#bubblewrap-fails-to-start-inside-a-container)
 
 Bubblewrap fails to start inside a container
@@ -956,11 +998,40 @@ Bubblewrap fails to start inside a container
 In an unprivileged container, [bubblewrap](#os-level-enforcement) can’t mount a fresh `/proc` filesystem, so sandboxed commands fail with a `bwrap` error such as `Can't mount proc on /newroot/proc: Operation not permitted`. Set [`enableWeakerNestedSandbox`](settings-reference.md#sandbox-enableweakernestedsandbox) to `true` so the sandbox bind-mounts the container’s existing `/proc` instead. Only use this setting when the outer container already provides the isolation boundary you need, since the setting exposes process information to sandboxed commands that a fresh `/proc` mount would hide.
 
 
+[​](#apparmor-restriction-stops-bubblewrap)
+
+Ubuntu’s AppArmor restriction stops bubblewrap
+
+On Linux and WSL2, the message `Ubuntu's AppArmor restriction on user namespaces stops bubblewrap here` means that Ubuntu’s AppArmor restriction keeps the sandbox from starting. To get the sandbox to start, lift the restriction in one of these two ways:
+
+- [Add an AppArmor profile for bubblewrap](#add-an-apparmor-profile-for-bubblewrap) if Claude Code runs `/usr/bin/bwrap`
+- In your shell, run `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0`, which lifts the restriction for every program on the machine and lasts until you reboot
+
+Then restart Claude Code and [confirm the sandbox works](#confirm-commands-run-inside-the-sandbox). Until you lift the restriction, commands run without the sandbox under the regular permission flow, or Claude Code refuses to start if [`sandbox.failIfUnavailable`](settings-reference.md#sandbox-failifunavailable) is `true`.
+
+
+[​](#bwrap-uid-map-permission-denied)
+
+Sandboxed commands fail with `bwrap: setting up uid map: Permission denied`
+
+On Linux and WSL2, this error or `bwrap: loopback: Failed RTM_NEWADDR: Operation not permitted` can mean that Ubuntu’s AppArmor restriction on user namespaces is stopping bubblewrap. To check, run `sysctl kernel.apparmor_restrict_unprivileged_userns` in your shell:
+
+- `kernel.apparmor_restrict_unprivileged_userns = 1`: the restriction is on. [Add an AppArmor profile](#add-an-apparmor-profile-for-bubblewrap) if Claude Code runs `/usr/bin/bwrap`, or run `sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0`, which lifts it for every program until you reboot. Then restart Claude Code and [confirm the sandbox works](#confirm-commands-run-inside-the-sandbox)
+- Any other output: the restriction isn’t the cause. To report the failure, run [`/feedback`](commands.md#all-commands) at the Claude Code prompt
+
+Before v2.1.310, Claude Code didn’t check for this restriction at startup, so `/sandbox` didn’t report it.
+
+
 [​](#0-byte-read-only-files-appear-at-claude-settings-paths-and-“yes-and-don’t-ask-again”-doesn’t-save)
 
 0-byte read-only files appear at `.claude` settings paths, and “Yes, and don’t ask again” doesn’t save
 
-On Linux and WSL2, the sandbox holds a write denial on a file that doesn’t exist yet by creating a 0-byte read-only placeholder there while a sandboxed command runs. The sandbox removes the placeholder afterward. If a session is killed before that cleanup runs, for example by SIGKILL, the placeholders stay behind. Later sessions bind the placeholders read-only again on every start, so a settings write such as saving a permission choice fails at a path where a placeholder remains. Run `claude doctor` in your terminal to list the leftover placeholder files. The [`Sandbox mask files left behind at write-deny paths`](errors.md#stale-sandbox-mask-files-left-by-a-killed-session) warning names some of them and counts the rest. Delete each file with `rm` while no other Claude Code session is running in that project. Before v2.1.257, Claude Code left the same placeholders behind without flagging them.
+On Linux and WSL2, the sandbox holds a write denial on a file that doesn’t exist yet by creating a 0-byte read-only placeholder there while a sandboxed command runs. The sandbox removes the placeholder afterward. A placeholder stays behind in cases such as these:
+
+- The session is killed before that cleanup runs, for example by SIGKILL
+- The session exits while a sandboxed command is still running, such as a background command
+
+Later sessions bind the placeholders read-only again on every start, so a settings write such as saving a permission choice fails at a path where a placeholder remains. Run `claude doctor` in your terminal to list the leftover placeholder files. The [`Sandbox mask files left behind at write-deny paths`](errors.md#stale-sandbox-mask-files-left-by-a-killed-session) warning names some of them and counts the rest. Delete each file with `rm` while no other Claude Code session is running in that project. Before v2.1.257, Claude Code left the same placeholders behind when a session was killed, without flagging them.
 
 
 [​](#git-over-ssh-fails-with-the-sandbox-on)
@@ -1060,6 +1131,24 @@ The sandbox proxy refuses an allowed hostname that [resolves to a local address]
 An IP address entry with no port lets sandboxed commands reach every service listening on that address. Before v2.1.284, the proxy connected to whatever address an allowed hostname resolved to.
 
 
+[​](#commands-refused-with-sandbox-is-required)
+
+Commands are refused with `Sandbox is required`
+
+If you require the sandbox with [`sandbox.failIfUnavailable`](settings-reference.md#sandbox-failifunavailable) and it fails in one of these ways after Claude Code starts, each sandboxed command Claude runs is refused with the message shown. The session keeps running, and the refused command doesn’t run unsandboxed:
+
+- **`Sandbox is required but failed to initialize: <reason>`**: Claude Code started, but the sandbox then failed to initialize. Take the step the message gives: `Restart to retry.` or `Fix the sandbox settings to retry`.
+- **`Sandbox is required (sandbox.failIfUnavailable) and stopped being available in this session: <reason>`**: on Linux or WSL2, the sandbox started and Claude Code then found a dependency missing. Fix what the reason names, such as [installing a missing dependency](#set-up-linux-and-wsl2), then restart Claude Code.
+
+Excluded commands and commands you type yourself keep running, and Claude can’t retry a refused command unsandboxed:
+
+- **Excluded commands**: commands that match an [`excludedCommands`](#run-commands-outside-the-sandbox-with-excludedcommands) entry keep running outside the sandbox. When one writes to a [`filesystem.allowWrite`](settings-reference.md#sandbox-filesystem-allowwrite) path outside your working directory, that write goes through the regular permission flow. Under an [admin-required sandbox](#repository-settings-under-an-admin-required-sandbox), Claude Code ignores entries from the repository’s settings
+- **Commands you type at the [`!` shell-mode prompt](interactive-mode.md#shell-mode-with-prefix)**: keep running outside the sandbox. In a [background session](../09-Agents-Patterns/agent-view.md), they’re refused too
+- **Unsandboxed retries**: Claude Code ignores the `dangerouslyDisableSandbox` parameter of an [unsandboxed retry](#the-unsandboxed-retry-escape-hatch)
+
+In a Linux session with `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` set, every command runs sandboxed, so excluded commands and commands you type are refused too.
+
+
 [​](#/sandbox-fails-with-sandbox-settings-are-overridden-by-a-higher-priority-configuration)
 
 `/sandbox` fails with `Sandbox settings are overridden by a higher-priority configuration`
@@ -1112,6 +1201,7 @@ Allowing broad domains such as `github.com` can create paths for data exfiltrati
 - **Filesystem permission escalation**: overly broad filesystem write permissions can enable privilege escalation attacks. Allowing writes to directories containing executables in `$PATH`, system configuration directories, or user shell configuration files such as `.bashrc` or `.zshrc` can lead to code execution in different security contexts when other users or system processes access these files.
 - **Linux sandbox strength**: the Linux implementation provides strong filesystem and network isolation but includes an `enableWeakerNestedSandbox` mode that enables it to work inside Docker environments without privileged namespaces. This option considerably weakens security and should only be used when additional isolation is otherwise enforced.
 - **Apple Events on macOS**: the macOS sandbox blocks Apple Events by default. The `allowAppleEvents` setting lifts this restriction so tools such as `open` and `osascript` work, but it removes code-execution isolation: sandboxed commands can launch other applications unsandboxed with no user prompt, and can send AppleScript commands to running applications, subject to the per-app macOS automation-consent prompt (TCC). It is only honored from user, managed, or CLI settings. Project settings cannot enable it.
+- **Mach and XPC services on macOS**: sandboxed commands can reach outside the sandbox to each service that you list in [`network.allowMachLookup`](settings-reference.md#sandbox-network-allowmachlookup), and the sandbox doesn’t confine what those services do for those commands.
 - **User namespaces on Linux and WSL2**: by default, sandboxed commands can’t create user namespaces. If you set [`allowNestedUserNamespaces`](settings-reference.md#sandbox-allownestedusernamespaces) to `true`, you turn off a security boundary: code from a sandboxed command can end up running outside the sandbox. Before you turn this setting on, read the warning in [Chromium or rootless Podman fails inside the sandbox on Linux](#chromium-or-rootless-podman-fails-inside-the-sandbox-on-linux).
 
 

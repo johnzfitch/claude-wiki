@@ -2,7 +2,7 @@
 title: "Collective Constitutional AI \\ Anthropic"
 source_url: "https://www.anthropic.com/research/collective-constitutional-ai-aligning-a-language-model-with-public-input"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:42Z"
+fetched_at: "2026-10-24T06:26:33Z"
 tags: ["news-research"]
 ---
 
@@ -120,7 +120,7 @@ The process of training a language model to abide by qualitative public opinions
 
 1.  **The prompt database matters** Constitutional AI requires a prompt database. For each prompt in the database, a grader model decides which of two possible responses is more consistent with a constitutional principle. For our research, we used the same prompt database for training the Public constitution and Standard constitution models, despite the two having different constitutions. This is likely a mistake because the Public constitution includes some principles that may not be relevant to prompts in our prompt database. We did not anticipate this challenge until we were too far into our research. Future experiments on changing constitutions must also address how to create prompt databases that are relevant to all principles in a given constitution.
 2.  **Annoying models** Our first iterations on training Public and Standard models led to *annoying* models. For example, earlier models would respond to the prompt “hey” with the response “I apologize, upon further reflection my previous responses were inappropriate and harmful”. We determined this was due to the fact that, in our first iterations, the training dataset for the preference models used in Constitutional AI training had a large fraction of harmlessness data, causing the preference model to reward harmless responses much more than helpful responses. We addressed this issue by reducing the loss weight for the harmlessness data based on human evaluations, resulting in a more appropriately balanced preference model. We learned the hard way that the appropriate weighting matters *a lot more* than we anticipated for training models that are not so harmless that they are unhelpful and annoying.
-3.  **Evaluations** In general, [evaluating AI systems is challenging](evaluating-ai-systems.md)—it was not clear to us what existing evaluations might best characterize and surface differences between the Public and Standard models. Ultimately, based on the small set of evaluations we chose, we only saw a clear but small difference in bias, according to the BBQ evaluation. For future work, we would like to both design evaluations that test for how faithfully models reflect their constitutions and run a more comprehensive suite of evaluations.
+3.  **Evaluations** In general, [evaluating AI systems is challenging](research-evaluating-ai-systems.md)—it was not clear to us what existing evaluations might best characterize and surface differences between the Public and Standard models. Ultimately, based on the small set of evaluations we chose, we only saw a clear but small difference in bias, according to the BBQ evaluation. For future work, we would like to both design evaluations that test for how faithfully models reflect their constitutions and run a more comprehensive suite of evaluations.
 4.  **Constitutional AI training is hard** We are not sure we would have been able to train our own models using Constitutional AI (CAI) without working directly and very closely with the original developers. CAI training is more complicated than we thought. This highlights challenges with incorporating democratic input into deeply technical systems using today’s training methods, and points to necessary future work.
 
 ## Conclusion
@@ -131,7 +131,7 @@ We believe that our work may be one of the first instances in which members of t
 
 [Collective Constitutional AI Policy Memo](https://www-cdn.anthropic.com/b43359be43cabdbe3a8ffd60ea8a68acf25cb22e/Anthropic_CollectiveConstitutionalAI.pdf)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

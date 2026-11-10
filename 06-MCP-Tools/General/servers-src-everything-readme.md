@@ -2,8 +2,8 @@
 title: "MCP Everything Server (Test)"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-20T06:38:08Z"
-tags: ["desktop", "mcp", "prompting"]
+fetched_at: "2026-11-05T06:37:00Z"
+tags: ["desktop", "docker", "mcp", "prompting"]
 ---
 
 # Everything MCP Server
@@ -21,6 +21,12 @@ This MCP server attempts to exercise all the features of the MCP protocol. It is
 
 A complete list of the registered MCP primitives and other protocol features demonstrated can be found in the [Server Features](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/features.md) document.
 
+The resource collections (`demo://resource/collection/summer-specials`, and the `by-category/{category}` and `item/{itemId}` templates beside it) show a single `resources/read` returning several contents, each under its own URI: reading a collection returns one content per item, and each item's URI can be read on its own.
+
+The server info and every tool, prompt, resource and resource template carry a pair of [icons](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/features.md#icons), one for a light theme and one for a dark theme, so a client can show the variant that suits its own background.
+
+The `get-env` tool returns the server's environment variables, but masks the value of any credential-like name (a `KEY`, `TOKEN`, `SECRET`, `PASSWORD`, `PASSWD`, `CREDENTIAL`, `AUTH` or `COOKIE` segment, such as `OPENAI_API_KEY`) as `"<redacted>"`. To see every value unmasked while debugging, start the server with `GET_ENV_INCLUDE_SECRETS=1` (or `true`). Leave it unset otherwise: with it set, every credential in the server's environment reaches the model's context.
+
 ## Protocol versions
 
 The server serves both protocol eras, over stdio and Streamable HTTP, from one process:
@@ -29,6 +35,19 @@ The server serves both protocol eras, over stdio and Streamable HTTP, from one p
 - **2025-era** clients connect with the `initialize` handshake, as before. Elicitation, sampling and roots are served to them from the same multi-round-trip handlers through the SDK's legacy shim.
 
 Roots, sampling and logging are deprecated as of 2026-07-28 and stay available, labelled deprecated. [Server Features](https://raw.githubusercontent.com/modelcontextprotocol/servers/main/src/everything/docs/features.md) marks which era each feature belongs to.
+
+## Configuring `gzip-file-as-resource`
+
+The `gzip-file-as-resource` tool fetches the URL it is given, so these environment variables limit what it will fetch:
+
+| Variable | Default | Effect |
+| --- | --- | --- |
+| `GZIP_MAX_FETCH_SIZE` | 10 MiB | The largest response, in bytes, it reads |
+| `GZIP_MAX_FETCH_TIME_MILLIS` | 30000 | How long a fetch may take, redirects included |
+| `GZIP_ALLOWED_DOMAINS` | empty (any name) | Comma-separated host names; a host must be one of them or a subdomain of one. Checked on the caller's URL and on every redirect hop |
+| `GZIP_ALLOW_PRIVATE_IPS` | off | Set to `1` or `true` to allow loopback, private (RFC 1918), CGNAT, link-local (cloud metadata) and other non-public addresses |
+
+By default the tool refuses a URL whose host resolves to a non-public address, and follows at most five redirects, checking each hop the same way. `GZIP_ALLOWED_DOMAINS` filters names, not addresses: a listed name that resolves to a private address is still refused unless `GZIP_ALLOW_PRIVATE_IPS` is set. The address is checked before the request and resolved again when it is made, so a DNS answer that changes in between (DNS rebinding) is not caught. `data:` URLs are not fetched, so neither check applies to them.
 
 ## Requirements
 
@@ -116,6 +135,8 @@ npm run start:streamableHttp
 
 The endpoint is `http://localhost:3001/mcp` (`PORT` overrides the port). It serves 2026-07-28 clients statelessly and 2025-era clients with sessions, from the same URL.
 
+Both HTTP transports (Streamable HTTP and HTTP+SSE) accept browser requests only from a localhost origin: an `Origin` header whose host is `localhost`, `127.0.0.1` or `[::1]`, on any port, such as the MCP Inspector's. A request carrying any other `Origin` is refused with `403 Forbidden`. Clients that send no `Origin` header, which is every non-browser client, are unaffected.
+
 ## Running from source with [HTTP+SSE Transport](../Spec-Archive/2024-11-05-basic-transports.md#http-with-sse) (deprecated as of [2025-03-26](../Spec-Archive/2025-03-26-basic-transports.md))
 
 ```shell
@@ -157,6 +178,32 @@ npx @modelcontextprotocol/server-everything streamableHttp
 ```shell
 npx @modelcontextprotocol/server-everything sse
 ```
+
+## Running with Docker
+
+This repository publishes no image; build one from the repository root (the build context):
+
+```shell
+docker build -f src/everything/Dockerfile -t mcp/everything .
+```
+
+The `mcp/everything` image on Docker Hub is built by Docker, not by this repository, and can lag behind it.
+
+### Run over stdio (the default)
+
+```shell
+docker run -i --rm mcp/everything
+```
+
+`-i` keeps stdin open, which the stdio transport reads. This is the command an MCP client configuration launches.
+
+### Run the Streamable HTTP server
+
+```shell
+docker run --rm -p 127.0.0.1:3001:3001 mcp/everything streamableHttp
+```
+
+The endpoint is `http://localhost:3001/mcp`. The server listens on port 3001 on every interface inside the container; `127.0.0.1:` publishes it on the host's loopback only. To use another port, set `PORT` and publish that one (`-e PORT=8080 -p 127.0.0.1:8080:8080`). The localhost-only `Origin` check described above applies inside the container too. `docker stop` ends the server cleanly.
 
 ## License
 

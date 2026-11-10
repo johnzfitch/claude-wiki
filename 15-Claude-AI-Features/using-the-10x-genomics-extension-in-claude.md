@@ -2,7 +2,7 @@
 title: "Using the 10x Genomics Extension in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:56Z"
+fetched_at: "2026-11-08T06:25:16Z"
 tags: ["claude-ai"]
 ---
 
@@ -72,22 +72,6 @@ The 10x Genomics integration is available as a desktop extension in the Claude D
 6.  Follow the instructions to authenticate with your 10x Cloud Analysis account
 
 Learn about [installing desktop extensions from the directory(opens in new tab)](../16-Mobile-Desktop/getting-started-with-local-mcp-servers-on-claude-desktop.md).
-
-**For Claude Code Users**
-
-1.  Command: `/plugin marketplace add anthropics/life-sciences`
-
-2.  Command: `/plugin install 10x-genomics@life-sciences`
-
-3.  Restart Claude Code
-
-4.  Command: `/plugin`
-
-5.  Navigate to “Manage and uninstall plugins" and configure the 10x Genomics MCP with your access token
-
-6.  Restart Claude Code one more time
-
-7.  Verify that the server is connected with `/mcp`
 
 ## Common use cases[](#common-use-cases)
 

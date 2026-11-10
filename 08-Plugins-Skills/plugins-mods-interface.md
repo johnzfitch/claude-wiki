@@ -2,11 +2,14 @@
 title: "Draw in the interface with a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/interface"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-23T06:28:42Z"
+fetched_at: "2026-11-03T06:23:01Z"
+last_modified: "Tue, 03 Nov 2026 06:18:14 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Build a pane with tabs](#build-a-pane-with-tabs)
 - [Pick where to draw](#pick-where-to-draw)
@@ -20,6 +23,7 @@ tags: ["claude-code", "plugins"]
   - [When a Client fails](#when-a-client-fails)
   - [Draw a grid of colored cells](#draw-a-grid-of-colored-cells)
 - [Respond to presses and typing](#respond-to-presses-and-typing)
+  - [Which controls need a key](#which-controls-need-a-key)
   - [Keyboard focus and hotkeys](#know-which-keys-your-mod-can-receive)
   - [How a pane gets keyboard focus](#how-a-pane-gets-keyboard-focus)
   - [What each key does](#what-each-key-does)
@@ -241,14 +245,14 @@ Change what Claude Code already draws
 
 Claude Code draws most of its interface itself: messages, tool call rows, the spinner, and more. Each of those parts is a render site too, so a mod can restyle or replace it. To change one, filter your `ui.render` hook on its name from this table:
 
-| Site                                      | What it is                                                                                                                               |
-|:------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
-| `UserMessage`, `AssistantMessage`         | A message in the transcript                                                                                                              |
-| `ToolUse`, `ToolResult`, `ToolGroup`      | A tool call’s row, its result, and a collapsed group of calls                                                                            |
-| `CommandOutput`                           | The row a command printed                                                                                                                |
-| `AskUserQuestion`                         | The dialog Claude opens to ask you a question                                                                                            |
+| Site | What it is |
+|:---|:---|
+| `UserMessage`, `AssistantMessage` | A message in the transcript |
+| `ToolUse`, `ToolResult`, `ToolGroup` | A tool call’s row, its result, and a collapsed group of calls |
+| `CommandOutput` | The row a command printed |
+| `AskUserQuestion` | The dialog Claude opens to ask you a question |
 | `Spinner`, `ToolProgress`, `TurnDuration` | Status lines for a turn: the line that animates while Claude works, a running tool’s live progress line, and the line that closes a turn |
-| `InfoNotice`, `SessionMode`, `PromptHint` | Status lines under the logo, the mode labels in the footer, and the hint line under the prompt                                           |
+| `InfoNotice`, `SessionMode`, `PromptHint` | Status lines under the logo, the mode labels in the footer, and the hint line under the prompt |
 
 `Pane`, `AskUserQuestion`, `Spinner`, `UserMessage`, `AssistantMessage`, and the tool call sites work in the terminal, the Desktop app, and the VS Code extension. The [render sites table](plugins-mods-reference.md#render-sites) lists where each of the others is raised. At a site Claude Code already draws, your hook can change a detail, replace the drawing, or leave it alone. Select a tab to see each one applied to the spinner. The examples read a `calls` variable that another hook counts, as in the [tutorial mod](plugins-mods-create.md#write-a-mod-yourself).
 
@@ -336,14 +340,14 @@ await $.ui.close({ id: 'hello-tabs' })
 
 Besides `id`, `$.ui.open` takes these optional fields:
 
-| Field           | What it does                                                                                                                                                                                                                                                                             |
-|:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `title`         | The pane’s tab label when more than one pane is open                                                                                                                                                                                                                                     |
-| `focus`         | Requests [keyboard focus](#know-which-keys-your-mod-can-receive)                                                                                                                                                                                                                         |
-| `closeOnEscape` | Makes Esc close the pane                                                                                                                                                                                                                                                                 |
-| `holdToasts`    | In the terminal, holds toasts while this pane is the one showing. See [Hold toasts behind a dialog](#hold-toasts-behind-a-dialog).                                                                                                                                                       |
-| `rows`          | The height to ask for when the pane sits above the prompt. The default is a third of the space.                                                                                                                                                                                          |
-| `columns`       | The width to ask for when the pane sits beside the transcript, at most 45% of the terminal’s width. Once the user has resized a pane beside the transcript, in this session or an earlier one, panes open there at the width they set instead. The same 45% limit applies to that width. |
+| Field | What it does |
+|:---|:---|
+| `title` | The pane’s tab label when more than one pane is open |
+| `focus` | Requests [keyboard focus](#know-which-keys-your-mod-can-receive) |
+| `closeOnEscape` | Makes Esc close the pane |
+| `holdToasts` | In the terminal, holds toasts while this pane is the one showing. See [Hold toasts behind a dialog](#hold-toasts-behind-a-dialog). |
+| `rows` | The height to ask for when the pane sits above the prompt. The default is a third of the space. |
+| `columns` | The width to ask for when the pane sits beside the transcript, at most 45% of the terminal’s width. Once the user has resized a pane beside the transcript, in this session or an earlier one, panes open there at the width they set instead. The same 45% limit applies to that width. |
 
 The [VS Code extension](#draw-in-the-vs-code-extension) ignores `rows` and `columns` and sizes the pane itself. `focus`, `closeOnEscape`, and `holdToasts` are optional and accept only `true`. To leave one off, omit it. Passing `false` throws an error such as `ui.open: focus is true or left out`. To set one of them conditionally, add the field only when the condition holds. This call asks for keyboard focus only when `items` isn’t empty:
 
@@ -460,20 +464,26 @@ Input({
 Note: Type a note and press Enter
 ```
 
+Set `rows` to 2 or more for [a field that holds several lines](plugins-mods-gallery.md#input).
+
 The [interface gallery](plugins-mods-gallery.md) has samples and screenshots of most elements. This table lists every element:
 
-| Element                    | What it draws                                                                                                                                                                                                                                                                                               | Where                      |
-|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------|
-| `Box`                      | A flex container that takes layout props such as `flexDirection`, [`borderStyle`](plugins-mods-reference.md#box-border-styles), and `width`. Spacing props such as `columnGap` and `padding` take a number or a [step name](plugins-mods-reference.md#box-spacing-steps) from `'xs'` to `'xl'`. | Everywhere                 |
-| `Text`                     | Styled text. Takes `color`, `bold`, `dimColor`, `italic`, `wrap`, and others such as [`weight`](plugins-mods-reference.md#text-typography). A `color` is a theme key or a color such as `'red'`. A `wrap` is `'wrap'`, `'truncate'`, `'truncate-start'`, `'truncate-middle'`, or `'truncate-end'`.    | Everywhere                 |
-| `Button`                   | A control that calls `onPress`                                                                                                                                                                                                                                                                              | Everywhere                 |
-| `Link`, `Code`, `Markdown` | A link with `href` and an optional `label`, a code block, and text formatted the way Claude’s replies are. `Markdown` takes its content in a `text` prop, not in `children`, and needs a `key` when you pass `onLinkPress`.                                                                                 | Everywhere                 |
-| `Input`, `Select`          | A text field and a dropdown                                                                                                                                                                                                                                                                                 | Terminal, Desktop, VS Code |
-| `Svg`                      | An SVG document                                                                                                                                                                                                                                                                                             | Desktop, VS Code           |
-| `Client`                   | A region drawn by a second file of yours, for animation and pointer input. That file gets no mods API. It reaches your hooks by posting data, which arrives as a `ui.message` event. If it fails to load, draw, or run, your hooks receive a [`ui.fault`](plugins-mods-reference.md#interface) event. | Terminal, Desktop          |
-| `Raster`, `Image`          | A [grid of colored cells](#draw-a-grid-of-colored-cells), and a picture                                                                                                                                                                                                                                     | Terminal                   |
+| Element | What it draws | Where |
+|:---|:---|:---|
+| `Box` | A flex container that takes layout props such as `flexDirection`, [`borderStyle`](plugins-mods-reference.md#box-border-styles), and `width`. Spacing props such as `columnGap` and `padding` take a number or a [step name](plugins-mods-reference.md#box-spacing-steps) from `'xs'` to `'xl'`. | Everywhere |
+| `Text` | Styled text. Takes `color`, `bold`, `dimColor`, `italic`, `wrap`, and others such as [`weight`](plugins-mods-reference.md#text-typography). A `color` is a theme key or a color such as `'red'`. A `wrap` is `'wrap'`, `'truncate'`, `'truncate-start'`, `'truncate-middle'`, or `'truncate-end'`. | Everywhere |
+| `Button` | A control that calls `onPress` | Everywhere |
+| `Link`, `Code`, `Markdown` | A link with `href` and an optional `label`, a code block, and text formatted the way Claude’s replies are. `Markdown` takes its content in a `text` prop, not in `children`, and needs a `key` when you pass `onLinkPress`. | Everywhere |
+| `Input`, `Select` | A text field and a dropdown | Terminal, Desktop, VS Code |
+| `Svg` | An SVG document | Desktop, VS Code |
+| `Client` | A region drawn by a second file of yours, for animation and pointer input. That file gets no mods API. It reaches your hooks by posting data, which arrives as a `ui.message` event. If it fails to load, draw, or run, your hooks receive a [`ui.fault`](plugins-mods-reference.md#interface) event. | Terminal, Desktop |
+| `Raster`, `Image` | A [grid of colored cells](#draw-a-grid-of-colored-cells), and a picture | Terminal |
 
-If your module is a `.tsx` or `.jsx` file, you can write the tree as JSX. Destructure the elements from `$.ui.resolve(e)` first. If a tree uses an element the app doesn’t have, a prop an element doesn’t take, or a child where none goes, Claude Code draws its own version of the site. In a session started with `--plugin-dir`, a transcript line says so, such as `ui.render (Pane) refused: Text prop "bogusProp" is not allowed; the engine drew its own`. The [debug log](plugins-mods-troubleshoot.md#read-the-debug-log) records it as `ui.render (Pane): a hook returned a tree that does not validate` with the same reason. Nothing else appears in the session, so when a drawing doesn’t show up, check that line or the log.
+If your module is a `.tsx` or `.jsx` file, you can write the tree as JSX. Destructure the elements from `$.ui.resolve(e)` first. If your drawing doesn’t show up, check its tree for a prop an element doesn’t take or a child where none goes. A hook that returns such a tree [fails](plugins-mods-events.md#handle-a-hook-that-fails), and a [`hook skipped` line](plugins-mods-troubleshoot.md#a-pane-or-band-is-empty) names your mod and the rule the tree broke. For a `Text` in a pane with a prop named `bogusProp`, that line reads:
+
+```python
+my-mod: ui.render hook skipped: returned the wrong shape (a tree Pane refuses: Text prop "bogusProp" is not allowed)
+```
 
 
 [​](#link-in-the-desktop-app)
@@ -547,7 +557,17 @@ When the user presses a button, types into a field, or picks from a list your mo
 - **`Input`**: takes `onSubmit(value)` and `onInput(value)`
 - **`Select`**: takes `onSelect(value)` with its choices in `options`, a list of at least one choice with unique values, such as `[{ value: 'sm', label: 'Small' }, { value: 'lg', label: 'Large' }]`
 
-A test presses or types into a control by its `key`, so give each control one. Each use of a control also fires [`ui.press`, `ui.input`, or `ui.select`](plugins-mods-reference.md#interface) with the `key` in `e.element`, and another mod can handle those events. Its hook runs before your callback, so it sees what the user types into your `Input` and can change it or answer in place of your callback. The mods API has no method that presses another mod’s button.
+
+[​](#which-controls-need-a-key)
+
+Which controls need a `key`
+
+Give every `Input` and `Select` a `key` prop, such as `key: 'size'`. A `Button` can go without a `key` when it has a `label` prop or a single string child. Its key is then the `label` value or that string. Tests and other mods identify a control by its key:
+
+- **Tests**: a [test](plugins-mods-test.md#test-a-drawing) presses or types into a control by its key.
+- **Other mods**: Claude Code fires [`ui.press`, `ui.input`, or `ui.select`](plugins-mods-reference.md#interface) with the control’s key in `e.element` before it runs the control’s callback. Another mod’s hook for that event sees what the user typed into your `Input` and can change that text or keep your callback from running. The mods API gives that mod no method to press your buttons.
+
+If a message says `needs a key` or `is drawn twice`, [find the cause by that message](plugins-mods-troubleshoot.md#needs-a-key).
 
 
 [​](#know-which-keys-your-mod-can-receive)
@@ -576,17 +596,17 @@ What each key does
 
 This table lists what a key does while your pane or band has keyboard focus:
 
-| Key                               | What it does                                                                                                                                                          |
-|:----------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Tab                               | Moves to the next control                                                                                                                                             |
-| Up and Down                       | Move between controls while your drawing fits. When the pane or band has more rows than it can show, they scroll it.                                                  |
-| Enter                             | Presses the focused `Button`, submits the focused `Input`, or picks in a `Select`                                                                                     |
-| A button’s hotkey                 | Presses that button. While an `Input` has the focus, every printable key goes to the field.                                                                           |
-| Page Up, Page Down, Home, and End | Scroll your pane or band when it has more rows than it can show                                                                                                       |
-| Ctrl+X then an arrow key          | Resizes your pane. Left or Up gives it more room, and Right or Down gives the room back. A pane beside the transcript stops widening at 45% of the terminal’s width.  |
-| Ctrl+X then X                     | Closes your pane, even while one of its fields has the focus                                                                                                          |
-| Ctrl+X then Ctrl+A                | [Collapses the band](#when-the-user-collapses-the-band) to one row while a mod draws there, or expands it again. These keys also work while the prompt has the focus. |
-| Esc                               | Returns keyboard focus to the prompt. With `closeOnEscape: true`, it also closes the pane.                                                                            |
+| Key | What it does |
+|:---|:---|
+| Tab | Moves to the next control |
+| Up and Down | Move between controls while your drawing fits. When the pane or band has more rows than it can show, they scroll it. In an `Input` in the terminal, they [move between the field’s rows](plugins-mods-gallery.md#input), and from its first or last row they move to the control before or after it. |
+| Enter | Presses the focused `Button`, submits the focused `Input`, or picks in a `Select` |
+| A button’s hotkey | Presses that button. While an `Input` has the focus, every printable key goes to the field. |
+| Page Up, Page Down, Home, and End | Scroll your pane or band when it has more rows than it can show |
+| Ctrl+X then an arrow key | Resizes your pane. Left or Up gives it more room, and Right or Down gives the room back. A pane beside the transcript stops widening at 45% of the terminal’s width. |
+| Ctrl+X then X | Closes your pane, even while one of its fields has the focus |
+| Ctrl+X then Ctrl+A | [Collapses the band](#when-the-user-collapses-the-band) to one row while a mod draws there, or expands it again. These keys also work while the prompt has the focus. |
+| Esc | Returns keyboard focus to the prompt. With `closeOnEscape: true`, it also closes the pane. |
 
 A mod can’t bind Tab or the arrow keys to anything else, so a game steers with `w`, `a`, `s`, and `d`.
 
@@ -600,10 +620,10 @@ Set a hotkey and the first focus
 
 How a hotkey shows depends on the button and the app:
 
-| Button                     | In the terminal                     | In the Desktop app                   | In the VS Code extension               |
-|:---------------------------|:------------------------------------|:-------------------------------------|:---------------------------------------|
+| Button | In the terminal | In the Desktop app | In the VS Code extension |
+|:---|:---|:---|:---|
 | With brackets, the default | `[ Add one ]`, with no hotkey shown | The label with a small key beside it | The label, and the hotkey does nothing |
-| With `plain: true`         | `1: One`                            | The label with a small key beside it | The label, and the hotkey does nothing |
+| With `plain: true` | `1: One` | The label with a small key beside it | The label, and the hotkey does nothing |
 
 In the terminal, name the key in a bracketed button’s label, or use `plain: true`, so the user can see what to press. The [elements reference](plugins-mods-reference.md#elements) has the other `Button` rules: `action`, digit hotkeys on the band, and two buttons on one hotkey.
 
@@ -710,12 +730,12 @@ To try the pane:
 
 Each change follows the same render cycle as `hello-tabs`: the callback changes `notes`, calls `redraw`, and saves the list to `$.store`. If your hook draws the pane again while the user is typing a note, the field keeps their text as long as the hook passes the same `value` each time. To replace their text with your own, pass a different `value`. The example saves the notes and doesn’t load them. To bring them back in the next session, read them in a `session.start` hook, the way `hello-tabs` reads `count`. These props make up the field’s line, `Note: Type a note and press Enter ⏎ add`:
 
-| Prop          | In the example                | What it is                                                                 |
-|:--------------|:------------------------------|:---------------------------------------------------------------------------|
-| `label`       | `Note`                        | The text before the field. The terminal draws `: ` after it.               |
-| `placeholder` | `Type a note and press Enter` | Dim text that shows while the field is empty                               |
-| `value`       | `''`                          | The text the field starts with. It’s empty here, so the placeholder shows. |
-| `submitLabel` | `add`                         | The word after `⏎` that says what Enter does                               |
+| Prop | In the example | What it is |
+|:---|:---|:---|
+| `label` | `Note` | The text before the field. The terminal draws `: ` after it. |
+| `placeholder` | `Type a note and press Enter` | Dim text that shows while the field is empty |
+| `value` | `''` | The text the field starts with. It’s empty here, so the placeholder shows. |
+| `submitLabel` | `add` | The word after `⏎` that says what Enter does |
 
 Submitting an `Input` doesn’t start a turn unless your callback calls [`$.prompt.submit`](plugins-mods-api.md#start-a-turn-from-a-background-job).
 
@@ -782,7 +802,7 @@ on('session.start', async ($, e, next) => {
 })
 ```
 
-Claude Code now runs your `ui.render` hook once a second. The timer stops when the module reloads, and the new instance of the module starts its own.
+Claude Code now runs your `ui.render` hook once a second. The timer stops after the module reloads, and the new instance of the module starts its own.
 
 
 [​](#how-often-a-site-can-redraw)
@@ -798,11 +818,11 @@ Keep state
 
 Where a mod keeps a value decides how long the value lasts: until the module reloads, until the session ends, or from one session to the next. Choose by how long the value has to last:
 
-| Keep it in              | It lasts until                                                                                                                                                                                                                                     | Use it for                                                     |
-|:------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|
-| A module-level variable | The module reloads, which happens every time you save a file during development                                                                                                                                                                    | Values you can lose, as `tab` is in `hello-tabs`               |
-| `$.state`               | The session ends, or the user runs `/clear`, `/resume`, or `/branch`                                                                                                                                                                               | Values a drawing depends on that should survive a reload       |
-| `$.store`               | Your mod deletes it, or no session reads or writes the store for [`cleanupPeriodDays`](../02-Claude-Code-CLI/settings-reference.md#cleanupperioddays). The store is a key-value store, saved as a JSON file of your plugin’s own under `~/.claude/plugins/store/`. | Settings, history, anything the user expects to find next time |
+| Keep it in | It lasts until | Use it for |
+|:---|:---|:---|
+| A module-level variable | The module reloads, which happens every time you save a file during development | Values you can lose, as `tab` is in `hello-tabs` |
+| `$.state` | The session ends, or the user runs `/clear`, `/resume`, or `/branch` | Values a drawing depends on that should survive a reload |
+| `$.store` | Your mod deletes it, or no session reads or writes the store for [`cleanupPeriodDays`](../02-Claude-Code-CLI/settings-reference.md#cleanupperioddays). The store is a key-value store, saved as a JSON file of your plugin’s own under `~/.claude/plugins/store/`. | Settings, history, anything the user expects to find next time |
 
 `$.store.get(key)` resolves to the value or `undefined`, and `$.store.set(key, value)` takes any JSON value.
 

@@ -2,11 +2,14 @@
 title: "The MCP Registry - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/about"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-21T06:29:03Z"
+fetched_at: "2026-10-31T06:24:48Z"
+last_modified: "Fri, 30 Oct 2026 20:34:16 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
 ## On this page
+
+Back to top
 
 - [The MCP Registry Ecosystem](#the-mcp-registry-ecosystem)
   - [Relationship with Package Registries](#relationship-with-package-registries)

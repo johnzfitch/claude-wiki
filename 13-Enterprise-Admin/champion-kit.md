@@ -257,4 +257,4 @@ The techniques below are the ones that most reliably move someone from a first t
 | Recover from an incorrect result | Rather than rephrasing the request, paste the failing test or stack trace back to Claude and ask it to address that specific failure.                                 |
 | Keep edits surgical              | Ask for a diff, or specify “only change X.” Claude respects scope when scope is stated.                                                                               |
 
-Claude Code is updated frequently. Verify version-specific details against the [documentation home page](../02-Claude-Code-CLI/code-home.md) before distributing this material internally.
+Claude Code is updated frequently. Verify version-specific details against the [documentation home page](../01-Getting-Started/overview.md) before distributing this material internally.

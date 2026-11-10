@@ -2,20 +2,18 @@
 title: "Get started with Claude Design | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14604416-get-started-with-claude-design"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:09Z"
+fetched_at: "2026-11-09T06:26:28Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with Claude Design
 
-Updated today
 
+**[Claude Design](product-design.md)** lets you create designs, interactive prototypes, one-pagers, and other visual work by chatting with Claude. It's one of the templates you can start an artifact from, so you can use it in any chat, in Claude Code, and from the **Artifacts** tab, with on-canvas editing and your design system included. This guide walks you through creating your first design, iterating on it, and getting the most out of it. Learn more about **[what artifacts are and how to use them](https://support.claude.com/en/articles/9487310)**.
 
-**[Claude Design](product-design.md)** lets you create designs, interactive prototypes, one-pagers, and other visual work by chatting with Claude. It's one of the templates you can start an artifact from, so you can use it in any chat, in Claude Code, and from the **Artifacts** tab, with on-canvas editing and your design system included. This guide walks you through creating your first design, iterating on it, and getting the most out of it. Learn more about **[what artifacts are and how to use them](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md)**.
+Claude Design is available on Free, Pro, Max, Ultra, Team, and Enterprise plans, and it's on by default. On Enterprise plans, it turns on by default on October 15, 2026, and owners can turn it on before then in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. The standalone version at claude.ai/design closes on December 14, 2026. Learn more in **[Move from standalone Claude Design to Claude](migrate-from-standalone-claude-design-to-claude-claude-help-center.md)**.
 
-Claude Design is available on Free, Pro, Max, Team, and Enterprise plans, and it's on by default. On Enterprise plans, it turns on by default on October 15, 2026, and owners can turn it on before then in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. The standalone version at claude.ai/design closes on December 14, 2026. Learn more in **[Move from standalone Claude Design to Claude](migrate-from-standalone-claude-design-to-claude-claude-help-center.md)**.
-
-This guide assumes your organization’s design system has already been set up, so everything you create will automatically use your brand’s colors, typography, and component patterns. If you’re a design lead who needs to set up or modify the design system itself, see **[Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design)**.
+This guide assumes your organization’s design system has already been set up, so everything you create will automatically use your brand’s colors, typography, and component patterns. If you’re a design lead who needs to set up or modify the design system itself, see **[Set up your design system in Claude Design](../21-Account-Support/set-up-your-design-system-in-claude-design.md)**.
 
 **[Create an artifact with Claude](https://claude.ai/artifacts)**
 
@@ -149,7 +147,7 @@ Use **comments** for targeted, component-level changes (“fix this button,” �
 
 ## Use Claude Design with a keyboard
 
-To get into and out of the artifact panel, and to comment from the panel's header, see **[Use artifacts with a keyboard or screen reader](use-artifacts-with-a-keyboard-or-screen-reader-claude-help-center.md)**. That article also explains what focus means, what to do on a Mac laptop or in Safari, and how the tables show keys.
+To get into and out of the artifact panel, and to comment from the panel's header, see **[Use artifacts with a keyboard or screen reader](https://support.claude.com/en/articles/17457950)**. That article also explains what focus means, what to do on a Mac laptop or in Safari, and how the tables show keys.
 
 A design is a canvas of artboards. Each artboard holds layers, such as text, shapes, and images, and a layer can hold other layers inside it.
 
@@ -227,7 +225,7 @@ Use the “Export” button in the upper right corner when viewing your project 
 
   - Send to Claude Code Web
 
-Designs start private to you. To share one, click "Share" and choose who can open it and what they can do. People you share a design with can view, comment on, or edit it. Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
+Designs start private to you. To share one, click "Share" and choose who can open it and what they can do. People you share a design with can view, comment on, or edit it. Learn more about **[sharing artifacts](share-artifacts-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 

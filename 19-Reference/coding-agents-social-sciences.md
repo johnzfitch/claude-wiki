@@ -2,9 +2,11 @@
 title: "Coding agents in the social sciences \\ Anthropic"
 source_url: "https://www.anthropic.com/research/coding-agents-social-sciences"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:22Z"
+fetched_at: "2026-10-28T06:39:55Z"
 tags: ["agents", "news-research", "search"]
 ---
+
+### Chapter 01: How are AI coding agents changing how we study the economy and society?
 
 # Coding agents in the social sciences
 
@@ -23,7 +25,7 @@ tags: ["agents", "news-research", "search"]
 
 - Team
 
-  [Science](https://www.anthropic.com/science)
+  [Societal Impacts](team-societal-impacts.md)
 
 - Topics
 
@@ -73,7 +75,7 @@ Respondents were evenly split between economics, political science and sociology
 
 We measured overall AI use in two ways. First, we asked “Have you previously used genAI models to aid your research process?” 81% of respondents said yes.
 
-But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).^([1](#footnote-1))
+But what about those who have actually adopted increasingly capable coding agents into their workflow? Here, we asked “Do you regularly (more than once a week) use an AI coding assistant integrated into your command line (such as Codex, Cursor, or Claude Code)?” In a follow-up question, we verified that they used one of those tools (or Google Antigravity).^([^1])
 
 Only 20% of respondents use coding agents. Our survey came around two months after a flurry of discussion about Claude Code and Opus 4.6 that kicked off in late December of 2025. Yet even among interested respondents who self-selected into our survey, only ⅕ had adopted agents into their workflow. Claude Code is the most common coding agent tool reported, with 86% of users reporting Claude Code use (31% report using Codex, the next most common tool).
 
@@ -141,7 +143,7 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 01We launched the survey only a month after the release of Claude Cowork and before the release of OpenAI’s Codex app, so we focused this question on Command Line Interface tools for interaction with coding agents. This means we do not count researchers who use AI agents exclusively via more general purpose desktop apps.[](#footnote-ref-1)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 
@@ -162,3 +164,7 @@ Copy
  date = {2026-05-27},
  year = {2026},
  url = {https://www.anthropic.com/research/coding-agents-social-sciences},
+}
+```
+
+[^1]:

@@ -2,7 +2,7 @@
 title: "Project Fetch: Phase two \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-fetch-phase-two"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:43Z"
+fetched_at: "2026-10-24T06:27:01Z"
 tags: ["news-research"]
 ---
 

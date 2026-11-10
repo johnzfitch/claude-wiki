@@ -2,7 +2,7 @@
 title: "Read and request reviews on a pull request - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-pull-requests"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:27Z"
+fetched_at: "2026-10-25T06:26:40Z"
 tags: ["claude-code"]
 ---
 
@@ -188,7 +188,12 @@ Before a July 2026 update, `@claude review` subscribed the PR to push-triggered 
 
 What a later review covers
 
-A later review that starts on its own, such as after a push, focuses on what changed since the last review and posts fewer nits and pre-existing findings. Its summary counts what it left out, in a line that ends “found and not posted” or “outside the scope of this re-review and not posted.” To get a review that leaves none of these out, comment [`@claude review`](#comment-commands). It covers the whole pull request again.
+A later review that starts on its own, such as after a push, focuses on what changed since the last review and posts fewer [nits and pre-existing findings](#severity-levels). To see whether it left findings out as a result, look in the review body for a sentence that counts them:
+
+- **Findings on code that hasn’t changed since the last review**: the sentence ends “outside the scope of this re-review and not posted”
+- **Nits and pre-existing findings**: the sentence ends “found and not posted”
+
+To get a review that leaves none of these out, comment [`@claude review`](#comment-commands). It covers the whole pull request again.
 
 
 [​](#review-drafts-and-pull-requests-from-forks)

@@ -2,7 +2,7 @@
 title: "Claude can now use tools | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/tool-use-ga"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:26Z"
+fetched_at: "2026-11-09T06:26:29Z"
 tags: ["news-research"]
 ---
 
@@ -12,7 +12,7 @@ Claude now connects with external tools and APIs to perform tasks, manipulate da
 
 - 
 
-  Category[Announcements](https://www.anthropic.com/resources/product-announcements)
+  Category[Product updates](https://www.anthropic.com/resources/product-updates)
 - 
 
   ProductClaude Platform
@@ -74,33 +74,29 @@ You can get started with tool use today on the Anthropic Messages API, Amazon Be
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 22, 2026
+ArticleNov 5, 2026
 
-### The full Claude Platform, available on Google Cloud
+### Introducing Personal Finance in Claude
 
-Use Claude Models on Google Cloud (Anthropic managed) to access Claude Platform features with Google Cloud authentication, billing, and commitment retirement.
+Ask Claude about your money and get straight answers from the accounts you connect.
+
+
+ArticleNov 5, 2026
+
+### More visibility and control over Claude Enterprise for security teams
+
+Claude EnterpriseClaude apps
+
+
+ArticleNov 4, 2026
+
+### New agents and products for security, productivity, and creative work on Claude Marketplace
+
+
+ArticleNov 2, 2026
+
+### Make long-running agents faster with message threads
+
+New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
 
 Claude Platform
-
-
-ArticleOct 21, 2026
-
-### HCLTech joins the Claude Partner Network as a Global Premier partner
-
-HCLTech will bring Claude into the solutions it provides for banks, hospitals, telecom companies, and manufacturers.
-
-
-ArticleOct 21, 2026
-
-### Introducing Claude Duet
-
-A research preview is available by waitlist today, starting with US Pro and Max subscribers.
-
-
-ArticleOct 21, 2026
-
-### Claude Security now scans continuously and tracks fixes
-
-Claude Security now keeps up with your repositories as code changes, tracks findings until they’re fixed, learns from the context your team adds, and connects to your tools through an API and MCP. Available in public beta for Claude Enterprise customers.
-
-Claude Security

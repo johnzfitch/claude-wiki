@@ -2,53 +2,9 @@
 title: "PHP SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/php"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:13Z"
+fetched_at: "2026-11-05T06:36:34Z"
 tags: ["api", "sdk"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fphp)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
 # PHP SDK
 
@@ -63,10 +19,6 @@ Install and configure the Anthropic PHP SDK with value objects and builder patte
 
 
 The Anthropic PHP library provides convenient access to the Claude API from any PHP 8.1.0+ application.
-
-
-
-The PHP SDK is currently in beta. APIs might change between versions.
 
 
 
@@ -94,9 +46,9 @@ This library uses named parameters to specify optional arguments. Parameters wit
 $client = new Client();
 
 $message = $client->messages->create(
-  maxTokens: 1024,
-  messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5-5',
+    maxTokens: 1024,
+    messages: [['role' => 'user', 'content' => 'Hello, Claude']],
+    model: 'claude-opus-5-5',
 );
 
 $textBlock = array_find($message->content, static fn ($block): bool => $block->type === 'text');
@@ -105,13 +57,13 @@ echo $textBlock->text;
 
 
 
-For authentication options including Workload Identity Federation, see [Authentication](manage-claude-authentication.md). If your API key is a [personal or service account key](manage-claude-authentication.md#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](manage-claude-authentication.md#select-a-workspace) shows the per-request option for this SDK.
+For authentication options including Workload Identity Federation, see [Authentication](manage-claude-authentication.md). If your API key is a [personal or service account key](manage-claude-authentication.md#key-types) that isn’t scoped to a workspace, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](manage-claude-authentication.md#select-a-workspace) shows the per-request option for this SDK.
 
 ## Value objects
 
-It is recommended to use the static `with` constructor `Base64ImageSource::with(data: "U3RhaW5sZXNzIHJvY2tz", ...)` and named parameters to initialize value objects.
+The recommended way to initialize value objects is the static `with` constructor `Base64ImageSource::with(data: 'U3RhaW5sZXNzIHJvY2tz', ...)` with named parameters.
 
-However, builders are also provided `(new Base64ImageSource)->withData("U3RhaW5sZXNzIHJvY2tz")`.
+However, builders are also provided, for example `(new Base64ImageSource())->withData('U3RhaW5sZXNzIHJvY2tz')`.
 
 ## Streaming
 
@@ -121,13 +73,13 @@ The SDK provides support for streaming responses using Server-Sent Events (SSE).
 $client = new Client();
 
 $stream = $client->messages->createStream(
-  maxTokens: 1024,
-  messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5-5',
+    maxTokens: 1024,
+    messages: [['role' => 'user', 'content' => 'Hello, Claude']],
+    model: Model::CLAUDE_OPUS_5_5,
 );
 
 foreach ($stream as $event) {
-  echo $event->type . PHP_EOL;
+    echo $event->type . PHP_EOL;
 }
 ```
 
@@ -137,7 +89,7 @@ Streaming requires an HTTP client that returns the response body incrementally. 
 
 ```python
 $client = new Client(
-  requestOptions: RequestOptions::with(streamingTransporter: $myStreamingClient),
+    requestOptions: RequestOptions::with(streamingTransporter: $myStreamingClient),
 );
 ```
 
@@ -153,21 +105,22 @@ When the library is unable to connect to the API, or if the API returns a non-su
 use Anthropic\Core\Exceptions\APIConnectionException;
 use Anthropic\Core\Exceptions\APIStatusException;
 use Anthropic\Core\Exceptions\RateLimitException;
+use Anthropic\Messages\Model;
 // ...
 try {
-  $message = $client->messages->create(
-    maxTokens: 1024,
-    messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-    model: 'claude-opus-5-5',
-  );
+    $message = $client->messages->create(
+        maxTokens: 1024,
+        messages: [['role' => 'user', 'content' => 'Hello, Claude']],
+        model: Model::CLAUDE_OPUS_5_5,
+    );
 } catch (APIConnectionException $e) {
-  echo "The server could not be reached", PHP_EOL;
-  echo $e->getPrevious()?->getMessage(), PHP_EOL;
+    echo 'The server could not be reached', PHP_EOL;
+    echo $e->getPrevious()?->getMessage(), PHP_EOL;
 } catch (RateLimitException $_) {
-  echo "A 429 status code was received; we should back off a bit.", PHP_EOL;
+    echo 'A 429 status code was received; we should back off a bit.', PHP_EOL;
 } catch (APIStatusException $e) {
-  echo "Another non-200-range status code was received", PHP_EOL;
-  echo $e->getMessage();
+    echo 'Another non-200-range status code was received', PHP_EOL;
+    echo $e->getMessage();
 }
 ```
 
@@ -175,7 +128,7 @@ try {
 
 Error codes are as follows:
 
-| Cause            | Error Type                     |
+| Cause            | Error type                     |
 |------------------|--------------------------------|
 | HTTP 400         | `BadRequestException`          |
 | HTTP 401         | `AuthenticationException`      |
@@ -198,6 +151,7 @@ Connection errors (for example, because of a network connectivity problem), 408 
 You can use the `maxRetries` option to configure or disable this:
 
 ```python
+use Anthropic\Messages\Model;
 use Anthropic\RequestOptions;
 // ...
 // Configure the default for all requests:
@@ -205,10 +159,10 @@ $client = new Client(requestOptions: RequestOptions::with(maxRetries: 0));
 
 // Or, configure per-request:
 $result = $client->messages->create(
-  maxTokens: 1024,
-  messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5-5',
-  requestOptions: RequestOptions::with(maxRetries: 5),
+    maxTokens: 1024,
+    messages: [['role' => 'user', 'content' => 'Hello, Claude']],
+    model: Model::CLAUDE_OPUS_5_5,
+    requestOptions: RequestOptions::with(maxRetries: 5),
 );
 ```
 
@@ -227,12 +181,12 @@ $page = $client->beta->messages->batches->list(limit: 20);
 
 // fetch items from the current page
 foreach ($page->getItems() as $item) {
-  echo $item->id, PHP_EOL;
+    echo $item->id, PHP_EOL;
 }
 // make additional network requests to fetch items from all pages, including and after the current page
 // ...
 foreach ($page->pagingEachItem() as $item) {
-  echo $item->id, PHP_EOL;
+    echo $item->id, PHP_EOL;
 // ...
 }
 ```
@@ -240,6 +194,10 @@ foreach ($page->pagingEachItem() as $item) {
 
 
 ## Advanced usage
+
+### OpenTelemetry tracing
+
+When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
 
 ### Undocumented properties
 
@@ -255,14 +213,14 @@ The `extra*` parameters of the same name override the documented parameters.
 use Anthropic\RequestOptions;
 // ...
 $message = $client->messages->create(
-  maxTokens: 1024,
-  messages: [['role' => 'user', 'content' => 'Hello, Claude']],
-  model: 'claude-opus-5-5',
-  requestOptions: RequestOptions::with(
-    extraQueryParams: ['my_query_parameter' => 'value'],
-    extraBodyParams: ['my_body_parameter' => 'value'],
-    extraHeaders: ['my-header' => 'value'],
-  ),
+    maxTokens: 1024,
+    messages: [['role' => 'user', 'content' => 'Hello, Claude']],
+    model: 'claude-opus-5-5',
+    requestOptions: RequestOptions::with(
+        extraQueryParams: ['my_query_parameter' => 'value'],
+        extraBodyParams: ['my_body_parameter' => 'value'],
+        extraHeaders: ['my-header' => 'value'],
+    ),
 );
 ```
 
@@ -280,15 +238,51 @@ To make requests to undocumented endpoints while retaining the benefit of authen
 $client = new Client();
 
 $response = $client->request(
-  method: "post",
-  path: '/undocumented/endpoint',
-  query: ['dog' => 'woof'],
-  headers: ['useful-header' => 'interesting-value'],
-  body: ['hello' => 'world']
+    method: 'post',
+    path: '/undocumented/endpoint',
+    query: ['dog' => 'woof'],
+    headers: ['useful-header' => 'interesting-value'],
+    body: ['hello' => 'world']
 );
 ```
 
 
+
+### Middleware
+
+Middleware runs your code around every HTTP request the client sends. [SDK middleware](cli-sdks-libraries-middleware.md) shows how to register a middleware and the order in which several run. This section covers the details that are specific to the PHP SDK.
+
+A middleware is a callable that takes the request and `$next`, or an instance of a class that implements `Anthropic\Middleware`, whose `handle()` method has the same signature. The `middleware` request option accepts both:
+
+```python
+use Anthropic\Middleware;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+
+final class TracingMiddleware implements Middleware
+{
+    public function handle(RequestInterface $request, \Closure $next): ResponseInterface
+    {
+        return $next($request->withHeader('x-trace-id', bin2hex(random_bytes(8))));
+    }
+}
+
+$client = new Client(requestOptions: ['middleware' => [new TracingMiddleware()]]);
+```
+
+
+
+`$next` runs the rest of the chain and sends the request. Call it once to forward the request, skip the call to return your own response (such as a cached one), or call it several times to send follow-up requests (such as a custom retry).
+
+The SDK also passes every middleware a third argument: the request’s `Anthropic\RequestOptions`, which merges the client’s options with the options of the call. To read an option such as `fallbackState`, declare an optional third parameter, `?RequestOptions $options = null`. Treat the object as read-only, because every middleware and every retry of the request shares it. If your callable already has a third parameter with another purpose, rewrite it, because the SDK fills that parameter on every call.
+
+At runtime:
+
+- **Retries:** Middleware runs once for each HTTP attempt, inside the SDK’s retry loop, so it runs again on each retry.
+- **Error responses:** `$next` returns a response for every HTTP status. The SDK throws its [typed exceptions](#error-handling) only after the whole chain returns, so a middleware can inspect or replace a 4xx or 5xx response.
+- **Exceptions:** An exception that a middleware throws reaches your code unchanged, except in two cases. The SDK handles a PSR-18 `ClientExceptionInterface` as a connection error, which surfaces as `APIConnectionException`. It retries the attempt after an `Anthropic\Core\Exceptions\RetryableException`, and throws that exception unchanged when no retries are left.
+- **Authentication:** The SDK refreshes OAuth tokens, and signs or authorizes Amazon Bedrock and Google Cloud requests, inside the innermost `$next`. A request that your middleware changes is therefore signed after the change, and again each time you call `$next`.
+- **Response bodies:** A middleware that reads the response body must rewind it, or return `$response->withBody(...)` with a new body, so that the SDK can still decode it. A streaming body can’t be rewound, so pass it through unread.
 
 ## Platform integrations
 
@@ -299,12 +293,14 @@ For detailed platform setup guides with code examples, see:
 - [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
 - [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)
+- [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+
+See also [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md).
 
 The PHP SDK supports the following platforms:
 
-- **Agent Platform:** `Anthropic\Vertex\Client`. Use `::fromEnvironment()`.
+- **Claude Models on Google Cloud (Google managed):** `Anthropic\Vertex\Client`. Use `::fromEnvironment()`.
 - **Bedrock:** `Anthropic\Bedrock\MantleClient`. Use `new MantleClient(awsRegion: ...)`.
 - **Bedrock (legacy):** `Anthropic\Bedrock\Client`. Use `::fromEnvironment()` or `::withCredentials()`.
 - **Claude Platform on AWS:** `Anthropic\Aws\Client` (requires `aws/aws-sdk-php` as a soft dependency). Use `new Anthropic\Aws\Client(workspaceId: ...)` or set `ANTHROPIC_AWS_WORKSPACE_ID`. Available in beta.
@@ -312,11 +308,15 @@ The PHP SDK supports the following platforms:
 
 Use `MantleClient` for new projects; `Anthropic\Bedrock\Client` remains for existing applications using the Bedrock `InvokeModel` API.
 
+The PHP SDK also supports Claude Models on Google Cloud (Anthropic managed) through `Anthropic\GoogleCloud\Client`. This client is in beta. `Anthropic\GoogleCloud\Client` requires `google/auth` as a soft dependency. Use `new Anthropic\GoogleCloud\Client(workspaceId: ...)` or set the `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID` environment variable. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution).
+
 ## Semantic versioning
 
-This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions. As the library is in initial development and has a major version of `0`, APIs might change at any time.
+This package follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions.
 
 This package considers improvements to the (non-runtime) PHPDoc type definitions to be non-breaking changes.
+
+Every request to the Claude API uses an API version. With this SDK, your requests use the API version that was current when your SDK’s major version was released, so you move to a new API version by upgrading to a new major version. Version 1.0.0 is the first to use `2026-10-21`. See [Migrating to API version 2026-10-21](../Endpoints/migration-2026-10-21.md#upgrade) for how to upgrade.
 
 ## Additional resources
 

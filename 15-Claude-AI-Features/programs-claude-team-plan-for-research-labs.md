@@ -314,7 +314,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 ## Products
 
 - [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
+- [Claude Code](product-claude-code.md)
 - [Claude Cowork](product-cowork.md)
 - [@Claude](product-tag.md)
 - [Claude Science](product-claude-science.md)
@@ -347,7 +347,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 ## Enterprise
 
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Overview](../18-Industry-UseCases/enterprise.md)
 - [Claude Code for Enterprise](product-claude-code-enterprise.md)
 
 ## Departments
@@ -378,7 +378,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 ## Developers
 
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer docs](../01-Getting-Started/overview.md)
 - [Developer blog](https://claude.dev)
 - [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)
@@ -439,7 +439,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 ## Products
 
 - [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
+- [Claude Code](product-claude-code.md)
 - [Claude Cowork](product-cowork.md)
 - [@Claude](product-tag.md)
 - [Claude Science](product-claude-science.md)
@@ -472,7 +472,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 ## Enterprise
 
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Overview](../18-Industry-UseCases/enterprise.md)
 - [Claude Code for Enterprise](product-claude-code-enterprise.md)
 
 ## Departments
@@ -503,7 +503,7 @@ No. Claude does not train on your conversations, uploaded files, or research dat
 
 ## Developers
 
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer docs](../01-Getting-Started/overview.md)
 - [Developer blog](https://claude.dev)
 - [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)

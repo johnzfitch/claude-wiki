@@ -2,9 +2,11 @@
 title: "Economic Index: New building blocks for AI use \\ Anthropic"
 source_url: "https://www.anthropic.com/news/economic-index-primitives"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:21Z"
+fetched_at: "2026-11-09T06:26:26Z"
 tags: ["news-research"]
 ---
+
+### 01What we’ve learned from our economic primitives
 
 # **Anthropic Economic Index: **New building blocks for understanding AI use
 
@@ -14,23 +16,20 @@ tags: ["news-research"]
 - [02Updates on our previous measures](#updates-on-our-previous-measures)
 - [03Conclusion](#conclusion)
 
-- Published
+Published  
+Jan 15, 2026
 
-  Jan 15, 2026
+Team  
+[Economics](team-economics.md)
 
-- Team
+Topics  
+- [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
 
-  [Economics](team-economics.md)
-
-- Topics
-
-  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
-
-  See more...
+See more...
 
 Related articles
 
@@ -44,9 +43,9 @@ Related articles
 
 Is artificial intelligence really making people faster at work? What sort of tasks does AI support best? And how might it change the nature of people’s occupations?
 
-At Anthropic, we’re measuring real-world AI use on an ongoing basis to answer questions exactly like these. Our privacy-preserving [analysis method](clio.md) allows us to learn more about conversations on [Claude.ai](http://claude.ai) (capturing uses by consumers) and our first-party API (mostly capturing uses by businesses).^([1](#footnote-1)) In past reports, we’ve assessed AI tasks by [occupation and wage level](the-anthropic-economic-index.md), looked more closely at [software development](impact-software-development.md), and studied AI use [by country and by US state](economic-index-geography.md).
+At Anthropic, we’re measuring real-world AI use on an ongoing basis to answer questions exactly like these. Our privacy-preserving [analysis method](clio.md) allows us to learn more about conversations on [Claude.ai](http://claude.ai) (capturing uses by consumers) and our first-party API (mostly capturing uses by businesses).^([^1]) In past reports, we’ve assessed AI tasks by [occupation and wage level](the-anthropic-economic-index.md), looked more closely at [software development](impact-software-development.md), and studied AI use [by country and by US state](economic-index-geography.md).
 
-We’re now adding a new level of detail to our Economic Index. In our fourth report, we’re introducing what we’ve called **economic primitives**: a set of five simple, foundational measurements to track the economic impacts of Claude over time. Our initial set includes task complexity, skill level, purpose (work, education, or personal use), AI autonomy, and success.^([2](#footnote-2)) We derive these primitives from asking Claude to answer a common set of questions about every conversation in our sample for this report.
+We’re now adding a new level of detail to our Economic Index. In our fourth report, we’re introducing what we’ve called **economic primitives**: a set of five simple, foundational measurements to track the economic impacts of Claude over time. Our initial set includes task complexity, skill level, purpose (work, education, or personal use), AI autonomy, and success.^([^2]) We derive these primitives from asking Claude to answer a common set of questions about every conversation in our sample for this report.
 
 These primitives provide a leading indicator of AI’s potential economic impacts—and allow us to answer far more complex questions about how AI is already changing jobs. Our latest report, which samples conversations from November 2025 (predominantly using Claude Sonnet 4.5), uses our primitives to explore a wide range of questions that we wouldn’t otherwise be able to answer—including how Claude’s task-level success rates change for more complex tasks, and whether the use of Claude to date might portend a net-deskilling effect on many jobs.
 
@@ -96,7 +95,7 @@ A further question we asked is whether the tasks that AI covers represent the hi
 
 As an experiment, we estimated how removing these Claude-covered tasks would shift the task composition of people’s jobs. As a first-order effect, this would *deskill* jobs on average, since it would remove those higher-education tasks. Professions like technical writers, travel agents, and teachers would be affected (as we discuss further in [the report](https://www.anthropic.com/news/anthropic.com/research/anthropic-economic-index-january-2026-report)), though a rarer few (like real estate managers) would see effects going the other way.
 
-We’re not necessarily *predicting* that this deskilling will occur: it’s possible that *even if* AI fully automated the tasks it currently supports, the labor market would dynamically adjust in ways that this analysis doesn’t account for. (Of course, as models improve, the composition of tasks that AI covers will change, too.) That said, we think this offers a useful signal as to the most immediate effects that AI might have on occupations in the near future.^([3](#footnote-3))
+We’re not necessarily *predicting* that this deskilling will occur: it’s possible that *even if* AI fully automated the tasks it currently supports, the labor market would dynamically adjust in ways that this analysis doesn’t account for. (Of course, as models improve, the composition of tasks that AI covers will change, too.) That said, we think this offers a useful signal as to the most immediate effects that AI might have on occupations in the near future.^([^3])
 
 ### Aggregate impact
 
@@ -137,3 +136,9 @@ In the meantime, researchers, journalists, and the public can use our data to in
 5.  **Task success** measures Claude’s assessment of whether Claude completes tasks successfully. Task success helps assess whether tasks can be automated effectively (can a task be automated at all?) and efficiently (how many attempts would it take to automate a task?). That is, task success matters for both the feasibility and the cost of automating labor tasks.
 
 03Indeed, some [historical evidence](https://www.michaelwebb.co/webb_ai.pdf) suggests that when technologies automating job tasks appear in patent data, employment and wages subsequently fall for exposed occupations.[](#footnote-ref-3)
+
+[^1]:
+
+[^2]:
+
+[^3]:

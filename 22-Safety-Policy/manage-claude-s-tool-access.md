@@ -2,7 +2,7 @@
 title: "Manage Claude’s tool access | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13730515-manage-claude-s-tool-access"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:29:04Z"
+fetched_at: "2026-11-09T06:26:03Z"
 tags: ["safety"]
 ---
 

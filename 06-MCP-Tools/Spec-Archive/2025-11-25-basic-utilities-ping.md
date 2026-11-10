@@ -1,12 +1,15 @@
 ---
 title: "Ping - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/ping"
+source_url: "https://modelcontextprotocol.io/specification/2025-06-18/basic/utilities/ping"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:10Z"
+fetched_at: "2026-10-31T06:25:23Z"
+last_modified: "Sat, 31 Oct 2026 06:22:50 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Overview](#overview)
 - [Message Format](#message-format)

@@ -2,11 +2,14 @@
 title: "Claude Code on Google Cloud's Agent Platform - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/google-vertex-ai"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-14T06:25:57Z"
+fetched_at: "2026-11-03T06:23:03Z"
+last_modified: "Tue, 03 Nov 2026 06:18:14 GMT"
 tags: ["agents", "claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Prerequisites](#prerequisites)
 - [Sign in with Agent Platform](#sign-in-with-agent-platform)
@@ -20,6 +23,8 @@ tags: ["agents", "claude-code"]
   - [5. Pin model versions](#5-pin-model-versions)
   - [6. Verify your configuration](#6-verify-your-configuration)
 - [Startup model checks](#startup-model-checks)
+  - [Start a session on a specific model](#start-a-session-on-a-specific-model)
+  - [Remembered model refusals](#remembered-model-refusals)
   - [When your organization enforces a model allowlist](#when-your-organization-enforces-a-model-allowlist)
   - [When a model is disabled mid-session](#when-a-model-is-disabled-mid-session)
 - [IAM configuration](#iam-configuration)
@@ -204,14 +209,14 @@ For current and legacy model IDs, see [Models overview](../20-Models/about-claud
 | Primary model    | `claude-opus-5-5`            |
 | Small/fast model | `claude-sonnet-4-5@20250929` |
 
-Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Google Cloud’s Agent Platform, Claude Code uses the default Sonnet model for background tasks because Haiku may not be enabled in every project or region. Two selections change which model carries them:
+Before v2.1.280, the primary model on Google Cloud’s Agent Platform defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219. Background tasks such as session title generation use the small/fast model, normally a Haiku-class model. On Google Cloud’s Agent Platform, Claude Code uses the default Sonnet model for background tasks because Haiku may not be enabled in every project or region. Two selections change which model carries them:
 
 - When you select a primary model with `--model`, `ANTHROPIC_MODEL`, or the `model` setting, background tasks use that model. When Claude Code starts the session on the model you set with [`ANTHROPIC_DEFAULT_MODEL`](model-config.md#set-a-default-model-for-new-sessions), background tasks use that model too. Setting `ANTHROPIC_DEFAULT_OPUS_MODEL` without `ANTHROPIC_DEFAULT_SONNET_MODEL` also counts as a selection, because the built-in Sonnet model may not be enabled in a project that steers its own Opus.
 - To use Haiku for background tasks, set `ANTHROPIC_DEFAULT_HAIKU_MODEL` to a model ID that is available in your project.
 
 Opus models have a higher per-token price than Sonnet models, so if you don’t pin a primary model, you’re billed at the Opus rate. To use Sonnet 4.5 as the primary model, set `ANTHROPIC_MODEL` to its full model ID. A deployment that steers the default with `ANTHROPIC_DEFAULT_SONNET_MODEL` and doesn’t set `ANTHROPIC_DEFAULT_OPUS_MODEL` keeps its steered Sonnet model as the default.
 
-Before v2.1.280, the primary model on Google Cloud’s Agent Platform defaulted to Opus 5 and the `opus` alias resolved to Opus 5 from v2.1.219. On v2.1.207 through v2.1.218, the primary model on Google Cloud’s Agent Platform defaulted to Opus 4.8 and the `opus` alias resolved to Opus 4.8. To customize models further:
+To customize models further:
 
 ```python
 export ANTHROPIC_MODEL='claude-opus-4-8'
@@ -230,7 +235,26 @@ Start Claude Code and run `/status` to confirm the setup. The `API provider` lin
 
 Startup model checks
 
-When Claude Code starts with Google Cloud’s Agent Platform configured, it verifies that the models it intends to use are accessible in your project. If you have pinned a model version that is older than the current Claude Code default, and your project can invoke the newer version, Claude Code prompts you to update the pin. Accepting writes the new model ID to your [user settings file](settings.md) and restarts Claude Code. Declining is remembered until the next default version change. If you have not pinned a model and the current default is unavailable in your project, Claude Code falls back for the current session and shows a notice. It tries earlier versions of the default model first and, when the default is an Opus model and no Opus version is available, falls back to the default Sonnet model. The fallback is not persisted. Enable the newer model in [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) or [pin a version](#5-pin-model-versions) to make the choice permanent. When you start the session on a specific Sonnet or Opus version, for example with `--model`, `ANTHROPIC_MODEL`, or the [`model` setting](settings-reference.md#model), that version acts as the session’s pinned default for the matching `sonnet` or `opus` alias. Claude Code skips the availability check for the built-in default your model replaces and starts on the model you configured, with no fallback notice. Model aliases such as `opus` don’t act as pins, and neither does a model ID Claude Code doesn’t recognize. When these checks find a model your project can’t invoke, Claude Code remembers the refusal on this machine for up to a day, and launches during that time skip the remembered model without asking Agent Platform again. Claude Code checks a remembered refusal of a current default model again at launch once ten minutes have passed since the last check, so a default your administrator re-enables comes back. To turn the memory off, set [`CLAUDE_CODE_SKIP_MODEL_ACCESS_MEMORY=1`](env-vars.md).
+When Claude Code starts with Google Cloud’s Agent Platform configured, it verifies that the models it intends to use are accessible in your project. You may have pinned a model version that is older than the current Claude Code default. If your project can invoke the newer version, Claude Code prompts you to update the pin:
+
+- **If you accept**: Claude Code writes the new model ID to your [user settings file](settings.md) and restarts
+- **If you decline**: Claude Code remembers your choice until the next default version change
+
+For a pin in the `env` block of [managed settings](../13-Enterprise-Admin/managed-settings.md), Claude Code runs no check and shows no prompt. If the update prompt still appears for this pin, update Claude Code to v2.1.314 or later. Before v2.1.314, the managed pin stayed in effect after you accepted, so the prompt came back at the next start. If you have not pinned a model and the current default is unavailable in your project, Claude Code falls back for the current session and shows a notice. It tries earlier versions of the default model first and, when the default is an Opus model and no Opus version is available, falls back to the default Sonnet model. The fallback is not persisted. Enable the newer model in [Model Garden](https://console.cloud.google.com/vertex-ai/model-garden) or [pin a version](#5-pin-model-versions) to make the choice permanent.
+
+
+[​](#start-a-session-on-a-specific-model)
+
+Start a session on a specific model
+
+When you start the session on a specific Sonnet or Opus version, for example with `--model`, `ANTHROPIC_MODEL`, or the [`model` setting](settings-reference.md#model), that version acts as the session’s pinned default for the matching `sonnet` or `opus` alias. Claude Code skips the availability check for the built-in default your model replaces and starts on the model you configured, with no fallback notice. When you start a session on a model alias such as `opus` or on a model ID Claude Code doesn’t recognize, that value doesn’t act as a pin.
+
+
+[​](#remembered-model-refusals)
+
+Remembered model refusals
+
+When the startup model checks find a model your project can’t invoke, Claude Code can remember the refusal on this machine for up to a day. Once ten minutes have passed since the last check, Claude Code checks a remembered refusal of a current default model again at launch. A default your administrator re-enables then comes back. To turn the memory off, set [`CLAUDE_CODE_SKIP_MODEL_ACCESS_MEMORY=1`](env-vars.md).
 
 
 [​](#when-your-organization-enforces-a-model-allowlist)

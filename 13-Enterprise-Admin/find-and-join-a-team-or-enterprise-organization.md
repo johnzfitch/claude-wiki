@@ -2,13 +2,11 @@
 title: "Find and join a Team or Enterprise organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13566435-find-and-join-a-team-or-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:04Z"
+fetched_at: "2026-11-09T06:26:02Z"
 tags: ["enterprise"]
 ---
 
 # Find and join a Team or Enterprise organization
-
-July 21, 2026
 
 
 Organization discovery allows you to find and join your company's existing Team or Enterprise plan organization when you start the sign-up flow with a work email address. Instead of creating a separate personal account, you can request to join—or be added automatically—depending on your organization's configuration.
@@ -73,13 +71,13 @@ If multiple organizations share the same email domain and are all discoverable, 
 
 ## Join when you already have a personal Claude account
 
-If you have a Free, Pro, or Max account on the same email address as the organization you're joining, you can choose what to do with it:
+If you have a Free, Pro, Max, or Ultra account on the same email address as the organization you're joining, you can choose what to do with it:
 
 - **Keep both accounts.** Your personal account stays active, and you switch between it and your organization account from your account menu.
 
-- **Use your organization account only.** Your personal account closes. You choose whether to bring your data with you or delete it.
+- **Use your organization only.** You choose "Bring what you can" or "Start fresh" (nothing moves). Then your personal account closes and will be deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
-Some things don't move either way, including custom skills and your connected apps. Before you choose, review **[Move your personal Claude account to a Team or Enterprise organization](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
+Even with "Bring what you can," not everything moves. For example, custom skills, Claude Docs, and your connected apps don't. Before you choose, review **[Move your personal Claude account to a Team or Enterprise organization](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
 
 On Team plans, you're prompted when you accept the invite. On Team and Enterprise plans, you can start the migration from **[Settings \> Account](https://claude.ai/settings/account)** at any time after joining. Start from your organization account rather than your personal one—if you're signed in to the personal account, switch first by clicking your initials or name in the lower left corner.
 

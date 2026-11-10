@@ -2,37 +2,9 @@
 title: "API usage primer for Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/claude_api_primer"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:39:25Z"
+fetched_at: "2026-11-05T06:36:55Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fclaude_api_primer)
-
-
-
-
-
-SearchCtrlK
-
-[Console](playground.md)
-
-Documentation
 
 # API usage primer for Claude
 
@@ -114,7 +86,9 @@ Output
 
 ### Multiple conversational turns
 
-The Messages API is stateless, which means that you always send the full conversational history to the API. You can use this pattern to build up a conversation over time. Earlier conversational turns don't necessarily need to actually originate from Claude. You can use synthetic `assistant` messages.
+The Messages API is stateless, which means that you always send the full conversational history to the API. You can use this pattern to build up a conversation over time. Earlier conversational turns don’t necessarily need to actually originate from Claude. You can use synthetic `assistant` messages.
+
+With [message threads](../Guides/build-with-claude-message-threads.md), in beta, the API can keep the conversation, so that each later request sends only the new messages. A thread expires 5 minutes after its last request and is deleted no more than 1 hour after its last use.
 
 CLI
 
@@ -139,9 +113,9 @@ message = anthropic.Anthropic().messages.create(
 print(message)
 ```
 
-### Prefilling Claude's response
+### Prefilling Claude’s response
 
-You can prefill part of Claude's response in the last position of the input messages list. Use this technique to shape Claude's response. The following example uses `"max_tokens": 1` to get a single multiple choice answer from Claude.
+You can prefill part of Claude’s response in the last position of the input messages list. Use this technique to shape Claude’s response. The following example uses `"max_tokens": 1` to get a single multiple choice answer from Claude.
 
 
 
@@ -189,7 +163,7 @@ import anthropic
 import base64
 import httpx2
 
-# Option 1: Base64-encoded image
+# Option 1: base64-encoded image
 image_url = "https://platform.claude.com/docs/images/vision-example.jpg"
 image_media_type = "image/jpeg"
 image_data = base64.standard_b64encode(httpx2.get(image_url).content).decode("utf-8")
@@ -242,8 +216,6 @@ print(next(block.text for block in message_from_url.content if block.type == "te
 ## Thinking
 
 Thinking can sometimes help Claude with very hard tasks. The current mechanism is [adaptive thinking](../Guides/build-with-claude-thinking.md) (`thinking: {"type": "adaptive"}`): Claude determines when and how much to think, and you steer thinking depth with the [`effort`](../Guides/build-with-claude-effort.md) parameter rather than a token budget. Adaptive thinking is supported on Claude 4.6 and later models and Claude Mythos Preview. On Claude 5 and later models and Claude Mythos Preview, thinking is on by default when the `thinking` parameter is omitted.
-
-Temperature must be set to 1 (or left unset) whenever thinking is enabled, on all models. On Claude 4.7 and later models and Claude Mythos Preview, `temperature` is deprecated and only its default value is accepted, even when thinking is off.
 
 Thinking is supported in the following models:
 
@@ -318,7 +290,7 @@ Thinking can be used alongside tool use, allowing Claude to reason through tool 
 
 Important limitations:
 
-1.  **Tool choice limitation:** With manual extended thinking (`thinking: {"type": "enabled"}`), only `tool_choice: {"type": "auto"}` (default) or `tool_choice: {"type": "none"}` is supported. Adaptive thinking accepts forced tool use, except on the models listed under [Forcing tool use](#forcing-tool-use). Where it's accepted, a forced tool call skips thinking: the response starts with the tool call and has no `thinking` block.
+1.  **Tool choice limitation:** With manual extended thinking (`thinking: {"type": "enabled"}`), only `tool_choice: {"type": "auto"}` (default) or `tool_choice: {"type": "none"}` is supported. Adaptive thinking accepts forced tool use, except on the models listed under [Forcing tool use](#forcing-tool-use). Where it’s accepted, a forced tool call skips thinking: the response starts with the tool call and has no `thinking` block.
 2.  **Preserving thinking blocks:** During tool use, you must pass `thinking` blocks back to the API for the last assistant message.
 
 ### Preserving thinking blocks
@@ -344,7 +316,7 @@ weather_tool = {
 
 weather_data = {"temperature": 72}
 
-# First request - Claude responds with thinking and tool request
+# First request: Claude responds with thinking and tool request
 response = client.messages.create(
     model="claude-opus-5-5",
     max_tokens=16000,
@@ -361,7 +333,7 @@ tool_use_block = next(
     (block for block in response.content if block.type == "tool_use"), None
 )
 
-# Second request - Include thinking block and tool result
+# Second request: include thinking block and tool result
 continuation = client.messages.create(
     model="claude-opus-5-5",
     max_tokens=16000,
@@ -391,7 +363,7 @@ for block in continuation.content:
 
 ### Interleaved thinking
 
-Interleaved thinking enables Claude to think between tool calls, reasoning about tool results before determining the next step.
+Interleaved thinking allows Claude to think between tool calls, reasoning about tool results before determining the next step.
 
 
 
@@ -471,11 +443,11 @@ With interleaved thinking and ONLY with interleaved thinking (not regular manual
 
 Client tools are specified in the `tools` top-level parameter of the API request. Each tool definition includes:
 
-| Parameter      | Description                                                                                         |
-|:---------------|:----------------------------------------------------------------------------------------------------|
-| `name`         | The name of the tool. Must match the regex `^[a-zA-Z0-9_-]{1,128}$`.                                |
-| `description`  | A detailed plaintext description of what the tool does, when it should be used, and how it behaves. |
-| `input_schema` | A [JSON Schema](https://json-schema.org/) object defining the expected parameters for the tool.     |
+| Parameter | Description |
+|:---|:---|
+| `name` | The name of the tool. Must match the regex `^[a-zA-Z0-9_-]{1,128}$`. |
+| `description` | A detailed plain text description of what the tool does, when it should be used, and how it behaves. |
+| `input_schema` | A [JSON Schema](https://json-schema.org/) object defining the expected parameters for the tool. |
 
 ```python
 {
@@ -506,11 +478,11 @@ Client tools are specified in the `tools` top-level parameter of the API request
 **Provide extremely detailed descriptions.** This is by far the most important factor in tool performance. Your descriptions should explain every detail about the tool, including:
 
 - What the tool does
-- When it should be used (and when it shouldn't)
-- What each parameter means and how it affects the tool's behavior
+- When it should be used (and when it shouldn’t)
+- What each parameter means and how it affects the tool’s behavior
 - Any important caveats or limitations
 
-**Consider using `input_examples` for complex tools.** For tools with nested objects, optional parameters, or format-sensitive inputs, you can provide concrete examples using the `input_examples` field (beta). This helps Claude understand expected input patterns. See [Providing tool use examples](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) for details.
+**Consider using `input_examples` for complex tools.** For tools with nested objects, optional parameters, or format-sensitive inputs, you can provide concrete examples using the `input_examples` field (beta). This shows Claude the expected input patterns. See [Providing tool use examples](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) for details.
 
 Example of a good tool description:
 
@@ -533,7 +505,7 @@ Example of a good tool description:
 
 
 
-## Controlling Claude's output
+## Controlling Claude’s output
 
 ### Forcing tool use
 
@@ -547,12 +519,12 @@ tool_choice = {"type": "tool", "name": "get_weather"}
 
 When working with the `tool_choice` parameter, there are four possible options:
 
-- `auto` allows Claude to determine whether to call any provided tools or not (default).
+- `auto` allows Claude to determine whether to call any provided tools (default).
 - `any` tells Claude that it must use one of the provided tools.
 - `tool` forces Claude to always use a particular tool.
 - `none` prevents Claude from using any tools.
 
-On Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, `any` and `tool` return a 400 error. Leave `tool_choice` at `auto` and set `"strict": true` on the tool definition to guarantee that any call Claude makes matches the tool's `input_schema`. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
+On Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, `any` and `tool` return a 400 error. Leave `tool_choice` at `auto` and set `"strict": true` on the tool definition to guarantee that any call Claude makes matches the tool’s `input_schema`. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
 
 ### JSON output
 
@@ -560,7 +532,7 @@ Tools do not necessarily need to be client functions. You can use tools anytime 
 
 ### Parallel tool use
 
-By default, Claude may use multiple tools to answer a user query. You can disable this behavior by setting `disable_parallel_tool_use=true`.
+By default, Claude might use multiple tools to answer a user query. You can disable this behavior by setting `disable_parallel_tool_use=true`.
 
 ## Handling tool use and tool result content blocks
 
@@ -568,9 +540,9 @@ By default, Claude may use multiple tools to answer a user query. You can disabl
 
 The response has a `stop_reason` of `tool_use` and one or more `tool_use` content blocks that include:
 
-- `id`: A unique identifier for this particular tool use block.
-- `name`: The name of the tool being used.
-- `input`: An object containing the input being passed to the tool.
+- `id`: A unique identifier for this particular tool use block
+- `name`: The name of the tool being used
+- `input`: An object containing the input being passed to the tool
 
 ```python
 {
@@ -611,11 +583,11 @@ When you receive a tool use response, you should:
 
 ### Handling the `max_tokens` stop reason
 
-If Claude's response is cut off because it hits the `max_tokens` limit during tool use, retry the request with a higher `max_tokens` value.
+If Claude’s response is cut off because it hits the `max_tokens` limit during tool use, retry the request with a higher `max_tokens` value.
 
 ### Handling the `pause_turn` stop reason
 
-When using server tools such as web search, the API may return a `pause_turn` stop reason. Continue the conversation by passing the paused response back as-is in a subsequent request.
+When you use server tools such as web search, the API might return a `pause_turn` stop reason. Continue the conversation by passing the paused response back as-is in a subsequent request.
 
 ## Troubleshooting errors
 
@@ -641,7 +613,7 @@ If the tool itself throws an error during execution, return the error message wi
 
 ### Invalid tool name
 
-If Claude's attempted use of a tool is invalid (for example, missing required parameters), try the request again with more-detailed `description` values in your tool definitions.
+If Claude’s attempted use of a tool is invalid (for example, missing required parameters), try the request again with more-detailed `description` values in your tool definitions.
 
 ## Streaming messages
 

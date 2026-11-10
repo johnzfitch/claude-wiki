@@ -9,54 +9,6 @@
 Source: https://platform.claude.com/docs/en/about-claude/additional-resources
 Path: 04-API-Reference/About/about-claude-additional-resources.md
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fadditional-resources)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](about-claude-use-case-guides-overview.md)Reference
-
 # Additional resources
 
 Copy page
@@ -73,7 +25,7 @@ Learning resources and documentation formats optimized for AI ingestion.
 
 
 
-[Quickstarts](https://github.com/anthropics/anthropic-quickstarts)
+[Quickstarts](https://github.com/anthropics/claude-quickstarts)
 
 Deployable applications built with the API.
 
@@ -83,7 +35,7 @@ Deployable applications built with the API.
 
 Step-by-step lessons on building with Claude.
 
-[Cookbook](https://platform.claude.com/cookbook)
+[Claude Cookbook](https://platform.claude.com/cookbook)
 
 Replicable code samples and implementations.
 
@@ -111,113 +63,59 @@ LLM-optimized documentation index.
 
 ---
 
-## API credits for Max and Team plans - Claude Platform Docs
+## API credits for Max, Ultra, and Team plans - Claude Platform Docs
 
 Source: https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers
 Path: 04-API-Reference/About/about-claude-api-credits-for-subscribers.md
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fapi-credits-for-subscribers)
-
-
-
-
-
-SearchCtrlK
-
-Models
-
-[Models overview](../../20-Models/about-claude-models-overview.md)
-
-[Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md)
-
-[Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
-
-[Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
-
-[Claude Haiku 5.5](../../20-Models/models-haiku-5-5-overview.md)
-
-Specialized models
-
-Legacy models
-
-Guides
-
-[Choosing a model](../../20-Models/about-claude-models-choosing-a-model.md)[Optimizing for cost and intelligence](../../20-Models/about-claude-models-optimizing-for-cost-and-intelligence.md)[Upgrade between model versions](../../20-Models/about-claude-models-migration-guide.md)
-
-Lifecycle and reference
-
-[Model IDs and versioning](../../20-Models/about-claude-models-model-ids-and-versions.md)[Model deprecations](../../20-Models/about-claude-model-deprecations.md)[Model cards](../Other/resources-overview.md)[Pricing](../../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](about-claude-api-credits-for-subscribers.md)
-
-[System prompts](../../20-Models/release-notes-system-prompts-overview.md)
-
-[Console](../Other/playground.md)
-
-[Models & pricing](../../20-Models/about-claude-models-overview.md)Lifecycle and reference
-
-# API credits for Max and Team plans
+# API credits for Max, Ultra, and Team plans
 
 Copy page
 
 
 
-Claim the monthly Claude Platform credits included with Claude Max and Team plans, and learn what they cover.
+Claim the monthly Claude Platform credits included with Claude Max, Ultra, and Team plans, and learn what they cover.
 
 Copy page
 
 
 
-Claude Max and Team plans include monthly credits for the Claude API. To claim them, you link a [Claude Console](../Other/playground.md) organization to your plan. Credits then arrive in that organization each billing cycle (or monthly for annual plans), and you can use them to build and run your own applications and agents. You don't need to add a payment method to Claude Platform.
+Claude Max, Ultra, and Team plans include monthly credits for the Claude API. To claim them, you link a [Claude Console](../Other/playground.md) organization to your plan. Credits then arrive in that organization each billing cycle (or monthly for annual plans), and you can use them to build and run your own applications and agents. You don’t need to add a payment method to Claude Platform.
 
 
 
-Claude Platform on AWS, Amazon Bedrock, Google Cloud, and Microsoft Foundry: These credits apply only to the Claude API in the Claude Console. They can't be used on other platforms.
+Claude Platform on AWS, Amazon Bedrock, Google Cloud, and Microsoft Foundry: These credits apply only to the Claude API in the Claude Console. They can’t be used on other platforms.
 
 ## Summary
 
-| Topic                                  | Details                                                                   |
-|:---------------------------------------|:--------------------------------------------------------------------------|
-| **Eligible plans**                     | Max 5x, Max 20x, and Team, including discounted Team plans                |
-| **Monthly amount**                     | \$100 USD (Max 5x), \$200 USD (Max 20x), up to \$500 USD (Team, pooled\*) |
-| **Covers**                             | Claude API, Claude Managed Agents, the Claude Agent SDK, and playground   |
-| **Doesn't cover**                      | Claude Code, extra usage in the Claude apps                               |
-| **Refresh**                            | Each billing cycle (or monthly for annual plans)                          |
-| **Expiry**                             | End of each billing cycle (or monthly for annual plans), with no rollover |
-| **Payment method for Claude Platform** | Not required                                                              |
+| Topic | Details |
+|:---|:---|
+| **Eligible plans** | Max, Ultra, and Team, including discounted Team plans |
+| **Monthly amount** | \$100 USD (Max), \$200 USD (Ultra), up to \$500 USD (Team, pooled\*) |
+| **Covers** | Claude API, Claude Managed Agents, the Claude Agent SDK, and playground |
+| **Doesn’t cover** | Claude Code, extra usage in the Claude apps |
+| **Refresh** | Each billing cycle (or monthly for annual plans) |
+| **Expiry** | End of each billing cycle (or monthly for annual plans), with no rollover |
+| **Payment method for Claude Platform** | Not required |
 
 ## API credit amounts
 
-| Plan                                          | Monthly credit                                                         |
-|:----------------------------------------------|:-----------------------------------------------------------------------|
-| Max 5x                                        | \$100 USD                                                              |
-| Max 20x                                       | \$200 USD                                                              |
-| Team, Standard seat                           | \$20 USD per seat\*                                                    |
-| Team, Premium seat                            | \$100 USD per seat\*                                                   |
+| Plan | Monthly credit |
+|:---|:---|
+| Max | \$100 USD |
+| Ultra | \$200 USD |
+| Team, Standard seat | \$20 USD per seat\* |
+| Team, Premium seat | \$100 USD per seat\* |
 | Discounted Team plans (Nonprofit, Scientists) | Same as Team: \$20 USD per Standard seat, \$100 USD per Premium seat\* |
 
-\*On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500 USD. Each monthly credit, including the first, is based on the seats on your plan at the start of that billing month. For example, a team with three Standard seats and two Premium seats receives \$260 USD a month. Adding another Premium seat raises the next month's credit to \$360 USD.
+\*On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500 USD. Each monthly credit, including the first, is based on the seats on your plan at the start of that billing month. For example, a team with three Standard seats and two Premium seats receives \$260 USD a month. Adding another Premium seat raises the next month’s credit to \$360 USD.
 
 ## Eligibility
 
 - Your eligible plan must be active and in good standing.
 - New subscribers can claim credits after 7 days on an eligible plan.
 - Plans purchased through Claude for iOS or Claude for Android are eligible. Claim your credits on [claude.ai](https://claude.ai) in a web browser.
-- Free, Pro, and Enterprise plans aren't eligible.
+- Free, Pro, and Enterprise plans aren’t eligible.
 
 ## Claim your credits
 
@@ -227,7 +125,7 @@ You need both of the following roles:
 
 [TABLE]
 
-If you don't have a Claude Console organization, create one in the Console at [platform.claude.com](../Other/playground.md) first, or create one during the claim flow.
+If you don’t have a Claude Console organization, create one in the Console at [platform.claude.com](../Other/playground.md) first, or create one during the claim flow.
 
 ### Steps
 
@@ -235,7 +133,7 @@ If you don't have a Claude Console organization, create one in the Console at [p
 
     ### Open billing settings
 
-    On claude.ai, go to **Settings \> Billing** on a Max plan, or **Organization settings \> Billing** on a Team plan.
+    On claude.ai, go to **Settings \> Billing** on a Max or Ultra plan, or **Organization settings \> Billing** on a Team plan.
 
 2.  2
 
@@ -251,44 +149,44 @@ If you don't have a Claude Console organization, create one in the Console at [p
 
 
 
-Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can't change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
+Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can’t change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
 
-Subscribers who aren't eligible don't see API credits in their settings page. If you think you should be eligible but don't see the API credits, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
+Subscribers who aren’t eligible don’t see API credits in their settings page. If you think you should be eligible but don’t see the API credits, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
 
 ## What the credits cover
 
 These API credits can only be used on the Claude Platform. The following table shows which products are covered:
 
-| Product                                                                | Covered |
-|:-----------------------------------------------------------------------|:--------|
-| [Claude API](../Endpoints/overview.md)                                    | Yes     |
-| [Claude Managed Agents](../Other/managed-agents-overview.md)              | Yes     |
-| [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md) | Yes     |
-| [Playground](../Other/playground.md) in the Claude Console                        | Yes     |
-| Claude Code                                                            | No      |
-| Extra usage in the Claude apps                                         | No      |
-| Claude Platform on AWS, Bedrock, Google Cloud, Microsoft Foundry       | No      |
+| Product | Covered |
+|:---|:---|
+| [Claude API](../Endpoints/overview.md) | Yes |
+| [Claude Managed Agents](../Other/managed-agents-overview.md) | Yes |
+| [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md) | Yes |
+| [Playground](../Other/playground.md) in the Claude Console | Yes |
+| Claude Code | No |
+| Extra usage in the Claude apps | No |
+| Claude Platform on AWS, Bedrock, Google Cloud, Microsoft Foundry | No |
 
 ## How credits are applied
 
 - **Timing.** Credits arrive each billing cycle, shortly after your plan payment is processed. On annual plans, credits arrive monthly.
-- **Order.** Included credits are spent first, then any credits you've purchased. Auto-reload is based only on your purchased balance. It reloads when that balance reaches your threshold, even if included credits remain.
-- **Expiry.** Unused credits expire at the end of each billing cycle (or monthly for annual plans) and don't roll over.
-- **Sharing.** Every API key and workspace in the linked organization draws from the same balance. To cap spending on a project, give it its own workspace and set that workspace's [spend limit](../Other/manage-claude-workspaces.md#setting-workspace-limits).
+- **Order.** Included credits are spent first, then any credits you’ve purchased. Auto-reload is based only on your purchased balance. It reloads when that balance reaches your threshold, even if included credits remain.
+- **Expiry.** Unused credits expire at the end of each billing cycle (or monthly for annual plans) and don’t roll over.
+- **Sharing.** Every API key and workspace in the linked organization draws from the same balance. To cap spending on a project, give it its own workspace and set that workspace’s [spend limit](../Other/manage-claude-workspaces.md#setting-workspace-limits).
 - **Visibility.** Your credits appear in the **Promotional credits** section of the [Billing](../Other/playground.md) page (`platform.claude.com/settings/billing`) in the Console, with the amount and expiry date.
-- **Your Claude plan.** Credits don't change your usage limits in Claude or Claude Code.
+- **Your Claude plan.** Credits don’t change your usage limits in Claude or Claude Code.
 
 ## Spend limits and rate limits
 
-Credits don't change how [rate limits and spend limits](../Endpoints/rate-limits.md) work:
+Credits don’t change how [rate limits and spend limits](../Endpoints/rate-limits.md) work:
 
-- Usage paid with credits counts toward your organization's [monthly spend cap](../Endpoints/rate-limits.md#spend-limits). Spend caps reset on the first of each calendar month, whereas credits refresh on your billing cycle (or monthly for annual plans).
+- Usage paid with credits counts toward your organization’s [monthly spend cap](../Endpoints/rate-limits.md#spend-limits). Spend caps reset on the first of each calendar month, whereas credits refresh on your billing cycle (or monthly for annual plans).
 - Organizations linked to an eligible plan move up to at least the Start tier. If their monthly credits are over \$200 USD, they move up to at least the Build tier.
-- Claiming credits doesn't otherwise change your [usage tier](../Endpoints/rate-limits.md#about-rate-limits), and these credits don't count toward moving to a higher tier.
+- Claiming credits doesn’t otherwise change your [usage tier](../Endpoints/rate-limits.md#about-rate-limits), and these credits don’t count toward moving to a higher tier.
 
 ### When credits run out
 
-- **If the organization has other credits**, requests continue using purchased credits. Auto-reload, if it's turned on, adds credits to the purchased balance.
+- **If the organization has other credits**, requests continue using purchased credits. Auto-reload, if it’s turned on, adds credits to the purchased balance.
 - **If the organization has no credits left**, API requests stop until your next monthly API credits arrive. Usage is never charged to your Claude plan. To keep building, purchase credits or turn on auto-reload on the [Billing](../Other/playground.md) page (`platform.claude.com/settings/billing`) in the Console.
 - **If your organization is invoiced through Anthropic sales**, usage beyond the API credits is billed as usual.
 
@@ -300,7 +198,7 @@ Your credit balance is too low to access the Anthropic API. Please go to Plans &
 
 
 
-If an organization holds only these credits and sends a request they don't cover, such as a Claude Code session, Claude Code displays:
+If an organization holds only these credits and sends a request they don’t cover, such as a Claude Code session, Claude Code displays:
 
 ``` block
 Credit balance too low · Add funds: https://platform.claude.com/settings/billing
@@ -310,12 +208,12 @@ Credit balance too low · Add funds: https://platform.claude.com/settings/billin
 
 ## If your plan changes
 
-| Change                                             | What happens                                                                                                                                                                                          |
-|:---------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Cancel, downgrade to an ineligible plan, or refund | New credits stop when your plan ends. Credits you already have stay usable until they expire.                                                                                                         |
-| Upgrade from Max 5x to Max 20x                     | You receive prorated API credits right away, then \$200 USD each billing cycle. If you subscribe through Google Play, the \$200 USD credit arrives later, by your next renewal at the latest.         |
-| Upgrade from Max to Team                           | The Max link ends. A Team owner can claim the team's credits after the Team plan has been active for 7 days.                                                                                          |
-| Add or remove Team seats                           | Seats added to your plan count from the next billing month's credit. Seats you remove stay on your plan until it renews, so the credit might be lower after that. The pool stays capped at \$500 USD. |
+| Change | What happens |
+|:---|:---|
+| Cancel, downgrade to an ineligible plan, or refund | New credits stop when your plan ends. Credits you already have stay usable until they expire. |
+| Upgrade from Max to Ultra | You receive prorated API credits right away, then \$200 USD each billing cycle. If you subscribe through Google Play, the \$200 USD credit arrives later, by your next renewal at the latest. |
+| Upgrade from Max or Ultra to Team | The link to your Max or Ultra plan ends. A Team owner can claim the team’s credits after the Team plan has been active for 7 days. |
+| Add or remove Team seats | Seats added to your plan count from the next billing month’s credit. Seats you remove stay on your plan until it renews, so the credit might be lower after that. The pool stays capped at \$500 USD. |
 
 ## Use your credits efficiently
 
@@ -323,7 +221,7 @@ Your monthly cost depends mainly on the model you choose and how often your appl
 
 - Choose a model that fits each task. To learn how, see [Choosing the right model](../../20-Models/about-claude-models-choosing-a-model.md).
 - Use [prompt caching](../Guides/build-with-claude-prompt-caching.md) for repeated context.
-- Use the [Message Batches API](../Guides/build-with-claude-batch-processing.md) for work that doesn't need an immediate response. It costs 50 percent less.
+- Use the [Message Batches API](../Guides/build-with-claude-batch-processing.md) for work that doesn’t need an immediate response. It costs 50 percent less.
 - Check [pricing](../../17-Billing-Plans/about-claude-pricing.md) and track spend on the [Cost](../Other/playground.md) page in the Claude Console.
 
 ## Related
@@ -331,7 +229,7 @@ Your monthly cost depends mainly on the model you choose and how often your appl
 - [Rate limits and spend limits](../Endpoints/rate-limits.md)
 - [Workspaces](../Other/manage-claude-workspaces.md)
 - [Pricing](../../17-Billing-Plans/about-claude-pricing.md)
-- [Help Center: API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)
+- [Help Center: API credits for Max, Ultra, and Team plans](../../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)
 
 ---
 
@@ -339,54 +237,6 @@ Your monthly cost depends mainly on the model you choose and how often your appl
 
 Source: https://platform.claude.com/docs/en/about-claude/glossary
 Path: 04-API-Reference/About/about-claude-glossary.md
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fglossary)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](about-claude-use-case-guides-overview.md)Reference
 
 # Glossary
 
@@ -402,17 +252,17 @@ These concepts are not unique to Claude. This page presents a brief summary of k
 
 ## Context window
 
-The "context window" refers to the amount of text a language model can look back on and reference when generating new text. This is different from the large corpus of data the language model was trained on, and instead represents a "working memory" for the model. A larger context window allows the model to process and respond to more complex and lengthy prompts, while a smaller context window may limit the model's ability to handle longer prompts or maintain coherence over extended conversations.
+The “context window” refers to the amount of text a language model can look back on and reference when generating new text. This is different from the large corpus of data the language model was trained on, and instead represents a “working memory” for the model. A larger context window allows the model to process and respond to more complex and lengthy prompts, whereas a smaller context window might limit the model’s ability to handle longer prompts or maintain coherence over extended conversations.
 
 See the [guide to understanding context windows](../Guides/build-with-claude-context-windows.md) to learn more.
 
 ## Fine-tuning
 
-Fine-tuning is the process of further training a pretrained language model using additional data. This causes the model to start representing and mimicking the patterns and characteristics of the fine-tuning dataset. Claude is not a bare language model; it has already been fine-tuned to be a helpful assistant. The Claude API does not currently offer fine-tuning, but ask your Anthropic contact if you are interested in exploring this option. Fine-tuning can be useful for adapting a language model to a specific domain, task, or writing style, but it requires careful consideration of the fine-tuning data and the potential impact on the model's performance and biases.
+Fine-tuning is the process of further training a pretrained language model using additional data. This causes the model to start representing and mimicking the patterns and characteristics of the fine-tuning dataset. Claude is not a bare language model; it has already been fine-tuned to be a helpful assistant. The Claude API does not currently offer fine-tuning, but ask your Anthropic contact if you are interested in exploring this option. Fine-tuning can be useful for adapting a language model to a specific domain, task, or writing style, but it requires careful consideration of the fine-tuning data and the potential impact on the model’s performance and biases.
 
 ## HHH
 
-HHH (helpful, honest, harmless) is a research framework that informs how Claude is trained to be beneficial to society. It is distinct from the Claude product tagline, "AI assistant for life and work."
+HHH (helpful, honest, harmless) is a research framework that informs how Claude is trained to be beneficial to society. It is distinct from the Claude product tagline, “AI assistant for life and work.”
 
 - A **helpful** AI will attempt to perform the task or answer the question posed to the best of its abilities, providing relevant and useful information.
 - An **honest** AI will give accurate information, and not hallucinate or confabulate. It will acknowledge its limitations and uncertainties when appropriate.
@@ -428,37 +278,37 @@ Large language models (LLMs) are AI language models with many parameters that ar
 
 ## MCP (Model Context Protocol)
 
-Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Like a USB-C port for AI applications, MCP provides a unified way to connect AI models to different data sources and tools. MCP enables AI systems to maintain consistent context across interactions and access external resources in a standardized manner. See the [MCP documentation](https://modelcontextprotocol.io/) to learn more.
+Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Like a USB-C port for AI applications, MCP provides a unified way to connect AI models to different data sources and tools. MCP allows AI systems to maintain consistent context across interactions and access external resources in a standardized manner. See the [MCP documentation](https://modelcontextprotocol.io/) to learn more.
 
 ## MCP connector
 
-The MCP connector is a feature that allows API users to connect to MCP servers directly from the Messages API without building an MCP client. This enables seamless integration with MCP-compatible tools and services through the Claude API. The MCP connector supports features such as tool calling and is available in beta. See the [MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md) documentation to learn more.
+The MCP connector is a feature that allows API users to connect to MCP servers directly from the Messages API without building an MCP client. This allows seamless integration with MCP-compatible tools and services through the Claude API. The MCP connector supports features such as tool calling and is available in beta. See the [MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md) documentation to learn more.
 
 ## Pretraining
 
-Pretraining is the initial process of training language models on a large unlabeled corpus of text. In Claude's case, autoregressive language models (such as Claude's underlying model) are pretrained to predict the next word, given the previous context of text in the document. These pretrained models are not inherently good at answering questions or following instructions, and often require deep skill in prompt engineering to elicit desired behaviors. Fine-tuning and RLHF are used to refine these pretrained models, making them more useful for a wide range of tasks.
+Pretraining is the initial process of training language models on a large unlabeled corpus of text. In Claude’s case, autoregressive language models (such as Claude’s underlying model) are pretrained to predict the next word, given the previous context of text in the document. These pretrained models are not inherently good at answering questions or following instructions, and often require deep skill in prompt engineering to elicit the behaviors you want. Fine-tuning and RLHF are used to refine these pretrained models, making them more useful for a wide range of tasks.
 
-## RAG (Retrieval augmented generation)
+## RAG (retrieval augmented generation)
 
-Retrieval augmented generation (RAG) is a technique that combines information retrieval with language model generation to improve the accuracy and relevance of the generated text, and to better ground the model's response in evidence. In RAG, a language model is augmented with an external knowledge base or a set of documents that is passed into the context window. The data is retrieved at runtime when a query is sent to the model, although the model itself does not necessarily retrieve the data (but can with [tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md) and a retrieval function). When generating text, relevant information first must be retrieved from the knowledge base based on the input prompt, and then passed to the model along with the original query. The model uses this information to guide the output it generates. This allows the model to access and use information beyond its training data, reducing the reliance on memorization and improving the factual accuracy of the generated text. RAG can be particularly useful for tasks that require up-to-date information, domain-specific knowledge, or explicit citation of sources. However, the effectiveness of RAG depends on the quality and relevance of the external knowledge base and the knowledge that is retrieved at runtime.
+Retrieval augmented generation (RAG) is a technique that combines information retrieval with language model generation to improve the accuracy and relevance of the generated text, and to better ground the model’s response in evidence. In RAG, a language model is augmented with an external knowledge base or a set of documents that is passed into the context window. The data is retrieved at runtime when a query is sent to the model, although the model itself does not necessarily retrieve the data (but can with [tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md) and a retrieval function). When generating text, relevant information first must be retrieved from the knowledge base based on the input prompt, and then passed to the model along with the original query. The model uses this information to guide the output it generates. This allows the model to access and use information beyond its training data, reducing the reliance on memorization and improving the factual accuracy of the generated text. RAG can be particularly useful for tasks that require up-to-date information, domain-specific knowledge, or explicit citation of sources. However, the effectiveness of RAG depends on the quality and relevance of the external knowledge base and the knowledge that is retrieved at runtime.
 
 ## RLHF
 
-Reinforcement Learning from Human Feedback (RLHF) is a technique used to train a pretrained language model to behave in ways that are consistent with human preferences. This can include helping the model follow instructions more effectively or act more like a chatbot. Human feedback consists of ranking a set of two or more example texts, and the reinforcement learning process encourages the model to prefer outputs that are similar to the higher-ranked ones. Claude has been trained using RLHF to be a more helpful assistant. For more details, you can read [Anthropic's paper on the subject](https://arxiv.org/abs/2204.05862).
+Reinforcement learning from human feedback (RLHF) is a technique used to train a pretrained language model to behave in ways that are consistent with human preferences. This can include helping the model follow instructions more effectively or act more like a chatbot. Human feedback consists of ranking a set of two or more example texts, and the reinforcement learning process encourages the model to prefer outputs that are similar to the higher-ranked ones. Claude has been trained using RLHF to be a more helpful assistant. For more details, you can read Anthropic’s [paper on RLHF](https://arxiv.org/abs/2204.05862).
 
 ## Temperature
 
-Temperature is a parameter that controls the randomness of a model's predictions during text generation. Higher temperatures lead to more creative and diverse outputs, allowing for multiple variations in phrasing and, in the case of fiction, variation in answers as well. Lower temperatures result in more conservative and deterministic outputs that stick to the most probable phrasing and answers. Adjusting the temperature enables users to encourage a language model to explore rare, uncommon, or surprising word choices and sequences, rather than only selecting the most likely predictions.
+Temperature is a parameter that controls the randomness of a model’s predictions during text generation. Higher temperatures lead to more creative and diverse outputs, allowing for multiple variations in phrasing and, in the case of fiction, variation in answers as well. Lower temperatures result in more conservative and deterministic outputs that stick to the most probable phrasing and answers. Adjusting the temperature allows users to encourage a language model to explore rare, uncommon, or surprising word choices and sequences, rather than only selecting the most likely predictions.
 
-Users may encounter non-determinism in APIs. Even with temperature set to 0, the results will not be fully deterministic and identical inputs may produce different outputs across API calls. This applies both to Anthropic's first-party inference service and to inference through third-party cloud providers.
+Users might encounter non-determinism in APIs. Even with temperature set to 0, the results will not be fully deterministic, and identical inputs might produce different outputs across API calls. This applies both to Anthropic’s first-party inference service and to inference through third-party cloud providers.
 
-## TTFT (Time to first token)
+## TTFT (time to first token)
 
-Time to First Token (TTFT) is a performance metric that measures the time it takes for a language model to generate the first token of its output after receiving a prompt. It is an important indicator of the model's responsiveness and is particularly relevant for interactive applications, chatbots, and real-time systems where users expect quick initial feedback. A lower TTFT indicates that the model can start generating a response faster, providing a more seamless and engaging user experience. Factors that can influence TTFT include model size, hardware capabilities, network conditions, and the complexity of the prompt.
+Time to first token (TTFT) is a performance metric that measures the time it takes for a language model to generate the first token of its output after receiving a prompt. It is an important indicator of the model’s responsiveness and is particularly relevant for interactive applications, chatbots, and real-time systems where users expect quick initial feedback. A lower TTFT indicates that the model can start generating a response faster, providing a more seamless and engaging user experience. Factors that can influence TTFT include model size, hardware capabilities, network conditions, and the complexity of the prompt.
 
 ## Tokens
 
-Tokens are the smallest individual units of a language model, and can correspond to words, subwords, characters, or even bytes (in the case of Unicode). For Claude, the number of characters a token represents depends on the model and the language. Claude 4.7 and later models and Claude Mythos Preview use a newer tokenizer that produces approximately 30 percent more tokens for the same text than earlier models, on which a token represents approximately 3.5 English characters. To get exact counts, use [token counting](../Guides/build-with-claude-token-counting.md) with the model you plan to use. Tokens are typically hidden when interacting with language models at the "text" level but become relevant when examining the exact inputs and outputs of a language model. When Claude is provided with text to evaluate, the text (consisting of a series of characters) is encoded into a series of tokens for the model to process. Larger tokens enable data efficiency during inference and pretraining (and are used when possible), while smaller tokens allow a model to handle uncommon or never-before-seen words. The choice of tokenization method can impact the model's performance, vocabulary size, and ability to handle out-of-vocabulary words.
+Tokens are the smallest individual units of a language model, and can correspond to words, subwords, characters, or even bytes (in the case of Unicode). For Claude, the number of characters a token represents depends on the model and the language. Claude 4.7 and later models and Claude Mythos Preview use a newer tokenizer that produces approximately 30 percent more tokens for the same text than earlier models, on which a token represents approximately 3.5 English characters. To get exact counts, use [token counting](../Guides/build-with-claude-token-counting.md) with the model you plan to use. Tokens are typically hidden when interacting with language models at the “text” level but become relevant when examining the exact inputs and outputs of a language model. When Claude is provided with text to evaluate, the text (consisting of a series of characters) is encoded into a series of tokens for the model to process. Larger tokens improve data efficiency during inference and pretraining (and are used when possible), whereas smaller tokens allow a model to handle uncommon or never-before-seen words. The choice of tokenization method can impact the model’s performance, vocabulary size, and ability to handle out-of-vocabulary words.
 
 ---
 
@@ -630,7 +480,11 @@ Build a shopping agent and a merchant agent on Claude using Claude for commerce,
 
 
 
-This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business's own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint with a working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), and [Claude Managed Agents](../Other/managed-agents-overview.md), runnable examples for retail, travel, telecom, and entertainment, and a Claude Code plugin that scaffolds the same design against your own systems.
+This guide shows how to build commerce agents on Claude: a shopping agent that customers use inside your app, and a merchant agent for the people running the store, whether that is the business’s own operations staff or the sellers on its platform. It does that through Claude for commerce, an open-source blueprint that includes the following:
+
+- A working implementation of each agent on the [Messages API](../Guides/build-with-claude-working-with-messages.md), the [Claude Agent SDK](../../05-Agent-SDK/agent-sdk-overview.md), and [Claude Managed Agents](../Other/managed-agents-overview.md)
+- Runnable examples for retail, travel, telecom, and entertainment
+- A Claude Code plugin that scaffolds the same design against your own systems
 
 The code, setup instructions, and safety documentation are in the [Claude for commerce repository on GitHub](https://github.com/anthropics/commerce-agents). For how the agents are built and why, including the single-agent-with-skills design, UI components as tools, harness-enforced safety, prompt caching, memory, and evals, read the engineering post [A guide to the anatomy of effective commerce agents](https://claude.com/blog/the-anatomy-of-effective-commerce-agents).
 
@@ -660,7 +514,7 @@ The merchant agent supports the people running the store. It reaches your analyt
 - Explain how the business is doing: why a metric moved, which segment drove it, and pace against a comparable period. An optional analysis delegate runs read-only queries under a time and size budget.
 - Present a daily digest of what needs attention, including low stock, slow movers, and order exceptions.
 - Improve listing content and fix catalog data from material the operator supplies.
-- Recommend price changes and promotions within the store's guardrails, with a margin preview.
+- Recommend price changes and promotions within the store’s guardrails, with a margin preview.
 - Draft marketing campaigns with audiences, placements, and budget.
 
 Its five skills cover performance insights, inventory and operations, catalog and listings, pricing and promotions, and marketing campaigns.
@@ -671,31 +525,31 @@ Every write the merchant agent proposes, whether a listing update, a price chang
 
 Each example includes a customer storefront and a merchant portal over fictional data.
 
-| Vertical      | Storefront                                                                         | Merchant portal                                                                            |
-|---------------|------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| Retail        | Search, comparison, plans, cart, checkout, and memory over the built-in components | Daily digest, staged restocks and listing fixes, and the analysis delegate over a SQL view |
-| Travel        | Date-bound inventory and an itinerary component                                    | Occupancy calendar and date-window rate moves                                              |
-| Telecom       | Account context, a plan matrix, and server-authored fee disclosures                | Plan mix, price moves that state the lines affected, and protected regulated fees          |
-| Entertainment | Timed holds, waitlists, transfers, a venue map, and all-in fee disclosures         | Event pacing, hold releases that add real capacity, and fee-preserving price moves         |
+| Vertical | Storefront | Merchant portal |
+|----|----|----|
+| Retail | Search, comparison, plans, cart, checkout, and memory over the built-in components | Daily digest, staged restocks and listing fixes, and the analysis delegate over a SQL view |
+| Travel | Date-bound inventory and an itinerary component | Occupancy calendar and date-window rate moves |
+| Telecom | Account context, a plan matrix, and server-authored fee disclosures | Plan mix, price moves that state the lines affected, and protected regulated fees |
+| Entertainment | Timed holds, waitlists, transfers, a venue map, and all-in fee disclosures | Event pacing, hold releases that add real capacity, and fee-preserving price moves |
 
 ## Where it runs
 
-The Messages API and Agent SDK runtimes run against the Claude API, [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md), [Google Cloud's Agent Platform](../Guides/build-with-claude-claude-on-vertex-ai.md), or [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), or through your own gateway. The Claude Managed Agents path runs on the Claude API. The repository's deployment guide shows where each path selects its platform and which model ID format each expects.
+The Messages API and Agent SDK runtimes run against the Claude API, [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md), or [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), or through your own gateway. The Claude Managed Agents path runs on the Claude API. The repository’s deployment guide shows where each path selects its platform and which model ID format each expects.
 
 ## Build your own with the Claude Code plugin
 
-The blueprint ships with a [Claude Code](../../02-Claude-Code-CLI/code-home.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
+The blueprint ships with a [Claude Code](../../01-Getting-Started/overview.md) plugin that reads the cloned repository as its reference and builds an agent against your own systems. Its four commands cover the path from nothing to a tested agent:
 
-| Command                    | What it does                                                                                                                              |
-|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| Command | What it does |
+|----|----|
 | `/scaffold-commerce-agent` | Interviews you about your stack, plays the plan back, and scaffolds a shopping agent, a merchant agent, or both on the reference packages |
-| `/add-commerce-flow`       | Adds one flow to an existing agent by copying its skill, wiring the tools it calls, and writing its first eval cases                      |
-| `/author-commerce-evals`   | Builds an eval suite with a runner, the first cases against your own catalog, and a replay gate for CI                                    |
-| `/review-commerce-agent`   | Maps an agent you already run, compares it with the reference, and converts the parts you pick                                            |
+| `/add-commerce-flow` | Adds one flow to an existing agent by copying its skill, wiring the tools it calls, and writing its first eval cases |
+| `/author-commerce-evals` | Builds an eval suite with a runner, the first cases against your own catalog, and a replay gate for CI |
+| `/review-commerce-agent` | Maps an agent you already run, compares it with the reference, and converts the parts you pick |
 
 The plugin also carries six skills on the architecture, prompt caching, UI as tools, trust and safety, evals, and merchant operations, which load whenever a Claude Code conversation matches them. Installation instructions are in the repository README.
 
-To adapt the reference by hand instead, implement the shopping or merchant backend interface over your services, switch off the systems you don't have with the configuration flags so their tools and prompt lines drop out, and set your brand name, assistant name, and voice. The repository's backend guide walks through identity and credentials, ordered flows, checkout hand-off, and products with options. A pilot can implement search and product details and stub the rest.
+To adapt the reference by hand instead, implement the shopping or merchant backend interface over your services, switch off the systems you don’t have with the configuration flags so their tools and prompt lines drop out, and set your brand name, assistant name, and voice. The repository’s backend guide walks through identity and credentials, ordered flows, checkout hand-off, and products with options. A pilot can implement search and product details and stub the rest.
 
 ## Get started
 
@@ -716,54 +570,6 @@ Read how the agents are built and why.
 Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation
 Path: 04-API-Reference/About/about-claude-use-case-guides-content-moderation.md
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcontent-moderation)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](about-claude-use-case-guides-overview.md)Use cases
-
 # Content moderation
 
 Copy page
@@ -776,17 +582,17 @@ Content moderation is a critical aspect of maintaining a safe, respectful, and p
 
 
 
-> Visit the [content moderation cookbook](https://platform.claude.com/cookbook/misc-building-moderation-filter) to see an example content moderation implementation using Claude.
+> Visit the [content moderation recipe](https://platform.claude.com/cookbook/misc-building-moderation-filter) in the Claude Cookbook to see an example content moderation implementation using Claude.
 
 
 
-This guide is focused on moderating user-generated content within your application. If you're looking for guidance on moderating interactions with Claude, refer to [Mitigate jailbreaks and prompt injections](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md).
+This guide is focused on moderating user-generated content within your application. If you’re looking for guidance on moderating interactions with Claude, refer to [Mitigate jailbreaks and prompt injections](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md).
 
 ## Before building with Claude
 
 ### Decide whether to use Claude for content moderation
 
-Here are some key indicators that you should use an LLM like Claude instead of a traditional ML or rules-based approach for content moderation:
+Here are some key indicators that you should use an LLM such as Claude instead of a traditional ML or rules-based approach for content moderation:
 
 ### You want a cost-effective and rapid implementation
 
@@ -794,35 +600,35 @@ Traditional ML methods require significant engineering resources, ML expertise, 
 
 ### You want both semantic understanding and quick decisions
 
-Traditional ML approaches, such as bag-of-words models or simple pattern matching, often struggle to understand the tone, intent, and context of the content. While human moderation systems excel at understanding semantic meaning, they require time for content to be reviewed. Claude addresses both needs by combining semantic understanding with the ability to deliver moderation decisions quickly.
+Traditional ML approaches, such as bag-of-words models or simple pattern matching, often have difficulty capturing the tone, intent, and context of the content. Although human moderation systems excel at understanding semantic meaning, they require time for content to be reviewed. Claude addresses both needs by combining semantic understanding with the ability to deliver moderation decisions quickly.
 
 ### You need consistent policy decisions
 
-By leveraging its advanced reasoning capabilities, Claude can interpret and apply complex moderation guidelines uniformly. This consistency helps ensure fair treatment of all content, reducing the risk of inconsistent or biased moderation decisions that can undermine user trust.
+With its advanced reasoning capabilities, Claude can interpret and apply complex moderation guidelines uniformly. This consistency helps ensure fair treatment of all content, reducing the risk of inconsistent or biased moderation decisions that can undermine user trust.
 
 ### Your moderation policies are likely to change or evolve over time
 
 Once a traditional ML approach has been established, changing it is a laborious and data-intensive undertaking. On the other hand, as your product or customer needs evolve, Claude can easily adapt to changes or additions to moderation policies without extensive relabeling of training data.
 
-### You require interpretable reasoning for your moderation decisions
+### You need interpretable reasoning for your moderation decisions
 
 If you want to provide users or regulators with clear explanations behind moderation decisions, Claude can generate detailed and coherent justifications. This transparency is important for building trust and ensuring accountability in content moderation practices.
 
 ### You need multilingual support without maintaining separate models
 
-Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Human moderation requires hiring a workforce fluent in each supported language. Claude’s multilingual capabilities allow it to classify tickets in various languages without the need for separate models or extensive translation processes, streamlining moderation for global customer bases.
+Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Human moderation requires hiring a workforce fluent in each supported language. Claude’s multilingual capabilities allow it to classify content in various languages without the need for separate models or extensive translation processes, streamlining moderation for global customer bases.
 
-### You require multimodal support
+### You need multimodal support
 
-Claude's multimodal capabilities allow it to analyze and interpret content across both text and images. This makes it a versatile tool for comprehensive content moderation in environments where different media types need to be evaluated together.
+Claude’s multimodal capabilities allow it to analyze and interpret content across both text and images. This makes it a versatile tool for comprehensive content moderation in environments where different media types need to be evaluated together.
 
 
 
-All Claude models are trained with built-in safety behaviors. This may result in Claude moderating content deemed particularly dangerous (in line with the [Acceptable Use Policy](https://www.anthropic.com/legal/aup)), regardless of the prompt used. For example, an adult website that wants to allow users to post explicit sexual content may find that Claude still flags explicit content as requiring moderation, even if they specify in their prompt not to moderate explicit sexual content. Consider reviewing the AUP in advance of building a moderation solution.
+All Claude models are trained with built-in safety behaviors. This might result in Claude moderating content deemed particularly dangerous (in line with the [Usage Policy](https://www.anthropic.com/legal/aup)), regardless of the prompt used. For example, an adult website that wants to allow users to post explicit sexual content might find that Claude still flags explicit content as requiring moderation, even if they specify in their prompt not to moderate explicit sexual content. Consider reviewing the Usage Policy in advance of building a moderation solution.
 
 ### Generate examples of content to moderate
 
-Before developing a content moderation solution, first create examples of content that should be flagged and content that should not be flagged. Ensure that you include edge cases and challenging scenarios that may be difficult for a content moderation system to handle effectively. Afterward, review your examples to create a well-defined list of moderation categories. For instance, the examples generated by a social media platform might include the following:
+Before developing a content moderation solution, first create examples of content that should be flagged and content that should not be flagged. Ensure that you include edge cases and challenging scenarios that might be difficult for a content moderation system to handle effectively. Afterward, review your examples to create a well-defined list of moderation categories. For instance, the examples generated by a social media platform might include the following:
 
 Python
 
@@ -877,9 +683,9 @@ unsafe_categories = [
 ]
 ```
 
-Effectively moderating these examples requires a nuanced understanding of language. In the comment, `This movie was great, I really enjoyed it. The main actor really killed it!`, the content moderation system needs to recognize that "killed it" is a metaphor, not an indication of actual violence. Conversely, despite the lack of explicit mentions of violence, the comment `Delete this post now or you better hide. I am coming after you and your family.` should be flagged by the content moderation system.
+Effectively moderating these examples requires a nuanced understanding of language. In the comment, `This movie was great, I really enjoyed it. The main actor really killed it!`, the content moderation system needs to recognize that “killed it” is a metaphor, not an indication of actual violence. Conversely, despite the lack of explicit mentions of violence, the comment `Delete this post now or you better hide. I am coming after you and your family.` should be flagged by the content moderation system.
 
-The unsafe categories can be customized to fit your specific needs. For example, if you want to prevent minors from creating content on your website, you could add "Underage Posting" to the categories.
+The unsafe categories can be customized to fit your specific needs. For example, if you want to prevent minors from creating content on your website, you could add “Underage Posting” to the categories.
 
 ------------------------------------------------------------------------
 
@@ -887,7 +693,7 @@ The unsafe categories can be customized to fit your specific needs. For example,
 
 ### Select the right Claude model
 
-When selecting a model, it’s important to consider the size of your data. If costs are a concern, a smaller model such as Claude Haiku 5.5 is an excellent choice because of its cost-effectiveness. The following is an estimate of the cost to moderate text for a social media platform that receives one billion posts per month:
+When selecting a model, it’s important to consider the size of your data. If costs are a concern, a smaller model such as Claude Haiku 5.5 is an excellent choice because of its cost-effectiveness. The following is an estimate of the cost to moderate text for a social media platform that receives 1 billion posts per month:
 
 - **Content size**
 
@@ -922,11 +728,11 @@ When selecting a model, it’s important to consider the size of your data. If c
 
 
 
-Actual costs may differ from these estimates. These estimates are based on the prompt highlighted in the section on [batch processing](#consider-batch-processing). Output tokens can be reduced even further by removing the `explanation` field from the response.
+Actual costs might differ from these estimates. These estimates are based on the prompt highlighted in the section on [batch processing](#consider-batch-processing). Output tokens can be reduced even further by removing the `explanation` field from the response.
 
 ### Build a strong prompt
 
-To use Claude for content moderation, Claude must understand the moderation requirements of your application. Start by writing a prompt that allows you to define your moderation needs:
+To use Claude for content moderation, Claude must interpret the moderation requirements of your application correctly. Start by writing a prompt that allows you to define your moderation needs:
 
 Python
 
@@ -1009,13 +815,13 @@ for comment in user_comments:
 
 In this example, the `moderate_message` function contains an assessment prompt that includes the unsafe content categories and the message to evaluate. The prompt asks Claude to assess whether the message should be moderated, based on the unsafe categories you defined earlier.
 
-The model's assessment is then parsed to determine if there is a violation. If there is a violation, Claude also returns a list of violated categories and an explanation as to why the message is unsafe.
+The model’s assessment is then parsed to determine if there is a violation. If there is a violation, Claude also returns a list of violated categories and an explanation as to why the message is unsafe.
 
 ### Evaluate your prompt
 
-Content moderation is a classification problem. Thus, you can use the same techniques outlined in the [classification cookbook](https://platform.claude.com/cookbook/capabilities-classification-guide) to determine the accuracy of your content moderation system.
+Content moderation is a classification problem. Thus, you can use the same techniques outlined in the Claude Cookbook’s [classification recipe](https://platform.claude.com/cookbook/capabilities-classification-guide) to determine the accuracy of your content moderation system.
 
-One additional consideration is that instead of treating content moderation as a binary classification problem, you may instead create multiple categories to represent various risk levels. Creating multiple risk levels allows you to adjust the aggressiveness of your moderation. For example, you might want to automatically block user queries that are deemed high risk, while users with many medium risk queries are flagged for human review.
+One additional consideration is that instead of treating content moderation as a binary classification problem, you can create multiple categories to represent various risk levels. Creating multiple risk levels allows you to adjust the aggressiveness of your moderation. For example, you might want to automatically block user queries that are deemed high risk, whereas users with many medium risk queries are flagged for human review.
 
 Python
 
@@ -1106,11 +912,11 @@ This code implements an `assess_risk_level` function that uses Claude to evaluat
 
 Within the function, a prompt is generated for Claude, including the message to be assessed, the unsafe categories, and specific instructions for evaluating the risk level. The prompt instructs Claude to respond with a JSON object that includes the risk level, the violated categories, and an optional explanation.
 
-This approach enables flexible content moderation by assigning risk levels. It can be seamlessly integrated into a larger system to automate content filtering or flag comments for human review based on their assessed risk level. For instance, when running this code, the comment `Delete this post now or you better hide. I am coming after you and your family.` is identified as high risk because of its dangerous threat. Conversely, the comment `Stay away from the 5G cellphones!! They are using 5G to control you.` is categorized as medium risk.
+This approach allows flexible content moderation by assigning risk levels. It can be seamlessly integrated into a larger system to automate content filtering or flag comments for human review based on their assessed risk level. For instance, when you run this code, the comment `Delete this post now or you better hide. I am coming after you and your family.` is identified as high risk because of its dangerous threat. Conversely, the comment `Stay away from the 5G cellphones!! They are using 5G to control you.` is categorized as medium risk.
 
 ### Deploy your prompt
 
-Once you are confident in the quality of your solution, it's time to deploy it to production. Here are some best practices to follow when using content moderation in production:
+Once you are confident in the quality of your solution, it’s time to deploy it to production. Here are some best practices to follow when using content moderation in production:
 
 1.  **Provide clear feedback to users:** When user input is blocked or a response is flagged because of content moderation, provide informative and constructive feedback to help users understand why their message was flagged and how they can rephrase it appropriately. In the earlier coding examples, this is done through the `explanation` field in the Claude response.
 
@@ -1122,7 +928,7 @@ Once you are confident in the quality of your solution, it's time to deploy it t
 
 ## Improve performance
 
-In complex scenarios, it may be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md). Here are some advanced strategies:
+In complex scenarios, it might be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md). Here are some advanced strategies:
 
 ### Define topics and provide examples
 
@@ -1237,7 +1043,7 @@ Notably, the definition for the `Specialized Advice` category now specifies the 
 
 ### Consider batch processing
 
-To reduce costs in situations where real-time moderation isn't necessary, consider moderating messages in batches. Include multiple messages within the prompt's context, and ask Claude to assess which messages should be moderated.
+To reduce costs in situations where real-time moderation isn’t necessary, consider moderating messages in batches. Include multiple messages within the prompt’s context, and ask Claude to assess which messages should be moderated.
 
 Python
 
@@ -1299,7 +1105,7 @@ Important Notes:
     # Send the request to Claude for content moderation
     response = client.messages.create(
         model="claude-haiku-4-5-20251001",  # Using the Haiku model for lower costs
-        max_tokens=2048,  # Increased max token count to handle batches
+        max_tokens=2048,  # Increased token limit to handle batches
         messages=[{"role": "user", "content": assessment_prompt}],
     )
 
@@ -1320,11 +1126,11 @@ Explanation: {violation["explanation"]}
 """)
 ```
 
-In this example, the `batch_moderate_messages` function handles the moderation of an entire batch of messages with a single Claude API call. Inside the function, a prompt is created that includes the list of messages to evaluate and the unsafe content categories. The prompt directs Claude to return a JSON object listing all messages that contain violations. Each message in the response is identified by its `id`, which corresponds to the message's position in the batch. Keep in mind that finding the optimal batch size for your specific needs may require some experimentation. While larger batch sizes can lower costs, they might also lead to a slight decrease in quality. Additionally, you may need to increase the `max_tokens` parameter in the Claude API call to accommodate longer responses. For details on the maximum number of tokens your chosen model can output, refer to the [model comparison table](../../20-Models/about-claude-models-overview.md#latest-models-comparison).
+In this example, the `batch_moderate_messages` function handles the moderation of an entire batch of messages with a single Claude API call. Inside the function, a prompt is created that includes the list of messages to evaluate and the unsafe content categories. The prompt directs Claude to return a JSON object listing all messages that contain violations. Each message in the response is identified by its `id`, which corresponds to the message’s position in the batch. Keep in mind that finding the optimal batch size for your specific needs might require some experimentation. Although larger batch sizes can lower costs, they might also lead to a slight decrease in quality. Additionally, you might need to increase the `max_tokens` parameter in the Claude API call to accommodate longer responses. For details on the maximum number of tokens your chosen model can output, refer to the [model comparison table](../../20-Models/about-claude-models-overview.md#latest-models-comparison).
 
 
 
-[Content moderation cookbook](https://platform.claude.com/cookbook/misc-building-moderation-filter)
+[Content moderation recipe](https://platform.claude.com/cookbook/misc-building-moderation-filter)
 
 View a fully implemented code-based example of how to use Claude for content moderation.
 
@@ -1340,54 +1146,6 @@ Explore guardrail techniques to moderate interactions with Claude.
 
 Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/customer-support-chat
 Path: 04-API-Reference/About/about-claude-use-case-guides-customer-support-chat.md
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fcustomer-support-chat)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](about-claude-use-case-guides-overview.md)Use cases
 
 # Customer support agent
 
@@ -1420,7 +1178,7 @@ pip install anthropic streamlit python-dotenv
 
 ### Decide whether to use Claude for support chat
 
-Here are some key indicators that you should employ an LLM like Claude to automate portions of your customer support process:
+Here are some key indicators that you should employ an LLM such as Claude to automate portions of your customer support process:
 
 ### High volume of repetitive queries
 
@@ -1428,11 +1186,11 @@ Claude excels at handling a large number of similar questions efficiently, freei
 
 ### Need for quick information synthesis
 
-Claude can quickly retrieve, process, and combine information from vast knowledge bases, while human agents may need time to research or consult multiple sources.
+Claude can quickly retrieve, process, and combine information from vast knowledge bases, whereas human agents might need time to research or consult multiple sources.
 
 ### 24/7 availability requirement
 
-Claude can provide round-the-clock support without fatigue, whereas staffing human agents for continuous coverage can be costly and challenging.
+Claude can provide support at all hours without fatigue, whereas staffing human agents for continuous coverage can be costly and challenging.
 
 ### Rapid scaling during peak periods
 
@@ -1440,13 +1198,13 @@ Claude can handle sudden increases in query volume without the need for hiring a
 
 ### Consistent brand voice
 
-You can instruct Claude to consistently represent your brand's tone and values, whereas human agents may vary in their communication styles.
+You can instruct Claude to consistently represent your brand’s tone and values, whereas human agents might vary in their communication styles.
 
 Some considerations for choosing Claude over other LLMs:
 
-- You prioritize natural, nuanced conversation: Claude's sophisticated language understanding allows for more natural, context-aware conversations that feel more human-like than chats with other LLMs.
-- You often receive complex and open-ended queries: Claude can handle a wide range of topics and inquiries without generating canned responses or requiring extensive programming of permutations of user utterances.
-- You need scalable multilingual support: Claude's multilingual capabilities allow it to engage in conversations in over 200 languages without the need for separate chatbots or extensive translation processes for each supported language.
+- You prioritize natural, nuanced conversation: Claude’s sophisticated language understanding allows for more natural, context-aware conversations that feel more human-like than chats with other LLMs.
+- You often receive complex and open-ended queries: Claude can handle a wide range of topics and inquiries without generating scripted responses or requiring extensive programming of permutations of user utterances.
+- You need scalable multilingual support: Claude’s multilingual capabilities allow it to engage in conversations in over 200 languages without the need for separate chatbots or extensive translation processes for each supported language.
 
 ### Define your ideal chat interaction
 
@@ -1458,21 +1216,21 @@ Here is an example chat interaction for car insurance customer support:
   - **Claude:** Warmly greets customer and initiates conversation
 - **Customer:** Asks about insurance for their new electric car
   - **Claude:** Provides relevant information about electric vehicle coverage
-- **Customer:** Asks questions related to unique needs for electric vehicle insurances
+- **Customer:** Asks questions related to unique needs for electric vehicle insurance
   - **Claude:** Responds with accurate and informative answers and provides links to the sources
 - **Customer:** Asks off-topic questions unrelated to insurance or cars
   - **Claude:** Clarifies it does not discuss unrelated topics and steers the user back to car insurance
 - **Customer:** Expresses interest in an insurance quote
-  - **Claude:** Ask a set of questions to determine the appropriate quote, adapting to their responses
+  - **Claude:** Asks a set of questions to determine the appropriate quote, adapting to their responses
   - **Claude:** Sends a request to use the quote generation API tool along with necessary information collected from the user
   - **Claude:** Receives the response information from the API tool use, synthesizes the information into a natural response, and presents the provided quote to the user
-- **Customer:** Asks follow up questions
-  - **Claude:** Answers follow up questions as needed
+- **Customer:** Asks follow-up questions
+  - **Claude:** Answers follow-up questions as needed
   - **Claude:** Guides the customer to the next steps in the insurance process and closes out the conversation
 
 
 
-In the real example that you write for your own use case, you might find it useful to write out the actual words in this interaction so that you can also get a sense of the ideal tone, response length, and level of detail you want Claude to have.
+In the real example that you write for your own use case, you might find it useful to write the actual words in this interaction so that you can also get a sense of the ideal tone, response length, and level of detail you want Claude to have.
 
 ### Break the interaction into unique tasks
 
@@ -1518,41 +1276,41 @@ Here are criteria and benchmarks that can be used to evaluate how successfully C
 
 ### Query comprehension accuracy
 
-This metric evaluates how accurately Claude understands customer inquiries across various topics. Measure this by reviewing a sample of conversations and assessing whether Claude has the correct interpretation of customer intent, critical next steps, what successful resolution looks like, and more. Aim for a comprehension accuracy of 95% or higher.
+This metric evaluates how accurately Claude interprets customer inquiries across various topics. Measure this by reviewing a sample of conversations and assessing whether Claude has the correct interpretation of customer intent, critical next steps, what successful resolution looks like, and more. Aim for a comprehension accuracy of 95 percent or higher.
 
 ### Response relevance
 
-This assesses how well Claude's response addresses the customer's specific question or issue. Evaluate a set of conversations and rate the relevance of each response (using LLM-based grading for scale). Target a relevance score of 90% or above.
+This assesses how well Claude’s response addresses the customer’s specific question or issue. Evaluate a set of conversations and rate the relevance of each response (using LLM-based grading for scale). Target a relevance score of 90 percent or above.
 
 ### Response accuracy
 
-Assess the correctness of general company and product information provided to the user, based on the information provided to Claude in context. Target 100% accuracy in this introductory information.
+Assess the correctness of general company and product information provided to the user, based on the information provided to Claude in context. Target 100 percent accuracy in this introductory information.
 
 ### Citation provision relevance
 
-Track the frequency and relevance of links or sources offered. Target providing relevant sources in 80% of interactions where additional information could be beneficial.
+Track the frequency and relevance of links or sources offered. Target providing relevant sources in 80 percent of interactions where additional information could be beneficial.
 
 ### Topic adherence
 
-Measure how well Claude stays on topic, such as the topic of car insurance in the example implementation. Aim for 95% of responses to be directly related to car insurance or the customer's specific query.
+Measure how well Claude stays on topic, such as the topic of car insurance in the example implementation. Aim for 95 percent of responses to be directly related to car insurance or the customer’s specific query.
 
 ### Content generation effectiveness
 
-Measure how successful Claude is at determining when to generate informational content and how relevant that content is. For example, in this implementation, you would be determining how well Claude understands when to generate a quote and how accurate that quote is. Target 100% accuracy, as this is vital information for a successful customer interaction.
+Measure how successful Claude is at determining when to generate informational content and how relevant that content is. For example, in this implementation, you would be determining how well Claude identifies when to generate a quote and how accurate that quote is. Target 100 percent accuracy, as this is vital information for a successful customer interaction.
 
 ### Escalation efficiency
 
-This measures Claude's ability to recognize when a query needs human intervention and escalate appropriately. Track the percentage of correctly escalated conversations versus those that should have been escalated but weren't. Aim for an escalation accuracy of 95% or higher.
+This measures Claude’s ability to recognize when a query needs human intervention and escalate appropriately. Track the percentage of correctly escalated conversations versus those that should have been escalated but weren’t. Aim for an escalation accuracy of 95 percent or higher.
 
 Here are criteria and benchmarks that can be used to evaluate the business impact of employing Claude for support:
 
 ### Sentiment maintenance
 
-This assesses Claude's ability to maintain or improve customer sentiment throughout the conversation. Use sentiment analysis tools to measure sentiment at the beginning and end of each conversation. Aim for maintained or improved sentiment in 90% of interactions.
+This assesses Claude’s ability to maintain or improve customer sentiment throughout the conversation. Use sentiment analysis tools to measure sentiment at the beginning and end of each conversation. Aim for maintained or improved sentiment in 90 percent of interactions.
 
 ### Deflection rate
 
-The percentage of customer inquiries successfully handled by the chatbot without human intervention. Typically aim for 70-80% deflection rate, depending on the complexity of inquiries.
+The percentage of customer inquiries successfully handled by the chatbot without human intervention. Typically aim for a 70–80 percent deflection rate, depending on the complexity of inquiries.
 
 ### Customer satisfaction score
 
@@ -1566,9 +1324,9 @@ The average time it takes for the chatbot to resolve an inquiry. This varies wid
 
 ### Choose the right Claude model
 
-The choice of model depends on the trade-offs between cost, accuracy, and response time.
+The choice of model depends on the trade-offs among cost, accuracy, and response time.
 
-For customer support chat, Claude Opus 5.5 is well suited to balance intelligence, latency, and cost, including the most complex support scenarios that require deep reasoning across long, multi-step conversations. However, for instances where you have conversation flow with multiple prompts including RAG, tool use, or long-context prompts, Claude Haiku 5.5 may be more suitable to optimize for latency. [Effort](../Guides/build-with-claude-effort.md) is its main control for speed: `low` is the fastest level, suited to chat and short tool tasks.
+For customer support chat, Claude Opus 5.5 is well suited to balance intelligence, latency, and cost, including the most complex support scenarios that require deep reasoning across long, multistep conversations. However, for instances where you have a conversation flow with multiple prompts including RAG, tool use, or long-context prompts, Claude Haiku 5.5 might be more suitable to optimize for latency. [Effort](../Guides/build-with-claude-effort.md) is its main control for speed: `low` is the fastest level, suited to chat and short tool tasks.
 
 ### Build a strong prompt
 
@@ -1587,9 +1345,9 @@ insurance. You can also help customers get quotes for their insurance needs."""
 
 
 
-While you may be tempted to put all your information inside a system prompt as a way to separate instructions from the user conversation, Claude actually works best with the bulk of its prompt content written inside the first `User` turn (with the only exception being role prompting). Read more at [Giving Claude a role with a system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
+Although you might be tempted to put all your information inside a system prompt as a way to separate instructions from the user conversation, Claude actually works best with the bulk of its prompt content written inside the first `User` turn (with the only exception being role prompting). Read more at [Giving Claude a role with a system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
 
-It's best to break down complex prompts into subsections and write one part at a time. For each task, you might find greater success by following a step-by-step process to define the parts of the prompt Claude would need to do the task well. For this car insurance customer support example, you'll be writing piecemeal all the parts for a prompt starting with the "Greeting and general guidance" task. This also makes debugging your prompt easier as you can more quickly adjust individual parts of the overall prompt.
+It’s best to break down complex prompts into subsections and write one part at a time. For each task, you might find greater success by following a step-by-step process to define the parts of the prompt Claude would need to do the task well. For this car insurance customer support example, you’ll be writing piecemeal all the parts for a prompt starting with the “Greeting and general guidance” task. This also makes debugging your prompt easier as you can more quickly adjust individual parts of the overall prompt.
 
 ```python
 STATIC_GREETINGS_AND_GENERAL = """
@@ -1659,7 +1417,7 @@ that gives you the confidence to enjoy every electron-powered mile.
 
 
 
-Now that you have your static content, add at least 4-5 sample "good" interactions to guide Claude's responses. These examples should be representative of your ideal customer interaction and can include elements such as guardrails and tool calls.
+Now that you have your static content, add at least 4–5 sample “good” interactions to guide Claude’s responses. These examples should be representative of your ideal customer interaction and can include elements such as guardrails and tool calls.
 
 ```python
 EXAMPLES = """
@@ -1730,7 +1488,7 @@ Once you provide this information, I'll use our quoting tool to generate a perso
 
 
 
-You will also want to include any important instructions outlining dos and don'ts for how Claude should interact with the customer. This may draw from brand guardrails or support policies.
+Also include any important instructions outlining dos and don’ts for how Claude should interact with the customer. This might draw from brand guardrails or support policies.
 
 ```python
 ADDITIONAL_GUARDRAILS = """Please adhere to the following guardrails:
@@ -1770,7 +1528,7 @@ For this example, start with one tool for calculating the quote.
 
 
 
-As a reminder, this tool will not perform the actual calculation, it will just signal to the application that a tool should be used with whatever arguments specified.
+As a reminder, this tool does not perform the actual calculation; it just signals to the application that a tool should be used with whatever arguments Claude specifies.
 
 Add the model name, the tool definition, and a stub implementation to `config.py`:
 
@@ -1809,8 +1567,8 @@ TOOLS = [
 
 def get_quote(make, model, year, mileage, driver_age):
     """Returns the premium per month in USD"""
-    # You can call an http endpoint or a database to get the quote.
-    # Here, we simulate a delay of 1 seconds and return a fixed quote of 100.
+    # You can call an HTTP endpoint or a database to get the quote.
+    # This example simulates a delay of 1 second and returns a fixed quote of 100.
     time.sleep(1)
     return 100
 ```
@@ -1819,7 +1577,7 @@ def get_quote(make, model, year, mileage, driver_age):
 
 ### Deploy your prompts
 
-It's hard to know how well your prompt works without deploying it in a test production setting and [running evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md). Build a small application using the prompt, the Anthropic SDK, and Streamlit for a user interface.
+It’s hard to know how well your prompt works without deploying it in a test production setting and [running evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md). Build a small application using the prompt, the Anthropic SDK, and Streamlit for a user interface.
 
 In a file called `chatbot.py` (or the equivalent module in your language), set up the ChatBot class, which will encapsulate the interactions with the Anthropic SDK.
 
@@ -1844,7 +1602,7 @@ Python
 
 
 ```python
-# In your chatbot.py, import these from the config.py you wrote above:
+# In your chatbot.py, import these from the config.py you wrote earlier:
 # from config import IDENTITY, TOOLS, MODEL, get_quote
 from anthropic import Anthropic
 from dotenv import load_dotenv
@@ -1953,9 +1711,9 @@ class ChatBot:
 
 ### Build your user interface
 
-Test deploying this code with Streamlit using a main method. This `main()` function sets up a Streamlit-based chat interface. Streamlit is a Python framework, so this part of the walkthrough is shown in Python only; the ChatBot class above is the piece you can port to any language.
+Test deploying this code with Streamlit using a main function. This `main()` function sets up a Streamlit-based chat interface. Streamlit is a Python framework, so this part of the walkthrough is shown in Python only; the ChatBot class shown earlier is the piece you can port to any language.
 
-Do this in a file called `app.py`
+Do this in a file called `app.py`:
 
 ```python
 import streamlit as st
@@ -2011,7 +1769,7 @@ Prompting often requires testing and optimization for it to be production ready.
 
 ### Improve performance
 
-In complex scenarios, it may be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) & [guardrail implementation strategies](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md). Here are some common scenarios:
+In complex scenarios, it might be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) and [guardrail implementation strategies](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md). Here are some common scenarios:
 
 #### Reduce long context latency with RAG
 
@@ -2023,21 +1781,21 @@ Implementing RAG for support use cases has been shown to increase accuracy, redu
 
 #### Integrate real-time data with tool use
 
-When dealing with queries that require real-time information, such as account balances or policy details, embedding-based RAG approaches are not sufficient. Instead, tool use can enhance your chatbot's ability to provide accurate, real-time responses. For example, you can use tool use to look up customer information, retrieve order details, and cancel orders on behalf of the customer.
+When dealing with queries that require real-time information, such as account balances or policy details, embedding-based RAG approaches are not sufficient. Instead, tool use can enhance your chatbot’s ability to provide accurate, real-time responses. For example, you can use tool use to look up customer information, retrieve order details, and cancel orders on behalf of the customer.
 
-This approach, [outlined in the tool use: customer service agent recipe](https://platform.claude.com/cookbook/tool-use-customer-service-agent), lets you integrate live data into Claude's responses and provide a more personalized and efficient customer experience.
+This approach, outlined in the [tool use: customer service agent recipe](https://platform.claude.com/cookbook/tool-use-customer-service-agent), lets you integrate live data into Claude’s responses and provide a more personalized and efficient customer experience.
 
 #### Strengthen input and output guardrails
 
-When deploying a chatbot, especially in customer service scenarios, it's important to prevent risks associated with misuse, out-of-scope queries, and inappropriate responses. While Claude is inherently resilient to such scenarios, here are additional steps to strengthen your chatbot guardrails:
+When deploying a chatbot, especially in customer service scenarios, it’s important to prevent risks associated with misuse, out-of-scope queries, and inappropriate responses. Although Claude is inherently resilient to such scenarios, here are additional steps to strengthen your chatbot guardrails:
 
 - [Reduce hallucination](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md): Implement fact-checking mechanisms and [citations](https://platform.claude.com/cookbook/misc-using-citations) to ground responses in provided information.
-- Cross-check information: Verify that the agent's responses align with your company's policies and known facts.
-- Avoid contractual commitments: Ensure the agent doesn't make promises or enter into agreements it's not authorized to make.
-- [Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md): Use methods like harmlessness screens and input validation to prevent users from exploiting model vulnerabilities, aiming to generate inappropriate content.
-- Avoid mentioning competitors: Implement a competitor mention filter to maintain brand focus and not mention any competitor's products or services.
+- Cross-check information: Verify that the agent’s responses align with your company’s policies and known facts.
+- Avoid contractual commitments: Ensure the agent doesn’t make promises or enter into agreements it’s not authorized to make.
+- [Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md): Use methods such as harmlessness screens and input validation to prevent users from exploiting model vulnerabilities to generate inappropriate content.
+- Avoid mentioning competitors: Implement a competitor mention filter to maintain brand focus and not mention any competitor’s products or services.
 - [Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md): Prevent Claude from changing style or going out of character, even during long, complex interactions.
-- Remove Personally Identifiable Information (PII): Unless explicitly required and authorized, strip out any PII from responses.
+- Remove personally identifiable information (PII): Unless explicitly required and authorized, strip out any PII from responses.
 
 #### Reduce perceived response time with streaming
 
@@ -2046,11 +1804,11 @@ When dealing with potentially lengthy responses, implementing streaming can impr
 Here is how to implement streaming:
 
 1.  Use the [Anthropic Streaming API](../Guides/build-with-claude-streaming.md) to support streaming responses.
-2.  Set up your frontend to handle incoming chunks of text.
+2.  Set up your front end to handle incoming chunks of text.
 3.  Display each chunk as it arrives, simulating real-time typing.
 4.  Implement a mechanism to save the full response, allowing users to view it if they navigate away and return.
 
-In some cases, streaming enables the use of more advanced models with higher base latencies, as the progressive display mitigates the impact of longer processing times.
+In some cases, streaming makes it possible to use more advanced models with higher base latencies, as the progressive display mitigates the impact of longer processing times.
 
 #### Scale your chatbot
 
@@ -2059,15 +1817,15 @@ As the complexity of your chatbot grows, your application architecture can evolv
 - Ensure that you are making the most out of your prompts and optimizing through prompt engineering. Use the [prompt engineering guides](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) to write the most effective prompts.
 - Add additional [tools](../Agents-Tools/agents-and-tools-tool-use-overview.md) to the prompt (which can include [prompt chains](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#chain-complex-prompts)) and see if you can achieve the functionality required.
 
-If your chatbot handles incredibly varied tasks, you may want to consider adding a [separate intent classifier](https://platform.claude.com/cookbook/capabilities-classification-guide) to route the initial customer query. For the existing application, this would involve creating a decision tree that would route customer queries through the classifier and then to specialized conversations (with their own set of tools and system prompts). Note, this method requires an additional call to Claude that can increase latency.
+If your chatbot handles incredibly varied tasks, you might want to consider adding a [separate intent classifier](https://platform.claude.com/cookbook/capabilities-classification-guide) to route the initial customer query. For the existing application, this would involve creating a decision tree that would route customer queries through the classifier and then to specialized conversations (with their own set of tools and system prompts). Note that this method requires an additional call to Claude that can increase latency.
 
 ### Integrate Claude into your support workflow
 
-While these examples have focused on Python functions callable within a Streamlit environment, deploying Claude for real-time support chatbot requires an API service.
+Although these examples have focused on Python functions callable within a Streamlit environment, deploying Claude for a real-time support chatbot requires an API service.
 
-Here's how you can approach this:
+Here’s how you can approach this:
 
-1.  Create an API wrapper: Develop a simple API wrapper around your classification function. For example, you can use Flask API or Fast API to wrap your code into a HTTP Service. Your HTTP service could accept the user input and return the Assistant response in its entirety. Thus, your service could have the following characteristics:
+1.  Create an API wrapper: Develop a simple API wrapper around your classification function. For example, you can use Flask or FastAPI to wrap your code into an HTTP service. Your HTTP service could accept the user input and return the Assistant response in its entirety. Thus, your service could have the following characteristics:
 
     - Server-Sent Events (SSE): SSE allows for real-time streaming of responses from the server to the client. This provides a smooth, interactive experience when working with LLMs.
     - Caching: Implementing caching can improve response times and reduce unnecessary API calls.
@@ -2108,67 +1866,19 @@ Refine your system prompt and examples for better task performance.
 Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization
 Path: 04-API-Reference/About/about-claude-use-case-guides-legal-summarization.md
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Flegal-summarization)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](about-claude-use-case-guides-overview.md)Use cases
-
 # Legal summarization
 
 Copy page
 
 
 
-This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key information and expediting legal research. With Claude, you can streamline the review of contracts, litigation prep, and regulatory work, saving time and ensuring accuracy in your legal processes.
+This guide walks through how to use Claude’s advanced natural language processing capabilities to efficiently summarize legal documents, extracting key information and expediting legal research. With Claude, you can streamline the review of contracts, litigation prep, and regulatory work, saving time and ensuring accuracy in your legal processes.
 
 Copy page
 
 
 
-> Visit the [summarization cookbook](https://platform.claude.com/cookbook/capabilities-summarization-guide) to see an example legal summarization implementation using Claude.
+> Visit the [summarization recipe](https://platform.claude.com/cookbook/capabilities-summarization-guide) in the Claude Cookbook to see an example legal summarization implementation using Claude.
 
 ## Before building with Claude
 
@@ -2178,11 +1888,11 @@ Here are some key indicators that you should employ an LLM such as Claude to sum
 
 ### You want to review a high volume of documents efficiently and affordably
 
-Large-scale document review can be time-consuming and expensive when done manually. Claude can process and summarize vast amounts of legal documents rapidly, significantly reducing the time and cost associated with document review. This capability is particularly valuable for tasks like due diligence, contract analysis, or litigation discovery, where efficiency is crucial.
+Large-scale document review can be time-consuming and expensive when done manually. Claude can process and summarize vast amounts of legal documents rapidly, significantly reducing the time and cost associated with document review. This capability is particularly valuable for tasks such as due diligence, contract analysis, or litigation discovery, where efficiency is crucial.
 
-### You require automated extraction of key metadata
+### You need automated extraction of key metadata
 
-Claude can efficiently extract and categorize important metadata from legal documents, such as parties involved, dates, contract terms, or specific clauses. This automated extraction can help organize information, making it easier to search, analyze, and manage large document sets. It's especially useful for contract management, compliance checks, or creating searchable databases of legal information.
+Claude can efficiently extract and categorize important metadata from legal documents, such as parties involved, dates, contract terms, or specific clauses. This automated extraction can help organize information, making it easier to search, analyze, and manage large document sets. It’s especially useful for contract management, compliance checks, or creating searchable databases of legal information.
 
 ### You want to generate clear, concise, and standardized summaries
 
@@ -2194,7 +1904,7 @@ When creating legal summaries, proper attribution and citation are crucial to en
 
 ### You want to streamline and expedite your legal research process
 
-Claude can assist in legal research by quickly analyzing large volumes of case law, statutes, and legal commentary. It can identify relevant precedents, extract key legal principles, and summarize complex legal arguments. This capability can significantly speed up the research process, allowing legal professionals to focus on higher-level analysis and strategy development.
+Claude can help with legal research by quickly analyzing large volumes of case law, statutes, and legal commentary. It can identify relevant precedents, extract key legal principles, and summarize complex legal arguments. This capability can significantly speed up the research process, allowing legal professionals to focus on higher-level analysis and strategy development.
 
 ### Determine the details you want the summarization to extract
 
@@ -2233,7 +1943,7 @@ details_to_extract = [
 
 ### Establish success criteria
 
-Evaluating the quality of summaries is a notoriously challenging task. Unlike many other natural language processing tasks, evaluation of summaries often lacks clear-cut, objective metrics. The process can be highly subjective, with different readers valuing different aspects of a summary. Here are criteria you may want to consider when assessing how well Claude performs legal summarization.
+Evaluating the quality of summaries is a notoriously challenging task. Unlike many other natural language processing tasks, evaluation of summaries often lacks clear-cut, objective metrics. The process can be highly subjective, with different readers valuing different aspects of a summary. Here are criteria you might want to consider when assessing how well Claude performs legal summarization.
 
 ### Factual correctness
 
@@ -2267,7 +1977,7 @@ See the guide on [establishing success criteria](../Test-Evaluate/test-and-evalu
 
 ### Select the right Claude model
 
-Model accuracy is extremely important when summarizing legal documents. Claude Opus 5.5 is an excellent choice for use cases such as this where high accuracy is required. If the size and quantity of your documents is large such that costs start to become a concern, you can also try using a smaller model such as Claude Haiku 5.5.
+Model accuracy is extremely important when summarizing legal documents. Claude Opus 5.5 is an excellent choice for use cases such as this where high accuracy is required. If the size and quantity of your documents are large such that costs start to become a concern, you can also try using a smaller model such as Claude Haiku 5.5.
 
 To help estimate these costs, the following is a comparison of the cost to summarize 1,000 sublease agreements using Opus and Haiku models:
 
@@ -2279,7 +1989,7 @@ To help estimate these costs, the following is a comparison of the cost to summa
 
 - **Estimated tokens**
 
-  - Input tokens: 108M, about 108,000 per agreement (about 1 token per 2.8 characters, the rate both models showed on this guide's sample agreement)
+  - Input tokens: 108M, about 108,000 per agreement (about 1 token per 2.8 characters, the rate both models showed on this guide’s sample agreement)
   - Output tokens per summary, including any thinking tokens, which are billed as output: about 6,200 on Claude Opus 5.5 and 3,100 on Claude Haiku 5.5
   - Total output tokens: 6.2M on Claude Opus 5.5 and 3.1M on Claude Haiku 5.5
 
@@ -2297,11 +2007,11 @@ To help estimate these costs, the following is a comparison of the cost to summa
 
 
 
-Actual costs may differ from these estimates. The token counts come from running the example in the [Build a strong prompt](#build-a-strong-prompt) section on this guide's sample agreement, about 105,000 input tokens, and output length varies with the document and from run to run. Each agreement here is one prompt of about 108,000 tokens, over the 100,000-token threshold of Claude Haiku 5.5's [long-prompt prices](../../17-Billing-Plans/about-claude-pricing.md#long-context-pricing). A document whose prompt stays at or under 100,000 tokens pays \$0.10/MTok input and \$0.50/MTok output instead. To see which prices apply, count your documents with [token counting](../Guides/build-with-claude-token-counting.md) and `model` set to `claude-haiku-5-5`.
+Actual costs might differ from these estimates. The token counts come from running the example in the [Build a strong prompt](#build-a-strong-prompt) section on this guide’s sample agreement, about 105,000 input tokens, and output length varies with the document and from run to run. Each agreement here is one prompt of about 108,000 tokens, over the 100,000-token threshold of Claude Haiku 5.5’s [long-prompt prices](../../17-Billing-Plans/about-claude-pricing.md#long-context-pricing). A document whose prompt stays at or under 100,000 tokens pays \$0.10 / \$0.50 USD per million input / output tokens instead. To see which prices apply, count your documents with [token counting](../Guides/build-with-claude-token-counting.md) and `model` set to `claude-haiku-5-5`.
 
 ### Transform documents into a format that Claude can process
 
-Before you begin summarizing documents, you need to prepare your data. This involves extracting text from PDFs, cleaning the text, and ensuring it's ready to be processed by Claude.
+Before you start summarizing documents, you need to prepare your data. This involves extracting text from PDFs, cleaning the text, and ensuring it’s ready to be processed by Claude.
 
 Here is a demonstration of this process on a sample PDF:
 
@@ -2362,7 +2072,7 @@ document_text = get_llm_text(pdf_file)
 print(document_text[:50000])
 ```
 
-In this example, you first download a PDF of a sample sublease agreement used in the [summarization cookbook](https://platform.claude.com/cookbook/capabilities-summarization-guide). This agreement was sourced from a publicly available sublease agreement from the [sec.gov website](https://www.sec.gov/Archives/edgar/data/1045425/000119312507044370/dex1032.htm).
+In this example, you first download a PDF of a sample sublease agreement used in the Claude Cookbook’s [summarization recipe](https://platform.claude.com/cookbook/capabilities-summarization-guide). This agreement was sourced from a publicly available sublease agreement from the [sec.gov website](https://www.sec.gov/Archives/edgar/data/1045425/000119312507044370/dex1032.htm).
 
 The example uses the `pypdf` library to extract the contents of the PDF and convert it to text. The text data is then cleaned by removing page numbers and extra whitespace.
 
@@ -2439,15 +2149,15 @@ sublease_summary = summarize_document(document_text, details_to_extract)
 print(sublease_summary)
 ```
 
-This code implements a `summarize_document` function that uses Claude to summarize the contents of a sublease agreement. The function accepts a text string and a list of details to extract as inputs. In this example, the code calls the function with the `document_text` and `details_to_extract` variables that were defined in the previous code snippets.
+This code implements a `summarize_document()` function that uses Claude to summarize the contents of a sublease agreement. The function accepts a text string and a list of details to extract as inputs. In this example, the code calls the function with the `document_text` and `details_to_extract` variables that were defined in the previous code snippets.
 
 Within the function, a prompt is generated for Claude, including the document to be summarized, the details to extract, and specific instructions for summarizing the document. The prompt instructs Claude to respond with a summary of each detail to extract nested within XML headers.
 
-Because the code outputs each section of the summary within tags, each section can easily be parsed out as a post-processing step. This approach enables structured summaries that can be adapted for your use case, so that each summary follows the same pattern.
+Because the code outputs each section of the summary within tags, each section can be parsed out as a post-processing step. This approach makes it possible to create structured summaries that can be adapted for your use case, so that each summary follows the same pattern.
 
 ### Evaluate your prompt
 
-Prompting often requires testing and optimization for it to be production ready. To determine the readiness of your solution, evaluate the quality of your summaries using a systematic process combining quantitative and qualitative methods. Creating a [strong empirical evaluation](../Test-Evaluate/test-and-evaluate-develop-tests.md#build-evaluations) based on your defined success criteria allows you to optimize your prompts. Here are some metrics you may want to include within your empirical evaluation:
+Prompting often requires testing and optimization for it to be production ready. To determine the readiness of your solution, evaluate the quality of your summaries using a systematic process combining quantitative and qualitative methods. Creating a [strong empirical evaluation](../Test-Evaluate/test-and-evaluate-develop-tests.md#build-evaluations) based on your defined success criteria allows you to optimize your prompts. Here are some metrics you might want to include within your empirical evaluation:
 
 ### ROUGE scores
 
@@ -2475,21 +2185,21 @@ Here are some additional considerations to keep in mind as you deploy your solut
 
 1.  **Ensure no liability:** Understand the legal implications of errors in the summaries, which could lead to legal liability for your organization or clients. Provide disclaimers or legal notices clarifying that the summaries are generated by AI and should be reviewed by legal professionals.
 
-2.  **Handle diverse document types:** This guide discusses how to extract text from PDFs. In the real world, documents may come in a variety of formats (such as PDFs, Word documents, and text files). Ensure your data extraction pipeline can convert all of the file formats you expect to receive.
+2.  **Handle diverse document types:** This guide discusses how to extract text from PDFs. In the real world, documents might come in a variety of formats (such as PDFs, Word documents, and text files). Ensure your data extraction pipeline can convert all of the file formats you expect to receive.
 
-3.  **Parallelize API calls to Claude:** Long documents with a large number of tokens may require up to a minute for Claude to generate a summary. For large document collections, you may want to send API calls to Claude in parallel so that the summaries can be completed in a reasonable timeframe. Refer to Anthropic’s [rate limits](../Endpoints/rate-limits.md#rate-limits) to determine the maximum amount of API calls that can be performed in parallel.
+3.  **Parallelize API calls to Claude:** Long documents with a large number of tokens might require up to a minute for Claude to generate a summary. For large document collections, you might want to send API calls to Claude in parallel so that the summaries can be completed in a reasonable timeframe. Refer to Anthropic’s [rate limits](../Endpoints/rate-limits.md#rate-limits) to determine the maximum number of API calls that can be performed in parallel.
 
 ------------------------------------------------------------------------
 
 ## Improve performance
 
-In complex scenarios, it may be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md). Here are some advanced strategies:
+In complex scenarios, it might be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md). Here are some advanced strategies:
 
 ### Perform meta-summarization to summarize long documents
 
 Legal summarization often involves handling long documents or many related documents at once, such that you surpass Claude’s context window. You can use a chunking method known as meta-summarization to handle this use case. This technique involves breaking down documents into smaller, manageable chunks and then processing each chunk separately. You can then combine the summaries of each chunk to create a meta-summary of the entire document.
 
-Here's an example of how to perform meta-summarization:
+Here’s an example of how to perform meta-summarization:
 
 cURL
 
@@ -2570,27 +2280,27 @@ long_summary = summarize_long_document(document_text, details_to_extract)
 print(long_summary)
 ```
 
-The `summarize_long_document` function builds upon the earlier `summarize_document` function by splitting the document into smaller chunks and summarizing each chunk individually.
+The `summarize_long_document()` function builds upon the earlier `summarize_document()` function by splitting the document into smaller chunks and summarizing each chunk individually.
 
-The code achieves this by applying the `summarize_document` function to each chunk of 20,000 characters within the original document. The individual summaries are then combined, and a final summary is created from these chunk summaries.
+The code achieves this by applying the `summarize_document()` function to each chunk of 20,000 characters within the original document. The individual summaries are then combined, and a final summary is created from these chunk summaries.
 
-Note that the `summarize_long_document` function isn't strictly necessary for the example PDF, as the entire document fits within Claude's context window. However, it becomes essential for documents exceeding Claude's context window or when summarizing multiple related documents together. Regardless, this meta-summarization technique often captures additional important details in the final summary that were missed in the earlier single-summary approach.
+Note that the `summarize_long_document()` function isn’t strictly necessary for the example PDF, as the entire document fits within Claude’s context window. However, it becomes essential for documents exceeding Claude’s context window or when summarizing multiple related documents together. Regardless, this meta-summarization technique often captures additional important details in the final summary that were missed in the earlier single-summary approach.
 
 ### Use summary indexed documents to explore a large collection of documents
 
-Searching a collection of documents with an LLM usually involves retrieval-augmented generation (RAG). However, in scenarios involving large documents or when precise information retrieval is crucial, a basic RAG approach may be insufficient. Summary indexed documents is an advanced RAG approach that provides a more efficient way of ranking documents for retrieval, using less context than traditional RAG methods. In this approach, you first use Claude to generate a concise summary for each document in your corpus, and then use Claude to rank the relevance of each summary to the query being asked. For further details on this approach, including a code-based example, check out the summary indexed documents section in the [summarization cookbook](https://platform.claude.com/cookbook/capabilities-summarization-guide).
+Searching a collection of documents with an LLM usually involves retrieval-augmented generation (RAG). However, in scenarios involving large documents or when precise information retrieval is crucial, a basic RAG approach might be insufficient. Summary indexed documents is an advanced RAG approach that provides a more efficient way of ranking documents for retrieval, using less context than traditional RAG methods. In this approach, you first use Claude to generate a concise summary for each document in your corpus, and then use Claude to rank the relevance of each summary to the query being asked. For further details on this approach, including a code-based example, see the summary indexed documents section in the [summarization recipe](https://platform.claude.com/cookbook/capabilities-summarization-guide).
 
 ### Fine-tune Claude to learn from your dataset
 
-Another advanced technique to improve Claude's ability to generate summaries is fine-tuning. Fine-tuning involves training Claude on a custom dataset that specifically aligns with your legal summarization needs, ensuring that Claude adapts to your use case. Here’s an overview on how to perform fine-tuning:
+Another advanced technique to improve Claude’s ability to generate summaries is fine-tuning. Fine-tuning involves training Claude on a custom dataset that specifically aligns with your legal summarization needs, ensuring that Claude adapts to your use case. Here’s an overview on how to perform fine-tuning:
 
-1.  **Identify errors:** Start by collecting instances where Claude’s summaries fall short - this could include missing critical legal details, misunderstanding context, or using inappropriate legal terminology.
+1.  **Identify errors:** Start by collecting instances where Claude’s summaries are inadequate. This could include missing critical legal details, misunderstanding context, or using inappropriate legal terminology.
 
-2.  **Curate a dataset:** Once you've identified these issues, compile a dataset of these problematic examples. This dataset should include the original legal documents alongside your corrected summaries, ensuring that Claude learns the desired behavior.
+2.  **Curate a dataset:** Once you’ve identified these issues, compile a dataset of these problematic examples. This dataset should include the original legal documents alongside your corrected summaries, ensuring that Claude learns the behavior you want.
 
 3.  **Perform fine-tuning:** Fine-tuning involves retraining the model on your curated dataset to adjust its weights and parameters. This retraining helps Claude better adapt to the specific requirements of your legal domain, improving its ability to summarize documents according to your standards.
 
-4.  **Iterative improvement:** Fine-tuning is not a one-time process. As Claude continues to generate summaries, you can iteratively add new examples where it has underperformed, further refining its capabilities. Over time, this continuous feedback loop will result in a model that is highly specialized for your legal summarization tasks.
+4.  **Improve iteratively:** Fine-tuning is not a one-time process. As Claude continues to generate summaries, you can iteratively add new examples where it has underperformed, further refining its capabilities. Over time, this continuous feedback loop will result in a model that is highly specialized for your legal summarization tasks.
 
 
 
@@ -2598,15 +2308,15 @@ Fine-tuning is currently only available through Amazon Bedrock. Additional detai
 
 
 
-[Summarization cookbook](https://platform.claude.com/cookbook/capabilities-summarization-guide)
+[Summarization recipe](https://platform.claude.com/cookbook/capabilities-summarization-guide)
 
 View a fully implemented code-based example of how to use Claude to summarize contracts.
 
 
 
-[Citations cookbook](https://platform.claude.com/cookbook/misc-using-citations)
+[Citations recipe](https://platform.claude.com/cookbook/misc-using-citations)
 
-Explore the Citations cookbook recipe for guidance on how to ensure accuracy and explainability of information.
+Explore the Citations recipe for guidance on how to ensure accuracy and explainability of information.
 
 ---
 
@@ -2614,54 +2324,6 @@ Explore the Citations cookbook recipe for guidance on how to ensure accuracy and
 
 Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/overview
 Path: 04-API-Reference/About/about-claude-use-case-guides-overview.md
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Foverview)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-Best practicesUse cases
 
 # Guides to common use cases
 
@@ -2716,61 +2378,13 @@ The three paths for building with Claude differ in how much control you keep and
 Source: https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing
 Path: 04-API-Reference/About/about-claude-use-case-guides-ticket-routing.md
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fuse-case-guides%2Fticket-routing)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](about-claude-use-case-guides-overview.md)[Ticket routing](about-claude-use-case-guides-ticket-routing.md)[Customer support agent](about-claude-use-case-guides-customer-support-chat.md)[Content moderation](about-claude-use-case-guides-content-moderation.md)[Legal summarization](about-claude-use-case-guides-legal-summarization.md)[Commerce agent](about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md)[Prompting best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](about-claude-glossary.md)[Additional resources](about-claude-additional-resources.md)
-
-[Console](../Other/playground.md)
-
-[Best practices](about-claude-use-case-guides-overview.md)Use cases
-
 # Ticket routing
 
 Copy page
 
 
 
-This guide walks through how to harness Claude's advanced natural language understanding capabilities to classify customer support tickets at scale based on customer intent, urgency, prioritization, customer profile, and more.
+This guide walks through how to use Claude’s advanced natural language understanding capabilities to classify customer support tickets at scale based on customer intent, urgency, prioritization, customer profile, and more.
 
 Copy page
 
@@ -2784,11 +2398,11 @@ This guide walks through how to harness Claude's advanced natural language under
 
 ## Define whether to use Claude for ticket routing
 
-Here are some key indicators that you should use an LLM like Claude instead of traditional ML approaches for your classification task:
+Here are some key indicators that you should use an LLM such as Claude instead of traditional ML approaches for your classification task:
 
 ### You have limited labeled training data available
 
-Traditional ML processes require massive labeled datasets. Claude's pre-trained model can effectively classify tickets with just a few dozen labeled examples, significantly reducing data preparation time and costs.
+Traditional ML processes require massive labeled datasets. Claude’s pre-trained model can effectively classify tickets with just a few dozen labeled examples, significantly reducing data preparation time and costs.
 
 ### Your classification categories are likely to change or evolve over time
 
@@ -2796,23 +2410,23 @@ Once a traditional ML approach has been established, changing it is a laborious 
 
 ### You need to handle complex, unstructured text inputs
 
-Traditional ML models often struggle with unstructured data and require extensive feature engineering. Claude's advanced language understanding allows for accurate classification based on content and context, rather than relying on strict ontological structures.
+Traditional ML models often struggle with unstructured data and require extensive feature engineering. Claude’s advanced language understanding allows for accurate classification based on content and context, rather than relying on strict ontological structures.
 
 ### Your classification rules are based on semantic understanding
 
-Traditional ML approaches often rely on bag-of-words models or simple pattern matching. Claude excels at understanding and applying underlying rules when classes are defined by conditions rather than examples.
+Traditional ML approaches often rely on bag-of-words models or simple pattern matching. Claude excels at applying underlying rules when classes are defined by conditions rather than examples.
 
-### You require interpretable reasoning for classification decisions
+### You need interpretable reasoning for classification decisions
 
 Many traditional ML models provide little insight into their decision-making process. Claude can provide human-readable explanations for its classification decisions, building trust in the automation system and facilitating easy adaptation if needed.
 
 ### You want to handle edge cases and ambiguous tickets more effectively
 
-Traditional ML systems often struggle with outliers and ambiguous inputs, frequently misclassifying them or defaulting to a catch-all category. Claude's natural language processing capabilities allow it to better interpret context and nuance in support tickets, potentially reducing the number of misrouted or unclassified tickets that require manual intervention.
+Traditional ML systems often struggle with outliers and ambiguous inputs, frequently misclassifying them or defaulting to a catch-all category. Claude’s natural language processing capabilities allow it to better interpret context and nuance in support tickets, potentially reducing the number of misrouted or unclassified tickets that require manual intervention.
 
 ### You need multilingual support without maintaining separate models
 
-Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Claude's multilingual capabilities allow it to classify tickets in various languages without the need for separate models or extensive translation processes, streamlining support for global customer bases.
+Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Claude’s multilingual capabilities allow it to classify tickets in various languages without the need for separate models or extensive translation processes, streamlining support for global customer bases.
 
 ------------------------------------------------------------------------
 
@@ -2820,9 +2434,9 @@ Traditional ML approaches typically require separate models or extensive transla
 
 ### Understand your current support approach
 
-Before you automate, it's crucial to understand your existing ticketing system. Start by investigating how your support team currently handles ticket routing.
+Before you automate, it’s crucial to understand your existing ticketing system. Start by investigating how your support team currently handles ticket routing.
 
-Consider questions like:
+Consider questions such as:
 
 - What criteria are used to determine what SLA/service offering is applied?
 - Is ticket routing used to determine which tier of support or product specialist a ticket goes to?
@@ -2917,7 +2531,7 @@ Here are some example user intent categories and subcategories.
 - API usage questions
 - Third-party compatibility inquiries
 
-In addition to intent, ticket routing and prioritization may also be influenced by other factors such as urgency, customer type, SLAs, or language. Be sure to consider other routing criteria when building your automated routing system.
+In addition to intent, ticket routing and prioritization might also be influenced by other factors such as urgency, customer type, SLAs, or language. Be sure to consider other routing criteria when building your automated routing system.
 
 ### Establish success criteria
 
@@ -2927,37 +2541,37 @@ Here are some standard criteria and benchmarks when using LLMs for support ticke
 
 ### Classification consistency
 
-This metric assesses how consistently Claude classifies similar tickets over time. It's crucial for maintaining routing reliability. Measure this by periodically testing the model with a set of standardized inputs and aiming for a consistency rate of 95% or higher.
+This metric assesses how consistently Claude classifies similar tickets over time. It’s crucial for maintaining routing reliability. Measure this by periodically testing the model with a set of standardized inputs and aiming for a consistency rate of 95 percent or higher.
 
 ### Adaptation speed
 
-This measures how quickly Claude can adapt to new categories or changing ticket patterns. Test this by introducing new ticket types and measuring the time it takes for the model to achieve satisfactory accuracy (for example, \>90%) on these new categories. Aim for adaptation within 50–100 sample tickets.
+This measures how quickly Claude can adapt to new categories or changing ticket patterns. Test this by introducing new ticket types and measuring the time it takes for the model to achieve satisfactory accuracy (for example, more than 90 percent) on these new categories. Aim for adaptation within 50–100 sample tickets.
 
 ### Multilingual handling
 
-This assesses Claude's ability to accurately route tickets in multiple languages. Measure the routing accuracy across different languages, aiming for no more than a 5–10% drop in accuracy for non-primary languages.
+This assesses Claude’s ability to accurately route tickets in multiple languages. Measure the routing accuracy across different languages, aiming for no more than a 5–10 percent drop in accuracy for non-primary languages.
 
 ### Edge case handling
 
-This evaluates Claude's performance on unusual or complex tickets. Create a test set of edge cases and measure the routing accuracy, aiming for at least 80% accuracy on these challenging inputs.
+This evaluates Claude’s performance on unusual or complex tickets. Create a test set of edge cases and measure the routing accuracy, aiming for at least 80 percent accuracy on these challenging inputs.
 
 ### Bias mitigation
 
-This measures Claude's fairness in routing across different customer demographics. Regularly audit routing decisions for potential biases, aiming for consistent routing accuracy (within 2–3%) across all customer groups.
+This measures Claude’s fairness in routing across different customer demographics. Regularly audit routing decisions for potential biases, aiming for consistent routing accuracy (within 2–3 percent) across all customer groups.
 
 ### Prompt efficiency
 
-In situations where minimizing token count is crucial, this criteria assesses how well Claude performs with minimal context. Measure routing accuracy with varying amounts of context provided, aiming for 90%+ accuracy with just the ticket title and a brief description.
+In situations where minimizing token count is crucial, this criterion assesses how well Claude performs with minimal context. Measure routing accuracy with varying amounts of context provided, aiming for at least 90 percent accuracy with just the ticket title and a brief description.
 
 ### Explainability score
 
-This evaluates the quality and relevance of Claude's explanations for its routing decisions. Human raters can score explanations on a scale (for example, 1–5), with the goal of achieving an average score of 4 or higher.
+This evaluates the quality and relevance of Claude’s explanations for its routing decisions. Human raters can score explanations on a scale (for example, 1–5), with the goal of achieving an average score of 4 or higher.
 
-Here are some common success criteria that may be useful regardless of whether an LLM is used:
+Here are some common success criteria that might be useful regardless of whether an LLM is used:
 
 ### Routing accuracy
 
-Routing accuracy measures how often tickets are correctly assigned to the appropriate team or individual on the first try. This is typically measured as a percentage of correctly routed tickets out of total tickets. Industry benchmarks often aim for 90–95% accuracy, though this can vary based on the complexity of the support structure.
+Routing accuracy measures how often tickets are correctly assigned to the appropriate team or individual on the first try. This is typically measured as a percentage of correctly routed tickets out of total tickets. Industry benchmarks often aim for 90–95 percent accuracy, though this can vary based on the complexity of the support structure.
 
 ### Time-to-assignment
 
@@ -2965,11 +2579,11 @@ This metric tracks how quickly tickets are assigned after being submitted. Faste
 
 ### Rerouting rate
 
-The rerouting rate indicates how often tickets need to be reassigned after initial routing. A lower rate suggests more accurate initial routing. Aim for a rerouting rate below 10%, with top-performing systems achieving rates as low as 5% or less.
+The rerouting rate indicates how often tickets need to be reassigned after initial routing. A lower rate suggests more accurate initial routing. Aim for a rerouting rate below 10 percent, with top-performing systems achieving rates as low as 5 percent or less.
 
 ### First-contact resolution rate
 
-This measures the percentage of tickets resolved during the first interaction with the customer. Higher rates indicate efficient routing and well-prepared support teams. Industry benchmarks typically range from 70–75%, with top performers achieving rates of 80% or higher.
+This measures the percentage of tickets resolved during the first interaction with the customer. Higher rates indicate efficient routing and well-prepared support teams. Industry benchmarks typically range from 70 to 75 percent, with top performers achieving rates of 80 percent or higher.
 
 ### Average handling time
 
@@ -2977,29 +2591,29 @@ Average handling time measures how long it takes to resolve a ticket from start 
 
 ### Customer satisfaction scores
 
-Often measured through post-interaction surveys, these scores reflect overall customer happiness with the support process. Effective routing contributes to higher satisfaction. Aim for CSAT scores of 90% or higher, with top performers often achieving 95%+ satisfaction rates.
+Often measured through post-interaction surveys, these scores reflect overall customer happiness with the support process. Effective routing contributes to higher satisfaction. Aim for CSAT scores of 90 percent or higher, with top performers often achieving satisfaction rates of at least 95 percent.
 
 ### Escalation rate
 
-This measures how often tickets need to be escalated to higher tiers of support. Lower escalation rates often indicate more accurate initial routing. Strive for an escalation rate below 20%, with best-in-class systems achieving rates of 10% or less.
+This measures how often tickets need to be escalated to higher tiers of support. Lower escalation rates often indicate more accurate initial routing. Strive for an escalation rate below 20 percent, with best-in-class systems achieving rates of 10 percent or less.
 
 ### Agent productivity
 
-This metric looks at how many tickets agents can handle effectively after implementing the routing solution. Improved routing should increase productivity. Measure this by tracking tickets resolved per agent per day or hour, aiming for a 10–20% improvement after implementing a new routing system.
+This metric looks at how many tickets agents can handle effectively after implementing the routing solution. Improved routing should increase productivity. Measure this by tracking tickets resolved per agent per day or hour, aiming for a 10–20 percent improvement after implementing a new routing system.
 
 ### Self-service deflection rate
 
-This measures the percentage of potential tickets resolved through self-service options before entering the routing system. Higher rates indicate effective pre-routing triage. Aim for a deflection rate of 20–30%, with top performers achieving rates of 40% or higher.
+This measures the percentage of potential tickets resolved through self-service options before entering the routing system. Higher rates indicate effective pre-routing triage. Aim for a deflection rate of 20–30 percent, with top performers achieving rates of 40 percent or higher.
 
 ### Cost per ticket
 
-This metric calculates the average cost to resolve each support ticket. Efficient routing should help reduce this cost over time. While benchmarks vary widely, many organizations aim to reduce cost per ticket by 10–15% after implementing an improved routing system.
+This metric calculates the average cost to resolve each support ticket. Efficient routing should help reduce this cost over time. Although benchmarks vary widely, many organizations aim to reduce cost per ticket by 10–15 percent after implementing an improved routing system.
 
 ### Choose the right Claude model
 
-The choice of model depends on the trade-offs between cost, accuracy, and response time.
+The choice of model depends on the trade-offs among cost, accuracy, and response time.
 
-Claude Haiku 5.5 (`claude-haiku-5-5`) suits ticket routing: it's the fastest and most cost-effective current model, and at `low` effort it handles simple, high-volume requests such as classification. If your classification problem requires deep subject matter expertise or a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
+Claude Haiku 5.5 (`claude-haiku-5-5`) suits ticket routing: it’s the fastest and most cost-effective current model, and at `low` effort it handles simple, high-volume requests such as classification. If your classification problem requires deep subject matter expertise, a large volume of intent categories, or complex reasoning, you may opt for the [larger Sonnet model](../../20-Models/about-claude-models-overview.md).
 
 ### Build a strong prompt
 
@@ -3011,7 +2625,7 @@ Write a ticket classification prompt. The initial prompt should contain the cont
 
 Try the [metaprompt recipe from the Claude Cookbook](https://colab.research.google.com/github/anthropics/claude-cookbooks/blob/main/misc/metaprompt.ipynb) to have Claude write a first draft for you.
 
-Here's an example ticket routing classification prompt:
+Here’s an example ticket routing classification prompt:
 
 cURL
 
@@ -3099,9 +2713,9 @@ This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On
 Here are the key components of this prompt:
 
 - The prompt template inserts `ticket_contents` into the `<request>` tags.
-- The prompt gives Claude a clearly defined role as a classification system that carefully analyzes the ticket content to determine the customer's core intent and needs.
+- The prompt gives Claude a clearly defined role as a classification system that carefully analyzes the ticket content to determine the customer’s core intent and needs.
 - The prompt instructs Claude on proper output formatting, in this case to provide its reasoning and analysis inside `<reasoning>` tags, followed by the appropriate classification label inside `<intent>` tags.
-- The prompt specifies the valid intent categories: "Support, Feedback, Complaint", "Order Tracking", and "Refund/Exchange".
+- The prompt specifies the valid intent categories: `Support, Feedback, Complaint`, `Order Tracking`, and `Refund/Exchange`.
 - The prompt includes a few examples (a.k.a. few-shot prompting) to illustrate how the output should be formatted, which improves accuracy and consistency.
 
 Having Claude split its response into separate XML tag sections lets you use regular expressions to extract the reasoning and intent from the output independently. This lets you create targeted next steps in the ticket routing workflow, such as using only the intent to decide which person to route the ticket to.
@@ -3110,7 +2724,7 @@ Having Claude split its response into separate XML tag sections lets you use reg
 
 It’s hard to know how well your prompt works without deploying it in a test production setting and [running evaluations](../Test-Evaluate/test-and-evaluate-develop-tests.md).
 
-Build the deployment structure. Start by defining the method signature for wrapping the call to Claude. Extend the method you began writing earlier, which takes `ticket_contents` as input, so that it now returns the reasoning and the intent as output. If you have an existing automation using traditional ML, you'll want to follow that method signature instead.
+Build the deployment structure. Start by defining the function signature for wrapping the call to Claude. Extend the function you started writing earlier, which takes `ticket_contents` as input, so that it now returns the reasoning and the intent as output. If you have an existing automation using traditional ML, you’ll want to follow that signature instead.
 
 cURL
 
@@ -3178,9 +2792,9 @@ def classify_support_request(ticket_contents):
 This code:
 
 - Creates a client instance using your API key.
-- Defines a `classify_support_request` function that takes a `ticket_contents` string.
+- Defines a `classify_support_request()` function that takes a `ticket_contents` string.
 - Sends the `ticket_contents` to Claude for classification using the `classification_prompt`.
-- Returns the model's reasoning and intent extracted from the response.
+- Returns the model’s reasoning and intent extracted from the response.
 
 Because the entire reasoning and intent text must be generated before parsing, the example does not stream the response.
 
@@ -3194,14 +2808,14 @@ To run your evaluation, you need test cases to run it on. The rest of this guide
 
 ### Build an evaluation function
 
-The example evaluation for this guide measures Claude’s performance along three key metrics:
+The example evaluation for this guide measures Claude’s performance along two key metrics:
 
 - Accuracy
 - Cost per classification
 
-You may need to assess Claude on other axes depending on what factors that are important to you.
+You might need to assess Claude on other axes depending on which factors are important to you.
 
-To assess this, first modify the script to add a function that compares the predicted intent with the actual intent and calculates the percentage of correct predictions. Then add cost calculation and time measurement functionality.
+To assess this, first modify the script so that it compares the predicted intent with the actual intent. Then have it return the API call’s token usage, from which you can calculate cost.
 
 cURL
 
@@ -3235,7 +2849,7 @@ client = anthropic.Anthropic()
 DEFAULT_MODEL = "claude-haiku-5-5"
 
 
-def classify_support_request(request, actual_intent):
+def classify_support_request(ticket_contents, actual_intent):
     # Define the prompt for the classification task
     classification_prompt = f"""You will be acting as a customer support ticket classification system.
         […]
@@ -3272,36 +2886,36 @@ def classify_support_request(request, actual_intent):
 
 Here is a breakdown of the edits:
 
-- The `classify_support_request` method now takes the `actual_intent` from the test cases and compares it against Claude’s intent classification to assess whether they match.
-- The method extracts usage statistics for the API call to calculate cost based on input and output tokens used.
+- The `classify_support_request()` function now takes the `actual_intent` from the test cases and compares it against Claude’s intent classification to assess whether they match.
+- The function extracts usage statistics for the API call to calculate cost based on input and output tokens used.
 
 ### Run your evaluation
 
-A proper evaluation requires clear thresholds and benchmarks to determine what is a good result. The preceding script returns the runtime values for accuracy, response time, and cost per classification, but you still need clearly established thresholds. For example:
+A proper evaluation requires clear thresholds and benchmarks to determine what is a good result. The preceding script returns the values you need to measure accuracy and cost per classification, but you still need clearly established thresholds. For example:
 
 - **Accuracy:** 95% (out of 100 tests)
 - **Cost per classification:** 50% reduction on average (across 100 tests) from current routing method
 
-Having these thresholds allows you to quickly and easily tell at scale, and with impartial empiricism, what method is best for you and what changes might need to be made to better fit your requirements.
+Having these thresholds allows you to tell at scale, and with impartial empiricism, what method is best for you and what changes you might need to make to better fit your requirements.
 
 ------------------------------------------------------------------------
 
 ## Improve performance
 
-In complex scenarios, it may be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) & [guardrail implementation strategies](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md). Here are some common scenarios:
+In complex scenarios, it might be helpful to consider additional strategies to improve performance beyond standard [prompt engineering techniques](../../10-Prompting-Guides/build-with-claude-prompt-engineering-overview.md) and [guardrail implementation strategies](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md). Here are some common scenarios:
 
 ### Use a taxonomic hierarchy for cases with 20+ intent categories
 
 As the number of classes grows, the number of examples required also expands, potentially making the prompt unwieldy. As an alternative, you can consider implementing a hierarchical classification system using a mixture of classifiers.
 
 1.  Organize your intents in a taxonomic tree structure.
-2.  Create a series of classifiers at every level of the tree, enabling a cascading routing approach.
+2.  Create a series of classifiers at every level of the tree to make a cascading routing approach possible.
 
-For example, you might have a top-level classifier that broadly categorizes tickets into "Technical Issues," "Billing Questions," and "General Inquiries." Each of these categories can then have its own sub-classifier to further refine the classification.
+For example, you might have a top-level classifier that broadly categorizes tickets into “Technical Issues,” “Billing Questions,” and “General Inquiries.” Each of these categories can then have its own sub-classifier to further refine the classification.
 
 - **Pros - greater nuance and accuracy:** You can create different prompts for each parent path, allowing for more targeted and context-specific classification. This can lead to improved accuracy and more nuanced handling of customer requests.
 
-- **Cons - increased latency:** Be advised that multiple classifiers can lead to increased latency, and Anthropic recommends implementing this approach with the fastest model, Haiku.
+- **Cons - increased latency:** Multiple classifiers can lead to increased latency, and Anthropic recommends implementing this approach with the fastest model, Haiku.
 
 ### Use vector databases and similarity search retrieval to handle highly variable tickets
 
@@ -3309,27 +2923,27 @@ Despite providing examples being the most effective way to improve performance, 
 
 In this scenario, you could employ a vector database to do similarity searches from a dataset of examples and retrieve the most relevant examples for a given query.
 
-This approach, outlined in detail in the [classification recipe](https://platform.claude.com/cookbook/capabilities-classification-guide), has been shown to improve performance from 71% accuracy to 93% accuracy.
+This approach, outlined in detail in the [classification recipe](https://platform.claude.com/cookbook/capabilities-classification-guide), has been shown to improve performance from 71 percent accuracy to 93 percent accuracy.
 
 ### Account specifically for expected edge cases
 
-Here are some scenarios where Claude may misclassify tickets (there may be others that are unique to your situation). In these scenarios, consider providing explicit instructions or examples in the prompt of how Claude should handle the edge case:
+Here are some scenarios where Claude might misclassify tickets (there might be others that are unique to your situation). In these scenarios, consider providing explicit instructions or examples in the prompt of how Claude should handle the edge case:
 
 ### Customers make implicit requests
 
-Customers often express needs indirectly. For example, "I've been waiting for my package for over two weeks now" may be an indirect request for order status.
+Customers often express needs indirectly. For example, “I’ve been waiting for my package for over two weeks now” might be an indirect request for order status.
 
 - **Solution:** Provide Claude with some real customer examples of these kinds of requests, along with what the underlying intent is. You can get even better results if you include a classification rationale for particularly nuanced ticket intents, so that Claude can better generalize the logic to other tickets.
 
 ### Claude prioritizes emotion over intent
 
-When customers express dissatisfaction, Claude may prioritize addressing the emotion over solving the underlying problem.
+When customers express dissatisfaction, Claude might prioritize addressing the emotion over solving the underlying problem.
 
-- **Solution:** Provide Claude with directions on when to prioritize customer sentiment or not. It can be something as simple as “Ignore all customer emotions. Focus only on analyzing the intent of the customer’s request and what information the customer might be asking for.”
+- **Solution:** Provide Claude with directions on when to prioritize customer sentiment or not. For example: “Ignore all customer emotions. Focus only on analyzing the intent of the customer’s request and what information the customer might be asking for.”
 
 ### Multiple issues cause issue prioritization confusion
 
-When customers present multiple issues in a single interaction, Claude may have difficulty identifying the primary concern.
+When customers present multiple issues in a single interaction, Claude might have difficulty identifying the primary concern.
 
 - **Solution:** Clarify the prioritization of intents so that Claude can better rank the extracted intents and identify the primary concern.
 
@@ -3350,12 +2964,12 @@ For either of these approaches, you need to wrap your script in a service. The c
 
 
 
-[Classification cookbook](https://platform.claude.com/cookbook/capabilities-classification-guide)
+[Classification recipe](https://platform.claude.com/cookbook/capabilities-classification-guide)
 
-Visit the classification cookbook for more example code and detailed eval guidance.
+Visit the classification recipe for more example code and detailed eval guidance.
 
 
 
 [Claude Console](https://platform.claude.com/dashboard)
 
-Begin building and evaluating your workflow on the Claude Console.
+Start building and evaluating your workflow on the Claude Console.

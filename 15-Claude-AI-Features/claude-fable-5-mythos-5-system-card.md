@@ -2,7 +2,7 @@
 title: "Claude Fable 5 Mythos 5 System Card 62E81Ca8E8"
 source_url: "https://www.anthropic.com/claude-fable-5-mythos-5-system-card"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-08-02T05:41:32Z"
+fetched_at: "2026-11-09T06:26:07Z"
 tags: ["claude-ai"]
 ---
 

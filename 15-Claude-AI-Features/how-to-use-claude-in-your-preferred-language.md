@@ -2,13 +2,11 @@
 title: "How to use Claude in your preferred language | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:48Z"
+fetched_at: "2026-11-09T06:25:33Z"
 tags: ["claude-ai"]
 ---
 
 # How to use Claude in your preferred language
-
-August 6, 2026
 
 
 Claude is available in multiple languages on web and desktop applications.
@@ -53,4 +51,4 @@ Claude is available in multiple languages on web and desktop applications.
 
 ## Voice mode languages
 
-Voice mode has its own language setting, separate from your display language. To change the language Claude speaks and listens to in voice mode, go to **[Settings \> General](https://claude.ai/settings/general)**, then find **Voice \> Language** and choose a language. Learn more in **[Use voice mode](use-voice-mode.md)**.
+Voice mode has its own language setting, separate from your display language. To change the language Claude speaks and listens to in voice mode, go to **Settings \> Capabilities**, then find **Voice \> Spoken language** and choose a language. If **Voice** isn't there, go to **Settings \> General**, then **Voice \> Language**. Learn more in **[Use voice mode](https://support.claude.com/en/articles/11101966-use-voice-mode)**.

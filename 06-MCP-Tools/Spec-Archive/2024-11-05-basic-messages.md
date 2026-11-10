@@ -2,11 +2,14 @@
 title: "Messages - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/basic/messages"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:05Z"
+fetched_at: "2026-10-31T06:25:21Z"
+last_modified: "Fri, 30 Oct 2026 23:19:28 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Requests](#requests)
 - [Responses](#responses)

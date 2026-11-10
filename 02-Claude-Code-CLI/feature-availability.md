@@ -2,11 +2,14 @@
 title: "Feature availability - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/feature-availability"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-21T06:28:28Z"
+fetched_at: "2026-10-31T06:25:09Z"
+last_modified: "Sat, 31 Oct 2026 01:19:32 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Availability by model provider](#availability-by-model-provider)
   - [Features available on every provider](#features-available-on-every-provider)
@@ -15,6 +18,7 @@ tags: ["claude-code"]
   - [Admin and analytics](#admin-and-analytics)
   - [Summary by provider](#summary-by-provider)
 - [Availability by subscription plan](#availability-by-subscription-plan)
+  - [Ultra plan](#ultra-plan)
 - [Model availability](#model-availability)
 - [Related resources](#related-resources)
 
@@ -37,7 +41,7 @@ Availability by model provider
 
 How you authenticate determines which features Claude Code can reach. For a single list of what is missing on your provider, see the [summary by provider](#summary-by-provider) tabs. To find your column in the tables:
 
-- **Claude subscription**: you sign in with a claude.ai account on the Pro, Max, Team, or Enterprise plan
+- **Claude subscription**: you sign in with a claude.ai account on the Pro, Max, Ultra, Team, or Enterprise plan
 - **Anthropic Console**: you authenticate with an Anthropic API key or by [signing in to a Console account without one](authentication.md#sign-in-without-an-api-key)
 - **Amazon Bedrock**: you use Claude models from the Amazon Bedrock model catalog and set `CLAUDE_CODE_USE_BEDROCK`. The [Mantle endpoint](amazon-bedrock.md#use-the-mantle-endpoint) (`CLAUDE_CODE_USE_MANTLE`) is covered by this column
 - **Claude Platform on AWS**: you bought Claude through AWS Marketplace but call the Anthropic API, and set `CLAUDE_CODE_USE_ANTHROPIC_AWS`
@@ -75,15 +79,15 @@ Features that require a Claude subscription
 These require signing in with a claude.ai account and are not reachable with an Anthropic Console API key or from a third-party provider:
 
 - [Cloud sessions](claude-code-on-the-web.md) and Claude Code on mobile
-- [Claude Code in Slack](../14-Connectors/slack.md): Pro and Max plans
+- [Claude Code in Slack](../14-Connectors/slack.md): Pro, Max, and Ultra plans
 - [Claude Code Desktop](../16-Mobile-Desktop/desktop.md)
 - [Cloud scheduled tasks](web-scheduled-tasks.md) (`/schedule`)
 - [Ultrareview](ultrareview.md)
 - [Code Review](code-review.md): Team and Enterprise plans
 - [Remote Control](remote-control.md)
 - [Chrome extension](../03-IDE-Integrations/chrome.md)
-- [Computer use](computer-use.md): Pro and Max plans
-- [Artifacts](artifacts.md): Pro, Max, Team, and Enterprise plans
+- [Computer use](computer-use.md): Pro, Max, and Ultra plans
+- [Artifacts](artifacts.md): Pro, Max, Ultra, Team, and Enterprise plans
 - [Voice dictation](voice-dictation.md)
 
 Desktop is the partial exception: [gateway routing can be configured in the app or by an administrator](../13-Enterprise-Admin/llm-gateway-connect.md#desktop-app). [Claude Desktop on 3P](https://claude.com/docs/third-party/claude-desktop/overview) also runs the Code tab on Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, or a self-hosted LLM gateway. It also runs the Code tab on the [Claude API](https://claude.com/docs/third-party/claude-desktop/claude-api) with an Anthropic Console API key. For per-plan availability of these features, see [Availability by subscription plan](#availability-by-subscription-plan).
@@ -95,16 +99,16 @@ CLI capabilities that vary by provider
 
 These features work in the local CLI but depend on a server-side capability that not every provider exposes.
 
-| Feature                                                        | Claude subscription                                                                                   | Anthropic Console             | Amazon Bedrock                | Claude Platform on AWS        | Google Cloud’s Agent Platform | Microsoft Foundry             |
-|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|-------------------------------|
-| [Web search](tools-reference.md#websearch-tool-behavior) | ✓                                                                                                     | ✓                             | ✗                             | ✓                             | See note ^([1](#fn1))         | ✓                             |
-| [Fast mode](fast-mode.md)                                | ✓ ([Owner-enabled](fast-mode.md#enable-fast-mode-for-your-organization) on Team and Enterprise) | ✓ (provisioned organizations) | ✗                             | ✗                             | ✗                             | ✗                             |
-| [Auto mode](auto-mode-config.md)                         | ✓                                                                                                     | ✓                             | See note ^([2](#fn2))         | ✓                             | See note ^([2](#fn2))         | See note ^([2](#fn2))         |
-| [Advisor](advisor.md)                                    | ✓                                                                                                     | ✓                             | ✗                             | ✗                             | ✗                             | ✗                             |
-| [Cross-session messaging](cross-session-messaging.md)    | ✓ ^([5](#fn5))                                                                                        | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) |
-| [Channels](channels.md)                                  | ✓                                                                                                     | ✓                             | ✗                             | ✗                             | ✗                             | ✗                             |
-| [GitHub Actions](github-actions.md)                      | ✓                                                                                                     | ✓                             | ✓                             | ✗                             | ✓                             | ✓                             |
-| [GitLab CI/CD](gitlab-ci-cd.md)                          | ✓                                                                                                     | ✓                             | ✓                             | ✓                             | ✓                             | ✗                             |
+| Feature | Claude subscription | Anthropic Console | Amazon Bedrock | Claude Platform on AWS | Google Cloud’s Agent Platform | Microsoft Foundry |
+|----|----|----|----|----|----|----|
+| [Web search](tools-reference.md#websearch-tool-behavior) | ✓ | ✓ | ✗ | ✓ | See note ^([1](#fn1)) | ✓ |
+| [Fast mode](fast-mode.md) | ✓ ([Owner-enabled](fast-mode.md#enable-fast-mode-for-your-organization) on Team and Enterprise) | ✓ (Opus 5 and 4.8 need provisioning) | ✗ | ✗ | ✗ | ✗ |
+| [Auto mode](auto-mode-config.md) | ✓ | ✓ | See note ^([2](#fn2)) | ✓ | See note ^([2](#fn2)) | See note ^([2](#fn2)) |
+| [Advisor](advisor.md) | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ |
+| [Cross-session messaging](cross-session-messaging.md) | ✓ ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) | ✓ (same machine) ^([5](#fn5)) |
+| [Channels](channels.md) | ✓ | ✓ | ✗ | ✗ | ✗ | ✗ |
+| [GitHub Actions](github-actions.md) | ✓ | ✓ | ✓ | ✗ | ✓ | ✓ |
+| [GitLab CI/CD](gitlab-ci-cd.md) | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
 
 
 [​](#admin-and-analytics)
@@ -113,11 +117,11 @@ Admin and analytics
 
 Organization-level controls and usage visibility.
 
-| Feature                                                     | Claude subscription                                 | Anthropic Console                                                                   | Amazon Bedrock        | Claude Platform on AWS | Google Cloud’s Agent Platform | Microsoft Foundry     |
-|-------------------------------------------------------------|-----------------------------------------------------|-------------------------------------------------------------------------------------|-----------------------|------------------------|-------------------------------|-----------------------|
-| [Analytics dashboard and API](../13-Enterprise-Admin/analytics.md)           | ✓ (dashboard: Team and Enterprise; API: Enterprise) | ✓ ^([4](#fn4))                                                                      | ✗                     | ✗                      | ✗                             | ✗                     |
-| [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) | ✓ (Team and Enterprise)                             | See [Platform availability](../13-Enterprise-Admin/server-managed-settings.md#platform-availability) | ✗                     | ✗                      | ✗                             | ✗                     |
-| [Zero Data Retention](zero-data-retention.md)         | ✓ (qualified Enterprise accounts)                   | ✓ (qualified accounts)                                                              | See note ^([3](#fn3)) | ✓ (qualified accounts) | See note ^([3](#fn3))         | See note ^([3](#fn3)) |
+| Feature | Claude subscription | Anthropic Console | Amazon Bedrock | Claude Platform on AWS | Google Cloud’s Agent Platform | Microsoft Foundry |
+|----|----|----|----|----|----|----|
+| [Analytics dashboard and API](../13-Enterprise-Admin/analytics.md) | ✓ (dashboard: Team and Enterprise; API: Enterprise) | ✓ ^([4](#fn4)) | ✗ | ✗ | ✗ | ✗ |
+| [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) | ✓ (Team and Enterprise) | See [Platform availability](../13-Enterprise-Admin/server-managed-settings.md#platform-availability) | ✗ | ✗ | ✗ | ✗ |
+| [Zero Data Retention](zero-data-retention.md) | ✓ (qualified Enterprise accounts) | ✓ (qualified accounts) | See note ^([3](#fn3)) | ✓ (qualified accounts) | See note ^([3](#fn3)) | See note ^([3](#fn3)) |
 
 ¹ On Google Cloud’s Agent Platform, web search is available for Opus 4, Sonnet 4, Haiku 4.5, and later models.  
 ² On these providers, auto mode supports only Claude Sonnet 5 or later, Opus 4.7 or later, Haiku 5.5, and the Fable models. See [Auto mode configuration](auto-mode-config.md). For the permission mode a session on these providers starts in, see [Which mode a session starts in](permission-modes.md#which-mode-a-session-starts-in).  
@@ -178,7 +182,7 @@ Each tab lists what is unavailable or partially supported on that provider, with
 
 **Alternatives:** for scheduling, use [`/loop`](scheduled-tasks.md) instead of `/schedule`. For cloud sessions, use [GitHub Actions](github-actions.md).
 
-**Not available:** all [features that require a Claude subscription](#features-that-require-a-claude-subscription).Everything in [CLI capabilities that vary by provider](#cli-capabilities-that-vary-by-provider) is available, except that [fast mode](fast-mode.md) requires [provisioned access](fast-mode.md#enable-fast-mode-for-your-organization). [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) that you configure in a claude.ai Team or Enterprise organization don’t reach a session that authenticates with a Console API key. See [Platform availability](../13-Enterprise-Admin/server-managed-settings.md#platform-availability) for how to cover those sessions.**Partial support:**
+**Not available:** all [features that require a Claude subscription](#features-that-require-a-claude-subscription).Everything in [CLI capabilities that vary by provider](#cli-capabilities-that-vary-by-provider) is available, except that [fast mode](fast-mode.md) with Claude Opus 5 or Claude Opus 4.8 requires [provisioned access](fast-mode.md#enable-fast-mode-for-your-organization). [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) that you configure in a claude.ai Team or Enterprise organization don’t reach a session that authenticates with a Console API key. See [Platform availability](../13-Enterprise-Admin/server-managed-settings.md#platform-availability) for how to cover those sessions.**Partial support:**
 
 - [Desktop](../16-Mobile-Desktop/desktop.md): via [Claude Desktop on 3P with the Claude API](https://claude.com/docs/third-party/claude-desktop/claude-api)
 
@@ -189,26 +193,33 @@ Availability by subscription plan
 
 If you authenticate through Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, or an Anthropic Console API key, this section does not apply to you. When you sign in with a claude.ai account, your plan determines which of the features below are available. In Enterprise organizations with the [HIPAA configuration](hipaa-setup.md) applied, some features in this table are turned off.
 
-| Feature                                                                     | Pro | Max | Team          | Enterprise     |
-|:----------------------------------------------------------------------------|:----|:----|:--------------|:---------------|
-| [Cloud sessions](claude-code-on-the-web.md)                           | ✓   | ✓   | ✓             | ✓ ^([6](#fn6)) |
-| [Cloud scheduled tasks](web-scheduled-tasks.md)                                  | ✓   | ✓   | ✓             | ✓              |
-| [Remote Control](remote-control.md)                                   | ✓   | ✓   | Admin-enabled | Admin-enabled  |
-| [Channels](channels.md)                                               | ✓   | ✓   | Admin-enabled | Admin-enabled  |
-| [Computer use](computer-use.md)                                       | ✓   | ✓   | ✗             | ✗              |
-| Dispatch ([Desktop](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch))               | ✓   | ✓   | ✗             | ✗              |
-| [Code Review](code-review.md)                                         | ✗   | ✗   | ✓             | ✓              |
-| [Artifacts](artifacts.md)                                             | ✓   | ✓   | ✓             | ✓              |
-| [Analytics dashboard and contribution metrics](../13-Enterprise-Admin/analytics.md)          | ✗   | ✗   | ✓             | ✓              |
-| [Enterprise Analytics API](../13-Enterprise-Admin/analytics.md#access-data-programmatically) | ✗   | ✗   | ✗             | ✓              |
-| [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md)                 | ✗   | ✗   | ✓             | ✓              |
-| [SSO](../17-Billing-Plans/what-is-the-team-plan.md) | ✗   | ✗   | ✓             | ✓              |
-| SCIM                                                                        | ✗   | ✗   | ✗             | ✓              |
-| [Compliance API](../04-API-Reference/Admin/compliance.md)        | ✗   | ✗   | ✗             | ✓              |
-| [Zero Data Retention](zero-data-retention.md)                         | ✗   | ✗   | ✗             | ✓ ^([7](#fn7)) |
+| Feature | Pro | Max | Ultra | Team | Enterprise |
+|:---|:---|:---|:---|:---|:---|
+| [Cloud sessions](claude-code-on-the-web.md) | ✓ | ✓ | ✓ | ✓ | ✓ ^([6](#fn6)) |
+| [Cloud scheduled tasks](web-scheduled-tasks.md) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| [Remote Control](remote-control.md) | ✓ | ✓ | ✓ | Admin-enabled | Admin-enabled |
+| [Channels](channels.md) | ✓ | ✓ | ✓ | Admin-enabled | Admin-enabled |
+| [Computer use](computer-use.md) | ✓ | ✓ | ✓ | ✗ | ✗ |
+| Dispatch ([Desktop](../16-Mobile-Desktop/desktop.md#sessions-from-dispatch)) | ✓ | ✓ | ✓ | ✗ | ✗ |
+| [Code Review](code-review.md) | ✗ | ✗ | ✗ | ✓ | ✓ |
+| [Artifacts](artifacts.md) | ✓ | ✓ | ✓ | ✓ | ✓ |
+| [Analytics dashboard and contribution metrics](../13-Enterprise-Admin/analytics.md) | ✗ | ✗ | ✗ | ✓ | ✓ |
+| [Enterprise Analytics API](../13-Enterprise-Admin/analytics.md#access-data-programmatically) | ✗ | ✗ | ✗ | ✗ | ✓ |
+| [Server-managed settings](../13-Enterprise-Admin/server-managed-settings.md) | ✗ | ✗ | ✗ | ✓ | ✓ |
+| [SSO](../17-Billing-Plans/what-is-the-team-plan.md) | ✗ | ✗ | ✗ | ✓ | ✓ |
+| SCIM | ✗ | ✗ | ✗ | ✗ | ✓ |
+| [Compliance API](../04-API-Reference/Admin/compliance.md) | ✗ | ✗ | ✗ | ✗ | ✓ |
+| [Zero Data Retention](zero-data-retention.md) | ✗ | ✗ | ✗ | ✗ | ✓ ^([7](#fn7)) |
 
 ⁶ On Enterprise, requires a premium seat or a Chat + Claude Code seat. See [Use Claude Code in the cloud](claude-code-on-the-web.md).  
 ⁷ Not included in the standard Enterprise plan. Requires separate enablement by Anthropic for qualified accounts. See [Zero Data Retention](zero-data-retention.md). For pricing and the full plan comparison, see [Team plans](../17-Billing-Plans/what-is-the-team-plan.md) and [Enterprise plans](../17-Billing-Plans/what-is-the-enterprise-plan.md).
+
+
+[​](#ultra-plan)
+
+Ultra plan
+
+Ultra is the new name for the Max 20x plan, and Max is the new name for Max 5x. To check which plan you’re on, see your subscription on claude.ai. In Claude Code, Max and Ultra have the same features, listed in the Max and Ultra columns of the [availability table](#availability-by-subscription-plan). For usage limits and pricing, see the [Claude pricing page](../17-Billing-Plans/pricing.md).
 
 
 [​](#model-availability)

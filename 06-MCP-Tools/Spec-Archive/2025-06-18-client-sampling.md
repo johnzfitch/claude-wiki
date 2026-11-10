@@ -2,11 +2,14 @@
 title: "Sampling - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/client/sampling"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:08Z"
+fetched_at: "2026-10-31T06:24:39Z"
+last_modified: "Fri, 30 Oct 2026 21:51:03 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)

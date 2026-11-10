@@ -2,14 +2,14 @@
 title: "Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:14Z"
+fetched_at: "2026-11-09T06:26:14Z"
 tags: ["enterprise", "rag"]
 ---
 
 # Business Associate Agreements (BAA) for Commercial Customers
 
 
-*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max, Ultra and when accounts from those plans use Claude Code, see **[here](https://privacy.claude.com/en/collections/10663362-consumers)**.*
 
 *For Claude Enterprise features to be covered under a Business Associate Agreement (BAA), the Primary Owner of the organization must activate HIPAA compliance in the HIPAA-ready Claude Enterprise organization settings under “Data and privacy” and accept Anthropic's BAA. Standard Claude Enterprise plans do not include BAA coverage without action from a Primary Owner. For Claude Code (local mode) and Claude Cowork (local mode) to be covered, the Primary Owner must also apply the HIPAA configuration to both products. See **[Use Claude Code (local mode) and Claude Cowork (local mode) on a HIPAA-ready Enterprise plan](https://support.claude.com/en/articles/17318731)**.*
 
@@ -21,7 +21,7 @@ For clarity, the BAA only covers the single organization that accepted it, and e
 
 Not all API features are covered. See the **[Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide)** for the full list of eligible and non-eligible features.
 
-**Important: [Covered Models](../15-Claude-AI-Features/covered-models.md)** require 30-day data retention and aren't available with zero data retention (ZDR) enabled unless Anthropic has expressly authorized it for your organization. With the **[HIPAA configuration applied to Claude Code (local mode) and Claude Cowork (local mode)](https://support.claude.com/en/articles/17318731)** on a HIPAA-ready Enterprise plan, members can use Covered Models in both products under the BAA. Claude Code can't use Covered Models while your organization has ZDR for Claude Code, unless Anthropic has expressly authorized it for your organization.
+**Important: [Covered Models](https://support.claude.com/en/articles/15425695-covered-models)** require 30-day data retention and aren't available with zero data retention (ZDR) enabled unless Anthropic has expressly authorized it for your organization. With the **[HIPAA configuration applied to Claude Code (local mode) and Claude Cowork (local mode)](https://support.claude.com/en/articles/17318731)** on a HIPAA-ready Enterprise plan, members can use Covered Models in both products under the BAA. Claude Code can't use Covered Models while your organization has ZDR for Claude Code, unless Anthropic has expressly authorized it for your organization.
 
 Below is a breakdown of what’s covered under the BAA, by feature and product surface. This article covers:
 

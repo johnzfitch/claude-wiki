@@ -112,7 +112,7 @@ Dec 2, 2025
 
 Nov 13, 2025
 
-### [Measuring political bias in Claude](political-even-handedness.md)
+### [Measuring political bias in Claude](research-political-even-handedness.md)
 
 Aug 27, 2025
 

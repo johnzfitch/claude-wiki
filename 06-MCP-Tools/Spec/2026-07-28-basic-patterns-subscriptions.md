@@ -1,12 +1,15 @@
 ---
 title: "Subscriptions - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions"
+source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns/subscriptions"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:28:54Z"
+fetched_at: "2026-10-31T06:24:56Z"
+last_modified: "Sat, 31 Oct 2026 01:43:50 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Opening a Stream](#opening-a-stream)
   - [Notification Filter](#notification-filter)
@@ -60,11 +63,11 @@ The client sends a `subscriptions/listen` request with a `notifications` filter 
 
 Notification Filter
 
-| Field                   | Type       | Description                                                       |
-|-------------------------|------------|-------------------------------------------------------------------|
-| `toolsListChanged`      | `boolean`  | Receive `notifications/tools/list_changed` when tools change      |
-| `promptsListChanged`    | `boolean`  | Receive `notifications/prompts/list_changed` when prompts change  |
-| `resourcesListChanged`  | `boolean`  | Receive `notifications/resources/list_changed` when list changes  |
+| Field | Type | Description |
+|----|----|----|
+| `toolsListChanged` | `boolean` | Receive `notifications/tools/list_changed` when tools change |
+| `promptsListChanged` | `boolean` | Receive `notifications/prompts/list_changed` when prompts change |
+| `resourcesListChanged` | `boolean` | Receive `notifications/resources/list_changed` when list changes |
 | `resourceSubscriptions` | `string[]` | Receive `notifications/resources/updated` for these resource URIs |
 
 All fields are optional. Omitting a field is equivalent to not subscribing to that notification type.

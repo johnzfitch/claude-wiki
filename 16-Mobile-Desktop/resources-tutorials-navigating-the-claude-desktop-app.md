@@ -2,7 +2,7 @@
 title: "Navigating the Claude desktop app · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/navigating-the-claude-desktop-app"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-23T06:28:18Z"
+fetched_at: "2026-11-07T06:23:35Z"
 tags: ["desktop"]
 ---
 
@@ -77,7 +77,7 @@ Once Claude can see a folder, you can ask Claude to:
 - *Sort a cluttered Downloads folder into clearly named subfolders.*
 - *Each month, add the new invoices to that same spreadsheet, building a running record.*
 
-A task like that can later [run on a schedule(opens in new tab)](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork).
+A task like that can later [run on a schedule(opens in new tab)](../15-Claude-AI-Features/schedule-recurring-tasks-in-cowork.md).
 
 ### Apps[](#apps)
 
@@ -109,7 +109,7 @@ A task in Claude, on the web or the desktop app, can also work in your own Chrom
 
 
 
-Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) and [Use the built-in browser(opens in new tab)](https://support.claude.com/en/articles/16607400).
+Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) and [Use the built-in browser(opens in new tab)](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork-claude-help-center.md).
 
 ### Your screen, through computer use (beta)[](#your-screen-through-computer-use-beta)
 
@@ -127,7 +127,7 @@ Things to ask:
 
 
 
-By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md).
+By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork).
 
 ### Record a skill[](#record-a-skill)
 
@@ -154,9 +154,9 @@ Good to know
 Working in your folders, the built-in browser, computer use, and Record a skill need a paid plan:
 
 - Folders come with every paid plan.
-- The built-in browser is on Pro, Max, Team, and Enterprise. On Team and Enterprise plans, your organization's owner controls whether it's available.
-- Computer use is in beta on Mac and Windows, for Pro and Max.
-- Record a skill is on Pro, Max, and Team, on Mac.
+- The built-in browser is on Pro, Max, Ultra, Team, and Enterprise. On Team and Enterprise plans, your organization's owner controls whether it's available.
+- Computer use is in beta on Mac and Windows, for Pro, Max, and Ultra.
+- Record a skill is on Pro, Max, Ultra, and Team, on Mac.
 
 On Team and Enterprise plans, your admin can limit which extensions are allowed. See [Install Claude Desktop(opens in new tab)](https://support.claude.com/en/articles/10065433-install-claude-desktop).
 
@@ -191,3 +191,4 @@ Loading
 - [1. Claude is one shortcut away](#1-claude-is-one-shortcut-away)
 - [2. Claude can work in your files, apps, and websites](#2-claude-can-work-in-your-files-apps-and-websites)
 - [3. Claude can keep going while you're away](#3-claude-can-keep-going-while-youre-away)
+- [Get started](#get-started)

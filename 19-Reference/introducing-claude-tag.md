@@ -75,6 +75,6 @@ If you’re a Claude Enterprise or Team customer, you have access to Claude Tag 
 3.  Set a limit on your organization’s monthly spend
 4.  Test Claude in a private channel to confirm it works.
 
-Claude Tag replaces the existing [Claude in Slack](https://support.claude.com/en/articles/11506255-get-started-with-claude-in-slack) app. To migrate, administrators can opt in within 30 days. We’re issuing an introductory [launch credit](../13-Enterprise-Admin/claude-tag-launch-promo-for-claude-team-and-enterprise.md) to eligible Enterprise and Team organizations so that the whole company can try it out.
+Claude Tag replaces the existing [Claude in Slack](../14-Connectors/using-claude-in-slack.md) app. To migrate, administrators can opt in within 30 days. We’re issuing an introductory [launch credit](../13-Enterprise-Admin/claude-tag-launch-promo-for-claude-team-and-enterprise.md) to eligible Enterprise and Team organizations so that the whole company can try it out.
 
 Claude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/docs/claude-tag/overview) and [product page](../15-Claude-AI-Features/product-tag.md).

@@ -2,11 +2,13 @@
 title: "Orchestrate subagents at scale with dynamic workflows - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/workflows"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-21T06:28:59Z"
+fetched_at: "2026-10-28T06:36:07Z"
 tags: ["agents", "claude-code", "subagents"]
 ---
 
 ## On this page
+
+Back to top
 
 - [When to use a workflow](#when-to-use-a-workflow)
 - [Run a bundled workflow](#run-a-bundled-workflow)
@@ -65,14 +67,14 @@ When to use a workflow
 
 [Subagents](../09-Agents-Patterns/sub-agents.md), [skills](../08-Plugins-Skills/skills.md), [agent teams](../09-Agents-Patterns/agent-teams.md), and workflows can all run a multi-step task. The difference is who holds the plan:
 
-|                                 | Subagents                      | Skills                       | Agent teams                            | Workflows                            |
-|:--------------------------------|:-------------------------------|:-----------------------------|:---------------------------------------|:-------------------------------------|
-| What it is                      | A worker Claude spawns         | Instructions Claude follows  | A lead agent supervising peer sessions | A script the runtime executes        |
-| Who decides what runs next      | Claude, turn by turn           | Claude, following the prompt | The lead agent, turn by turn           | The script                           |
-| Where intermediate results live | Claude’s context window        | Claude’s context window      | A shared task list                     | Script variables                     |
-| What’s repeatable               | The worker definition          | The instructions             | The team definition                    | The orchestration itself             |
-| Scale                           | A few delegated tasks per turn | Same as subagents            | A handful of long-running peers        | Dozens to hundreds of agents per run |
-| Interruption                    | Restarts the turn              | Restarts the turn            | Teammates keep running                 | Resumable in the same session        |
+|  | Subagents | Skills | Agent teams | Workflows |
+|:---|:---|:---|:---|:---|
+| What it is | A worker Claude spawns | Instructions Claude follows | A lead agent supervising peer sessions | A script the runtime executes |
+| Who decides what runs next | Claude, turn by turn | Claude, following the prompt | The lead agent, turn by turn | The script |
+| Where intermediate results live | Claude’s context window | Claude’s context window | A shared task list | Script variables |
+| What’s repeatable | The worker definition | The instructions | The team definition | The orchestration itself |
+| Scale | A few delegated tasks per turn | Same as subagents | A handful of long-running peers | Dozens to hundreds of agents per run |
+| Interruption | Restarts the turn | Restarts the turn | Teammates keep running | Resumable in the same session |
 
 A workflow moves the plan into code. With subagents, skills, and agent teams, Claude is the orchestrator: it decides turn by turn what to spawn or assign next, and every result goes into a context window. A workflow script holds the loop, the branching, and the intermediate results itself, so Claude’s context holds only the final answer. Moving the plan into code also lets a workflow apply a repeatable quality pattern, not just run more agents: it can have independent agents adversarially review each other’s findings before they’re reported, or draft a plan from several angles and weigh them against each other, so you get a more trustworthy result than a single pass.
 
@@ -126,8 +128,8 @@ Bundled workflows
 
 Claude Code includes `/deep-research` as a built-in workflow:
 
-| Command                     | What it does                                                                                                                                                                                                                                                                                                           |
-|:----------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Command | What it does |
+|:---|:---|
 | `/deep-research <question>` | Fans out web searches on a question across several angles, fetches and cross-checks the sources it finds, votes on each claim, and returns a cited report with claims that didn’t survive cross-checking filtered out. Requires the [WebSearch tool](tools-reference.md#websearch-tool-behavior) to be available |
 
 `/deep-research` runs only when you invoke it. [Workflows you save](#save-the-workflow-for-reuse) yourself become commands the same way and appear in `/` autocomplete alongside the bundled ones.
@@ -139,17 +141,17 @@ Watch the run
 
 Workflows run in the background, so the session stays responsive while agents work. Run `/workflows` at any time to list running and completed workflows, then select one to open its progress view. When the session has only one run, `/workflows` skips the list and opens that run. To stop a running workflow from the list without opening it, select it and press `x`. The progress view shows each phase with its agent counts. The footer lists the key for each action:
 
-| Key            | Action                                                                                                     |
-|:---------------|:-----------------------------------------------------------------------------------------------------------|
-| `↑` / `↓`      | Select a phase or agent                                                                                    |
+| Key | Action |
+|:---|:---|
+| `↑` / `↓` | Select a phase or agent |
 | `Enter` or `→` | Drill into the selected phase, then into an agent’s detail. In the detail, `Enter` expands or collapses it |
-| `Esc` or `←`   | Back out one level                                                                                         |
-| `j` / `k`      | Scroll within the agent detail when it overflows                                                           |
-| `f`            | Filter the agent list in the selected phase by status. Press again to cycle                                |
-| `p`            | Pause or resume the run                                                                                    |
-| `x`            | Stop the selected agent, or stop the whole workflow when focus is on the run                               |
-| `r`            | Restart the selected running agent                                                                         |
-| `s`            | [Save](#save-the-workflow-for-reuse) the run’s script as a command                                         |
+| `Esc` or `←` | Back out one level |
+| `j` / `k` | Scroll within the agent detail when it overflows |
+| `f` | Filter the agent list in the selected phase by status. Press again to cycle |
+| `p` | Pause or resume the run |
+| `x` | Stop the selected agent, or stop the whole workflow when focus is on the run |
+| `r` | Restart the selected running agent |
+| `s` | [Save](#save-the-workflow-for-reuse) the run’s script as a command |
 
 The agent detail lists the agent’s prompt, its recent tool calls, and its result. Each call shows its state, such as still running or failed. When the agent keeps a task list of its own, the detail shows it too, with each task’s status. Press `Enter` to expand the detail. The prompt and result then show in full, and each listed call shows its input and the start of its result.
 
@@ -214,7 +216,7 @@ To start a session with ultracode already on, launch with `claude --effort ultra
 - The session’s [concurrent subagent limit](../09-Agents-Patterns/sub-agents.md#concurrent-subagent-limit) isn’t enforced for the subagents Claude spawns with the Agent tool
 - In auto permission mode, you aren’t asked to [approve the first workflow launch](#approve-the-plan-before-it-runs)
 
-`/effort ultracode` lasts for the current session; to have every session start with it, set the [`ultracode`](settings-reference.md#ultracode) setting. Turn it off with `/effort ultracode off` when you return to routine work. The `/effort` slider offers the toggle only [when ultracode is available](model-config.md#when-ultracode-is-available).
+`/effort ultracode` lasts for the current session; to have every session start with it, set the [`ultracode`](settings-reference.md#ultracode) setting. Turn it off with `/effort ultracode off` when you return to routine work. The `/effort` slider offers the toggle only [when ultracode is available](model-config.md#when-ultracode-is-available). Before v2.1.284, `/effort ultracode` set the session to `xhigh`, and `/effort ultracode off` failed with `Invalid argument`.
 
 
 [​](#approve-the-plan-before-it-runs)
@@ -230,12 +232,12 @@ In the CLI, the per-run prompt shows the planned phases and these options:
 
 `Ctrl+G` opens the script in your editor. With **Yes, run it** or **No** selected, press `Tab` to [add a comment](permissions.md#add-a-comment-when-you-answer-a-permission-prompt) to your answer. Whether you see this prompt depends on your [permission mode](permission-modes.md):
 
-| Permission mode        | When you’re prompted                                                                                                                                    |
-|:-----------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Auto                   | First launch only. Any **Yes** records consent in your user settings, and later launches start without prompting. Skipped entirely when ultracode is on |
-| Manual, accept edits   | Every run, unless you’ve selected **Yes, and don’t ask again** for that workflow in this project                                                        |
-| Bypass permissions     | Claude Code doesn’t prompt you. The run starts immediately                                                                                              |
-| `claude -p`, Agent SDK | Claude Code doesn’t prompt you                                                                                                                          |
+| Permission mode | When you’re prompted |
+|:---|:---|
+| Auto | First launch only. Any **Yes** records consent in your user settings, and later launches start without prompting. Skipped entirely when ultracode is on |
+| Manual, accept edits | Every run, unless you’ve selected **Yes, and don’t ask again** for that workflow in this project |
+| Bypass permissions | Claude Code doesn’t prompt you. The run starts immediately |
+| `claude -p`, Agent SDK | Claude Code doesn’t prompt you |
 
 In `claude -p` and the Agent SDK, Claude Code never shows this prompt. It runs the Workflow tool call through the same [permission evaluation](../05-Agent-SDK/agent-sdk-permissions.md#how-permissions-are-evaluated) as the rest of the session, so deny rules, ask rules, and `dontAsk` mode apply to the launch as they apply to every tool call. To let the workflow start in these runs, use one of these:
 
@@ -257,12 +259,12 @@ When Claude writes a workflow for a task you’ll repeat, you can save that run�
 - `.claude/workflows/` in your project: shared with everyone who clones the repo
 - `~/.claude/workflows/` in your home directory: available in every project, visible only to you. If you set [`CLAUDE_CONFIG_DIR`](env-vars.md), this location is the `workflows/` directory under that path.
 
-The save dialog shows the resolved path for the personal location. Press Enter to save. The workflow runs as `/<name>` in future sessions from either location. Claude Code checks the save location for symlinks before writing, and shows an error instead of writing through one. What it checks depends on where you save:
+The save dialog shows the resolved path for the personal location. Press Enter to save. The workflow runs as `/<name>` in future sessions from either location. Claude Code checks the save location for symlinks before writing, and shows an error instead of writing through one:
 
 - Project location: Claude Code refuses if `.claude`, `.claude/workflows`, or the target file is a symlink.
 - Personal location: Claude Code refuses only if the target file itself is a symlink, so a `~/.claude` directory managed by a dotfiles tool still works.
 
-Before v2.1.216, Claude Code followed the link, which could place the file outside the location you chose. In a monorepo with several `.claude/` directories, you can keep workflows alongside the package they apply to. Saving to the project location writes to the closest `.claude/workflows/` directory that already exists between your working directory and the repository root, or to the repository root if none exists yet. Project workflows also load from every `.claude/workflows/` along that path, and when more than one defines the same name Claude Code runs the one closest to the working directory. If a project workflow and a personal workflow share a name, the project one runs.
+In a monorepo with several `.claude/` directories, you can keep workflows alongside the package they apply to. Saving to the project location writes to the closest `.claude/workflows/` directory that already exists between your working directory and the repository root, or to the repository root if none exists yet. Project workflows also load from every `.claude/workflows/` along that path, and when more than one defines the same name Claude Code runs the one closest to the working directory. If a project workflow and a personal workflow share a name, the project one runs.
 
 
 [​](#distribute-a-workflow-in-a-plugin)
@@ -402,7 +404,7 @@ You can also edit [the script of a single run](#how-a-workflow-runs) rather than
 
 How a workflow runs
 
-The workflow runtime executes the script in an isolated environment, separate from your conversation. Intermediate results stay in script variables instead of landing in Claude’s context. Every run writes its script to a file under your session’s directory in `~/.claude/projects/`. Claude receives the path when the run starts, so you can ask for it. You can open that file to read the orchestration Claude wrote, diff it against a previous run’s script, or edit it and ask Claude to relaunch from the edited version. Claude can start a workflow only from a script file the session is already allowed to read. To run a script kept outside your working directory, add its directory with [`/add-dir`](permissions.md#working-directories) or a [Read allow rule](permissions.md#read-and-edit) first. The runtime tracks each agent’s result as the run progresses, which is what makes a run [resumable](#resume-after-a-pause) within the same session.
+The workflow runtime executes the script in an isolated environment, separate from your conversation. Intermediate results stay in script variables instead of landing in Claude’s context. Unless Claude starts a run from a script file’s path, Claude Code writes the run’s script to a file under your session’s directory in `~/.claude/projects/`. Claude receives the script’s path when the run starts, so you can ask for it. You can open that file to read the orchestration Claude wrote, diff it against a previous run’s script, or edit it and ask Claude to relaunch from the edited version. Claude can start a workflow only from a script file the session is already allowed to read. To run a script kept outside your working directory, add its directory with [`/add-dir`](permissions.md#working-directories) or a [Read allow rule](permissions.md#read-and-edit) first. The runtime tracks each agent’s result as the run progresses, which is what makes a run [resumable](#resume-after-a-pause) within the same session.
 
 
 [​](#prompt-caching-in-a-fan-out)
@@ -418,15 +420,15 @@ Behavior and limits
 
 The runtime applies the following constraints:
 
-| Constraint                                                                                                                                                                                                                                                                                                    | Why                                                                                                                                                                                    |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| No mid-run user input                                                                                                                                                                                                                                                                                         | A run pauses on its own only for agent permission prompts and a [usage-limit wait](#when-a-run-hits-your-usage-limit). For sign-off between stages, run each stage as its own workflow |
-| No direct filesystem or shell access from the workflow itself                                                                                                                                                                                                                                                 | Agents read, write, and run commands. The script coordinates the agents                                                                                                                |
-| No module loading: a script that contains `import()` fails before the run starts                                                                                                                                                                                                                              | The script body is plain JavaScript. Put work that needs a library in an agent’s task                                                                                                  |
-| Up to 16 concurrent agents by default, fewer when Claude Code has fewer CPUs available, including inside a CPU-limited container. To change the limit, set [`CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`](env-vars.md#variables) to a value from 1 to 256, which requires Claude Code v2.1.269 or later | Bounds local resource use                                                                                                                                                              |
-| In a fan-out, agents that share the first agent’s prompt-cache prefix start up to 5 seconds after it by default                                                                                                                                                                                               | All but the first read the [prefix the first agent cached](#prompt-caching-in-a-fan-out) instead of each processing it uncached                                                        |
-| Up to 4,096 items in a single `parallel()` or `pipeline()` call: the runtime rejects a longer list with an error                                                                                                                                                                                              | A silent cap would drop part of the workload without telling the script                                                                                                                |
-| 1,000 agents total per run                                                                                                                                                                                                                                                                                    | Prevents runaway loops                                                                                                                                                                 |
+| Constraint | Why |
+|:---|:---|
+| No mid-run user input | A run pauses on its own only for agent permission prompts and a [usage-limit wait](#when-a-run-hits-your-usage-limit). For sign-off between stages, run each stage as its own workflow |
+| No direct filesystem or shell access from the workflow itself | Agents read, write, and run commands. The script coordinates the agents |
+| No module loading: a script that contains `import()` fails before the run starts | The script body is plain JavaScript. Put work that needs a library in an agent’s task |
+| Up to 16 concurrent agents by default, fewer when Claude Code has fewer CPUs available, including inside a CPU-limited container. To change the limit, set [`CLAUDE_CODE_WORKFLOW_MAX_CONCURRENT_AGENTS`](env-vars.md#variables) to a value from 1 to 256, which requires Claude Code v2.1.269 or later | Bounds local resource use |
+| In a fan-out, agents that share the first agent’s prompt-cache prefix start up to 5 seconds after it by default | All but the first read the [prefix the first agent cached](#prompt-caching-in-a-fan-out) instead of each processing it uncached |
+| Up to 4,096 items in a single `parallel()` or `pipeline()` call: the runtime rejects a longer list with an error | A silent cap would drop part of the workload without telling the script |
+| 1,000 agents total per run | Prevents runaway loops |
 
 
 [​](#manage-runs)
@@ -460,10 +462,11 @@ That last case means a failure in the middle of a fan-out reruns work that alrea
 
 Resume after you leave the session
 
-You can resume a run within the same Claude Code session. What happens to a running workflow when you leave the session depends on how you leave:
+If you background your session or exit Claude Code while a workflow run is in progress, the run doesn’t continue on its own. The run continues only when Claude relaunches it with a `Workflow` call, which [replays the run from its saved results](#which-agents-run-again).
 
-- If you [background the session](../09-Agents-Patterns/agent-view.md#what-carries-over-when-you-background), Claude Code replays the run the same way in the background session and continues it.
-- If you exit Claude Code while a workflow is running and [agent view is on](../09-Agents-Patterns/agent-view.md#from-inside-a-session), the exit dialog offers `Move to background and exit`, which carries the run over the same way. If you choose `Exit and stop tasks` instead, or the option isn’t offered, the run stops with the session. Claude Code keeps the run’s saved results under that session’s directory in `~/.claude/projects/`, so a session you resume with `claude --resume` can replay them when you ask Claude to relaunch the workflow. In a session you start fresh, Claude has no earlier run to relaunch and starts the workflow over as a new run.
+- **You backgrounded the session or chose [`Move to background and exit`](../09-Agents-Patterns/agent-view.md#from-inside-a-session)**: if the run hasn’t continued when you check the [background session](../09-Agents-Patterns/agent-view.md#what-carries-over-when-you-background), ask Claude there to relaunch the workflow. Depending on your [permission mode](#approve-the-plan-before-it-runs), Claude Code asks you to approve the relaunch first. If the session shows under `Needs input` in agent view, [attach to it](../09-Agents-Patterns/agent-view.md#attach-to-a-session) to answer the approval prompt.
+- **The relaunch in the background session failed with `nothing to resume`**: ask Claude to start the workflow over as a new run. If Claude started the run from the path of a script file outside `~/.claude/projects/`, such as one in your working directory, Claude can’t relaunch it in the background session.
+- **You chose `Exit and stop tasks`, or weren’t offered `Move to background and exit`**: the run stopped with the session, and Claude Code keeps the run’s saved results under that session’s directory in `~/.claude/projects/`. Resume the session with `claude --resume` in your shell, then ask Claude to relaunch the workflow. In a fresh session, Claude has no earlier run to relaunch and starts the workflow over.
 
 In a [cloud session](claude-code-on-the-web.md), Claude Code also saves the run’s results with the session’s conversation history, which survives when the session’s VM is reclaimed. When you [reopen such a session](claude-code-on-the-web.md#environment-expired) and ask Claude to relaunch the workflow, completed agents still return their saved results. In local and cloud sessions alike, when Claude relaunches an earlier run and Claude Code can’t find that run’s saved results at all, the relaunch fails with a `nothing to resume` error instead of starting the run over on its own. Ask Claude to start the workflow over as a new run.
 
@@ -533,7 +536,7 @@ A size guideline tells Claude how many agents to aim for when it writes a dynami
 | `medium`       | Fewer than 10 agents                                |
 | `large`        | Fewer than 50 agents                                |
 
-The default is `medium`, or `small` when you’re signed in on a Pro plan with Claude Code v2.1.271 or later. Until you choose a value, the `/config` row marks the value as the default, and the workflow’s `Running in background` line names the size in force. Requires Claude Code v2.1.219 or later; earlier versions default to `unrestricted`. To change the guideline, pick a value for the Dynamic workflow size setting in `/config`, or run `/config workflowSizeGuideline=small`. On v2.1.219 and later, you can also set the [`workflowSizeGuideline` key](settings-reference.md#workflowsizeguideline) in any settings file; that value takes precedence over `/config`, and Claude Code hides the `/config` row while a settings file provides one. Changes take effect on the next prompt. The [runtime agent caps](#behavior-and-limits) still apply regardless of the setting.
+The default is `medium`, or `small` when you’re signed in on a Pro plan with Claude Code v2.1.271 or later. Until you choose a value, the `/config` row marks the value as the default, and the workflow’s `Running in background` line names the size in force. To change the guideline, pick a value for the Dynamic workflow size setting in `/config`, or run `/config workflowSizeGuideline=small`. You can also set the [`workflowSizeGuideline` key](settings-reference.md#workflowsizeguideline) in any settings file; that value takes precedence over `/config`, and Claude Code hides the `/config` row while a settings file provides one. Changes take effect on the next prompt. The [runtime agent caps](#behavior-and-limits) still apply regardless of the setting.
 
 
 [​](#turn-workflows-off)

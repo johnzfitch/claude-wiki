@@ -2,53 +2,9 @@
 title: "CLI quickstart - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/quickstart"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:20Z"
+fetched_at: "2026-11-05T06:36:12Z"
 tags: ["api", "authentication", "cli"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fquickstart)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
 # CLI quickstart
 
@@ -64,7 +20,7 @@ Install the ant command-line tool, authenticate, and send your first request to 
 
 The `ant` CLI provides access to the Claude API from your terminal. Every API resource is exposed as a subcommand, with output formatting, response filtering, and YAML or JSON file input.
 
-Compared to `curl`, `ant` builds request bodies from typed flags or piped YAML instead of hand-written JSON, and inlines file contents into string fields with an `@path` reference. It extracts response fields with a built-in `--transform` query, so you don't need a separate tool such as `jq`, and it paginates list endpoints automatically.
+Compared to `curl`, `ant` builds request bodies from typed flags or piped YAML instead of hand-written JSON, and inlines file contents into string fields with an `@path` reference. It extracts response fields with a built-in `--transform` query, so you don’t need a separate tool such as `jq`, and it paginates list endpoints automatically.
 
 
 
@@ -76,7 +32,7 @@ Homebrew (macOS)
 
 curl (Linux/WSL)
 
-Go
+go install
 
 Homebrew (macOS)
 
@@ -91,7 +47,7 @@ curl (Linux/WSL)
 For Linux environments, download the release binary directly.
 
 ```python
-VERSION=1.42.0
+VERSION=2.6.0
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 case $(uname -m) in
   x86_64) ARCH=amd64 ;;
@@ -105,17 +61,17 @@ curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${VER
 
 You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
 
-Go
+go install
 
 You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
 
 ```python
-go install github.com/anthropics/anthropic-cli/cmd/ant@latest
+go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
 ```
 
 
 
-The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn't already:
+The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
 
 ```python
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -248,4 +204,4 @@ Command structure, output formats, GJSON transforms, and request bodies
 
 [CLI scripting and automation](cli-sdks-libraries-cli-scripting.md)
 
-Version-control API resources, scripting patterns, and use from Claude Code
+Version control for API resources, scripting patterns, and use from Claude Code

@@ -2,7 +2,7 @@
 title: "What AWS Regions are Claude models available in Amazon Bedrock? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10280791-what-aws-regions-are-claude-models-available-in-amazon-bedrock"
 category: "20-Models"
-fetched_at: "2026-10-23T06:28:47Z"
+fetched_at: "2026-11-09T06:25:43Z"
 tags: ["bedrock", "models"]
 ---
 

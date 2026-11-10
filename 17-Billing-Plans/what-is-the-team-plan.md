@@ -2,7 +2,7 @@
 title: "What is the Team plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:17Z"
+fetched_at: "2026-11-09T06:26:43Z"
 tags: ["billing"]
 ---
 
@@ -41,11 +41,11 @@ Users with Standard seats on the Team plan can access the following:
 
   - Search across Slack, Microsoft 365, and custom connectors
 
-  - For more details, see **[Use enterprise search](https://support.claude.com/en/articles/12489464)**
+  - For more details, see **[Use enterprise search](../13-Enterprise-Admin/use-enterprise-search-claude-help-center.md)**
 
 - **Connectors for your workplace tools:** Connect Claude to Google Drive, Gmail, Google Calendar, GitHub, Microsoft 365, and Slack to search and retrieve context from your existing documents, emails, calendars, and team communications—without manual uploads.
 
-- **Monthly API credits:** Claude Max and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
+- **Monthly API credits:** Claude Max, Ultra, and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
 
 - **Everything in Pro, including:**
 

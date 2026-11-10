@@ -2,231 +2,9 @@
 title: "Query compliance activities - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/activities/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-10-20T06:39:02Z"
+fetched_at: "2026-11-07T06:23:15Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fcompliance%2Factivities%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-
-Query compliance activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](../Endpoints/opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
 
 To enable the Compliance API, see the setup guide.
 
@@ -235,6 +13,8 @@ To enable the Compliance API, see the setup guide.
 Copy page
 
 
+
+API version 2026-10-21
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Compliance API](../Endpoints/http-compliance.md)
@@ -246,6 +26,8 @@ To enable the Compliance API, see the setup guide.
 
 
 
+API version 2026-10-21
+
 GET/v1/compliance/activities
 
 List compliance activities for the authenticated tenant.
@@ -256,7 +38,7 @@ The tenant is the caller's parent organization, or — for an organization with 
 
 
 
-activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 533 more
+activity_types: optional array of "abuse_decision_received" or "account_deleted" or "account_migration_completed" or 571 more
 
 
 
@@ -275,6 +57,24 @@ An external anti-abuse service reported a consequential decision about a sign-in
 
 
 User-initiated self-service account deletion.
+
+"account_migration_completed"
+
+
+
+A personal Claude account's migration into the organization finished: the migrated data is now part of the organization.
+
+"account_migration_failed"
+
+
+
+A personal Claude account's migration into the organization did not complete.
+
+"account_migration_started"
+
+
+
+A personal Claude account began migrating into the organization: its data, including conversations, projects and files, is being moved from the member's personal account into this organization.
 
 "admin_api_key_created"
 
@@ -318,11 +118,15 @@ A step of the Claude Enterprise admin setup checklist was delegated to a teammat
 
 The delegation of a Claude Enterprise admin setup checklist step was cancelled.
 
+
+
 "age_verified"
 
 
 
 User age was verified.
+
+This activity type is retired: this feed no longer records age verifications. Activities of this type recorded earlier are still returned.
 
 "anonymous_mobile_login_attempted"
 
@@ -682,7 +486,7 @@ User created a chat.
 
 
 
-A user deleted a Claude.ai chat conversation.
+A Claude.ai chat conversation was deleted.
 
 "claude_chat_deletion_failed"
 
@@ -755,6 +559,12 @@ A Claude Code credential (runner pool key, runner token, or session token) was r
 
 
 Claude Code Review configuration was enabled/disabled for an org.
+
+"claude_code_review_promo_enrolled"
+
+
+
+An organization admin enrolled the organization in a Claude Code Review promotion, for example by claiming promotional credits.
 
 "claude_code_review_repository_added"
 
@@ -838,7 +648,7 @@ A person's access to a Claude Code Security scan project was granted, changed, o
 
 
 
-A Claude Code Security scan project was archived, unarchived, created, or migrated to a new product experience.
+A Claude Code Security scan project was archived, unarchived, created, or migrated to a new product experience, or a user paused the project's scheduled scanning, unpaused it, or lifted a billing pause on it.
 
 "claude_code_security_scan_project_visibility_updated"
 
@@ -1038,6 +848,72 @@ A GitHub integration was disabled for the organization.
 
 A GitHub integration's configuration was updated.
 
+"claude_insights_attribution_setting_updated"
+
+
+
+An organization admin set the organization's setting that allows Smart Reports to be opened in the rendering that attributes findings to individual, identified members (off: no member can open that rendering). Every write is recorded, so the two values are equal when the setting was written with the value it already had.
+
+"claude_insights_report_archived"
+
+
+
+A Smart Report was archived, hiding it from the organization's default report list, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+"claude_insights_report_attribution_viewed"
+
+
+
+A Smart Report was viewed or downloaded with its usage findings attributed to individual, identified members of the organization (rather than in the default rendering, which identifies no member), one session it lists was inspected from that attributed rendering, or an organization admin was shown which members one of its recommendations suggests.
+
+"claude_insights_report_deleted"
+
+
+
+An archived Smart Report was permanently deleted, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope): its document was removed; purge_confirmed says whether it was also removed from the organization's report list.
+
+"claude_insights_report_feedback_submitted"
+
+
+
+Feedback was submitted on a Smart Report by an organization admin, by the delegate who ran it (a member the organization allowed to run reports on a limited scope), or by a member it was shared with. The event records which report was rated, not the ratings themselves or the member's written comment.
+
+"claude_insights_report_renamed"
+
+
+
+A Smart Report was renamed, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+"claude_insights_report_sharing_updated"
+
+
+
+An organization admin, or the delegate who ran the report (a member the organization allowed to run reports on a limited scope), changed who a Smart Report is shared with: the organization members who may open the report by link, and whether they may open the rendering that attributes findings to individual members.
+
+"claude_insights_report_triggered"
+
+
+
+A Smart Report was triggered by an organization admin, or by a delegate: a member the organization allowed to run reports on a limited scope. A Smart Report is an aggregate analysis of the organization's usage over a date range, optionally scoped to one or more directory groups, to a directory attribute's values, or to product surfaces.
+
+"claude_insights_report_unarchived"
+
+
+
+An archived Smart Report was restored to the organization's default report list, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+"claude_insights_report_viewed"
+
+
+
+A Smart Report was viewed or downloaded in its default rendering, which identifies no member of the organization (viewing or downloading the rendering that attributes findings to individual members is recorded as a separate activity).
+
+"claude_insights_resource_access_updated"
+
+
+
+Which directory groups, or which values of one directory attribute, a member may run Smart Reports on (the member's delegated scope) changed: an organization admin set or revoked it, or Smart Reports itself (a system actor) revoked it when the member left the organization.
+
 "claude_organization_settings_updated"
 
 
@@ -1091,6 +967,12 @@ Plugin was replaced.
 
 
 A security scan of a plugin completed and produced a verdict.
+
+"claude_plugin_security_scan_override_updated"
+
+
+
+An administrator allowed a plugin version despite its security scan's verdict, or that allowance was revoked.
 
 "claude_plugin_served_version_updated"
 
@@ -1240,13 +1122,85 @@ A Claude project was viewed.
 
 
 
-A published artifact was deleted or unpublished — by its creator, by an organization admin, or by Anthropic (for example, when it was removed for a policy violation).
+A published artifact was deleted or unpublished — by its creator, by an organization admin, through the Compliance API, or by Anthropic (for example, when it was removed for a policy violation); one artifact can have more than one of these activities, such as when its deletion is retried.
 
 "claude_pubsec_identity_configured"
 
 
 
 SAML IdP configuration updated for a public sector organization.
+
+"claude_security_finding_deleted"
+
+
+
+A Claude Security finding was permanently deleted by a user.
+
+"claude_security_finding_updated"
+
+
+
+A Claude Security finding was resolved or reopened by a user, or by an automated Claude Security process (a system actor whose service field names the process).
+
+"claude_security_knowledge_document_created"
+
+
+
+A knowledge document was created in a Claude Security scan project.
+
+"claude_security_knowledge_document_deleted"
+
+
+
+A knowledge document was deleted from a Claude Security scan project.
+
+"claude_security_knowledge_document_updated"
+
+
+
+A Claude Security scan project's knowledge document, such as its threat model, was changed.
+
+"claude_security_knowledge_document_version_restored"
+
+
+
+An earlier version of a Claude Security scan project's knowledge document, such as its threat model, was written back as the document's newest version.
+
+"claude_security_scan_project_asset_added"
+
+
+
+A repository was added to a Claude Security scan project.
+
+"claude_security_scan_project_asset_removed"
+
+
+
+A repository was removed from a Claude Security scan project.
+
+"claude_security_scan_project_asset_updated"
+
+
+
+A repository's scan settings, such as its branch or directories, were changed in a Claude Security scan project.
+
+"claude_security_scan_project_ownership_transferred"
+
+
+
+Ownership of a Claude Security scan project was transferred to a member of the organization.
+
+"claude_skill_auto_disabled"
+
+
+
+A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why. A member turning a skill off themselves is recorded as claude_skill_disabled.
+
+"claude_skill_auto_enabled"
+
+
+
+A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them. A member turning a skill on themselves is recorded as claude_skill_enabled.
 
 "claude_skill_created"
 
@@ -1289,6 +1243,12 @@ Skill was replaced.
 
 
 A security scan of a skill completed and produced a verdict.
+
+"claude_skill_security_scan_override_updated"
+
+
+
+An administrator allowed a skill version despite its security scan's verdict, or that allowance was revoked.
 
 "claude_survey_closed"
 
@@ -1336,7 +1296,7 @@ An organization member's seat tier was changed. A null `previous_seat_tier` mean
 
 
 
-User updated their personal settings.
+User updated their personal settings. Only changes to `analysis_tool_enabled`, `artifacts_enabled`, `cli_op_permissions_enabled`, `conversation_preferences`, `cowork_global_instructions`, `google_calendar_integration_enabled`, `mcp_tools_enabled` and `web_search_enabled` are recorded; older events may also list other settings.
 
 "cli_plugin_exec_policy_updated"
 
@@ -1473,6 +1433,18 @@ A desktop extension was uploaded, either globally by an admin or org-scoped by a
 
 
 A new version of an existing org-owned desktop extension was uploaded.
+
+"domain_claim_cancelled"
+
+
+
+A pending domain claim was cancelled before it took effect, so the personal accounts on the claimed domains will no longer be migrated or deactivated at its deadline.
+
+"domain_claim_deadline_updated"
+
+
+
+The migration deadline of a pending domain claim was moved to a later or an earlier date by Anthropic staff or an automated process.
 
 "domain_claim_initiated"
 
@@ -2980,6 +2952,42 @@ An org-level spend limit was removed.
 
 An org-level spend limit snooze/ignore state was changed.
 
+"platform_telemetry_destination_auto_disabled"
+
+
+
+A telemetry destination was disabled automatically after deliveries to it failed, so no telemetry is sent to it until an administrator enables it again.
+
+"platform_telemetry_destination_created"
+
+
+
+A telemetry destination was registered for the organization.
+
+"platform_telemetry_destination_deleted"
+
+
+
+A telemetry destination was deleted.
+
+"platform_telemetry_destination_updated"
+
+
+
+A telemetry destination's configuration was updated. State changes and changes of its workspace scope (the type, or the list through an update's workspace_ids) are included; the workspaces an update took off or put on the list are also recorded as workspace_removed and workspace_added activities. Previous and current values are recorded only for the endpoint URL, the traces URL, the content mode and the workspaces type.
+
+"platform_telemetry_destination_workspace_added"
+
+
+
+A workspace was added to the workspace list of a telemetry destination. When the list type is "include", the destination starts to receive the spans of that workspace; when it is "exclude", the destination stops receiving them.
+
+"platform_telemetry_destination_workspace_removed"
+
+
+
+A workspace was removed from the workspace list of a telemetry destination, by a change to the list or because the destination was deleted. When the list type is "include", the destination stops receiving the spans of that workspace; when it is "exclude", the destination receives them again unless the destination was deleted.
+
 "platform_usage_report_claude_code_viewed"
 
 
@@ -3063,6 +3071,12 @@ A workspace rate limit was created or updated.
 
 
 A workspace was updated.
+
+"platform_workspace_user_profile_attached"
+
+
+
+A user profile was attached to a workspace, so that inference requests served by the workspace must name that profile.
 
 "plugin_installation_preference_updated"
 
@@ -3566,7 +3580,7 @@ formatdate-time
 
 
 
-exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "admin_api_key_created" or 533 more
+exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "account_migration_completed" or 571 more
 
 
 
@@ -3585,6 +3599,24 @@ An external anti-abuse service reported a consequential decision about a sign-in
 
 
 User-initiated self-service account deletion.
+
+"account_migration_completed"
+
+
+
+A personal Claude account's migration into the organization finished: the migrated data is now part of the organization.
+
+"account_migration_failed"
+
+
+
+A personal Claude account's migration into the organization did not complete.
+
+"account_migration_started"
+
+
+
+A personal Claude account began migrating into the organization: its data, including conversations, projects and files, is being moved from the member's personal account into this organization.
 
 "admin_api_key_created"
 
@@ -3628,11 +3660,15 @@ A step of the Claude Enterprise admin setup checklist was delegated to a teammat
 
 The delegation of a Claude Enterprise admin setup checklist step was cancelled.
 
+
+
 "age_verified"
 
 
 
 User age was verified.
+
+This activity type is retired: this feed no longer records age verifications. Activities of this type recorded earlier are still returned.
 
 "anonymous_mobile_login_attempted"
 
@@ -3992,7 +4028,7 @@ User created a chat.
 
 
 
-A user deleted a Claude.ai chat conversation.
+A Claude.ai chat conversation was deleted.
 
 "claude_chat_deletion_failed"
 
@@ -4065,6 +4101,12 @@ A Claude Code credential (runner pool key, runner token, or session token) was r
 
 
 Claude Code Review configuration was enabled/disabled for an org.
+
+"claude_code_review_promo_enrolled"
+
+
+
+An organization admin enrolled the organization in a Claude Code Review promotion, for example by claiming promotional credits.
 
 "claude_code_review_repository_added"
 
@@ -4148,7 +4190,7 @@ A person's access to a Claude Code Security scan project was granted, changed, o
 
 
 
-A Claude Code Security scan project was archived, unarchived, created, or migrated to a new product experience.
+A Claude Code Security scan project was archived, unarchived, created, or migrated to a new product experience, or a user paused the project's scheduled scanning, unpaused it, or lifted a billing pause on it.
 
 "claude_code_security_scan_project_visibility_updated"
 
@@ -4348,6 +4390,72 @@ A GitHub integration was disabled for the organization.
 
 A GitHub integration's configuration was updated.
 
+"claude_insights_attribution_setting_updated"
+
+
+
+An organization admin set the organization's setting that allows Smart Reports to be opened in the rendering that attributes findings to individual, identified members (off: no member can open that rendering). Every write is recorded, so the two values are equal when the setting was written with the value it already had.
+
+"claude_insights_report_archived"
+
+
+
+A Smart Report was archived, hiding it from the organization's default report list, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+"claude_insights_report_attribution_viewed"
+
+
+
+A Smart Report was viewed or downloaded with its usage findings attributed to individual, identified members of the organization (rather than in the default rendering, which identifies no member), one session it lists was inspected from that attributed rendering, or an organization admin was shown which members one of its recommendations suggests.
+
+"claude_insights_report_deleted"
+
+
+
+An archived Smart Report was permanently deleted, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope): its document was removed; purge_confirmed says whether it was also removed from the organization's report list.
+
+"claude_insights_report_feedback_submitted"
+
+
+
+Feedback was submitted on a Smart Report by an organization admin, by the delegate who ran it (a member the organization allowed to run reports on a limited scope), or by a member it was shared with. The event records which report was rated, not the ratings themselves or the member's written comment.
+
+"claude_insights_report_renamed"
+
+
+
+A Smart Report was renamed, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+"claude_insights_report_sharing_updated"
+
+
+
+An organization admin, or the delegate who ran the report (a member the organization allowed to run reports on a limited scope), changed who a Smart Report is shared with: the organization members who may open the report by link, and whether they may open the rendering that attributes findings to individual members.
+
+"claude_insights_report_triggered"
+
+
+
+A Smart Report was triggered by an organization admin, or by a delegate: a member the organization allowed to run reports on a limited scope. A Smart Report is an aggregate analysis of the organization's usage over a date range, optionally scoped to one or more directory groups, to a directory attribute's values, or to product surfaces.
+
+"claude_insights_report_unarchived"
+
+
+
+An archived Smart Report was restored to the organization's default report list, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+"claude_insights_report_viewed"
+
+
+
+A Smart Report was viewed or downloaded in its default rendering, which identifies no member of the organization (viewing or downloading the rendering that attributes findings to individual members is recorded as a separate activity).
+
+"claude_insights_resource_access_updated"
+
+
+
+Which directory groups, or which values of one directory attribute, a member may run Smart Reports on (the member's delegated scope) changed: an organization admin set or revoked it, or Smart Reports itself (a system actor) revoked it when the member left the organization.
+
 "claude_organization_settings_updated"
 
 
@@ -4401,6 +4509,12 @@ Plugin was replaced.
 
 
 A security scan of a plugin completed and produced a verdict.
+
+"claude_plugin_security_scan_override_updated"
+
+
+
+An administrator allowed a plugin version despite its security scan's verdict, or that allowance was revoked.
 
 "claude_plugin_served_version_updated"
 
@@ -4550,13 +4664,85 @@ A Claude project was viewed.
 
 
 
-A published artifact was deleted or unpublished — by its creator, by an organization admin, or by Anthropic (for example, when it was removed for a policy violation).
+A published artifact was deleted or unpublished — by its creator, by an organization admin, through the Compliance API, or by Anthropic (for example, when it was removed for a policy violation); one artifact can have more than one of these activities, such as when its deletion is retried.
 
 "claude_pubsec_identity_configured"
 
 
 
 SAML IdP configuration updated for a public sector organization.
+
+"claude_security_finding_deleted"
+
+
+
+A Claude Security finding was permanently deleted by a user.
+
+"claude_security_finding_updated"
+
+
+
+A Claude Security finding was resolved or reopened by a user, or by an automated Claude Security process (a system actor whose service field names the process).
+
+"claude_security_knowledge_document_created"
+
+
+
+A knowledge document was created in a Claude Security scan project.
+
+"claude_security_knowledge_document_deleted"
+
+
+
+A knowledge document was deleted from a Claude Security scan project.
+
+"claude_security_knowledge_document_updated"
+
+
+
+A Claude Security scan project's knowledge document, such as its threat model, was changed.
+
+"claude_security_knowledge_document_version_restored"
+
+
+
+An earlier version of a Claude Security scan project's knowledge document, such as its threat model, was written back as the document's newest version.
+
+"claude_security_scan_project_asset_added"
+
+
+
+A repository was added to a Claude Security scan project.
+
+"claude_security_scan_project_asset_removed"
+
+
+
+A repository was removed from a Claude Security scan project.
+
+"claude_security_scan_project_asset_updated"
+
+
+
+A repository's scan settings, such as its branch or directories, were changed in a Claude Security scan project.
+
+"claude_security_scan_project_ownership_transferred"
+
+
+
+Ownership of a Claude Security scan project was transferred to a member of the organization.
+
+"claude_skill_auto_disabled"
+
+
+
+A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why. A member turning a skill off themselves is recorded as claude_skill_disabled.
+
+"claude_skill_auto_enabled"
+
+
+
+A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them. A member turning a skill on themselves is recorded as claude_skill_enabled.
 
 "claude_skill_created"
 
@@ -4599,6 +4785,12 @@ Skill was replaced.
 
 
 A security scan of a skill completed and produced a verdict.
+
+"claude_skill_security_scan_override_updated"
+
+
+
+An administrator allowed a skill version despite its security scan's verdict, or that allowance was revoked.
 
 "claude_survey_closed"
 
@@ -4646,7 +4838,7 @@ An organization member's seat tier was changed. A null `previous_seat_tier` mean
 
 
 
-User updated their personal settings.
+User updated their personal settings. Only changes to `analysis_tool_enabled`, `artifacts_enabled`, `cli_op_permissions_enabled`, `conversation_preferences`, `cowork_global_instructions`, `google_calendar_integration_enabled`, `mcp_tools_enabled` and `web_search_enabled` are recorded; older events may also list other settings.
 
 "cli_plugin_exec_policy_updated"
 
@@ -4783,6 +4975,18 @@ A desktop extension was uploaded, either globally by an admin or org-scoped by a
 
 
 A new version of an existing org-owned desktop extension was uploaded.
+
+"domain_claim_cancelled"
+
+
+
+A pending domain claim was cancelled before it took effect, so the personal accounts on the claimed domains will no longer be migrated or deactivated at its deadline.
+
+"domain_claim_deadline_updated"
+
+
+
+The migration deadline of a pending domain claim was moved to a later or an earlier date by Anthropic staff or an automated process.
 
 "domain_claim_initiated"
 
@@ -6290,6 +6494,42 @@ An org-level spend limit was removed.
 
 An org-level spend limit snooze/ignore state was changed.
 
+"platform_telemetry_destination_auto_disabled"
+
+
+
+A telemetry destination was disabled automatically after deliveries to it failed, so no telemetry is sent to it until an administrator enables it again.
+
+"platform_telemetry_destination_created"
+
+
+
+A telemetry destination was registered for the organization.
+
+"platform_telemetry_destination_deleted"
+
+
+
+A telemetry destination was deleted.
+
+"platform_telemetry_destination_updated"
+
+
+
+A telemetry destination's configuration was updated. State changes and changes of its workspace scope (the type, or the list through an update's workspace_ids) are included; the workspaces an update took off or put on the list are also recorded as workspace_removed and workspace_added activities. Previous and current values are recorded only for the endpoint URL, the traces URL, the content mode and the workspaces type.
+
+"platform_telemetry_destination_workspace_added"
+
+
+
+A workspace was added to the workspace list of a telemetry destination. When the list type is "include", the destination starts to receive the spans of that workspace; when it is "exclude", the destination stops receiving them.
+
+"platform_telemetry_destination_workspace_removed"
+
+
+
+A workspace was removed from the workspace list of a telemetry destination, by a change to the list or because the destination was deleted. When the list type is "include", the destination stops receiving the spans of that workspace; when it is "exclude", the destination receives them again unless the destination was deleted.
+
 "platform_usage_report_claude_code_viewed"
 
 
@@ -6373,6 +6613,12 @@ A workspace rate limit was created or updated.
 
 
 A workspace was updated.
+
+"platform_workspace_user_profile_attached"
+
+
+
+A user profile was attached to a workspace, so that inference requests served by the workspace must name that profile.
 
 "plugin_installation_preference_updated"
 
@@ -6876,7 +7122,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: optional array of AbuseDecisionReceived or AccountDeleted or AdminAPIKeyCreated or 533 more
+data: optional array of AbuseDecisionReceived or AccountDeleted or AccountMigrationCompleted or 571 more
 
 
 
@@ -6899,6 +7145,30 @@ AccountDeleted object{ type: "account_deleted", actor, id, 3 more }
 
 
 User-initiated self-service account deletion.
+
+
+
+AccountMigrationCompleted object{ type: "account_migration_completed", account_migration_id, actor, 6 more }
+
+
+
+A personal Claude account's migration into the organization finished: the migrated data is now part of the organization.
+
+
+
+AccountMigrationFailed object{ type: "account_migration_failed", account_migration_id, actor, 7 more }
+
+
+
+A personal Claude account's migration into the organization did not complete.
+
+
+
+AccountMigrationStarted object{ type: "account_migration_started", account_migration_id, actor, 6 more }
+
+
+
+A personal Claude account began migrating into the organization: its data, including conversations, projects and files, is being moved from the member's personal account into this organization.
 
 
 
@@ -6964,6 +7234,8 @@ AgeVerified object{ type: "age_verified", actor, id, 3 more }
 
 User age was verified.
 
+This activity type is retired: this feed no longer records age verifications. Activities of this type recorded earlier are still returned.
+
 
 
 AnonymousMobileLoginAttempted object{ type: "anonymous_mobile_login_attempted", actor, id, 3 more }
@@ -7018,7 +7290,7 @@ ClaudePublishedArtifactDeleted object{ type: "claude_published_artifact_deleted"
 
 
 
-A published artifact was deleted or unpublished — by its creator, by an organization admin, or by Anthropic (for example, when it was removed for a policy violation).
+A published artifact was deleted or unpublished — by its creator, by an organization admin, through the Compliance API, or by Anthropic (for example, when it was removed for a policy violation); one artifact can have more than one of these activities, such as when its deletion is retried.
 
 
 
@@ -7482,7 +7754,7 @@ ClaudeChatDeleted object{ type: "claude_chat_deleted", actor, claude_chat_id, 5 
 
 
 
-A user deleted a Claude.ai chat conversation.
+A Claude.ai chat conversation was deleted.
 
 
 
@@ -7542,11 +7814,19 @@ A Claude Code credential (runner pool key, runner token, or session token) was r
 
 
 
-ClaudeCodeReviewConfigUpdated object{ type: "claude_code_review_config_updated", actor, enabled, 15 more }
+ClaudeCodeReviewConfigUpdated object{ type: "claude_code_review_config_updated", actor, enabled, 17 more }
 
 
 
 Claude Code Review configuration was enabled/disabled for an org.
+
+
+
+ClaudeCodeReviewPromoEnrolled object{ type: "claude_code_review_promo_enrolled", actor, promo_id, 5 more }
+
+
+
+An organization admin enrolled the organization in a Claude Code Review promotion, for example by claiming promotional credits.
 
 
 
@@ -7566,7 +7846,7 @@ A repository was removed from org-level Claude Code Review configuration.
 
 
 
-ClaudeCodeReviewRepositoryUpdated object{ type: "claude_code_review_repository_updated", actor, config_id, 8 more }
+ClaudeCodeReviewRepositoryUpdated object{ type: "claude_code_review_repository_updated", actor, config_id, 10 more }
 
 
 
@@ -7658,7 +7938,7 @@ ClaudeCodeSecurityScanProjectUpdated object{ type: "claude_code_security_scan_pr
 
 
 
-A Claude Code Security scan project was archived, unarchived, created, or migrated to a new product experience.
+A Claude Code Security scan project was archived, unarchived, created, or migrated to a new product experience, or a user paused the project's scheduled scanning, unpaused it, or lifted a billing pause on it.
 
 
 
@@ -7838,6 +8118,94 @@ A user viewed a file in Claude.ai.
 
 
 
+ClaudeInsightsAttributionSettingUpdated object{ type: "claude_insights_attribution_setting_updated", actor, id, 5 more }
+
+
+
+An organization admin set the organization's setting that allows Smart Reports to be opened in the rendering that attributes findings to individual, identified members (off: no member can open that rendering). Every write is recorded, so the two values are equal when the setting was written with the value it already had.
+
+
+
+ClaudeInsightsReportArchived object{ type: "claude_insights_report_archived", actor, report_id, 4 more }
+
+
+
+A Smart Report was archived, hiding it from the organization's default report list, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+
+
+ClaudeInsightsReportAttributionViewed object{ type: "claude_insights_report_attribution_viewed", actor, report_id, 5 more }
+
+
+
+A Smart Report was viewed or downloaded with its usage findings attributed to individual, identified members of the organization (rather than in the default rendering, which identifies no member), one session it lists was inspected from that attributed rendering, or an organization admin was shown which members one of its recommendations suggests.
+
+
+
+ClaudeInsightsReportDeleted object{ type: "claude_insights_report_deleted", actor, report_id, 5 more }
+
+
+
+An archived Smart Report was permanently deleted, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope): its document was removed; purge_confirmed says whether it was also removed from the organization's report list.
+
+
+
+ClaudeInsightsReportFeedbackSubmitted object{ type: "claude_insights_report_feedback_submitted", actor, report_id, 4 more }
+
+
+
+Feedback was submitted on a Smart Report by an organization admin, by the delegate who ran it (a member the organization allowed to run reports on a limited scope), or by a member it was shared with. The event records which report was rated, not the ratings themselves or the member's written comment.
+
+
+
+ClaudeInsightsReportRenamed object{ type: "claude_insights_report_renamed", actor, report_id, 4 more }
+
+
+
+A Smart Report was renamed, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+
+
+ClaudeInsightsReportSharingUpdated object{ type: "claude_insights_report_sharing_updated", actor, attributed_view_allowed, 7 more }
+
+
+
+An organization admin, or the delegate who ran the report (a member the organization allowed to run reports on a limited scope), changed who a Smart Report is shared with: the organization members who may open the report by link, and whether they may open the rendering that attributes findings to individual members.
+
+
+
+ClaudeInsightsReportTriggered object{ type: "claude_insights_report_triggered", actor, report_id, 14 more }
+
+
+
+A Smart Report was triggered by an organization admin, or by a delegate: a member the organization allowed to run reports on a limited scope. A Smart Report is an aggregate analysis of the organization's usage over a date range, optionally scoped to one or more directory groups, to a directory attribute's values, or to product surfaces.
+
+
+
+ClaudeInsightsReportUnarchived object{ type: "claude_insights_report_unarchived", actor, report_id, 4 more }
+
+
+
+An archived Smart Report was restored to the organization's default report list, by an organization admin or by the delegate who ran it (a member the organization allowed to run reports on a limited scope).
+
+
+
+ClaudeInsightsReportViewed object{ type: "claude_insights_report_viewed", actor, report_id, 5 more }
+
+
+
+A Smart Report was viewed or downloaded in its default rendering, which identifies no member of the organization (viewing or downloading the rendering that attributes findings to individual members is recorded as a separate activity).
+
+
+
+ClaudeInsightsResourceAccessUpdated object{ type: "claude_insights_resource_access_updated", account_id, actor, 10 more }
+
+
+
+Which directory groups, or which values of one directory attribute, a member may run Smart Reports on (the member's delegated scope) changed: an organization admin set or revoked it, or Smart Reports itself (a system actor) revoked it when the member left the organization.
+
+
+
 ClaudePluginArchiveAccessed object{ type: "claude_plugin_archive_accessed", actor, marketplace_id, 7 more }
 
 
@@ -7851,6 +8219,14 @@ ClaudePluginDownloaded object{ type: "claude_plugin_downloaded", actor, marketpl
 
 
 The archive of the plugin version a member was served was downloaded to install or update the plugin in one of the member's Claude apps (Claude in the browser, the Claude desktop app, Claude Code, or a cloud session). Recorded when the member explicitly installs, updates or downloads the plugin (user_action), and when a fetch creates the member's install record for the plugin — its first delivery to them, whether a background sync of a plugin distributed to them or their own first install, which then carries both records (first_delivery). A plugin the member enabled in Claude is on the feed as claude_plugin_enabled and its later delivery by a client's background sync is not recorded again; nor are re-syncs, or fetches that only display the plugin's files in the browser.
+
+
+
+ClaudePluginSecurityScanOverrideUpdated object{ type: "claude_plugin_security_scan_override_updated", action, actor, 13 more }
+
+
+
+An administrator allowed a plugin version despite its security scan's verdict, or that allowance was revoked.
 
 
 
@@ -7894,11 +8270,115 @@ A Claude project sync source's configuration was updated.
 
 
 
+ClaudeSecurityFindingDeleted object{ type: "claude_security_finding_deleted", actor, finding_id, 6 more }
+
+
+
+A Claude Security finding was permanently deleted by a user.
+
+
+
+ClaudeSecurityFindingUpdated object{ type: "claude_security_finding_updated", action, actor, 8 more }
+
+
+
+A Claude Security finding was resolved or reopened by a user, or by an automated Claude Security process (a system actor whose service field names the process).
+
+
+
+ClaudeSecurityKnowledgeDocumentCreated object{ type: "claude_security_knowledge_document_created", actor, memory_id, 8 more }
+
+
+
+A knowledge document was created in a Claude Security scan project.
+
+
+
+ClaudeSecurityKnowledgeDocumentDeleted object{ type: "claude_security_knowledge_document_deleted", actor, memory_id, 8 more }
+
+
+
+A knowledge document was deleted from a Claude Security scan project.
+
+
+
+ClaudeSecurityKnowledgeDocumentUpdated object{ type: "claude_security_knowledge_document_updated", actor, memory_id, 9 more }
+
+
+
+A Claude Security scan project's knowledge document, such as its threat model, was changed.
+
+
+
+ClaudeSecurityKnowledgeDocumentVersionRestored object{ type: "claude_security_knowledge_document_version_restored", actor, memory_id, 9 more }
+
+
+
+An earlier version of a Claude Security scan project's knowledge document, such as its threat model, was written back as the document's newest version.
+
+
+
+ClaudeSecurityScanProjectAssetAdded object{ type: "claude_security_scan_project_asset_added", actor, asset_id, 7 more }
+
+
+
+A repository was added to a Claude Security scan project.
+
+
+
+ClaudeSecurityScanProjectAssetRemoved object{ type: "claude_security_scan_project_asset_removed", actor, asset_id, 7 more }
+
+
+
+A repository was removed from a Claude Security scan project.
+
+
+
+ClaudeSecurityScanProjectAssetUpdated object{ type: "claude_security_scan_project_asset_updated", actor, asset_id, 8 more }
+
+
+
+A repository's scan settings, such as its branch or directories, were changed in a Claude Security scan project.
+
+
+
+ClaudeSecurityScanProjectOwnershipTransferred object{ type: "claude_security_scan_project_ownership_transferred", actor, new_owner_id, 8 more }
+
+
+
+Ownership of a Claude Security scan project was transferred to a member of the organization.
+
+
+
+ClaudeSkillAutoDisabled object{ type: "claude_skill_auto_disabled", actor, reason, 9 more }
+
+
+
+A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why. A member turning a skill off themselves is recorded as claude_skill_disabled.
+
+
+
+ClaudeSkillAutoEnabled object{ type: "claude_skill_auto_enabled", actor, trigger, 11 more }
+
+
+
+A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them. A member turning a skill on themselves is recorded as claude_skill_enabled.
+
+
+
 ClaudeSkillDownloaded object{ type: "claude_skill_downloaded", actor, download_kind, 11 more }
 
 
 
 A member explicitly downloaded a skill's files to their device: the Download action in Claude, a single file saved from the skill viewer, or an install they asked one of their Claude apps for. Background syncs to the Claude apps, viewing a skill in the app and services reading a skill on the member's behalf are not recorded.
+
+
+
+ClaudeSkillSecurityScanOverrideUpdated object{ type: "claude_skill_security_scan_override_updated", action, actor, 12 more }
+
+
+
+An administrator allowed a skill version despite its security scan's verdict, or that allowance was revoked.
 
 
 
@@ -8160,7 +8640,7 @@ Inference hooks configuration was removed for the organization.
 
 
 
-InferenceHooksConfigUpdated object{ type: "inference_hooks_config_updated", actor, enabled, 16 more }
+InferenceHooksConfigUpdated object{ type: "inference_hooks_config_updated", actor, enabled, 17 more }
 
 
 
@@ -8173,6 +8653,22 @@ InferenceHooksSigningSecretGenerated object{ type: "inference_hooks_signing_secr
 
 
 A request signing secret was generated for the organization's Inference hooks configuration.
+
+
+
+DomainClaimCancelled object{ type: "domain_claim_cancelled", actor, domain_claim_id, 4 more }
+
+
+
+A pending domain claim was cancelled before it took effect, so the personal accounts on the claimed domains will no longer be migrated or deactivated at its deadline.
+
+
+
+DomainClaimDeadlineUpdated object{ type: "domain_claim_deadline_updated", action, actor, 7 more }
+
+
+
+The migration deadline of a pending domain claim was moved to a later or an earlier date by Anthropic staff or an automated process.
 
 
 
@@ -8677,7 +9173,7 @@ The organization published its approved MCP directory listing.
 
 
 
-McpServerCreated object{ type: "mcp_server_created", actor, mcp_server_id, 6 more }
+McpServerCreated object{ type: "mcp_server_created", actor, mcp_server_id, 8 more }
 
 
 
@@ -9101,7 +9597,7 @@ Organization domain was verified.
 
 
 
-OrgExternalKeyCreated object{ type: "org_external_key_created", actor, external_key_id, 5 more }
+OrgExternalKeyCreated object{ type: "org_external_key_created", actor, external_key_id, 6 more }
 
 
 
@@ -9165,7 +9661,7 @@ A primary owner accepted the Business Associate Agreement and enabled the HIPAA 
 
 
 
-OrgIPRestrictionCreated object{ type: "org_ip_restriction_created", actor, id, 4 more }
+OrgIPRestrictionCreated object{ type: "org_ip_restriction_created", actor, id, 5 more }
 
 
 
@@ -9173,7 +9669,7 @@ Organization IP restriction was created.
 
 
 
-OrgIPRestrictionDeleted object{ type: "org_ip_restriction_deleted", actor, id, 4 more }
+OrgIPRestrictionDeleted object{ type: "org_ip_restriction_deleted", actor, id, 5 more }
 
 
 
@@ -9229,7 +9725,7 @@ Organization invites were listed.
 
 
 
-OrgJoinProposalDecided object{ type: "org_join_proposal_decided", actor, approved, 4 more }
+OrgJoinProposalDecided object{ type: "org_join_proposal_decided", actor, approved, 5 more }
 
 
 
@@ -9349,7 +9845,7 @@ An organization or role default model setting was changed by an administrator.
 
 
 
-OrgParentJoinProposalCreated object{ type: "org_parent_join_proposal_created", actor, id, 3 more }
+OrgParentJoinProposalCreated object{ type: "org_parent_join_proposal_created", actor, id, 4 more }
 
 
 
@@ -10237,6 +10733,54 @@ An org-level spend limit snooze/ignore state was changed.
 
 
 
+PlatformTelemetryDestinationAutoDisabled object{ type: "platform_telemetry_destination_auto_disabled", actor, telemetry_destination_id, 5 more }
+
+
+
+A telemetry destination was disabled automatically after deliveries to it failed, so no telemetry is sent to it until an administrator enables it again.
+
+
+
+PlatformTelemetryDestinationCreated object{ type: "platform_telemetry_destination_created", actor, telemetry_destination_id, 7 more }
+
+
+
+A telemetry destination was registered for the organization.
+
+
+
+PlatformTelemetryDestinationDeleted object{ type: "platform_telemetry_destination_deleted", actor, telemetry_destination_id, 4 more }
+
+
+
+A telemetry destination was deleted.
+
+
+
+PlatformTelemetryDestinationUpdated object{ type: "platform_telemetry_destination_updated", actor, telemetry_destination_id, 6 more }
+
+
+
+A telemetry destination's configuration was updated. State changes and changes of its workspace scope (the type, or the list through an update's workspace_ids) are included; the workspaces an update took off or put on the list are also recorded as workspace_removed and workspace_added activities. Previous and current values are recorded only for the endpoint URL, the traces URL, the content mode and the workspaces type.
+
+
+
+PlatformTelemetryDestinationWorkspaceAdded object{ type: "platform_telemetry_destination_workspace_added", actor, telemetry_destination_id, 5 more }
+
+
+
+A workspace was added to the workspace list of a telemetry destination. When the list type is "include", the destination starts to receive the spans of that workspace; when it is "exclude", the destination stops receiving them.
+
+
+
+PlatformTelemetryDestinationWorkspaceRemoved object{ type: "platform_telemetry_destination_workspace_removed", actor, telemetry_destination_id, 5 more }
+
+
+
+A workspace was removed from the workspace list of a telemetry destination, by a change to the list or because the destination was deleted. When the list type is "include", the destination stops receiving the spans of that workspace; when it is "exclude", the destination receives them again unless the destination was deleted.
+
+
+
 PlatformUsageReportClaudeCodeViewed object{ type: "platform_usage_report_claude_code_viewed", actor, id, 3 more }
 
 
@@ -10346,6 +10890,14 @@ PlatformWorkspaceUpdated object{ type: "platform_workspace_updated", actor, work
 
 
 A workspace was updated.
+
+
+
+PlatformWorkspaceUserProfileAttached object{ type: "platform_workspace_user_profile_attached", actor, user_profile_id, 5 more }
+
+
+
+A user profile was attached to a workspace, so that inference requests served by the workspace must name that profile.
 
 
 
@@ -11113,7 +11665,7 @@ ClaudeUserSettingsUpdated object{ type: "claude_user_settings_updated", actor, u
 
 
 
-User updated their personal settings.
+User updated their personal settings. Only changes to `analysis_tool_enabled`, `artifacts_enabled`, `cli_op_permissions_enabled`, `conversation_preferences`, `cowork_global_instructions`, `google_calendar_integration_enabled`, `mcp_tools_enabled` and `web_search_enabled` are recorded; older events may also list other settings.
 
 
 

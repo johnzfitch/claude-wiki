@@ -2,11 +2,14 @@
 title: "Plugins overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-23T06:28:30Z"
+fetched_at: "2026-11-09T06:25:28Z"
+last_modified: "Sun, 08 Nov 2026 19:52:38 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Understand what a plugin is](#understand-what-a-plugin-is)
   - [Decide whether you need a plugin](#decide-whether-you-need-a-plugin)
@@ -91,7 +94,7 @@ A marketplace is a repository or directory with a `.claude-plugin/marketplace.js
 
 A plugin marketplace isn’t [Claude Marketplace](https://claude.com/marketplace). Claude Marketplace is the website at claude.com/marketplace where you browse plugins, connectors, partner products, and service partners. It isn’t a marketplace you add with `/plugin marketplace add`.
 
-Claude Code adds Anthropic’s official marketplace the first time you start an interactive terminal session, unless a [managed policy](plugins-org.md#allow-the-official-marketplace-and-your-own) blocks it. Claude Code doesn’t add Anthropic’s community and demo marketplaces on its own. To distinguish the three Anthropic marketplaces, read [Anthropic’s marketplaces](plugins-anthropic-marketplaces.md). To see what the official one lists, open the **Discover** tab of `/plugin` in a session or browse [Claude Marketplace](https://claude.com/marketplace/plugins). This diagram shows the path from a marketplace to your session. A marketplace lists a plugin, you install that plugin, and Claude Code loads its components.
+Claude Code adds Anthropic’s official marketplace the first time you start an interactive terminal session, unless a [managed policy](plugins-org.md#allow-the-official-marketplace-and-your-own) blocks it. Claude Code doesn’t add Anthropic’s community marketplace on its own. To distinguish Anthropic’s marketplaces, read [Anthropic’s marketplaces](plugins-anthropic-marketplaces.md). To see what the official one lists, open the **Discover** tab of `/plugin` in a session or browse [Claude Marketplace](https://claude.com/marketplace/plugins). This diagram shows the path from a marketplace to your session. A marketplace lists a plugin, you install that plugin, and Claude Code loads its components.
 
 [Install and manage plugins](discover-plugins.md#install-a-plugin) has the install steps for each place you run Claude Code. While you’re developing a plugin, you don’t need a marketplace: load it straight from its folder with `--plugin-dir`, as [Develop without a marketplace](plugins-create.md#develop-without-a-marketplace) shows.
 
@@ -115,7 +118,7 @@ Tell Anthropic’s marketplaces from third-party ones
 
 A marketplace’s name places it in one of three tiers. Claude Code accepts the official and community names only for marketplaces sourced from `github.com/anthropics/` repositories:
 
-- **Official**: marketplaces with one of Anthropic’s [official marketplace names](plugins-security.md#official-marketplace-names), including `claude-plugins-official` and the demo marketplace `claude-code-plugins`.
+- **Official**: marketplaces with one of Anthropic’s [official marketplace names](plugins-security.md#official-marketplace-names), including `claude-plugins-official` and `claude-code-plugins`.
 - **Community**: marketplaces with one of Anthropic’s community names, such as `claude-community`. [Identify Anthropic’s marketplaces by name](plugins-security.md#marketplace-tiers) lists them.
 - **Third-party**: every other marketplace. A marketplace your coworker or your organization publishes is third-party.
 

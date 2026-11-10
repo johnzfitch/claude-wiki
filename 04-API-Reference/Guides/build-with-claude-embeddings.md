@@ -2,85 +2,9 @@
 title: "Embeddings - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/embeddings"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-20T06:40:02Z"
+fetched_at: "2026-11-05T06:36:43Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fembeddings)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Model capabilities
 
 # Embeddings
 
@@ -88,7 +12,7 @@ Claude on cloud platforms
 
 
 
-Text embeddings are numerical representations of text that enable measuring semantic similarity. This guide introduces embeddings, their applications, and how to use embedding models for tasks like search, recommendations, and anomaly detection.
+Text embeddings are numerical representations of text that let you measure semantic similarity. This guide introduces embeddings, their applications, and how to use embedding models for tasks such as search, recommendations, and anomaly detection.
 
 Copy page
 
@@ -98,9 +22,9 @@ Text embeddings are numerical representations of text that enable measuring sema
 
 When selecting an embeddings provider, there are several factors you can consider depending on your needs and preferences:
 
-- Dataset size & domain specificity: size of the model training dataset and its relevance to the domain you want to embed. Larger or more domain-specific data generally produces better in-domain embeddings
-- Inference performance: embedding lookup speed and end-to-end latency. This is a particularly important consideration for large scale production deployments
-- Customization: options for continued training on private data, or specialization of models for very specific domains. This can improve performance on unique vocabularies
+- Dataset size and domain specificity: size of the model training dataset and its relevance to the domain you want to embed. Larger or more domain-specific data generally produces better in-domain embeddings.
+- Inference performance: embedding lookup speed and end-to-end latency. This is a particularly important consideration for large-scale production deployments.
+- Customization: options for continued training on private data, or specialization of models for very specific domains. This can improve performance on unique vocabularies.
 
 ## How to get embeddings with Anthropic
 
@@ -116,51 +40,51 @@ Voyage AI offers the following text embedding models:
 
 **Latest generation**
 
-| Model            | Context length | Embedding dimension            | Description                                                                                                                                                                                                                                                                                          |
-|------------------|----------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `voyage-4-large` | 32,000         | 1024 (default), 256, 512, 2048 | The best general-purpose and multilingual retrieval quality. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details.                                                                                                                                               |
-| `voyage-4`       | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for general-purpose and multilingual retrieval quality. Balances quality and efficiency. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details.                                                                                                         |
-| `voyage-4-lite`  | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for latency and cost. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details.                                                                                                                                                                            |
-| `voyage-code-4`  | 32,000         | 1024 (default), 256, 512, 2048 | Optimized for **code** retrieval and agentic coding applications. See the [voyage-code-4 blog post](https://blog.voyageai.com/2026/08/13/voyage-code-4/) for details.                                                                                                                                |
-| `voyage-4-nano`  | 32,000         | 2048 (default), 256, 512, 1024 | Open-weight model (Apache 2.0 license) that you download from [Hugging Face](https://huggingface.co/voyageai/voyage-4-nano) and run yourself. Not available through the Atlas Embedding and Reranking API. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details. |
+| Model | Context length | Embedding dimension | Description |
+|----|----|----|----|
+| `voyage-4-large` | 32,000 | 1024 (default), 256, 512, 2048 | The best general-purpose and multilingual retrieval quality. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details. |
+| `voyage-4` | 32,000 | 1024 (default), 256, 512, 2048 | Optimized for general-purpose and multilingual retrieval quality. Balances quality and efficiency. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details. |
+| `voyage-4-lite` | 32,000 | 1024 (default), 256, 512, 2048 | Optimized for latency and cost. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details. |
+| `voyage-code-4` | 32,000 | 1024 (default), 256, 512, 2048 | Optimized for **code** retrieval and agentic coding applications. See the [voyage-code-4 blog post](https://blog.voyageai.com/2026/08/13/voyage-code-4/) for details. |
+| `voyage-4-nano` | 32,000 | 2048 (default), 256, 512, 1024 | Open-weight model (Apache 2.0 license) that you download from [Hugging Face](https://huggingface.co/voyageai/voyage-4-nano) and run yourself. Not available through the Atlas Embedding and Reranking API. See the [Voyage 4 blog post](https://blog.voyageai.com/2026/01/15/voyage-4/) for details. |
 
 **Previous generation**
 
-For each model's lifecycle status and recommended replacement, see [Model deprecations, lifecycle states, and support](https://www.mongodb.com/docs/voyageai/models/lifecycle/) in the MongoDB documentation.
+For each model’s lifecycle status and recommended replacement, see [Model deprecations, lifecycle states, and support](https://www.mongodb.com/docs/voyageai/models/lifecycle/) in the MongoDB documentation.
 
-| Model              | Context length | Embedding dimension            | Description                                                                                                                                                                                         |
-|--------------------|----------------|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `voyage-3-large`   | 32,000         | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-4-large`. See the [voyage-3-large blog post](https://blog.voyageai.com/2025/01/07/voyage-3-large/) for details.                                                      |
-| `voyage-3.5`       | 32,000         | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-4`. See the [voyage-3.5 blog post](https://blog.voyageai.com/2025/05/20/voyage-3-5/) for details.                                                                    |
-| `voyage-3.5-lite`  | 32,000         | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-4-lite`. See the [voyage-3.5 blog post](https://blog.voyageai.com/2025/05/20/voyage-3-5/) for details.                                                               |
-| `voyage-code-3`    | 32,000         | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-code-4`. See the [voyage-code-3 blog post](https://blog.voyageai.com/2024/12/04/voyage-code-3/) for details.                                                         |
-| `voyage-finance-2` | 32,000         | 1024                           | Optimized for **finance** retrieval and RAG. See the [voyage-finance-2 blog post](https://blog.voyageai.com/2024/06/03/domain-specific-embeddings-finance-edition-voyage-finance-2/) for details.   |
-| `voyage-law-2`     | 16,000         | 1024                           | Optimized for **legal** retrieval and RAG. See the [voyage-law-2 blog post](https://blog.voyageai.com/2024/04/15/domain-specific-embeddings-and-retrieval-legal-edition-voyage-law-2/) for details. |
+| Model | Context length | Embedding dimension | Description |
+|----|----|----|----|
+| `voyage-3-large` | 32,000 | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-4-large`. See the [voyage-3-large blog post](https://blog.voyageai.com/2025/01/07/voyage-3-large/) for details. |
+| `voyage-3.5` | 32,000 | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-4`. See the [voyage-3.5 blog post](https://blog.voyageai.com/2025/05/20/voyage-3-5/) for details. |
+| `voyage-3.5-lite` | 32,000 | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-4-lite`. See the [voyage-3.5 blog post](https://blog.voyageai.com/2025/05/20/voyage-3-5/) for details. |
+| `voyage-code-3` | 32,000 | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-code-4`. See the [voyage-code-3 blog post](https://blog.voyageai.com/2024/12/04/voyage-code-3/) for details. |
+| `voyage-finance-2` | 32,000 | 1024 | Optimized for **finance** retrieval and RAG. See the [voyage-finance-2 blog post](https://blog.voyageai.com/2024/06/03/domain-specific-embeddings-finance-edition-voyage-finance-2/) for details. |
+| `voyage-law-2` | 16,000 | 1024 | Optimized for **legal** retrieval and RAG. See the [voyage-law-2 blog post](https://blog.voyageai.com/2024/04/15/domain-specific-embeddings-and-retrieval-legal-edition-voyage-law-2/) for details. |
 
 Additionally, Voyage AI offers the following multimodal embedding models. Call these models with `multimodal_embed()` instead of `embed()`:
 
-| Model                   | Context length | Embedding dimension            | Description                                                                                                                                                                                                                                                                              |
-|-------------------------|----------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `voyage-multimodal-3.5` | 32,000         | 1024 (default), 256, 512, 2048 | Rich multimodal embedding model that can vectorize interleaved text, images, and videos. Includes video support as the first production-grade video embedding model. See the [voyage-multimodal-3.5 blog post](https://blog.voyageai.com/2026/01/15/voyage-multimodal-3-5/) for details. |
-| `voyage-multimodal-3`   | 32,000         | 1024                           | Previous generation of `voyage-multimodal-3.5`. Vectorizes interleaved text and content-rich images, such as screenshots of PDFs, slides, tables, figures, and more. See the [voyage-multimodal-3 blog post](https://blog.voyageai.com/2024/11/12/voyage-multimodal-3/) for details.     |
+| Model | Context length | Embedding dimension | Description |
+|----|----|----|----|
+| `voyage-multimodal-3.5` | 32,000 | 1024 (default), 256, 512, 2048 | Rich multimodal embedding model that can vectorize interleaved text, images, and videos. Includes video support as the first production-grade video embedding model. See the [voyage-multimodal-3.5 blog post](https://blog.voyageai.com/2026/01/15/voyage-multimodal-3-5/) for details. |
+| `voyage-multimodal-3` | 32,000 | 1024 | Previous generation of `voyage-multimodal-3.5`. Vectorizes interleaved text and content-rich images, such as screenshots of PDFs, slides, tables, figures, and more. See the [voyage-multimodal-3 blog post](https://blog.voyageai.com/2024/11/12/voyage-multimodal-3/) for details. |
 
 The following contextualized chunk embedding models produce chunk-level vectors that capture full document context without manual metadata augmentation. Call these models with `contextualized_embed()` instead of `embed()`:
 
-| Model              | Context length | Embedding dimension            | Description                                                                                                                                                                                                 |
-|--------------------|----------------|--------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `voyage-context-4` | 120,000        | 1024 (default), 256, 512, 2048 | Contextualized chunk embeddings optimized for general-purpose and multilingual retrieval quality. See the [voyage-context-4 blog post](https://blog.voyageai.com/2026/06/29/voyage-context-4/) for details. |
-| `voyage-context-3` | 120,000        | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-context-4`. See the [voyage-context-3 blog post](https://blog.voyageai.com/2025/07/23/voyage-context-3/) for details.                                                        |
+| Model | Context length | Embedding dimension | Description |
+|----|----|----|----|
+| `voyage-context-4` | 120,000 | 1024 (default), 256, 512, 2048 | Contextualized chunk embeddings optimized for general-purpose and multilingual retrieval quality. See the [voyage-context-4 blog post](https://blog.voyageai.com/2026/06/29/voyage-context-4/) for details. |
+| `voyage-context-3` | 120,000 | 1024 (default), 256, 512, 2048 | Previous generation of `voyage-context-4`. See the [voyage-context-3 blog post](https://blog.voyageai.com/2025/07/23/voyage-context-3/) for details. |
 
-The 120,000-token limit applies when you set `enable_auto_chunking` to `true`. Otherwise, the total number of tokens across all inputs can't exceed 32,000.
+The 120,000-token limit applies when you set `enable_auto_chunking` to `true`. Otherwise, the total number of tokens across all inputs can’t exceed 32,000.
 
 Voyage AI also offers rerankers, which take a query and a list of documents and return them ranked by relevance to the query. Call these models with `rerank()`:
 
-| Model             | Context length | Description                                                                                                                                    |
-|-------------------|----------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| `rerank-3`        | 32,000         | Highest accuracy. Recommended for most applications. See the [rerank-3 blog post](https://blog.voyageai.com/2026/09/30/rerank-3/) for details. |
-| `rerank-3-lite`   | 32,000         | Optimized for latency and cost. See the [rerank-3 blog post](https://blog.voyageai.com/2026/09/30/rerank-3/) for details.                      |
-| `rerank-2.5`      | 32,000         | Previous generation of `rerank-3`. See the [rerank-2.5 blog post](https://blog.voyageai.com/2025/08/11/rerank-2-5/) for details.               |
-| `rerank-2.5-lite` | 32,000         | Previous generation of `rerank-3-lite`. See the [rerank-2.5 blog post](https://blog.voyageai.com/2025/08/11/rerank-2-5/) for details.          |
+| Model | Context length | Description |
+|----|----|----|
+| `rerank-3` | 32,000 | Highest accuracy. Recommended for most applications. See the [rerank-3 blog post](https://blog.voyageai.com/2026/09/30/rerank-3/) for details. |
+| `rerank-3-lite` | 32,000 | Optimized for latency and cost. See the [rerank-3 blog post](https://blog.voyageai.com/2026/09/30/rerank-3/) for details. |
+| `rerank-2.5` | 32,000 | Previous generation of `rerank-3`. See the [rerank-2.5 blog post](https://blog.voyageai.com/2025/08/11/rerank-2-5/) for details. |
+| `rerank-2.5-lite` | 32,000 | Previous generation of `rerank-3-lite`. See the [rerank-2.5 blog post](https://blog.voyageai.com/2025/08/11/rerank-2-5/) for details. |
 
 Need help deciding which model to use? See [Voyage AI embedding and reranking models overview](https://www.mongodb.com/docs/voyageai/models/) in the MongoDB documentation.
 
@@ -180,7 +104,7 @@ export VOYAGE_API_KEY="<your model API key>"
 
 For more detail, see [Voyage AI quick start](https://www.mongodb.com/docs/voyageai/quickstart/) in the MongoDB documentation.
 
-You can obtain the embeddings by either using the official [`voyageai` Python package](https://github.com/voyage-ai/voyageai-python) or HTTP requests, as described in the following sections. Voyage AI also has an official TypeScript client. To use it with a model API key from Atlas, set its `environment` option to `https://ai.mongodb.com/v1`, as described in [TypeScript client](https://www.mongodb.com/docs/voyageai/api-and-clients/#typescript-client) in the MongoDB documentation.
+You can obtain the embeddings by using either the official [`voyageai` Python package](https://github.com/voyage-ai/voyageai-python) or HTTP requests, as described in the following sections. Voyage AI also has an official TypeScript client. To use it with a model API key from Atlas, set its `environment` option to `https://ai.mongodb.com/v1`, as described in [TypeScript client](https://www.mongodb.com/docs/voyageai/api-and-clients/#typescript-client) in the MongoDB documentation.
 
 ### Voyage AI Python library
 
@@ -242,7 +166,7 @@ curl https://ai.mongodb.com/v1/embeddings \
   }'
 ```
 
-The response you would get is a JSON object containing the embeddings and the token usage:
+The response is a JSON object containing the embeddings and the token usage:
 
 ```python
 {
@@ -268,19 +192,19 @@ The response you would get is a JSON object containing the embeddings and the to
 
 
 
-Model API keys from Atlas work with `ai.mongodb.com`, except keys scoped to a geography, which use that geography's endpoint. If you have an API key from the Voyage AI platform instead, see [Migrate your applications to use the Atlas Embedding and Reranking API](https://www.mongodb.com/docs/voyageai/tutorials/migrate-to-atlas/) in the MongoDB documentation.
+Model API keys from Atlas work with `ai.mongodb.com`, except keys scoped to a geography, which use that geography’s endpoint. If you have an API key from the Voyage AI platform instead, see [Migrate your applications to use the Atlas Embedding and Reranking API](https://www.mongodb.com/docs/voyageai/tutorials/migrate-to-atlas/) in the MongoDB documentation.
 
 For the full request and response reference, see [Create text embeddings](https://www.mongodb.com/docs/api/doc/atlas-embedding-and-reranking-api/operation/operation-createembedding) in the Atlas Embedding and Reranking API documentation.
 
 ### AWS Marketplace
 
-Voyage AI models are also available on AWS Marketplace through [MongoDB's seller profile](https://aws.amazon.com/marketplace/seller-profile?id=c9032c7b-70dd-459f-834f-c1e23cf3d092). For instructions, see [Deploy Voyage AI models using AWS Marketplace](https://www.mongodb.com/docs/voyageai/management/aws-marketplace/) in the MongoDB documentation.
+Voyage AI models are also available on AWS Marketplace through [MongoDB’s seller profile](https://aws.amazon.com/marketplace/seller-profile?id=c9032c7b-70dd-459f-834f-c1e23cf3d092). For instructions, see [Deploy Voyage AI models using AWS Marketplace](https://www.mongodb.com/docs/voyageai/management/aws-marketplace/) in the MongoDB documentation.
 
 ## Quickstart example
 
 The following brief example shows how to use embeddings.
 
-Suppose you have a small corpus of six documents to retrieve from
+Suppose you have a small corpus of six documents to retrieve from:
 
 ```python
 documents = [
@@ -308,7 +232,7 @@ doc_embds = vo.embed(documents, model="voyage-4", input_type="document").embeddi
 
 
 
-The embeddings allow you to do semantic search / retrieval in the vector space. Given an example query,
+The embeddings allow you to do semantic search / retrieval in the vector space. Consider the following example query:
 
 ```python
 query = "When is Apple's conference call scheduled?"
@@ -345,20 +269,20 @@ Apple's conference call to discuss fourth fiscal quarter results and business up
 
 
 
-If you are looking for a detailed set of recipes on how to do RAG with embeddings, including vector databases, check out the [RAG recipe](https://platform.claude.com/cookbook/third-party-pinecone-rag-using-pinecone).
+If you are looking for a detailed set of recipes on how to do RAG with embeddings, including vector databases, see the [RAG recipe](https://platform.claude.com/cookbook/third-party-pinecone-rag-using-pinecone).
 
 ## FAQ
 
 ### Why do Voyage AI embeddings have superior quality?
 
-Embedding models rely on powerful neural networks to capture and compress semantic context, similar to generative models. Voyage AI's team of experienced AI researchers optimizes every component of the embedding process, including:
+Embedding models rely on powerful neural networks to capture and compress semantic context, similar to generative models. Voyage AI’s team of experienced AI researchers optimizes every component of the embedding process, including:
 
 - Model architecture
 - Data collection
 - Loss functions
 - Optimizer selection
 
-Learn more about Voyage AI's technical approach on the [Voyage AI blog](https://blog.voyageai.com/).
+Learn more about Voyage AI’s technical approach on the [Voyage AI blog](https://blog.voyageai.com/).
 
 ### What embedding models are available and which should I use?
 
@@ -386,7 +310,7 @@ You can use Voyage AI embeddings with dot-product similarity, cosine similarity,
 
 Voyage AI embeddings are normalized to length 1, which means that:
 
-- Cosine similarity is equivalent to dot-product similarity, while the latter can be computed more quickly.
+- Cosine similarity is equivalent to dot-product similarity, although the latter can be computed more quickly.
 - Cosine similarity and Euclidean distance result in identical rankings.
 
 ### What is the relationship between characters, words, and tokens?
@@ -404,8 +328,8 @@ When using the `input_type` parameter, special prompts are prepended to the inpu
 > - For a query, the prompt is `"Represent the query for retrieving supporting documents: "`.
 > - For a document, the prompt is `"Represent the document for retrieval: "`.
 > - Example
->   - When `input_type="query"`, a query such as "When is Apple's conference call scheduled?" will become "**Represent the query for retrieving supporting documents:** When is Apple's conference call scheduled?"
->   - When `input_type="document"`, a document such as "Apple's conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET." will become "**Represent the document for retrieval:** Apple's conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET."
+>   - When `input_type="query"`, a query such as “When is Apple’s conference call scheduled?” will become “**Represent the query for retrieving supporting documents:** When is Apple’s conference call scheduled?”
+>   - When `input_type="document"`, a document such as “Apple’s conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET.” will become “**Represent the document for retrieval:** Apple’s conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET.”
 
 ### What quantization options are available?
 

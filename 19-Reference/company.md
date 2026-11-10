@@ -2,7 +2,7 @@
 title: "Company \\ Anthropic"
 source_url: "https://www.anthropic.com/company"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:42Z"
+fetched_at: "2026-10-28T06:40:38Z"
 tags: ["news-research"]
 ---
 
@@ -108,8 +108,14 @@ Vas Narasimhan
 
 ### LTBT Trustees
 
-Neil Buddy Shah
+Dr. Ben Bernanke
 
 Richard Fontaine
 
-Dr. Ben Bernanke
+Neil Buddy Shah
+
+Dr. Christopher Stubbs
+
+## Want to help us build the  future of safe AI?
+
+[See open roles](https://www.anthropic.com/jobs)

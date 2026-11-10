@@ -2,11 +2,14 @@
 title: "Prompts - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/server/prompts"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:05Z"
+fetched_at: "2026-10-31T06:25:21Z"
+last_modified: "Sat, 31 Oct 2026 05:17:56 GMT"
 tags: ["mcp", "mcp-spec", "prompting"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)

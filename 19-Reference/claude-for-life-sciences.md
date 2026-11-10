@@ -78,7 +78,7 @@ Last week, we released [Agent Skills:](skills.md) folders including instructions
 
 We’re developing a number of scientific skills for Claude, beginning with **`single-cell-rna-qc`** This skill performs quality control and filtering on single-cell RNA sequencing data, using [scverse](https://scverse.org/) best practices:
 
-In addition to the skills we’re creating, scientists can build their own. For more information and guidance, including setting up custom skills, see [here](../02-Claude-Code-CLI/using-skills-in-claude.md).
+In addition to the skills we’re creating, scientists can build their own. For more information and guidance, including setting up custom skills, see [here](https://support.claude.com/en/articles/12512180-using-skills-in-claude).
 
 ## Using Claude for Life Sciences
 

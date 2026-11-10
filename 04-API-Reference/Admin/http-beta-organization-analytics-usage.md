@@ -1,252 +1,12 @@
 ---
 title: "Usage - Claude API Reference"
-source_url: "https://platform.claude.com/docs/en/api/http/beta/organization/analytics/usage"
+source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/usage"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-09-27T06:27:09Z"
+fetched_at: "2026-11-07T06:23:49Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [CLI, SDKs, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fhttp%2Fbeta%2Forganization%2Fanalytics%2Fusage)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](../Endpoints/overview.md)[Beta headers](../Endpoints/beta-headers.md)[Errors](../Endpoints/errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-
-Get Activity Summaries
-
-Usage
-
-
-Get Token Usage Over Time
-
-
-Get Per-User Token Usage
-
-Cost
-
-Users
-
-Skills
-
-Connectors
-
-Chat Projects
-
-Plugins
-
-Artifacts
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-Code
-
-
-Completions
-
-
-Create a Text Completion
-
-Support & configuration
-
-[Rate limits](../Endpoints/rate-limits.md)[Service tiers](../Endpoints/service-tiers.md)[IAM actions (Claude Platform on AWS)](../Endpoints/claude-platform-on-aws-iam-actions.md)[Versions](../Endpoints/versioning.md)[IP addresses](../Endpoints/ip-addresses.md)[Supported regions](../Endpoints/supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](../Endpoints/claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](../Endpoints/http.md)
 2.  [Beta](../Endpoints/platform-claude-com-http-beta.md)
@@ -255,26 +15,130 @@ cURL
 
 # Usage
 
-##### [Get Token Usage Over Time](http-beta-organization-analytics-usage-list.md)
+Copy page
 
-GET/v1/organizations/analytics/usage_report
+
 
-Get token usage over time across a date range.
+API version 2026-10-21
 
-##### [Get Per-User Token Usage](beta-organization-analytics-usage-list-by-user.md)
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
-GET/v1/organizations/analytics/user_usage_report
+##### [Get Token Usage By Dimension](platform-claude-com-http-beta-organization-analytics-usage-list.md)
 
-Get per-user token usage across a date range.
+GET/v1/organizations/analytics/usage
+
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](../Endpoints/beta-headers.md)
+
+Get token usage across a date range, broken out by dimension.
 
 ##### Models
 
 
 
-BetaUsageBucket object{ data, data_refreshed_at, has_more, 2 more }
+BetaAnalyticsUsageGroup object{ actor, actor_type, agent_id, 16 more }
+
+
+
+The dimension values one usage row is broken out by; each is null unless its dimension is in `group_by[]`.
+
+
+
+BetaAnalyticsUsageGroupBy = "actor" or "actor_type" or "agent_id" or 16 more
+
+
+
+One of the following:
+
+"actor"
+
+
+
+"actor_type"
+
+
+
+"agent_id"
+
+
+
+"api_key_id"
+
+
+
+"claude_tag_category"
+
+
+
+"claude_tag_user_id"
+
+
+
+"context_window"
+
+
+
+"deployment_id"
+
+
+
+"environment_id"
+
+
+
+"inference_geo"
+
+
+
+"model"
+
+
+
+"product"
+
+
+
+"rbac_group_id"
+
+
+
+"service_tier"
+
+
+
+"session_id"
+
+
+
+"slack_channel_id"
+
+
+
+"speed"
+
+
+
+"user_profile_id"
+
+
+
+"workspace_id"
 
 
 
 
 
-BetaUserUsage object{ data, data_refreshed_at, has_more, 2 more }
+BetaAnalyticsUsageItem object{ ending_at, group, starting_at, usage }
+
+
+
+
+
+BetaAnalyticsUsageMetrics object{ cache_creation, cache_read_input_tokens, output_tokens, 4 more }
+
+
+
+The token usage of one row.
+
+
+
+BetaAnalyticsUsageOrderBy = "output_tokens" or "requests" or "time" or 2 more

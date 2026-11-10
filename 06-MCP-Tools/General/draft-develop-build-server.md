@@ -2,11 +2,14 @@
 title: "Build an MCP server - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/develop/build-server"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-13T06:30:13Z"
+fetched_at: "2026-11-07T06:23:04Z"
+last_modified: "Fri, 06 Nov 2026 19:42:40 GMT"
 tags: ["agents", "cli", "mcp", "skills"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What we’ll be building](#what-we%E2%80%99ll-be-building)
 - [Core MCP Concepts](#core-mcp-concepts)
@@ -875,6 +878,8 @@ This tells Claude for Desktop:
 
 Save the file, and restart **Claude for Desktop**.
 
+This server uses MCP protocol version 2025-11-25, as supported by the latest stable release of the Java SDK. Clients that also support that version can connect to it, but clients that support only 2026-07-28 cannot. See [backward compatibility](../Spec/draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions).
+
 This is a quickstart demo based on Spring AI MCP auto-configuration and boot starters. To learn how to create sync and async MCP Servers, manually, consult the [Java SDK Server](https://java.sdk.modelcontextprotocol.io/) documentation.
 
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/weather/starter-stdio-server)For more information, see the [MCP Server Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html) reference documentation. For manual MCP Server implementation, refer to the [MCP Server Java SDK documentation](https://java.sdk.modelcontextprotocol.io/).
@@ -900,7 +905,7 @@ Best Practices
 System requirements
 
 - Java 17 or higher installed.
-- [Spring Boot 3.3.x](https://docs.spring.io/spring-boot/installing.html) or higher
+- [Spring Boot 4.1.x](https://docs.spring.io/spring-boot/installing.html) or higher
 
 
 [​](#set-up-your-environment-3)
@@ -1133,7 +1138,7 @@ var stdioParams = ServerParameters.builder("java")
   .args("-jar", "/ABSOLUTE/PATH/TO/PARENT/FOLDER/mcp-weather-stdio-server-0.0.1-SNAPSHOT.jar")
   .build();
 
-var stdioTransport = new StdioClientTransport(stdioParams);
+var stdioTransport = new StdioClientTransport(stdioParams, McpJsonDefaults.getMapper());
 
 var mcpClient = McpClient.sync(stdioTransport).build();
 
@@ -1179,6 +1184,8 @@ When you start your client application, the auto-configuration will automaticall
 More Java MCP Server examples
 
 The [starter-webflux-server](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/weather/starter-webflux-server) demonstrates how to create an HTTP-based MCP server with the WebFlux starter. Set the `spring.ai.mcp.server.protocol=STREAMABLE` property to serve it over Streamable HTTP. It showcases how to define and register MCP Tools, Resources, and Prompts, using the Spring Boot’s auto-configuration capabilities.
+
+This server uses MCP protocol version 2025-11-25, as supported by the latest stable release of the Kotlin SDK. Clients that also support that version can connect to it, but clients that support only 2026-07-28 cannot. See [backward compatibility](../Spec/draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions).
 
 Let’s get started with building our weather server! [You can find the complete code for what we’ll be building here.](https://github.com/modelcontextprotocol/kotlin-sdk/tree/main/samples/weather-stdio-server)
 
@@ -1254,7 +1261,7 @@ build.gradle.kts
 
 ```python
 // Check latest versions at https://github.com/modelcontextprotocol/kotlin-sdk/releases
-val mcpVersion = "0.9.0"
+val mcpVersion = "0.16.0"
 val ktorVersion = "3.2.3"
 val slf4jVersion = "2.0.17"
 
@@ -1263,6 +1270,10 @@ plugins {
     kotlin("plugin.serialization") version "2.3.20"
     id("com.gradleup.shadow") version "8.3.9"
     application
+}
+
+repositories {
+    mavenCentral()
 }
 
 application {
@@ -1500,7 +1511,7 @@ For production use, build the shadow JAR:
 
 ```python
 ./gradlew build
-java -jar build/libs/weather-0.1.0-all.jar
+java -jar build/libs/weather-all.jar
 ```
 
 Let’s now test your server from an existing MCP host, Claude for Desktop.
@@ -1543,7 +1554,7 @@ Windows
       "command": "java",
       "args": [
         "-jar",
-        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/build/libs/weather-0.1.0-all.jar"
+        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/build/libs/weather-all.jar"
       ]
     }
   }
@@ -1557,7 +1568,7 @@ Windows
       "command": "java",
       "args": [
         "-jar",
-        "C:\\PATH\\TO\\PARENT\\FOLDER\\weather\\build\\libs\\weather-0.1.0-all.jar"
+        "C:\\PATH\\TO\\PARENT\\FOLDER\\weather\\build\\libs\\weather-all.jar"
       ]
     }
   }
@@ -1567,7 +1578,7 @@ Windows
 This tells Claude for Desktop:
 
 1.  There’s an MCP server named “weather”
-2.  Launch it by running `java -jar /ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/build/libs/weather-0.1.0-all.jar`
+2.  Launch it by running `java -jar /ABSOLUTE/PATH/TO/PARENT/FOLDER/weather/build/libs/weather-all.jar`
 
 Save the file, and restart **Claude for Desktop**.
 
@@ -2223,7 +2234,7 @@ eprintln!("Processing request"); // writes to stderr
 
 System requirements
 
-- Rust 1.70 or higher installed.
+- Rust 1.88 or higher installed. This is the minimum version the `rmcp` crate declares.
 - Cargo (comes with Rust installation).
 
 
@@ -2281,14 +2292,12 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-rmcp = { version = "0.3", features = ["server", "macros", "transport-io"] }
-tokio = { version = "1.46", features = ["full"] }
-reqwest = { version = "0.12", features = ["json"] }
+rmcp = { version = "3.4", features = ["server", "macros", "transport-io"] }
+tokio = { version = "1.53", features = ["full"] }
+reqwest = { version = "0.13", features = ["json"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 anyhow = "1.0"
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["env-filter", "std", "fmt"] }
 ```
 
 Now let’s dive into building your server.
@@ -2308,19 +2317,22 @@ Open `src/main.rs` and add these imports and constants at the top:
 ```python
 use anyhow::Result;
 use rmcp::{
-    ServerHandler, ServiceExt,
-    handler::server::{router::tool::ToolRouter, tool::Parameters},
+    ErrorData, ServerHandler, ServiceExt,
+    handler::server::{router::tool::ToolRouter, tool::schema_for_output, wrapper::Parameters},
     model::*,
-    schemars, tool, tool_handler, tool_router,
+    schemars::{self, JsonSchema},
+    tool, tool_handler, tool_router,
+    transport::stdio,
 };
 use serde::Deserialize;
 use serde::de::DeserializeOwned;
+use serde::Serialize;
 
 const NWS_API_BASE: &str = "https://api.weather.gov";
 const USER_AGENT: &str = "weather-app/1.0";
 ```
 
-The `rmcp` crate provides the Model Context Protocol SDK for Rust, with features for server implementation, procedural macros, and stdio transport.
+The `rmcp` crate provides the Model Context Protocol SDK for Rust, with features for server implementation, procedural macros, and stdio transport. `Parameters` unwraps the arguments a client sends to a tool, `schema_for_output` builds the JSON Schema a tool advertises for its results, and `stdio` is the standard input and output transport.
 
 
 [​](#data-structures)
@@ -2385,18 +2397,45 @@ struct ForecastPeriod {
 }
 ```
 
-Now define the request types that MCP clients will send:
+Each tool also returns structured content next to its text. Define the types that describe it. Deriving `JsonSchema` lets the server advertise their shape as the tool’s output schema, and the doc comments become property descriptions in that schema:
 
 ```python
-#[derive(serde::Deserialize, schemars::JsonSchema)]
-pub struct MCPForecastRequest {
-    latitude: f32,
-    longitude: f32,
+/// One element of `get_alerts`' structured content. Declaring `Vec<Alert>` as
+/// the output schema makes `structuredContent` a top-level JSON array rather
+/// than an object wrapping one, which revision 2026-07-28 is the first to allow.
+#[derive(Debug, Serialize, JsonSchema)]
+pub struct Alert {
+    /// The kind of weather event.
+    event: String,
+    /// The area the alert covers.
+    area: String,
+    /// How severe the event is.
+    severity: String,
+    /// What is happening.
+    description: String,
+    /// What people in the area should do.
+    instructions: String,
 }
 
-#[derive(serde::Deserialize, schemars::JsonSchema)]
-pub struct MCPAlertRequest {
-    state: String,
+/// `get_forecast`' structured content: the object case.
+#[derive(Debug, Serialize, JsonSchema)]
+pub struct Forecast {
+    /// Latitude the forecast is for.
+    latitude: f32,
+    /// Longitude the forecast is for.
+    longitude: f32,
+    /// The forecast periods, soonest first.
+    periods: Vec<Period>,
+}
+
+#[derive(Debug, Serialize, JsonSchema)]
+pub struct Period {
+    name: String,
+    temperature: i32,
+    temperature_unit: String,
+    wind_speed: String,
+    wind_direction: String,
+    detailed_forecast: String,
 }
 ```
 
@@ -2405,7 +2444,7 @@ pub struct MCPAlertRequest {
 
 Helper functions
 
-Add helper functions for making API requests and formatting responses:
+Add helper functions for making API requests, formatting text, and building a tool result that carries both text and structured content:
 
 ```python
 async fn make_nws_request<T: DeserializeOwned>(url: &str) -> Result<T> {
@@ -2420,25 +2459,14 @@ async fn make_nws_request<T: DeserializeOwned>(url: &str) -> Result<T> {
     Ok(rsp.json::<T>().await?)
 }
 
-fn format_alert(feature: &AlertFeature) -> String {
-    let props = &feature.properties;
+fn format_alert(alert: &Alert) -> String {
     format!(
         "Event: {}\nArea: {}\nSeverity: {}\nDescription: {}\nInstructions: {}",
-        props.event.as_deref().unwrap_or("Unknown"),
-        props.area_desc.as_deref().unwrap_or("Unknown"),
-        props.severity.as_deref().unwrap_or("Unknown"),
-        props
-            .description
-            .as_deref()
-            .unwrap_or("No description available"),
-        props
-            .instruction
-            .as_deref()
-            .unwrap_or("No specific instructions provided")
+        alert.event, alert.area, alert.severity, alert.description, alert.instructions
     )
 }
 
-fn format_period(period: &ForecastPeriod) -> String {
+fn format_period(period: &Period) -> String {
     format!(
         "{}:\nTemperature: {}°{}\nWind: {} {}\nForecast: {}",
         period.name,
@@ -2449,21 +2477,55 @@ fn format_period(period: &ForecastPeriod) -> String {
         period.detailed_forecast
     )
 }
+
+/// Build a result carrying both channels.
+fn dual_channel_result(
+    text: String,
+    structured: impl Serialize,
+) -> Result<CallToolResult, ErrorData> {
+    let value = serde_json::to_value(structured).map_err(|e| {
+        ErrorData::internal_error(format!("failed to serialize structured content: {e}"), None)
+    })?;
+    let mut result = CallToolResult::success(vec![ContentBlock::text(text)]);
+    result.structured_content = Some(value);
+    Ok(result)
+}
 ```
+
+`dual_channel_result` builds a `CallToolResult` whose `content` holds the human-readable text and whose `structured_content` holds the JSON that matches the tool’s output schema.
 
 
 [​](#implementing-the-weather-server-and-tools)
 
 Implementing the Weather server and tools
 
+Now define the request types that MCP clients will send:
+
+```python
+#[derive(serde::Deserialize, JsonSchema)]
+pub struct MCPForecastRequest {
+    /// Latitude of the location.
+    latitude: f32,
+    /// Longitude of the location.
+    longitude: f32,
+}
+
+#[derive(serde::Deserialize, JsonSchema)]
+pub struct MCPAlertRequest {
+    /// Two-letter US state code (e.g. CA, NY).
+    state: String,
+}
+```
+
 Now let’s implement the main Weather server struct with the tool handlers:
 
 ```python
+#[derive(Clone)]
 pub struct Weather {
     tool_router: ToolRouter<Weather>,
 }
 
-#[tool_router]
+#[tool_router(router = tool_router)]
 impl Weather {
     fn new() -> Self {
         Self {
@@ -2471,84 +2533,136 @@ impl Weather {
         }
     }
 
-    #[tool(description = "Get weather alerts for a US state.")]
+    #[tool(
+        description = "Get weather alerts for a US state.",
+        output_schema = schema_for_output::<Vec<Alert>>()
+    )]
     async fn get_alerts(
         &self,
         Parameters(MCPAlertRequest { state }): Parameters<MCPAlertRequest>,
-    ) -> String {
-        let url = format!(
-            "{}/alerts/active/area/{}",
-            NWS_API_BASE,
-            state.to_uppercase()
-        );
+    ) -> Result<CallToolResult, ErrorData> {
+        let state = state.to_uppercase();
+        let url = format!("{NWS_API_BASE}/alerts/active/area/{state}");
 
-        match make_nws_request::<AlertsResponse>(&url).await {
-            Ok(data) => {
-                if data.features.is_empty() {
-                    "No active alerts for this state.".to_string()
-                } else {
-                    data.features
-                        .iter()
-                        .map(format_alert)
-                        .collect::<Vec<_>>()
-                        .join("\n---\n")
+        let Ok(data) = make_nws_request::<AlertsResponse>(&url).await else {
+            return Ok(CallToolResult::error(vec![ContentBlock::text(format!(
+                "Unable to fetch alerts for {state}."
+            ))]));
+        };
+
+        // An empty result is an empty array, not an error.
+        let alerts: Vec<Alert> = data
+            .features
+            .into_iter()
+            .map(|feature| {
+                let props = feature.properties;
+                Alert {
+                    event: props.event.unwrap_or_else(|| "Unknown".into()),
+                    area: props.area_desc.unwrap_or_else(|| "Unknown".into()),
+                    severity: props.severity.unwrap_or_else(|| "Unknown".into()),
+                    description: props
+                        .description
+                        .unwrap_or_else(|| "No description available".into()),
+                    instructions: props
+                        .instruction
+                        .unwrap_or_else(|| "No specific instructions provided".into()),
                 }
-            }
-            Err(_) => "Unable to fetch alerts or no alerts found.".to_string(),
-        }
+            })
+            .collect();
+
+        let text = if alerts.is_empty() {
+            "No active alerts for this state.".to_string()
+        } else {
+            alerts
+                .iter()
+                .map(format_alert)
+                .collect::<Vec<_>>()
+                .join("\n---\n")
+        };
+
+        dual_channel_result(text, &alerts)
     }
 
-    #[tool(description = "Get weather forecast for a location.")]
+    #[tool(
+        description = "Get weather forecast for a location.",
+        output_schema = schema_for_output::<Forecast>()
+    )]
     async fn get_forecast(
         &self,
         Parameters(MCPForecastRequest {
             latitude,
             longitude,
         }): Parameters<MCPForecastRequest>,
-    ) -> String {
+    ) -> Result<CallToolResult, ErrorData> {
         let points_url = format!("{NWS_API_BASE}/points/{latitude},{longitude}");
         let Ok(points_data) = make_nws_request::<PointsResponse>(&points_url).await else {
-            return "Unable to fetch forecast data for this location.".to_string();
+            return Ok(CallToolResult::error(vec![ContentBlock::text(
+                "Unable to fetch forecast data for this location.",
+            )]));
         };
 
         let forecast_url = points_data.properties.forecast;
-
         let Ok(forecast_data) = make_nws_request::<ForecastResponse>(&forecast_url).await else {
-            return "Unable to fetch forecast data for this location.".to_string();
+            return Ok(CallToolResult::error(vec![ContentBlock::text(
+                "Unable to fetch detailed forecast.",
+            )]));
         };
 
-        let periods = &forecast_data.properties.periods;
-        let forecast_summary: String = periods
+        let forecast = Forecast {
+            latitude,
+            longitude,
+            periods: forecast_data
+                .properties
+                .periods
+                .into_iter()
+                .take(5) // Next 5 periods only
+                .map(|p| Period {
+                    name: p.name,
+                    temperature: p.temperature,
+                    temperature_unit: p.temperature_unit,
+                    wind_speed: p.wind_speed,
+                    wind_direction: p.wind_direction,
+                    detailed_forecast: p.detailed_forecast,
+                })
+                .collect(),
+        };
+
+        let text = forecast
+            .periods
             .iter()
-            .take(5) // Next 5 periods only
             .map(format_period)
-            .collect::<Vec<String>>()
+            .collect::<Vec<_>>()
             .join("\n---\n");
-        forecast_summary
+
+        dual_channel_result(text, &forecast)
     }
 }
 ```
 
-The `#[tool_router]` macro automatically generates the routing logic, and the `#[tool]` attribute marks methods as MCP tools.
+The `#[tool_router]` macro automatically generates the routing logic, and the `#[tool]` attribute marks methods as MCP tools. Each tool declares an `output_schema` and returns `Result<CallToolResult, ErrorData>`. A failed request to the weather service is reported with `CallToolResult::error`, which the client receives as a tool failure.
 
 
 [​](#implementing-the-serverhandler)
 
 Implementing the ServerHandler
 
-Implement the `ServerHandler` trait to define server capabilities:
+Implement the `ServerHandler` trait to declare the server’s name, version, and capabilities:
 
 ```python
-#[tool_handler]
+#[tool_handler(router = self.tool_router)]
 impl ServerHandler for Weather {
-    fn get_info(&self) -> ServerInfo {
-        ServerInfo {
-            capabilities: ServerCapabilities::builder().enable_tools().build(),
-            ..Default::default()
-        }
+    fn get_info(&self) -> ServerConfig {
+        let mut info = ServerConfig::default();
+        // Without this the server reports rmcp's own crate name and version
+        // rather than its own.
+        info.server_info = Implementation::new("weather", "1.0.0");
+        info.capabilities = ServerCapabilities::builder().enable_tools().build();
+        info
     }
 }
 ```
+
+`get_info` returns a `ServerConfig`. Setting `server_info` gives the server its own name and version in the `initialize` response.
 
 
 [​](#running-the-server-7)
@@ -2560,8 +2674,7 @@ Finally, implement the main function to run the server with stdio transport:
 ```python
 #[tokio::main]
 async fn main() -> Result<()> {
-    let transport = (tokio::io::stdin(), tokio::io::stdout());
-    let service = Weather::new().serve(transport).await?;
+    let service = Weather::new().serve(stdio()).await?;
     service.waiting().await?;
     Ok(())
 }
@@ -2683,7 +2796,7 @@ fmt.Fprintln(os.Stderr, "Processing request")
 
 System requirements
 
-- Go 1.24 or higher installed.
+- Go 1.25 or higher installed.
 
 
 [​](#set-up-your-environment-8)

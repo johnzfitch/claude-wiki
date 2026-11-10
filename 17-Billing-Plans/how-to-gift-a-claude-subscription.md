@@ -2,7 +2,7 @@
 title: "How to gift a Claude subscription | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12938627-how-to-gift-a-claude-subscription"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:19Z"
+fetched_at: "2026-11-09T06:25:59Z"
 tags: ["billing"]
 ---
 
@@ -17,7 +17,7 @@ Gift subscriptions purchased when they were available include full access to all
 
 - **[What is the Pro plan?](what-is-the-pro-plan.md)**
 
-- **[What is the Max plan?](what-is-the-max-plan.md)**
+- **[What are the Max and Ultra plans?](https://support.claude.com/en/articles/11049741)**
 
 ## How to purchase a gift
 

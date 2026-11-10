@@ -2,11 +2,14 @@
 title: "Track cost and usage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/cost-tracking"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-06T06:23:39Z"
+fetched_at: "2026-11-06T06:26:27Z"
+last_modified: "Fri, 06 Nov 2026 05:17:18 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Understand token usage](#understand-token-usage)
 - [Track costs in streaming input mode](#track-costs-in-streaming-input-mode)
@@ -41,7 +44,7 @@ The `total_cost_usd` and `costUSD` fields are client-side estimates, not authori
 - the installed SDK version does not recognize a model
 - billing rules apply that the client cannot model
 
-One billing rule the SDK does model is [data residency pricing](../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing). When a response’s `usage` reports `inference_geo: "us"`, the SDK multiplies the list price of that response’s tokens by 1.1. Per-request fees such as web search aren’t multiplied. Requires TypeScript Agent SDK v0.3.239 or later, or Python Agent SDK v0.2.144 or later.Use these fields for development insight and approximate budgeting. For authoritative billing, use the [Usage and Cost API](../04-API-Reference/Guides/build-with-claude-usage-cost-api.md) or the Usage page in the [Claude Console](../04-API-Reference/Other/playground.md). Do not bill end users or trigger financial decisions from these fields.
+One billing rule the SDK does model is [data residency pricing](../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing). When a response’s `usage` reports `inference_geo: "us"`, the SDK multiplies the list price of that response’s tokens by 1.1. Per-request fees such as web search aren’t multiplied. Requires TypeScript Agent SDK v0.3.239 or later, or Python Agent SDK v0.2.144 or later.Use these fields for development insight and approximate budgeting. For authoritative billing, see [Manage costs for your organization](../17-Billing-Plans/costs.md#manage-costs-for-your-organization). Don’t bill end users or trigger financial decisions from these fields.
 
 
 [​](#understand-token-usage)
@@ -103,11 +106,11 @@ The result message, typed as [`SDKResultMessage`](agent-sdk-typescript.md#sdkres
 
 In streaming input mode, read call totals as described in [Track costs in streaming input mode](#track-costs-in-streaming-input-mode). The three result-level fields differ in what they count when the agent spawns [subagents](agent-sdk-subagents.md). Use `modelUsage`, or `model_usage` in Python, for whole-tree token accounting; the `usage` field undercounts as soon as nesting occurs.
 
-| Field                        | Subagent activity                                                                                 |
-|------------------------------|---------------------------------------------------------------------------------------------------|
-| `usage`                      | Excluded. Counts only the top-level agent loop, so tokens consumed inside subagents are not added |
-| `total_cost_usd`             | Included. Counts subagent requests alongside the top-level loop                                   |
-| `modelUsage` / `model_usage` | Included. Counts subagent requests alongside the top-level loop, broken down by model             |
+| Field | Subagent activity |
+|----|----|
+| `usage` | Excluded. Counts only the top-level agent loop, so tokens consumed inside subagents are not added |
+| `total_cost_usd` | Included. Counts subagent requests alongside the top-level loop |
+| `modelUsage` / `model_usage` | Included. Counts subagent requests alongside the top-level loop, broken down by model |
 
 In [single message input mode](agent-sdk-streaming-vs-single-mode.md#single-message-input), when background subagents are still running at the end of the final turn, Claude Code waits for them, up to the cap described in [background tasks at exit](../02-Claude-Code-CLI/headless.md#background-tasks-at-exit), before emitting the result. The result’s `total_cost_usd`, `duration_api_ms`, and `modelUsage`, or `model_usage` in Python, include the work done during that wait. The following examples iterate over the message stream from a `query()` call and print the total cost when the `result` message arrives:
 
@@ -331,7 +334,7 @@ For accurate cost tracking, account for the placeholder output count on assistan
 
 Read output tokens from the result message
 
-Claude Code builds each assistant message from the usage the API reported when the response began, so the message’s `output_tokens` is only the count the API had reported at `message_start`, before the response was generated. One API response can produce several assistant messages, and every one of them carries that same placeholder. The API reports the real output count at the end of the response, and Claude Code adds it to the result message. Read output tokens from the result’s `usage`, or from `modelUsage` for a per-model breakdown. To watch a response’s output count grow while it streams, set `includePartialMessages`, or `include_partial_messages` in Python, and read `usage` from each `message_delta` stream event, typed as [`SDKPartialAssistantMessage`](agent-sdk-typescript.md#sdkpartialassistantmessage) in TypeScript and [`StreamEvent`](agent-sdk-python.md#streamevent) in Python.
+Claude Code builds each assistant message from the usage the API reported when the response began, so the message’s `output_tokens` is only the count the API had reported at `message_start`, before the response was generated. One API response can produce several assistant messages, and every one of them carries that same placeholder. The API reports the real output count at the end of the response, and Claude Code adds it to the result message. Read output tokens from the result’s `usage`, or from `modelUsage` for a per-model breakdown.
 
 
 [​](#track-costs-on-failed-conversations)
@@ -417,7 +420,7 @@ for await (const message of query({ prompt: "Summarize this project", options })
 }
 ```
 
-Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
+Cache writes with a 1-hour TTL are billed at a higher rate than 5-minute writes, so enabling this trades higher write cost for more cache reads. See [prompt caching pricing](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) for details. On a Claude subscription within your plan’s included usage, you get the 1-hour TTL on your own turns, and on some of the helper requests Claude Code makes beside them, without setting this variable, and Claude Code drops those turns to the 5-minute TTL once you’re drawing on [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans). `ENABLE_PROMPT_CACHING_1H` asks for the 1-hour TTL on every request in both buckets. To choose a TTL for each bucket separately, use these controls instead. Each takes `5m` or `1h` and takes precedence over `ENABLE_PROMPT_CACHING_1H`:
 
 - Main conversation: the `CLAUDE_CODE_PROMPT_CACHE_TTL` [environment variable](../02-Claude-Code-CLI/env-vars.md), or the [`promptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#promptcachettl) setting
 - Everything else: the `CLAUDE_CODE_SUBAGENT_PROMPT_CACHE_TTL` environment variable, or the [`subagentPromptCacheTtl`](../02-Claude-Code-CLI/settings-reference.md#subagentpromptcachettl) setting

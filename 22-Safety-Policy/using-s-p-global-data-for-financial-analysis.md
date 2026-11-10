@@ -2,7 +2,7 @@
 title: "Using S&P global data for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:29:14Z"
+fetched_at: "2026-11-09T06:26:14Z"
 tags: ["safety"]
 ---
 

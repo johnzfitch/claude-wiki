@@ -2,11 +2,14 @@
 title: "Get started with the desktop app - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-quickstart"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-22T06:28:04Z"
+fetched_at: "2026-10-31T06:25:08Z"
+last_modified: "Sat, 31 Oct 2026 01:15:36 GMT"
 tags: ["claude-code", "desktop"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Install](#install)
 - [Start your first session](#start-your-first-session)
@@ -23,7 +26,7 @@ Install the Claude desktop app, open the Code tab, and start your first Claude C
 
 Copy pageCopy page
 
-The desktop app gives you Claude Code with a graphical interface. You can ask Claude to work on the code in a folder on your computer and review its changes without using a terminal. Claude Code is in the **Code** tab at the top of the app’s sidebar. This page walks through installing the app and starting your first session there. Claude Code requires a [Pro, Max, Team, or Enterprise subscription](../17-Billing-Plans/pricing.md).
+The desktop app gives you Claude Code with a graphical interface. You can ask Claude to work on the code in a folder on your computer, then review the changes yourself, without using a terminal. Claude Code is in the **Code** tab at the top of the app’s sidebar. This page walks through installing the app and starting your first session there. Claude Code requires a [Pro, Max, Ultra, Team, or Enterprise subscription](../17-Billing-Plans/pricing.md).
 
 ## Download for macOS
 
@@ -80,7 +83,7 @@ With the Code tab open, choose a project and give Claude something to do.
 
 Choose an environment and folder
 
-In the [row under the prompt box](desktop.md#start-a-session), click the first control, the environment selector, and select the top entry in the **Local** group. Then click the project folder control beside the environment selector, select **Open folder…**, and choose your project’s directory.If no environment selector appears under your prompt box, you have the earlier layout. See [Check which layout you have](desktop.md#check-which-layout-you-have).
+In the [row under the prompt box](desktop.md#start-a-session), click the first control, the environment selector, and select the top entry in the **Local** group. Then click the project folder control beside the environment selector, select **Open folder…**, and choose your project’s directory.If a new session shows no environment under your prompt box, you have the earlier layout. See [Check which layout you have](desktop.md#check-which-layout-you-have).
 
 Start with a small project you know well. It’s the fastest way to see what Claude Code can do.
 

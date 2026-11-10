@@ -29,7 +29,7 @@ Whether the first message in a chat is discounted depends on how you start the c
 
 - **Start from a regular chat:** If you ask Claude to create or edit an artifact partway through a chat, the message where Claude first creates the artifact counts at the standard rate. Your next 10 messages in the chat are discounted.
 
-**Note:** This promotion reduces how much of your usage limits a chat uses. If you’ve turned on usage credits and a message uses it, that message is billed at the standard rate. Learn more about **[managing usage credits on paid Claude plans](https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans)**.
+**Note:** This promotion reduces how much of your usage limits a chat uses. If you’ve turned on usage credits and a message uses it, that message is billed at the standard rate. Learn more about **[managing usage credits on paid Claude plans](../17-Billing-Plans/manage-usage-credits-for-paid-claude-plans.md)**.
 
 ### In a Cowork task
 

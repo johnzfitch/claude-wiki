@@ -2,11 +2,13 @@
 title: "Plugin loading reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/loading"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-22T06:29:28Z"
+fetched_at: "2026-10-26T06:30:33Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Check which stage a plugin reached](#check-which-stage-a-plugin-reached)
   - [Plugins and marketplaces that aren’t on disk at session start](#plugins-and-marketplaces-that-aren%E2%80%99t-on-disk-at-session-start)
@@ -92,7 +94,7 @@ Plugins load at session start from `installed_plugins.json` and the cache withou
 - **A marketplace that settings declare but `known_marketplaces.json` lacks**: Claude Code clones it, then reloads plugins and downloads enabled plugins that aren’t cached yet
 - **A declared marketplace whose source changed in settings**: Claude Code re-fetches it from the new source and shows `Plugins changed. Run /reload-plugins to activate.`
 
-An enabled plugin that neither path fetched and that has no usable cache directory shows `Plugin "<name>" not cached at <path>` in the `/plugin` **Errors** tab, and `claude plugin list` adds `— run /plugin to refresh` to the same line. For the fix, see [`Plugin "<name>" not cached at <path>`](plugins-troubleshooting.md#plugin-not-cached-at).
+An enabled plugin that neither path fetched and that has no usable cache directory shows `Plugin "<name>" not cached at <path>` in the `/plugin` **Errors** tab. For the fix, see [`Plugin "<name>" not cached at <path>`](plugins-troubleshooting.md#plugin-not-cached-at).
 
 
 [​](#find-where-a-plugin-came-from)
@@ -101,12 +103,12 @@ Find where a plugin came from
 
 Every plugin has an id of the form `<name>@<origin>`, which is what you see in settings files and in `claude plugin list --json`. The part after `@` tells you where Claude Code found the plugin:
 
-| ID ends in       | How the plugin got there                                                                                                                                                                                     | How you turn it on or off                                                                                                                                           |
-|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `@<marketplace>` | You installed it from a marketplace you added                                                                                                                                                                | `"<name>@<marketplace>": true` or `false` under `enabledPlugins` in a settings file                                                                                 |
-| `@inline`        | You started Claude Code with `--plugin-dir` or `--plugin-url`, set [`CLAUDE_CODE_PLUGIN_DIRS`](../02-Claude-Code-CLI/env-vars.md#variables), or an Agent SDK app passed the `plugins` option. It loads for that session only | On for the session unless the manifest sets `defaultEnabled: false` or a settings file sets `"<name>@inline": false`                                                |
-| `@skills-dir`    | You saved a plugin directory that has a `.claude-plugin/plugin.json` under `~/.claude/skills/` or the project’s `.claude/skills/`                                                                            | The manifest’s `defaultEnabled`, unless a settings file sets `"<name>@skills-dir"` to `true` or `false`                                                             |
-| `@synced`        | You or your organization turned it on for your claude.ai account, and Claude Code [downloaded it](#synced-plugins)                                                                                           | On unless the manifest sets `defaultEnabled: false` or a settings file sets `"<name>@synced": false`. A plugin your organization marks as required loads regardless |
+| ID ends in | How the plugin got there | How you turn it on or off |
+|:---|:---|:---|
+| `@<marketplace>` | You installed it from a marketplace you added | `"<name>@<marketplace>": true` or `false` under `enabledPlugins` in a settings file |
+| `@inline` | You started Claude Code with `--plugin-dir` or `--plugin-url`, set [`CLAUDE_CODE_PLUGIN_DIRS`](../02-Claude-Code-CLI/env-vars.md#variables), or an Agent SDK app passed the `plugins` option. It loads for that session only | On for the session unless the manifest sets `defaultEnabled: false` or a settings file sets `"<name>@inline": false` |
+| `@skills-dir` | You saved a plugin directory that has a `.claude-plugin/plugin.json` under `~/.claude/skills/` or the project’s `.claude/skills/` | The manifest’s `defaultEnabled`, unless a settings file sets `"<name>@skills-dir"` to `true` or `false` |
+| `@synced` | You or your organization turned it on for your claude.ai account, and Claude Code [downloaded it](#synced-plugins) | On unless the manifest sets `defaultEnabled: false` or a settings file sets `"<name>@synced": false`. A plugin your organization marks as required loads regardless |
 
 For a marketplace plugin, `<name>` is the entry name in `marketplace.json`; for `@inline` and `@skills-dir` it’s the `name` in the plugin’s manifest. The origin names in this table are reserved, so no marketplace can be named `inline`, `skills-dir`, or `synced`.
 
@@ -225,14 +227,14 @@ Find where a plugin is enabled
 
 You can set an `enabledPlugins` entry in any of six sources. The table lists them from lowest precedence to highest, and who each one applies to. For the settings files themselves, see [Settings files and who they affect](../02-Claude-Code-CLI/settings.md#where-settings-live).
 
-| Source      | Where you set it                                                                                  | Reaches                                                                                                   |
-|:------------|:--------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
-| `--add-dir` | `.claude/settings.json` or `.claude/settings.local.json` in a directory you pass with `--add-dir` | This session only. Only a `true` value has an effect, and every other source overrides it                 |
-| `user`      | `~/.claude/settings.json`                                                                         | You, in every project                                                                                     |
-| `project`   | `.claude/settings.json`                                                                           | Everyone who clones the repository                                                                        |
-| `local`     | `.claude/settings.local.json`                                                                     | You, in this repository only                                                                              |
-| `flag`      | The `--settings` value you pass at launch                                                         | This session only                                                                                         |
-| `managed`   | [Managed settings](../13-Enterprise-Admin/managed-settings.md)                                                     | Every user the policy covers. `true` force-enables and `false` blocks, and no other source overrides them |
+| Source | Where you set it | Reaches |
+|:---|:---|:---|
+| `--add-dir` | `.claude/settings.json` or `.claude/settings.local.json` in a directory you pass with `--add-dir` | This session only. Only a `true` value has an effect, and every other source overrides it |
+| `user` | `~/.claude/settings.json` | You, in every project |
+| `project` | `.claude/settings.json` | Everyone who clones the repository |
+| `local` | `.claude/settings.local.json` | You, in this repository only |
+| `flag` | The `--settings` value you pass at launch | This session only |
+| `managed` | [Managed settings](../13-Enterprise-Admin/managed-settings.md) | Every user the policy covers. `true` force-enables and `false` blocks, and no other source overrides them |
 
 These sources merge key by key. For each plugin id, the value that applies is the one from the highest-precedence source that mentions the id. A source that doesn’t mention the id leaves the value from the lower-precedence source in effect.
 
@@ -262,16 +264,16 @@ Find plugins on disk
 
 Claude Code keeps plugin files and state records under one plugins root, which is `~/.claude/plugins` unless you set [`CLAUDE_CODE_PLUGIN_CACHE_DIR`](../02-Claude-Code-CLI/env-vars.md). Every path in the table is relative to that root.
 
-| Path                                                                                                   | What it holds                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|:-------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cache/<marketplace>/<plugin>/<version>/`                                                              | One directory per installed version of a marketplace plugin. `<plugin>` is the marketplace entry name and `<version>` is the [resolved version](#versions-and-updates). `${CLAUDE_PLUGIN_ROOT}` points at this directory                                                                                                                                                                                                                                                                                                        |
-| `data/<plugin-id>/`                                                                                    | The plugin’s persistent directory, exposed as `${CLAUDE_PLUGIN_DATA}`. For how `<plugin-id>` is formed, see [Path variables and persistent data](plugins-components.md#path-variables-and-persistent-data). Claude Code creates it when a plugin component first uses it and keeps it across updates. By default, Claude Code deletes it when you uninstall the plugin from its last scope. For `--keep-data` and the other cases where it stays, see [plugin uninstall](plugins-cli-reference.md#plugin-uninstall) |
-| `marketplaces/<name>/`                                                                                 | The clone or download of a marketplace added from GitHub, another Git host, or a URL. A marketplace added from a local `file` or `directory` source has no copy here, and its `installLocation` in `known_marketplaces.json` is the path you gave                                                                                                                                                                                                                                                                               |
-| `synced/`                                                                                              | The plugins Claude Code [synced from your claude.ai account](#synced-plugins)                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `.trash/`                                                                                              | Plugins that the claude.ai sync removed, such as after you turn one off on claude.ai or stop syncing                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `installed_plugins.json` and `known_marketplaces.json`                                                 | The records of what Claude Code has installed and which marketplaces it has fetched, described under [Check which stage a plugin reached](#check-which-stage-a-plugin-reached). A [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai) is recorded in `known_marketplaces_claudeai.json` instead                                                                                                                                                                                                      |
-| `flagged-plugins.json`                                                                                 | Plugins Claude Code uninstalled because their marketplace delisted them. They appear in the **Flagged** section of `/plugin`; see [Host a marketplace](plugins-host-marketplace.md)                                                                                                                                                                                                                                                                                                                                       |
-| `installed_plugins.set-aside.<date>.<hash>.json` and `installed_plugins.unreadable.<date>.<hash>.kept` | Dated copies Claude Code keeps before it drops install records that no version of Claude Code can use or rebuilds an unreadable `installed_plugins.json`. See [the recovery notes](plugins-troubleshooting.md#installed-plugins-json-could-not-be-read-and-was-rebuilt). They age out on the [`cleanupPeriodDays`](../02-Claude-Code-CLI/settings-reference.md#cleanupperioddays) schedule                                                                                                                                                |
+| Path | What it holds |
+|:---|:---|
+| `cache/<marketplace>/<plugin>/<version>/` | One directory per installed version of a marketplace plugin. `<plugin>` is the marketplace entry name and `<version>` is the [resolved version](#versions-and-updates). `${CLAUDE_PLUGIN_ROOT}` points at this directory |
+| `data/<plugin-id>/` | The plugin’s persistent directory, exposed as `${CLAUDE_PLUGIN_DATA}`. For how `<plugin-id>` is formed, see [Path variables and persistent data](plugins-components.md#path-variables-and-persistent-data). Claude Code creates it when a plugin component first uses it and keeps it across updates. By default, Claude Code deletes it when you uninstall the plugin from its last scope. For `--keep-data` and the other cases where it stays, see [plugin uninstall](plugins-cli-reference.md#plugin-uninstall) |
+| `marketplaces/<name>/` | The clone or download of a marketplace added from GitHub, another Git host, or a URL. A marketplace added from a local `file` or `directory` source has no copy here, and its `installLocation` in `known_marketplaces.json` is the path you gave |
+| `synced/` | The plugins Claude Code [synced from your claude.ai account](#synced-plugins) |
+| `.trash/` | Plugins that the claude.ai sync removed, such as after you turn one off on claude.ai or stop syncing |
+| `installed_plugins.json` and `known_marketplaces.json` | The records of what Claude Code has installed and which marketplaces it has fetched, described under [Check which stage a plugin reached](#check-which-stage-a-plugin-reached). A [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai) is recorded in `known_marketplaces_claudeai.json` instead |
+| `flagged-plugins.json` | Plugins Claude Code uninstalled because their marketplace delisted them. They appear in the **Flagged** section of `/plugin`; see [Host a marketplace](plugins-host-marketplace.md) |
+| `installed_plugins.set-aside.<date>.<hash>.json` and `installed_plugins.unreadable.<date>.<hash>.kept` | Dated copies Claude Code keeps before it drops install records that no version of Claude Code can use or rebuilds an unreadable `installed_plugins.json`. See [the recovery notes](plugins-troubleshooting.md#installed-plugins-json-could-not-be-read-and-was-rebuilt). They age out on the [`cleanupPeriodDays`](../02-Claude-Code-CLI/settings-reference.md#cleanupperioddays) schedule |
 
 Because `${CLAUDE_PLUGIN_ROOT}` points at a version directory, a plugin’s root path changes with every version. Keep a plugin’s durable files in `${CLAUDE_PLUGIN_DATA}` instead.
 
@@ -382,13 +384,13 @@ For a marketplace you added by source, Claude Code picks the rule by the `source
 2.  Then the `version` field in the plugin’s marketplace entry
 3.  When neither is set, the version comes from the source type:
 
-| Source type                                                                                | Version when no `version` field is set                                                                                                               |
-|:-------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| `github`, `url`, or `git-subdir`                                                           | The commit SHA of the source, shortened to 12 characters. A `git-subdir` version also carries a hash of the subdirectory path                        |
-| `archive`                                                                                  | The SHA-256 digest, shortened to 12 characters: the `sha256` pin in the marketplace entry, or the digest of the downloaded file when there is no pin |
-| Relative path inside a Git-hosted marketplace                                              | The commit SHA of the installed directory                                                                                                            |
-| Local directory, when neither the plugin directory nor its marketplace is a git repository | `unknown`                                                                                                                                            |
-| `npm`                                                                                      | `unknown`                                                                                                                                            |
+| Source type | Version when no `version` field is set |
+|:---|:---|
+| `github`, `url`, or `git-subdir` | The commit SHA of the source, shortened to 12 characters. A `git-subdir` version also carries a hash of the subdirectory path |
+| `archive` | The SHA-256 digest, shortened to 12 characters: the `sha256` pin in the marketplace entry, or the digest of the downloaded file when there is no pin |
+| Relative path inside a Git-hosted marketplace | The commit SHA of the installed directory |
+| Local directory, when neither the plugin directory nor its marketplace is a git repository | `unknown` |
+| `npm` | `unknown` |
 
 Claude Code doesn’t take the version from a repository that encloses the install path, such as a git-managed `~/.claude`. For a `command` source, Claude Code always derives the version from what the command produced: a 12-character hash on its own, or `<manifest version>-<hash>` when the manifest sets one. The marketplace entry’s `version` is ignored for command sources. For what the hash covers, see [Copy mode and link mode](plugins-marketplace-reference.md#copy-mode-and-link-mode). Because the manifest comes first, a manifest that pins `"version": "1.0.0"` keeps every user on the cached copy until its author changes the string, however many commits they push. To let users track commits instead, leave `version` out of both the manifest and the entry. [Host a marketplace](plugins-host-marketplace.md) covers which choice fits which release setup.
 
@@ -399,11 +401,11 @@ When Claude Code refreshes a marketplace before an install
 
 When you install a plugin, Claude Code looks it up in its local copy of the marketplace catalog. You can run `/plugin install` in a session or `claude plugin install` in your shell, and name the plugin with or without its marketplace. The table shows which of those combinations refresh the local copy.
 
-| Plugin name        | Command                                      | What Claude Code refreshes                                                   |
-|:-------------------|:---------------------------------------------|:-----------------------------------------------------------------------------|
-| `name@marketplace` | `/plugin install` or `claude plugin install` | The named marketplace, before the lookup                                     |
-| `name` alone       | `/plugin install`                            | Only marketplaces that have auto-update on, and only after the lookup misses |
-| `name` alone       | `claude plugin install`                      | Nothing. It reads the cached catalogs without refreshing                     |
+| Plugin name | Command | What Claude Code refreshes |
+|:---|:---|:---|
+| `name@marketplace` | `/plugin install` or `claude plugin install` | The named marketplace, before the lookup |
+| `name` alone | `/plugin install` | Only marketplaces that have auto-update on, and only after the lookup misses |
+| `name` alone | `claude plugin install` | Nothing. It reads the cached catalogs without refreshing |
 
 The refresh before a `name@marketplace` install doesn’t depend on the marketplace’s auto-update setting or on `DISABLE_AUTOUPDATER`. When the refresh fails, the install proceeds from the cached catalog and `claude plugin install` reports `marketplace not refreshed`. Claude Code skips the refresh before a `name@marketplace` install when:
 

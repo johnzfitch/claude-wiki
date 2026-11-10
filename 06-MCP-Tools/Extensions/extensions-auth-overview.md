@@ -2,11 +2,14 @@
 title: "Authorization Extensions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/auth/overview"
 category: "06-MCP-Tools/Extensions"
-fetched_at: "2026-08-02T05:36:59Z"
+fetched_at: "2026-10-31T06:24:49Z"
+last_modified: "Fri, 30 Oct 2026 20:54:24 GMT"
 tags: ["authorization", "cli", "enterprise", "mcp", "mcp-extensions", "oauth"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Why authorization extensions?](#why-authorization-extensions)
 - [Available extensions](#available-extensions)
@@ -60,14 +63,14 @@ Centralized access control via enterprise identity providers. Employees access M
 
 Choosing the right extension
 
-| Scenario                                             | Recommended extension                                                                 |
-|------------------------------------------------------|---------------------------------------------------------------------------------------|
-| Background service or daemon accessing an MCP server | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md)                 |
-| CI/CD pipeline calling MCP tools                     | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md)                 |
-| Server-to-server API integration                     | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md)                 |
-| Enterprise employees accessing MCP servers at work   | [Enterprise-Managed Authorization](extensions-auth-enterprise-managed-authorization.md) |
-| Organization-wide MCP access policy enforcement      | [Enterprise-Managed Authorization](extensions-auth-enterprise-managed-authorization.md) |
-| Standard interactive user authorization              | Core MCP spec (no extension needed)                                                   |
+| Scenario | Recommended extension |
+|----|----|
+| Background service or daemon accessing an MCP server | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md) |
+| CI/CD pipeline calling MCP tools | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md) |
+| Server-to-server API integration | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md) |
+| Enterprise employees accessing MCP servers at work | [Enterprise-Managed Authorization](extensions-auth-enterprise-managed-authorization.md) |
+| Organization-wide MCP access policy enforcement | [Enterprise-Managed Authorization](extensions-auth-enterprise-managed-authorization.md) |
+| Standard interactive user authorization | Core MCP spec (no extension needed) |
 
 
 [​](#client-support)
@@ -81,4 +84,4 @@ Authorization extension support varies by client. See the [client matrix](extens
 
 Specification
 
-Both extensions are specified in the [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth/tree/main/specification/draft). They use the standard MCP [extension negotiation](extensions-overview.md#negotiation) mechanism: clients declare support in the `extensions` field of the `io.modelcontextprotocol/clientCapabilities` they send in each request’s `_meta`, and servers advertise theirs in the capabilities returned by [`server/discover`](../Spec/2026-07-28-server-discover.md).
+Both extensions are specified in the [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth/tree/main/specification/stable). They use the standard MCP [extension negotiation](extensions-overview.md#negotiation) mechanism: clients declare support in the `extensions` field of the `io.modelcontextprotocol/clientCapabilities` they send in each request’s `_meta`, and servers advertise theirs in the capabilities returned by [`server/discover`](../Spec/2026-07-28-server-discover.md).

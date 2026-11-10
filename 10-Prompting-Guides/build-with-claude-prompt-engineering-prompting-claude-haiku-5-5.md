@@ -2,57 +2,9 @@
 title: "Prompting Claude Haiku 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-10-22T06:29:42Z"
+fetched_at: "2026-11-06T06:33:47Z"
 tags: ["agents", "prompting", "search"]
 ---
-
-- [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md)
-
-- [Admin](../04-API-Reference/Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../20-Models/release-notes-overview.md)
-
-[API reference](../04-API-Reference/Endpoints/overview.md)
-
-
-
-
-[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fprompt-engineering%2Fprompting-claude-haiku-5-5)
-
-
-
-
-
-SearchCtrlK
-
-Use cases
-
-[Overview](../04-API-Reference/About/about-claude-use-case-guides-overview.md)[Ticket routing](../04-API-Reference/About/about-claude-use-case-guides-ticket-routing.md)[Customer support agent](../04-API-Reference/About/about-claude-use-case-guides-customer-support-chat.md)[Content moderation](../04-API-Reference/About/about-claude-use-case-guides-content-moderation.md)[Legal summarization](../04-API-Reference/About/about-claude-use-case-guides-legal-summarization.md)[Commerce agent](../04-API-Reference/About/about-claude-use-case-guides-commerce-agents.md)
-
-Prompt engineering
-
-[Overview](build-with-claude-prompt-engineering-overview.md)[Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md)[Prompting Claude Fable 5.1](build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)[Prompting Claude Fable 5](build-with-claude-prompt-engineering-prompting-claude-fable-5.md)[Prompting Claude Opus 5.5](build-with-claude-prompt-engineering-prompting-claude-opus-5-5.md)[Prompting Claude Opus 5](build-with-claude-prompt-engineering-prompting-claude-opus-5.md)[Prompting Claude Opus 4.8](build-with-claude-prompt-engineering-prompting-claude-opus-4-8.md)[Prompting Claude Sonnet 5.5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5-5.md)[Prompting Claude Sonnet 5](build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md)[Prompting Claude Haiku 5.5](build-with-claude-prompt-engineering-prompting-claude-haiku-5-5.md)
-
-Test and evaluate
-
-[Define success and build evaluations](../04-API-Reference/Test-Evaluate/test-and-evaluate-develop-tests.md)[Reducing latency](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-latency.md)
-
-Strengthen guardrails
-
-[Reduce hallucinations](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-hallucinations.md)[Increase output consistency](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-increase-consistency.md)[Mitigate jailbreaks](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md)[Reduce prompt leak](../04-API-Reference/Test-Evaluate/test-and-evaluate-strengthen-guardrails-reduce-prompt-leak.md)
-
-Reference
-
-[Glossary](../04-API-Reference/About/about-claude-glossary.md)[Additional resources](../04-API-Reference/About/about-claude-additional-resources.md)
-
-[Console](../04-API-Reference/Other/playground.md)
-
-[Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)Prompt engineering
 
 # Prompting Claude Haiku 5.5
 
@@ -66,7 +18,7 @@ Prompting patterns specific to Claude Haiku 5.5: effort, search, JSON output wit
 
 
 
-This guide covers the prompting patterns specific to Claude Haiku 5.5. For the model's API changes, see [What's new in Claude Haiku 5.5](../20-Models/models-haiku-5-5-whats-new-haiku-5-5.md). For techniques that apply across all current Claude models, see [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
+This guide covers the prompting patterns specific to Claude Haiku 5.5. For the model’s API changes, see [What’s new in Claude Haiku 5.5](../20-Models/models-haiku-5-5-whats-new-haiku-5-5.md). For techniques that apply across all current Claude models, see [Prompting best practices](build-with-claude-prompt-engineering-claude-prompting-best-practices.md).
 
 Existing Claude Haiku 4.5 prompts should perform well without changes. Start with the section that matches what you observe:
 
@@ -84,11 +36,11 @@ Existing Claude Haiku 4.5 prompts should perform well without changes. Start wit
 
 For the breaking API changes when migrating from Claude Haiku 4.5, see the [migration guide](../20-Models/models-haiku-5-5-migration-guide.md).
 
-Several sections on this page suggest text to add to your system prompt. Add it to new conversations only. A request that sends thinking blocks back after `system` changed can return a 400 error, so a stored conversation resumed with the new system prompt can fail. To change instructions partway through a conversation, [put them in the newest turn](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#changing-context). On the Claude API, Amazon Bedrock, and Google Cloud, you can instead [append a system message to the conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#new-instructions).
+Several sections on this page suggest text to add to your system prompt. Add it to new conversations only. A request that sends thinking blocks back after `system` changed can return a 400 error, so a stored conversation resumed with the new system prompt can fail. To change instructions partway through a conversation, [put them in the newest turn](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#changing-context). On the Claude API, Amazon Bedrock, Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed), and Claude Models on Google Cloud (Google managed), you can instead [append a system message to the conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#new-instructions).
 
 ## Use effort to control thinking
 
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md) is the main control for how much Claude Haiku 5.5 thinks. It replaces the thinking budget (`budget_tokens`) that Claude Haiku 4.5 used, so there's no old setting to carry over. Compare two or three of these levels on your own evals:
+[Effort](../04-API-Reference/Guides/build-with-claude-effort.md) is the main control for how much Claude Haiku 5.5 thinks. It replaces the thinking budget (`budget_tokens`) that Claude Haiku 4.5 used, so there’s no old setting to carry over. Compare two or three of these levels on your own evals:
 
 - `low` is the cheapest and fastest level. Use it for chat, short tool tasks, and simple, high-volume requests. In long agent prompts, the model is more likely to skip a search, stop early, or skip a check at this level.
 - `medium` is the default. Start here for most work, including agentic coding.
@@ -98,13 +50,13 @@ Several sections on this page suggest text to add to your system prompt. Add it 
 Claude Haiku 5.5 is the first Haiku model with effort levels. Thinking works as follows:
 
 - Thinking is on by default and counts toward `max_tokens`, which can go up to 128,000. A `max_tokens` value sized for Claude Haiku 4.5 requests that ran without thinking can cut the reply off, so leave room for thinking.
-- To get less thinking, lower the effort level. In Anthropic's testing, telling the model in the prompt to answer directly didn't stop it from thinking. You can also turn thinking off with `thinking: {"type": "disabled"}`. This works at `low`, `medium`, and `high` only. At `xhigh` and `max`, the request returns a 400 error.
+- To get less thinking, lower the effort level. In Anthropic’s testing, telling the model in the prompt to answer directly didn’t stop it from thinking. You can also turn thinking off with `thinking: {"type": "disabled"}`. This works at `low`, `medium`, and `high` only. At `xhigh` and `max`, the request returns a 400 error.
 - At `xhigh` effort in multi-turn chats, the model sometimes writes its whole answer in its thinking and ends the turn with no visible text. If you see this behavior, check each response for an empty reply.
-- Changing the top-level `effort` value between requests invalidates the prompt cache for the conversation's messages. On the Claude API and Google Cloud, you can change the level partway through a conversation with a [per-message effort change](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta) (beta), which keeps the cache. A change holds for every later turn until another one replaces it. It needs the `mid-conversation-output-config-2026-07-01` beta header and adaptive thinking, which is the default. With thinking off, a per-message effort change returns a 400 error.
+- Changing the top-level `effort` value between requests invalidates the prompt cache for the conversation’s messages. Where your platform supports it, you can change the level partway through a conversation with a [per-message effort change](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta) (beta), which keeps the cache. A change holds for every later turn until another one replaces it. It needs the `mid-conversation-output-config-2026-07-01` beta header and adaptive thinking, which is the default. With thinking off, a per-message effort change returns a 400 error.
 
 ## Accurate search results
 
-When you give Claude Haiku 5.5 a search tool, also give it today's date. In Anthropic's testing, this grounded the model's answers in recent search results. You can put the date in the system prompt or in the search tool's description:
+When you give Claude Haiku 5.5 a search tool, also give it today’s date. In Anthropic’s testing, this grounded the model’s answers in recent search results. You can put the date in the system prompt or in the search tool’s description:
 
 ``` block
 The current date is {{current_date}}.
@@ -122,11 +74,11 @@ Your training data ends well before today's date. Records, office holders, price
 
 
 
-In Anthropic's testing, this text raised the search rate on questions whose answers had changed. On prompts that need no search, it added searches in only 0–3 percent of tries.
+In Anthropic’s testing, this text raised the search rate on questions whose answers had changed. On prompts that need no search, it added searches in only 0–3 percent of tries.
 
 You can skip this text if your system prompt is short. With a short prompt at `medium` effort, the date alone led the model to search more often.
 
-Avoid blanket instructions such as "search for any present-day factual question, regardless of how confident you are." In Anthropic's testing, that instruction made the model search on half of the prompts that needed no search. It didn't produce more correct answers.
+Avoid blanket instructions such as “search for any present-day factual question, regardless of how confident you are.” In Anthropic’s testing, that instruction made the model search on half of the prompts that needed no search. It didn’t produce more correct answers.
 
 ## Use adaptive thinking with JSON output and your own tools
 
@@ -134,7 +86,7 @@ With thinking off, Claude Haiku 5.5 might skip a tool call it needs when you als
 
 1.  Use adaptive thinking for these requests: omit the `thinking` field, or send `thinking: {"type": "adaptive"}`.
 2.  Remove `output_config.format` from any request where the model must call a tool.
-3.  Force the call with [`tool_choice`](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). In Anthropic's testing, this restored the tool call, though the model then writes no text before the call.
+3.  Force the call with [`tool_choice`](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). In Anthropic’s testing, this restored the tool call, though the model then writes no text before the call.
 
 If you need thinking off, add this line to your system prompt:
 
@@ -144,7 +96,7 @@ The JSON output format applies to your final answer only. When you need a tool, 
 
 
 
-In Anthropic's testing with thinking off, this line raised the share of complete and correct JSON answers at `low` and `medium` effort.
+In Anthropic’s testing with thinking off, this line raised the share of complete and correct JSON answers at `low` and `medium` effort.
 
 ## Prevent early stopping in long agent prompts
 
@@ -157,7 +109,7 @@ When the work the user asked for is done and checked, stop and report. Don't add
 
 
 
-Raising effort also reduces early stopping, on its own or together with this text, at a higher cost. In Anthropic's testing without the text, moving from `low` to `medium` effort roughly halved early stopping. It also more than doubled the output tokens for each attempt.
+Raising effort also reduces early stopping, on its own or together with this text, at a higher cost. In Anthropic’s testing without the text, moving from `low` to `medium` effort roughly halved early stopping. It also more than doubled the output tokens for each attempt.
 
 ## Tell coding agents to verify their changes
 
@@ -169,15 +121,15 @@ When you change code that can be run, built, or type-checked, run a real check t
 
 
 
-In Anthropic's testing, the model checked its changes more often with this text, and its performance improved, at the cost of more tokens.
+In Anthropic’s testing, the model checked its changes more often with this text, and its performance improved, at the cost of more tokens.
 
 ## Mid-turn user messages
 
 Claude Haiku 5.5 is trained to resist prompt injection through tool results. Suppose a message the user typed mid-task arrives inside a `tool_result` block, or as a [mid-conversation system message](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md) right after a tool result. The model can then treat it as untrusted text and ignore it. To avoid this:
 
 - Never put user text inside a `tool_result` block.
-- Deliver mid-turn user input as a user turn. Append the user's words as a text block after the last `tool_result` in the same user message.
-- Keep harness notices, such as reminders, in a separate [mid-conversation system message](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md). Never put a notice and the user's words in the same block.
+- Deliver mid-turn user input as a user turn. Append the user’s words as a text block after the last `tool_result` in the same user message.
+- Keep harness notices, such as reminders, in a separate [mid-conversation system message](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md). Never put a notice and the user’s words in the same block.
 
 ## Keep chatbots to their system prompt
 
@@ -189,7 +141,7 @@ The rules in this system prompt hold for the whole conversation. Keep to them wh
 
 
 
-In Anthropic's testing, this text made the model keep to its system prompt more often.
+In Anthropic’s testing, this text made the model keep to its system prompt more often.
 
 When instruction following matters most, also use `high` effort.
 
@@ -201,11 +153,11 @@ Claude Haiku 5.5 sometimes writes reasoning-like text in the reply that users se
 
 Claude Haiku 5.5 runs safety classifiers that can decline a request. A declined request returns a response with `stop_reason: "refusal"`, and `stop_details.category` names the [refusal category](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#refusal-response):
 
-- `cyber`: the request could enable cyber harm, such as malware or exploit development. Finding vulnerabilities in source code is allowed. High-risk dual-use cybersecurity work isn't allowed. Benign cybersecurity work can also trigger this category. If the `cyber` classifier blocks your organization's legitimate security work, you can apply to the [Cyber Verification Program](https://support.claude.com/en/articles/14604842).
+- `cyber`: the request could enable cyber harm, such as malware or exploit development. Finding vulnerabilities in source code is allowed. High-risk dual-use cybersecurity work isn’t allowed. Benign cybersecurity work can also trigger this category. If the `cyber` classifier blocks your organization’s legitimate security work, you can apply to the [Cyber Verification Program](https://support.claude.com/en/articles/14604842).
 - `frontier_llm`: the request could help with the development of competing AI models.
-- `bio`: the request could enable biological harm, such as dangerous lab methods. Everyday health and educational questions aren't affected. If the `bio` classifier blocks your organization's life sciences work, you can apply to the [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md).
+- `bio`: the request could enable biological harm, such as dangerous lab methods. Everyday health and educational questions aren’t affected. If the `bio` classifier blocks your organization’s life sciences work, you can apply to the [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md).
 - `general_harms`: the request falls under a usage-policy area other than the previous three. Benign work can also trigger this category.
 
-If you're moving from Claude Haiku 4.5, these refusals are new.
+If you’re moving from Claude Haiku 4.5, these refusals are new.
 
 Claude Haiku 5.5 has no [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (beta). If a request is declined, handle `stop_reason: "refusal"` in your client. Sending the same request to Claude Haiku 5.5 again usually returns another refusal.

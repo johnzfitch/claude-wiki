@@ -2,7 +2,7 @@
 title: "Scheduled deployments - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:26Z"
+fetched_at: "2026-11-05T06:36:28Z"
 tags: ["api"]
 ---
 
@@ -18,7 +18,22 @@ Create and manage deployments with the Claude API: run an agent on a recurring c
 
 
 
-A **scheduled deployment** allows an [agent](managed-agents-agent-setup.md) to start [sessions](managed-agents-sessions.md) autonomously, enabling task completion over a predictable cadence. You create and manage deployments with the Deployments API, part of the Claude API.
+Scheduled deployments
+
+Feature of  
+[Managed Agents](managed-agents-overview.md)
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+
+[Beta header](#feature-beta-headers)  
+- `managed-agents-2026-04-01`
+  
+
+[Data handling](#feature-data-handling)  
+Not ZDR eligibleNot HIPAA eligible
+
+A **scheduled deployment** allows an [agent](managed-agents-agent-setup.md) to start [sessions](managed-agents-sessions.md) autonomously, so the agent can complete tasks on a predictable cadence. You create and manage deployments with the Deployments API, part of the Claude API.
 
 For the launch context and examples of what teams run on schedules, see [scheduled deployments and vaults in Claude Managed Agents](https://claude.com/blog/whats-new-in-claude-managed-agents) on the blog.
 
@@ -26,8 +41,8 @@ For the launch context and examples of what teams run on schedules, see [schedul
 
 When creating a deployment, you pass the [session configurations](managed-agents-sessions.md) required for execution, in addition to a `schedule`.
 
-- Deployments require [agent configuration](managed-agents-agent-setup.md) and [environment configuration](managed-agents-environments.md), and optionally accept [files](managed-agents-files.md), [GitHub](managed-agents-github.md), [memory stores](managed-agents-memory.md), and [vaults](managed-agents-vaults.md). A deployment that targets a [self-hosted environment](managed-agents-self-hosted-sandboxes-memory.md) can attach memory stores; `file` and `github_repository` resources require a cloud environment. The Claude Console deployment form does not currently offer memory stores for self-hosted environments; attach them through the API or an SDK instead.
-- Deployments also require at least one initial event, a `user.message` or `user.define_outcome`, that starts each session's work. In a deployment file for `ant apply`, the text below the frontmatter becomes that `user.message`.
+- Deployments require [agent configuration](managed-agents-agent-setup.md) and [environment configuration](managed-agents-environments.md), and optionally accept [files](managed-agents-files.md), [GitHub](managed-agents-github.md), [memory stores](managed-agents-memory.md), and [vaults](managed-agents-vaults.md). A deployment that targets a [self-hosted environment](managed-agents-self-hosted-sandboxes-memory.md) can attach memory stores; `file` and `github_repository` resources require a cloud environment. The Claude Console deployment form does not currently offer memory stores for self-hosted environments; attach them through the API or the SDK instead.
+- Deployments also require at least one initial event, a `user.message` or `user.define_outcome`, that starts each session’s work. In a deployment file for `ant apply`, the text below the frontmatter becomes that `user.message`.
 - In the `schedule`, you define a cron `expression` and a `timezone`. Maximum granularity supported is at the minute level.
 
 
@@ -84,7 +99,7 @@ schedule:
 Run the weekly compliance scan.
 ```
 
-[`ant apply`](cli-sdks-libraries-cli-apply.md) prints the new deployment's ID and records it in `claude-lock.json`. To see the deployment object, run `ant beta:deployments retrieve`.
+[`ant apply`](cli-sdks-libraries-cli-apply.md) prints the new deployment’s ID and records it in `claude-lock.json`. To see the deployment object, run `ant beta:deployments retrieve`.
 
 The response includes a deployment object with a populated `schedule.upcoming_runs_at` with the next upcoming fire times, to confirm your schedule was set correctly.
 
@@ -109,11 +124,11 @@ The response includes a deployment object with a populated `schedule.upcoming_ru
 
 
 
-The upcoming run timestamps reflect the exact schedule configured. However, to distribute load, actual execution applies jitter of up to 15% of the interval between runs, with a minimum of 5 seconds and a maximum of 9 minutes.
+The upcoming run timestamps reflect the exact schedule configured. However, to distribute load, actual execution applies jitter of up to 15 percent of the interval between runs, with a minimum of 5 seconds and a maximum of 9 minutes.
 
-A maximum of **1,000 scheduled deployments** is supported per organization. Contact Anthropic support if you need more.
+A maximum of **1,000 scheduled deployments** is supported for each organization. Contact Anthropic support if you need more.
 
-See the [Create Deployment reference](../Endpoints/beta-deployments-create.md) for full parameters and response schema.
+See the [Create Deployment](../Endpoints/beta-deployments-create.md) reference for full parameters and response schema.
 
 ### Cron and timezone semantics
 
@@ -127,9 +142,9 @@ Wall-clock times that do not exist on a spring-forward day (such as 2 AM) are no
 
 ### Set a budget on each run
 
-Pass the optional `budget` object when you create or update the deployment. It takes the same shape as a [session budget](managed-agents-budgets.md). The deployment copies the cap onto each session it starts, so the budget bounds every run separately rather than acting as a cumulative ceiling across runs: a deployment with a `"2000"` cap can spend up to about \$20 on every run.
+Pass the optional `budget` object when you create or update the deployment. It takes the same shape as a [session budget](managed-agents-budgets.md). The deployment copies the cap onto each session it starts, so the budget bounds every run separately rather than acting as a cumulative ceiling across runs: a deployment with a `"2000"` cap can spend up to about \$20 USD on every run.
 
-A session started by the deployment behaves exactly like any other budgeted session: it pauses with `budget_reached` when its own list cost [reaches the cap](managed-agents-budgets.md#when-a-session-reaches-its-budget). Changing the deployment's budget applies to runs started afterward; a session already running keeps the cap it started with, which you can [change through the session itself](managed-agents-session-operations.md#updating-the-session-budget). Unlike a session budget, a deployment's budget can be removed with `budget=None` and set again later.
+A session started by the deployment behaves exactly like any other budgeted session: it pauses with `budget_reached` when its own list cost [reaches the cap](managed-agents-budgets.md#when-a-session-reaches-its-budget). Changing the deployment’s budget applies to runs started afterward; a session already running keeps the cap it started with, which you can [change through the session itself](managed-agents-session-operations.md#updating-the-session-budget). Unlike a session budget, a deployment’s budget can be removed with `budget=None` and set again later.
 
 The following example sets a budget on an existing deployment:
 
@@ -186,9 +201,9 @@ Run the weekly compliance scan.
 
 ## Deployment runs
 
-Deployments can fail to trigger for a variety of reasons: for example, if the `environment` resource has been archived, or if session creation is rate-limited. Each attempt at executing a deployment generates a **deployment run** record, allowing you to track successes and failures independent of the session lifecycle.
+Deployments can fail to trigger for a variety of reasons: for example, if the `environment` resource has been archived, or if session creation is rate-limited. Each attempt generates a **deployment run** record, allowing you to track successes and failures independent of the session lifecycle.
 
-Successful deployments generate active sessions, and a successful deployment run contains the associated `session_id`. To follow a session's lifecycle, track the session events through the [event stream](managed-agents-events-and-streaming.md) or [webhooks](managed-agents-webhooks.md). Deployment lifecycle changes and the outcome of each scheduled run are also delivered as webhook events, listed in the Deployment events and Deployment run events tabs of [Supported event types](managed-agents-webhooks.md#supported-event-types).
+Successful deployments generate active sessions, and a successful deployment run contains the associated `session_id`. To follow a session’s lifecycle, track the session events through the [event stream](managed-agents-events-and-streaming.md) or [webhooks](managed-agents-webhooks.md). Deployment lifecycle changes and the outcome of each scheduled run are also delivered as webhook events, listed in the **Deployment events** and **Deployment run events** tabs of [Supported event types](managed-agents-webhooks.md#supported-event-types).
 
 List all deployment runs for a deployment as follows:
 
@@ -253,7 +268,7 @@ for run in client.beta.deployment_runs.list(
     print(run.created_at, run.error.type, run.error.message)
 ```
 
-A failed run includes an `error` with a `type` describing why session creation was rejected (for example, `environment_archived_error`, `agent_archived_error`, or `session_rate_limited_error`). See the [List Deployment Runs reference](../Endpoints/beta-deployment-runs-list.md) for all filter parameters and the response schema.
+A failed run includes an `error` with a `type` describing why session creation was rejected (for example, `environment_archived_error`, `agent_archived_error`, or `session_rate_limited_error`). See the [List Deployment Runs](../Endpoints/beta-deployment-runs-list.md) reference for all filter parameters and the response schema.
 
 ```python
 {
@@ -277,9 +292,9 @@ To retrieve a single run by ID, call [`GET /v1/deployment_runs/{deployment_run_i
 
 ## Managing deployment lifecycle
 
-Each lifecycle change emits a [webhook event](managed-agents-webhooks.md#supported-event-types), so you can react to a paused, unpaused, or archived deployment without polling; see the Deployment events tab.
+Each lifecycle change emits a [webhook event](managed-agents-webhooks.md#supported-event-types), so you can react to a paused, unpaused, or archived deployment without polling; see the **Deployment events** tab.
 
-**Pause** suppresses scheduled triggers on a go-forward basis; running sessions from a prior deployment run continue to execute. Manual runs through the `run` endpoint are still allowed while paused. Pausing sets `paused_reason` to `{"type": "manual"}`; unpausing clears it.
+**Pause** suppresses scheduled triggers from that point on; sessions already running from a prior deployment run continue. Manual runs through the `run` endpoint are still allowed while paused. Pausing sets `paused_reason` to `{"type": "manual"}`; unpausing clears it.
 
 cURL
 
@@ -335,7 +350,7 @@ Python
 client.beta.deployments.unpause(deployment.id)
 ```
 
-**Archive**, unlike **pause**, is terminal: the schedule terminates and the deployment cannot be modified.
+**Archive**, unlike **pause**, is terminal: the schedule ends and the deployment cannot be modified.
 
 cURL
 
@@ -367,7 +382,7 @@ client.beta.deployments.archive(deployment.id)
 
 Session creation rate-limit responses are recorded immediately as a `session_rate_limited_error` run without retry; the schedule attempts again at the next scheduled occurrence. Rate limits on underlying API calls within a session are handled by the session itself.
 
-If a deployment's agent has been archived, the deployment is automatically archived in the same operation. If the agent has been deleted, the next scheduled trigger detects the missing agent and automatically archives the deployment. In both cases no deployment run is recorded. If a subagent referenced by the agent has been archived, the next trigger records a failed run with `error.type: "agent_archived_error"` and the deployment is automatically paused so you can update the agent and resume. Other unrecoverable session-creation errors, such as an archived environment or vault, behave the same way: the trigger records a failed run and the deployment is automatically paused. The deployment's `paused_reason.error.type` mirrors the failed run's `error.type`.
+If a deployment’s agent has been archived, the deployment is automatically archived in the same operation. If the agent has been deleted, the next scheduled trigger detects the missing agent and automatically archives the deployment. In both cases no deployment run is recorded. If a subagent referenced by the agent has been archived, the next trigger records a failed run with `error.type: "agent_archived_error"` and the deployment is automatically paused so you can update the agent and resume. Other unrecoverable session-creation errors, such as an archived environment or vault, behave the same way: the trigger records a failed run and the deployment is automatically paused. The deployment’s `paused_reason.error.type` mirrors the failed run’s `error.type`.
 
 ## Trigger a manual run
 
@@ -398,3 +413,50 @@ Python
 ```python
 run = client.beta.deployments.run(deployment.id)
 ```
+
+## Availability
+
+Scheduled deployments are available on every model.
+
+### API support
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+
+Models
+
+- [All models](../../20-Models/about-claude-models-overview.md)
+
+### Required beta headers
+
+[Beta headers overview](../Endpoints/beta-headers.md)
+
+Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+
+Header
+
+- `managed-agents-2026-04-01`
+  
+
+### Data handling
+
+[Data handling overview](manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/agents`
+- `/v1/sessions`
+- `/v1/environments`
+
+Zero data retentionNot eligible
+
+Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+
+HIPAANot eligible
+
+Applies to all Managed Agents sub-features, including Self-hosted sandboxes.

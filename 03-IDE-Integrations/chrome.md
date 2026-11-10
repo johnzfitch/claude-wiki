@@ -2,17 +2,21 @@
 title: "Use Claude Code with Chrome - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/chrome"
 category: "03-IDE-Integrations"
-fetched_at: "2026-10-21T06:28:24Z"
+fetched_at: "2026-10-31T06:24:15Z"
+last_modified: "Sat, 31 Oct 2026 01:07:51 GMT"
 tags: ["claude-code", "ide"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Capabilities](#capabilities)
 - [Prerequisites](#prerequisites)
 - [Get started in the CLI](#get-started-in-the-cli)
   - [Install the extension when Claude asks](#install-the-extension-when-claude-asks)
   - [Enable Chrome by default](#enable-chrome-by-default)
+  - [Answer the startup dialog](#answer-the-startup-dialog)
   - [Manage site permissions](#manage-site-permissions)
   - [Permission prompts in VS Code sessions](#permission-prompts-in-vs-code-sessions)
   - [Browser tools in plan mode](#browser-tools-in-plan-mode)
@@ -79,9 +83,9 @@ Before using Claude Code with Chrome, you need:
 - [Google Chrome](https://www.google.com/chrome/), [Microsoft Edge](https://www.microsoft.com/edge), or another Chromium-based browser such as Brave, Arc, Vivaldi, or Opera
 - [Claude in Chrome extension](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn) version 1.0.36 or later, available in the Chrome Web Store
 - [Claude Code](../01-Getting-Started/quickstart.md#step-1-install-claude-code)
-- A direct Anthropic plan (Pro, Max, Team, or Enterprise)
+- A direct Anthropic plan (Pro, Max, Ultra, Team, or Enterprise)
 
-In Enterprise organizations that have HIPAA enabled, Claude in Chrome is off by default, and an [Owner](../13-Enterprise-Admin/server-managed-settings.md#access-control) can turn it on in [**Organization settings \> Claude in Chrome**](https://claude.ai/admin-settings/browser-extension). Your Business Associate Agreement (BAA) with Anthropic doesn’t cover data sent to third-party sites through Claude in Chrome. See the [Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide) for a list of Eligible Services. Chrome integration also requires signing in with `/login`. If you authenticate with an API key or a long-lived token from [`claude setup-token`](../02-Claude-Code-CLI/authentication.md#generate-a-long-lived-token), Claude Code keeps Chrome integration off, even when you pass `--chrome`, because the browser extension can’t authenticate with those credentials. Before v2.1.216, these sessions could enable Chrome integration, but every attempt to connect to the browser extension failed with a 403 error.
+In Enterprise organizations that have HIPAA enabled, Claude in Chrome is off by default, and an [Owner](../13-Enterprise-Admin/server-managed-settings.md#access-control) can turn it on in [**Organization settings \> Claude in Chrome**](https://claude.ai/admin-settings/browser-extension). Your Business Associate Agreement (BAA) with Anthropic doesn’t cover data sent to third-party sites through Claude in Chrome. See the [Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide) for a list of Eligible Services. Chrome integration also requires signing in with `/login`. If you authenticate with an API key or a long-lived token from [`claude setup-token`](../02-Claude-Code-CLI/authentication.md#generate-a-long-lived-token), Claude Code keeps Chrome integration off, even when you pass `--chrome`. The browser extension can’t authenticate with those credentials.
 
 Chrome integration is not available through third-party providers like Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry. If you access Claude exclusively through a third-party provider, you need a separate claude.ai account to use this feature.
 
@@ -141,6 +145,18 @@ Enable Chrome by default
 To connect Chrome without passing `--chrome` each time, run `/chrome` in a CLI session and select **Enabled by default**. In the [VS Code extension](vs-code.md#automate-browser-tasks-with-chrome), type `/chrome` in the prompt box and turn on the **Enabled by default** switch. The two share one setting, so turning it on in either place turns it on for both the CLI and VS Code. With the setting on and Claude Code v2.1.287 or later, each VS Code session connects to your browser as it starts, so Claude can use it before you type `@browser`. On earlier versions, or with the setting off, a VS Code session connects when you type `@browser`. Claude Code starts normally when Chrome isn’t running.
 
 Enabling Chrome by default increases context usage since the browser tools and their instructions are always loaded. If you notice increased context consumption, turn the setting off and connect only when needed, with `--chrome` in the CLI or by typing [`@browser`](vs-code.md#automate-browser-tasks-with-chrome) in the VS Code prompt box.
+
+
+[​](#answer-the-startup-dialog)
+
+Answer the startup dialog
+
+If the “Claude in Chrome extension detected” dialog appears when you start `claude`, your answer changes the [**Enabled by default** setting](#enable-chrome-by-default):
+
+- **Yes, use my browser**: turns the setting on and connects this session
+- **No, keep browser tools off**, or Esc: turns the setting off, and Claude Code stops offering to set up Chrome
+
+To change your answer for later sessions, run `/chrome`.
 
 
 [​](#manage-site-permissions)
@@ -399,13 +415,13 @@ Common error messages
 
 These are the most frequently encountered errors and how to resolve them:
 
-| Error                                       | Cause                                                                                                                                                                                                                                           | Fix                                                                                                                                                                                                                                                                                                                                                                                                                |
-|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ”Browser extension is not connected”        | The extension isn’t installed and running in Chrome, the extension is signed in to a different claude.ai account or organization than Claude Code, or your organization’s IP allowlist rejects the connection to `bridge.claudeusercontent.com` | Check that the extension is signed in to the same claude.ai account and [organization](#extension-signed-in-to-a-different-organization) as Claude Code, restart Chrome and Claude Code, then run `/chrome` to reconnect. If your organization uses IP allowlisting and the error persists, see [Organization IP allowlists and proxy egress](../13-Enterprise-Admin/network-config.md#organization-ip-allowlists-and-proxy-egress) |
-| Extension shows “Not detected” in `/chrome` | Chrome extension is not installed or is disabled                                                                                                                                                                                                | Install or enable the extension in `chrome://extensions`                                                                                                                                                                                                                                                                                                                                                           |
-| ”No tab available”                          | Claude tried to act before a tab was ready                                                                                                                                                                                                      | Ask Claude to create a new tab and retry                                                                                                                                                                                                                                                                                                                                                                           |
-| ”Receiving end does not exist”              | Extension service worker went idle                                                                                                                                                                                                              | Run `/chrome` and select “Reconnect extension"                                                                                                                                                                                                                                                                                                                                                                     |
-| "No browsers are connected”                 | Chrome isn’t open with the extension signed in to the same claude.ai account and organization as Claude Code, or Claude Code can’t reach `bridge.claudeusercontent.com`                                                                         | Confirm Chrome is open and the extension is signed in to the same claude.ai account and [organization](#extension-signed-in-to-a-different-organization) as Claude Code. If so, check that your network lets Claude Code reach `bridge.claudeusercontent.com`, listed under [Network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements)                                                     |
+| Error | Cause | Fix |
+|----|----|----|
+| ”Browser extension is not connected” | The extension isn’t installed and running in Chrome, the extension is signed in to a different claude.ai account or organization than Claude Code, or your organization’s IP allowlist rejects the connection to `bridge.claudeusercontent.com` | Check that the extension is signed in to the same claude.ai account and [organization](#extension-signed-in-to-a-different-organization) as Claude Code, restart Chrome and Claude Code, then run `/chrome` to reconnect. If your organization uses IP allowlisting and the error persists, see [Organization IP allowlists and proxy egress](../13-Enterprise-Admin/network-config.md#organization-ip-allowlists-and-proxy-egress) |
+| Extension shows “Not detected” in `/chrome` | Chrome extension is not installed or is disabled | Install or enable the extension in `chrome://extensions` |
+| ”No tab available” | Claude tried to act before a tab was ready | Ask Claude to create a new tab and retry |
+| ”Receiving end does not exist” | Extension service worker went idle | Run `/chrome` and select “Reconnect extension" |
+| "No browsers are connected” | Chrome isn’t open with the extension signed in to the same claude.ai account and organization as Claude Code, or Claude Code can’t reach `bridge.claudeusercontent.com` | Confirm Chrome is open and the extension is signed in to the same claude.ai account and [organization](#extension-signed-in-to-a-different-organization) as Claude Code. If so, check that your network lets Claude Code reach `bridge.claudeusercontent.com`, listed under [Network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements) |
 
 
 [​](#see-also)
@@ -417,4 +433,4 @@ See also
 - [CLI reference](../02-Claude-Code-CLI/cli-reference.md): command-line flags including `--chrome`
 - [Common workflows](../02-Claude-Code-CLI/common-workflows.md): more ways to use Claude Code
 - [Data and privacy](../13-Enterprise-Admin/data-usage.md): how Claude Code handles your data
-- [Getting started with Claude in Chrome](https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions
+- [Getting started with Claude in Chrome](../15-Claude-AI-Features/getting-started-with-claude-in-chrome.md): full documentation for the Chrome extension, including shortcuts, scheduling, and permissions

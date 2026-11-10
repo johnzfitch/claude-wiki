@@ -2,13 +2,13 @@
 title: "Partnerships \\ Anthropic"
 source_url: "https://www.anthropic.com/news/partnerships"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:29Z"
+fetched_at: "2026-11-09T06:26:11Z"
 tags: ["news-research"]
 ---
 
 # Partnerships
 
-50
+51
 
 ARTICLES
 
@@ -26,6 +26,18 @@ Title
 Description
 
 
+  ### Expanding our partnership with GSA to bring Claude to all levels of government
+
+  We are expanding our partnership with the General Services Administration (GSA) through a new agreement that gives government partners a 40% discount on Claude Enterprise, Claude for Government, and the Claude API.
+
+  Oct 27, 2026
+
+  Oct 27, 2026
+
+  ### Expanding our partnership with GSA to bring Claude to all levels of government
+
+  We are expanding our partnership with the General Services Administration (GSA) through a new agreement that gives government partners a 40% discount on Claude Enterprise, Claude for Government, and the Claude API.
+
   ### Building on our commitment to American scientific discovery
 
   Anthropic is committing \$150 million over three years to the Genesis Mission, a federal initiative to accelerate scientific and technological discovery through AI.
@@ -301,18 +313,6 @@ Description
   ### Anthropic and Teach For All launch global AI training initiative for educators
 
   The AI Literacy & Creator Collective brings AI training to 100,000+ educators across 63 countries serving 1.5 million students.
-
-  ### Working with the US Department of Energy to unlock the next era of scientific discovery
-
-  A multi-year partnership with the DOE's Genesis Mission deploys Claude and custom scientific tools across the 17 national laboratories.
-
-  Dec 18, 2025
-
-  Dec 18, 2025
-
-  ### Working with the US Department of Energy to unlock the next era of scientific discovery
-
-  A multi-year partnership with the DOE's Genesis Mission deploys Claude and custom scientific tools across the 17 national laboratories.
 
 See more
 
@@ -324,7 +324,7 @@ See more
 
 ### Support
 
-[How to get support](../15-Claude-AI-Features/how-to-get-support.md)
+[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)
 
 ### Media assets
 

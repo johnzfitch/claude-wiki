@@ -2,11 +2,14 @@
 title: "OAuth Client Credentials - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/auth/oauth-client-credentials"
 category: "06-MCP-Tools/Extensions"
-fetched_at: "2026-08-02T05:39:26Z"
+fetched_at: "2026-11-01T06:24:03Z"
+last_modified: "Sat, 31 Oct 2026 19:50:35 GMT"
 tags: ["cli", "mcp", "mcp-extensions", "oauth"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What it is](#what-it-is)
 - [When to use it](#when-to-use-it)
@@ -219,7 +222,7 @@ pip install mcp
 
 Create a provider and connect
 
-Choose the credential format that matches your setup:
+Each sample pins the issuer of the authorization server that provisioned the credentials, so the client refuses to send them to any other authorization server the MCP server might advertise.Choose the credential format that matches your setup:
 
 
 [​](#using-a-client-secret)
@@ -240,6 +243,7 @@ import {
 const provider = new ClientCredentialsProvider({
   clientId: "my-service",
   clientSecret: "s3cr3t",
+  expectedIssuer: "https://auth.example.com",
 });
 
 const client = new Client(
@@ -300,7 +304,8 @@ provider = ClientCredentialsOAuthProvider(
     storage=InMemoryTokenStorage(),
     client_id="my-service",
     client_secret="s3cr3t",
-    scopes="read write",
+    scope="read write",
+    issuer="https://auth.example.com",
 )
 
 
@@ -340,6 +345,7 @@ const provider = new PrivateKeyJwtProvider({
   clientId: "my-service",
   privateKey: process.env.CLIENT_PRIVATE_KEY_PEM,
   algorithm: "RS256",
+  expectedIssuer: "https://auth.example.com",
 });
 
 const client = new Client(
@@ -411,7 +417,8 @@ provider = PrivateKeyJWTOAuthProvider(
     storage=InMemoryTokenStorage(),
     client_id="my-service",
     assertion_provider=jwt_params.create_assertion_provider(),
-    scopes="read write",
+    scope="read write",
+    issuer="https://auth.example.com",
 )
 
 

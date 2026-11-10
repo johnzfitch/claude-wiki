@@ -2,258 +2,11 @@
 title: "Rate Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces/rate_limits"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-17T06:26:25Z"
+fetched_at: "2026-11-02T06:27:10Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Forganization%2Fworkspaces%2Frate_limits)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-
-List Workspaces
-
-
-Create Workspace
-
-
-Get Workspace
-
-
-Update Workspace
-
-
-Archive Workspace
-
-Rate Limits
-
-
-List Workspace Rate Limits
-
-Members
-
-Service Accounts
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 
 
@@ -269,7 +22,9 @@ A beta version of this API exists and may have additional functionality. [View t
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [List Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits/list)
 
@@ -277,11 +32,17 @@ cURL
 
 List a workspace's rate limits.
 
+##### [Set Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/rate_limits/{rate_limit_id}
+
+Set or clear rate-limit overrides for one rate-limit group in a workspace.
+
 ##### Models
 
 
 
-WorkspaceRateLimit object{ type: "workspace_rate_limit", group, group_type, 4 more }
+WorkspaceRateLimit object{ type: "workspace_rate_limit", group, limits, 3 more }
 
 
 
@@ -300,6 +61,116 @@ type: "organization"
 Always `organization`: no workspace-level override is stored, so the organization's value applies.
 
 defaultorganization
+
+
+
+WorkspaceRateLimitType = "fast_itpmca" or "fast_otpm" or "input_tokens_per_minute" or 6 more
+
+
+
+Rate limiter type.
+
+One of the following:
+
+"fast_itpmca"
+
+
+
+"fast_otpm"
+
+
+
+"input_tokens_per_minute"
+
+
+
+"input_tokens_per_minute_cache_aware"
+
+
+
+"output_tokens_per_minute"
+
+
+
+"requests_per_minute"
+
+
+
+"tokens_per_day"
+
+
+
+"tokens_per_minute"
+
+
+
+"tool_uses_per_second"
+
+
+
+
+
+WorkspaceRateLimitUpdateValue object{ type, value }
+
+
+
+
+
+type: [WorkspaceRateLimitType](https://platform.claude.com/docs/en/api/http/organization/workspaces/rate_limits#workspace_rate_limit_type)
+
+
+
+Rate limiter type.
+
+One of the following:
+
+"fast_itpmca"
+
+
+
+"fast_otpm"
+
+
+
+"input_tokens_per_minute"
+
+
+
+"input_tokens_per_minute_cache_aware"
+
+
+
+"output_tokens_per_minute"
+
+
+
+"requests_per_minute"
+
+
+
+"tokens_per_day"
+
+
+
+"tokens_per_minute"
+
+
+
+"tool_uses_per_second"
+
+
+
+
+
+value: number or null
+
+
+
+New limit value. Set to null to clear the workspace override and fall back to the organization limit.
+
+minimum0
+
+maximum9007199254740991
 
 
 

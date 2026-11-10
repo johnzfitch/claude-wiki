@@ -2,85 +2,9 @@
 title: "Search results - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/search-results"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-20T06:40:16Z"
+fetched_at: "2026-11-05T06:36:29Z"
 tags: ["api", "search"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fsearch-results)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Model capabilities
 
 # Search results
 
@@ -88,28 +12,43 @@ Claude on cloud platforms
 
 
 
-Enable natural citations for RAG applications by providing search results with source attribution
+Get natural citations for RAG applications by providing search results with source attribution
 
 Copy page
 
 
 
-
+Search results
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsAvailable
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
+
+Usage differs by product
+
+Messages API
+
+Send `search_result` blocks in a tool result or directly in a user message.
+
+Managed Agents
+
+Accepted only in tool results, such as a `user.custom_tool_result` event, not in `user.message` events.
 
 Search result content blocks let Claude cite your own content the same way it cites web search results: each citation carries the source and title you provided. Use them in RAG (Retrieval-Augmented Generation) applications where Claude needs to attribute answers to your documents.
-
-All [active models](../../20-Models/about-claude-models-overview.md) support search results with citations, with the exception of Claude Haiku 3. No beta header is required: search results are part of the standard Messages API.
 
 ## How it works
 
 Search results can be provided in two ways:
 
-1.  **From tool calls:** Your custom tools return search results, enabling dynamic RAG applications
-2.  **As top-level content:** You provide search results directly in user messages for pre-fetched or cached content
+1.  **From tool calls:** Your custom tools return search results, which lets you build dynamic RAG applications.
+2.  **As top-level content:** You provide search results directly in user messages for pre-fetched or cached content.
 
-In both cases, Claude cites the search results automatically when citations are enabled. No special prompting is needed: ask your question, and citations appear on the text blocks that draw on your content.
+In both cases, Claude cites the search results automatically when citations are enabled. No special prompting is needed: ask your question, and citations appear on the text blocks that draw on your content. However, if your prompt asks for only JSON, the response might contain few or no citations. To extract structured data with a citation for each value, see [Get structured data with citations](build-with-claude-citations.md#get-structured-data-with-citations).
 
 ### Search result schema
 
@@ -138,19 +77,19 @@ Search results use the following structure:
 
 ### Required fields
 
-| Field     | Type   | Description                                                                                                      |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------|
-| `type`    | string | Must be `"search_result"`                                                                                        |
-| `source`  | string | The source of the content. Any stable string works: a URL, or an internal identifier such as `kb://article-1234` |
-| `title`   | string | A descriptive title for the search result                                                                        |
-| `content` | array  | An array of text blocks containing the actual content                                                            |
+| Field | Type | Description |
+|----|----|----|
+| `type` | string | Must be `"search_result"` |
+| `source` | string | The source of the content. Any stable string works: a URL, or an internal identifier such as `kb://article-1234` |
+| `title` | string | A descriptive title for the search result |
+| `content` | array | An array of text blocks containing the actual content |
 
 ### Optional fields
 
-| Field           | Type   | Description                                                                                                                                                                                                                                                 |
-|-----------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `citations`     | object | Citation configuration with `enabled` Boolean field. Citations are disabled by default; every example on this page sets `"enabled": true` explicitly. All search results in a request must use the same setting (see [Citation control](#citation-control)) |
-| `cache_control` | object | Cache control settings (for example, `{"type": "ephemeral"}`)                                                                                                                                                                                               |
+| Field | Type | Description |
+|----|----|----|
+| `citations` | object | Citation configuration with an `enabled` boolean field. Citations are disabled by default; every example on this page sets `"enabled": true` explicitly. All search results in a request must use the same setting (see [Citation control](#citation-control)) |
+| `cache_control` | object | Cache control settings (for example, `{"type": "ephemeral"}`) |
 
 Each item in the `content` array must be a text block with:
 
@@ -161,7 +100,7 @@ Search results hold text only. Images and other media are not supported inside t
 
 ## Method 1: Search results from tool calls
 
-Returning search results from your custom tools enables dynamic RAG applications: tools fetch content at runtime, and Claude cites it in the response. The following example forces the tool call with [`tool_choice`](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use), so the retrieval step runs every time.
+Returning search results from your custom tools lets you build dynamic RAG applications: tools fetch content at runtime, and Claude cites it in the response. The following example forces the tool call with [`tool_choice`](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use), so the retrieval step runs every time.
 
 ### Example: Knowledge base tool
 
@@ -242,8 +181,8 @@ def search_knowledge_base(query):
 
 
 # Build up the conversation in a list, starting with the user's question
-messages = [
-    MessageParam(role="user", content="How do I configure the timeout settings?")
+messages: list[MessageParam] = [
+    {"role": "user", "content": "How do I configure the timeout settings?"}
 ]
 
 # Create a message with the tool
@@ -251,7 +190,11 @@ response = client.messages.create(
     model="claude-opus-5",
     max_tokens=1024,
     tools=[knowledge_base_tool],
-    tool_choice={"type": "tool", "name": "search_knowledge_base"},
+    tool_choice={
+        "type": "tool",
+        "name": "search_knowledge_base",
+        "disable_parallel_tool_use": True,
+    },
     messages=messages,
 )
 
@@ -262,18 +205,18 @@ if tool_use is not None:
     tool_result = search_knowledge_base(tool_use.input["query"])
 
     # Append Claude's turn, then the tool result, to the running conversation
-    messages.append(MessageParam(role="assistant", content=response.content))
+    messages.append({"role": "assistant", "content": response.content})
     messages.append(
-        MessageParam(
-            role="user",
-            content=[
+        {
+            "role": "user",
+            "content": [
                 ToolResultBlockParam(
                     type="tool_result",
                     tool_use_id=tool_use.id,
                     content=tool_result,  # Search results go here
                 )
             ],
-        )
+        }
     )
 
     # Send the tool result back
@@ -319,7 +262,7 @@ Python
 
 
 ```python
-from anthropic.types import MessageParam, TextBlockParam, SearchResultBlockParam
+from anthropic.types import TextBlockParam, SearchResultBlockParam
 
 client = Anthropic()
 
@@ -328,9 +271,9 @@ response = client.messages.create(
     model="claude-opus-5-5",
     max_tokens=1024,
     messages=[
-        MessageParam(
-            role="user",
-            content=[
+        {
+            "role": "user",
+            "content": [
                 SearchResultBlockParam(
                     type="search_result",
                     source="https://docs.company.com/api-reference",
@@ -360,14 +303,14 @@ response = client.messages.create(
                     text="Based on these search results, how do I authenticate API requests and what are the rate limits?",
                 ),
             ],
-        )
+        }
     ],
 )
 
 print(response)
 ```
 
-## Claude's response with citations
+## Claude’s response with citations
 
 Regardless of how search results are provided, Claude automatically includes citations when using information from them:
 
@@ -419,17 +362,17 @@ Regardless of how search results are provided, Claude automatically includes cit
 
 Each citation includes:
 
-| Field                 | Type           | Description                                                                                                                                                               |
-|-----------------------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`                | string         | Always `"search_result_location"` for search result citations                                                                                                             |
-| `source`              | string         | The source from the original search result                                                                                                                                |
-| `title`               | string or null | The title from the original search result                                                                                                                                 |
-| `cited_text`          | string         | The full text of the cited block(s), concatenated. Equals the contents of `content[start_block_index:end_block_index]` joined together. Not counted toward output tokens. |
-| `search_result_index` | integer        | 0-based index of the cited search result among all `search_result` blocks in the request, in the order they appear (across all messages and tool results).                |
-| `start_block_index`   | integer        | 0-based index of the first cited block in the search result's `content` array.                                                                                            |
-| `end_block_index`     | integer        | Exclusive end index of the cited block range in the search result's `content` array. Always greater than `start_block_index`.                                             |
+| Field | Type | Description |
+|----|----|----|
+| `type` | string | Always `"search_result_location"` for search result citations |
+| `source` | string | The source from the original search result |
+| `title` | string or null | The title from the original search result |
+| `cited_text` | string | The full text of the cited block(s), concatenated. Equals the contents of `content[start_block_index:end_block_index]` joined together. Not counted toward output tokens. |
+| `search_result_index` | integer | 0-based index of the cited search result among all `search_result` blocks in the request, in the order they appear (across all messages and tool results). |
+| `start_block_index` | integer | 0-based index of the first cited block in the search result’s `content` array. |
+| `end_block_index` | integer | Exclusive end index of the cited block range in the search result’s `content` array. Always greater than `start_block_index`. |
 
-The block indices identify a slice of the search result's `content` array, and `cited_text` is the full text of that slice. The text block is the minimal citable unit: Claude cites whole blocks, not substrings within a block. To get finer-grained citations, split your search result content into smaller blocks (see [Multiple content blocks](#multiple-content-blocks)).
+The block indices identify a slice of the search result’s `content` array, and `cited_text` is the full text of that slice. The text block is the minimal citable unit: Claude cites whole blocks, not substrings within a block. To get finer-grained citations, split your search result content into smaller blocks (see [Multiple content blocks](#multiple-content-blocks)).
 
 ## Multiple content blocks
 
@@ -476,7 +419,7 @@ A citation referencing the rate limits block looks like:
 
 
 
-When this search result is cited, `start_block_index` and `end_block_index` identify which of these blocks the citation covers, and `cited_text` contains exactly those blocks' text. Splitting content into smaller, focused blocks gives Claude finer citation boundaries; combining content into one block means every citation returns the full text. This is the same model used by [custom content documents](build-with-claude-citations.md#custom-content-documents) in the Citations feature.
+When this search result is cited, `start_block_index` and `end_block_index` identify which of these blocks the citation covers, and `cited_text` contains exactly those blocks’ text. Splitting content into smaller, focused blocks gives Claude finer citation boundaries; combining content into one block means every citation returns the full text. This is the same model used by [custom content documents](build-with-claude-citations.md#custom-content-documents) in the Citations feature.
 
 ## Advanced usage
 
@@ -484,7 +427,7 @@ When this search result is cited, `start_block_index` and `end_block_index` iden
 
 You can mix both methods in the same conversation. Claude cites from either source, and `search_result_index` counts all `search_result` blocks in request order, regardless of source.
 
-The following example replays a complete conversation. The first user message carries a pre-fetched search result, the assistant turn calls a knowledge base tool, and the tool result returns a second search result. Claude's answer cites both sources:
+The following example replays a complete conversation. The first user message carries a pre-fetched search result, the assistant turn calls a knowledge base tool, and the tool result returns a second search result. Claude’s answer cites both sources:
 
 cURL
 
@@ -510,7 +453,6 @@ Python
 
 ```python
 from anthropic.types import (
-    MessageParam,
     SearchResultBlockParam,
     TextBlockParam,
     ToolResultBlockParam,
@@ -530,15 +472,15 @@ knowledge_base_tool = {
 }
 
 # Replay a conversation that provides search results both ways: the first
-# user message carries a pre-fetched result, the tool result returns another
+# user message carries a pre-fetched result, and the tool result returns another
 response = client.messages.create(
     model="claude-opus-5-5",
     max_tokens=1024,
     tools=[knowledge_base_tool],
     messages=[
-        MessageParam(
-            role="user",
-            content=[
+        {
+            "role": "user",
+            "content": [
                 SearchResultBlockParam(
                     type="search_result",
                     source="https://docs.company.com/overview",
@@ -556,10 +498,10 @@ response = client.messages.create(
                     text="What does Acme Dashboard do, and what plans is it available on?",
                 ),
             ],
-        ),
-        MessageParam(
-            role="assistant",
-            content=[
+        },
+        {
+            "role": "assistant",
+            "content": [
                 TextBlockParam(
                     type="text", text="Let me check the pricing information."
                 ),
@@ -570,10 +512,10 @@ response = client.messages.create(
                     input={"query": "Acme Dashboard pricing plans"},
                 ),
             ],
-        ),
-        MessageParam(
-            role="user",
-            content=[
+        },
+        {
+            "role": "user",
+            "content": [
                 ToolResultBlockParam(
                     type="tool_result",
                     tool_use_id="toolu_01A09q90qw90lq917835lq9",
@@ -593,7 +535,7 @@ response = client.messages.create(
                     ],
                 )
             ],
-        ),
+        },
     ],
 )
 
@@ -654,7 +596,7 @@ The response cites both sources. The pre-fetched result is `search_result_index:
 
 In user messages, `search_result` blocks can sit alongside any other content block. The Method 2 example pairs search results with a `text` question, and image or document blocks can join them the same way.
 
-Tool results are stricter: if any block in a `tool_result` content array is a `search_result`, all of its blocks must be `search_result`. Mixing search results with other block types in the same tool result returns a validation error. To return supporting text alongside tool-sourced search results, include it as a text block inside one of the search results' `content` arrays, where it also becomes citable.
+Tool results are stricter: if any block in a `tool_result` content array is a `search_result`, all of its blocks must be `search_result`. Mixing search results with other block types in the same tool result returns a validation error. To return supporting text alongside tool-sourced search results, include it as a text block inside one of the search results’ `content` arrays, where it also becomes citable.
 
 ### Cache control
 
@@ -710,8 +652,8 @@ Citations are all-or-nothing: either all search results in a request must have c
 ### For top-level search (Method 2)
 
 - **Pre-fetched content:** Use when you already have search results
-- **Batch processing:** Ideal for processing multiple search results at once
-- **Testing:** Great for testing citation behavior with known content
+- **Batch processing:** Use for processing multiple search results at once
+- **Testing:** Use for testing citation behavior with known content
 
 ### General best practices
 
@@ -731,7 +673,6 @@ Citations are all-or-nothing: either all search results in a request must have c
 
 ## Limitations
 
-- Search result content blocks are available on Claude API, Amazon Bedrock, and Google Cloud.
 - Only text content is supported within search results (no images or other media).
 - `search_result` blocks can only appear in user messages (including inside tool results). Assistant messages with search results are rejected.
 - When the [web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md) is enabled in the same request, citations must be enabled on all `search_result` blocks.
@@ -748,7 +689,7 @@ Detect and handle refusal stop reasons in streaming responses, and retry refused
 
 [Citations](build-with-claude-citations.md)
 
-Ground Claude's responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources to your users.
+Ground Claude’s responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources to your users.
 
 
 
@@ -767,3 +708,53 @@ See the complete Messages API documentation, including content block types.
 [Prompt caching](build-with-claude-prompt-caching.md)
 
 Cache search results with `cache_control` to reduce cost and latency on repeated requests.
+
+## Availability
+
+Search results are available on every model and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+[Messages API](build-with-claude-working-with-messages.md)
+
+Usage
+
+Send `search_result` blocks in a tool result or directly in a user message.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+Usage
+
+Accepted only in tool results, such as a `user.custom_tool_result` event, not in `user.message` events.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages` with `search_results` source
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+HIPAAEligible

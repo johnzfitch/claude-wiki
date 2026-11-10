@@ -2,11 +2,13 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/quickstart"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-06T06:23:10Z"
+fetched_at: "2026-10-28T06:35:52Z"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
@@ -39,7 +41,7 @@ Use the Agent SDK to build an AI agent that reads your code, finds bugs, and fix
 
 Prerequisites
 
-- **Node.js 18+** or **Python 3.10+**
+- **Node.js 18.14+** or **Python 3.10+**
 - An **Anthropic account**. If you don’t have one, [sign up here](../04-API-Reference/Other/playground.md).
 
 

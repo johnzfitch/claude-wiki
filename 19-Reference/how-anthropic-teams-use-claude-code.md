@@ -2,7 +2,7 @@
 title: "How Anthropic teams use Claude Code | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/how-anthropic-teams-use-claude-code"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:22Z"
+fetched_at: "2026-11-09T06:26:26Z"
 tags: ["claude-code", "news-research"]
 ---
 
@@ -25,7 +25,7 @@ Teams across Anthropic use Claude Code for everything from debugging production 
 - 
 
 
-Agentic coding tools like [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md) help developers accelerate workflows, automate repetitive tasks, and tackle complex programming projects. As the field evolves, we're learning about new applications everyday from users, including our own employees.
+Agentic coding tools like [Claude Code](../15-Claude-AI-Features/product-claude-code.md) help developers accelerate workflows, automate repetitive tasks, and tackle complex programming projects. As the field evolves, we're learning about new applications everyday from users, including our own employees.
 
 To learn more, we sat down with employees across Anthropic to understand how they use Claude Code at work.
 
@@ -106,11 +106,20 @@ Anthropic’s guide to starting, scaling, and succeeding based on real-world exa
 
 Get started with Claude Code.
 
-[Learn more.](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+[Learn more.](../15-Claude-AI-Features/product-claude-code.md)
 
 ## Related articles
 
 Explore more product news and best practices for teams building with Claude.
+
+
+ArticleOct 27, 2026
+
+### Manage costs and demonstrate ROI for Claude Code on Google Cloud
+
+Best practices for managing costs and measuring return on investment for Claude Code on Google Cloud.
+
+Claude Code
 
 
 ArticleOct 22, 2026
@@ -139,14 +148,3 @@ ArticleOct 16, 2026
 How one business development representative clears his inbound queue and drafts bilingual customer emails with Claude Managed Agents and Claude Tag.
 
 Claude Managed Agents
-
-
-ArticleOct 16, 2026
-
-### How the Claude Code team does code review
-
-How do you review code at the volume agents produce it? The Claude Code team shares its review process, from Claude verifying its own work to risk-tiered human approval, plus a checklist for adopting it.
-
-Claude Code
-
-(opens in new tab)

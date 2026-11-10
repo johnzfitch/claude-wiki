@@ -2,275 +2,11 @@
 title: "Credentials - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/vaults/credentials"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:38:53Z"
+fetched_at: "2026-11-05T06:35:36Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fvaults%2Fcredentials)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-
-Create a Vault
-
-
-List Vaults
-
-
-Retrieve a Vault
-
-
-Update a Vault
-
-
-Delete a Vault
-
-
-Archive a Vault
-
-Credentials
-
-
-Create a Credential
-
-
-List Credentials
-
-
-Retrieve a Credential
-
-
-Update a Credential
-
-
-Delete a Credential
-
-
-Archive a Credential
-
-
-Validate an MCP OAuth Credential
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -282,35 +18,51 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/create)
 
 POST/v1/vaults/{vault_id}/credentials
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Credentials](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/list)
 
 GET/v1/vaults/{vault_id}/credentials
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Retrieve a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
 
 GET/v1/vaults/{vault_id}/credentials/{credential_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Delete a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
 
 DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Validate an MCP OAuth Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### Models
 
@@ -610,6 +362,8 @@ minLength1
 
 maxLength8192
 
+pattern^\[^\x00-\x1f\x7f\]\*\$
+
 
 
 mcp_server_url: string
@@ -689,6 +443,8 @@ The new OAuth access token to replace the stored one.
 minLength1
 
 maxLength8192
+
+pattern^\[^\x00-\x1f\x7f\]\*\$
 
 
 
@@ -918,6 +674,8 @@ minLength1
 
 maxLength8192
 
+pattern^\[^\x00-\x1f\x7f\]\*\$
+
 
 
 mcp_server_url: string
@@ -953,6 +711,8 @@ The new static bearer token to replace the stored one.
 minLength1
 
 maxLength8192
+
+pattern^\[^\x00-\x1f\x7f\]\*\$
 
 
 

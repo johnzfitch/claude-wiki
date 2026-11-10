@@ -1,8 +1,8 @@
 ---
 title: "Commitments on model deprecation and preservation \\ Anthropic"
-source_url: "https://www.anthropic.com/research/deprecation-commitments"
+source_url: "https://www.anthropic.com/news/deprecation-commitments"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:23Z"
+fetched_at: "2026-10-21T06:30:23Z"
 tags: ["news-research"]
 ---
 

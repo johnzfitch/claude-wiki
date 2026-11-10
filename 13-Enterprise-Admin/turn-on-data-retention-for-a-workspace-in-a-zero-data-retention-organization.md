@@ -2,7 +2,7 @@
 title: "Turn on data retention for a Workspace in a zero data retention organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16824617-turn-on-data-retention-for-a-workspace-in-a-zero-data-retention-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:12Z"
+fetched_at: "2026-11-09T06:26:11Z"
 tags: ["enterprise"]
 ---
 
@@ -15,7 +15,7 @@ This is only available to organizations on the Claude API that use zero data ret
 
 ## Why a Workspace needs data retention
 
-**[Covered Models](../15-Claude-AI-Features/covered-models.md)**, such as Claude Fable 5.1, require 30-day data retention and aren't available under zero data retention unless Anthropic has expressly authorized it for your organization (for example, under Enterprise Frontier Safeguards). If not, you need to turn on data retention. Data retention is configured at the Workspace level, so you need to turn it on for each Workspace you’d like to use Covered Models in.
+**[Covered Models](https://support.claude.com/en/articles/15425695-covered-models)**, such as Claude Fable 5.1, require 30-day data retention and aren't available under zero data retention unless Anthropic has expressly authorized it for your organization (for example, under Enterprise Frontier Safeguards). If not, you need to turn on data retention. Data retention is configured at the Workspace level, so you need to turn it on for each Workspace you’d like to use Covered Models in.
 
 Requests to Covered Models from a Workspace with retention off return an error like this one:
 

@@ -2,7 +2,7 @@
 title: "How to use Link by Stripe with Claude Duet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17666484-how-to-use-link-by-stripe-with-claude-duet"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:13Z"
+fetched_at: "2026-11-09T06:26:36Z"
 tags: ["claude-ai"]
 ---
 
@@ -11,7 +11,7 @@ tags: ["claude-ai"]
 
 Connect Link, Stripe's digital wallet, to Claude Duet so it can pay for purchases you approve.
 
-Link is available in Claude Duet, a research preview for Pro and Max plans in the US with a US payment method. It isn't available in Claude, Cowork, or Claude Code for now.
+Link is available in Claude Duet, a research preview for Pro, Max, and Ultra plans in the US with a US payment method. It isn't available in Claude, Cowork, or Claude Code for now.
 
 Link is separate from the Stripe connector, which lets Claude work in your Stripe account. You can use either one without the other.
 
@@ -33,7 +33,7 @@ Link isn't listed in the connectors directory. You connect it in Claude Duet.
 
 Claude Duet also suggests connecting Link when you ask for something that needs a payment.
 
-Claude Duet can see the card type, last four digits of your card or bank account, nickname and expiration date of your saved payment methods, plus your shipping addresses. Claude isn’t given your full credit card number (PAN) or bank account number.
+Claude Duet can see the last four digits and expiration date of your saved payment methods, as well as your billing address. It doesn’t have access to your full card or bank account numbers.
 
 ## How to pay with Link
 
@@ -47,7 +47,7 @@ Claude Duet can see the card type, last four digits of your card or bank account
 
 ## Current limitations
 
-- Link is available only in Claude Duet, on Pro and Max plans in the US.
+- Link is available only in Claude Duet, on Pro, Max, and Ultra plans in the US.
 
 - A US payment method is required.
 
@@ -83,7 +83,7 @@ No. The Stripe connector lets Claude work in your Stripe account, for example to
 
 - Contact **[Link Support](https://support.link.com/topics/link-agent-wallet)** for Link account problems, approval problems, payment-method issues, duplicate or incorrect payment amounts, an unrecognized Link payment, or a payment authorization that remains pending after a failed purchase.
 
-- Contact **[our Support team](how-to-get-support.md)** if Claude Duet selected a different product, store, quantity, or option than you requested, or if Claude Duet itself did not work correctly. You can tell Claude Duet what happened directly in the chat and it will pass your report to our team.
+- Contact **[our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** if Claude Duet selected a different product, store, quantity, or option than you requested, or if Claude Duet itself did not work correctly. You can tell Claude Duet what happened directly in the chat and it will pass your report to our team.
 
 - If you do not recognize a purchase, deny any pending approval requests, disconnect Link from Claude Duet, and contact Link Support promptly.
 

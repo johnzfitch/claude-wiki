@@ -1,21 +1,19 @@
 ---
 title: "Set up and manage the new unified Claude experience for your Enterprise organization | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/17444462"
+source_url: "https://support.claude.com/en/articles/17444462-set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:16Z"
+fetched_at: "2026-11-09T06:25:58Z"
 tags: ["enterprise"]
 ---
 
 # Set up and manage the new unified Claude experience for your Enterprise organization
-
-Updated today
 
 
 The new unified Claude experience brings chat and Cowork together on web, desktop, and mobile. Members no longer choose between chat and Cowork before they start. Every conversation starts as a chat, and when a task needs to run code or work with files, Claude continues the same conversation in an isolated cloud sandbox managed by Anthropic, then returns the finished work for review.
 
 This article explains how admins turn on the new unified Claude experience, which settings apply to it, and how it fits your security, compliance, and data retention setup.
 
-The new unified Claude experience is in public beta for Claude Enterprise plans. In your admin settings it appears as **Chat and Cowork unified (beta)**. The new unified Claude experience is off by default. Nothing changes for your organization until an admin turns it on.
+The new unified Claude experience is available on Enterprise plans, where it appears in admin settings as **Chat and Cowork unified**. It's off by default in existing organizations and turns on by default on November 16, 2026.
 
 ------------------------------------------------------------------------
 
@@ -29,7 +27,7 @@ The new unified Claude experience is in public beta for Claude Enterprise plans.
 
 4.  Work moves across devices. Members can start a task on the desktop app and pick it up on web or mobile.
 
-5.  Local access stays optional. Through the Claude desktop app, members can link their computers so Claude can work with local folders, local MCP servers, and applications. Your Computer access and device policies govern this.
+5.  Local access stays optional. Through the Claude desktop app, members can link their computers so Claude can work with local folders, local MCP servers, and applications. Your Remote control and device policies govern this.
 
 ------------------------------------------------------------------------
 
@@ -57,15 +55,23 @@ The new unified Claude experience isn't available yet for organizations that use
 
 2.  Go to **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**.
 
-3.  Turn on **Chat and Cowork unified (beta)**.
+3.  Turn on **Chat and Cowork unified**.
 
 4.  Ask members to refresh the Claude app if they don't see the new experience right away.
 
-This turns on the new unified Claude experience for every member of your organization. To limit access to specific members, use roles instead.
+This turns on the new unified Claude experience for members with the User, Admin, Owner or Primary Owner role. Members on a custom role get it only if their role also includes Chat and Cowork unified.
 
 Scheduled tasks and session history will continue working after the change. You don’t need to update or recreate anything.
 
+### If you haven't changed this setting
+
+In **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**, under Chat and Cowork unified, Owners and Primary Owners see "Will be automatically enabled on November 16, 2026." Select Enable now to turn it on early, or Keep disabled to keep it off. You can still turn it off later. If the setting was already turned on or off, that choice stays.
+
+If Chat or Cloud code execution and file creation is off, there's no notice and nothing turns on. After November 16, the new experience turns on as soon as both are on.
+
 ### For specific members, using roles
+
+The organization setting above must also be on. Once it is, everyone with the User, Admin, Owner or Primary Owner role has access. Before you turn it on, move anyone who shouldn't have it to a custom role with Chat and Cowork unified turned off. New roles start with All capabilities, which includes it.
 
 If your organization uses custom roles, you can grant the new unified Claude experience to specific roles:
 
@@ -73,7 +79,7 @@ If your organization uses custom roles, you can grant the new unified Claude exp
 
 2.  Open the role you want to update and go to “Capabilities.”
 
-3.  Turn on **Chat and Cowork unified (beta)** for that role.
+3.  Turn on **Chat and Cowork unified** for that role.
 
 4.  Assign the role to the members who should have access. You can sync role membership through SCIM to add members in waves.
 
@@ -89,7 +95,7 @@ To learn how to create a role, see **[Set up role-based permissions on Enterpris
 
 3.  Start in your sandbox organization, if you have one, or with a pilot group through a role.
 
-4.  Review your network egress, connector, sharing, and Computer access settings before you turn the experience on.
+4.  Review your network egress, connector, sharing, and remote control settings before you turn the experience on.
 
 5.  Monitor usage and gather feedback for two to four weeks, then expand in waves.
 
@@ -107,23 +113,29 @@ For recommended Security settings and architecture, see **[Unified Claude and Co
 
 ## Data retention and deletion
 
-1.  **Conversations.** Conversations are kept until the member deletes them or according to your organization's custom data retention setting if you’ve set one (minimum 30 days). See **[custom data retention](https://support.claude.com/en/articles/10440198)**. Conversations in a project follow the project’s retention period. The period is measured from the most recent activity in the conversation or in any cloud session Claude started from it, so a conversation isn’t deleted while one of its cloud sessions is in use.
+1.  **Conversations.** Conversations are kept until the member deletes them or according to your organization's custom data retention setting if you’ve set one (minimum 30 days). See **[custom data retention](https://support.claude.com/en/articles/10440198)**. Conversations in a project are deleted with the project, once deleted by the user or once the project and all its conversations have been inactive for the project’s retention period. The period is measured from the most recent activity in the conversation or in any cloud session Claude started from it.
 
-2.  **Cloud sessions started from a conversation.** When a conversation is deleted, whether by a member, by deleting its project, or under your retention period, the cloud sessions Claude started in it are deleted too, including their transcripts.
+2.  **Cloud sessions started from a conversation.** When a conversation is deleted, whether by a member, by deleting its project, or under your retention period, the cloud sessions Claude started in it are deleted too, including their transcripts. Deletion finishes in the background after the conversation is removed.
 
-3.  **Artifacts.** When a conversation is deleted under your retention period, the artifacts made in it aren't deleted with it. They follow the retention period that covers artifacts, if you have one. Research reports and artifacts in some older chats are the exception, and they're deleted with their conversation.
+3.  **Memory.** Account memory is covered by your custom data retention setting for chats, and project memory is deleted when the project is deleted, including by your project data retention period. After moving to the new experience, the memory will be moved to a new memory system and the old memory may be deleted 14 days later, or sooner if it’s past the data retention period.
 
-4.  **Not deleted with a conversation.** Custom data retention doesn’t cover:
+4.  **Artifacts.** Artifacts, including those Claude creates in conversations, follow your retention periods for private and shared artifacts, or your period for all data, not the conversation's. These periods don't delete artifacts published with a public link. Some artifacts, such as Research reports and artifacts in some older conversations, are deleted with their conversation instead.
+
+5.  **Files Claude gives you.** Almost all files (like documents or spreadsheets) that Claude gives you in a conversation on or after October 8, 2026 are deleted with it, including under your retention period, unless another conversation or project in your organization uses them. Older files may remain after their conversation is deleted.
+
+6.  **Not deleted with a conversation.** Custom data retention doesn’t cover:
 
     1.  Cowork cloud sessions a member starts directly, including in a project. These are kept until the member deletes them.
 
-    2.  Scheduled tasks and their runs, including tasks created from a conversation. These keep running after that conversation is deleted. To prevent this, turn off Scheduled tasks.
+    2.  Scheduled tasks and their runs, including tasks created from a conversation. These keep running after that conversation is deleted. To stop them from running, turn off Scheduled tasks.
 
     3.  Cowork history stored on a member’s computer.
 
-5.  **Memory during the public beta.** Memory isn’t covered by your retention setting during the beta. When you turn on the new experience, each member’s existing memory is copied into it, and memory from conversations that are later deleted can remain. If you turn the experience off, that memory is kept. We plan to apply your retention setting to memory, including memory created during the beta, at general availability, and will update this article.
+    4.  Memory of members who have left your organization.
 
-As with chat, we may retain content flagged by our trust and safety systems or as required by law. See **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**
+    5.  Transcripts and memory kept by Claude Code (including Claude Code on the web), Claude Tag, and other products outside chat and Cowork.
+
+Deletion happens after the period ends rather than at an exact moment, and deleted data is removed from our back-end systems. As with chat, we may retain content flagged by our trust and safety systems or as required by law. See **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data)**
 
 ------------------------------------------------------------------------
 
@@ -141,47 +153,47 @@ As with chat, we may retain content flagged by our trust and safety systems or a
 
 ## Usage and analytics
 
-The new unified Claude experience gets its own line in your reports. When a member has access to the new unified Claude experience, their chat and Cowork usage is reported under **Chat and Cowork unified (beta)**, not under Chat or Cowork. Think of it as a new folder for the same work: only where the usage is filed changes, so moving usage to this line doesn't change how it's counted or billed.
+The new unified Claude experience gets its own line in your reports. When a member has access to the new unified Claude experience, their chat and Cowork usage is reported under **Chat and Cowork unified**, not under Chat or Cowork. Think of it as a new folder for the same work: only where the usage is filed changes, so moving usage to this line doesn't change how it's counted or billed.
 
 ### How usage is counted
 
-- **Counting follows each member.** Usage counts toward the new unified Claude experience if the member has access to it when the usage happens. If you turn it on for some roles first, your reports can show Chat, Cowork, and **Chat and Cowork unified (beta)** on the same day.
+- **Counting follows each member.** Usage counts toward the new unified Claude experience if the member has access to it when the usage happens. If you turn it on for some roles first, your reports can show Chat, Cowork, and **Chat and Cowork unified** on the same day.
 
 - **It covers chat and Cowork.** A member's chats, their cloud sessions, and their use of the Cowork desktop app count toward the new unified Claude experience.
 
 - **Other products keep their own line.** For example, Claude Code and Claude in Chrome usage is still reported under those products.
 
-- **Past usage stays where it is.** Data for the new unified Claude experience starts the day a member first gets access. Usage from before then stays under Chat or Cowork. If you turn the new unified Claude experience off, past unified usage keeps its **Chat and Cowork unified (beta)** label, and new usage goes back to Chat and Cowork.
+- **Past usage stays where it is.** Data for the new unified Claude experience starts the day a member first gets access. Usage from before then stays under Chat or Cowork. If you turn the new unified Claude experience off, past unified usage keeps its **Chat and Cowork unified** label, and new usage goes back to Chat and Cowork.
 
-- **Include it when you add things up.** When you add up spend, tokens, or messages for Chat and Cowork, include **Chat and Cowork unified (beta)** too. Otherwise your Chat and Cowork numbers will seem to drop as members move over. For the number of people, use the overall active users count rather than adding products together, since one person can be active in more than one.
+- **Include it when you add things up.** When you add up spend, tokens, or messages for Chat and Cowork, include **Chat and Cowork unified** too. Otherwise your Chat and Cowork numbers will seem to drop as members move over. For the number of people, use the overall active users count rather than adding products together, since one person can be active in more than one.
 
 ### In the analytics dashboard
 
-- **A page of its own.** Admins who can view analytics will find a Chat and Cowork unified page under Apps, marked Beta. It shows daily active users.
+**A page of its own.** Admins who can view analytics will find a Chat and Cowork unified page under Apps. It shows daily active users.
 
 
-- **Across the dashboard.** You can pick "Chat and Cowork unified (beta)" in the Active users, Active members, Total spend, and Spend by model charts. The See all members table on the Overview page has a "Messages in Chat and Cowork unified (beta)" column. The Top connectors and Top skills cards don't include it yet.
+**Across the dashboard.** You can pick "Chat and Cowork unified" in the Active users, Active members, Total spend, and Spend by model charts. The See all members table on the Overview page has a "Messages in Chat and Cowork unified" column. The Top connectors and Top skills cards don't include it yet.
 
 
-- **Who sees it.** The page appears for every organization that can turn on the new unified Claude experience, whether or not it is on yet.
+**Who sees it.** The page appears for every organization that can turn on the new unified Claude experience, whether or not it is on yet.
 
-- **Give it a day or two.** New activity can take up to two days to show up.
+**Give it a day or two.** New activity can take up to two days to show up.
 
 ### In the APIs
 
-- **Your keys already work.** If you already use these APIs, your existing access keys work. If your scripts check responses against a fixed list of fields or products, add the new ones.
+**Your keys already work.** If you already use these APIs, your existing access keys work. If your scripts check responses against a fixed list of fields or products, add the new ones.
 
-- **Cost and Usage API.** Tokens and spend for the new unified Claude experience are reported under the product value `chat_cowork_unified`. You can filter to it with `products[]`. The `chat` and `cowork` values still work, and cover usage from members who didn't have the new unified Claude experience at the time.
+**Cost and Usage API.** Tokens and spend for the new unified Claude experience are reported under the product value `chat_cowork_unified`. You can filter to it with `products[]`. The `chat` and `cowork` values still work, and cover usage from members who didn't have the new unified Claude experience at the time.
 
-- **Analytics API.** Member, skill, and connector rows have a `chat_cowork_unified_metrics` object with two parts: `chat`, for chat activity, and `sessions`, for cloud sessions and the Cowork desktop app. Daily summaries add daily, weekly, and monthly active user counts for the new unified Claude experience, such as `chat_cowork_unified_daily_active_user_count`.
+**Analytics API.** Member, skill, and connector rows have a `chat_cowork_unified_metrics` object with two parts: `chat`, for chat activity, and `sessions`, for cloud sessions and the Cowork desktop app. Daily summaries add daily, weekly, and monthly active user counts for the new unified Claude experience, such as `chat_cowork_unified_daily_active_user_count`.
 
 ### What members see
 
-Members with usage-based seats see their own usage of the new unified Claude experience on their usage page, listed as **Chat and Cowork unified (beta)**.
+Members with usage-based seats see their own usage of the new unified Claude experience on their usage page, listed as **Chat and Cowork unified**.
 
 ### Unified smart report and analytics chat
 
-To learn how to create a smart report, refer to **[Get started with smart reports](../15-Claude-AI-Features/get-started-with-smart-reports.md#h_85974ef359)**. When choosing products to run the report for, choose “Chat and Cowork unified (beta)” to run the report against the new unified Claude experience.
+To learn how to create a smart report, refer to **[Get started with smart reports](../15-Claude-AI-Features/get-started-with-smart-reports.md#h_85974ef359)**. When choosing products to run the report for, choose “Chat and Cowork unified” to run the report against the new unified Claude experience.
 
 ------------------------------------------------------------------------
 
@@ -195,6 +207,4 @@ When on, org members can use only Sonnet and Haiku models in the new unified Cla
 
 ## Current limitations
 
-1.  **ZDR, HIPAA, and CMEK.** The new unified Claude experience isn't available to organizations with zero data retention, the HIPAA-ready configuration, or customer-managed encryption keys. These organizations stay on their current configuration. HIPAA and CMEK support is expected after general availability.
-
-2.  **Per-role access for Computer access and scheduled tasks.** These are set for the whole organization, not per role.
+1.  **ZDR, HIPAA, and CMEK.** The new unified Claude experience isn't available to organizations with zero data retention, the HIPAA-ready configuration, or customer-managed encryption keys. These organizations keep using chat and Cowork as they do today, and admins can't turn on Chat and Cowork unified. HIPAA support is expected after general availability; CMEK support is planned for a later release. If your organization turns on CMEK after turning on the new experience, it becomes unavailable.

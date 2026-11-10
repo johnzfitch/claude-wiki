@@ -2,7 +2,7 @@
 title: "Using Databricks for Data Analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12430928-using-databricks-for-data-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:28:55Z"
+fetched_at: "2026-11-09T06:25:56Z"
 tags: ["safety"]
 ---
 
@@ -14,7 +14,7 @@ Integrate Claude with Databricks to access organizational data through Unity Cat
 
 [Open Claude](https://claude.ai/new)
 
-The Databricks connector provides Claude with access to your organization's internal data through Unity Catalog, enabling analysis of your databases, running custom business logic, and accessing unstructured documents. Databricks provides three separate connectors: one for functions, one for vector search, and one for Genie, each accessing different capabilities within your Databricks workspace.
+The Databricks integration provides Claude with access to your organization's internal data through Unity Catalog, enabling analysis of your databases, running custom business logic, and accessing unstructured documents.
 
 ## Reminder on Databricks Components[](#reminder-on-databricks-components)
 

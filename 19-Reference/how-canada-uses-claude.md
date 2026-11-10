@@ -2,7 +2,7 @@
 title: "How Canada uses Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-canada-uses-claude"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:45Z"
+fetched_at: "2026-10-24T06:26:17Z"
 tags: ["news-research"]
 ---
 
@@ -126,7 +126,7 @@ Le Canada figure parmi les pays où l’adoption de Claude est la plus forte au 
 
 Certains types d’utilisation sont également révélateurs de la structure de l’économie canadienne. Les utilisations d’aide à la traduction sont plus fréquentes dans les provinces ayant plus d’emplois dans la fonction publique, ce qui correspond aux exigences relatives aux langues officielles qui s’appliquent à une grande partie de la fonction publique canadienne; il en résulte que la traduction de documents est l’utilisation la plus caractéristique de Claude au Canada par rapport aux autres pays de la sphère anglophone. D’une manière plus générale, l’utilisation de Claude au Canada est davantage axée sur les études et l’insertion sur le marché du travail, puisque les travaux scolaires, l’aide au codage et la rédaction de CV sont surreprésentés au Canada par rapport à l’Australie, au Royaume-Uni et aux États-Unis.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Citation
 

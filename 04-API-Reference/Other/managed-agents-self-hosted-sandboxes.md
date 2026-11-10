@@ -2,103 +2,9 @@
 title: "Self-hosted sandboxes - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:27Z"
+fetched_at: "2026-11-05T06:36:28Z"
 tags: ["api", "mcp"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanaged-agents%2Fself-hosted-sandboxes)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Overview](managed-agents-overview.md)[Quickstart](managed-agents-quickstart.md)[Build in Console](managed-agents-onboarding.md)[Migration](managed-agents-migration.md)
-
-Define your agent
-
-[Agent setup](managed-agents-agent-setup.md)[Tools](managed-agents-tools.md)[Web tool restrictions](managed-agents-tools-web-restrictions.md)[MCP connector](managed-agents-mcp-connector.md)[Permission policies](managed-agents-permission-policies.md)[Agent Skills](managed-agents-skills.md)
-
-Configure agent environment
-
-[Choose an environment](managed-agents-choosing-an-environment.md)[Cloud environment setup](managed-agents-environments.md)[Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
-
-[Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
-
-[Overview and quickstart](managed-agents-self-hosted-sandboxes.md)[Deploy workers](managed-agents-self-hosted-sandboxes-workers.md)[Memory stores](managed-agents-self-hosted-sandboxes-memory.md)[Custom tools and MCP servers](managed-agents-self-hosted-sandboxes-custom-tools.md)[Monitor and troubleshoot](managed-agents-self-hosted-sandboxes-operations.md)[Worker reference](managed-agents-self-hosted-sandboxes-reference.md)[Security model](managed-agents-self-hosted-sandboxes-security.md)
-
-Delegate work to your agent
-
-[Start a session](managed-agents-sessions.md)[Session operations](managed-agents-session-operations.md)[Session event stream](managed-agents-events-and-streaming.md)[Event deltas](managed-agents-event-deltas.md)[Inspect and track usage](managed-agents-session-observability.md)[Session budgets](managed-agents-budgets.md)[Subscribe to webhooks](managed-agents-webhooks.md)[Define outcomes](managed-agents-define-outcomes.md)[Authenticate with vaults](managed-agents-vaults.md)
-
-Manage agent context
-
-[Access GitHub](managed-agents-github.md)[Attach and download files](managed-agents-files.md)
-
-Build persistent memory
-
-Advanced orchestration
-
-[Multiagent orchestration](managed-agents-multiagent-orchestration.md)[Session threads](managed-agents-session-threads.md)[Workflow runs](managed-agents-workflow-runs.md)[Scheduled deployments](managed-agents-scheduled-deployments.md)
-
-Security
-
-[Secure your deployment](managed-agents-secure-deployment.md)[Review and monitor sessions](managed-agents-secure-deployment-monitoring.md)[Risks and boundaries](managed-agents-secure-deployment-risks.md)
-
-Reference
-
-[Managed Agents reference](managed-agents-reference.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-
-[Console](playground.md)
-
-[Managed Agents](managed-agents-overview.md)Self-hosted sandboxes
-
-[Managed Agents](managed-agents-overview.md)
-
-[Beta](../Guides/build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-managed-agents-2026-04-01
 
 # Self-hosted sandboxes
 
@@ -112,17 +18,32 @@ Run Claude Managed Agents sessions in self-hosted sandboxes, keeping tool execut
 
 
 
-Self-hosted sandboxes move the agent's tool execution from Anthropic-managed cloud sandboxes into infrastructure you control, while Anthropic keeps running the agent. To learn what that means and decide whether it fits your agent, see [Choosing an agent environment](managed-agents-choosing-an-environment.md).
+Self-hosted sandboxes
+
+Feature of  
+[Managed Agents](managed-agents-overview.md)
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+
+[Beta header](#feature-beta-headers)  
+- `managed-agents-2026-04-01`
+  
+
+[Data handling](#feature-data-handling)  
+Not ZDR eligibleNot HIPAA eligible
+
+Self-hosted sandboxes move the agent’s tool execution from Anthropic-managed cloud sandboxes into infrastructure you control, while Anthropic keeps running the agent. To learn what that means and decide whether it fits your agent, see [Choosing an agent environment](managed-agents-choosing-an-environment.md).
 
 ## How it works
 
 A `self_hosted` environment acts as a work queue. You run an **environment worker**, a process on your own infrastructure that serves that queue:
 
 1.  You create a [session](managed-agents-sessions.md) that targets the environment. Anthropic enqueues the session as a work item.
-2.  Your worker claims the work item and downloads the agent's [skills](managed-agents-skills.md) and the session's [memory stores](managed-agents-memory.md).
-3.  Claude runs on Anthropic's side and requests tool calls. Your worker runs each call locally and posts the result back.
+2.  Your worker claims the work item and downloads the agent’s [skills](managed-agents-skills.md) and the session’s [memory stores](managed-agents-memory.md).
+3.  Claude runs on Anthropic’s side and requests tool calls. Your worker runs each call locally and posts the result back.
 
-Tool inputs and outputs still flow to Anthropic's control plane, so the model can see results and determine what to do next. Anthropic stores skills and memory stores. Your sandbox holds a copy for the session. See [Security model](managed-agents-self-hosted-sandboxes-security.md) for the full data-flow boundary.
+Tool inputs and outputs still flow to Managed Agents on Anthropic’s side, so the model can receive results and determine what to do next. Anthropic stores skills and memory stores. Your sandbox holds a copy for the session. To learn where each part of a session runs, see [What the sandbox can and cannot do](managed-agents-secure-deployment-risks.md#what-the-sandbox-can-and-cannot-do).
 
 Self-hosted sandboxes support every Claude model available in Managed Agents. The model is configured on the agent, not the environment.
 
@@ -130,18 +51,24 @@ The `ant` CLI and the Python, TypeScript, and Go SDKs ship pre-built workers. Sa
 
 ## Quickstart
 
-This quickstart runs one always-on worker with the `ant` CLI, sends it a session, and confirms that the agent's tool calls ran on your host.
+This quickstart runs one always-on worker with the `ant` CLI, sends it a session, and confirms that the agent’s tool calls ran on your host.
 
 ### Prerequisites
 
-- **An agent:** If you don't have one, complete [Get started with Claude Managed Agents](managed-agents-quickstart.md) first and note the agent ID.
-- **A Linux host:** The host needs `/bin/bash` at that exact path. The worker needs only outbound HTTPS.
+- **An agent:** If you don’t have one, complete [Get started with Claude Managed Agents](managed-agents-quickstart.md) first and note the agent ID.
+- **A Linux or macOS host:** The host needs `/bin/bash` at that exact path. The worker needs only outbound HTTPS.
 - **A Claude API key:** You use it from your own machine to create sessions and read queue stats. Keep it off the worker host, where agent tool calls could read it.
 - **The `ant` CLI or the SDK on your own machine:** The stats and session steps in this quickstart run there, not on the worker host. Install the CLI the same way the [install step](#run-your-first-session) does for the worker, or install the [SDK](cli-sdks-libraries-overview.md).
 
 
 
-On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), the worker authenticates with AWS IAM (SigV4) or an [API key generated in the AWS Console](../Guides/build-with-claude-claude-platform-on-aws.md#api-key-authentication), not an environment key. Attach the [`AnthropicSelfHostedEnvironmentAccess`](../Endpoints/claude-platform-on-aws-iam-actions.md#managed-policies) managed policy to the IAM principal your worker runs as. Environment keys generated in the Claude Console don't work with the Claude Platform on AWS endpoint.
+On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), the worker authenticates with AWS IAM (SigV4) or an [API key generated in the AWS Console](../Guides/build-with-claude-claude-platform-on-aws.md#api-key-authentication), not an environment key. Attach the [`AnthropicSelfHostedEnvironmentAccess`](../Endpoints/claude-platform-on-aws-iam-actions.md#managed-policies) managed policy to the IAM principal your worker runs as. Environment keys generated in the Claude Console don’t work with the Claude Platform on AWS endpoint.
+
+On [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md), the worker authenticates with [Google Cloud credentials](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#authentication), not an environment key. Grant the Google Cloud identity your worker uses `roles/claude.user` or `roles/claude.admin` on the project. Both roles include [`environments.processWork`](../Endpoints/claude-models-on-google-cloud-anthropic-managed-iam-permissions.md#environments), which the worker needs to poll for and manage work items, and the session and skill permissions it needs to run a session. Environment keys generated in the Claude Console don’t work with the Claude Models on Google Cloud (Anthropic managed) endpoint. The pre-built workers in the `ant` CLI and in the Python, TypeScript, and Go SDKs don’t support Claude Models on Google Cloud (Anthropic managed), so implement your own worker that calls the [Environments Work endpoints](../Endpoints/beta-environments-work.md) directly. See [Features not supported](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#features-not-supported).
+
+
+
+On macOS, the worker’s bash tool runs the system Bash 3.2 at `/bin/bash`, even if you install a newer Bash with Homebrew. To use memory stores on macOS, first [prepare the macOS host](managed-agents-self-hosted-sandboxes-memory.md#prepare-a-macos-host).
 
 ### Run your first session
 
@@ -203,15 +130,24 @@ On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.m
 
     Run this on the worker host.
 
-    curl (Linux/WSL)
     Homebrew (macOS)
+    curl (Linux/WSL)
+    go install
+
+    Homebrew (macOS)
+
+    ``` shiki
+    brew install anthropics/tap/ant
+    ```
+
+    
 
     curl (Linux/WSL)
 
     For Linux environments, download the release binary directly.
 
     ``` shiki
-    VERSION=1.42.0
+    VERSION=2.6.0
     OS=$(uname -s | tr '[:upper:]' '[:lower:]')
     case $(uname -m) in
       x86_64) ARCH=amd64 ;;
@@ -225,10 +161,28 @@ On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.m
 
     You can find all releases on the [GitHub releases page](https://github.com/anthropics/anthropic-cli/releases).
 
-    Homebrew (macOS)
+    go install
+
+    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
 
     ``` shiki
-    brew install anthropics/tap/ant
+    go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
+    ```
+
+    
+
+    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+
+    ``` shiki
+    export PATH="$PATH:$(go env GOPATH)/bin"
+    ```
+
+    
+
+    Check the installation:
+
+    ``` shiki
+    ant --version
     ```
 
     
@@ -237,11 +191,29 @@ On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.m
 
     ### Start the worker
 
-    Create the working directory, then start the worker. `--workdir` defaults to the current directory, so pass `/workspace` to match the system default.
+    Create the working directory, then start the worker with `--workdir` set to it. Without the flag, the worker uses the current directory.
+
+    Linux
+    macOS
+
+    Linux
+
+    Pass `/workspace` to match the system default.
 
     ``` shiki
     sudo mkdir -p /workspace && sudo chown "$USER" /workspace
     ant beta:worker poll --workdir /workspace
+    ```
+
+    
+
+    macOS
+
+    The root volume is read-only, so `mkdir` can’t create `/workspace`. Use a directory in your home directory instead. If the agent uses skills, add this directory’s full path (`echo ~/workspace` prints it) to its system prompt, as [Sandbox filesystem](managed-agents-self-hosted-sandboxes-reference.md#sandbox-filesystem) describes.
+
+    ``` shiki
+    mkdir -p ~/workspace
+    ant beta:worker poll --workdir ~/workspace
     ```
 
     
@@ -281,7 +253,7 @@ On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.m
 
     ### Start a session
 
-    Set `agent_id` to your agent's ID. Create a session that targets the environment, then send it a task:
+    Set `agent_id` to your agent’s ID. Create a session that targets the environment, then send it a task:
 
     cURL
     CLI
@@ -319,7 +291,7 @@ On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.m
     )
     ```
 
-    The session waits in the environment's queue until a worker claims it. If no worker is connected, the session stays queued rather than failing.
+    The session waits in the environment’s queue until a worker claims it. If no worker is connected, the session stays queued rather than failing.
 
 7.  7
 
@@ -327,13 +299,26 @@ On [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.m
 
     On the worker host, read the file the agent wrote:
 
+    Linux
+    macOS
+
+    Linux
+
     ``` shiki
     cat /workspace/hello.txt
     ```
 
     
 
-    The file describes your own host's kernel, so the agent's tool calls ran there. To follow the agent's work as it happens, see [Session event stream](managed-agents-events-and-streaming.md).
+    macOS
+
+    ``` shiki
+    cat ~/workspace/hello.txt
+    ```
+
+    
+
+    The file describes your own host’s kernel, so the agent’s tool calls ran there. To follow the agent’s work in real time, see [Session event stream](managed-agents-events-and-streaming.md).
 
 ## Session resources
 
@@ -349,9 +334,9 @@ Environment env_... is a self-hosted environment. `resources` are not supported 
 
 ## Self-hosted sandboxes and MCP tunnels
 
-Self-hosting controls *where the agent's code executes*. [MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) control *how Anthropic reaches MCP servers in your network*. The two are independent:
+Self-hosting controls *where the agent’s code runs*. [MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) control *how Anthropic reaches MCP servers in your network*. The two are independent:
 
-- A session in Anthropic's cloud sandboxes can reach private MCP servers through a tunnel. For example, a private MCP server might sit in front of a database or an internal API behind your firewall.
+- A session in Anthropic’s cloud sandboxes can reach private MCP servers through a tunnel. For example, a private MCP server might sit in front of a database or an internal API behind your firewall.
 - A self-hosted session can use either tunneled or public MCP servers.
 
 Use both when you want execution and tool access to stay inside your boundary. To skip the tunnel, [wrap the MCP server as custom tools](managed-agents-self-hosted-sandboxes-custom-tools.md#wrap-an-mcp-server-as-custom-tools) that your worker serves.
@@ -382,7 +367,7 @@ Run the SDK worker, trigger workers from webhooks, or give each session its own 
 
 
 
-[Memory stores](managed-agents-self-hosted-sandboxes-memory.md)
+[Memory stores in self-hosted sandboxes](managed-agents-self-hosted-sandboxes-memory.md)
 
 Prepare the host, configure sync, and handle read-only stores and conflicts.
 
@@ -409,3 +394,50 @@ CLI flags, environment variables, filesystem paths, and SDK helper options.
 [Security model](managed-agents-self-hosted-sandboxes-security.md)
 
 Shared responsibility model for self-hosted sandbox environments.
+
+## Availability
+
+Self-hosted sandboxes are available on every model.
+
+### API support
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+
+Models
+
+- [All models](../../20-Models/about-claude-models-overview.md)
+
+### Required beta headers
+
+[Beta headers overview](../Endpoints/beta-headers.md)
+
+Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+
+Header
+
+- `managed-agents-2026-04-01`
+  
+
+### Data handling
+
+[Data handling overview](manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/agents`
+- `/v1/sessions`
+- `/v1/environments`
+
+Zero data retentionNot eligible
+
+Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+
+HIPAANot eligible
+
+Applies to all Managed Agents sub-features, including Self-hosted sandboxes.

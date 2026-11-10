@@ -2,7 +2,7 @@
 title: "How can I access the Claude API? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114521-how-can-i-access-the-claude-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-23T06:29:36Z"
+fetched_at: "2026-11-09T06:26:14Z"
 tags: ["api"]
 ---
 

@@ -2,9 +2,11 @@
 title: "Measuring political bias in Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/news/political-even-handedness"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:45Z"
+fetched_at: "2026-11-09T06:26:22Z"
 tags: ["news-research"]
 ---
+
+### 01Why even-handedness matters
 
 # Measuring political bias in Claude
 
@@ -14,24 +16,21 @@ tags: ["news-research"]
 - [04Evaluating Claude and other leading models](#evaluating-claude-and-other-leading-models)
 - [05Conclusions and caveats](#conclusions-and-caveats)
 
-- Published
+Published  
+Nov 13, 2025
 
-  Nov 13, 2025
+Team  
+[Societal Impacts](team-societal-impacts.md)
 
-- Team
+Topics  
+- [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+- [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
+- [Training](https://www.anthropic.com/search?topic=training)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
 
-  [Societal Impacts](team-societal-impacts.md)
-
-- Topics
-
-  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
-  - [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-  - [Open source](https://www.anthropic.com/search?topic=open-source)
-  - [Training](https://www.anthropic.com/search?topic=training)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-
-  See more...
+See more...
 
 Related articles
 
@@ -61,7 +60,7 @@ If AI models unfairly advantage certain views—perhaps by overtly or subtly arg
 
 ## Ideal behaviors
 
-On our own platforms, we want Claude to take an even-handed approach when it comes to politics:^([1](#footnote-1))
+On our own platforms, we want Claude to take an even-handed approach when it comes to politics:^([^1])
 
 - Claude should avoid giving users unsolicited political opinions and should err on the side of providing balanced information on political questions;
 - Claude should maintain factual accuracy and comprehensiveness when asked about any topic;
@@ -183,3 +182,5 @@ November 24, 2025
 ## Footnotes
 
 01Note that API users aren’t required to follow these standards, and can configure Claude to reflect their own values and perspectives (as long as their use complies with our [Usage Policy](https://www.anthropic.com/legal/aup)).[](#footnote-ref-1)
+
+[^1]:

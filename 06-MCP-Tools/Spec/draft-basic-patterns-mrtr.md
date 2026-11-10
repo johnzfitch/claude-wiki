@@ -2,11 +2,14 @@
 title: "Multi Round-Trip Requests - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns/mrtr"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:16Z"
+fetched_at: "2026-10-31T06:25:30Z"
+last_modified: "Fri, 30 Oct 2026 21:13:16 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Multi Round-Trip Requests](#multi-round-trip-requests)
   - [Core Types](#core-types)
@@ -56,7 +59,7 @@ This flow is implemented in MCP using the following Types.
 
 InputRequests
 
-An [`InputRequests`](2026-07-28-schema.md#inputrequests) object is a map of server-client requests. Keys are server-assigned string identifiers; values are request objects (e.g., [`ElicitRequest`](2026-07-28-schema.md#elicitrequest), [`CreateMessageRequest`](2026-07-28-schema.md#createmessagerequest), or [`ListRootsRequest`](2026-07-28-schema.md#listrootsrequest)).
+An [`InputRequests`](draft-schema.md#inputrequests) object is a map of server-client requests. Keys are server-assigned string identifiers; values are request objects (e.g., [`ElicitRequest`](draft-schema.md#elicitrequest), [`CreateMessageRequest`](draft-schema.md#createmessagerequest), or [`ListRootsRequest`](draft-schema.md#listrootsrequest)).
 
 ```python
 {
@@ -98,7 +101,7 @@ An [`InputRequests`](2026-07-28-schema.md#inputrequests) object is a map of serv
 
 InputResponses
 
-An [`InputResponses`](2026-07-28-schema.md#inputresponses) object is a map of client responses to the server requests. Keys correspond to the keys in the `InputRequests` map; values are the client’s result for each request (e.g., [`ElicitResult`](2026-07-28-schema.md#elicitresult), [`CreateMessageResult`](2026-07-28-schema.md#createmessageresult), or [`ListRootsResult`](2026-07-28-schema.md#listrootsresult)).
+An [`InputResponses`](draft-schema.md#inputresponses) object is a map of client responses to the server requests. Keys correspond to the keys in the `InputRequests` map; values are the client’s result for each request (e.g., [`ElicitResult`](draft-schema.md#elicitresult), [`CreateMessageResult`](draft-schema.md#createmessageresult), or [`ListRootsResult`](draft-schema.md#listrootsresult)).
 
 ```python
 {
@@ -125,9 +128,9 @@ An [`InputResponses`](2026-07-28-schema.md#inputresponses) object is a map of cl
 
 InputRequiredResult
 
-An [`InputRequiredResult`](2026-07-28-schema.md#inputrequiredresult) is a type of [`Result`](draft-basic.md#responses), indicating that additional input is needed before the request can be completed.
+An [`InputRequiredResult`](draft-schema.md#inputrequiredresult) is a type of [`Result`](draft-basic.md#responses), indicating that additional input is needed before the request can be completed.
 
-- `inputRequests` *(optional)*: An [`InputRequests`](2026-07-28-schema.md#inputrequests) map of server-initiated requests that the client must fulfill.
+- `inputRequests` *(optional)*: An [`InputRequests`](draft-schema.md#inputrequests) map of server-initiated requests that the client must fulfill.
 - `requestState` *(optional)*: An opaque string meaningful only to the server. Clients **MUST NOT** inspect, parse, modify, or make any assumptions about its contents.
 
 ```python
@@ -187,11 +190,11 @@ Supported Requests
 
 Servers **MAY** send `InputRequiredResult` responses on the following client requests:
 
-| Client Request                                                              | Supports InputRequiredResult |
-|-----------------------------------------------------------------------------|------------------------------|
-| [`prompts/get`](draft-server-prompts.md#getting-a-prompt)       | Yes                          |
-| [`resources/read`](2026-07-28-server-resources.md#reading-resources) | Yes                          |
-| [`tools/call`](draft-server-tools.md#calling-tools)             | Yes                          |
+| Client Request | Supports InputRequiredResult |
+|----|----|
+| [`prompts/get`](draft-server-prompts.md#getting-a-prompt) | Yes |
+| [`resources/read`](2026-07-28-server-resources.md#reading-resources) | Yes |
+| [`tools/call`](draft-server-tools.md#calling-tools) | Yes |
 
 Servers **MUST NOT** send `InputRequiredResult` responses on any other client requests.
 
@@ -210,7 +213,7 @@ Server Requirements (Basic Workflow)
 1.  Servers **MAY** respond to any [supported client request](#supported-requests) with an `InputRequiredResult`.
 2.  The `InputRequiredResult` **MAY** include an `inputRequests` field.
     - `inputRequests` keys are server assigned identifiers and **MUST** be unique within the scope of the request.
-    - `inputRequests` values are request objects that **MUST** be one of [`ElicitRequest`](2026-07-28-schema.md#elicitrequest), [`CreateMessageRequest`](2026-07-28-schema.md#createmessagerequest), or [`ListRootsRequest`](2026-07-28-schema.md#listrootsrequest)
+    - `inputRequests` values are request objects that **MUST** be one of [`ElicitRequest`](draft-schema.md#elicitrequest), [`CreateMessageRequest`](draft-schema.md#createmessagerequest), or [`ListRootsRequest`](draft-schema.md#listrootsrequest)
 3.  The `InputRequiredResult` **MAY** include a `requestState` field. If specified, this field is an opaque string meaningful only to the server. Servers are free to encode the state in any format (e.g. base64-encoded JSON, encrypted JWT, serialized binary).
 4.  If a client request contains a `requestState` field, servers **MUST** treat `requestState` as an attacker-controlled input. If `requestState` influences authorization, resource access, or business logic, servers **MUST** protect its integrity (e.g. HMAC or AEAD) and **MUST** reject state that fails verification. Integrity protection **MAY** be omitted only when tampering can cause nothing worse than request failure.
 5.  To prevent replay, servers **SHOULD** include the following inside the integrity-protected `requestState` payload and verify each on receipt:

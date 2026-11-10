@@ -2,13 +2,11 @@
 title: "Use interactive connectors in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13454812-using-interactive-connectors-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:29:02Z"
+fetched_at: "2026-11-09T06:25:57Z"
 tags: ["connectors", "enterprise", "mcp", "security"]
 ---
 
 # Use interactive connectors in Claude
-
-August 11, 2026
 
 
 Interactive connectors are available for all users on Claude, Cowork, Claude Desktop, and Claude for iOS/Android.
@@ -119,7 +117,7 @@ No. Purchases through third-party interactive connectors are not supported.
 
 - Try refreshing the page or restarting Claude Desktop.
 
-- If the issue persists, disconnect and reconnect the connector in **[Settings \> Connectors](https://claude.ai/settings/connectors)**.
+- If the issue persists, disconnect and reconnect the connector in **Customize \> Connectors**.
 
 ### I want to disable interactive connectors
 

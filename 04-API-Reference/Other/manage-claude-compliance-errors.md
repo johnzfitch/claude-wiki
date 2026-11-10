@@ -2,67 +2,9 @@
 title: "Handle Compliance API errors - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-errors"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:17Z"
+fetched_at: "2026-11-05T06:36:19Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcompliance-errors)
-
-
-
-
-
-SearchCtrlK
-
-Organization
-
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
-
-Authentication
-
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
-
-Identity providers
-
-Monitoring
-
-[Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
-
-[OpenTelemetry](manage-claude-opentelemetry.md)
-
-Data & compliance
-
-[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
-
-[Access Transparency](manage-claude-access-transparency.md)
-
-[Encryption keys (CMEK)](manage-claude-cmek.md)
-
-[Inference hooks](manage-claude-inference-hooks.md)
-
-Compliance API
-
-[Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
-
-[Console](playground.md)
-
-[Admin](manage-claude-admin-api.md)Compliance API
 
 # Handle Compliance API errors
 
@@ -95,22 +37,22 @@ The Compliance API returns errors in the standard [Anthropic error format](../En
 
 
 
-On this page, local sessions run on users' machines and remote sessions run in the cloud; see [Retrieve session transcripts](manage-claude-compliance-sessions.md).
+On this page, local sessions run on users’ machines and remote sessions run in the cloud; see [Retrieve session transcripts](manage-claude-compliance-sessions.md).
 
 Match on the HTTP status code and `error.type`, not on the message string. Messages are stable enough to copy into runbooks but might be reworded over time; the status codes and type values are part of the API contract. A few responses that share a status code and type are told apart by an error code in `error.details.error_code` when the response carries one, and otherwise by their message; each is called out where it applies.
 
-The following table tells you at a glance whether to retry. Each section that follows shows the verbatim error body and the fix.
+The following table tells you whether to retry. Each section that follows shows the verbatim error body and the fix.
 
-| Status                                                  | Retry?                      | When                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|---------------------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [400 Bad Request](#400-bad-request)                     | No                          | Fix the request, or enable the Compliance API if the message says it is not enabled, then resend. If `error.details.error_code` is `transcript_page_read_limit_exceeded` (the message says a page of a session's transcript is too large to read), do not resend the same request; [Transcript page too large](#transcript-page-too-large) says what to do instead.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| [401 Unauthorized](#401-unauthorized)                   | No                          | The key is not recognized, has been deactivated, or has expired; re-enable or replace it, then resend.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| [403 Forbidden](#403-forbidden)                         | No                          | Add the missing scope or use the right key type, then resend.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| [404 Not Found](#404-not-found)                         | Usually no                  | A message that names a resource means it was deleted or never existed; remove it from your queue. The bare message `Not found` means the request did not authenticate (or the path does not exist), not that a resource is gone; see [Request not authenticated](#request-not-authenticated). The session endpoints add two more cases: on the local session endpoints, the message `Local sessions are not available.` (returned on every call, including the list) means the endpoints are currently unavailable to your parent organization, not that a session is gone; keep your queued IDs and see [Local session not found](#local-session-not-found). A remote session still in `pending` status 404s on its messages endpoint until it starts; see [Remote session not found](#remote-session-not-found). |
-| [409 Conflict](#409-conflict)                           | No                          | The request conflicts with the resource's current state; resolve the conflict (such as detaching child resources), then retry.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| [429 Too Many Requests](#429-too-many-requests)         | Yes, after `retry-after`    | Wait the seconds in `retry-after`, then retry; do not advance your cursor.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| [500 Internal Server Error](#500-internal-server-error) | Depends on `x-should-retry` | Check the `x-should-retry` response header before retrying.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [502, 503, 504, 529](#500-internal-server-error)        | Yes, with backoff           | Transient; retry with exponential backoff. Exception: some local session 503s are not transient. See [Local sessions temporarily unavailable](#local-sessions-temporarily-unavailable).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Status | Retry? | When |
+|----|----|----|
+| [400 Bad Request](#400-bad-request) | No | Fix the request, or enable the Compliance API if the message says it is not enabled, then resend. If `error.details.error_code` is `transcript_page_read_limit_exceeded` (the message says a page of a session’s transcript is too large to read), do not resend the same request; [Transcript page too large](#transcript-page-too-large) says what to do instead. |
+| [401 Unauthorized](#401-unauthorized) | No | The key is not recognized, has been deactivated, or has expired; re-enable or replace it, then resend. |
+| [403 Forbidden](#403-forbidden) | No | Add the missing scope or use the right key type, then resend. |
+| [404 Not Found](#404-not-found) | Usually no | A message that names a resource means it was deleted or never existed; remove it from your queue. The bare message `Not found` means the request did not authenticate (or the path does not exist), not that a resource is gone; see [Request not authenticated](#request-not-authenticated). The session endpoints add two more cases: on the local session endpoints, the message `Local sessions are not available.` (returned on every call, including the list) means the endpoints are currently unavailable to your parent organization, not that a session is gone; keep your queued IDs and see [Local session not found](#local-session-not-found). A remote session still in `pending` status 404s on its messages endpoint until it starts; see [Remote session not found](#remote-session-not-found). |
+| [409 Conflict](#409-conflict) | No | The request conflicts with the resource’s current state; resolve the conflict (such as detaching child resources), then retry. |
+| [429 Too Many Requests](#429-too-many-requests) | Yes, after `retry-after` | Wait the seconds in `retry-after`, then retry; do not advance your cursor. |
+| [500 Internal Server Error](#500-internal-server-error) | Depends on `x-should-retry` | Check the `x-should-retry` response header before retrying. |
+| [502, 503, 504, 529](#500-internal-server-error) | Yes, with backoff | Transient; retry with exponential backoff. Exception: some local session 503s are not transient. See [Local sessions temporarily unavailable](#local-sessions-temporarily-unavailable). |
 
 ## 400 Bad Request
 
@@ -142,7 +84,7 @@ Unknown query parameter: 'created_at[gte]'. Did you mean 'created_at.gte'?
 
 **Cause:** The request included a query parameter that the endpoint does not define; the Compliance API rejects unrecognized parameters rather than ignoring them. The message names the parameter and, for near misses such as bracket notation in place of a dot or a missing `[]` suffix, suggests the defined name.
 
-**Fix:** Use the parameter names shown on the endpoint's [Compliance API reference](../Admin/compliance.md) page. Range filters use dot notation (for example, `created_at.gte`), array filters take a `[]` suffix (for example, `activity_types[]`), and the pagination parameters are `after_id`, `before_id`, or `page`, depending on the endpoint.
+**Fix:** Use the parameter names shown on the endpoint’s [Compliance API reference](../Admin/compliance.md) page. Range filters use dot notation (for example, `created_at.gte`), array filters take a `[]` suffix (for example, `activity_types[]`), and the pagination parameters are `after_id`, `before_id`, or `page`, depending on the endpoint.
 
 ### Invalid parameter value
 
@@ -166,7 +108,7 @@ activity_types[].0: Input is not one of the permitted values.
 
 
 
-**Cause:** A query parameter's value failed validation. The message starts with the parameter name (followed by the element's position for an array parameter), then states the constraint that failed. Three common cases are shown: a `limit` above the endpoint's maximum (the number in the message is that endpoint's maximum), a `created_at.*` or `updated_at.*` value that cannot be parsed as a date or timestamp, and an `activity_types[]` value that is not a supported activity type.
+**Cause:** A query parameter’s value failed validation. The message starts with the parameter name (followed by the element’s position for an array parameter), then states the constraint that failed. Three common cases are shown: a `limit` above the endpoint’s maximum (the number in the message is that endpoint’s maximum), a `created_at.*` or `updated_at.*` value that cannot be parsed as a date or timestamp, and an `activity_types[]` value that is not a supported activity type.
 
 **Fix:** Correct the parameter named in the message. Each list endpoint has its own `limit` range; see the parameter constraints on the corresponding [Compliance API reference](../Admin/compliance.md) page. Send timestamps in RFC 3339 format with an explicit UTC offset, for example, `2024-03-01T00:00:00Z` or `2024-03-01T00:00:00+00:00`; the local session list rejects a timestamp without an offset (`created_at.gte: Input should have timezone info`). For the supported `activity_types[]` values, see [Query compliance activities](../Admin/compliance-activities-list.md).
 
@@ -210,7 +152,7 @@ Invalid pagination cursor for 'after_id'
 
 The directory, project, and session endpoints (organizations, users, roles, role permissions, groups, group members, projects, project attachments, local and remote sessions, and session messages) paginate with an opaque `page` token rather than `after_id` and `before_id`. The same advice applies: pass the `next_page` value from the previous response unchanged, and stop when `has_more` is `false` (or, on the session endpoints, which return no `has_more`, when `next_page` is `null`). A malformed `page` token returns the same 400 `invalid_request_error` as a malformed `after_id` or `before_id`, with a message specific to the endpoint.
 
-The two paginated local session endpoints (the list and the messages endpoint) return the following 400 `invalid_request_error` for any `page` value they cannot decode, for example, a token that was truncated or altered after you stored it, or one issued by a different endpoint or under a different parent organization. On the local session messages endpoint (`GET /v1/compliance/apps/sessions/local/{session_id}/messages`), each `page` cursor is also bound to the session and `order` it was issued for, so a cursor issued for a different session or sort order returns the same body:
+The two paginated local session endpoints (the list and the messages endpoint) return the following 400 `invalid_request_error` for any `page` value they cannot decode. Examples include a token truncated or altered after you stored it, and one issued by a different endpoint or under a different parent organization. On the local session messages endpoint (`GET /v1/compliance/apps/sessions/local/{session_id}/messages`), each `page` cursor is also bound to the session and `order` it was issued for, so a cursor issued for a different session or sort order returns the same body:
 
 ``` block
 The page parameter is not a valid cursor for this request.
@@ -228,6 +170,26 @@ The page cursor has expired. Restart the walk without a page parameter; results 
 
 For the first body, resend the unmodified `next_page` value from the previous response to the endpoint and session that issued it. For an expired cursor, restart without a `page` parameter; the new walk reflects the retention boundary in effect when it starts, so messages that aged out of the retention period in the meantime are no longer returned (see [Retrieve a local session transcript](manage-claude-compliance-sessions.md#retrieve-a-local-session-transcript)).
 
+### Invalid file ID
+
+**Type:** `invalid_request_error`
+
+``` block
+Invalid claude_gen_file_id format: 'claude_file_01Qm7RzKdTgWnYbVx3HcLpE5'
+```
+
+
+
+``` block
+Invalid claude_file_id format: 'claude_gen_file_01TbR8wAcCeFhJkLnPqStUvX'
+```
+
+
+
+**Cause:** The ID in the path is not in the form the endpoint accepts. The generated-file endpoints (`/v1/compliance/apps/chats/generated-files/*`) accept only `claude_gen_file_...` IDs and return the first body for any other value. The file endpoints (`/v1/compliance/apps/chats/files/*`) accept only `claude_file_...` IDs and return the second body. The `generated_files` array on a chat message can hold both kinds of ID.
+
+**Fix:** Choose the endpoint by the ID’s prefix, not by the array the ID came from; see [Retrieve files and artifacts](manage-claude-compliance-content-data.md#retrieve-files-and-artifacts). If the prefix already matches the endpoint, the ID was truncated or altered; copy it again from the response that returned it.
+
 ### Transcript page too large
 
 **Type:** `invalid_request_error`
@@ -244,8 +206,8 @@ This page of the session's transcript is too large to read, and retrying will no
 
 **Fix:** Do not retry the request. If it used `order=desc`, read that session oldest first instead:
 
-- Restart the session's walk (one pass through its pages; see [Retrieve a local session transcript](manage-claude-compliance-sessions.md#retrieve-a-local-session-transcript)) without `order` (or with `order=asc`) and without `page`, and follow `next_page` until it is `null`. Messages you already stored from the newest-first read keep the same `id`, so deduplicate on `id`.
-- Set your client's request timeout to at least 5 minutes for this walk.
+- Restart the session’s walk (one pass through its pages; see [Retrieve a local session transcript](manage-claude-compliance-sessions.md#retrieve-a-local-session-transcript)) without `order` (or with `order=asc`) and without `page`, and follow `next_page` until it is `null`. Messages you already stored from the newest-first read keep the same `id`, so deduplicate on `id`.
+- Set your client’s request timeout to at least 5 minutes for this walk.
 - Lowering `limit` is not a reliable way to avoid this error.
 
 If an oldest-first request returns this error, do not retry it either. Keep the pages you have already read, record the session as incomplete, continue with the rest of your export, and contact your Anthropic representative with the `request-id` response header.
@@ -276,7 +238,7 @@ API key has expired.
 
 
 
-**Cause:** `API key is invalid.` means the value sent does not match a usable key, for example because it was truncated or altered when it was stored. `API key has been deactivated.` means the key has been disabled or deleted. `API key has expired.` means an Admin API key's expiration date has passed; Compliance Access Keys are not created with one.
+**Cause:** `API key is invalid.` means the value sent does not match a usable key, for example because it was truncated or altered when it was stored. `API key has been deactivated.` means the key has been disabled or deleted. `API key has expired.` means an Admin API key’s expiration date has passed; Compliance Access Keys are not created with one.
 
 **Fix:** For `API key is invalid.`, compare the value your client sends against the secret you stored when the key was created; the full secret is displayed only once, so if your stored copy is wrong, create a new key. For `API key has been deactivated.`, re-enable the key if it was only disabled, in [claude.ai \> Organization settings \> API](https://claude.ai/admin-settings/api-access) for a Compliance Access Key or on the [Admin keys](playground.md) page (`platform.claude.com/settings/admin-keys`) in the Claude Console for an Admin API key; a deleted key cannot be restored. For a deleted or expired key, create a new key and update your integration to use it, as described in [Manage and rotate keys](manage-claude-compliance-api-access.md#manage-and-rotate-keys).
 
@@ -391,9 +353,9 @@ Chat conversation not found: 'claude_chat_01H5CWunD7RpVJ5bHa8RCkja'
 
 
 
-**Cause:** The chat ID in the path does not match a chat readable through the Compliance API. The chat might have been hard-deleted through a previous Compliance API call or removed by your organization's retention policy, or it might belong to an organization the calling key cannot read. Chats that a user deleted in claude.ai do not return 404; they remain readable, with `deleted_at` populated, but without their message content.
+**Cause:** The chat ID in the path does not match a chat readable through the Compliance API. The chat might have been hard-deleted through a previous Compliance API call or removed by your organization’s retention policy, or it might belong to an organization the calling key cannot read. Chats that a user deleted in claude.ai do not return 404; they remain readable, with `deleted_at` populated, but without their message content.
 
-**Fix:** Confirm the chat ID against a recent `claude_chat_created` or `claude_chat_viewed` activity. If the activity is recent and the read still fails, the chat has been hard-deleted (through this API or by retention-policy expiry) or belongs to an organization outside your key's scope.
+**Fix:** Confirm the chat ID against a recent `claude_chat_created` or `claude_chat_viewed` activity. If the activity is recent and the read still fails, the chat has been hard-deleted (through this API or by retention-policy expiry) or belongs to an organization outside your key’s scope.
 
 ### File not found
 
@@ -407,7 +369,7 @@ File not found: 0d3b8f72-6c1e-4a59-b2de-7f4c9a1e5b60
 
 **Cause:** The file ID does not exist in an organization your key can read, or the file has been deleted. Deleting a chat in claude.ai also deletes the files attached to it, although the chat itself remains listed. The message identifies the file by its underlying UUID rather than by the `claude_file_...` ID sent in the request. The metadata, content, and delete endpoints return this body; it applies to both chat-attached files (`claude_file_...`) and project files.
 
-**Fix:** Reconcile against recent `claude_file_uploaded` or `claude_file_deleted` activities. Files deleted along with a chat have no `claude_file_deleted` activity, so check for the chat's `claude_chat_deleted` activity as well. If the file was deleted, the binary is gone; the activity records remain in the feed for the 6-year retention window.
+**Fix:** Reconcile against recent `claude_file_uploaded` or `claude_file_deleted` activities. Files deleted along with a chat have no `claude_file_deleted` activity, so check for the chat’s `claude_chat_deleted` activity as well. When your organization’s retention policy deletes a chat, the Activity Feed records no `claude_chat_deleted` activity. If the file was deleted, the binary is gone; the activity records remain in the feed for the 6-year retention window.
 
 ### Generated file or artifact not found
 
@@ -433,7 +395,7 @@ Artifact version not found: 'claude_artifact_version_01KmNpQrSt3UvWxYz5AbCdEfG'
 
 **Cause:** The ID in the path does not match a tool-generated file or artifact version readable through the Compliance API. The generated-file metadata endpoint returns the first body, the content endpoint returns the second, and both artifact endpoints return the third. Generated files and artifacts are deleted with the chat they were created in, including when a user deletes the chat in claude.ai.
 
-**Fix:** Use [Get chat messages](../Admin/compliance-apps-chats-messages-list.md) to look up the chat the ID came from. If the chat's `deleted_at` is populated, or a `claude_chat_deleted` activity names the chat, the content is gone; remove the ID from your queue. Otherwise, confirm the ID against the `generated_files` and `artifacts` arrays on the chat's messages.
+**Fix:** Use [Get chat messages](../Admin/compliance-apps-chats-messages-list.md) to look up the chat the ID came from. If the chat’s `deleted_at` is populated, or a `claude_chat_deleted` activity names the chat, the content is gone; remove the ID from your queue. Otherwise, confirm the ID against the `generated_files` and `artifacts` arrays on the chat’s messages. When your organization’s retention policy deletes a chat, the Activity Feed records no `claude_chat_deleted` activity.
 
 ### Project not found
 
@@ -453,7 +415,7 @@ No project found with provided id, or it has already been deleted.
 
 **Cause:** The project ID does not exist or has been deleted. The project detail, attachments, and collaborators endpoints return the first body; `DELETE /v1/compliance/apps/projects/{project_id}` returns the second.
 
-**Fix:** Reconcile against recent `claude_project_created` or `claude_project_deleted` activities. The Activity Feed continues to expose the project's lifecycle events even after the project itself is gone.
+**Fix:** Reconcile against recent `claude_project_created` or `claude_project_deleted` activities. The Activity Feed continues to expose the project’s lifecycle events even after the project itself is gone. When your organization’s retention policy deletes a project, the Activity Feed records no `claude_project_deleted` activity.
 
 ### Project document not found
 
@@ -485,11 +447,18 @@ Local session not found.
 
 
 
-**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/local/{session_id}` or `GET /v1/compliance/apps/sessions/local/{session_id}/messages` does not match a local session readable through the Compliance API. Both endpoints return this one message, without distinguishing the cause, when the ID is not a session in an organization your key can read (including IDs that belong to another parent organization), when the session never existed, when [zero data retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect for the session, or when all of the session's activity has aged past the retention period that applies to the organization that ran it. The `Local session not found.` response has no transient form, because local sessions have no provisioning (`pending`) state; compare [Remote session not found](#remote-session-not-found), where a `pending` session 404s until it starts. A session ID that is not a well-formed `clls_` identifier returns [400 Bad Request](#400-bad-request) instead.
+**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/local/{session_id}` or `GET /v1/compliance/apps/sessions/local/{session_id}/messages` does not match a local session readable through the Compliance API. Both endpoints return this one message, without distinguishing the cause, in any of the following cases:
+
+- The ID is not a session in an organization your key can read (including IDs that belong to another parent organization).
+- The session never existed.
+- [Zero data retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect for the session.
+- All of the session’s activity has aged past the retention period that applies to the organization that ran it.
+
+The `Local session not found.` response has no transient form, because local sessions have no provisioning (`pending`) state; compare [Remote session not found](#remote-session-not-found), where a `pending` session 404s until it starts. A session ID that is not a well-formed `clls_` identifier returns [400 Bad Request](#400-bad-request) instead.
 
 The local session endpoints, including the list endpoint, return a different 404 message, `Local sessions are not available.`, while the endpoints themselves are unavailable to your parent organization. That response does not depend on the session ID; no customer-side key, scope, or setting changes it, and it can be temporary. Both responses carry the `not_found_error` type; the message text is what tells them apart.
 
-**Fix:** Confirm the session ID against `GET /v1/compliance/apps/sessions/local`; see [Sessions on users' machines](manage-claude-compliance-sessions.md#retrieve-local-sessions). If the session no longer appears in the list, its content has aged past retention (or the session is otherwise no longer in an organization your key can read) and its transcript is not retrievable; remove the ID from your queue. If every call, including the list, returns `Local sessions are not available.`, keep your queued session IDs and retry on your next scheduled run; if the response persists, contact your Anthropic representative and include the `request-id` response header.
+**Fix:** Confirm the session ID against `GET /v1/compliance/apps/sessions/local`; see [Sessions on users’ machines](manage-claude-compliance-sessions.md#retrieve-local-sessions). If the session no longer appears in the list, its content has aged past retention (or the session is otherwise no longer in an organization your key can read) and its transcript is not retrievable; remove the ID from your queue. If every call, including the list, returns `Local sessions are not available.`, keep your queued session IDs and retry on your next scheduled run; if the response persists, contact your Anthropic representative and include the `request-id` response header.
 
 ### Remote session not found
 
@@ -501,7 +470,13 @@ Remote session not found.
 
 
 
-**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/remote/{session_id}/messages` does not match a session transcript readable through the Compliance API. This occurs when the session ID (`cse_...`) does not exist or the session has been deleted, when the session belongs to an organization your key cannot read, or when the session's `status` is still `pending`: a pending session has no transcript yet, so the messages endpoint returns 404 until the session starts. A session ID that is not a well-formed `cse_` identifier returns [400 Bad Request](#400-bad-request) instead.
+**Cause:** The session ID passed to `GET /v1/compliance/apps/sessions/remote/{session_id}/messages` does not match a session transcript readable through the Compliance API. This occurs in any of the following cases:
+
+- The session ID (`cse_...`) does not exist or the session has been deleted.
+- The session belongs to an organization your key cannot read.
+- The session’s `status` is still `pending`: a pending session has no transcript yet, so the messages endpoint returns 404 until the session starts.
+
+A session ID that is not a well-formed `cse_` identifier returns [400 Bad Request](#400-bad-request) instead.
 
 **Fix:** Confirm the session ID and its `status` against `GET /v1/compliance/apps/sessions/remote`; see [Sessions in the cloud](manage-claude-compliance-sessions.md#retrieve-remote-sessions). If the session is `pending`, retry after it leaves that status. If the session no longer appears in the list, it has been deleted and its transcript is not retrievable.
 
@@ -531,13 +506,19 @@ organization `91012d09-e48b-438e-a489-1bebfd8fa6f9` not found in this organizati
 
 
 
-**Cause:** `GET /v1/compliance/organizations/{organization_id}/settings` returns this 404 in three cases that intentionally share the same body so the response does not reveal whether an organization exists: the `organization_id` is not one of your parent's linked organizations, the value is not a valid UUID, or the settings endpoint is not yet enabled for your parent organization.
+**Cause:** `GET /v1/compliance/organizations/{organization_id}/settings` returns this 404 in three cases:
+
+- The `organization_id` is not one of your parent’s linked organizations.
+- The `organization_id` is not a valid UUID.
+- The settings endpoint is not yet enabled for your parent organization.
+
+The endpoint intentionally returns the same body in all three cases, so a 404 does not reveal whether an organization exists.
 
 **Fix:** Verify the ID against [List organizations](../Admin/compliance-organizations-list.md). If a known-good organization ID still returns 404, the settings endpoint is not yet enabled for your parent organization; contact your Anthropic representative.
 
 ## 409 Conflict
 
-The request is well-formed and authorized but conflicts with the resource's current state. The body carries the `invalid_request_error` type, which 400 responses also use, so distinguish a conflict by the 409 status code rather than by `error.type`.
+The request is well-formed and authorized but conflicts with the resource’s current state. The body carries the `invalid_request_error` type, which 400 responses also use, so distinguish a conflict by the 409 status code rather than by `error.type`.
 
 ### Project has attached chats
 
@@ -551,7 +532,7 @@ The "claude_proj_01KGp4eZNug9ri4kE35RSppq" project cannot be deleted as it has c
 
 **Cause:** `DELETE /v1/compliance/apps/projects/{project_id}` was called on a project that still has chats attached.
 
-**Fix:** List the project's chats with `GET /v1/compliance/apps/chats?user_ids[]={user_id}&project_ids[]={project_id}` (the `project_ids[]` filter requires at least one `user_ids[]` value; enumerate IDs through [List organization users](manage-claude-compliance-org-data.md#list-organization-users)), delete each one with `DELETE /v1/compliance/apps/chats/{claude_chat_id}`, and then retry the project delete.
+**Fix:** List the project’s chats with `GET /v1/compliance/apps/chats?user_ids[]={user_id}&project_ids[]={project_id}` (the `project_ids[]` filter requires at least one `user_ids[]` value; enumerate IDs through [List organization users](manage-claude-compliance-org-data.md#list-organization-users)), delete each one with `DELETE /v1/compliance/apps/chats/{claude_chat_id}`, and then retry the project delete.
 
 ## 429 Too Many Requests
 
@@ -589,11 +570,11 @@ anthropic-ratelimit-requests-reset: 2026-04-21T14:38:25Z
 
 
 
-**Cause:** Your parent organization (or standalone Claude Console organization) sent more than 600 requests to `/v1/compliance/*` in a 1-minute window, across all of the keys that share its budget, or it exhausted the remote session endpoints' second request budget (described later in this section).
+**Cause:** Your parent organization (or standalone Claude Console organization) sent more than 600 requests to `/v1/compliance/*` in a 1-minute window, across all of the keys that share its budget, or it exhausted the remote session endpoints’ second request budget (described later in this section).
 
 **Fix:** Wait the number of seconds in the `retry-after` header, then retry. If the header is absent (for example, stripped by an intermediary), fall back to exponential backoff (start at 1 second, double up to 60 seconds). Do not advance your pagination cursor on a 429: the failed request returned no data, so the cursor from the last successful page is still correct.
 
-Requests that fail authentication (a missing or unrecognized key, or a Claude API key rather than a Compliance Access Key or Admin API key) are rejected before the rate limiter and do not consume quota. A valid key that lacks the endpoint's required scope consumes one quota unit before the 403 is returned.
+Requests that fail authentication (a missing or unrecognized key, or a Claude API key rather than a Compliance Access Key or Admin API key) are rejected before the rate limiter and do not consume quota. A valid key that lacks the endpoint’s required scope consumes one quota unit before the 403 is returned.
 
 The [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions) count only against the shared limit. The [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions) also carry a second request budget, keyed to your parent organization like the shared limit, on top of it. A 429 from that budget carries a `retry-after` header that is always `1` (a minimum wait, not the actual reset time); any `anthropic-ratelimit-*` headers on that response describe the shared limit rather than this budget, so back off exponentially if the 429 repeats. One 429 comes from no request budget: [Server busy reading large transcripts](#server-busy-reading-large-transcripts), which only the local session messages endpoint returns.
 
@@ -619,7 +600,7 @@ Too many large session transcripts are being read at once. This is not a limit o
 
 A 500 from the Compliance API carries an `x-should-retry: false` response header when the failure is deterministic. The Claude SDK honors this header automatically. If you use a generic HTTP retry library that retries on every 5xx, suppress retries when `x-should-retry` is `false`; retrying this error fails identically on every attempt.
 
-A 500 without the `x-should-retry: false` header is transient: retry with exponential backoff (start at 1 second, double up to 60 seconds). The same applies to 502, 503, 504, and 529 responses. The exception is a small set of local session 503s, described next, that depend on an organization's settings or encryption key rather than on load. See [Errors](../Endpoints/errors.md) for the platform-wide retry semantics.
+A 500 without the `x-should-retry: false` header is transient: retry with exponential backoff (start at 1 second, double up to 60 seconds). The same applies to 502, 503, 504, and 529 responses. The exception is a small set of local session 503s, described next, that depend on an organization’s settings or encryption key rather than on load. See [Claude API errors](../Endpoints/errors.md) for the platform-wide retry semantics.
 
 ### Local sessions temporarily unavailable
 
@@ -646,14 +627,14 @@ The local-sessions index cannot currently evaluate retention overrides for this 
 **Cause:** The [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions) return 503 with one of these bodies. All three share the `overloaded_error` type, so this is one of the few errors on this page where you need the message text, not `error.type`, to tell the conditions apart:
 
 - The `index is temporarily unavailable` body means session listings are briefly unavailable because of load or a backend condition. This is transient.
-- The `Captured content` body means a session's transcript content cannot be returned right now. This is usually transient too. In organizations that use [customer-managed encryption keys](manage-claude-cmek.md), the messages endpoint also returns this body for every page that contains content your customer-managed key cannot decrypt, for example because you disabled, revoked, or destroyed the key, or because the key cannot be reached. In that case the error persists for as long as the key cannot be used. The message text is the same either way, so the only signal that the key is the cause is that the error keeps recurring for that organization. An unusable key is never reported as `not_captured`.
+- The `Captured content` body means a session’s transcript content cannot be returned right now. This is usually transient too. In organizations that use [customer-managed encryption keys](manage-claude-cmek.md), the messages endpoint also returns this body for every page that contains content your customer-managed key cannot decrypt, for example because you disabled, revoked, or destroyed the key, or because the key cannot be reached. In that case the error persists for as long as the key cannot be used. The message text is the same either way, so the only signal that the key is the cause is that the error keeps recurring for that organization. An unusable key is never reported as `not_captured`.
 - The `retention overrides` body means a retention or data-handling setting that applies to one or more sessions in the requested range could not be evaluated yet. On the retrieve and messages endpoints it reads `for this session` instead of `for this page`. It depends on the data and settings of the organization that ran the session rather than on load, and it can persist for an extended period.
 
 **Fix:** Handle each body as follows:
 
 - For the two `Try again shortly.` bodies, retry with exponential backoff and do not advance your `page` cursor, because the failed request returned no data.
-- If the `Captured content` body keeps recurring on the messages endpoint for an organization that uses a customer-managed key, treat it as persistent: stop walking that organization's transcripts and check the key's status in your key management service. Transcripts in other linked organizations, and session metadata everywhere, are unaffected. If you retry on a later run, restart each session's walk without `page`, because messages page cursors expire 24 hours after the walk's first page.
-- For the `Try again later.` body, do not hold a walk open waiting for it to clear. On the list endpoint, either retry later by restarting without the `page` parameter (a list page token older than 24 hours is still accepted but is re-evaluated against the current retention boundary, so a parked walk can skip sessions), or narrow the `created_at` window until the request succeeds and export the skipped range separately on a later run. On the retrieve and messages endpoints, skip that session ID, continue with the rest of your export, and retry the session on a later run. Messages page cursors expire 24 hours after the walk's first page, so restart that session's walk without `page` when you return to it.
+- If the `Captured content` body keeps recurring on the messages endpoint for an organization that uses a customer-managed key, treat it as persistent: stop walking that organization’s transcripts and check the key’s status in your key management service. Transcripts in other linked organizations, and session metadata everywhere, are unaffected. If you retry on a later run, restart each session’s walk without `page`, because messages page cursors expire 24 hours after the walk’s first page.
+- For the `Try again later.` body, do not hold a walk open waiting for it to clear. On the list endpoint, either retry later by restarting without the `page` parameter (a list page token older than 24 hours is still accepted but is re-evaluated against the current retention boundary, so a parked walk can skip sessions), or narrow the `created_at` window until the request succeeds and export the skipped range separately on a later run. On the retrieve and messages endpoints, skip that session ID, continue with the rest of your export, and retry the session on a later run. Messages page cursors expire 24 hours after the walk’s first page, so restart that session’s walk without `page` when you return to it.
 
 If any of these conditions recurs across runs, contact your Anthropic representative and include the `request-id` response header. For the customer-managed key case, do this only if the error continues while that key is usable.
 

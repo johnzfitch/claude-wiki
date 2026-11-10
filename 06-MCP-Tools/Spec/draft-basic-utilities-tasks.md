@@ -163,7 +163,7 @@ Copy
 }
 ```
 
-When a receiver accepts a task-augmented request, it returns a [`CreateTaskResult`](2026-07-28-schema.md#createtaskresult) containing task data. The response does not include the actual operation result. The actual result (e.g., tool result for `tools/call`) becomes available only through `tasks/result` after the task completes.
+When a receiver accepts a task-augmented request, it returns a [`CreateTaskResult`](draft-schema.md#createtaskresult) containing task data. The response does not include the actual operation result. The actual result (e.g., tool result for `tools/call`) becomes available only through `tasks/result` after the task completes.
 
 When a task is created in response to a `tools/call` request, host applications may wish to return control to the model while the task is executing. This allows the model to continue processing other requests or perform additional work while waiting for the task to complete.To support this pattern, servers can provide an optional `io.modelcontextprotocol/model-immediate-response` key in the `_meta` field of the `CreateTaskResult`. The value of this key should be a string intended to be passed as an immediate tool result to the model. If a server does not provide this field, the host application can fall back to its own predefined message.This guidance is non-binding and is provisional logic intended to account for the specific use case. This behavior may be formalized or modified as part of `CreateTaskResult` in future protocol versions.
 
@@ -172,7 +172,7 @@ Getting Tasks
 
 In the Streamable HTTP (SSE) transport, clients **MAY** disconnect from an SSE stream opened by the server in response to a `tasks/get` request at any time.While this note is not prescriptive regarding the specific usage of SSE streams, all implementations **MUST** continue to comply with the existing [Streamable HTTP transport specification](https://modelcontextprotocol.io/specification/draft/basic/transports#sending-messages-to-the-server).
 
-Requestors poll for task completion by sending [`tasks/get`](2026-07-28-schema.md#tasks%2Fget) requests. Requestors **SHOULD** respect the `pollInterval` provided in responses when determining polling frequency. Requestors **SHOULD** continue polling until the task reaches a terminal status (`completed`, `failed`, or `cancelled`), or until encountering the [`input_required`](#input-required-status) status. Note that invoking `tasks/result` does not imply that the requestor needs to stop polling - requestors **SHOULD** continue polling the task status via `tasks/get` if they are not actively waiting for `tasks/result` to complete. **Request:**
+Requestors poll for task completion by sending [`tasks/get`](draft-schema.md#tasks%2Fget) requests. Requestors **SHOULD** respect the `pollInterval` provided in responses when determining polling frequency. Requestors **SHOULD** continue polling until the task reaches a terminal status (`completed`, `failed`, or `cancelled`), or until encountering the [`input_required`](#input-required-status) status. Note that invoking `tasks/result` does not imply that the requestor needs to stop polling - requestors **SHOULD** continue polling the task status via `tasks/get` if they are not actively waiting for `tasks/result` to complete. **Request:**
 
 Copy
 
@@ -212,7 +212,7 @@ Retrieving Task Results
 
 In the Streamable HTTP (SSE) transport, clients **MAY** disconnect from an SSE stream opened by the server in response to a `tasks/result` request at any time.While this note is not prescriptive regarding the specific usage of SSE streams, all implementations **MUST** continue to comply with the existing [Streamable HTTP transport specification](https://modelcontextprotocol.io/specification/draft/basic/transports#sending-messages-to-the-server).
 
-After a task completes the operation result is retrieved via [`tasks/result`](2026-07-28-schema.md#tasks%2Fresult). This is distinct from the initial `CreateTaskResult` response, which contains only task data. The result structure matches the original request type (e.g., `CallToolResult` for `tools/call`). To retrieve the result of a completed task, requestors can send a `tasks/result` request: While `tasks/result` blocks until the task reaches a terminal status, requestors can continue polling via `tasks/get` in parallel if they are not actively blocked waiting for the result, such as if their previous `tasks/result` request failed or was cancelled. This allows requestors to monitor status changes or display progress updates while the task executes, even after invoking `tasks/result`. **Request:**
+After a task completes the operation result is retrieved via [`tasks/result`](draft-schema.md#tasks%2Fresult). This is distinct from the initial `CreateTaskResult` response, which contains only task data. The result structure matches the original request type (e.g., `CallToolResult` for `tools/call`). To retrieve the result of a completed task, requestors can send a `tasks/result` request: While `tasks/result` blocks until the task reaches a terminal status, requestors can continue polling via `tasks/get` in parallel if they are not actively blocked waiting for the result, such as if their previous `tasks/result` request failed or was cancelled. This allows requestors to monitor status changes or display progress updates while the task executes, even after invoking `tasks/result`. **Request:**
 
 Copy
 
@@ -255,7 +255,7 @@ Copy
 
 Task Status Notification
 
-When a task status changes, receivers **MAY** send a [`notifications/tasks/status`](2026-07-28-schema.md#notifications%2Ftasks%2Fstatus) notification to inform the requestor of the change. This notification includes the full task state. **Notification:**
+When a task status changes, receivers **MAY** send a [`notifications/tasks/status`](draft-schema.md#notifications%2Ftasks%2Fstatus) notification to inform the requestor of the change. This notification includes the full task state. **Notification:**
 
 Copy
 
@@ -274,12 +274,12 @@ Copy
 }
 ```
 
-The notification includes the full [`Task`](2026-07-28-schema.md#task) object, including the updated `status` and `statusMessage` (if present). This allows requestors to access the complete task state without making an additional `tasks/get` request. Requestors **MUST NOT** rely on receiving this notifications, as it is optional. Receivers are not required to send status notifications and may choose to only send them for certain status transitions. Requestors **SHOULD** continue to poll via `tasks/get` to ensure they receive status updates.
+The notification includes the full [`Task`](draft-schema.md#task) object, including the updated `status` and `statusMessage` (if present). This allows requestors to access the complete task state without making an additional `tasks/get` request. Requestors **MUST NOT** rely on receiving this notifications, as it is optional. Receivers are not required to send status notifications and may choose to only send them for certain status transitions. Requestors **SHOULD** continue to poll via `tasks/get` to ensure they receive status updates.
 
 
 Listing Tasks
 
-To retrieve a list of tasks, requestors can send a [`tasks/list`](2026-07-28-schema.md#tasks%2Flist) request. This operation supports pagination. **Request:**
+To retrieve a list of tasks, requestors can send a [`tasks/list`](draft-schema.md#tasks%2Flist) request. This operation supports pagination. **Request:**
 
 Copy
 
@@ -328,7 +328,7 @@ Copy
 
 Cancelling Tasks
 
-To explicitly cancel a task, requestors can send a [`tasks/cancel`](2026-07-28-schema.md#tasks%2Fcancel) request. **Request:**
+To explicitly cancel a task, requestors can send a [`tasks/cancel`](draft-schema.md#tasks%2Fcancel) request. **Request:**
 
 Copy
 

@@ -2,11 +2,14 @@
 title: "Tools - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:28:43Z"
+fetched_at: "2026-10-31T06:24:53Z"
+last_modified: "Fri, 30 Oct 2026 20:45:39 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -292,12 +295,12 @@ Embedded Resources
   "resource": {
     "uri": "file:///project/src/main.rs",
     "mimeType": "text/x-rust",
-    "text": "fn main() {\n    println!(\"Hello world!\");\n}",
-    "annotations": {
-      "audience": ["user", "assistant"],
-      "priority": 0.7,
-      "lastModified": "2025-05-03T14:30:00Z"
-    }
+    "text": "fn main() {\n    println!(\"Hello world!\");\n}"
+  },
+  "annotations": {
+    "audience": ["user", "assistant"],
+    "priority": 0.7,
+    "lastModified": "2025-05-03T14:30:00Z"
   }
 }
 ```

@@ -2,11 +2,14 @@
 title: "Progress - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/progress"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:28:44Z"
+fetched_at: "2026-10-31T06:24:53Z"
+last_modified: "Fri, 30 Oct 2026 21:51:21 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Progress Flow](#progress-flow)
 - [Behavior Requirements](#behavior-requirements)
@@ -81,7 +84,7 @@ Behavior Requirements
     - Choose not to send any progress notifications
     - Send notifications at whatever frequency they deem appropriate
     - Omit the total value if unknown
-3.  For [task-augmented requests](https://modelcontextprotocol.io/specification/2025-11-25/basic/utilities/tasks), the `progressToken` provided in the original request **MUST** continue to be used for progress notifications throughout the task’s lifetime, even after the `CreateTaskResult` has been returned. The progress token remains valid and associated with the task until the task reaches a terminal status.
+3.  For [task-augmented requests](2025-11-25-basic-utilities-tasks.md), the `progressToken` provided in the original request **MUST** continue to be used for progress notifications throughout the task’s lifetime, even after the `CreateTaskResult` has been returned. The progress token remains valid and associated with the task until the task reaches a terminal status.
     - Progress notifications for tasks **MUST** use the same `progressToken` that was provided in the initial task-augmented request
     - Progress notifications for tasks **MUST** stop after the task reaches a terminal status (`completed`, `failed`, or `cancelled`)
 

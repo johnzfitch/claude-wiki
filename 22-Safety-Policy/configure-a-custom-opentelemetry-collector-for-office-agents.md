@@ -2,7 +2,7 @@
 title: "Configure a custom OpenTelemetry collector for Office agents | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14447276-configure-a-custom-opentelemetry-collector-for-office-agents"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:29:26Z"
+fetched_at: "2026-11-09T06:26:02Z"
 tags: ["agents", "safety"]
 ---
 

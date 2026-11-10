@@ -2,237 +2,9 @@
 title: "Migrating to API version 2026-10-21 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/migration-2026-10-21"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-22T06:28:18Z"
+fetched_at: "2026-11-06T06:33:41Z"
 tags: ["api", "cli", "sdk"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmigration-2026-10-21)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-Webhooks
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Delete User Profile
-
-
-Create Enrollment URL
-
-Action URLs
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[AWS IAM actions](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[Migrating to API version 2026-10-21](migration-2026-10-21.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-[API reference](overview.md)Support & configuration
 
 # Migrating to API version 2026-10-21
 
@@ -248,13 +20,23 @@ Upgrade a Claude API integration from API version 2023-06-01 to 2026-10-21: the 
 
 This guide lists the code changes for moving from API version `2023-06-01` to `2026-10-21`. The [upgrade steps](#migration-checklist) say what to do, in order.
 
+Claude Code
+
+The easiest way to upgrade your code
+
+Run in
+
+`❯``/claude-api`` api-version`
+
+
+
 ## Upgrade steps
 
 1.  1
 
     ### Switch to 2026-10-21
 
-    If you use an SDK, your requests use the API version that was current when your SDK's major version was released. The versions shown for your language are the first to use `2026-10-21`, so upgrade to them. If you call the API without an SDK, set the `anthropic-version` header to `2026-10-21`.
+    If you use an SDK, your requests use the API version that was current when your SDK’s major version was released. The versions shown for your language are the first to use `2026-10-21`, so upgrade to them. If you call the API without an SDK, set the `anthropic-version` header to `2026-10-21`.
 
     cURL
     CLI
@@ -303,13 +85,13 @@ In `2026-10-21`, a request that places a `document` block directly in an `assist
 
 Affects you if you send `citations` on `text` blocks in `user` messages, including inside `search_result` blocks.
 
-In `2026-10-21`, a request that sends a `text` block with a non-empty `citations` array in a `user` message returns a 400 error. Remove `citations` from those blocks. Citations on `text` blocks in `assistant` messages, such as Claude's earlier replies that you send back, are still accepted, and so is the `"citations": {"enabled": true}` setting on documents and search results.
+In `2026-10-21`, a request that sends a `text` block with a non-empty `citations` array in a `user` message returns a 400 error. Remove `citations` from those blocks. Citations on `text` blocks in `assistant` messages, such as Claude’s earlier replies that you send back, are still accepted, and so is the `"citations": {"enabled": true}` setting on documents and search results.
 
 #### Sampling parameters are removed
 
 Affects you if you send `temperature`, `top_p`, or `top_k` in Messages requests or Message Batch requests.
 
-In `2026-10-21`, a request that sends `temperature`, `top_p`, or `top_k` returns a 400 error, even at the parameter's default value.
+In `2026-10-21`, a request that sends `temperature`, `top_p`, or `top_k` returns a 400 error, even at the parameter’s default value.
 
 Remove the three parameters from your requests.
 
@@ -325,20 +107,20 @@ In `2026-10-21`, responses from the Admin API and the [Claude Enterprise Analyti
 
 Admin API:
 
-| Endpoints                                                                                                                                                                                                  | Old name       | New name                                                                            |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|-------------------------------------------------------------------------------------|
-| [RBAC groups](../Admin/beta-organization-rbac-groups-list.md): create, list, retrieve, and update                                                                                                         | `roles`        | `role_ids`                                                                          |
-| [RBAC group members](../Admin/beta-organization-rbac-groups-members-list.md): list and add, and the response to [removing a member](../Admin/beta-organization-rbac-groups-members-remove.md)            | `group_id`     | `rbac_group_id`                                                                     |
-| [RBAC roles](../Admin/beta-organization-rbac-roles-list.md): list and retrieve                                                                                                                            | `name`         | `display_name`                                                                      |
-| [Organization](organization-rate-limits-list.md) and [workspace](organization-workspaces-rate-limits-list.md) rate limits: list, and the response to setting a workspace's rate limits | `group_type`   | `group.type`                                                                        |
-| [API keys](organization-api-keys-list.md): list, retrieve, and update                                                                                                                            | `workspace_id` | `scope` (different values; see [`workspace_id` on API keys](#api-key-workspace-id)) |
+| Endpoints | Old name | New name |
+|----|----|----|
+| [RBAC groups](../Admin/beta-organization-rbac-groups-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.: create, list, retrieve, and update | `roles` | `role_ids` |
+| [RBAC group members](../Admin/beta-organization-rbac-groups-members-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.: list and add, and the response to [removing a member](../Admin/beta-organization-rbac-groups-members-remove.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. | `group_id` | `rbac_group_id` |
+| [RBAC roles](../Admin/beta-organization-rbac-roles-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.: list and retrieve | `name` | `display_name` |
+| [Organization](organization-rate-limits-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. and [workspace](organization-workspaces-rate-limits-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. rate limits: list, and the response to [setting a workspace’s rate limits](organization-workspaces-rate-limits-update.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. | `group_type` | `group.type` |
+| [API keys](organization-api-keys-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.: list, retrieve, and update | `workspace_id` | `scope` (different values; see [`workspace_id` on API keys](#api-key-workspace-id)) |
 
 Claude Enterprise Analytics API:
 
-| Endpoints                                                                                                                                                            | Old name      | New name              |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|-----------------------|
-| Per-user [usage](../Admin/beta-organization-analytics-user-usage-report-list.md) and [cost](../Admin/beta-organization-analytics-user-cost-report-list.md) reports | `actor.email` | `actor.email_address` |
-| [Activity summaries](../Admin/beta-organization-analytics-summaries-list.md)                                                                                        | `summaries`   | `data`                |
+| Endpoints | Old name | New name |
+|----|----|----|
+| Per-user [usage](../Admin/beta-organization-analytics-user-usage-report-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. and [cost](../Admin/beta-organization-analytics-user-cost-report-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reports | `actor.email` | `actor.email_address` |
+| [Activity summaries](../Admin/beta-organization-analytics-summaries-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. | `summaries` | `data` |
 
 The `group_type` query parameter on the rate-limit list endpoints and the `workspace_id` filter on the API key list endpoint are unchanged.
 
@@ -346,15 +128,15 @@ The `group_type` query parameter on the rate-limit list endpoints and the `works
 
 Affects you if your code reads `workspace_id` on API keys.
 
-In `2023-06-01`, an API key's `workspace_id` is the ID of the workspace the key is bound to, or `null` for a key bound to the Default Workspace and for a key that isn't bound to one workspace (an all-workspaces key).
+In `2023-06-01`, an API key’s `workspace_id` is the ID of the workspace the key is bound to, or `null` for a key bound to the Default Workspace and for a key that isn’t bound to one workspace (an all-workspaces key).
 
-In `2026-10-21`, `workspace_id` is removed. Read `scope` instead: for a key bound to a workspace, including the Default Workspace, `scope.workspace_id` is that workspace's real ID, and an all-workspaces key has a `scope` of `{"type": "organization"}`, with no `workspace_id`.
+In `2026-10-21`, `workspace_id` is removed. Read `scope` instead: for a key bound to a workspace, including the Default Workspace, `scope.workspace_id` is that workspace’s real ID, and an all-workspaces key has a `scope` of `{"type": "organization"}`, with no `workspace_id`.
 
-If your code treated a `null` `workspace_id` as the Default Workspace, compare `scope.workspace_id` with your Default Workspace's ID instead. To find that ID, call [List Workspaces](organization-workspaces-list.md) with `include_default=true` and take the workspace named `"Default"`.
+If your code treated a `null` `workspace_id` as the Default Workspace, compare `scope.workspace_id` with your Default Workspace’s ID instead. To find that ID, call [List Workspaces](organization-workspaces-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. with `include_default=true` and take the workspace named `"Default"`.
 
 ## SDK and CLI changes
 
-Earlier SDK and CLI versions sent `anthropic-version: 2023-06-01` with every request. The versions under [Switch to 2026-10-21](#upgrade) send `2026-10-21`, including their Amazon Bedrock and Google Cloud clients. The changes in [Breaking changes](#breaking-changes) apply to them too: the removed parameters and the old field names are also gone from the SDK's types and from the CLI's flags and output.
+Earlier SDK and CLI versions sent `anthropic-version: 2023-06-01` with every request. The versions under [Switch to 2026-10-21](#upgrade) send `2026-10-21`, including their Amazon Bedrock and Google Cloud clients. The changes in [Breaking changes](#breaking-changes) apply to them too: the removed parameters and the old field names are also gone from the SDK’s types and from the CLI’s flags and output.
 
 ### `MessageParam` is a union with one type for each role
 
@@ -413,7 +195,7 @@ def to_message(role: Literal["user", "assistant"], text: str) -> MessageParam:
 
 Two more apply to `BetaMessageParam` only:
 
-- `clear_at` and `output_config` are keys of `BetaSystemMessageParam`, so a user or assistant message can't have them.
+- `clear_at` and `output_config` are keys of `BetaSystemMessageParam`, so a user or assistant message can’t have them.
 - `content` is optional in `BetaSystemMessageParam`, so pyright reports `message["content"]`. Read it with `message.get("content")`, or check first that `message["role"]` is not `"system"`.
 
 ### One-value enums are constants
@@ -438,7 +220,7 @@ CLI
 
 ### Client-side compaction is removed from the tool runner
 
-This affects the TypeScript and Ruby SDKs. Client-side compaction in the tool runner has been removed in favor of server-side compaction, which summarizes the conversation inside the API instead of with an extra request from the client.
+This affects the TypeScript and Ruby SDKs. Client-side compaction in the tool runner is removed in favor of server-side compaction, which summarizes the conversation inside the API instead of with an extra request from the client.
 
 TypeScript
 
@@ -446,7 +228,7 @@ Ruby
 
 TypeScript
 
-The `compactionControl` option and the `@anthropic-ai/sdk/lib/tools/CompactionControl` module are gone. The option stopped working in v0.129.0, where passing it threw an `AnthropicError`. It isn't in the tool runner's parameters type, so TypeScript reports it as an unknown property.
+The `compactionControl` option and the `@anthropic-ai/sdk/lib/tools/CompactionControl` module are gone. The option stopped working in v0.129.0, where passing it threw an `AnthropicError`. It isn’t in the tool runner’s parameters type, so TypeScript reports it as an unknown property.
 
 To keep compacting automatically at a token threshold:
 
@@ -475,41 +257,7 @@ The trigger threshold must be at least 50,000 tokens. See [compaction](../Guides
 
 ### Text Completions is removed
 
-The legacy Text Completions API is removed from the TypeScript, Go, Java, and Ruby SDKs and from the CLI. Newer models and features don't support it. Use the [Messages API](messages.md) instead.
-
-CLI
-
-TypeScript
-
-Go
-
-Java
-
-Ruby
-
-CLI
-
-The `ant completions create` command is gone.
-
-```python
-# Before
-ant completions create \
-  --model "$MODEL" \
-  --max-tokens-to-sample 1024 \
-  --prompt $'\n\nHuman: Hello, Claude\n\nAssistant:'
-
-# After
-ant messages create \
-  --model "$MODEL" \
-  --max-tokens 1024 \
-  --message '{role: user, content: "Hello, Claude"}'
-```
-
-
-
-The reply text moves from the `completion` field to `content.0.text`, so a script that passed `--transform completion` passes `--transform content.0.text` instead.
-
-`ant messages create` also takes `--stream`, but its events have another shape: the text arrives in `delta.text` of `content_block_delta` events, so `--transform content.0.text` does not apply to a stream.
+The legacy Text Completions API is removed from the TypeScript, Go, Java, and Ruby SDKs and from the CLI. Newer models and features don’t support it. Use the [Messages API](../Guides/build-with-claude-working-with-messages.md) instead.
 
 ### `betas` is removed from the non-beta Models methods
 
@@ -547,7 +295,7 @@ page = client.beta.models.list(betas=[beta])
 
 ### API keys are sent as `Authorization: Bearer`
 
-The SDK and the CLI send your API key as `Authorization: Bearer <key>` instead of in the `X-Api-Key` header, so change any proxy or gateway that reads or sets `X-Api-Key` to use `Authorization`, or [send the key in `X-Api-Key` yourself](#sdk-proxy-x-api-key). The Claude API accepts a key in either header, so a program that talks to the API directly needs no change.
+The SDK and the CLI send your API key as `Authorization: Bearer <key>` instead of in the `X-Api-Key` header, so change any proxy or gateway that reads or sets `X-Api-Key` to use `Authorization`, or [send the key in `X-Api-Key` yourself](#sdk-proxy-x-api-key). Also change code in your own program that reads `X-Api-Key`, such as middleware, a log filter, or a test stub. The Claude API accepts a key in either header.
 
 ``` block
 # Before
@@ -626,7 +374,7 @@ client = Anthropic(api_key=api_key, http_client=DefaultHttpxClient(auth=send_x_a
 
 This affects the Python, TypeScript, Go, PHP, and Ruby SDKs.
 
-If you removed `X-Api-Key` so that a request sent only an authentication token, delete that code instead of changing it, because removing `Authorization` would remove the token. [A client holds one credential](#sdk-one-credential), so make sure that it's the token: with none passed in code and both `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` set, the client uses the key.
+If you removed `X-Api-Key` so that a request sent only an authentication token, delete that code instead of changing it, because removing `Authorization` would remove the token. [A client holds one credential](#sdk-one-credential), so make sure that it’s the token: with none passed in code and both `ANTHROPIC_API_KEY` and `ANTHROPIC_AUTH_TOKEN` set, the client uses the key.
 
 Python
 
@@ -642,7 +390,7 @@ Python
 
 Code that passes `extra_headers={"X-Api-Key": omit}` to keep the key off a request no longer does that. Pass `extra_headers={"Authorization": omit}` instead.
 
-`extra_headers={"X-Api-Key": other_key}` no longer replaces the client's key: both keys go out. To send another key with one request, pass `extra_headers={"Authorization": f"Bearer {other_key}"}`.
+`extra_headers={"X-Api-Key": other_key}` no longer replaces the client’s key: both keys go out. To send another key with one request, pass `extra_headers={"Authorization": f"Bearer {other_key}"}`.
 
 ### A client holds one credential
 
@@ -666,10 +414,10 @@ Python
 
 v1 sent both an API key and an authentication token when the client had both, each in its own header. The credential is one of `api_key`, `auth_token`, `credentials`, `config`, or `profile`.
 
-- **Pass at most one.** Two or more in the constructor, or in one `copy()` or `with_options()` call, raise `ValueError`. `None` doesn't count. v1 raised `TypeError`, and only for two of `credentials`, `config`, and `profile`.
+- **Pass at most one.** Two or more in the constructor, or in one `copy()` or `with_options()` call, raise `ValueError`. `None` doesn’t count. v1 raised `TypeError`, and only for two of `credentials`, `config`, and `profile`.
 - **The one you pass is the only one.** As in v1, the client does not look for another in the environment or on disk.
 - **With none passed, only the first of these that is set is used:** `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, the profile that `ANTHROPIC_PROFILE` names, the workload identity federation variables, the active profile on disk (the one the `active_config` file names, otherwise `default`). When both of the first two are set, the client logs a warning once. v1 used the active profile ahead of the federation variables when `ANTHROPIC_CONFIG_DIR` was set or an `active_config` file existed; set `ANTHROPIC_PROFILE` to keep using it.
-- **`copy()` and `with_options()` replace.** A credential you pass replaces the client's own, whichever kind either one is. A base URL and headers that came from the old credential's config or profile go with it, and the new credential's are used. A base URL you passed stays.
+- **`copy()` and `with_options()` replace.** A credential you pass replaces the client’s own, whichever kind either one is. A base URL and headers that came from the old credential’s config or profile go with it, and the new credential’s are used. A base URL you passed stays.
 
 ```python
 client = Anthropic(api_key=key, auth_token=token)
@@ -706,10 +454,10 @@ CLI
 
 **`--api-key` and `--auth-token` are removed.** `ant` no longer takes an API key or authentication token as a flag value, because a value on the command line is visible in shell history and process listings. Both flags have printed a deprecation warning since v1.27.0. A command that still passes one stops with `flag provided but not defined`.
 
-| Removed                | Use instead                                                 |
-|------------------------|-------------------------------------------------------------|
-| `--api-key <key>`      | `ANTHROPIC_API_KEY`, `--api-key-stdin`, or `ant auth login` |
-| `--auth-token <token>` | `ANTHROPIC_AUTH_TOKEN` or `--auth-token-stdin`              |
+| Removed | Use instead |
+|----|----|
+| `--api-key <key>` | `ANTHROPIC_API_KEY`, `--api-key-stdin`, or `ant auth login` |
+| `--auth-token <token>` | `ANTHROPIC_AUTH_TOKEN` or `--auth-token-stdin` |
 
 ```python
 # Before
@@ -731,7 +479,7 @@ op read op://vault/anthropic/api-key | ant --api-key-stdin models list
 
 ### The license is Apache 2.0
 
-Starting with these versions, the SDK and the CLI are licensed under the Apache License, Version 2.0. Earlier versions remain under the MIT License. No code changes are needed. If you track the licenses of your dependencies, update their entries.
+Starting with the versions under [Switch to 2026-10-21](#upgrade), the SDK and the CLI are licensed under the Apache License, Version 2.0. Earlier versions remain under the MIT License. No code changes are needed. If you track the licenses of your dependencies, update their entries.
 
 - **TypeScript:** The platform packages (`@anthropic-ai/bedrock-sdk`, `@anthropic-ai/vertex-sdk`, `@anthropic-ai/foundry-sdk`, `@anthropic-ai/aws-sdk`, and `@anthropic-ai/google-cloud-sdk`) change license in their own 1.0.0 releases.
 - **C#:** The other packages (`Anthropic.Bedrock`, `Anthropic.Vertex`, `Anthropic.Foundry`, `Anthropic.Aws`, `Anthropic.GoogleCloud`, and `Anthropic.Mcp`) change license in their own 1.0.0 releases.

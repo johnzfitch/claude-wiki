@@ -2,87 +2,9 @@
 title: "Deploy MCP tunnels with Docker Compose - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/deploy-compose"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-20T06:38:49Z"
+fetched_at: "2026-11-05T06:34:36Z"
 tags: ["api", "docker", "mcp"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Fmcp-tunnels%2Fdeploy-compose)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
-
-[Thinking](../Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](agents-and-tools-tool-use-tool-reference.md)[Manage tool context](agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
-
-[Compaction](../Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](agents-and-tools-agent-skills-overview.md)[Quickstart](agents-and-tools-agent-skills-quickstart.md)[Best practices](agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](agents-and-tools-remote-mcp-servers.md)[MCP connector](agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](agents-and-tools-mcp-tunnels-overview.md)
-
-[Overview](agents-and-tools-mcp-tunnels-overview.md)[Architecture and components](agents-and-tools-mcp-tunnels-concepts.md)[Quickstart](agents-and-tools-mcp-tunnels-quickstart.md)[Manage in the Console](agents-and-tools-mcp-tunnels-console.md)[Deploy with Helm](agents-and-tools-mcp-tunnels-deploy-helm.md)[Deploy with Docker Compose](agents-and-tools-mcp-tunnels-deploy-compose.md)[Security](agents-and-tools-mcp-tunnels-security.md)[Troubleshooting](agents-and-tools-mcp-tunnels-troubleshooting.md)[Reference](agents-and-tools-mcp-tunnels-reference.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)MCP tunnels
 
 # Deploy MCP tunnels with Docker Compose
 
@@ -102,21 +24,21 @@ MCP tunnels are in research preview. [Request access](https://claude.com/form/mc
 
 This guide deploys the [tunnel stack](agents-and-tools-mcp-tunnels-concepts.md#components) as hardened containers on a single host. The same configuration can be replicated across multiple hosts for availability.
 
-## Before you begin
+## Before you start
 
 You need:
 
-- **A tunnel.** With programmatic access, the [setup component](agents-and-tools-mcp-tunnels-concepts.md#components) creates one for you when you don't supply a tunnel ID; to attach to an existing tunnel instead, [create it in the Console](agents-and-tools-mcp-tunnels-console.md#create-a-tunnel) and record the tunnel ID (`tnl_...`). Manual provisioning always starts from a Console-created tunnel.
+- **A tunnel.** With programmatic access, the [setup component](agents-and-tools-mcp-tunnels-concepts.md#components) creates one for you when you don’t supply a tunnel ID; to attach to an existing tunnel instead, [create it in the Claude Console](agents-and-tools-mcp-tunnels-console.md#create-a-tunnel) and record the tunnel ID (`tnl_...`). Manual provisioning always starts from a Console-created tunnel.
 - **A way for the host to authenticate to the Tunnels API.**
-  - **Programmatic access (recommended).** Turn on **Set up programmatic access** when creating the tunnel so the setup component can authenticate through Workload Identity Federation. If you're letting the setup component create the tunnel, create the federation rule directly on the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`) in the Claude Console instead. Record the federation rule ID (`fdrl_...`) and your organization ID.
-  - **Manual.** Skip programmatic access. You'll [get the tunnel token from the Console](agents-and-tools-mcp-tunnels-console.md#get-the-connection-details), generate a CA and server certificate yourself, and [register the CA in the Console](agents-and-tools-mcp-tunnels-console.md#add-a-ca-certificate).
+  - **Programmatic access (recommended).** Turn on **Set up programmatic access** when creating the tunnel so the setup component can authenticate through Workload Identity Federation. If you’re letting the setup component create the tunnel, create the federation rule directly on the [Workload identity](https://platform.claude.com/settings/workload-identity-federation) page (`platform.claude.com/settings/workload-identity-federation`) in the Claude Console instead. Record the federation rule ID (`fdrl_...`) and your organization ID.
+  - **Manual.** Skip programmatic access. You’ll [get the tunnel token from the Console](agents-and-tools-mcp-tunnels-console.md#get-the-connection-details), generate a CA and server certificate yourself, and [register the CA in the Console](agents-and-tools-mcp-tunnels-console.md#add-a-ca-certificate).
 - **A host with Docker and Docker Compose** installed. The manual flow also requires `openssl` (1.1.1 or later).
 - **Outbound network connectivity** from the host to `api.anthropic.com` (443 TCP) and the [tunnel edge](agents-and-tools-mcp-tunnels-concepts.md#components) (7844 TCP and UDP). See the full [network requirements](agents-and-tools-mcp-tunnels-overview.md#network-requirements).
-- **One or more MCP servers** running and reachable from the host on the addresses you'll configure under `routes`. If you don't have one yet, [use the sample server](#optional-use-a-sample-mcp-server).
+- **One or more MCP servers** running and reachable from the host on the addresses you’ll configure under `routes`. If you don’t have one yet, [use the sample server](#optional-use-a-sample-mcp-server).
 
 ## Optional: Use a sample MCP server
 
-If you don't have an MCP server available for testing, use this minimal one:
+If you don’t have an MCP server available for testing, use this minimal one:
 
 ```python
 mkdir -p mcp-tunnel
@@ -143,7 +65,7 @@ The following Install steps `cd` into `mcp-tunnel/` and note where to add the co
 
 ## Install
 
-This guide provides one reference approach using Docker Compose. You are responsible for adapting it to meet your organization's security requirements.
+This guide provides one reference approach using Docker Compose. You are responsible for adapting it to meet your organization’s security requirements.
 
 With programmatic access
 
@@ -151,7 +73,7 @@ Without programmatic access
 
 With programmatic access
 
-This path requires the host to have an OIDC identity provider (such as a cloud VM metadata server or SPIFFE). If it doesn't, use the **Without programmatic access** tab instead.
+This path requires the host to have an OIDC identity provider (such as a cloud VM metadata server or SPIFFE). If it doesn’t, use the **Without programmatic access** tab instead.
 
 The setup component uses Workload Identity Federation to fetch the tunnel token, generate a CA and server certificate, and register the CA with Anthropic.
 
@@ -179,7 +101,7 @@ The setup component uses Workload Identity Federation to fetch the tunnel token,
     cat > docker-compose.yaml <<'EOF'
     services:
       setup:
-        image: us-docker.pkg.dev/anthropic-public-registry/images/mcp-proxy@sha256:efb27b299d627e4134815663cb8896641eeaee025d734c0f695582b4df38f013
+        image: us-docker.pkg.dev/anthropic-public-registry/images/mcp-proxy@sha256:d243d30642d39857a0579e465cb3b9bf3ae7c1141e83143bb6856777a31467a5
         entrypoint: ["/setup"]
         command:
           - init
@@ -203,7 +125,7 @@ The setup component uses Workload Identity Federation to fetch the tunnel token,
         profiles: ["setup"]
 
       cloudflared:
-        image: cloudflare/cloudflared@sha256:6b599ca3e974349ead3286d178da61d291961182ec3fe9c505e1dd02c8ac31b0
+        image: cloudflare/cloudflared@sha256:0e56c13c7058fcef9c4f0e7d83372f82330548dbf8f8b366f3d8b506526d93b2
         command: tunnel --no-autoupdate run --url http://localhost:8080
         environment:
           - TUNNEL_TOKEN
@@ -223,7 +145,7 @@ The setup component uses Workload Identity Federation to fetch the tunnel token,
             max-file: "3"
 
       mcp-proxy:
-        image: us-docker.pkg.dev/anthropic-public-registry/images/mcp-proxy@sha256:efb27b299d627e4134815663cb8896641eeaee025d734c0f695582b4df38f013
+        image: us-docker.pkg.dev/anthropic-public-registry/images/mcp-proxy@sha256:d243d30642d39857a0579e465cb3b9bf3ae7c1141e83143bb6856777a31467a5
         volumes:
           - ./config/mcp-proxy.yaml:/etc/mcp-gateway/config.yaml:ro
           - ./data:/data:ro
@@ -244,7 +166,7 @@ The setup component uses Workload Identity Federation to fetch the tunnel token,
 
     
 
-    If you're using the [sample MCP server](#optional-use-a-sample-mcp-server), append it as a service:
+    If you’re using the [sample MCP server](#optional-use-a-sample-mcp-server), append it as a service:
 
     ``` shiki
     cat >> docker-compose.yaml <<'EOF'
@@ -275,9 +197,9 @@ The setup component uses Workload Identity Federation to fetch the tunnel token,
 
     
 
-    If your federation rule is scoped to a workspace other than your organization's default, also set `ANTHROPIC_WORKSPACE_ID=wrkspc_...`; the setup component uses the default workspace otherwise. An auto-created tunnel is created in that workspace.
+    If your federation rule is scoped to a workspace other than your organization’s default, also set `ANTHROPIC_WORKSPACE_ID=wrkspc_...`; the setup component uses the default workspace otherwise. An auto-created tunnel is created in that workspace.
 
-    Set `ANTHROPIC_IDENTITY_TOKEN` to an OIDC JWT from this host's identity provider. Follow the [WIF guide for your provider](../Other/manage-claude-workload-identity-federation.md#identity-providers) to register the issuer, set the rule's subject, and mint the token; the rule's audience must match the audience you request when minting.
+    Set `ANTHROPIC_IDENTITY_TOKEN` to an OIDC JWT from this host’s identity provider. Follow the [WIF guide for your provider](../Other/manage-claude-workload-identity-federation.md#identity-providers) to register the issuer, set the rule’s subject, and mint the token; the rule’s audience must match the audience you request when minting.
 
     Run the setup component:
 
@@ -340,7 +262,7 @@ The setup component uses Workload Identity Federation to fetch the tunnel token,
 
 Without programmatic access
 
-Use this flow if you didn't turn on **Set up programmatic access**, or for local development and testing. There is no `setup` service.
+Use this flow if you didn’t turn on **Set up programmatic access**, or for local development and testing. There is no `setup` service.
 
 1.  1
 
@@ -368,7 +290,7 @@ Use this flow if you didn't turn on **Set up programmatic access**, or for local
 
     
 
-    The proxy listens on `:8080` over plain WebSocket; the [inner TLS](agents-and-tools-mcp-tunnels-concepts.md#components) handshake happens **inside** that WebSocket stream using these certificates. Anthropic verifies the inner handshake against the CA you register in the Console. The server certificate's Subject Alternative Name (SAN) must include `*.<tunnel-domain>` per the [certificate requirements](agents-and-tools-mcp-tunnels-reference.md#certificate-requirements).
+    The proxy listens on `:8080` over plain WebSocket; the [inner TLS](agents-and-tools-mcp-tunnels-concepts.md#components) handshake occurs **inside** that WebSocket stream using these certificates. Anthropic verifies the inner handshake against the CA you register in the Console. The server certificate’s Subject Alternative Name (SAN) must include `*.<tunnel-domain>` as described in the [certificate requirements](agents-and-tools-mcp-tunnels-reference.md#certificate-requirements).
 
     ``` shiki
     # Self-signed CA. Explicit extensions so it satisfies the certificate
@@ -410,7 +332,7 @@ Use this flow if you didn't turn on **Set up programmatic access**, or for local
 
     ### Register the CA certificate in the Console
 
-    On the tunnel detail page, scroll to the **Certificates** section and click **Add certificate**. Upload `data/ca.crt` directly with **Choose file** (the modal accepts `.pem`, `.crt`, and `.cer`), or paste its contents:
+    On the tunnel detail page, scroll to the **Certificates** section and click **Add certificate**. Upload `data/ca.crt` directly with **Choose file** (the modal window accepts `.pem`, `.crt`, and `.cer`), or paste its contents:
 
     ``` shiki
     cat data/ca.crt
@@ -418,7 +340,7 @@ Use this flow if you didn't turn on **Set up programmatic access**, or for local
 
     
 
-    The **Needs certificate** badge next to the tunnel's name goes away once a certificate is registered. See [Add a CA certificate](agents-and-tools-mcp-tunnels-console.md#add-a-ca-certificate).
+    The **Needs certificate** badge next to the tunnel’s name goes away once a certificate is registered. See [Add a CA certificate](agents-and-tools-mcp-tunnels-console.md#add-a-ca-certificate).
 
 4.  4
 
@@ -447,13 +369,13 @@ Use this flow if you didn't turn on **Set up programmatic access**, or for local
 
     ### Write docker-compose.yaml
 
-    The `network_mode: "service:mcp-proxy"` setting places [cloudflared](agents-and-tools-mcp-tunnels-concepts.md#components) in the proxy's network namespace so that `localhost:8080` inside the cloudflared container reaches the proxy. The `--url http://localhost:8080` flag gives cloudflared its forwarding target; without that flag, cloudflared has no route for incoming requests and returns a 503.
+    The `network_mode: "service:mcp-proxy"` setting places [cloudflared](agents-and-tools-mcp-tunnels-concepts.md#components) in the proxy’s network namespace so that `localhost:8080` inside the cloudflared container reaches the proxy. The `--url http://localhost:8080` flag gives cloudflared its forwarding target; without that flag, cloudflared has no route for incoming requests and returns a 503.
 
     ``` shiki
     cat > docker-compose.yaml <<'EOF'
     services:
       cloudflared:
-        image: cloudflare/cloudflared@sha256:6b599ca3e974349ead3286d178da61d291961182ec3fe9c505e1dd02c8ac31b0
+        image: cloudflare/cloudflared@sha256:0e56c13c7058fcef9c4f0e7d83372f82330548dbf8f8b366f3d8b506526d93b2
         # --url is required: no ingress rules are pushed in the manual flow,
         # so without it cloudflared 503s every request.
         command: tunnel --no-autoupdate run --url http://localhost:8080
@@ -475,7 +397,7 @@ Use this flow if you didn't turn on **Set up programmatic access**, or for local
             max-file: "3"
 
       mcp-proxy:
-        image: us-docker.pkg.dev/anthropic-public-registry/images/mcp-proxy@sha256:efb27b299d627e4134815663cb8896641eeaee025d734c0f695582b4df38f013
+        image: us-docker.pkg.dev/anthropic-public-registry/images/mcp-proxy@sha256:d243d30642d39857a0579e465cb3b9bf3ae7c1141e83143bb6856777a31467a5
         volumes:
           - ./config/mcp-proxy.yaml:/etc/mcp-gateway/config.yaml:ro
           - ./data:/data:ro
@@ -496,7 +418,7 @@ Use this flow if you didn't turn on **Set up programmatic access**, or for local
 
     
 
-    If you're using the [sample MCP server](#optional-use-a-sample-mcp-server), append it as a service:
+    If you’re using the [sample MCP server](#optional-use-a-sample-mcp-server), append it as a service:
 
     ``` shiki
     cat >> docker-compose.yaml <<'EOF'
@@ -523,13 +445,13 @@ Use this flow if you didn't turn on **Set up programmatic access**, or for local
 
     
 
-The compose file reads `TUNNEL_TOKEN` from the host environment with no default, so the export must be repeated in every fresh shell and after a reboot.
+The compose file reads `TUNNEL_TOKEN` from the host environment with no default, so you must repeat the export in every fresh shell and after a reboot.
 
-For a multi-VM deployment, copy the `mcp-tunnel/` directory to each host, set `TUNNEL_TOKEN`, and run `docker compose up -d`. In the programmatic flow `TUNNEL_TOKEN` is `$(sudo cat data/tunnel-token)`; in the manual flow it's the value you copied from the Console. The same tunnel token and certificates work across all replicas.
+For a multi-VM deployment, copy the `mcp-tunnel/` directory to each host, set `TUNNEL_TOKEN`, and run `docker compose up -d`. In the programmatic flow `TUNNEL_TOKEN` is `$(sudo cat data/tunnel-token)`; in the manual flow it’s the value you copied from the Console. The same tunnel token and certificates work across all replicas.
 
 ## Verify the deployment
 
-Verify end to end by calling an [upstream MCP server](agents-and-tools-mcp-tunnels-concepts.md#components) from Anthropic's side: see [Use the tunneled MCP servers](agents-and-tools-mcp-tunnels-overview.md#use-the-tunneled-mcp-servers). With the [sample MCP server](#optional-use-a-sample-mcp-server), the routed URL is `https://echo.<your-tunnel-domain>/mcp`. If verification fails, see [Troubleshooting](agents-and-tools-mcp-tunnels-troubleshooting.md).
+Verify end to end by calling an [upstream MCP server](agents-and-tools-mcp-tunnels-concepts.md#components) from Anthropic’s side: see [Use the tunneled MCP servers](agents-and-tools-mcp-tunnels-overview.md#use-the-tunneled-mcp-servers). With the [sample MCP server](#optional-use-a-sample-mcp-server), the routed URL is `https://echo.<your-tunnel-domain>/mcp`. If verification fails, see [Troubleshooting](agents-and-tools-mcp-tunnels-troubleshooting.md).
 
 ## Upgrades
 
@@ -549,8 +471,8 @@ With programmatic access, increment `--token-version` in the `setup` service com
 export ANTHROPIC_FEDERATION_RULE_ID=fdrl_...
 export ANTHROPIC_ORGANIZATION_ID=00000000-0000-0000-0000-000000000000
 # export ANTHROPIC_WORKSPACE_ID=wrkspc_...   # if your rule is workspace-scoped
-# Re-mint ANTHROPIC_IDENTITY_TOKEN per the WIF provider guide for your
-# environment (it will have expired since install).
+# Re-mint ANTHROPIC_IDENTITY_TOKEN as described in the WIF provider guide for
+# your environment (it will have expired since install).
 export ANTHROPIC_IDENTITY_TOKEN=...
 
 docker compose run --rm setup
@@ -571,7 +493,7 @@ Clicking **Rotate token** invalidates the current token immediately. Between tha
 
 ### Certificate renewal
 
-You're responsible for monitoring expiry and renewing the server certificate before it expires.
+You’re responsible for monitoring expiry and renewing the server certificate before it expires.
 
 With programmatic access:
 
@@ -581,13 +503,13 @@ docker compose run --rm setup renew-cert --output=dir:/data
 
 
 
-The CLI arguments replace the `setup` service's `command` (the `init` arguments) but keep its `entrypoint`, so this runs `/setup renew-cert --output=dir:/data`.
+The CLI arguments replace the `setup` service’s `command` (the `init` arguments) but keep its `entrypoint`, so this runs `/setup renew-cert --output=dir:/data`.
 
 
 
 Pass `--renew-before=720h` to make the command a no-op when more than 30 days of validity remain. This makes it safe to run on a fixed schedule.
 
-Without programmatic access, sign a new server certificate with your existing CA (the CA registered in the Console doesn't change) and replace `data/tls.crt`. Set `TUNNEL_DOMAIN` first if you're running this from a fresh shell.
+Without programmatic access, sign a new server certificate with your existing CA (the CA registered in the Console doesn’t change) and replace `data/tls.crt`. Set `TUNNEL_DOMAIN` first if you’re running this from a fresh shell.
 
 ```python
 export TUNNEL_DOMAIN=YOUR_TUNNEL_DOMAIN_HERE

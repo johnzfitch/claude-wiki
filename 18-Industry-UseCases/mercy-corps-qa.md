@@ -17,7 +17,7 @@ Company size:
 Large
 
 Product:  
-[Claude Enterprise](../17-Billing-Plans/pricing-enterprise.md)[Claude for Nonprofits](nonprofits.md)
+[Claude Enterprise](enterprise.md)[Claude for Nonprofits](nonprofits.md)
 
 Location:  
 North America
@@ -113,7 +113,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
 - [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
@@ -145,7 +145,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 
 ## Enterprise
 
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Overview](enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -176,7 +176,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 
 ## Developers
 
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer docs](../01-Getting-Started/overview.md)
 - [Developer blog](https://claude.dev)
 - [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)
@@ -237,7 +237,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 ## Products
 
 - [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
+- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
 - [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
 - [@Claude](../15-Claude-AI-Features/product-tag.md)
 - [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
@@ -269,7 +269,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 
 ## Enterprise
 
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
+- [Overview](enterprise.md)
 - [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
 
 ## Departments
@@ -300,7 +300,7 @@ Our Innovation Catalyst platform is another effort taking shape, weaving AI for 
 
 ## Developers
 
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
+- [Developer docs](../01-Getting-Started/overview.md)
 - [Developer blog](https://claude.dev)
 - [Community](https://www.claude.com/community)
 - [Console](../04-API-Reference/Other/home.md)

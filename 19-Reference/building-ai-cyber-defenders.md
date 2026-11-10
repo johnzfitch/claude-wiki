@@ -2,7 +2,7 @@
 title: "Building AI for cyber defenders \\ Anthropic"
 source_url: "https://www.anthropic.com/research/building-ai-cyber-defenders"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:01Z"
+fetched_at: "2026-10-24T06:26:59Z"
 tags: ["evaluation", "news-research", "skills"]
 ---
 

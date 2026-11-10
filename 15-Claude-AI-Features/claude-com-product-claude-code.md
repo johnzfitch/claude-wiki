@@ -11,7 +11,7 @@ tags: ["agents", "claude-ai", "claude-code", "slack"]
 
 Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
 
-[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](../02-Claude-Code-CLI/code-home.md)
+[Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](../01-Getting-Started/overview.md)
 
 (opens in new tab)
 
@@ -316,9 +316,9 @@ Get Claude Code
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](../02-Claude-Code-CLI/code-home.md)
+Or read the [documentation](../01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../02-Claude-Code-CLI/code-home.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../01-Getting-Started/overview.md)
 
 Onboarding
 
@@ -411,9 +411,9 @@ Super powerful terminal integration. Works with all your CLI tools alongside any
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](../02-Claude-Code-CLI/code-home.md)
+Or read the [documentation](../01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../02-Claude-Code-CLI/code-home.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../01-Getting-Started/overview.md)
 
 ### Integrate with your editor
 
@@ -495,7 +495,7 @@ Your terminal is where real work happens. Claude Code connects with the tools th
 
 ### How do I get started with Claude?
 
-You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan, or a Claude Console account. [Download Claude Code](../02-Claude-Code-CLI/code-home.md) and sign in with your respective Claude or Console credentials.
+You can access Claude Code with a Claude Pro or Max plan, a Team or Enterprise plan, or a Claude Console account. [Download Claude Code](../01-Getting-Started/overview.md) and sign in with your respective Claude or Console credentials.
 
 ### What kind of tasks can Claude Code handle?
 
@@ -577,6 +577,6 @@ Get Claude Code
 
 curl -fsSL https://claude.ai/install.sh \| bash
 
-Or read the [documentation](../02-Claude-Code-CLI/code-home.md)
+Or read the [documentation](../01-Getting-Started/overview.md)
 
-[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../02-Claude-Code-CLI/code-home.md)
+[Try Claude Code (opens in new tab)](https://claude.ai/code)[Developer docs (opens in new tab)](../01-Getting-Started/overview.md)

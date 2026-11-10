@@ -580,7 +580,7 @@ One-line replies for the questions you will be asked most.
 | “Do I have to configure anything first?” | No. Install, then run `claude` in any repo. Run `/init` once and you’re set. [Quickstart →](../01-Getting-Started/quickstart.md)                                                                                        |
 | “Where does my code go?”                 | The CLI runs in your terminal and sends context to Anthropic’s API for inference. On a Team or Enterprise plan, your code and prompts are not used to train models. [Data usage →](data-usage.md) |
 | “Can it see my whole repo?”              | It reads what you give it access to. File reads inside your working directory don’t prompt. [Permissions →](../02-Claude-Code-CLI/permissions.md)                                                                       |
-| “How is this different from Copilot?”    | Copilot autocompletes lines. Claude Code is an agent that reads files, runs commands, and makes multi-file edits. [Overview →](../02-Claude-Code-CLI/code-home.md)                                                       |
+| “How is this different from Copilot?”    | Copilot autocompletes lines. Claude Code is an agent that reads files, runs commands, and makes multi-file edits. [Overview →](../01-Getting-Started/overview.md)                                                       |
 | “What should I try first?”               | A bug you’ve been putting off because it’s tedious. “The test in \[file\] is flaky, figure out why.” [Quickstart →](../01-Getting-Started/quickstart.md)                                                                |
 
 
@@ -601,4 +601,4 @@ Share these starter prompts with engineers who have installed but aren’t sure 
 | Make a skill         | ”make me a /ship skill that runs tests and lint before commit”                |
 | Debug a stack trace  | ”here’s the stack trace, find the root cause, don’t just paper over it”       |
 
-Claude Code ships frequently. Verify version-specific details against the [documentation home page](../02-Claude-Code-CLI/code-home.md) before distributing internally.
+Claude Code ships frequently. Verify version-specific details against the [documentation home page](../01-Getting-Started/overview.md) before distributing internally.

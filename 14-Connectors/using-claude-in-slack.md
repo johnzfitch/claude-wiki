@@ -2,7 +2,8 @@
 title: "Work with Claude Tag - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:28:56Z"
+fetched_at: "2026-11-09T06:25:56Z"
+last_modified: "Mon, 09 Nov 2026 01:18:01 GMT"
 tags: ["connectors"]
 ---
 
@@ -47,7 +48,7 @@ Done: Pulled p99 latency from DatadogDone: Diffed deploy 4f2c1 against mainDone:
 
 Plans that include Claude Tag
 
-Claude Tag is available on Team and Enterprise plans, on Anthropic’s first-party service. It isn’t available on individual plans (Free, Pro, or Max), or for third-party deployments. To use it, your organization pairs its Slack workspace with its Claude organization; see [the setup overview](https://support.claude.com/docs/claude-tag/admins/setup-overview) for the full prerequisites. If you’re choosing between Claude products for Slack-shaped work, [how Claude Tag differs from Cowork and Claude Code](https://support.claude.com/docs/claude-tag/concepts/how-it-works#how-claude-tag-differs-from-cowork-and-claude-code) compares them directly: team work in shared channels is Claude Tag; personal work on your own files is Cowork or Claude Code.
+Claude Tag is available on Team and Enterprise plans, on Anthropic’s first-party service. It isn’t available on individual plans (Free, Pro, Max, or Ultra), or for third-party deployments. To use it, your organization pairs its Slack workspace with its Claude organization; see [the setup overview](https://support.claude.com/docs/claude-tag/admins/setup-overview) for the full prerequisites. If you’re choosing between Claude products for Slack-shaped work, [how Claude Tag differs from Cowork and Claude Code](https://support.claude.com/docs/claude-tag/concepts/how-it-works#how-claude-tag-differs-from-cowork-and-claude-code) compares them directly: team work in shared channels is Claude Tag; personal work on your own files is Cowork or Claude Code.
 
 
 [​](#who-needs-a-claude-seat)
@@ -58,7 +59,7 @@ Slack users don’t each need a Claude seat to work with Claude in channels.
 
 - **In channels**: by default, anyone in the paired Slack workspace can tag `@Claude` in a channel, and an Owner can [restrict who can use Claude](https://support.claude.com/docs/claude-tag/admins/restrict-access#restrict-who-can-use-claude) to people in your Claude organization or, on Enterprise, to specific roles. Channel work bills by usage to your organization’s usage balance, under a [spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) an Owner sets.
 - **In group DMs**: the same restriction on who can use Claude applies, and the work bills to your organization’s usage balance. See [Group DMs](https://support.claude.com/docs/claude-tag/admins/restrict-access#group-dms).
-- **In one-to-one DMs**: a DM from a member who has connected a Claude account runs on that account and bills to that person’s seat. The seat must include Claude Code, or, on the Enterprise plan, be a **Standard** or **Usage-Based Chat** seat held by someone who also has Cowork. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can bill to your organization for a limited time.
+- **In one-to-one DMs**: a DM from a member who has connected a Claude account runs on that account and bills to that person’s seat. For the DM to work, that person needs either a seat that includes Claude Code or, on the Enterprise plan, Cowork access on a **Standard** seat or a usage-based **Chat** seat. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can bill to your organization for a limited time.
 
 
 [​](#where-claude-tag-runs)

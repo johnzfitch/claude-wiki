@@ -39,7 +39,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=institute)
 
-In the five years since Anthropic began, AI progress has moved incredibly quickly. It took us two years to release our first commercial model, and just three more to develop models that can discover [severe](https://red.anthropic.com/2026/zero-days/) [cybersecurity](2026-critical-infrastructure-defense.md) [vulnerabilities](2026-cyber-toolkits-update.md), [take on](measuring-agent-autonomy.md) a [wide range](https://www.anthropic.com/economic-index) of [real work](economic-index-primitives.md), and even begin to accelerate the pace of [AI development itself](how-ai-is-transforming-work-at-anthropic.md).
+In the five years since Anthropic began, AI progress has moved incredibly quickly. It took us two years to release our first commercial model, and just three more to develop models that can discover [severe](https://red.anthropic.com/2026/zero-days/) [cybersecurity](2026-critical-infrastructure-defense.md) [vulnerabilities](2026-cyber-toolkits-update.md), [take on](measuring-agent-autonomy.md) a [wide range](https://www.anthropic.com/economic-index) of [real work](research-economic-index-primitives.md), and even begin to accelerate the pace of [AI development itself](how-ai-is-transforming-work-at-anthropic.md).
 
 We predict that far more dramatic progress will follow in the next two years. One of our company’s core convictions is that AI development is accelerating: that the improvements we make are compounding over time. Because of this, extremely powerful AI, like the kind our CEO Dario Amodei describes in [*Machines of Loving Grace*](https://www.darioamodei.com/essay/machines-of-loving-grace), is coming far sooner than many think.
 

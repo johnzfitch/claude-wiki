@@ -2,252 +2,11 @@
 title: "Create a Message Batch - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:39:54Z"
+fetched_at: "2026-11-05T06:36:28Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fmessages%2Fbatches%2Fcreate)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-
-Create a Message Batch
-
-
-Retrieve a Message Batch
-
-
-List Message Batches
-
-
-Cancel a Message Batch
-
-
-Delete a Message Batch
-
-
-Retrieve Message Batch results
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 
 
@@ -263,7 +22,9 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/messages/batches
 
@@ -289,7 +50,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
+The user profile ID to attribute the requests in this batch to. Use when acting on behalf of a party other than your organization. Applies to every request in the batch; an individual request whose `user_profile_id` body field conflicts with this header is errored.
 
 
 
@@ -333,7 +94,7 @@ pattern^\[a-zA-Z0-9\_-\]{1,64}\$
 
 
 
-params: object{ max_tokens, messages, model, 17 more }
+params: object{ max_tokens, messages, model, 14 more }
 
 
 
@@ -359,7 +120,7 @@ minimum0
 
 
 
-messages: array of [MessageParam](https://platform.claude.com/docs/en/api/http/messages#message_param) { content, role }
+messages: array of [MessageParam](https://platform.claude.com/docs/en/api/http/messages#message_param)
 
 
 
@@ -418,277 +179,51 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter.
 
 There is a limit of 100,000 messages in a single request.
 
+One of the following:
+
 
 
-content: string or array of [ContentBlockParam](https://platform.claude.com/docs/en/api/http/messages#content_block_param)
+UserMessageParam object{ content, role }
+
+
+
+
+
+content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
 
 
 
 One of the following:
 
-string
+role: "user"
 
 
 
 
 
-array of [ContentBlockParam](https://platform.claude.com/docs/en/api/http/messages#content_block_param)
+AssistantMessageParam object{ content, role }
+
+
+
+
+
+content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
 
 
 
 One of the following:
 
-
-
-TextBlockParam object{ type: "text", text, cache_control, citations }
+role: "assistant"
 
 
 
 
 
-ImageBlockParam object{ type: "image", source, cache_control, transformations }
-
-
-
-
-
-DocumentBlockParam object{ type: "document", source, cache_control, 3 more }
-
-
-
-
-
-SearchResultBlockParam object{ type: "search_result", content, source, 3 more }
-
-
-
-
-
-ThinkingBlockParam object{ type: "thinking", signature, thinking }
-
-
-
-type: "thinking"
-
-
-
-
-
-signature: string
-
-
-
-The `signature` value of this thinking block, exactly as returned by the API in a previous response. Used to verify that the block was generated by Claude.
-
-Thinking blocks must be passed back unmodified and in their original order; a modified block results in a 400 `invalid_request_error`.
-
-thinking: string
-
-
-
-The `thinking` text of this block as returned by the API.
-
-
-
-RedactedThinkingBlockParam object{ type: "redacted_thinking", data }
-
-
-
-type: "redacted_thinking"
-
-
-
-data: string
-
-
-
-The `data` value of this redacted thinking block, exactly as returned by the API in a previous response. Opaque and encrypted; pass it back unchanged.
-
-
-
-ToolUseBlockParam object{ type: "tool_use", id, input, 4 more }
-
-
-
-
-
-ToolResultBlockParam object{ type: "tool_result", tool_use_id, cache_control, 3 more }
-
-
-
-
-
-ServerToolUseBlockParam object{ type: "server_tool_use", id, input, 3 more }
-
-
-
-
-
-WebSearchToolResultBlockParam object{ type: "web_search_tool_result", content, tool_use_id, 2 more }
-
-
-
-
-
-WebFetchToolResultBlockParam object{ type: "web_fetch_tool_result", content, tool_use_id, 2 more }
-
-
-
-
-
-CodeExecutionToolResultBlockParam object{ type: "code_execution_tool_result", content, tool_use_id, cache_control }
-
-
-
-type: "code_execution_tool_result"
-
-
-
-
-
-content: [CodeExecutionToolResultBlockParamContent](https://platform.claude.com/docs/en/api/http/messages#code_execution_tool_result_block_param_content)
-
-
-
-One of the following:
-
-
-
-tool_use_id: string
-
-
-
-pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
-
-
-
-cache_control: optional [CacheControlEphemeral](https://platform.claude.com/docs/en/api/http/messages#cache_control_ephemeral) { type: "ephemeral", ttl } or null
-
-
-
-Create a cache control breakpoint at this content block.
-
-type: "ephemeral"
-
-
-
-
-
-ttl: optional "5m" or "1h"
-
-
-
-The time-to-live for the cache control breakpoint.
-
-This may be one the following values:
-
-- `5m`: 5 minutes
-- `1h`: 1 hour
-
-Defaults to `5m`. See [prompt caching pricing](../Guides/build-with-claude-prompt-caching.md) for details.
-
-One of the following:
-
-"5m"
-
-
-
-"1h"
-
-
-
-
-
-BashCodeExecutionToolResultBlockParam object{ type: "bash_code_execution_tool_result", content, tool_use_id, cache_control }
-
-
-
-
-
-TextEditorCodeExecutionToolResultBlockParam object{ type: "text_editor_code_execution_tool_result", content, tool_use_id, cache_control }
-
-
-
-
-
-ToolSearchToolResultBlockParam object{ type: "tool_search_tool_result", content, tool_use_id, cache_control }
-
-
-
-
-
-ContainerUploadBlockParam object{ type: "container_upload", file_id, cache_control }
-
-
-
-A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
-
-type: "container_upload"
-
-
-
-file_id: string
-
-
-
-
-
-cache_control: optional [CacheControlEphemeral](https://platform.claude.com/docs/en/api/http/messages#cache_control_ephemeral) { type: "ephemeral", ttl } or null
-
-
-
-Create a cache control breakpoint at this content block.
-
-type: "ephemeral"
-
-
-
-
-
-ttl: optional "5m" or "1h"
-
-
-
-The time-to-live for the cache control breakpoint.
-
-This may be one the following values:
-
-- `5m`: 5 minutes
-- `1h`: 1 hour
-
-Defaults to `5m`. See [prompt caching pricing](../Guides/build-with-claude-prompt-caching.md) for details.
-
-One of the following:
-
-"5m"
-
-
-
-"1h"
-
-
-
-
-
-role: "user" or "assistant" or "system"
-
-
-
-One of the following:
-
-"user"
-
-
-
-"assistant"
-
-
-
-"system"
+SystemMessageParam object{ content, role }
 
 
 
@@ -1568,7 +1103,11 @@ CodeExecutionTool20260120 object{ type: "code_execution_20260120", name, allowed
 
 
 
-Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+A `tools` entry for the code execution tool, version `code_execution_20260120`. It adds REPL state persistence to version `code_execution_20250825`.
+
+REPL state persistence applies with programmatic tool calling. With it, the Python interpreter state, such as variable bindings, persists across requests that reuse the container.
+
+See the [code execution tool guide](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md#tool-versions) to learn what each tool version adds.
 
 
 
@@ -1674,58 +1213,6 @@ ToolSearchToolRegex20251119 object{ type, name, allowed_callers, 3 more }
 
 
 
-
-
-temperature: optional number⁠Deprecated
-
-
-
-Amount of randomness injected into the response.
-
-Deprecated. Models released after Claude Opus 4.6 do not support setting temperature. A value of 1.0 will be accepted for backwards compatibility, all other values will be rejected with a 400 error.
-
-Defaults to `1.0`. Ranges from `0.0` to `1.0`. Use `temperature` closer to `0.0` for analytical / multiple choice, and closer to `1.0` for creative and generative tasks.
-
-Note that even with `temperature` of `0.0`, the results will not be fully deterministic.
-
-minimum0
-
-maximum1
-
-
-
-top_k: optional number⁠Deprecated
-
-
-
-Only sample from the top K options for each subsequent token.
-
-Deprecated. Models released after Claude Opus 4.6 do not accept top_k; any value will be rejected with a 400 error.
-
-Used to remove "long tail" low probability responses. [Learn more technical details here](https://towardsdatascience.com/how-to-sample-from-language-models-682bceb97277).
-
-Recommended for advanced use cases only.
-
-minimum0
-
-
-
-top_p: optional number⁠Deprecated
-
-
-
-Use nucleus sampling.
-
-Deprecated. Models released after Claude Opus 4.6 do not support setting top_p. A value \>= 0.99 will be accepted for backwards compatibility, all other values will be rejected with a 400 error.
-
-In nucleus sampling, we compute the cumulative distribution over all the options for each subsequent token in decreasing probability order and cut it off once it reaches a particular probability specified by `top_p`.
-
-Recommended for advanced use cases only.
-
-minimum0
-
-maximum1
-
 ##### Returns
 
 
@@ -1743,8 +1230,8 @@ cURL
 ```python
 curl https://api.anthropic.com/v1/messages/batches \
     -H 'Content-Type: application/json' \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY" \
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY" \
     -d '{
           "requests": [
             {

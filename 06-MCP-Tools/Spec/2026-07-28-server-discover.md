@@ -1,12 +1,15 @@
 ---
 title: "Discovery - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/discover"
+source_url: "https://modelcontextprotocol.io/specification/draft/server/discover"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:28:55Z"
+fetched_at: "2026-10-31T06:24:57Z"
+last_modified: "Fri, 30 Oct 2026 20:46:38 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Request](#request)
 - [Response](#response)
@@ -85,12 +88,12 @@ The server replies with its supported protocol versions, capabilities, and ident
 
 When to Call
 
-Calling `server/discover` is optional for clients — a client may invoke any RPC inline and handle [`UnsupportedProtocolVersionError`](2026-07-28-schema.md#unsupportedprotocolversionerror) if the server does not support the requested version. However, `server/discover` is useful in two scenarios:
+Calling `server/discover` is optional for clients — a client may invoke any RPC inline and handle [`UnsupportedProtocolVersionError`](draft-schema.md#unsupportedprotocolversionerror) if the server does not support the requested version. However, `server/discover` is useful in two scenarios:
 
 - **Presenting server information.** While a client doesn’t need to call `server/discover` to use the server, it’s a convenient way to retrieve the server’s identity, capabilities, and supported versions in a single request. For example, a client can present the capabilities a server supports from a single `server/discover` response instead of probing with separate `tools/list`, `prompts/list`, and `resources/list` requests.
 - **stdio backward-compatibility probe.** On stdio, there is no per-request HTTP status code to drive fallback. A client that supports both modern (per-request `_meta`) and legacy (`initialize` handshake) servers **SHOULD** send `server/discover` first; see [stdio: Backward Compatibility](2026-07-28-basic-transports-stdio.md#backward-compatibility) for the fallback rules.
 
-See [Protocol Version Negotiation](2026-07-28-basic-versioning.md#protocol-version-negotiation) for the full version-selection flow. For HTTP-specific status codes returned for unknown methods, see the [Protocol Version Header](2026-07-28-basic-transports-streamable-http.md#protocol-version-header) section in Transports.
+See [Protocol Version Negotiation](draft-basic-versioning.md#protocol-version-negotiation) for the full version-selection flow. For HTTP-specific status codes returned for unknown methods, see the [Protocol Version Header](draft-basic-transports-streamable-http.md#protocol-version-header) section in Transports.
 
 
 [​](#data-types)

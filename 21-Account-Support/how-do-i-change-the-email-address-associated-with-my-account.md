@@ -2,26 +2,24 @@
 title: "How do I change the email address associated with my account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8452276-how-do-i-change-the-email-address-associated-with-my-account"
 category: "21-Account-Support"
-fetched_at: "2026-10-23T06:29:37Z"
+fetched_at: "2026-11-09T06:26:01Z"
 tags: ["account"]
 ---
 
 # How do I change the email address associated with my account?
-
-March 16, 2026
 
 
 It's not possible to change the email address associated with your Claude account at this time. When creating an account, please make sure you use an email you'll have long-term access to.
 
 If you need to use Claude with a different email address, do the following:
 
-### 1. If you have a paid plan (Pro or Max), follow these steps to cancel it
+### 1. If you have a paid plan (Pro, Max, or Ultra), follow these steps to cancel it
 
 - Log in to your Claude account.
 
 - Click on your initials or name in the bottom left corner.
 
-- Navigate to [Settings \> Billing](https://claude.ai/settings/billing).
+- Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
 - Find the **Cancellation** section and click "Cancel."
 
@@ -37,7 +35,7 @@ If you want to use the same phone number to verify your new Claude account, you 
 
 ### 3. Delete the old account
 
-After cancelling your previous subscription and unlinking your phone number, you can delete your account by navigating to [Settings \> Account](https://claude.ai/settings/account), clicking "Delete Account," and following the prompts. **Please note that deleting your account is permanent** and you will no longer have access to saved chats. If you wish to keep your data, we recommend exporting it before deletion by following the steps in [How can I export my Claude data?](../22-Safety-Policy/how-can-i-export-my-claude-data.md)
+After cancelling your previous subscription and unlinking your phone number, you can delete your account by navigating to **[Settings \> Account](https://claude.ai/settings/account)**, clicking "Delete Account," and following the prompts. **Please note that deleting your account is permanent** and you will no longer have access to saved chats. If you wish to keep your data, we recommend exporting it before deletion by following the steps in **[How can I export my Claude data?](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**
 
   
-If you see "Contact support" instead of a "Delete account" button, you'll need to [reach out to our Support team](../15-Claude-AI-Features/how-to-get-support.md) to request assistance with deletion.
+If you see "Contact support" instead of a "Delete account" button, you'll need to **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to request assistance with deletion.

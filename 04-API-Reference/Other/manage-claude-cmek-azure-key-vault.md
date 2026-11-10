@@ -1,80 +1,18 @@
 ---
-title: "Configure Azure Key Vault for CMEK - Claude Platform Docs"
+title: "Set up CMEK with Azure Key Vault - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-azure-key-vault"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:25Z"
+fetched_at: "2026-11-05T06:36:38Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fcmek-azure-key-vault)
-
-
-
-
-
-SearchCtrlK
-
-Organization
-
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
-
-Authentication
-
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
-
-Identity providers
-
-Monitoring
-
-[Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
-
-[OpenTelemetry](manage-claude-opentelemetry.md)
-
-Data & compliance
-
-[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
-
-[Access Transparency](manage-claude-access-transparency.md)
-
-[Encryption keys (CMEK)](manage-claude-cmek.md)
-
-[Overview](manage-claude-cmek.md)[Google Cloud KMS](manage-claude-cmek-google-cloud-kms.md)[Azure Key Vault](manage-claude-cmek-azure-key-vault.md)
-
-[AWS KMS](manage-claude-cmek-aws-kms.md)
-
-[Inference hooks](manage-claude-inference-hooks.md)
-
-Compliance API
-
-[Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
-
-[Console](playground.md)
-
-[Admin](manage-claude-admin-api.md)Encryption keys (CMEK)
-
-# Configure Azure Key Vault for CMEK
+# Set up CMEK with Azure Key Vault
 
 Copy page
 
 
 
-Use Azure Key Vault to provide an encryption key for your organization.
+Create an Azure Key Vault key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.
 
 Copy page
 
@@ -90,55 +28,56 @@ Run in
 
 
 
-This guide shows how to use an Azure Key Vault key as a [customer-managed encryption key (CMEK)](manage-claude-cmek.md) for your Anthropic organization.
+## Before you start
 
-
+In Claude:
 
-Enabling CMEK is permanent. If your Key Vault key is deleted or disabled, Anthropic cannot recover the data encrypted under it. Review the [warnings and limitations](manage-claude-cmek.md) before you start.
+- Customer-managed encryption keys (CMEK) are [turned on for your organization](manage-claude-cmek.md#availability).
+- You have your Anthropic organization ID, the UUID without the `org_` prefix. Copy it from [Organization](playground.md) in the Claude Console, or from **Organization settings \> Organization and access** on claude.ai. Whoever creates the key needs it.
+- You’re an Organization Admin on Claude Platform, or an Owner or Primary Owner on Claude Enterprise.
+- On Claude Platform, you have a workspace that [retains data](manage-claude-cmek-data-retention.md#data-retention), ideally a new one, because [existing data stays under Anthropic’s key](manage-claude-cmek-how-it-works.md#when-your-key-takes-effect).
+- On Claude Enterprise, you know [which features turn off or change](manage-claude-cmek-coverage-claude-enterprise.md#turned-off-or-changed).
 
-## Prerequisites
+In Azure:
 
-- An Azure Key Vault with these settings:
-  - RBAC authorization is enabled (`enableRbacAuthorization: true`).
-  - Public network access is allowed. Private endpoints are not supported.
-  - Purge protection is enabled (`enablePurgeProtection: true`). You can't turn off purge protection after you enable it.
-  - Diagnostic settings route the `AuditEvent` log category to Log Analytics, a storage account, or an event hub. Without them, you have no audit trail of Anthropic's key operations, such as `KeyWrap`, `KeyUnwrap`, and `KeyGet`.
-- Permissions to create keys in the vault and to assign RBAC roles on it.
-- Permissions to create service principals in your Entra tenant (`Application Administrator`, `Cloud Application Administrator`, or an equivalent custom role).
-- The [`az` CLI](https://learn.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) installed and authenticated, or Cloud Shell in the Azure portal. Some steps have no portal equivalent.
-- To register the key through the API, an Anthropic Admin API key for your organization.
+- You can create keys in your key vault and assign RBAC roles on it.
+- You can create service principals in your Entra tenant (Application Administrator, Cloud Application Administrator, or an equivalent custom role).
+- The vault has a diagnostic setting for the `AuditEvent` log category. Without one, Anthropic’s key operations leave no audit trail.
 
-## Anthropic app information
+## In Azure: create the key
 
-You give the following Anthropic multitenant application access to your key. The application requests no Microsoft Graph permissions.
+After a failed **Verify** or **Add**, see the [fixes for Azure Key Vault](manage-claude-cmek-troubleshooting.md#azure-key-vault).
 
-| Field                          | Value                                  |
-|:-------------------------------|:---------------------------------------|
-| Multitenant app client ID (US) | `8635ae1a-3e5d-44e8-a4ed-e0f614466f87` |
-| App display name               | `anthropic-cmek-client-us`             |
+These steps give Anthropic’s multitenant application access to your key:
 
-
+- **Name:** `anthropic-cmek-client-us`
+- **Client ID:** `8635ae1a-3e5d-44e8-a4ed-e0f614466f87`
 
-Use only this published client ID and display name. Never trust an identifier provided over email, chat, or any onboarding channel.
+Use only this client ID and name, never ones sent by email or chat. The application requests no Microsoft Graph permissions.
 
-## Encryption key setup
+### Check the vault
 
-The key must meet these requirements:
+For the lowest latency, use a vault in `northcentralus` or `eastus2`. Run this first, in the Azure CLI or Cloud Shell:
 
-- **Type:** RSA, 3072-bit or larger. For an HSM-backed key, use `RSA-HSM`, which requires a Premium-SKU vault.
-- **Permitted operations:** `wrapKey` and `unwrapKey`. The steps in this guide turn off every other operation, so Anthropic can only read the key and wrap and unwrap with it.
-- **Organization tag:** `anthropic-org-<ORGANIZATION_UUID>` with the value `true`. Replace `<ORGANIZATION_UUID>` with your Anthropic organization ID in lowercase. Validation fails without the tag.
-- **Access:** the `Key Vault Crypto User` role for Anthropic's service principal, assigned on the key.
+```python
+az keyvault show --name <your-vault-name> \
+  --query "{rbac:properties.enableRbacAuthorization, purge:properties.enablePurgeProtection, pub:properties.publicNetworkAccess, net:properties.networkAcls.defaultAction, ipRules:properties.networkAcls.ipRules, uri:properties.vaultUri, tenantId:properties.tenantId}"
+```
 
-
+
 
-**Finding your organization ID:** Use the bare UUID, not the `org_`-prefixed ID. Copy it from one of these places:
+| Field | Must be |
+|:---|:---|
+| `rbac` | `true` |
+| `purge` | `true`. If it’s `false` or `null`, turn on purge protection first. You can’t turn it off again. |
+| `pub` | `"Enabled"`. Private endpoints aren’t supported. |
+| `net` | `"Allow"`, or `"Deny"` with [Anthropic’s outbound IP addresses](../Endpoints/ip-addresses.md#outbound-ip-addresses) in `ipRules` |
 
-- **Claude Console:** the **Organization ID** field on the [Organization](playground.md) page (`platform.claude.com/settings/organization`)
-- **claude.ai:** the **Organization ID** field under **Organization settings \> Organization**
-- **Admin API:** the `id` field from the [Organization Info](../Endpoints/organization-retrieve.md) endpoint
+Copy `uri` (the vault URI) and `tenantId`.
 
 ### Create the key and grant access
+
+On this page, `<ORGANIZATION_UUID>` is your [Anthropic organization ID](#prerequisites) in lowercase. To use a key you already have, [add the organization tag](#organization-tag) first.
 
 Azure portal
 
@@ -148,9 +87,9 @@ Azure portal
 
 1.  1
 
-    ### Create Anthropic's service principal
+    ### Create Anthropic’s service principal
 
-    Open Cloud Shell from the portal's top navigation bar. Run this command:
+    Open Cloud Shell from the portal’s top navigation bar. Run this command:
 
     ``` shiki
     az ad sp create --id 8635ae1a-3e5d-44e8-a4ed-e0f614466f87
@@ -203,7 +142,7 @@ Azure portal
 
 7.  7
 
-    ### Open the key's access control
+    ### Open the key’s access control
 
     Open the key itself, not the vault. Select its **Access control (IAM)** tab and click **Add \> Add role assignment**.
 
@@ -215,7 +154,7 @@ Azure portal
 
 9.  9
 
-    ### Add Anthropic's service principal
+    ### Add Anthropic’s service principal
 
     On the **Members** tab, click **Select members**. Search for `anthropic-cmek-client-us` and select it. Click **Select**, then click **Next**.
 
@@ -225,19 +164,11 @@ Azure portal
 
     On the **Review + assign** tab, click **Review + assign**.
 
-To use a key you already have, follow these steps instead of steps 3 to 6, then continue from step 7:
-
-1.  In your key vault, select **Keys** and open the key. Open its current version.
-2.  Click the link next to **Tags**.
-3.  Add the organization tag and click **OK**.
-4.  Under **Permitted operations**, clear every checkbox except **Wrap Key** and **Unwrap Key**.
-5.  Click **Save**.
-
 Azure CLI
 
 1.  1
 
-    ### Create Anthropic's service principal
+    ### Create Anthropic’s service principal
 
     ``` shiki
     az ad sp create --id 8635ae1a-3e5d-44e8-a4ed-e0f614466f87
@@ -247,7 +178,7 @@ Azure CLI
 
     Copy the `id` field from the output.
 
-    If the command exits with an "already exists" error, get the `id` with this command instead:
+    If the command exits with an “already exists” error, get the `id` with this command instead:
 
     ``` shiki
     az ad sp show --id 8635ae1a-3e5d-44e8-a4ed-e0f614466f87 --query id -o tsv
@@ -300,7 +231,13 @@ Azure CLI
     - **`<sp-object-id>`:** the `id` value from the first step
     - **`<your-key-name>`:** the name of the key
 
-To use a key you already have, run this command instead of step 2:
+Whoever adds the key in Claude needs the vault URI, the key name, and the tenant ID.
+
+### Add the organization tag to a key you already have
+
+Verification fails without the organization tag. The key must be RSA, 3072-bit or larger.
+
+Instead of creating a key, run this command in the Azure CLI or Cloud Shell. It limits the key to `wrapKey` and `unwrapKey`. It also replaces the current version’s tags, so list any you want to keep in `--tags` as `name=value`.
 
 ```python
 az keyvault key set-attributes \
@@ -312,228 +249,66 @@ az keyvault key set-attributes \
 
 
 
-This replaces the version's existing tags. Add each existing tag to `--tags` as `name=value`.
+You still need the service principal and role assignment steps.
 
-
+## In Claude: add and attach the key
 
-**Optional:**
-
-- To share one key among several Anthropic organizations, add one organization tag for each. A key version can carry at most 15 tags, including your own.
-- If the vault holds only this key, you can assign the role on the vault instead of the key.
-
-### Check your vault configuration
-
-Run this command with the Azure CLI or in Cloud Shell. Replace `<your-vault-name>` with the name of your key vault.
-
-```python
-az keyvault show --name <your-vault-name> \
-  --query "{rbac:properties.enableRbacAuthorization, purge:properties.enablePurgeProtection, pub:properties.publicNetworkAccess, net:properties.networkAcls.defaultAction, ipRules:properties.networkAcls.ipRules, uri:properties.vaultUri, tenantId:properties.tenantId}"
-```
-
-
-
-Confirm these values:
-
-- `rbac`: `true`
-- `purge`: `true`. If it's `false` or `null`, enable purge protection before you continue.
-- `pub`: `"Enabled"`. If it's `"Disabled"`, turn on public network access.
-- `net`: `"Allow"`, or `"Deny"` with Anthropic's outbound IP ranges in `ipRules`. For the ranges, see [Outbound IP addresses](../Endpoints/ip-addresses.md#outbound-ip-addresses).
-
-Copy these values to register the key:
-
-- `uri`: the vault URI
-- `tenantId`: the ID of the tenant that governs the vault
-
-## Register the key with Anthropic
+To script this part on Claude Platform, [use the Admin API](manage-claude-cmek-admin-api.md) instead.
 
 Claude Platform
 
 Claude Enterprise
 
 Claude Platform
-
-Claude Console
-
-API
-
-Claude Console
 
 1.  1
 
     ### Open the encryption key settings
 
-    In the Claude Console, go to the [Data retention](playground.md#encryption-keys) page (`platform.claude.com/settings/privacy`). If you don't see **Encryption keys**, select **Organization** from the dropdown menu at the top of the page.
+    In the Claude Console, open [Encryption keys](playground.md#encryption-keys) on the Data retention page. If the section isn’t there, select **Organization** from the dropdown menu at the top.
 
 2.  2
 
     ### Add the key
 
-    Under **Encryption keys**, click **Add key**. Enter a **Display name** and select **Azure Key Vault**. Click **Continue**.
+    Under **Encryption keys**, click **Add key**. Enter a **Display name**, select **Azure Key Vault**, and click **Continue**.
 
 3.  3
 
     ### Enter the key details
 
-    The dialog box shows an **Organization tag**. Check that your key has this tag. Enter these values:
-
-    - **Vault URI:** the `uri` value that you copied
-    - **Key name:** the name of the key
-    - **Tenant ID:** the `tenantId` value that you copied
-
-    Click **Add**.
+    Check that your key has the **Organization tag** shown in the dialog box. Enter the **Vault URI**, **Key name**, and **Tenant ID**, leave **Client ID** empty, and click **Add**.
 
 4.  4
 
-    ### Validate the key
+    ### Verify the key
 
-    In the **Encryption keys** list, click **Verify** next to the key. **Connected** appears when the check passes. If it fails, see [Troubleshoot validation](#troubleshoot-validation) for common causes.
+    In the **Encryption keys** list, click **Verify** next to the key. **Connected** appears when the check passes. If **Connection failed** appears instead, see [Troubleshoot CMEK](manage-claude-cmek-troubleshooting.md).
 
 5.  5
 
     ### Attach the key to a workspace
 
-    Attaching a key can't be undone. If you can, attach it to a new workspace before that workspace receives any requests. In a workspace that already receives requests, the key can take [up to a day to take effect](manage-claude-cmek.md#how-it-works).
+    
+    Attaching a key [can’t be undone](manage-claude-cmek-key-lifecycle.md#what-each-action-does). You can’t remove it from the workspace or replace it. If the key is deleted, Anthropic can’t recover the data it protects.
 
-    On the Data retention page, select the workspace from the dropdown menu at the top of the page. Under **Encryption key**, select the key and click **Save**.
+    1.  At the top of the Data retention page, select the workspace from the dropdown menu.
+    2.  Under **Encryption key**, select the key and click **Save**.
+    3.  Select the checkbox to confirm that you have read the CMEK documentation, then click **Confirm**.
 
-6.  6
+    You see **Workspace settings updated.** Once the key [takes effect](manage-claude-cmek-how-it-works.md#when-your-key-takes-effect), your cloud provider’s audit log shows Anthropic’s calls to the key.
 
-    ### Confirm the change
-
-    Select the checkbox to confirm that you have read the CMEK documentation, then click **Confirm**.
-
-API
-
-1.  1
-
-    ### Create the external key
-
-    Replace the placeholders:
-
-    - **`<friendly-name>`:** a display name for the key
-    - **`<your-vault-name>`:** the name of your key vault
-    - **`<your-key-name>`:** the name of the key
-    - **`<your-tenant-id>`:** the `tenantId` value that you copied
-
-    cURL
-    CLI
-    Python
-    TypeScript
-    C#
-    Go
-    Java
-    PHP
-    Ruby
-
-    Python
-
-    
-
-    ``` shiki
-    client = anthropic.Anthropic()
-
-    external_key = client.organization.external_keys.create(
-        display_name="<friendly-name>",
-        geo="us",
-        provider_config={
-            "type": "azure",
-            "vault_uri": "https://<your-vault-name>.vault.azure.net/",
-            "key_name": "<your-key-name>",
-            "tenant_id": "<your-tenant-id>",
-        },
-    )
-
-    print(f"id: {external_key.id}")
-    print(f"display_name: {external_key.display_name}")
-    ```
-
-    The `id` field of the response contains the external key ID. Copy it for the next two steps:
-
-    ``` shiki
-    {
-      "type": "external_key",
-      "id": "ekey_<id>",
-      "display_name": "<friendly-name>"
-    }
-    ```
-
-    
-
-2.  2
-
-    ### Validate the key
-
-    Replace `ekey_<id>` with the external key ID.
-
-    cURL
-    CLI
-    Python
-    TypeScript
-    C#
-    Go
-    Java
-    PHP
-    Ruby
-
-    Python
-
-    
-
-    ``` shiki
-    client = anthropic.Anthropic()
-
-    validation = client.organization.external_keys.validate("ekey_<id>")
-
-    print(f"status: {validation.status}")
-    print(f"error: {validation.error}")
-    ```
-
-    A successful response looks like this:
-
-    ``` shiki
-    { "type": "external_key_validation", "status": "success", "error": null }
-    ```
-
-    
-
-    If validation fails, the `error` field describes the problem. For common causes, see [Troubleshoot validation](#troubleshoot-validation).
-
-3.  3
-
-    ### Attach the key to a workspace
-
-    Attaching a key can't be undone. If you can, attach it to a new workspace before that workspace receives any requests. In a workspace that already receives requests, the key can take [up to a day to take effect](manage-claude-cmek.md#how-it-works).
-
-    Replace `<workspace-id>` with the workspace ID and `ekey_<id>` with the external key ID.
-
-    cURL
-    CLI
-    Python
-    TypeScript
-    C#
-    Go
-    Java
-    PHP
-    Ruby
-
-    Python
-
-    
-
-    ``` shiki
-    client = anthropic.Anthropic()
-
-    workspace = client.organization.workspaces.update(
-        "<workspace-id>", external_key_id="ekey_<id>"
-    )
-
-    print(f"id: {workspace.id}")
-    print(f"external_key_id: {workspace.external_key_id}")
-    ```
+    In a [ZDR organization](manage-claude-cmek-data-retention.md#zdr-organizations), after you select the workspace, select **Standard data retention** so that **Encryption key** appears. After you click **Save**, click **Accept** on the data retention terms.
 
 Claude Enterprise
 
-On Claude Enterprise, CMEK applies to the whole organization, and an organization can have only one key.
+On Claude Enterprise, CMEK applies to the whole organization, and you can add only one key.
+
+
+
+Adding a key [can’t be undone](manage-claude-cmek-key-lifecycle.md#what-each-action-does). You can’t remove it from the organization or replace it. If the key is deleted, Anthropic can’t recover the data it protects.
+
+Adding the key [turns off or changes some features](manage-claude-cmek-coverage-claude-enterprise.md#turned-off-or-changed) for every user. To try CMEK first, use a separate organization.
 
 1.  1
 
@@ -551,29 +326,12 @@ On Claude Enterprise, CMEK applies to the whole organization, and an organizatio
 
     ### Enter the key details
 
-    The dialog box shows an **Organization tag**. Check that your key has this tag. Enter these values:
-
-    - **Vault URI:** the `uri` value that you copied
-    - **Key name:** the name of the key
-    - **Tenant ID:** the `tenantId` value that you copied
-
-    Click **Add**.
+    Check that your key has the **Organization tag** shown in the dialog box. Enter the **Vault URI**, **Key name**, and **Tenant ID**, leave **Client ID** empty, and click **Add**.
 
 4.  4
 
-    ### Confirm that validation passed
+    ### Confirm that the key was added
 
-    When the check passes, **Encryption key configured** appears, and your organization is CMEK-protected from then on. If the check fails, see [Troubleshoot validation](#troubleshoot-validation).
+    The check can take up to 30 seconds. When **Encryption key configured.** appears, click **Done**. If **The encryption key couldn’t be added.** appears instead, [find the cause and retry](manage-claude-cmek-troubleshooting.md#claude-ai-add-fails).
 
-## Troubleshoot validation
-
-If validation fails, common causes are:
-
-- **Wrong organization tag:** Make sure the key's current version has the tag `anthropic-org-<ORGANIZATION_UUID>` with the value `true`. The organization ID must be the bare UUID in lowercase.
-- **RBAC propagation delay:** Role assignments can take a few minutes to take effect. Wait and retry.
-- **Network ACLs blocking Anthropic:** Confirm public network access and `ipRules`, as described in [Check your vault configuration](#check-your-vault-configuration).
-- **Conditional access policies on workload identities:** If your tenant has conditional access policies that target service principals, exclude the Anthropic service principal. Or add Anthropic's outbound IP ranges to the policy's named locations.
-
-## Terraform
-
-To create the key with Terraform, use the `azurerm` and `azuread` providers.
+    Your key protects data written from then on. Tell your users [which features changed](manage-claude-cmek-coverage-claude-enterprise.md#turned-off-or-changed).

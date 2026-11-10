@@ -2,7 +2,7 @@
 title: "Preparing for AI's economic impact \\ Anthropic"
 source_url: "https://www.anthropic.com/research/economic-policy-responses"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:24Z"
+fetched_at: "2026-10-24T06:26:37Z"
 tags: ["news-research"]
 ---
 

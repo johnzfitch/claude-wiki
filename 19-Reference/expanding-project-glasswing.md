@@ -37,7 +37,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=cybersecurity)
 
-[Project Glasswing](../22-Safety-Policy/glasswing.md) is our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recently [described](glasswing-initial-update.md) how these partners have so far found more than 10,000 high- or critical-severity security flaws.
+[Project Glasswing](../22-Safety-Policy/glasswing.md) is our collaborative effort to secure the world’s most important software. In early April, we announced that roughly 50 initial partners had access to Claude Mythos Preview, and since then, they’ve been deploying the model to scan their codebases for vulnerabilities. We recently [described](research-glasswing-initial-update.md) how these partners have so far found more than 10,000 high- or critical-severity security flaws.
 
 We’re now expanding Project Glasswing. Following several weeks of close collaboration with our Project Glasswing partners, the security industry, open-source software maintainers, and the US government, we’re extending the partnership to approximately 150 new organizations. Each one will need to meet our security requirements before they gain access.
 
@@ -53,7 +53,7 @@ Project Glasswing and the capabilities of Claude Mythos Preview have sparked bro
 
 Cheap, fast AI models with powerful cyber capabilities are around the corner. We want Project Glasswing to spur institutions toward operating norms that reflect this reality.
 
-Mythos Preview continues a long-term trend that we’ve been warning about for some time: within 6 to 12 months, we expect that many other AI companies will have Mythos-class models, and they could release them without safeguards that prevent misuse. In that world, cyberattacks could occur much more often, and in much more unpredictable forms. It’s imperative that cyberdefenders [adapt to maintain pace](glasswing-initial-update.md).
+Mythos Preview continues a long-term trend that we’ve been warning about for some time: within 6 to 12 months, we expect that many other AI companies will have Mythos-class models, and they could release them without safeguards that prevent misuse. In that world, cyberattacks could occur much more often, and in much more unpredictable forms. It’s imperative that cyberdefenders [adapt to maintain pace](research-glasswing-initial-update.md).
 
 We see our role as twofold. First, to help the software industry adapt by safely providing wide access to better models, tools, and common infrastructure. Second, to steadily shift the support we provide, from finding vulnerabilities to disclosing, fixing, and deploying patched software. We’ll now discuss each of these in turn.
 
@@ -61,13 +61,13 @@ We see our role as twofold. First, to help the software industry adapt by safely
 
 So far, companies, nonprofits, maintainers, and researchers have acted quickly. Within the first weeks of Project Glasswing, each member began using Mythos Preview at large scale, sharing information and best practices with other partners, and working with third parties to triage the model’s findings. These organizations’ methods for adapting to new tools can, and should, be replicated widely across the millions of organizations and developers who are vulnerable to cyberattacks.
 
-To support this, we recently released [Claude Security](../15-Claude-AI-Features/product-claude-security.md), a product that uses our latest public frontier models, like Claude Opus 4.8, to scan codebases and suggest patches. We're also releasing—on request, to trusted security teams—[the tools](glasswing-initial-update.md) we developed to help Project Glasswing’s partners find vulnerabilities more quickly.
+To support this, we recently released [Claude Security](../15-Claude-AI-Features/product-claude-security.md), a product that uses our latest public frontier models, like Claude Opus 4.8, to scan codebases and suggest patches. We're also releasing—on request, to trusted security teams—[the tools](research-glasswing-initial-update.md) we developed to help Project Glasswing’s partners find vulnerabilities more quickly.
 
 We intend to go much further: our longer-term aim is to support the industry in creating new initiatives, standards, and infrastructure for the era of powerful cyber models.
 
 #### Accelerating patching and the rest of security
 
-As we’ve [previously discussed](glasswing-initial-update.md), the bottleneck in cybersecurity is now verifying, disclosing, and patching the large numbers of vulnerabilities that Mythos-class models can surface.
+As we’ve [previously discussed](research-glasswing-initial-update.md), the bottleneck in cybersecurity is now verifying, disclosing, and patching the large numbers of vulnerabilities that Mythos-class models can surface.
 
 Mythos Preview itself can help. Many of Project Glasswing’s partners now use the model to write patches, as well as for pre-release checks that prevent vulnerabilities from appearing in the first place. Models like Mythos Preview can also be used for penetration testing (simulating a cyberattack to identify how vulnerabilities might be exploited), automating threat detection and response, and rebuilding legacy codebases in memory-safe languages, among many other defensive tasks.
 

@@ -2,33 +2,9 @@
 title: "Documentation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/home"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:14Z"
+fetched_at: "2026-11-05T06:36:35Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fhome)
-
-
-
-
-
-Claude Platform
 
 # Start building with Claude
 
@@ -102,7 +78,7 @@ Claude is also available on these cloud platforms:
 
 [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
 
-[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)
+[Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-overview.md)
 
 [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
@@ -176,7 +152,7 @@ Managed Agents
 
     [API keys in Claude Console](playground.md)
 
-    [Usage monitoring](manage-claude-usage-cost-api.md)
+    [Usage monitoring](manage-claude-usage-cost-analytics-api.md)
 
     [Model migration](../../20-Models/about-claude-models-migration-guide.md)
 
@@ -242,7 +218,7 @@ Deployable starter apps.
 
 
 
-[What's new](../../20-Models/release-notes-overview.md)
+[What’s new](../../20-Models/release-notes-overview.md)
 
 Latest features and updates.
 

@@ -2,13 +2,11 @@
 title: "Models, usage, and limits in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:29:08Z"
+fetched_at: "2026-11-09T06:26:27Z"
 tags: ["claude-code", "safety"]
 ---
 
 # Models, usage, and limits in Claude Code
-
-September 22, 2026
 
 
 This guide explains which model you are using, how usage is metered, and how to keep long sessions within their context and usage limits.
@@ -77,7 +75,7 @@ Almost every "I burned through my limit by lunchtime" report traces back to one 
 
 Every previous message is resent on every turn, so a session that has wandered through three unrelated problems pays for all three on each new message.
 
-**In practice:** you just finished debugging a login redirect and now want to write a database migration. Run `/clear` first. A simple test: if your next prompt would make perfect sense in a brand-new terminal, clear before sending it. Your `CLAUDE.md` and project files stay put; only the chat history goes.
+**In practice:** you just finished debugging a login redirect and now want to write a database migration. Run `/clear` first. A simple test: if your next prompt would make perfect sense in a brand-new session, clear before sending it. Your `CLAUDE.md` and project files stay put; only the chat history goes.
 
 **One warning:** `/clear` cannot be undone. If you might still need something from the history, copy it out first or run `/compact` instead, which preserves a summary rather than wiping everything.
 

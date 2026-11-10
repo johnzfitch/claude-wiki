@@ -2,11 +2,13 @@
 title: "Working and Interest Groups - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-interest-groups"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-09-29T06:29:39Z"
+fetched_at: "2026-10-27T06:26:47Z"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Quick Reference](#quick-reference)
 - [When to Use Which](#when-to-use-which)
@@ -48,15 +50,15 @@ Within the MCP contributor community we maintain two types of collaboration form
 
 Quick Reference
 
-|                | Interest Group (IG)                                | Working Group (WG)                                     |
-|----------------|----------------------------------------------------|--------------------------------------------------------|
-| **Purpose**    | Identify and discuss problems                      | Build concrete solutions                               |
-| **Output**     | Problem statements, use cases, recommendations     | SEPs, implementations, code                            |
-| **Commitment** | Active contribution expected                       | Active contribution expected                           |
-| **Duration**   | Ongoing as long as topic is relevant               | Until deliverables complete                            |
-| **Leadership** | Facilitator(s)                                     | Lead(s)                                                |
-| **Decisions**  | Rough consensus, non-binding                       | Binding (lazy consensus → vote → escalation)           |
-| **Example**    | ”Security in MCP” — discussing security challenges | ”Server Identity” — implementing identity verification |
+|  | Interest Group (IG) | Working Group (WG) |
+|----|----|----|
+| **Purpose** | Identify and discuss problems | Build concrete solutions |
+| **Output** | Problem statements, use cases, recommendations | SEPs, implementations, code |
+| **Commitment** | Active contribution expected | Active contribution expected |
+| **Duration** | Ongoing as long as topic is relevant | Until deliverables complete |
+| **Leadership** | Facilitator(s) | Lead(s) |
+| **Decisions** | Rough consensus, non-binding | Binding (lazy consensus → vote → escalation) |
+| **Example** | ”Security in MCP” — discussing security challenges | ”Server Identity” — implementing identity verification |
 
 
 [​](#when-to-use-which)
@@ -167,12 +169,12 @@ Participation Levels
 
 All groups use the following participation tiers. Note that **WG Member** is a group-specific participation level distinct from the org-wide **Member** role — an individual may be a WG Member in a specific group without holding org-wide Member status, and vice versa.
 
-| Level                | Description                                       | Privileges                                                         |
-|----------------------|---------------------------------------------------|--------------------------------------------------------------------|
-| **Observer**         | Anyone interested in following the group’s work   | Read access, may attend meetings, limited discussion participation |
-| **Participant**      | Active contributor to group discussions           | Can propose agenda items, participate in async votes               |
-| **WG Member**        | Sustained contributor with demonstrated expertise | Counted for quorum (WGs only)                                      |
-| **Lead/Facilitator** | Operational leadership of the group               | Sets agenda, facilitates, escalates                                |
+| Level | Description | Privileges |
+|----|----|----|
+| **Observer** | Anyone interested in following the group’s work | Read access, may attend meetings, limited discussion participation |
+| **Participant** | Active contributor to group discussions | Can propose agenda items, participate in async votes |
+| **WG Member** | Sustained contributor with demonstrated expertise | Counted for quorum (WGs only) |
+| **Lead/Facilitator** | Operational leadership of the group | Sets agenda, facilitates, escalates |
 
 Interest Groups primarily operate with Observers, Participants, and Facilitators. IGs may adopt the WG Member tier if their work warrants formal decision-making, but are not required to. **Becoming a WG Member** (WGs, and IGs that adopt the WG Member tier):
 
@@ -254,6 +256,7 @@ Leads determine meeting frequency, format, and duration based on the group’s c
 - Be published on [meet.modelcontextprotocol.io](https://meet.modelcontextprotocol.io) at least 7 days in advance
 - Have agendas published and publicly available. The agenda or a link to the agenda should be published as a [GitHub Discussion in the Meeting Notes category](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/)
 - Have notes published within 48 hours to the same discussion
+- Use the official Google Meet transcription as the only automated record of the meeting. Third-party AI notetakers and meeting bots are not permitted, per the [Code of Conduct](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CODE_OF_CONDUCT.md#community-meetings)
 
 Leads should actively involve WG Members and Participants in operational duties such as preparing agendas, taking meeting notes, and facilitating discussions.
 
@@ -264,10 +267,10 @@ Communication Channels
 
 All groups use the following channels:
 
-| Channel                              | Purpose                        | Response Expectation |
-|--------------------------------------|--------------------------------|----------------------|
-| Discord `#{name}-wg` or `#{name}-ig` | Quick questions, coordination  | Best effort          |
-| GitHub Discussions                   | Long-form technical discussion | Weekly triage        |
+| Channel | Purpose | Response Expectation |
+|----|----|----|
+| Discord `#{name}-wg` or `#{name}-ig` | Quick questions, coordination | Best effort |
+| GitHub Discussions | Long-form technical discussion | Weekly triage |
 
 In addition to Discord, groups can establish a discussion category in [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/). Leads will be granted the appropriate roles to manage and moderate discussions.
 

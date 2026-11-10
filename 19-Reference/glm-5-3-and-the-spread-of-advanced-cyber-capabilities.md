@@ -2,7 +2,7 @@
 title: "GLM-5.3 and the spread of advanced cyber capabilities \\ Anthropic"
 source_url: "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
 category: "19-Reference"
-fetched_at: "2026-10-22T06:29:02Z"
+fetched_at: "2026-10-24T06:26:38Z"
 tags: ["news-research"]
 ---
 
@@ -46,7 +46,7 @@ Cole McFaul, Robert Xiao, Tripp Gallagher*
 
 Five months ago, we [announced](../22-Safety-Policy/glasswing.md) Claude Mythos Preview, the first AI model that could autonomously build sophisticated, end-to-end cyber exploits. The rapid rate of improvement in AI suggested to us that this ability would eventually proliferate to many other models, making it much easier for malicious cyber actors to launch highly impactful cyberattacks.
 
-In light of these considerations, we chose to release Claude Mythos Preview in a limited way, through Project Glasswing—which enabled trusted cyber defenders to find [more than 10,000 vulnerabilities](glasswing-initial-update.md) in critical software, giving them a head start before malicious actors had access to similarly capable models.
+In light of these considerations, we chose to release Claude Mythos Preview in a limited way, through Project Glasswing—which enabled trusted cyber defenders to find [more than 10,000 vulnerabilities](research-glasswing-initial-update.md) in critical software, giving them a head start before malicious actors had access to similarly capable models.
 
 But those models have now arrived. In this post, we share our analysis of GLM-5.3, the latest AI model developed by Zhipu AI (known outside of China as Z.ai). Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse. We find that attackers can bypass GLM-5.3’s safeguards between 64% and 100% of the time with simple techniques in our simulated tests. In contrast, these attacks did not succeed against safeguarded Claude models in our testing. We assess that GLM-5.3’s lax safeguards significantly increase the cyber capabilities available to malicious actors. At the same time, these capabilities can also benefit defenders working to secure their systems.
 

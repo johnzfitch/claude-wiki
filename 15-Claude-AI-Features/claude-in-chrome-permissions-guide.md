@@ -2,18 +2,18 @@
 title: "Claude in Chrome permissions guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902446-claude-in-chrome-permissions-guide"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:58Z"
+fetched_at: "2026-11-09T06:25:53Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
 # Claude in Chrome permissions guide
 
-Updated today
-
 
 This guide explains how to control what Claude can access and do when using Claude in Chrome. Understanding permissions helps you balance productivity with security.
 
-Claude in Chrome is available for all paid plans (Pro, Max, Team, and Enterprise). It's available in Claude Cowork and Claude Code, and in beta in the Chrome browser. On Max and Team plans, the side panel runs as a Claude Cowork session, and this is rolling out to Pro plans in the coming weeks. On Enterprise plans, the side panel runs as a Cowork session once your admin has enabled Cowork in the cloud; until then, it uses the classic experience.
+## Availability
+
+Claude in Chrome is available on paid plans (Pro, Max, Ultra, Team, and Enterprise), in the Chrome side panel, Claude Cowork, and Claude Code. The side panel runs as a Claude Cowork session. On Enterprise plans, this requires an owner to enable Claude in Chrome and Cowork in the cloud; until then, the side panel uses the classic experience.
 
 **Important:** Before using Claude in Chrome, review **[Use Claude in Chrome Safely](https://support.claude.com/en/articles/12902428)** to understand the risks of browser-based AI.
 
@@ -42,7 +42,7 @@ Claude creates a plan from your prompt, which you can approve before Claude star
 
 Note that Claude will only use the websites listed in the plan, so you’ll need to manually approve any additional access requests.
 
-Claude clarifies which sites it’s planning to access and the actions it will take upfront, allowing you to review the proposed plan and ensure it’s correct before starting. You can also click "Make changes" to reject the current proposal, then prompt Claude again to make any necessary changes. Once you click "Approve plan," Claude will be able to act independently within the outlined parameters, but will still check with you before other sensitive actions, like downloading a file or entering sensitive information into a page. Claude will not deviate from the stated plan without requesting your permission first. There are certain actions that Claude cannot take for your security, such as making purchases, creating accounts, bypassing bot authorizations, executing trades, permanently deleting files, or taking certain actions that may indicate a prompt injection risk (see **[Prohibited actions](#h_e199f8f523)**).
+Claude clarifies which sites it’s planning to access and the actions it will take upfront, allowing you to review the proposed plan and ensure it’s correct before starting. You can also click "Make changes" to reject the current proposal, then prompt Claude again to make any necessary changes. Once you click "Approve plan," Claude will be able to act independently within the outlined parameters, but will still check with you before other sensitive actions, like downloading a file or entering sensitive information into a page. Claude will not deviate from the stated plan without requesting your permission first. There are certain actions that Claude cannot take for your security, such as making purchases, creating accounts, bypassing bot authorizations, executing trades, or taking certain actions that may indicate a prompt injection risk (see **[Prohibited actions](#h_e199f8f523)**).
 
 ### In the Cowork side panel
 
@@ -125,6 +125,8 @@ Regardless of your permission mode, Claude requires explicit user permission to 
 
 - Inputting potentially sensitive information into websites
 
+- Permanent deletions (emptying trash, deleting emails, files, or messages)
+
 ------------------------------------------------------------------------
 
 ## Prohibited actions
@@ -138,8 +140,6 @@ To protect you, Claude is prohibited from taking following actions regardless of
 - Handling sensitive credit card or ID data
 
 - Downloading files from untrusted sources
-
-- Permanent deletions (emptying trash, deleting emails, files, or messages)
 
 - Providing investment or financial advice
 

@@ -2,11 +2,14 @@
 title: "Streamable HTTP - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:28:47Z"
+fetched_at: "2026-10-31T06:24:55Z"
+last_modified: "Fri, 30 Oct 2026 20:56:04 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Security & Endpoint](#security-%26-endpoint)
 - [Sending Messages](#sending-messages)
@@ -49,7 +52,7 @@ In the **Streamable HTTP** transport, the server operates as an independent proc
 - The server exposes a single HTTP endpoint (the **MCP endpoint**) that accepts POST.
 - The client sends every JSON-RPC request or notification as its own HTTP POST.
 - The server answers each request with either a single JSON object or a [Server-Sent Events](https://en.wikipedia.org/wiki/Server-sent_events) (SSE) stream scoped to that request, carrying request-related notifications followed by the final response.
-- Server-to-client interactions (sampling, elicitation, roots) are embedded in results as input requests per [Multi Round-Trip Requests (MRTR)](2026-07-28-basic-patterns-mrtr.md) ([SEP-2322](../SEPs/seps-2322-mrtr.md)).
+- Server-to-client interactions (sampling, elicitation, roots) are embedded in results as input requests per [Multi Round-Trip Requests (MRTR)](draft-basic-patterns-mrtr.md) ([SEP-2322](../SEPs/seps-2322-mrtr.md)).
 - Long-lived change notifications (such as list changes and resource updates) are delivered on the response stream of a [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md) request.
 
 See [Message Flow](#message-flow) for sequence diagrams of these interactions. The server **MUST** provide a single HTTP endpoint path (hereafter referred to as the **MCP endpoint**) that supports POST. For example, this could be a URL like `https://example.com/mcp`.
@@ -94,7 +97,7 @@ Receiving Messages
 When the server returns an SSE response stream (`Content-Type: text/event-stream`):
 
 - The server **MAY** send JSON-RPC *notifications* — for example, [`notifications/progress`](draft-basic-patterns-progress.md) or [`notifications/message`](2026-07-28-server-utilities-logging.md) — before the final response. These notifications **MUST** relate to the originating client request.
-- The server **MUST NOT** send independent JSON-RPC *requests* on this stream. Server-to-client interactions (sampling, elicitation, list-roots) are embedded as input requests inside an [`InputRequiredResult`](2026-07-28-schema.md#inputrequiredresult) per [MRTR](2026-07-28-basic-patterns-mrtr.md) ([SEP-2322](../SEPs/seps-2322-mrtr.md)), not delivered as separate requests on this or any other stream. This is a change from Streamable HTTP in protocol versions `2025-03-26` through `2025-11-25`, where servers could send such requests on SSE streams.
+- The server **MUST NOT** send independent JSON-RPC *requests* on this stream. Server-to-client interactions (sampling, elicitation, list-roots) are embedded as input requests inside an [`InputRequiredResult`](2026-07-28-schema.md#inputrequiredresult) per [MRTR](draft-basic-patterns-mrtr.md) ([SEP-2322](../SEPs/seps-2322-mrtr.md)), not delivered as separate requests on this or any other stream. This is a change from Streamable HTTP in protocol versions `2025-03-26` through `2025-11-25`, where servers could send such requests on SSE streams.
 - The final JSON-RPC *response* **SHOULD** terminate the stream.
 
 Long-lived notification streams are obtained by sending a [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md) request. The server’s response is itself an SSE stream that stays open and delivers the change notifications the client opted in to (such as `notifications/tools/list_changed` or `notifications/resources/updated`). Request-scoped notifications like `notifications/progress` and `notifications/message` are **not** delivered on the listen stream — they flow only on the response stream of the request they relate to. When initiating an SSE stream, servers **SHOULD** include the `X-Accel-Buffering: no` header in the HTTP response. This instructs reverse proxies (such as nginx) to disable response buffering, ensuring that SSE events are delivered to clients immediately rather than being held in a buffer. Without this header, proxies may accumulate messages before sending them to the client, introducing unwanted latency and potentially breaking the real-time nature of SSE communication.
@@ -108,7 +111,7 @@ Resumable SSE streams via `Last-Event-ID` are not supported.
 
 Message Flow
 
-The following diagrams illustrate the message flows on a single MCP endpoint. **Requests and responses.** Each request is its own POST; the server chooses per request whether to respond with a single JSON object or an SSE stream: **Server-to-client interactions (MRTR).** When the server needs input from the client — sampling, elicitation, or roots — it does not send its own JSON-RPC request. It returns an [`InputRequiredResult`](2026-07-28-schema.md#inputrequiredresult) containing `inputRequests`, and the client retries the original request with the matching `inputResponses` (see [Multi Round-Trip Requests](2026-07-28-basic-patterns-mrtr.md)): **Change notifications.** Clients that want server-initiated change notifications open a long-lived stream with [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md); the response stream stays open and carries only the notification types the client opted in to:
+The following diagrams illustrate the message flows on a single MCP endpoint. **Requests and responses.** Each request is its own POST; the server chooses per request whether to respond with a single JSON object or an SSE stream: **Server-to-client interactions (MRTR).** When the server needs input from the client — sampling, elicitation, or roots — it does not send its own JSON-RPC request. It returns an [`InputRequiredResult`](2026-07-28-schema.md#inputrequiredresult) containing `inputRequests`, and the client retries the original request with the matching `inputResponses` (see [Multi Round-Trip Requests](draft-basic-patterns-mrtr.md)): **Change notifications.** Clients that want server-initiated change notifications open a long-lived stream with [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md); the response stream stays open and carries only the notification types the client opted in to:
 
 
 [​](#cancellation)
@@ -129,17 +132,17 @@ The Streamable HTTP transport mirrors selected JSON-RPC body fields into HTTP he
 
 Protocol Version Header
 
-Every POST request to the MCP endpoint **MUST** include an `MCP-Protocol-Version` header. For example: `MCP-Protocol-Version: 2026-07-28` The header value **MUST** match the `io.modelcontextprotocol/protocolVersion` field carried in the request body’s `_meta`. If the values do not match, the server **MUST** reject the request with `400 Bad Request` and a `HeaderMismatch` JSON-RPC error (see [Server Validation](#server-validation)). If the server does not implement the requested protocol version (whether the version is unknown to the server, or is a known version the server has chosen not to support), it **MUST** respond with `400 Bad Request` and an [`UnsupportedProtocolVersionError`](2026-07-28-schema.md#unsupportedprotocolversionerror) listing its supported versions. See [Versioning: Protocol Version Negotiation](2026-07-28-basic-versioning.md#protocol-version-negotiation) for the negotiation flow. If the server does not implement the requested RPC method, it **MUST** respond with `404 Not Found` and a JSON-RPC error with code `-32601` (`Method not found`). The JSON-RPC error body distinguishes this case from a `404` returned by a legacy [HTTP+SSE](../Spec-Archive/2024-11-05-basic-transports.md#http-with-sse) server that does not host the modern MCP endpoint (see [Backward Compatibility](#backward-compatibility)). A server that supports clients implementing protocol versions earlier than `2025-06-18` (which did not define the `MCP-Protocol-Version` header) **MAY** treat a request that omits the header as protocol version `2025-03-26`. A server that does not support such clients **MUST** reject a request without the header per [Server Validation](#server-validation).
+Every POST request to the MCP endpoint **MUST** include an `MCP-Protocol-Version` header. For example: `MCP-Protocol-Version: 2026-07-28` The header value **MUST** match the `io.modelcontextprotocol/protocolVersion` field carried in the request body’s `_meta`. If the values do not match, the server **MUST** reject the request with `400 Bad Request` and a `HeaderMismatch` JSON-RPC error (see [Server Validation](#server-validation)). If the server does not implement the requested protocol version (whether the version is unknown to the server, or is a known version the server has chosen not to support), it **MUST** respond with `400 Bad Request` and an [`UnsupportedProtocolVersionError`](2026-07-28-schema.md#unsupportedprotocolversionerror) listing its supported versions. See [Versioning: Protocol Version Negotiation](draft-basic-versioning.md#protocol-version-negotiation) for the negotiation flow. If the server does not implement the requested RPC method, it **MUST** respond with `404 Not Found` and a JSON-RPC error with code `-32601` (`Method not found`). The JSON-RPC error body distinguishes this case from a `404` returned by a legacy [HTTP+SSE](../Spec-Archive/2024-11-05-basic-transports.md#http-with-sse) server that does not host the modern MCP endpoint (see [Backward Compatibility](#backward-compatibility)). A server that supports clients implementing protocol versions earlier than `2025-06-18` (which did not define the `MCP-Protocol-Version` header) **MAY** treat a request that omits the header as protocol version `2025-03-26`. A server that does not support such clients **MUST** reject a request without the header per [Server Validation](#server-validation).
 
 
 [​](#standard-request-headers)
 
 Standard Request Headers
 
-| Header Name  | Source Field                  | Required For                                           |
-|--------------|-------------------------------|--------------------------------------------------------|
-| `Mcp-Method` | `method`                      | All requests                                           |
-| `Mcp-Name`   | `params.name` or `params.uri` | `tools/call`, `resources/read`, `prompts/get` requests |
+| Header Name | Source Field | Required For |
+|----|----|----|
+| `Mcp-Method` | `method` | All requests |
+| `Mcp-Name` | `params.name` or `params.uri` | `tools/call`, `resources/read`, `prompts/get` requests |
 
 These headers are **REQUIRED** for compliance. If the `Mcp-Name` source value cannot be safely represented as a plain ASCII header value, clients **MUST** encode it using the Base64 sentinel format described in [Value Encoding](#value-encoding). **`tools/call` request:**
 
@@ -300,13 +303,13 @@ Mcp-Name: =?base64?{Base64EncodedValue}?=
 
 The prefix `=?base64?` and suffix `?=` indicate that the value is Base64-encoded. These markers are case-sensitive and **MUST** appear exactly as shown (lowercase). Servers and intermediaries that need to inspect these values **MUST** decode them accordingly. In particular, servers **MUST** decode an encoded `Mcp-Name` or `Mcp-Param-{Name}` value before comparing it to the corresponding request body value during [Server Validation](#server-validation). To avoid ambiguity, clients **MUST** also Base64-encode any plain-ASCII value that matches the sentinel pattern (i.e., starts with `=?base64?` and ends with `?=`). **Encoding examples:**
 
-| Original Value         | Reason                   | Encoded Header Value                                  |
-|------------------------|--------------------------|-------------------------------------------------------|
-| `"us-west1"`           | Plain ASCII              | `Mcp-Param-Region: us-west1`                          |
-| `"Hello, 世界"`        | Contains non-ASCII       | `Mcp-Param-Greeting: =?base64?SGVsbG8sIOS4lueVjA==?=` |
-| `" padded "`           | Leading/trailing spaces  | `Mcp-Param-Text: =?base64?IHBhZGRlZCA=?=`             |
-| `"line1\nline2"`       | Contains newline         | `Mcp-Param-Text: =?base64?bGluZTEKbGluZTI=?=`         |
-| `"=?base64?literal?="` | Matches sentinel pattern | `Mcp-Param-Val: =?base64?PT9iYXNlNjQ/bGl0ZXJhbD89?=`  |
+| Original Value | Reason | Encoded Header Value |
+|----|----|----|
+| `"us-west1"` | Plain ASCII | `Mcp-Param-Region: us-west1` |
+| `"Hello, 世界"` | Contains non-ASCII | `Mcp-Param-Greeting: =?base64?SGVsbG8sIOS4lueVjA==?=` |
+| `" padded "` | Leading/trailing spaces | `Mcp-Param-Text: =?base64?IHBhZGRlZCA=?=` |
+| `"line1\nline2"` | Contains newline | `Mcp-Param-Text: =?base64?bGluZTEKbGluZTI=?=` |
+| `"=?base64?literal?="` | Matches sentinel pattern | `Mcp-Param-Val: =?base64?PT9iYXNlNjQ/bGl0ZXJhbD89?=` |
 
 
 [​](#client-behavior)
@@ -330,12 +333,12 @@ Server Behavior for Custom Headers
 
 Intermediate servers that do not recognize an `Mcp-Param-{Name}` header **MUST** forward it and otherwise ignore it, as required by the [HTTP Semantics RFC](https://www.rfc-editor.org/rfc/rfc9110.html#name-field-names). Servers **MUST** reject requests with a recognized `Mcp-Param-{Name}` header that contains invalid characters (see [Value Encoding](#value-encoding)). Any server that processes the message body **MUST** validate that encoded header values, after decoding if Base64-encoded, match the corresponding values in the request body. Servers **MUST** reject requests with a `400 Bad Request` HTTP status and JSON-RPC error code `-32020` (`HeaderMismatch`) if any validation fails.
 
-| Scenario                                 | Client Behavior                | Server Behavior                          |
-|------------------------------------------|--------------------------------|------------------------------------------|
-| Parameter value provided                 | Client MUST include the header | Server MUST validate header matches body |
-| Parameter value is `null`                | Client MUST omit the header    | Server MUST NOT expect the header        |
-| Parameter not in arguments               | Client MUST omit the header    | Server MUST NOT expect the header        |
-| Client omits header but value is in body | Non-conforming client          | Server MUST reject the request           |
+| Scenario | Client Behavior | Server Behavior |
+|----|----|----|
+| Parameter value provided | Client MUST include the header | Server MUST validate header matches body |
+| Parameter value is `null` | Client MUST omit the header | Server MUST NOT expect the header |
+| Parameter not in arguments | Client MUST omit the header | Server MUST NOT expect the header |
+| Client omits header but value is in body | Non-conforming client | Server MUST reject the request |
 
 
 [​](#case-sensitivity)
@@ -355,8 +358,8 @@ When validating integer parameter values, servers **SHOULD** compare the header 
 
 When rejecting a request due to header validation failure, servers **MUST** return HTTP status `400 Bad Request` and **MUST** include a JSON-RPC error response using the following error code:
 
-| Code     | Name                                                                     | Description                                                                                                            |
-|----------|--------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| Code | Name | Description |
+|----|----|----|
 | `-32020` | [`HeaderMismatch`](2026-07-28-schema.md#headermismatcherror) | The HTTP headers do not match the corresponding values in the request body, or required headers are missing/malformed. |
 
 This error code is allocated from the sub-range the MCP specification reserves for protocol-defined errors. See [Error Codes](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#error-codes). **Example error response:**
@@ -392,7 +395,7 @@ A client that supports both modern (per-request-metadata) MCP versions and a leg
 - If the body contains a recognized modern JSON-RPC error, the server speaks a modern version of MCP — retry using the advertised `supported` versions or correct the request, rather than falling back.
 - If the body is empty or is not a recognized modern JSON-RPC error, fall back to `initialize` and continue with the legacy version for subsequent requests.
 
-See [Versioning: Backward Compatibility](2026-07-28-basic-versioning.md#backward-compatibility-with-initialization-based-versions) for the era model and a compatibility matrix for implementors.
+See [Versioning: Backward Compatibility](draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions) for the era model and a compatibility matrix for implementors.
 
 
 [​](#earlier-streamable-http-revisions)

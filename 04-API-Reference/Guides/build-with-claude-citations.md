@@ -2,93 +2,9 @@
 title: "Citations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/citations"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-20T06:39:59Z"
+fetched_at: "2026-11-05T06:36:22Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fcitations)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Google Cloud](build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Model capabilities
-
-Citations
-
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
-
-Eligible
-
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 # Citations
 
@@ -96,11 +12,25 @@ excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model
 
 
 
-Ground Claude's responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources to your users.
+Ground Claude’s responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources to your users.
 
 Copy page
 
 
+
+Citations
+
+Feature of  
+[Messages API](build-with-claude-working-with-messages.md)
+
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsNot available
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
 
 Claude can provide detailed citations when answering questions about documents, helping you track and verify the sources behind each response.
 
@@ -169,9 +99,9 @@ print(response)
 
 Compared to prompting Claude to cite sources, the citations feature offers the following advantages:
 
-- **Cost savings:** If your prompt-based approach asks Claude to output direct quotes, you may see cost savings because `cited_text` does not count toward your output tokens.
+- **Cost savings:** If your prompt-based approach asks Claude to output direct quotes, you might see cost savings because `cited_text` does not count toward your output tokens.
 - **Better citation reliability:** Because the API parses citations into the response formats described in the following sections and extracts `cited_text` directly, citations are guaranteed to contain valid pointers to the provided documents.
-- **Improved citation quality:** In Anthropic's evaluations, the citations feature is significantly more likely to cite the most relevant quotes from documents than purely prompt-based approaches.
+- **Improved citation quality:** In Anthropic’s evaluations, the citations feature is significantly more likely to cite the most relevant quotes from documents than purely prompt-based approaches.
 
 ------------------------------------------------------------------------
 
@@ -191,7 +121,7 @@ Integrate citations with Claude in these steps:
 
     ### Documents get processed
 
-    - Document contents are "chunked" to define the minimum granularity of possible citations. For example, sentence chunking lets Claude cite a single sentence or chain together multiple consecutive sentences to cite a paragraph or longer passage.
+    - Document contents are “chunked” to define the minimum granularity of possible citations. For example, sentence chunking lets Claude cite a single sentence or chain together multiple consecutive sentences to cite a paragraph or longer passage.
       - **For PDFs:** Text is extracted as described in [PDF support](build-with-claude-pdf-support.md) and content is chunked into sentences. Citing images from PDFs is not currently supported.
       - **For plain text documents:** Content is chunked into sentences that can be cited from.
       - **For custom content documents:** Your provided content blocks are used as-is and no further chunking is done.
@@ -200,7 +130,7 @@ Integrate citations with Claude in these steps:
 
     ### Claude provides cited response
 
-    - Responses may now include multiple text blocks where each text block can contain a claim that Claude is making and a list of citations that support the claim.
+    - Responses might now include multiple text blocks where each text block can contain a claim that Claude is making and a list of citations that support the claim.
     - Citations reference specific locations in source documents. The format of these citations is dependent on the type of document being cited from.
       - **For PDFs:** Citations include the page number range (1-indexed).
       - **For plain text documents:** Citations include the character index range (0-indexed).
@@ -217,7 +147,7 @@ For example, if you want Claude to be able to cite specific sentences from your 
 
 ### Citable versus non-citable content
 
-- Text found within a document's `source` content can be cited from.
+- Text found within a document’s `source` content can be cited from.
 - `title` and `context` are optional fields that are passed to the model but not used toward cited content.
 - `title` is limited in length, so the `context` field is useful for storing document metadata as text or stringified JSON.
 
@@ -231,10 +161,10 @@ For example, if you want Claude to be able to cite specific sentences from your 
 ### Token costs
 
 - Enabling citations incurs a slight increase in input tokens because of system prompt additions and document chunking.
-- However, the citations feature is very efficient with output tokens. Internally, the model outputs citations in a standardized format that are then parsed into cited text and document location indices. The `cited_text` field is provided for convenience and does not count toward output tokens.
+- However, the citations feature is very efficient with output tokens. Internally, the model outputs citations in a standardized format, and those citations are then parsed into cited text and document location indices. The `cited_text` field is provided for convenience and does not count toward output tokens.
 - When passed back in subsequent conversation turns, `cited_text` is also not counted toward input tokens.
 
-### Feature compatibility
+## Feature compatibility
 
 Citations work in conjunction with other API features including [prompt caching](build-with-claude-prompt-caching.md), [token counting](build-with-claude-token-counting.md), and [batch processing](build-with-claude-batch-processing.md).
 
@@ -246,7 +176,70 @@ Citations cannot be used together with [structured outputs](build-with-claude-st
 
 This is because citations require interleaving citation blocks with text output, which is incompatible with the strict JSON schema constraints of structured outputs.
 
-#### Using prompt caching with citations
+### Get structured data with citations
+
+To get a citation for each extracted value, prompt Claude to answer with one line per field. Then parse the lines into structured data in your code.
+
+Avoid user or system prompts that ask for only JSON, such as “Return only a JSON object, no other text.” A request with such a prompt succeeds, but the response might contain few or no citations.
+
+The following prompt asks for two fields from the plain text document in the example at the top of this page. Send it in place of that example’s question:
+
+``` block
+Extract these fields from the document: grass_color, sky_color.
+Answer with one line per field in the form "field: value", and cite the document for each line. After the colon, write only the value, with no explanation or quotation.
+```
+
+
+
+In the following response, each value has its own citations:
+
+```python
+{
+  "content": [
+    { "type": "text", "text": "grass_color: " },
+    {
+      "type": "text",
+      "text": "green",
+      "citations": [
+        {
+          "type": "char_location",
+          "cited_text": "The grass is green. ",
+          "document_index": 0,
+          "document_title": "My Document",
+          "start_char_index": 0,
+          "end_char_index": 20
+        }
+      ]
+    },
+    { "type": "text", "text": "\nsky_color: " },
+    {
+      "type": "text",
+      "text": "blue",
+      "citations": [
+        {
+          "type": "char_location",
+          "cited_text": "The sky is blue.",
+          "document_index": 0,
+          "document_title": "My Document",
+          "start_char_index": 20,
+          "end_char_index": 36
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+
+To parse the response, follow these steps:
+
+1.  Read the `text` blocks in order, and add each block’s text to the current line. Start a new line at each newline character.
+2.  Attach each block’s `citations` to every line that contains part of its text. A cited block can hold only a value, as in this example, or a whole line.
+3.  Skip lines that have no colon. Split each remaining line at its first colon into a field name and a value, and trim spaces from both. Skip lines whose name isn’t one of your fields, such as a closing note.
+4.  Check that each field has a value and at least one citation. The API doesn’t guarantee either.
+
+### Using prompt caching with citations
 
 Citations and prompt caching can be used together effectively.
 
@@ -325,15 +318,15 @@ In this example:
 
 Three document types are supported for citations. Documents can be provided directly in the message (base64, text, or URL) or uploaded through the [Files API](build-with-claude-files.md) and referenced by `file_id`:
 
-| Type           | Best for                                                        | Chunking               | Citation format               |
-|:---------------|:----------------------------------------------------------------|:-----------------------|:------------------------------|
-| Plain text     | Simple text documents, prose                                    | Sentence               | Character indices (0-indexed) |
-| PDF            | PDF files with text content                                     | Sentence               | Page numbers (1-indexed)      |
-| Custom content | Lists, transcripts, special formatting, more granular citations | No additional chunking | Block indices (0-indexed)     |
+| Type | Best for | Chunking | Citation format |
+|:---|:---|:---|:---|
+| Plain text | Simple text documents, prose | Sentence | Character indices (0-indexed) |
+| PDF | PDF files with text content | Sentence | Page numbers (1-indexed) |
+| Custom content | Lists, transcripts, special formatting, more granular citations | No additional chunking | Block indices (0-indexed) |
 
 
 
-For file types that the `document` block doesn't support (for example, .docx and .xlsx), convert the files to plain text and include the content directly in message content. Files that are already plain text, such as .csv and .md files, can also be uploaded with an explicit `text/plain` content type. See [Working with other file formats](build-with-claude-files.md#working-with-other-file-formats).
+For file types that the `document` block doesn’t support (for example, .docx and .xlsx), convert the files to plain text and include the content directly in message content. Files that are already plain text, such as .csv and .md files, can also be uploaded with an explicit `text/plain` content type. See [Working with other file formats](build-with-claude-files.md#working-with-other-file-formats).
 
 ### Plain text documents
 
@@ -429,7 +422,7 @@ print(cited_response)
 
 ### PDF documents
 
-PDF documents can be provided as base64-encoded data, a URL, or by `file_id`. PDF text is extracted and chunked into sentences. As image citations are not yet supported, PDFs that are scans of documents and do not contain extractable text are not citable.
+PDF documents can be provided as base64-encoded data, as a URL, or by `file_id`. PDF text is extracted and chunked into sentences. As image citations are not yet supported, PDFs that are scans of documents and do not contain extractable text are not citable.
 
 Base64
 
@@ -698,7 +691,7 @@ When citations are enabled, responses include multiple text blocks with citation
       "citations": [
         {
           "type": "char_location",
-          "cited_text": "The grass is green.",
+          "cited_text": "The grass is green. ",
           "document_index": 0,
           "document_title": "Example Document",
           "start_char_index": 0,
@@ -803,7 +796,7 @@ data: {"type": "message_stop"}
 
 [Streaming messages](build-with-claude-streaming.md)
 
-Handle the `citations_delta` delta type alongside text deltas to render cited responses as they stream.
+Learn the event flow and the other content block delta types that arrive alongside `citations_delta`.
 
 [Search results](build-with-claude-search-results.md)
 
@@ -819,11 +812,39 @@ Learn how Claude extracts text from PDFs and how page-based citations map back t
 
 Upload documents once and reference them by `file_id` across multiple citation requests.
 
-## Compatibility
+## Availability
 
-Supported platforms  
-- Claude API
-- Claude Platform on AWS
-- Amazon Bedrock
-- Google Cloud
-- Microsoft Foundry
+Citations are available on every model and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+[Messages API](build-with-claude-working-with-messages.md)
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+StatusNot available
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages`
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+HIPAAEligible

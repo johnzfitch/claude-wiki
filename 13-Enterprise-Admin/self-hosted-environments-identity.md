@@ -2,11 +2,14 @@
 title: "Verify session identity in self-hosted environments - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments-identity"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:28:31Z"
+fetched_at: "2026-10-30T06:26:01Z"
+last_modified: "Fri, 30 Oct 2026 02:09:30 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
 ## On this page
+
+Back to top
 
 - [The session token](#the-session-token)
   - [What the token proves](#what-the-token-proves)
@@ -129,7 +132,7 @@ Reject the token if `exp` is in the past. Anthropic issues session tokens with a
 
 Read the identity
 
-The creating user’s identity is in the `act` claim: `act.sub` is their Anthropic user ID in the prefixed form `user:<id>`, and `act.email`, when the creating surface recorded one, is their email address. Sessions your organization’s service identity creates, including Claude Tag channel sessions, carry an `agent:` subject instead, so treat a session as user-created only when `act.sub` carries the `user:` prefix, rather than testing whether identity claims are absent. See the [claims reference](#claims-reference) for the full structure and the flat duplicate claims.
+The creating user’s identity is in the `act` claim. `act.sub` is their Anthropic user ID in the prefixed form `user:<id>`, and `act.email`, when the creating surface recorded one, is their email address. Sessions your organization’s service identity creates carry an `agent:` subject instead. Treat a session as user-created only when `act.sub` carries the `user:` prefix, rather than testing whether identity claims are absent.See the [claims reference](#claims-reference) for the full structure and the flat duplicate claims.
 
 The checks map directly onto standard JWT libraries. The examples below implement the full sequence in Node.js with [`jose`](https://www.npmjs.com/package/jose), which handles JWKS fetching, caching, and `kid` selection, and in Python with [`PyJWT`](https://pyjwt.readthedocs.io/) and its built-in JWKS client.
 
@@ -230,25 +233,25 @@ Wrappers receive the absolute path to the runner’s own binary in `CLAUDE_RUNNE
 
 Claims reference
 
-The table below lists the session token claims relevant to verification. Read identity from the `ccr:*` namespace and the `act` chain; the flat `account_email`, `organization_uuid`, and `account_uuid` claims are backward-compatibility duplicates that may be removed. Sessions your organization’s service identity creates, including Claude Tag channel sessions, carry an `agent:` subject in `act.sub` and omit `act.email`, `ccr:account_id`, `account_email`, and `account_uuid`. The two email claims are optional for user-created sessions too: Anthropic records them at session creation only when the creating request’s credentials carry an email, and a session dispatched from the CLI can lack both, so key identity on `act.sub` or `ccr:account_id` rather than on email. Tokens can also carry additional claims beyond this table; ignore claims you don’t recognize.
+Read identity from the `ccr:*` namespace and the `act` chain; the flat `account_email`, `organization_uuid`, and `account_uuid` claims are backward-compatibility duplicates that may be removed. Sessions your organization’s service identity creates carry an `agent:` subject in `act.sub` and omit `act.email`, `ccr:account_id`, `account_email`, and `account_uuid`. The two email claims are optional for user-created sessions too. Anthropic records them at session creation only when the creating request’s credentials carry an email, and a session dispatched from the CLI can lack both. Key identity on `act.sub` or `ccr:account_id` rather than on email. Tokens can also carry additional claims beyond this table; ignore claims you don’t recognize. The table below lists the session token claims relevant to verification.
 
-| Claim               | Type             | Description                                                                                                                                                                                                                                                                                                                                                                                                     |
-|:--------------------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `iss`               | string           | Always `ccr`.                                                                                                                                                                                                                                                                                                                                                                                                   |
-| `sub`               | string           | `ccr:session:<session_id>`.                                                                                                                                                                                                                                                                                                                                                                                     |
-| `aud`               | array of strings | Always contains `anthropic-api`. For sessions in self-hosted environments the array also contains your environment ID, such as `ccpool_...`. Verify the environment ID, not `anthropic-api`.                                                                                                                                                                                                                    |
-| `exp`               | number           | Expiry as a Unix timestamp. Four-hour default lifetime, eight-hour maximum.                                                                                                                                                                                                                                                                                                                                     |
-| `iat`               | number           | Issued-at as a Unix timestamp.                                                                                                                                                                                                                                                                                                                                                                                  |
-| `jti`               | string           | Unique token identifier.                                                                                                                                                                                                                                                                                                                                                                                        |
-| `ccr:role`          | string           | Always `session_worker` for session tokens.                                                                                                                                                                                                                                                                                                                                                                     |
-| `ccr:session_id`    | string           | The session ID in `cse_...` form. Same value as the suffix of `sub`, and the same string as [`CLAUDE_CODE_REMOTE_SESSION_ID`](self-hosted-environments-configuration.md#wrapper-scripts). To match it to the `CLAUDE_RUNNER_SESSION_ID` that [lifecycle hooks](self-hosted-environments-configuration.md#lifecycle-hooks) receive, replace the `cse_` prefix with `session_`.                       |
-| `ccr:pool_id`       | string           | Your environment ID. Same value that appears in `aud`.                                                                                                                                                                                                                                                                                                                                                          |
-| `ccr:org_id`        | string           | Your Anthropic organization ID.                                                                                                                                                                                                                                                                                                                                                                                 |
-| `ccr:account_id`    | string           | The creating user’s Anthropic account ID: the value of `act.sub` without the `user:` prefix, a tagged `user_...` ID. The same value the [spawn-runner hook](self-hosted-environments-configuration.md#the-spawn-runner-hook)’s `CLAUDE_RUNNER_ACCOUNT_ID` carries and [`--lock-to-account`](self-hosted-environments-reference.md#runner-cli-flags) accepts, so the three compare as equal strings. |
-| `account_email`     | string           | Duplicate of `act.email`; absent whenever `act.email` is.                                                                                                                                                                                                                                                                                                                                                       |
-| `organization_uuid` | string           | Your Anthropic organization UUID.                                                                                                                                                                                                                                                                                                                                                                               |
-| `account_uuid`      | string           | The creating user’s Anthropic account UUID.                                                                                                                                                                                                                                                                                                                                                                     |
-| `act`               | object           | [RFC 8693](https://www.rfc-editor.org/rfc/rfc8693) delegation chain. See [The `act` chain](#the-act-chain).                                                                                                                                                                                                                                                                                                     |
+| Claim | Type | Description |
+|:---|:---|:---|
+| `iss` | string | Always `ccr`. |
+| `sub` | string | `ccr:session:<session_id>`. |
+| `aud` | array of strings | Always contains `anthropic-api`. For sessions in self-hosted environments the array also contains your environment ID, such as `ccpool_...`. Verify the environment ID, not `anthropic-api`. |
+| `exp` | number | Expiry as a Unix timestamp. Four-hour default lifetime, eight-hour maximum. |
+| `iat` | number | Issued-at as a Unix timestamp. |
+| `jti` | string | Unique token identifier. |
+| `ccr:role` | string | Always `session_worker` for session tokens. |
+| `ccr:session_id` | string | The session ID in `cse_...` form. Same value as the suffix of `sub`, and the same string as [`CLAUDE_CODE_REMOTE_SESSION_ID`](self-hosted-environments-configuration.md#wrapper-scripts). To match it to the `CLAUDE_RUNNER_SESSION_ID` that [lifecycle hooks](self-hosted-environments-configuration.md#lifecycle-hooks) receive, replace the `cse_` prefix with `session_`. |
+| `ccr:pool_id` | string | Your environment ID. Same value that appears in `aud`. |
+| `ccr:org_id` | string | Your Anthropic organization ID. |
+| `ccr:account_id` | string | The creating user’s Anthropic account ID: the value of `act.sub` without the `user:` prefix, a tagged `user_...` ID. The same value the [spawn-runner hook](self-hosted-environments-configuration.md#the-spawn-runner-hook)’s `CLAUDE_RUNNER_ACCOUNT_ID` carries and [`--lock-to-account`](self-hosted-environments-reference.md#runner-cli-flags) accepts, so the three compare as equal strings. |
+| `account_email` | string | Duplicate of `act.email`; absent whenever `act.email` is. |
+| `organization_uuid` | string | Your Anthropic organization UUID. |
+| `account_uuid` | string | The creating user’s Anthropic account UUID. |
+| `act` | object | [RFC 8693](https://www.rfc-editor.org/rfc/rfc8693) delegation chain. See [The `act` chain](#the-act-chain). |
 
 
 [​](#the-act-chain)
@@ -257,14 +260,14 @@ The `act` chain
 
 The `act` claim records the full delegation path from the user or service identity that created the session down to the [environment](self-hosted-environments.md#key-concepts) whose secret admitted the runner, and the identity that created that secret. The creator is the outermost actor, so `act.sub` identifies them directly.
 
-| Path              | Description                                                                                                                                                                                                    |
-|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `act.sub`         | The creating user’s Anthropic user ID, in the form `user:<id>`, or `agent:<id>` when your organization’s service identity created the session, as it does for Claude Tag channel sessions.                     |
-| `act.email`       | The creating user’s email address, when one was recorded at session creation. Don’t require it; key on `act.sub`.                                                                                              |
+| Path | Description |
+|:---|:---|
+| `act.sub` | The creating user’s Anthropic user ID, in the form `user:<id>`, or `agent:<id>` when your organization’s service identity created the session. |
+| `act.email` | The creating user’s email address, when one was recorded at session creation. Don’t require it; key on `act.sub`. |
 | `act.attested_by` | Reserved for the upstream identity provider’s attestation for the creating user. Expect it to be absent, and don’t depend on it. Key on `act.sub`. If you need an address, read `act.email` when it’s present. |
-| `act.act`         | The runner that spawned the session. `act.act.sub` is `ccr:runner:<runner_id>`.                                                                                                                                |
-| `act.act.act`     | The environment. `act.act.act.sub` is `ccr:pool:<pool_id>`.                                                                                                                                                    |
-| `act.act.act.act` | The identity that created the environment secret the runner registered with. The chain ends here.                                                                                                              |
+| `act.act` | The runner that spawned the session. `act.act.sub` is `ccr:runner:<runner_id>`. |
+| `act.act.act` | The environment. `act.act.act.sub` is `ccr:pool:<pool_id>`. |
+| `act.act.act.act` | The identity that created the environment secret the runner registered with. The chain ends here. |
 
 
 [​](#scope-derived-credentials)

@@ -2,65 +2,9 @@
 title: "Claude Fable 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5/overview"
 category: "20-Models"
-fetched_at: "2026-10-20T06:40:29Z"
+fetched_at: "2026-11-05T06:36:31Z"
 tags: ["models"]
 ---
-
-- [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md)
-
-- [Admin](../04-API-Reference/Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](release-notes-overview.md)
-
-[API reference](../04-API-Reference/Endpoints/overview.md)
-
-
-
-
-[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmodels%2Ffable-5%2Foverview)
-
-
-
-
-
-SearchCtrlK
-
-Models
-
-[Models overview](about-claude-models-overview.md)
-
-[Claude Fable 5.1](models-fable-5-1-overview.md)
-
-[Claude Opus 5.5](models-opus-5-5-overview.md)
-
-[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
-
-[Claude Haiku 5.5](models-haiku-5-5-overview.md)
-
-Specialized models
-
-Legacy models
-
-[Claude Fable 5](models-fable-5-overview.md)[Claude Opus 5](models-opus-5-overview.md)[Claude Sonnet 5](models-sonnet-5-overview.md)[Claude Opus 4.8](models-opus-4-8-overview.md)[Claude Opus 4.7](models-opus-4-7-overview.md)[Claude Opus 4.6](models-opus-4-6-overview.md)[Claude Sonnet 4.6](models-sonnet-4-6-overview.md)[Claude Opus 4.5](models-opus-4-5-overview.md)[Claude Sonnet 4.5](models-sonnet-4-5-overview.md)[Claude Haiku 4.5](models-haiku-4-5-overview.md)
-
-Guides
-
-[Choosing a model](about-claude-models-choosing-a-model.md)[Optimizing for cost and intelligence](about-claude-models-optimizing-for-cost-and-intelligence.md)[Upgrade between model versions](about-claude-models-migration-guide.md)
-
-Lifecycle and reference
-
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
-
-[System prompts](release-notes-system-prompts-overview.md)
-
-[Console](../04-API-Reference/Other/playground.md)
-
-
 
 Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.1.
 
@@ -96,9 +40,9 @@ Input pricing
 Output pricing  
 \$50/ MTok
 
-## Fable vs. Mythos
+## Fable versus Mythos
 
-[Claude Mythos 5](models-mythos-5-overview.md) is offered separately for defensive cybersecurity workflows and is available only to organizations verified through Anthropic's verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). It shares Claude Fable 5's specifications and pricing.
+[Claude Mythos 5](models-mythos-5-overview.md) is offered separately for defensive cybersecurity workflows and is available only to organizations verified through Anthropic’s verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). It shares Claude Fable 5’s specifications and pricing.
 
 ## How it compares to the current lineup
 
@@ -114,13 +58,16 @@ claude-fable-5
 [Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)  
 anthropic.claude-fable-5
 
-[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)  
+[Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)  
 claude-fable-5
 
 [Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)  
 claude-fable-5
 
 [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)  
+claude-fable-5
+
+[Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)  
 claude-fable-5
 
 ### Pricing
@@ -180,7 +127,7 @@ Retirement
 Not sooner than June 9, 2027
 
 Platforms  
-Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Google Cloud](../04-API-Reference/Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)
+Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)
 
 ## Resources
 

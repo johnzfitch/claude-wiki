@@ -2,20 +2,18 @@
 title: "Understanding your billing address and tax calculation | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation"
 category: "17-Billing-Plans"
-fetched_at: "2026-10-23T06:29:00Z"
+fetched_at: "2026-11-09T06:25:43Z"
 tags: ["billing"]
 ---
 
 # Understanding your billing address and tax calculation
-
-August 6, 2026
 
 
 Your billing address determines how taxes are calculated on your Claude purchases. This address should represent the primary place of business receiving the product.
 
 ## How billing addresses work by plan type
 
-### Pro, Max, self-serve Team, and self-serve Enterprise plans
+### Pro, Max, Ultra, self-serve Team, and self-serve Enterprise plans
 
 Your billing address is automatically set to match your payment method's billing address. To update it, navigate to **[Settings \> Billing](https://claude.ai/settings/billing)** and click “Update” to the right of your current payment method.
 
@@ -35,7 +33,7 @@ You can update your billing address directly in the Claude Console under Setting
 
 If your billing address doesn't match your payment method's address—for example, you're on a self-serve plan and need it to reflect a different business location for VAT purposes—you have two options:
 
-- **Update your payment method's address.** Self-serve plans (Pro, Max, self-serve Team, self-serve Enterprise, and API usage tiers) take their billing address from the payment method, so updating the address on your card or Link wallet updates your billing address too.
+- **Update your payment method's address.** Self-serve plans (Pro, Max, Ultra, self-serve Team, self-serve Enterprise, and API usage tiers) take their billing address from the payment method, so updating the address on your card or Link wallet updates your billing address too.
 
 - **Contact support to lock a fixed address.** If you need an address that stays the same even when you change payment methods, contact our Support team with documentation verifying your primary business location:
 

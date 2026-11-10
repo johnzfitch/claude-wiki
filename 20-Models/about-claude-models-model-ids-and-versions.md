@@ -2,63 +2,9 @@
 title: "Model IDs and versioning - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/models/model-ids-and-versions"
 category: "20-Models"
-fetched_at: "2026-10-20T06:36:49Z"
+fetched_at: "2026-11-05T06:35:03Z"
 tags: ["models"]
 ---
-
-- [Managed Agents](../04-API-Reference/Other/managed-agents-overview.md)
-
-- [Admin](../04-API-Reference/Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../04-API-Reference/About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../04-API-Reference/Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](release-notes-overview.md)
-
-[API reference](../04-API-Reference/Endpoints/overview.md)
-
-
-
-
-[Console](../04-API-Reference/Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fabout-claude%2Fmodels%2Fmodel-ids-and-versions)
-
-
-
-
-
-SearchCtrlK
-
-Models
-
-[Models overview](about-claude-models-overview.md)
-
-[Claude Fable 5.1](models-fable-5-1-overview.md)
-
-[Claude Opus 5.5](models-opus-5-5-overview.md)
-
-[Claude Sonnet 5.5](models-sonnet-5-5-overview.md)
-
-[Claude Haiku 5.5](models-haiku-5-5-overview.md)
-
-Specialized models
-
-Legacy models
-
-Guides
-
-[Choosing a model](about-claude-models-choosing-a-model.md)[Optimizing for cost and intelligence](about-claude-models-optimizing-for-cost-and-intelligence.md)[Upgrade between model versions](about-claude-models-migration-guide.md)
-
-Lifecycle and reference
-
-[Model IDs and versioning](about-claude-models-model-ids-and-versions.md)[Model deprecations](about-claude-model-deprecations.md)[Model cards](../04-API-Reference/Other/resources-overview.md)[Pricing](../17-Billing-Plans/about-claude-pricing.md)[API credits for subscribers](../04-API-Reference/About/about-claude-api-credits-for-subscribers.md)
-
-[System prompts](release-notes-system-prompts-overview.md)
-
-[Console](../04-API-Reference/Other/playground.md)
-
-[Models & pricing](about-claude-models-overview.md)Lifecycle and reference
 
 # Model IDs and versioning
 
@@ -104,7 +50,7 @@ For example: `anthropic.claude-sonnet-4-6`, `anthropic.claude-sonnet-5`, `anthro
 
 Claude Opus 4.6 is the last Bedrock model ID to include the `-v1` suffix (`anthropic.claude-opus-4-6-v1`). Anthropic dropped the suffix starting with Claude Sonnet 4.6.
 
-On Google Cloud, the format matches the Claude API.
+On Claude Models on Google Cloud (Google managed), the format matches the Claude API.
 
 ### Before the 4.6 generation
 
@@ -128,7 +74,7 @@ anthropic.claude-{name}-{major}-{minor}-{YYYYMMDD}-v1:0
 
 For example: `anthropic.claude-sonnet-4-5-20250929-v1:0`
 
-On Google Cloud, the date is separated with `@`:
+On Claude Models on Google Cloud (Google managed), the date is separated with `@`:
 
 ``` block
 claude-{name}-{major}-{minor}@{YYYYMMDD}
@@ -158,4 +104,4 @@ Occasionally, infrastructure updates produce minor differences in observable beh
 
 ## Current model IDs
 
-For the full list of current model IDs and their Amazon Bedrock and Google Cloud equivalents, see [Models overview](about-claude-models-overview.md).
+For the full list of current model IDs and their equivalents on Claude Models on Google Cloud (Google managed) and Amazon Bedrock, see [Models overview](about-claude-models-overview.md).

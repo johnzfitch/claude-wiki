@@ -2,11 +2,13 @@
 title: "Control project sharing for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:25Z"
+fetched_at: "2026-11-09T06:26:20Z"
 tags: ["claude-ai"]
 ---
 
 # Control project sharing for your organization
+
+September 24, 2026
 
 
 This feature is available to Primary Owners and Owners on Team and Enterprise plans. On Enterprise plans, custom roles with the **Privacy** permission set to "Can manage" can also change these settings. Setting project sharing by role is available on Enterprise plans only.

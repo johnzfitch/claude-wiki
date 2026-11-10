@@ -2,11 +2,14 @@
 title: "Pagination - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/pagination"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:29:07Z"
+fetched_at: "2026-10-31T06:25:23Z"
+last_modified: "Sat, 31 Oct 2026 02:27:36 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Pagination Model](#pagination-model)
 - [Response Format](#response-format)

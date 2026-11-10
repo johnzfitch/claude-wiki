@@ -2,85 +2,9 @@
 title: "Bash tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-20T06:38:52Z"
+fetched_at: "2026-11-05T06:34:40Z"
 tags: ["api", "security"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fbash-tool)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
-
-[Thinking](../Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](agents-and-tools-tool-use-tool-reference.md)[Manage tool context](agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
-
-[Compaction](../Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](agents-and-tools-agent-skills-overview.md)[Quickstart](agents-and-tools-agent-skills-quickstart.md)[Best practices](agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](agents-and-tools-remote-mcp-servers.md)[MCP connector](agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Tools
 
 # Bash tool
 
@@ -94,11 +18,18 @@ Let Claude request shell commands that your application runs in a persistent bas
 
 
 
-
+Bash tool
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+Feature of  
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-The bash tool is a [client tool](agents-and-tools-tool-use-how-tool-use-works.md): Claude doesn't run commands itself. When you include the tool in a request, Claude replies with a `tool_use` block that names the command to run. Your application runs that command in a bash session it owns and returns the output in a `tool_result` block.
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
+
+The bash tool is a [client tool](agents-and-tools-tool-use-how-tool-use-works.md): Claude doesn’t run commands itself. When you include the tool in a request, Claude replies with a `tool_use` block that names the command to run. Your application runs that command in a bash session it owns and returns the output in a `tool_result` block.
 
 Your application keeps one bash process alive across tool calls, so state persists between commands. The working directory, environment variables, and any files a command creates are still there for the next command.
 
@@ -107,7 +38,7 @@ The current version of the tool is `bash_20250124`. For model support, beta head
 ## Use cases
 
 - **Development workflows:** Run build commands, tests, and development tools
-- **System automation:** Execute scripts, manage files, automate tasks
+- **System automation:** Run scripts, manage files, automate tasks
 - **Data processing:** Process files, run analysis scripts, manage datasets
 - **Environment setup:** Install packages, configure environments
 
@@ -187,16 +118,16 @@ Each tool call is one round trip between Claude and your application:
 
 1.  Claude returns a `tool_use` block containing the `command` to run.
 2.  Your application runs the command in its bash session.
-3.  Your application returns the command's output, stdout and stderr together, to Claude in a `tool_result` block.
+3.  Your application returns the command’s output, stdout and stderr together, to Claude in a `tool_result` block.
 4.  Claude either requests another command in the same session or responds with text.
 
 Claude can also return several `tool_use` blocks in one response. Run them in order in the same session and return all of the results in one `user` message. See [Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md).
 
-The API is stateless. Nothing about your shell session travels between requests, so your application decides when the session starts, how long it lives, and when to restart it. For the full request and response cycle, see [Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md).
+The API is stateless. Nothing about your shell session travels between requests, so your application determines when the session starts, how long it lives, and when to restart it. For the full request and response cycle, see [Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md).
 
 ## Parameters
 
-A bash tool definition has two required fields, `type` and `name`, and the `name` must be `bash`. The tool is schema-less: you don't provide an `input_schema`, because the schema is built into Claude's model and can't be modified. The following table lists the input fields Claude sets when it calls the tool.
+A bash tool definition has two required fields, `type` and `name`, and the `name` must be `bash`. The tool is schema-less: you don’t provide an `input_schema`, because the schema is built into Claude’s model and can’t be modified. The following table lists the input fields Claude sets when it calls the tool.
 
 | Parameter | Required | Description                               |
 |-----------|----------|-------------------------------------------|
@@ -233,7 +164,7 @@ Restart the session:
 
 `bash_20250124` is the current version of the tool, and it requires no beta header. Every model from Claude Sonnet 3.7 ([retired](../../20-Models/about-claude-model-deprecations.md)) onward accepts it, including all current Claude models.
 
-The original `bash_20241022` version works only with the October 2024 Claude Sonnet 3.5 model ([retired](../../20-Models/about-claude-model-deprecations.md)). Requests that use it need the `anthropic-beta: computer-use-2024-10-22` header, and the SDK exposes it only in its beta namespace. New integrations should use `bash_20250124`.
+The `bash_20241022` version works only with the October 2024 Claude Sonnet 3.5 model ([retired](../../20-Models/about-claude-model-deprecations.md)). Requests that use it need the `anthropic-beta: computer-use-2024-10-22` header, and the SDK exposes it only in its beta namespace. New integrations should use `bash_20250124`.
 
 ## Example: Multistep automation
 
@@ -267,7 +198,7 @@ Claude determines which command to run. Your application owns everything else: t
 
     ### Create a persistent bash session
 
-    Start one long-lived bash process and run every command inside it. Because a pipe to a live process never reports end-of-file, the session prints a unique sentinel line after each command to mark where that command's output ends:
+    Start one long-lived bash process and run every command inside it. Because a pipe to a live process never reports end-of-file, the session prints a unique sentinel line after each command to mark where that command’s output ends:
 
     Python
     TypeScript
@@ -301,7 +232,7 @@ Claude determines which command to run. Your application owns everything else: t
 
         def execute_command(self, command):
             """Run a command in the session and return its output."""
-            sentinel = f"__CLAUDE_BASH_DONE_{uuid.uuid4().hex}__"  # unique per call
+            sentinel = f"__CLAUDE_BASH_DONE_{uuid.uuid4().hex}__"  # unique for each call
             self.process.stdin.write(f"{command}\necho {sentinel}\n")
             self.process.stdin.flush()
 
@@ -323,13 +254,13 @@ Claude determines which command to run. Your application owns everything else: t
     print(bash_session.execute_command("pwd"))  # still /tmp: the session kept its state
     ```
 
-    The session interleaves stderr with stdout, so error messages land where they happened. The example leaves out what a complete implementation also needs: a timeout that kills the shell and every process it started when a command hangs, then restarts the session. The [Use command timeouts](#follow-implementation-best-practices) best practice shows one way to add it.
+    The session interleaves stderr with stdout, so error messages land where they occurred. The example leaves out what a complete implementation also needs: a timeout that kills the shell and every process it started when a command hangs, then restarts the session. The [Use command timeouts](#follow-implementation-best-practices) best practice shows one way to add it.
 
 2.  2
 
-    ### Process Claude's tool calls
+    ### Process Claude’s tool calls
 
-    Extract and run commands from Claude's responses:
+    Extract and run commands from Claude’s responses:
 
     Python
     TypeScript
@@ -354,7 +285,7 @@ Claude determines which command to run. Your application owns everything else: t
                 command = content.input.get("command")
                 result = bash_session.execute_command(command)
 
-            # One tool_result per tool_use block, all returned in the next user message
+            # One tool_result for each tool_use block, all returned in the next user message
             tool_results.append(
                 {"type": "tool_result", "tool_use_id": content.id, "content": result}
             )
@@ -364,7 +295,7 @@ Claude determines which command to run. Your application owns everything else: t
 
     ### Return the result to Claude
 
-    Send the `tool_result` back in a `user` message that continues the same conversation. Claude either requests another command in the same session or finishes its answer:
+    Send the `tool_result` back in a `user` message that continues the same conversation. Claude either requests another command in the same session or completes its answer:
 
     cURL
     CLI
@@ -422,7 +353,7 @@ Claude determines which command to run. Your application owns everything else: t
 
     ### Implement safety measures
 
-    Add validation and restrictions. Use an allowlist rather than a blocklist: a blocklist misses any command it didn't anticipate. The example also rejects shell operators that appear as separate words:
+    Add validation and restrictions. Use an allowlist rather than a blocklist: a blocklist misses any command it didn’t anticipate. The example also rejects shell operators that appear as separate words:
 
     Python
     TypeScript
@@ -469,11 +400,11 @@ Claude determines which command to run. Your application owns everything else: t
 
 ### Handle errors
 
-When a command fails or the session breaks, tell Claude what happened. Return the message as the `tool_result` content and set `is_error` to `true`, which marks the tool call as failed. See [Handling errors with is_error](agents-and-tools-tool-use-handle-tool-calls.md#handling-errors-with-is-error).
+When a command fails or the session breaks, tell Claude what occurred. Return the message as the `tool_result` content and set `is_error` to `true`, which marks the tool call as failed. See [Handling errors with is_error](agents-and-tools-tool-use-handle-tool-calls.md#handling-errors-with-is-error).
 
 ### Command execution timeout
 
-If a command takes too long to execute:
+If a command takes too long to run:
 
 ```python
 {
@@ -493,7 +424,7 @@ If a command takes too long to execute:
 
 ### Command not found
 
-If a command doesn't exist:
+If a command doesn’t exist:
 
 ```python
 {
@@ -535,7 +466,7 @@ If there are permission issues:
 
 ### Use command timeouts
 
-A command that never finishes, such as one that waits for input, blocks the session forever because its sentinel line never arrives. Give every command a deadline. When the deadline passes, stop the shell and everything the command started, then restart the session:
+A command that never completes, such as one that waits for input, blocks the session forever because its sentinel line never arrives. Give every command a deadline. When the deadline passes, stop the shell and everything the command started, then restart the session:
 
 Python
 
@@ -640,7 +571,7 @@ def truncate_output(output, max_lines=100):
 
 ### Log all commands
 
-Keep an audit trail. Route every command through one wrapper that records the command before it runs and the output after it finishes. A command that hangs or breaks the session still leaves a record:
+Keep an audit trail. Route every command through one wrapper that records the command before it runs and the output after it completes. A command that hangs or breaks the session still leaves a record:
 
 Python
 
@@ -693,10 +624,10 @@ Beyond isolation, add these controls:
 
 The bash tool definition adds the following input tokens to your request. This is in addition to the per-model [tool use system prompt](agents-and-tools-tool-use-overview.md#pricing) that applies whenever any tool is present.
 
-| Model                                                 | Additional input tokens |
-|-------------------------------------------------------|-------------------------|
-| Claude 4.7 and later models and Claude Mythos Preview | 325 tokens              |
-| Claude 4.6 and earlier models                         | 244 tokens              |
+| Model | Additional input tokens |
+|----|----|
+| Claude 4.7 and later models and Claude Mythos Preview | 325 tokens |
+| Claude 4.6 and earlier models | 244 tokens |
 
 Additional tokens are consumed by:
 
@@ -712,9 +643,9 @@ See [tool use pricing](agents-and-tools-tool-use-overview.md#pricing) for comple
 
 - Running tests: `pytest && coverage report`
 - Building projects: `npm install && npm run build`
-- Git operations: `git status && git add . && git commit -m "message"`
+- Running Git operations: `git status && git add . && git commit -m "message"`
 
-For guidance on using git as a checkpoint-and-recovery mechanism in long-running agent workflows, see [state management best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#state-management-best-practices).
+For guidance on using Git as a checkpoint-and-recovery mechanism in long-running agent workflows, see [state management best practices](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#state-management-best-practices).
 
 ### File operations
 
@@ -725,15 +656,15 @@ For guidance on using git as a checkpoint-and-recovery mechanism in long-running
 ### System tasks
 
 - Checking resources: `df -h && free -m`
-- Process management: `ps aux | grep python`
-- Environment setup: `export PATH=$PATH:/new/path && echo $PATH`
+- Managing processes: `ps aux | grep python`
+- Setting up the environment: `export PATH=$PATH:/new/path && echo $PATH`
 
 ## Limitations
 
-- **No interactive commands:** The session can't run `vim`, `less`, password prompts, or any command that waits for input on stdin.
+- **No interactive commands:** The session can’t run `vim`, `less`, password prompts, or any command that waits for input on stdin.
 - **No GUI applications:** The session is command-line only.
 - **Session scope:** Bash session state is client-side. Your application is responsible for maintaining the shell session between turns.
-- **Output limits:** The API doesn't truncate tool results (an oversized request is rejected). Truncate large outputs in your application before returning them to Claude.
+- **Output limits:** The API doesn’t truncate tool results (an oversized request is rejected). Truncate large outputs in your application before returning them to Claude.
 - **No streaming:** Output reaches Claude only when your application returns the `tool_result` in the next request.
 
 ## Combining with other tools
@@ -742,7 +673,7 @@ The bash tool pairs well with the [Text editor tool](agents-and-tools-tool-use-t
 
 
 
-If you're also using the [Code execution tool](agents-and-tools-tool-use-code-execution-tool.md), Claude has access to two separate execution environments: your local bash session and Anthropic's sandboxed container. State is not shared between them. See [Using code execution with other execution tools](agents-and-tools-tool-use-code-execution-tool.md#using-code-execution-with-other-execution-tools) for guidance on prompting Claude to distinguish between environments.
+If you’re also using the [Code execution tool](agents-and-tools-tool-use-code-execution-tool.md), Claude has access to two separate execution environments: your local bash session and Anthropic’s sandboxed container. State is not shared between them. See [Using code execution with other execution tools](agents-and-tools-tool-use-code-execution-tool.md#using-code-execution-with-other-execution-tools) for guidance on prompting Claude to distinguish between environments.
 
 ## Next steps
 
@@ -756,4 +687,37 @@ View and modify text files to debug, fix, and improve code.
 
 [Tool use with Claude](agents-and-tools-tool-use-overview.md)
 
-Connect Claude to external tools and APIs. See where tools execute, when Claude calls them, and which tool fits your task.
+Connect Claude to external tools and APIs. See where tools run, when Claude calls them, and which tool fits your task.
+
+## Availability
+
+Bash tool is available on every model and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages` with `bash` tool
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+Client-side tool run in your environment.
+
+HIPAAEligible

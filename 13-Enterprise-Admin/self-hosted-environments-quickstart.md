@@ -2,11 +2,14 @@
 title: "Self-hosted environments quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments-quickstart"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:28:25Z"
+fetched_at: "2026-10-29T06:26:45Z"
+last_modified: "Thu, 29 Oct 2026 06:06:44 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Prerequisites](#prerequisites)
   - [Organization and roles](#organization-and-roles)
@@ -57,7 +60,7 @@ The runner host needs:
 
 - A Linux or macOS host or container with outbound HTTPS to `api.anthropic.com`, to `claude.ai` and the download hosts it redirects to for the install step below, and to your git host for the clone; the [network requirements table](self-hosted-environments-deploy.md#network-requirements) has the full list. Windows isn’t supported as a runner host; run the runner in a Linux container instead. Developer workstations aren’t affected, since sessions start from claude.ai in a browser.
 - A repository for the test session: a public one, or one this host can already clone by its HTTPS URL without being asked for credentials. An SSH key alone isn’t enough, because the runner clones the repository’s `https://` URL. To clone over SSH instead, see [Rewrite git URLs for private networks](self-hosted-environments-deploy.md#rewrite-git-urls-for-private-networks).
-- A clock synchronized to real time, for example with NTP. Authentication fails when the clock is more than five minutes off; see [Troubleshooting](self-hosted-environments-deploy.md#troubleshooting).
+- A clock synchronized to real time, for example with NTP.
 
 
 [​](#software-on-the-runner-host)
@@ -66,7 +69,7 @@ Software on the runner host
 
 Install on the host before you start:
 
-- **Claude Code v2.1.224 or later**, with any of the [standard install methods](../01-Getting-Started/setup.md). The runner is part of the standard `claude` binary, and earlier versions don’t recognize the `self-hosted-runner` subcommand. To pin the exact version your fleet runs, see [Install a specific version](../01-Getting-Started/setup.md#install-a-specific-version). For container images, see the Dockerfile in [Deploy to production](self-hosted-environments-deploy.md#build-the-runner-image).
+- **Claude Code v2.1.224 or later**, with any of the [standard install methods](../01-Getting-Started/setup.md). The runner is part of the standard `claude` binary, and earlier versions don’t recognize the `self-hosted-runner` subcommand. A runner that serves Claude Tag sessions needs v2.1.229 or later and `python3` on its `PATH`, since the [hooks the control plane supplies](self-hosted-environments-configuration.md#how-each-session%E2%80%99s-config-is-assembled) for those sessions run `python3`. To pin the exact version your fleet runs, see [Install a specific version](../01-Getting-Started/setup.md#install-a-specific-version). For container images, see the Dockerfile in [Deploy to production](self-hosted-environments-deploy.md#build-the-runner-image).
 - **Git 2.24 or newer**. Some git options on the deploy page need newer versions; [Configure git](self-hosted-environments-deploy.md#configure-git) states each floor.
 
 Confirm the host is ready:
@@ -159,6 +162,8 @@ Start a session at claude.ai/code and select your environment from the environme
 - **The session fails to start with a git error**: if the error includes git’s `could not read Username for` followed by your git host’s URL, the runner had no HTTPS credentials for that host.
   - **Supply HTTPS credentials**: see [Configure git](self-hosted-environments-deploy.md#configure-git)
   - **Clone over SSH instead**: if the runner host already has an SSH key, see [Rewrite git URLs for private networks](self-hosted-environments-deploy.md#rewrite-git-urls-for-private-networks)
+  - **After either fix**: start the runner again and watch the failed session instead of starting a new one. If it has failed several times, wait several minutes for the runner to log `Picked up session`.
+  - **To use a different repository instead**: [archive](../02-Claude-Code-CLI/claude-code-on-the-web.md#archive-sessions) or [delete](../02-Claude-Code-CLI/claude-code-on-the-web.md#delete-sessions) the failed session, then start the runner again and start a new session. Otherwise, the runner can pick up the failed session instead of the new one.
 
 
 [​](#if-the-runner-exits)

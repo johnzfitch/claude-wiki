@@ -2,7 +2,7 @@
 title: "Set up Code Review for Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14233555-set-up-code-review-for-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:26Z"
+fetched_at: "2026-11-09T06:26:02Z"
 tags: ["claude-code"]
 ---
 
@@ -161,7 +161,7 @@ If you’ve installed the Claude GitHub App but your repositories don’t appear
 
 3.  Try disconnecting and reconnecting your GitHub account in Claude. Go to **[Customize \> Connectors](https://claude.ai/customize/connectors)**, disconnect GitHub, and connect it again. Which repositories the App can access is managed on GitHub's side, covered in step 1.
 
-4.  If the issue persists, **[contact our Support team](../15-Claude-AI-Features/how-to-get-support.md)** with your organization name and GitHub organization name so we can investigate.
+4.  If the issue persists, **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** with your organization name and GitHub organization name so we can investigate.
 
 ### Code Review doesn’t start on a new PR
 

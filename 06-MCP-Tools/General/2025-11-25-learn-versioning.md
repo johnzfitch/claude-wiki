@@ -2,11 +2,14 @@
 title: "Versioning - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-11-25/learn/versioning"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-21T06:29:02Z"
+fetched_at: "2026-10-31T06:24:44Z"
+last_modified: "Fri, 30 Oct 2026 20:34:18 GMT"
 tags: ["mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Revisions](#revisions)
 - [Feature States](#feature-states)

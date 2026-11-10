@@ -2,7 +2,7 @@
 title: "Cyber toolkits for LLMs \\ Anthropic"
 source_url: "https://www.anthropic.com/research/cyber-toolkits"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:42Z"
+fetched_at: "2026-10-24T06:26:33Z"
 tags: ["news-research"]
 ---
 

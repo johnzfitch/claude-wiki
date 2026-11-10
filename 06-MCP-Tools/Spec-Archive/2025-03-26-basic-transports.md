@@ -2,11 +2,14 @@
 title: "Transports - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-03-26/basic/transports"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:28:47Z"
+fetched_at: "2026-10-31T06:24:49Z"
+last_modified: "Sat, 31 Oct 2026 05:07:18 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [stdio](#stdio)
 - [Streamable HTTP](#streamable-http)

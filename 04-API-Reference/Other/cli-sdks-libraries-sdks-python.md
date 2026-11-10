@@ -2,53 +2,9 @@
 title: "Python SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/python"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:22Z"
+fetched_at: "2026-11-05T06:36:15Z"
 tags: ["api", "python", "sdk"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fsdks%2Fpython)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
 # Python SDK
 
@@ -62,7 +18,7 @@ Install and configure the Anthropic Python SDK with sync and async client suppor
 
 
 
-The Anthropic Python SDK provides convenient access to the Claude API from Python applications. It supports both synchronous and asynchronous operations, streaming, and integrations with Amazon Bedrock, Claude Platform on AWS, Google Cloud, and Microsoft Foundry.
+The Anthropic Python SDK provides convenient access to the Claude API from Python applications. It supports both synchronous and asynchronous operations, streaming, and integrations with Amazon Bedrock, Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed), Claude Models on Google Cloud (Google managed), and Microsoft Foundry.
 
 
 
@@ -82,7 +38,7 @@ For platform-specific integrations or improved async performance, install with e
 # For Amazon Bedrock support
 pip install "anthropic[bedrock]"
 
-# For Google Cloud support
+# For Claude Models on Google Cloud (Google managed) support
 pip install "anthropic[vertex]"
 
 # For Claude Platform on AWS support
@@ -95,6 +51,8 @@ pip install "anthropic[aiohttp]"
 ```
 
 
+
+To use Claude Models on Google Cloud (Anthropic managed), run `pip install "anthropic[google_cloud]"`.
 
 ## Requirements
 
@@ -131,9 +89,9 @@ for block in message.content:
 
 
 
-Consider using [python-dotenv](https://pypi.org/project/python-dotenv/) to add `ANTHROPIC_API_KEY="my-anthropic-api-key"` to your `.env` file so that your API key isn't stored in source control.
+Consider using [python-dotenv](https://pypi.org/project/python-dotenv/) to add `ANTHROPIC_API_KEY="my-anthropic-api-key"` to your `.env` file so that your API key isn’t stored in source control.
 
-For authentication options including Workload Identity Federation, see [Authentication](manage-claude-authentication.md). If your API key is a [personal or service account key](manage-claude-authentication.md#key-types) with access to multiple workspaces, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](manage-claude-authentication.md#select-a-workspace) shows the per-request option for this SDK.
+For authentication options including Workload Identity Federation, see [Authentication](manage-claude-authentication.md). If your API key is a [personal or service account key](manage-claude-authentication.md#key-types) that isn’t scoped to a workspace, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](manage-claude-authentication.md#select-a-workspace) shows the per-request option for this SDK.
 
 ## Async usage
 
@@ -276,7 +234,7 @@ asyncio.run(main())
 
 Streaming with `client.messages.stream(...)` exposes various helpers including accumulation and SDK-specific events.
 
-Alternatively, you can use `client.messages.create(..., stream=True)` which only returns an iterable of the events in the stream and uses less memory (it doesn't build up a final message object for you).
+Alternatively, you can use `client.messages.create(..., stream=True)`, which only returns an iterable of the events in the stream and uses less memory (it doesn’t build up a final message object for you).
 
 ## Token counting
 
@@ -433,7 +391,7 @@ The async client uses the exact same interface. If you pass a `PathLike` instanc
 
 ## Handling errors
 
-When the library is unable to connect to the API, or if the API returns a non-success status code (that is, 4xx or 5xx response), a subclass of `APIError` is raised:
+When the library is unable to connect to the API, or if the API returns a non-success status code (that is, a 4xx or 5xx response), a subclass of `APIError` is raised:
 
 ```python
 import anthropic
@@ -480,7 +438,7 @@ Error codes are as follows:
 
 > For more information on debugging requests, see [Request ID](../Endpoints/errors.md#request-id).
 
-All object responses in the SDK provide a `_request_id` property which is added from the `request-id` response header so that you can quickly log failing requests and report them back to Anthropic.
+All object responses in the SDK provide a `_request_id` property, which is added from the `request-id` response header so that you can log failing requests and report them back to Anthropic.
 
 ```python
 message = client.messages.create(
@@ -488,7 +446,7 @@ message = client.messages.create(
     messages=[{"role": "user", "content": "Hello, Claude"}],
     model="claude-opus-5-5",
 )
-print(message._request_id)  # e.g., req_018EeWyXxfu5pfWkrYcMdjWG
+print(message._request_id)  # for example, req_018EeWyXxfu5pfWkrYcMdjWG
 ```
 
 
@@ -555,13 +513,13 @@ Note that requests that time out are [retried twice by default](#retries).
 
 
 
-Consider using the streaming [Messages API](#streaming-responses) for longer running requests.
+Consider using the [streaming Messages API](#streaming-responses) for longer-running requests.
 
-Avoid setting a large `max_tokens` value without using streaming. Some networks may drop idle connections after a certain period of time, which can cause the request to fail or [time out](#timeouts) without receiving a response from Anthropic.
+Avoid setting a large `max_tokens` value without using streaming. Some networks might drop idle connections after a certain period of time, which can cause the request to fail or [time out](#timeouts) without receiving a response from Anthropic.
 
 The SDK will throw a `ValueError` if a non-streaming request is expected to take longer than approximately 10 minutes. Passing `stream=True` or overriding the `timeout` option at the client or request level disables this error.
 
-An expected request latency longer than the [timeout](#timeouts) for a non-streaming request will result in the client terminating the connection and retrying without receiving a response.
+An expected request latency longer than the [timeout](#timeouts) for a non-streaming request will result in the client ending the connection and retrying without receiving a response.
 
 The SDK sets a [TCP socket keep-alive](https://tldp.org/HOWTO/TCP-Keepalive-HOWTO/overview.html) option to reduce the impact of idle connection timeouts on some networks. This can be overridden by passing a custom `http_client` option to the client.
 
@@ -602,7 +560,9 @@ Alternatively, you can use the `.has_next_page()`, `.next_page_info()`, or `.get
 first_page = await client.messages.batches.list(limit=20)
 
 if first_page.has_next_page():
-    print(f"will fetch next page using these details: {first_page.next_page_info()}")
+    print(
+        f"will fetch next page using these details: {first_page.next_page_info()}"
+    )
     next_page = await first_page.get_next_page()
     print(f"number of items we just fetched: {len(next_page.data)}")
 
@@ -627,13 +587,13 @@ for batch in first_page.data:
 
 ## Default headers
 
-The SDK automatically sends the `anthropic-version` header set to `2023-06-01`.
+The SDK automatically sends the `anthropic-version` header set to the API version for this major version of the SDK (see [Semantic versioning](#semantic-versioning)).
 
 If you need to, you can override it by setting default headers on the client object or per-request.
 
 
 
-Overriding default headers may result in incorrect types and other unexpected or undefined behavior in the SDK.
+Overriding default headers might result in incorrect types and other unexpected or undefined behavior in the SDK.
 
 ```python
 # Set default headers for all requests on the client
@@ -656,9 +616,9 @@ client.messages.with_raw_response.create(
 
 ### Request parameters
 
-Nested request parameters are [TypedDicts](https://docs.python.org/3/library/typing.html#typing.TypedDict). Responses are [Pydantic models](https://docs.pydantic.dev) which also have helper methods for things like serializing back into JSON ([`v1`](https://docs.pydantic.dev/1.10/usage/models/), [`v2`](https://docs.pydantic.dev/latest/concepts/serialization/)).
+Nested request parameters are [TypedDicts](https://docs.python.org/3/library/typing.html#typing.TypedDict). Responses are [Pydantic models](https://docs.pydantic.dev), which also have helper methods for things such as serializing back into JSON ([Pydantic `v1`](https://docs.pydantic.dev/1.10/usage/models/), [Pydantic `v2`](https://docs.pydantic.dev/latest/concepts/serialization/)).
 
-Typed requests and responses provide autocomplete and documentation within your editor. If you'd like to see type errors in VS Code to help catch bugs earlier, set `python.analysis.typeCheckingMode` to `basic`.
+Typed requests and responses provide auto-complete and documentation within your editor. If you’d like to see type errors in VS Code to help catch bugs earlier, set `python.analysis.typeCheckingMode` to `basic`.
 
 ### Response models
 
@@ -676,7 +636,7 @@ data = message.to_dict()
 
 
 
-### Handling null vs missing fields
+### Handling null versus missing fields
 
 In responses, you can distinguish between fields that are explicitly `null` versus fields that were not returned (missing):
 
@@ -699,7 +659,7 @@ if response.my_field is None:
 
 ### Accessing raw response data (for example, headers)
 
-The "raw" `Response` returned by `httpx2` can be accessed through the `.with_raw_response` property on the client. This is useful for accessing response headers or other metadata:
+The “raw” `Response` returned by `httpx2` can be accessed through the `.with_raw_response` property on the client. This is useful for accessing response headers or other metadata:
 
 ```python
 client = Anthropic()
@@ -719,7 +679,7 @@ print(message.content)
 
 
 
-These methods return an `APIResponse` object. On the async client they return an `AsyncAPIResponse`, and `.parse()`, `.read()`, `.text()`, and `.json()` must be awaited.
+These methods return an `APIResponse` object. On the async client they return an `AsyncAPIResponse`, and you must await `.parse()`, `.read()`, `.text()`, and `.json()`.
 
 ### Streaming response body
 
@@ -739,7 +699,7 @@ with client.messages.with_streaming_response.create(
 
 
 
-The context manager is required so that the response will reliably be closed.
+The context manager is required so that the response is reliably closed.
 
 ### Logging
 
@@ -753,9 +713,13 @@ export ANTHROPIC_LOG=debug
 
 
 
+### OpenTelemetry tracing
+
+When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
+
 ### Making custom/undocumented requests
 
-This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, params, or response properties, the library can still be used.
+This library is typed for convenient access to the documented API. If you need to access undocumented endpoints, parameters, or response properties, the library can still be used.
 
 #### Undocumented endpoints
 
@@ -775,17 +739,17 @@ print(response.json())
 
 
 
-#### Undocumented request params
+#### Undocumented request parameters
 
 If you want to explicitly send an extra parameter, you can do so with the `extra_query`, `extra_body`, and `extra_headers` request options.
 
 
 
-The `extra_` parameters override documented parameters of the same name. For security reasons, ensure these methods are only used with trusted input data.
+The `extra_` parameters override documented parameters of the same name. For security reasons, use these methods only with trusted input data.
 
 #### Undocumented response properties
 
-To access undocumented response properties, you can access the extra fields like `response.unknown_prop`. You can also get all extra fields on the Pydantic model as a dict with `response.model_extra`.
+To access undocumented response properties, you can access the extra fields such as `response.unknown_prop`. You can also get all extra fields on the Pydantic model as a dict with `response.model_extra`.
 
 ### Configuring the HTTP client
 
@@ -817,13 +781,13 @@ client.with_options(http_client=DefaultHttpxClient(...))
 
 
 
-Use `DefaultHttpxClient` and `DefaultAsyncHttpxClient` instead of raw `httpx2.Client` and `httpx2.AsyncClient` to ensure the SDK's default configuration (such as timeouts and connection limits) is preserved. The `http_client` argument must be an `httpx2` client. Passing a client from the separate `httpx` package raises a `TypeError`.
+Use `DefaultHttpxClient` and `DefaultAsyncHttpxClient` instead of raw `httpx2.Client` and `httpx2.AsyncClient` to ensure the SDK’s default configuration (such as timeouts and connection limits) is preserved. The `http_client` argument must be an `httpx2` client. Passing a client from the separate `httpx` package raises a `TypeError`.
 
-Tracing and mocking tools that patch `httpx` itself, such as OpenTelemetry's `HTTPXClientInstrumentor`, Sentry's `httpx` integration, `respx`, or `pytest-httpx`, do not see the SDK's requests by default. To use them, call `httpx2.alias_httpx()` once at startup, before anything imports `httpx`. This makes `import httpx` resolve to `httpx2` for the whole process.
+Tracing and mocking tools that patch `httpx` itself, such as OpenTelemetry’s `HTTPXClientInstrumentor`, Sentry’s `httpx` integration, `respx`, or `pytest-httpx`, do not see the SDK’s requests by default. To use them, call `httpx2.alias_httpx()` once at startup, before anything imports `httpx`. This makes `import httpx` resolve to `httpx2` for the whole process.
 
 ### Managing HTTP resources
 
-By default the library closes underlying HTTP connections whenever the client is [garbage collected](https://docs.python.org/3/reference/datamodel.html#object.__del__). You can manually close the client using the `.close()` method if desired, or with a context manager that closes when exiting.
+By default the library closes underlying HTTP connections whenever the client is [garbage collected](https://docs.python.org/3/reference/datamodel.html#object.__del__). You can manually close the client using the `.close()` method if you want to, or with a context manager that closes when exiting.
 
 ```python
 with Anthropic() as client:
@@ -836,7 +800,7 @@ with Anthropic() as client:
 
 ## Beta features
 
-Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude's capabilities and tools in the [Features overview](../Guides/build-with-claude-overview.md).
+Beta features are available before general release to get early feedback and test new functionality. You can check the availability of all of Claude’s capabilities and tools in the [Features overview](../Guides/build-with-claude-overview.md).
 
 You can access most beta API features through the `beta` property of the client. To enable a particular beta feature, you need to add the appropriate [beta header](../Endpoints/beta-headers.md) to the `betas` field when creating a message.
 
@@ -864,20 +828,23 @@ For detailed platform setup guides with code examples, see:
 - [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
 - [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)
+- [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-All five client classes are included in the base `anthropic` package:
+See also [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md).
 
-| Provider                         | Client                                         | Extra dependencies                 |
-|----------------------------------|------------------------------------------------|------------------------------------|
-| Agent Platform                   | `from anthropic import AnthropicVertex`        | `pip install "anthropic[vertex]"`  |
-| Bedrock                          | `from anthropic import AnthropicBedrockMantle` | `pip install "anthropic[bedrock]"` |
-| Bedrock (`bedrock-runtime` path) | `from anthropic import AnthropicBedrock`       | `pip install "anthropic[bedrock]"` |
-| Claude Platform on AWS           | `from anthropic import AnthropicAWS`           | `pip install "anthropic[aws]"`     |
-| Foundry                          | `from anthropic import AnthropicFoundry`       | None                               |
+All six client classes are included in the base `anthropic` package:
 
-The `AnthropicAWS` client is in beta. Pass `workspace_id` to the constructor or set the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable.
+| Provider | Client | Extra dependencies |
+|----|----|----|
+| Claude Models on Google Cloud (Google managed) | `from anthropic import AnthropicVertex` | `pip install "anthropic[vertex]"` |
+| Bedrock | `from anthropic import AnthropicBedrockMantle` | `pip install "anthropic[bedrock]"` |
+| Bedrock (`bedrock-runtime` path) | `from anthropic import AnthropicBedrock` | `pip install "anthropic[bedrock]"` |
+| Claude Platform on AWS | `from anthropic import AnthropicAWS` | `pip install "anthropic[aws]"` |
+| Claude Models on Google Cloud (Anthropic managed) | `from anthropic import AnthropicGoogleCloud` | `pip install "anthropic[google_cloud]"` |
+| Foundry | `from anthropic import AnthropicFoundry` | None |
+
+The `AnthropicAWS` client is in beta. Pass `workspace_id` to the constructor or set the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable. The `AnthropicGoogleCloud` client is also in beta. Pass `workspace_id` to the constructor or set the `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID` environment variable. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution) for how the client resolves the workspace ID.
 
 Use `AnthropicBedrockMantle` for new projects; `AnthropicBedrock` remains for existing applications using the Bedrock `InvokeModel` API.
 
@@ -886,12 +853,14 @@ Use `AnthropicBedrockMantle` for new projects; `AnthropicBedrock` remains for ex
 This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backward-incompatible changes may be released as minor versions:
 
 1.  Changes that only affect static types, without breaking runtime behavior.
-2.  Changes to library internals which are technically public but not intended or documented for external use.
-3.  Changes that aren't expected to impact the vast majority of users in practice.
+2.  Changes to library internals that are technically public but not intended or documented for external use.
+3.  Changes that aren’t expected to impact the vast majority of users in practice.
+
+Every request to the Claude API uses an API version. With this SDK, your requests use the API version that was current when your SDK’s major version was released, so you move to a new API version by upgrading to a new major version. Version 2.0.0 is the first to use `2026-10-21`. See [Migrating to API version 2026-10-21](../Endpoints/migration-2026-10-21.md#upgrade) for how to upgrade.
 
 ### Determining the installed version
 
-If you've upgraded to the latest version but aren't seeing new features you were expecting, your Python environment is likely still using an older version. You can determine the version being used at runtime with:
+If you’ve upgraded to the latest version but aren’t seeing new features you were expecting, your Python environment is likely still using an older version. You can determine the version being used at runtime with:
 
 ```python
 print(anthropic.__version__)

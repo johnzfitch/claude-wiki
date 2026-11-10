@@ -2,11 +2,14 @@
 title: "Key Changes - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/changelog"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:14Z"
+fetched_at: "2026-10-31T06:25:28Z"
+last_modified: "Fri, 30 Oct 2026 20:40:09 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Major changes](#major-changes)
 - [Minor changes](#minor-changes)
@@ -36,7 +39,7 @@ Major changes
 5.  Remove `ping`, `logging/setLevel`, and `notifications/roots/list_changed`. Log level is now set per-request via `io.modelcontextprotocol/logLevel` in `_meta`; servers MUST NOT emit `notifications/message` for requests that did not include this field ([SEP-2575](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575)).
 6.  Move experimental tasks out of the core protocol and into an official extension (`io.modelcontextprotocol/tasks`). The redesigned extension replaces the blocking `tasks/result` method with polling via `tasks/get` and a new `tasks/update` for client-to-server input, removes `tasks/list`, and allows servers to return task handles unsolicited without per-request opt-in ([SEP-2663](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2663)).
 7.  Multi Round-Trip Requests (MRTR) pattern introduced which replaces the previous approach of sending server-initiated requests, such as `roots/list`, `sampling/createMessage`, or `elicitation/create`. Servers return an `InputRequiredResult` (`resultType: "input_required"`) whose `inputRequests` field carries the requests for the additional information needed to process the request. Clients respond with `inputResponses` on a retry of the original request providing the requested information. ([SEP-2322](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2322)).
-8.  All results now carry a required `resultType` field: `"complete"` for ordinary results and `"input_required"` for [multi round-trip request](2026-07-28-basic-patterns-mrtr.md) interim results. Clients **MUST** treat results from earlier-protocol servers that omit the field as `"complete"` ([SEP-2322](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2322)).
+8.  All results now carry a required `resultType` field: `"complete"` for ordinary results and `"input_required"` for [multi round-trip request](draft-basic-patterns-mrtr.md) interim results. Clients **MUST** treat results from earlier-protocol servers that omit the field as `"complete"` ([SEP-2322](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2322)).
 9.  Remove SSE stream resumability and message redelivery (the `Last-Event-ID` header and SSE event IDs) from the Streamable HTTP transport. A broken response stream loses the in-flight request; clients **MUST** re-issue it as a new request with a new request ID ([SEP-2575](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575)).
 
 
@@ -54,7 +57,7 @@ Minor changes
 8.  Require MCP clients to specify an appropriate `application_type` during Dynamic Client Registration to avoid OpenID Connect redirect URI conflicts ([SEP-837](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/837)).
 9.  Clarify that client credentials are bound to the authorization server that issued them: clients **MUST** key persisted credentials by the issuer identifier, **MUST NOT** reuse them with a different authorization server, and **MUST** re-register when the authorization server changes ([SEP-2352](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2352)).
 10. Loosen `inputSchema` and `outputSchema` to allow any JSON Schema 2020-12 keywords, and `structuredContent` to allow any JSON value. Add `$ref` resolution requirements and composition-keyword resource bounds ([SEP-2106](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2106)).
-11. Remove the `notifications/elicitation/complete` notification and the `elicitationId` field of URL mode elicitation requests, both introduced in `2025-11-25`. Under the [Multi Round-Trip Requests](2026-07-28-basic-patterns-mrtr.md) pattern, the client learns the outcome of an out-of-band interaction by retrying the original request, so a server-initiated completion signal — and the identifier used to correlate it — no longer fit the protocol. Servers needing to correlate an elicitation across retries encode their own identifier in `requestState`.
+11. Remove the `notifications/elicitation/complete` notification and the `elicitationId` field of URL mode elicitation requests, both introduced in `2025-11-25`. Under the [Multi Round-Trip Requests](draft-basic-patterns-mrtr.md) pattern, the client learns the outcome of an out-of-band interaction by retrying the original request, so a server-initiated completion signal — and the identifier used to correlate it — no longer fit the protocol. Servers needing to correlate an elicitation across retries encode their own identifier in `requestState`.
 12. Define an [error code allocation policy](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#error-codes) partitioning the JSON-RPC server-error range: `-32000` to `-32019` remains implementation-defined (existing SDK usage is grandfathered), `-32020` to `-32099` is reserved for the MCP specification. Renumber the error codes introduced in this draft accordingly — `HeaderMismatch` `-32001` → `-32020`, `MissingRequiredClientCapability` `-32003` → `-32021`, `UnsupportedProtocolVersion` `-32004` → `-32022` — and add `HeaderMismatchError` to the schema, which previously existed only in transport prose.
 
 

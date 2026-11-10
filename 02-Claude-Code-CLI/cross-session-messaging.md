@@ -2,11 +2,13 @@
 title: "Message your other Claude Code sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/cross-session-messaging"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-21T06:28:25Z"
+fetched_at: "2026-10-28T06:36:41Z"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [When to use cross-session messaging](#when-to-use-cross-session-messaging)
 - [Message another session](#message-another-session)
@@ -176,11 +178,11 @@ Message sessions on other machines
 
 How a message travels, and whether it passes through Anthropic servers, depends on where the target session runs:
 
-| Where the other session runs                    | How the message travels                                                                                                      |
-|:------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------|
-| On this machine                                 | Over a per-session socket on macOS and Linux, or a per-session named pipe on native Windows, never through Anthropic servers |
-| On another of your machines                     | Through Anthropic servers, arriving over that machine’s [Remote Control](remote-control.md) connection                 |
-| In the [cloud](claude-code-on-the-web.md) | Through Anthropic servers, straight to the cloud session                                                                     |
+| Where the other session runs | How the message travels |
+|:---|:---|
+| On this machine | Over a per-session socket on macOS and Linux, or a per-session named pipe on native Windows, never through Anthropic servers |
+| On another of your machines | Through Anthropic servers, arriving over that machine’s [Remote Control](remote-control.md) connection |
+| In the [cloud](claude-code-on-the-web.md) | Through Anthropic servers, straight to the cloud session |
 
 Starting a conversation with a session on another of your machines requires Claude Code v2.1.225 or later and a target that [appears in the listing](#see-which-sessions-claude-can-reach). A session’s row in [the listing](#see-which-sessions-claude-can-reach) can show a condition that changes what happens when Claude messages that session:
 
@@ -215,7 +217,7 @@ What a message looks like
 
 When a message arrives, Claude Code shows it in the conversation as a dim one-line preview, and the preview line stays in the conversation afterward. The preview carries the sender’s name and the first line of the message, cut with `…` when it’s long, such as `› Message from @api-worker: Schema migration finished (ctrl+o to expand)`. Any of these shows you the full text:
 
-- Press `Ctrl+O` to open the [transcript viewer](interactive-mode.md#transcript-viewer) and read the full text under the sender’s session name.
+- Press `Ctrl+O` to open the [transcript viewer](interactive-mode.md#transcript-viewer) and read the full text under the sender’s session name. If Claude is busy and hasn’t received the message yet, scroll to the end of the transcript, where the message is listed under `Waiting to be delivered`. Requires Claude Code v2.1.309 or later.
 - In [fullscreen rendering](fullscreen.md#use-the-mouse), click a preview line that leaves part of the message out to expand it in place.
 - In a session started with [`--verbose`](cli-reference.md#cli-flags), Claude Code shows the full text instead of the preview.
 
@@ -233,11 +235,11 @@ Control inbound messages
 
 Set [`crossSessionInbound`](settings-reference.md#crosssessioninbound) to choose what a session does with messages arriving from your other sessions:
 
-| Value    | Behavior                                                                                                                                                                                                              |
-|:---------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `accept` | Claude Code delivers each message to Claude                                                                                                                                                                           |
-| `hold`   | Claude Code shows a notice for each message and doesn’t deliver it. If an `accept` later applies, per the [precedence rules](settings-reference.md#crosssessioninbound), Claude Code releases the held messages |
-| `refuse` | Claude Code drops each message without delivering it                                                                                                                                                                  |
+| Value | Behavior |
+|:---|:---|
+| `accept` | Claude Code delivers each message to Claude |
+| `hold` | Claude Code shows a notice for each message and doesn’t deliver it. If an `accept` later applies, per the [precedence rules](settings-reference.md#crosssessioninbound), Claude Code releases the held messages |
+| `refuse` | Claude Code drops each message without delivering it |
 
 Beyond editing a settings file, you can select the value in the `/config` row **Messages from your other sessions**. Claude Code writes the value you select to your user settings. The row requires Claude Code v2.1.232 or later and doesn’t appear while managed settings or the `--settings` flag sets the key, since a user-settings value wouldn’t apply then. Claude Code rejects the `/config crossSessionInbound=value` shorthand for this key. To see which value applies, follow the `crossSessionInbound` precedence rules in the [settings reference](settings-reference.md#crosssessioninbound). When no value applies, Claude Code decides per message from the two sessions’ permission modes. It groups sessions that [bypass permission prompts](permission-modes.md#skip-all-checks-with-bypasspermissions-mode) into one class, and every other session into the other. Plan mode counts as bypassing in interactive terminal sessions with bypass permissions available, and [auto](permission-modes.md#eliminate-prompts-with-auto-mode), `acceptEdits`, and `dontAsk` count as prompting:
 

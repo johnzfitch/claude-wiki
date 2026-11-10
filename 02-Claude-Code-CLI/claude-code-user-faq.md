@@ -2,13 +2,11 @@
 title: "Claude Code user FAQ | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14554922-claude-code-user-faq"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:29:27Z"
+fetched_at: "2026-11-09T06:26:03Z"
 tags: ["claude-code"]
 ---
 
 # Claude Code user FAQ
-
-August 7, 2026
 
 
 Short answers to the questions that come up most at office hours, with a link to go deeper. Organized by where you are in your first few weeks.

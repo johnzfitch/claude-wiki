@@ -2,11 +2,14 @@
 title: "Prompts - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/server/prompts"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-21T06:28:45Z"
+fetched_at: "2026-10-31T06:24:54Z"
+last_modified: "Fri, 30 Oct 2026 20:51:54 GMT"
 tags: ["mcp", "mcp-spec", "prompting"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -209,7 +212,7 @@ Messages in a prompt can contain:
 - `role`: Either “user” or “assistant” to indicate the speaker
 - `content`: One of the following content types:
 
-All content types in prompt messages support optional [annotations](https://modelcontextprotocol.io/specification/2025-11-25/server/resources#annotations) for metadata about audience, priority, and modification times.
+All content types in prompt messages support optional [annotations](2025-11-25-server-resources.md#annotations) for metadata about audience, priority, and modification times.
 
 
 [​](#text-content)

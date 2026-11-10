@@ -11,8 +11,6 @@ Path: 21-Account-Support/account-management-faqs.md
 
 # Account management FAQs
 
-August 6, 2026
-
 
 ## How do I change my team name?
 
@@ -24,7 +22,7 @@ It's not possible to change another user's name on their behalf, but a user can 
 
 1.  Log in to your Claude account.
 
-2.  Navigate to **[Settings \> General](https://claude.ai/settings/general)**.
+2.  Navigate to **Settings \> Account**.
 
 3.  Make edits to the "Full name" field and click "Save changes."
 
@@ -65,10 +63,12 @@ While the account creator must use a business email address, you can add public 
 
 ## Assign a program to custom roles on Enterprise plans | Claude Help Center
 
-Source: https://support.claude.com/en/articles/17118092-assign-a-program-to-custom-roles-on-enterprise-plans
-Path: 21-Account-Support/assign-a-program-to-custom-roles-on-enterprise-plans.md
+Source: https://support.claude.com/en/articles/17118092
+Path: 21-Account-Support/assign-a-program-to-custom-roles-on-enterprise-plans-claude-help-center.md
 
 # Assign a program to custom roles on Enterprise plans
+
+October 8, 2026
 
 
 This article explains how to assign an Anthropic-issued program to users through custom roles on Enterprise plans.
@@ -251,21 +251,21 @@ After the grant is active, you can use the program through the API with that wor
 
 ## Assign tasks from anywhere in Claude Cowork | Claude Help Center
 
-Source: https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork
-Path: 21-Account-Support/assign-tasks-from-anywhere-in-claude-cowork.md
+Source: https://support.claude.com/en/articles/13947068-assign-tasks-to-claude-from-anywhere-in-cowork
+Path: 21-Account-Support/assign-tasks-to-claude-from-anywhere-in-cowork.md
 
 # Assign tasks from anywhere in Claude Cowork
 
 
-**Note:** Claude Cowork is now just Claude. Ask for what you need, and Claude decides whether that’s a quick answer or a task. This is rolling out gradually to Pro and Max plans, and it’s in beta for Enterprise plans, where an admin turns it on as **Chat and Cowork unified (beta)**. If your message box no longer shows “Chat” and “Cowork” options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**, or read our **[blog post](https://claude.com/blog/cowork-is-now-claude)**. For Enterprise owners, see **[Set up and manage the new unified Claude experience for your Enterprise organization](../13-Enterprise-Admin/set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization.md)**.
-
 Claude Cowork gives you one continuous conversation with Claude that you can reach from your phone or your desktop. With Dispatch, you can message Claude from your phone and have it work on your desktop computer, using your local files, connectors, plugins, and apps, then come back to the finished work.
-
-**Note:** Dispatch isn't available to new users. If you already use Dispatch, you can keep using it for now, and this article still applies.
 
 Dispatch runs your tasks on your desktop, so your computer needs to be awake and the Claude Desktop app open while Claude works. This is different from a cloud session, which runs on Anthropic's servers and keeps working even when your computer is off. For where Cowork runs on each surface, see **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-This capability is in limited beta for Pro and Max plans on Claude Cowork, and it requires both the Claude Desktop app and the Claude mobile app. Dispatch is only available for some Pro and Max plans, so if you don't see Dispatch in the Cowork side panel, you should **[use Cowork in the cloud](https://support.claude.com/en/articles/15520349)** instead of the pairing flow described here.
+## Availability
+
+Dispatch is in limited beta on some Pro, Max, and Ultra plans, and it isn't available to new users. If you already use Dispatch, you can keep using it for now, and this article still applies. It requires both the Claude Desktop app and the Claude mobile app. If you don't see Dispatch in the Cowork side panel, use Cowork in the cloud instead of the pairing flow described here.
+
+The new Claude experience, which combines chat and Cowork, is rolling out to Pro, Max, and Ultra plans. On Team plans (in beta) and Enterprise plans, it's available where **Chat and Cowork unified** is turned on. If your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
 
 ------------------------------------------------------------------------
 
@@ -277,7 +277,7 @@ To use this capability, you need:
 
 - The most recent version of the **Claude mobile app** installed on your phone. Existing mobile app users will need to update to the latest version before using this capability.
 
-- **A Pro or Max plan**.
+- **A Pro, Max, or Ultra plan**.
 
 - **An active internet connection** on both devices.
 
@@ -345,17 +345,17 @@ Claude remembers what you've worked on and learns how you work. Context carries 
 
 You control what Claude remembers. You can view, edit, and delete your memory at any time.
 
-### Scheduled tasks and routines
+### Scheduled tasks
 
 You can set up tasks that Claude runs automatically on a schedule. Tell Claude once to check your email every morning, pull your metrics every week, or compile a Friday report, and it handles it from there without being asked again.
 
-For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork)**.
+For more on setting up and managing scheduled tasks, see **[Schedule recurring tasks in Cowork](../15-Claude-AI-Features/schedule-recurring-tasks-in-cowork.md)**.
 
 ### Computer use
 
 Claude can use the apps on your computer to complete tasks you assign through Dispatch. If you ask Claude to update a spreadsheet in Excel, navigate an internal dashboard, or run your dev tools, Claude can work directly with those apps on your desktop.
 
-For details on how computer use works, permissions, and safety guidance, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
+For details on how computer use works, permissions, and safety guidance, see **[Let Claude use your computer in Cowork](../15-Claude-AI-Features/computer-use-safety.md)**.
 
 **Note:** Computer use isn't available in the Linux beta. On a Linux desktop, Dispatch still works with your files, connectors, and plugins, but it can't drive desktop apps through computer use.
 
@@ -387,7 +387,7 @@ The following limitations apply:
 
 - **Your desktop must be active.** Dispatch works with the local files and apps on your desktop computer, so your computer needs to be awake and the Claude Desktop app open while Claude works. If you want Claude to keep working while your computer is off, start a cloud session instead. See **[Use Claude Cowork on web, desktop, and mobile](https://support.claude.com/en/articles/15520349)**.
 
-- **Computer use has different safety properties than other Cowork tools.** Claude clicks, types, and navigates your screen directly rather than going through connectors or permission-gated file access. For details, see **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-computer-use-safety)**.
+- **Computer use has different safety properties than other Cowork tools.** Claude clicks, types, and navigates your screen directly rather than going through connectors or permission-gated file access. For details, see **[Let Claude use your computer in Cowork](../15-Claude-AI-Features/computer-use-safety.md)**.
 
 - **One continuous thread.** There's no way to start a new thread or manage multiple threads. All messages live in a single conversation.
 
@@ -403,9 +403,9 @@ Path: 21-Account-Support/can-i-have-a-claude-account-and-a-console-account.md
 # Can I have a Claude account and a Console account?
 
 
-Yes. You can have a Claude account (free, Pro, Max, Team, or Enterprise) and a Console account (to access the Claude API) with the same email address. These two accounts will operate independently.
+Yes. You can have a Claude account (free, Pro, Max, Ultra, Team, or Enterprise) and a Console account (to access the Claude API) with the same email address. These two accounts will operate independently.
 
-Claude Max and Team plans include monthly credits for the Claude API. To claim your credits, you link a Claude Console organization to your plan. Learn more about **[monthly API credits for Max and Team plans](https://support.claude.com/en/articles/17154008)**.
+Claude Max, Ultra, and Team plans include monthly credits for the Claude API. To claim your credits, you link a Claude Console organization to your plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
 
 **Tip:** Sign in to the Claude Console with the same email you use for your Claude account.
 
@@ -419,15 +419,21 @@ Path: 21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-t
 # Move your personal Claude account to a Team or Enterprise organization
 
 
-If you're using Claude with a personal account (Free, Pro, or Max) tied to your work email, you may be able to move that account into your organization's Team or Enterprise workspace. There are two paths: you can start a migration yourself (Team and Enterprise) or your admin can claim accounts on your domain (Enterprise only).
+If you're using Claude with a personal account (Free, Pro, Max, or Ultra) on the same email address you use with your organization, you may be able to bring much of your work into your organization's Team or Enterprise workspace. Not everything can move. There are two paths: you can start a migration yourself (Team and Enterprise) or your admin can claim accounts on your domain (Enterprise only).
 
-**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you won't be offered the option to bring your data with you, and a domain claim won't offer to merge your account. You can export your data first if you want a copy. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+Your personal account is the Claude account you signed up for yourself. Your organization account is the one you get in your organization's Team or Enterprise plan. Both can be on one email address, and you switch between them by clicking your initials or name in the lower left corner.
+
+Unless your admin has claimed your account, you don't have to decide now. You can keep both accounts and nothing changes. You can move your account later from **[Settings \> Account](https://claude.ai/settings/account)**.
+
+**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you can't bring your data, whether you start the move or your admin does. You can **[export your data](https://support.claude.com/en/articles/9450526-export-your-claude-data)** first if you want a copy. The export doesn't include the original files you uploaded. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
 ------------------------------------------------------------------------
 
 ## What moves when you migrate
 
-Both paths move the same content for each person.
+Both paths move the same content for each person. Before you confirm, the last screen lists what will and won't move from your account. You can't pick which chats move.
+
+**Important:** A move can't be reversed, and not everything moves. Nothing changes until you click "Move now." When the move finishes, your personal account closes (a few weeks later if you subscribed through the Apple App Store), and you can't open it or export from it. What's left in it will be deleted with the account per our data retention practices, including any Claude Docs, other artifacts that didn't move, custom skills, and Cowork tasks in the cloud. Your organization can access what moves. Save what you want to keep first (see **[Before you migrate](#h_c1ec8a383d)**). Learn more about **[how long Anthropic stores your data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
 ### What moves
 
@@ -435,51 +441,83 @@ Both paths move the same content for each person.
 
 - Artifacts within chats
 
-- Projects, project instructions, and files, including projects created through or used with Cowork
+- Artifacts in your **Artifacts** tab, if artifacts are available to you in your organization. You get private copies under new links, so old links, and previews in moved chats, may say you no longer have access.
+
+- Projects, project instructions, and files, including projects created through or used with Cowork. Projects on the **[new version of projects (beta)](../15-Claude-AI-Features/what-are-projects.md#h_e9fb2a161e)** don't move.
 
 - Uploaded files and attachments
 
 - Project sync configurations (which Drive folders and repositories a project syncs)
 
-- Claude's memory from chats and projects, unless your organization has memory turned off
+- Claude's memory from chats and projects, unless your organization has memory turned off. Your organization's settings may stop some of it from moving.
 
 - Claude Code memory and personal settings such as tool settings, notification preferences, and consents, unless your organization account already has its own values set
 
-- Claude Design systems and projects migrated since 14 August 2026
+- Your instructions for Claude
+
+- Claude Design systems and projects migrated since August 14, 2026. If Claude Design is turned off for your organization, they don't move. If it isn't turned on yet, they move and appear once it is.
 
 ### What doesn't move
 
-- Custom skills. There's no migration path for skills. Export any you want to keep before you migrate.
+- Custom skills. There's no migration path for skills. Download any you want to keep before you migrate.
 
-- Sign-ins to connected apps and services**.** All authorizations are revoked. You'll reconnect each app from your organization account.
+- Claude Docs. Export any docs you want to keep before you migrate.
+
+- Claude Dashboards, other artifacts that **[store data](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_97446f855f)**, and a few other kinds of artifacts
+
+- Projects on the new version of projects (beta), and the chats in them. If we've switched a project of yours to the new version, only its earlier version moves: an archived project with the chats from before the switch.
+
+- Chats that are too large to move. The last screen says how many. Your other chats still move.
+
+- Connections to apps and services. They're turned off, and you'll reconnect each one from your organization account.
+
+- Personal Finance. It isn’t available on Team and Enterprise plans. Unlink your banks before you move.
 
 - Custom connectors you added yourself. You'll need to add them again in your organization account, and your organization's policy may not allow them.
 
-- Published artifacts. Publishing isn't available on Team and Enterprise plans.
+- Published legacy artifacts (made in a chat). Their public links stop working permanently. Publishing a legacy artifact isn't available on Team and Enterprise plans.
 
 - Public share links to chats. These stop working permanently.
 
+- Public links to artifacts you shared with anyone who has the link. These usually stop working. The artifact itself can still move, as a private copy.
+
 - Pending share invites
 
-- Cowork sessions in the desktop app. Desktop sessions and the folders you've connected are stored locally, not in the cloud, so they stay on your computer. Copy anything you want to keep after you migrate.
+- Cowork tasks in the cloud, including scheduled tasks. On Pro, Max, and Ultra plans, tasks started since October 6, 2026 **[run in the cloud](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md#h_fd499216c4)**, even in Claude Desktop. They sit beside your chats, so they're easy to mistake for chats. Download any files or outputs you want to keep before you migrate.
 
-- Cowork cloud sessions (web and mobile). Download any files or outputs you want to keep before you migrate.
+- Cowork tasks that run only on your computer. Each one shows a banner saying so. These, and the folders you've connected, stay on your computer but don't move. Copy anything you want to keep.
 
 - Claude Code cloud sessions (web, scheduled tasks, and mobile)
 
-- Claude Design systems and projects migrated before 14 August 2026
+- Claude Design systems and projects migrated before August 14, 2026
 
 ### Before you migrate
 
-1.  Export any custom skills you want to keep.
+Before you migrate, do the following in **[your personal account](#h_c20f7490d4)**:
 
-2.  Save a copy of anything you've published as an artifact, since published artifacts won't be available afterward.
+1.  To keep a copy of your chats, **[export your data](https://support.claude.com/en/articles/9450526-export-your-claude-data)**. Download the file before you start the move: that export's link stops working once the account closes. The export doesn't include the original files you uploaded.
 
-3.  Share any content you've sent out as a public link another way, because those links will break.
+2.  Export any Claude Docs you want to keep. You can **[export a doc](../15-Claude-AI-Features/get-started-with-claude-docs.md#h_9920271284)** as Word, PDF, Markdown, or Google Docs.
 
-4.  Make a note of the apps you've connected so you can reconnect them.
+3.  Download any custom skills you want to keep: go to **[Customize \> Skills](https://claude.ai/customize/skills)**, open the skill's menu, and click "Download."
 
-**Note:** After a migration, your chat list can take a little while to fill in. Searching by chat title works right away. The first time Claude searches your past chats in your new organization, it rebuilds its search index, so Claude might not find everything at first. If chats still seem to be missing, sign out, sign back in, and search again.
+4.  Download any files you want from **[Cowork tasks in the cloud](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md#h_fd499216c4)**.
+
+5.  If your organization has code execution and file creation turned off, files Claude created in your chats move but can't be opened. Download them first.
+
+6.  **[Save a copy](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_1403132eb8)** of anything you've published as an artifact, since published artifacts won't be available afterward.
+
+7.  Share any content you've sent out as a public link another way, because most of those links will stop working.
+
+8.  Make a note of the apps you've connected so you can reconnect them.
+
+9.  Some shared links may keep working, so **[turn off sharing](https://support.claude.com/en/articles/9547008-share-artifacts#h_93fcc84306)** on any artifact you don't want left shared. You can't change it once your personal account closes.
+
+**Note:** A migration usually takes a few minutes. When it's done, you're signed out on all your devices. Sign in again with the same email address. After a migration, your chat list can take a little while to fill in. Searching by chat title works right away. The first time Claude searches your past chats in your new organization, it rebuilds its search index, so Claude might not find everything at first. If chats still seem to be missing, sign out, sign back in, and search again.
+
+### Will my organization be able to see my old conversations?
+
+Yes. Your organization can access what moves, the same way it can access the rest of its data. For example, its Primary Owner can export it. Any data retention policy your organization has set applies to it too. For more information, see **[Who owns and manages the data of my team?](../13-Enterprise-Admin/who-owns-and-manages-the-data-of-my-team.md)**
 
 ------------------------------------------------------------------------
 
@@ -491,49 +529,87 @@ If you have a personal Claude account on the same email address as your organiza
 
 - **Keep both accounts:** Your personal account stays active. You can switch between it and your organization account from your account menu.
 
-- **Use your organization account only:** You'll see two migration options after selecting this.
+- **Use your organization only:** You'll see two migration options after selecting this.
 
-  - **Bring your data with you:** Your personal data moves into the organization's workspace, as described above in **[What moves when you migrate](#h_4e63ef6e87)**. Your personal account closes, and active Pro or Max subscriptions are canceled and refunded depending on how you purchased the plan.
+  - **Bring what you can:** What can move goes into the organization's workspace, as described above in **[What moves when you migrate](#h_4e63ef6e87)**. After you click "Move now," the move can't be reversed. Your personal account closes and will be deleted, along with anything left in it, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. If you bought a paid subscription directly from us, it's canceled automatically and you get a prorated refund. If you bought it through Google Play, we ask Google Play to cancel it and refund your unused time. Check Google Play, and cancel there if your plan is still active.
 
-  - **Delete your data:** Your personal account closes (with a prorated refund if you had a paid subscription), but no content moves into the organization. You start with a clean account. You can choose to download your account data before deleting it.
+  - **Start fresh:** Nothing moves into the organization. Your personal account closes, and its data will be deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. This can't be undone. If you bought a paid subscription directly from us, you get a prorated refund. If you bought it through Google Play, we ask Google Play to refund your unused time (see **[How do refunds work for migrated accounts?](#h_c0aa7afb70)**). You can usually download a copy on the next step (original uploaded files aren't included). See **[Close your personal account without moving your work](#h_ca32360002)**.
 
-If your organization has turned on HIPAA readiness or CMEK, **Bring your data with you** isn't offered.
+If your organization has turned on HIPAA readiness or CMEK, you won't see these choices or **Close your personal account**. Your personal account stays as it is. If your personal account has too much data to move, the screen says so and **Bring what you can** isn't offered. You can keep both accounts. **Start fresh** is still offered, but it doesn't move anything and can't be undone.
 
 ### How do refunds work for migrated accounts?
 
-What happens to your Pro or Max plan after migrating depends on where you bought it:
+What happens to your Pro, Max, or Ultra plan after migrating depends on where you bought it:
 
-- **Directly (not through a mobile app):** Your Pro or Max subscription is canceled automatically as part of the move, and you receive a prorated refund for unused time. The refund is issued about 24 hours after your plan is canceled, and depending on your bank, it can take several more business days to appear on your statement.
+- **Directly (not through a mobile app):** Your Pro, Max, or Ultra subscription is canceled automatically as part of the move, and you receive a prorated refund for unused time. The refund is issued about 24 hours after your plan is canceled, and depending on your bank, it can take several more business days to appear on your statement.
 
-- **Google Play Store:** Your Pro or Max subscription is canceled automatically as part of the move, and you receive a prorated refund for unused time. Refunds for Google Play purchases can take a few days to appear.
+- **Google Play Store:** We ask Google Play to cancel your Pro, Max, or Ultra subscription as part of the move, and to refund your unused time. Refunds usually take one to two weeks. Check Google Play, and cancel there if your plan is still active.
 
-- **Apple App Store:** Your Pro or Max subscription isn't canceled. Apple doesn't allow third-party cancellation, so you'll need to cancel it yourself through your Apple ID settings. If you don't, Apple keeps charging you after your personal account closes.
+- **Apple App Store:** Your Pro, Max, or Ultra subscription isn't canceled. Apple doesn't allow third-party cancellation, so you'll need to cancel it yourself through your Apple ID settings. If you don't, Apple keeps charging you after your personal account closes.
 
-If you’ve claimed monthly API credits on your Max plan:
+If you’ve claimed monthly API credits on your Max or Ultra plan:
 
-- **Moving to a Team organization:** Your Max link ends. A Team Owner or Primary Owner can claim the team’s credits once the Team plan has been active for seven days.
+- **Moving to a Team organization:** The link between your Max or Ultra plan and your Console organization ends, so new credits stop. A Team Owner or Primary Owner can claim the team’s credits once the Team plan has been active for seven days.
 
 - **Moving to an Enterprise organization:** New credits stop. Credits you already have stay usable until they expire. Enterprise plans aren’t eligible for monthly API credits.
 
-For cancellation instructions, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
+Credits you bought directly from us are refunded too, but credits bought in the mobile apps aren't. For cancellation instructions, see **[Cancel your Pro, Max, or Ultra subscription](../17-Billing-Plans/cancel-your-pro-max-or-ultra-subscription-claude-help-center.md)**.
 
 ### How to start a migration
 
-Start from your organization account, not your personal account. If you're signed in to your personal account, switch first by clicking your initials or name in the lower left corner and selecting your organization.
+Use Claude on the web or Claude Desktop: you can't start a migration from the mobile apps. Start from your organization account, not your personal account. If you're signed in to your personal account, switch first by clicking your initials or name in the lower left corner and selecting your organization.
 
 On a Team plan, you'll be prompted to choose when you accept an invite to your organization. If you don't pick an option right away, you'll see a reminder banner for about seven days. You can also go to **[Settings \> Account \> Close your personal account](https://claude.ai/settings/account)** at any time to initiate the migration.
 
 On an Enterprise plan, you won't see a prompt when you join. To start the migration, go to **[Settings \> Account \> Close your personal account](https://claude.ai/settings/account)**.
 
+Despite its name, **Close your personal account** is also where a move starts. Nothing will close until you confirm it.
+
+If you don't see it:
+
+- Check that you've switched to your organization account.
+
+- Ask your admin whether you have a seat in your organization. Owners need one too.
+
+- Check that your personal account is on the same email address (see **[If your personal account is on a different email address](#h_909699092e)** below).
+
+- If you subscribed through the Apple App Store, look for **Move to \[your organization\]** instead.
+
+- If a banner at the top of Claude says "Choose what happens to your personal data," use that instead.
+
+If you still don't see it, your organization's settings may be the reason. Ask your admin.
+
+If a move fails, try again. If it fails again, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)**, and don't choose "Start fresh" in the meantime: what hasn't moved yet wouldn't move at all.
+
 ### If you own both accounts
 
 Owning the Team organization doesn't change where you start the migration. If you created the organization from your personal account, you may still be signed in to the personal one, and **Close your personal account** won't appear there. Switch to your organization account first, then go to **[Settings \> Account](https://claude.ai/settings/account)**.
 
-**Important:** Bringing your work into a Team or Enterprise workspace is one-way. Once content has been moved, it can't be moved back to a personal account.
+### If your personal account is on a different email address
+
+Claude keeps your chats and projects under the email address you log in with. Creating a Team plan needs a work email address, so if you've been using a different one (like Gmail), your earlier chats aren't in your organization. Those chats, and any subscription, remain unchanged in your personal account.
+
+If your chats seem to be missing after you create or join an organization:
+
+1.  Click your initials or name in the lower left corner. The menu shows the email address you're logged in with.
+
+2.  If it isn't the address you used before, click "Log out" and log in with the earlier address.
+
+3.  If it's the same address, switch accounts from that menu.
+
+Migration can't move chats from one email address to another, and **[you can't change the email address on an account](how-do-i-change-the-email-address-associated-with-my-account.md)**.
 
 ### Apple App Store subscribers
 
-If you subscribed to the Pro or Max plan through the Apple App Store, **Keep both accounts** is your only option. Apple doesn't allow third-party cancellation of App Store subscriptions, so we can't auto-cancel your iOS plan as part of the migration. If you'd rather move your work into the Team, **[cancel your iOS subscription](https://support.claude.com/en/articles/8325617-cancel-your-pro-or-max-subscription#h_54384c9962)** through your Apple ID settings first, then start the migration from the reminder banner or **[Settings \> Account](https://claude.ai/settings/account)**.
+If you subscribed to the Pro, Max, or Ultra plan through the Apple App Store, you can still bring your chats and projects to your organization:
+
+- **How to move:** If you're invited to a Team, choose "Bring my work to \[your organization\]" when you join. Otherwise, on the web or in Claude Desktop, go to **[Settings \> Account](https://claude.ai/settings/account)** and select "Move to \[your organization\]."
+
+- **Cancel your subscription yourself:** We can't cancel or refund it. **[Cancel your iOS subscription](https://support.claude.com/en/articles/8325617-cancel-your-pro-max-or-ultra-subscription#h_54384c9962)** in your Apple ID settings. Until you do, Apple keeps charging you, even after your personal account closes. To ask Apple for a refund, see **[Request a refund for a paid Claude plan](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan#h_0d726f5bbf)**.
+
+- **When your personal account closes:** A few weeks after you move. It's then deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. Chats you start in your personal account before it closes move to your organization too, and your organization can access them. Credits you buy after you move aren't refunded.
+
+**Start fresh** isn't offered until your App Store plan has ended.
 
 ------------------------------------------------------------------------
 
@@ -541,7 +617,7 @@ If you subscribed to the Pro or Max plan through the Apple App Store, **Keep bot
 
 Domain claiming is supported on Claude Enterprise plans only.
 
-Enterprise admins can claim all existing personal accounts on their organization's verified domain and move them into the Enterprise workspace. If your admin initiates a domain claim, you'll receive an email and in-product notification with a deadline (at least 30 days out) to choose between merging your data into a new Enterprise account or starting fresh. If your organization has turned on HIPAA readiness or CMEK, you'll still get the notification and deadline, but merging isn't offered. Export anything you want to keep before the deadline, then start fresh.
+Enterprise admins can claim all existing personal accounts on their organization's verified domain. If your admin initiates a domain claim, you'll receive an email and in-product notification with a deadline (at least 30 days out) to choose between bringing what you can into the Enterprise workspace or starting fresh. If your organization has turned on HIPAA readiness or CMEK, you'll still get the notification and deadline, but bringing your data isn't offered. **[Export](https://support.claude.com/en/articles/9450526-export-your-claude-data)** anything you want to keep before the deadline, then start fresh. The export doesn't include the original files you uploaded.
 
 For the full walkthrough of your options, deadlines, and what happens to your subscription, see **[Respond to an Enterprise domain claim on your Claude account](respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
 
@@ -552,19 +628,23 @@ For the full walkthrough of your options, deadlines, and what happens to your su
 You may have both a personal account and an organization account tied to the same email address. You can switch between them by clicking your initials or name in the lower left corner of the screen.
 
 
-A blue checkmark shows which account you're currently using. Click the other account to switch to it and access its separate conversations and projects.
+A blue checkmark shows which account you're currently using. Click the other account to switch to it and access its separate chats and projects.
 
 ------------------------------------------------------------------------
 
-## Discontinue your personal account manually
+## Close your personal account without moving your work
 
-If you want to close your personal account without moving any of your work into an organization:
+If you're in a Team or Enterprise organization and want to close your personal account without moving any of your work:
 
-1.  **[Cancel your individual paid plan](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md)** if applicable.
+1.  From your organization account, go to **[Settings \> Account \> Close your personal account](https://claude.ai/settings/account)** and choose "Start fresh." If you bought a paid plan directly from us, it's canceled for you. If you bought it through Google Play, we ask Google Play to cancel it. Check Google Play, and cancel there if your plan is still active (see **[How do refunds work for migrated accounts?](#h_c0aa7afb70)**).
 
-2.  **[Export your data](../22-Safety-Policy/how-can-i-export-my-claude-data.md)** while you still have access.
+2.  On the next step, choose "Download your data" to get a copy of your chats, projects, and memory, or "Delete your data" if you don't want one. Either way, your personal account closes and its data will be deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. We'll email you the download link after that. The download doesn't include the original files you uploaded. Download the file right away: the link expires after 24 hours and may work only once. If it has expired or won't open, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** (an Owner of your organization may need to reach out for you). If you don't see "Download your data," a download isn't available for your account.
 
-3.  Navigate to **[Settings \> Account](https://claude.ai/settings/account)** and click "Delete" to **[delete your account](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account)**.
+3.  Confirm and click "Delete account." This can't be undone. Your organization account isn't affected.
+
+If you don't see **Close your personal account**, see **[How to start a migration](#h_13d479a758)**.
+
+If you're not in an organization, or your personal account is on a different email address from your organization, log in to your personal account and see **[Delete your Claude account](delete-your-claude-account.md)**.
 
 ---
 
@@ -575,10 +655,10 @@ Path: 21-Account-Support/claim-and-migrate-accounts-on-your-domain.md
 
 # Claim and migrate accounts on your domain
 
-September 2, 2026
 
+Domain claiming lets Enterprise admins discover and claim existing personal Claude accounts (Free, Pro, Max, and Ultra) on a verified company domain. Each person then chooses whether to bring what they can into your Enterprise workspace.
 
-Domain claiming lets Enterprise admins discover, claim, and migrate existing personal Claude accounts (Free, Pro, and Max) on a verified company domain into their Enterprise workspace. This gives your organization a clean path to consolidate accounts on day one of an Enterprise deployment, and allows people using Claude on personal accounts to keep their work. Domain claiming is available for Enterprise plans, whether purchased directly through Anthropic or through the AWS Marketplace, and works the same in both cases.
+This gives your organization a clean path to consolidate accounts on day one of an Enterprise deployment, and allows people using Claude on personal accounts to bring much of their work with them. Domain claiming is available for Enterprise plans, whether purchased directly through Anthropic or through the AWS Marketplace, and works the same in both cases.
 
 Domain claiming is supported on Claude Enterprise plans only.
 
@@ -606,7 +686,7 @@ These prerequisites exist to prevent people from being locked out of Claude duri
 
 ### Review accounts on your domain
 
-After verifying your domain, you can view all existing personal accounts (Free, Pro, and Max) on that domain that aren’t already in your organization. For each account, you’ll see the email address, plan type, account creation date, and last active date. You can also export this list as a CSV.
+After verifying your domain, you can view all existing personal accounts (Free, Pro, Max, and Ultra) on that domain that aren’t already in your organization. For each account, you’ll see the email address, plan type, account creation date, and last active date. You can also export this list as a CSV.
 
 Use this view to understand the scope of migration before initiating a claim. Check which accounts are in your identity provider (IdP) and which aren’t—people not in the IdP won’t be able to sign in after migration unless you add them.
 
@@ -626,7 +706,7 @@ When you enable domain capture, you’ll walk through a flow that shows you the 
 
 - Warnings about any potential issues
 
-Once confirmed, all affected accounts receive notification immediately—both by email and through an in-product banner. The migration window is 30 days from the date you initiate the claim.
+Once confirmed, all affected accounts receive notification immediately—both by email and through an in-product banner. The migration window is 30 days from the date you initiate the claim. A claim applies to every personal account on all the domains verified when you start it. Claude Console organizations and API access aren’t affected.
 
 ### The 30-day migration window
 
@@ -634,19 +714,19 @@ The migration deadline is a single date for the claim, not a rolling per-user ti
 
 During this window, each person on the domain can sign in and choose how to migrate:
 
-- **Merge and join:** Bring existing chats, projects, files, and memory into a new account within your Enterprise workspace. See the full list: **[What moves when you migrate](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**.
+- **Bring what you can:** Bring existing chats, projects, files, and memory into your Enterprise workspace. Not everything can move. See the full list: **[What moves when you migrate](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**. Each person needs a seat in your organization to bring their data.
 
-- **Join fresh:** Start with a clean Enterprise account.
+- **Start fresh:** Their existing data won’t move to your Enterprise workspace. Their personal account closes, and its data will be deleted, per our data retention practices. Learn more about **[how long Anthropic stores your data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
 ### What happens at the deadline
 
-- Any remaining personal accounts that haven’t been migrated are deactivated.
+- Any remaining personal accounts that haven’t been migrated are closed and will be deleted, along with their data, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
-- Paid subscriptions (Pro and Max) are automatically canceled with a prorated refund. Any usage credits remaining on the account will also be refunded.
+- Paid subscriptions (Pro, Max, and Ultra) bought directly from us are automatically canceled with a prorated refund. For subscriptions bought through Google Play, we ask Google Play to cancel them and refund the unused time. People should check Google Play, and cancel there if their plan is still active. People who bought through the Apple App Store must cancel their own (see **[What’s not supported](#h_871e6bea9d)**). Any remaining credits people bought directly from us will also be refunded.
 
-- Once all accounts are migrated or deactivated, no personal accounts exist on your domain.
+- Once all accounts are migrated or closed, no personal accounts exist on your domain. App Store subscribers’ accounts stay open for a few weeks after they move.
 
-- People who don’t choose before the deadline are given a fresh Enterprise account by default and their data will be emailed to them, but their personal account will not be accessible.
+- People who don’t choose before the deadline are emailed a link to download their data. The link only opens if they can sign in, so make sure they’re in your IdP before the deadline (see **[SSO and provisioning sequencing](#h_3eceece083)** below). To use Claude in your organization, they'll sign in with single sign-on (SSO). Ask people to export and download their data before the deadline: Claude for Teachers and FERPA-covered accounts don’t get a download link. For Claude for Teachers, they go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, they go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If they can’t export, they should **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** before the deadline.
 
 New accounts created on the domain after domain capture is enabled go directly through SSO and your Enterprise workspace—no personal account is created.
 
@@ -666,23 +746,23 @@ To migrate accounts on a domain you verified later:
 
 ## What’s not supported
 
-- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only join fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only start fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
-- Claiming Team plan accounts. Only individual accounts (Free, Pro, Max) can be claimed.
+- Claiming Team plan accounts. Only individual accounts (Free, Pro, Max, Ultra) and, for schools and districts, individual Claude for Teachers accounts can be claimed.
 
-- Setting a custom migration deadline. The window is always 30 days.
+- Setting a custom migration deadline.
 
-- Canceling App Store subscriptions. People who purchased Pro or Max through the Apple App Store need to cancel their subscription themselves through their Apple ID settings. For details, see **[Respond to an Enterprise domain claim on your Claude account](https://support.claude.com/en/articles/14625626)**.
+- Canceling App Store subscriptions. People who purchased Pro, Max, or Ultra through the Apple App Store need to cancel their subscription themselves through their Apple ID settings. For details, see **[Respond to an Enterprise domain claim on your Claude account](https://support.claude.com/en/articles/14625626)**.
 
 ## SSO and provisioning sequencing
 
 Domain claiming integrates with your existing SSO and provisioning setup:
 
-- **If SSO is already enforced:** After an organization admin enables a claim for all personal Claude accounts using their verified domain, users will see a banner upon logging into their personal accounts and receive an email telling them to migrate. If a user is not added to your organization’s IdP, they will be locked out, so admins should ensure any users who need access are added before enabling a claim.
+- **If SSO is already enforced:** After an organization admin enables a claim for all personal Claude accounts using their verified domain, users will see a banner upon logging into their personal accounts and receive an email telling them to choose before the deadline. If a user is not added to your organization’s IdP, they will be locked out, so admins should ensure any users who need access are added before enabling a claim.
 
 - **SCIM and JIT:** If SCIM is enabled, provisioned accounts are linked to migrated accounts by email match. Don’t enable SCIM and JIT provisioning simultaneously—SCIM takes precedence if both are active.
 
-**Important:** To prevent lockouts, make sure all affected users are in your IdP before the migration deadline. Anyone not in the IdP won’t be able to sign in to the Enterprise workspace, and their personal account will be deactivated at the 30-day deadline. Your IT team will need to add them to the IdP.
+**Important:** To prevent lockouts, make sure all affected users are in your IdP before the migration deadline. Anyone not in the IdP won’t be able to sign in to the Enterprise workspace. Their personal account will still close at the 30-day deadline and will be deleted, along with its data, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. Your IT team will need to add them to the IdP.
 
 ------------------------------------------------------------------------
 
@@ -690,7 +770,7 @@ Domain claiming integrates with your existing SSO and provisioning setup:
 
 ### What happens if my organization doesn’t have enough seats available for migrated users?
 
-If you purchased your Enterprise plan directly through Anthropic, you'll see an error message in organization settings prompting you to **[buy more seats](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)**.
+If you purchased your Enterprise plan directly through Anthropic, you'll see an error message in organization settings prompting you to **[buy more seats](../17-Billing-Plans/purchase-and-manage-seats-on-enterprise-plans.md)**.
 
 If you purchased your Enterprise plan through the AWS Marketplace, migrated users will see a message asking them to contact their admin when they try to log in after the migration.
 
@@ -703,12 +783,10 @@ Path: 21-Account-Support/claude-design-admin-guide-for-team-and-enterprise-plans
 
 # Claude Design admin guide for Team and Enterprise plans
 
-Updated today
-
 
 Claude Design lets your team create on-brand designs, prototypes, and interactive microsites through conversation with Claude. Presentations now have their own tool, Claude Slides.
 
-Claude Design is available on Free, Pro, Max, Team, and Enterprise plans. It's on by default on Team plans. On Enterprise plans, it turns on by default on October 15, 2026, and owners can turn it on before then.
+Claude Design is available on Free, Pro, Max, Ultra, Team, and Enterprise plans. It's on by default on Team plans. On Enterprise plans, it turns on by default on October 15, 2026, and owners can turn it on before then.
 
 **Note:** Settings for artifacts, templates (including **Design**), design systems, and sharing live in one place now. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**. This guide covers how to roll out Claude Design with a design system in place, and what to do before standalone Claude Design at **claude.ai/design** closes.
 
@@ -752,7 +830,7 @@ For best results, we recommend pulling in designers across both brand and produc
 
 ### What they’ll do
 
-1.  Create your organization in Claude Design (see **[Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design)**).
+1.  Create your organization in Claude Design (see **[Set up your design system in Claude Design](set-up-your-design-system-in-claude-design.md)**).
 
 2.  Complete the onboarding flow.
 
@@ -878,8 +956,8 @@ If your previous account was disabled for [Usage Policy violations](https://www.
 
 ## Cyber Verification Program Security Requirements | Claude Help Center
 
-Source: https://support.claude.com/en/articles/17202708
-Path: 21-Account-Support/cyber-verification-program-security-requirements-claude-help-center.md
+Source: https://support.claude.com/en/articles/17202708-cyber-verification-program-security-requirements
+Path: 21-Account-Support/cyber-verification-program-security-requirements.md
 
 # Cyber Verification Program Security Requirements
 
@@ -890,7 +968,7 @@ Customer must meet and maintain the following security requirements for each Cyb
 
 1.  **Security Contact.** Customer must provide Anthropic with a named security contact who may receive security and misuse alerts and is able to act on them.
 
-2.  **Incident Reporting.** Customer must report suspected breaches or misuse involving the grant to Anthropic within 72 hours, or within 24 hours for a security incident. Reporting can be done at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#84f7e1e7f1f6edf0fdc4e5eaf0ecf6ebf4ede7aae7ebe9) or your Account team contact.
+2.  **Incident Reporting.** Customer must report suspected breaches or misuse involving the grant to Anthropic within 72 hours, or within 24 hours for a security incident. Reporting can be done at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#daa9bfb9afa8b3aea39abbb4aeb2a8b5aab3b9f4b9b5b7) or your Account team contact.
 
 3.  **Cooperation.** Customer must investigate any abuse that Anthropic identifies within 48 hours, work with Anthropic to remediate it, and respond to misuse inquiries within seven (7) days.
 
@@ -950,7 +1028,7 @@ Customer must meet and maintain the following security requirements for each Cyb
 
 3.  **Organization Accounts.** Approved Users must sign in with accounts on Customer's domain. Personal and webmail accounts are not permitted.
 
-4.  **Approved Users.** The Granted Workspace is limited to twenty-five (25) Approved Users who personally perform or directly supervise the work for which the grant was approved. Workload identities do not count toward that number. Customer may request additional Approved Users seats in writing (email sufficing). Only named administrators may add members, change roles, or create workload identities or credentials on the Granted Workspace.
+4.  **Approved Users.** The Granted Workspace is limited to seventy-five (75) Approved Users who personally perform or directly supervise the work for which the grant was approved. Workload identities do not count toward that number. Customer may request additional Approved Users seats in writing (email sufficing). Only named administrators may add members, change roles, or create workload identities or credentials on the Granted Workspace.
 
 5.  **Gateways.** If Customer operates a gateway or proxy in front of the model, it must admit only Approved Users or their workload identities, use a short-lived credential of its own, and keep its logs and transcripts restricted to Approved Users and Customer's security, IT-administration, or trust-and-safety teams.
 
@@ -1010,21 +1088,21 @@ Customer must meet and maintain the following security requirements for each Cyb
 
 ## Delete your Claude account | Claude Help Center
 
-Source: https://support.claude.com/en/articles/9028421
-Path: 21-Account-Support/delete-your-claude-account-claude-help-center.md
+Source: https://support.claude.com/en/articles/9028421-delete-your-claude-account
+Path: 21-Account-Support/delete-your-claude-account.md
 
 # Delete your Claude account
-
-August 19, 2026
 
 
 This article shows you how to permanently delete your account on the web and in the Claude mobile apps, and explains what happens to your data when you do.
 
-**Important:** Deleting your account is permanent. You'll lose access to your conversations, projects, and other saved data, and you can't recover the account afterward. If you want to keep your data, export it on web or desktop before you delete. Learn more about **[exporting your Claude data](../22-Safety-Policy/how-can-i-export-my-claude-data.md)**.
+**Important:** Deleting your account is permanent. You'll lose access to your conversations, projects, and other saved data, and you can't recover the account afterward. If you want to keep your data, export it on web or desktop before you delete. Learn more about **[exporting your Claude data](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**.
 
 ## Before you delete a paid account
 
-If you're on a Pro or Max plan:
+**Note:** If you use Personal Finance, unlink your banks before your paid plan ends, even if you’ve already canceled it. You can’t open Personal Finance after your plan ends. If your plan has already ended, follow the steps in **[Use Personal Finance in Claude](../15-Claude-AI-Features/use-personal-finance-with-claude.md)** before you delete your account.
+
+If you're on a Pro, Max, or Ultra plan:
 
 1.  Cancel your subscription from your **[Billing settings](https://claude.ai/settings/billing)**.
 
@@ -1032,7 +1110,7 @@ If you're on a Pro or Max plan:
 
 3.  Once the subscription lapses, delete your account using the steps below.
 
-For detailed cancellation instructions, including for Claude for iOS and Android, see **[Cancel your Pro or Max subscription](https://support.claude.com/en/articles/8325617)**.
+For detailed cancellation instructions, including for Claude for iOS and Android, see **[Cancel your Pro, Max, or Ultra subscription](../17-Billing-Plans/cancel-your-pro-max-or-ultra-subscription-claude-help-center.md)**.
 
 ## Delete your account on the web
 
@@ -1070,11 +1148,13 @@ These steps apply to Claude for Android, listed on Google Play as Claude by Anth
 
 ## What happens when you delete your account
 
-When you delete your account, you’ll no longer have access to your conversations, projects, and account information. Learn more about **[how long Anthropic stores your data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
+When you delete your account, you’ll no longer have access to your conversations, projects, account information, or any remaining usage credits. Learn more about **[how long Anthropic stores your data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
 ## When you need to contact support
 
-In some scenarios you'll need to contact our team to delete your account. If this applies to you, it'll be noted in your account settings. Learn more about **[how to get support](../15-Claude-AI-Features/how-to-get-support.md)**.
+In some scenarios you'll need to contact our team to delete your account. If this applies to you, it'll be noted in your account settings. Learn more about **[how to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+
+If you're in a Team or Enterprise organization and only want to close your personal account, you can usually do it yourself. Switch to your organization, go to **[Settings \> Account \> Close your personal account](https://claude.ai/settings/account)**, and see **[Close your personal account without moving your work](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_ca32360002)**.
 
 If you have multiple accounts associated with the same email address, you'll need to specify which accounts you want to delete when you contact us.
 
@@ -1082,8 +1162,8 @@ If you have multiple accounts associated with the same email address, you'll nee
 
 ## Designate support contacts for human support | Claude Help Center
 
-Source: https://support.claude.com/en/articles/15263885
-Path: 21-Account-Support/designate-support-contacts-for-human-support-claude-help-center.md
+Source: https://support.claude.com/en/articles/15263885-designate-support-contacts-for-human-support
+Path: 21-Account-Support/designate-support-contacts-for-human-support.md
 
 # Designate support contacts for human support
 
@@ -1146,7 +1226,7 @@ May 26, 2026
 
 Users in the EU can open a support inquiry from this page via the chat tool, which serves as our single point of contact for EU users under the DSA.
 
-Follow these **[instructions](../15-Claude-AI-Features/how-to-get-support.md)** to get support.
+Follow these **[instructions](https://support.claude.com/en/articles/9015913-how-to-get-support)** to get support.
 
 ## European Union monthly active recipients
 
@@ -1212,7 +1292,7 @@ Only Console Admins can request deletion. For a full overview of your role's cap
 
 ### I accidentally deleted my Console organization – what should I do?
 
-If you followed the steps above to delete your Console organization but want to revert this action, our Support team can restore your account data within seven days of deletion. Please **[contact Support](../15-Claude-AI-Features/how-to-get-support.md)** for further assistance.
+If you followed the steps above to delete your Console organization but want to revert this action, our Support team can restore your account data within seven days of deletion. Please **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for further assistance.
 
 ### I have an outstanding balance; how can I delete my Console organization?
 
@@ -1235,20 +1315,18 @@ Path: 21-Account-Support/how-do-i-change-the-email-address-associated-with-my-ac
 
 # How do I change the email address associated with my account?
 
-March 16, 2026
-
 
 It's not possible to change the email address associated with your Claude account at this time. When creating an account, please make sure you use an email you'll have long-term access to.
 
 If you need to use Claude with a different email address, do the following:
 
-### 1. If you have a paid plan (Pro or Max), follow these steps to cancel it
+### 1. If you have a paid plan (Pro, Max, or Ultra), follow these steps to cancel it
 
 - Log in to your Claude account.
 
 - Click on your initials or name in the bottom left corner.
 
-- Navigate to [Settings \> Billing](https://claude.ai/settings/billing).
+- Navigate to **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
 - Find the **Cancellation** section and click "Cancel."
 
@@ -1264,10 +1342,10 @@ If you want to use the same phone number to verify your new Claude account, you 
 
 ### 3. Delete the old account
 
-After cancelling your previous subscription and unlinking your phone number, you can delete your account by navigating to [Settings \> Account](https://claude.ai/settings/account), clicking "Delete Account," and following the prompts. **Please note that deleting your account is permanent** and you will no longer have access to saved chats. If you wish to keep your data, we recommend exporting it before deletion by following the steps in [How can I export my Claude data?](../22-Safety-Policy/how-can-i-export-my-claude-data.md)
+After cancelling your previous subscription and unlinking your phone number, you can delete your account by navigating to **[Settings \> Account](https://claude.ai/settings/account)**, clicking "Delete Account," and following the prompts. **Please note that deleting your account is permanent** and you will no longer have access to saved chats. If you wish to keep your data, we recommend exporting it before deletion by following the steps in **[How can I export my Claude data?](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**
 
   
-If you see "Contact support" instead of a "Delete account" button, you'll need to [reach out to our Support team](../15-Claude-AI-Features/how-to-get-support.md) to request assistance with deletion.
+If you see "Contact support" instead of a "Delete account" button, you'll need to **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to request assistance with deletion.
 
 ---
 
@@ -1345,7 +1423,7 @@ This article applies to individual consumers signing up for paid Pro plans. If y
 
 ## How does subscription renewal work for Pro plans?
 
-After subscribing for a Pro plan, your subscription will be set to automatically renew at the end of each billing period (monthly or annual) by default. This ensures uninterrupted access to Pro features. However, you have the flexibility to **[cancel your paid plan](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md)** at any time if you choose not to continue.
+After subscribing for a Pro plan, your subscription will be set to automatically renew at the end of each billing period (monthly or annual) by default. This ensures uninterrupted access to Pro features. However, you have the flexibility to **[cancel your paid plan](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)** at any time if you choose not to continue.
 
 ## I am outside of your supported locations; can I subscribe to the Pro plan?
 
@@ -1555,7 +1633,7 @@ If an organization you want to invite doesn’t appear in the invite list, check
 
 - **Every member needs a verified-domain email address.** If any member has an email address outside your parent organization’s verified domains, the organization doesn’t appear.
 
-- **The organization may already belong to another parent organization** with separate verified domains and SSO. **[Contact support](https://support.claude.com/en/articles/9015913)** to have it detached. Detaching clears that organization’s existing domain verification and SSO/SCIM configuration, so confirm its admins are aware before you request it.
+- **The organization may already belong to another parent organization** with separate verified domains and SSO. **[Contact support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** to have it detached. Detaching clears that organization’s existing domain verification and SSO/SCIM configuration, so confirm its admins are aware before you request it.
 
 ### To initiate a merge proposal
 
@@ -1611,15 +1689,17 @@ For detailed information on how each provisioning method works, see **[Set up JI
 
 After enabling SSO for your organization, there are two distinct scenarios to consider for users who have individual accounts associated with your verified company domain:
 
-### Users with existing Free/Pro/Team/Max accounts who ARE added to your SSO application
+### Users with existing Free/Pro/Team/Max/Ultra accounts who ARE added to your SSO application
 
-These users keep access to their existing Free/Pro/Team/Max accounts. They can toggle between the Team or Enterprise plan account and their previous accounts by clicking the profile icon with their initials in the bottom left corner.
+These users keep access to their existing Free/Pro/Team/Max/Ultra accounts. They can toggle between the Team or Enterprise plan account and their previous accounts by clicking the profile icon with their initials in the bottom left corner. They can also close the personal account and bring what can move. Learn more in **[Move your personal Claude account to a Team or Enterprise organization](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
 
-### Users with existing Free/Pro/Team/Max accounts who are NOT added to your SSO application
+On Enterprise plans, to close every personal account on your domain. Learn more in **[Claim and migrate accounts on your domain](claim-and-migrate-accounts-on-your-domain.md)**.
+
+### Users with existing Free/Pro/Team/Max/Ultra accounts who are NOT added to your SSO application
 
 - **If "Require SSO for Claude" is NOT enabled:** These users can still access their existing accounts using the "Continue with email" option.
 
-- **If "Require SSO for Claude" IS enabled:** These users will be unable to access their existing Free/Pro/Team/Max accounts. Please note that these accounts are not deleted, but will be inaccessible as users are unable to log in via SSO.
+- **If "Require SSO for Claude" IS enabled:** These users will be unable to access their existing Free/Pro/Team/Max/Ultra accounts. Please note that these accounts are not deleted, but will be inaccessible as users are unable to log in via SSO.
 
 ------------------------------------------------------------------------
 
@@ -1643,7 +1723,7 @@ To view or download information about your verified domains and their usage acro
 
 - Provide a clear timeline for when the change will occur.
 
-- Advise employees who won't be added to the SSO application to save or **[export their conversation history](../22-Safety-Policy/how-can-i-export-my-claude-data.md)** if SSO will be enforced.
+- Advise employees who won't be added to the SSO application to save or **[export their conversation history](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** if SSO will be enforced.
 
 ### Plan for a smooth transition
 
@@ -1681,10 +1761,131 @@ For more information on effective prompt design, refer to our **[Claude API Docs
 
 ---
 
+## Log in to your Claude account | Claude Help Center
+
+Source: https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account
+Path: 21-Account-Support/logging-in-to-your-claude-account.md
+
+# Log in to your Claude account
+
+
+When you open Claude on a web browser ([claude.ai](https://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
+
+
+## Continue with Google
+
+Click “Continue with Google” if you want to use your Google account credentials to log in to Claude. This opens a modal where you can enter your Google email address and password. After entering your credentials and clicking “Next,” you will be authenticated into your Claude account.
+
+## Continue with email
+
+If you’d prefer to use your email address to log in, enter it in the field pictured above, and click “Continue with email.” This will send you an email with the subject line *“Secure link to log in to Claude.ai”* and a login link.
+
+### Clicking the link on the same device
+
+If you requested the login email and clicked the link using the same device, you’ll be automatically redirected to your logged-in Claude account.
+
+### Clicking the link on another device
+
+If you requested the login email and clicked the link using a different device (requesting from a web browser and clicking the email link on a phone, for example), then you will still see a “Sign in with Claude.ai” link in the email, but clicking it will generate a verification code. You should enter this code on the original device where you requested the login email to authenticate.
+
+## Authenticating to subscription plans
+
+Claude offers subscription plans (Free, Pro, Max, Ultra, Team, Enterprise) that let subscribers authenticate using OAuth tokens or other methods. Subscription plans can only be used by subscribers, and the usage included in these plans is designed to support ordinary use of native Anthropic applications, including the Claude web, desktop, and mobile applications and Claude Code.
+
+The preferred way to access Anthropic services using third-party software, tools, or services (“third-party tools”), including open-source projects, is through API key authentication through Claude Console or a supported cloud provider. Anthropic may at its discretion allow paid subscribers who have enabled **[usage credits](https://support.claude.com/en/articles/12429409-)** to use certain third-party tools to access Anthropic services included in paid subscription plans, but reserves the right to draw use of such third-party tools from usage credits rather than subscription limits. Users are responsible for any usage credit charges incurred this way. Use of third-party tools that misrepresent their identity to Anthropic’s servers, attempt to route third-party traffic against subscription limits, or otherwise violate applicable terms or policies is prohibited and such use may be enforced against.
+
+## Developers
+
+If you’re building a product, application, or tool for others, use API key authentication through Claude Console or a supported cloud provider. Applications that misrepresent their identity to Anthropic’s servers, attempt to route third-party traffic against subscription limits, or otherwise violate applicable terms or policies are prohibited and may be enforced against.
+
+------------------------------------------------------------------------
+
+## Troubleshooting
+
+### I entered my email address but I haven’t received my login email.
+
+If you requested a login email but you haven’t received it yet, do the following:
+
+- Check your spam and junk folders for emails from @mail.anthropic.com.
+
+- Check your server's quarantined emails.
+
+- Whitelist @mail.anthropic.com in your email settings.
+
+- Try logging in again after a few minutes.
+
+**Note:** Business, government, or .edu email users may need to contact their IT department to adjust email security settings.
+
+### I received the email but I'm still having trouble logging in.
+
+If you received the login email but can’t log in with the link or code, take note of the error message you’re seeing. If you’re creating an account or logging in for the first time and seeing a message about your phone number, please refer to **[Verifying your phone number](https://support.claude.com/en/articles/8287232-verifying-your-phone-number)**.
+
+Otherwise, visit the **[Claude status page](https://status.claude.com/)** to check if there are any known service disruptions or maintenance activities. If the status page shows an ongoing system-wide incident, it's best to wait for service restoration before attempting further troubleshooting.
+
+------------------------------------------------------------------------
+
+## Frequently asked questions
+
+### How can I set a password for my Claude account?
+
+It’s not possible to create a dedicated password for your Claude account at this time.
+
+### Can I use my Claude account across multiple devices?
+
+To use your Claude account across multiple devices, enter the same email address you use to log in on your usual device. For example, if you signed up for your Claude account on a web browser, you can access the same account on the Claude mobile apps by entering the same email address when you log in.
+
+### I have multiple accounts – how can I switch between them?
+
+If you have both an individual Claude account and a Team or Enterprise plan account tied to the same email address, follow these steps to switch to your other account:
+
+1.  Click your initials in the bottom left corner.
+
+2.  Select the desired account.
+
+3.  Look for the check mark indicating the active account.
+
+If your accounts are on different email addresses, log out, then log in with the other email address. See **[Move your personal Claude account to a Team or Enterprise organization](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_909699092e)**.
+
+### I don’t want to use “Continue with Google” to log in anymore; how can I revoke access to my Google account?
+
+If you've previously authenticated using Google, you can follow these steps to unlink your Google account from Claude and use only the emailed login link moving forward:
+
+1.  Visit [https://myaccount.google.com/connections](https://myaccount.google.com/connections).
+
+2.  Locate “Claude by Anthropic” in the list and click on it.
+
+3.  Click "See details."
+
+4.  Click the "Stop using Sign in with Google” button.
+
+You should also follow these steps if you're experiencing issues with Google login. After clearing your existing connection, try logging in to Claude again using "Continue with Google."
+
+### I used Apple’s Hide My Email feature to create my Claude account – how can I log in on another device?
+
+If you signed up for your Claude account using Apple's Hide My Email feature, follow these steps to log in:
+
+1.  Use your @privaterelay.appleid.com email address.
+
+2.  Click "Continue with email" on Claude, Claude Desktop, or Claude Mobile.
+
+3.  A secure login link will be sent to your Apple ID email.
+
+4.  Click the “Sign in with Claude.ai” link in the email you received to log in.
+
+If you are already logged in to Claude for iOS, you can see the email address you used:
+
+1.  Open Claude for iOS.
+
+2.  Click your initials in the top right corner.
+
+3.  Look for your email address under Settings.
+
+---
+
 ## Log in to your Console account | Claude Help Center
 
-Source: https://support.claude.com/en/articles/13371040-log-in-to-your-console-account
-Path: 21-Account-Support/log-in-to-your-console-account.md
+Source: https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account
+Path: 21-Account-Support/logging-in-to-your-console-account.md
 
 # Log in to your Console account
 
@@ -1765,125 +1966,6 @@ If you've previously authenticated using Google, you can follow these steps to u
 ### Can I have both a Claude account and a Console account?
 
 Yes, you can have both a Claude account (for using Claude at claude.ai) and a Console account (for accessing the playground and Claude API). These are separate accounts, though you can use the same email address for both. Learn more in **[Can I have a Claude account and a Console account?](can-i-have-a-claude-account-and-a-console-account.md)**
-
----
-
-## Log in to your Claude account | Claude Help Center
-
-Source: https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account
-Path: 21-Account-Support/logging-in-to-your-claude-account.md
-
-# Log in to your Claude account
-
-
-When you open Claude on a web browser ([claude.ai](https://claude.ai)), the desktop app, or a mobile app, you will see two different options for logging in to your Claude account.
-
-
-## Continue with Google
-
-Click “Continue with Google” if you want to use your Google account credentials to log in to Claude. This opens a modal where you can enter your Google email address and password. After entering your credentials and clicking “Next,” you will be authenticated into your Claude account.
-
-## Continue with email
-
-If you’d prefer to use your email address to log in, enter it in the field pictured above, and click “Continue with email.” This will send you an email with the subject line *“Secure link to log in to Claude.ai”* and a login link.
-
-### Clicking the link on the same device
-
-If you requested the login email and clicked the link using the same device, you’ll be automatically redirected to your logged-in Claude account.
-
-### Clicking the link on another device
-
-If you requested the login email and clicked the link using a different device (requesting from a web browser and clicking the email link on a phone, for example), then you will still see a “Sign in with Claude.ai” link in the email, but clicking it will generate a verification code. You should enter this code on the original device where you requested the login email to authenticate.
-
-## Authenticating to subscription plans
-
-Claude offers subscription plans (Free, Pro, Max, Team, Enterprise) that let subscribers authenticate using OAuth tokens or other methods. Subscription plans can only be used by subscribers, and the usage included in these plans is designed to support ordinary use of native Anthropic applications, including the Claude web, desktop, and mobile applications and Claude Code.
-
-The preferred way to access Anthropic services using third-party software, tools, or services (“third-party tools”), including open-source projects, is through API key authentication through Claude Console or a supported cloud provider. Anthropic may at its discretion allow paid subscribers who have enabled **[usage credits](https://support.claude.com/en/articles/12429409-)** to use certain third-party tools to access Anthropic services included in paid subscription plans, but reserves the right to draw use of such third-party tools from usage credits rather than subscription limits. Users are responsible for any usage credit charges incurred this way. Use of third-party tools that misrepresent their identity to Anthropic’s servers, attempt to route third-party traffic against subscription limits, or otherwise violate applicable terms or policies is prohibited and such use may be enforced against.
-
-## Developers
-
-If you’re building a product, application, or tool for others, use API key authentication through Claude Console or a supported cloud provider. Applications that misrepresent their identity to Anthropic’s servers, attempt to route third-party traffic against subscription limits, or otherwise violate applicable terms or policies are prohibited and may be enforced against.
-
-------------------------------------------------------------------------
-
-## Troubleshooting
-
-### I entered my email address but I haven’t received my login email.
-
-If you requested a login email but you haven’t received it yet, do the following:
-
-- Check your spam and junk folders for emails from @mail.anthropic.com.
-
-- Check your server's quarantined emails.
-
-- Whitelist @mail.anthropic.com in your email settings.
-
-- Try logging in again after a few minutes.
-
-**Note:** Business, government, or .edu email users may need to contact their IT department to adjust email security settings.
-
-### I received the email but I'm still having trouble logging in.
-
-If you received the login email but can’t log in with the link or code, take note of the error message you’re seeing. If you’re creating an account or logging in for the first time and seeing a message about your phone number, please refer to **[Verifying your phone number](verifying-your-phone-number.md)**.
-
-Otherwise, visit the **[Claude status page](https://status.claude.com/)** to check if there are any known service disruptions or maintenance activities. If the status page shows an ongoing system-wide incident, it's best to wait for service restoration before attempting further troubleshooting.
-
-------------------------------------------------------------------------
-
-## Frequently asked questions
-
-### How can I set a password for my Claude account?
-
-It’s not possible to create a dedicated password for your Claude account at this time.
-
-### Can I use my Claude account across multiple devices?
-
-To use your Claude account across multiple devices, enter the same email address you use to log in on your usual device. For example, if you signed up for your Claude account on a web browser, you can access the same account on the Claude mobile apps by entering the same email address when you log in.
-
-### I have multiple accounts – how can I switch between them?
-
-If you have both an individual Claude account and a Team or Enterprise plan account tied to the same email address, follow these steps to switch to your other account:
-
-1.  Click your initials in the bottom left corner.
-
-2.  Select the desired account.
-
-3.  Look for the check mark indicating the active account.
-
-### I don’t want to use “Continue with Google” to log in anymore; how can I revoke access to my Google account?
-
-If you've previously authenticated using Google, you can follow these steps to unlink your Google account from Claude and use only the emailed login link moving forward:
-
-1.  Visit [https://myaccount.google.com/connections](https://myaccount.google.com/connections).
-
-2.  Locate “Claude by Anthropic” in the list and click on it.
-
-3.  Click "See details."
-
-4.  Click the "Stop using Sign in with Google” button.
-
-You should also follow these steps if you're experiencing issues with Google login. After clearing your existing connection, try logging in to Claude again using "Continue with Google."
-
-### I used Apple’s Hide My Email feature to create my Claude account – how can I log in on another device?
-
-If you signed up for your Claude account using Apple's Hide My Email feature, follow these steps to log in:
-
-1.  Use your @privaterelay.appleid.com email address.
-
-2.  Click "Continue with email" on Claude, Claude Desktop, or Claude Mobile.
-
-3.  A secure login link will be sent to your Apple ID email.
-
-4.  Click the “Sign in with Claude.ai” link in the email you received to log in.
-
-If you are already logged in to Claude for iOS, you can see the email address you used:
-
-1.  Open Claude for iOS.
-
-2.  Click your initials in the top right corner.
-
-3.  Look for your email address under Settings.
 
 ---
 
@@ -2007,7 +2089,7 @@ OneLogin's Email field is the most reliable source for both SCIM and SAML, as it
 
 After correcting the attribute mapping and completing the full sync:
 
-- **Rogue free accounts:** If organization creation was not restricted before the fix, some people may have inadvertently created free personal Claude accounts. Contact **[our Support team](https://support.claude.com/en/articles/9015913)** to have these removed.
+- **Rogue free accounts:** If organization creation was not restricted before the fix, some people may have inadvertently created free personal Claude accounts. Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** to have these removed.
 
 - **Ghost accounts (wrong-email seats):** The originally provisioned accounts with the incorrect email may still exist in your organization, occupying seats that can never be used. Contact our Support team to deprovision these.
 
@@ -2039,7 +2121,7 @@ After correcting the attribute mapping and completing the full sync:
 
 ## When to contact Support
 
-Contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your organization's domain, the affected person's email, and screenshots of your attribute mappings when:
+Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your organization's domain, the affected person's email, and screenshots of your attribute mappings when:
 
 - SCIM and SSO attributes appear identical but people still cannot access their seats.
 
@@ -2139,7 +2221,7 @@ In the **Users** tab, assign individual people or use **Rules** to automatically
 
 ## Need help?
 
-See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your OneLogin domain and a screenshot of your SAML configuration.
+See **[Set up single sign-on](https://support.claude.com/en/articles/13132885)** for the full end-to-end flow including domain verification and choosing a provisioning approach. If you run into issues, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your OneLogin domain and a screenshot of your SAML configuration.
 
 ---
 
@@ -2182,7 +2264,7 @@ Not yet; though it’s coming this year. Until then, customers can use Claude Co
 
 Yes. Claude API is available via Amazon Bedrock (in AWS GovCloud - FedRAMP High, and in IL5+) and Google Vertex with Assured Workloads (FedRAMP-High).
 
-For more information, see our **[Claude Code product page](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)**.
+For more information, see our **[Claude Code product page](../15-Claude-AI-Features/product-claude-code.md)**.
 
 ### What models are available in Claude for Government?
 
@@ -2290,17 +2372,13 @@ Learn more here: **[Offering expanded Claude access across all three branches of
 
 ## Cyber Verification Program | Claude Help Center
 
-Source: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet
-Path: 21-Account-Support/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md
+Source: https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude
+Path: 21-Account-Support/real-time-cyber-safeguards-on-claude.md
 
 # Cyber Verification Program
 
-Updated today
-
 
 **Updated October 2026.** The CVP previously covered Claude Opus and Sonnet with a single level of access. We are now offering three access tiers for Claude Opus 5.5, our most capable cyber model yet, Claude Sonnet 5.5, Claude Mythos 5.1, and new models moving forward.
-
-For more details, register for our upcoming **[webinar on the Cyber Verification Program](https://claude.com/resources/webinars/inside-the-cyber-verification-program)** on October 14th at 9am PT.
 
 ## Overview
 
@@ -2328,6 +2406,8 @@ What you'll need:
 [TABLE]
 
 ## Once you're approved
+
+- Approval doesn’t turn on CVP. To activate it, assign your access to a workspace, role, or linked cloud account. See **[Provisioning Access using your Grants](#h_ce0ef780bd)** for instructions.
 
 - The **[Usage Policy](https://www.anthropic.com/legal/aup)** still applies in full.
 
@@ -2381,7 +2461,7 @@ Check your answers before you submit: you can't edit or withdraw an application 
 
 ## Security controls and requirements
 
-Each access level has its own security requirements. The security requirements for each tier are outlined in detail in the **[CVP Security Requirements Help Center article](cyber-verification-program-security-requirements-claude-help-center.md)**. For existing CVP customers, your current access and corresponding security requirements are not impacted and stay under your current terms.
+Each access level has its own security requirements. The security requirements for each tier are outlined in detail in the **[CVP Security Requirements Help Center article](https://support.claude.com/en/articles/17202708)**. For existing CVP customers, your current access and corresponding security requirements are not impacted and stay under your current terms.
 
 **Defense Access will have until *December 15, 2026* to adopt phishing-resistant multi-factor authentication and to stop using API keys.** Until then, multi-factor authentication of some kind is required, and API keys will expire every seven days. We recommend migrating now to using **[Workload Identity Federation](../04-API-Reference/Other/manage-claude-workload-identity-federation.md)**.
 
@@ -2452,46 +2532,56 @@ Path: 21-Account-Support/respond-to-an-enterprise-domain-claim-on-your-claude-ac
 
 # Respond to an Enterprise domain claim on your Claude account
 
-August 17, 2026
 
-
-If your organization has set up Claude Enterprise, they may claim your existing personal Claude account (Free, Pro, or Max) and move it into their workspace. This article explains what to expect and what your options are.
+If your organization has set up Claude Enterprise, they may claim your existing personal Claude account (Free, Pro, Max, or Ultra). This article explains what to expect and what your options are.
 
 **Note:** If your admin hasn't claimed your domain yet and you're exploring your options, see **[Move your personal Claude account to a Team or Enterprise organization](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
 
 ## What it means when your domain is claimed
 
-Your organization’s admin has initiated a process called domain claiming. This means all personal Claude accounts tied to your company’s email domain (for example, *@yourcompany.com*) are being migrated into the organization’s Enterprise workspace.
+Your organization’s admin has initiated a process called domain claiming. This means all personal Claude accounts tied to your company’s email domain (for example, *@yourcompany.com*) will close. Before a deadline, you choose whether to bring what you can into your organization’s Enterprise workspace.
 
 You’ll receive an email and an in-product notification letting you know that your account has been claimed, along with a deadline to choose what happens to your data. This deadline is at least 30 days from the date your admin initiates the claim.
 
+The notification is a banner at the top of Claude, on the web and in Claude Desktop, titled "Choose what happens to your personal data." Click "See options" to make a choice. The banner appears in your personal account, and in your organization if you’ve already joined.
+
 ## Your two options
 
-**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the merge and join option isn't available. Your only option is to join fresh. Export your data before the deadline if you want a copy. Your subscription is still canceled and refunded as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the **Bring what you can** option isn't available. Your only option is to start fresh. **[Export your data](https://support.claude.com/en/articles/9450526-export-your-claude-data)** before the deadline if you want a copy. The export doesn’t include the original files you uploaded. Your subscription is still handled as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
 
-### Merge and join
+### Bring what you can
 
-Bring your existing data into a new account within your organization's Enterprise workspace. Some things don't move. Most importantly, custom skills and your connected apps stay behind. For the full list of what does and doesn’t move to your new account, see **[What moves when you migrate](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**.
+Bring your existing data into your organization's Enterprise workspace. Some things don't move. Most importantly, custom skills, Claude Docs, Cowork tasks in the cloud, and your connected apps are left in your personal account. To bring your data, you need a seat in your organization. Ask your admin for one. Before you confirm, you’ll see the list of what will and won’t move from your account. Save what won’t move first (see **[Before you migrate](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_c1ec8a383d)**). For the full list of what does and doesn’t move, see **[What moves when you migrate](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**.
 
-After the merge, your personal account is deactivated. **This can’t be undone**—once you merge, your data lives in your Enterprise account and your personal account no longer exists.
+After the move, your personal account closes and will be deleted, along with anything that didn’t move, per our data retention practices. **This can’t be undone.** If you subscribed through the Apple App Store, your personal account closes a few weeks after you move, then it's deleted, per our data retention practices. What moved stays in your organization’s workspace. Learn more about **[how long Anthropic stores your data](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
-### Join fresh
+### Start fresh
 
-Start with a clean Enterprise account. None of your personal account data transfers.
+Your existing data won’t move to your organization’s Enterprise workspace. Your personal account closes, and its data will be deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**.
 
-Before your deadline, you can **[export your data](../22-Safety-Policy/how-can-i-export-my-claude-data.md)** if you want to keep a copy. Navigate to **[Settings \> Account](https://claude.ai/settings/account)** to request a data export. Note that exported data can’t be imported into your Enterprise account—it’s for your personal records only.
+If you want a copy, you can get one in two ways:
+
+- Before you choose "Start fresh," sign in to your personal account, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**, export your data, and download the file.
+
+- After you choose "Start fresh," pick "Download your data." We’ll email you a link after your personal account closes. The link expires after 24 hours and may work only once, so download the file right away. Claude for Teachers and FERPA-covered accounts don’t get a download link. Export and download your data before you choose **Start fresh**. For Claude for Teachers, go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If you can’t export, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** before you choose **Start fresh**.
+
+Note that exported data can’t be imported into your organization’s workspace, and it’s for your personal records only. Neither copy includes the original files you uploaded.
 
 ## What happens if you don’t choose
 
-**If you don’t make a choice before the deadline, you’ll get a fresh Enterprise account by default.** You won’t be able to access your personal account after the deadline.
+**If you don’t make a choice before the deadline, your personal account closes and will be deleted, along with its data**, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data).** You’ll get an email with a link to download your data. The download doesn’t include the original files you uploaded.
+
+Download the file right away: the link expires after 24 hours and may only work only. It opens only when you’re signed in to Claude with the same email address. If it has expired or won’t open, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** (an Owner of your organization may need to reach out for you). Claude for Teachers and FERPA-covered accounts don’t get a download link. Export and download your data before the deadline.
+
+For Claude for Teachers, go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If you can’t export, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** before the deadline. To use Claude in your organization, sign in with single sign-on (SSO). If you don’t see your organization after you sign in, ask your admin for access.
 
 Sign in before the deadline to make your choice.
 
 ## What happens to your paid subscription
 
-If you have a Pro or Max subscription, it will be automatically canceled when you migrate or when the deadline passes. You’ll receive a prorated refund for any unused time.
+If you bought a Pro, Max, or Ultra subscription directly from us, it will be automatically canceled when you choose an option or when the deadline passes. You’ll receive a prorated refund for any unused time. If you subscribed through Google Play, we ask Google Play to cancel your subscription and refund your unused time. Check Google Play, and cancel there if your plan is still active. See **[How do refunds work for migrated accounts?](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_c0aa7afb70)**
 
-**Apple App Store subscriptions:** If you purchased your Pro or Max plan through the Apple App Store, we can’t cancel or refund it directly. You’ll need to cancel it yourself through your Apple ID settings:
+**Apple App Store subscriptions:** If you purchased your Pro, Max, or Ultra plan through the Apple App Store, we can’t cancel or refund it directly. You’ll need to cancel it yourself through your Apple ID settings:
 
 1.  Open the Settings app on your iPhone or iPad.
 
@@ -2499,27 +2589,27 @@ If you have a Pro or Max subscription, it will be automatically canceled when yo
 
 3.  Find your Claude subscription and tap "Cancel Subscription."
 
-If you don’t cancel your App Store subscription, Apple will continue to charge you even though your personal account has been deactivated.
+If you don’t cancel your App Store subscription, Apple will continue to charge you even though your personal account has been closed.
 
 ## How to sign in after migration
 
-After migration, you’ll sign in to Claude using your organization’s single sign-on (SSO) provider. Go to claude.ai and sign in with your work email—you’ll be redirected to your company’s login page.
+After migration, you’ll sign in to Claude using your organization’s single sign-on (SSO) provider. Go to claude.ai and sign in with your work email—you’ll be redirected to your company’s login page. When a move finishes or your personal account closes, you’re signed out on all your devices, so you’ll need to sign in again.
 
 **Can’t sign in?** You may not be set up in your company’s identity provider yet. Contact your IT admin for help.
 
-If you chose to merge, your conversations, projects, and files will be waiting in your new Enterprise account.
+If you chose "Bring what you can," what moved will be waiting in your organization’s workspace.
 
 ------------------------------------------------------------------------
 
 ## Frequently asked questions
 
-### Can I undo a merge?
+### Can I undo a move?
 
-No. Merging is permanent. Once your personal account data is transferred to your Enterprise account, it can’t be moved back to a personal account.
+No. Moving is permanent. Once your personal account data is transferred to your organization’s workspace, it can’t be moved back to a personal account. Start fresh can’t be undone either.
 
 ### Can I keep my personal account and also join the Enterprise workspace?
 
-No. Once your domain is claimed, personal accounts on that domain can’t coexist with the Enterprise workspace. You’ll need to choose merge or join fresh.
+No. Once your domain is claimed, personal accounts on that domain can’t coexist with the Enterprise workspace. You’ll need to choose "Bring what you can" or "Start fresh."
 
 ### What if I use my personal email, not my work email?
 
@@ -2527,31 +2617,29 @@ Domain claiming only affects accounts tied to your organization’s verified dom
 
 ### Will my organization be able to see my old conversations?
 
-Data migrated from your personal account into an Enterprise organization will be accessible via the same mechanism as all other organization data. For more information, see **[Who owns and manages the data of my team?](../13-Enterprise-Admin/who-owns-and-manages-the-data-of-my-team.md)**
+Yes. Your organization can access what moves, the same way it can access the rest of its data. For example, its Primary Owner can export it. Your organization’s data retention policies apply to it too. For more information, see **[Who owns and manages the data of my team?](../13-Enterprise-Admin/who-owns-and-manages-the-data-of-my-team.md)**
 
 ### What if I’m not in my company’s identity provider?
 
-If you’re not in your organization’s IdP, you won’t be able to sign in to the Enterprise workspace after migration. Contact your IT admin to make sure you’re added before the deadline. You should still choose to merge or join fresh before the deadline so your preference is recorded.
+If you’re not in your organization’s IdP, you won’t be able to sign in to the Enterprise workspace after migration. Contact your IT admin to make sure you’re added before the deadline. Your admin must add you, with a seat, before you can bring your data.
 
 ### I have both a personal account and an existing Enterprise account. What happens?
 
-You can migrate your personal account to an existing Enterprise account; data from the individual account will be added to the Enterprise account. If the individual and Enterprise accounts have conflicting settings, the migrated account will use the Enterprise organization’s settings.
+You can choose "Bring what you can." What can move is added to your organization’s workspace. If your personal and organization settings conflict, your organization’s settings apply.
 
 ---
 
 ## Set up your design system in Claude Design | Claude Help Center
 
-Source: https://support.claude.com/en/articles/14604397
-Path: 21-Account-Support/set-up-your-design-system-in-claude-design-claude-help-center.md
+Source: https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design
+Path: 21-Account-Support/set-up-your-design-system-in-claude-design.md
 
 # Set up your design system in Claude Design
-
-Updated today
 
 
 A design system captures your colors, typography, components, and layout patterns, so Claude applies them to every new design and deck. Claude extracts them from the assets you provide, like codebases, slide decks, or other design references.
 
-Design systems are available in beta on Pro, Max, Team, and Enterprise plans. They're on by default on Pro, Max, and Team plans. On Enterprise plans, they're off until an owner turns on **Design systems** in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. Standalone Claude Design at claude.ai/design has its own separate setting.
+Design systems are available in beta on Pro, Max, Ultra, Team, and Enterprise plans. They're on by default on Pro, Max, Ultra, and Team plans. On Enterprise plans, they're off until an owner turns on **Design systems** in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. Standalone Claude Design at claude.ai/design has its own separate setting.
 
 This guide is for the designer or brand owner who will set up the design system. On Team and Enterprise plans, you only need to do this once, and everyone's work picks it up after that.
 
@@ -2589,13 +2677,13 @@ Each design system becomes an artifact Claude can use in any chat, including in 
 
 ## Manage your design systems
 
-Manage your design systems in **[Settings \> Design systems](https://claude.ai/settings/design-systems)**. On Enterprise plans, admins can reserve publishing, setting the organization default, and deleting design systems for specific users. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
+Manage your design systems in Settings \> Capabilities by selecting Manage next to Design systems. If Design systems isn't there, go to Settings \> Design systems. On Enterprise plans, admins can reserve publishing, setting the organization default, and deleting design systems for specific users. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
 
 ------------------------------------------------------------------------
 
 ## Use a design system with a keyboard
 
-To get into and out of the artifact panel, see **[Use artifacts with a keyboard or screen reader](../15-Claude-AI-Features/use-artifacts-with-a-keyboard-or-screen-reader-claude-help-center.md)**. That article also explains what focus means, what to do on a Mac laptop or in Safari, and how shortcuts are written.
+To get into and out of the artifact panel, see **[Use artifacts with a keyboard or screen reader](https://support.claude.com/en/articles/17457950)**. That article also explains what focus means, what to do on a Mac laptop or in Safari, and how shortcuts are written.
 
 A design system opens as a list of sections beside the section you're reading. Return on a section in the list moves into it, Cmd+F6 (Ctrl+F6 on Windows) moves between the list and the section, and Cmd+Z (Ctrl+Z on Windows) undoes a change when you're not in a text box.
 
@@ -2856,7 +2944,7 @@ When your Identity Provider’s X.509 signing certificate (SAML) or client secre
 
 5.  Click "Test sign-in" on the same page to confirm everything is working.
 
-**Important:** If **Require SSO** is turned on and your certificate or client secret has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](https://support.claude.com/en/articles/9015913)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update it. To avoid this, note the expiry date of your certificate or client secret in your Identity Provider and rotate it ahead of time.
+**Important:** If **Require SSO** is turned on and your certificate or client secret has already expired, no one in your organization can sign in to update it, because every sign-in option routes through SSO. **[Contact Support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** from an Owner’s or Primary Owner’s email address and we’ll help you regain access so an Owner can update it. To avoid this, note the expiry date of your certificate or client secret in your Identity Provider and rotate it ahead of time.
 
 ------------------------------------------------------------------------
 
@@ -2874,8 +2962,8 @@ If none of your Owners or Admins can sign in (for example, after a certificate o
 
 ## Verify your phone number | Claude Help Center
 
-Source: https://support.claude.com/en/articles/8287232-verifying-your-phone-number
-Path: 21-Account-Support/verifying-your-phone-number.md
+Source: https://support.claude.com/en/articles/8287232-verify-your-phone-number
+Path: 21-Account-Support/verify-your-phone-number.md
 
 # Verify your phone number
 
@@ -3089,12 +3177,10 @@ Path: 21-Account-Support/who-owns-and-manages-the-data-of-my-claude-for-educatio
 
 # Who owns and manages the data of my Claude for Education account?
 
-March 16, 2026
-
 
 This article provides important information about your Claude for Education account associated with your university’s Claude for Education partnership. It includes details about data access and control that were shared with you when your Claude for Education account was set up.
 
-*This article is about Claude for Education (a commercial product). For more information about our other commercial products such as Claude for Work and the Anthropic API see [here](https://privacy.anthropic.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team). For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see [here](https://privacy.anthropic.com/en/collections/10663362-consumers).*
+*This article is about Claude for Education (a commercial product). For more information about our other commercial products such as Claude for Work and the Anthropic API see [here](https://privacy.anthropic.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team). For our consumer products such as Claude Free, Pro, Max, Ultra, and when accounts from those plans use Claude Code, see [here](https://privacy.anthropic.com/en/collections/10663362-consumers).*
 
 ## Default Settings and Account Management
 
@@ -3108,7 +3194,7 @@ On Claude for Education, by default, the following capabilities are disabled by 
 
 - Thumbs Feedback
 
-These settings reflect Anthropic’s default approach to Claude for Education, but we understand that universities may have legitimate needs to access data. In these situations, the Primary Owner will need to reach out to [Anthropic support](../15-Claude-AI-Features/how-to-get-support.md) to request and enable access.
+These settings reflect Anthropic’s default approach to Claude for Education, but we understand that universities may have legitimate needs to access data. In these situations, the Primary Owner will need to reach out to [Anthropic support](https://support.anthropic.com/en/articles/9015913-how-to-get-support) to request and enable access.
 
 This includes the ability to request access to your user data through data exports, which may contain your conversations with Claude, uploaded files, and usage patterns. Primary Owners can also remove your access to the Claude for Education account if necessary.
 

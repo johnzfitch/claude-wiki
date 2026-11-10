@@ -2,7 +2,7 @@
 title: "How Claude's values vary by model and language \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-values-models-languages"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:42Z"
+fetched_at: "2026-10-24T06:26:33Z"
 tags: ["news-research"]
 ---
 
@@ -38,7 +38,7 @@ Related articles
 
   Nov 13, 2025
 
-  [Measuring political bias in Claude](political-even-handedness.md)
+  [Measuring political bias in Claude](research-political-even-handedness.md)
 
 [View more](https://www.anthropic.com/search?topic=claude-s-character)
 
@@ -182,7 +182,7 @@ Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/02da7f28f
 
 07See the GMMLU evaluation results on page 215 and the different refusal rates by language in the benign request evaluation on page 56 of our [Claude Opus 4.7 System Card](https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf).[](#footnote-ref-7)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

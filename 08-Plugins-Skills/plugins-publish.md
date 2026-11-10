@@ -2,11 +2,14 @@
 title: "Publish and distribute a plugin - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/publish"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-22T06:29:28Z"
+fetched_at: "2026-10-31T06:24:39Z"
+last_modified: "Sat, 31 Oct 2026 01:06:29 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Choose how to distribute](#choose-how-to-distribute)
 - [Prepare your plugin for release](#prepare-your-plugin-for-release)
@@ -52,11 +55,11 @@ Choose how to distribute
 
 Choose a distribution option based on who needs to install the plugin:
 
-| Route                                                         | Who can install                                                                                                                                          | What you need                                                                                  | Do users get your updates automatically?     |
-|:--------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------|:---------------------------------------------|
-| [No marketplace](#share-a-plugin-without-a-marketplace)       | The people you send the plugin folder or a `.zip` of it                                                                                                  | The plugin’s folder                                                                            | None. They load the copy you sent            |
-| [Your own marketplace](#publish-through-your-own-marketplace) | Anyone who can reach the repository, which can be a private one your team can clone                                                                      | A git repository or other host with a `.claude-plugin/marketplace.json` that lists your plugin | Off                                          |
-| [Anthropic’s directory](#submit-to-anthropics-directory)      | People who add it on claude.ai or in Cowork. It also loads in their Claude Code sessions through [account sync](plugins-loading.md#synced-plugins) | A GitHub repository holding the plugin and a paid claude.ai plan to submit from                | Yes, after the version you push is published |
+| Route | Who can install | What you need | Do users get your updates automatically? |
+|:---|:---|:---|:---|
+| [No marketplace](#share-a-plugin-without-a-marketplace) | The people you send the plugin folder or a `.zip` of it | The plugin’s folder | None. They load the copy you sent |
+| [Your own marketplace](#publish-through-your-own-marketplace) | Anyone who can reach the repository, which can be a private one your team can clone | A git repository or other host with a `.claude-plugin/marketplace.json` that lists your plugin | Off |
+| [Anthropic’s directory](#submit-to-anthropics-directory) | People who add it on claude.ai or in Cowork. It also loads in their Claude Code sessions through [account sync](plugins-loading.md#synced-plugins) | A GitHub repository holding the plugin and a paid claude.ai plan to submit from | Yes, after the version you push is published |
 
 Auto-update is a per-marketplace setting on the user’s side that fetches new versions in the background.
 
@@ -154,7 +157,7 @@ To publish from the plugin’s own repository, save the marketplace file beside 
 }
 ```
 
-In your shell, run `claude plugin validate .` in the repository before you push. For what the run checks, see [Validate a directory](plugins-cli-reference.md#validate-a-directory). [Create a marketplace](plugin-marketplaces.md) covers the layout with several plugins in one repository.
+Replace `your-marketplace` with a name that other authors are unlikely to pick, because a user [can’t have two marketplaces with the same name](plugins-marketplace-reference.md#marketplace-file). In your shell, run `claude plugin validate .` in the repository before you push. For what the run checks, see [Validate a directory](plugins-cli-reference.md#validate-a-directory). [Create a marketplace](plugin-marketplaces.md) covers the layout with several plugins in one repository.
 
 
 [​](#control-who-can-install)
@@ -198,7 +201,7 @@ Submit to Anthropic’s directory
 
 Confirm you can submit
 
-Submitting requires a paid claude.ai plan. On Pro and Max you submit from your own account. On Team and Enterprise, an Owner can submit, and on Enterprise an Owner can also grant the **Directory** permission to other members through a custom role under **Organization settings \> Roles**. See [Confirm you can submit to the directory](https://claude.com/docs/directory/publish#confirm-you-can-submit-to-the-directory).
+Submitting requires a paid claude.ai plan. On Pro, Max, and Ultra you submit from your own account. On Team and Enterprise, an Owner can submit, and on Enterprise an Owner can also grant the **Directory** permission to other members through a custom role under **Organization settings \> Roles**. See [Confirm you can submit to the directory](https://claude.com/docs/directory/publish#confirm-you-can-submit-to-the-directory).
 
 2
 

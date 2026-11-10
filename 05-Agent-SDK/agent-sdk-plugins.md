@@ -2,14 +2,19 @@
 title: "Plugins in the SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/plugins"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-26T06:37:59Z"
+fetched_at: "2026-11-06T06:26:28Z"
+last_modified: "Fri, 06 Nov 2026 05:17:18 GMT"
 tags: ["agents", "claude-code", "plugins", "sdk"]
 ---
 
 ## On this page
 
+Back to top
+
 - [Loading plugins](#loading-plugins)
   - [Path specifications](#path-specifications)
+  - [Reload plugins in a running session](#reload-plugins-in-a-running-session)
+  - [Add plugins to a running session](#add-plugins-to-a-running-session)
 - [Verifying plugin installation](#verifying-plugin-installation)
 - [Use plugin skills](#use-plugin-skills)
 - [Complete example](#complete-example)
@@ -99,6 +104,30 @@ Plugin paths can be:
 - **Absolute paths**: full file system paths (for example, `"/home/user/plugins/my-plugin"`)
 
 The path should point to the plugin’s root directory: the parent of `skills/`, `agents/`, `hooks/`, `commands/`, or `.claude-plugin/`.
+
+
+[​](#reload-plugins-in-a-running-session)
+
+Reload plugins in a running session
+
+To apply a change to a plugin’s skills, commands, agents, or hooks without starting a new session, call [`reloadPlugins()`](agent-sdk-typescript.md#query-object) on the TypeScript SDK’s `Query` object. The Python SDK doesn’t expose an equivalent method; send [`/reload-plugins`](../08-Plugins-Skills/plugins-cli-reference.md#reload-plugins) as a prompt in the session instead.
+
+
+[​](#add-plugins-to-a-running-session)
+
+Add plugins to a running session
+
+In the TypeScript SDK, call [`reloadPlugins()`](agent-sdk-typescript.md#load-more-plugin-folders-with-addplugins) on the `Query` object that `query()` returned, and list the plugin directory in that call’s `addPlugins` option. Each `addPlugins` entry is a `{ type: "local", path }` object with an absolute `path`. Requires TypeScript Agent SDK v0.3.301 or later. In this example, `q` is the `Query` object that `query()` returned. The example adds one plugin directory to the running session and, after `reloadPlugins()` returns, prints the path of every plugin in the session:
+
+```python
+const result = await q.reloadPlugins({
+  addPlugins: [{ type: "local", path: "/home/user/plugins/another-plugin" }]
+});
+
+console.log(result.plugins.map((plugin) => plugin.path));
+```
+
+If the plugin loaded, the printed list includes `/home/user/plugins/another-plugin`. If that path is missing from the list, or `reloadPlugins()` rejects, see [When `reloadPlugins()` doesn’t load the `addPlugins` folders](agent-sdk-typescript.md#when-reloadplugins-doesnt-load-the-addplugins-folders) for the causes.
 
 
 [​](#verifying-plugin-installation)

@@ -2,9 +2,11 @@
 title: "Challenges in evaluating AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/evaluating-ai-systems"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:22Z"
+fetched_at: "2026-11-09T06:26:26Z"
 tags: ["news-research"]
 ---
+
+### 01Introduction
 
 # Challenges in evaluating AI systems
 
@@ -13,24 +15,21 @@ tags: ["news-research"]
 - [03Policy recommendations](#policy-recommendations)
 - [04Conclusion](#conclusion)
 
-- Published
+Published  
+Oct 4, 2023
 
-  Oct 4, 2023
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+- [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
-  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-
-  See more...
+See more...
 
 Related articles
 
@@ -189,16 +188,18 @@ If you found this post helpful and want to discuss evaluations of AI systems wit
 
 04For example, a well-known issue with many facial recognition systems has been higher error rates for certain demographics, like women and people of color. The FRVT reports shined a spotlight on these accuracy discrepancies, which put pressure on vendors to improve their algorithms and mitigate systemic biases.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Citation
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{ganguli2023challenges,
 author = {Deep Ganguli and Nicholas Schiefer and Marina Favaro and Jack Clark},
 title = {Challenges in evaluating {AI} systems},
 date = {2023-10-04},
 year = {2023},
 url = {https://www.anthropic.com/index/evaluating-ai-systems},
+}
+```

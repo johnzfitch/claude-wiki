@@ -92,7 +92,7 @@ The feature becomes Deprecated when the revision carrying these changes is relea
 
 The Deprecated Registry
 
-[`docs/specification/draft/deprecated.mdx`](../Spec/draft-deprecated.md) is a single page listing every feature in a Deprecated or Removed state. It is the canonical answer to “what is on its way out, and by when,” so that an implementer does not have to reconstruct that picture from deprecation entries spread across revision changelogs.
+[`docs/specification/draft/deprecated.mdx`](../Spec/2026-07-28-deprecated.md) is a single page listing every feature in a Deprecated or Removed state. It is the canonical answer to “what is on its way out, and by when,” so that an implementer does not have to reconstruct that picture from deprecation entries spread across revision changelogs.
 
 
 [​](#tier-1-sdk-obligations)

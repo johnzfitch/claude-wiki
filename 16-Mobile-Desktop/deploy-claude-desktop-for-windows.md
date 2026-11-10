@@ -2,7 +2,7 @@
 title: "Deploy Claude Desktop for Windows | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-23T06:28:57Z"
+fetched_at: "2026-11-09T06:25:52Z"
 tags: ["desktop"]
 ---
 
@@ -24,6 +24,8 @@ Claude Desktop for Windows requires the **[Virtual Machine Platform](https://sup
     Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform -All -NoRestart
 
 The feature takes effect after the machine restarts. The `-NoRestart` flag suppresses the automatic restart for silent deployment, so schedule one through your management tool.
+
+**Note:** You can run your endpoint detection and response (EDR) sensor in Cowork in beta. Learn more about **[running your EDR sensor in Claude Cowork](../15-Claude-AI-Features/run-your-endpoint-detection-and-response-edr-sensor-in-claude-cowork.md)**.
 
 ## Download
 
@@ -111,7 +113,7 @@ To resolve it:
 
 2.  Run the current installer elevated.
 
-3.  If the install fails again with the same error, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md)** and include the `ClaudeSetup.log` file from the user’s Temp folder. IT needs to recover the device in system context, and Support will provide the steps.
+3.  If the install fails again with the same error, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** and include the `ClaudeSetup.log` file from the user’s Temp folder. IT needs to recover the device in system context, and Support will provide the steps.
 
 ### Cowork reports missing HCS services or virtualization errors
 

@@ -2,7 +2,7 @@
 title: "How do I sign up for the Pro plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325609-how-do-i-sign-up-for-the-pro-plan"
 category: "21-Account-Support"
-fetched_at: "2026-10-23T06:29:37Z"
+fetched_at: "2026-11-09T06:26:15Z"
 tags: ["account"]
 ---
 
@@ -47,7 +47,7 @@ This article applies to individual consumers signing up for paid Pro plans. If y
 
 ## How does subscription renewal work for Pro plans?
 
-After subscribing for a Pro plan, your subscription will be set to automatically renew at the end of each billing period (monthly or annual) by default. This ensures uninterrupted access to Pro features. However, you have the flexibility to **[cancel your paid plan](../17-Billing-Plans/how-do-i-cancel-my-paid-claude-subscription.md)** at any time if you choose not to continue.
+After subscribing for a Pro plan, your subscription will be set to automatically renew at the end of each billing period (monthly or annual) by default. This ensures uninterrupted access to Pro features. However, you have the flexibility to **[cancel your paid plan](https://support.claude.com/en/articles/8325617-how-do-i-cancel-my-paid-claude-subscription)** at any time if you choose not to continue.
 
 ## I am outside of your supported locations; can I subscribe to the Pro plan?
 

@@ -2,17 +2,21 @@
 title: "Create a marketplace - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugin-marketplaces"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-23T06:28:22Z"
+fetched_at: "2026-11-09T06:25:40Z"
+last_modified: "Sun, 08 Nov 2026 19:52:07 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Create a marketplace](#create-a-marketplace)
 - [Add plugin entries](#add-plugin-entries)
 - [Rules for plugin entries](#rules-for-plugin-entries)
   - [Write relative paths from the marketplace root](#write-relative-paths-from-the-marketplace-root)
   - [Keep the entry name and the manifest name the same](#keep-the-entry-name-and-the-manifest-name-the-same)
+  - [Keep unused submodules out of the clone](#keep-unused-submodules-out-of-the-clone)
 - [Choose a plugin source](#choose-a-plugin-source)
 - [Validate and test](#validate-and-test)
   - [Problems that validation reports](#problems-that-validation-reports)
@@ -184,17 +188,29 @@ A marketplace plugin has an entry `name` in `marketplace.json` and a `name` in i
 When the two names differ and someone installs by the manifest name, Claude Code reports `Plugin "<manifest-name>" not found in marketplace "<marketplace>"`. Keep the two names the same. For more on how Claude Code uses the two names, see [Plugin loading reference](plugins-loading.md#find-where-a-plugin-came-from).
 
 
+[​](#keep-unused-submodules-out-of-the-clone)
+
+Keep unused submodules out of the clone
+
+When someone adds your marketplace, Claude Code clones the repository and fetches only the git submodules that hold plugin files. Requires Claude Code v2.1.295 or later. You decide which submodules Claude Code fetches by where you put each plugin:
+
+- **A plugin in a subdirectory**: Claude Code fetches the submodules inside the plugin’s directory and a submodule that contains it. Put a submodule your plugin needs inside the plugin’s directory, and keep one it doesn’t need outside
+- **A plugin at the marketplace root**: Claude Code fetches every submodule in the repository as soon as one of the plugin’s files refers to a path inside any of them. If your repository has a large submodule that only your build uses, move the plugin into a subdirectory
+
+If a plugin at the root runs a file from a submodule, write the file’s path out in the plugin’s hook or server configuration, such as `${CLAUDE_PLUGIN_ROOT}/vendor/tool/run.sh`. Claude Code reads those paths to find out whether the plugin needs the submodules. It can’t see a path that a script builds while it runs. For the full rule, see [Git submodules in the marketplace repository](plugins-marketplace-reference.md#git-submodules-in-the-marketplace-repository).
+
+
 [​](#choose-a-plugin-source)
 
 Choose a plugin source
 
 Each plugin entry in `marketplace.json` has a `source` that tells Claude Code where to fetch that one plugin. Pick the source by where the plugin’s files are stored. The table lists the sources most marketplace owners use.
 
-| Source        | Use it when                                                               | Minimal `source` value                                                                    |
-|:--------------|:--------------------------------------------------------------------------|:------------------------------------------------------------------------------------------|
-| Relative path | The plugin’s files are inside the marketplace directory itself            | `"./plugins/my-first-plugin"`                                                             |
-| `github`      | The plugin is a GitHub repository of its own                              | `{ "source": "github", "repo": "your-org/my-first-plugin" }`                              |
-| `git-subdir`  | The plugin is a subdirectory of some other repository, such as a monorepo | `{ "source": "git-subdir", "url": "your-org/monorepo", "path": "tools/my-first-plugin" }` |
+| Source | Use it when | Minimal `source` value |
+|:---|:---|:---|
+| Relative path | The plugin’s files are inside the marketplace directory itself | `"./plugins/my-first-plugin"` |
+| `github` | The plugin is a GitHub repository of its own | `{ "source": "github", "repo": "your-org/my-first-plugin" }` |
+| `git-subdir` | The plugin is a subdirectory of some other repository, such as a monorepo | `{ "source": "git-subdir", "url": "your-org/monorepo", "path": "tools/my-first-plugin" }` |
 
 In a `git-subdir` source, `url` takes a git URL or an `owner/repo` GitHub shorthand. A plugin can also come from one of these source types:
 
@@ -259,7 +275,7 @@ To remove everything and start over, run `claude plugin marketplace remove my-ma
 
 Host your marketplace
 
-Once you can install a plugin from the marketplace on your own machine, as in [Create a marketplace](#create-a-marketplace), push the marketplace directory to a git host. Your teammates then run `claude plugin marketplace add <owner>/<repo>` in their shell for a GitHub repository, or the same command with the repository URL. They then install a plugin by name as in [the walkthrough](#create-a-marketplace). For private-repository access, updates, versioning, and renaming or removing entries, see [Host and maintain a marketplace](plugins-host-marketplace.md).
+Once you can install a plugin from the marketplace on your own machine, as in [Create a marketplace](#create-a-marketplace), push the marketplace directory to a git host. Before you push, give the marketplace a top-level `name` that other authors are unlikely to pick, because a user [can’t have two marketplaces with the same name](plugins-marketplace-reference.md#marketplace-file). Your teammates then run `claude plugin marketplace add <owner>/<repo>` in their shell for a GitHub repository, or the same command with the repository URL. They then install a plugin by name as in [the walkthrough](#create-a-marketplace). For private-repository access, updates, versioning, and renaming or removing entries, see [Host and maintain a marketplace](plugins-host-marketplace.md).
 
 
 [​](#next-steps)

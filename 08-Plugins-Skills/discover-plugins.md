@@ -2,11 +2,14 @@
 title: "Install and manage plugins - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/discover-plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-23T06:28:40Z"
+fetched_at: "2026-11-09T06:25:42Z"
+last_modified: "Sun, 08 Nov 2026 19:57:36 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Install a plugin](#install-a-plugin)
   - [Choose an install scope](#choose-an-install-scope)
@@ -240,12 +243,12 @@ Add a marketplace
 
 You only need this section when the plugin you want isn’t in Anthropic’s official marketplace, for example one a coworker published or one from Anthropic’s community marketplace. A marketplace is a catalog of plugins, and Claude Code has to know about a marketplace before you can install from it. You add a marketplace once. After that, its plugins appear on the **Discover** tab and install with `/plugin install <plugin>@<marketplace>` in a session or `claude plugin install <plugin>@<marketplace>` in your shell, where `<marketplace>` is the name the marketplace registered under. To do both in one step, see [Add a marketplace and install in one command](#add-a-marketplace-and-install-in-one-command). In a Claude Code session, run `/plugin marketplace add` followed by the marketplace’s source: a GitHub repository, a git repository on any host, a local directory or file, or a hosted `marketplace.json`.
 
-| Source                     | What you type                                                                                                                                                                                                                       | Example                                                                                                                        |
-|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
-| GitHub repository          | `owner/repo`. Add `#ref` to pin a branch or tag.                                                                                                                                                                                    | `/plugin marketplace add anthropics/claude-code`, or `/plugin marketplace add your-org/plugins#v1.2.0` to pin the `v1.2.0` tag |
-| Git repository on any host | The full clone URL. Add `#ref` to pin a branch or tag.                                                                                                                                                                              | `/plugin marketplace add https://gitlab.example.com/your-group/your-marketplace.git#v1.0.0`                                    |
-| Local directory or file    | A relative or absolute path to a directory that holds `.claude-plugin/marketplace.json`, or to the JSON file itself. Start a relative path with `./` or `../`, because Claude Code reads a bare `name/name` as a GitHub repository. | `/plugin marketplace add ./my-marketplace`                                                                                     |
-| Hosted `marketplace.json`  | Its `https://` URL                                                                                                                                                                                                                  | `/plugin marketplace add https://example.com/marketplace.json`                                                                 |
+| Source | What you type | Example |
+|:---|:---|:---|
+| GitHub repository | `owner/repo`. Add `#ref` to pin a branch or tag. | `/plugin marketplace add anthropics/claude-plugins-official`, or `/plugin marketplace add your-org/plugins#v1.2.0` to pin the `v1.2.0` tag |
+| Git repository on any host | The full clone URL. Add `#ref` to pin a branch or tag. | `/plugin marketplace add https://gitlab.example.com/your-group/your-marketplace.git#v1.0.0` |
+| Local directory or file | A relative or absolute path to a directory that holds `.claude-plugin/marketplace.json`, or to the JSON file itself. Start a relative path with `./` or `../`, because Claude Code reads a bare `name/name` as a GitHub repository. | `/plugin marketplace add ./my-marketplace` |
+| Hosted `marketplace.json` | Its `https://` URL | `/plugin marketplace add https://example.com/marketplace.json` |
 
 From your shell, `claude plugin marketplace add` takes the same sources.
 
@@ -293,7 +296,7 @@ Add a private marketplace
 
 A private marketplace is one in a repository you need credentials to clone, on GitHub or any other git host. You add it with the same `/plugin marketplace add` or `claude plugin marketplace add` command as a public one. Claude Code clones it with the git credentials already on your machine and never prompts, so each way of connecting has a requirement:
 
-- **HTTPS**: your git credential helpers apply, so access you set up with `gh auth login`, the macOS Keychain, or `git-credential-store` works. Interactive prompts are suppressed, so a host you have never authenticated to fails instead of asking for a password.
+- **HTTPS**: your git credential helpers apply, so access you set up with `gh auth login`, the macOS Keychain, or `git-credential-store` works. Git’s prompts and askpass programs are off, including one set in `GIT_ASKPASS`, so the clone fails instead of prompting when git would have to ask for a credential.
 - **SSH**: the host must already be in your `known_hosts` file and the key must work without a passphrase prompt. If your git setup names an SSH program in `GIT_SSH_COMMAND`, `GIT_SSH`, or your git config’s `core.sshCommand`, Claude Code runs that program.
 - **GitHub `owner/repo` shorthand**: Claude Code checks whether your SSH key authenticates to `github.com`, then clones over SSH if it does and over HTTPS if it doesn’t. Set [`CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1`](../02-Claude-Code-CLI/env-vars.md#variables) to skip that check and always clone over HTTPS.
 
@@ -443,11 +446,11 @@ Manage marketplaces
 
 The **Marketplaces** tab in `/plugin` lists every marketplace you registered, along with its source. Select one to browse its plugins, update its listing, turn auto-update on or off, or remove it. You can also list, update, and remove marketplaces with commands, from your shell or inside a session:
 
-| Action                         | In your shell                             | Inside a session                    |
-|:-------------------------------|:------------------------------------------|:------------------------------------|
-| List marketplaces              | `claude plugin marketplace list`          | `/plugin marketplace list`          |
+| Action | In your shell | Inside a session |
+|:---|:---|:---|
+| List marketplaces | `claude plugin marketplace list` | `/plugin marketplace list` |
 | Update a marketplace’s listing | `claude plugin marketplace update <name>` | `/plugin marketplace update <name>` |
-| Remove a marketplace           | `claude plugin marketplace remove <name>` | `/plugin marketplace remove <name>` |
+| Remove a marketplace | `claude plugin marketplace remove <name>` | `/plugin marketplace remove <name>` |
 
 When you remove a marketplace, Claude Code uninstalls every plugin you installed from it and removes their `enabledPlugins` entries from your settings files. The **Marketplaces** tab names those plugins before it asks you to confirm.
 
@@ -456,7 +459,7 @@ When you remove a marketplace, Claude Code uninstalls every plugin you installed
 
 Next steps
 
-- [Anthropic’s marketplaces](plugins-anthropic-marketplaces.md): how the official, community, and demo marketplaces differ and where to browse each one
+- [Anthropic’s marketplaces](plugins-anthropic-marketplaces.md): how the official and community marketplaces differ and where to browse each one
 - [Plugin loading reference](plugins-loading.md): why a plugin loaded, didn’t load, or didn’t change after an update
 - [Plugin security and trust](plugins-security.md): what to review before you install a plugin from a marketplace you don’t know
 - [Troubleshoot plugins](plugins-troubleshooting.md): install and marketplace error messages with their fixes

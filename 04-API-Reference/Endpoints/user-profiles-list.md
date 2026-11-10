@@ -2,241 +2,11 @@
 title: "List User Profiles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/user_profiles/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-21T06:29:08Z"
+fetched_at: "2026-11-06T06:33:46Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fuser_profiles%2Flist)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-Webhooks
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Delete User Profile
-
-
-Create Enrollment URL
-
-Action URLs
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 
 
@@ -251,13 +21,41 @@ A beta version of this method exists and may have additional functionality. [Vie
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/user_profiles
 
 List User Profiles
 
 ##### Query parameters
+
+
+
+enforcement_status: optional array of [UserProfileEnforcementStatus](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_status)
+
+
+
+Return only the user profiles whose `enforcement_status` is one of these values: `unrestricted`, `pending`, `restricted` or `banned`. Repeat the parameter to match any of several. With it set, a page may hold fewer than `limit` profiles, or none, and still carry a `next_page`: the service examines a bounded number of profiles per request, and only a null `next_page` means the listing is complete. Rejected with `invalid_request_error` under the `user-profiles-2026-09-04` and earlier beta headers. Fails with `overloaded_error` when a profile's enforcement actions cannot be read for the moment.
+
+One of the following:
+
+"unrestricted"
+
+
+
+"pending"
+
+
+
+"restricted"
+
+
+
+"banned"
+
+
 
 
 
@@ -349,7 +147,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-data: array of [UserProfile](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile) { type: "user_profile", id, access_type, 6 more }
+data: array of [UserProfile](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile) { type: "user_profile", id, access_type, 8 more }
 
 
 
@@ -398,6 +196,128 @@ created_at: string
 When this user profile was created, in RFC 3339 format.
 
 formatdate-time
+
+
+
+enforcement_actions: array of [UserProfileEnforcementAction](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_action)
+
+
+
+The enforcement actions open on this profile; empty when none is open. Absent under the `user-profiles-2026-09-04` and earlier beta headers.
+
+One of the following:
+
+
+
+UserProfileEnforcementActionRestriction object{ type: "restriction", id, action, 3 more }
+
+
+
+Anthropic has limited how it serves the end user until the action is resolved. The end user may still be served in part.
+
+
+
+UserProfileEnforcementActionBan object{ type: "ban", id, action, 3 more }
+
+
+
+Anthropic has stopped serving the end user where the ban applies and does not plan to serve them there again.
+
+type: "ban"
+
+
+
+id: string
+
+
+
+The action's ID (`enac_...`), stable while the action is open.
+
+action: [UserProfileEnforcementActionNextStep](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_action_next_step) or null
+
+
+
+Always `null`: the end user cannot clear a ban.
+
+
+
+expires_at: string or null
+
+
+
+Always `null`: a ban has no end date.
+
+formatdate-time
+
+
+
+opened_at: string
+
+
+
+When Anthropic opened the action, in RFC 3339 format.
+
+formatdate-time
+
+
+
+reason: [UserProfileEnforcementActionReason](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_action_reason)
+
+
+
+Why Anthropic placed the limit: `unsupported_region`, `fraud_or_abuse`, `high_harm`, `usage_policy_violation`, `account_compromise` or `unspecified`.
+
+One of the following:
+
+"unsupported_region"
+
+
+
+"fraud_or_abuse"
+
+
+
+"high_harm"
+
+
+
+"usage_policy_violation"
+
+
+
+"account_compromise"
+
+
+
+"unspecified"
+
+
+
+
+
+enforcement_status: [UserProfileEnforcementStatus](https://platform.claude.com/docs/en/api/http/user_profiles#user_profile_enforcement_status)
+
+
+
+Anthropic's enforcement status of this profile, from its open enforcement actions and any identity check under review, by the first rule that applies: `banned` while any open action is a `ban`; `pending` while a restriction that an identity check can clear is open, the end user has submitted that check, Anthropic's review of it has not ended, and no open action's `reason` is `account_compromise`; `restricted` while any action is open; `unrestricted` while none is. Absent under the `user-profiles-2026-09-04` and earlier beta headers.
+
+One of the following:
+
+"unrestricted"
+
+
+
+"pending"
+
+
+
+"restricted"
+
+
+
+"banned"
+
+
 
 
 
@@ -451,8 +371,8 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/user_profiles \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY"
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY"
 ```
 
 Response 200
@@ -466,6 +386,17 @@ Response 200
       "id": "uprof_011CZkZCu8hGbp5mYRQgUmz9",
       "access_type": "application",
       "created_at": "2026-03-15T10:00:00Z",
+      "enforcement_actions": [
+        {
+          "id": "enac_011CZkZCu8hGbp5mYRQgUmz9",
+          "action": "verify",
+          "expires_at": null,
+          "opened_at": "2026-10-02T19:30:00Z",
+          "reason": "fraud_or_abuse",
+          "type": "restriction"
+        }
+      ],
+      "enforcement_status": "unrestricted",
       "external_user_details": {
         "account_status": "active",
         "country": "US",
@@ -522,6 +453,17 @@ Response 200
       "id": "uprof_011CZkZCu8hGbp5mYRQgUmz9",
       "access_type": "application",
       "created_at": "2026-03-15T10:00:00Z",
+      "enforcement_actions": [
+        {
+          "id": "enac_011CZkZCu8hGbp5mYRQgUmz9",
+          "action": "verify",
+          "expires_at": null,
+          "opened_at": "2026-10-02T19:30:00Z",
+          "reason": "fraud_or_abuse",
+          "type": "restriction"
+        }
+      ],
+      "enforcement_status": "unrestricted",
       "external_user_details": {
         "account_status": "active",
         "country": "US",

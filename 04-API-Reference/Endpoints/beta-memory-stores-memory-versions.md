@@ -2,265 +2,11 @@
 title: "Memory Versions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:38:28Z"
+fetched_at: "2026-11-05T06:35:48Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmemory_stores%2Fmemory_versions)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-
-Create a memory store
-
-
-List memory stores
-
-
-Retrieve a memory store
-
-
-Update a memory store
-
-
-Delete a memory store
-
-
-Archive a memory store
-
-Memories
-
-Memory Versions
-
-
-List memory versions
-
-
-Retrieve a memory version
-
-
-Redact a memory version
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -272,19 +18,27 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
 
-##### [List memory versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/list)
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+
+##### [List Memory Versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/list)
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions
 
-##### [Retrieve a memory version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Retrieve a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
 
-##### [Redact a memory version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/redact)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Redact a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/redact)
 
 POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
+
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### Models
 
@@ -326,7 +80,13 @@ BetaManagedAgentsMemoryVersion object{ type: "memory_version", id, created_at, 1
 
 
 
-A `memory_version` object: one immutable, attributed row in a memory's append-only history. Every non-no-op mutation to a memory produces a new version. Versions belong to the store (not the individual memory) and are not deleted with the memory; each version is retained for at least the version retention period after it was written, unless the store itself is deleted. Retrieving a redacted version returns 200 with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`; branch on `redacted_at`, not HTTP status.
+One entry in a memory's history, recording a single change and who made it.
+
+Every change to a memory adds one version. Only redaction can change a version after that. Versions belong to the memory store and stay after the memory is deleted. Each version is retained for at least the version retention period after it was written, unless the store itself is deleted.
+
+Retrieving a redacted version succeeds, with `content`, `path`, `content_size_bytes`, and `content_sha256` set to `null`. Check `redacted_at` to find out whether a version was redacted.
+
+See the [memory guide](../Other/managed-agents-memory.md#audit-memory-changes) to learn more about memory versions.
 
 
 
@@ -334,7 +94,9 @@ BetaManagedAgentsMemoryVersionOperation = "created" or "modified" or "deleted"
 
 
 
-The kind of mutation a `memory_version` records. Every non-no-op mutation to a memory appends exactly one version row with one of these values.
+The kind of change that a memory version records.
+
+Every change to a memory adds one version. If you update a memory and nothing changes, the memory doesn't get a new version.
 
 One of the following:
 

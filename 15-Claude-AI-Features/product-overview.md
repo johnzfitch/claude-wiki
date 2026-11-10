@@ -1,9 +1,9 @@
 ---
-title: "The AI for problem solvers | Claude by Anthropic"
+title: "Claude | The AI assistant for work"
 source_url: "https://www.claude.com/product/overview"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:30:17Z"
-tags: ["claude-ai", "enterprise", "security"]
+fetched_at: "2026-11-09T06:26:59Z"
+tags: ["claude-ai"]
 ---
 
 # Give Claude more
@@ -247,10 +247,10 @@ Learn more
 - [Quick answers or long tasks](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork) — Ask something quick, or hand off a long, complex task that keeps working after you close your laptop.
 - [Parallel tasks](product-cowork.md) — Run several tasks with Claude at the same time.
 - Frontier intelligence — Access to Claude’s latest models for reasoning, coding, and writing.
-- [Scheduled tasks](schedule-recurring-tasks-in-claude-cowork.md) — Set up work Claude runs again on a schedule you choose.
-- [Voice](use-voice-mode.md) — Talk to Claude instead of typing.
+- [Scheduled tasks](https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork) — Set up work Claude runs again on a schedule you choose.
+- [Voice](https://support.claude.com/en/articles/11101966-use-voice-mode) — Talk to Claude instead of typing.
 - [Finished, editable work](create-and-edit-files-with-claude.md) — Get editable, polished files, ready for your review.
-- [Artifacts](https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them) — Shareable, on-brand designs, slides, and documents. Edit yourself or tell Claude what to change.
+- [Artifacts](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md) — Shareable, on-brand designs, slides, and documents. Edit yourself or tell Claude what to change.
 - [Interactive visuals](visual-responses-and-interactive-widgets.md) — Build charts, diagrams, and interactive visuals right in the conversation.
 
 ### Access tools
@@ -259,7 +259,7 @@ Learn more
 - [Connectors](https://claude.com/marketplace/connectors-plugins) — Connect the apps you already use, including interactive MCP apps.
 - [Files and folders](https://academy.claude.com/use-cases/organize-files-by-whats-in-them) — Work with the files and folders already on your desktop.
 - [Browser use](https://claude.com/claude-in-chrome) — Browse and act on the web through Claude in Chrome and the built-in browser.
-- [Computer use](let-claude-use-your-computer-in-cowork.md) — See and use your screen (beta).
+- [Computer use](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork) — See and use your screen (beta).
 
 ### Make it yours
 
@@ -285,7 +285,7 @@ Learn more
 
 - [Memory](https://claude.com/import-memory) — Remember context from past conversations.
 - [Projects](what-are-projects.md) — Keep context, instructions, and files organized by project.
-- [Instructions for Claude](https://support.claude.com/en/articles/10185728-understanding-claude-s-personalization-features) — Set preferences that apply across every conversation.
+- [Instructions for Claude](understanding-claude-s-personalization-features.md) — Set preferences that apply across every conversation.
 
 ## I'm in Marketing and I need to make the Campaign readout.
 
@@ -350,7 +350,7 @@ What kind of work can I hand off?
 
 Claude can take on a wide range of work: it can handle routine work like updating metrics, consolidating feedback or data to surface what really needs your opinion, or large projects like audits. Other common use cases include first drafts and editing; creating briefs from meeting notes or account records; reconciling disparate data from different sources and pulling it into a spreadsheet or dashboard; pulling information into slides and presentations, and much more. Not sure where to start or what it can do? Ask Claude.
 
-Claude also works directly in other apps like Slack via [Claude Tag](product-tag.md), [Microsoft 365](https://claude.com/claude-for-microsoft-365) services, and on the web through [Claude in Chrome](https://claude.com/claude-in-chrome). For coding, visit [Claude Code](product-claude-code-fad1ab4b.md).
+Claude also works directly in other apps like Slack via [Claude Tag](product-tag.md), [Microsoft 365](https://claude.com/claude-for-microsoft-365) services, and on the web through [Claude in Chrome](https://claude.com/claude-in-chrome). For coding, visit [Claude Code](product-claude-code.md).
 
 What happened to Claude Cowork?
 
@@ -379,7 +379,7 @@ No. Claude runs on web and mobile (iOS and Android). The desktop app is availabl
 
 Can I assign tasks from my phone?
 
-Yes. Start a task from your phone, and Claude keeps working in the cloud even when your laptop is closed. Check in, redirect, or review the result from anywhere. Available in Pro, Max, and Team plans automatically. Enterprise plans can opt in.
+Yes. Start a task from your phone, and Claude keeps working in the cloud even when your laptop is closed. Check in, redirect, or review the result from anywhere. Available in Pro, Max, Ultra, and Team plans automatically. Enterprise plans can opt in.
 
 How much does Claude cost?
 
@@ -390,234 +390,3 @@ Claude plans are available for personal, team, and enterprise use and all offer 
 Claude works with you to tackle your most complex challenges.
 
 Ask Claude
-
-[](https://www.claude.com/)
-
-© 2026 Anthropic PBC
-
-## Products
-
-- [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
-- [Claude Cowork](product-cowork.md)
-- [Claude Duet](product-claude-duet.md)
-- [Claude Tag](product-tag.md)
-- [Claude Science](product-claude-science.md)
-- [Claude Security](product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](claude-mythos.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-
-## Industries
-
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-## Programs
-
-- [Campus](programs-campus.md)
-- [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-team-plan-for-scientists.md)
-- [Startups](programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-## Company
-
-- [Anthropic](https://www.anthropic.com/)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [Anthropic news](../19-Reference/news.md)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Transparency](https://anthropic.com/transparency)
-
-## Terms and policies
-
-- Privacy choices
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
-- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
-- [Usage Policy](https://www.anthropic.com/legal/aup)
-
-## Products
-
-- [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
-- [Claude Cowork](product-cowork.md)
-- [Claude Duet](product-claude-duet.md)
-- [Claude Tag](product-tag.md)
-- [Claude Science](product-claude-science.md)
-- [Claude Security](product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](claude-mythos.md)
-- [Opus](claude-opus.md)
-- [Sonnet](claude-sonnet.md)
-- [Haiku](claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-
-## Industries
-
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-## Programs
-
-- [Campus](programs-campus.md)
-- [Frontier Academy](programs-frontier-academy.md)
-- [Scientists](programs-team-plan-for-scientists.md)
-- [Startups](programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)

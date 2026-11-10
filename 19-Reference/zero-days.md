@@ -2,7 +2,7 @@
 title: "LLM-discovered 0 days \\ Anthropic"
 source_url: "https://www.anthropic.com/research/zero-days"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:47Z"
+fetched_at: "2026-10-24T06:27:02Z"
 tags: ["news-research"]
 ---
 
@@ -162,7 +162,7 @@ This is ongoing work, and we'll have more to share soon—including what we're l
 
 - *Updated the author list*
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

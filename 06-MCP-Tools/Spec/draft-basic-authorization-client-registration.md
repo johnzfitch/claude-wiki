@@ -2,11 +2,14 @@
 title: "Client Registration - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/authorization/client-registration"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:15Z"
+fetched_at: "2026-11-09T06:25:44Z"
+last_modified: "Mon, 09 Nov 2026 03:10:18 GMT"
 tags: ["cli", "mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Client ID Metadata Documents](#client-id-metadata-documents)
   - [Implementation Requirements](#implementation-requirements)
@@ -44,20 +47,20 @@ Clients supporting all options **SHOULD** use the following priority order:
 
 Client ID Metadata Documents
 
-MCP clients and authorization servers **SHOULD** support OAuth Client ID Metadata Documents as specified in [OAuth Client ID Metadata Document](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-00) for client registration. This approach enables clients to use HTTPS URLs as client identifiers, where the URL points to a JSON document containing client metadata. This addresses the common MCP scenario where servers and clients have no pre-existing relationship.
+MCP clients and authorization servers **SHOULD** support OAuth Client ID Metadata Documents as specified in [OAuth Client ID Metadata Document](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-03) for client registration. This approach enables clients to use HTTPS URLs as client identifiers, where the URL points to a JSON document containing client metadata. This addresses the common MCP scenario where servers and clients have no pre-existing relationship.
 
 
 [​](#implementation-requirements)
 
 Implementation Requirements
 
-MCP implementations supporting Client ID Metadata Documents **MUST** follow the requirements specified in [OAuth Client ID Metadata Document](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-00). Key requirements include: **For MCP Clients:**
+MCP implementations supporting Client ID Metadata Documents **MUST** follow the requirements specified in [OAuth Client ID Metadata Document](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-03). Key requirements include: **For MCP Clients:**
 
 - Clients **MUST** host their metadata document at an HTTPS URL following RFC requirements
 - The `client_id` URL **MUST** use the “https” scheme and contain a path component, e.g. `https://example.com/client.json`
 - The metadata document **MUST** include at least the following properties: `client_id`, `client_name`, `redirect_uris`
 - Clients **MUST** ensure the `client_id` value in the metadata matches the document URL exactly
-- Clients **MAY** use `private_key_jwt` for client authentication (e.g., for requests to the token endpoint) with appropriate JWKS configuration as described in [Section 6.2 of Client ID Metadata Document](https://www.ietf.org/archive/id/draft-ietf-oauth-client-id-metadata-document-00.html#section-6.2)
+- Clients **MAY** use `private_key_jwt` for client authentication (e.g., for requests to the token endpoint) with appropriate JWKS configuration as described in [Section 5 of Client ID Metadata Document](https://www.ietf.org/archive/id/draft-ietf-oauth-client-id-metadata-document-03.html#section-5)
 
 **For Authorization Servers:**
 
@@ -66,7 +69,7 @@ MCP implementations supporting Client ID Metadata Documents **MUST** follow the 
 - **SHOULD** cache metadata respecting HTTP cache headers
 - **MUST** validate redirect URIs presented in an authorization request against those in the metadata document
 - **MUST** validate the document structure is valid JSON and contains required fields
-- **SHOULD** follow the security considerations in [Section 6 of Client ID Metadata Document](https://www.ietf.org/archive/id/draft-ietf-oauth-client-id-metadata-document-00.html#section-6) and in [Client ID Metadata Document Security](draft-basic-authorization-security-considerations.md#client-id-metadata-document-security)
+- **SHOULD** follow the security considerations in [Section 10 of Client ID Metadata Document](https://www.ietf.org/archive/id/draft-ietf-oauth-client-id-metadata-document-03.html#section-10) and in [Client ID Metadata Document Security](specification-draft-basic-authorization-security-considerations.md#client-id-metadata-document-security)
 
 
 [​](#example-metadata-document)

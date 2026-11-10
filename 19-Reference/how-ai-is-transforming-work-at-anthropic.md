@@ -2,7 +2,7 @@
 title: "How AI is transforming work at Anthropic \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:05Z"
+fetched_at: "2026-10-24T06:26:38Z"
 tags: ["claude-code", "news-research"]
 ---
 
@@ -329,7 +329,7 @@ Our Claude Code analysis uses proportionate sampling across time periods, which 
 
 Finally, this research was conducted in August 2025 when Claude Sonnet 4 and Claude Opus 4 were our state-of-the-art models. Given the rapid pace of AI development, the patterns we observed may have already shifted as newer models become available.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

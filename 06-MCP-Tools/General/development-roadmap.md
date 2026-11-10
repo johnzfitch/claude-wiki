@@ -2,7 +2,7 @@
 title: "Roadmap - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/development/roadmap"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-21T06:28:35Z"
+fetched_at: "2026-10-24T06:25:43Z"
 tags: ["mcp"]
 ---
 
@@ -50,7 +50,7 @@ Priority Areas
 
 1. Agentic Messaging Primitives
 
-Core Maintainers: [**Caitie McCaffrey**](https://github.com/CaitieM20), [**Clare Liguori**](https://github.com/clareliguori), [**Peter Alexander**](https://github.com/pja-ant) Agentic workloads need [messaging patterns](../Spec/2026-07-28-basic-patterns.md) beyond request and response: work that runs for minutes, servers that push, results that stream, and a way to steer work mid-flight. MCP has grown a set of concepts for this, including [Tasks](../Extensions/extensions-tasks-overview.md), [`subscriptions/listen`](../Spec/2026-07-28-basic-patterns-subscriptions.md), and [progress notifications](../Spec/draft-basic-patterns-progress.md), spread across multiple Working Groups. The risk is three answers to “the server isn’t done yet” that don’t share a lifecycle, a cancellation model, or an error surface. We want them to compose. **This roadmap period:**
+Core Maintainers: [**Caitie McCaffrey**](https://github.com/CaitieM20), [**Clare Liguori**](https://github.com/clareliguori), [**Peter Alexander**](https://github.com/poita) Agentic workloads need [messaging patterns](../Spec/2026-07-28-basic-patterns.md) beyond request and response: work that runs for minutes, servers that push, results that stream, and a way to steer work mid-flight. MCP has grown a set of concepts for this, including [Tasks](../Extensions/extensions-tasks-overview.md), [`subscriptions/listen`](../Spec/2026-07-28-basic-patterns-subscriptions.md), and [progress notifications](../Spec/draft-basic-patterns-progress.md), spread across multiple Working Groups. The risk is three answers to “the server isn’t done yet” that don’t share a lifecycle, a cancellation model, or an error surface. We want them to compose. **This roadmap period:**
 
 - **Server-initiated events**: [Tasks & Events WG](../Community/community-working-groups-tasks-events.md). Channels and subscriptions for push delivery, including webhooks. As we take on asynchronous workloads through Tasks and other events, we need extensions that let servers tell clients when work has finished, without relying purely on expensive client-side polling.
 - **A composition review**: [Tasks & Events](../Community/community-working-groups-tasks-events.md) and Transports WGs, with the [Agents](../Community/community-interest-groups-agents.md) IG. Primitives in the making, such as Tasks and Triggers, need to compose cleanly with each other and fit concrete use cases.
@@ -86,7 +86,7 @@ Beyond these, several other topics are under discussion and may come into scope 
 
 4. Improved Primitives
 
-Core Maintainers: [**Kurtis Van Gent**](https://github.com/kurtisvg), [**Peter Alexander**](https://github.com/pja-ant), [**Den Delimarsky**](https://github.com/localden) MCP’s tool calling interface has served well. However, `tools/call` allows returning both `content` and `structuredContent` at the same time, which has confused server and client authors alike and produced diverging implementations. We want to spend this roadmap period improving the shape of the `tools/call` interface for more consistent semantics. We also hear repeatedly from the community that servers need more options to guide clients through large sets of tools, resources, and other primitives, so we’re starting a dedicated effort around **progressive discovery** to define what an experimental server-side discovery mechanism would look like. **This roadmap period:**
+Core Maintainers: [**Kurtis Van Gent**](https://github.com/kurtisvg), [**Peter Alexander**](https://github.com/poita), [**Den Delimarsky**](https://github.com/localden) MCP’s tool calling interface has served well. However, `tools/call` allows returning both `content` and `structuredContent` at the same time, which has confused server and client authors alike and produced diverging implementations. We want to spend this roadmap period improving the shape of the `tools/call` interface for more consistent semantics. We also hear repeatedly from the community that servers need more options to guide clients through large sets of tools, resources, and other primitives, so we’re starting a dedicated effort around **progressive discovery** to define what an experimental server-side discovery mechanism would look like. **This roadmap period:**
 
 - **Tool result shape**: Core Primitives WG (forming during this roadmap period). Redesign the `tools/call` interface to resolve fidelity disparities among return types and streamline the handling of structured and unstructured output.
 - **Progressive discovery**: Core Primitives WG. Clients learn a server’s tools and resources as they need them instead of ingesting the full catalog up front, with a defined interaction with the caching work under [HTTP-Native Transport Unification and Hardening](#2-http-native-transport-unification-and-hardening).

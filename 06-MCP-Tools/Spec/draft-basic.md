@@ -2,11 +2,14 @@
 title: "Overview - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:16Z"
+fetched_at: "2026-10-31T06:24:47Z"
+last_modified: "Fri, 30 Oct 2026 21:03:55 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Messages](#messages)
   - [Requests](#requests)
@@ -64,7 +67,7 @@ All messages between MCP clients and servers **MUST** follow the [JSON-RPC 2.0](
 
 Requests
 
-[Requests](2026-07-28-schema.md#jsonrpcrequest) are sent from the client to the server, to initiate an operation.
+[Requests](draft-schema.md#jsonrpcrequest) are sent from the client to the server, to initiate an operation.
 
 ```python
 {
@@ -93,7 +96,7 @@ Responses are sent in reply to requests, containing either the result or error o
 
 Result Responses
 
-[Result responses](2026-07-28-schema.md#jsonrpcresultresponse) are sent when the operation completes successfully.
+[Result responses](draft-schema.md#jsonrpcresultresponse) are sent when the operation completes successfully.
 
 ```python
 {
@@ -126,7 +129,7 @@ The `resultType` field in a result indicates the type of the result being return
 
 Error Responses
 
-[Error responses](2026-07-28-schema.md#jsonrpcerrorresponse) are sent when the operation fails or encounters an error.
+[Error responses](draft-schema.md#jsonrpcerrorresponse) are sent when the operation fails or encounters an error.
 
 ```python
 {
@@ -153,15 +156,15 @@ Error Codes
 MCP uses the standard JSON-RPC 2.0 error codes (`-32700`, `-32600` to `-32603`) for general protocol failures. JSON-RPC 2.0 reserves the range `-32000` to `-32099` for implementation-defined server errors. MCP partitions this range as follows:
 
 - **`-32000` to `-32019` — legacy.** Codes in this sub-range were allocated by implementations before this policy was introduced. New codes **MUST NOT** be allocated in this sub-range, and new implementations **SHOULD NOT** use codes from this sub-range at all. Apart from `-32002` (see below), receivers **MUST NOT** assume any specific meaning for these codes.
-- **`-32020` to `-32099` — reserved for the MCP specification.** Error codes in this sub-range are defined exclusively by the MCP specification and recorded in the [schema](2026-07-28-schema.md). Implementations **MUST NOT** emit any code from this sub-range that is not defined by this specification and **MUST** use defined codes only with their specified meanings.
+- **`-32020` to `-32099` — reserved for the MCP specification.** Error codes in this sub-range are defined exclusively by the MCP specification and recorded in the [schema](draft-schema.md). Implementations **MUST NOT** emit any code from this sub-range that is not defined by this specification and **MUST** use defined codes only with their specified meanings.
 
 MCP defines the following error codes:
 
-| Code     | Name                                                                                                  |
-|----------|-------------------------------------------------------------------------------------------------------|
-| `-32020` | [`HeaderMismatch`](2026-07-28-schema.md#headermismatcherror)                                   |
-| `-32021` | [`MissingRequiredClientCapability`](2026-07-28-schema.md#missingrequiredclientcapabilityerror) |
-| `-32022` | [`UnsupportedProtocolVersion`](2026-07-28-schema.md#unsupportedprotocolversionerror)           |
+| Code | Name |
+|----|----|
+| `-32020` | [`HeaderMismatch`](draft-schema.md#headermismatcherror) |
+| `-32021` | [`MissingRequiredClientCapability`](draft-schema.md#missingrequiredclientcapabilityerror) |
+| `-32022` | [`UnsupportedProtocolVersion`](draft-schema.md#unsupportedprotocolversionerror) |
 
 Codes defined by earlier protocol versions remain reserved and will not be reused. Implementations of this protocol version **MUST NOT** emit these codes:
 
@@ -175,7 +178,7 @@ Errors that are purely local to an implementation (for example, a request timeou
 
 Notifications
 
-[Notifications](2026-07-28-schema.md#jsonrpcnotification) are sent from the client to the server or vice versa, as a one-way message. The receiver **MUST NOT** send a response.
+[Notifications](draft-schema.md#jsonrpcnotification) are sent from the client to the server or vice versa, as a one-way message. The receiver **MUST NOT** send a response.
 
 ```python
 {
@@ -224,7 +227,7 @@ For a walkthrough of how the per-request model maps to SDK code, see the [Archit
 
 Auth
 
-MCP provides an [Authorization](2026-07-28-basic-authorization.md) framework for use with HTTP. Implementations using an HTTP-based transport **SHOULD** conform to this specification, whereas implementations using STDIO transport **SHOULD NOT** follow this specification, and instead retrieve credentials from the environment. Additionally, clients and servers **MAY** negotiate their own custom authentication and authorization strategies. For further discussions and contributions to the evolution of MCP’s auth mechanisms, join us in [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) to help shape the future of the protocol!
+MCP provides an [Authorization](draft-basic-authorization.md) framework for use with HTTP. Implementations using an HTTP-based transport **SHOULD** conform to this specification, whereas implementations using STDIO transport **SHOULD NOT** follow this specification, and instead retrieve credentials from the environment. Additionally, clients and servers **MAY** negotiate their own custom authentication and authorization strategies. For further discussions and contributions to the evolution of MCP’s auth mechanisms, join us in [GitHub Discussions](https://github.com/modelcontextprotocol/specification/discussions) to help shape the future of the protocol!
 
 
 [​](#schema)
@@ -346,30 +349,30 @@ The `_meta` property/parameter is used by MCP to allow clients and servers to at
 
 **Reserved keys:** The following `_meta` keys are reserved by this specification:
 
-| Key                                          | Description                                                 | Defined in                                                         |
-|----------------------------------------------|-------------------------------------------------------------|--------------------------------------------------------------------|
-| `progressToken`                              | Opts the request into progress notifications                | [Progress](draft-basic-patterns-progress.md)           |
-| `io.modelcontextprotocol/protocolVersion`    | Protocol version for a request                              | Per-request protocol fields (below)                                |
-| `io.modelcontextprotocol/clientInfo`         | Client name and version                                     | Per-request protocol fields (below)                                |
-| `io.modelcontextprotocol/clientCapabilities` | Client capabilities relevant to a request                   | Per-request protocol fields (below)                                |
-| `io.modelcontextprotocol/logLevel`           | Minimum log level the server should emit for a request      | [Logging](2026-07-28-server-utilities-logging.md)           |
-| `io.modelcontextprotocol/subscriptionId`     | Correlates a notification with its originating subscription | [Subscriptions](2026-07-28-basic-patterns-subscriptions.md) |
-| `traceparent`, `tracestate`, `baggage`       | OpenTelemetry trace context propagation                     | OpenTelemetry trace context (below)                                |
+| Key | Description | Defined in |
+|----|----|----|
+| `progressToken` | Opts the request into progress notifications | [Progress](draft-basic-patterns-progress.md) |
+| `io.modelcontextprotocol/protocolVersion` | Protocol version for a request | Per-request protocol fields (below) |
+| `io.modelcontextprotocol/clientInfo` | Client name and version | Per-request protocol fields (below) |
+| `io.modelcontextprotocol/clientCapabilities` | Client capabilities relevant to a request | Per-request protocol fields (below) |
+| `io.modelcontextprotocol/logLevel` | Minimum log level the server should emit for a request | [Logging](2026-07-28-server-utilities-logging.md) |
+| `io.modelcontextprotocol/subscriptionId` | Correlates a notification with its originating subscription | [Subscriptions](2026-07-28-basic-patterns-subscriptions.md) |
+| `traceparent`, `tracestate`, `baggage` | OpenTelemetry trace context propagation | OpenTelemetry trace context (below) |
 
 Official [extensions](draft-basic-versioning.md#extension-negotiation) define additional `_meta` keys under the `io.modelcontextprotocol/` prefix, and third-party extensions use their own vendor prefix. In both cases the keys are specified in the extension’s documentation. **Per-request protocol fields:** Client requests carry the following `io.modelcontextprotocol/*` fields in `_meta`; fields marked as required **MUST** be included on every request. Servers use these to identify the protocol version and capabilities in use without relying on any prior connection state. See [Versioning and Compatibility](draft-basic-versioning.md) for version negotiation rules.
 
-| Key                                          | Type                 | Required | Description                                               |
-|----------------------------------------------|----------------------|----------|-----------------------------------------------------------|
-| `io.modelcontextprotocol/protocolVersion`    | `string`             | Yes      | Protocol version for this request (e.g., `"2026-07-28"`)  |
-| `io.modelcontextprotocol/clientInfo`         | `Implementation`     | No       | Client name and version                                   |
-| `io.modelcontextprotocol/clientCapabilities` | `ClientCapabilities` | Yes      | Client capabilities relevant to this request              |
-| `io.modelcontextprotocol/logLevel`           | `LoggingLevel`       | No       | Minimum log level the server should emit for this request |
+| Key | Type | Required | Description |
+|----|----|----|----|
+| `io.modelcontextprotocol/protocolVersion` | `string` | Yes | Protocol version for this request (e.g., `"2026-07-28"`) |
+| `io.modelcontextprotocol/clientInfo` | `Implementation` | No | Client name and version |
+| `io.modelcontextprotocol/clientCapabilities` | `ClientCapabilities` | Yes | Client capabilities relevant to this request |
+| `io.modelcontextprotocol/logLevel` | `LoggingLevel` | No | Minimum log level the server should emit for this request |
 
-A request missing any required field is malformed; the server **MUST** reject it with JSON-RPC error code `-32602` (Invalid params). On HTTP, the response status **MUST** be `400 Bad Request`. Clients **SHOULD** include `io.modelcontextprotocol/clientInfo` on every request unless specifically configured not to do so. A server **MUST NOT** rely on capabilities the client has not declared. If processing a request requires a capability the client did not include in `io.modelcontextprotocol/clientCapabilities`, the server **MUST** return a [`MissingRequiredClientCapabilityError`](2026-07-28-schema.md#missingrequiredclientcapabilityerror) (`-32021`) whose `data.requiredCapabilities` lists the missing capabilities. On HTTP, the response status **MUST** be `400 Bad Request`. **Per-response protocol fields:** Servers **SHOULD** include the following `io.modelcontextprotocol/*` field in every result’s `_meta`, unless specifically configured not to do so, to identify themselves without relying on any prior connection state:
+A request missing any required field is malformed; the server **MUST** reject it with JSON-RPC error code `-32602` (Invalid params). On HTTP, the response status **MUST** be `400 Bad Request`. Clients **SHOULD** include `io.modelcontextprotocol/clientInfo` on every request unless specifically configured not to do so. A server **MUST NOT** rely on capabilities the client has not declared. If processing a request requires a capability the client did not include in `io.modelcontextprotocol/clientCapabilities`, the server **MUST** return a [`MissingRequiredClientCapabilityError`](draft-schema.md#missingrequiredclientcapabilityerror) (`-32021`) whose `data.requiredCapabilities` lists the missing capabilities. On HTTP, the response status **MUST** be `400 Bad Request`. **Per-response protocol fields:** Servers **SHOULD** include the following `io.modelcontextprotocol/*` field in every result’s `_meta`, unless specifically configured not to do so, to identify themselves without relying on any prior connection state:
 
-| Key                                  | Type             | Required | Description             |
-|--------------------------------------|------------------|----------|-------------------------|
-| `io.modelcontextprotocol/serverInfo` | `Implementation` | No       | Server name and version |
+| Key | Type | Required | Description |
+|----|----|----|----|
+| `io.modelcontextprotocol/serverInfo` | `Implementation` | No | Server name and version |
 
 `io.modelcontextprotocol/clientInfo` and `io.modelcontextprotocol/serverInfo` are self-reported by the sender and are not verified by the protocol. They are intended for display, logging, and debugging. Implementations **SHOULD NOT** use them to change the behavior of the client or server, and **SHOULD NOT** rely on them for security decisions.
 

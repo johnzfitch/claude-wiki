@@ -2,7 +2,7 @@
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:02Z"
+fetched_at: "2026-11-09T06:25:45Z"
 tags: ["enterprise", "security"]
 ---
 

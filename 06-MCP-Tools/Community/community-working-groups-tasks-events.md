@@ -2,7 +2,7 @@
 title: "Tasks and Events Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/tasks-events"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-10-21T06:28:41Z"
+fetched_at: "2026-10-24T06:26:24Z"
 tags: ["mcp", "mcp-community"]
 ---
 
@@ -90,7 +90,7 @@ Leadership
 | Role | Name             | Organization        | GitHub                                             | Term    |
 |------|------------------|---------------------|----------------------------------------------------|---------|
 | Lead | Clare Liguori    | Amazon Web Services | [@clareliguori](https://github.com/clareliguori)   | Initial |
-| Lead | Peter Alexander  | Anthropic           | [@pja-ant](https://github.com/pja-ant)             | Initial |
+| Lead | Peter Alexander  | \-                  | [@poita](https://github.com/poita)                 | Initial |
 | Lead | Luca Chang       | Amazon Web Services | [@LucaButBoring](https://github.com/LucaButBoring) | Initial |
 | Lead | Caitie McCaffrey | Microsoft           | [@CaitieM20](https://github.com/CaitieM20)         | Initial |
 
@@ -118,7 +118,7 @@ Membership
 | Name             | Organization        | GitHub                                             | Discord | Level |
 |------------------|---------------------|----------------------------------------------------|---------|-------|
 | Clare Liguori    | Amazon Web Services | [@clareliguori](https://github.com/clareliguori)   |         | Lead  |
-| Peter Alexander  | Anthropic           | [@pja-ant](https://github.com/pja-ant)             |         | Lead  |
+| Peter Alexander  | \-                  | [@poita](https://github.com/poita)                 |         | Lead  |
 | Luca Chang       | Amazon Web Services | [@LucaButBoring](https://github.com/LucaButBoring) |         | Lead  |
 | Caitie McCaffrey | Microsoft           | [@CaitieM20](https://github.com/CaitieM20)         |         | Lead  |
 

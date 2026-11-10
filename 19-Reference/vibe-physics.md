@@ -2,9 +2,11 @@
 title: "Vibe physics: The AI grad student \\ Anthropic"
 source_url: "https://www.anthropic.com/research/vibe-physics"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:53Z"
+fetched_at: "2026-11-03T06:24:30Z"
 tags: ["news-research"]
 ---
+
+### Chapter 01: Who am I?
 
 # **Vibe physics: **The AI grad student
 
@@ -39,6 +41,8 @@ tags: ["news-research"]
 
   See more...
 
+*Can AI do theoretical physics? In this guest post, professor of physics [Matthew Schwartz](https://www.physics.harvard.edu/people/facpages/schwartz) decided to find out by supervising Claude through a real research calculation, start to finish, without ever touching a file himself. His account of what happened is below.*
+
 Related articles
 
 - Science
@@ -48,8 +52,6 @@ Related articles
   [The missing map of the sky](the-missing-map-of-the-sky.md)
 
 [View more](https://www.anthropic.com/search?topic=discovery)
-
-**Can AI do theoretical physics? In this guest post, professor of physics [Matthew Schwartz](https://www.physics.harvard.edu/people/facpages/schwartz) decided to find out by supervising Claude through a real research calculation, start to finish, without ever touching a file himself. His account of what happened is below.**
 
 #### Summary
 

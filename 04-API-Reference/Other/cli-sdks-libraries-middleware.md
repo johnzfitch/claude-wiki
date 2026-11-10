@@ -2,53 +2,9 @@
 title: "SDK middleware - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/middleware"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:37:49Z"
+fetched_at: "2026-11-05T06:37:08Z"
 tags: ["api", "cli", "sdk"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fmiddleware)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Client SDKs
 
 # SDK middleware
 
@@ -56,11 +12,19 @@ Libraries and integrations
 
 
 
-Intercept and modify the SDK's requests and responses.
+Intercept and modify the SDK’s requests and responses.
 
 Copy page
 
 
+
+SDK middleware
+
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsAvailable
+
+[Cloud platforms](#availability-feature-support)  
+All platforms
 
 The Claude SDK provides a middleware (or interceptor) hook that lets you run code before a request is sent and after the response is received. Use middleware for cross-cutting concerns such as logging, custom retries, request annotation, and refusal fallback handling.
 
@@ -107,14 +71,41 @@ client = Anthropic(middleware=[logging_middleware])
 
 ## Middleware ordering
 
-When you register multiple middleware, they apply in the order given: the first middleware's "before" code runs first, and its "after" code runs last. Middleware registered on the client runs before middleware passed as a per-request option.
+When you register multiple middleware, they apply in the order given: the first middleware’s “before” code runs first, and its “after” code runs last. Middleware registered on the client runs before middleware passed as a per-request option.
 
 In the Go SDK, repeated `option.WithMiddleware` calls concatenate (client first, then method). In the other SDKs, pass an array; later entries wrap inner.
 
 ## Replacing the HTTP client
 
-The SDK also accepts a custom HTTP client (for proxy configuration, custom TLS, or connection pooling). Only one HTTP client is used per SDK client; setting it replaces the default. The custom HTTP client receives requests after all middleware has run.
+The SDK also accepts a custom HTTP client (for proxy configuration, custom TLS, or connection pooling). Only one HTTP client is used for each SDK client; setting it replaces the default. The custom HTTP client receives requests after all middleware has run.
 
 ## Built-in middleware
 
 The SDK ships a refusal-fallback middleware that automatically retries a request Claude declines (`stop_reason: "refusal"`) on a fallback model. [Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md) lists the models whose safety classifiers can decline requests, and [Detect and retry on a fallback model](../Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback) covers setup and per-language examples.
+
+## Availability
+
+SDK middleware is available or in beta, depending on the API.
+
+### API support
+
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+StatusAvailable
+
+Cloud platforms
+
+- All supported platforms
+
+[Managed Agents](managed-agents-overview.md)
+
+Usage
+
+Runs on your SDK client’s calls to the Managed Agents API. It does not see the model calls the agent makes inside its loop.
+
+StatusBeta
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)

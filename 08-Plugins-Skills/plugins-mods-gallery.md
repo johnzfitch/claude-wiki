@@ -2,11 +2,13 @@
 title: "Interface gallery for mods - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/gallery"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-21T06:28:53Z"
+fetched_at: "2026-10-28T06:36:04Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Try a sample](#try-a-sample)
 - [Pick an element](#pick-an-element)
@@ -27,6 +29,7 @@ tags: ["claude-code", "plugins"]
   - [Raster](#raster)
   - [Svg](#svg)
   - [Image and Client](#image-and-client)
+  - [Draw an Image inside tmux](#draw-an-image-inside-tmux)
 - [See where a mod can draw](#see-where-a-mod-can-draw)
 - [Next steps](#next-steps)
 
@@ -310,7 +313,7 @@ A button that has the focus draws in inverse video. Here the user has pressed Ta
 
 `Input`
 
-An `Input` is a one-line text field that runs `onSubmit` when the user presses Enter:
+An `Input` is a text field that holds one line by default and runs `onSubmit` when the user presses Enter:
 
 ```python
 Input({
@@ -328,6 +331,24 @@ Without the focus, the field shows its label and its placeholder:
 With the focus, the label turns bold, a cursor appears, and the `submitLabel` shows after `⏎`:
 
 Typing replaces the placeholder:
+
+Set `rows` to 2 or more for a field that holds several lines, such as a note or a commit message:
+
+```python
+Input({
+  key: 'note',
+  label: 'Note',
+  placeholder: 'Write a note',
+  rows: 4,
+  onSubmit: noop,
+})
+```
+
+The terminal and the Desktop app draw the rows. In the VS Code extension, the field holds one line. `rows` requires Claude Code v2.1.301 or later. On earlier versions the field holds one line. The field takes up the number of rows you set, even when it’s empty, up to the height of the pane or band it’s drawn in. While the field has focus, longer text scrolls inside it.
+
+- In the terminal, Enter still submits. There, the user starts a new line by typing a backslash and then pressing Enter, or by pressing Shift+Enter where [the terminal emulator supports it](../02-Claude-Code-CLI/terminal-config.md#enter-multiline-prompts). Those are the same keys as in the prompt.
+- In the terminal, Up and Down move between the field’s rows. From its first and last row they move to the control before or after.
+- `onSubmit` and `onInput` receive the whole text with its lines joined by `\n`.
 
 
 [​](#select)
@@ -416,12 +437,38 @@ Two more elements have no sample here. `Image` draws a PNG or raw pixels in the 
 
 In any other terminal, the user sees the `Image`’s `alt` text, dimmed, in place of the picture. Write `alt` text that stands on its own, because it also shows in these cases, among others:
 
-- **tmux and screen**: a session running inside tmux or screen, in any terminal.
+- **GNU screen**: a session running inside screen, in any terminal.
+- **tmux**: a session running inside tmux that misses a [requirement for drawing inside tmux](#draw-an-image-inside-tmux).
 - **Background sessions**: every [background session](../09-Agents-Patterns/agent-view.md), whatever terminal it’s attached from.
 - **iTerm2 outside fullscreen rendering**: in iTerm2 the picture draws only under [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md), and not while [`CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT`](../02-Claude-Code-CLI/env-vars.md) is set to `1`. To see the picture, run `/tui fullscreen` at the Claude Code prompt and leave that variable unset.
-- **A file path source in iTerm2**: iTerm2 draws an `Image` whose `source` prop holds `png` or `rgba` bytes, and shows the `alt` text for one whose `source` names a `file`. If your mod has iTerm2 users, pass the picture as base64 in `source.png` or `source.rgba` rather than as a path in `source.file`.
+- **A file path source in iTerm2 or tmux**: in iTerm2 and inside tmux, an `Image` whose `source` names a `file` shows the `alt` text instead of the picture. If your mod has iTerm2 or tmux users, pass the picture as base64 in `source.png` or `source.rgba` rather than as a path in `source.file`.
 
-If your mod’s users see the dimmed text in a terminal that draws kitty graphics protocol images with Unicode placeholders, they can set [`CLAUDE_CODE_FORCE_TERMINAL_IMAGES`](../02-Claude-Code-CLI/env-vars.md) to `1`. Inside tmux or screen that doesn’t help: the `alt` text goes away, and Claude Code sends the picture without wrapping it for tmux or screen passthrough.
+If your mod’s users see the dimmed text in a terminal that draws kitty graphics protocol images with Unicode placeholders, they can set [`CLAUDE_CODE_FORCE_TERMINAL_IMAGES`](../02-Claude-Code-CLI/env-vars.md) to `1`. They shouldn’t set it inside GNU screen, inside tmux older than 3.3, in a tmux popup, or with tmux’s `allow-passthrough` off. There they see no picture and a box in place of the `alt` text.
+
+
+[​](#draw-an-image-inside-tmux)
+
+Draw an `Image` inside tmux
+
+If an `Image` shows its `alt` text inside tmux, check these requirements along with the [other `alt` text cases](#image-and-client) such as a background session:
+
+- Claude Code v2.1.310 or later
+- tmux 3.3 or later
+- Claude Code runs in a tmux pane, not a tmux popup
+- tmux runs inside kitty 0.28 or later, Ghostty, or iTerm2 3.5 or later
+- The tmux options `focus-events` and `allow-passthrough` are `on`. Inside kitty or Ghostty, `allow-passthrough` can also be `all`.
+- Inside iTerm2, tmux runs [without `-CC`](../02-Claude-Code-CLI/fullscreen.md#use-with-tmux), [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md) is on, and `CLAUDE_CODE_ALT_SCREEN_FULL_REPAINT` is unset.
+- Inside iTerm2, the tmux window is no bigger than the iTerm2 window. To check, run `tmux display-message -p '#{window_bigger}'` in that tmux window. If it prints `1`, make the tmux window fit, then restart Claude Code.
+- The mod’s author passes the picture as `png` or `rgba` bytes, not as a `file` path. If you use a mod you didn’t write and the other requirements hold, ask its author to check this one.
+
+For each tmux option that isn’t already set as required, run its command in your shell:
+
+```python
+tmux set -g allow-passthrough on
+tmux set -g focus-events on
+```
+
+Then detach from tmux, attach again, and restart Claude Code. Restart it again whenever you attach tmux from a different terminal. To keep both options across tmux server restarts, [add both lines to `~/.tmux.conf`](../02-Claude-Code-CLI/terminal-config.md#configure-tmux) too.
 
 
 [​](#see-where-a-mod-can-draw)

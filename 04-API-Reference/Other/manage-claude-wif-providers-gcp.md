@@ -2,69 +2,9 @@
 title: "Use WIF with Google Cloud - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/wif-providers/gcp"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:20Z"
+fetched_at: "2026-11-05T06:36:20Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fwif-providers%2Fgcp)
-
-
-
-
-
-SearchCtrlK
-
-Organization
-
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
-
-Authentication
-
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
-
-Identity providers
-
-[AWS](manage-claude-wif-providers-aws.md)[Google Cloud](manage-claude-wif-providers-gcp.md)[Microsoft Entra ID](manage-claude-wif-providers-azure.md)[GitHub Actions](manage-claude-wif-providers-github-actions.md)[Kubernetes](manage-claude-wif-providers-kubernetes.md)[SPIFFE](manage-claude-wif-providers-spiffe.md)[Okta](manage-claude-wif-providers-okta.md)
-
-Monitoring
-
-[Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
-
-[OpenTelemetry](manage-claude-opentelemetry.md)
-
-Data & compliance
-
-[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
-
-[Access Transparency](manage-claude-access-transparency.md)
-
-[Encryption keys (CMEK)](manage-claude-cmek.md)
-
-[Inference hooks](manage-claude-inference-hooks.md)
-
-Compliance API
-
-[Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
-
-[Console](playground.md)
-
-[Admin](manage-claude-admin-api.md)Identity providers
 
 # Use WIF with Google Cloud
 
@@ -78,7 +18,7 @@ Federate Google Cloud workloads (Cloud Run, Cloud Functions, App Engine, GCE, GK
 
 
 
-Any Google Cloud compute environment with access to the instance metadata server (Cloud Run, Cloud Functions, App Engine, Compute Engine (GCE), and GKE with Workload Identity) can request a Google-signed identity token for its attached service account. The token's issuer is `https://accounts.google.com`, and Anthropic can validate it directly through standard OIDC discovery, with no extra Google Cloud configuration required.
+Any Google Cloud compute environment with access to the instance metadata server (Cloud Run, Cloud Functions, App Engine, Compute Engine (GCE), and GKE with Workload Identity) can request a Google-signed identity token for its attached service account. The token’s issuer is `https://accounts.google.com`, and Anthropic can validate it directly through standard OIDC discovery, with no extra Google Cloud configuration required.
 
 This guide shows how to register the Google issuer with Anthropic, bind a Google service account to an Anthropic service account, and have your workload exchange its identity token for a short-lived Claude API access token.
 
@@ -101,14 +41,12 @@ Cloud Run, Cloud Functions, App Engine, GCE
 
 Attach a dedicated service account to your service or instance:
 
-CLI
-
-
-
 ```python
 gcloud run deploy my-service \
   --service-account inference-worker@my-project.iam.gserviceaccount.com
 ```
+
+
 
 Inside the workload, the metadata server returns a signed identity token on demand. Request it with the `audience` you intend to register on the Anthropic side, and include `format=full` so the response carries the `email` claim:
 
@@ -121,15 +59,13 @@ Metadata-Flavor: Google
 
 Or, with the gcloud CLI:
 
-CLI
-
-
-
 ```python
 gcloud auth print-identity-token \
   --audiences="https://api.anthropic.com" \
   --include-email
 ```
+
+
 
 The SDK equivalents are shown in [Acquire and use the token](#acquire-and-use-the-token).
 
@@ -149,11 +85,11 @@ The decoded token payload looks like this:
 
 
 
-The `sub` claim is the Google service account's opaque numeric unique ID. The `email` claim is the human-readable service account address. Match on both `sub` and `email` in your federation rule.
+The `sub` claim is the Google service account’s opaque numeric unique ID. The `email` claim is the human-readable service account address. Match on both `sub` and `email` in your federation rule.
 
 GKE with Workload Identity
 
-Enable [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) on your cluster and bind your Kubernetes service account to a Google service account with the `iam.gke.io/gcp-service-account` annotation:
+Enable [GKE Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity) on your cluster and bind your Kubernetes service account to a Google service account with the `iam.gke.io/gcp-service-account` annotation:
 
 ```python
 apiVersion: v1
@@ -169,11 +105,11 @@ metadata:
 
 With this binding in place, the GKE metadata server returns a Google-signed token identical to the Cloud Run and GCE case: same `https://accounts.google.com` issuer, same `email` claim, same fetch URL. Configure Anthropic exactly as in the next section.
 
-A `format=full` token from GKE additionally includes `google.compute_engine.project_id`, `google.compute_engine.zone`, and `google.compute_engine.instance_name` claims, which you can reference in a federation rule's `condition` matcher (a CEL expression like `claims.google.compute_engine.project_id == "my-project"`) to scope access to a specific cluster or node pool.
+A `format=full` token from GKE additionally includes `google.compute_engine.project_id`, `google.compute_engine.zone`, and `google.compute_engine.instance_name` claims, which you can reference in a federation rule’s `condition` matcher (a CEL expression such as `claims.google.compute_engine.project_id == "my-project"`) to scope access to a specific cluster or node pool.
 
 
 
-If you do not want to bind Kubernetes service accounts to Google service accounts, GKE pods can instead use the cluster's own OIDC issuer (`https://container.googleapis.com/v1/projects/PROJECT/locations/REGION/clusters/CLUSTER`) with a projected `serviceAccountToken` volume. That path uses a per-cluster issuer rather than `accounts.google.com`. See [Use WIF with Kubernetes](manage-claude-wif-providers-kubernetes.md) for that pattern.
+If you do not want to bind Kubernetes service accounts to Google service accounts, GKE pods can instead use the cluster’s own OIDC issuer (`https://container.googleapis.com/v1/projects/PROJECT/locations/REGION/clusters/CLUSTER`) with a projected `serviceAccountToken` volume. That path uses a per-cluster issuer rather than `accounts.google.com`. See [Use WIF with Kubernetes](manage-claude-wif-providers-kubernetes.md) for that pattern.
 
 ## Configure Anthropic
 
@@ -193,7 +129,7 @@ The wizard creates these resources for you. Use the following values whether you
 
 
 
-**Federation rule:** Match on both the `sub` and `email` claims. `email` is the readable service-account address; `sub` is the service account's numeric unique ID, which Google never reuses, so pinning it protects the rule if the service account is deleted and a new one is later created with the same email. Find the unique ID with `gcloud iam service-accounts describe SA_EMAIL --format='value(uniqueId)'`.
+**Federation rule:** Match on both the `sub` and `email` claims. `email` is the readable service-account address; `sub` is the service account’s numeric unique ID, which Google never reuses, so pinning it protects the rule if the service account is deleted and a new one is later created with the same email. Find the unique ID with `gcloud iam service-accounts describe inference-worker@my-project.iam.gserviceaccount.com --format='value(uniqueId)'`.
 
 ```python
 {
@@ -224,17 +160,17 @@ Inside your Google Cloud workload, fetch the identity token from the metadata se
 
 cURL
 
+CLI
+
 Python
 
 TypeScript
 
+C#
+
 Go
 
 Java
-
-C#
-
-CLI
 
 PHP
 
@@ -277,7 +213,7 @@ message = client.messages.create(
 print(next(block.text for block in message.content if block.type == "text"))
 ```
 
-Google identity tokens expire after roughly one hour. Except in Java (see the comment in that example), the SDK re-invokes the token provider and re-exchanges automatically before expiry. For shell scripts that run longer than the access token's `expires_in`, refresh on a timer and repeat the exchange.
+Google identity tokens expire after roughly 1 hour. Except in Java (see the comment in that example), the SDK calls the token provider again and re-exchanges automatically before expiry. For shell scripts that run longer than the access token’s `expires_in`, refresh on a timer and repeat the exchange.
 
 ## Verify the setup
 
@@ -293,22 +229,22 @@ curl -sS -H "Metadata-Flavor: Google" \
   | jq -rR 'split(".")[1] | gsub("-";"+") | gsub("_";"/") | @base64d | fromjson'
 ```
 
-Check that `iss` is `https://accounts.google.com`, `aud` is `https://api.anthropic.com`, and `email` matches the value in your federation rule. Then run the exchange from the previous section. A successful exchange returns an `access_token` beginning with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange); the most common Google Cloud-side cause is the `email` claim missing (request the token with `format=full` so it is included).
+Check that `iss` is `https://accounts.google.com`, `aud` is `https://api.anthropic.com`, and `email` matches the value in your federation rule. Then run the exchange from the previous section. A successful exchange returns an `access_token` starting with `sk-ant-oat01-` and an `expires_in` value in seconds. If the exchange fails with the opaque `401` `authentication_error` response (message `Authentication failed`), check the [authentication history page](https://platform.claude.com/settings/workload-identity-federation?tab=history) in the Claude Console for the deny reason and see [Troubleshoot a failed exchange](manage-claude-wif-reference.md#troubleshoot-a-failed-exchange). The most common Google Cloud-side cause is the `email` claim missing (request the token with `format=full` so it is included).
 
 ## Scope your rule
 
 
 
-The Google `sub` claim is the service account's opaque numeric unique ID and has no stable prefix. A `subject_prefix` with a trailing `*` matches arbitrary service accounts across every Google Cloud project, and any of them could obtain a federated Anthropic token.
+The Google `sub` claim is the service account’s opaque numeric unique ID and has no stable prefix. A `subject_prefix` with a trailing `*` matches arbitrary service accounts across every Google Cloud project, and any of them could obtain a federated Anthropic token.
 
-Lock the rule's `match` block to the narrowest scope that fits your use case:
+Lock the rule’s `match` block to the narrowest scope that fits your use case:
 
 - **Match `sub` exactly:** Set the full numeric unique ID in `claims.sub` and never use `subject_prefix` for Google tokens.
 - **Pin the `email` claim:** Add `claims.email` alongside `sub` so both the stable ID and the readable address must match.
 - **Pin the audience:** Set `audience` to the exact value you request from the metadata server so tokens minted for other consumers are rejected.
-- **Pin the project on GKE:** For `format=full` tokens, add a `condition` such as `claims.google.compute_engine.project_id == "my-project"` to restrict the rule to one project's nodes.
+- **Pin the project on GKE:** For `format=full` tokens, add a `condition` such as `claims.google.compute_engine.project_id == "my-project"` to restrict the rule to one project’s nodes.
 
 ## Next steps
 
 - Read the [Workload Identity Federation](manage-claude-workload-identity-federation.md) page for the full resource model and SDK credential precedence.
-- Add a separate federation rule per environment (production, staging) so you can revoke one without affecting the others.
+- Add a separate federation rule for each environment (production, staging) so you can revoke one without affecting the others.

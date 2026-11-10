@@ -2,13 +2,11 @@
 title: "Account management FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 category: "21-Account-Support"
-fetched_at: "2026-10-23T06:29:01Z"
+fetched_at: "2026-11-09T06:25:45Z"
 tags: ["account", "enterprise"]
 ---
 
 # Account management FAQs
-
-August 6, 2026
 
 
 ## How do I change my team name?
@@ -21,7 +19,7 @@ It's not possible to change another user's name on their behalf, but a user can 
 
 1.  Log in to your Claude account.
 
-2.  Navigate to **[Settings \> General](https://claude.ai/settings/general)**.
+2.  Navigate to **Settings \> Account**.
 
 3.  Make edits to the "Full name" field and click "Save changes."
 

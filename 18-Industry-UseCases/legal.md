@@ -2,17 +2,17 @@
 title: "Claude legal solutions | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/legal"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-23T06:29:53Z"
-tags: ["case-studies", "enterprise", "security"]
+fetched_at: "2026-11-09T06:26:49Z"
+tags: ["case-studies"]
 ---
 
-# Claude Legal Solutions
+# Claude for legal teams
 
 Practice better judgment with Claude
 
-Claude handles research, drafting, and the assembly of legal work, so your team can focus on the calls only they can make.
+Claude’s ready-to-use artifacts are built for legal work, from scanning regulatory change to reviewing contracts to tracking renewals.
 
-[Contact sales](https://www.claude.com/contact-sales)[Try it now](https://claude.ai/)
+[Get started](https://claude.ai/artifacts?templates=legal)[Contact sales](https://www.claude.com/contact-sales)
 
 > “PI law presents some of the toughest challenges for AI: reasoning across large volumes of medical records and billing data, identifying critical facts, and executing complex workflows with consistency and accuracy. Claude Opus 4.8 delivers a new level of reasoning, reliability, and long-context performance. EvenUp adds proprietary PI data, domain expertise, and purpose-built workflows on top.”
 
@@ -88,27 +88,25 @@ Gerrit Beckhaus, Partner and Co-Head
 
 1/12
 
-## Built for legal work
+## Designed for the way your legal team already works
 
-Claude reviews contracts, surfaces case law, and drafts across the tools your team already uses. Every output can be traced back to its source, on infrastructure your risk and compliance teams trust.
+### Shaped with legal teams
 
-### Connected to your tools
+Designed with input from in-house teams, law firms, and legal tech partners to make working simpler through legal artifactsArtifactsLegal artifacts are ready-made templates you can edit to make yours., or tune Claude to your industry through pluginsPluginsLegal plugins combine tools, skills, and integrations to tune Claude to your industry.. Edit and steer any time, and drop in your playbooks and guidelines so Claude knows your organization and preferences on day one.
 
-Claude connects to iManage, NetDocuments, Docusign, Ironclad, and Thomson Reuters. No copy-paste, context switching, or re-explaining every time you start a new task.
+### Works where you do
 
-### Designed for your practice
+Claude works inside Word and Outlook, where your team already drafts and negotiates. Review counterparty paper against your playbook with tracked changes, without leaving the document.
 
-New plugins for commercial legal, corporate legal, IP, litigation and more — configured for your practice area, extensible with your team’s playbook and house style. Extend them with custom skills and connectors.
+### Connects to your sources
 
-### Works where lawyers do
+Skip the re-explaining, copy-pasting, and tab-switching. Claude connects to the tools your team already uses—from iManage and NetDocuments to Ironclad and Bloomberg Law.
 
-Use Claude for Word, Outlook, and the document management systems your team already uses. In Claude Cowork, delegate multi-step tasks and run skills to speed up your processes.
+### Built for privileged work
 
-### Confidentiality by design
+On Team and Enterprise plans, Anthropic doesn’t train on your content by default, and Enterprise admins set how long it’s retained. A lawyer stays in charge of the work and judgment. [Read our guidance on privilege and confidentiality.](../15-Claude-AI-Features/using-claude-for-legal-work-privilege-confidentiality-and-how-to-think-about-configuration.md)
 
-Enterprise security, full audit trails, no training on your data by default on Team and Enterprise plans. Claude clears the bar for sensitive matters and privileged work, so your team can focus on strategy and high-stakes work, worry-free.
-
-How Anthropic uses Claude  in legal
+How Anthropic uses Claude in legal
 
 Mark Pike, Associate General Counsel, shares how Anthropic's legal team uses Claude to build workflows that cut review times from days to hours—no coding required.
 
@@ -118,124 +116,71 @@ We're working with Free Law Project and the Justice Technology Association to ma
 
 [Learn more (opens in new tab)](nonprofits.md)
 
-Claude for the legal industry
+New: ready-to-use legal artifacts
 
-[Learn more (opens in new tab)](https://www.claude.com/resources/articles/claude-for-the-legal-industry)
+Explore our gallery of ready-made legal tools, built with legal teams, for the work your team does every day.
+
+[Read the announcement](https://claude.com/resources/articles/introducing-artifacts-for-legal-work)
 
 ## How legal teams use Claude
 
-Legal research
+Teams use legal artifacts, our new ready-to-use tools, across daily tasks. Ask Claude to tailor them, and add your own data and connectors to make them yours.
 
-M&A diligence
+[See all legal artifacts](https://claude.ai/artifacts?templates=legal)
 
-Contract redlining
+Tabular review
 
-Outside counsel management
+Regulatory tracking
 
-Regulatory and compliance
+Legal intake
 
-Prompt
+Jurisdiction surveys
 
-Pull a research framework on EU AI Act data minimization for high-risk systems. Cover Article 10 obligations, how Germany, France, and Italy implement, and notable enforcement actions in the past 12 months. Flag unsettled guidance and citations needing verification. Format as a brief, not a memo.
+Playbook review
 
-Connectors
+Matter tracking
 
-- [NetDocuments](https://www.claude.com/marketplace/connectors/netdocuments)
-- [CoCounsel Legal](https://www.claude.com/marketplace/connectors/cocounsel-legal)
+### See all your agreements in a tabular review
 
-**Research brief — for counsel review**
+Attach a set of agreements and Claude lays them out with one row per agreement and questions worth asking across the top. Every answer links to the exact passage it came from, risky ones are flagged, and a new column asks another question about every agreement.
 
-### EU AI Act, Article 10
+[Make it yours (opens in new tab)](https://claude.ai/artifacts?templates=legal&try=tabular-review)
 
-*Data minimization obligations for high-risk AI systems*
+### Track what’s coming and when
 
-**Scope:** Art. 10 · DE, FR, IT · 12-month enforcement
+Describe what your company does and where it operates. Claude places upcoming laws and regulations on a timeline grouped by topic, scores each for its impact on your business, and links every development to its official source.
 
- 
-###### Article 10 — key obligations
+[Make it yours (opens in new tab)](https://claude.ai/artifacts?templates=legal&try=regulatory-horizon-scan)
 
-Providers of high-risk AI systems must meet the following data and governance requirements. Each item is pinned to its source paragraph for verification.
+### Give every Legal question one front door
 
-- Datasets must be relevant, representative, and as error-free as possible.
-  - **Verified** Reg. (EU) 2024/1689, Art. 10(3)
-- Dataset origin, governance, and preparation steps must be documented.
-  - **Verified** Reg. (EU) 2024/1689, Art. 10(2)(a)–(c)
-- Datasets must be examined for biases affecting health, safety, or fundamental rights.
-  - **Verified** Reg. (EU) 2024/1689, Art. 10(2)(f)–(g)
-- Special-category data permitted for bias correction only where strictly necessary.
-  - **Confirm** Rg. (EU) 2024/1689, Art. 10(5); cross-ref. GDPR Art. 9(2)(g)
-- Operates alongside GDPR Art. 5(1)(c) — does not displace minimization.
-  - **Verified** AI Act Recital 67; cross-ref. Reg. (EU) 2016/679, Art. 5(1)(c)
+Add your approved guidance and who covers what. Colleagues ask in plain words, routine questions get an answer straight away, and everything else reaches the right lawyer with a status you can track: on time, at risk, late, or waiting on the requester.
 
-*Art. 10 obligations cascade into Art. 9 (risk management) and Art. 17 (quality management). Defined terms "training data," "validation data," and "testing data" (Art. 3) carry through; verify consistency where source materials predate the final adopted text.*
+[Make it yours (opens in new tab)](https://claude.ai/artifacts?templates=legal&try=legal-front-door)
 
- 
-###### Member state implementation
+### Compare the law across jurisdictions
 
-**Germany**
+Name a question and the countries or states that matter. Claude answers it for each one in a single table, marks where the answer is yes, no, or conditional, and links every cell to the law it relies on.
 
-- **Notable posture** BNetzA leads market surveillance; emphasis on dataset documentation.
-- **Open issue** BNetzA / Länder DPA allocation unsettled.
-- **Source pin** BMWK guidance, Mar. 2025
+[Make it yours (opens in new tab)](https://claude.ai/artifacts?templates=legal&try=survey-matrix)
 
- 
-**France**
+### Check contracts against your playbook
 
-- **Notable posture** CNIL active; strict-necessity test for Art. 10(5) processing.
-- **Open issue** National AI authority designation pending.
-- **Source pin** CNIL recommendation, 2024
+Attach your playbook and contracts to check. Each clause is marked standard, fallback, deviation, or missing, with quoted wording beside your position, and anything that needs sign-off goes to the right approver.
 
- 
-**Italy**
+[Make it yours (opens in new tab)](https://claude.ai/artifacts?templates=legal&try=playbook-deviation-board)
 
-- **Notable posture** Garante enforcing on training-data lawfulness ahead of phase-in.
-- **Open issue** Sequencing with AI Act timelines unclear.
-- **Source pin** Garante decision register
+### View each open matter and next steps
 
-*Cross-references not fully traced: French CNIL recommendations predate the final AI Act text — check whether "high-risk" scope mapping still aligns. Italian Garante decisions cite GDPR, not the AI Act; treat as analogous, not directly on point.*
+Bring your matter list and recent activity. Claude sorts each matter by stage, names its next step, and flags hearings, limitation dates, and offers about to run out.
 
- 
-###### Recent enforcement — last 12 months
+[Make it yours (opens in new tab)](https://claude.ai/artifacts?templates=legal&try=matter-board)
 
-- **Garante (Italy).** Training-data lawfulness in generative AI deployment. Penalty amount — confirm before relying.
-  - **Verified** Garante decision, 2024 (registry no. — confirm)
-- **CNIL (France).** Sanction on dataset documentation and lawful basis. Penalty amount — confirm before relying.
-  - **Confirm** CNIL deliberation — reference not located
-- **EDPB.** Opinion on AI training data and GDPR minimization — guidance instrument.
-  - **Verified** EPB Opinion 28/2024 (confirm number)
+Ready-to-use legal artifacts
 
- 
-###### Flag for counsel — unsettled and cross-cutting
+Artifacts for the legal work you do every day.
 
-Items below are unresolved at the regulatory level or depend on cross-references that should be re-traced before reliance.
-
-- Scope of Art. 10(5) strict-necessity test — guidance varies; cross-check against GDPR Art. 9(2)(g) and member state implementing law.
-- Interplay with GDPR Art. 5(1)(c) — not yet litigated; AI Act Recital 67 signals concurrent application but does not resolve overlap.
-- Documentation depth expected under Art. 10(2) — divergent national posture likely; BNetzA, CNIL, and the Garante have not aligned.
-- Defined-term consistency — "training data," "validation data," "testing data" (Art. 3) may not map cleanly onto pre-existing dataset taxonomies in client materials.
-
- 
-**Legal review required.** Claude-generated content — verify conclusions and citations before relying.
-
-### Legal research
-
-Ask Claude to surface relevant case law or regulatory guidance via Thomson Reuters. Get a structured memo with citations, not a list of links to dig through yourself.
-
-### Due diligence document review
-
-Connect Claude to a Box or Intralinks data room. Claude reads and categorizes the document set, flags material issues, and drafts the diligence summary. Work that used to take days of associate time.
-
-### Contract lifecycle
-
-Claude drafts the NDA or SOW in Word, routes it to Ironclad for CLM tracking, and surfaces status on request. The whole flow without leaving Claude.
-
-### Outside counsel and matter review
-
-Pull billing and matter data into Claude. Spot off-pattern entries, flag matters drifting against budget, and prep for relationship-partner conversations.
-
-### Regulatory compliance gap analysis
-
-Run a compliance gap analysis against a named framework. Claude pulls evidence from your systems, scores severity, and flags what needs attention before audit.
+[Browse artifacts (opens in new tab)](https://claude.ai/artifacts?templates=legal)
 
 ## Build legal products with Claude
 
@@ -243,19 +188,17 @@ Embed Claude into your legal platform or product through the API and Agent SDK.
 
 [Learn more](https://www.claude.com/platform/api)
 
-### MCP for legal data
+### Connectors for your legal data
 
-Connect your contract systems, document repositories, and matter data to Claude through Anthropic's open Model Context Protocol.
+Bring your contract systems, document repositories, and matter data into Claude through the open Model Context Protocol (MCP).
 
-### Frontier models
+### Models built for legal reasoning
 
-Claude leads on legal reasoning benchmarks across contract review, citation accuracy, and long-document comprehension.
+Claude is tested on contract review, citation accuracy, and long-document comprehension and its models meet high legal benchmarks.
 
-### Built for sensitive data
+### Configured for sensitive data
 
-Deploy in sandboxed containers with network controls, credential isolation, and audit logging built into the SDK.
-
-- 
+Run Claude in sandboxed containers, with network controls, credential isolation, and audit logging built into the SDK.
 
 - 
 
@@ -265,303 +208,53 @@ Deploy in sandboxed containers with network controls, credential isolation, and 
 
 - 
 
-## Tools made for the way you work
+- 
 
-### Claude for M365
+## Make Claude fit the way your team works
+
+### Claude for Microsoft 365
 
 Word is where legal work gets done. Claude handles full redlining with tracked changes, document comparison, and MSA-scale review without leaving the doc. It pulls in pleadings, prior versions, and Outlook context, drafts the next turn for your review, and tracks every change for the audit trail.
 
 [Learn more](https://www.claude.com/claude-for-microsoft-365)
 
-### Claude Cowork
+### Legal plugins
 
-Hand off multi-document matter tasks: drafting a memo against pleadings, preparing for a deposition. Like a trusted senior associate, you delegate to Claude and come back when it’s done, so you can do deeper work.
-
-[Learn more](../15-Claude-AI-Features/product-cowork.md)
-
-### Plugins
-
-Add practice-area plugins for contract review, NDA triage, compliance workflows, and more, all configurable to your organization's playbook and risk tolerances.
+Add practice-area plugins for contract review, NDA triage, compliance workflows, and more, all configurable to your organization’s playbook and risk tolerances.
 
 [Learn more](https://github.com/anthropics/claude-for-legal)
 
 ### Platform
 
-Integrate Claude directly into your CLM, matter management, or e-discovery systems. Build production-grade workflows on the same frontier models that firms like Freshfields and Quinn Emanuel do.
+Bring Claude into your contract lifecycle management, matter management, or e-discovery systems through the API or Agent SDK.
 
 [Learn more](https://www.claude.com/platform/api)
 
-## Claude connects to your legal ecosystem
+## Connect Claude to your legal ecosystem
 
-Matter management, research platforms, contract tools, and data rooms: finally all in one place.
+Browse connectors for your legal research, document management, and contract tools in one place.
 
-[Explore connectors](../04-API-Reference/Other/partners-mcp.md)
+[Browse the legal directory](https://claude.com/marketplace/connectors-plugins?categories=legal)
 
-## Legal resources
-
-
-How Anthropic's legal team cut review times from days to hours with Claude
-
-Blog
+## Claude for Legal resources
 
 
-How Claude helps legal teams handle the work that needs your judgment
+Introducing artifacts for legal work
 
 Blog
 
 
-Watch the Claude for Legal teams webinar
+Browse the legal artifact gallery
 
-Webinar
-
-
-Prep scattered documents for a compliance audit
-
-Use case
+Gallery
 
 
-Organize your legal workflows using Projects
-
-Use case
-
-
-Product guide: Claude for the legal industry
+Using Claude for legal work: privilege and confidentiality
 
 Guide
 
-## See what Claude does for legal teams
+## Bring your team’s legal work to Claude
 
-Whether you're an in-house team looking to scale or a firm building on Claude, we can help you figure out where to start.
+Claude handles the first pass on contracts, regulatory change, and renewals, so your team can spend its time on the decisions that need a lawyer.
 
-[Contact sales](https://www.claude.com/contact-sales)[Try it now](https://claude.ai/)
-
-[](https://www.claude.com/)
-
-© 2026 Anthropic PBC
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](customer-support.md)
-- [Cybersecurity](cybersecurity.md)
-- [Legal](legal.md)
-- [Sales](sales.md)
-
-## Industries
-
-- [Financial advisors](financial-advisors.md)
-- [Financial services](finance.md)
-- [Government](government.md)
-- [Healthcare](healthcare.md)
-- [Higher education](education.md)
-- [K-12 teachers](teachers.md)
-- [Life sciences](life-sciences.md)
-- [Nonprofits](nonprofits.md)
-- [Small business](small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-## Company
-
-- [Anthropic](https://www.anthropic.com/)
-- [Careers](https://www.anthropic.com/careers)
-- [Policy](https://www.anthropic.com/policy)
-- [Research](../19-Reference/anthropic-com-research.md)
-- [Anthropic news](../19-Reference/news.md)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](../19-Reference/announcing-our-updated-responsible-scaling-policy.md)
-- [Transparency](https://anthropic.com/transparency)
-
-## Terms and policies
-
-- Privacy choices
-- [Privacy policy](https://www.anthropic.com/legal/privacy)
-- [Responsible disclosure policy](https://www.anthropic.com/responsible-disclosure-policy)
-- [Terms of service: Commercial](https://www.anthropic.com/legal/commercial-terms)
-- [Terms of service: Consumer](https://www.anthropic.com/legal/consumer-terms)
-- [Terms of Service: US K-12](https://anthropic.com/legal/k12-terms)
-- [Data Processing Agreement: US K-12](https://anthropic.com/legal/k12-dpa)
-- [Usage Policy](https://www.anthropic.com/legal/aup)
-
-## Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [Claude Duet](../15-Claude-AI-Features/product-claude-duet.md)
-- [Claude Tag](../15-Claude-AI-Features/product-tag.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Download app](https://www.claude.com/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in](https://claude.ai/login)
-
-## Capabilities
-
-- [Artifacts](https://www.claude.com/features/artifacts)
-- [Design](../15-Claude-AI-Features/product-design.md)
-- [Connectors](https://www.claude.com/marketplace/connectors-plugins)
-- [Plugins](https://www.claude.com/marketplace/plugins)
-- [Skills](https://www.claude.com/skills)
-
-## Extensions
-
-- [Claude in Chrome](https://www.claude.com/claude-in-chrome)
-- [Claude for Google Workspace](https://www.claude.com/claude-for-google-workspace)
-- [Claude for Microsoft 365](https://www.claude.com/claude-for-microsoft-365)
-
-## Models
-
-- [Mythos (including Fable)](../15-Claude-AI-Features/claude-mythos.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-## Enterprise
-
-- [Overview](../17-Billing-Plans/pricing-enterprise.md)
-- [Claude Code for Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-
-## Departments
-
-- [Customer support](customer-support.md)
-- [Cybersecurity](cybersecurity.md)
-- [Legal](legal.md)
-- [Sales](sales.md)
-
-## Industries
-
-- [Financial advisors](financial-advisors.md)
-- [Financial services](finance.md)
-- [Government](government.md)
-- [Healthcare](healthcare.md)
-- [Higher education](education.md)
-- [K-12 teachers](teachers.md)
-- [Life sciences](life-sciences.md)
-- [Nonprofits](nonprofits.md)
-- [Small business](small-business.md)
-
-## Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-## Developers
-
-- [Developer docs](../02-Claude-Code-CLI/code-home.md)
-- [Developer blog](https://claude.dev)
-- [Community](https://www.claude.com/community)
-- [Console](../04-API-Reference/Other/home.md)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-
-## Platform
-
-- [Overview](https://www.claude.com/platform/api)
-- [Marketplace](https://www.claude.com/marketplace)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Managed Agents](https://www.claude.com/platform/claude-managed-agents)
-
-## Resources
-
-- [Overview](https://www.claude.com/resources)
-- [Articles](https://www.claude.com/resources/articles)
-- [Webinars](https://www.claude.com/resources/webinars)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Claude Academy](https://academy.claude.com/)
-- [Customer stories](customers.md)
-- [Events](https://www.anthropic.com/events)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](https://www.claude.com/marketplace/service-partners)
-
-## Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Check files](https://www.claude.com/check-files)
-- [Regional compliance](https://www.claude.com/regional-compliance)
-- [Report abuse](https://www.claude.com/form/anthropic-content-reporting)
+[Get started](https://claude.ai/artifacts?templates=legal)[Contact sales](https://www.claude.com/contact-sales)

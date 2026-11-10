@@ -2,11 +2,13 @@
 title: "Why Claude switched models in your conversation with Fable 5 or Fable 5.1 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15363606-why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:09Z"
+fetched_at: "2026-11-09T06:25:53Z"
 tags: ["billing", "claude-ai"]
 ---
 
 # Why Claude switched models in your conversation with Fable 5 or Fable 5.1
+
+September 28, 2026
 
 
 This article explains why a request might be blocked on Claude Fable 5 or Fable 5.1, what happens when your conversation switches to a different Claude model, and how to manage automatic switching.
@@ -49,7 +51,7 @@ After the switch, the model picker stays on Opus for the rest of the conversatio
 
 Opus has its own safety systems. To learn about fallbacks in Claude Opus 5, see **[Why Claude switched models in your conversation with Opus 5](https://support.claude.com/en/articles/16049681)**.
 
-If your request is also blocked on the less capable model, you can edit your message and retry. For cybersecurity specifically, if your use case has a legitimate defensive purpose and is being affected by these safeguards, you can apply for the Cyber Verification Program (CVP) for Opus. Learn more about **[real-time cyber safeguards on Claude Opus and Sonnet](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude)**.
+If your request is also blocked on the less capable model, you can edit your message and retry. For cybersecurity specifically, if your use case has a legitimate defensive purpose and is being affected by these safeguards, you can apply for the Cyber Verification Program (CVP) for Opus. Learn more about **[real-time cyber safeguards on Claude Opus and Sonnet](../21-Account-Support/real-time-cyber-safeguards-on-claude.md)**.
 
 ## Manage automatic model switching
 

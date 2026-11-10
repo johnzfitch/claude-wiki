@@ -2,28 +2,34 @@
 title: "Microsoft 365 connector security guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12684923-microsoft-365-connector-security-guide"
 category: "14-Connectors"
-fetched_at: "2026-10-23T06:28:58Z"
+fetched_at: "2026-11-09T06:25:52Z"
 tags: ["connectors", "security"]
 ---
 
 # Microsoft 365 connector security guide
 
 
-The Microsoft 365 connector is an **Anthropic-hosted integration** that enables Claude to securely access Microsoft 365 services (Outlook, SharePoint, OneDrive, Teams) through user-delegated permissions. Anthropic has completed Microsoft's publisher verification process, associating our verified Microsoft Partner Network account with this application to confirm our organizational identity.
+The Microsoft 365 connector is an **Anthropic-hosted integration** that enables Claude to securely access Microsoft 365 services (Outlook, SharePoint, OneDrive, Teams) through user-delegated permissions. Anthropic has completed Microsoft's publisher verification process, associating our verified Microsoft Partner Network account with these applications to confirm our organizational identity.
 
-The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Team, and Enterprise.
+The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Ultra, Team, and Enterprise.
+
+This guide has a section for each account type:
+
+- **[Work or school accounts](#h_887146248e)**
+
+- **[Personal Microsoft accounts](#h_66d5bff0e6)**
+
+## Work or school accounts
 
 The connector operates as a **secure proxy**, and your Microsoft 365 documents, emails, and files remain in your tenant. The connector only retrieves data on-demand during active queries and doesn’t cache file content. Credentials are encrypted and managed by Anthropic's backend infrastructure. The MCP server itself doesn’t store or manage these credentials. Microsoft's Azure SDK handles the On-Behalf-Of token exchange and caching on a per-user basis for accessing the Graph API.
 
-## Access restriction
+### Restrict access
 
-### Access can be fully restricted
-
-The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 connector, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**.
+The connector provides **multiple layers of access control** to address your security requirements. For detailed information on administration of the Microsoft 365 connector, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
 
 **1. Microsoft Entra tenant requirement**
 
-All people using the connector—regardless of Claude plan—must authenticate with a Microsoft 365 account tied to a Microsoft Entra tenant. Personal Microsoft accounts (@outlook.com, @hotmail.com) can't be used. A Microsoft Entra Global Administrator must complete a one-time consent process before anyone in the tenant can connect.
+People connecting a work or school account must authenticate with a Microsoft 365 account tied to a Microsoft Entra tenant, on every Claude plan. A Microsoft Entra Global Administrator must complete a one-time consent process before anyone in the tenant can connect.
 
 **2. Organization-level gating (Team and Enterprise plans)**
 
@@ -41,7 +47,7 @@ Changes take effect immediately for all people in your organization. People can 
 
 **4. Microsoft Conditional Access**
 
-Your Conditional Access policies apply to the connector, but not always in the way they apply to a user working directly in Microsoft 365. When a user connects, Entra evaluates your policies against their sign-in. Every later request is made by Claude's servers. In our testing, Entra evaluates those requests as coming from Anthropic's IP range (`160.79.104.0/21`), identifying the member and carrying the device recorded when they connected, rather than the member's current device or network. What that means for each kind of policy:
+Your Conditional Access policies apply to the connector, but not always in the way they apply to a user working directly in Microsoft 365. When a user connects, Entra evaluates your policies against their sign-in. Every later request is made by Claude's servers. In our testing, Entra evaluates those requests as coming from **[Anthropic’s outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses)**, identifying the member and carrying the device recorded when they connected, rather than the member’s current device or network. What that means for each kind of policy:
 
 - **Group-based access**: Supported. Scope your policy to specific security groups, or set **Assignment required** on both Claude applications as described in **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
 
@@ -49,7 +55,7 @@ Your Conditional Access policies apply to the connector, but not always in the w
 
 - **Device compliance**: Supported, with a difference in when it's checked. In our testing, the policy is evaluated against the device the member connects from. A device that doesn't meet the policy isn't stopped at the connect screen; its requests fail from the first tool call afterwards. The connection then carries that device record, and ongoing access is checked against the record rather than the device currently in use, until the member next reconnects. Each member's most recent connection is the one that counts. The record is only created if the member's browser can prove the device to Entra, so a compliant device used with a browser profile that isn't signed in to your organization is treated as not compliant. Members who are blocked (`AADSTS53000`) fix it by reconnecting from a device that meets the policy, in a browser signed in to your organization. Keep the policy assigned to the Claude applications; excluding them removes the check.
 
-- **Location and network restrictions**: Not supported. In our testing, the server-side requests always appear to come from Anthropic's IP range, wherever the member is, so a policy that limits sign-ins to your network or VPN blocks the connector for every member. The same applies to sign-in frequency policies. Learn how to exclude Anthropic's IP range in **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
+- **Location and network restrictions**: Not supported. In our testing, the server-side requests always appear to come from Anthropic's IP ranges, wherever the member is, so a policy that limits sign-ins to your network or VPN blocks the connector for every member. The same applies to sign-in frequency policies. Learn how to exclude Anthropic's IP ranges in **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
 
 **Warning:** Don't change a device policy to require a compliant device *or* multi-factor authentication as a workaround. In our testing the MFA proof carries through the stored connection in the same way, so the policy can end up satisfied for every member and the device requirement stops doing anything reliable.
 
@@ -77,11 +83,11 @@ To stop members from connecting a work Microsoft 365 account to a Claude account
 
 - Admins or users can revoke access anytime via Microsoft Entra ID.
 
-- The Microsoft 365 Connector never sees or stores passwords.
+- The Microsoft 365 Connector doesn’t see or store passwords.
 
-## Security architecture summary
+### Security architecture summary
 
-### Authentication flow
+**Authentication flow**
 
 - **OAuth 2.0 On-Behalf-Of (OBO):** Industry-standard delegated authentication
 
@@ -93,7 +99,7 @@ To stop members from connecting a work Microsoft 365 account to a Claude account
 
 - **Encrypted token storage**: Access and refresh tokens are encrypted while cached by the Claude backend
 
-### Data flow
+**Data flow**
 
 - Documents and other content are retrieved **only during active queries**
 
@@ -105,25 +111,25 @@ To stop members from connecting a work Microsoft 365 account to a Claude account
 
 - Each request creates a fresh data flow which is cleaned up after the response is returned
 
-### Multi-tenant isolation
+**Multi-tenant isolation**
 
 - Microsoft Entra tenants are **cryptographically separated** from each other using a common-scoped multi-tenant configuration
 
 - Multi-tenant isolation is cryptographically enforced through digitally signed access tokens that bind each user to their organization’s tenant
 
-## Available capabilities
+### Available capabilities
 
-### Read and search tools
+**Read and search tools**
 
 The connector provides **read-only** access to:
 
 [TABLE]
 
-### Write tools
+**Write tools**
 
 [TABLE]
 
-**Note:** “Always allow” is not supported for the following tools:
+**Note:** “Always allow” is not supported for the following tools on Team and Enterprise plans:
 
 - `outlook_send_mail`
 
@@ -157,7 +163,7 @@ Write tools include the following built-in safeguards:
 
 - **Confirmation required:** Sending a Teams chat message and posting or replying in a channel can only be set to Ask, so the user confirms every send.
 
-## Permissions list
+### Permissions list
 
 **Basic permissions**
 
@@ -247,7 +253,7 @@ Requested as part of the updated consent set; used only when write tools are ena
 
 - **[People.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#peopleread)**: Find people in the organization to start a chat with
 
-## Current limitations
+### Current limitations
 
 - **Teams write access is limited to messaging**: Claude can send a chat message, post or reply in a channel, or start a new chat, but can't modify Teams settings, memberships, or permissions. All write tools require an admin to enable them, and Teams write tools are enabled individually.
 
@@ -255,9 +261,9 @@ Requested as part of the updated consent set; used only when write tools are ena
 
 - **Online Archive mailboxes aren't searched**: email search covers each user's primary mailbox, including its Archive folder, and any shared mailboxes they can access. It doesn't cover the separate Online Archive mailbox (also called the In-Place Archive), so messages that a retention policy has moved there won't appear in results.
 
-## Frequently asked questions
+### Frequently asked questions
 
-### Can we test with a small pilot group before enterprise-wide rollout?
+**Can we test with a small pilot group before enterprise-wide rollout?**
 
 Yes. The recommended approach is to use app assignment to restrict who can use the connector:
 
@@ -269,7 +275,7 @@ Yes. The recommended approach is to use app assignment to restrict who can use t
 
 - Expand groups progressively for gradual deployment
 
-### How do we ensure no data leakage occurs between our organization and others in the multi-tenant environment?
+**How do we ensure no data leakage occurs between our organization and others in the multi-tenant environment?**
 
 Multi-tenant isolation ensures complete separation:
 
@@ -281,15 +287,21 @@ Multi-tenant isolation ensures complete separation:
 
 - Cross-tenant token access is prevented cryptographically by the design of Microsoft Graph’s OAuth 2.0 implementation.
 
-### What happens if someone tries to connect with a personal Microsoft account?
+**What happens if someone tries to connect with a personal Microsoft account?**
 
-The connector requires a Microsoft Entra tenant tied to a Microsoft Business plan. Personal Microsoft accounts (@outlook.com, @hotmail.com) can't be used to authenticate. People attempting to connect with a personal account will receive an authentication error.
+It depends on which option they choose:
 
-### Do you have audit logging for compliance?
+- **Work or school option:** Signing in with a personal account gives an authentication error.
+
+- **Personal account option:** On Free, Pro, Max, and Ultra plans, people can connect a personal account here. This option isn't shown on Team and Enterprise plans.
+
+Learn more about **[personal Microsoft accounts](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365#h_cffabf2c6c)**.
+
+**Do you have audit logging for compliance?**
 
 Yes. All Graph API calls made by the connector are logged in your organization's Microsoft 365 audit log, which you can access through the M365 Compliance Center. These logs show the timestamp, user, operation performed, and resource accessed, with retention periods matching your Microsoft 365 audit policy. Additionally, Anthropic logs authentication and tool execution events.
 
-### Can we revoke access if we discover unauthorized usage?
+**Can we revoke access if we discover unauthorized usage?**
 
 There are multiple revocation methods:
 
@@ -301,22 +313,46 @@ There are multiple revocation methods:
 
 - **Tenant-level**: Revoke all permissions in Microsoft Entra Admin Center
 
-### What certifications does Anthropic have?
+------------------------------------------------------------------------
+
+## Personal Microsoft accounts
+
+On Free, Pro, Max, and Ultra plans, people can connect a personal Microsoft account, such as an Outlook.com, Hotmail, Live, or MSN account. This option isn't shown on Team and Enterprise plans. Learn more in **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365)**.
+
+- **Separate applications:** Personal accounts use their own Microsoft applications, which accept only personal accounts. Your tenant's applications and consent aren't involved.
+
+- **Consent:** Each person consents for their own account. There's no admin step, and Microsoft Entra controls such as Conditional Access and app assignment don't apply.
+
+- **Tools:** Personal accounts get the tools in Available capabilities, plus `search_people`, except the Teams tools, `chat_message_search`, `find_meeting_availability`, `outlook_create_filter`, `outlook_delete_filter`, and `outlook_set_vacation`. `read_resource` can't read Teams content. The `sharepoint_*` tools work on the person's own OneDrive, including shared items they've added to it, and don't use `Sites.Read.All`.
+
+- **Write tools:** There's no admin setting, so write tools are available once connected. Attribution, rate limits, and the attachment restriction still apply. The "Always allow" limits in Available capabilities don't apply to personal accounts.
+
+- **Permissions:** Personal accounts request these Microsoft Graph permissions: `User.Read`, `offline_access`, `Mail.Read`, `Mail.ReadWrite`, `Mail.Send`, `MailboxSettings.Read`, `MailboxSettings.ReadWrite`, `Calendars.Read`, `Calendars.ReadWrite`, `Files.Read.All`, `Files.ReadWrite.All`, and `People.Read`. Sign-in also requests `openid` and `email`, so Claude receives the account's email address.
+
+- **Terms:** On Free, Pro, Max, and Ultra plans, this connection falls under Anthropic's **[Consumer Terms of Service](https://www.anthropic.com/legal/consumer-terms)** and **[Privacy Policy](https://www.anthropic.com/legal/privacy)**.
+
+- **Access removal:** People disconnect in Customize \> Connectors and can remove the permission in their Microsoft account.
+
+- **Data handling:** The connector retrieves data on demand and doesn't cache file content. Your email and files stay in your Microsoft account, but content Claude retrieves becomes part of your chat. Credentials are encrypted and managed by Anthropic's backend infrastructure, and the connector doesn’t see or store passwords. Tool call results in stored chats are retained.
+
+------------------------------------------------------------------------
+
+## Certifications
 
 Anthropic has the following certifications:
 
-- **SOC 2 Type II** (annual audit)
+- SOC 2 Type II (annual audit)
 
-- **ISO 27001** certified
+- ISO 27001 certified
 
-- **GDPR compliant** (DPA available)
+- DPA available on Team and Enterprise plans
 
-- **Microsoft publisher-verified** application
+------------------------------------------------------------------------
 
 ## Additional resources
 
 - **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**
 
-- **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**
+- **[Connect Claude to Microsoft 365](connect-to-microsoft-365-claude-help-center.md)**
 
 - **[Overview of Microsoft Graph permissions: Delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)**

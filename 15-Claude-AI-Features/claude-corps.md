@@ -181,7 +181,7 @@ Our partners
 ### Products
 
 - [Claude](product-overview.md)
-- [Claude Code](product-claude-code-fad1ab4b.md)
+- [Claude Code](product-claude-code.md)
 - [Claude Code Enterprise](product-claude-code-enterprise.md)
 - [Claude Cowork](product-cowork.md)
 - [@Claude](product-tag.md)
@@ -212,7 +212,7 @@ Our partners
 - [Commerce](../18-Industry-UseCases/commerce.md)
 - [Customer support](../18-Industry-UseCases/customer-support.md)
 - [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../17-Billing-Plans/pricing-enterprise.md)
+- [Enterprise](../18-Industry-UseCases/enterprise.md)
 - [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
 - [Financial services](../18-Industry-UseCases/finance.md)
 - [Government](../18-Industry-UseCases/government.md)

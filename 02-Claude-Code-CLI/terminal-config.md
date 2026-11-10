@@ -2,11 +2,14 @@
 title: "Configure your terminal for Claude Code - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/terminal-config"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-20T06:36:47Z"
+fetched_at: "2026-11-06T06:26:43Z"
+last_modified: "Fri, 06 Nov 2026 05:17:43 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Enter multiline prompts](#enter-multiline-prompts)
 - [Enable Option key shortcuts on macOS](#enable-option-key-shortcuts-on-macos)
@@ -55,12 +58,12 @@ Enter multiline prompts
 
 Pressing Enter submits your message. To add a line break without submitting, press Ctrl+J, or type `\` and then press Enter. Both work in every terminal with no setup. In most terminals you can also press Shift+Enter, but support varies by terminal emulator:
 
-| Terminal                                                                                           | Shift+Enter for newline                                     |
-|:---------------------------------------------------------------------------------------------------|:------------------------------------------------------------|
-| Ghostty, Kitty, iTerm2, WezTerm, Warp, Apple Terminal, Windows Terminal                            | Works without setup                                         |
+| Terminal | Shift+Enter for newline |
+|:---|:---|
+| Ghostty, Kitty, iTerm2, WezTerm, Warp, Apple Terminal, Windows Terminal | Works without setup |
 | Other terminals that support the kitty keyboard protocol, such as foot and Alacritty 0.16 or later | Works without setup. Requires Claude Code v2.1.269 or later |
-| VS Code, Cursor, Devin Desktop, Alacritty before 0.16, Zed                                         | Run `/terminal-setup` once                                  |
-| gnome-terminal, JetBrains IDEs such as PyCharm and Android Studio                                  | Not available; use Ctrl+J or `\` then Enter                 |
+| VS Code, Cursor, Devin Desktop, Alacritty before 0.16, Zed | Run `/terminal-setup` once |
+| gnome-terminal, JetBrains IDEs such as PyCharm and Android Studio | Not available; use Ctrl+J or `\` then Enter |
 
 For VS Code, Cursor, Devin Desktop, Alacritty before 0.16, and Zed, `/terminal-setup` writes a Shift+Enter keybinding into the terminal’s configuration file. On the first run you see a confirmation such as `Installed VSCode terminal Shift+Enter key binding`. Existing bindings are left in place; if you see a message such as `VSCode terminal Shift+Enter key binding already configured`, no change was made. Run `/terminal-setup` directly in the host terminal rather than inside tmux or screen, since it needs to write to the host terminal’s configuration. In VS Code, Cursor, and Devin Desktop, `/terminal-setup` also updates two editor settings: it sets `terminal.integrated.gpuAcceleration` to `"off"` to prevent garbled text in the integrated terminal, and it sets `terminal.integrated.mouseWheelScrollSensitivity` for smoother scrolling in [fullscreen mode](fullscreen.md). To undo the GPU acceleration change, set it back to `"auto"` and reload the editor window. In Zed, `/terminal-setup` updates your `keymap.json` in place:
 
@@ -95,7 +98,13 @@ For Ghostty, Kitty, and other terminals, look for an Option-as-Alt or Option-as-
 
 Get a terminal bell or notification
 
-When Claude finishes a task or pauses for a permission prompt, and you appear to be away from the terminal, it fires a notification event. See [when each notification type fires](../07-Hooks/hooks.md#notification) for the exact timing. Surfacing this as a terminal bell or desktop notification lets you switch to other work while a long task runs. By default Claude Code sends a desktop notification only in Ghostty, Kitty, and iTerm2. In other terminals, set [`preferredNotifChannel`](settings-reference.md#preferrednotifchannel) to `"terminal_bell"` to ring the terminal bell instead, or configure a [Notification hook](#play-a-sound-with-a-notification-hook) for a custom sound or command. The following settings entry turns on the terminal bell:
+When Claude finishes a task or pauses for a permission prompt, and you appear to be away from the terminal, it fires a notification event. See [when each notification type fires](../07-Hooks/hooks.md#notification) for the exact timing. Surfacing this as a terminal bell or desktop notification lets you switch to other work while a long task runs. By default, Claude Code sends a desktop notification in some terminals, and a bell character or nothing in others:
+
+- **Ghostty, Kitty, and iTerm2, when Claude Code detects them**: a desktop notification, which iTerm2 shows only after you turn on its alert settings.
+- **Apple Terminal**: no sound; a silent bell character when Claude Code finds “Audible bell” off in the front Terminal window’s profile, otherwise nothing. That bell character shows as a window flash, or a Dock bounce while Terminal is in the background, if that profile’s “Visual bell” or Dock bounce option is on.
+- **Other terminals**: nothing.
+
+To make Claude Code send the bell character whatever the terminal or profile, set [`preferredNotifChannel`](settings-reference.md#preferrednotifchannel) to `"terminal_bell"`. In Apple Terminal, also turn on **Audible bell** under **Settings \> Profiles \> Advanced** to hear it. The following settings entry sets the channel:
 
 ~/.claude/settings.json
 
@@ -105,7 +114,7 @@ When Claude finishes a task or pauses for a permission prompt, and you appear to
 }
 ```
 
-The desktop notification reaches your local machine over SSH, so a remote session can still alert you. Ghostty and Kitty forward it to your OS notification center without further setup. iTerm2 requires you to enable forwarding:
+Over SSH from a terminal running outside tmux, set [`preferredNotifChannel`](settings-reference.md#preferrednotifchannel) to your local terminal’s value, `"iterm2"`, `"kitty"`, or `"ghostty"`, on the machine running Claude Code. The desktop notification then reaches your local machine. Ghostty and Kitty forward it to your OS notification center without further setup. iTerm2 requires you to enable forwarding:
 
 1
 
@@ -154,22 +163,25 @@ If your terminal implements the OSC 7501 Program Status Protocol, it can show wh
 - **Background session**: a [background session](../09-Agents-Patterns/agent-view.md) doesn’t report its status to your terminal, even while you’re attached to it. Agent view shows its status instead.
 - **[`CLAUDE_CODE_DISABLE_TERMINAL_TITLE`](env-vars.md#variables)**: if you set this variable to `1`, Claude Code doesn’t check for support or report status. Unset it.
 
+The tab title doesn’t start with a status glyph in a terminal that reports support for the protocol. The terminal shows the session’s state itself, so Claude Code leaves out the glyph it puts in front of the title in other terminals.
+
 
 [​](#configure-tmux)
 
 Configure tmux
 
-When Claude Code runs inside tmux, by default Shift+Enter submits instead of inserting a newline, and desktop notifications and the [progress bar](settings-reference.md#terminalprogressbarenabled) never reach the outer terminal. Add these lines to `~/.tmux.conf`, then run `tmux source-file ~/.tmux.conf` to apply them to the running server:
+When Claude Code runs inside tmux, by default Shift+Enter submits instead of inserting a newline, and desktop notifications don’t reach the outer terminal. Add these lines to `~/.tmux.conf`, then run `tmux source-file ~/.tmux.conf` to apply them to the running server:
 
 ~/.tmux.conf
 
 ```python
 set -g allow-passthrough on
+set -g focus-events on
 set -s extended-keys on
 set -as terminal-features 'xterm*:extkeys'
 ```
 
-The `allow-passthrough` line lets notifications and progress updates reach the outer terminal instead of being swallowed by tmux. The `extended-keys` lines let tmux distinguish Shift+Enter from plain Enter so the newline shortcut works.
+To send notifications from a visible pane to the outer terminal, keep the `allow-passthrough` line and set [`preferredNotifChannel`](settings-reference.md#preferrednotifchannel) to `"iterm2"`, `"kitty"`, or `"ghostty"`. With this sample, a pane in a window you aren’t viewing sends none. The `extended-keys` lines let tmux distinguish Shift+Enter from plain Enter so the newline shortcut works. A [mod’s `Image`](../08-Plugins-Skills/plugins-mods-reference.md#elements) needs the `allow-passthrough` and `focus-events` lines, along with the other [requirements for drawing inside tmux](../08-Plugins-Skills/plugins-mods-gallery.md#draw-an-image-inside-tmux). After you add the lines, also detach from tmux, attach again, and restart Claude Code.
 
 
 [​](#fix-backspace-deleting-a-whole-word-on-windows)
@@ -192,11 +204,11 @@ Create a custom theme
 
 In addition to the built-in presets, `/theme` lists any custom themes you have defined and any themes contributed by installed [plugins](../08-Plugins-Skills/plugins-components.md#themes-and-output-styles). Select **New custom theme…** at the end of the list to create one interactively: you name the theme, then pick individual color tokens to override. Press `Ctrl+E` while a custom theme is highlighted to edit it. Each custom theme is a JSON file in `~/.claude/themes/`. The filename without the `.json` extension is the theme’s slug, and selecting the theme stores `custom:<slug>` as your theme preference. The file has three optional fields:
 
-| Field       | Type   | Description                                                                                                                                     |
-|:------------|:-------|:------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`      | string | Display label shown in `/theme`. Defaults to the filename slug                                                                                  |
-| `base`      | string | Built-in preset the theme starts from: `dark`, `light`, `dark-daltonized`, `light-daltonized`, `dark-ansi`, or `light-ansi`. Defaults to `dark` |
-| `overrides` | object | Map of color token names to color values. Tokens not listed here fall through to the base preset                                                |
+| Field | Type | Description |
+|:---|:---|:---|
+| `name` | string | Display label shown in `/theme`. Defaults to the filename slug |
+| `base` | string | Built-in preset the theme starts from: `dark`, `light`, `dark-daltonized`, `light-daltonized`, `dark-ansi`, or `light-ansi`. Defaults to `dark` |
+| `overrides` | object | Map of color token names to color values. Tokens not listed here fall through to the base preset |
 
 Color values accept `#rrggbb`, `#rgb`, `rgb(r,g,b)`, `ansi256(n)`, or `ansi:<name>` where `<name>` is one of the 16 standard ANSI color names such as `red` or `cyanBright`. Unknown tokens and invalid color values are ignored, so a typo cannot break rendering. The following example defines a theme that keeps the dark preset but recolors the prompt accent, error text, and success text:
 
@@ -243,16 +255,16 @@ Text and accent colors
 
 Control the primary brand accent and the foreground text shades used throughout the interface.
 
-| Token         | Controls                                                         |
-|:--------------|:-----------------------------------------------------------------|
-| `claude`      | Primary brand accent, used for the spinner and assistant label   |
-| `text`        | Default foreground text                                          |
+| Token | Controls |
+|:---|:---|
+| `claude` | Primary brand accent, used for the spinner and assistant label |
+| `text` | Default foreground text |
 | `inverseText` | Text drawn on top of a colored background, such as status badges |
-| `inactive`    | Secondary text such as hints, timestamps, and disabled items     |
-| `subtle`      | Faint borders and de-emphasized secondary text                   |
-| `suggestion`  | Autocomplete suggestions and selection highlight in pickers      |
-| `permission`  | Dialog borders, including permission prompts and pickers         |
-| `remember`    | Memory and `CLAUDE.md` indicators                                |
+| `inactive` | Secondary text such as hints, timestamps, and disabled items |
+| `subtle` | Faint borders and de-emphasized secondary text |
+| `suggestion` | Autocomplete suggestions and selection highlight in pickers |
+| `permission` | Dialog borders, including permission prompts and pickers |
+| `remember` | Memory and `CLAUDE.md` indicators |
 
 
 [​](#status-colors)
@@ -275,15 +287,15 @@ Input box and mode indicators
 
 Set the input box border color and the accent shown while a permission mode or indicator is active.
 
-| Token          | Controls                                                                                                                                                                                  |
-|:---------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `promptBorder` | Input box border                                                                                                                                                                          |
-| `planMode`     | Plan mode accent, plan messages, and plan-mode dialogs                                                                                                                                    |
-| `autoAccept`   | Accept-edits mode accent                                                                                                                                                                  |
-| `bashBorder`   | Input box border when entering a `!` shell command                                                                                                                                        |
-| `ide`          | IDE connection indicator                                                                                                                                                                  |
-| `fastMode`     | Fast mode indicator                                                                                                                                                                       |
-| `effortUltra`  | The `ultracode` tag on the input box border while [ultracode](model-config.md#adjust-effort-level) is on. Your override of this color takes effect on Claude Code v2.1.239 or later |
+| Token | Controls |
+|:---|:---|
+| `promptBorder` | Input box border |
+| `planMode` | Plan mode accent, plan messages, and plan-mode dialogs |
+| `autoAccept` | Accept-edits mode accent |
+| `bashBorder` | Input box border when entering a `!` shell command |
+| `ide` | IDE connection indicator |
+| `fastMode` | Fast mode indicator |
+| `effortUltra` | The `ultracode` tag on the input box border while [ultracode](model-config.md#adjust-effort-level) is on. Your override of this color takes effect on Claude Code v2.1.239 or later |
 
 
 [​](#diff-rendering)
@@ -292,14 +304,14 @@ Diff rendering
 
 Color added and removed code in file edits and reviews.
 
-| Token               | Controls                                                                      |
-|:--------------------|:------------------------------------------------------------------------------|
-| `diffAdded`         | Background of added lines                                                     |
-| `diffRemoved`       | Background of removed lines                                                   |
-| `diffAddedDimmed`   | Background of added lines in the dimmed diff shown after you reject an edit   |
+| Token | Controls |
+|:---|:---|
+| `diffAdded` | Background of added lines |
+| `diffRemoved` | Background of removed lines |
+| `diffAddedDimmed` | Background of added lines in the dimmed diff shown after you reject an edit |
 | `diffRemovedDimmed` | Background of removed lines in the dimmed diff shown after you reject an edit |
-| `diffAddedWord`     | Word-level highlight within an added line                                     |
-| `diffRemovedWord`   | Word-level highlight within a removed line                                    |
+| `diffAddedWord` | Word-level highlight within an added line |
+| `diffRemovedWord` | Word-level highlight within a removed line |
 
 
 [​](#fullscreen-mode)
@@ -308,14 +320,14 @@ Fullscreen mode
 
 Claude Code uses `userMessageBackgroundHover`, `selectionBg`, and `composerSidebarBackground` only in [fullscreen rendering mode](fullscreen.md). It paints `userMessageBackground`, `bashMessageBackgroundColor`, and `memoryBackgroundColor` in both the default and fullscreen renderers.
 
-| Token                        | Controls                                                                                                                                                                               |
-|:-----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `userMessageBackground`      | Background behind your messages in the transcript                                                                                                                                      |
-| `userMessageBackgroundHover` | Background behind a message while hovered or expanded                                                                                                                                  |
-| `bashMessageBackgroundColor` | Background behind `!` shell command entries in the transcript                                                                                                                          |
-| `memoryBackgroundColor`      | Background behind `#` memory entries in the transcript                                                                                                                                 |
-| `selectionBg`                | Background of text selected with the mouse                                                                                                                                             |
-| `composerSidebarBackground`  | Background of the panel beside the conversation, such as the [diff panel](fullscreen.md#watch-your-changes-in-the-diff-panel) or a [mod’s pane](../08-Plugins-Skills/plugins-mods-interface.md) |
+| Token | Controls |
+|:---|:---|
+| `userMessageBackground` | Background behind your messages in the transcript |
+| `userMessageBackgroundHover` | Background behind a message while hovered or expanded |
+| `bashMessageBackgroundColor` | Background behind `!` shell command entries in the transcript |
+| `memoryBackgroundColor` | Background behind `#` memory entries in the transcript |
+| `selectionBg` | Background of text selected with the mouse |
+| `composerSidebarBackground` | Background of the panel beside the conversation, such as the [diff panel](fullscreen.md#watch-your-changes-in-the-diff-panel) or a [mod’s pane](../08-Plugins-Skills/plugins-mods-interface.md) |
 
 
 [​](#usage-meter-and-speaker-labels)
@@ -345,7 +357,7 @@ Several tokens have a paired shimmer variant that supplies the lighter color use
 - `inactive` and `inactiveShimmer`
 - `fastMode` and `fastModeShimmer`
 
-Each [subagent](../09-Agents-Patterns/sub-agents.md) and parallel task is shown in one of eight named colors so you can tell them apart in the transcript. The token names follow the pattern `<color>_FOR_SUBAGENTS_ONLY`, where `<color>` is `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, or `cyan`. Override these to change what each named color looks like. For example, a subagent with `color: blue` in its definition is drawn using the `blue_FOR_SUBAGENTS_ONLY` value.Claude Code renders the [`ultrathink`](model-config.md#use-ultrathink-for-one-off-deep-reasoning) keyword in the prompt input with a seven-color rainbow gradient. The token names follow the pattern `rainbow_<color>` and `rainbow_<color>_shimmer`, where `<color>` is `red`, `orange`, `yellow`, `green`, `blue`, `indigo`, or `violet`.
+Each [subagent](../09-Agents-Patterns/sub-agents.md) and parallel task is shown in one of eight named colors so you can tell them apart in the transcript. The token names follow the pattern `<color>_FOR_SUBAGENTS_ONLY`, where `<color>` is `red`, `blue`, `green`, `yellow`, `purple`, `orange`, `pink`, or `cyan`. Override these to change what each named color looks like. For example, a subagent with `color: blue` in its definition is drawn using the `blue_FOR_SUBAGENTS_ONLY` value.When [`ultrathink`](model-config.md#use-ultrathink-for-one-off-deep-reasoning) can raise a turn’s effort, Claude Code renders the word in the prompt input with a seven-color rainbow gradient. The token names follow the pattern `rainbow_<color>` and `rainbow_<color>_shimmer`, where `<color>` is `red`, `orange`, `yellow`, `green`, `blue`, `indigo`, or `violet`.
 
 
 [​](#switch-to-fullscreen-rendering)

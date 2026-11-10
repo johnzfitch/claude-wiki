@@ -2,7 +2,7 @@
 title: "AI models on realistic cyber ranges \\ Anthropic"
 source_url: "https://www.anthropic.com/research/cyber-toolkits-update"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:38Z"
+fetched_at: "2026-10-24T06:26:16Z"
 tags: ["news-research"]
 ---
 
@@ -4329,7 +4329,7 @@ See below for the full transcripts:
             
 ```
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

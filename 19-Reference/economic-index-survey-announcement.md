@@ -2,7 +2,7 @@
 title: "Announcing the Anthropic Economic Index Survey \\ Anthropic"
 source_url: "https://www.anthropic.com/research/economic-index-survey-announcement"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:03Z"
+fetched_at: "2026-10-24T06:27:00Z"
 tags: ["news-research"]
 ---
 
@@ -60,4 +60,4 @@ We will use Anthropic Interviewer to ask you about your work, what changes youâ€
 
 We will analyze the insights from this study as part of our economic research, publish our findings, and use this to improve our models and services in ways that reflect what weâ€™ve learned. The data we collect through this study will be processed according to our [Supplemental Privacy Policy](https://privacy.claude.com/en/articles/14139821-supplemental-anthropic-interviewer-privacy-policy). We may also include de-identified responses in published findings, from users who opt in. [Learn more.](https://privacy.claude.com/en/articles/12996960-how-does-anthropic-interviewer-collect-and-use-my-data)
 
-*If you have further questions, reach out via the message icon in the lower right corner of our [Help Center](../15-Claude-AI-Features/how-to-get-support.md).*
+*If you have further questions, reach out via the message icon in the lower right corner of our [Help Center](https://support.claude.com/en/articles/9015913-how-to-get-support).*

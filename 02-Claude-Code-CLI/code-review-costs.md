@@ -2,11 +2,14 @@
 title: "Code Review costs and usage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-costs"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-16T06:24:30Z"
+fetched_at: "2026-10-30T06:25:12Z"
+last_modified: "Fri, 30 Oct 2026 04:56:11 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Pricing](#pricing)
   - [How often reviews run](#how-often-reviews-run)
@@ -35,7 +38,7 @@ Copy pageCopy page
 
 Pricing
 
-Code Review is billed on token usage through [usage credits](../17-Billing-Plans/extra-usage-for-paid-claude-plans.md), separately from your plan’s included usage. Reviews are billed to your organization, not to the developer who opened the PR or requested the review. Costs appear on your Anthropic bill regardless of whether your organization uses Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry for other Claude Code features.
+Code Review is billed on token usage through [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans), separately from your plan’s included usage. Reviews are billed to your organization, not to the developer who opened the PR or requested the review. Costs appear on your Anthropic bill regardless of whether your organization uses Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry for other Claude Code features.
 
 
 [​](#how-often-reviews-run)
@@ -89,11 +92,12 @@ View usage
 
 Go to [claude.ai/analytics/code-review](https://claude.ai/analytics/code-review) to see Code Review activity across your organization.
 
-| Section              | What it shows                                                                                              |
-|:---------------------|:-----------------------------------------------------------------------------------------------------------|
-| PRs reviewed         | Daily count of pull requests reviewed over the selected time range                                         |
-| Code Review cost     | Code Review spend so far this month                                                                        |
-| Feedback             | Count of review comments that were auto-resolved because a developer addressed the issue                   |
+| Section | What it shows |
+|:---|:---|
+| PRs reviewed | Daily count of pull requests reviewed over the selected time range |
+| Code Review cost | Code Review spend so far this month |
+| Feedback | Count of review comments that were auto-resolved because a developer addressed the issue |
+| Code Review findings | Daily count of [findings by severity level](code-review-pull-requests.md#severity-levels), from reviews Claude posted over the selected time range |
 | Repository breakdown | Per-repo counts of PRs reviewed, comments resolved, and review runs, with estimated cost and a per-PR view |
 
 The Code Review cost card shows an amount only when the current month is selected. Cost figures in analytics can differ from your invoice. Repository breakdown costs are estimated at list price, before any discounts or credits, and cover only reviews that Claude posted on a pull request. For invoice-accurate spend, refer to your Anthropic bill.

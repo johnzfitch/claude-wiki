@@ -2,85 +2,9 @@
 title: "Handle streaming refusals - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-10-20T06:40:34Z"
+fetched_at: "2026-11-05T06:36:36Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Ftest-and-evaluate%2Fstrengthen-guardrails%2Fhandle-streaming-refusals)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
-
-[Thinking](../Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
-
-[Compaction](../Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Model capabilities
 
 # Handle streaming refusals
 
@@ -94,7 +18,25 @@ Detect and handle refusal stop reasons in streaming responses, and retry refused
 
 
 
-Starting with Claude 4 models, streaming responses from Claude's API return **`stop_reason`: `"refusal"`** when streaming classifiers intervene to handle potential policy violations. This safety feature helps maintain content compliance during real-time streaming.
+Streaming refusals
+
+[APIs](#feature-availability)  
+Messages APIAlways onManaged AgentsAlways on
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
+Usage differs by product
+
+Messages API
+
+The stream ends with `stop_reason` `"refusal"`, and `stop_details` (`category` and `explanation`) arrives on the `message_delta` event.
+
+Managed Agents
+
+A refused turn ends, and the session goes idle. Treat a turn as refused if `stop_details.type` or `stop_reason.type` is `"refusal"`.
+
+Starting with Claude 4 models, streaming responses from Claude’s API return **`stop_reason`: `"refusal"`** when streaming classifiers intervene to handle potential policy violations. This safety feature helps maintain content compliance during real-time streaming.
 
 
 
@@ -102,7 +44,7 @@ This page covers how refusals appear in streaming responses. For every `stop_rea
 
 ## API response format
 
-When streaming classifiers detect content that violates Anthropic's policies, the API returns this response:
+When streaming classifiers detect content that violates Anthropic’s policies, the API returns this response:
 
 ```python
 {
@@ -128,7 +70,7 @@ In the event stream, `stop_details` arrives on the `message_delta` event alongsi
 
 
 
-A `refusal` response from streaming classifiers includes a `stop_details` object with a `category` and a human-readable `explanation` that you can surface to the user. See [Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md#refusal-response) for the full response shape and the available categories.
+A `refusal` response from streaming classifiers includes a `stop_details` object with a `category` and a human-readable `explanation` that you can surface to the user. See [What a refusal looks like](../Guides/build-with-claude-refusals-and-fallback.md#refusal-response) for the full response shape and the available categories.
 
 On a refusal the `stop_details` object is always present, but its `category` and `explanation` fields can be `null`, for example when the refusal maps to no named category. Branch on `stop_reason` or `stop_details.type` rather than assuming `category` and `explanation` are populated, and provide your own user-facing messaging when they are `null`.
 
@@ -146,7 +88,7 @@ Resetting context is not the only way to recover. You can also retry the refused
 
 ## Implementation guide
 
-Here's how to detect and handle streaming refusals in your application:
+Here’s how to detect and handle streaming refusals in your application:
 
 cURL
 
@@ -202,27 +144,27 @@ except Exception as e:
 
 The API currently handles refusals in three different ways:
 
-| Refusal type                       | Response format              | When it occurs                                  |
-|------------------------------------|------------------------------|-------------------------------------------------|
-| Streaming classifier refusals      | **`stop_reason`: `refusal`** | During streaming when content violates policies |
-| API input and copyright validation | 400 error codes              | When input fails validation checks              |
-| Model-generated refusals           | Standard text responses      | When the model itself refuses                   |
+| Refusal type | Response format | When it occurs |
+|----|----|----|
+| Streaming classifier refusals | **`stop_reason`: `refusal`** | During streaming when content violates policies |
+| API input and copyright validation | 400 error codes | When input fails validation checks |
+| Model-generated refusals | Standard text responses | When the model itself refuses |
 
 ## Best practices
 
-- **Monitor for refusals:** Include **`stop_reason`: `refusal`** checks in your error handling
-- **Reset automatically:** Implement automatic context reset when refusals are detected
-- **Fall back to another model:** Configure [server-side fallback or the SDK middleware](../Guides/build-with-claude-refusals-and-fallback.md) so refused requests are retried on another Claude model instead of surfacing a refusal to the user. Claude Haiku 5.5 has no server-side fallback, so set up its retry in your client
-- **Redeem fallback credit on manual retries:** If you build the retry yourself, pass the refusal's [fallback credit](../Guides/build-with-claude-fallback-credit.md) token so the retry doesn't pay the prompt-cache cost twice. Claude Haiku 5.5 refusals carry no fallback credit
-- **Provide custom messaging:** Create user-friendly messages for better UX when refusals occur
-- **Track refusal patterns:** Monitor refusal frequency to identify potential issues with your prompts
+- **Monitor for refusals:** Include **`stop_reason`: `refusal`** checks in your error handling.
+- **Reset automatically:** Implement automatic context reset when refusals are detected.
+- **Fall back to another model:** Configure [server-side fallback or the SDK middleware](../Guides/build-with-claude-refusals-and-fallback.md) so refused requests are retried on another Claude model instead of surfacing a refusal to the user. Claude Haiku 5.5 has no server-side fallback, so set up its retry in your client.
+- **Redeem fallback credit on manual retries:** If you build the retry yourself, pass the refusal’s [fallback credit](../Guides/build-with-claude-fallback-credit.md) token so the retry doesn’t pay the prompt-cache cost twice. Claude Haiku 5.5 refusals carry no fallback credit.
+- **Provide custom messaging:** Create user-friendly messages for better UX when refusals occur.
+- **Track refusal patterns:** Monitor refusal frequency to identify potential issues with your prompts.
 
 ## Migration notes
 
-If you built refusal handling when this feature first shipped, or you're adding it to an existing integration, check the following:
+If you built refusal handling when this feature first shipped, or you’re adding it to an existing integration, check the following:
 
-- **Refusals are responses, not errors.** A refusal arrives as a successful HTTP 200 response with `stop_reason`: `"refusal"`, so monitoring built only on error rates won't surface it. Track refusals as their own signal.
-- **Refusals include structured detail.** On every model, a refusal also includes a `stop_details` object that identifies the policy category behind the decline. See [Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md#refusal-response) for the full response shape.
+- **Refusals are responses, not errors.** A refusal arrives as a successful HTTP 200 response with `stop_reason`: `"refusal"`, so monitoring built only on error rates won’t surface it. Track refusals as their own signal.
+- **Refusals include structured detail.** On every model, a refusal also includes a `stop_details` object that identifies the policy category behind the decline. See [What a refusal looks like](../Guides/build-with-claude-refusals-and-fallback.md#refusal-response) for the full response shape.
 - **Retry on a different model.** Re-sending a refused request to the same model usually results in another refusal. Instead of only resetting context, retry on a fallback model with [server-side fallback, the SDK middleware, or a manual retry](../Guides/build-with-claude-refusals-and-fallback.md), and redeem [fallback credit](../Guides/build-with-claude-fallback-credit.md) when you build the retry yourself. Claude Haiku 5.5 has no server-side fallback, and its refusals carry no fallback credit, so set up its retry in your client.
 - **Check batch results for refusals.** A refused request in a [Message Batch](../Guides/build-with-claude-batch-processing.md) is returned as a succeeded result with `stop_reason`: `"refusal"`, not as an errored result.
 - **Centralize handling on `stop_reason`.** The API continues to consolidate refusal handling around `stop_reason`: `"refusal"`, so branch on the stop reason rather than on model-specific behavior.
@@ -251,4 +193,44 @@ Stream responses and read `stop_reason` from `message_delta` events as they arri
 
 [Multilingual support](../Guides/build-with-claude-multilingual-support.md)
 
-Serve users across languages with Claude's cross-lingual capabilities.
+Serve users across languages with Claude’s cross-lingual capabilities.
+
+## Availability
+
+Streaming refusals are available or in beta, depending on the API.
+
+### API support
+
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+Usage
+
+Always on
+
+The stream ends with `stop_reason` `"refusal"`, and `stop_details` (`category` and `explanation`) arrives on the `message_delta` event.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+Usage
+
+Always on
+
+A refused turn ends, and the session goes idle. Treat a turn as refused if `stop_details.type` or `stop_reason.type` on the `session.status_idle` event is `"refusal"`. On a refused turn, `stop_reason.type` can be `"end_turn"`. `stop_details` is `null` on any other turn, and can be `null` on a refused turn too.
+
+StatusBeta
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)

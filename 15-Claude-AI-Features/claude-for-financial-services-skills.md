@@ -2,7 +2,7 @@
 title: "Six skills for financial service professionals · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12663107-claude-for-financial-services-skills"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:58Z"
+fetched_at: "2026-11-07T06:24:14Z"
 tags: ["claude-ai", "rag", "search", "skills"]
 ---
 
@@ -28,11 +28,11 @@ A comps table, a DCF model, and an earnings update each follow a structure your 
 
 **How to enable Skills**
 
-1.  Make sure **Code execution and file creation** is enabled. On Enterprise plans your admin controls this at the organization level; individual Free, Pro, and Max accounts manage it in [Settings \> Capabilities(opens in new tab)](https://claude.ai/settings/capabilities). Skills run in Claude’s secure sandboxed computing environment.
+1.  Make sure **Code execution and file creation** is enabled. On Enterprise plans your admin controls this at the organization level; individual Free, Pro, Max, and Ultra accounts manage it in [Settings \> Capabilities(opens in new tab)](https://claude.ai/settings/capabilities). Skills run in Claude’s secure sandboxed computing environment.
 2.  Open [Customize \> Skills(opens in new tab)](https://claude.ai/customize/skills).
 3.  Toggle individual skills on or off as needed. You can also upload your own.
 
-Read more about [using Skills in Claude(opens in new tab)](../02-Claude-Code-CLI/using-skills-in-claude.md).
+Read more about [using Skills in Claude(opens in new tab)](https://support.claude.com/en/articles/12512180-using-skills-in-claude).
 
 ## Comps analysis with public/private peers[](#comps-analysis-with-publicprivate-peers)
 
@@ -165,7 +165,7 @@ One habit carries beyond these six Skills: whenever a deliverable has to fit an 
 ## Learn more about Skills[](#learn-more-about-skills)
 
 - [What are Skills?(opens in new tab)](../02-Claude-Code-CLI/what-are-skills.md)
-- [Using Skills in Claude(opens in new tab)](../02-Claude-Code-CLI/using-skills-in-claude.md)
+- [Using Skills in Claude(opens in new tab)](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
 - [How to create custom Skills(opens in new tab)](../02-Claude-Code-CLI/how-to-create-custom-skills.md)
 
 - [Prerequisites](#prerequisites)

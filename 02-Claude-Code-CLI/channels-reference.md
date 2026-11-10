@@ -2,7 +2,7 @@
 title: "Channels reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/channels-reference"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-06T06:23:37Z"
+fetched_at: "2026-10-25T06:26:39Z"
 tags: ["claude-code"]
 ---
 
@@ -620,10 +620,11 @@ async function onInbound(message: PlatformMessage) {
 }
 ```
 
-A remote reply that doesn’t exactly match the expected format fails in one of two ways, and in both cases the local terminal dialog stays open:
+If a remote reply has no effect and the local terminal dialog stays open, check for these causes:
 
-- **Different format**: your inbound handler’s regex fails to match, so text like `approve it` or `yes` without an ID falls through as a normal message to Claude.
-- **Right format, wrong ID**: your server emits a verdict, but Claude Code finds no open request with that ID and drops it silently.
+- **The format is wrong**: your inbound handler’s regex fails to match, so text like `approve it` or `yes` without an ID falls through as a normal message to Claude.
+- **The ID is wrong**: your server emits a verdict, but Claude Code finds no open request with that ID and drops it silently.
+- **The ID was used by an earlier prompt**: your server emits a verdict with the ID from the request, but an earlier prompt in the session had the same ID. Once an ID repeats, Claude Code drops any channel verdict carrying it, so that a reply meant for one prompt can’t approve the other. An ID is five random letters, so a repeat is rare. Answer at the terminal instead.
 
 
 [​](#full-example)

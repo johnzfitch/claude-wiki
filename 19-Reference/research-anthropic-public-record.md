@@ -2,7 +2,7 @@
 title: "Results from first Anthropic Public Record \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-public-record"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:40Z"
+fetched_at: "2026-10-24T06:26:32Z"
 tags: ["news-research"]
 ---
 

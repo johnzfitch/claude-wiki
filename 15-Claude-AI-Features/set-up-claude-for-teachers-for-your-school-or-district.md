@@ -2,7 +2,7 @@
 title: "Set up Claude for Teachers for your school or district | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16559896-set-up-claude-for-teachers-for-your-school-or-district"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:10Z"
+fetched_at: "2026-11-09T06:26:33Z"
 tags: ["claude-ai"]
 ---
 
@@ -25,7 +25,7 @@ Your organization gets one set of **[K-12 terms and a data processing agreement]
 
 US K-12 schools and districts qualify. The person applying must be authorized to set up technology for the school or district, and must apply with a school or district email address.
 
-**Important:** Only one application can be open per email domain at a time, so coordinate within your district so the right person applies. This should be an administrator who can accept the K-12 terms on behalf of all district staff. If you have any issues with your application, **[contact Support](how-to-get-support.md)**.
+**Important:** Only one application can be open per email domain at a time, so coordinate within your district so the right person applies. This should be an administrator who can accept the K-12 terms on behalf of all district staff. If you have any issues with your application, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
 
 ## Set up your organization
 
@@ -39,7 +39,7 @@ You'll need your school or district email, a document showing your role (such as
 
 4.  **Set up SSO and automatic account creation.** Connect your identity provider, turn on Require SSO, turn on just-in-time or SCIM provisioning, and turn on Restrict organization creation so district emails can't create personal Claude accounts. Once automatic account creation is on, email invitations are disabled. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
-5.  **Bring your teachers in.** Click Migrate accounts to start a 30-day window. Every existing Claude account on your domain, including individual Claude for Teachers accounts, is notified and chooses to move everything, start over, or do nothing (the account closes at the deadline; data is kept so Support can recover it). Teachers who join later sign in with SSO and land in your organization directly. See Claim and migrate accounts on your domain.
+5.  **Bring your teachers in.** Click Migrate accounts to start a 30-day window. Every existing Claude account on your domain, including individual Claude for Teachers accounts, is notified and chooses to move everything, start over, or do nothing. Teachers who join later sign in with SSO and land in your organization directly. See Claim and migrate accounts on your domain.
 
 ## Manage your organization
 
@@ -49,4 +49,4 @@ For the full set of admin articles, see the **[Admin management](https://support
 
 ## Get help
 
-For setup questions, **[contact Support](how-to-get-support.md)**. Districts working with an Anthropic account team can also reach out to their contact for procurement paperwork, security reviews, or multi-organization setups.
+For setup questions, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Districts working with an Anthropic account team can also reach out to their contact for procurement paperwork, security reviews, or multi-organization setups.

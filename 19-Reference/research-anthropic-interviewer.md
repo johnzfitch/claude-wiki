@@ -2,7 +2,7 @@
 title: "Introducing Anthropic Interviewer \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-interviewer"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:19Z"
+fetched_at: "2026-10-24T06:26:35Z"
 tags: ["news-research"]
 ---
 
@@ -340,7 +340,7 @@ The interview is only available for existing [Claude.ai](http://claude.ai) Free,
 
 *If you have questions, reach out via the message icon in the lower right corner of our [Help Center](https://links.email.claude.com/s/c/cGkT1SXSNgcdo1m1Jg5ubLKEl9K6sdfmpEYqg1hKZUyGgcl4dwPfeO18GyKSSqXjh6VJYoL1jUZK6AD2BWJz4p6OxoEug7KO9W2Yl7UuTqBou7dHkuDUR9lSrGIwoWBHBu-wkEktomJDbUAT2u8a6E6foGoE2H3RIurvO9epWQ7AJsKe_0FNVxLk4ygbQL3j7y1jjTEiC2qM5p0y1YCjCVAFED8I6wYqldfi9BKBYq993W-nOs45JbAMQkT6sZUFTHhEwJTV__gENvsItJqLkEOWFL9lrz48UJTC33i6n3SqYgI6stnpAsjLF66P_qtdOX888L-0h2qzKpxlrtGvrvuqEtl5pLNkPQUulHsITd7MyVL3tf-Ubi3dJVc1h9rB7v04z5j16n5-Kbp-iwCpz3RIbNot86fAZNPdfMqyBxFRDZlAUH-iEQ7h8wY1x6k8mnegW7y77GhLsqTJiZxqIi9o511wHl1Ltu-XLpeOVd80/ql5MQfX8py3XUgI4Usb8PWvj6gyGGxly/16).*
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

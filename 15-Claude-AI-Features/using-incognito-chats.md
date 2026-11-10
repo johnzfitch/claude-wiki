@@ -2,7 +2,7 @@
 title: "Use incognito chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12260368-using-incognito-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:55Z"
+fetched_at: "2026-11-09T06:25:40Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -13,15 +13,15 @@ tags: ["claude-ai", "enterprise"]
 
 ## What are incognito chats?
 
-Incognito chats are temporary conversations that aren't saved to your chat history or to **[Claude’s memory](https://support.claude.com/en/articles/11817273-using-claude-s-chat-search-and-memory-to-build-on-previous-context)**.
+Incognito chats are temporary conversations that aren't saved to your chat history or to **[Claude’s memory](using-claude-s-chat-search-and-memory-to-build-on-previous-context.md)**.
 
-Incognito chats are available to all Claude users (Free, Pro, Max, Team, and Enterprise plans).
+Incognito chats are available to all Claude users (Free, Pro, Max, Ultra, Team, and Enterprise plans).
 
 These differ from regular chats in several ways:
 
 - Incognito chats are not used for training. See our Privacy Center for more information:
 
-  - **[Is my data used for model training?](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training)** (for Free, Pro, and Max plans)
+  - **[Is my data used for model training?](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training)** (for Free, Pro, Max, and Ultra plans)
 
   - **[Is my data used for model training?](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training)** (for Team and Enterprise plans)
 
@@ -35,7 +35,7 @@ These differ from regular chats in several ways:
 
   - Incognito chats will not be included in future memory entries.
 
-- Incognito chats aren't included in **[your monthly recap](https://support.claude.com/en/articles/15672559)**.
+- Incognito chats aren't included in **[your monthly recap](see-your-monthly-recap-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 

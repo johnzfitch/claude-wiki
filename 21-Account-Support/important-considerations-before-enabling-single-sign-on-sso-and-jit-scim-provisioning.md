@@ -2,7 +2,7 @@
 title: "Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10276682-important-considerations-before-enabling-single-sign-on-sso-and-jit-scim-provisioning"
 category: "21-Account-Support"
-fetched_at: "2026-10-23T06:28:47Z"
+fetched_at: "2026-11-09T06:25:30Z"
 tags: ["account", "authentication"]
 ---
 
@@ -63,7 +63,7 @@ If an organization you want to invite doesn’t appear in the invite list, check
 
 - **Every member needs a verified-domain email address.** If any member has an email address outside your parent organization’s verified domains, the organization doesn’t appear.
 
-- **The organization may already belong to another parent organization** with separate verified domains and SSO. **[Contact support](https://support.claude.com/en/articles/9015913)** to have it detached. Detaching clears that organization’s existing domain verification and SSO/SCIM configuration, so confirm its admins are aware before you request it.
+- **The organization may already belong to another parent organization** with separate verified domains and SSO. **[Contact support](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** to have it detached. Detaching clears that organization’s existing domain verification and SSO/SCIM configuration, so confirm its admins are aware before you request it.
 
 ### To initiate a merge proposal
 
@@ -119,15 +119,17 @@ For detailed information on how each provisioning method works, see **[Set up JI
 
 After enabling SSO for your organization, there are two distinct scenarios to consider for users who have individual accounts associated with your verified company domain:
 
-### Users with existing Free/Pro/Team/Max accounts who ARE added to your SSO application
+### Users with existing Free/Pro/Team/Max/Ultra accounts who ARE added to your SSO application
 
-These users keep access to their existing Free/Pro/Team/Max accounts. They can toggle between the Team or Enterprise plan account and their previous accounts by clicking the profile icon with their initials in the bottom left corner.
+These users keep access to their existing Free/Pro/Team/Max/Ultra accounts. They can toggle between the Team or Enterprise plan account and their previous accounts by clicking the profile icon with their initials in the bottom left corner. They can also close the personal account and bring what can move. Learn more in **[Move your personal Claude account to a Team or Enterprise organization](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**.
 
-### Users with existing Free/Pro/Team/Max accounts who are NOT added to your SSO application
+On Enterprise plans, to close every personal account on your domain. Learn more in **[Claim and migrate accounts on your domain](claim-and-migrate-accounts-on-your-domain.md)**.
+
+### Users with existing Free/Pro/Team/Max/Ultra accounts who are NOT added to your SSO application
 
 - **If "Require SSO for Claude" is NOT enabled:** These users can still access their existing accounts using the "Continue with email" option.
 
-- **If "Require SSO for Claude" IS enabled:** These users will be unable to access their existing Free/Pro/Team/Max accounts. Please note that these accounts are not deleted, but will be inaccessible as users are unable to log in via SSO.
+- **If "Require SSO for Claude" IS enabled:** These users will be unable to access their existing Free/Pro/Team/Max/Ultra accounts. Please note that these accounts are not deleted, but will be inaccessible as users are unable to log in via SSO.
 
 ------------------------------------------------------------------------
 
@@ -151,7 +153,7 @@ To view or download information about your verified domains and their usage acro
 
 - Provide a clear timeline for when the change will occur.
 
-- Advise employees who won't be added to the SSO application to save or **[export their conversation history](../22-Safety-Policy/how-can-i-export-my-claude-data.md)** if SSO will be enforced.
+- Advise employees who won't be added to the SSO application to save or **[export their conversation history](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)** if SSO will be enforced.
 
 ### Plan for a smooth transition
 

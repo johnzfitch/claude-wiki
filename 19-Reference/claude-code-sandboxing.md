@@ -40,7 +40,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=claude-code)
 
-In [Claude Code](../15-Claude-AI-Features/product-claude-code-fad1ab4b.md), Claude writes, tests, and debugs code alongside you, navigating your codebase, editing multiple files, and running commands to verify its work. Giving Claude this much access to your codebase and files can introduce risks, especially in the case of prompt injection.
+In [Claude Code](../15-Claude-AI-Features/product-claude-code.md), Claude writes, tests, and debugs code alongside you, navigating your codebase, editing multiple files, and running commands to verify its work. Giving Claude this much access to your codebase and files can introduce risks, especially in the case of prompt injection.
 
 To help address this, we’ve introduced two new features in Claude Code built on top of sandboxing, both of which are designed to provide a more secure place for developers to work, while also allowing Claude to run more autonomously and with fewer permission prompts. In our internal usage, we've found that sandboxing safely reduces permission prompts by 84%. By defining set boundaries within which Claude can work freely, they increase security and agency.
 

@@ -2,9 +2,11 @@
 title: "Contextual retrieval in AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/contextual-retrieval"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:44Z"
+fetched_at: "2026-11-09T06:26:22Z"
 tags: ["news-research", "rag"]
 ---
+
+### 01A primer on RAG: scaling to larger knowledge bases
 
 # Introducing Contextual Retrieval
 
@@ -14,21 +16,18 @@ tags: ["news-research", "rag"]
 - [04Conclusion](#conclusion)
 - [05Appendix I](#appendix-i)
 
-- Published
+Published  
+Sep 19, 2024
 
-  Sep 19, 2024
+Team  
+[Engineering](https://www.anthropic.com/engineering)
 
-- Team
+Topics  
+- [Context engineering](https://www.anthropic.com/search?topic=context-engineering)
+- [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
 
-  [Engineering](https://www.anthropic.com/engineering)
-
-- Topics
-
-  - [Context engineering](https://www.anthropic.com/search?topic=context-engineering)
-  - [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-
-  See more...
+See more...
 
 Related articles
 
@@ -101,7 +100,7 @@ Let’s return to our SEC filings collection example. Here's an example of how a
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 original_chunk = "The company's revenue grew by 3% over the previous quarter."
 
 contextualized_chunk = "This chunk is from an SEC filing on ACME corp's performance in Q2 2023; the previous quarter's revenue was $314 million. The company's revenue grew by 3% over the previous quarter."
@@ -115,7 +114,7 @@ Of course, it would be far too much work to manually annotate the thousands or e
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 <document> 
 {{WHOLE_DOCUMENT}} 
 </document> 
@@ -200,7 +199,7 @@ Below is a breakdown of results across datasets, embedding providers, use of BM2
 
 See [Appendix II](https://assets.anthropic.com/m/1632cded0a125333/original/Contextual-Retrieval-Appendix-2.pdf) for the breakdowns for Retrievals @ 10 and @ 5 as well as example questions and answers for each dataset.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

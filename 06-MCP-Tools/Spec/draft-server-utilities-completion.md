@@ -2,11 +2,14 @@
 title: "Completion - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/completion"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:29:15Z"
+fetched_at: "2026-10-31T06:25:29Z"
+last_modified: "Fri, 30 Oct 2026 21:09:07 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [User Interaction Model](#user-interaction-model)
 - [Capabilities](#capabilities)
@@ -152,9 +155,9 @@ Reference Types
 
 The protocol supports two types of completion references:
 
-| Type           | Description                               | Example                                             |
-|----------------|-------------------------------------------|-----------------------------------------------------|
-| `ref/prompt`   | References a prompt by name               | `{"type": "ref/prompt", "name": "code_review"}`     |
+| Type | Description | Example |
+|----|----|----|
+| `ref/prompt` | References a prompt by name | `{"type": "ref/prompt", "name": "code_review"}` |
 | `ref/resource` | References a resource URI or URI template | `{"type": "ref/resource", "uri": "file:///{path}"}` |
 
 

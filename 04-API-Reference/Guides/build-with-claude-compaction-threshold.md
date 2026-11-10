@@ -2,103 +2,9 @@
 title: "Compaction at a token threshold - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-threshold"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-10-23T06:28:38Z"
+fetched_at: "2026-11-08T06:24:41Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fbuild-with-claude%2Fcompaction-threshold)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](build-with-claude-overview.md)[Using the Messages API](build-with-claude-working-with-messages.md)[Stop reasons and fallback](build-with-claude-handling-stop-reasons.md)[Refusals and fallback](build-with-claude-refusals-and-fallback.md)[Fallback credit](build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](build-with-claude-effort.md)[Task budgets (beta)](build-with-claude-task-budgets.md)[Fast mode](build-with-claude-fast-mode.md)[Structured outputs](build-with-claude-structured-outputs.md)[Citations](build-with-claude-citations.md)[Streaming Messages](build-with-claude-streaming.md)[Batch processing](build-with-claude-batch-processing.md)[Search results](build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](build-with-claude-multilingual-support.md)[Embeddings](build-with-claude-embeddings.md)
-
-[Thinking](build-with-claude-thinking.md)
-
-Tools
-
-[Overview](../Agents-Tools/agents-and-tools-tool-use-overview.md)[How tool use works](../Agents-Tools/agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](../Agents-Tools/agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](../Agents-Tools/agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md)[Tool runner (SDK)](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md)[Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md)[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md)[Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](../Agents-Tools/agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md)[Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md)[Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](../Agents-Tools/agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](../Agents-Tools/agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](../Agents-Tools/agents-and-tools-tool-use-tool-reference.md)[Manage tool context](../Agents-Tools/agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](../Agents-Tools/agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](../Agents-Tools/agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](../Agents-Tools/agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](build-with-claude-context-windows.md)[Context editing](build-with-claude-context-editing.md)[Prompt caching](build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](build-with-claude-cache-diagnostics.md)[Token counting](build-with-claude-token-counting.md)
-
-[Compaction](build-with-claude-compaction.md)
-
-[Overview](build-with-claude-compaction.md)[Compact on demand](build-with-claude-compaction-on-demand.md)[Keep recent turns](build-with-claude-compaction-keep-recent-turns.md)[Compact in the background](build-with-claude-compaction-background.md)[Keep thinking blocks valid](build-with-claude-compaction-thinking-blocks.md)[Threshold compaction](build-with-claude-compaction-threshold.md)
-
-Working with files
-
-[Files API](build-with-claude-files.md)[PDF support](build-with-claude-pdf-support.md)
-
-[Images and vision](build-with-claude-vision.md)
-
-Skills
-
-[Overview](../Agents-Tools/agents-and-tools-agent-skills-overview.md)[Quickstart](../Agents-Tools/agents-and-tools-agent-skills-quickstart.md)[Best practices](../Agents-Tools/agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](../Agents-Tools/agents-and-tools-agent-skills-enterprise.md)[Skills in the API](build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](../Agents-Tools/agents-and-tools-remote-mcp-servers.md)[MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)[Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
-
-[Google Cloud](build-with-claude-claude-models-on-google-cloud-overview.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Compaction
-
-Compaction at a token threshold
-
-[Beta](build-with-claude-overview.md#feature-availability)
-
-[Beta header](../Endpoints/beta-headers.md)
-
-compact-2026-01-12
-
-[ZDR](../Other/manage-claude-api-and-data-retention.md)
-
-Eligible
-
-excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
 
 # Compaction at a token threshold
 
@@ -111,6 +17,35 @@ Have the API summarize older context automatically, inside an ordinary request, 
 Copy page
 
 
+
+Threshold compaction
+
+[Status](#availability-feature-support)  
+Beta
+
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsAlways on
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
+[Beta header](#feature-beta-headers)  
+Messages API
+- `compact-2026-01-12`
+  
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleNot HIPAA eligible
+
+Usage differs by product
+
+Messages API
+
+Opt in with a `compact_20260112` edit; compaction starts at 150,000 input tokens by default.
+
+Managed Agents
+
+Always onIt compacts the session’s conversation history to fit the context window.
 
 Threshold compaction is the automatic kind of compaction: you set a token threshold on your ordinary requests, and the API summarizes older context partway through a request once the threshold is reached. It is supported alongside on-demand compaction, where you decide when the summary is written (see [Compaction on demand](build-with-claude-compaction-on-demand.md)). To choose between them, see [Choose how to compact](build-with-claude-compaction.md#choose-how-to-compact).
 
@@ -181,12 +116,12 @@ messages.append({"role": "assistant", "content": response.content})
 
 ## Parameters
 
-| Parameter                | Type    | Default                                     | Description                                                                                                            |
-|:-------------------------|:--------|:--------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|
-| `type`                   | string  | Required                                    | Must be `"compact_20260112"`                                                                                           |
-| `trigger`                | object  | `{"type": "input_tokens", "value": 150000}` | When to trigger compaction. `input_tokens` is the only supported trigger type. `value` must be at least 50,000 tokens. |
-| `pause_after_compaction` | boolean | `false`                                     | Whether to pause after generating the compaction summary                                                               |
-| `instructions`           | string  | `null`                                      | Custom summarization prompt. Completely replaces the default prompt when provided.                                     |
+| Parameter | Type | Default | Description |
+|:---|:---|:---|:---|
+| `type` | string | Required | Must be `"compact_20260112"` |
+| `trigger` | object | `{"type": "input_tokens", "value": 150000}` | When to trigger compaction. `input_tokens` is the only supported trigger type. `value` must be at least 50,000 tokens. |
+| `pause_after_compaction` | boolean | `false` | Whether to pause after generating the compaction summary |
+| `instructions` | string | `null` | Custom summarization prompt. Completely replaces the default prompt when provided. |
 
 ### Trigger configuration
 
@@ -243,7 +178,7 @@ You have written a partial transcript for the initial task above. Please write a
 
 
 
-You can provide custom instructions through the `instructions` parameter. Custom instructions don't supplement the default prompt. They replace it completely:
+You can provide custom instructions through the `instructions` parameter. Custom instructions don’t supplement the default prompt. They replace it completely:
 
 cURL
 
@@ -286,7 +221,7 @@ response = client.beta.messages.create(
 )
 ```
 
-On Claude 5.1 and later models, a request with custom `instructions` summarizes from the visible conversation only: earlier thinking blocks are not part of the summarizer's input.
+On Claude 5.1 and later models, a request with custom `instructions` summarizes from the visible conversation only: earlier thinking blocks are not part of the summarizer’s input.
 
 ### Pausing after compaction
 
@@ -343,6 +278,8 @@ if response.stop_reason == "compaction":
         context_management={"edits": [{"type": "compact_20260112"}]},
     )
 ```
+
+The API pauses even if no summary is generated. The `compaction` block’s `content` is then `null`, so keep the original messages when you continue. If safeguards block the summary, `content` is also `null` and the stop reason is `refusal` instead of `compaction`. [`stop_details`](build-with-claude-handling-stop-reasons.md#refusal) gives the policy category, if there is one. Continue the same way in both cases: look for the `compaction` block instead of testing `stop_reason`, as the [example that preserves recent messages](#examples) does.
 
 #### Enforcing a total token budget
 
@@ -415,7 +352,7 @@ Output
 
 
 
-``` inline-block
+```python
 {
   "content": [
     {
@@ -488,7 +425,9 @@ When the API receives a `compaction` block, all content blocks before it are ign
 - Keep the original messages in your list and let the API handle removing the compacted content
 - Manually drop the compacted messages and only include the compaction block onward
 
-On Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, thinking blocks from before a `compaction` block aren't carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
+If no summary is generated, the block’s `content` is `null` and the API ignores the block. Nothing is compacted, so keep the original messages.
+
+On Claude 5.1 and later models, thinking blocks from before a `compaction` block aren’t carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
 
 ### Streaming
 
@@ -635,7 +574,7 @@ Output
 
 
 
-``` block
+```python
 {
   "usage": {
     "input_tokens": 23000,
@@ -656,13 +595,13 @@ Output
 }
 ```
 
-The `iterations` array shows usage for each sampling iteration. When compaction occurs, you'll see a `compaction` iteration followed by the main `message` iteration. The top-level `input_tokens` and `output_tokens` match the `message` iteration exactly in this example because there is only one non-compaction iteration. The final iteration's token counts reflect the effective context size after compaction.
+The `iterations` array shows usage for each sampling iteration. When compaction occurs, you’ll see a `compaction` iteration followed by the main `message` iteration. The top-level `input_tokens` and `output_tokens` match the `message` iteration exactly in this example because there is only one non-compaction iteration. The final iteration’s token counts reflect the effective context size after compaction.
 
 
 
 The top-level `input_tokens` and `output_tokens` do not include compaction iteration usage. They reflect the sum of all non-compaction iterations. To calculate total tokens consumed and billed for a request, sum across all entries in the `usage.iterations` array.
 
-If you previously relied on `usage.input_tokens` and `usage.output_tokens` for cost tracking or auditing, you'll need to update your tracking logic to aggregate across `usage.iterations` when compaction is enabled. With the compaction beta enabled, every response includes `usage.iterations`, even if no compaction occurred. A `compaction` entry appears only when a new compaction is triggered during the request. Re-applying a previous `compaction` block incurs no additional compaction cost, and the top-level usage fields remain accurate in that case.
+If you previously relied on `usage.input_tokens` and `usage.output_tokens` for cost tracking or auditing, you’ll need to update your tracking logic to aggregate across `usage.iterations` when compaction is enabled. With the compaction beta enabled, every response includes `usage.iterations`, even if no compaction occurred. A `compaction` entry appears only when a new compaction is triggered during the request. Re-applying a previous `compaction` block incurs no additional compaction cost, and the top-level usage fields remain accurate in that case.
 
 ## Combining with other features
 
@@ -712,7 +651,7 @@ print(f"Original tokens: {count_response.context_management.original_input_token
 
 ## Examples
 
-Here's a complete example of a long-running conversation with compaction:
+Here’s a complete example of a long-running conversation with compaction:
 
 cURL
 
@@ -764,19 +703,19 @@ def chat(user_message: str) -> str:
     messages.append({"role": "assistant", "content": response.content})
 
     # Return the text content
-    return next(block.text for block in response.content if block.type == "text")
+    return next((block.text for block in response.content if block.type == "text"), "")
 
 
 # Run a long conversation
-print(chat("Help me build a Python web scraper"))
-print(chat("Add support for JavaScript-rendered pages"))
-print(chat("Now add rate limiting and error handling"))
+print(chat("Briefly, help me build a Python web scraper"))
+print(chat("Briefly, add support for JavaScript-rendered pages"))
+print(chat("Briefly, add rate limiting and error handling"))
 # Continue calling chat() for as long as the conversation needs
 ```
 
-On Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, remove the `thinking` and `redacted_thinking` blocks from any assistant turn you re-insert after the compaction block, or send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"` with the `thinking-binding-controls-2026-08-01` [beta header](../Endpoints/beta-headers.md). Those blocks were produced when the full history was present, so they no longer pass the [conversation check](build-with-claude-thinking.md#preserved-in-conversation). Where the check is enforced, the continuation request is rejected with a 400 error. The preserved text and tool blocks can stay as they are. Letting the API summarize everything, without re-inserting earlier turns, avoids this. On Claude Sonnet 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With `between_tools`, remove the blocks instead. On Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`, so with `thinking: {"type": "disabled"}`, remove the blocks instead.
+On Claude 5.1 and later models, thinking blocks in any assistant turn you reinsert after the compaction block fail the [prefix check](build-with-claude-thinking.md#preserved-in-conversation), because they were produced when the full history was present. Strip the `thinking` and `redacted_thinking` blocks from those turns. Alternatively, send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"` with the `thinking-binding-controls-2026-08-01` [beta header](../Endpoints/beta-headers.md). The preserved text and tool blocks can stay as they are. Letting the API summarize everything, without reinserting earlier turns, avoids this. On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With any other thinking setting on those models, strip the blocks.
 
-Here's an example that uses `pause_after_compaction` to preserve the prior exchange and the current user message (three messages total) instead of summarizing them. It keeps their text and tool blocks unchanged, removes the `thinking` and `redacted_thinking` blocks from the preserved assistant turn, and drops that turn if nothing else is left:
+Here’s an example that uses `pause_after_compaction` to preserve the prior exchange and the current user message (three messages total) instead of summarizing them. It keeps their text and tool blocks unchanged, removes the `thinking` and `redacted_thinking` blocks from the preserved assistant turn, and drops that turn if nothing else is left:
 
 cURL
 
@@ -827,11 +766,14 @@ def chat(user_message: str) -> str:
         },
     )
 
-    # Check if compaction occurred and paused
-    if response.stop_reason == "compaction":
-        # Get the compaction block from the response
-        compaction_block = response.content[0]
+    # Look for the compaction block, not the stop reason:
+    # stop_reason is "refusal", not "compaction", if the summary was blocked
+    compaction_block = next(
+        (block for block in response.content if block.type == "compaction"), None
+    )
 
+    # Replace the history only if a summary was generated
+    if compaction_block is not None and compaction_block.content is not None:
         # Preserve the prior exchange + current user message (3 messages)
         # by including them after the compaction block, without thinking
         # blocks; an assistant turn left with no content is dropped
@@ -856,30 +798,31 @@ def chat(user_message: str) -> str:
             {"role": "assistant", "content": new_assistant_content}
         ] + preserved_messages
 
-        # Continue the request with the compacted context + preserved messages
+        # Update the message list to reflect the compaction
+        messages.clear()
+        messages.extend(messages_after_compaction)
+
+    if compaction_block is not None:
+        # Continue the request, with the full history if there is no summary
         response = client.beta.messages.create(
             betas=["compact-2026-01-12"],
             model="claude-opus-5-5",
             max_tokens=4096,
-            messages=messages_after_compaction,
+            messages=messages,
             context_management={"edits": [{"type": "compact_20260112"}]},
         )
-
-        # Update the message list to reflect the compaction
-        messages.clear()
-        messages.extend(messages_after_compaction)
 
     # Append the final response
     messages.append({"role": "assistant", "content": response.content})
 
     # Return the text content
-    return next(block.text for block in response.content if block.type == "text")
+    return next((block.text for block in response.content if block.type == "text"), "")
 
 
 # Run a long conversation
-print(chat("Help me build a Python web scraper"))
-print(chat("Add support for JavaScript-rendered pages"))
-print(chat("Now add rate limiting and error handling"))
+print(chat("Briefly, help me build a Python web scraper"))
+print(chat("Briefly, add support for JavaScript-rendered pages"))
+print(chat("Briefly, add rate limiting and error handling"))
 # Continue calling chat() for as long as the conversation needs
 ```
 
@@ -913,18 +856,85 @@ Learn about context window sizes and management strategies.
 
 Explore a practical implementation that manages long-running conversations with instant session memory compaction using background threading and prompt caching.
 
-## Compatibility
+## Availability
 
-Supported models  
-- Fable 5 and 5.1
-- Mythos 5, 5.1, and Preview
-- Opus 4.6, 4.7, 4.8, 5, and 5.5
-- Sonnet 4.6, 5, and 5.5
-- Haiku 5.5
+Threshold compaction is in beta on select models and eligible for zero data retention.
 
-Supported platforms  
-- Claude APIBeta
-- Claude Platform on AWSBeta
-- Amazon BedrockBeta
-- Claude Models on Google Cloud (Google managed)Beta
-- Microsoft FoundryBeta
+### API support
+
+[Messages API](build-with-claude-working-with-messages.md)
+
+Usage
+
+Opt in with a `compact_20260112` edit in `context_management.edits`. Compaction starts when input tokens reach the trigger, 150,000 by default and at least 50,000.
+
+StatusBeta
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+
+Models
+
+- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
+- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
+- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
+- All other models
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+Usage
+
+Always on
+
+It compacts the session’s conversation history to fit the context window, and each compaction emits an `agent.thread_context_compacted` event.
+
+StatusBeta
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+
+Models
+
+- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
+- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
+- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
+- All other models
+
+### Required beta headers
+
+[Beta headers overview](../Endpoints/beta-headers.md)
+
+Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+
+Header
+
+- `compact-2026-01-12`
+  
+
+APIs
+
+- [Messages API](build-with-claude-working-with-messages.md)
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages` with `context_management`
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+Server-side compaction results are returned and round-tripped statelessly through the API response.
+
+HIPAANot eligible

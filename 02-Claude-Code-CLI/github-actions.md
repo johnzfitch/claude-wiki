@@ -2,11 +2,14 @@
 title: "Claude Code GitHub Actions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/github-actions"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-08T06:24:38Z"
+fetched_at: "2026-10-31T06:25:09Z"
+last_modified: "Sat, 31 Oct 2026 02:21:00 GMT"
 tags: ["claude-code", "git", "github"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Setup](#setup)
   - [Quick setup](#quick-setup)
@@ -35,7 +38,7 @@ tags: ["claude-code", "git", "github"]
 - [Upgrade from beta](#upgrade-from-beta)
 - [What’s next](#what%E2%80%99s-next)
 
-Code review & CI/CD
+Run Claude in your own CI
 
 # Claude Code GitHub Actions
 
@@ -110,7 +113,7 @@ Add an authentication secret
 Add one of the following secrets to your repository, depending on how you authenticate. See GitHub’s guide to [using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
 - `ANTHROPIC_API_KEY`: a Claude API key from the [Claude Console](../04-API-Reference/Other/playground.md)
-- `CLAUDE_CODE_OAUTH_TOKEN`: an OAuth token that authenticates with your Claude subscription, available on Pro, Max, Team, and Enterprise plans. Generate one by running `claude setup-token` locally. See [Generate a long-lived token](authentication.md#generate-a-long-lived-token)
+- `CLAUDE_CODE_OAUTH_TOKEN`: an OAuth token that authenticates with your Claude subscription, available on Pro, Max, Ultra, Team, and Enterprise plans. Generate one by running `claude setup-token` locally. See [Generate a long-lived token](authentication.md#generate-a-long-lived-token)
 
 In workflow files, pass the secret to the matching input: `anthropic_api_key` for an API key, or `claude_code_oauth_token` for an OAuth token.
 
@@ -288,8 +291,8 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
-          plugins: "code-review@claude-code-plugins"
+          plugin_marketplaces: "https://github.com/anthropics/claude-plugins-official.git"
+          plugins: "code-review@claude-plugins-official"
           prompt: "/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
           claude_args: '--allowedTools "mcp__github_inline_comment__create_inline_comment"'
 ```
@@ -431,20 +434,20 @@ Action parameters
 
 These are the most commonly used inputs. Each maps to a `with:` key in the `anthropics/claude-code-action` step.
 
-| Parameter                 | Description                                                                                                                                                                       | Required                                                                                                                                                                      |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `prompt`                  | Instructions for Claude, as plain text or a [skill](../08-Plugins-Skills/skills.md) invocation. When omitted, Claude responds to the [trigger phrase](#interactive-and-automation-modes) instead | No                                                                                                                                                                            |
-| `claude_args`             | CLI arguments passed to Claude Code                                                                                                                                               | No                                                                                                                                                                            |
-| `anthropic_api_key`       | Claude API key                                                                                                                                                                    | For the Claude API, unless you use `claude_code_oauth_token` or [workload identity federation](#set-up-for-an-organization). Not used for Bedrock, Agent Platform, or Foundry |
-| `claude_code_oauth_token` | OAuth token for authenticating with a Claude subscription, generated with `claude setup-token`                                                                                    | No                                                                                                                                                                            |
-| `github_token`            | Token for GitHub operations. When omitted, the Claude Code GitHub Action authenticates as the Claude GitHub App                                                                   | No                                                                                                                                                                            |
-| `plugin_marketplaces`     | Newline-separated list of plugin marketplace Git URLs                                                                                                                             | No                                                                                                                                                                            |
-| `plugins`                 | Newline-separated list of plugin names to install before execution                                                                                                                | No                                                                                                                                                                            |
-| `settings`                | Claude Code settings, as a JSON string or a path to a settings JSON file                                                                                                          | No                                                                                                                                                                            |
-| `trigger_phrase`          | Trigger phrase Claude responds to. Default: `@claude`                                                                                                                             | No                                                                                                                                                                            |
-| `use_bedrock`             | Use Amazon Bedrock instead of the Claude API                                                                                                                                      | No                                                                                                                                                                            |
-| `use_vertex`              | Use Google Cloud’s Agent Platform instead of the Claude API                                                                                                                       | No                                                                                                                                                                            |
-| `use_foundry`             | Use Microsoft Foundry instead of the Claude API                                                                                                                                   | No                                                                                                                                                                            |
+| Parameter | Description | Required |
+|----|----|----|
+| `prompt` | Instructions for Claude, as plain text or a [skill](../08-Plugins-Skills/skills.md) invocation. When omitted, Claude responds to the [trigger phrase](#interactive-and-automation-modes) instead | No |
+| `claude_args` | CLI arguments passed to Claude Code | No |
+| `anthropic_api_key` | Claude API key | For the Claude API, unless you use `claude_code_oauth_token` or [workload identity federation](#set-up-for-an-organization). Not used for Bedrock, Agent Platform, or Foundry |
+| `claude_code_oauth_token` | OAuth token for authenticating with a Claude subscription, generated with `claude setup-token` | No |
+| `github_token` | Token for GitHub operations. When omitted, the Claude Code GitHub Action authenticates as the Claude GitHub App | No |
+| `plugin_marketplaces` | Newline-separated list of plugin marketplace Git URLs | No |
+| `plugins` | Newline-separated list of plugin names to install before execution | No |
+| `settings` | Claude Code settings, as a JSON string or a path to a settings JSON file | No |
+| `trigger_phrase` | Trigger phrase Claude responds to. Default: `@claude` | No |
+| `use_bedrock` | Use Amazon Bedrock instead of the Claude API | No |
+| `use_vertex` | Use Google Cloud’s Agent Platform instead of the Claude API | No |
+| `use_foundry` | Use Microsoft Foundry instead of the Claude API | No |
 
 For the full input list, see the Claude Code GitHub Action’s [configuration reference](https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md#inputs).
 

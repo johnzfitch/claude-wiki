@@ -2,11 +2,14 @@
 title: "Build an MCP client - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/draft/develop/build-client"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-08-10T06:45:51Z"
+fetched_at: "2026-11-07T06:23:43Z"
+last_modified: "Sat, 07 Nov 2026 06:21:34 GMT"
 tags: ["cli", "mcp"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Next steps](#next-steps)
 
@@ -148,6 +151,10 @@ from dotenv import load_dotenv
 load_dotenv()  # load environment variables from .env
 
 MODEL = "claude-opus-5"
+# The model thinks adaptively unless told otherwise, and max_tokens caps thinking
+# plus the reply, so leave room for both.
+MAX_TOKENS = 10000
+MAX_TOOL_TURNS = 10
 anthropic = Anthropic()
 ```
 
@@ -203,32 +210,37 @@ async def process_query(client: Client, query: str) -> str:
         "input_schema": tool.input_schema
     } for tool in tool_list.tools]
 
+    final_text = []
+
     # Initial Claude API call
     response = anthropic.messages.create(
         model=MODEL,
-        max_tokens=1000,
+        max_tokens=MAX_TOKENS,
         messages=messages,
         tools=available_tools
     )
 
-    # Process response and handle tool calls
-    final_text = []
-    tool_results = []
+    for _ in range(MAX_TOOL_TURNS):
+        # Process response and collect tool calls
+        tool_uses = []
+        for content in response.content:
+            if content.type == 'text':
+                final_text.append(content.text)
+            elif content.type == 'tool_use':
+                tool_uses.append(content)
 
-    for content in response.content:
-        if content.type == 'text':
-            final_text.append(content.text)
-        elif content.type == 'tool_use':
-            tool_name = content.name
-            tool_args = content.input
+        if not tool_uses:
+            return "\n".join(final_text)
 
+        tool_results = []
+        for tool_use in tool_uses:
             # Execute tool call
-            result = await client.call_tool(tool_name, tool_args)
-            final_text.append(f"[Calling tool {tool_name} with args {tool_args}]")
+            result = await client.call_tool(tool_use.name, tool_use.input)
+            final_text.append(f"[Calling tool {tool_use.name} with args {tool_use.input}]")
 
             tool_results.append({
                 "type": "tool_result",
-                "tool_use_id": content.id,
+                "tool_use_id": tool_use.id,
                 "content": "\n".join(
                     block.text
                     for block in result.content
@@ -237,26 +249,28 @@ async def process_query(client: Client, query: str) -> str:
                 "is_error": result.is_error
             })
 
-    if tool_results:
+        # Replay the assistant turn as returned, then answer all of its
+        # tool calls in a single user message
         messages.append({"role": "assistant", "content": response.content})
         messages.append({"role": "user", "content": tool_results})
 
         # Get next response from Claude
         response = anthropic.messages.create(
             model=MODEL,
-            max_tokens=1000,
+            max_tokens=MAX_TOKENS,
             messages=messages,
             tools=available_tools
         )
 
-        for content in response.content:
-            if content.type == 'text':
-                final_text.append(content.text)
-
+    # The turn cap was hit. Keep the last response's text. If it asked for
+    # more tools, say they were not run.
+    final_text.extend(content.text for content in response.content if content.type == 'text')
+    if any(content.type == 'tool_use' for content in response.content):
+        final_text.append(f"[Stopped after {MAX_TOOL_TURNS} tool-use turns]")
     return "\n".join(final_text)
 ```
 
-`call_tool` returns a `CallToolResult`. Its `content` is a list of blocks, which is why we narrow to `TextContent` before reading `.text`. A tool that raises does not raise here: it answers with `is_error` set, and passing that flag on lets Claude read the message and try something else.
+`call_tool` returns a `CallToolResult`. Its `content` is a list of blocks, which is why we narrow to `TextContent` before reading `.text`. A tool that raises does not raise here: it answers with `is_error` set, and passing that flag on lets Claude read the message and try something else.Each turn replays the assistant message exactly as Claude returned it, thinking blocks included, and answers every `tool_use` block of that turn in one user message. The Messages API rejects a conversation where those two do not line up. `tools` goes on every call so Claude can keep calling tools, and the loop runs until Claude answers without one or `MAX_TOOL_TURNS` is reached, at which point the client reports that it stopped.
 
 
 [​](#interactive-chat-interface)
@@ -347,7 +361,8 @@ Key Components Explained
 
 - Maintains conversation context
 - Handles Claude’s responses and tool calls
-- Manages the message flow between Claude and tools
+- Runs every tool call of a turn, then answers them all in one message
+- Keeps looping while Claude asks for tools, up to `MAX_TOOL_TURNS`
 - Combines results into a coherent response
 
 
@@ -376,6 +391,7 @@ Common Customization Points
 
 1.  **Tool Handling**
     - Modify `process_query()` to handle specific tool types
+    - Adjust `MAX_TOOL_TURNS` to allow more or fewer rounds of tool calls per query
     - Add custom error handling for tool calls
     - Implement tool-specific response formatting
 2.  **Response Processing**
@@ -423,7 +439,7 @@ When you submit a query:
 2.  Your query is sent to Claude along with tool descriptions
 3.  Claude decides which tools (if any) to use
 4.  The client executes any requested tool calls through the server
-5.  Results are sent back to Claude
+5.  Results are sent back to Claude, and steps 3 to 5 repeat while Claude keeps asking for tools, up to `MAX_TOOL_TURNS`
 6.  Claude provides a natural language response
 7.  The response is displayed to you
 
@@ -434,6 +450,7 @@ Best practices
 
 1.  **Error Handling**
     - Check `result.is_error` rather than expecting a failing tool to raise
+    - Keep the tool loop capped so a query that never settles still returns
     - Provide meaningful error messages
     - Gracefully handle connection issues
 2.  **Resource Management**
@@ -633,8 +650,11 @@ First, let’s set up our imports and create the basic client class in `index.ts
 ```python
 import { Anthropic } from "@anthropic-ai/sdk";
 import {
+  ContentBlockParam,
   MessageParam,
   Tool,
+  ToolResultBlockParam,
+  ToolUseBlock,
 } from "@anthropic-ai/sdk/resources/messages/messages.mjs";
 import { Client } from "@modelcontextprotocol/client";
 import { StdioClientTransport } from "@modelcontextprotocol/client/stdio";
@@ -648,6 +668,12 @@ if (!ANTHROPIC_API_KEY) {
   throw new Error("ANTHROPIC_API_KEY is not set");
 }
 
+const MODEL = "claude-opus-5";
+// The model thinks adaptively unless told otherwise, and max_tokens caps
+// thinking plus the reply, so leave room for both.
+const MAX_TOKENS = 10000;
+const MAX_TOOL_TURNS = 10;
+
 class MCPClient {
   private mcp: Client;
   private anthropic: Anthropic;
@@ -658,7 +684,12 @@ class MCPClient {
     this.anthropic = new Anthropic({
       apiKey: ANTHROPIC_API_KEY,
     });
-    this.mcp = new Client({ name: "mcp-client-cli", version: "1.0.0" });
+    // 'auto' probes server/discover, falling back to the 2025-11-25 handshake.
+    // The SDK's default is 'legacy'.
+    this.mcp = new Client(
+      { name: "mcp-client-cli", version: "1.0.0" },
+      { versionNegotiation: { mode: "auto" } },
+    );
   }
   // methods will go here
 }
@@ -726,53 +757,85 @@ async processQuery(query: string) {
     },
   ];
 
-  const response = await this.anthropic.messages.create({
-    model: "claude-opus-5",
-    max_tokens: 1000,
+  let response = await this.anthropic.messages.create({
+    model: MODEL,
+    max_tokens: MAX_TOKENS,
     messages,
     tools: this.tools,
   });
 
-  const finalText = [];
+  const finalText: string[] = [];
 
-  for (const content of response.content) {
-    if (content.type === "text") {
-      finalText.push(content.text);
-    } else if (content.type === "tool_use") {
-      const toolName = content.name;
-      const toolArgs = content.input as { [x: string]: unknown } | undefined;
+  for (let turn = 0; turn < MAX_TOOL_TURNS; turn++) {
+    const toolUses: ToolUseBlock[] = [];
 
-      const result = await this.mcp.callTool({
-        name: toolName,
-        arguments: toolArgs,
-      });
+    for (const block of response.content) {
+      if (block.type === "text") {
+        finalText.push(block.text);
+      } else if (block.type === "tool_use") {
+        toolUses.push(block);
+      }
+    }
+
+    if (toolUses.length === 0) {
+      return finalText.join("\n");
+    }
+
+    const toolResults: ToolResultBlockParam[] = [];
+    for (const toolUse of toolUses) {
+      const toolArgs = toolUse.input as { [x: string]: unknown } | undefined;
       finalText.push(
-        `[Calling tool ${toolName} with args ${JSON.stringify(toolArgs)}]`
+        `[Calling tool ${toolUse.name} with args ${JSON.stringify(toolArgs)}]`
       );
 
-      messages.push({
-        role: "user",
+      const result = await this.mcp.callTool({
+        name: toolUse.name,
+        arguments: toolArgs,
+      });
+
+      toolResults.push({
+        type: "tool_result",
+        tool_use_id: toolUse.id,
         content: result.content
           .filter((block) => block.type === "text")
           .map((block) => block.text)
           .join("\n"),
+        is_error: result.isError === true,
       });
-
-      const response = await this.anthropic.messages.create({
-        model: "claude-opus-5",
-        max_tokens: 1000,
-        messages,
-      });
-
-      finalText.push(
-        response.content[0].type === "text" ? response.content[0].text : ""
-      );
     }
+
+    messages.push({
+      role: "assistant",
+      content: response.content as unknown as ContentBlockParam[],
+    });
+    messages.push({ role: "user", content: toolResults });
+
+    response = await this.anthropic.messages.create({
+      model: MODEL,
+      max_tokens: MAX_TOKENS,
+      messages,
+      tools: this.tools,
+    });
   }
 
+  // The turn cap was hit. Keep the last response's text. If it asked for
+  // more tools, say they were not run.
+  let wantsTools = false;
+  for (const block of response.content) {
+    if (block.type === "text") {
+      finalText.push(block.text);
+    } else if (block.type === "tool_use") {
+      wantsTools = true;
+    }
+  }
+  if (wantsTools) {
+    finalText.push(`[Stopped after ${MAX_TOOL_TURNS} tool-use turns]`);
+  }
   return finalText.join("\n");
 }
 ```
+
+Each turn collects every `tool_use` block before calling the server, then sends the whole assistant turn back as returned (thinking blocks included) followed by one user message holding a `tool_result` block per call. `callTool` returns a `CallToolResult` whose `content` is a list of blocks, which is why the code narrows to `text` blocks before reading `.text`. A tool that fails does not throw here: it answers with `isError` set, and passing that flag on as `is_error` lets Claude read the message and try something else. Every request carries `tools`, so Claude can keep calling tools until it has an answer, up to `MAX_TOOL_TURNS` rounds.
 
 
 [​](#interactive-chat-interface-2)
@@ -787,13 +850,26 @@ async chatLoop() {
     input: process.stdin,
     output: process.stdout,
   });
+  // rl.question() doesn't reject on stdin EOF on its own. Wire its close
+  // event to an AbortSignal so EOF (Ctrl-D) and SIGINT both unblock it.
+  const ac = new AbortController();
+  const onClose = () => ac.abort();
+  rl.on("close", onClose);
+  const onSigint = () => rl.close();
+  process.once("SIGINT", onSigint);
 
   try {
     console.log("\nMCP Client Started!");
     console.log("Type your queries or 'quit' to exit.");
 
     while (true) {
-      const message = await rl.question("\nQuery: ");
+      let message: string;
+      try {
+        message = await rl.question("\nQuery: ", { signal: ac.signal });
+      } catch {
+        break;
+      }
+
       if (message.toLowerCase() === "quit") {
         break;
       }
@@ -801,6 +877,8 @@ async chatLoop() {
       console.log("\n" + response);
     }
   } finally {
+    process.off("SIGINT", onSigint);
+    rl.off("close", onClose);
     rl.close();
   }
 }
@@ -809,6 +887,8 @@ async cleanup() {
   await this.mcp.close();
 }
 ```
+
+Closing stdin (Ctrl-D) or pressing Ctrl-C aborts the pending `rl.question()` and breaks out of the loop, so the client reaches `cleanup()` and exits with status 0 instead of failing with `ERR_USE_AFTER_CLOSE`.
 
 
 [​](#main-entry-point-2)
@@ -877,9 +957,9 @@ When you submit a query:
 1.  The client gets the list of available tools from the server
 2.  Your query is sent to Claude along with tool descriptions
 3.  Claude decides which tools (if any) to use
-4.  The client executes any requested tool calls through the server
-5.  Results are sent back to Claude
-6.  Claude provides a natural language response
+4.  The client executes every requested tool call through the server
+5.  The assistant turn and all tool results go back to Claude in one request, with the tools attached again
+6.  Claude either requests more tools (the loop allows up to `MAX_TOOL_TURNS` rounds) or provides a natural language response
 7.  The response is displayed to you
 
 
@@ -889,7 +969,7 @@ Best practices
 
 1.  **Error Handling**
     - Use TypeScript’s type system for better error detection
-    - Wrap tool calls in try-catch blocks
+    - Check `result.isError` rather than expecting a failing tool to throw
     - Provide meaningful error messages
     - Gracefully handle connection issues
 2.  **Security**
@@ -953,6 +1033,8 @@ If you see:
 - `TypeError`: Ensure you’re using the correct types for tool arguments
 - `BadRequestError`: Ensure you have enough credits to access the Anthropic API
 
+This client uses MCP protocol version 2025-11-25, as supported by the latest stable release of the Java SDK. It connects to servers that accept that version, but not to servers that accept only 2026-07-28. See [backward compatibility](../Spec/draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions).
+
 This is a quickstart demo based on Spring AI MCP auto-configuration and boot starters. To learn how to create sync and async MCP Clients manually, consult the [Java SDK Client](https://java.sdk.modelcontextprotocol.io/) documentation.
 
 This example demonstrates how to build an interactive chatbot that combines Spring AI’s Model Context Protocol (MCP) with the [Brave Search MCP Server](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/brave-search). The application creates a conversational interface powered by Anthropic’s Claude AI model that can perform internet searches through Brave Search, enabling natural language interactions with real-time web data. [You can find the complete code for this tutorial here.](https://github.com/spring-projects/spring-ai-examples/tree/main/model-context-protocol/web-search/brave-chatbot)
@@ -984,7 +1066,7 @@ Setting Up Your Environment
 
     ``` shiki
     git clone https://github.com/spring-projects/spring-ai-examples.git
-    cd model-context-protocol/web-search/brave-chatbot
+    cd spring-ai-examples/model-context-protocol/web-search/brave-chatbot
     ```
 3.  Set up your API keys:
 
@@ -1043,7 +1125,6 @@ spring:
         type: SYNC
         request-timeout: 20s
         stdio:
-          root-change-notification: true
           servers-configuration: classpath:/mcp-servers-config.json
         toolcallback:
           enabled: true
@@ -1051,7 +1132,7 @@ spring:
       api-key: ${ANTHROPIC_API_KEY}
 ```
 
-This activates the `spring-ai-starter-mcp-client` to create one or more `McpClient`s based on the provided server configuration. The `spring.ai.mcp.client.toolcallback.enabled=true` property enables the tool callback mechanism, that automatically registers all MCP tool as spring ai tools. It is disabled by default.
+This activates the `spring-ai-starter-mcp-client` to create one or more `McpClient`s based on the provided server configuration. The `spring.ai.mcp.client.toolcallback.enabled=true` property enables the tool callback mechanism, that automatically registers all MCP tool as spring ai tools. It is enabled by default.
 
 3.  MCP Server Configuration (`mcp-servers-config.json`):
 
@@ -1079,8 +1160,8 @@ The chatbot is implemented using Spring AI’s ChatClient with MCP tool integrat
 ```python
 var chatClient = chatClientBuilder
     .defaultSystem("You are useful assistant, expert in AI and Java.")
-    .defaultToolCallbacks((Object[]) mcpToolAdapter.toolCallbacks())
-    .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
+    .defaultTools(SyncMcpToolCallbackProvider.builder().mcpClients(mcpSyncClients).build())
+    .defaultAdvisors(MessageChatMemoryAdvisor.builder(MessageWindowChatMemory.builder().build()).build())
     .build();
 ```
 
@@ -1088,7 +1169,7 @@ Key features:
 
 - Uses Claude AI model for natural language understanding
 - Integrates Brave Search through MCP for real-time web search capabilities
-- Maintains conversation memory using InMemoryChatMemory
+- Maintains conversation memory using MessageWindowChatMemory
 - Runs as an interactive command-line application
 
 
@@ -1143,6 +1224,8 @@ For WebFlux-based applications, you can use the WebFlux starter instead:
 
 This provides similar functionality but uses a WebFlux-based Streamable HTTP transport implementation, recommended for production deployments.
 
+This client uses MCP protocol version 2025-11-25, as supported by the latest stable release of the Kotlin SDK. It connects to servers that accept that version, but not to servers that accept only 2026-07-28. See [backward compatibility](../Spec/draft-basic-versioning.md#backward-compatibility-with-initialization-based-versions).
+
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/kotlin-sdk/tree/main/samples/kotlin-mcp-client)
 
 
@@ -1195,7 +1278,7 @@ build.gradle.kts
 
 ```python
 // Check latest versions at https://github.com/modelcontextprotocol/kotlin-sdk/releases
-val mcpVersion = "0.9.0"
+val mcpVersion = "0.16.0"
 val ktorVersion = "3.2.3"
 val anthropicVersion = "2.15.0"
 val slf4jVersion = "2.0.17"
@@ -1204,6 +1287,10 @@ plugins {
     kotlin("jvm") version "2.3.20"
     id("com.gradleup.shadow") version "8.3.9"
     application
+}
+
+repositories {
+    mavenCentral()
 }
 
 application {
@@ -1250,6 +1337,12 @@ Basic Client Structure
 First, let’s create the basic client class:
 
 ```python
+private const val MODEL = "claude-opus-5"
+// The model thinks adaptively unless told otherwise, and max_tokens caps thinking
+// plus the reply, so leave room for both.
+private const val MAX_TOKENS = 10_000L
+private const val MAX_TOOL_TURNS = 10
+
 class MCPClient(apiKey: String) : AutoCloseable {
     private val anthropic = AnthropicOkHttpClient.builder()
         .apiKey(apiKey)
@@ -1339,7 +1432,7 @@ private fun JsonObject.toJsonValue(): JsonValue {
 
 Query processing logic
 
-Now let’s add the core functionality for processing queries and handling tool calls:
+Now let’s add the core functionality for processing queries and handling tool calls. Claude can request several tools in one turn and can request more after reading their results, so the client runs a loop: it executes every requested tool, sends all of the results back in one message, and repeats until Claude answers without tool calls or `MAX_TOOL_TURNS` is reached:
 
 ```python
 suspend fun processQuery(query: String): String {
@@ -1350,58 +1443,89 @@ suspend fun processQuery(query: String): String {
             .build(),
     )
 
-    val response = anthropic.messages().create(
+    var response = anthropic.messages().create(
         MessageCreateParams.builder()
-            .model("claude-opus-5")
-            .maxTokens(1024)
+            .model(MODEL)
+            .maxTokens(MAX_TOKENS)
             .messages(messages)
             .tools(tools)
             .build(),
     )
 
     val finalText = mutableListOf<String>()
-    response.content().forEach { content ->
-        when {
-            content.isText() -> finalText.add(content.text().get().text())
 
-            content.isToolUse() -> {
-                val toolName = content.toolUse().get().name()
-                val toolArgs =
-                    content.toolUse().get()._input().convert(object : TypeReference<Map<String, JsonValue>>() {})
-
-                val result = mcp.callTool(
-                    name = toolName,
-                    arguments = toolArgs ?: emptyMap(),
-                )
-                finalText.add("[Calling tool $toolName with args $toolArgs]")
-
-                messages.add(
-                    MessageParam.builder()
-                        .role(MessageParam.Role.USER)
-                        .content(
-                            result.content
-                                .filterIsInstance<TextContent>()
-                                .joinToString("\n") { it.text }
-                        )
-                        .build(),
-                )
-
-                val aiResponse = anthropic.messages().create(
-                    MessageCreateParams.builder()
-                        .model("claude-opus-5")
-                        .maxTokens(1024)
-                        .messages(messages)
-                        .build(),
-                )
-
-                finalText.add(aiResponse.content().first().text().get().text())
+    repeat(MAX_TOOL_TURNS) {
+        val toolUses = mutableListOf<ToolUseBlock>()
+        response.content().forEach { block ->
+            when {
+                block.isText() -> finalText.add(block.text().get().text())
+                block.isToolUse() -> toolUses.add(block.toolUse().get())
             }
         }
+
+        if (toolUses.isEmpty()) return finalText.joinToString("\n")
+
+        val toolResults = toolUses.map { toolUse ->
+            val toolArgs = toolUse._input().convert(object : TypeReference<Map<String, JsonValue>>() {})
+            finalText.add("[Calling tool ${toolUse.name()} with args $toolArgs]")
+
+            val result = mcp.callTool(
+                name = toolUse.name(),
+                arguments = toolArgs ?: emptyMap(),
+            )
+
+            // content is a list of block types, so forward only the text ones. MCP
+            // and Anthropic block shapes differ, so other kinds need converting.
+            ContentBlockParam.ofToolResult(
+                ToolResultBlockParam.builder()
+                    .toolUseId(toolUse.id())
+                    .content(result.content.filterIsInstance<TextContent>().joinToString("\n") { it.text })
+                    .apply { if (result.isError == true) isError(true) }
+                    .build(),
+            )
+        }
+
+        // Replay the full assistant turn, tool_use blocks included, then send
+        // every tool result of this turn in one user message.
+        messages.add(
+            MessageParam.builder()
+                .role(MessageParam.Role.ASSISTANT)
+                .contentOfBlockParams(response.content().map { it.toParam() })
+                .build(),
+        )
+        messages.add(
+            MessageParam.builder()
+                .role(MessageParam.Role.USER)
+                .contentOfBlockParams(toolResults)
+                .build(),
+        )
+
+        response = anthropic.messages().create(
+            MessageCreateParams.builder()
+                .model(MODEL)
+                .maxTokens(MAX_TOKENS)
+                .messages(messages)
+                .tools(tools)
+                .build(),
+        )
     }
+
+    // The turn cap was hit. Keep the last response's text. If it asked for
+    // more tools, say they were not run.
+    var wantsTools = false
+    response.content().forEach { block ->
+        when {
+            block.isText() -> finalText.add(block.text().get().text())
+            block.isToolUse() -> wantsTools = true
+        }
+    }
+    if (wantsTools) finalText.add("[Stopped after $MAX_TOOL_TURNS tool-use turns]")
 
     return finalText.joinToString("\n")
 }
 ```
+
+`callTool` returns a `CallToolResult`. Its `content` is a list of blocks, which is why the code narrows to `TextContent` before reading `.text`. A tool that fails does not throw here: it answers with `isError` set, and passing that flag on through `ToolResultBlockParam` lets Claude read the message and try something else. Every tool result carries the `id` of the `tool_use` block it answers, and the assistant turn goes back exactly as returned, so the conversation stays valid for the next call.
 
 
 [​](#interactive-chat)
@@ -1495,9 +1619,9 @@ Here’s a high-level workflow schema:When you submit a query:
 1.  The client gets the list of available tools from the server
 2.  Your query is sent to Claude along with tool descriptions
 3.  Claude decides which tools (if any) to use
-4.  The client executes any requested tool calls through the server
-5.  Results are sent back to Claude
-6.  Claude provides a natural language response
+4.  The client executes every requested tool call through the server and forwards the `isError` flag of any call that failed
+5.  The client replays the assistant turn and sends all tool results back to Claude in one message, with the tool descriptions attached again
+6.  Steps 3 to 5 repeat until Claude answers without tool calls or `MAX_TOOL_TURNS` is reached
 7.  The response is displayed to you
 
 
@@ -1506,6 +1630,8 @@ Here’s a high-level workflow schema:When you submit a query:
 Best practices
 
 1.  **Error Handling**
+    - Check `result.isError` on every tool result and forward it with `isError(true)`, since a failing tool answers with that flag instead of throwing
+    - Keep `MAX_TOOL_TURNS` in place so a run that keeps requesting tools stops with a visible message
     - Leverage Kotlin’s type system to model errors explicitly
     - Wrap external tool and API calls in `try-catch` blocks when exceptions are possible
     - Provide clear and meaningful error messages
@@ -1578,6 +1704,7 @@ If you see:
 
 - `Connection refused`: Ensure the server is running and the path is correct
 - `Tool execution failed`: Verify the tool’s required environment variables are set
+- `[Stopped after 10 tool-use turns]`: Claude was still requesting tools when `MAX_TOOL_TURNS` ran out, so raise the cap or narrow the query
 - `ANTHROPIC_API_KEY is not set`: Check your environment variables
 
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/csharp-sdk/tree/main/samples/QuickstartClient)
@@ -1644,7 +1771,6 @@ using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using ModelContextProtocol.Client;
-using ModelContextProtocol.Protocol.Transport;
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -1707,7 +1833,7 @@ using var anthropicClient = new AnthropicClient(new APIAuthentication(builder.Co
 
 var options = new ChatOptions
 {
-    MaxOutputTokens = 1000,
+    MaxOutputTokens = 10000,
     ModelId = "claude-opus-5",
     Tools = [.. tools]
 };
@@ -1851,7 +1977,7 @@ cd mcp-client
 bundle init
 
 # Add required dependencies
-bundle add anthropic base64 dotenv mcp
+bundle add anthropic dotenv mcp
 
 # Create our main file
 new-item client.rb
@@ -1896,6 +2022,10 @@ require "mcp"
 
 class MCPClient
   ANTHROPIC_MODEL = "claude-opus-5"
+  # The model thinks adaptively unless told otherwise, and max_tokens caps thinking
+  # plus the reply, so leave room for both.
+  MAX_TOKENS = 10000
+  MAX_TOOL_TURNS = 10
 
   def initialize
     @mcp_client = nil
@@ -1941,11 +2071,9 @@ end
 
 Query Processing Logic
 
-Now let’s add the core functionality for processing queries and handling tool calls:
+Now let’s add the core functionality for processing queries and handling tool calls. Each turn runs every tool Claude asks for, sends all of the results back in one message, and calls Claude again with the tools attached, until Claude answers without a tool call or `MAX_TOOL_TURNS` is reached:
 
 ```python
-private
-
 def process_query(query)
   messages = [{ role: "user", content: query }]
 
@@ -1953,31 +2081,33 @@ def process_query(query)
     { name: tool.name, description: tool.description, input_schema: tool.input_schema }
   end
 
-  # Initial Claude API call.
-  response = chat(messages, tools: available_tools)
+  final_text = []
 
-  # Process response and handle tool calls.
-  if response.content.any?(Anthropic::Models::ToolUseBlock)
-    assistant_content = response.content.filter_map do |content_block|
-      case content_block
+  # Initial Claude API call with tools.
+  response = chat(messages, available_tools)
+
+  # Keep calling tools until Claude answers without one, up to a cap.
+  MAX_TOOL_TURNS.times do
+    tool_uses = []
+    response.content.each do |block|
+      case block
       when Anthropic::Models::TextBlock
-        { type: "text", text: content_block.text }
+        final_text << block.text
       when Anthropic::Models::ToolUseBlock
-        { type: "tool_use", id: content_block.id, name: content_block.name, input: content_block.input }
+        tool_uses << block
       end
     end
-    messages << { role: "assistant", content: assistant_content }
-  end
 
-  response.content.each_with_object([]) do |content, response_parts|
-    case content
-    when Anthropic::Models::TextBlock
-      response_parts << content.text
-    when Anthropic::Models::ToolUseBlock
-      # Execute tool call via MCP.
-      result = @mcp_client.call_tool(name: content.name, arguments: content.input)
-      response_parts << "[Calling tool #{content.name} with args #{content.input.to_json}]"
+    return final_text.join("\n") if tool_uses.empty?
 
+    # Execute every tool call in this response and collect the results.
+    tool_results = tool_uses.map do |tool_use|
+      result = @mcp_client.call_tool(name: tool_use.name, arguments: tool_use.input)
+      final_text << "[Calling tool #{tool_use.name} with args #{tool_use.input.to_json}]"
+
+      is_error = result.dig("result", "isError") == true
+
+      # content is a list of block types, so forward only the text ones.
       tool_result_content = result.dig("result", "content")
       result_text = if tool_result_content.is_a?(Array)
         tool_result_content.filter_map { |content_item| content_item["text"] }.join("\n")
@@ -1985,34 +2115,26 @@ def process_query(query)
         tool_result_content.to_s
       end
 
-      messages << {
-        role: "user",
-        content: [{
-          type: "tool_result",
-          tool_use_id: content.id,
-          content: result_text
-        }]
-      }
-
-      # Get next response from Claude.
-      response = chat(messages)
-
-      response.content.each do |content_block|
-        response_parts << content_block.text if content_block.is_a?(Anthropic::Models::TextBlock)
-      end
+      { type: "tool_result", tool_use_id: tool_use.id, content: result_text, is_error: is_error }
     end
-  end.join("\n")
-end
 
-def chat(messages, tools: nil)
-  params = { model: ANTHROPIC_MODEL, max_tokens: 1000, messages: messages }
-  params[:tools] = tools if tools
+    # Append the assistant's response and all tool results, in one user
+    # message, to the history. Every tool_use needs a matching tool_result.
+    messages << { role: "assistant", content: assistant_content(response) }
+    messages << { role: "user", content: tool_results }
 
-  anthropic_client.messages.create(**params)
-end
+    response = chat(messages, available_tools)
+  end
 
-def anthropic_client
-  @anthropic_client ||= Anthropic::Client.new(api_key: ENV["ANTHROPIC_API_KEY"])
+  # The turn cap was hit. Keep the last response's text. If it asked for
+  # more tools, say they were not run.
+  response.content.each do |block|
+    final_text << block.text if block.is_a?(Anthropic::Models::TextBlock)
+  end
+  if response.content.any?(Anthropic::Models::ToolUseBlock)
+    final_text << "[Stopped after #{MAX_TOOL_TURNS} tool-use turns]"
+  end
+  final_text.join("\n")
 end
 ```
 
@@ -2021,7 +2143,7 @@ end
 
 Interactive Chat Interface
 
-Now we’ll add the chat loop and cleanup functionality:
+Now we’ll add the chat loop and cleanup functionality, followed by the private helpers that `process_query` relies on:
 
 ```python
 def chat_loop
@@ -2050,6 +2172,40 @@ end
 
 def cleanup
   @transport&.close
+end
+
+private
+
+# Convert a response's content blocks back into request parameters. Thinking
+# blocks must go back unchanged, signature included, or the API rejects the
+# follow-up request.
+def assistant_content(response)
+  response.content.filter_map do |block|
+    case block
+    when Anthropic::Models::TextBlock
+      { type: "text", text: block.text }
+    when Anthropic::Models::ToolUseBlock
+      { type: "tool_use", id: block.id, name: block.name, input: block.input }
+    when Anthropic::Models::ThinkingBlock
+      { type: "thinking", thinking: block.thinking, signature: block.signature }
+    when Anthropic::Models::RedactedThinkingBlock
+      { type: "redacted_thinking", data: block.data }
+    end
+  end
+end
+
+# Tools are passed on every call so Claude can keep calling them across turns.
+def chat(messages, tools)
+  anthropic_client.messages.create(
+    model: ANTHROPIC_MODEL,
+    max_tokens: MAX_TOKENS,
+    messages: messages,
+    tools: tools
+  )
+end
+
+def anthropic_client
+  @anthropic_client ||= Anthropic::Client.new(api_key: ENV["ANTHROPIC_API_KEY"])
 end
 ```
 
@@ -2122,11 +2278,12 @@ Key Components Explained
 
 - Maps MCP tools to Anthropic tool format (`name`, `description`, `input_schema`)
 - Uses `Anthropic::Models::TextBlock` and `Anthropic::Models::ToolUseBlock` for pattern matching
-- Builds assistant content once before iterating tool calls
+- Loops up to `MAX_TOOL_TURNS` times, running every tool call in each response
 - Executes tool calls via `@mcp_client.call_tool`
-- Uses `chat` helper method to wrap Anthropic API calls
-- Extracts tool result content with `result.dig("result", "content")`
-- Passes tool results back to Claude for a final response
+- Extracts tool result content with `result.dig("result", "content")` and the error flag with `result.dig("result", "isError")`
+- Sends all of a turn’s `tool_result` blocks in a single user message, each with its `tool_use_id` and `is_error`
+- Replays the assistant turn with `assistant_content`, which round-trips thinking blocks with their signatures intact
+- Uses the `chat` helper, which passes `tools` and `MAX_TOKENS` on every API call
 
 
 [​](#4-interactive-interface-2)
@@ -2181,10 +2338,11 @@ When you submit a query:
 1.  The client gets the list of available tools from the server
 2.  Your query is sent to Claude along with tool descriptions
 3.  Claude decides which tools (if any) to use
-4.  The client executes any requested tool calls through the server
-5.  Results are sent back to Claude
-6.  Claude provides a natural language response
-7.  The response is displayed to you
+4.  The client executes every requested tool call through the server
+5.  The assistant turn and all tool results are sent back to Claude, with the tools attached again
+6.  Steps 3 to 5 repeat until Claude answers without a tool call or `MAX_TOOL_TURNS` is reached
+7.  Claude provides a natural language response
+8.  The response is displayed to you
 
 
 [​](#best-practices-4)
@@ -2193,11 +2351,13 @@ Best practices
 
 1.  **Error Handling**
     - Wrap tool calls in `begin`…`rescue` blocks
+    - Check `isError` on each tool result and forward it as `is_error` rather than expecting a failing tool to raise
     - Provide meaningful error messages
     - Gracefully handle connection issues
 2.  **Resource Management**
     - Always close the transport when done
     - Use `begin`…`ensure` for proper cleanup
+    - Cap tool-use turns with `MAX_TOOL_TURNS` so one query cannot loop indefinitely
     - Handle server disconnections
 3.  **Security**
     - Store API keys securely in `.env`
@@ -2260,6 +2420,7 @@ If you see:
 - `Connection refused`: Ensure the server is running and the path is correct
 - `Tool execution failed`: Verify the tool’s required environment variables are set
 - `Anthropic::Errors::AuthenticationError`: Check your `.env` file has a valid `ANTHROPIC_API_KEY`
+- `[Stopped after 10 tool-use turns]`: Claude kept asking for tools, so the client stopped at `MAX_TOOL_TURNS` and returned the text collected so far
 
 [You can find the complete code for this tutorial here.](https://github.com/modelcontextprotocol/quickstart-resources/tree/main/mcp-client-rust)
 
@@ -2268,9 +2429,9 @@ If you see:
 
 System Requirements
 
-Before starting, ensure your Linux system meets these requirements:
+Before starting, ensure your system meets these requirements:
 
-- Latest stable version of [Rust and Cargo](https://www.rust-lang.org/tools/install)
+- [Rust and Cargo](https://www.rust-lang.org/tools/install) 1.88 or newer
 - Anthropic API key (Claude)
 - A Python, Node.js, or executable MCP server to connect to
 
@@ -2297,18 +2458,24 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-anyhow = "1.0.100"
-genai = "0.4.2"
-rmcp = { version = "0.8.0", features = ["server", "client", "transport-io", "transport-child-process"] }
-tokio = { version = "1.47.1", features = ["full"] }
-tracing = "0.1.41"
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
-serde_json = "1.0.128"
+anyhow = "1.0.104"
+jsonschema = "0.59"
+# Only the client half of rmcp is needed, over a child-process stdio transport.
+rmcp = { version = "3.4", features = [
+    "client",
+    "transport-io",
+    "transport-child-process",
+], default-features = false }
+# The Messages API is called directly, which keeps the provider's content
+# blocks verbatim. That matters for signed thinking blocks; see request_model.
+reqwest = { version = "0.13", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.151"
+tokio = { version = "1.53", features = ["full"] }
 dotenvy = "0.15.7"
-reqwest = "0.12.23"
 ```
 
-The [`rmcp`](https://github.com/modelcontextprotocol/rust-sdk) crate provides the Rust MCP SDK and child-process transport. This example uses the [`genai`](https://github.com/jeremychone/rust-genai) crate to send requests to Claude and represent tools in the model request.
+The [`rmcp`](https://github.com/modelcontextprotocol/rust-sdk) crate provides the Rust MCP SDK and the child-process stdio transport. Only its client half is enabled. The client calls the [Messages API](https://docs.anthropic.com/en/api/messages) directly with [`reqwest`](https://docs.rs/reqwest). Calling the API directly keeps the content blocks of each reply verbatim, which matters when a reply contains a signed thinking block. The [`jsonschema`](https://docs.rs/jsonschema) crate validates structured tool results against the schema a tool declares.
 
 
 [​](#setting-up-your-api-key-6)
@@ -2327,6 +2494,8 @@ Add `.env` to your `.gitignore`:
 echo ".env" >> .gitignore
 ```
 
+The client loads `.env` when the file exists. Exporting `ANTHROPIC_API_KEY` in the shell works as well.
+
 Make sure you keep your `ANTHROPIC_API_KEY` secure!
 
 
@@ -2341,54 +2510,161 @@ Open `src/main.rs` and replace its contents as you work through the following se
 
 Imports and Client Structure
 
-First, add the imports, model constant, and basic client structure:
+First, add the imports and constants:
 
 ```python
 use anyhow::{Context, Result, bail};
-use genai::Client;
-use genai::chat::{
-    ChatMessage, ChatRequest, ChatResponse, ContentPart, Tool as GenaiTool, ToolResponse,
+use jsonschema::Validator;
+use rmcp::model::{
+    CallToolRequestParams, CallToolResult, ClientCapabilities, ClientConfig, Implementation,
+    ProtocolVersion, Tool as McpTool,
 };
-use rmcp::model::{CallToolRequestParam, Tool as McpTool};
-use rmcp::service::{RoleClient, RunningService, ServiceExt};
+use rmcp::service::{ClientLifecycleMode, ClientServiceExt, RoleClient, RunningService};
 use rmcp::transport::TokioChildProcess;
-use serde_json::Value;
+use serde::{Deserialize, Serialize};
+use serde_json::{Value, json};
+use std::collections::HashMap;
+use std::time::Duration;
 use tokio::io::{self, AsyncBufReadExt, BufReader};
 use tokio::process::Command;
 
 const MODEL_ANTHROPIC: &str = "claude-opus-5";
+/// The model may think before answering, and max_tokens caps thinking
+/// plus the reply, so leave room for both.
+const MAX_TOKENS: u32 = 10000;
+const MAX_TOOL_TURNS: usize = 10;
+
+const ANTHROPIC_API_BASE: &str = "https://api.anthropic.com";
+const ANTHROPIC_VERSION: &str = "2023-06-01";
+const REQUEST_TIMEOUT: Duration = Duration::from_secs(120);
+```
+
+`MAX_TOKENS` caps the thinking and the reply together. `MAX_TOOL_TURNS` bounds how many rounds of tool calls one query may take. `REQUEST_TIMEOUT` applies to each request sent to the Messages API.Next, add the types for the Messages API and the client structure:
+
+```python
+/// One turn of the conversation, as the Messages API takes it.
+///
+/// `content` is a list of raw blocks rather than typed ones on purpose. An
+/// assistant turn is fed straight back on the next request, and Claude requires
+/// the blocks it sent to return unchanged -- a thinking block's `signature`
+/// included. Reserialising through a narrower type would drop whatever it does
+/// not model.
+#[derive(Serialize, Clone)]
+struct Message {
+    role: &'static str,
+    content: Vec<Value>,
+}
+
+impl Message {
+    fn user(content: Vec<Value>) -> Self {
+        Message {
+            role: "user",
+            content,
+        }
+    }
+
+    fn assistant(content: Vec<Value>) -> Self {
+        Message {
+            role: "assistant",
+            content,
+        }
+    }
+}
+
+/// A tool as the Messages API declares it, converted from an MCP tool.
+#[derive(Serialize, Clone)]
+struct ToolDefinition {
+    name: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    description: Option<String>,
+    input_schema: Value,
+}
+
+#[derive(Serialize)]
+struct MessagesRequest<'a> {
+    model: &'a str,
+    max_tokens: u32,
+    messages: &'a [Message],
+    tools: &'a [ToolDefinition],
+}
+
+#[derive(Deserialize)]
+struct MessagesResponse {
+    content: Vec<Value>,
+}
+
+/// The `type` of a content block, when it has one.
+fn block_type(block: &Value) -> &str {
+    block
+        .get("type")
+        .and_then(Value::as_str)
+        .unwrap_or_default()
+}
 
 struct MCPClient {
-    anthropic: Client,
-    session: Option<RunningService<RoleClient, ()>>,
-    tools: Vec<GenaiTool>,
+    http: reqwest::Client,
+    session: Option<RunningService<RoleClient, ClientConfig>>,
+    tools: Vec<ToolDefinition>,
+    /// Compiled `outputSchema` per tool name. rmcp does not validate results,
+    /// so this client does it with the `jsonschema` crate.
+    output_schemas: HashMap<String, Validator>,
 }
 ```
 
-The client keeps the model API client, the active MCP session, and the tools advertised by the connected server.
+`Message` holds the content blocks of one turn as raw `serde_json::Value`s. An assistant turn goes back to the API unchanged on the next request, with any thinking block and its `signature` intact. `ToolDefinition` is a tool as the Messages API declares it. `MCPClient` keeps the HTTP client, the active MCP session, the tools in Messages API form, and one compiled validator per tool that declares an `outputSchema`.
 
 
 [​](#client-initialization)
 
 Client Initialization
 
-Next, initialize the model client and start without an MCP session or tools:
+Next, open the `impl MCPClient` block with the constructor. The methods in the following sections go inside this block, which closes after `cleanup`:
 
 ```python
 impl MCPClient {
     fn new() -> Result<Self> {
         Ok(MCPClient {
-            anthropic: Client::default(),
+            http: reqwest::Client::builder()
+                .timeout(REQUEST_TIMEOUT)
+                .build()
+                .context("Failed to build HTTP client")?,
             session: None,
             tools: Vec::new(),
+            output_schemas: HashMap::new(),
         })
     }
-
-    // Additional methods will go here.
-}
 ```
 
-`genai::Client::default()` reads the `ANTHROPIC_API_KEY` environment variable when it sends a request.
+`new` builds a `reqwest::Client` with the request timeout. The API key is read later, when a request is sent, so connecting to a server and listing its tools works without one.
+
+
+[​](#validating-structured-tool-output)
+
+Validating Structured Tool Output
+
+Add this method inside the `impl MCPClient` block:
+
+```python
+    /// Check a result against its tool's declared `outputSchema`. Error results
+    /// are exempt: they carry a message, not data.
+    fn validate_tool_output(&self, name: &str, result: &CallToolResult) -> Result<()> {
+        let Some(validator) = self.output_schemas.get(name) else {
+            return Ok(());
+        };
+        if result.is_error.unwrap_or(false) {
+            return Ok(());
+        }
+        let Some(structured) = &result.structured_content else {
+            bail!("Tool {name} declares an output schema but returned no structured content");
+        };
+        if let Err(error) = validator.validate(structured) {
+            bail!("Structured content from tool {name} does not match its output schema: {error}");
+        }
+        Ok(())
+    }
+```
+
+A tool may declare an `outputSchema`, and the specification asks clients to validate `structuredContent` against it. rmcp does not do this, so the client keeps a compiled `jsonschema::Validator` per tool and checks each successful result. A result with `is_error` set carries a message, so it is exempt. A tool that declares a schema and returns no structured content is reported as an error.
 
 
 [​](#server-connection-management-5)
@@ -2398,87 +2674,83 @@ Server Connection Management
 Add this method inside the `impl MCPClient` block:
 
 ```python
-async fn connect_to_server(&mut self, server_args: &[String]) -> Result<()> {
-    if self.session.is_some() {
-        bail!("Client is already connected to a server");
+    async fn connect_to_server(&mut self, server_args: &[String]) -> Result<()> {
+        if self.session.is_some() {
+            bail!("Client is already connected to a server");
+        }
+
+        let mut command = Command::new(&server_args[0]);
+        command.args(&server_args[1..]);
+
+        let process = TokioChildProcess::new(command)
+            .with_context(|| format!("Failed to spawn server process for {:?}", server_args))?;
+
+        // Without a ClientConfig the client would report rmcp's own crate name
+        // and version rather than its own.
+        let config = ClientConfig::new(
+            ClientCapabilities::default(),
+            Implementation::new("mcp-client-rust", "1.0.0"),
+        );
+
+        // `Auto` probes server/discover and falls back to the 2025-11-25
+        // initialize handshake, matching the Python and TypeScript clients.
+        // `serve` alone would only ever do the legacy handshake, under which a
+        // server cannot offer this era's features -- an array-rooted
+        // `outputSchema`, for one, which get_alerts uses.
+        let session = config
+            .serve_with_lifecycle(
+                process,
+                ClientLifecycleMode::Auto {
+                    preferred_versions: vec![ProtocolVersion::V_2026_07_28],
+                    legacy_version: Some(ProtocolVersion::V_2025_11_25),
+                },
+            )
+            .await?;
+
+        let rmcp_tools = session
+            .list_all_tools()
+            .await
+            .context("Unable to list tools from server")?;
+
+        let tool_names: Vec<String> = rmcp_tools
+            .iter()
+            .map(|tool| tool.name.to_string())
+            .collect();
+
+        let protocol_version = session
+            .peer_info()
+            .map(|info| info.protocol_version.to_string())
+            .unwrap_or_else(|| "unknown".to_string());
+        println!("Connected over protocol {protocol_version} with tools: {tool_names:?}");
+
+        // An outputSchema root may be any JSON Schema, not just an object.
+        for tool in &rmcp_tools {
+            let Some(schema) = &tool.output_schema else {
+                continue;
+            };
+            let schema = Value::Object(schema.as_ref().clone());
+            let validator = Validator::new(&schema).with_context(|| {
+                format!("Failed to compile output schema of tool {}", tool.name)
+            })?;
+            self.output_schemas.insert(tool.name.to_string(), validator);
+        }
+
+        self.tools = convert_tools(&rmcp_tools);
+        self.session = Some(session);
+        Ok(())
     }
-
-    let mut command = Command::new(&server_args[0]);
-    command.args(&server_args[1..]);
-
-    let process = TokioChildProcess::new(command)
-        .with_context(|| format!("Failed to spawn server process for {:?}", server_args))?;
-
-    let session = ().serve(process).await?;
-
-    let rmcp_tools = session
-        .list_all_tools()
-        .await
-        .context("Unable to list tools from server")?;
-
-    let tool_names: Vec<String> = rmcp_tools
-        .iter()
-        .map(|tool| tool.name.to_string())
-        .collect();
-
-    println!("Connected to server with tools: {tool_names:?}");
-
-    self.tools = convert_tools(&rmcp_tools);
-    self.session = Some(session);
-    Ok(())
-}
 ```
 
 This method:
 
 1.  Starts the server as a child process using the command and arguments supplied on the command line
-2.  Establishes an MCP session over stdio
-3.  Lists all tools advertised by the server
-4.  Converts those tools into the format used in model requests
+2.  Names the client `mcp-client-rust` through a `ClientConfig`
+3.  Negotiates the protocol with `serve_with_lifecycle` and `ClientLifecycleMode::Auto`, which probes `server/discover` for `2026-07-28` and falls back to the `2025-11-25` `initialize` handshake
+4.  Lists all tools advertised by the server and prints the negotiated protocol version with the tool names
+5.  Compiles a validator from each tool’s `outputSchema`
+6.  Converts the tools into the form used in model requests
 
-
-[​](#converting-mcp-tools)
-
-Converting MCP Tools
-
-Add this function outside the `impl MCPClient` block:
-
-```python
-fn convert_tools(tools: &[McpTool]) -> Vec<GenaiTool> {
-    tools
-        .iter()
-        .map(|tool| GenaiTool {
-            name: tool.name.to_string(),
-            description: tool.description.as_deref().map(str::to_string),
-            schema: Some(Value::Object(tool.input_schema.as_ref().clone())),
-            config: None,
-        })
-        .collect()
-}
-```
-
-MCP and model APIs describe tools with similar information but different Rust types. `convert_tools` maps each MCP tool’s name, description, and input schema into a `genai` tool definition.
-
-
-[​](#sending-model-requests)
-
-Sending Model Requests
-
-Add this helper method inside `impl MCPClient`:
-
-```python
-async fn request_model(&self, chat_req: &ChatRequest) -> Result<ChatResponse> {
-    let response = self
-        .anthropic
-        .exec_chat(MODEL_ANTHROPIC, chat_req.clone(), None)
-        .await
-        .context("Anthropic chat request failed")?;
-
-    Ok(response)
-}
-```
-
-This keeps model request handling in one place and adds useful context if the API request fails.
+rmcp’s `serve` method alone performs only the legacy handshake. The `Auto` mode makes the features of the current revision reachable, including an `outputSchema` whose root is an array.
 
 
 [​](#query-processing-logic-6)
@@ -2488,77 +2760,190 @@ Query Processing Logic
 Now add the core query-processing method inside `impl MCPClient`:
 
 ```python
-async fn process_query(&mut self, query: &str) -> Result<String> {
-    let session = self
-        .session
-        .as_ref()
-        .context("Client is not connected to any server")?;
+    async fn process_query(&mut self, query: &str) -> Result<String> {
+        let session = self
+            .session
+            .as_ref()
+            .context("Client is not connected to any server")?;
 
-    let mut messages = vec![ChatMessage::user(query)];
-    let mut final_text = Vec::new();
+        let mut messages = vec![Message::user(vec![json!({"type": "text", "text": query})])];
+        let mut final_text = Vec::new();
 
-    // Initial Claude API call with tools
-    let mut chat_req = ChatRequest::new(messages.clone()).with_tools(self.tools.clone());
-    let mut chat_rsp = self.request_model(&chat_req).await?;
+        // Initial Claude API call with tools
+        let mut content = self.request_model(&messages).await?;
 
-    // Process response content - collect text and handle tool calls
-    for text in chat_rsp.texts() {
-        final_text.push(text.to_string());
-    }
+        // Keep calling tools until Claude answers without one, up to a cap.
+        for _ in 0..MAX_TOOL_TURNS {
+            let mut tool_uses = Vec::new();
+            for block in &content {
+                match block_type(block) {
+                    "text" => {
+                        if let Some(text) = block.get("text").and_then(Value::as_str) {
+                            final_text.push(text.to_string());
+                        }
+                    }
+                    "tool_use" => tool_uses.push(block.clone()),
+                    _ => {}
+                }
+            }
 
-    let tool_calls = chat_rsp.tool_calls();
-    if !tool_calls.is_empty() {
-        // Append assistant's response to message history
-        messages.push(ChatMessage::assistant(chat_rsp.content.clone()));
+            if tool_uses.is_empty() {
+                return Ok(final_text.join("\n"));
+            }
 
-        // Execute each tool call and collect responses
-        let mut tool_results = Vec::new();
-        for tool_call in tool_calls {
-            // Add information about the tool call to final text
-            let tool_args_str = serde_json::to_string(&tool_call.fn_arguments)
-                .unwrap_or_else(|_| "{}".to_string());
+            // Execute every tool call in this response and collect the results
+            let mut tool_results = Vec::new();
+            for tool_use in &tool_uses {
+                let name = tool_use
+                    .get("name")
+                    .and_then(Value::as_str)
+                    .context("tool_use block has no name")?;
+                let id = tool_use
+                    .get("id")
+                    .and_then(Value::as_str)
+                    .context("tool_use block has no id")?;
+                let input = tool_use.get("input").cloned().unwrap_or(json!({}));
 
-            final_text.push(format!(
-                "[Calling tool {} with args {}]",
-                tool_call.fn_name, tool_args_str
-            ));
+                // Add information about the tool call to final text
+                final_text.push(format!("[Calling tool {name} with args {input}]"));
 
-            // Query the MCP server
-            let tool_result = session
-                .call_tool(CallToolRequestParam {
-                    name: tool_call.fn_name.clone().into(),
-                    arguments: tool_call.fn_arguments.as_object().cloned(),
-                })
-                .await
-                .with_context(|| format!("Tool call {} failed", tool_call.fn_name))?;
+                // Query the MCP server
+                let mut params = CallToolRequestParams::new(name.to_string());
+                if let Some(arguments) = input.as_object().cloned() {
+                    params = params.with_arguments(arguments);
+                }
+                let tool_result = match session.call_tool(params).await {
+                    Ok(result) => result,
+                    // A rejected call is the model's mistake to correct, so it
+                    // goes back as a failed tool_result rather than ending the
+                    // query. Every tool_use still needs a matching result.
+                    Err(error) => {
+                        final_text.push(format!("[{name} failed: {error}]"));
+                        tool_results.push(json!({
+                            "type": "tool_result",
+                            "tool_use_id": id,
+                            "content": format!("Tool call {name} failed: {error}"),
+                            "is_error": true,
+                        }));
+                        continue;
+                    }
+                };
 
-            let payload = serde_json::to_string(&tool_result)
-                .context("Failed to serialize tool result")?;
+                self.validate_tool_output(name, &tool_result)?;
 
-            tool_results.push(ContentPart::ToolResponse(ToolResponse::new(
-                tool_call.call_id.clone(),
-                payload,
-            )));
+                // structured_content is data the application can use directly.
+                if let Some(Value::Array(items)) = &tool_result.structured_content {
+                    final_text.push(format!("[{name} returned {} items]", items.len()));
+                }
+
+                // content is a list of block types; forward only the text ones.
+                let mut payload = tool_result
+                    .content
+                    .iter()
+                    .filter_map(|block| block.as_text().map(|text| text.text.as_str()))
+                    .collect::<Vec<_>>()
+                    .join("\n");
+
+                // A structured result SHOULD also carry serialized JSON in a text
+                // block, but only SHOULD, so fall back to serializing it rather
+                // than sending the model an empty result.
+                if payload.is_empty() {
+                    if let Some(structured) = &tool_result.structured_content {
+                        payload = structured.to_string();
+                    }
+                }
+
+                tool_results.push(json!({
+                    "type": "tool_result",
+                    "tool_use_id": id,
+                    "content": payload,
+                    "is_error": tool_result.is_error.unwrap_or(false),
+                }));
+            }
+
+            // Append the assistant's response and all tool results, in one user
+            // message, to the history. Every tool_use needs a matching
+            // tool_result, and the assistant's blocks go back as they arrived.
+            messages.push(Message::assistant(content));
+            messages.push(Message::user(tool_results));
+
+            content = self.request_model(&messages).await?;
         }
 
-        // Append tool responses to message history
-        messages.push(ChatMessage::user(tool_results));
-
-        // Build the next request and query model
-        chat_req = ChatRequest::new(messages.clone());
-        chat_rsp = self.request_model(&chat_req).await?;
-
-        // Collect text from response
-        for text in chat_rsp.texts() {
-            final_text.push(text.to_string());
+        // The turn cap was hit. Keep the last response's text. If it asked for
+        // more tools, say they were not run.
+        let mut wants_tools = false;
+        for block in &content {
+            match block_type(block) {
+                "text" => {
+                    if let Some(text) = block.get("text").and_then(Value::as_str) {
+                        final_text.push(text.to_string());
+                    }
+                }
+                "tool_use" => wants_tools = true,
+                _ => {}
+            }
         }
-    }
+        if wants_tools {
+            final_text.push(format!("[Stopped after {MAX_TOOL_TURNS} tool-use turns]"));
+        }
 
-    Ok(final_text.join("\n"))
-}
+        Ok(final_text.join("\n"))
+    }
 ```
 
-The method first sends the user’s query and available tools to Claude. When Claude requests tools, the client executes each request through the MCP session, sends the results back to Claude, and collects the final text response.
+The method sends the user’s query to Claude with the server’s tools and then loops. Each pass collects the text blocks of the reply and gathers its `tool_use` blocks. When a reply contains no tool use, the collected text is returned. Otherwise the client calls each requested tool through the MCP session and builds one `tool_result` block per `tool_use`. A call the server rejects goes back with `is_error` set, so Claude can read the message and try something else. A successful result is checked against its output schema. Its text blocks are joined and forwarded to Claude, and when it has no text blocks the serialized `structured_content` is sent in their place. When `structured_content` is an array, the client prints the item count as an example of using structured data directly. The assistant’s blocks are appended to the history exactly as they arrived, followed by one user message holding all tool results, and the next request is sent. The loop stops after `MAX_TOOL_TURNS` rounds. At that point the last reply’s text is kept, and a note is added when Claude asked for more tools.
+
+
+[​](#sending-model-requests)
+
+Sending Model Requests
+
+Add this helper method inside `impl MCPClient`:
+
+```python
+    /// Call Claude with the current history and return the content blocks of
+    /// its reply, untouched. Tools are passed on every call so Claude can keep
+    /// calling them across turns.
+    async fn request_model(&self, messages: &[Message]) -> Result<Vec<Value>> {
+        let api_key = std::env::var("ANTHROPIC_API_KEY").context("ANTHROPIC_API_KEY is not set")?;
+        // The base URL is configurable so the client can point at a local stand-in.
+        let base_url =
+            std::env::var("ANTHROPIC_BASE_URL").unwrap_or_else(|_| ANTHROPIC_API_BASE.to_string());
+
+        let request = MessagesRequest {
+            model: MODEL_ANTHROPIC,
+            max_tokens: MAX_TOKENS,
+            messages,
+            tools: &self.tools,
+        };
+
+        let response = self
+            .http
+            .post(format!("{}/v1/messages", base_url.trim_end_matches('/')))
+            .header("x-api-key", api_key)
+            .header("anthropic-version", ANTHROPIC_VERSION)
+            .json(&request)
+            .send()
+            .await
+            .context("Anthropic request failed")?;
+
+        let status = response.status();
+        let body = response
+            .text()
+            .await
+            .context("Unable to read the Anthropic response")?;
+        if !status.is_success() {
+            bail!("Anthropic request failed with {status}: {body}");
+        }
+
+        let parsed: MessagesResponse =
+            serde_json::from_str(&body).context("Unable to parse the Anthropic response")?;
+        Ok(parsed.content)
+    }
+```
+
+`request_model` reads `ANTHROPIC_API_KEY` on each call and posts the history to `/v1/messages` with the `x-api-key` and `anthropic-version` headers. `ANTHROPIC_BASE_URL` overrides the endpoint, which allows pointing the client at a local stand-in. Tools are sent on every request so Claude can keep calling them across turns. A non-success status becomes an error that includes the response body. The reply’s content blocks are returned untouched.
 
 
 [​](#interactive-chat-interface-4)
@@ -2568,55 +2953,56 @@ Interactive Chat Interface
 Add the interactive terminal loop inside `impl MCPClient`:
 
 ```python
-async fn chat_loop(&mut self) -> Result<()> {
-    println!("\nMCP Client Started!");
-    println!("Type your queries or 'quit' to exit.");
+    async fn chat_loop(&mut self) -> Result<()> {
+        println!("\nMCP Client Started!");
+        println!("Type your queries or 'quit' to exit.");
 
-    let mut stdin = BufReader::new(io::stdin());
-    let mut input = String::new();
+        let mut stdin = BufReader::new(io::stdin());
+        let mut input = String::new();
 
-    loop {
-        print!("\nQuery: ");
-        std::io::Write::flush(&mut std::io::stdout())?;
+        loop {
+            print!("\nQuery: ");
+            std::io::Write::flush(&mut std::io::stdout())?;
 
-        input.clear();
-        if stdin.read_line(&mut input).await? == 0 {
-            break; // EOF
+            input.clear();
+            if stdin.read_line(&mut input).await? == 0 {
+                break; // EOF
+            }
+
+            let query = input.trim();
+            if query.eq_ignore_ascii_case("quit") {
+                break;
+            }
+            if query.is_empty() {
+                continue;
+            }
+
+            match self.process_query(query).await {
+                Ok(response) => println!("\n{}", response),
+                Err(err) => println!("\nError: {:#}", err),
+            }
         }
 
-        let query = input.trim();
-        if query.eq_ignore_ascii_case("quit") {
-            break;
-        }
-        if query.is_empty() {
-            continue;
-        }
-
-        match self.process_query(query).await {
-            Ok(response) => println!("\n{}", response),
-            Err(err) => println!("\nError: {}", err),
-        }
+        Ok(())
     }
-
-    Ok(())
-}
 ```
 
-The loop accepts queries until the user types `quit` or closes standard input. Query errors are printed without terminating the client.
+The loop accepts queries until the user types `quit` or closes standard input. Query errors are printed without terminating the client. The `{:#}` format prints the whole `anyhow` context chain on one line.
 
 
 [​](#cleanup)
 
 Cleanup
 
-Add this method inside `impl MCPClient` to stop the MCP session and child process:
+Add this method inside `impl MCPClient` to stop the MCP session and child process. The closing brace ends the `impl MCPClient` block:
 
 ```python
-async fn cleanup(&mut self) -> Result<()> {
-    if let Some(session) = self.session.take() {
-        let _ = session.cancel().await;
+    async fn cleanup(&mut self) -> Result<()> {
+        if let Some(session) = self.session.take() {
+            let _ = session.cancel().await;
+        }
+        Ok(())
     }
-    Ok(())
 }
 ```
 
@@ -2625,12 +3011,13 @@ async fn cleanup(&mut self) -> Result<()> {
 
 Main Entry Point
 
-Finally, add the asynchronous entry point outside the `impl MCPClient` block:
+Next, add the asynchronous entry point outside the `impl MCPClient` block:
 
 ```python
 #[tokio::main]
 async fn main() -> Result<()> {
-    dotenvy::dotenv().context("Failed to load env file")?;
+    // .env is optional; the key may come from the environment instead.
+    let _ = dotenvy::dotenv();
 
     let mut args = std::env::args();
     let _ = args.next();
@@ -2645,6 +3032,21 @@ async fn main() -> Result<()> {
 
     let result = async {
         client.connect_to_server(&server_args).await?;
+
+        // Connecting and listing tools needs no credentials; querying them
+        // does. Matching the Python and TypeScript clients, report and exit
+        // rather than failing, so the connection itself can be exercised
+        // without a key.
+        // Empty counts as unset, as it does in the other clients: `KEY= cmd`
+        // is how the smoke test forces this path.
+        if std::env::var("ANTHROPIC_API_KEY").map_or(true, |key| key.is_empty()) {
+            println!(
+                "\nNo ANTHROPIC_API_KEY found. To query these tools with Claude, set your API key:"
+            );
+            println!("  export ANTHROPIC_API_KEY=your-api-key-here");
+            return Ok(());
+        }
+
         client.chat_loop().await
     }
     .await;
@@ -2658,7 +3060,29 @@ async fn main() -> Result<()> {
 }
 ```
 
-The entry point loads `.env`, treats all remaining command-line arguments as the server command, connects the client, starts the chat loop, and ensures cleanup runs before exiting.
+The entry point loads `.env` when the file exists, treats all remaining command-line arguments as the server command, connects the client, and ensures cleanup runs before exiting. When `ANTHROPIC_API_KEY` is unset or empty, the client prints how to set the key and exits after listing the server’s tools. This exercises the MCP connection without credentials.
+
+
+[​](#describing-tools-to-the-model)
+
+Describing Tools to the Model
+
+Finally, add this function outside the `impl MCPClient` block:
+
+```python
+fn convert_tools(tools: &[McpTool]) -> Vec<ToolDefinition> {
+    tools
+        .iter()
+        .map(|tool| ToolDefinition {
+            name: tool.name.to_string(),
+            description: tool.description.as_deref().map(str::to_string),
+            input_schema: Value::Object(tool.input_schema.as_ref().clone()),
+        })
+        .collect()
+}
+```
+
+MCP and the Messages API describe tools with the same information in different Rust types. `convert_tools` copies each MCP tool’s name, description, and input schema into a `ToolDefinition`, which serializes to the shape the `tools` parameter expects. The description is omitted when a tool has none.
 
 
 [​](#verify-the-complete-file)
@@ -2667,8 +3091,9 @@ Verify the Complete File
 
 Before running the client, confirm the items in `src/main.rs` are placed at the correct scope:
 
-- `new`, `connect_to_server`, `process_query`, `request_model`, `chat_loop`, and `cleanup` are methods inside the single `impl MCPClient` block.
-- `main` and `convert_tools` are functions outside the `impl MCPClient` block.
+- `new`, `validate_tool_output`, `connect_to_server`, `process_query`, `request_model`, `chat_loop`, and `cleanup` are methods inside the single `impl MCPClient` block, which opens in Client Initialization and closes after `cleanup`.
+- `user` and `assistant` are methods inside the `impl Message` block.
+- `block_type`, `main`, and `convert_tools` are functions outside both `impl` blocks.
 
 Rust does not require these items to appear in a particular order, but methods and free functions must be placed in the correct scope. Compare your file with the [complete `src/main.rs` example](https://github.com/modelcontextprotocol/quickstart-resources/blob/main/mcp-client-rust/src/main.rs), then check that it compiles:
 
@@ -2702,25 +3127,33 @@ If you’re continuing [the weather tutorial from the server quickstart](https:/
 The client will:
 
 1.  Start and connect to the specified MCP server
-2.  List the tools available from that server
+2.  Print the negotiated protocol version and the tools available from that server
 3.  Start an interactive chat session where you can:
     - Enter queries
     - See tool executions
     - Get responses from Claude
+
+Connecting to the weather server prints a line like:
+
+```python
+Connected over protocol 2026-07-28 with tools: ["get_alerts", "get_forecast"]
+```
+
+Without an `ANTHROPIC_API_KEY`, the client stops after this line and prints how to set the key.
 
 
 [​](#how-it-works-6)
 
 How It Works
 
-When you submit a query:
+When the user submits a query:
 
-1.  The client sends your query and the server’s available tools to Claude
+1.  The client sends the query and the server’s tool definitions to Claude
 2.  Claude decides which tools, if any, to use
-3.  The client executes requested tools through the MCP session
-4.  Tool results are sent back to Claude
-5.  Claude provides a natural language response
-6.  The response is displayed in the terminal
+3.  The client executes every requested tool through the MCP session and validates structured results against their output schemas
+4.  Tool results, including failures marked with `is_error`, are sent back to Claude together with Claude’s own blocks, unchanged
+5.  Steps 2 through 4 repeat until Claude answers without a tool call or `MAX_TOOL_TURNS` is reached
+6.  The collected text is displayed in the terminal
 
 
 [​](#best-practices-5)
@@ -2728,17 +3161,21 @@ When you submit a query:
 Best Practices
 
 1.  **Error Handling**
-    - Add context to errors at process, MCP, model API, and serialization boundaries
+    - Add context to errors at process, MCP, and model API boundaries
+    - Send a rejected tool call back to Claude as a `tool_result` with `is_error` set, so every `tool_use` gets an answer
     - Report individual query errors without terminating the interactive session
-    - Validate server commands before running them
-2.  **Resource Management**
+2.  **Conversation History**
+    - Feed assistant blocks back exactly as they arrived, thinking blocks and their signatures included
+    - Pass the tool list on every request so Claude can keep calling tools across turns
+    - Cap the number of tool turns per query
+3.  **Resource Management**
     - Always cancel the MCP session during cleanup
     - Ensure cleanup runs even when connection or chat-loop operations fail
     - Avoid starting a second server while a session is active
-3.  **Security**
-    - Store API keys securely in `.env`
-    - Review the tools exposed by a server before allowing model-driven calls
-    - Connect only to servers and executable commands you trust
+4.  **Security**
+    - Store API keys securely in `.env` or the environment
+    - Validate structured tool results against their declared output schemas
+    - Connect only to trusted servers and executable commands
 
 
 [​](#troubleshooting-5)
@@ -2768,7 +3205,7 @@ If a command cannot be found, use its absolute path or verify it is available in
 
 Environment File Issues
 
-If you see `Failed to load env file`, ensure `.env` exists in the directory where you run the client.If the model request reports a missing API key, confirm that `.env` contains:
+The `.env` file is optional. When it is missing, the client reads `ANTHROPIC_API_KEY` from the environment. When the key is unset or empty, the client connects, prints the server’s tools, and exits with instructions for setting the key. Export the key, or create a `.env` in the directory where the client runs that contains:
 
 ```python
 ANTHROPIC_API_KEY=your-api-key-goes-here
@@ -2780,8 +3217,10 @@ ANTHROPIC_API_KEY=your-api-key-goes-here
 Tool and Response Errors
 
 - `Unable to list tools from server`: Verify the server starts successfully and communicates over stdio
-- `Tool call ... failed`: Verify the server tool’s required arguments and environment variables
-- `Failed to serialize tool result`: Inspect the server’s response for unsupported or malformed content
+- `[... failed: ...]` in the output: The server rejected the tool call. The message also goes to Claude as a failed `tool_result`, so Claude may retry with different arguments
+- `Tool ... declares an output schema but returned no structured content` or `Structured content from tool ... does not match its output schema`: The server’s result does not satisfy its own `outputSchema`
+- `Anthropic request failed with ...`: The response body follows the status and names the cause, such as an invalid key or insufficient credits
+- `[Stopped after 10 tool-use turns]`: The query reached `MAX_TOOL_TURNS`. Raise the constant for workflows that need more rounds
 
 
 [​](#next-steps)

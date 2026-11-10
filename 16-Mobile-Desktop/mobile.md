@@ -2,11 +2,14 @@
 title: "Claude Code on mobile - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/mobile"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-08T06:24:39Z"
+fetched_at: "2026-11-07T06:23:00Z"
+last_modified: "Sat, 07 Nov 2026 04:17:09 GMT"
 tags: ["claude-code", "desktop", "mobile"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Get the app](#get-the-app)
 - [Work from your phone](#work-from-your-phone)
@@ -62,12 +65,12 @@ Work from your phone
 
 From the app you can start cloud sessions, open a project, drive a Claude Code session running on your computer, or message Dispatch a task. The app is the same for each; they differ in where the work happens.
 
-| Feature                                             | What you connect to                                                               | When to use                                                                                                                                                 |
-|:----------------------------------------------------|:----------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md)   | A session on cloud infrastructure, Anthropic-managed by default                   | Your repository is on GitHub and the task should keep running after you put your phone away. See the [cloud quickstart](../02-Claude-Code-CLI/web-quickstart.md) to set up. |
-| [Projects](../02-Claude-Code-CLI/claude-projects.md)                | A conversation where Claude coordinates parallel threads of work and reports back | You have a stream of related work rather than one task and want to see which threads finished or need you.                                                  |
-| [Remote Control](../02-Claude-Code-CLI/remote-control.md)           | A Claude Code session running on your computer                                    | The work needs your local filesystem, tools, or MCP servers.                                                                                                |
-| [Dispatch](desktop.md#sessions-from-dispatch) | The Desktop app on your computer                                                  | You want to message a task and let Dispatch decide how to run it. Requires a Pro or Max plan.                                                               |
+| Feature | What you connect to | When to use |
+|:---|:---|:---|
+| [Cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) | A session on cloud infrastructure, Anthropic-managed by default | Your repository is on GitHub and the task should keep running after you put your phone away. See the [cloud quickstart](../02-Claude-Code-CLI/web-quickstart.md) to set up. |
+| [Projects](../02-Claude-Code-CLI/claude-projects.md) | A conversation where Claude coordinates parallel threads of work and reports back | You have a stream of related work rather than one task and want to see which threads finished or need you. |
+| [Remote Control](../02-Claude-Code-CLI/remote-control.md) | A Claude Code session running on your computer | The work needs your local filesystem, tools, or MCP servers. |
+| [Dispatch](desktop.md#sessions-from-dispatch) | The Desktop app on your computer | You want to message a task and let Dispatch decide how to run it. Requires a Pro, Max, or Ultra plan. |
 
 If your computer will be off, use cloud sessions or a project, which run in the cloud and continue with your laptop closed. Remote Control and Dispatch drive your own machine, so it needs to stay on with Claude Code or the Desktop app running. If your machine sleeps during a Remote Control session, Claude Code reconnects when the machine comes back online. For a fuller comparison, see [work when you are away from your terminal](../02-Claude-Code-CLI/platforms.md#work-when-you-are-away-from-your-terminal). Cloud sessions and Remote Control run from the **Code** tab. For Dispatch, which you message as a task in the app, see [sessions from Dispatch](desktop.md#sessions-from-dispatch).
 
@@ -95,7 +98,7 @@ For requirements, invocation modes, and troubleshooting, see the [Remote Control
 
 Get push notifications
 
-When Remote Control is active, Claude can send push notifications to your phone, typically when a long-running task finishes or when it needs a decision from you. You can also ask for one in your prompt, such as `notify me when the tests finish`. See [mobile push notifications](../02-Claude-Code-CLI/remote-control.md#mobile-push-notifications) for the two `/config` toggles and delivery troubleshooting. Dispatch sends its own notification when a Code session it spawned finishes or needs your approval, described in [sessions from Dispatch](desktop.md#sessions-from-dispatch).
+When Remote Control is active, Claude can send push notifications to your phone when a long-running task finishes or when it needs a decision from you. You can also ask for one in your prompt, such as `notify me when the tests finish`. See [mobile push notifications](../02-Claude-Code-CLI/remote-control.md#mobile-push-notifications) for the two `/config` toggles and delivery troubleshooting. Dispatch sends its own notification when a Code session it spawned finishes or needs your approval, described in [sessions from Dispatch](desktop.md#sessions-from-dispatch).
 
 
 [​](#limitations)
@@ -106,7 +109,7 @@ The mobile client covers most of what a session needs, with a few limitations:
 
 - **Local-only commands**: commands that only run in the terminal interface, such as `/plugin` and `/resume`, don’t work from the app. The [Remote Control limitations](../02-Claude-Code-CLI/remote-control.md#limitations) list the commands that do work from mobile and how their behavior differs.
 - **Permission modes**: cloud sessions offer Accept edits, Plan, and Auto, and Remote Control sessions offer Manual, Accept edits, Plan, and Auto. You can’t select Bypass permissions from the app in either case. See [switch permission modes](../02-Claude-Code-CLI/permission-modes.md#switch-permission-modes) for when Auto is available.
-- **Dispatch plans**: Dispatch requires a Pro or Max plan and isn’t available on Team or Enterprise.
+- **Dispatch plans**: Dispatch requires a Pro, Max, or Ultra plan and isn’t available on Team or Enterprise.
 
 
 [​](#related-resources)

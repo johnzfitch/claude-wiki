@@ -2,67 +2,9 @@
 title: "Data residency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/data-residency"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:27Z"
+fetched_at: "2026-11-05T06:37:04Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fdata-residency)
-
-
-
-
-
-SearchCtrlK
-
-Organization
-
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)
-
-Authentication
-
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
-
-Identity providers
-
-Monitoring
-
-[Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
-
-[OpenTelemetry](manage-claude-opentelemetry.md)
-
-Data & compliance
-
-[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
-
-[Access Transparency](manage-claude-access-transparency.md)
-
-[Encryption keys (CMEK)](manage-claude-cmek.md)
-
-[Inference hooks](manage-claude-inference-hooks.md)
-
-Compliance API
-
-[Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
-
-[Console](playground.md)
-
-[Admin](manage-claude-admin-api.md)Data & compliance
 
 # Data residency
 
@@ -76,27 +18,44 @@ Manage where model inference runs and where data is stored with geographic contr
 
 
 
+Data residency
+
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsAvailable
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
+
+Usage differs by product
+
+Messages API
+
+Set `inference_geo` on each request, or set a default for the workspace.
+
+Managed Agents
+
+Pin `inference_geo` in the agent’s model configuration; override it at session creation.
+
 Data residency controls let you manage where your data is processed and stored. Two independent settings govern this:
 
 - **Inference geo:** Controls where model inference runs, on a per-request basis. Set through the `inference_geo` API parameter or as a workspace default.
-- **Workspace geo:** Controls where data is stored at rest and where endpoint processing (such as image transcoding and code execution) happens. Configured at the workspace level in the [Claude Console](playground.md).
+- **Workspace geo:** Controls where data is stored at rest and where endpoint processing (such as image transcoding and code execution) occurs. Configured at the workspace level in the [Claude Console](playground.md).
 
 
 
-[Claude Managed Agents](managed-agents-overview.md) supports geographic pinning at the agent level: `inference_geo` on an [agent's model configuration](managed-agents-agent-setup.md#pin-the-inference-geo) pins the geography that serves model requests for sessions running that agent, with [per-session overrides](managed-agents-sessions.md#pin-the-inference-geo-for-a-session) at session create. Agents without a pin follow the workspace's default inference geo on each request. Managed Agents also respects the Workspace geo configured in Console, and with [self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md), tool execution and the sandbox filesystem stay on infrastructure you control; the contents of attached [memory stores](managed-agents-self-hosted-sandboxes-memory.md) remain stored by Anthropic and are copied to your sandbox for the session.
+[Claude Managed Agents](managed-agents-overview.md) supports geographic pinning at the agent level: `inference_geo` on an [agent’s model configuration](managed-agents-agent-setup.md#pin-the-inference-geo) pins the geography that serves model requests for sessions running that agent, with [per-session overrides](managed-agents-sessions.md#pin-the-inference-geo-for-a-session) at session create. Agents without a pin follow the workspace’s default inference geo on each request. Managed Agents also respects the Workspace geo configured in Console, and with [self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md), tool execution and the sandbox filesystem stay on infrastructure you control; the contents of attached [memory stores](managed-agents-self-hosted-sandboxes-memory.md) remain stored by Anthropic and are copied to your sandbox for the session.
 
 ## Inference geo
 
-
-
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](manage-claude-api-and-data-retention.md).
-
 The `inference_geo` parameter controls where model inference runs for a specific API request. Add it to any `POST /v1/messages` call.
 
-| Value      | Description                                                                                     |
-|:-----------|:------------------------------------------------------------------------------------------------|
+| Value | Description |
+|:---|:---|
 | `"global"` | Default. Inference may run in any available geography for optimal performance and availability. |
-| `"us"`     | Inference runs only in US-based infrastructure.                                                 |
+| `"us"` | Inference runs only in US-based infrastructure. |
 
 ### API usage
 
@@ -165,7 +124,7 @@ The `inference_geo` parameter is supported on Claude 4.6 and later models. Reque
 
 
 
-The `inference_geo` parameter is available on the Claude API (first-party) and [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md). On Amazon Bedrock and Google Cloud, the inference region is determined by the endpoint URL or inference profile, so `inference_geo` is not applicable. On [Claude in Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), `inference_geo` is likewise not applicable: deployments hosted on Azure can instead use the US Data Zone Standard deployment type, which keeps inference within the United States. The `inference_geo` parameter is also not available through the [OpenAI SDK compatibility endpoint](cli-sdks-libraries-libraries-openai-sdk.md).
+The `inference_geo` parameter is available on the Claude API (first-party), [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), and [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md). On Claude Models on Google Cloud (Google managed) and Amazon Bedrock, the inference region is determined by the endpoint URL or inference profile, so `inference_geo` is not applicable. On [Claude in Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md), `inference_geo` is likewise not applicable: deployments hosted on Azure can instead use the US Data Zone Standard deployment type, which keeps inference within the United States. The `inference_geo` parameter is also not available through the [OpenAI SDK compatibility endpoint](cli-sdks-libraries-libraries-openai-sdk.md).
 
 ### Workspace-level restrictions
 
@@ -176,13 +135,17 @@ Workspace settings also support restricting which inference geos are available:
 
 These settings can be configured through the Console or the [Admin API](manage-claude-admin-api.md) under the `data_residency` field.
 
+
+
+**Claude Models on Google Cloud (Anthropic managed):** Every workspace allows all inference geos and uses `"global"` as its default inference geo. The Claude Console shows both settings as read-only. For US-only inference, set `inference_geo: "us"` on each request.
+
 ## Workspace geo
 
-Workspace geo is set when you create a workspace and can't be changed afterward. Currently, `"us"` is the only available workspace geo.
+Workspace geo is set when you create a workspace and can’t be changed afterward. Currently, `"us"` is the only available workspace geo.
 
 To set workspace geo, create a new workspace in the [Console](playground.md):
 
-1.  In the Console, go to the [Workspaces](playground.md) page (`platform.claude.com/settings/workspaces`).
+1.  Go to [Workspaces in the Claude Console](playground.md) (`platform.claude.com/settings/workspaces`).
 2.  Click **Create workspace** to open the [Create workspace](https://platform.claude.com/settings/workspaces/new) page (`platform.claude.com/settings/workspaces/new`) in the Console.
 3.  Enter a name, confirm the value in the **Workspace geo** field, and click **Create workspace**.
 
@@ -190,17 +153,21 @@ To set workspace geo, create a new workspace in the [Console](playground.md):
 
 **Claude Platform on AWS:** Workspace geo is not configurable. Claude Managed Agents sessions on this platform run with an effective Workspace geo of `"us"`, which is currently the only available workspace geo. See [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md) for data residency considerations specific to that platform.
 
+
+
+**Claude Models on Google Cloud (Anthropic managed):** Workspace geo is not configurable. Every workspace uses `"us"` as its workspace geo, and the **Workspace geo** field doesn’t appear in the Claude Console.
+
 ## Pricing
 
 Data residency pricing varies by model generation:
 
 - **Claude 4.6 and later models:** US-only inference (`inference_geo: "us"`) is priced at 1.1x the standard rate across all token pricing categories (input tokens, output tokens, cache writes, and cache reads). On Claude Haiku 5.5, the multiplier also applies to the higher prices for prompts over 100,000 tokens (see [Long context pricing](../../17-Billing-Plans/about-claude-pricing.md#long-context-pricing)).
-- **Global routing** (`inference_geo: "global"`): Standard pricing applies.
-- **Older models:** Don't support `inference_geo` (see [Model availability](#model-availability)); standard pricing applies. Requests that include the parameter return a 400 error.
+- **Global routing (`inference_geo: "global"`):** Standard pricing applies.
+- **Older models:** Don’t support `inference_geo` (see [Model availability](#model-availability)). Standard pricing applies. Requests that include the parameter return a 400 error.
 
-This pricing applies to the Claude API (first-party) and Claude Platform on AWS. On Claude in Microsoft Foundry, the same 1.1x multiplier applies to deployments hosted on Azure that use the US Data Zone Standard deployment type. Partner-operated platforms (Bedrock and Google Cloud) have their own regional pricing. See [Data residency pricing](../../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing) for details.
+This pricing applies to the Claude API (first-party), Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed). On Claude in Microsoft Foundry, the same 1.1x multiplier applies to deployments hosted on Azure that use the US Data Zone Standard deployment type. Partner-operated platforms, Claude Models on Google Cloud (Google managed) and Bedrock, have their own regional pricing. See [Data residency pricing](../../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing) for details.
 
-The same multiplier applies to [Claude Managed Agents](managed-agents-overview.md): when an agent's [model configuration](managed-agents-agent-setup.md) pins `inference_geo` to `"us"`, model requests in sessions running that agent are priced at 1.1x the standard rate.
+The same multiplier applies to [Claude Managed Agents](managed-agents-overview.md): when an agent’s [model configuration](managed-agents-agent-setup.md) pins `inference_geo` to `"us"`, model requests in sessions running that agent are priced at 1.1x the standard rate.
 
 
 
@@ -212,7 +179,7 @@ The `inference_geo` parameter is supported on the [Batch API](../Guides/build-wi
 
 ## Migration from legacy opt-outs
 
-If your organization previously opted out of global routing to keep inference in the US, your workspace has been automatically configured with `allowed_inference_geos: ["us"]` and `default_inference_geo: "us"`. No code changes are required. Your existing data residency requirements continue to be enforced through the new geo controls.
+If your organization previously opted out of global routing to keep inference in the US, your workspace has been automatically configured with `allowed_inference_geos: ["us"]` and `default_inference_geo: "us"`. No code changes are needed. Your existing data residency requirements continue to be enforced through the new geo controls.
 
 ### What changed
 
@@ -225,15 +192,15 @@ The legacy opt-out was an organization-level setting that restricted all request
 
 Your workspace was migrated automatically:
 
-| Legacy setting                   | New equivalent                                                  |
-|:---------------------------------|:----------------------------------------------------------------|
+| Legacy setting | New equivalent |
+|:---|:---|
 | Global routing opt-out (US only) | `allowed_inference_geos: ["us"]`, `default_inference_geo: "us"` |
 
 All API requests using keys from your workspace continue to run on US-based infrastructure. No action is needed to maintain your current behavior.
 
 ### If you want to use global routing
 
-If your data residency requirements have changed and you want to take advantage of global routing for better performance and availability, update your workspace's inference geo settings to include `"global"` in the allowed geos and set `default_inference_geo` to `"global"`. See [Workspace-level restrictions](#workspace-level-restrictions) for details.
+If your data residency requirements have changed and you want to take advantage of global routing for better performance and availability, update your workspace’s inference geo settings to include `"global"` in the allowed geos and set `default_inference_geo` to `"global"`. See [Workspace-level restrictions](#workspace-level-restrictions) for details.
 
 ### Pricing impact
 
@@ -243,13 +210,13 @@ Legacy models are unaffected by this migration. For current pricing on newer mod
 
 - **Shared rate limits:** Rate limits are shared across all geos.
 - **Inference geo:** Only `"us"` and `"global"` are available.
-- **Workspace geo:** Only `"us"` is currently available. Workspace geo can't be changed after workspace creation.
+- **Workspace geo:** Only `"us"` is currently available. Workspace geo can’t be changed after workspace creation.
 
 ## Next steps
 
 
 
-[Pricing](../../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing)
+[Data residency pricing](../../17-Billing-Plans/about-claude-pricing.md#data-residency-pricing)
 
 View data residency pricing details.
 
@@ -261,6 +228,109 @@ Learn about workspace configuration.
 
 
 
-[Usage and Cost API](manage-claude-usage-cost-api.md)
+[Usage and Cost Analytics API](manage-claude-usage-cost-analytics-api.md)
 
-Track usage and costs by data residency.
+Track usage and costs by inference geo.
+
+## Availability
+
+Data residency is available on select models and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+Usage
+
+Set `inference_geo` on each request, or set a default for the workspace.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+
+Models
+
+- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
+- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
+- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
+- All other models
+
+StatusAvailable
+
+Cloud platforms
+
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+
+Models
+
+- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
+- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
+- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
+- All other models
+
+Workspace geo is not configurable.
+
+StatusAvailable
+
+Cloud platforms
+
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+
+Models
+
+- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
+- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
+- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
+- All other models
+
+Workspace geo is not configurable.
+
+[Managed Agents](managed-agents-overview.md)
+
+Usage
+
+Pin `inference_geo` in the agent’s model configuration, and override it per session at session creation. An agent with no pin follows the workspace default.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+
+Models
+
+- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
+- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
+- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
+- All other models
+
+StatusAvailable
+
+Cloud platforms
+
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+
+Models
+
+- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
+- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
+- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
+- All other models
+
+Workspace geo is not configurable; Managed Agents sessions there run with workspace geo “us”.
+
+### Data handling
+
+[Data handling overview](manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages` with `inference_geo`
+
+Zero data retentionEligible
+
+Excludes [Covered Models](manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+HIPAAEligible

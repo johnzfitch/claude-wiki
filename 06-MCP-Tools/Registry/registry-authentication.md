@@ -2,11 +2,14 @@
 title: "How to Authenticate When Publishing to the Official MCP Registry - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/authentication"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-21T06:28:38Z"
+fetched_at: "2026-10-31T06:25:20Z"
+last_modified: "Fri, 30 Oct 2026 22:17:55 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
 ## On this page
+
+Back to top
 
 - [GitHub Authentication](#github-authentication)
 - [DNS Authentication](#dns-authentication)
@@ -24,10 +27,10 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 
 You must authenticate before publishing to the official MCP Registry. The MCP Registry supports different authentication methods. Which authentication method you choose determines the namespace of your server’s name. If you choose GitHub-based authentication, your server’s name in `server.json` **MUST** be of the form `io.github.username/*` (or `io.github.orgname/*`). For example, `io.github.alice/weather-server`. If you choose domain-based authentication, your server’s name in `server.json` **MUST** be of the form `com.example.*/*`, where `com.example` is the reverse-DNS form of your domain name. For example, `io.modelcontextprotocol/everything`.
 
-| Authentication | Name Format                                     | Example Name                         |
-|----------------|-------------------------------------------------|--------------------------------------|
-| GitHub-based   | `io.github.username/*` or `io.github.orgname/*` | `io.github.alice/weather-server`     |
-| domain-based   | `com.example.*/*`                               | `io.modelcontextprotocol/everything` |
+| Authentication | Name Format | Example Name |
+|----|----|----|
+| GitHub-based | `io.github.username/*` or `io.github.orgname/*` | `io.github.alice/weather-server` |
+| domain-based | `com.example.*/*` | `io.modelcontextprotocol/everything` |
 
 
 [​](#github-authentication)

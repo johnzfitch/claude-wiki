@@ -2,7 +2,7 @@
 title: "Cyber evaluations of Claude 4 \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-4-cyber"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:21Z"
+fetched_at: "2026-10-24T06:26:36Z"
 tags: ["evaluation", "news-research"]
 ---
 

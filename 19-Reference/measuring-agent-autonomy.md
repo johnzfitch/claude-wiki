@@ -2,7 +2,7 @@
 title: "Measuring AI agent autonomy in practice \\ Anthropic"
 source_url: "https://www.anthropic.com/research/measuring-agent-autonomy"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:42Z"
+fetched_at: "2026-10-24T06:27:01Z"
 tags: ["agents", "claude-code", "news-research"]
 ---
 
@@ -68,7 +68,7 @@ In light of these challenges, how can we study agents empirically?
 
 To start, for this study we adopted a definition of agents that is conceptually grounded and operationalizable: *an agent is an AI system equipped with tools that allow it to take actions*, like running code, calling external APIs, and sending messages to other agents.^([1](#footnote-1)) Studying the tools that agents use tells us a great deal about what they are doing in the world.
 
-Next, we developed a collection of metrics that draw on data from both agentic uses of our [public API](../04-API-Reference/Endpoints/overview.md) and [Claude Code](../02-Claude-Code-CLI/code-home.md), our own coding agent. These offer a tradeoff between breadth and depth:
+Next, we developed a collection of metrics that draw on data from both agentic uses of our [public API](../04-API-Reference/Endpoints/overview.md) and [Claude Code](../01-Getting-Started/overview.md), our own coding agent. These offer a tradeoff between breadth and depth:
 
 - Our **public API** gives us broad visibility into agentic deployments across thousands of different customers. Rather than attempting to infer our customers’ agent architectures, we instead perform our analysis at the level of *individual tool calls*.^([2](#footnote-2)) This simplifying assumption allows us to make grounded, consistent observations about real-world agents, even as the contexts in which those agents are deployed vary significantly. The limitation of this approach is that we must analyze actions in isolation, and cannot reconstruct how individual actions compose into longer sequences of behavior over time.
 - **Claude Code** offers the opposite tradeoff. Because Claude Code is our own product, we can link requests across sessions and understand entire agent workflows from start to finish. This makes Claude Code especially useful for studying autonomy—for example, how long agents run without human intervention, what triggers interruptions, and how users maintain oversight over Claude as they develop experience. However, because Claude Code is only one product, it does not provide the same diversity of insight into agentic use as API traffic.
@@ -215,7 +215,7 @@ This research is just a start. We provide only a partial view into agentic activ
 
 ## Looking ahead
 
-We are in the early days of agent adoption, but autonomy is increasing and higher-stakes deployments are emerging, especially as products like [Cowork](https://support.claude.com/en/articles/13345190-getting-started-with-cowork) make agents more accessible. Below, we offer recommendations for model developers, product developers, and policymakers. Given that we have only just begun measuring agent behavior in the wild, we avoid making strong prescriptions and instead highlight areas for future work.
+We are in the early days of agent adoption, but autonomy is increasing and higher-stakes deployments are emerging, especially as products like [Cowork](../15-Claude-AI-Features/getting-started-with-cowork.md) make agents more accessible. Below, we offer recommendations for model developers, product developers, and policymakers. Given that we have only just begun measuring agent behavior in the wild, we avoid making strong prescriptions and instead highlight areas for future work.
 
 **Model and product developers should invest in post-deployment monitoring.** Post-deployment monitoring is essential for understanding how agents are actually used. Pre-deployment evaluations test what agents are capable of in controlled settings, but many of our findings cannot be observed through pre-deployment testing alone. Beyond understanding a model’s capabilities, we must also understand how people interact with agents in practice. The data we report here exists because we *chose* to build the infrastructure to collect it. But there’s more to do. We have no reliable way to link independent requests to our public API into coherent agent sessions, which limits what we can learn about agent behavior beyond first-party products like Claude Code. Developing these methods in a privacy-preserving way is an important area for cross-industry research and collaboration.
 
@@ -269,7 +269,7 @@ On the empirical side, [Kapoor et al. (2024)](https://arxiv.org/abs/2407.01502) 
 
 16 Whether the adoption curve in software engineering will repeat in other domains is an open question. Software is comparatively easy to test and review—you can run code and see if it works—which makes it easier to trust an agent and catch its mistakes. In domains like law, medicine, or finance, verifying an agent’s output may require significant effort, which could slow the development of trust.[](#footnote-ref-16)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 

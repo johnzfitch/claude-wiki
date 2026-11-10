@@ -2,258 +2,11 @@
 title: "Sessions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:38:42Z"
+fetched_at: "2026-11-05T06:36:02Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fsessions)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-
-Create Session
-
-
-List Sessions
-
-
-Get Session
-
-
-Update Session
-
-
-Delete Session
-
-
-Archive Session
-
-Events
-
-Resources
-
-Threads
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -264,31 +17,45 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### [Create Session](https://platform.claude.com/docs/en/api/http/beta/sessions/create)
 
 POST/v1/sessions
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions/list)
 
 GET/v1/sessions
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Get Session](https://platform.claude.com/docs/en/api/http/beta/sessions/retrieve)
 
 GET/v1/sessions/{session_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update Session](https://platform.claude.com/docs/en/api/http/beta/sessions/update)
 
 POST/v1/sessions/{session_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Delete Session](https://platform.claude.com/docs/en/api/http/beta/sessions/delete)
 
 DELETE/v1/sessions/{session_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive Session](https://platform.claude.com/docs/en/api/http/beta/sessions/archive)
 
 POST/v1/sessions/{session_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### Models
 
@@ -432,11 +199,15 @@ max_list_cost: [BetaMonetaryAmount](platform-claude-com-http-beta.md#beta_moneta
 
 Maximum list cost the session may accrue. List price is used regardless of any negotiated discount, so the cap fires at or before the actual charge.
 
+
+
 amount: string
 
 
 
 Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is \$25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
+
+pattern^(0\|\[1-9\]\d\*)\$
 
 currency: [BetaCurrency](platform-claude-com-http-beta.md#beta_currency)
 
@@ -493,6 +264,8 @@ Full commit SHA to check out.
 minLength7
 
 maxLength64
+
+pattern^\[0-9a-fA-F\]+\$
 
 
 
@@ -628,11 +401,15 @@ type: "memory_store"
 
 
 
+
+
 memory_store_id: string
 
 
 
 The memory store ID (memstore\_...). Must belong to the caller's organization and workspace.
+
+pattern^memstore\_\[a-zA-Z0-9\_\]+\$
 
 
 
@@ -1136,13 +913,19 @@ Event sent by the client providing the result of an agent-toolset tool execution
 
 GET/v1/sessions/{session_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Send Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/send)
 
 POST/v1/sessions/{session_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Stream Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/stream)
 
 GET/v1/sessions/{session_id}/events/stream
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### Sessions[Resources](https://platform.claude.com/docs/en/api/http/beta/sessions/resources)
 
@@ -1150,21 +933,31 @@ Event sent by the client providing the result of an agent-toolset tool execution
 
 POST/v1/sessions/{session_id}/resources
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Session Resources](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/list)
 
 GET/v1/sessions/{session_id}/resources
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Get Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/retrieve)
 
 GET/v1/sessions/{session_id}/resources/{resource_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/update)
 
 POST/v1/sessions/{session_id}/resources/{resource_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Delete Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/delete)
 
 DELETE/v1/sessions/{session_id}/resources/{resource_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### Sessions[Threads](https://platform.claude.com/docs/en/api/http/beta/sessions/threads)
 
@@ -1172,13 +965,19 @@ Event sent by the client providing the result of an agent-toolset tool execution
 
 GET/v1/sessions/{session_id}/threads
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Get Session Thread](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/retrieve)
 
 GET/v1/sessions/{session_id}/threads/{thread_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive Session Thread](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/archive)
 
 POST/v1/sessions/{session_id}/threads/{thread_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### SessionsThreads[Events](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/events)
 
@@ -1186,6 +985,10 @@ Event sent by the client providing the result of an agent-toolset tool execution
 
 GET/v1/sessions/{session_id}/threads/{thread_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Stream Session Thread Events](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/events/stream)
 
 GET/v1/sessions/{session_id}/threads/{thread_id}/stream
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)

@@ -2,7 +2,7 @@
 title: "Connect your tools to unlock a smarter, more capable AI companion · Claude Academy"
 source_url: "https://support.claude.com/en/articles/11817150-connect-your-tools-to-unlock-a-smarter-more-capable-ai-companion"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:28:51Z"
+fetched_at: "2026-11-07T06:24:08Z"
 tags: ["claude-ai", "connectors", "mcp"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Getting started with Claude for nonprofits · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits"
 category: "01-Getting-Started"
-fetched_at: "2026-10-23T06:28:58Z"
+fetched_at: "2026-11-07T06:22:25Z"
 tags: ["connectors", "getting-started"]
 ---
 
@@ -18,10 +18,7 @@ Claude for nonprofits enhances mission-driven organizations with specialized cap
 
 ## How to access nonprofit tools and features[](#how-to-access-nonprofit-tools-and-features)
 
-Claude for nonprofits is available on two plans:
-
-- **Team plan:** \$8/user/month
-- **Enterprise plan:** \$10/user/month
+Claude for nonprofits is available on the Team and Enterprise plans at nonprofit pricing. See current prices on the [nonprofit solutions page(opens in new tab)](../18-Industry-UseCases/nonprofits.md).
 
 Both plans include access to the same models as our standard Team and Enterprise plans, with a minimum of 2 seats for teams under 150.
 
@@ -29,11 +26,11 @@ To get started, verify your nonprofit status through our partner Goodstack by co
 
 ## Nonprofit operations and fundraising connectors[](#nonprofit-operations-and-fundraising-connectors)
 
-Claude connects to three nonprofit-specific connectors through the Model Context Protocol (MCP):
+Claude connects to nonprofit platforms through the Model Context Protocol (MCP). Nonprofit connectors include:
 
-- [**Benevity**(opens in new tab)](https://benevity.com/)**:** Access a database of 2.4M+ validated nonprofits for cause discovery and research
+- [**Benevity**(opens in new tab)](https://benevity.com/)**:** Access a database of validated nonprofits for cause discovery and research
 - [**Blackbaud**(opens in new tab)](https://www.blackbaud.com/)**:** Connect to Raiser's Edge NXT for donor records, gift history, events, and personalized communications
-- [**Candid**(opens in new tab)](https://candid.org/)**:** Search 1.9M+ nonprofits and foundations with detailed profiles, financials, and grant data
+- [**Candid**(opens in new tab)](https://candid.org/)**:** Search nonprofits and foundations with detailed profiles, financials, and grant data
 
 Additional connectors include Microsoft 365, Gmail, Google Drive, Asana, Slack, and HubSpot. Browse all available connectors in the [connector directory(opens in new tab)](../04-API-Reference/Other/partners-mcp.md).
 
@@ -55,7 +52,7 @@ Explore the [use case library(opens in new tab)](https://support.claude.com/all?
 
 #### Who is eligible?
 
-501(c)(3) organizations, K–12 schools, and qualifying healthcare organizations.
+501(c)(3) organizations and their international equivalents, K–12 schools, and qualifying healthcare organizations.
 
 #### Who is not eligible?
 
@@ -71,7 +68,7 @@ The nonprofit discount remains active as long as your organization maintains its
 
 #### What if I already have a full-priced account?
 
-Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
+Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
 
 #### Is my data used for training?
 
@@ -79,11 +76,11 @@ Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-sett
 
 #### Can I get a tax exemption?
 
-Submit your tax exemption certificate through [support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md) to receive a refund and apply the exemption to future invoices.
+Submit your tax exemption certificate through [support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) to receive a refund and apply the exemption to future invoices.
 
 #### What about organizations with fewer than five employees?
 
-Individual users can access Claude Pro at \$20/month. Explore the [AI fluency for nonprofits course(opens in new tab)](https://support.claude.com/courses/ai-fluency-for-nonprofits) and the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) to get started.
+The Team plan at nonprofit pricing has a minimum of 2 seats, so small organizations can use it too. Individual users can access Claude Pro at \$20/month. Explore the [AI fluency for nonprofits course(opens in new tab)](https://support.claude.com/courses/ai-fluency-for-nonprofits) and the [use case library(opens in new tab)](https://support.claude.com/all?kind=use-case) to get started.
 
 #### What support and training is available?
 
@@ -91,7 +88,7 @@ Visit the [use case library(opens in new tab)](https://support.claude.com/all?ki
 
 ## Troubleshooting[](#troubleshooting)
 
-- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
+- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
 - **Team plan option greyed out:** Make sure you're signed in to the correct account and have admin permissions
 - **Email domain questions:** All team members don't need the same domain. Learn about [allowed email domains(opens in new tab)](../21-Account-Support/account-management-faqs.md#h_b54c41c86c).
 - **Connecting tools:** Learn how to [browse and connect tools from the directory(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).

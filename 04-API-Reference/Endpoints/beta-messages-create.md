@@ -2,243 +2,11 @@
 title: "Create a Message - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-23T06:28:39Z"
+fetched_at: "2026-11-08T06:24:12Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmessages%2Fcreate)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-Webhooks
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Delete User Profile
-
-
-Create Enrollment URL
-
-Action URLs
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[AWS IAM actions](claude-platform-on-aws-iam-actions.md)[Google Cloud IAM permissions](claude-models-on-google-cloud-anthropic-managed-iam-permissions.md)[Versions](versioning.md)[Migrating to API version 2026-10-21](migration-2026-10-21.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-API version 2026-10-21
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -252,7 +20,7 @@ cURL
 
 API version 2026-10-21
 
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/messages
 
@@ -493,6 +261,18 @@ string
 
 
 "webhooks-2026-10-07"
+
+
+
+"message-threads-2026-08-12"
+
+
+
+"analytics-usage-cost-2026-08-24"
+
+
+
+"experimental-claude-tag-2026-10-21"
 
 
 
@@ -824,6 +604,10 @@ One of the following:
 
 compaction: optional [BetaCompactionConfig](platform-claude-com-http-beta-messages.md#beta_compaction_config) { type: "summarize", instructions } or null
 
+⁠
+
+
+
 
 
 Compaction configuration.
@@ -928,6 +712,10 @@ string
 
 context_management: optional [BetaContextManagementConfig](platform-claude-com-http-beta-messages.md#beta_context_management_config) { edits } or null
 
+⁠
+
+
+
 
 
 Context management configuration.
@@ -955,6 +743,10 @@ maxLength256
 
 
 fallback_credit_token: optional string or [BetaFallbackCreditTokenParam](platform-claude-com-http-beta-messages.md#beta_fallback_credit_token_param) or null
+
+⁠
+
+
 
 
 
@@ -1014,6 +806,10 @@ One of the following:
 
 fallbacks: optional [BetaFallbacksParam](platform-claude-com-http-beta-messages.md#beta_fallbacks_param) or null
 
+⁠
+
+
+
 
 
 Opt-in server-side retry on one or more substitute models when the requested model declines for policy reasons. Tried in order: if the first entry also declines, the second is tried, and so on. Some models don't support fallbacks; on those models, a list of fallback models returns a 400 error. See [Server-side fallback](../Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback). The string "default" requests the requested model's server-defined default fallback configuration. On a model that doesn't support fallbacks, the request runs on the requested model alone, so a declined request stays declined.
@@ -1029,6 +825,10 @@ Specifies the geographic region for inference processing. If not specified, the 
 
 
 mcp_servers: optional array of [BetaRequestMCPServerURLDefinition](platform-claude-com-http-beta-messages.md#beta_request_mcp_server_url_definition) { type: "url", name, url, 2 more }
+
+⁠
+
+
 
 
 
@@ -1493,6 +1293,50 @@ One of the following:
 
 
 
+thread: optional [BetaMessageThreadParam](platform-claude-com-http-beta-messages.md#beta_message_thread_param) or null
+
+⁠
+
+
+
+
+
+Server-held conversation state (a Thread). `{"type": "create"}` asks the server to hold this conversation's state under the response's `id`; `{"type": "continue", "previous_message_id": ...}` resumes from a previous response so only the new turn's messages are sent. The response shape is unchanged.
+
+One of the following:
+
+
+
+BetaThreadCreateParams object{ type: "create" }
+
+
+
+Start holding conversation state under this response's `id`.
+
+type: "create"
+
+
+
+
+
+BetaThreadContinueParams object{ type: "continue", previous_message_id }
+
+
+
+Resume from the response named by `previous_message_id`.
+
+type: "continue"
+
+
+
+previous_message_id: string
+
+
+
+The `id` of the previous response in this Thread.
+
+
+
 tool_choice: optional [BetaToolChoice](platform-claude-com-http-beta-messages.md#beta_tool_choice)
 
 
@@ -1587,6 +1431,10 @@ BetaTool object{ type, input_schema, name, 7 more }
 
 BetaToolBash20241022 object{ type: "bash_20241022", name, allowed_callers, 4 more }
 
+⁠
+
+
+
 
 
 
@@ -1613,7 +1461,11 @@ BetaCodeExecutionTool20260120 object{ type: "code_execution_20260120", name, all
 
 
 
-Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+A `tools` entry for the code execution tool, version `code_execution_20260120`. It adds REPL state persistence to version `code_execution_20250825`.
+
+REPL state persistence applies with programmatic tool calling. With it, the Python interpreter state, such as variable bindings, persists across requests that reuse the container.
+
+See the [code execution tool guide](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md#tool-versions) to learn what each tool version adds.
 
 
 
@@ -1635,6 +1487,10 @@ The browser toolset: a single `tools[]` entry (carrying no `name`) that declares
 
 BetaToolComputerUse20241022 object{ type: "computer_20241022", display_height_px, display_width_px, 7 more }
 
+⁠
+
+
+
 
 
 
@@ -1647,17 +1503,29 @@ BetaMemoryTool20250818 object{ type: "memory_20250818", name, allowed_callers, 4
 
 BetaToolComputerUse20250124 object{ type: "computer_20250124", display_height_px, display_width_px, 7 more }
 
+⁠
+
+
+
 
 
 
 
 BetaToolTextEditor20241022 object{ type: "text_editor_20241022", name, allowed_callers, 4 more }
 
+⁠
+
+
+
 
 
 
 
 BetaToolComputerUse20251124 object{ type: "computer_20251124", display_height_px, display_width_px, 8 more }
+
+⁠
+
+
 
 
 
@@ -1735,6 +1603,10 @@ BetaWebFetchTool20260318 object{ type: "web_fetch_20260318", name, allowed_calle
 
 BetaAdvisorTool20260301 object{ type: "advisor_20260301", model, name, 7 more }
 
+⁠
+
+
+
 
 
 
@@ -1753,6 +1625,10 @@ BetaToolSearchToolRegex20251119 object{ type, name, allowed_callers, 3 more }
 
 BetaMCPToolset object{ type: "mcp_toolset", mcp_server_name, cache_control, 3 more }
 
+⁠
+
+
+
 
 
 Configuration for a group of tools from an MCP server.
@@ -1761,7 +1637,11 @@ Allows configuring enabled status and defer_loading for all tools from an MCP se
 
 
 
-output_format: optional [BetaJSONOutputFormat](platform-claude-com-http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null⁠Deprecated
+output_format: optional [BetaJSONOutputFormat](platform-claude-com-http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null
+
+⁠Deprecated
+
+
 
 
 
@@ -2018,6 +1898,10 @@ BetaWebFetchToolResultBlock object{ type: "web_fetch_tool_result", content, tool
 
 BetaAdvisorToolResultBlock object{ type: "advisor_tool_result", content, tool_use_id }
 
+⁠
+
+
+
 
 
 
@@ -2072,6 +1956,10 @@ BetaToolSearchToolResultBlock object{ type: "tool_search_tool_result", content, 
 
 BetaMCPToolUseBlock object{ type: "mcp_tool_use", id, input, 2 more }
 
+⁠
+
+
+
 
 
 
@@ -2110,6 +1998,10 @@ The name of the MCP server
 
 BetaMCPToolResultBlock object{ type: "mcp_tool_result", content, is_error, tool_use_id }
 
+⁠
+
+
+
 
 
 
@@ -2136,6 +2028,10 @@ file_id: string
 
 BetaCompactionBlock object{ type: "compaction", content, encrypted_content, 2 more }
 
+⁠
+
+
+
 
 
 A compaction block returned when autocompact is triggered.
@@ -2145,6 +2041,10 @@ When content is None, it indicates the compaction failed to produce a valid summ
 
 
 BetaFallbackBlock object{ type: "fallback", from, to, trigger }
+
+⁠
+
+
 
 
 
@@ -2157,6 +2057,10 @@ The block is treated like a server-tool content block for streaming: it arrives 
 
 
 BetaMCPToolListingBlock object{ type: "mcp_tool_listing", mcp_server_name, tools }
+
+⁠
+
+
 
 
 
@@ -2195,6 +2099,10 @@ description: optional string
 
 
 context_management: [BetaContextManagementResponse](platform-claude-com-http-beta-messages.md#beta_context_management_response) { applied_edits } or null
+
+⁠
+
+
 
 
 
@@ -2469,6 +2377,10 @@ Total input tokens in a request is the summation of `input_tokens`, `cache_creat
 
 
 input_transformations: optional array of [BetaInputTransformation](platform-claude-com-http-beta-messages.md#beta_input_transformation) or null
+
+⁠
+
+
 
 
 

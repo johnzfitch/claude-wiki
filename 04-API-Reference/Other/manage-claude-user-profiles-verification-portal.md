@@ -2,67 +2,9 @@
 title: "Send an end customer a link to the Verification Portal - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/user-profiles-verification-portal"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-21T06:29:40Z"
+fetched_at: "2026-11-06T06:27:05Z"
 tags: ["api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fmanage-claude%2Fuser-profiles-verification-portal)
-
-
-
-
-
-SearchCtrlK
-
-Organization
-
-[Admin API](manage-claude-admin-api.md)[User management](manage-claude-user-management.md)[Plugins API](manage-claude-plugins-api.md)[Workspaces](manage-claude-workspaces.md)[Organization webhooks (beta)](manage-claude-organization-webhooks.md)[User profiles](manage-claude-user-profiles.md)[Verification Portal links](manage-claude-user-profiles-verification-portal.md)
-
-Authentication
-
-[Overview](manage-claude-authentication.md)[Create an Admin API key](manage-claude-admin-api-keys.md)[App Attest](manage-claude-app-attest.md)[Workload Identity Federation](manage-claude-workload-identity-federation.md)[Manage WIF via API](manage-claude-wif-admin-api.md)[WIF reference](manage-claude-wif-reference.md)
-
-Identity providers
-
-Monitoring
-
-[Usage and Cost API](manage-claude-usage-cost-api.md)[Rate Limits API](manage-claude-rate-limits-api.md)[Analytics APIs](manage-claude-analytics-api.md)[Claude Code Analytics API](manage-claude-claude-code-analytics-api.md)[Spend Limits API](manage-claude-spend-limits-api.md)
-
-[OpenTelemetry](manage-claude-opentelemetry.md)
-
-Data & compliance
-
-[Data residency](manage-claude-data-residency.md)[API and data retention](manage-claude-api-and-data-retention.md)
-
-[Access Transparency](manage-claude-access-transparency.md)
-
-[Encryption keys (CMEK)](manage-claude-cmek.md)
-
-[Inference hooks](manage-claude-inference-hooks.md)
-
-Compliance API
-
-[Overview](manage-claude-compliance-api.md)[Set up the Compliance API](manage-claude-compliance-api-access.md)[Activity Feed](manage-claude-compliance-activity-feed.md)[Chats, files, and projects](manage-claude-compliance-content-data.md)[Session transcripts](manage-claude-compliance-sessions.md)[Organizations, users, roles, groups, and settings](manage-claude-compliance-org-data.md)[Design your integration](manage-claude-compliance-integration-patterns.md)[Errors](manage-claude-compliance-errors.md)[FAQ](manage-claude-compliance-faq.md)
-
-[Console](playground.md)
-
-[Admin](manage-claude-admin-api.md)Organization
 
 # Send an end customer a link to the Verification Portal
 
@@ -76,17 +18,17 @@ Create an enrollment link for a user profile, see what your end customer does in
 
 
 
-Anthropic runs programs that an organization can apply to in the Verification Portal. For an end customer's approvals to apply when they use Claude through your platform, the end customer links their user profile to their own Anthropic organization in the portal. You start the process: create an enrollment link for the profile and give it to the end customer.
+Anthropic runs programs that an organization can apply to in the Verification Portal. For an end customer’s approvals to apply when they use Claude through your platform, the end customer links their user profile to their own Anthropic organization in the portal. You start the process: create an enrollment link for the profile and give it to the end customer.
 
 A user profile tells Anthropic which of your end customers each API request is for. You create one for each end customer and send its `uprof_` ID on every request you make for them. The profile must exist before you can create a link for it. To create one, see [User profiles for end-customer attribution](manage-claude-user-profiles.md).
 
-You can skip this page if you need only attribution, or if creating enrollment links isn't enabled for your organization.
+You can skip this page if you need only attribution, or if creating enrollment links isn’t enabled for your organization.
 
 ## Create the link
 
-To create an enrollment link for a profile, call [`POST /v1/user_profiles/{id}/action_urls`](../Endpoints/user-profiles-action-urls-create.md) with the profile's ID in the path. In the request body, set `action.type` to `enroll_end_user`.
+To create an enrollment link for a profile, call [`POST /v1/user_profiles/{id}/action_urls`](../Endpoints/user-profiles-action-urls-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. with the profile’s ID in the path. In the request body, set `action.type` to `enroll_end_user`.
 
-The call returns a `404` if creating enrollment links isn't enabled for your organization. That's the same status as for a profile ID it can't find, so check the ID first.
+The call returns a `404` if creating enrollment links isn’t enabled for your organization. That’s the same status as for a profile ID it can’t find, so check the ID first.
 
 cURL
 
@@ -133,17 +75,17 @@ The response contains the link and the time it stops working:
 
 
 
-The link works until the time in `expires_at`, about an hour after you create it. Create it when the end customer asks for it, for example when they click a button in your product, not ahead of time in an email they might read later. They can open the link more than once until it expires. If it has expired, create a new one: each call returns a fresh link. Creating a new link doesn't cancel earlier ones.
+The link works until the time in `expires_at`, about an hour after you create it. Create it when the end customer asks for it, for example when they click a button in your product, not ahead of time in an email they might read later. They can open the link more than once until it expires. If it has expired, create a new one: each call returns a fresh link. Creating a new link doesn’t cancel earlier ones.
 
-Anyone who has the link can use it until it expires, so give it only to the end customer it's for. Send it to an admin or owner of the end customer's Anthropic organization, because only an admin or owner can link a profile. Don't parse the URL or build one yourself. Its format can change.
+Anyone who has the link can use it until it expires, so give it only to the end customer it’s for. Send it to an admin or owner of the end customer’s Anthropic organization, because only an admin or owner can link a profile. Don’t parse the URL or build one yourself. Its format can change.
 
-If you're using Claude Platform on AWS, create the link with `POST /v1/user_profiles/{id}/enrollment_url` instead, and send the `anthropic-beta: user-profiles-2026-08-18` header. That request takes no body, and the response has the same `url` and `expires_at` fields. In the SDK and the CLI, that call is in the beta namespace: `client.beta.user_profiles.create_enrollment_url()`.
+If you’re using Claude Platform on AWS, create the link with `POST /v1/user_profiles/{id}/enrollment_url` instead, and send the `anthropic-beta: user-profiles-2026-08-18` header. That request takes no body, and the response has the same `url` and `expires_at` fields. In the SDK and the CLI, that call is in the beta namespace: `client.beta.user_profiles.create_enrollment_url()`.
 
-`POST /v1/user_profiles/{id}/action_urls` is not available on Microsoft Foundry.
+If your inference runs on a Microsoft Foundry deployment hosted on Anthropic, create the link from the organization on the Claude API that created the profile. `POST /v1/user_profiles/{id}/action_urls` is not available on Microsoft Foundry.
 
 ## What the end customer sees
 
-The link opens Anthropic's Verification Portal at `portal.anthropic.com`. After the end customer logs in, the portal shows them the name of your Anthropic organization and the profile's ID.
+The link opens Anthropic’s Verification Portal at `portal.anthropic.com`. After the end customer logs in, the portal shows them the name of your Anthropic organization and the profile’s ID.
 
 1.  1
 
@@ -155,9 +97,9 @@ The link opens Anthropic's Verification Portal at `portal.anthropic.com`. After 
 
     ### Link the profile
 
-    The portal shows a card titled **Link your partner profile**. It names your platform, the profile's ID, the end customer's organization, and when the invitation expires. The end customer selects **Link profile** to accept or **Skip for now** to continue to the portal without linking.
+    The portal shows a card titled **Link your partner profile**. It names your platform, the profile’s ID, the end customer’s organization, and when the invitation expires. The end customer selects **Link profile** to accept or **Skip for now** to continue to the portal without linking.
 
-    Only an admin or owner of the organization can link a profile. Anyone else sees **Admin access needed** and can't link the profile. They can switch to an organization where they are an admin or owner. Otherwise, tell the end customer that an admin or owner of their Anthropic organization has to open the link.
+    Only an admin or owner of the organization can link a profile. Anyone else sees **Admin access needed** and can’t link the profile. They can switch to an organization where they are an admin or owner. Otherwise, tell the end customer that an admin or owner of their Anthropic organization has to open the link.
 
 3.  3
 
@@ -167,25 +109,25 @@ The link opens Anthropic's Verification Portal at `portal.anthropic.com`. After 
 
 If the link has expired by the time an admin or owner opens it and logs in, the portal shows **This invitation has expired** and tells them to ask you for a new one.
 
-A profile links to one organization. If it's already linked to a different one, the portal says **This partner profile is already linked to a different organization** and doesn't link it. An admin or owner of the organization it's linked to can unlink it under **Linked accounts** in the portal. After that, create a new link and send it to the end customer.
+A profile links to one organization. If it’s already linked to a different one, the portal says **This partner profile is already linked to a different organization** and doesn’t link it. An admin or owner of the organization it’s linked to can unlink it under **Linked accounts** in the portal. After that, create a new link and send it to the end customer.
 
 ## After the end customer links the profile
 
-The portal doesn't send the end customer back to your product, and Anthropic doesn't notify you. Tell the end customer in your own interface to return when they have finished.
+The portal doesn’t send the end customer back to your product, and Anthropic doesn’t notify you. Tell the end customer in your own interface to return when they have finished.
 
-Linking doesn't approve anything by itself. It connects the profile to the end customer's organization, so that programs the organization is approved for apply to requests that carry the profile's ID, except Cyber Verification Program access levels, which the end customer turns on for each linked profile in the portal. The profile has no field that says it is linked.
+Linking doesn’t approve anything by itself. It connects the profile to the end customer’s organization, so that programs the organization is approved for apply to requests that carry the profile’s ID, except Cyber Verification Program access levels, which the end customer turns on for each linked profile in the portal. The profile has no field that says it is linked.
 
-To see which programs apply to a profile, [retrieve the profile](../Endpoints/user-profiles-retrieve.md) and read `programs`. It has a key for each program, such as `cyber` and `efs`, and every profile has every key. Each key is one of the following:
+To see which programs apply to a profile, [retrieve the profile](../Endpoints/user-profiles-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. and read `programs`. It has a key for each program, such as `cyber` and `efs`, and every profile has every key. Each key is one of the following:
 
-- `null`: Anthropic has no status to report for that program. Every key is `null` if Anthropic hasn't enabled programs for your organization.
+- `null`: Anthropic has no status to report for that program. Every key is `null` if Anthropic hasn’t enabled programs for your organization.
 - An object: Its `status` is `active` when the program applies to the profile, otherwise `pending` or `rejected`.
 
 The end customer can see the linked profile under **Linked accounts** in the portal.
 
-If your inference runs on Claude in Amazon Bedrock or Google Cloud, you have to link your own accounts too. Programs apply to requests from an AWS account or Google Cloud project only after you link it to the Anthropic organization that creates your profiles. See [Attribute requests on Amazon Bedrock and Google Cloud](manage-claude-user-profiles.md#attribute-requests-on-amazon-bedrock-and-google-cloud).
+If your inference runs on Claude Models on Google Cloud (Google managed) or Claude in Amazon Bedrock, you have to link your own accounts too. Programs apply to requests from an AWS account or Google Cloud project only after you link it to the Anthropic organization that creates your profiles. See [Attribute requests on Claude Models on Google Cloud (Google managed) and Amazon Bedrock](manage-claude-user-profiles.md#attribute-requests-on-amazon-bedrock-and-google-cloud).
 
 ## Next steps
 
-For each field that a retrieved profile contains, see the [Retrieve a profile](../Endpoints/user-profiles-retrieve.md) reference.
+For each field that a retrieved profile contains, see the [Retrieve a profile](../Endpoints/user-profiles-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference.
 
 To create profiles, send their IDs on your requests, and keep them current, see [User profiles for end-customer attribution](manage-claude-user-profiles.md).

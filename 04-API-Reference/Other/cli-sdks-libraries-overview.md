@@ -2,53 +2,9 @@
 title: "SDKs, CLI, and libraries - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:13Z"
+fetched_at: "2026-11-05T06:36:34Z"
 tags: ["agents", "api", "claude-code", "cli", "sdk"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Foverview)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-SDKs, CLI, and libraries
 
 # SDKs, CLI, and libraries
 
@@ -65,8 +21,8 @@ Official tools for building with the Claude API: client SDKs in seven languages,
 Anthropic provides three kinds of official tooling for building with the Claude API:
 
 - **CLI:** The `ant` command-line tool for shell scripting and interactive use.
-- **Client SDKs:** General-purpose Messages API clients for Python, TypeScript, C#, Go, Java, PHP, and Ruby. Each SDK provides idiomatic interfaces, type safety, and built-in support for streaming, retries, and error handling.
-- **Libraries and integrations:** Packages and compatibility layers that expose Claude inside another framework's API surface rather than the Messages API directly.
+- **Client SDKs:** General-purpose Messages API clients for Python, TypeScript, C#, Go, Java, PHP, and Ruby. Each SDK provides idiomatic interfaces, type safety, and built-in support for streaming, retries, error handling, and [OpenTelemetry tracing](manage-claude-opentelemetry-sdk.md).
+- **Libraries and integrations:** Packages and compatibility layers that expose Claude inside another framework’s API surface rather than the Messages API directly.
 
 
 
@@ -108,13 +64,30 @@ Value objects, builder pattern
 
 Sorbet types, streaming helpers
 
+Each major version of a client SDK sends one [API version](../Endpoints/versioning.md) by default, and a new major version comes with each new API version. To move to `2026-10-21`, see [Switch to 2026-10-21](../Endpoints/migration-2026-10-21.md#upgrade).
+
+## Latest versions
+
+| Tool | Latest version | Package |
+|----|----|----|
+| ant CLI | `2.6.0` | [`github.com/anthropics/anthropic-cli`](https://github.com/anthropics/anthropic-cli/releases) |
+| Python | `2.5.0` | [`anthropic` on PyPI](https://pypi.org/project/anthropic/) |
+| TypeScript | `1.5.0` | [`@anthropic-ai/sdk`](https://www.npmjs.com/package/@anthropic-ai/sdk) |
+| C# | `13.5.0` | [`Anthropic`](https://www.nuget.org/packages/Anthropic) |
+| Go | `2.6.0` | [`github.com/anthropics/anthropic-sdk-go/v2`](https://pkg.go.dev/github.com/anthropics/anthropic-sdk-go/v2) |
+| Java | `3.5.0` | [`com.anthropic:anthropic-java`](https://central.sonatype.com/artifact/com.anthropic/anthropic-java) |
+| PHP | `1.5.0` | [`anthropic-ai/sdk`](https://packagist.org/packages/anthropic-ai/sdk) |
+| Ruby | `2.5.0` | [`anthropic` on RubyGems](https://rubygems.org/gems/anthropic) |
+
+The same versions are available as JSON at `https://platform.claude.com/docs/sdk-versions.json`.
+
 ## Libraries and integrations
 
-Libraries and integrations expose Claude through another framework's API surface. They are not general-purpose Messages API clients.
+Libraries and integrations expose Claude through another framework’s API surface. They are not general-purpose Messages API clients.
 
 [Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)
 
-Swift package for Apple's `LanguageModelSession` API
+Swift package for Apple’s `LanguageModelSession` API
 
 [OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
 
@@ -124,7 +97,7 @@ Use Claude through the OpenAI SDK surface
 
 The CLI, client SDKs, and libraries are for calling the Claude API yourself: you send each request and handle each response. Claude Code, the Claude Agent SDK, and Claude Managed Agents work at a higher level, providing the agent loop, tool execution, and runtime.
 
-[Claude Code](../../02-Claude-Code-CLI/code-home.md)
+[Claude Code](../../01-Getting-Started/overview.md)
 
 Agentic coding tool for delegating coding tasks to Claude
 
@@ -134,4 +107,4 @@ Build agents that run in a process you operate
 
 [Claude Managed Agents](managed-agents-overview.md)
 
-Run agents in Anthropic's managed infrastructure
+Run agents in Anthropic’s managed infrastructure

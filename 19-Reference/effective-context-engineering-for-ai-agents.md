@@ -90,7 +90,7 @@ Our overall guidance across the different components of context (system prompts*
 
 ## Context retrieval and agentic search
 
-In [Building effective AI agents](building-effective-agents.md), we highlighted the differences between LLM-based workflows and agents. Since we wrote that post, we’ve gravitated towards a [simple definition](https://simonwillison.net/2025/Sep/18/agents/) for agents: LLMs autonomously using tools in a loop.
+In [Building effective AI agents](research-building-effective-agents.md), we highlighted the differences between LLM-based workflows and agents. Since we wrote that post, we’ve gravitated towards a [simple definition](https://simonwillison.net/2025/Sep/18/agents/) for agents: LLMs autonomously using tools in a loop.
 
 Working alongside our customers, we’ve seen the field converging on this simple paradigm. As the underlying models become more capable, the level of autonomy of agents can scale: smarter models allow agents to independently navigate nuanced problem spaces and recover from errors.
 

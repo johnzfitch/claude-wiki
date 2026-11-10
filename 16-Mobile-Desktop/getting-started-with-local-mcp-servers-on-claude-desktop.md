@@ -2,7 +2,7 @@
 title: "Getting Started with Local MCP Servers on Claude Desktop | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-23T06:28:49Z"
+fetched_at: "2026-11-09T06:25:50Z"
 tags: ["desktop", "enterprise", "mcp"]
 ---
 
@@ -19,7 +19,7 @@ Desktop extensions provide a streamlined way to install and manage local MCP ser
 
 ## Installing desktop extensions from the directory
 
-1.  Navigate to Settings \> Extensions on Claude Desktop.
+1.  Navigate to **Settings \> Desktop app** and select "Manage" next to **Extensions** (or **Settings \> Extensions** in the older Settings layout) on Claude Desktop.
 
 2.  Click “Browse extensions” to view our directory and click on any Anthropic-reviewed tools you want to use. Click "Install" on your desired extension.
 
@@ -29,7 +29,7 @@ Desktop extensions provide a streamlined way to install and manage local MCP ser
 
 ## Installing custom desktop extensions
 
-1.  Navigate to Settings \> Extensions on Claude Desktop.
+1.  Navigate to **Settings \> Desktop app** and select "Manage" next to **Extensions** (or **Settings \> Extensions** in the older Settings layout) on Claude Desktop.
 
 2.  Click “Advanced settings” and find the **Extension Developer** section.
 
@@ -55,7 +55,7 @@ for specific instructions.
 
 ### Create and upload custom extensions for your organization
 
-Custom desktop extensions uploads allow Team and Enterprise plans to leverage organization-specific workflows that aren’t available in the public directory. After creating a custom desktop extension, Owners and Primary Owners can navigate to Settings \> Extensions within Claude Desktop and click “Advanced settings” to access the **Extension Developer** section:
+Custom desktop extensions uploads allow Team and Enterprise plans to leverage organization-specific workflows that aren’t available in the public directory. After creating a custom desktop extension, Owners and Primary Owners can navigate to **Settings \> Desktop app**, select "Manage" next to **Extensions** (or **Settings \> Extensions** in the older Settings layout), and click "Advanced settings" to access the **Extension Developer** section:
 
 
 Click “Install Extension…” and select the .mcpb file. Follow the prompts to install and configure your custom desktop extension. For more in-depth information, please refer to our [desktop extension developer documentation](https://github.com/anthropics/mcpb).
@@ -86,7 +86,7 @@ For controlling desktop extensions through system policies, please refer to our 
 
 ### Extension configuration issues
 
-- Navigate to Settings \> Extensions and click on the extension to review its settings.
+- Navigate to **Settings \> Desktop app** and select "Manage" next to **Extensions** (or **Settings \> Extensions** in the older Settings layout), then click on the extension to review its settings.
 
 - Ensure all required configuration fields are completed.
 
@@ -104,7 +104,7 @@ For controlling desktop extensions through system policies, please refer to our 
 
 ### How do I check if my MCP servers are properly connected in Claude Desktop?
 
-Click the "+" button on bottom the chat box within Claude Desktop, then select "Connectors." This will show you connected MCP servers and their tools. Alternatively, you can visit Developer settings (under **Desktop app**) to see connection status and look at the logs for any MCP servers.
+Click the "+" button on bottom the chat box within Claude Desktop, then select "Connectors." This will show you connected MCP servers and their tools. Alternatively, go to the **Local MCP servers** section of the Extensions page (**Settings \> Desktop app**, then "Manage" next to **Extensions**), or to **Settings \> Developer**, under **This computer**, in the older Settings layout, to see connection status and look at the logs for any MCP servers.
 
 ### How do I convert my existing MCP server to a desktop extension?
 
@@ -144,4 +144,4 @@ For more in-depth information on building your own MCP clients and servers, we r
 
 - [Guide to debugging MCP integrations](https://modelcontextprotocol.io/docs/tools/debugging) - Troubleshooting tips and solutions for common implementation challenges.
 
-If you need further guidance, visit our guide on [How to Get Support](../15-Claude-AI-Features/how-to-get-support.md) for additional support options.
+If you need further guidance, visit our guide on [How to Get Support](https://support.claude.com/en/articles/9015913-how-to-get-support) for additional support options.

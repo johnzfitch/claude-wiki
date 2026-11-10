@@ -2,53 +2,9 @@
 title: "Connect to a Managed Agents session from your terminal - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-17T06:26:13Z"
+fetched_at: "2026-11-02T06:26:53Z"
 tags: ["agents", "api"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fsessions-connect)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
 # Connect to a Managed Agents session from your terminal
 
@@ -62,7 +18,7 @@ Attach the ant CLI to a Claude Managed Agents session to follow its transcript l
 
 
 
-`ant beta:sessions connect` attaches your terminal to an existing Claude Managed Agents [session](managed-agents-sessions.md). It loads the session's transcript and follows it live as the agent works. You can also step in: send a message, interrupt the agent, or allow or deny a tool call that is waiting for approval. With `--web`, it opens the session in the Claude Console's session viewer in your browser instead.
+`ant beta:sessions connect` attaches your terminal to an existing Claude Managed Agents [session](managed-agents-sessions.md). It loads the session’s transcript and follows it live as the agent works. You can also step in: send a message, interrupt the agent, or allow or deny a tool call that is waiting for approval. With `--web`, it opens the session in the Claude Console’s session viewer in your browser instead.
 
 The command requires version 1.32.0 or later of the CLI. To install or update the CLI and authenticate, see the [CLI quickstart](cli-sdks-libraries-cli-quickstart.md).
 
@@ -84,17 +40,17 @@ Press Ctrl+C to detach. The session keeps running, and connecting again loads it
 
 ## Follow and steer the session
 
-The terminal view shows the conversation live: messages and tool calls, with each call's duration and outcome. A status bar shows whether the session is running, idle, or waiting for your approval. In [multiagent](managed-agents-multiagent-orchestration.md) sessions, the view follows the session's primary thread, which includes the messages exchanged between the agent that the session runs and the agents it delegates to.
+The terminal view shows the conversation live: messages and tool calls, with each call’s duration and outcome. A status bar shows whether the session is running, idle, or waiting for your approval. In [multiagent](managed-agents-multiagent-orchestration.md) sessions, the view follows the session’s primary thread, which includes the messages exchanged between the agent that the session runs and the agents it delegates to.
 
-| Key                | Action                                                                                                                     |
-|--------------------|----------------------------------------------------------------------------------------------------------------------------|
-| Enter              | Send your input as a `user.message` event. Alt+Enter or Ctrl+J starts a new line.                                          |
-| Esc                | Interrupt the agent while it's running (`user.interrupt`).                                                                 |
-| Ctrl+O             | Show or hide detail: tool inputs and results, token usage, and status events. `--verbose` (`-v`) starts with detail shown. |
-| Page Up, Page Down | Scroll through the transcript. Scrolling up pauses following; End resumes it.                                              |
-| Ctrl+C             | Detach. Ctrl+D on an empty input line also detaches.                                                                       |
+| Key | Action |
+|----|----|
+| Enter | Send your input as a `user.message` event. Alt+Enter or Ctrl+J starts a new line. |
+| Esc | Interrupt the agent while it’s running (`user.interrupt`). |
+| Ctrl+O | Show or hide detail: tool inputs and results, token usage, and status events. `--verbose` (`-v`) starts with detail shown. |
+| Page Up, Page Down | Scroll through the transcript. Scrolling up pauses following; End resumes it. |
+| Ctrl+C | Detach. Ctrl+D on an empty input line also detaches. |
 
-When a tool call is waiting for your approval, the input line changes to **Allow tool call?** This happens under an `always_ask` policy, or under `auto` when the server reaches no determination. Choose **Yes**, **No**, or **No, and tell the agent why**. The CLI sends your choice as a [`user.tool_confirmation`](managed-agents-permission-policies.md#respond-to-confirmation-requests) event, with any reason you type as its `deny_message`.
+When a tool call is waiting for your approval, the input line changes to **Allow tool call?** This occurs under an `always_ask` policy, or under `auto` when the server reaches no determination. Select **Yes**, **No**, or **No, and tell the agent why**. The CLI sends your choice as a [`user.tool_confirmation`](managed-agents-permission-policies.md#respond-to-confirmation-requests) event, with any reason you type as its `deny_message`.
 
 If the session is `terminated` or deleted, the view is read-only.
 
@@ -108,6 +64,6 @@ CLI
 ant beta:sessions connect sesn_011CZkZAtmR3yMPDzynEDxu7 --web
 ```
 
-`--web` serves the Console's session viewer from a local server on `127.0.0.1`, prints its URL, and opens it in your browser. Add `--no-browser` to skip opening the browser. You can also send messages, interrupt the agent, and allow or deny a tool call from the browser. Unlike the terminal view, the browser viewer follows every thread of a multiagent session.
+`--web` serves the Console’s session viewer from a local server on `127.0.0.1`, prints its URL, and opens it in your browser. Add `--no-browser` to skip opening the browser. You can also send messages, interrupt the agent, and allow or deny a tool call from the browser. Unlike the terminal view, the browser viewer follows every thread of a multiagent session.
 
-The URL can be opened once, within two minutes of being printed. Reloading that tab works, but to open the viewer anywhere else, run the command again. Your credentials never leave the CLI: the page sends requests only to the local `ant` process, which makes the API requests. The server runs until you press Ctrl+C.
+The URL can be opened once, within 2 minutes of being printed. Reloading that tab works, but to open the viewer anywhere else, run the command again. Your credentials never leave the CLI: the page sends requests only to the local `ant` process, which makes the API requests. The server runs until you press Ctrl+C.

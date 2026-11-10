@@ -1,12 +1,15 @@
 ---
 title: "Overview - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns"
+source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-21T06:28:54Z"
+fetched_at: "2026-10-31T06:24:56Z"
+last_modified: "Sat, 31 Oct 2026 01:43:07 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Request and Response](#request-and-response)
 - [Multi Round-Trip Requests](#multi-round-trip-requests)
@@ -21,7 +24,7 @@ Copy pageCopy page
 
 Copy pageCopy page
 
-This page defines the message patterns of the core protocol: the ways a client and server compose JSON-RPC [requests, responses, and notifications](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#messages) into interactions. Every [transport](draft-basic-transports.md) carries all of these patterns; transports differ only in how messages are framed and delivered. Every interaction begins with the client:
+This page defines the message patterns of the core protocol: the ways a client and server compose JSON-RPC [requests, responses, and notifications](https://modelcontextprotocol.io/specification/draft/basic/index#messages) into interactions. Every [transport](draft-basic-transports.md) carries all of these patterns; transports differ only in how messages are framed and delivered. Every interaction begins with the client:
 
 - The **client** sends JSON-RPC *requests* and *notifications*.
 - The **server** answers each request with a JSON-RPC *response* (a result or error), optionally preceded by *notifications* scoped to that request.
@@ -40,7 +43,7 @@ The client sends a request; the server answers it with a result or an error. Whi
 
 Multi Round-Trip Requests
 
-When a server needs client input (sampling, elicitation, or roots) to complete a request, it answers with an [`InputRequiredResult`](2026-07-28-basic-patterns-mrtr.md#inputrequiredresult) and the client retries the request with the matching `inputResponses`. See [Multi Round-Trip Requests](2026-07-28-basic-patterns-mrtr.md).
+When a server needs client input (sampling, elicitation, or roots) to complete a request, it answers with an [`InputRequiredResult`](draft-basic-patterns-mrtr.md#inputrequiredresult) and the client retries the request with the matching `inputResponses`. See [Multi Round-Trip Requests](draft-basic-patterns-mrtr.md).
 
 
 [​](#subscribe-and-notify)

@@ -2,85 +2,9 @@
 title: "Web search tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-10-20T06:38:16Z"
+fetched_at: "2026-11-05T06:35:34Z"
 tags: ["api", "prompting", "search"]
 ---
-
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fagents-and-tools%2Ftool-use%2Fweb-search-tool)
-
-
-
-
-
-SearchCtrlK
-
-First steps
-
-[Intro to Claude](../../01-Getting-Started/intro.md)[Get your API key](../Other/get-api-key.md)[Quickstart](../../01-Getting-Started/get-started.md)[Authentication](../Other/manage-claude-authentication.md)
-
-Building with Claude
-
-[Features overview](../Guides/build-with-claude-overview.md)[Using the Messages API](../Guides/build-with-claude-working-with-messages.md)[Stop reasons and fallback](../Guides/build-with-claude-handling-stop-reasons.md)[Refusals and fallback](../Guides/build-with-claude-refusals-and-fallback.md)[Fallback credit](../Guides/build-with-claude-fallback-credit.md)
-
-Model capabilities
-
-[Effort](../Guides/build-with-claude-effort.md)[Task budgets (beta)](../Guides/build-with-claude-task-budgets.md)[Fast mode](../Guides/build-with-claude-fast-mode.md)[Structured outputs](../Guides/build-with-claude-structured-outputs.md)[Citations](../Guides/build-with-claude-citations.md)[Streaming Messages](../Guides/build-with-claude-streaming.md)[Batch processing](../Guides/build-with-claude-batch-processing.md)[Search results](../Guides/build-with-claude-search-results.md)[Streaming refusals](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-handle-streaming-refusals.md)[Multilingual support](../Guides/build-with-claude-multilingual-support.md)[Embeddings](../Guides/build-with-claude-embeddings.md)
-
-[Thinking](../Guides/build-with-claude-thinking.md)
-
-Tools
-
-[Overview](agents-and-tools-tool-use-overview.md)[How tool use works](agents-and-tools-tool-use-how-tool-use-works.md)[Tutorial: Build a tool-using agent](agents-and-tools-tool-use-build-a-tool-using-agent.md)[Define tools](agents-and-tools-tool-use-implement-tool-use.md)[Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md)[Parallel tool use](agents-and-tools-tool-use-parallel-tool-use.md)[Tool Runner (SDK)](agents-and-tools-tool-use-tool-runner.md)[Strict tool use](agents-and-tools-tool-use-strict-tool-use.md)[Server tools](agents-and-tools-tool-use-server-tools.md)[Web search tool](agents-and-tools-tool-use-web-search-tool.md)[Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)[Code execution tool](agents-and-tools-tool-use-code-execution-tool.md)[Advisor tool](agents-and-tools-tool-use-advisor-tool.md)[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)[Memory tool](agents-and-tools-tool-use-memory-tool.md)[Bash tool](agents-and-tools-tool-use-bash-tool.md)[Text editor tool](agents-and-tools-tool-use-text-editor-tool.md)[Browser and computer use (SDK)](agents-and-tools-tool-use-browser-use-sdk.md)[Computer use tool](agents-and-tools-tool-use-computer-use-tool.md)[Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)[Troubleshooting](agents-and-tools-tool-use-troubleshooting-tool-use.md)
-
-Tool infrastructure
-
-[Tool reference](agents-and-tools-tool-use-tool-reference.md)[Manage tool context](agents-and-tools-tool-use-manage-tool-context.md)[Tool combinations](agents-and-tools-tool-use-tool-combinations.md)[Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md)[Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md)[Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md)
-
-Context management
-
-[Context windows](../Guides/build-with-claude-context-windows.md)[Context editing](../Guides/build-with-claude-context-editing.md)[Prompt caching](../Guides/build-with-claude-prompt-caching.md)[Mid-conversation system messages and tool changes](../Guides/build-with-claude-mid-conversation-system-messages.md)[Build an orchestration mode](../Guides/build-with-claude-mid-conversation-effort-example.md)[Cache diagnostics](../Guides/build-with-claude-cache-diagnostics.md)[Token counting](../Guides/build-with-claude-token-counting.md)
-
-[Compaction](../Guides/build-with-claude-compaction.md)
-
-Working with files
-
-[Files API](../Guides/build-with-claude-files.md)[PDF support](../Guides/build-with-claude-pdf-support.md)
-
-[Images and vision](../Guides/build-with-claude-vision.md)
-
-Skills
-
-[Overview](agents-and-tools-agent-skills-overview.md)[Quickstart](agents-and-tools-agent-skills-quickstart.md)[Best practices](agents-and-tools-agent-skills-best-practices.md)[Skills for enterprise](agents-and-tools-agent-skills-enterprise.md)[Skills in the API](../Guides/build-with-claude-skills-guide.md)
-
-MCP
-
-[Remote MCP servers](agents-and-tools-remote-mcp-servers.md)[MCP connector](agents-and-tools-mcp-connector.md)
-
-[MCP tunnels](agents-and-tools-mcp-tunnels-overview.md)
-
-Claude on cloud platforms
-
-[Amazon Bedrock (Opus 4.7 and later)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)[Google Cloud](../Guides/build-with-claude-claude-on-vertex-ai.md)[Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
-
-[Console](../Other/playground.md)
-
-[Messages](../../01-Getting-Started/intro.md)Tools
 
 # Web search tool
 
@@ -94,9 +18,26 @@ Give Claude access to current web content with cited sources, optional dynamic f
 
 
 
-
+Web search tool
 
-To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
+[APIs](#feature-availability)  
+Messages APIAvailableManaged AgentsAvailable
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+
+[Data handling](#feature-data-handling)  
+ZDR eligibleHIPAA eligible
+
+Usage differs by product
+
+Messages API
+
+Add a `web_search` tool to the request’s `tools`. Settings such as `max_uses`, domain lists and `user_location` go on that tool.
+
+Managed Agents
+
+On by default in the agent toolset, without `max_uses`, `citations` or `cache_control`.
 
 The web search tool gives Claude direct access to real-time web content, allowing it to answer questions with up-to-date information beyond its knowledge cutoff. The response includes citations for sources drawn from search results.
 
@@ -112,9 +53,9 @@ The examples on this page use `web_search_20250305` for basic search and `web_se
 
 
 
-For [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), web search is supported on the Claude API, Google Cloud, and Microsoft Foundry. Web search is not available for Mythos Preview on Amazon Bedrock or [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md).
+For [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), web search is supported on the Claude API, Claude Models on Google Cloud (Google managed), and Microsoft Foundry.
 
-For web search's Zero Data Retention eligibility and the related `allowed_callers` configuration, see [Server tools](agents-and-tools-tool-use-server-tools.md#zdr-and-allowed-callers).
+For web search’s Zero Data Retention eligibility and the related `allowed_callers` configuration, see [Server tools](agents-and-tools-tool-use-server-tools.md#zdr-and-allowed-callers).
 
 For model support, see the [Tool reference](agents-and-tools-tool-use-tool-reference.md).
 
@@ -148,15 +89,15 @@ Triggering is steerable through your system prompt: you can encourage Claude to 
 
 ### Dynamic filtering
 
-With basic web search, every search result is loaded into Claude's context window, and much of that content can be irrelevant to the request. With `web_search_20260209` or later, Claude instead writes and runs code that filters the results first, so only relevant content reaches the context window. This reduces token use on search-heavy requests.
+With basic web search, every search result is loaded into Claude’s context window, and much of that content can be irrelevant to the request. With `web_search_20260209` or later, Claude instead writes and runs code that filters the results first, so only relevant content reaches the context window. This reduces token use on search-heavy requests.
 
-Dynamic filtering runs web search from inside [code execution](agents-and-tools-tool-use-code-execution-tool.md): on `web_search_20260209` and later, the tool's `allowed_callers` field defaults to `["code_execution_20260120"]`, and when dynamic filtering runs, the API provisions the code execution it needs for the request automatically. You don't need to add the code execution tool to `tools` yourself. There are no additional charges for code execution calls made this way beyond the standard token costs.
+Dynamic filtering runs web search from inside [code execution](agents-and-tools-tool-use-code-execution-tool.md): on `web_search_20260209` and later, the tool’s `allowed_callers` field defaults to `["code_execution_20260120"]`, and when dynamic filtering runs, the API provisions the code execution it needs for the request automatically. You don’t need to add the code execution tool to `tools` yourself. There are no additional charges for code execution calls made this way beyond the standard token costs.
 
-To call web search directly, without dynamic filtering, set `allowed_callers: ["direct"]`. Models that don't support programmatic tool calling require this setting. Without it, the API returns a 400 error that tells you to set it.
+To call web search directly, without dynamic filtering, set `allowed_callers: ["direct"]`. Models that don’t support programmatic tool calling require this setting. Without it, the API returns a 400 error that tells you to set it.
 
 
 
-The web search tool (with and without dynamic filtering) is available on the Claude API, [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), and [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md). On Microsoft Foundry, deployments [hosted on Azure](../Guides/build-with-claude-claude-in-microsoft-foundry.md#additional-features-not-supported-when-hosted-on-azure) support only the basic web search tool (`web_search_20250305`, without dynamic filtering). Deployments hosted on Anthropic support all versions. On Google Cloud, only the basic web search tool (without dynamic filtering) is available. Web search is not available on Amazon Bedrock.
+The web search tool (with and without dynamic filtering) is available on the Claude API, [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md), and [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md). On Microsoft Foundry, deployments [hosted on Azure](../Guides/build-with-claude-claude-in-microsoft-foundry.md#additional-features-not-supported-when-hosted-on-azure) support only the basic web search tool (`web_search_20250305`, without dynamic filtering). Deployments hosted on Anthropic support all versions. On Claude Models on Google Cloud (Google managed), only the basic web search tool (without dynamic filtering) is available.
 
 The following examples use `web_search_20260318`:
 
@@ -203,9 +144,9 @@ print(response)
 
 
 
-Web search is enabled for your organization unless an administrator has disabled it in the [Claude Console](../Other/playground.md), where they can also restrict which domains it searches. If it's disabled, a request that includes the tool fails with a 400 `invalid_request_error` that says web search is not enabled, rather than an [error code](#errors) inside a search result.
+Web search is enabled for your organization unless an administrator has disabled it in the [Claude Console](../Other/playground.md), where they can also restrict which domains it searches. If it’s disabled, a Messages API request that includes the tool fails with a 400 `invalid_request_error` that says web search is not enabled, rather than an [error code](#errors) inside a search result.
 
-These organization-level settings in the Claude Console apply to Messages API requests only. [Claude Managed Agents](../Other/managed-agents-overview.md) sessions use the per-tool `allowed_domains` and `blocked_domains` lists on the agent toolset instead; see [Restrict web search and web fetch domains](../Other/managed-agents-tools-web-restrictions.md). For a session in a cloud environment with `limited` networking, the environment's `allowed_hosts` also applies to `web_search` and `web_fetch`; see [Networking](../Other/managed-agents-environments.md#networking). The per-tool lists restrict these tools further, within the hosts that `allowed_hosts` allows.
+For how your organization’s web search settings apply in Claude Managed Agents sessions, see [Restrict web search and web fetch domains](../Other/managed-agents-tools-web-restrictions.md).
 
 Provide the web search tool in your API request:
 
@@ -256,7 +197,7 @@ JSON
   "type": "web_search_20250305",
   "name": "web_search",
 
-  // Optional: Limit the number of searches per request
+  // Optional: Limit the number of searches for each request
   "max_uses": 5,
 
   // Optional: Only include results from these domains.
@@ -277,7 +218,7 @@ JSON
 }
 ```
 
-All web search tool versions accept `allowed_callers`, which controls whether Claude calls web search directly or from code execution through [dynamic filtering](#dynamic-filtering). On `web_search_20260209` and later it defaults to `["code_execution_20260120"]` instead of `["direct"]`. See [Server tools](agents-and-tools-tool-use-server-tools.md#zdr-and-allowed-callers) for how to configure it. `web_search_20260318` and later also accept [`response_inclusion`](#response-inclusion).
+All web search tool versions accept `allowed_callers`, which controls whether Claude calls web search directly or from code execution through [dynamic filtering](#dynamic-filtering). On `web_search_20260209` and later it defaults to `["code_execution_20260120"]` instead of `["direct"]`. See [ZDR and allowed_callers](agents-and-tools-tool-use-server-tools.md#zdr-and-allowed-callers) for how to configure it. `web_search_20260318` and later also accept [`response_inclusion`](#response-inclusion).
 
 ### Max uses
 
@@ -295,15 +236,15 @@ On [Claude Managed Agents](../Other/managed-agents-overview.md), set these field
 
 ### Localization
 
-The `user_location` parameter allows you to localize search results based on a user's location. Provide at least one of `city`, `region`, `country`, or `timezone`.
+The `user_location` parameter allows you to localize search results based on a user’s location. Provide at least one of `city`, `region`, `country`, or `timezone`.
 
 - `type`: The type of location (must be `approximate`)
 - `city`: The city name
 - `region`: The region or state
-- `country`: The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code. The API rejects unsupported country codes with a 400 error.
-- `timezone`: The [IANA timezone ID](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+- `country`: The two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code (the API rejects an unsupported code with a 400 error)
+- `timezone`: The [IANA time zone ID](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
-On Claude Managed Agents, the `web_search` entry of the agent toolset accepts a `user_location` object with the same fields. The API rejects an unsupported `country` code with a 400 error when you create or update the agent, or when you create or update a session that supplies the setting. See the [web tool settings](../Other/managed-agents-tools-web-restrictions.md#settings).
+On Claude Managed Agents, the `web_search` entry of the agent toolset also accepts `user_location`; see the [web tool settings](../Other/managed-agents-tools-web-restrictions.md#settings).
 
 ### Response inclusion
 
@@ -311,7 +252,7 @@ On Claude Managed Agents, the `web_search` entry of the agent toolset accepts a 
 
 Requires `web_search_20260318` or later.
 
-The `response_inclusion` parameter controls how search result blocks appear in the API response when the result was consumed by a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same turn. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, reducing output token costs for agentic workflows that don't need to echo raw search content back to the client. The default is `"full"`. Results from direct calls, or from code execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
+The `response_inclusion` parameter controls how search result blocks appear in the API response when the result was consumed by a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same turn. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, reducing output token costs for agentic workflows that don’t need to echo raw search content back to the client. The default is `"full"`. Results from direct calls, or from code execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
 
 JSON
 
@@ -331,7 +272,7 @@ JSON
 
 ## Response
 
-Here's an example response structure:
+Here’s an example response structure:
 
 Output
 
@@ -400,7 +341,7 @@ Output
 }
 ```
 
-This example shows a direct search. When a search runs through [dynamic filtering](#dynamic-filtering), the response also contains the [code execution tool's](agents-and-tools-tool-use-code-execution-tool.md) result blocks, and each nested `server_tool_use` and `web_search_tool_result` pair carries a `caller` field identifying the code execution call that made it.
+This example shows a direct search. When a search runs through [dynamic filtering](#dynamic-filtering), the response also contains the result blocks of the [code execution tool](agents-and-tools-tool-use-code-execution-tool.md), and each nested `server_tool_use` and `web_search_tool_result` pair carries a `caller` field identifying the code execution call that made it.
 
 ### Search results
 
@@ -411,7 +352,7 @@ Search results include:
 - `page_age`: When the site was last updated
 - `encrypted_content`: Encrypted content that you must pass back in multi-turn conversations
 
-To continue a conversation that contains search results, send the assistant's content blocks back exactly as you received them, including each result's `encrypted_content`. The API decrypts that content on later turns to restore the search results in Claude's context. If `encrypted_content` is missing or modified, the request fails with a 400 validation error.
+To continue a conversation that contains search results, send the assistant’s content blocks back exactly as you received them, including each result’s `encrypted_content`. The API decrypts that content on later turns to restore the search results in Claude’s context. If `encrypted_content` is missing or modified, the request fails with a 400 validation error.
 
 ### Citations
 
@@ -472,7 +413,7 @@ To cache tool definitions across turns, see [Tool use with prompt caching](agent
 
 ## Streaming
 
-With streaming enabled, you'll receive search events as part of the stream. There will be a pause while the search runs:
+With streaming enabled, you’ll receive search events as part of the stream. There is a pause while the search runs:
 
 Output
 
@@ -494,7 +435,7 @@ data: {"type": "content_block_start", "index": 1, "content_block": {"type": "ser
 event: content_block_delta
 data: {"type": "content_block_delta", "index": 1, "delta": {"type": "input_json_delta", "partial_json": "{\"query\":\"latest quantum computing breakthroughs 2025\"}"}}
 
-// Pause while search executes
+// Pause while search runs
 
 // Search results streamed
 event: content_block_start
@@ -507,7 +448,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "web
 
 You can include the web search tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md). Web search tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
 
-To protect shared capacity, the Batches API throttles web search requests per organization, so large batches with many searches might take longer to complete. You can see your organization's web search rate limit on the [Rate limits](../Other/playground.md) page in the Claude Console. To request a higher limit, contact sales from that page.
+To protect shared capacity, the Batches API throttles web search requests for each organization, so large batches with many searches might take longer to complete. You can see your organization’s web search rate limit on the [Rate limits](../Other/playground.md) page in the Claude Console. To request a higher limit, contact sales from that page.
 
 ## Usage and pricing
 
@@ -529,7 +470,7 @@ Web search usage is charged in addition to token usage:
 
 
 
-Web search is available on the Claude API for **\$10 per 1,000 searches**, plus standard token costs for search-generated content. Web search results retrieved throughout a conversation are counted as input tokens, in search iterations executed during a single turn and in subsequent conversation turns.
+Web search is available on the Claude API for **\$10 USD per 1,000 searches**, plus standard token costs for search-generated content. Web search results retrieved throughout a conversation are counted as input tokens, in search iterations run during a single turn and in subsequent conversation turns.
 
 Each web search counts as one use, regardless of the number of results returned. If an error occurs during web search, the web search will not be billed.
 
@@ -539,16 +480,77 @@ Each web search counts as one use, regardless of the number of results returned.
 
 [Web fetch tool](agents-and-tools-tool-use-web-fetch-tool.md)
 
-Fetch and read content from specific URLs to augment Claude's context with live web content.
+Fetch and read content from specific URLs to augment Claude’s context with live web content.
 
 
 
 [Server tools](agents-and-tools-tool-use-server-tools.md)
 
-Work with Anthropic-executed tools: server_tool_use blocks, pause_turn continuation, and domain filtering.
+Work with tools that Anthropic runs: `server_tool_use` blocks, `pause_turn` continuation, and domain filtering.
 
 
 
 [Tool reference](agents-and-tools-tool-use-tool-reference.md)
 
 Directory of Anthropic-provided tools and reference for optional tool definition properties.
+
+## Availability
+
+Web search tool is available on every model and eligible for zero data retention and HIPAA readiness.
+
+### API support
+
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+Usage
+
+Add a `web_search` tool to the request’s `tools`. Settings such as `max_uses`, domain lists and `user_location` go on that tool.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+
+StatusAvailable
+
+Cloud platforms
+
+- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Azure
+
+Only the basic web search tool (`web_search_20250305`), without dynamic filtering.
+
+[Managed Agents](../Other/managed-agents-overview.md)
+
+Usage
+
+Part of the agent toolset, and on by default once the toolset is added. Domain lists and `user_location` go on the toolset’s `web_search` entry; `max_uses`, `citations` and `cache_control` are not available.
+
+StatusAvailable
+
+Cloud platforms
+
+- Claude API
+- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+
+### Data handling
+
+[Data handling overview](../Other/manage-claude-api-and-data-retention.md#feature-eligibility)
+
+Applicable endpoints
+
+- `/v1/messages` with `web_search` tool
+
+Zero data retentionEligible
+
+Excludes [Covered Models](../Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements)
+
+Real-time web search results returned in the API response. Dynamic filtering for web search is not eligible for ZDR or HIPAA.
+
+HIPAAEligible
+
+Dynamic filtering for web search is not eligible for ZDR or HIPAA.

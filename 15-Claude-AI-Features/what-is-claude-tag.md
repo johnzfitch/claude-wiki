@@ -2,11 +2,13 @@
 title: "What is Claude Tag? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15594475-what-is-claude-tag"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:12Z"
+fetched_at: "2026-11-09T06:26:06Z"
 tags: ["claude-ai"]
 ---
 
 # What is Claude Tag?
+
+September 24, 2026
 
 
 **[Claude in Slack](product-tag.md)** switched over to the new Claude Tag experience on August 3, 2026. To integrate Claude and Slack, use Claude Tag instead. Learn how to **[set up Claude Tag](https://claude.com/docs/claude-tag/admins/setup-overview)** or **[migrate from the earlier Claude in Slack](https://claude.com/docs/claude-tag/admins/migrate-from-earlier)**.

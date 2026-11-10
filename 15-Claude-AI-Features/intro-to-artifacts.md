@@ -2,7 +2,7 @@
 title: "Collaborate with your team in Claude artifacts · Claude Academy"
 source_url: "https://support.claude.com/en/articles/9945615-intro-to-artifacts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-22T06:30:41Z"
+fetched_at: "2026-11-09T06:26:46Z"
 tags: ["claude-ai"]
 ---
 
@@ -70,7 +70,7 @@ Once you have one artifact, build the next from it without explaining the work a
 
 You can share an artifact and edit it directly with your team, on a page that Claude hosts. Everyone opens the same page and sees the artifact and its comments, not your conversation with Claude. In a doc, deck, or design, people with edit access can work at the same time and see each other's changes as they happen. Claude keeps working on it too, whenever you or a teammate with edit access asks for a change.
 
-Other people can't open an artifact until you share it. To share, click **Share** at the top right of the artifact and choose what each person can do. People you invite need a Claude account. For every sharing setting and the options on each plan, see [Share artifacts(opens in new tab)](share-artifacts.md) in the Help Center.
+Other people can't open an artifact until you share it. To share, click **Share** at the top right of the artifact and choose what each person can do. People you invite need a Claude account. For every sharing setting and the options on each plan, see [Share artifacts(opens in new tab)](https://support.claude.com/en/articles/9547008-share-artifacts) in the Help Center.
 
 Loading
 
@@ -79,7 +79,7 @@ When the work has to leave Claude, export a file in the format the destination n
 ### What your plan includes[](#what-your-plan-includes)
 
 - **Every plan, including Free:** you can ask for an artifact and make Claude Docs, Slides, and Design.
-- **Paid plans (Pro, Max, Team, Enterprise):** Claude Dashboards (in beta), saving entries in an artifact, and connecting it to your tools.
+- **Paid plans (Pro, Max, Ultra, Team, Enterprise):** Claude Dashboards (in beta), saving entries in an artifact, and connecting it to your tools.
 - **Team and Enterprise:** Claude Motion (in beta). An owner of your organization decides [which kinds you can use(opens in new tab)](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans.md#h_6e06d8f1a8) and whether you can share outside it.
 
 For the details on each plan, see [What are artifacts and how do I use them(opens in new tab)](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md) in the Help Center.

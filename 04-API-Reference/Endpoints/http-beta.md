@@ -2,234 +2,11 @@
 title: "Beta - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:39:13Z"
+fetched_at: "2026-11-05T06:35:38Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIsThe API you’re viewing is only available in beta
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 
@@ -239,15 +16,21 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### Models
 
 
 
-AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 48 more
+AnthropicBeta = string or "message-batches-2024-09-24" or "prompt-caching-2024-07-31" or "computer-use-2024-10-22" or 52 more
 
 
+
+Beta names you can send in the `anthropic-beta` header.
+
+See [Beta headers](beta-headers.md) for how to send them and where to find the name a feature needs.
 
 One of the following:
 
@@ -407,11 +190,15 @@ BetaMonetaryAmount object{ amount, currency }
 
 A monetary amount in a specific currency.
 
+
+
 amount: string
 
 
 
 Amount in minor units of the currency, as an integer decimal string with no leading zeros: "2500" is \$25.00 and "50" is fifty cents. A string rather than a number so no float rounding is ever applied.
+
+pattern^(0\|\[1-9\]\d\*)\$
 
 currency: [BetaCurrency](platform-claude-com-http-beta.md#beta_currency)
 
@@ -577,27 +364,39 @@ Streams the results of a Message Batch as a `.jsonl` file.
 
 POST/v1/agents
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Agents](https://platform.claude.com/docs/en/api/http/beta/agents/list)
 
 GET/v1/agents
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Get Agent](https://platform.claude.com/docs/en/api/http/beta/agents/retrieve)
 
 GET/v1/agents/{agent_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update Agent](https://platform.claude.com/docs/en/api/http/beta/agents/update)
 
 POST/v1/agents/{agent_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive Agent](https://platform.claude.com/docs/en/api/http/beta/agents/archive)
 
 POST/v1/agents/{agent_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### BetaAgents[Versions](https://platform.claude.com/docs/en/api/http/beta/agents/versions)
 
 ##### [List Agent Versions](https://platform.claude.com/docs/en/api/http/beta/agents/versions/list)
 
 GET/v1/agents/{agent_id}/versions
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### Beta[Environments](https://platform.claude.com/docs/en/api/http/beta/environments)
 
@@ -693,25 +492,37 @@ Get statistics about the work queue for an environment.
 
 POST/v1/sessions
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Sessions](https://platform.claude.com/docs/en/api/http/beta/sessions/list)
 
 GET/v1/sessions
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Get Session](https://platform.claude.com/docs/en/api/http/beta/sessions/retrieve)
 
 GET/v1/sessions/{session_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update Session](https://platform.claude.com/docs/en/api/http/beta/sessions/update)
 
 POST/v1/sessions/{session_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Delete Session](https://platform.claude.com/docs/en/api/http/beta/sessions/delete)
 
 DELETE/v1/sessions/{session_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive Session](https://platform.claude.com/docs/en/api/http/beta/sessions/archive)
 
 POST/v1/sessions/{session_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### BetaSessions[Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events)
 
@@ -719,13 +530,19 @@ Get statistics about the work queue for an environment.
 
 GET/v1/sessions/{session_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Send Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/send)
 
 POST/v1/sessions/{session_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Stream Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/stream)
 
 GET/v1/sessions/{session_id}/events/stream
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### BetaSessions[Resources](https://platform.claude.com/docs/en/api/http/beta/sessions/resources)
 
@@ -733,21 +550,31 @@ Get statistics about the work queue for an environment.
 
 POST/v1/sessions/{session_id}/resources
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Session Resources](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/list)
 
 GET/v1/sessions/{session_id}/resources
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Get Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/retrieve)
 
 GET/v1/sessions/{session_id}/resources/{resource_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/update)
 
 POST/v1/sessions/{session_id}/resources/{resource_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Delete Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/delete)
 
 DELETE/v1/sessions/{session_id}/resources/{resource_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### BetaSessions[Threads](https://platform.claude.com/docs/en/api/http/beta/sessions/threads)
 
@@ -755,13 +582,19 @@ Get statistics about the work queue for an environment.
 
 GET/v1/sessions/{session_id}/threads
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Get Session Thread](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/retrieve)
 
 GET/v1/sessions/{session_id}/threads/{thread_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive Session Thread](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/archive)
 
 POST/v1/sessions/{session_id}/threads/{thread_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### BetaSessionsThreads[Events](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/events)
 
@@ -769,9 +602,13 @@ Get statistics about the work queue for an environment.
 
 GET/v1/sessions/{session_id}/threads/{thread_id}/events
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Stream Session Thread Events](https://platform.claude.com/docs/en/api/http/beta/sessions/threads/events/stream)
 
 GET/v1/sessions/{session_id}/threads/{thread_id}/stream
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### Beta[Deployments](https://platform.claude.com/docs/en/api/http/beta/deployments)
 
@@ -779,33 +616,49 @@ Get statistics about the work queue for an environment.
 
 POST/v1/deployments
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Deployments](https://platform.claude.com/docs/en/api/http/beta/deployments/list)
 
 GET/v1/deployments
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Get Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/retrieve)
 
 GET/v1/deployments/{deployment_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/update)
 
 POST/v1/deployments/{deployment_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Archive Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/archive)
 
 POST/v1/deployments/{deployment_id}/archive
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Run Deployment Now](https://platform.claude.com/docs/en/api/http/beta/deployments/run)
 
 POST/v1/deployments/{deployment_id}/run
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Pause Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/pause)
 
 POST/v1/deployments/{deployment_id}/pause
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Unpause Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/unpause)
 
 POST/v1/deployments/{deployment_id}/unpause
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### Beta[Deployment Runs](https://platform.claude.com/docs/en/api/http/beta/deployment_runs)
 
@@ -813,9 +666,13 @@ Get statistics about the work queue for an environment.
 
 GET/v1/deployment_runs
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Get Deployment Run](https://platform.claude.com/docs/en/api/http/beta/deployment_runs/retrieve)
 
 GET/v1/deployment_runs/{deployment_run_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### Beta[Vaults](https://platform.claude.com/docs/en/api/http/beta/vaults)
 
@@ -823,25 +680,37 @@ Get statistics about the work queue for an environment.
 
 POST/v1/vaults
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Vaults](https://platform.claude.com/docs/en/api/http/beta/vaults/list)
 
 GET/v1/vaults
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Retrieve a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/retrieve)
 
 GET/v1/vaults/{vault_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/update)
 
 POST/v1/vaults/{vault_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Delete a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/delete)
 
 DELETE/v1/vaults/{vault_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive a Vault](https://platform.claude.com/docs/en/api/http/beta/vaults/archive)
 
 POST/v1/vaults/{vault_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### BetaVaults[Credentials](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials)
 
@@ -849,91 +718,133 @@ Get statistics about the work queue for an environment.
 
 POST/v1/vaults/{vault_id}/credentials
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [List Credentials](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/list)
 
 GET/v1/vaults/{vault_id}/credentials
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Retrieve a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/retrieve)
 
 GET/v1/vaults/{vault_id}/credentials/{credential_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Update a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/update)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Delete a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/delete)
 
 DELETE/v1/vaults/{vault_id}/credentials/{credential_id}
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 ##### [Archive a Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/archive)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/archive
+
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 ##### [Validate an MCP OAuth Credential](https://platform.claude.com/docs/en/api/http/beta/vaults/credentials/mcp_oauth_validate)
 
 POST/v1/vaults/{vault_id}/credentials/{credential_id}/mcp_oauth_validate
 
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 #### Beta[Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores)
 
-##### [Create a memory store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/create)
+##### [Create a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/create)
 
 POST/v1/memory_stores
 
-##### [List memory stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores/list)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [List Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores/list)
 
 GET/v1/memory_stores
 
-##### [Retrieve a memory store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/retrieve)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Retrieve a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}
 
-##### [Update a memory store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/update)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Update a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/update)
 
 POST/v1/memory_stores/{memory_store_id}
 
-##### [Delete a memory store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/delete)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Delete a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/delete)
 
 DELETE/v1/memory_stores/{memory_store_id}
 
-##### [Archive a memory store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/archive)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Archive a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/archive)
 
 POST/v1/memory_stores/{memory_store_id}/archive
 
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 #### BetaMemory Stores[Memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories)
 
-##### [Create a memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/create)
+##### [Create a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/create)
 
 POST/v1/memory_stores/{memory_store_id}/memories
 
-##### [List memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/list)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [List Memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/list)
 
 GET/v1/memory_stores/{memory_store_id}/memories
 
-##### [Retrieve a memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/retrieve)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Retrieve a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-##### [Update a memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/update)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Update a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/update)
 
 POST/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-##### [Delete a memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/delete)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Delete a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/delete)
 
 DELETE/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
 #### BetaMemory Stores[Memory Versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions)
 
-##### [List memory versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/list)
+##### [List Memory Versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/list)
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions
 
-##### [Retrieve a memory version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Retrieve a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
 
-##### [Redact a memory version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/redact)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+
+##### [Redact a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/redact)
 
 POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
+
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
 
 #### Beta[Files](platform-claude-com-http-beta-files.md)
 
@@ -1017,9 +928,19 @@ Download a skill version's content as a zip archive.
 
 POST/v1/user_profiles/{user_profile_id}
 
+##### [Delete User Profile](https://platform.claude.com/docs/en/api/http/beta/user_profiles/delete)
+
+DELETE/v1/user_profiles/{user_profile_id}
+
 ##### [Create Enrollment URL](platform-claude-com-http-beta-user-profiles-create-enrollment-url.md)
 
 POST/v1/user_profiles/{user_profile_id}/enrollment_url
+
+#### BetaUser Profiles[Action URLs](https://platform.claude.com/docs/en/api/http/beta/user_profiles/action_urls)
+
+##### [Create Action URL](https://platform.claude.com/docs/en/api/http/beta/user_profiles/action_urls/create)
+
+POST/v1/user_profiles/{user_profile_id}/action_urls
 
 #### Beta[Dreams](https://platform.claude.com/docs/en/api/http/beta/dreams)
 
@@ -1027,11 +948,15 @@ Download a skill version's content as a zip archive.
 
 POST/v1/dreams
 
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+
 Start an asynchronous job that uses past sessions to produce a reorganized version of a memory store and get back the dream to poll for the result.
 
 ##### [List Dreams](https://platform.claude.com/docs/en/api/http/beta/dreams/list)
 
 GET/v1/dreams
+
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
 
 List the dreams in the workspace, newest first.
 
@@ -1039,17 +964,23 @@ List the dreams in the workspace, newest first.
 
 GET/v1/dreams/{dream_id}
 
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+
 Get a dream by ID to check its status, output memory store, and token usage.
 
 ##### [Cancel a Dream](https://platform.claude.com/docs/en/api/http/beta/dreams/cancel)
 
 POST/v1/dreams/{dream_id}/cancel
 
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+
 Stop a `pending` or `running` dream.
 
 ##### [Archive a Dream](https://platform.claude.com/docs/en/api/http/beta/dreams/archive)
 
 POST/v1/dreams/{dream_id}/archive
+
+Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
 
 Hide a `completed`, `failed`, or `canceled` dream from the default list of dreams.
 
@@ -1059,11 +990,15 @@ Hide a `completed`, `failed`, or `canceled` dream from the default list of dream
 
 POST/v1/tunnels
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
 ##### [Get Tunnel](platform-claude-com-http-beta-tunnels-retrieve.md)
 
 GET/v1/tunnels/{tunnel_id}
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -1071,11 +1006,15 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 GET/v1/tunnels
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
 ##### [Archive Tunnel](platform-claude-com-http-beta-tunnels-archive.md)
 
 POST/v1/tunnels/{tunnel_id}/archive
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -1083,11 +1022,15 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 POST/v1/tunnels/{tunnel_id}/reveal_token
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
 ##### [Rotate Tunnel Token](platform-claude-com-http-beta-tunnels-rotate-token.md)
 
 POST/v1/tunnels/{tunnel_id}/rotate_token
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -1097,11 +1040,15 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 POST/v1/tunnels/{tunnel_id}/certificates
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
 ##### [Get Tunnel Certificate](https://platform.claude.com/docs/en/api/http/beta/tunnels/certificates/retrieve)
 
 GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -1109,11 +1056,15 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 GET/v1/tunnels/{tunnel_id}/certificates
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
 ##### [Archive Tunnel Certificate](https://platform.claude.com/docs/en/api/http/beta/tunnels/certificates/archive)
 
 POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -1397,6 +1348,12 @@ Remove a member from the organization.
 
 List a workspace's rate limits.
 
+##### [Set Workspace Rate Limits](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/rate_limits/update)
+
+POST/v1/organizations/workspaces/{workspace_id}/rate_limits/{rate_limit_id}
+
+Set or clear rate-limit overrides for one rate-limit group in a workspace.
+
 #### BetaOrganizationWorkspaces[Members](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/members)
 
 ##### [List Workspace Members](https://platform.claude.com/docs/en/api/http/beta/organization/workspaces/members/list)
@@ -1479,6 +1436,8 @@ Update your organization's Compliance Settings.
 
 GET/v1/organizations/usage_report/messages
 
+\[Legacy\] Get a report of your organization's Messages API usage, aggregated into time buckets.
+
 ##### [Get Claude Code Usage Report](https://platform.claude.com/docs/en/api/http/beta/organization/usage_report/retrieve_claude_code)
 
 GET/v1/organizations/usage_report/claude_code
@@ -1491,6 +1450,8 @@ Retrieve daily aggregated usage metrics for Claude Code users. Enables organizat
 
 GET/v1/organizations/cost_report
 
+\[Legacy\] Get a report of your organization's Claude API costs in USD, aggregated into daily buckets.
+
 #### BetaOrganization[MCP Tunnels](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels)
 
 ##### [List Tunnels](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels/list)
@@ -1498,6 +1459,8 @@ Retrieve daily aggregated usage metrics for Claude Code users. Enables organizat
 Deprecated
 
 GET/v1/organizations/tunnels
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -1507,6 +1470,8 @@ Deprecated
 
 GET/v1/organizations/tunnels/{tunnel_id}
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
+
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
 ##### [Archive Tunnel](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels/archive)
@@ -1514,6 +1479,8 @@ Deprecated
 Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/archive
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -1523,6 +1490,8 @@ Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/reveal_token
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
+
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
 ##### [Rotate Tunnel Token](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels/rotate_token)
@@ -1530,6 +1499,8 @@ Deprecated
 Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/rotate_token
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -1541,6 +1512,8 @@ Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/certificates
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
+
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
 ##### [List Tunnel Certificates](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates/list)
@@ -1548,6 +1521,8 @@ Deprecated
 Deprecated
 
 GET/v1/organizations/tunnels/{tunnel_id}/certificates
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -1557,6 +1532,8 @@ Deprecated
 
 GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
 
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
+
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
 ##### [Archive Tunnel Certificate](https://platform.claude.com/docs/en/api/http/beta/organization/mcp_tunnels/tunnel_certificates/archive)
@@ -1564,6 +1541,8 @@ Deprecated
 Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
+
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](beta-headers.md)
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -1623,13 +1602,33 @@ Get per-skill usage for a given day, with cursor-based pagination.
 
 Get artifact-creation activity for a given day, broken out by MIME type.
 
+#### BetaOrganizationAnalytics[Usage](../Admin/platform-claude-com-http-beta-organization-analytics-usage.md)
+
+##### [Get Token Usage By Dimension](../Admin/platform-claude-com-http-beta-organization-analytics-usage-list.md)
+
+GET/v1/organizations/analytics/usage
+
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](beta-headers.md)
+
+Get token usage across a date range, broken out by dimension.
+
+#### BetaOrganizationAnalytics[Cost](../Admin/platform-claude-com-http-beta-organization-analytics-cost.md)
+
+##### [Get Cost By Dimension](../Admin/platform-claude-com-http-beta-organization-analytics-cost-list.md)
+
+GET/v1/organizations/analytics/cost
+
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](beta-headers.md)
+
+Get cost in USD across a date range, broken out by dimension.
+
 #### BetaOrganizationAnalytics[Usage Report](../Admin/http-beta-organization-analytics-usage-report.md)
 
 ##### [Get Token Usage Over Time](../Admin/http-beta-organization-analytics-usage-report-list.md)
 
 GET/v1/organizations/analytics/usage_report
 
-Get token usage over time across a date range.
+\[Legacy\] Get token usage over time across a date range.
 
 #### BetaOrganizationAnalytics[User Usage Report](../Admin/http-beta-organization-analytics-user-usage-report.md)
 
@@ -1637,7 +1636,7 @@ Get token usage over time across a date range.
 
 GET/v1/organizations/analytics/user_usage_report
 
-Get per-user token usage across a date range.
+\[Legacy\] Get per-user token usage across a date range.
 
 #### BetaOrganizationAnalytics[Cost Report](../Admin/http-beta-organization-analytics-cost-report.md)
 
@@ -1645,7 +1644,7 @@ Get per-user token usage across a date range.
 
 GET/v1/organizations/analytics/cost_report
 
-Get cost in USD over time across a date range.
+\[Legacy\] Get cost in USD over time across a date range.
 
 #### BetaOrganizationAnalytics[User Cost Report](../Admin/http-beta-organization-analytics-user-cost-report.md)
 
@@ -1653,7 +1652,7 @@ Get cost in USD over time across a date range.
 
 GET/v1/organizations/analytics/user_cost_report
 
-Get per-user cost in USD across a date range.
+\[Legacy\] Get per-user cost in USD across a date range.
 
 #### BetaOrganization[Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits)
 
@@ -1678,6 +1677,8 @@ Delete a spend limit.
 ##### [List Spend Limits](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits/list)
 
 GET/v1/organizations/spend_limits
+
+Requires `anthropic-beta: ``spend-limit-reads-2026-09-26`. [How to send beta headers](beta-headers.md)
 
 List the organization's spend limits.
 
@@ -1795,11 +1796,15 @@ List the permissions an RBAC Role grants.
 
 POST/v1/organizations/plugins
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 Create an organization-owned Plugin and its first version by uploading the version's files.
 
 ##### [Get Plugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/retrieve)
 
 GET/v1/organizations/plugins/{plugin_id}
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
 
 Retrieve a Plugin by ID.
 
@@ -1807,17 +1812,23 @@ Retrieve a Plugin by ID.
 
 POST/v1/organizations/plugins/{plugin_id}
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 Change which stored version of an organization-owned Plugin is served to members, for example to roll back to an earlier one. This pins the served version: later uploads are stored but no longer change what is served, and pinning cannot currently be undone, here or in claude.ai.
 
 ##### [List Plugins](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/list)
 
 GET/v1/organizations/plugins
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 List the Plugins created under the organization, newest first: those in the organization's own plugin marketplaces and those in members' personal plugin marketplaces.
 
 ##### [Delete Plugin](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/delete)
 
 DELETE/v1/organizations/plugins/{plugin_id}
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
 
 Permanently delete a Plugin and every version it holds, exactly as when an administrator deletes it in claude.ai. The Plugin may belong to the organization or to a member, including a member who has since left the organization.
 
@@ -1827,11 +1838,15 @@ Permanently delete a Plugin and every version it holds, exactly as when an admin
 
 POST/v1/organizations/plugins/{plugin_id}/versions
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 Add a version to an organization-owned Plugin by uploading the new version's files; it becomes the version served to members unless the Plugin's served version has been pinned.
 
 ##### [List Plugin Versions](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/versions/list)
 
 GET/v1/organizations/plugins/{plugin_id}/versions
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
 
 List a Plugin's versions, newest first.
 
@@ -1839,11 +1854,15 @@ List a Plugin's versions, newest first.
 
 GET/v1/organizations/plugins/{plugin_id}/versions/{version}
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 Retrieve one version of a Plugin by its ID, or the Plugin's newest version.
 
 ##### [Download Plugin Version Archive](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/versions/download)
 
 GET/v1/organizations/plugins/{plugin_id}/versions/{version}/content
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
 
 Download one version's `.zip` archive, exactly as stored. Each download of a Plugin from a member's personal plugin marketplace is recorded on the Compliance API activity feed.
 
@@ -1853,17 +1872,23 @@ Download one version's `.zip` archive, exactly as stored. Each download of a Plu
 
 GET/v1/organizations/plugins/{plugin_id}/installation_settings
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 List an organization-owned Plugin's installation settings, which say which members it is for, most recently created first.
 
 ##### [Set Plugin Installation Setting](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings/set)
 
 POST/v1/organizations/plugins/{plugin_id}/installation_settings/{target}
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 Set or change an organization-owned Plugin's installation setting for the whole organization or for one RBAC Group.
 
 ##### [Remove Plugin Installation Setting](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings/remove)
 
 DELETE/v1/organizations/plugins/{plugin_id}/installation_settings/{target}
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
 
 Remove an organization-owned Plugin's own installation setting for the whole organization or for one RBAC Group.
 
@@ -1873,6 +1898,8 @@ Remove an organization-owned Plugin's own installation setting for the whole org
 
 GET/v1/organizations/plugins/{plugin_id}/shares
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 List the shares the owner of a member-owned Plugin has given — to every member of the organization, to an RBAC Group, or to one member — most recently granted first.
 
 #### BetaOrganization[Plugin Marketplaces](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces)
@@ -1881,11 +1908,15 @@ List the shares the owner of a member-owned Plugin has given — to every member
 
 GET/v1/organizations/plugin_marketplaces
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 List the plugin marketplaces Plugins live in, newest first: the organization's own and its members' personal ones.
 
 ##### [Get Plugin Marketplace](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/retrieve)
 
 GET/v1/organizations/plugin_marketplaces/{marketplace_id}
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
 
 Retrieve a plugin marketplace by ID.
 
@@ -1893,17 +1924,23 @@ Retrieve a plugin marketplace by ID.
 
 POST/v1/organizations/plugin_marketplaces/{marketplace_id}
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 Set the default installation setting of one of the organization's own plugin marketplaces. Every Plugin in it without a setting of its own gets this default as its organization-wide setting, including Plugins added later.
 
 ##### [Validate Plugin Marketplace Repository](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/validate_repository)
 
 POST/v1/organizations/plugin_marketplaces/validate_repository
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
+
 Check whether a plugin marketplace held in a public GitHub repository would synchronize into claude.ai, without connecting or storing it.
 
 ##### [Validate Plugin Marketplace Archive](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/validate_archive)
 
 POST/v1/organizations/plugin_marketplaces/validate_archive
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. [How to send beta headers](beta-headers.md)
 
 Check whether a plugin marketplace, uploaded as a `.zip` of the marketplace directory, would synchronize into claude.ai, without connecting or storing it.
 
@@ -1913,11 +1950,15 @@ Check whether a plugin marketplace, uploaded as a `.zip` of the marketplace dire
 
 POST/v1/organizations/telemetry_destinations
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
+
 Register an OpenTelemetry destination for the organization.
 
 ##### [List Telemetry Destinations](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/list)
 
 GET/v1/organizations/telemetry_destinations
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
 
 List the organization's destinations, newest first, optionally only those that cover given workspaces.
 
@@ -1925,11 +1966,15 @@ List the organization's destinations, newest first, optionally only those that c
 
 GET/v1/organizations/telemetry_destinations/{destination_id}
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
+
 Read a destination's configuration, state, and most recent delivery results.
 
 ##### [Update a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/update)
 
 POST/v1/organizations/telemetry_destinations/{destination_id}
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
 
 Change a telemetry destination's settings, its state, or which workspaces it covers.
 
@@ -1937,11 +1982,15 @@ Change a telemetry destination's settings, its state, or which workspaces it cov
 
 DELETE/v1/organizations/telemetry_destinations/{destination_id}
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
+
 Delete a destination and its workspace list.
 
 ##### [Test a Telemetry Destination](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/test)
 
 POST/v1/organizations/telemetry_destinations/{destination_id}/test
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
 
 Send one test span, named `anthropic.test`, to the destination with its registered headers, once and without retries, and report the destination's answer. The response is 200 whether or not the destination answered with a 2xx status: its `result` has the type `success`, or the type `failure` and the reason in `error`. The destination's configuration, `state` and `delivery_health` do not change. A disabled destination can be tested too. Wait 10 seconds between tests of one destination; a request that comes sooner may be answered with status 429.
 
@@ -1951,11 +2000,15 @@ Send one test span, named `anthropic.test`, to the destination with its register
 
 GET/v1/organizations/telemetry_destinations/{destination_id}/workspaces
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
+
 List the workspaces on a destination's workspace list, newest entry first.
 
 ##### [Add a Telemetry Destination Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/telemetry_destinations/workspaces/add)
 
 POST/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
+
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
 
 Add one workspace to a destination's workspace list.
 
@@ -1963,4 +2016,176 @@ Add one workspace to a destination's workspace list.
 
 DELETE/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
 
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](beta-headers.md)
+
 Remove one workspace from a destination's workspace list.
+
+#### BetaOrganization[Webhooks](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks)
+
+##### [Create Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/create)
+
+POST/v1/organizations/webhooks
+
+Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](beta-headers.md)
+
+Create an organization webhook endpoint.
+
+##### [List Organization Webhook Endpoints](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/list)
+
+GET/v1/organizations/webhooks
+
+Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](beta-headers.md)
+
+List the organization's webhook endpoints.
+
+##### [Get Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/retrieve)
+
+GET/v1/organizations/webhooks/{webhook_endpoint_id}
+
+Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](beta-headers.md)
+
+Retrieve an organization webhook endpoint by ID.
+
+##### [Update Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/update)
+
+POST/v1/organizations/webhooks/{webhook_endpoint_id}
+
+Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](beta-headers.md)
+
+Update an organization webhook endpoint. Only the fields you send are changed.
+
+##### [Delete Organization Webhook Endpoint](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/delete)
+
+DELETE/v1/organizations/webhooks/{webhook_endpoint_id}
+
+Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](beta-headers.md)
+
+Delete an organization webhook endpoint.
+
+##### [Regenerate Organization Webhook Endpoint Signing Secret](https://platform.claude.com/docs/en/api/http/beta/organization/webhooks/regenerate_signing_secret)
+
+POST/v1/organizations/webhooks/{webhook_endpoint_id}/regenerate_signing_secret
+
+Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](beta-headers.md)
+
+Replace an organization webhook endpoint's signing secret. The old secret stops working immediately. The new secret is returned only in this response.
+
+#### BetaOrganizationClaude Tag[Slack Channels](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels)
+
+##### [Set Up Slack Channel](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels/create)
+
+POST/v1/organizations/claude_tag/slack_channels
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Set a Slack channel up for Claude Tag and return it with its identifier. If the channel is already set up, whether in claude.ai, by Claude's first use in it or by an earlier request, the existing channel is returned, so the request can be repeated. `settings`, when sent, is applied as an update applies it. Before a channel is set up, Claude's Slack app confirms with Slack that the channel is in the workspace, is not archived and is visible to the app; a channel that fails the confirmation returns 404. Setting the channel up and applying `settings` are two steps: when the second is refused, the response is the refusal, the channel stays set up with every setting unset, and the error's `details.slack_channel_id` holds the channel's identifier.
+
+##### [List Slack Channels](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels/list)
+
+GET/v1/organizations/claude_tag/slack_channels
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+List the set-up Slack channels of one Slack workspace, newest first by `created_at`. A channel that is not set up is not listed: Slack holds the full list of a workspace's channels. Pass `slack_channel_id` as well to look one channel up by its Slack identifiers: `data` then holds that channel, or is empty when it is not set up, and `limit` and `page` are ignored. A workspace that the organization owns only through a Slack Enterprise Grid returns 404 until it is set up. With `include_inherited=true` each channel's `settings` holds what applies in it, and the request fails with 503 rather than resolve against a settings level that could not be read. A `page` cursor resumes only a request with the same `include_inherited`.
+
+##### [Get Slack Channel](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels/retrieve)
+
+GET/v1/organizations/claude_tag/slack_channels/{id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Get one Slack channel and its settings. By default `settings` holds what the channel itself stores: a setting that is null there is not set on the channel and is inherited. With `include_inherited=true`, `settings` holds what applies in the channel once the settings levels above it are taken into account, and the request fails with 503 rather than resolve against a settings level that could not be read. Either way `sources` names the settings level each value comes from, so a caller tells the channel's own value from an inherited one by its source, not by whether it is null.
+
+##### [Update Slack Channel](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels/update)
+
+POST/v1/organizations/claude_tag/slack_channels/{id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Change the settings a Slack channel stores. The update is partial: a setting left out is unchanged, and a setting sent as null is cleared, so the channel inherits it. If any value is refused, no setting in the request is stored. A group direct message takes no settings and returns 400.
+
+##### [Remove Slack Channel](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels/delete)
+
+DELETE/v1/organizations/claude_tag/slack_channels/{id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Remove a Slack channel from Claude Tag. This deletes the channel's stored settings and its Bundle Targets at once, and then, in the background, the channel's sessions and their transcripts, its memory, its routines and the artifacts published from it. None of it can be restored. The channel in Slack and its messages are unchanged. The request is refused with 400 and `error.details.error_code` `slack_channel_enabled` while `enabled` resolves to `true` for the channel, as a read with `include_inherited=true` returns it: set `enabled` to `false` on the channel first. This guards against removing a channel in use by mistake; it is not a way to keep Claude out, because the removal deletes the channel's own `enabled: false` with its other settings, after which the channel inherits again and Claude's next use of it can set it up anew with a new identifier. The identifier returns 404 as soon as the request returns, so a repeated removal returns 404. A group direct message returns 400, and so does a channel that holds configuration this API does not manage.
+
+#### BetaOrganizationClaude Tag[Slack Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_workspaces)
+
+##### [List Slack Workspaces](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_workspaces/list)
+
+GET/v1/organizations/claude_tag/slack_workspaces
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+List the set-up Slack workspaces the organization owns, newest first by `created_at`. Pass `slack_workspace_id` to look one workspace up by its Slack identifier: `data` then holds that workspace, or is empty when it is not set up. A workspace of a Slack Enterprise Grid the organization has connected returns 404 until it is set up. With `include_inherited=true` each workspace's `settings` holds what applies in it, and the request fails with 503 rather than resolve against a settings level that could not be read. A `page` cursor resumes only a request with the same `include_inherited`.
+
+##### [Get Slack Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_workspaces/retrieve)
+
+GET/v1/organizations/claude_tag/slack_workspaces/{id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Get one Slack workspace and its settings. By default `settings` holds what the workspace itself stores: a setting that is null there is not set on the workspace and is inherited. With `include_inherited=true`, `settings` holds what applies in the workspace once the organization's Slack defaults are taken into account, and the request fails with 503 rather than resolve against a settings level that could not be read. Either way `sources` names the settings level each value comes from.
+
+##### [Update Slack Workspace](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_workspaces/update)
+
+POST/v1/organizations/claude_tag/slack_workspaces/{id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Change the settings a Slack workspace stores. The update is partial: a setting left out is unchanged, and a setting sent as null is cleared, so the workspace inherits it. If any value is refused, no setting in the request is stored.
+
+#### BetaOrganizationClaude Tag[Bundles](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles)
+
+##### [List Bundles](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles/list)
+
+GET/v1/organizations/claude_tag/bundles
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+List the organization's Bundles, newest first by `created_at`. A Bundle that Claude Tag manages for itself is not listed.
+
+##### [Get Bundle](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles/retrieve)
+
+GET/v1/organizations/claude_tag/bundles/{bundle_id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Get one Bundle. What the Bundle grants (connectors, repositories and credentials) is never returned.
+
+#### BetaOrganizationClaude TagBundles[Targets](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles/targets)
+
+##### [List Bundle Targets](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles/targets/list)
+
+GET/v1/organizations/claude_tag/bundles/{bundle_id}/targets
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+List the Slack channels and Slack workspaces a Bundle is attached to, newest first by `created_at`. Only channels and workspaces the organization owns are listed; a Bundle that is attached to anything else has no Bundle Target for it.
+
+##### [Attach Bundle](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles/targets/create)
+
+POST/v1/organizations/claude_tag/bundles/{bundle_id}/targets
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Attach a Bundle to a Slack channel or a Slack workspace. A Bundle attached to a workspace can be used in the workspace and in every channel in it. Attaching a Bundle to a channel or workspace it is already attached to returns the existing Bundle Target. The channel or workspace must be set up: attaching never sets a channel up. A group direct message takes no Bundle and returns 400.
+
+##### [Get Bundle Target](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles/targets/retrieve)
+
+GET/v1/organizations/claude_tag/bundles/{bundle_id}/targets/{target_id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Get one Bundle Target. Returns 404 when `target_id` is the identifier of another Bundle's Bundle Target, or the Bundle Target was detached.
+
+##### [Detach Bundle](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/bundles/targets/delete)
+
+DELETE/v1/organizations/claude_tag/bundles/{bundle_id}/targets/{target_id}
+
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](beta-headers.md)
+
+Detach a Bundle from a Slack channel or a Slack workspace. A repeated detach returns 404.

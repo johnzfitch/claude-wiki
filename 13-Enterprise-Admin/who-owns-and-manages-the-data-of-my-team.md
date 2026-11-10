@@ -2,18 +2,16 @@
 title: "Who owns and manages the data of my team? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-23T06:29:17Z"
+fetched_at: "2026-11-09T06:26:42Z"
 tags: ["enterprise"]
 ---
 
 # Who owns and manages the data of my team?
 
-March 16, 2026
-
 
 This article provides important information about your Claude for Work account associated with your organization's Claude for Work plan (Team or Enterprise plans). It includes details about data access and control that were shared with you when your Claude for Work plan account was set up.
 
-*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max and when accounts from those plans use Claude Code, see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
+*This article is about our commercial products such as Claude for Work and the Anthropic API. For our consumer products such as Claude Free, Pro, Max, Ultra, and when accounts from those plans use Claude Code, see [here](https://privacy.claude.com/en/collections/10663362-consumers).*
 
 ## Account Management
 

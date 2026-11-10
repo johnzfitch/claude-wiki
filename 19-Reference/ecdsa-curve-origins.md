@@ -2,7 +2,7 @@
 title: "Claude reveals ECDSA curve origins \\ Anthropic"
 source_url: "https://www.anthropic.com/research/ecdsa-curve-origins"
 category: "19-Reference"
-fetched_at: "2026-10-22T06:29:02Z"
+fetched_at: "2026-10-24T06:26:16Z"
 tags: ["news-research"]
 ---
 
@@ -31,11 +31,11 @@ tags: ["news-research"]
 
 Related articles
 
-- Science
+- Frontier Red Team
 
-  Sep 25, 2026
+  Oct 22, 2026
 
-  [Yes, Claude can do Nine Loops](yes-claude-can-do-nine-loops.md)
+  [LLMs are making formal software verification feasible at a much larger scale](formal-verification.md)
 
 [View more](https://www.anthropic.com/search?topic=cybersecurity)
 
@@ -250,7 +250,7 @@ prime192v3           seed 20517  tries 1  matches published Gx: True
 
 To the extent possible under law, the authors have waived all copyright and related or neighboring rights to the code on this page, dedicating it to the public domain under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).  
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

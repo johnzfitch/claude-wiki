@@ -2,11 +2,14 @@
 title: "Development containers - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/devcontainer"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-22T06:29:23Z"
+fetched_at: "2026-10-29T06:25:58Z"
+last_modified: "Thu, 29 Oct 2026 03:22:11 GMT"
 tags: ["claude-code", "containers"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Add Claude Code to your dev container](#add-claude-code-to-your-dev-container)
 - [Persist authentication and settings across rebuilds](#persist-authentication-and-settings-across-rebuilds)
@@ -81,7 +84,7 @@ What you see at the authentication prompt depends on your provider:
 
 For cloud providers, pass credentials into the container as environment variables through `containerEnv`, a Codespaces secret, or your cloud’s workload identity rather than mounting credential files from the host. See [Amazon Bedrock](amazon-bedrock.md), [Google Cloud’s Agent Platform](google-vertex-ai.md), or [Microsoft Foundry](microsoft-foundry.md) for the credential chain Claude Code reads. See [Choose your API provider](../13-Enterprise-Admin/admin-setup.md#choose-your-api-provider) to decide which path fits your organization.
 
-If the browser sign-in completes but the callback never reaches the container, copy the code shown in the browser and paste it at the `Paste code here if prompted` prompt in the terminal. This can happen when the editor’s port forwarding doesn’t route the localhost callback.
+For the Anthropic sign-in: if no browser opens, or it signs you in and then shows a `localhost` connection error, use the login URL shown above the terminal’s paste prompt. Copy it into your browser, sign in there, then paste the code the browser shows into that prompt. If pasting does nothing, see [OAuth login fails in WSL2, SSH, or containers](troubleshoot-install.md#oauth-login-fails-in-wsl2-ssh-or-containers).
 
 
 [​](#persist-authentication-and-settings-across-rebuilds)
@@ -181,11 +184,11 @@ Once the container finishes building, open a terminal with `` Ctrl+` `` and run 
 
 To use this configuration with your own project, copy the `.devcontainer/` directory into your repository and adjust the Dockerfile for your toolchain, or return to [Add Claude Code to your dev container](#add-claude-code-to-your-dev-container) to add only the feature to a setup you already have. The reference configuration consists of three files. None of them are required when you add Claude Code to your own dev container through the feature, but they show one way to combine the pieces.
 
-| File                                                                                                       | Purpose                                                                       |
-|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| File | Purpose |
+|----|----|
 | [`devcontainer.json`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/devcontainer.json) | Volume mounts, `runArgs` capabilities, VS Code extensions, and `containerEnv` |
-| [`Dockerfile`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile)               | Base image, development tools, and the Claude Code install                    |
-| [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh)   | Limits outbound network traffic to the destinations the script allows         |
+| [`Dockerfile`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/Dockerfile) | Base image, development tools, and the Claude Code install |
+| [`init-firewall.sh`](https://github.com/anthropics/claude-code/blob/main/.devcontainer/init-firewall.sh) | Limits outbound network traffic to the destinations the script allows |
 
 
 [​](#next-steps)

@@ -2,7 +2,7 @@
 title: "What do you want from AI? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/your-thoughts-on-ai"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:54Z"
+fetched_at: "2026-10-24T06:26:21Z"
 tags: ["news-research"]
 ---
 
@@ -49,7 +49,7 @@ How to weigh these benefits and risks shouldn’t be left to AI companies alone.
 - Is there anything about how the world works (like work, school, healthcare, or government) that you’d like AI to help change?
 - What do you want from the companies developing AI?
 
-This project builds on a similar study conducted last December, in which [81,000 people](https://www.anthropic.com/features/81k-interviews) told us their hopes and worries about AI. That study shaped [the Anthropic Institute’s agenda](anthropic-institute-agenda.md), was presented at the World Economic Forum to international leaders and decision-makers, and continues to guide our ongoing [Societal Impacts](team-societal-impacts.md) and [Economics research](81k-economics.md).
+This project builds on a similar study conducted last December, in which [81,000 people](https://www.anthropic.com/features/81k-interviews) told us their hopes and worries about AI. That study shaped [the Anthropic Institute’s agenda](research-anthropic-institute-agenda.md), was presented at the World Economic Forum to international leaders and decision-makers, and continues to guide our ongoing [Societal Impacts](team-societal-impacts.md) and [Economics research](81k-economics.md).
 
 AI and Anthropic have changed a lot since then. AI has improved, more people use Claude, and people’s feelings toward the technology have shifted. For the previous study, only the high-level results and a small number of quotes were made public. This time, we want your thoughts to be made widely available so that anyone can learn from them.
 

@@ -2,234 +2,11 @@
 title: "Count tokens in a Message - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/count_tokens"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-10-20T06:39:20Z"
+fetched_at: "2026-11-05T06:35:12Z"
 tags: ["api"]
 ---
 
-- [Managed Agents](../Other/managed-agents-overview.md)
-
-- [Admin](../Other/manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](../Other/cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](overview.md)
-
-
-
-
-[Console](../Other/playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fapi%2Fbeta%2Fmessages%2Fcount_tokens)
-
-
-
-
-
-SearchCtrlK
-
-Include beta APIs
-
-Using the API
-
-[Features overview](overview.md)[Beta headers](beta-headers.md)[Errors](errors.md)
-
-
-Messages
-
-
-Create a Message
-
-
-Count tokens in a Message
-
-Batches
-
-Managed Agents
-
-Agents
-
-Environments
-
-Sessions
-
-Deployments
-
-Deployment Runs
-
-Vaults
-
-Memory Stores
-
-Dreams
-
-
-Files
-
-
-Upload File
-
-
-List Files
-
-
-Download File
-
-
-Get File Metadata
-
-
-Delete File
-
-
-Models
-
-
-List Models
-
-
-Get a Model
-
-
-Organization
-
-
-Get Current Organization
-
-API Keys
-
-External Keys
-
-Federation
-
-Invites
-
-Service Accounts
-
-Users
-
-Workspaces
-
-Rate Limits
-
-Compliance Settings
-
-Usage Report
-
-Cost Report
-
-MCP Tunnels
-
-Analytics
-
-Spend Limits
-
-RBAC Groups
-
-RBAC Roles
-
-Plugins
-
-Plugin Marketplaces
-
-Telemetry Destinations
-
-
-Skills
-
-
-Create Skill
-
-
-List Skills
-
-
-Get Skill
-
-
-Delete Skill
-
-Versions
-
-
-Tunnels
-
-
-Create Tunnel
-
-
-Get Tunnel
-
-
-List Tunnels
-
-
-Archive Tunnel
-
-
-Reveal Tunnel Token
-
-
-Rotate Tunnel Token
-
-Certificates
-
-
-User Profiles
-
-
-Create User Profile
-
-
-List User Profiles
-
-
-Get User Profile
-
-
-Update User Profile
-
-
-Create Enrollment URL
-
-
-Compliance API
-
-Activities
-
-Organizations
-
-Groups
-
-Apps
-
-
-Completions
-
-
-Create a Text Completion Deprecated
-
-OpenTelemetry
-
-[Spans](opentelemetry-spans.md)
-
-Support & configuration
-
-[Rate limits](rate-limits.md)[Service tiers](service-tiers.md)[IAM actions (Claude Platform on AWS)](claude-platform-on-aws-iam-actions.md)[Versions](versioning.md)[IP addresses](ip-addresses.md)[Supported regions](supported-regions.md)
-
-Claude Code
-
-[Trigger a routine](claude-code-routines-fire.md)
-
-[Console](../Other/playground.md)
-
-Copy page
-
-
-
-cURL
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 1.  [API reference](http.md)
 2.  [Beta](platform-claude-com-http-beta.md)
@@ -241,7 +18,9 @@ cURL
 
 
 
-cURL
+API version 2026-10-21
+
+cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/messages/count_tokens
 
@@ -481,11 +260,27 @@ string
 
 
 
+"webhooks-2026-10-07"
+
+
+
+"message-threads-2026-08-12"
+
+
+
+"analytics-usage-cost-2026-08-24"
+
+
+
+"experimental-claude-tag-2026-10-21"
+
+
+
 "anthropic-user-profile-id": optional string
 
 
 
-The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization. Requires the `user-profiles` beta header.
+The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
 
 
 
@@ -501,7 +296,7 @@ Only needed for credentials that can act on more than one Workspace. A credentia
 
 
 
-messages: array of [BetaMessageParam](platform-claude-com-http-beta-messages.md#beta_message_param) { content, role, clear_at, output_config }
+messages: array of [BetaMessageParam](platform-claude-com-http-beta-messages.md#beta_message_param)
 
 
 
@@ -560,479 +355,51 @@ Each input message `content` may be either a single `string` or an array of cont
 
 See [input examples](../Guides/build-with-claude-working-with-messages.md).
 
-Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter — there is no `"system"` role for input messages in the Messages API.
+Note that if you want to include a [system prompt](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role), you can use the top-level `system` parameter.
 
 There is a limit of 100,000 messages in a single request.
 
+One of the following:
+
 
 
-content: string or array of [BetaContentBlockParam](platform-claude-com-http-beta-messages.md#beta_content_block_param)
+BetaUserMessageParam object{ content, role }
+
+
+
+
+
+content: [BetaMessageContentParam](platform-claude-com-http-beta-messages.md#beta_message_content_param)
 
 
 
 One of the following:
 
-string
+role: "user"
 
 
 
 
 
-array of [BetaContentBlockParam](platform-claude-com-http-beta-messages.md#beta_content_block_param)
+BetaAssistantMessageParam object{ content, role }
+
+
+
+
+
+content: [BetaMessageContentParam](platform-claude-com-http-beta-messages.md#beta_message_content_param)
 
 
 
 One of the following:
 
-
-
-BetaTextBlockParam object{ type: "text", text, cache_control, citations }
+role: "assistant"
 
 
 
 
 
-BetaImageBlockParam object{ type: "image", source, cache_control, transformations }
-
-
-
-
-
-BetaRequestDocumentBlock object{ type: "document", source, cache_control, 3 more }
-
-
-
-
-
-BetaSearchResultBlockParam object{ type: "search_result", content, source, 3 more }
-
-
-
-
-
-BetaThinkingBlockParam object{ type: "thinking", signature, thinking }
-
-
-
-type: "thinking"
-
-
-
-
-
-signature: string
-
-
-
-The `signature` value of this thinking block, exactly as returned by the API in a previous response. Used to verify that the block was generated by Claude.
-
-Thinking blocks must be passed back unmodified and in their original order; a modified block results in a 400 `invalid_request_error`.
-
-thinking: string
-
-
-
-The `thinking` text of this block as returned by the API.
-
-
-
-BetaRedactedThinkingBlockParam object{ type: "redacted_thinking", data }
-
-
-
-type: "redacted_thinking"
-
-
-
-data: string
-
-
-
-The `data` value of this redacted thinking block, exactly as returned by the API in a previous response. Opaque and encrypted; pass it back unchanged.
-
-
-
-BetaToolUseBlockParam object{ type: "tool_use", id, input, 4 more }
-
-
-
-
-
-BetaToolResultBlockParam object{ type: "tool_result", tool_use_id, cache_control, 3 more }
-
-
-
-
-
-BetaServerToolUseBlockParam object{ type: "server_tool_use", id, input, 3 more }
-
-
-
-
-
-BetaWebSearchToolResultBlockParam object{ type: "web_search_tool_result", content, tool_use_id, 2 more }
-
-
-
-
-
-BetaWebFetchToolResultBlockParam object{ type: "web_fetch_tool_result", content, tool_use_id, 2 more }
-
-
-
-
-
-BetaAdvisorToolResultBlockParam object{ type: "advisor_tool_result", content, tool_use_id, cache_control }
-
-
-
-
-
-BetaCodeExecutionToolResultBlockParam object{ type: "code_execution_tool_result", content, tool_use_id, cache_control }
-
-
-
-type: "code_execution_tool_result"
-
-
-
-
-
-content: [BetaCodeExecutionToolResultBlockParamContent](platform-claude-com-http-beta-messages.md#beta_code_execution_tool_result_block_param_content)
-
-
-
-One of the following:
-
-
-
-tool_use_id: string
-
-
-
-pattern^srvtoolu\_\[a-zA-Z0-9\_\]+\$
-
-
-
-cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
-
-
-
-Create a cache control breakpoint at this content block.
-
-type: "ephemeral"
-
-
-
-
-
-ttl: optional "5m" or "1h"
-
-
-
-The time-to-live for the cache control breakpoint.
-
-This may be one the following values:
-
-- `5m`: 5 minutes
-- `1h`: 1 hour
-
-Defaults to `5m`. See [prompt caching pricing](../Guides/build-with-claude-prompt-caching.md) for details.
-
-One of the following:
-
-"5m"
-
-
-
-"1h"
-
-
-
-
-
-BetaBashCodeExecutionToolResultBlockParam object{ type: "bash_code_execution_tool_result", content, tool_use_id, cache_control }
-
-
-
-
-
-BetaTextEditorCodeExecutionToolResultBlockParam object{ type: "text_editor_code_execution_tool_result", content, tool_use_id, cache_control }
-
-
-
-
-
-BetaToolSearchToolResultBlockParam object{ type: "tool_search_tool_result", content, tool_use_id, cache_control }
-
-
-
-
-
-BetaMCPToolUseBlockParam object{ type: "mcp_tool_use", id, input, 3 more }
-
-
-
-
-
-BetaRequestMCPToolResultBlockParam object{ type: "mcp_tool_result", tool_use_id, cache_control, 2 more }
-
-
-
-
-
-BetaContainerUploadBlockParam object{ type: "container_upload", file_id, cache_control }
-
-
-
-A content block that represents a file to be uploaded to the container Files uploaded via this block will be available in the container's input directory.
-
-type: "container_upload"
-
-
-
-file_id: string
-
-
-
-
-
-cache_control: optional [BetaCacheControlEphemeral](platform-claude-com-http-beta-messages.md#beta_cache_control_ephemeral) { type: "ephemeral", ttl } or null
-
-
-
-Create a cache control breakpoint at this content block.
-
-type: "ephemeral"
-
-
-
-
-
-ttl: optional "5m" or "1h"
-
-
-
-The time-to-live for the cache control breakpoint.
-
-This may be one the following values:
-
-- `5m`: 5 minutes
-- `1h`: 1 hour
-
-Defaults to `5m`. See [prompt caching pricing](../Guides/build-with-claude-prompt-caching.md) for details.
-
-One of the following:
-
-"5m"
-
-
-
-"1h"
-
-
-
-
-
-BetaCompactionBlockParam object{ type: "compaction", cache_control, content, 3 more }
-
-
-
-A compaction block containing summary of previous context.
-
-Users should round-trip these blocks from responses to subsequent requests to maintain context across compaction boundaries.
-
-When content is None, the block represents a failed compaction. The server treats these as no-ops. Empty string content is not allowed.
-
-
-
-BetaRequestToolAdditionBlock object{ type: "tool_addition", tool, cache_control }
-
-
-
-Mid-conversation directive to make a tool available.
-
-`tool` is a reference to a tool (or MCP toolset) declared in the request's `tools`. Under the `inline-tools-2026-09-15` beta it may instead be a reference to a tool defined earlier in `messages`, or a `tool_definition` object that carries an inline tool definition in `definition` (the same object a `tools` entry holds). An `mcp_toolset` definition also requires the `mcp-client-2026-09-15` beta. The tool is offered to the model from this point in the conversation onward.
-
-
-
-BetaRequestToolRemovalBlock object{ type: "tool_removal", tool, cache_control }
-
-
-
-Mid-conversation directive to withdraw a tool.
-
-`tool` references a tool (or MCP toolset) by name: one declared in the request's `tools` or defined earlier in `messages`. It is no longer offered to the model from this point in the conversation onward.
-
-
-
-BetaMCPToolListingBlockParam object{ type: "mcp_tool_listing", mcp_server_name, tools }
-
-
-
-The tool listing an MCP server returned while an earlier response was produced, as that response carried it. Send the assistant message back unchanged, this block included, and the server uses this listing for the matching `mcp_toolset` instead of asking the MCP server again.
-
-type: "mcp_tool_listing"
-
-
-
-
-
-mcp_server_name: string
-
-
-
-The name of the MCP server this listing came from, as `mcp_servers` declares it.
-
-minLength1
-
-maxLength255
-
-
-
-tools: array of [BetaMCPToolParam](platform-claude-com-http-beta-messages.md#beta_mcp_tool_param) { input_schema, name, description }
-
-
-
-The server's tools, exactly as the response listed them.
-
-input_schema: map\[unknown\]
-
-
-
-The tool's input schema as the MCP server lists it, verbatim.
-
-
-
-name: string
-
-
-
-The tool's name as the MCP server lists it (not prefixed with the server name).
-
-minLength1
-
-description: optional string or null
-
-
-
-The tool's description as the MCP server lists it.
-
-
-
-BetaFallbackBlockParam object{ type: "fallback", from, to, trigger }
-
-
-
-A `fallback` block echoed back from a prior response.
-
-Accepted in `messages[].content` and not rendered into the prompt; not validated against the request's `fallbacks` chain or top-level `model`.
-
-Echo the assistant turn back verbatim, including this block in its original position. The block marks the boundary between content produced before and after a fallback hop, and the server relies on that boundary to validate the turn: when thinking runs flank the boundary, omitting the block merges them into one span the server cannot validate (the request is rejected), and moving it into the middle of a single run is likewise rejected; between non-thinking blocks the block's placement has no validation effect.
-
-type: "fallback"
-
-
-
-
-
-from: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
-
-
-
-Identifies one hop of a fallback transition.
-
-
-
-to: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
-
-
-
-Identifies one hop of a fallback transition.
-
-trigger: optional unknown
-
-
-
-The response block's `trigger`, echoed verbatim. Accepted and ignored by the server; any object or `null` is allowed.
-
-
-
-role: "user" or "assistant" or "system"
-
-
-
-One of the following:
-
-"user"
-
-
-
-"assistant"
-
-
-
-"system"
-
-
-
-
-
-clear_at: optional "next_user_message" or "never" or null
-
-
-
-How long this system message's text stays in front of the model. `"never"` (the default) renders it on every request that includes it. `"next_user_message"` renders it only for the user turn it follows: once a later `role: "user"` message exists in `messages` the message stays in the array (send it unchanged) but is no longer shown to the model. Only permitted on `role: "system"` messages.
-
-One of the following:
-
-"next_user_message"
-
-
-
-"never"
-
-
-
-
-
-output_config: optional [BetaSystemMessageOutputConfig](platform-claude-com-http-beta-messages.md#beta_system_message_output_config) { effort } or null
-
-
-
-Per-message output configuration on a role:"system" input message.
-
-Fields here apply per-turn; `format` remains top-level only. An empty `{}` is accepted on a message that carries content; a message with neither content nor output_config fields is rejected.
-
-
-
-effort: optional "low" or "medium" or "high" or 2 more or null
-
-
-
-How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.
-
-Valid values are `low`, `medium`, `high`, `xhigh`, or `max`.
-
-One of the following:
-
-"low"
-
-
-
-"medium"
-
-
-
-"high"
-
-
-
-"xhigh"
-
-
-
-"max"
+BetaSystemMessageParam object{ role, clear_at, content, output_config }
 
 
 
@@ -1221,6 +588,10 @@ One of the following:
 
 compaction: optional [BetaCompactionConfig](platform-claude-com-http-beta-messages.md#beta_compaction_config) { type: "summarize", instructions } or null
 
+⁠
+
+
+
 
 
 Compaction configuration.
@@ -1245,6 +616,10 @@ maxLength16384
 
 context_management: optional [BetaContextManagementConfig](platform-claude-com-http-beta-messages.md#beta_context_management_config) { edits } or null
 
+⁠
+
+
+
 
 
 Context management configuration.
@@ -1254,6 +629,10 @@ This allows you to control how Claude manages context across multiple requests, 
 
 
 mcp_servers: optional array of [BetaRequestMCPServerURLDefinition](platform-claude-com-http-beta-messages.md#beta_request_mcp_server_url_definition) { type: "url", name, url, 2 more }
+
+⁠
+
+
 
 
 
@@ -1750,6 +1129,10 @@ BetaTool object{ type, input_schema, name, 7 more }
 
 BetaToolBash20241022 object{ type: "bash_20241022", name, allowed_callers, 4 more }
 
+⁠
+
+
+
 
 
 
@@ -1776,7 +1159,11 @@ BetaCodeExecutionTool20260120 object{ type: "code_execution_20260120", name, all
 
 
 
-Code execution tool with REPL state persistence (daemon mode + gVisor checkpoint).
+A `tools` entry for the code execution tool, version `code_execution_20260120`. It adds REPL state persistence to version `code_execution_20250825`.
+
+REPL state persistence applies with programmatic tool calling. With it, the Python interpreter state, such as variable bindings, persists across requests that reuse the container.
+
+See the [code execution tool guide](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md#tool-versions) to learn what each tool version adds.
 
 
 
@@ -1798,6 +1185,10 @@ The browser toolset: a single `tools[]` entry (carrying no `name`) that declares
 
 BetaToolComputerUse20241022 object{ type: "computer_20241022", display_height_px, display_width_px, 7 more }
 
+⁠
+
+
+
 
 
 
@@ -1810,17 +1201,29 @@ BetaMemoryTool20250818 object{ type: "memory_20250818", name, allowed_callers, 4
 
 BetaToolComputerUse20250124 object{ type: "computer_20250124", display_height_px, display_width_px, 7 more }
 
+⁠
+
+
+
 
 
 
 
 BetaToolTextEditor20241022 object{ type: "text_editor_20241022", name, allowed_callers, 4 more }
 
+⁠
+
+
+
 
 
 
 
 BetaToolComputerUse20251124 object{ type: "computer_20251124", display_height_px, display_width_px, 8 more }
+
+⁠
+
+
 
 
 
@@ -1898,6 +1301,10 @@ BetaWebFetchTool20260318 object{ type: "web_fetch_20260318", name, allowed_calle
 
 BetaAdvisorTool20260301 object{ type: "advisor_20260301", model, name, 7 more }
 
+⁠
+
+
+
 
 
 
@@ -1916,6 +1323,10 @@ BetaToolSearchToolRegex20251119 object{ type, name, allowed_callers, 3 more }
 
 BetaMCPToolset object{ type: "mcp_toolset", mcp_server_name, cache_control, 3 more }
 
+⁠
+
+
+
 
 
 Configuration for a group of tools from an MCP server.
@@ -1924,7 +1335,11 @@ Allows configuring enabled status and defer_loading for all tools from an MCP se
 
 
 
-output_format: optional [BetaJSONOutputFormat](platform-claude-com-http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null⁠Deprecated
+output_format: optional [BetaJSONOutputFormat](platform-claude-com-http-beta-messages.md#beta_json_output_format) { type: "json_schema", schema } or null
+
+⁠Deprecated
+
+
 
 
 
@@ -1954,6 +1369,10 @@ BetaMessageTokensCount object{ context_management, input_tokens }
 
 context_management: [BetaCountTokensContextManagementResponse](platform-claude-com-http-beta-messages.md#beta_count_tokens_context_management_response) { original_input_tokens } or null
 
+⁠
+
+
+
 
 
 Information about context management applied to the message.
@@ -1979,8 +1398,8 @@ cURL
 ```python
 curl https://api.anthropic.com/v1/messages/count_tokens \
     -H 'Content-Type: application/json' \
-    -H 'anthropic-version: 2023-06-01' \
-    -H "X-Api-Key: $ANTHROPIC_API_KEY" \
+    -H 'anthropic-version: 2026-10-21' \
+    -H "Authorization: Bearer $ANTHROPIC_API_KEY" \
     -d '{
           "messages": [
             {

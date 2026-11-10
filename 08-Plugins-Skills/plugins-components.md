@@ -2,11 +2,13 @@
 title: "Add components to a plugin - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/components"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-22T06:28:06Z"
+fetched_at: "2026-10-26T06:30:18Z"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Explore the plugin directory](#explore-the-plugin-directory)
 - [Add each kind of component](#add-each-kind-of-component)
@@ -383,10 +385,10 @@ Themes and output styles
 
 A plugin can include color themes and output styles. Both appear in the same pickers as the user’s own. For either one, setting the manifest key replaces the folder scan.
 
-| Component    | Save as                   | Format                                                                                                                           | Appears in                            | Manifest key          |
-|:-------------|:--------------------------|:---------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------|:----------------------|
-| Theme        | `themes/<slug>.json`      | The [custom theme file](../02-Claude-Code-CLI/terminal-config.md#create-a-custom-theme) format users write in `~/.claude/themes/`                | `/theme`, under the file’s `name`     | `experimental.themes` |
-| Output style | `output-styles/<name>.md` | The [custom output style](../02-Claude-Code-CLI/output-styles.md#create-a-custom-output-style) format, with `name` and `description` frontmatter | `/output-style`, as `<plugin>:<name>` | `outputStyles`        |
+| Component | Save as | Format | Appears in | Manifest key |
+|:---|:---|:---|:---|:---|
+| Theme | `themes/<slug>.json` | The [custom theme file](../02-Claude-Code-CLI/terminal-config.md#create-a-custom-theme) format users write in `~/.claude/themes/` | `/theme`, under the file’s `name` | `experimental.themes` |
+| Output style | `output-styles/<name>.md` | The [custom output style](../02-Claude-Code-CLI/output-styles.md#create-a-custom-output-style) format, with `name` and `description` frontmatter | `/output-style`, as `<plugin>:<name>` | `outputStyles` |
 
 Plugin themes are read-only, so when a user edits one in `/theme`, the edit is saved as a copy in their own themes directory. This theme recolors the prompt accent and error text on the dark preset:
 
@@ -461,7 +463,8 @@ monitors/monitors.json
 
 The command runs in a shell, in the session’s current working directory. It runs with your full user permissions and outside the [sandbox](../02-Claude-Code-CLI/sandboxing.md). A monitor’s command is limited in where it starts and what it can reference:
 
-- **Interactive sessions only**: plugin monitors start in an interactive session and never in non-interactive mode with the `-p` flag. They also don’t start in sessions where the API provider or telemetry settings make the [Monitor tool](../02-Claude-Code-CLI/tools-reference.md#monitor-tool) unavailable
+- **Interactive sessions**: plugin monitors don’t start in non-interactive mode with the `-p` flag
+- **Minimum version**: on Amazon Bedrock, Claude Platform on AWS, Google Cloud’s Agent Platform, or Microsoft Foundry, or with `DISABLE_TELEMETRY` or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` set, monitors require Claude Code v2.1.310 or later. The requirement applies when [feature-flag fetching](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching) is off
 - **No user configuration**: `command` gets the [path variables](#path-variables-and-persistent-data) and `${ENV_VAR}` from the environment, but never `${user_config.*}`. A monitor that references one doesn’t start, and monitor processes don’t receive `CLAUDE_PLUGIN_OPTION_<KEY>` either
 - **Disabling mid-session**: if you disable a plugin mid-session, Claude Code doesn’t stop monitors that are already running. They stop when the session ends
 
@@ -519,7 +522,7 @@ You don’t know where your plugin will be installed, so refer to its files and 
 - **`${CLAUDE_PLUGIN_DATA}`**: a directory that survives updates, for `node_modules`, virtual environments, and caches. It resolves to `~/.claude/plugins/data/<id>/` and is created when first referenced
 - **`${CLAUDE_PROJECT_DIR}`**: the project root, the same value hooks receive
 
-In the data directory path, `<id>` is the plugin identifier with every character other than letters, digits, `_`, and `-` replaced by `-`, so `my-plugin@my-marketplace` becomes `my-plugin-my-marketplace`. On Windows, the substituted paths use forward slashes so a shell doesn’t read backslashes as escapes.
+In the data directory path, `<id>` is the plugin identifier with every character other than letters, digits, `_`, and `-` replaced by `-`, so `my-plugin@my-marketplace` becomes `my-plugin-my-marketplace`. On Windows, most substituted paths use forward slashes, as in `C:/Users/you/...`. They keep their native backslashes in an [exec-form hook](../07-Hooks/hooks.md#exec-form-and-shell-form) and in a hook that runs through PowerShell, which is the default shell on Windows when Git Bash isn’t installed.
 
 
 [​](#install-dependencies-into-the-data-directory)

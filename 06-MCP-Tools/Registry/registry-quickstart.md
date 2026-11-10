@@ -2,11 +2,14 @@
 title: "Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/quickstart"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-21T06:28:45Z"
+fetched_at: "2026-10-31T06:24:35Z"
+last_modified: "Fri, 30 Oct 2026 21:39:39 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Prerequisites](#prerequisites)
 - [Step 1: Add verification information to the package](#step-1-add-verification-information-to-the-package)
@@ -35,7 +38,7 @@ Prerequisites
 
 - **Node.js** — This tutorial assumes the MCP server is written in TypeScript.
 - **npm account** — The MCP Registry only hosts metadata, not artifacts. Before publishing to the MCP Registry, we will publish the MCP server’s package to npm, so you will need an [npm](https://www.npmjs.com) account.
-- **GitHub account** — The MCP Registry supports [multiple authentication methods](https://modelcontextprotocol.io/registry/authentication). For simplicity, this tutorial will use GitHub-based authentication, so you will need a [GitHub](https://github.com/) account.
+- **GitHub account** — The MCP Registry supports [multiple authentication methods](registry-authentication.md). For simplicity, this tutorial will use GitHub-based authentication, so you will need a [GitHub](https://github.com/) account.
 
 If you do not have an MCP server written in TypeScript, you can copy the `weather-server-typescript` server from the [`modelcontextprotocol/quickstart-resources` repository](https://github.com/modelcontextprotocol/quickstart-resources) to follow along with this tutorial:
 
@@ -330,10 +333,10 @@ Output
 
 Troubleshooting
 
-| Error Message                                       | Action                                                                                                                                                  |
-|-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ”Registry validation failed for package”            | Ensure your package includes the required validation information (e.g, `mcpName` property in `package.json`).                                           |
-| ”Invalid or expired Registry JWT token”             | Re-authenticate by running `mcp-publisher login github`.                                                                                                |
+| Error Message | Action |
+|----|----|
+| ”Registry validation failed for package” | Ensure your package includes the required validation information (e.g, `mcpName` property in `package.json`). |
+| ”Invalid or expired Registry JWT token” | Re-authenticate by running `mcp-publisher login github`. |
 | ”You do not have permission to publish this server” | Your authentication method doesn’t match your server’s namespace format. With GitHub auth, your server name must start with `io.github.your-username/`. |
 
 
@@ -341,7 +344,7 @@ Troubleshooting
 
 Next Steps
 
-- Learn about [support for other package types](https://modelcontextprotocol.io/registry/package-types).
-- Learn about [support for remote servers](https://modelcontextprotocol.io/registry/remote-servers).
-- Learn how to [use other authentication methods](https://modelcontextprotocol.io/registry/authentication), such as [DNS authentication](https://modelcontextprotocol.io/registry/authentication#dns-authentication) which enables custom domains for server name prefixes.
-- Learn how to [automate publishing with GitHub Actions](https://modelcontextprotocol.io/registry/github-actions).
+- Learn about [support for other package types](registry-package-types.md).
+- Learn about [support for remote servers](registry-remote-servers.md).
+- Learn how to [use other authentication methods](registry-authentication.md), such as [DNS authentication](registry-authentication.md#dns-authentication) which enables custom domains for server name prefixes.
+- Learn how to [automate publishing with GitHub Actions](registry-github-actions.md).

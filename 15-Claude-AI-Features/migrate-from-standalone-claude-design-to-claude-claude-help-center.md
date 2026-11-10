@@ -2,18 +2,16 @@
 title: "Move from standalone Claude Design to Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17440474"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-10-23T06:29:34Z"
+fetched_at: "2026-11-09T06:25:58Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
 # Move from standalone Claude Design to Claude
 
-Updated today
-
 
 Claude Design now lives in Claude. The standalone Claude Design site (claude.ai/design) will close on December 14, 2026, and you can still access it until that date. This article explains what's changing and when, how to move your design systems today, and what happens to your projects.
 
-Claude Design is available on Free, Pro, Max, Team, and Enterprise plans.
+Claude Design is available on Free, Pro, Max, Ultra, Team, and Enterprise plans.
 
 ## What's changing and when
 
@@ -127,7 +125,7 @@ Moving a project to Claude, where it becomes an artifact, is rolling out gradual
 
 - On Team and Enterprise plans, artifacts also need to be on for your organization. On Enterprise plans with custom roles, your role needs them too.
 
-- Organizations with customer-managed encryption keys (CMEK) can move one project at a time, but can't yet move lists of projects, design systems, or everything at once. Standalone Claude Design doesn't support CMEK, so its data won't be encrypted under your key until you move. Once a project moves to Claude, it's encrypted under your key.
+- Organizations with customer-managed encryption keys (CMEK) can move individual projects, lists of projects, design systems, or everything at once. Standalone Claude Design doesn't support CMEK, so its data won't be encrypted under your key until you move. Once a project moves to Claude, it's encrypted under your key.
 
 - Organizations with the HIPAA-ready configuration can't move projects right now.
 
@@ -211,4 +209,4 @@ You get a .zip file with every file in the project. It's free and doesn't count 
 
 ## Get help
 
-If something didn't come over right, your original is still in the standalone version. Please let us know if your design system can't move and there's no way for you to fix it. Learn more about **[how to get support](how-to-get-support.md)**.
+If something didn't come over right, your original is still in the standalone version. Please let us know if your design system can't move and there's no way for you to fix it. Learn more about **[how to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.

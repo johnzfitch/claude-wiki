@@ -2,7 +2,7 @@
 title: "Code Review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:26Z"
+fetched_at: "2026-10-25T06:26:40Z"
 tags: ["claude-code"]
 ---
 
@@ -89,7 +89,7 @@ Each review leaves these on the pull request:
 
 - **Findings**: inline comments on the lines concerned, with a summary in the review body
 - **A check run**: named **Claude Code Review**, with the findings listed in its [details](code-review-pull-requests.md#check-run-output). The check run doesn’t conclude as a failure.
-- **When it finds nothing**: the check run’s title reads **Code review found no issues**, and Claude posts the same short note on the pull request
+- **A note in place of findings**: posted when the check run’s title reads **Code review found no issues**
 
 Code Review chooses the Claude models that reviews run on, and its admin settings don’t offer a model choice. To make reviews more or less thorough, change the [review level](#review-levels). After an Owner turns on Code Review, each repository has a setting for [when reviews run](code-review-setup.md#set-when-reviews-run): once when a pull request opens, after every push, or only on request. Whichever it is, someone with write access to the repository can comment `@claude review` on a pull request to [start a review](code-review-pull-requests.md#comment-commands).
 

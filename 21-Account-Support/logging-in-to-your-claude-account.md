@@ -2,7 +2,7 @@
 title: "Log in to your Claude account | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13189465-logging-in-to-your-claude-account"
 category: "21-Account-Support"
-fetched_at: "2026-10-23T06:29:00Z"
+fetched_at: "2026-11-09T06:25:55Z"
 tags: ["account"]
 ---
 
@@ -30,7 +30,7 @@ If you requested the login email and clicked the link using a different device (
 
 ## Authenticating to subscription plans
 
-Claude offers subscription plans (Free, Pro, Max, Team, Enterprise) that let subscribers authenticate using OAuth tokens or other methods. Subscription plans can only be used by subscribers, and the usage included in these plans is designed to support ordinary use of native Anthropic applications, including the Claude web, desktop, and mobile applications and Claude Code.
+Claude offers subscription plans (Free, Pro, Max, Ultra, Team, Enterprise) that let subscribers authenticate using OAuth tokens or other methods. Subscription plans can only be used by subscribers, and the usage included in these plans is designed to support ordinary use of native Anthropic applications, including the Claude web, desktop, and mobile applications and Claude Code.
 
 The preferred way to access Anthropic services using third-party software, tools, or services (“third-party tools”), including open-source projects, is through API key authentication through Claude Console or a supported cloud provider. Anthropic may at its discretion allow paid subscribers who have enabled **[usage credits](https://support.claude.com/en/articles/12429409-)** to use certain third-party tools to access Anthropic services included in paid subscription plans, but reserves the right to draw use of such third-party tools from usage credits rather than subscription limits. Users are responsible for any usage credit charges incurred this way. Use of third-party tools that misrepresent their identity to Anthropic’s servers, attempt to route third-party traffic against subscription limits, or otherwise violate applicable terms or policies is prohibited and such use may be enforced against.
 
@@ -58,7 +58,7 @@ If you requested a login email but you haven’t received it yet, do the followi
 
 ### I received the email but I'm still having trouble logging in.
 
-If you received the login email but can’t log in with the link or code, take note of the error message you’re seeing. If you’re creating an account or logging in for the first time and seeing a message about your phone number, please refer to **[Verifying your phone number](verifying-your-phone-number.md)**.
+If you received the login email but can’t log in with the link or code, take note of the error message you’re seeing. If you’re creating an account or logging in for the first time and seeing a message about your phone number, please refer to **[Verifying your phone number](https://support.claude.com/en/articles/8287232-verifying-your-phone-number)**.
 
 Otherwise, visit the **[Claude status page](https://status.claude.com/)** to check if there are any known service disruptions or maintenance activities. If the status page shows an ongoing system-wide incident, it's best to wait for service restoration before attempting further troubleshooting.
 
@@ -83,6 +83,8 @@ If you have both an individual Claude account and a Team or Enterprise plan acco
 2.  Select the desired account.
 
 3.  Look for the check mark indicating the active account.
+
+If your accounts are on different email addresses, log out, then log in with the other email address. See **[Move your personal Claude account to a Team or Enterprise organization](can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_909699092e)**.
 
 ### I don’t want to use “Continue with Google” to log in anymore; how can I revoke access to my Google account?
 

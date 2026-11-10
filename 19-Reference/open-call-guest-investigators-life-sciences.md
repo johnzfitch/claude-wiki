@@ -2,7 +2,7 @@
 title: "Open call for guest investigators in the life sciences \\ Anthropic"
 source_url: "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:24Z"
+fetched_at: "2026-11-07T06:24:07Z"
 tags: ["news-research"]
 ---
 
@@ -24,9 +24,9 @@ Related articles
 
 - Science
 
-  Sep 23, 2026
+  Nov 6, 2026
 
-  [Claude discovers a novel enzyme system with CRISPR-like repeats](claude-discovers-novel-enzyme-system.md)
+  [Teaching AI to build scientific models](teaching-ai-to-build-scientific-models.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 

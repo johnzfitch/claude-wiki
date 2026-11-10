@@ -2,7 +2,7 @@
 title: "AI to defend critical infrastructure \\ Anthropic"
 source_url: "https://www.anthropic.com/research/critical-infrastructure-defense"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:37Z"
+fetched_at: "2026-10-24T06:26:15Z"
 tags: ["news-research", "security"]
 ---
 
@@ -59,7 +59,7 @@ It is also among a growing number of partnerships between frontier AI labs like 
 
 In this research effort, Anthropic provided access to the cutting edge of model intelligence through Claude, and PNNL had the expertise and the cyber-physical assets to provide more realistic testing environments than would have been available to an AI company. Put differently, neither party could have done this kind of experimentation without the other. This is the central logic of the public-private partnerships that we undertake. We will continue to look for these complementarities, and welcome the chance to continue working with exceptional institutions like the national labs on our shared mission of ensuring that AI is used to protect critical infrastructure and other pillars of security and stability.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

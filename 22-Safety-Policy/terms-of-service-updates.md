@@ -2,7 +2,7 @@
 title: "Terms of Service Updates | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9190861-terms-of-service-updates"
 category: "22-Safety-Policy"
-fetched_at: "2026-10-23T06:29:38Z"
+fetched_at: "2026-11-09T06:26:02Z"
 tags: ["safety"]
 ---
 

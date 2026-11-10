@@ -2,53 +2,9 @@
 title: "CLI authentication options - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:11Z"
+fetched_at: "2026-11-05T06:36:32Z"
 tags: ["api", "authentication", "cli"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Fcli%2Fauthentication)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)ant CLI
 
 # CLI authentication options
 
@@ -62,7 +18,7 @@ Authenticate the ant CLI with interactive login, API keys, named profiles, and W
 
 
 
-The `ant` CLI supports several credential sources. The [Quickstart](cli-sdks-libraries-cli-quickstart.md#authentication) covers the one-command happy path (`ant auth login`). This page covers every option in full.
+The `ant` CLI supports several credential sources. The [Quickstart](cli-sdks-libraries-cli-quickstart.md#authentication) covers the one-command login (`ant auth login`). This page covers every option in full.
 
 ## Interactive login
 
@@ -147,9 +103,9 @@ setx ANTHROPIC_API_KEY "sk-ant-api03-..."
 
 Open a new terminal for the change to take effect.
 
-To override the key for a single invocation, pass [`--api-key-stdin`](cli-sdks-libraries-cli-using.md#global-flags) and pipe the key to the command. To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url`.
+To override the key for a single run, pass [`--api-key-stdin`](cli-sdks-libraries-cli-using.md#global-flags) and pipe the key to the command. To point at a different API host, set `ANTHROPIC_BASE_URL` or pass `--base-url`.
 
-If you are using an API key scoped to multiple workspaces, such as a [personal or service account key](manage-claude-authentication.md#key-types), you must [specify the workspace](manage-claude-authentication.md#select-a-workspace) to run your command in. Do this by setting an `ANTHROPIC_WORKSPACE_ID` environment variable, which the CLI reads automatically, or by using the [`--workspace-id` flag](cli-sdks-libraries-cli-using.md#global-flags). The value must be a `wrkspc_...` ID.
+If you are using a [personal or service account key](manage-claude-authentication.md#key-types) that isn’t scoped to a workspace, you must [specify the workspace](manage-claude-authentication.md#select-a-workspace) to run your command in. Do this by setting an `ANTHROPIC_WORKSPACE_ID` environment variable, which the CLI reads automatically, or by using the [`--workspace-id` flag](cli-sdks-libraries-cli-using.md#global-flags). The value must be a `wrkspc_...` ID.
 
 CLI
 
@@ -165,7 +121,7 @@ ant messages create \
 
 ## Check authentication status
 
-`ant auth status` prints the credential source the CLI selected (API key environment variable, OAuth login, federation, or profile), the active profile, the workspace the active token is bound to, and the configuration directory paths. Use it to diagnose why a workload picked the wrong credential or workspace.
+`ant auth status` prints the credential source the CLI selected (API key environment variable, OAuth login, federation, Google Cloud, or profile), the active profile, the workspace the active token is bound to, and the configuration directory paths. Use it to diagnose why a workload picked the wrong credential or workspace.
 
 CLI
 
@@ -191,7 +147,7 @@ Workspace
 
 
 
-Read the `(active)` rows to see which credential source and workspace won. The command reports status rather than performing a health check, so don't script against the exit status. For the full ordering of credential sources, see [Credential precedence](manage-claude-wif-reference.md#credential-precedence).
+Read the `(active)` rows to see which credential source and workspace won. The command reports status rather than performing a health check, so don’t script against the exit status. For the full ordering of credential sources, see [Credential precedence](manage-claude-wif-reference.md#credential-precedence).
 
 ## Switch between workspaces
 
@@ -218,7 +174,7 @@ Run [`ant auth status`](#check-authentication-status) to confirm which profile a
 
 
 
-Profiles are only consulted when no API key is set. If `ANTHROPIC_API_KEY` is present in your environment, it overrides every profile and these commands all use that key's workspace (or, for a multi-workspace key, the workspace set with `ANTHROPIC_WORKSPACE_ID` or `--workspace-id`). Unset it before switching profiles.
+An `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN` in your environment takes precedence over every profile (see [Credential precedence](manage-claude-wif-reference.md#credential-precedence)). Until you unset it, API requests use that credential, whichever profile you select, and `ant` prints a message to stderr that says so.
 
 ## Manage profiles
 
@@ -250,7 +206,7 @@ Command structure, output formats, GJSON transforms, and request bodies
 
 [CLI scripting and automation](cli-sdks-libraries-cli-scripting.md)
 
-Version-control API resources, scripting patterns, and use from Claude Code
+Version control for API resources, scripting patterns, and use from Claude Code
 
 
 

@@ -2,7 +2,7 @@
 title: "Customer stories | Claude by Anthropic"
 source_url: "https://www.claude.com/customers"
 category: "18-Industry-UseCases"
-fetched_at: "2026-10-23T06:29:28Z"
+fetched_at: "2026-11-09T06:26:53Z"
 tags: ["case-studies"]
 ---
 
@@ -78,43 +78,9 @@ on
 
 Claude
 
-[Read customer story Stripe](stripe.md)
-
-## Count on Claude
-
-Hear from the teams who choose Claude for the work they have to get right.
-
-[Contact sales](https://www.claude.com/contact-sales)[Try Claude](https://claude.ai/)
-
-# Meet the teams building what’s next
-
-Businesses build with Claude for the problems that matter most. Our customers include enterprises and startups across financial services, healthcare, legal, and more.
-
 [Contact sales](https://www.claude.com/contact-sales)
 
-Customer story
-
-Notion is building a workspace for teams and agents
-
-[Read story](notion-qa.md)
-
-Customer story
-
-How Slack uses Claude for AI search and summaries
-
-[Read story](slack.md)
-
-Customer story
-
-Figma transforms ideas into interactive software
-
-[Read story](figma.md)
-
-Customer story
-
-HubSpot reclaims time for creativity with Claude
-
-[Read story](hubspot.md)
+[Read customer story Stripe](stripe.md)
 
 ## Browse more customer stories
 
@@ -237,7 +203,13 @@ Grid
 
 List
 
-284 stories
+286 stories
+
+
+### Mid-Ohio Food Collective rebuilds the software behind 2,500 food pantries with Claude
+
+
+### Montgomery County Food Bank extends a small team’s reach across the county with Claude
 
 
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
@@ -277,12 +249,6 @@ List
 
 
 ### Rocket Money on building agents that fix their own code
-
-
-### How Rocket Money built its personal finance agent with Claude
-
-
-### How League went all in on Claude in a regulated industry
 
 View more
 

@@ -2,53 +2,9 @@
 title: "Apple Foundation Models - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models"
 category: "04-API-Reference/Other"
-fetched_at: "2026-10-20T06:40:20Z"
+fetched_at: "2026-11-05T06:36:13Z"
 tags: ["api", "authentication"]
 ---
-
-- [Managed Agents](managed-agents-overview.md)
-
-- [Admin](manage-claude-admin-api.md)
-
-- Resources
-  - [Best practices](../About/about-claude-use-case-guides-overview.md)
-  - [Models & pricing](../../20-Models/about-claude-models-overview.md)
-  - [SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)
-  - [Claude API skill](../Agents-Tools/agents-and-tools-agent-skills-claude-api-skill.md)
-  - [Release notes](../../20-Models/release-notes-overview.md)
-
-[API reference](../Endpoints/overview.md)
-
-
-
-
-[Console](playground.md)[Log in](https://platform.claude.com/login?returnTo=%2Fdocs%2Fen%2Fcli-sdks-libraries%2Flibraries%2Fapple-foundation-models)
-
-
-
-
-
-SearchCtrlK
-
-SDKs, CLI, and libraries
-
-[Overview](cli-sdks-libraries-overview.md)
-
-ant CLI
-
-[Quickstart](cli-sdks-libraries-cli-quickstart.md)[Authentication options](cli-sdks-libraries-cli-authentication.md)[Using the CLI](cli-sdks-libraries-cli-using.md)[Scripting and automation](cli-sdks-libraries-cli-scripting.md)[Manage resources as code](cli-sdks-libraries-cli-apply.md)[Connect to a Managed Agents session](cli-sdks-libraries-cli-sessions-connect.md)
-
-Client SDKs
-
-[Middleware](cli-sdks-libraries-middleware.md)[Python](cli-sdks-libraries-sdks-python.md)[TypeScript](cli-sdks-libraries-sdks-typescript.md)[C#](cli-sdks-libraries-sdks-csharp.md)[Go](cli-sdks-libraries-sdks-go.md)[Java](cli-sdks-libraries-sdks-java.md)[PHP](cli-sdks-libraries-sdks-php.md)[Ruby](cli-sdks-libraries-sdks-ruby.md)
-
-Libraries and integrations
-
-[Apple Foundation Models](cli-sdks-libraries-libraries-apple-foundation-models.md)[OpenAI SDK compatibility](cli-sdks-libraries-libraries-openai-sdk.md)
-
-[Console](playground.md)
-
-[SDKs, CLI, and libraries](cli-sdks-libraries-overview.md)Libraries and integrations
 
 # Apple Foundation Models
 
@@ -62,9 +18,20 @@ Use Claude on Apple platforms through the Foundation Models framework with the C
 
 
 
-[Claude for Foundation Models](https://github.com/anthropics/ClaudeForFoundationModels) is a Swift package that makes Claude available as a server-side language model in Apple's [Foundation Models](https://developer.apple.com/documentation/foundationmodels) framework. The package conforms Claude to the framework's `LanguageModel` protocol, so you drive it with the same `LanguageModelSession` API you use for Apple's on-device model: `respond(to:)`, streaming, guided generation, and tool calling all work the same way.
+Apple Foundation Models
 
-Requests go directly from your app to the Claude API; Apple is not in the request path and does not see prompts or responses. Usage is billed to your Anthropic account at [standard API pricing](../../17-Billing-Plans/about-claude-pricing.md), so your organization needs an available credit balance or an active billing method. Your app decides when to use Claude and when to use Apple's on-device model: pass whichever model you want to each session.
+Feature of  
+[Messages API](../Guides/build-with-claude-working-with-messages.md)
+
+[Status](#availability-feature-support)  
+Beta
+
+[Cloud platforms](#availability-feature-support)  
+Claude APIAvailable
+
+[Claude for Foundation Models](https://github.com/anthropics/ClaudeForFoundationModels) is a Swift package that makes Claude available as a server-side language model in Apple’s [Foundation Models](https://developer.apple.com/documentation/foundationmodels) framework. The package conforms Claude to the framework’s `LanguageModel` protocol, so you drive it with the same `LanguageModelSession` API you use for Apple’s on-device model: `respond(to:)`, streaming, guided generation, and tool calling all work the same way.
+
+Requests go directly from your app to the Claude API; Apple is not in the request path and does not see prompts or responses. Usage is billed to your Anthropic account at [standard API pricing](../../17-Billing-Plans/about-claude-pricing.md), so your organization needs an available credit balance or an active billing method. Your app determines when to use Claude and when to use Apple’s on-device model: pass whichever model you want to each session.
 
 
 
@@ -94,7 +61,7 @@ dependencies: [
 
 Or in Xcode: **File** \> **Add Package Dependencies…** and enter the repository URL.
 
-Then add `ClaudeForFoundationModels` to your target's dependencies and import it alongside `FoundationModels`:
+Then add `ClaudeForFoundationModels` to your target’s dependencies and import it alongside `FoundationModels`:
 
 ```python
 import FoundationModels
@@ -129,7 +96,7 @@ For a complete working program, the repository includes [`Examples/ClaudeExample
 
 ## Choosing a model
 
-Model identifiers are values of `ClaudeModel`. Use a compiled-in constant, or construct one with explicit capabilities for an ID that isn't compiled in yet (see [Capabilities](#capabilities)):
+Model identifiers are values of `ClaudeModel`. Use a compiled-in constant, or construct one with explicit capabilities for an ID that isn’t compiled in yet (see [Capabilities](#capabilities)):
 
 ```python
 ClaudeLanguageModel(name: .opus5_5, auth: auth)
@@ -137,11 +104,11 @@ ClaudeLanguageModel(name: .opus5_5, auth: auth)
 
 
 
-Constants mirror API model IDs (`.opus5` is `claude-opus-5`) and carry each model's capabilities. New models ship as new constants in package releases; check `ClaudeModel` in Xcode for the current list, and the [Models overview](../../20-Models/about-claude-models-overview.md) to compare models.
+Constants mirror API model IDs (`.opus5` is `claude-opus-5`) and carry each model’s capabilities. New models ship as new constants in package releases; check `ClaudeModel` in Xcode for the current list, and the [Models overview](../../20-Models/about-claude-models-overview.md) to compare models.
 
 ### Capabilities
 
-Each `ClaudeModel` declares what it accepts: sampling parameters, effort levels, adaptive thinking, structured output, and image input. The package uses this to determine which request fields to send, because sending a field a model rejects is a hard error. The constants carry the right capabilities. For an ID that isn't compiled in, declare what the model accepts (there is deliberately no shorthand that guesses):
+Each `ClaudeModel` declares what it accepts: sampling parameters, effort levels, adaptive thinking, structured output, and image input. The package uses this to determine which request fields to send, because sending a field a model rejects is a hard error. The constants carry the right capabilities. For an ID that isn’t compiled in, declare what the model accepts (there is deliberately no shorthand that guesses):
 
 ```python
 let model = ClaudeModel(
@@ -155,7 +122,7 @@ ClaudeLanguageModel(name: model, auth: auth)
 
 ### Effort
 
-Pin a Claude [effort level](../Guides/build-with-claude-effort.md) for every request with `fixedEffort:`. It takes precedence over the framework's per-request reasoning hints. The framework's named reasoning levels stop at high; to request more effort for a single request instead, pass a custom reasoning level naming the Claude effort (`.custom("xhigh")` or `.custom("max")`), which maps directly. When no effort is sent, the API uses the model's default level, which differs by model (see [Effort levels](../Guides/build-with-claude-effort.md#effort-levels)):
+Pin a Claude [effort level](../Guides/build-with-claude-effort.md) for every request with `fixedEffort:`. It takes precedence over the framework’s per-request reasoning hints. The framework’s named reasoning levels stop at high; to request more effort for a single request instead, pass a custom reasoning level naming the Claude effort (`.custom("xhigh")` or `.custom("max")`), which maps directly. When no effort is sent, the API uses the model’s default level, which differs by model (see [Effort levels](../Guides/build-with-claude-effort.md#effort-levels)):
 
 ```python
 ClaudeLanguageModel(name: .opus5_5, auth: auth, fixedEffort: .xhigh)
@@ -163,11 +130,11 @@ ClaudeLanguageModel(name: .opus5_5, auth: auth, fixedEffort: .xhigh)
 
 
 
-The level must be one the model accepts. Each `ClaudeModel` declares which of the five levels (`low`, `medium`, `high`, `xhigh`, `max`) its model takes, if any: some models don't accept effort at all.
+The level must be one the model accepts. Each `ClaudeModel` declares which of the five levels (`low`, `medium`, `high`, `xhigh`, `max`) its model takes, if any: some models don’t accept effort at all.
 
 ### When to use Claude versus the on-device model
 
-Apple's on-device model is fast, private, and available offline, but it is sized for lightweight tasks. Escalate to Claude when you need larger context, frontier reasoning, or server-side tools such as web search and code execution. Because both use the same `LanguageModelSession` API, you can switch by swapping the `model:` argument.
+Apple’s on-device model is fast, private, and available offline, but it is sized for lightweight tasks. Escalate to Claude when you need larger context, frontier reasoning, or server-side tools such as web search and code execution. Because both use the same `LanguageModelSession` API, you can switch by swapping the `model:` argument.
 
 ## Authentication
 
@@ -175,7 +142,7 @@ Set the credential with the `auth:` parameter. Use `.appAttest` to ship without 
 
 ### App Attest
 
-Each installation of your app uses Apple's [App Attest](https://developer.apple.com/documentation/devicecheck/establishing-your-app-s-integrity) service to prove that it is a genuine, unmodified build of the app you registered. Anthropic then issues the device a short-lived access token that bills usage to your workspace. The app ships no API key, and there is no proxy for you to operate.
+Each installation of your app uses Apple’s [App Attest](https://developer.apple.com/documentation/devicecheck/establishing-your-app-s-integrity) service to prove that it is a genuine, unmodified build of the app you registered. Anthropic then issues the device a short-lived access token that bills usage to your workspace. The app ships no API key, and there is no proxy for you to operate.
 
 App Attest authentication is available only when your app calls the Claude API directly. It is not available through Amazon Bedrock, Google Cloud, or Microsoft Foundry.
 
@@ -199,11 +166,11 @@ To set up App Attest, you need your Apple Developer Team ID and the admin, owner
 1.  In Xcode, add the **App Attest** capability to your app target under **Signing & Capabilities**.
 2.  In the Claude Console, go to the [App integrations](https://platform.claude.com/settings/workspaces/default/app-integrations) page (`platform.claude.com/settings/workspaces/default/app-integrations`). Each app integration belongs to one workspace. Select the workspace you want in the workspace picker in the sidebar.
 3.  Click **Create app integration** and enter a name, your Apple Developer Team ID, and one or more bundle IDs (up to 32).
-4.  Copy the client ID (`clid_...`) from the integration's **Overview** tab and pass it to your app's Claude configuration.
+4.  Copy the client ID (`clid_...`) from the integration’s **Overview** tab and pass it to your app’s Claude configuration.
 
-The first time your app uses Claude on a device, the app requests a challenge from Anthropic, attests the device with Apple's `DCAppAttestService`, and exchanges the verified attestation for an access token. The Claude for Foundation Models package runs this flow automatically and requests new tokens as they expire; there is no attestation code for you to write.
+The first time your app uses Claude on a device, the app requests a challenge from Anthropic, attests the device with Apple’s `DCAppAttestService`, and exchanges the verified attestation for an access token. The Claude for Foundation Models package runs this flow automatically and requests new tokens as they expire; there is no attestation code for you to write.
 
-Tokens are scoped to your workspace, expire after one hour, and authorize only [Messages API](../Endpoints/messages-create.md) calls. They carry no end-user identity: App Attest identifies your app, not the person using it, so handle any per-user logic in your app.
+Tokens are scoped to your workspace, expire after 1 hour, and authorize only [Messages API](../Endpoints/messages-create.md) calls. They carry no end-user identity: App Attest identifies your app, not the person using it, so handle any per-user logic in your app.
 
 To stop a compromised or retired app, revoke its integration. In the Claude Console, go to the [App integrations](https://platform.claude.com/settings/workspaces/default/app-integrations) page (`platform.claude.com/settings/workspaces/default/app-integrations`). Each app integration belongs to one workspace. In the workspace picker in the sidebar, select the workspace that holds the integration. Select the integration and click **Revoke**, then confirm. Revoking an integration revokes its outstanding tokens, and its registered devices can no longer request new ones. Revocation is permanent, so create a new app integration to restore access.
 
@@ -273,7 +240,7 @@ Structured output requires a model whose capabilities include it (all compiled-i
 
 ### Client-side tools
 
-The framework's `tools:` array works unchanged. Conform your types to `Tool`, pass them to `LanguageModelSession`, and the framework invokes them on the device when Claude calls them. See [Tool use with Claude](../Agents-Tools/agents-and-tools-tool-use-overview.md).
+The framework’s `tools:` array works unchanged. Conform your types to `Tool`, pass them to `LanguageModelSession`, and the framework runs them on the device when Claude calls them. See [Tool use with Claude](../Agents-Tools/agents-and-tools-tool-use-overview.md).
 
 ```python
 let session = LanguageModelSession(model: model, tools: [FindRestaurantsTool()])
@@ -283,7 +250,7 @@ let session = LanguageModelSession(model: model, tools: [FindRestaurantsTool()])
 
 ### Server-side tools
 
-[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md) (web search, web fetch, and code execution) run on Anthropic's infrastructure within a single round trip, with nothing for the framework to invoke on the device. Configure them for each model with `serverTools:`:
+[Server tools](../Agents-Tools/agents-and-tools-tool-use-server-tools.md) (web search, web fetch, and code execution) run on Anthropic’s infrastructure within a single round trip, with nothing for the framework to call on the device. Configure them for each model with `serverTools:`:
 
 ```python
 let model = ClaudeLanguageModel(
@@ -302,15 +269,15 @@ let model = ClaudeLanguageModel(
 
 
 
-`serverTools` is configured on `ClaudeLanguageModel` rather than on `LanguageModelSession` because the session type is Apple's. To use different server-tool sets for each conversation, construct multiple `ClaudeLanguageModel` instances.
+`serverTools` is configured on `ClaudeLanguageModel` rather than on `LanguageModelSession` because the session type is Apple’s. To use different server-tool sets for each conversation, construct multiple `ClaudeLanguageModel` instances.
 
 ## Images
 
-Models whose capabilities include image input declare the framework's vision capability. Pass image content through the framework's standard session API; the package converts it to the Claude API's image format. See [Vision](../Guides/build-with-claude-vision.md) for image requirements.
+Models whose capabilities include image input declare the framework’s vision capability. Pass image content through the framework’s standard session API; the package converts it to the Claude API’s image format. See [Vision](../Guides/build-with-claude-vision.md) for image requirements.
 
 ## Error handling
 
-The package maps Claude API errors onto Apple's `LanguageModelError` cases where one fits: context-window overflow surfaces as `.contextSizeExceeded`, HTTP 429 as `.rateLimited`, a request past the configured timeout as `.timeout`. Provider errors with no framework equivalent surface as `ClaudeError`. Pattern-match to drive product flows:
+The package maps Claude API errors onto Apple’s `LanguageModelError` cases where one fits: context-window overflow surfaces as `.contextSizeExceeded`, HTTP 429 as `.rateLimited`, a request past the configured timeout as `.timeout`. Provider errors with no framework equivalent surface as `ClaudeError`. Pattern-match to drive product flows:
 
 ```python
 do {
@@ -319,7 +286,7 @@ do {
 } catch ClaudeError.missingCredential {
   // Prompt for an API key.
 } catch let error as LanguageModelError {
-  // Framework-shaped errors (rate limits, guardrails, context length, decoding).
+  // Framework-shaped errors (rate limits, guardrails, context-window overflow, decoding).
 } catch {
   // Transport errors.
 }
@@ -331,7 +298,7 @@ A common pattern is to catch `.rateLimited` and fall back to `SystemLanguageMode
 
 ## Feature support
 
-The package surfaces the Messages API capabilities that the Foundation Models provider protocol can express. Features with no representation in Apple's protocol are not available through it, including:
+The package surfaces the Messages API capabilities that the Foundation Models provider protocol can express. Features with no representation in Apple’s protocol are not available through it, including:
 
 - Prompt caching controls (the package applies prompt caching automatically; cache TTL and breakpoint placement are not configurable)
 - Stop sequences
@@ -342,10 +309,22 @@ The package surfaces the Messages API capabilities that the Foundation Models pr
 
 ## Additional resources
 
-| Reference                                                                                           | Covers                                                                                            |
-|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| Reference | Covers |
+|----|----|
 | [Apple Foundation Models documentation](https://developer.apple.com/documentation/foundationmodels) | `LanguageModelSession`, `@Generable`, `Transcript`, `Tool`, and the rest of the framework surface |
-| [`ClaudeForFoundationModels` on GitHub](https://github.com/anthropics/ClaudeForFoundationModels)    | Source, the runnable example, and the issue tracker                                               |
-| [Claude API reference](../Endpoints/overview.md)                                                       | The underlying Messages API                                                                       |
+| [`ClaudeForFoundationModels` on GitHub](https://github.com/anthropics/ClaudeForFoundationModels) | Source, the runnable example, and the issue tracker |
+| [Claude API reference](../Endpoints/overview.md) | The underlying Messages API |
 
 The package is licensed under Apache 2.0. Bug reports are welcome through GitHub issues. External pull requests are not being accepted during the beta period.
+
+## Availability
+
+Apple Foundation Models are in beta on every model.
+
+### API support
+
+StatusBeta
+
+Cloud platforms
+
+- Claude API

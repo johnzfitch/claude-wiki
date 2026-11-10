@@ -299,7 +299,7 @@ To see what works and what breaks when agents are sent into a market, we made a
 
 Sep 23, 2026
 
-### [Claude discovers a novel enzyme system with CRISPR-like repeats](claude-discovers-novel-enzyme-system.md)
+### [Claude discovers a novel enzyme system with CRISPR-like repeats](research-claude-discovers-novel-enzyme-system.md)
 
 We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR.
 

@@ -2,7 +2,7 @@
 title: "Predictability and surprise in large generative models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/predictability-and-surprise-in-large-generative-models"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:07Z"
+fetched_at: "2026-10-24T06:26:39Z"
 tags: ["news-research"]
 ---
 

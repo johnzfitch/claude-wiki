@@ -2,27 +2,23 @@
 title: "Supporting Governor Abbott’s Calls for Responsible Data Center Development \\ Anthropic"
 source_url: "https://www.anthropic.com/news/tx-data-center-support"
 category: "19-Reference"
-fetched_at: "2026-10-23T06:29:23Z"
+fetched_at: "2026-11-09T06:26:11Z"
 tags: ["news-research"]
 ---
 
 # Supporting Governor Abbott’s Calls for Responsible Data Center Development
 
-- Published
+Published  
+Aug 11, 2026
 
-  Aug 11, 2026
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+- [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
-
-  See more...
+See more...
 
 Related articles
 
@@ -34,4 +30,6 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=compute-energy)
 
-We agree with Governor Abbott that data centers should be developed responsibly and Texans shouldn't bear the costs of that growth.
+We agree with Governor Abbott that data centers should be developed responsibly and Texans shouldn't bear the costs of that growth.  
+  
+[**Read more in our letter**](the-honorable-greg-abbott.md)

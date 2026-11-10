@@ -2,7 +2,7 @@
 title: "Estimating AI productivity gains \\ Anthropic"
 source_url: "https://www.anthropic.com/research/estimating-productivity-gains"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:40Z"
+fetched_at: "2026-10-24T06:26:17Z"
 tags: ["news-research"]
 ---
 
@@ -306,7 +306,7 @@ Return ONLY a JSON object mapping each task_id to your estimated hours per week,
 
 05For historical data on total factor productivity see estimates from the Federal Reserve Bank of San Francisco: <https://www.frbsf.org/research-and-insights/data-and-indicators/total-factor-productivity-tfp/>. The average growth in TFP from 2015 to 2024 was 0.7%. Twenty years earlier, the average growth rate in TFP from 1995 to 2004 was 1.6%.[](#footnote-ref-5)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Citation
 

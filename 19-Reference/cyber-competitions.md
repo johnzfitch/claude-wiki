@@ -2,7 +2,7 @@
 title: "Claude does cyber competitions \\ Anthropic"
 source_url: "https://www.anthropic.com/research/cyber-competitions"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:23Z"
+fetched_at: "2026-10-24T06:26:37Z"
 tags: ["news-research"]
 ---
 
@@ -167,7 +167,7 @@ Ultimately, experiments like entering Claude into cyber competitions to understa
 
 01Nicholas Carlini et al., "LLMs unlock new paths to monetizing exploits," arXiv preprint [arXiv:2505.11449v1](https://arxiv.org/html/2505.11449v1) (May 16, 2025).[](#footnote-ref-1)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

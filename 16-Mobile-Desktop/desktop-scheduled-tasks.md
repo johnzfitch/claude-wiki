@@ -2,15 +2,19 @@
 title: "Schedule recurring tasks in Claude Code Desktop - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-scheduled-tasks"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-10-23T06:28:25Z"
+fetched_at: "2026-11-06T06:26:29Z"
+last_modified: "Fri, 06 Nov 2026 05:50:12 GMT"
 tags: ["claude-code", "desktop"]
 ---
 
 ## On this page
 
+Back to top
+
 - [Compare scheduling options](#compare-scheduling-options)
 - [Create a scheduled task](#create-a-scheduled-task)
   - [Dialog with Only on this computer at the top](#dialog-with-only-on-this-computer-at-the-top)
+  - [Full-page form](#full-page-form)
 - [Schedule options](#schedule-options)
 - [How scheduled tasks run](#how-scheduled-tasks-run)
   - [Find a run’s session](#find-a-runs-session)
@@ -36,6 +40,8 @@ Scheduled tasks start a new session automatically at a time and frequency you ch
 
 This page covers local scheduled tasks; for cloud scheduled tasks and their trigger options, see [Automate work with scheduled tasks](../02-Claude-Code-CLI/web-scheduled-tasks.md).
 
+If your app shows the feature under its [earlier name](../02-Claude-Code-CLI/web-scheduled-tasks.md#where-the-name-routines-still-appears), click **Routines** wherever this page says **Scheduled** and **New routine** where it says **New task**.
+
 
 [​](#compare-scheduling-options)
 
@@ -43,17 +49,17 @@ Compare scheduling options
 
 Claude Code offers three ways to schedule recurring or one-off work:
 
-|                            | [Cloud](../02-Claude-Code-CLI/web-scheduled-tasks.md)                                                | [Desktop](desktop-scheduled-tasks.md)                                                            | [`/loop`](../02-Claude-Code-CLI/scheduled-tasks.md)                                             |
-|:---------------------------|:--------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
-| Runs on                    | Cloud, Anthropic-managed by default                                       | Your machine                                                                                           | Your machine                                                                    |
-| Requires machine on        | No                                                                        | Yes                                                                                                    | Yes                                                                             |
-| Requires open session      | No                                                                        | No                                                                                                     | Yes                                                                             |
-| Persistent across restarts | Yes                                                                       | Yes                                                                                                    | Restored on `--resume`, with [exceptions](../02-Claude-Code-CLI/scheduled-tasks.md#limitations) |
-| Access to local files      | No (fresh clone)                                                          | Yes                                                                                                    | Yes                                                                             |
-| MCP servers                | Connectors configured per task                                            | [Config files](../06-MCP-Tools/General/mcp.md) and connectors                                                            | Inherits from session                                                           |
-| Permission prompts         | [Auto mode](../02-Claude-Code-CLI/web-scheduled-tasks.md#permission-prompts-during-a-run) by default | Configurable per task                                                                                  | Inherits from session                                                           |
-| Customizable schedule      | Yes                                                                       | Yes                                                                                                    | Yes                                                                             |
-| Minimum interval           | 1 hour                                                                    | 1 minute when Claude sets it, [1 hour in the forms](desktop-scheduled-tasks.md#schedule-options) | 1 minute                                                                        |
+|  | [Cloud](../02-Claude-Code-CLI/web-scheduled-tasks.md) | [Desktop](desktop-scheduled-tasks.md) | [`/loop`](../02-Claude-Code-CLI/scheduled-tasks.md) |
+|:---|:---|:---|:---|
+| Runs on | Cloud, Anthropic-managed by default | Your machine | Your machine |
+| Requires machine on | No | Yes | Yes |
+| Requires open session | No | No | Yes |
+| Persistent across restarts | Yes | Yes | Restored on `--resume`, with [exceptions](../02-Claude-Code-CLI/scheduled-tasks.md#limitations) |
+| Access to local files | No (fresh clone) | Yes | Yes |
+| MCP servers | Connectors configured per task | [Config files](../06-MCP-Tools/General/mcp.md) and connectors | Inherits from session |
+| Permission prompts | [Auto mode](../02-Claude-Code-CLI/web-scheduled-tasks.md#permission-prompts-during-a-run) by default | Configurable per task | Inherits from session |
+| Customizable schedule | Yes | Yes | Yes |
+| Minimum interval | 1 hour | 1 minute when Claude sets it, [1 hour in the forms](desktop-scheduled-tasks.md#schedule-options) | 1 minute |
 
 Use **cloud tasks** for work that should run reliably without your machine. Use **Desktop tasks** when you need access to local files and tools. Use **`/loop`** for quick polling during a session.
 
@@ -70,13 +76,17 @@ Local scheduled tasks require Claude Desktop 1.1.5368 or later.
 
 Open the Scheduled tasks page
 
-In the [**Code** tab](desktop.md), click **Scheduled** in the sidebar or in the sidebar’s **More** menu.
+In the [**Code** tab](desktop.md), click **Scheduled** in the sidebar or in the sidebar’s **More** menu. If the sidebar shows **Routines** instead of **Scheduled**, click **Routines**, then click **New routine**, and continue with [Full-page form](#full-page-form).
 
 2
 
 Start a new task
 
-Click **New task**. If a menu opens with **Create with Claude** and **Set up manually**, select **Set up manually**. The **New scheduled task** dialog opens. If **Only on this computer** is at the top of the dialog, go to [Dialog with Only on this computer at the top](#dialog-with-only-on-this-computer-at-the-top) before you enter anything.
+Click **New task** to open the **New scheduled task** dialog. Check for these screens before you continue:
+
+- If a menu opens with **Create with Claude** and **Set up manually**, select **Set up manually** to open the dialog.
+- If **Only on this computer** is at the top of the dialog, go to [Dialog with Only on this computer at the top](#dialog-with-only-on-this-computer-at-the-top) before you enter anything.
+- If a menu with **Local** and **Cloud** opens, or a full page opens in place of the dialog, go to [Full-page form](#full-page-form).
 
 3
 
@@ -138,11 +148,25 @@ If **Only on this computer** is at the top of the **New scheduled task** dialog 
 Click **Create**. The task’s detail page opens.
 
 
+[​](#full-page-form)
+
+Full-page form
+
+If a menu with **Local** and **Cloud** opens, select **Local**. A page titled **New local routine** or **New local scheduled task** opens. Fill in its fields:
+
+- **Name**: enter a name that is unique across your tasks.
+- **Description**: enter one.
+- **Instructions**: enter what Claude should do when the task runs. In the same box, select the permission mode, the model, and the folder the task runs in.
+- **Schedule**: select one of the [schedule options](#schedule-options).
+
+If **Create** is unavailable, hover over it to see what the form still needs. Click **Create**, and the task’s detail page opens.
+
+
 [​](#schedule-options)
 
 Schedule options
 
-When you turn on **Only on this computer** under **Advanced settings**, the **Trigger** card offers Hourly, Daily, Weekdays, and Weekly. To get **Manual** or **Custom** for such a task, open its [**Edit** form](#manage-scheduled-tasks) after you create it. That form and the [dialog with **Only on this computer** at the top](#dialog-with-only-on-this-computer-at-the-top) offer these six options:
+When you turn on **Only on this computer** under **Advanced settings**, the **Trigger** card offers Hourly, Daily, Weekdays, and Weekly. To get **Manual** or **Custom** for such a task, open its [**Edit** form](#manage-scheduled-tasks) after you create it. That form, the [dialog with **Only on this computer** at the top](#dialog-with-only-on-this-computer-at-the-top), and the [full-page form](#full-page-form) offer these six options:
 
 - **Hourly**: runs every hour
 - **Daily**: runs every day at the local time you pick
@@ -158,7 +182,7 @@ You can also ask Claude in any Desktop session to set the schedule. Claude isn�
 
 How scheduled tasks run
 
-Local scheduled tasks run on your machine. Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due, independent of any manual sessions you have open. Each task gets a small delay of a few minutes after the scheduled time to stagger API traffic. The delay is deterministic: the same task always starts at the same offset. Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, turn on **Keep computer awake** in **Settings \> This computer \> System**. Closing the laptop lid still puts it to sleep.
+Local scheduled tasks run on your machine. Desktop checks the schedule every minute while the app is open and starts a fresh session when a task is due, independent of any manual sessions you have open. Each task gets a small delay of a few minutes after the scheduled time to stagger API traffic. The delay is deterministic: the same task always starts at the same offset. Tasks only run while the desktop app is running and your computer is awake. If your computer sleeps through a scheduled time, the run is skipped. To prevent idle-sleep, turn on **Keep computer awake** in **Settings \> Desktop app** or **Settings \> This computer \> System**. Closing the laptop lid still puts it to sleep.
 
 For tasks that need to run even when your computer is off, or that should trigger on an API call or GitHub event, create a [cloud scheduled task](../02-Claude-Code-CLI/web-scheduled-tasks.md) instead.
 
@@ -186,7 +210,7 @@ When the app starts or your computer wakes, Desktop checks whether each task mis
 
 Permissions for scheduled tasks
 
-Each task has its own permission mode, which you set when creating or editing the task. Allow rules from `~/.claude/settings.json` also apply to scheduled task sessions. If a task runs in [Manual mode](desktop.md#choose-a-permission-mode) and needs to run a tool it doesn’t have permission for, the run stalls until you approve it. To approve it, [find the run’s session](#find-a-runs-session) and answer the permission prompt there. To avoid stalls, click **Run now** after creating a task, watch for permission prompts, and select “always allow” for each one. Future runs of that task auto-approve the same tools without prompting. You can review and revoke these approvals from the task’s detail page. MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool) prompt on every call and don’t offer an always-allow option. Runs that call these tools stall each time.
+Each task has its own [permission mode](desktop.md#choose-a-permission-mode), which you set when creating or editing the task. Allow rules from `~/.claude/settings.json` also apply to scheduled task sessions. When a run is stalled on a permission prompt, [find the run’s session](#find-a-runs-session) and answer the prompt there. To avoid stalls, click **Run now** after creating a task, watch for permission prompts, and select “always allow” for each one. Future runs skip most of those prompts. You can review and revoke these approvals from the task’s detail page. If you select “always allow” on a file edit in the task’s folder, only that session moves to **Accept edits**, so set the task’s permission mode to **Accept edits**. MCP tools marked [`requiresUserInteraction`](../06-MCP-Tools/General/mcp.md#require-approval-for-a-specific-tool) prompt on every call and don’t offer an always-allow option. Runs that call these tools stall each time.
 
 
 [​](#manage-scheduled-tasks)
@@ -202,7 +226,7 @@ In the **Code** tab, click **Scheduled** in the sidebar, then click a task in th
 - **Review allowed permissions**: see and revoke saved tool approvals for this task from the **Always allowed** panel
 - **Delete**: remove the task. The sessions the task created are [archived](desktop.md#organize-and-find-sessions), not deleted. The folder holding the task’s `SKILL.md` file stays on disk at `~/.claude/scheduled-tasks/<task-name>/`, or at `scheduled-tasks/<task-name>/` under [`CLAUDE_CONFIG_DIR`](../02-Claude-Code-CLI/env-vars.md) if you set that variable. To remove that folder, delete it yourself.
 
-You can also list, create, edit, and pause tasks by asking Claude in any Desktop session. For example, “pause my dependency-audit task” or “show me my scheduled tasks.” To delete a task, use the **Delete** button on its detail page. A scheduled task can also modify its own schedule or prompt from within a running session using the `update_scheduled_task` MCP tool. This lets a task reschedule itself based on what it finds, for example, rescheduling a code review to run earlier when it detects a release branch has been created. To edit a task’s prompt on disk, open `~/.claude/scheduled-tasks/<task-name>/SKILL.md` (or under [`CLAUDE_CONFIG_DIR`](../02-Claude-Code-CLI/env-vars.md) if set). The file uses YAML frontmatter for `name` and `description`, with the prompt as the body. Changes take effect on the next run. Schedule, folder, model, and enabled state are not in this file: change them through the Edit form or ask Claude.
+You can also list, create, edit, and pause tasks by asking Claude in any Desktop session. For example, “pause my dependency-audit task” or “show me my scheduled tasks.” To delete a task, use the **Delete** button on its detail page. To let a task change its own schedule or prompt with the `update_scheduled_task` MCP tool, click **Run now** and approve the call each time. To edit a task’s prompt on disk, open `~/.claude/scheduled-tasks/<task-name>/SKILL.md` (or under [`CLAUDE_CONFIG_DIR`](../02-Claude-Code-CLI/env-vars.md) if set). The file uses YAML frontmatter for `name` and `description`, with the prompt as the body. Changes take effect on the next run. Schedule, folder, model, and enabled state are not in this file: change them through the Edit form or ask Claude.
 
 
 [​](#related-resources)

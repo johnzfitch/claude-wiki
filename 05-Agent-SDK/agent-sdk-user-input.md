@@ -2,11 +2,14 @@
 title: "Handle approvals and user input - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/user-input"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-09T06:27:22Z"
+fetched_at: "2026-11-05T06:34:48Z"
+last_modified: "Thu, 05 Nov 2026 03:49:43 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Detect when Claude needs input](#detect-when-claude-needs-input)
 - [Handle tool approval requests](#handle-tool-approval-requests)
@@ -73,9 +76,9 @@ const options = { canUseTool: handleToolRequest };
 The callback fires in two cases:
 
 1.  **Tool needs approval**: Claude wants to use a tool that isn’t auto-approved by a [permission rule](agent-sdk-permissions.md) or permission mode. Check `tool_name` for the tool (e.g., `"Bash"`, `"Write"`).
-2.  **Claude asks a question**: Claude calls the `AskUserQuestion` tool. Check if `tool_name == "AskUserQuestion"` to handle it differently. If you specify a `tools` array, include `AskUserQuestion` for this to work. See [Handle clarifying questions](#handle-clarifying-questions) for details.
+2.  **Claude asks a question**: Claude calls the `AskUserQuestion` tool. Check if `tool_name == "AskUserQuestion"` to handle it differently. If you specify a `tools` array, include `AskUserQuestion` for this to work. For more information, see [Handle clarifying questions](#handle-clarifying-questions).
 
-**The callback never fires for auto-approved tools.** Any approval earlier in the [permission evaluation flow](agent-sdk-permissions.md#how-permissions-are-evaluated), an allow rule or a mode like `acceptEdits` or `bypassPermissions`, resolves the call before `canUseTool` is consulted. If you list a tool bare in `allowed_tools`, a `canUseTool` check for that tool runs only when the [evaluation flow](agent-sdk-permissions.md#how-permissions-are-evaluated) routes the call back to a prompt, such as an ask rule or `plan` mode. For logic that must apply to every tool call, use a [`PreToolUse` hook](agent-sdk-hooks.md), which executes before the rest of the flow and can allow, deny, or modify requests.An allow rule doesn’t pre-approve the [actions no mode auto-approves](../02-Claude-Code-CLI/permission-modes.md#actions-no-mode-auto-approves); see [How permissions are evaluated](agent-sdk-permissions.md#how-permissions-are-evaluated) for which of them reach the callback and what happens in `dontAsk` and `auto` mode.
+**An earlier step can allow or deny a call before `canUseTool` runs.** The [permission evaluation flow](agent-sdk-permissions.md#how-permissions-are-evaluated) checks deny rules, the permission mode, and allow rules before your callback.To run your checks on calls that a rule or the permission mode already allowed, use a [`PreToolUse` hook](agent-sdk-hooks.md), which runs for those calls and can allow, deny, or modify them.
 
 You can also use the [`PermissionRequest` hook](agent-sdk-hooks.md#available-hooks) to send external notifications (Slack, email, push) when Claude is waiting for approval.
 
@@ -86,10 +89,10 @@ Handle tool approval requests
 
 Once you’ve passed a `canUseTool` callback in your query options, it fires when Claude wants to use a tool that nothing earlier in the permission flow has approved. In some configurations, such as `dontAsk` mode, Claude Code doesn’t call it; the last step of [How permissions are evaluated](agent-sdk-permissions.md#how-permissions-are-evaluated) lists them and says what happens to the call instead. Your callback receives three arguments:
 
-| Argument                            | Description                                                                                                                                                                                                                                                                                                                                |
-|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `toolName`                          | The name of the tool Claude wants to use (for example, `"Bash"`, `"Write"`, `"Edit"`)                                                                                                                                                                                                                                                      |
-| `input`                             | The parameters Claude is passing to the tool. Contents vary by tool.                                                                                                                                                                                                                                                                       |
+| Argument | Description |
+|----|----|
+| `toolName` | The name of the tool Claude wants to use (for example, `"Bash"`, `"Write"`, `"Edit"`) |
+| `input` | The parameters Claude is passing to the tool. Contents vary by tool. |
 | `options` (TS) / `context` (Python) | Additional context including optional `suggestions` (proposed `PermissionUpdate` entries to avoid re-prompting) and a cancellation signal. In TypeScript, `signal` is an `AbortSignal`; in Python, the signal field is reserved for future use. See [`ToolPermissionContext`](agent-sdk-python.md#toolpermissioncontext) for Python. |
 
 The `input` object contains tool-specific parameters. Common examples:
@@ -231,10 +234,10 @@ Respond to tool requests
 
 Your callback returns one of two response types:
 
-| Response  | Python                                     | TypeScript                            |
-|-----------|--------------------------------------------|---------------------------------------|
+| Response | Python | TypeScript |
+|----|----|----|
 | **Allow** | `PermissionResultAllow(updated_input=...)` | `{ behavior: "allow", updatedInput }` |
-| **Deny**  | `PermissionResultDeny(message=...)`        | `{ behavior: "deny", message }`       |
+| **Deny** | `PermissionResultDeny(message=...)` | `{ behavior: "deny", message }` |
 
 When allowing, the tool runs with the input Claude requested unless you return a modified input, `updatedInput` in TypeScript or `updated_input` in Python. Before v2.1.207, Claude Code rejected an allow result that omitted `updatedInput` and denied the tool call with a validation error. When denying, provide a message explaining why. Claude sees this message and may adjust its approach. Beyond allowing or denying, you can modify the tool’s input or provide context that helps Claude adjust its approach:
 
@@ -547,10 +550,10 @@ Return answers to Claude
 
 Build the `answers` object as a record where each key is the `question` text and each value is the selected option’s `label`:
 
-| From the question object                                            | Use as |
-|---------------------------------------------------------------------|--------|
-| `question` field (for example, `"How should I format the output?"`) | Key    |
-| Selected option’s `label` field (for example, `"Summary"`)          | Value  |
+| From the question object | Use as |
+|----|----|
+| `question` field (for example, `"How should I format the output?"`) | Key |
+| Selected option’s `label` field (for example, `"Summary"`) | Value |
 
 For multi-select questions, pass an array of labels or join them with `", "`. If you [support free-text input](#support-free-text-input), use the user’s custom text as the value.
 
@@ -590,12 +593,12 @@ Question format
 
 The input contains Claude’s generated questions in a `questions` array. Each question has these fields:
 
-| Field         | Description                                                                                                                                      |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| `question`    | The full question text to display                                                                                                                |
-| `header`      | Short label for the question (max 12 characters)                                                                                                 |
-| `options`     | Array of 2-4 choices, each with `label` and `description`. TypeScript: optionally `preview`. See [Option previews](#option-previews-typescript). |
-| `multiSelect` | If `true`, users can select multiple options                                                                                                     |
+| Field | Description |
+|----|----|
+| `question` | The full question text to display |
+| `header` | Short label for the question (max 12 characters) |
+| `options` | Array of 2-4 choices, each with `label` and `description`. TypeScript: optionally `preview`. See [Option previews](#option-previews-typescript). |
+| `multiSelect` | If `true`, users can select multiple options |
 
 The structure your callback receives:
 
@@ -622,11 +625,11 @@ Option previews (TypeScript)
 
 `toolConfig.askUserQuestion.previewFormat` adds a `preview` field to each option so your app can show a visual mockup alongside the label. Without this setting, Claude does not generate previews and the field is absent.
 
-| `previewFormat` | `preview` contains                                                                                            |
-|:----------------|:--------------------------------------------------------------------------------------------------------------|
-| unset (default) | Field is absent. Claude does not generate previews.                                                           |
-| `"markdown"`    | ASCII art and fenced code blocks                                                                              |
-| `"html"`        | A styled `<div>` fragment (the SDK rejects `<script>`, `<style>`, and `<!DOCTYPE>` before your callback runs) |
+| `previewFormat` | `preview` contains |
+|:---|:---|
+| unset (default) | Field is absent. Claude does not generate previews. |
+| `"markdown"` | ASCII art and fenced code blocks |
+| `"html"` | A styled `<div>` fragment (the SDK rejects `<script>`, `<style>`, and `<!DOCTYPE>` before your callback runs) |
 
 The format applies to all questions in the session. Claude includes `preview` on options where a visual comparison helps (layout choices, color schemes) and omits it where one wouldn’t (yes/no confirmations, text-only choices). Check for `undefined` before rendering.
 
@@ -666,11 +669,11 @@ Response format
 
 Return an `answers` object mapping each question’s `question` field to the selected option’s `label`:
 
-| Field       | Description                                                                          |
-|-------------|--------------------------------------------------------------------------------------|
-| `questions` | Pass through the original questions array (required for tool processing)             |
-| `answers`   | Object where keys are question text and values are selected labels                   |
-| `response`  | Optional freeform reply the user typed instead of answering the structured questions |
+| Field | Description |
+|----|----|
+| `questions` | Pass through the original questions array (required for tool processing) |
+| `answers` | Object where keys are question text and values are selected labels |
+| `response` | Optional freeform reply the user typed instead of answering the structured questions |
 
 For multi-select questions, pass an array of labels or join them with `", "`. For per-question free text such as an “Other” option, put the user’s text in `answers[question]` as shown in [Support free-text input](#support-free-text-input). Set `response` only when your UI lets the user dismiss the question card and type a general reply that isn’t an answer to any specific question. When `response` is set, Claude receives “The user responded: …” instead of the per-question answer list.
 

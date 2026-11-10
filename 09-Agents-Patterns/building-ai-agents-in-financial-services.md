@@ -2,7 +2,7 @@
 title: "Building AI agents for financial services | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/building-ai-agents-in-financial-services"
 category: "09-Agents-Patterns"
-fetched_at: "2026-10-23T06:28:33Z"
+fetched_at: "2026-11-09T06:25:38Z"
 tags: ["agents"]
 ---
 
@@ -202,6 +202,15 @@ Learn more about how organizations like Visa, Citi, and NBIM are transforming t
 Explore more product news and best practices for teams building with Claude.
 
 
+ArticleOct 27, 2026
+
+### Manage costs and demonstrate ROI for Claude Code on Google Cloud
+
+Best practices for managing costs and measuring return on investment for Claude Code on Google Cloud.
+
+Claude Code
+
+
 ArticleOct 22, 2026
 
 ### Building agents: When to fold subagents into your main agent loop
@@ -228,14 +237,3 @@ ArticleOct 16, 2026
 How one business development representative clears his inbound queue and drafts bilingual customer emails with Claude Managed Agents and Claude Tag.
 
 Claude Managed Agents
-
-
-ArticleOct 16, 2026
-
-### How the Claude Code team does code review
-
-How do you review code at the volume agents produce it? The Claude Code team shares its review process, from Claude verifying its own work to risk-tiered human approval, plus a checklist for adopting it.
-
-Claude Code
-
-(opens in new tab)
