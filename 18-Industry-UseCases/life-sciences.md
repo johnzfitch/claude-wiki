@@ -2,7 +2,7 @@
 title: "Claude for life science teams | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/life-sciences"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:27Z"
+fetched_at: "2026-11-18T06:29:19Z"
 tags: ["case-studies", "search"]
 ---
 
@@ -295,7 +295,7 @@ Everything in Pro, plus:
 - Higher output limits for all tasks
 - Early access to advanced Claude features
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.  
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.  
 The [Team plan for research labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md) is now available for nonprofits and academic institutions.
 
 ### Team
@@ -326,7 +326,7 @@ Everything in Team, plus:
 - Single sign-on (SSO) and domain capture
 - Custom data retention controls
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.  
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.  
 The [Team plan for research labs](../15-Claude-AI-Features/programs-claude-team-plan-for-research-labs.md) is now available for nonprofits and academic institutions.
 
 ## Life sciences resources

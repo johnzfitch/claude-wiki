@@ -2,7 +2,7 @@
 title: "RBAC Groups - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/rbac_groups"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:33Z"
+fetched_at: "2026-11-13T06:36:16Z"
 tags: ["api"]
 ---
 
@@ -154,6 +154,30 @@ updated_at: string
 RFC 3339 timestamp of when the RBAC Group was last updated.
 
 formatdate-time
+
+
+
+RBACGroupGrantsOwnerAccessErrorDetails object{ error_code }
+
+
+
+A role attached to an RBAC Group in the request grants owner access, so this API does not add members to that group (directly or through an invite), remove its members, or delete it. Make the change in the organization's admin settings in Claude.
+
+error_code: "rbac_group_grants_owner_access"
+
+
+
+
+
+RBACGroupOwnerAccessUnconfirmedErrorDetails object{ error_code }
+
+
+
+The API could not finish checking whether an RBAC Group in the request grants owner access, so it made no change. Retrying the same request will not help. Make the change in the organization's admin settings in Claude.
+
+error_code: "rbac_group_owner_access_unconfirmed"
+
+
 
 #### RBAC Groups[Members](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members)
 

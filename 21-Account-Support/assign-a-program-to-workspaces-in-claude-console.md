@@ -2,7 +2,7 @@
 title: "Assign a program to workspaces in Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16764810-assign-a-program-to-workspaces-in-claude-console"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:25:56Z"
+fetched_at: "2026-11-18T06:28:16Z"
 tags: ["account"]
 ---
 

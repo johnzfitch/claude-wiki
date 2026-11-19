@@ -2,7 +2,7 @@
 title: "Get started with Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114491-getting-started-with-claude"
 category: "01-Getting-Started"
-fetched_at: "2026-11-09T06:26:13Z"
+fetched_at: "2026-11-18T06:28:22Z"
 tags: ["getting-started"]
 ---
 

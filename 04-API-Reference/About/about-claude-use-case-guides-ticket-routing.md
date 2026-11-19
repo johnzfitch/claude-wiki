@@ -2,7 +2,7 @@
 title: "Ticket routing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/ticket-routing"
 category: "04-API-Reference/About"
-fetched_at: "2026-11-05T06:34:35Z"
+fetched_at: "2026-11-13T06:35:11Z"
 tags: ["api", "prompting"]
 ---
 
@@ -20,7 +20,7 @@ This guide walks through how to use Claude’s advanced natural language underst
 
 ## Prerequisites
 
-- A Claude API key and the Claude SDK installed
+- A Claude API key and the Anthropic SDK installed
 - Access to, and familiarity with, your existing support ticketing system
 - A sample set of historical support tickets for testing
 
@@ -28,31 +28,31 @@ This guide walks through how to use Claude’s advanced natural language underst
 
 Here are some key indicators that you should use an LLM such as Claude instead of traditional ML approaches for your classification task:
 
-### You have limited labeled training data available
+### You have limited labeled training data available
 
 Traditional ML processes require massive labeled datasets. Claude’s pre-trained model can effectively classify tickets with just a few dozen labeled examples, significantly reducing data preparation time and costs.
 
-### Your classification categories are likely to change or evolve over time
+### Your classification categories are likely to change or evolve over time
 
 Once a traditional ML approach has been established, changing it is a laborious and data-intensive undertaking. On the other hand, as your product or customer needs evolve, Claude can easily adapt to changes in class definitions or new classes without extensive relabeling of training data.
 
-### You need to handle complex, unstructured text inputs
+### You need to handle complex, unstructured text inputs
 
 Traditional ML models often struggle with unstructured data and require extensive feature engineering. Claude’s advanced language understanding allows for accurate classification based on content and context, rather than relying on strict ontological structures.
 
-### Your classification rules are based on semantic understanding
+### Your classification rules are based on semantic understanding
 
 Traditional ML approaches often rely on bag-of-words models or simple pattern matching. Claude excels at applying underlying rules when classes are defined by conditions rather than examples.
 
-### You need interpretable reasoning for classification decisions
+### You need interpretable reasoning for classification decisions
 
 Many traditional ML models provide little insight into their decision-making process. Claude can provide human-readable explanations for its classification decisions, building trust in the automation system and facilitating easy adaptation if needed.
 
-### You want to handle edge cases and ambiguous tickets more effectively
+### You want to handle edge cases and ambiguous tickets more effectively
 
 Traditional ML systems often struggle with outliers and ambiguous inputs, frequently misclassifying them or defaulting to a catch-all category. Claude’s natural language processing capabilities allow it to better interpret context and nuance in support tickets, potentially reducing the number of misrouted or unclassified tickets that require manual intervention.
 
-### You need multilingual support without maintaining separate models
+### You need multilingual support without maintaining separate models
 
 Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Claude’s multilingual capabilities allow it to classify tickets in various languages without the need for separate models or extensive translation processes, streamlining support for global customer bases.
 
@@ -80,80 +80,80 @@ A well-defined list of user intent categories is crucial for accurate support ti
 
 Here are some example user intent categories and subcategories.
 
-### Technical issue
+### Technical issue
 
 - Hardware problem
 - Software bug
 - Compatibility issue
 - Performance problem
 
-### Account management
+### Account management
 
 - Password reset
 - Account access issues
 - Billing inquiries
 - Subscription changes
 
-### Product information
+### Product information
 
 - Feature inquiries
 - Product compatibility questions
 - Pricing information
 - Availability inquiries
 
-### User guidance
+### User guidance
 
 - How-to questions
 - Feature usage assistance
 - Best practices advice
 - Troubleshooting guidance
 
-### Feedback
+### Feedback
 
 - Bug reports
 - Feature requests
 - General feedback or suggestions
 - Complaints
 
-### Order-related
+### Order-related
 
 - Order status inquiries
 - Shipping information
 - Returns and exchanges
 - Order modifications
 
-### Service request
+### Service request
 
 - Installation assistance
 - Upgrade requests
 - Maintenance scheduling
 - Service cancellation
 
-### Security concerns
+### Security concerns
 
 - Data privacy inquiries
 - Suspicious activity reports
 - Security feature assistance
 
-### Compliance and legal
+### Compliance and legal
 
 - Regulatory compliance questions
 - Terms of service inquiries
 - Legal documentation requests
 
-### Emergency support
+### Emergency support
 
 - Critical system failures
 - Urgent security issues
 - Time-sensitive problems
 
-### Training and education
+### Training and education
 
 - Product training requests
 - Documentation inquiries
 - Webinar or workshop information
 
-### Integration and API
+### Integration and API
 
 - Integration assistance
 - API usage questions
@@ -167,73 +167,73 @@ Work with your support team to [define clear success criteria](../Test-Evaluate/
 
 Here are some standard criteria and benchmarks when using LLMs for support ticket routing:
 
-### Classification consistency
+### Classification consistency
 
 This metric assesses how consistently Claude classifies similar tickets over time. It’s crucial for maintaining routing reliability. Measure this by periodically testing the model with a set of standardized inputs and aiming for a consistency rate of 95 percent or higher.
 
-### Adaptation speed
+### Adaptation speed
 
 This measures how quickly Claude can adapt to new categories or changing ticket patterns. Test this by introducing new ticket types and measuring the time it takes for the model to achieve satisfactory accuracy (for example, more than 90 percent) on these new categories. Aim for adaptation within 50–100 sample tickets.
 
-### Multilingual handling
+### Multilingual handling
 
 This assesses Claude’s ability to accurately route tickets in multiple languages. Measure the routing accuracy across different languages, aiming for no more than a 5–10 percent drop in accuracy for non-primary languages.
 
-### Edge case handling
+### Edge case handling
 
 This evaluates Claude’s performance on unusual or complex tickets. Create a test set of edge cases and measure the routing accuracy, aiming for at least 80 percent accuracy on these challenging inputs.
 
-### Bias mitigation
+### Bias mitigation
 
 This measures Claude’s fairness in routing across different customer demographics. Regularly audit routing decisions for potential biases, aiming for consistent routing accuracy (within 2–3 percent) across all customer groups.
 
-### Prompt efficiency
+### Prompt efficiency
 
 In situations where minimizing token count is crucial, this criterion assesses how well Claude performs with minimal context. Measure routing accuracy with varying amounts of context provided, aiming for at least 90 percent accuracy with just the ticket title and a brief description.
 
-### Explainability score
+### Explainability score
 
 This evaluates the quality and relevance of Claude’s explanations for its routing decisions. Human raters can score explanations on a scale (for example, 1–5), with the goal of achieving an average score of 4 or higher.
 
 Here are some common success criteria that might be useful regardless of whether an LLM is used:
 
-### Routing accuracy
+### Routing accuracy
 
 Routing accuracy measures how often tickets are correctly assigned to the appropriate team or individual on the first try. This is typically measured as a percentage of correctly routed tickets out of total tickets. Industry benchmarks often aim for 90–95 percent accuracy, though this can vary based on the complexity of the support structure.
 
-### Time-to-assignment
+### Time-to-assignment
 
 This metric tracks how quickly tickets are assigned after being submitted. Faster assignment times generally lead to quicker resolutions and improved customer satisfaction. Best-in-class systems often achieve average assignment times of under 5 minutes, with many aiming for near-instantaneous routing (which is possible with LLM implementations).
 
-### Rerouting rate
+### Rerouting rate
 
 The rerouting rate indicates how often tickets need to be reassigned after initial routing. A lower rate suggests more accurate initial routing. Aim for a rerouting rate below 10 percent, with top-performing systems achieving rates as low as 5 percent or less.
 
-### First-contact resolution rate
+### First-contact resolution rate
 
 This measures the percentage of tickets resolved during the first interaction with the customer. Higher rates indicate efficient routing and well-prepared support teams. Industry benchmarks typically range from 70 to 75 percent, with top performers achieving rates of 80 percent or higher.
 
-### Average handling time
+### Average handling time
 
 Average handling time measures how long it takes to resolve a ticket from start to finish. Efficient routing can significantly reduce this time. Benchmarks vary widely by industry and complexity, but many organizations aim to keep average handling time under 24 hours for non-critical issues.
 
-### Customer satisfaction scores
+### Customer satisfaction scores
 
 Often measured through post-interaction surveys, these scores reflect overall customer happiness with the support process. Effective routing contributes to higher satisfaction. Aim for CSAT scores of 90 percent or higher, with top performers often achieving satisfaction rates of at least 95 percent.
 
-### Escalation rate
+### Escalation rate
 
 This measures how often tickets need to be escalated to higher tiers of support. Lower escalation rates often indicate more accurate initial routing. Strive for an escalation rate below 20 percent, with best-in-class systems achieving rates of 10 percent or less.
 
-### Agent productivity
+### Agent productivity
 
 This metric looks at how many tickets agents can handle effectively after implementing the routing solution. Improved routing should increase productivity. Measure this by tracking tickets resolved per agent per day or hour, aiming for a 10–20 percent improvement after implementing a new routing system.
 
-### Self-service deflection rate
+### Self-service deflection rate
 
 This measures the percentage of potential tickets resolved through self-service options before entering the routing system. Higher rates indicate effective pre-routing triage. Aim for a deflection rate of 20–30 percent, with top performers achieving rates of 40 percent or higher.
 
-### Cost per ticket
+### Cost per ticket
 
 This metric calculates the average cost to resolve each support ticket. Efficient routing should help reduce this cost over time. Although benchmarks vary widely, many organizations aim to reduce cost per ticket by 10–15 percent after implementing an improved routing system.
 
@@ -336,7 +336,7 @@ def classify_support_request(ticket_contents):
 
 
 
-This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
+This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 Here are the key components of this prompt:
 
@@ -557,19 +557,19 @@ This approach, outlined in detail in the [classification recipe](https://platfor
 
 Here are some scenarios where Claude might misclassify tickets (there might be others that are unique to your situation). In these scenarios, consider providing explicit instructions or examples in the prompt of how Claude should handle the edge case:
 
-### Customers make implicit requests
+### Customers make implicit requests
 
 Customers often express needs indirectly. For example, “I’ve been waiting for my package for over two weeks now” might be an indirect request for order status.
 
 - **Solution:** Provide Claude with some real customer examples of these kinds of requests, along with what the underlying intent is. You can get even better results if you include a classification rationale for particularly nuanced ticket intents, so that Claude can better generalize the logic to other tickets.
 
-### Claude prioritizes emotion over intent
+### Claude prioritizes emotion over intent
 
 When customers express dissatisfaction, Claude might prioritize addressing the emotion over solving the underlying problem.
 
 - **Solution:** Provide Claude with directions on when to prioritize customer sentiment or not. For example: “Ignore all customer emotions. Focus only on analyzing the intent of the customer’s request and what information the customer might be asking for.”
 
-### Multiple issues cause issue prioritization confusion
+### Multiple issues cause issue prioritization confusion
 
 When customers present multiple issues in a single interaction, Claude might have difficulty identifying the primary concern.
 

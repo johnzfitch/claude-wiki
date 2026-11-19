@@ -1,9 +1,9 @@
 ---
 title: "Automate work with scheduled tasks - Claude Code Docs"
-source_url: "https://code.claude.com/docs/en/web-scheduled-tasks"
+source_url: "https://code.claude.com/docs/en/routines"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:26:03Z"
-last_modified: "Sun, 08 Nov 2026 19:53:31 GMT"
+fetched_at: "2026-11-13T06:35:05Z"
+last_modified: "Fri, 13 Nov 2026 06:17:05 GMT"
 tags: ["claude-code"]
 ---
 
@@ -158,7 +158,7 @@ After you select a repository, **Cloud environment** appears below it. Pick a [c
 - **Environment variables**: provide values Claude can use during each run. They’re [visible to anyone who uses the environment](cloud-environments.md#what-carries-over-from-your-setup), so in an Anthropic-hosted environment, store keys for the APIs Claude calls during a run as [network secrets](cloud-environments.md#add-network-secrets) instead. That section also lists the requests that never get a secret
 - **Setup script**: install dependencies and tools the task needs. The result is [cached](cloud-environments.md#environment-caching), so the script doesn’t re-run on every session
 
-A **Default** environment is provided with **Trusted** network access, which allows only the [default allowlist](cloud-environments.md#default-allowed-domains) of package registries, cloud provider APIs, container registries, and common development domains through the session’s network. Connectors you add to the task reach their services through Anthropic’s servers, so they don’t need allowlist changes.If your task needs to reach your own services directly, or a domain outside that list, edit the environment’s [network access](cloud-environments.md#network-access) before running. To use a separate environment, [create one](cloud-environments.md#configure-your-environment) first.
+A **Default** environment is provided with **Limited** network access and **Allow package managers** checked. Its runs reach the [default allowlist](cloud-environments.md#default-allowed-domains): package registries, cloud provider APIs, container registries, and common development domains. Connectors you add to the task reach their services through Anthropic’s servers, so they don’t need allowlist changes.If your task needs to reach your own services directly, or a domain outside that list, edit the environment’s [network access](cloud-environments.md#network-access) before running. To use a separate environment, [create one](cloud-environments.md#configure-your-environment) first.
 
 6
 
@@ -501,7 +501,7 @@ In every other case, including a run that an API or GitHub trigger starts, Claud
 
 Environments and network access
 
-Each scheduled task uses a [cloud environment](cloud-environments.md) that controls network access, environment variables, and setup scripts. The task inherits the environment’s network policy on every run. The **Default** environment uses **Trusted** network access, which allows only the [default allowlist](cloud-environments.md#default-allowed-domains) through the session’s network. Requests on that path to hosts outside the allowlist fail with `403` and `x-deny-reason: host_not_allowed`. MCP connector traffic is routed through Anthropic’s servers rather than that path, so the connectors you add to the task work without adding their hosts to **Allowed domains**. Remove any connectors you don’t need under [Connectors](#connectors). To allow additional domains on one of your own environments, follow these steps. An [organization-shared environment](cloud-environments.md#organization-shared-environments) opens read-only here, so an Owner changes its network access from the **Cloud environments** page in [admin settings](https://claude.ai/admin-settings) instead.
+Each scheduled task uses a [cloud environment](cloud-environments.md) that controls network access, environment variables, and setup scripts. The task inherits the environment’s network policy on every run. The **Default** environment uses **Limited** access with **Allow package managers** checked, so its runs reach the [default allowlist](cloud-environments.md#default-allowed-domains). A request to a blocked host fails with [an error such as a `403` or `ENOTFOUND`](errors.md#host-not-allowed-in-a-cloud-session). MCP connector traffic is routed through Anthropic’s servers, so the connectors you add to the task work without adding their hosts to **Allowed domains**. Remove any connectors you don’t need under [Connectors](#connectors). To allow additional domains on one of your own environments, follow these steps. An [organization-shared environment](cloud-environments.md#organization-shared-environments) opens read-only here, so an Owner changes its network access from the **Cloud environments** page in [admin settings](https://claude.ai/admin-settings) instead.
 
 1
 
@@ -523,9 +523,9 @@ Hover over the environment in the list and click the settings icon that appears 
 
 4
 
-Change the network access level
+Add the domains
 
-In the **Edit cloud environment** dialog, change **Network access** to **Custom** and enter your domains in **Allowed domains**. Check **Also include default list of common package managers** to keep the [default allowlist](cloud-environments.md#default-allowed-domains) alongside your custom domains. Select **Full** instead for unrestricted access.
+In the **Edit cloud environment** dialog, select **Limited** under **Network access** and enter your domains in **Allowed domains**. Check **Allow package managers** to allow the [default allowlist](cloud-environments.md#default-allowed-domains) alongside your own domains. Select **Full** instead for unrestricted access.
 
 5
 
@@ -619,6 +619,6 @@ Related resources
 - [`/loop` and in-session scheduling](scheduled-tasks.md): schedule local tasks within an open CLI session
 - [Desktop scheduled tasks](../16-Mobile-Desktop/desktop-scheduled-tasks.md): local scheduled tasks that run on your machine with access to local files
 - [Cloud environments](cloud-environments.md): configure network access, environment variables, and setup scripts for cloud sessions
-- [Projects](claude-projects.md): ongoing work Claude coordinates across parallel cloud sessions; scheduled tasks created from a project appear on its **Scheduled tasks** tab
+- [Projects](claude-projects.md): ongoing work Claude coordinates across parallel cloud sessions; scheduled tasks created from a project appear in its **Scheduled tasks** view
 - [MCP connectors](../06-MCP-Tools/General/mcp.md): connect external services like Slack, Linear, and Google Drive
 - [GitHub Actions](github-actions.md): run Claude in your CI pipeline on repository events

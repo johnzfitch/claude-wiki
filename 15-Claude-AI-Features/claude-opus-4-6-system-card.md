@@ -2,7 +2,7 @@
 title: "Claude Opus 4 6 System Card 9Eff230A85"
 source_url: "https://www.anthropic.com/claude-opus-4-6-system-card"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:46Z"
+fetched_at: "2026-11-18T06:29:00Z"
 tags: ["claude-ai"]
 ---
 

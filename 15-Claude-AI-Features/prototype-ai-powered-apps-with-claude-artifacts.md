@@ -1,8 +1,8 @@
 ---
 title: "Build and share tools in Claude with custom artifacts · Claude Academy"
-source_url: "https://support.claude.com/en/articles/11649438-prototype-ai-powered-apps-with-claude-artifacts"
+source_url: "https://support.claude.com/en/articles/11649427-use-artifacts-to-visualize-and-create-ai-apps-without-ever-writing-a-line-of-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-07T06:23:58Z"
+fetched_at: "2026-11-18T06:28:12Z"
 tags: ["claude-ai"]
 ---
 
@@ -25,18 +25,20 @@ From there, ask Claude to:
 
 ## What are custom artifacts and when would you use them?[](#what-are-custom-artifacts-and-when-would-you-use-them)
 
-Claude has named kinds of artifacts for common work, like documents, presentations, and designs. When your work fits none of them, ask for a **custom artifact**, such as an interactive tool or tracker. You can specify which kind you want in your request, or describe the work and Claude picks what fits the task.
+Claude has named kinds of artifacts for common work, like documents, presentations, and designs. When your work fits none of them, ask for a **custom artifact**, such as an interactive tool or an intake form. You can specify which kind you want in your request, or describe the work and Claude picks what fits the task.
 
 | Kind of artifact | Best for |
 |----|----|
 | [Claude Docs(opens in new tab)](get-started-with-claude-docs.md) | A document that you, your teammates, and Claude all write in at the same time |
 | [Claude Slides(opens in new tab)](https://support.claude.com/tutorials/using-claude-design-for-presentations-and-slide-decks) | A deck built from your conversation, to edit slide by slide and present from inside Claude |
 | [Claude Design(opens in new tab)](https://support.claude.com/tutorials/using-claude-design-for-prototypes-and-ux) | A design or clickable prototype in your brand's colors and type |
-| [Claude Dashboards(opens in new tab)](get-started-with-claude-dashboards.md) (beta, paid plans) | Charts and numbers from your data, for quick, exploratory questions |
+| [Claude Sheets(opens in new tab)](get-started-with-claude-sheets.md) (beta, paid plans) | A spreadsheet with formulas that you, your teammates, and Claude edit together, like a budget or a forecast |
+| [Claude Whiteboards(opens in new tab)](https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards) (beta, paid plans) | A shared board for mapping out ideas with your team and Claude, like planning a launch or running a retro |
+| [Claude Data(opens in new tab)](../22-Safety-Policy/get-started-with-claude-data.md) (paid plans) | A dashboard of charts and numbers from your data, for quick, exploratory questions |
 | [Claude Motion(opens in new tab)](get-started-with-claude-motion.md) (beta, Team and Enterprise) | An animated explainer, chart, or product walkthrough |
 | **Custom artifact** | An interactive page built for your request, like a tracker or an intake form, that can save what people enter |
 
-[Collaborate with your team in Claude artifacts(opens in new tab)](https://support.claude.com/tutorials/intro-to-artifacts) shows each kind.
+[Collaborate with your team in Claude artifacts(opens in new tab)](https://support.claude.com/tutorials/collaborate-with-your-team-in-claude-artifacts) shows several of them open in Claude.
 
 ## Create your first custom artifact[](#create-your-first-custom-artifact)
 
@@ -52,7 +54,7 @@ Loading
 
 ## Customize your artifact further for you and your team[](#customize-your-artifact-further-for-you-and-your-team)
 
-Once Claude has built your artifact, you can improve or add additional features just by asking Claude. Saving entries and using connected tools need a [paid plan(opens in new tab)](https://support.claude.com/tutorials/intro-to-artifacts#what-your-plan-includes).
+Once Claude has built your artifact, you can improve or add additional features just by asking Claude. Saving entries and using connected tools need a [paid plan(opens in new tab)](https://support.claude.com/tutorials/collaborate-with-your-team-in-claude-artifacts#what-your-plan-includes).
 
 ### Change what Claude built[](#change-what-claude-built)
 
@@ -65,7 +67,7 @@ Once Claude has built your artifact, you can improve or add additional features 
 Saved entries are still there the next time anyone opens the artifact, even after Claude changes it.
 
 - To save entries within your artifact, tell Claude what the artifact should keep.
-- Each artifact has a storage limit, which the [Help Center(opens in new tab)](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_97446f855f) lists.
+- Each artifact has a storage limit, which the [Help Center(opens in new tab)](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them#h_97446f855f) lists.
 
 Loading
 
@@ -74,7 +76,7 @@ Loading
 An artifact can read from tools you've connected, like Asana, Google Calendar, or Slack, and make changes in them.
 
 - To connect a tool to your Claude account, like your calendar, email, or drive, see [connecting your tools to Claude(opens in new tab)](https://support.claude.com/tutorials/getting-started-with-connectors).
-- [Each person connects their own tools(opens in new tab)](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_2d6486856e), even on a shared artifact. The artifact uses their connections, not yours, so if someone doesn't have access to a source, that part shows an error instead of your data.
+- [Each person connects their own tools(opens in new tab)](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them#h_2d6486856e), even on a shared artifact. The artifact uses their connections, not yours, so if someone doesn't have access to a source, that part shows an error instead of your data.
 
 Loading
 
@@ -140,10 +142,10 @@ When the work has to leave Claude, export your artifact as a file, or build it a
 
 ## More resources[](#more-resources)
 
-- Read [Collaborate with your team in Claude artifacts(opens in new tab)](https://support.claude.com/tutorials/intro-to-artifacts) for docs, decks, designs, dashboards, and animations.
+- Read [Collaborate with your team in Claude artifacts(opens in new tab)](https://support.claude.com/tutorials/collaborate-with-your-team-in-claude-artifacts) for the other kinds of artifact.
 - To make the same kind of artifact again for each project, see [how to create a skill through conversation(opens in new tab)](https://support.claude.com/tutorials/how-to-create-a-skill-with-claude-through-conversation).
 - Read [connecting your tools to Claude(opens in new tab)](https://support.claude.com/tutorials/getting-started-with-connectors) to set up the tools your artifacts use.
-- Visit the Help Center for more on [artifacts(opens in new tab)](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md) and [sharing(opens in new tab)](https://support.claude.com/en/articles/9547008-share-artifacts).
+- Visit the Help Center for more on [artifacts(opens in new tab)](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them) and [sharing(opens in new tab)](https://support.claude.com/en/articles/9547008-share-artifacts).
 - Artifacts you made in a chat before September 16, 2026 still work, and their published links still open. The Help Center explains [how to share or unpublish one(opens in new tab)](https://support.claude.com/en/articles/9547008-share-artifacts#h_a5750b9176).
 
 - [What are custom artifacts and when would you use them?](#what-are-custom-artifacts-and-when-would-you-use-them)

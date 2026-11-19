@@ -2,7 +2,7 @@
 title: "Inference hooks - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/inference-hooks"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-08T06:25:23Z"
+fetched_at: "2026-11-16T06:25:02Z"
 tags: ["api", "hooks"]
 ---
 

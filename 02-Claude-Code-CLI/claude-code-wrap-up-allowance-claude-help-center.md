@@ -2,7 +2,7 @@
 title: "Claude Code Wrap-Up Allowance | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17040437"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:26:10Z"
+fetched_at: "2026-11-18T06:28:33Z"
 tags: ["claude-code"]
 ---
 

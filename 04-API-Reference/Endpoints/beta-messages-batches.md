@@ -2,7 +2,7 @@
 title: "Batches - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/batches"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:51Z"
+fetched_at: "2026-11-13T06:34:11Z"
 tags: ["api"]
 ---
 

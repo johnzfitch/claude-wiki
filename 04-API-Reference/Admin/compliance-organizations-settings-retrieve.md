@@ -2,7 +2,7 @@
 title: "Get effective organization settings - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/settings/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:48Z"
+fetched_at: "2026-11-13T06:33:45Z"
 tags: ["api"]
 ---
 
@@ -35,7 +35,7 @@ Retrieve the effective settings for an organization.
 
 Returns the settings currently in force for the given organization — the enforced state after all policies are applied, which may differ from what is configured in the admin console. Settings an organization's administrators cannot change (for example, ones controlled by Anthropic policy or not available to the organization) are omitted from the list. Settings that report a compliance arrangement with Anthropic are the exception: the HIPAA and Access Transparency settings are always included; the API zero data retention setting is reported for Claude Console organizations, and the Claude Code zero data retention and customer-managed encryption keys (CMEK) settings for Claude Enterprise organizations. Each reports whether the arrangement is in place at the organization level; a retention setting on an individual workspace is not reflected.
 
-The organization must belong to the API key's organization hierarchy; unknown organizations and organizations outside the hierarchy return 404.
+The organization must belong to the API key's organization hierarchy; unknown organizations and organizations outside the hierarchy return 404. The verified_domains and identity_providers settings describe the whole parent organization and are returned only to API keys that are not restricted to a single organization.
 
 ##### Path parameters
 
@@ -49,13 +49,13 @@ The organization's UUID
 
 
 
-"anthropic-version": optional string
+"anthropic-version": string
 
 
 
-The version of the Claude API you want to use.
+The version of the Claude API to use. Send an available version on every request. A request that sends any other value, including an empty one, returns a 400 error. This endpoint treats a request that omits this header as version `2023-06-01`; some other Compliance API endpoints return a 400 error instead.
 
-Read more about versioning and our version history [here](../Endpoints/versioning.md).
+See [API versions](../Endpoints/versioning.md) for the available versions.
 
 "x-api-key": optional string
 
@@ -143,7 +143,7 @@ organization_id: string
 
 
 
-settings: array of Boolean or Integer or String or 3 more
+settings: array of Boolean or Integer or String or 5 more
 
 
 
@@ -167,7 +167,7 @@ defaultboolean
 
 
 
-name: "access_transparency_enabled" or "ai_powered_artifacts_enabled" or "api_workbench_feedback_collection_enabled" or 61 more
+name: "access_transparency_enabled" or "ai_powered_artifacts_enabled" or "api_workbench_feedback_collection_enabled" or 64 more
 
 
 
@@ -210,6 +210,14 @@ One of the following:
 
 
 "claude_ai_ccr_support_sharing_enabled"
+
+
+
+"claude_ai_chat_external_sharing_enabled"
+
+
+
+"claude_ai_chat_org_sharing_enabled"
 
 
 
@@ -282,6 +290,10 @@ One of the following:
 
 
 "claude_in_slack_enabled"
+
+
+
+"claude_science_auto_mode_enabled"
 
 
 
@@ -675,6 +687,102 @@ name: optional "data_retention_periods"
 
 defaultdata_retention_periods
 
+
+
+VerifiedDomains object{ type: "verified_domains", value, name }
+
+
+
+The domains verified for the organization's parent organization. The same for every organization under that parent, and returned only to API keys that are not restricted to a single organization.
+
+
+
+type: optional "verified_domains"
+
+
+
+defaultverified_domains
+
+
+
+value: array of object{ domain, sso_claude_ai_enforced, sso_console_enforced }
+
+
+
+domain: string
+
+
+
+The verified domain name.
+
+sso_claude_ai_enforced: boolean
+
+
+
+Whether single sign-on is required to sign in to Claude.ai with an email address on this domain.
+
+sso_console_enforced: boolean
+
+
+
+Whether single sign-on is required to sign in to the Claude Console with an email address on this domain.
+
+
+
+name: optional "verified_domains"
+
+
+
+defaultverified_domains
+
+
+
+IdentityProviders object{ type: "identity_providers", value, name }
+
+
+
+The IdP connections of the organization's parent organization, oldest first. The same for every organization under that parent, and returned only to API keys that are not restricted to a single organization.
+
+
+
+type: optional "identity_providers"
+
+
+
+defaultidentity_providers
+
+
+
+value: array of object{ id, directory_sync_enabled, sso_enabled }
+
+
+
+id: string
+
+
+
+Unique identifier for the IdP connection.
+
+directory_sync_enabled: boolean
+
+
+
+Whether directory sync through this IdP connection is enabled.
+
+sso_enabled: boolean
+
+
+
+Whether single sign-on through this IdP connection is enabled.
+
+
+
+name: optional "identity_providers"
+
+
+
+defaultidentity_providers
+
 Get effective organization settings
 
 cURL
@@ -683,7 +791,7 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/compliance/organizations/$ORGANIZATION_ID/settings \
-    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-version: 2026-10-21' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 

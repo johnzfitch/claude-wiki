@@ -2,7 +2,7 @@
 title: "Mitigate jailbreaks and prompt injections - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/mitigate-jailbreaks"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-11-05T06:37:34Z"
+fetched_at: "2026-11-13T06:35:18Z"
 tags: ["api", "prompting"]
 ---
 
@@ -31,7 +31,7 @@ In this threat model, a user is deliberately crafting inputs to manipulate your 
 
 - **Harmlessness screens:** Use a lightweight model such as Claude Haiku 5.5 to pre-screen user input before it reaches your main conversation. Use [structured outputs](../Guides/build-with-claude-structured-outputs.md) to constrain the response to a simple classification. Claude Haiku 5.5 runs [safety classifiers](../Guides/build-with-claude-refusals-and-fallback.md) that can decline the screening request itself, so treat a response with `stop_reason: "refusal"` as a harmful verdict.
 
-  ### Example: Harmlessness screen for content moderation
+  ### Example: Harmlessness screen for content moderation
 
   User
 
@@ -72,7 +72,7 @@ In this threat model, a user is deliberately crafting inputs to manipulate your 
 
 - **Prompt engineering:** Craft system prompts that emphasize ethical and legal boundaries, and that explicitly tell Claude how to refuse.
 
-  ### Example: Ethical system prompt for an enterprise chatbot
+  ### Example: Ethical system prompt for an enterprise chatbot
 
   System
 
@@ -104,7 +104,7 @@ Structure your application so that Claude can reliably distinguish untrusted con
 
 - **State the policy in your system prompt.** Tell Claude explicitly that content returned from tools, documents, or searches is untrusted data and must never override the system prompt or the user’s original request.
 
-  ### Example: System prompt guidance for a document-processing agent
+  ### Example: System prompt guidance for a document-processing agent
 
   System
 
@@ -122,7 +122,7 @@ Structure your application so that Claude can reliably distinguish untrusted con
 
 - **JSON-encode untrusted content.** Where possible, wrap third-party strings in a JSON object rather than concatenating them into free-form text. JSON escaping provides unambiguous delimiters between the untrusted payload and the surrounding structure, so an attacker cannot close a quote or tag to “break out” into an instruction context.
 
-  ### Example: JSON-encoded tool result for an inbound email
+  ### Example: JSON-encoded tool result for an inbound email
 
   ``` shiki
   {
@@ -147,7 +147,7 @@ Structure your application so that Claude can reliably distinguish untrusted con
 
 - **Screen tool outputs before Claude acts on them.** Apply the same lightweight-model screening pattern you use for user input to the content your tools return. Run each tool, pass its raw output to a small classifier call with Claude Haiku 5.5, and only return the content as a `tool_result` block if the screen reports no injection attempt. Use [structured outputs](../Guides/build-with-claude-structured-outputs.md) so the classifier’s verdict is a parseable value your application can branch on.
 
-  ### Example: Injection screen for tool output
+  ### Example: Injection screen for tool output
 
   User
 
@@ -202,7 +202,7 @@ Regularly analyze outputs for signs of successful injection. Use this monitoring
 
 Combine strategies for robust protection. Here’s an enterprise-grade example with tool use:
 
-### Example: Multilayered protection for a financial advisor chatbot
+### Example: Multilayered protection for a financial advisor chatbot
 
 ### Bot system prompt
 

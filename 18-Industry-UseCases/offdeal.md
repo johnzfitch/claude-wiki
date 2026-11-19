@@ -2,7 +2,7 @@
 title: "OffDeal Claude Agent SDK case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/offdeal"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:11Z"
+fetched_at: "2026-11-18T06:29:07Z"
 tags: ["agents", "case-studies", "sdk", "subagents"]
 ---
 
@@ -97,13 +97,13 @@ A year in, the new process is working. Businesses that historically couldn’t a
 ## Related stories
 
 
+### Transforming e-commerce in Latin America
+
+
+### Scaling AI for over 12K employees
+
+
 ### How Qonto delegates financial admin for small businesses with Claude on Amazon Bedrock
 
 
 ### Pictet turns weeks of work into hours with Claude Code
-
-
-### How Satispay’s engineers write 75% of their code with Claude
-
-
-### Money Forward builds an AI-native engineering organization with Claude Code

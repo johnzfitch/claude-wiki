@@ -2,8 +2,8 @@
 title: "Roots - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-06-18/client/roots"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:25:23Z"
-last_modified: "Sat, 31 Oct 2026 05:25:27 GMT"
+fetched_at: "2026-11-10T06:28:33Z"
+last_modified: "Mon, 09 Nov 2026 22:46:47 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

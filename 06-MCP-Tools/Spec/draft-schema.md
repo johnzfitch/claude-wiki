@@ -2,9 +2,9 @@
 title: "Schema Reference - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/schema"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-11-08T06:25:08Z"
-last_modified: "Sun, 08 Nov 2026 05:06:18 GMT"
-tags: ["mcp", "mcp-spec"]
+fetched_at: "2026-11-16T06:24:29Z"
+last_modified: "Mon, 16 Nov 2026 04:15:37 GMT"
+tags: ["mcp", "mcp-spec", "prompting"]
 ---
 
 ## On this page
@@ -186,15 +186,9 @@ Copy pageCopy page
 
 Copy pageCopy page
 
+## [](#json-rpc)JSON-RPC
 
-[​](#json-rpc)
-
-JSON-RPC
-
-
-[​](#jsonrpcerrorresponse)
-
-`JSONRPCErrorResponse`
+### [](#jsonrpcerrorresponse)`JSONRPCErrorResponse`
 
 interface JSONRPCErrorResponse {  
   [jsonrpc](#jsonrpcerrorresponse-jsonrpc): “2.0”;  
@@ -210,19 +204,13 @@ id?: RequestId[](#jsonrpcerrorresponse-id)
 
 error: Error[](#jsonrpcerrorresponse-error)
 
-
-[​](#jsonrpcmessage)
-
-`JSONRPCMessage`
+### [](#jsonrpcmessage)`JSONRPCMessage`
 
 JSONRPCMessage: [JSONRPCRequest](#jsonrpcrequest) \| [JSONRPCNotification](#jsonrpcnotification) \| [JSONRPCResponse](#jsonrpcresponse)
 
 Refers to any valid JSON-RPC object that can be decoded off the wire, or encoded to be sent.
 
-
-[​](#jsonrpcnotification)
-
-`JSONRPCNotification`
+### [](#jsonrpcnotification)`JSONRPCNotification`
 
 interface JSONRPCNotification {  
   [method](#jsonrpcnotification-method): string;  
@@ -242,10 +230,7 @@ Inherited from Notification.params
 
 jsonrpc: “2.0”[](#jsonrpcnotification-jsonrpc)
 
-
-[​](#jsonrpcrequest)
-
-`JSONRPCRequest`
+### [](#jsonrpcrequest)`JSONRPCRequest`
 
 interface JSONRPCRequest {  
   [method](#jsonrpcrequest-method): string;  
@@ -268,19 +253,13 @@ jsonrpc: “2.0”[](#jsonrpcrequest-jsonrpc)
 
 id: RequestId[](#jsonrpcrequest-id)
 
-
-[​](#jsonrpcresponse)
-
-`JSONRPCResponse`
+### [](#jsonrpcresponse)`JSONRPCResponse`
 
 JSONRPCResponse: [JSONRPCResultResponse](#jsonrpcresultresponse) \| [JSONRPCErrorResponse](#jsonrpcerrorresponse)
 
 A response to a request, containing either the result or error.
 
-
-[​](#jsonrpcresultresponse)
-
-`JSONRPCResultResponse`
+### [](#jsonrpcresultresponse)`JSONRPCResultResponse`
 
 interface JSONRPCResultResponse {  
   [jsonrpc](#jsonrpcresultresponse-jsonrpc): “2.0”;  
@@ -296,15 +275,9 @@ id: RequestId[](#jsonrpcresultresponse-id)
 
 result: Result[](#jsonrpcresultresponse-result)
 
+## [](#common-types)Common Types
 
-[​](#common-types)
-
-Common Types
-
-
-[​](#annotations)
-
-`Annotations`
+### [](#annotations)`Annotations`
 
 interface Annotations {  
   [audience](#annotations-audience)?: [Role](#role)\[\];  
@@ -334,28 +307,19 @@ Should be an ISO 8601 formatted string (e.g., “2025-01-12T15:00:58Z”).
 
 Examples: last activity timestamp in an open file, timestamp when the resource was attached, etc.
 
-
-[​](#cursor)
-
-`Cursor`
+### [](#cursor)`Cursor`
 
 Cursor: string
 
 An opaque token used to represent a cursor for pagination.
 
-
-[​](#emptyresult)
-
-`EmptyResult`
+### [](#emptyresult)`EmptyResult`
 
 EmptyResult: [Result](#result)
 
 A result that indicates success but carries no data.
 
-
-[​](#icon)
-
-`Icon`
+### [](#icon)`Icon`
 
 interface Icon {  
   [src](#icon-src): string;  
@@ -390,10 +354,7 @@ Optional specifier for the theme this icon is designed for. `“light”` indica
 
 If not provided, the client should assume the icon can be used with any theme.
 
-
-[​](#inputresponserequestparams)
-
-`InputResponseRequestParams`
+### [](#inputresponserequestparams)`InputResponseRequestParams`
 
 interface InputResponseRequestParams {  
   [\_meta](#inputresponserequestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -411,17 +372,11 @@ inputResponses?: InputResponses[](#inputresponserequestparams-inputresponses)
 
 requestState?: string[](#inputresponserequestparams-requeststate)
 
-
-[​](#jsonarray)
-
-`JSONArray`
+### [](#jsonarray)`JSONArray`
 
 JSONArray: [JSONValue](#jsonvalue)\[\]
 
-
-[​](#jsonobject)
-
-`JSONObject`
+### [](#jsonobject)`JSONObject`
 
 JSONObject: { \[key: string\]: [JSONValue](#jsonvalue) }
 
@@ -429,17 +384,11 @@ Type Declaration
 
 - \[key: string\]: [JSONValue](#jsonvalue)
 
-
-[​](#jsonvalue)
-
-`JSONValue`
+### [](#jsonvalue)`JSONValue`
 
 JSONValue: string \| number \| boolean \| null \| [JSONObject](#jsonobject) \| [JSONArray](#jsonarray)
 
-
-[​](#logginglevel)
-
-`LoggingLevel`
+### [](#logginglevel)`LoggingLevel`
 
 LoggingLevel:  
   \| “debug”  
@@ -459,10 +408,7 @@ Deprecated
 
 Deprecated as of protocol version 2026-07-28 (SEP-2577). Remains in the specification for at least twelve months; see the deprecated features registry.
 
-
-[​](#metaobject)
-
-`MetaObject`
+### [](#metaobject)`MetaObject`
 
 MetaObject: Record\<string, unknown\>
 
@@ -488,10 +434,7 @@ See
 
 [General fields: `_meta`](https://modelcontextprotocol.io/specification/draft/basic/index#meta) for more details.
 
-
-[​](#notificationmetaobject)
-
-`NotificationMetaObject`
+### [](#notificationmetaobject)`NotificationMetaObject`
 
 interface NotificationMetaObject {  
   [“io.modelcontextprotocol/subscriptionId”](#notificationmetaobject-iomodelcontextprotocolsubscriptionid)?: [RequestId](#requestid);  
@@ -511,10 +454,7 @@ Identifies the subscription stream a notification was delivered on. The server M
 
 The value is the JSON-RPC ID of the `subscriptions/listen` request that opened the stream.
 
-
-[​](#notificationparams)
-
-`NotificationParams`
+### [](#notificationparams)`NotificationParams`
 
 interface NotificationParams {  
   [\_meta](#notificationparams-_meta)?: [NotificationMetaObject](#notificationmetaobject);  
@@ -524,10 +464,7 @@ Common params for any notification.
 
 \_meta?: NotificationMetaObject[](#notificationparams-_meta)
 
-
-[​](#paginatedrequestparams)
-
-`PaginatedRequestParams`
+### [](#paginatedrequestparams)`PaginatedRequestParams`
 
 interface PaginatedRequestParams {  
   [\_meta](#paginatedrequestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -560,28 +497,19 @@ cursor?: string[](#paginatedrequestparams-cursor)
 
 An opaque token representing the current pagination position. If provided, the server should return results starting after this cursor.
 
-
-[​](#progresstoken)
-
-`ProgressToken`
+### [](#progresstoken)`ProgressToken`
 
 ProgressToken: string \| number
 
 A progress token, used to associate progress notifications with the original request.
 
-
-[​](#requestid)
-
-`RequestId`
+### [](#requestid)`RequestId`
 
 RequestId: string \| number
 
 A uniquely identifying ID for a request in JSON-RPC.
 
-
-[​](#requestmetaobject)
-
-`RequestMetaObject`
+### [](#requestmetaobject)`RequestMetaObject`
 
 interface RequestMetaObject {  
   [progressToken](#requestmetaobject-progresstoken)?: [ProgressToken](#progresstoken);  
@@ -633,10 +561,7 @@ Deprecated
 
 Deprecated as of protocol version 2026-07-28 (SEP-2577). Remains in the specification for at least twelve months; see the deprecated features registry.
 
-
-[​](#requestparams)
-
-`RequestParams`
+### [](#requestparams)`RequestParams`
 
 interface RequestParams {  
   [\_meta](#requestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -646,10 +571,7 @@ Common params for any request.
 
 \_meta: RequestMetaObject[](#requestparams-_meta)
 
-
-[​](#result)
-
-`Result`
+### [](#result)`Result`
 
 interface Result {  
   [\_meta](#result-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -667,10 +589,7 @@ Indicates the type of the result, which allows the client to determine how to pa
 
 Servers implementing this protocol version MUST include this field. For backward compatibility, when a client receives a result from a server implementing an earlier protocol version (which does not include `resultType`), the client MUST treat the absent field as `“complete”`.
 
-
-[​](#resultmetaobject)
-
-`ResultMetaObject`
+### [](#resultmetaobject)`ResultMetaObject`
 
 interface ResultMetaObject {  
   [“io.modelcontextprotocol/serverInfo”](#resultmetaobject-iomodelcontextprotocolserverinfo)?: [Implementation](#implementation);  
@@ -692,10 +611,7 @@ The [Implementation](#implementation) schema requires `name` and `version`; othe
 
 The value is self-reported by the server and is not verified by the protocol. It is intended for display, logging, and debugging. Clients SHOULD NOT use it to change their behavior, and SHOULD NOT rely on it for security decisions.
 
-
-[​](#resulttype)
-
-`ResultType`
+### [](#resulttype)`ResultType`
 
 ResultType: “complete” \| “input_required” \| string
 
@@ -703,24 +619,15 @@ Indicates the type of a [Result](#result) object, allowing the client to determi
 
 complete - the request completed successfully and the result contains the final content. input_required - the request requires additional input and the result contains an [InputRequiredResult](#inputrequiredresult) object with instructions for the client to provide additional input before retrying the original request.
 
-
-[​](#role)
-
-`Role`
+### [](#role)`Role`
 
 Role: “user” \| “assistant”
 
 The sender or recipient of messages and data in a conversation.
 
+## [](#errors)Errors
 
-[​](#errors)
-
-Errors
-
-
-[​](#error)
-
-`Error`
+### [](#error)`Error`
 
 interface Error {  
   [code](#error-code): number;  
@@ -740,19 +647,13 @@ data?: unknown[](#error-data)
 
 Additional information about the error. The value of this member is defined by the sender (e.g. detailed error information, nested errors etc.).
 
-
-[​](#header_mismatch)
-
-`HEADER_MISMATCH`
+### [](#header_mismatch)`HEADER_MISMATCH`
 
 HEADER_MISMATCH: -32020
 
 Error code returned when the HTTP headers of a request do not match the corresponding values in the request body, or required headers are missing or malformed.
 
-
-[​](#headermismatcherror)
-
-`HeaderMismatchError`
+### [](#headermismatcherror)`HeaderMismatchError`
 
 interface HeaderMismatchError {  
   [jsonrpc](#headermismatcherror-jsonrpc): “2.0”;  
@@ -785,10 +686,7 @@ Inherited from [JSONRPCErrorResponse](#jsonrpcerrorresponse).[id](#jsonrpcerrorr
 
 error: Error & { code: -32020 }[](#headermismatcherror-error)
 
-
-[​](#internalerror)
-
-`InternalError`
+### [](#internalerror)`InternalError`
 
 interface InternalError {  
   [message](#internalerror-message): string;  
@@ -829,10 +727,7 @@ The error type that occurred.
 
 Overrides [Error](#error).[code](#error-code)
 
-
-[​](#invalidparamserror)
-
-`InvalidParamsError`
+### [](#invalidparamserror)`InvalidParamsError`
 
 interface InvalidParamsError {  
   [message](#invalidparamserror-message): string;  
@@ -844,12 +739,12 @@ A JSON-RPC error indicating that the method parameters are invalid or malformed.
 
 In MCP, this error is returned in various contexts when request parameters fail validation:
 
-- **Tools**: Unknown tool name or invalid tool arguments
+- **Tools**: Unknown tool name, or a request that does not satisfy the `CallToolRequest` schema. Invalid tool arguments are instead reported as tool execution errors, with `isError` set to true
 - **Prompts**: Unknown prompt name or missing required arguments
 - **Pagination**: Invalid or expired cursor values
-- **Logging**: Invalid log level
+- **Logging** (deprecated): Invalid log level
 - **Elicitation**: Server requests an elicitation mode not declared in client capabilities
-- **Sampling**: Missing tool result or tool results mixed with other content
+- **Sampling** (deprecated): Missing tool result or tool results mixed with other content
 
 See
 
@@ -864,12 +759,12 @@ Example: Unknown tool[](#invalidparamserror-example-unknown-tool)
 } Copy
 ```
 
-Example: Invalid tool arguments[](#invalidparamserror-example-invalid-tool-arguments)
+Example: Malformed tool call[](#invalidparamserror-example-malformed-tool-call)
 
 ```
 {
   “code”: -32602,
-  “message”: “Invalid arguments for tool calculate: Missing required property ‘expression’”
+  “message”: “Invalid params for tools/call: ‘arguments’ must be an object”
 } Copy
 ```
 
@@ -909,10 +804,7 @@ The error type that occurred.
 
 Overrides [Error](#error).[code](#error-code)
 
-
-[​](#invalidrequesterror)
-
-`InvalidRequestError`
+### [](#invalidrequesterror)`InvalidRequestError`
 
 interface InvalidRequestError {  
   [message](#invalidrequesterror-message): string;  
@@ -944,10 +836,7 @@ The error type that occurred.
 
 Overrides [Error](#error).[code](#error-code)
 
-
-[​](#methodnotfounderror)
-
-`MethodNotFoundError`
+### [](#methodnotfounderror)`MethodNotFoundError`
 
 interface MethodNotFoundError {  
   [message](#methodnotfounderror-message): string;  
@@ -995,19 +884,13 @@ The error type that occurred.
 
 Overrides [Error](#error).[code](#error-code)
 
-
-[​](#missing_required_client_capability)
-
-`MISSING_REQUIRED_CLIENT_CAPABILITY`
+### [](#missing_required_client_capability)`MISSING_REQUIRED_CLIENT_CAPABILITY`
 
 MISSING_REQUIRED_CLIENT_CAPABILITY: -32021
 
 Error code returned when a server requires a client capability that was not declared in the request’s `clientCapabilities`.
 
-
-[​](#missingrequiredclientcapabilityerror)
-
-`MissingRequiredClientCapabilityError`
+### [](#missingrequiredclientcapabilityerror)`MissingRequiredClientCapabilityError`
 
 interface MissingRequiredClientCapabilityError {  
   [jsonrpc](#missingrequiredclientcapabilityerror-jsonrpc): “2.0”;  
@@ -1048,10 +931,7 @@ Inherited from [JSONRPCErrorResponse](#jsonrpcerrorresponse).[id](#jsonrpcerrorr
 
 error: Error & { code: -32021; data: { requiredCapabilities: ClientCapabilities }; }[](#missingrequiredclientcapabilityerror-error)
 
-
-[​](#parseerror)
-
-`ParseError`
+### [](#parseerror)`ParseError`
 
 interface ParseError {  
   [message](#parseerror-message): string;  
@@ -1092,19 +972,13 @@ The error type that occurred.
 
 Overrides [Error](#error).[code](#error-code)
 
-
-[​](#unsupported_protocol_version)
-
-`UNSUPPORTED_PROTOCOL_VERSION`
+### [](#unsupported_protocol_version)`UNSUPPORTED_PROTOCOL_VERSION`
 
 UNSUPPORTED_PROTOCOL_VERSION: -32022
 
 Error code returned when the request’s protocol version is not supported by the server.
 
-
-[​](#unsupportedprotocolversionerror)
-
-`UnsupportedProtocolVersionError`
+### [](#unsupportedprotocolversionerror)`UnsupportedProtocolVersionError`
 
 interface UnsupportedProtocolVersionError {  
   [jsonrpc](#unsupportedprotocolversionerror-jsonrpc): “2.0”;  
@@ -1147,15 +1021,9 @@ Inherited from [JSONRPCErrorResponse](#jsonrpcerrorresponse).[id](#jsonrpcerrorr
 
 error: Error & { code: -32022; data: { supported: string\[\]; requested: string }; }[](#unsupportedprotocolversionerror-error)
 
+## [](#content)Content
 
-[​](#content)
-
-Content
-
-
-[​](#audiocontent)
-
-`AudioContent`
+### [](#audiocontent)`AudioContent`
 
 interface AudioContent {  
   [type](#audiocontent-type): “audio”;  
@@ -1193,10 +1061,7 @@ Optional annotations for the client.
 
 \_meta?: MetaObject[](#audiocontent-_meta)
 
-
-[​](#blobresourcecontents)
-
-`BlobResourceContents`
+### [](#blobresourcecontents)`BlobResourceContents`
 
 interface BlobResourceContents {  
   [uri](#blobresourcecontents-uri): string;  
@@ -1235,10 +1100,7 @@ blob: string[](#blobresourcecontents-blob)
 
 A base64-encoded string representing the binary data of the item.
 
-
-[​](#contentblock)
-
-`ContentBlock`
+### [](#contentblock)`ContentBlock`
 
 ContentBlock:  
   \| [TextContent](#textcontent)  
@@ -1247,10 +1109,7 @@ ContentBlock:
   \| [ResourceLink](#resourcelink)  
   \| [EmbeddedResource](#embeddedresource)
 
-
-[​](#embeddedresource)
-
-`EmbeddedResource`
+### [](#embeddedresource)`EmbeddedResource`
 
 interface EmbeddedResource {  
   [type](#embeddedresource-type): “resource”;  
@@ -1291,10 +1150,7 @@ Optional annotations for the client.
 
 \_meta?: MetaObject[](#embeddedresource-_meta)
 
-
-[​](#imagecontent)
-
-`ImageContent`
+### [](#imagecontent)`ImageContent`
 
 interface ImageContent {  
   [type](#imagecontent-type): “image”;  
@@ -1336,10 +1192,7 @@ Optional annotations for the client.
 
 \_meta?: MetaObject[](#imagecontent-_meta)
 
-
-[​](#resourcelink)
-
-`ResourceLink`
+### [](#resourcelink)`ResourceLink`
 
 interface ResourceLink {  
   [icons](#resourcelink-icons)?: [Icon](#icon)\[\];  
@@ -1440,10 +1293,7 @@ Inherited from [Resource](#resource).[\_meta](#resource-_meta)
 
 type: “resource_link”[](#resourcelink-type)
 
-
-[​](#textcontent)
-
-`TextContent`
+### [](#textcontent)`TextContent`
 
 interface TextContent {  
   [type](#textcontent-type): “text”;  
@@ -1475,10 +1325,7 @@ Optional annotations for the client.
 
 \_meta?: MetaObject[](#textcontent-_meta)
 
-
-[​](#textresourcecontents)
-
-`TextResourceContents`
+### [](#textresourcecontents)`TextResourceContents`
 
 interface TextResourceContents {  
   [uri](#textresourcecontents-uri): string;  
@@ -1517,15 +1364,9 @@ text: string[](#textresourcecontents-text)
 
 The text of the item. This must only be set if the item can actually be represented as text (not binary data).
 
+## [](#completion/complete)`completion/complete`
 
-[​](#completion/complete)
-
-`completion/complete`
-
-
-[​](#completerequest)
-
-`CompleteRequest`
+### [](#completerequest)`CompleteRequest`
 
 interface CompleteRequest {  
   [jsonrpc](#completerequest-jsonrpc): “2.0”;  
@@ -1580,10 +1421,7 @@ params: CompleteRequestParams[](#completerequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-
-[​](#completerequestparams)
-
-`CompleteRequestParams`
+### [](#completerequestparams)`CompleteRequestParams`
 
 interface CompleteRequestParams {  
   [\_meta](#completerequestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -1675,10 +1513,7 @@ Type Declaration
 
   Previously-resolved variables in a URI template or prompt.
 
-
-[​](#completeresultresponse)
-
-`CompleteResultResponse`
+### [](#completeresultresponse)`CompleteResultResponse`
 
 interface CompleteResultResponse {  
   [jsonrpc](#completeresultresponse-jsonrpc): “2.0”;  
@@ -1717,10 +1552,7 @@ result: CompleteResult[](#completeresultresponse-result)
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#completeresult)
-
-`CompleteResult`
+### [](#completeresult)`CompleteResult`
 
 interface CompleteResult {  
   [\_meta](#completeresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -1785,10 +1617,7 @@ Type Declaration
 
   Indicates whether there are additional completion options beyond those provided in the current response, even if the exact total is unknown.
 
-
-[​](#promptreference)
-
-`PromptReference`
+### [](#promptreference)`PromptReference`
 
 interface PromptReference {  
   [name](#promptreference-name): string;  
@@ -1814,10 +1643,7 @@ Inherited from BaseMetadata.title
 
 type: “ref/prompt”[](#promptreference-type)
 
-
-[​](#resourcetemplatereference)
-
-`ResourceTemplateReference`
+### [](#resourcetemplatereference)`ResourceTemplateReference`
 
 interface ResourceTemplateReference {  
   [type](#resourcetemplatereference-type): “ref/resource”;  
@@ -1832,15 +1658,9 @@ uri: string[](#resourcetemplatereference-uri)
 
 The URI or URI template of the resource.
 
+## [](#elicitation/create)`elicitation/create`
 
-[​](#elicitation/create)
-
-`elicitation/create`
-
-
-[​](#elicitrequest)
-
-`ElicitRequest`
+### [](#elicitrequest)`ElicitRequest`
 
 interface ElicitRequest {  
   [method](#elicitrequest-method): “elicitation/create”;  
@@ -1876,19 +1696,13 @@ method: “elicitation/create”[](#elicitrequest-method)
 
 params: ElicitRequestParams[](#elicitrequest-params)
 
-
-[​](#elicitrequestparams)
-
-`ElicitRequestParams`
+### [](#elicitrequestparams)`ElicitRequestParams`
 
 ElicitRequestParams: [ElicitRequestFormParams](#elicitrequestformparams) \| [ElicitRequestURLParams](#elicitrequesturlparams)
 
 The parameters for a request to elicit additional information from the user via the client.
 
-
-[​](#elicitresult)
-
-`ElicitResult`
+### [](#elicitresult)`ElicitResult`
 
 interface ElicitResult {  
   [action](#elicitresult-action): “accept” \| “decline” \| “cancel”;  
@@ -1944,10 +1758,7 @@ The submitted form data, only present when action is `“accept”` and mode was
 
 \_meta?: MetaObject[](#elicitresult-_meta)
 
-
-[​](#booleanschema)
-
-`BooleanSchema`
+### [](#booleanschema)`BooleanSchema`
 
 interface BooleanSchema {  
   [type](#booleanschema-type): “boolean”;  
@@ -1975,10 +1786,7 @@ description?: string[](#booleanschema-description)
 
 default?: boolean[](#booleanschema-default)
 
-
-[​](#elicitrequestformparams)
-
-`ElicitRequestFormParams`
+### [](#elicitrequestformparams)`ElicitRequestFormParams`
 
 interface ElicitRequestFormParams {  
   [mode](#elicitrequestformparams-mode)?: “form”;  
@@ -2055,10 +1863,7 @@ A restricted subset of JSON Schema. Only top-level properties are allowed, witho
 
 \_meta?: MetaObject[](#elicitrequestformparams-_meta)
 
-
-[​](#elicitrequesturlparams)
-
-`ElicitRequestURLParams`
+### [](#elicitrequesturlparams)`ElicitRequestURLParams`
 
 interface ElicitRequestURLParams {  
   [mode](#elicitrequesturlparams-mode): “url”;  
@@ -2093,20 +1898,14 @@ The URL that the user should navigate to.
 
 \_meta?: MetaObject[](#elicitrequesturlparams-_meta)
 
-
-[​](#enumschema)
-
-`EnumSchema`
+### [](#enumschema)`EnumSchema`
 
 EnumSchema:  
   \| [SingleSelectEnumSchema](#singleselectenumschema)  
   \| [MultiSelectEnumSchema](#multiselectenumschema)  
   \| [LegacyTitledEnumSchema](#legacytitledenumschema)
 
-
-[​](#legacytitledenumschema)
-
-`LegacyTitledEnumSchema`
+### [](#legacytitledenumschema)`LegacyTitledEnumSchema`
 
 interface LegacyTitledEnumSchema {  
   [type](#legacytitledenumschema-type): “string”;  
@@ -2133,19 +1932,13 @@ enumNames?: string\[\][](#legacytitledenumschema-enumnames)
 
 default?: string[](#legacytitledenumschema-default)
 
-
-[​](#multiselectenumschema)
-
-`MultiSelectEnumSchema`
+### [](#multiselectenumschema)`MultiSelectEnumSchema`
 
 MultiSelectEnumSchema:  
   \| [UntitledMultiSelectEnumSchema](#untitledmultiselectenumschema)  
   \| [TitledMultiSelectEnumSchema](#titledmultiselectenumschema)
 
-
-[​](#numberschema)
-
-`NumberSchema`
+### [](#numberschema)`NumberSchema`
 
 interface NumberSchema {  
   [type](#numberschema-type): “number” \| “integer”;  
@@ -2181,10 +1974,7 @@ maximum?: number[](#numberschema-maximum)
 
 default?: number[](#numberschema-default)
 
-
-[​](#primitiveschemadefinition)
-
-`PrimitiveSchemaDefinition`
+### [](#primitiveschemadefinition)`PrimitiveSchemaDefinition`
 
 PrimitiveSchemaDefinition:  
   \| [StringSchema](#stringschema)  
@@ -2194,19 +1984,13 @@ PrimitiveSchemaDefinition:
 
 Restricted schema definitions that only allow primitive types without nested objects or arrays.
 
-
-[​](#singleselectenumschema)
-
-`SingleSelectEnumSchema`
+### [](#singleselectenumschema)`SingleSelectEnumSchema`
 
 SingleSelectEnumSchema:  
   \| [UntitledSingleSelectEnumSchema](#untitledsingleselectenumschema)  
   \| [TitledSingleSelectEnumSchema](#titledsingleselectenumschema)
 
-
-[​](#stringschema)
-
-`StringSchema`
+### [](#stringschema)`StringSchema`
 
 interface StringSchema {  
   [type](#stringschema-type): “string”;  
@@ -2246,10 +2030,7 @@ format?: “uri” \| “email” \| “date” \| “date-time”[](#stringsche
 
 default?: string[](#stringschema-default)
 
-
-[​](#titledmultiselectenumschema)
-
-`TitledMultiSelectEnumSchema`
+### [](#titledmultiselectenumschema)`TitledMultiSelectEnumSchema`
 
 interface TitledMultiSelectEnumSchema {  
   [type](#titledmultiselectenumschema-type): “array”;  
@@ -2315,10 +2096,7 @@ default?: string\[\][](#titledmultiselectenumschema-default)
 
 Optional default value.
 
-
-[​](#titledsingleselectenumschema)
-
-`TitledSingleSelectEnumSchema`
+### [](#titledsingleselectenumschema)`TitledSingleSelectEnumSchema`
 
 interface TitledSingleSelectEnumSchema {  
   [type](#titledsingleselectenumschema-type): “string”;  
@@ -2374,10 +2152,7 @@ default?: string[](#titledsingleselectenumschema-default)
 
 Optional default value.
 
-
-[​](#untitledmultiselectenumschema)
-
-`UntitledMultiSelectEnumSchema`
+### [](#untitledmultiselectenumschema)`UntitledMultiSelectEnumSchema`
 
 interface UntitledMultiSelectEnumSchema {  
   [type](#untitledmultiselectenumschema-type): “array”;  
@@ -2442,10 +2217,7 @@ default?: string\[\][](#untitledmultiselectenumschema-default)
 
 Optional default value.
 
-
-[​](#untitledsingleselectenumschema)
-
-`UntitledSingleSelectEnumSchema`
+### [](#untitledsingleselectenumschema)`UntitledSingleSelectEnumSchema`
 
 interface UntitledSingleSelectEnumSchema {  
   [type](#untitledsingleselectenumschema-type): “string”;  
@@ -2487,15 +2259,9 @@ default?: string[](#untitledsingleselectenumschema-default)
 
 Optional default value.
 
+## [](#notifications/cancelled)`notifications/cancelled`
 
-[​](#notifications/cancelled)
-
-`notifications/cancelled`
-
-
-[​](#cancellednotification)
-
-`CancelledNotification`
+### [](#cancellednotification)`CancelledNotification`
 
 interface CancelledNotification {  
   [jsonrpc](#cancellednotification-jsonrpc): “2.0”;  
@@ -2536,10 +2302,7 @@ params: CancelledNotificationParams[](#cancellednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-
-[​](#cancellednotificationparams)
-
-`CancelledNotificationParams`
+### [](#cancellednotificationparams)`CancelledNotificationParams`
 
 interface CancelledNotificationParams {  
   [\_meta](#cancellednotificationparams-_meta)?: [NotificationMetaObject](#notificationmetaobject);  
@@ -2572,15 +2335,9 @@ reason?: string[](#cancellednotificationparams-reason)
 
 An optional string describing the reason for the cancellation. This MAY be logged or presented to the user.
 
+## [](#notifications/message)`notifications/message`
 
-[​](#notifications/message)
-
-`notifications/message`
-
-
-[​](#loggingmessagenotification)
-
-`LoggingMessageNotification`
+### [](#loggingmessagenotification)`LoggingMessageNotification`
 
 interface LoggingMessageNotification {  
   [jsonrpc](#loggingmessagenotification-jsonrpc): “2.0”;  
@@ -2626,10 +2383,7 @@ params: LoggingMessageNotificationParams[](#loggingmessagenotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-
-[​](#loggingmessagenotificationparams)
-
-`LoggingMessageNotificationParams`
+### [](#loggingmessagenotificationparams)`LoggingMessageNotificationParams`
 
 interface LoggingMessageNotificationParams {  
   [\_meta](#loggingmessagenotificationparams-_meta)?: [NotificationMetaObject](#notificationmetaobject);  
@@ -2676,15 +2430,9 @@ data: unknown[](#loggingmessagenotificationparams-data)
 
 The data to be logged, such as a string message or an object. Any JSON serializable type is allowed here.
 
+## [](#notifications/progress)`notifications/progress`
 
-[​](#notifications/progress)
-
-`notifications/progress`
-
-
-[​](#progressnotification)
-
-`ProgressNotification`
+### [](#progressnotification)`ProgressNotification`
 
 interface ProgressNotification {  
   [jsonrpc](#progressnotification-jsonrpc): “2.0”;  
@@ -2721,10 +2469,7 @@ params: ProgressNotificationParams[](#progressnotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-
-[​](#progressnotificationparams)
-
-`ProgressNotificationParams`
+### [](#progressnotificationparams)`ProgressNotificationParams`
 
 interface ProgressNotificationParams {  
   [\_meta](#progressnotificationparams-_meta)?: [NotificationMetaObject](#notificationmetaobject);  
@@ -2767,15 +2512,9 @@ message?: string[](#progressnotificationparams-message)
 
 An optional message describing the current progress.
 
+## [](#notifications/prompts/list_changed)`notifications/prompts/list_changed`
 
-[​](#notifications/prompts/list_changed)
-
-`notifications/prompts/list_changed`
-
-
-[​](#promptlistchangednotification)
-
-`PromptListChangedNotification`
+### [](#promptlistchangednotification)`PromptListChangedNotification`
 
 interface PromptListChangedNotification {  
   [jsonrpc](#promptlistchangednotification-jsonrpc): “2.0”;  
@@ -2811,15 +2550,9 @@ params?: NotificationParams[](#promptlistchangednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
+## [](#notifications/resources/list_changed)`notifications/resources/list_changed`
 
-[​](#notifications/resources/list_changed)
-
-`notifications/resources/list_changed`
-
-
-[​](#resourcelistchangednotification)
-
-`ResourceListChangedNotification`
+### [](#resourcelistchangednotification)`ResourceListChangedNotification`
 
 interface ResourceListChangedNotification {  
   [jsonrpc](#resourcelistchangednotification-jsonrpc): “2.0”;  
@@ -2855,15 +2588,9 @@ params?: NotificationParams[](#resourcelistchangednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
+## [](#notifications/resources/updated)`notifications/resources/updated`
 
-[​](#notifications/resources/updated)
-
-`notifications/resources/updated`
-
-
-[​](#resourceupdatednotification)
-
-`ResourceUpdatedNotification`
+### [](#resourceupdatednotification)`ResourceUpdatedNotification`
 
 interface ResourceUpdatedNotification {  
   [jsonrpc](#resourceupdatednotification-jsonrpc): “2.0”;  
@@ -2900,10 +2627,7 @@ params: ResourceUpdatedNotificationParams[](#resourceupdatednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-
-[​](#resourceupdatednotificationparams)
-
-`ResourceUpdatedNotificationParams`
+### [](#resourceupdatednotificationparams)`ResourceUpdatedNotificationParams`
 
 interface ResourceUpdatedNotificationParams {  
   [\_meta](#resourceupdatednotificationparams-_meta)?: [NotificationMetaObject](#notificationmetaobject);  
@@ -2928,15 +2652,9 @@ uri: string[](#resourceupdatednotificationparams-uri)
 
 The URI of the resource that has been updated. This might be a sub-resource of the one that the client actually subscribed to.
 
+## [](#notifications/subscriptions/acknowledged)`notifications/subscriptions/acknowledged`
 
-[​](#notifications/subscriptions/acknowledged)
-
-`notifications/subscriptions/acknowledged`
-
-
-[​](#subscriptionsacknowledgednotification)
-
-`SubscriptionsAcknowledgedNotification`
+### [](#subscriptionsacknowledgednotification)`SubscriptionsAcknowledgedNotification`
 
 interface SubscriptionsAcknowledgedNotification {  
   [jsonrpc](#subscriptionsacknowledgednotification-jsonrpc): “2.0”;  
@@ -2978,10 +2696,7 @@ params: SubscriptionsAcknowledgedNotificationParams[](#subscriptionsacknowledged
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
-
-[​](#subscriptionsacknowledgednotificationparams)
-
-`SubscriptionsAcknowledgedNotificationParams`
+### [](#subscriptionsacknowledgednotificationparams)`SubscriptionsAcknowledgedNotificationParams`
 
 interface SubscriptionsAcknowledgedNotificationParams {  
   [\_meta](#subscriptionsacknowledgednotificationparams-_meta)?: [NotificationMetaObject](#notificationmetaobject);  
@@ -2998,15 +2713,9 @@ notifications: SubscriptionFilter[](#subscriptionsacknowledgednotificationparams
 
 The subset of requested notification types the server agreed to honor. Only includes notification types the server actually supports; if the client requested an unsupported type (e.g., `promptsListChanged` when the server has no prompts), it is omitted from this set.
 
+## [](#notifications/tools/list_changed)`notifications/tools/list_changed`
 
-[​](#notifications/tools/list_changed)
-
-`notifications/tools/list_changed`
-
-
-[​](#toollistchangednotification)
-
-`ToolListChangedNotification`
+### [](#toollistchangednotification)`ToolListChangedNotification`
 
 interface ToolListChangedNotification {  
   [jsonrpc](#toollistchangednotification-jsonrpc): “2.0”;  
@@ -3042,15 +2751,9 @@ params?: NotificationParams[](#toollistchangednotification-params)
 
 Overrides [JSONRPCNotification](#jsonrpcnotification).[params](#jsonrpcnotification-params)
 
+## [](#multi-round-trip)Multi Round-Trip
 
-[​](#multi-round-trip)
-
-Multi Round-Trip
-
-
-[​](#inputrequests)
-
-`InputRequests`
+### [](#inputrequests)`InputRequests`
 
 InputRequests: any
 
@@ -3094,10 +2797,7 @@ Example: Elicitation and sampling input requests[](#inputrequests-example-elicit
 } Copy
 ```
 
-
-[​](#inputrequiredresult)
-
-`InputRequiredResult`
+### [](#inputrequiredresult)`InputRequiredResult`
 
 interface InputRequiredResult {  
   [\_meta](#inputrequiredresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -3177,10 +2877,7 @@ inputRequests?: InputRequests[](#inputrequiredresult-inputrequests)
 
 requestState?: string[](#inputrequiredresult-requeststate)
 
-
-[​](#inputresponses)
-
-`InputResponses`
+### [](#inputresponses)`InputResponses`
 
 InputResponses: any
 
@@ -3208,15 +2905,9 @@ Example: Elicitation and sampling input responses[](#inputresponses-example-elic
 } Copy
 ```
 
+## [](#prompts/get)`prompts/get`
 
-[​](#prompts/get)
-
-`prompts/get`
-
-
-[​](#getpromptrequest)
-
-`GetPromptRequest`
+### [](#getpromptrequest)`GetPromptRequest`
 
 interface GetPromptRequest {  
   [jsonrpc](#getpromptrequest-jsonrpc): “2.0”;  
@@ -3267,10 +2958,7 @@ params: GetPromptRequestParams[](#getpromptrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-
-[​](#getpromptrequestparams)
-
-`GetPromptRequestParams`
+### [](#getpromptrequestparams)`GetPromptRequestParams`
 
 interface GetPromptRequestParams {  
   [\_meta](#getpromptrequestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -3321,10 +3009,7 @@ arguments?: { \[key: string\]: string }[](#getpromptrequestparams-arguments)
 
 Arguments to use for templating the prompt.
 
-
-[​](#getpromptresultresponse)
-
-`GetPromptResultResponse`
+### [](#getpromptresultresponse)`GetPromptResultResponse`
 
 interface GetPromptResultResponse {  
   [jsonrpc](#getpromptresultresponse-jsonrpc): “2.0”;  
@@ -3368,10 +3053,7 @@ result: InputRequiredResult \| GetPromptResult[](#getpromptresultresponse-result
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#getpromptresult)
-
-`GetPromptResult`
+### [](#getpromptresult)`GetPromptResult`
 
 interface GetPromptResult {  
   [\_meta](#getpromptresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -3419,10 +3101,7 @@ An optional description for the prompt.
 
 messages: PromptMessage\[\][](#getpromptresult-messages)
 
-
-[​](#promptmessage)
-
-`PromptMessage`
+### [](#promptmessage)`PromptMessage`
 
 interface PromptMessage {  
   [role](#promptmessage-role): [Role](#role);  
@@ -3437,15 +3116,9 @@ role: Role[](#promptmessage-role)
 
 content: ContentBlock[](#promptmessage-content)
 
+## [](#prompts/list)`prompts/list`
 
-[​](#prompts/list)
-
-`prompts/list`
-
-
-[​](#listpromptsrequest)
-
-`ListPromptsRequest`
+### [](#listpromptsrequest)`ListPromptsRequest`
 
 interface ListPromptsRequest {  
   [jsonrpc](#listpromptsrequest-jsonrpc): “2.0”;  
@@ -3492,10 +3165,7 @@ method: “prompts/list”[](#listpromptsrequest-method)
 
 Overrides PaginatedRequest.method
 
-
-[​](#listpromptsresultresponse)
-
-`ListPromptsResultResponse`
+### [](#listpromptsresultresponse)`ListPromptsResultResponse`
 
 interface ListPromptsResultResponse {  
   [jsonrpc](#listpromptsresultresponse-jsonrpc): “2.0”;  
@@ -3553,10 +3223,7 @@ result: ListPromptsResult[](#listpromptsresultresponse-result)
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#listpromptsresult)
-
-`ListPromptsResult`
+### [](#listpromptsresult)`ListPromptsResult`
 
 interface ListPromptsResult {  
   [\_meta](#listpromptsresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -3640,10 +3307,7 @@ Inherited from CacheableResult.cacheScope
 
 prompts: Prompt\[\][](#listpromptsresult-prompts)
 
-
-[​](#prompt)
-
-`Prompt`
+### [](#prompt)`Prompt`
 
 interface Prompt {  
   [icons](#prompt-icons)?: [Icon](#icon)\[\];  
@@ -3696,10 +3360,7 @@ A list of arguments to use for templating the prompt.
 
 \_meta?: MetaObject[](#prompt-_meta)
 
-
-[​](#promptargument)
-
-`PromptArgument`
+### [](#promptargument)`PromptArgument`
 
 interface PromptArgument {  
   [name](#promptargument-name): string;  
@@ -3732,15 +3393,9 @@ required?: boolean[](#promptargument-required)
 
 Whether this argument must be provided.
 
+## [](#resources/list)`resources/list`
 
-[​](#resources/list)
-
-`resources/list`
-
-
-[​](#listresourcesrequest)
-
-`ListResourcesRequest`
+### [](#listresourcesrequest)`ListResourcesRequest`
 
 interface ListResourcesRequest {  
   [jsonrpc](#listresourcesrequest-jsonrpc): “2.0”;  
@@ -3787,10 +3442,7 @@ method: “resources/list”[](#listresourcesrequest-method)
 
 Overrides PaginatedRequest.method
 
-
-[​](#listresourcesresultresponse)
-
-`ListResourcesResultResponse`
+### [](#listresourcesresultresponse)`ListResourcesResultResponse`
 
 interface ListResourcesResultResponse {  
   [jsonrpc](#listresourcesresultresponse-jsonrpc): “2.0”;  
@@ -3843,10 +3495,7 @@ result: ListResourcesResult[](#listresourcesresultresponse-result)
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#listresourcesresult)
-
-`ListResourcesResult`
+### [](#listresourcesresult)`ListResourcesResult`
 
 interface ListResourcesResult {  
   [\_meta](#listresourcesresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -3925,10 +3574,7 @@ Inherited from CacheableResult.cacheScope
 
 resources: Resource\[\][](#listresourcesresult-resources)
 
-
-[​](#resource)
-
-`Resource`
+### [](#resource)`Resource`
 
 interface Resource {  
   [icons](#resource-icons)?: [Icon](#icon)\[\];  
@@ -4016,15 +3662,9 @@ This can be used by Hosts to display file sizes and estimate context window usag
 
 \_meta?: MetaObject[](#resource-_meta)
 
+## [](#resources/read)`resources/read`
 
-[​](#resources/read)
-
-`resources/read`
-
-
-[​](#readresourcerequest)
-
-`ReadResourceRequest`
+### [](#readresourcerequest)`ReadResourceRequest`
 
 interface ReadResourceRequest {  
   [jsonrpc](#readresourcerequest-jsonrpc): “2.0”;  
@@ -4072,10 +3712,7 @@ params: ReadResourceRequestParams[](#readresourcerequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-
-[​](#readresourcerequestparams)
-
-`ReadResourceRequestParams`
+### [](#readresourcerequestparams)`ReadResourceRequestParams`
 
 interface ReadResourceRequestParams {  
   [\_meta](#readresourcerequestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -4104,10 +3741,7 @@ The URI of the resource. The URI can use any protocol; it is up to the server ho
 
 Inherited from ResourceRequestParams.uri
 
-
-[​](#readresourceresultresponse)
-
-`ReadResourceResultResponse`
+### [](#readresourceresultresponse)`ReadResourceResultResponse`
 
 interface ReadResourceResultResponse {  
   [jsonrpc](#readresourceresultresponse-jsonrpc): “2.0”;  
@@ -4169,10 +3803,7 @@ result: InputRequiredResult \| ReadResourceResult[](#readresourceresultresponse-
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#readresourceresult)
-
-`ReadResourceResult`
+### [](#readresourceresult)`ReadResourceResult`
 
 interface ReadResourceResult {  
   [\_meta](#readresourceresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -4234,15 +3865,9 @@ Inherited from CacheableResult.cacheScope
 
 contents: (TextResourceContents \| BlobResourceContents)\[\][](#readresourceresult-contents)
 
+## [](#resources/templates/list)`resources/templates/list`
 
-[​](#resources/templates/list)
-
-`resources/templates/list`
-
-
-[​](#listresourcetemplatesrequest)
-
-`ListResourceTemplatesRequest`
+### [](#listresourcetemplatesrequest)`ListResourceTemplatesRequest`
 
 interface ListResourceTemplatesRequest {  
   [jsonrpc](#listresourcetemplatesrequest-jsonrpc): “2.0”;  
@@ -4289,10 +3914,7 @@ method: “resources/templates/list”[](#listresourcetemplatesrequest-method)
 
 Overrides PaginatedRequest.method
 
-
-[​](#listresourcetemplatesresultresponse)
-
-`ListResourceTemplatesResultResponse`
+### [](#listresourcetemplatesresultresponse)`ListResourceTemplatesResultResponse`
 
 interface ListResourceTemplatesResultResponse {  
   [jsonrpc](#listresourcetemplatesresultresponse-jsonrpc): “2.0”;  
@@ -4344,10 +3966,7 @@ result: ListResourceTemplatesResult[](#listresourcetemplatesresultresponse-resul
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#listresourcetemplatesresult)
-
-`ListResourceTemplatesResult`
+### [](#listresourcetemplatesresult)`ListResourceTemplatesResult`
 
 interface ListResourceTemplatesResult {  
   [\_meta](#listresourcetemplatesresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -4426,10 +4045,7 @@ Inherited from CacheableResult.cacheScope
 
 resourceTemplates: ResourceTemplate\[\][](#listresourcetemplatesresult-resourcetemplates)
 
-
-[​](#resourcetemplate)
-
-`ResourceTemplate`
+### [](#resourcetemplate)`ResourceTemplate`
 
 interface ResourceTemplate {  
   [icons](#resourcetemplate-icons)?: [Icon](#icon)\[\];  
@@ -4494,15 +4110,9 @@ Optional annotations for the client.
 
 \_meta?: MetaObject[](#resourcetemplate-_meta)
 
+## [](#roots/list)`roots/list`
 
-[​](#roots/list)
-
-`roots/list`
-
-
-[​](#listrootsrequest)
-
-`ListRootsRequest`
+### [](#listrootsrequest)`ListRootsRequest`
 
 interface ListRootsRequest {  
   [method](#listrootsrequest-method): “roots/list”;  
@@ -4530,10 +4140,7 @@ method: “roots/list”[](#listrootsrequest-method)
 
 params?: { \_meta?: MetaObject }[](#listrootsrequest-params)
 
-
-[​](#listrootsresult)
-
-`ListRootsResult`
+### [](#listrootsresult)`ListRootsResult`
 
 interface ListRootsResult {  
   [roots](#listrootsresult-roots): [Root](#root)\[\];  
@@ -4580,10 +4187,7 @@ roots: Root\[\][](#listrootsresult-roots)
 
 \_meta?: MetaObject[](#listrootsresult-_meta)
 
-
-[​](#root)
-
-`Root`
+### [](#root)`Root`
 
 interface Root {  
   [uri](#root-uri): string;  
@@ -4616,15 +4220,9 @@ An optional name for the root. This can be used to provide a human-readable iden
 
 \_meta?: MetaObject[](#root-_meta)
 
+## [](#sampling/createmessage)`sampling/createMessage`
 
-[​](#sampling/createmessage)
-
-`sampling/createMessage`
-
-
-[​](#createmessagerequest)
-
-`CreateMessageRequest`
+### [](#createmessagerequest)`CreateMessageRequest`
 
 interface CreateMessageRequest {  
   [method](#createmessagerequest-method): “sampling/createMessage”;  
@@ -4671,10 +4269,7 @@ method: “sampling/createMessage”[](#createmessagerequest-method)
 
 params: CreateMessageRequestParams[](#createmessagerequest-params)
 
-
-[​](#createmessagerequestparams)
-
-`CreateMessageRequestParams`
+### [](#createmessagerequestparams)`CreateMessageRequestParams`
 
 interface CreateMessageRequestParams {  
   [messages](#createmessagerequestparams-messages): [SamplingMessage](#samplingmessage)\[\];  
@@ -4875,10 +4470,7 @@ Controls how the model uses tools. The client MUST return an error if this field
 
 \_meta?: MetaObject[](#createmessagerequestparams-_meta)
 
-
-[​](#createmessageresult)
-
-`CreateMessageResult`
+### [](#createmessageresult)`CreateMessageResult`
 
 interface CreateMessageResult {  
   [model](#createmessageresult-model): string;  
@@ -4979,10 +4571,7 @@ Inherited from [SamplingMessage](#samplingmessage).[content](#samplingmessage-co
 
 Inherited from [SamplingMessage](#samplingmessage).[\_meta](#samplingmessage-_meta)
 
-
-[​](#modelhint)
-
-`ModelHint`
+### [](#modelhint)`ModelHint`
 
 interface ModelHint {  
   [name](#modelhint-name)?: string;  
@@ -5010,10 +4599,7 @@ The client MAY also map the string to a different provider’s model name or a d
 
 - `gemini-1.5-flash` could match `claude-3-haiku-20240307`
 
-
-[​](#modelpreferences)
-
-`ModelPreferences`
+### [](#modelpreferences)`ModelPreferences`
 
 interface ModelPreferences {  
   [hints](#modelpreferences-hints)?: [ModelHint](#modelhint)\[\];  
@@ -5066,10 +4652,7 @@ intelligencePriority?: number[](#modelpreferences-intelligencepriority)
 
 How much to prioritize intelligence and capabilities when selecting a model. A value of 0 means intelligence is not important, while a value of 1 means intelligence is the most important factor.
 
-
-[​](#samplingmessage)
-
-`SamplingMessage`
+### [](#samplingmessage)`SamplingMessage`
 
 interface SamplingMessage {  
   [role](#samplingmessage-role): [Role](#role);  
@@ -5121,10 +4704,7 @@ content: SamplingMessageContentBlock \| SamplingMessageContentBlock\[\][](#sampl
 
 \_meta?: MetaObject[](#samplingmessage-_meta)
 
-
-[​](#samplingmessagecontentblock)
-
-`SamplingMessageContentBlock`
+### [](#samplingmessagecontentblock)`SamplingMessageContentBlock`
 
 SamplingMessageContentBlock:  
   \| [TextContent](#textcontent)  
@@ -5137,10 +4717,7 @@ Deprecated
 
 Deprecated as of protocol version 2026-07-28 (SEP-2577). Remains in the specification for at least twelve months; see the deprecated features registry.
 
-
-[​](#toolchoice)
-
-`ToolChoice`
+### [](#toolchoice)`ToolChoice`
 
 interface ToolChoice {  
   [mode](#toolchoice-mode)?: “none” \| “required” \| “auto”;  
@@ -5160,10 +4737,7 @@ Controls the tool use ability of the model:
 - `“required”`: Model MUST use at least one tool before completing
 - `“none”`: Model MUST NOT use any tools
 
-
-[​](#toolresultcontent)
-
-`ToolResultContent`
+### [](#toolresultcontent)`ToolResultContent`
 
 interface ToolResultContent {  
   [type](#toolresultcontent-type): “tool_result”;  
@@ -5225,10 +4799,7 @@ If true, the content typically describes the error that occurred. Default: false
 
 Optional metadata about the tool result. Clients SHOULD preserve this field when including tool results in subsequent sampling requests to enable caching optimizations.
 
-
-[​](#toolusecontent)
-
-`ToolUseContent`
+### [](#toolusecontent)`ToolUseContent`
 
 interface ToolUseContent {  
   [type](#toolusecontent-type): “tool_use”;  
@@ -5277,15 +4848,9 @@ The arguments to pass to the tool, conforming to the tool’s input schema.
 
 Optional metadata about the tool use. Clients SHOULD preserve this field when including tool uses in subsequent sampling requests to enable caching optimizations.
 
+## [](#server/discover)`server/discover`
 
-[​](#server/discover)
-
-`server/discover`
-
-
-[​](#discoverrequest)
-
-`DiscoverRequest`
+### [](#discoverrequest)`DiscoverRequest`
 
 interface DiscoverRequest {  
   [jsonrpc](#discoverrequest-jsonrpc): “2.0”;  
@@ -5332,10 +4897,7 @@ params: RequestParams[](#discoverrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-
-[​](#discoverresultresponse)
-
-`DiscoverResultResponse`
+### [](#discoverresultresponse)`DiscoverResultResponse`
 
 interface DiscoverResultResponse {  
   [jsonrpc](#discoverresultresponse-jsonrpc): “2.0”;  
@@ -5382,10 +4944,7 @@ result: DiscoverResult[](#discoverresultresponse-result)
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#discoverresult)
-
-`DiscoverResult`
+### [](#discoverresult)`DiscoverResult`
 
 interface DiscoverResult {  
   [\_meta](#discoverresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -5466,10 +5025,7 @@ Indicates the intended scope of the cached response, analogous to HTTP `Cache-Co
 
 Inherited from CacheableResult.cacheScope
 
-
-[​](#clientcapabilities)
-
-`ClientCapabilities`
+### [](#clientcapabilities)`ClientCapabilities`
 
 interface ClientCapabilities {  
   [experimental](#clientcapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };  
@@ -5588,10 +5144,7 @@ Example: Extensions — MCP Apps (UI) extension with MIME type support[](#client
 } Copy
 ```
 
-
-[​](#implementation)
-
-`Implementation`
+### [](#implementation)`Implementation`
 
 interface Implementation {  
   [icons](#implementation-icons)?: [Icon](#icon)\[\];  
@@ -5648,10 +5201,7 @@ websiteUrl?: string[](#implementation-websiteurl)
 
 An optional URL of the website for this implementation.
 
-
-[​](#servercapabilities)
-
-`ServerCapabilities`
+### [](#servercapabilities)`ServerCapabilities`
 
 interface ServerCapabilities {  
   [experimental](#servercapabilities-experimental)?: { \[key: string\]: [JSONObject](#jsonobject) };  
@@ -5822,15 +5372,9 @@ Example: Extensions — Tasks extension support[](#servercapabilities-example-ex
 } Copy
 ```
 
+## [](#subscriptions/listen)`subscriptions/listen`
 
-[​](#subscriptions/listen)
-
-`subscriptions/listen`
-
-
-[​](#subscriptionslistenrequest)
-
-`SubscriptionsListenRequest`
+### [](#subscriptionslistenrequest)`SubscriptionsListenRequest`
 
 interface SubscriptionsListenRequest {  
   [jsonrpc](#subscriptionslistenrequest-jsonrpc): “2.0”;  
@@ -5881,10 +5425,7 @@ params: SubscriptionsListenRequestParams[](#subscriptionslistenrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-
-[​](#subscriptionslistenrequestparams)
-
-`SubscriptionsListenRequestParams`
+### [](#subscriptionslistenrequestparams)`SubscriptionsListenRequestParams`
 
 interface SubscriptionsListenRequestParams {  
   [\_meta](#subscriptionslistenrequestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -5901,10 +5442,7 @@ notifications: SubscriptionFilter[](#subscriptionslistenrequestparams-notificati
 
 The notifications the client opts in to on this stream. The server **MUST NOT** send notification types the client has not explicitly requested.
 
-
-[​](#subscriptionslistenresultresponse)
-
-`SubscriptionsListenResultResponse`
+### [](#subscriptionslistenresultresponse)`SubscriptionsListenResultResponse`
 
 interface SubscriptionsListenResultResponse {  
   [jsonrpc](#subscriptionslistenresultresponse-jsonrpc): “2.0”;  
@@ -5941,10 +5479,7 @@ result: SubscriptionsListenResult[](#subscriptionslistenresultresponse-result)
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#subscriptionslistenresult)
-
-`SubscriptionsListenResult`
+### [](#subscriptionslistenresult)`SubscriptionsListenResult`
 
 interface SubscriptionsListenResult {  
   [resultType](#subscriptionslistenresult-resulttype): string;  
@@ -5977,10 +5512,7 @@ Inherited from [Result](#result).[resultType](#result-resulttype)
 
 Overrides [Result](#result).[\_meta](#result-_meta)
 
-
-[​](#subscriptionfilter)
-
-`SubscriptionFilter`
+### [](#subscriptionfilter)`SubscriptionFilter`
 
 interface SubscriptionFilter {  
   [toolsListChanged](#subscriptionfilter-toolslistchanged)?: boolean;  
@@ -6009,10 +5541,7 @@ resourceSubscriptions?: string\[\][](#subscriptionfilter-resourcesubscriptions)
 
 Subscribe to [notifications/resources/updated](#resourceupdatednotification) for these resource URIs. Replaces the former `resources/subscribe` RPC.
 
-
-[​](#subscriptionslistenresultmetaobject)
-
-`SubscriptionsListenResultMetaObject`
+### [](#subscriptionslistenresultmetaobject)`SubscriptionsListenResultMetaObject`
 
 interface SubscriptionsListenResultMetaObject {  
   [“io.modelcontextprotocol/serverInfo”](#subscriptionslistenresultmetaobject-iomodelcontextprotocolserverinfo)?: [Implementation](#implementation);  
@@ -6040,15 +5569,9 @@ Inherited from [ResultMetaObject](#resultmetaobject).[io.modelcontextprotocol/se
 
 Identifies the subscription stream this response closes, so the client can correlate it with the originating subscription — mirroring the same key on the stream’s notifications. The value is the JSON-RPC ID of the `subscriptions/listen` request that opened the stream (and equals this response’s `id`).
 
+## [](#tools/call)`tools/call`
 
-[​](#tools/call)
-
-`tools/call`
-
-
-[​](#calltoolrequest)
-
-`CallToolRequest`
+### [](#calltoolrequest)`CallToolRequest`
 
 interface CallToolRequest {  
   [jsonrpc](#calltoolrequest-jsonrpc): “2.0”;  
@@ -6099,10 +5622,7 @@ params: CallToolRequestParams[](#calltoolrequest-params)
 
 Overrides [JSONRPCRequest](#jsonrpcrequest).[params](#jsonrpcrequest-params)
 
-
-[​](#calltoolrequestparams)
-
-`CallToolRequestParams`
+### [](#calltoolrequestparams)`CallToolRequestParams`
 
 interface CallToolRequestParams {  
   [\_meta](#calltoolrequestparams-_meta): [RequestMetaObject](#requestmetaobject);  
@@ -6173,10 +5693,7 @@ arguments?: { \[key: string\]: unknown }[](#calltoolrequestparams-arguments)
 
 Arguments to use for the tool call.
 
-
-[​](#calltoolresultresponse)
-
-`CallToolResultResponse`
+### [](#calltoolresultresponse)`CallToolResultResponse`
 
 interface CallToolResultResponse {  
   [jsonrpc](#calltoolresultresponse-jsonrpc): “2.0”;  
@@ -6217,10 +5734,7 @@ result: InputRequiredResult \| CallToolResult[](#calltoolresultresponse-result)
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#calltoolresult)
-
-`CallToolResult`
+### [](#calltoolresult)`CallToolResult`
 
 interface CallToolResult {  
   [\_meta](#calltoolresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -6282,6 +5796,21 @@ Example: Invalid tool input error[](#calltoolresult-example-invalid-tool-input-e
 } Copy
 ```
 
+Example: Missing required tool argument[](#calltoolresult-example-missing-required-tool-argument)
+
+```
+{
+  “resultType”: “complete”,
+  “content”: [
+    {
+      “type”: “text”,
+      “text”: “Invalid arguments for tool calculate: Missing required property ‘expression’”
+    }
+  ],
+  “isError”: true
+} Copy
+```
+
 \_meta?: ResultMetaObject[](#calltoolresult-_meta)
 
 Inherited from [Result](#result).[\_meta](#result-_meta)
@@ -6314,15 +5843,9 @@ Any errors that originate from the tool SHOULD be reported inside the result obj
 
 However, any errors in *finding* the tool, an error indicating that the server does not support tool calls, or any other exceptional conditions, should be reported as an MCP error response.
 
+## [](#tools/list)`tools/list`
 
-[​](#tools/list)
-
-`tools/list`
-
-
-[​](#listtoolsrequest)
-
-`ListToolsRequest`
+### [](#listtoolsrequest)`ListToolsRequest`
 
 interface ListToolsRequest {  
   [jsonrpc](#listtoolsrequest-jsonrpc): “2.0”;  
@@ -6369,10 +5892,7 @@ method: “tools/list”[](#listtoolsrequest-method)
 
 Overrides PaginatedRequest.method
 
-
-[​](#listtoolsresultresponse)
-
-`ListToolsResultResponse`
+### [](#listtoolsresultresponse)`ListToolsResultResponse`
 
 interface ListToolsResultResponse {  
   [jsonrpc](#listtoolsresultresponse-jsonrpc): “2.0”;  
@@ -6433,10 +5953,7 @@ result: ListToolsResult[](#listtoolsresultresponse-result)
 
 Overrides [JSONRPCResultResponse](#jsonrpcresultresponse).[result](#jsonrpcresultresponse-result)
 
-
-[​](#listtoolsresult)
-
-`ListToolsResult`
+### [](#listtoolsresult)`ListToolsResult`
 
 interface ListToolsResult {  
   [\_meta](#listtoolsresult-_meta)?: [ResultMetaObject](#resultmetaobject);  
@@ -6523,10 +6040,7 @@ Inherited from CacheableResult.cacheScope
 
 tools: Tool\[\][](#listtoolsresult-tools)
 
-
-[​](#tool)
-
-`Tool`
+### [](#tool)`Tool`
 
 interface Tool {  
   [icons](#tool-icons)?: [Icon](#icon)\[\];  
@@ -6748,10 +6262,7 @@ Display name precedence order is: `title`, `annotations.title`, then `name`.
 
 \_meta?: MetaObject[](#tool-_meta)
 
-
-[​](#toolannotations)
-
-`ToolAnnotations`
+### [](#toolannotations)`ToolAnnotations`
 
 interface ToolAnnotations {  
   [title](#toolannotations-title)?: string;  

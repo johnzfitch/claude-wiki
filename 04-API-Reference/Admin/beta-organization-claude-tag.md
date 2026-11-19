@@ -2,7 +2,7 @@
 title: "Claude Tag - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/claude_tag"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-08T06:24:51Z"
+fetched_at: "2026-11-16T06:25:52Z"
 tags: ["api"]
 ---
 
@@ -23,6 +23,18 @@ API version 2026-10-21
 cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 ##### Models
+
+
+
+BetaAPIKeyScopeMissingErrorDetails object{ error_code }
+
+
+
+The API key lacks the scope the request needs: `read:claude_tag` for a read, `write:claude_tag` for a change.
+
+error_code: "api_key_scope_missing"
+
+
 
 
 
@@ -120,6 +132,64 @@ type: "restrict"
 
 
 
+BetaClaudeTagReplyMode = [BetaClaudeTagReplyModeAutomatic](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_reply_mode_automatic) or [BetaClaudeTagReplyModeMentionOnly](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_reply_mode_mention_only) or [BetaClaudeTagReplyModeAlwaysAwake](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_reply_mode_always_awake) or [BetaClaudeTagReplyModeThread](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_reply_mode_thread)
+
+
+
+How Claude takes part in a Slack channel. A channel alone stores one. More types can be added.
+
+One of the following:
+
+
+
+BetaClaudeTagReplyModeAlwaysAwake object{ type: "always_awake" }
+
+
+
+Like `automatic`, but Claude never pauses on its own. Available where it is enabled for the channel.
+
+type: "always_awake"
+
+
+
+
+
+BetaClaudeTagReplyModeAutomatic object{ type: "automatic" }
+
+
+
+Claude reads along and joins in when it can help, and pauses on its own in quiet or busy channels.
+
+type: "automatic"
+
+
+
+
+
+BetaClaudeTagReplyModeMentionOnly object{ type: "mention_only" }
+
+
+
+Claude replies only when it is @-mentioned.
+
+type: "mention_only"
+
+
+
+
+
+BetaClaudeTagReplyModeThread object{ type: "thread" }
+
+
+
+Every new top-level message in the channel gets its own reply from Claude, in a thread under it. Available where it is enabled for the channel, and only once Claude has been used in the channel.
+
+type: "thread"
+
+
+
+
+
 BetaClaudeTagSettingSource = [BetaClaudeTagSlackChannelSettingSource](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_slack_channel_setting_source) or [BetaClaudeTagSlackWorkspaceSettingSource](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_slack_workspace_setting_source) or [BetaClaudeTagSlackParentChannelSettingSource](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_slack_parent_channel_setting_source) or 3 more
 
 
@@ -130,7 +200,7 @@ One of the following:
 
 
 
-BetaClaudeTagSettingSources object{ enabled, environment_id, guest_policy, 2 more }
+BetaClaudeTagSettingSources object{ enabled, environment_id, guest_policy, 3 more }
 
 
 
@@ -138,15 +208,15 @@ For each setting, the settings level its value in `settings` comes from. Without
 
 
 
-BetaClaudeTagSettings object{ enabled, environment_id, guest_policy, 2 more }
+BetaClaudeTagSettings object{ enabled, environment_id, guest_policy, 3 more }
 
 
 
-Claude Tag settings. Without `include_inherited`, a setting that is null is not set on the settings level and is inherited. With it, `enabled` and `guest_policy` are never null, and `instructions`, `model` and `environment_id` are null when no settings level sets them.
+Claude Tag settings. Without `include_inherited`, a setting that is null is not set on the settings level and is inherited. With it, `enabled` and `guest_policy` are never null, `instructions`, `model` and `environment_id` are null when no settings level sets them, and `reply_mode` is null unless the channel itself stores one.
 
 
 
-BetaClaudeTagSettingsCreate object{ enabled, environment_id, guest_policy, 2 more }
+BetaClaudeTagSettingsCreate object{ enabled, environment_id, guest_policy, 3 more }
 
 
 
@@ -154,7 +224,7 @@ The settings in a request that sets a Slack channel up. A setting left out is no
 
 
 
-BetaClaudeTagSettingsUpdate object{ enabled, environment_id, guest_policy, 2 more }
+BetaClaudeTagSettingsUpdate object{ enabled, environment_id, guest_policy, 3 more }
 
 
 
@@ -316,13 +386,107 @@ slack_workspace_id: string
 
 The workspace's identifier, starting with `slws_`.
 
+
+
+BetaClaudeTagWritesNotEnabledErrorDetails object{ error_code }
+
+
+
+Changes through the Claude Tag API are not enabled for the organization.
+
+error_code: "claude_tag_writes_not_enabled"
+
+
+
+
+
+BetaComplianceConfigurationRestrictedErrorDetails object{ error_code }
+
+
+
+The organization's compliance configuration does not let Claude Tag store anything new.
+
+error_code: "compliance_configuration_restricted"
+
+
+
+
+
+BetaOrganizationLevelScopedAPIKeyRequiredErrorDetails object{ error_code }
+
+
+
+The credential is not a scoped API key that is bound at the organization level.
+
+error_code: "organization_level_scoped_api_key_required"
+
+
+
+
+
+BetaSlackChannelSetUpEnvironmentNotFoundErrorDetails object{ error_code, slack_channel_id }
+
+
+
+`settings.environment_id` names no Environment within the organization's reach, and the request had set the channel up by then. The channel stays set up with every setting unset.
+
+error_code: "slack_channel_set_up_environment_not_found"
+
+
+
+slack_channel_id: string
+
+
+
+The identifier of the channel the request set up, starting with `slch_`.
+
+
+
+BetaSlackChannelSetUpSettingsConflictErrorDetails object{ error_code, slack_channel_id }
+
+
+
+The request set the channel up, and something else then changed the channel or removed it. Nothing of `settings` was stored.
+
+error_code: "slack_channel_set_up_settings_conflict"
+
+
+
+A stable code that names the cause.
+
+slack_channel_id: string
+
+
+
+The identifier of the channel the request set up, starting with `slch_`.
+
+
+
+BetaSlackChannelSetUpSettingsRefusedErrorDetails object{ error_code, slack_channel_id }
+
+
+
+The request set the channel up, and `settings` was then refused. The channel stays set up with every setting unset.
+
+error_code: "slack_channel_set_up_settings_refused"
+
+
+
+A stable code that names the cause.
+
+slack_channel_id: string
+
+
+
+The identifier of the channel the request set up, starting with `slch_`.
+
 #### Claude Tag[Slack Channels](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels)
 
 ##### [Set Up Slack Channel](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag/slack_channels/create)
 
 POST/v1/organizations/claude_tag/slack_channels
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Set a Slack channel up for Claude Tag and return it with its identifier. If the channel is already set up, whether in claude.ai, by Claude's first use in it or by an earlier request, the existing channel is returned, so the request can be repeated. `settings`, when sent, is applied as an update applies it. Before a channel is set up, Claude's Slack app confirms with Slack that the channel is in the workspace, is not archived and is visible to the app; a channel that fails the confirmation returns 404. Setting the channel up and applying `settings` are two steps: when the second is refused, the response is the refusal, the channel stays set up with every setting unset, and the error's `details.slack_channel_id` holds the channel's identifier.
 
@@ -330,7 +494,7 @@ Set a Slack channel up for Claude Tag and return it with its identifier. If the 
 
 GET/v1/organizations/claude_tag/slack_channels
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the set-up Slack channels of one Slack workspace, newest first by `created_at`. A channel that is not set up is not listed: Slack holds the full list of a workspace's channels. Pass `slack_channel_id` as well to look one channel up by its Slack identifiers: `data` then holds that channel, or is empty when it is not set up, and `limit` and `page` are ignored. A workspace that the organization owns only through a Slack Enterprise Grid returns 404 until it is set up. With `include_inherited=true` each channel's `settings` holds what applies in it, and the request fails with 503 rather than resolve against a settings level that could not be read. A `page` cursor resumes only a request with the same `include_inherited`.
 
@@ -338,7 +502,7 @@ List the set-up Slack channels of one Slack workspace, newest first by `created_
 
 GET/v1/organizations/claude_tag/slack_channels/{id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get one Slack channel and its settings. By default `settings` holds what the channel itself stores: a setting that is null there is not set on the channel and is inherited. With `include_inherited=true`, `settings` holds what applies in the channel once the settings levels above it are taken into account, and the request fails with 503 rather than resolve against a settings level that could not be read. Either way `sources` names the settings level each value comes from, so a caller tells the channel's own value from an inherited one by its source, not by whether it is null.
 
@@ -346,7 +510,7 @@ Get one Slack channel and its settings. By default `settings` holds what the cha
 
 POST/v1/organizations/claude_tag/slack_channels/{id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Change the settings a Slack channel stores. The update is partial: a setting left out is unchanged, and a setting sent as null is cleared, so the channel inherits it. If any value is refused, no setting in the request is stored. A group direct message takes no settings and returns 400.
 
@@ -354,7 +518,7 @@ Change the settings a Slack channel stores. The update is partial: a setting lef
 
 DELETE/v1/organizations/claude_tag/slack_channels/{id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Remove a Slack channel from Claude Tag. This deletes the channel's stored settings and its Bundle Targets at once, and then, in the background, the channel's sessions and their transcripts, its memory, its routines and the artifacts published from it. None of it can be restored. The channel in Slack and its messages are unchanged. The request is refused with 400 and `error.details.error_code` `slack_channel_enabled` while `enabled` resolves to `true` for the channel, as a read with `include_inherited=true` returns it: set `enabled` to `false` on the channel first. This guards against removing a channel in use by mistake; it is not a way to keep Claude out, because the removal deletes the channel's own `enabled: false` with its other settings, after which the channel inherits again and Claude's next use of it can set it up anew with a new identifier. The identifier returns 404 as soon as the request returns, so a repeated removal returns 404. A group direct message returns 400, and so does a channel that holds configuration this API does not manage.
 
@@ -364,7 +528,7 @@ Remove a Slack channel from Claude Tag. This deletes the channel's stored settin
 
 GET/v1/organizations/claude_tag/slack_workspaces
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the set-up Slack workspaces the organization owns, newest first by `created_at`. Pass `slack_workspace_id` to look one workspace up by its Slack identifier: `data` then holds that workspace, or is empty when it is not set up. A workspace of a Slack Enterprise Grid the organization has connected returns 404 until it is set up. With `include_inherited=true` each workspace's `settings` holds what applies in it, and the request fails with 503 rather than resolve against a settings level that could not be read. A `page` cursor resumes only a request with the same `include_inherited`.
 
@@ -372,7 +536,7 @@ List the set-up Slack workspaces the organization owns, newest first by `created
 
 GET/v1/organizations/claude_tag/slack_workspaces/{id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get one Slack workspace and its settings. By default `settings` holds what the workspace itself stores: a setting that is null there is not set on the workspace and is inherited. With `include_inherited=true`, `settings` holds what applies in the workspace once the organization's Slack defaults are taken into account, and the request fails with 503 rather than resolve against a settings level that could not be read. Either way `sources` names the settings level each value comes from.
 
@@ -380,7 +544,7 @@ Get one Slack workspace and its settings. By default `settings` holds what the w
 
 POST/v1/organizations/claude_tag/slack_workspaces/{id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Change the settings a Slack workspace stores. The update is partial: a setting left out is unchanged, and a setting sent as null is cleared, so the workspace inherits it. If any value is refused, no setting in the request is stored.
 
@@ -390,7 +554,7 @@ Change the settings a Slack workspace stores. The update is partial: a setting l
 
 GET/v1/organizations/claude_tag/bundles
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the organization's Bundles, newest first by `created_at`. A Bundle that Claude Tag manages for itself is not listed.
 
@@ -398,7 +562,7 @@ List the organization's Bundles, newest first by `created_at`. A Bundle that Cla
 
 GET/v1/organizations/claude_tag/bundles/{bundle_id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get one Bundle. What the Bundle grants (connectors, repositories and credentials) is never returned.
 
@@ -408,7 +572,7 @@ Get one Bundle. What the Bundle grants (connectors, repositories and credentials
 
 GET/v1/organizations/claude_tag/bundles/{bundle_id}/targets
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the Slack channels and Slack workspaces a Bundle is attached to, newest first by `created_at`. Only channels and workspaces the organization owns are listed; a Bundle that is attached to anything else has no Bundle Target for it.
 
@@ -416,7 +580,7 @@ List the Slack channels and Slack workspaces a Bundle is attached to, newest fir
 
 POST/v1/organizations/claude_tag/bundles/{bundle_id}/targets
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Attach a Bundle to a Slack channel or a Slack workspace. A Bundle attached to a workspace can be used in the workspace and in every channel in it. Attaching a Bundle to a channel or workspace it is already attached to returns the existing Bundle Target. The channel or workspace must be set up: attaching never sets a channel up. A group direct message takes no Bundle and returns 400.
 
@@ -424,7 +588,7 @@ Attach a Bundle to a Slack channel or a Slack workspace. A Bundle attached to a 
 
 GET/v1/organizations/claude_tag/bundles/{bundle_id}/targets/{target_id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get one Bundle Target. Returns 404 when `target_id` is the identifier of another Bundle's Bundle Target, or the Bundle Target was detached.
 
@@ -432,6 +596,6 @@ Get one Bundle Target. Returns 404 when `target_id` is the identifier of another
 
 DELETE/v1/organizations/claude_tag/bundles/{bundle_id}/targets/{target_id}
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Detach a Bundle from a Slack channel or a Slack workspace. A repeated detach returns 404.

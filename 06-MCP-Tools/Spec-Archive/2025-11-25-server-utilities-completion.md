@@ -2,8 +2,8 @@
 title: "Completion - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/server/utilities/completion"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:24:42Z"
-last_modified: "Sat, 31 Oct 2026 00:28:02 GMT"
+fetched_at: "2026-11-10T06:27:55Z"
+last_modified: "Tue, 10 Nov 2026 00:04:28 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

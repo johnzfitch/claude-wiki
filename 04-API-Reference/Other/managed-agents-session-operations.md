@@ -2,7 +2,7 @@
 title: "Session operations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/session-operations"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:29Z"
+fetched_at: "2026-11-13T06:36:47Z"
 tags: ["agents", "api"]
 ---
 
@@ -20,18 +20,22 @@ Retrieve, list, update, archive, and delete Claude Managed Agents sessions.
 
 [Managed Agents](managed-agents-overview.md)
 
-[Status](managed-agents-overview.md#availability-feature-support)  
 Beta
 
-[Cloud platforms](managed-agents-overview.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](managed-agents-overview.md#feature-availability)  
+- All models
 
-[Beta header](managed-agents-overview.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](managed-agents-overview.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-overview.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-overview.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Once a session exists, use these operations to read, update, archive, or delete it. See [Start a session](managed-agents-sessions.md) for creating a session and sending it work.
 

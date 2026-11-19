@@ -2,7 +2,7 @@
 title: "Feature Dev | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/feature-dev"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:41Z"
+fetched_at: "2026-11-18T06:27:26Z"
 tags: ["plugins"]
 ---
 
@@ -18,7 +18,7 @@ Comprehensive feature development workflow with specialized agents for codebase 
   Claude Code
 - 
 
-  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/0412be76f50ab4f4f8abff3753efa9269fbbca5b/plugins/feature-dev)
+  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/e6143c9807a001832badb63e89d58ffe25d542ec/plugins/feature-dev)
 - 
 
   Installs256,017

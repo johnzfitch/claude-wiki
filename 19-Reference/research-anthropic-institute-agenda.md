@@ -2,7 +2,7 @@
 title: "Focus areas for The Anthropic Institute \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-institute-agenda"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:23Z"
+fetched_at: "2026-11-18T06:29:04Z"
 tags: ["news-research"]
 ---
 
@@ -135,7 +135,7 @@ The interaction of people and organizations with AI systems will be a major sour
 
 *Understanding and governing AI models:*
 
-- **System “values”:** What are the expressed “values” of AI systems and how do these relate to how these systems were trained? More specifically, how can we measure the influence that an AI “constitution” has on behavior of the model once deployed? We’ll extend our [previous](values-wild.md) [research](https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf) on these questions.
+- **System “values”:** What are the expressed “values” of AI systems and how do these relate to how these systems were trained? More specifically, how can we measure the influence that an AI “constitution” has on behavior of the model once deployed? We’ll extend our [previous](values-wild.md) [research](https://assets.claude.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf) on these questions.
 - **Governing autonomous agents:** What aspects of existing laws, governance systems, and accountability mechanisms could be adapted to autonomous AI agents? For example, how naval law treats abandoned ships has relevance to how the law might treat agents that run without human oversight. Conversely, are there aspects of existing law which already apply to AI agents and shouldn’t?
 - **Reliability of agents:** What aspects of autonomous AI agents could be adapted to fit into existing laws, governance systems, and accountability mechanisms? For example, can we ensure AI agents have a unique identity that they reliably output, even in the absence of direct human control?
 - **AI governance of AI:** How effectively can we use AI to govern AI systems? What are areas of AI oversight where humans either have a comparative advantage or a legal or normative requirement to be 'in the loop'?

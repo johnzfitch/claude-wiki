@@ -2,7 +2,7 @@
 title: "Visuals that appear as you study with Claude · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/imagine-with-claude-student-guide"
 category: "01-Getting-Started"
-fetched_at: "2026-11-07T06:21:54Z"
+fetched_at: "2026-11-18T06:26:58Z"
 tags: ["getting-started"]
 ---
 
@@ -18,7 +18,7 @@ Some things land faster drawn than said, and a good teacher knows when to reach 
 
 Now, Claude can do that too. When a visual is the clearer answer to what you asked, Claude builds one as part of its response. The visual sits alongside the text, shaped directly to your ask — a diagram you click into as Claude explains, a chart you filter while you ask follow-ups, something that plays when the concept is a sound.
 
-The visual streams in alongside the text and the conversation keeps going. You can adjust it, click into what's still unclear, or ask a follow-up and Claude draws the next one. If something turns out worth keeping, there's a one-click path to save it for later.
+The visual streams in alongside the text and the conversation keeps going. You can adjust it, click into what's still unclear, or ask a follow-up and Claude draws the next one. If something turns out worth keeping, you can copy or download it for later.
 
 **You don't need to do anything special.** Claude decides when a visual would help. You can also ask to explicitly trigger it — any version of "draw this," "show me," or "can I see that" works.
 
@@ -112,11 +112,12 @@ Bring what you have — lab data, lecture notes, a difficult problem. As you cha
 
 **Evaluate** **—** Look at what Claude drew with some skepticism. It's built for your question, not pulled from a verified source, so it can be wrong in ways a textbook figure usually isn't. Checking it is good for you: spotting an error means you understand well enough to notice one. Not being sure tells you where your grasp is still shaky. Both leave you better off than taking the picture at face value.
 
-**Save it.** To keep or build on your visual, hover over what Claude drew and a few options appear in the corner.
+**Save it.** To keep your visual, hover over what Claude drew and a few options appear in the corner.
 
 - `Copy as image` — snapshot for notes or slides. The move most of the time.
-- `Save as artifact` — when you'd reopen the interactive version or share it. The whiteboard becomes a document.
-- `Download` — source code (.svg or .html).
+- `Download as SVG` or `Download as HTML` for the source code.
+
+To reopen the interactive version later, or to share it, ask Claude to turn it into an artifact. The whiteboard becomes a document.
 
 **Take it further.** Ask Claude to help you write up what clicked from the visual in a doc for your notes. Explain it to someone else to test whether it stuck. Or ask Claude to map what you now understand and what's still fuzzy; articulating one gap often surfaces the next. Either way, check the content against a real source before treating it as authoritative.
 

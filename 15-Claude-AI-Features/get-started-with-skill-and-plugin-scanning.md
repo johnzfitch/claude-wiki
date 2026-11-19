@@ -2,11 +2,13 @@
 title: "Get started with skill and plugin scanning | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15927065-get-started-with-skill-and-plugin-scanning"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:32Z"
+fetched_at: "2026-11-18T06:28:05Z"
 tags: ["claude-ai"]
 ---
 
 # Get started with skill and plugin scanning
+
+Updated today
 
 
 Skill and plugin scanning automatically checks third-party skills and plugins for malicious content when someone uploads or edits them, before they can run in your organization. This article explains what scanning checks for, how to turn it on, and what the results mean.
@@ -21,13 +23,13 @@ Scanning runs in the background, and most scans finish in about one to two minut
 
 ## What gets scanned
 
-Scanning applies to third-party skills and plugins that a member or owner uploads. This includes standalone skills, plugins, and the skills bundled inside a plugin. Hooks are scanned when they're shipped as part of a plugin.
+Scanning applies to third-party skills and plugins that a member or owner uploads. This includes standalone skills, plugins, and the skills bundled inside a plugin. Hooks are scanned when they're shipped as part of a plugin. Skills you create with Claude are scanned too, each time you save them.
 
 Scanning doesn't apply to:
 
 - Skills and plugins that were already in your organization before scanning was turned on. Existing skills and plugins keep working, so nothing you already use stops working when you enable scanning.
 
-- Skills you create with Claude, which rely on Claude's built-in safeguards.
+- Skills you created with Claude and saved before November 13, 2026. They keep working, and the next version you save is scanned.
 
 - Skills shared through a connected MCP server. These follow the same trust model as other MCP tools and aren't covered by scanning.
 
@@ -70,8 +72,6 @@ A fail result means the scan detected malicious content. The skill or plugin is 
 A blocked skill can't be overridden by the person who uploaded it, unless they're an Owner, Primary Owner, or have a role with **Libraries** permission that's set to "Can manage." If you have that permission, you can select "Allow anyway" on a skill or plugin that scanning blocked or warned about, where the option is shown. You'll find this option in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** or the **[Customize](https://claude.ai/customize/skills)** tab. Select "Revoke" to undo this later.
 
 Selecting "Allow anyway" applies only to that version, and each new version is scanned again. Allowing a version removes the scan's banner for everyone with access to it, whether it was blocked or had a warning. Only allow a version if you've reviewed it and trust the source.
-
-**Note:** "Allow anyway" is rolling out to organizations gradually, so you may not see it yet.
 
 If you think a skill was blocked by mistake, edit and upload it again. Uploading the same skill again without changes returns the same result, so any fix needs to address what was flagged.
 

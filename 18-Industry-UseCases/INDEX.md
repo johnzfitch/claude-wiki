@@ -1,6 +1,6 @@
 # Industry Use Cases
 
-314 pages. The full text of every page is in [llms.txt](llms.txt).
+323 pages. The full text of every page is in [llms.txt](llms.txt).
 
 - [A conversation with IRC on frontline health data | Claude by Anthropic](irc-qa.md) — health facilities across 40 countries
 - [Adalat AI Claude Platform (API) case study | Claude by Anthropic](adalat-ai.md) — 50–200% productivity gains
@@ -8,6 +8,7 @@
 - [Advolve Claude Platform (API) case study | Claude by Anthropic](advolve.md) — in customer return on ad spend
 - [AES Claude Platform (API) case study | Claude by Anthropic](aes.md) — AES, a global energy company, uses Claude on Google Cloud to automate safety audits and accelerate their mission of transforming the future of energy. By…
 - [AI agents | Claude by Anthropic](agents.md) — With Claude, you can build AI agents that plan, act, and collaborate more effectively.
+- [AIG Case Study | Claude by Anthropic | Claude by Anthropic](aig-case-study.md) — - 8: AIG business lines using Claude¹
 - [AirOps Claude Platform (API) case study | Claude by Anthropic](airops.md) — 2x productivity across the team
 - [Airtree Claude Cowork case study | Claude by Anthropic](airtree.md) — Give Claude access to your local files and let it complete tasks autonomously. Agentic capabilities for non-technical knowledge work.
 - [Alexa+ Claude Platform (API) case study | Claude by Anthropic](alexa-plus.md) — starting in the next few weeks, with wider availability coming
@@ -120,6 +121,7 @@
 - [Factory Claude Platform (API) case study | Claude by Anthropic](factory.md) — of development time saved
 - [Figma Claude Platform (API) case study | Claude by Anthropic](figma.md) — Working prototypes in minutes
 - [Financial services | Claude by Anthropic](finance.md) — Claude helps leading financial institutions across banking, insurance, asset and wealth management, and fintech improve how they serve clients and markets and…
+- [Firecrawl Case Study | Claude by Anthropic | Claude by Anthropic](firecrawl.md) — pull requests opened through Claude Tag since late June
 - [Fountain Claude Platform (API) case study | Claude by Anthropic](fountain.md) — in manual screening effort
 - [Freedom Forever Claude Platform (API) case study | Claude by Anthropic](freedom-forever.md) — on complex web automation tests (39 of 40 runs passed), compared to 20–60% for alternative frameworks
 - [FutureHouse Claude Platform (API) case study | Claude by Anthropic](futurehouse.md) — Life sciencesBeneficial Deployments
@@ -155,6 +157,7 @@
 - [JAKALA Claude case study | Claude by Anthropic](jakala.md) — ~70% reduction in time spent
 - [Jamf Claude Cowork case study | Claude by Anthropic](jamf-qa.md) — to build a conversational UI in Cowork with branching logic, role-based filtering, Jira integration, progress tracking, and structured file export
 - [Jamf Claude Enterprise case study | Claude by Anthropic](jamf.md) — 89% active usage among licensed employees
+- [Jane Street Capital Case Study | Claude by Anthropic | Claude by Anthropic](jane-street-capital.md) — - +32%: Claude Fable 5.1 performance over Fable 5 via Jane Street’s internal agentic coding eval
 - [Jetbrains Claude Code case study | Claude by Anthropic](jetbrains-2.md) — Millions of developers now benefit from the Claude Agent SDK, the same underlying technology that powers Claude Code, natively inside of JetBrains
 - [JetBrains Claude Platform (API) case study | Claude by Anthropic](jetbrains.md) — in documentation generation
 - [Jumpcut Claude Platform (API) case study | Claude by Anthropic](jumpcut.md) — saved in script reading time
@@ -180,8 +183,10 @@
 - [L’Oréal Claude Platform (API) case study | Claude by Anthropic](loreal.md) — across L’Oréal’s AI platform with 2.5 million messages per month
 - [MagicSchool Claude Platform (API) case study | Claude by Anthropic](magicschool.md) — EducationBeneficial Deployments
 - [MagicSchool Q&A | Claude Platform (API) | Claude by Anthropic](magicschool-qa.md) — EducationBeneficial Deployments
+- [Manufacturing | Claude by Anthropic](manufacturing.md) — Claude helps your teams price new jobs, write up quality issues, and diagnose machine breakdowns from your facility’s records. It works through the steps, and…
 - [Matillion Claude Code case study | Claude by Anthropic](matillion.md) — 41% faster pull request completion with Claude Code
 - [Medgate Claude Code case study | Claude by Anthropic](medgate.md) — 90% faster bug resolution
+- [Mercado Libre Case Study | Claude by Anthropic | Claude by Anthropic](mercado-libre.md) — - 100%: Merged code up year over year
 - [Mercy Corps Claude for Nonprofits case study | Claude by Anthropic](mercy-corps.md) — to analyze community feedback in CARM pilot testing
 - [Mercy Corps Q&A | Claude by Anthropic](mercy-corps-qa.md) — 98% of pilot users report faster workflows
 - [Mercy Corps Q&A | Claude by Anthropic](prosper-global-qa.md) — 98% of pilot users report faster workflows
@@ -215,6 +220,7 @@
 - [Panorama Claude Platform (API) case study | Claude by Anthropic](panorama.md) — student population served
 - [Panther Claude Platform (API) case study | Claude by Anthropic](panther.md) — in alert fatigue through automated triage
 - [Parcha Claude Platform (API) case study | Claude by Anthropic](parcha.md) — Customer due diligence workflow time reduced
+- [PayPal Case Study | Claude by Anthropic | Claude by Anthropic](paypal.md) — - 12,000+: Claude Enterprise monthly active users
 - [Pelanor Claude Platform (API) case study | Claude by Anthropic](pelanor.md) — of new business from Claude-powered features
 - [Pendo Claude Managed Agents case study | Claude by Anthropic](pendo-qa.md) — Claude Managed AgentsClaude Code
 - [Pensive Claude Platform (API) case study | Claude by Anthropic](pensive.md) — feedback cycle - grading in minutes vs days
@@ -253,7 +259,7 @@
 - [Semgrep Claude Platform (API) case study | Claude by Anthropic](semgrep.md) — in false positive security alerts
 - [Sentry Claude Managed Agents case study | Claude by Anthropic](sentry.md) — to ship end-to-end fix automation with Managed Agents
 - [Sett Claude Platform (API) case study | Claude by Anthropic](sett.md) — Time to produce a single playable ad dropped from approximately one week to 75 minutes
-- [Shopify Claude Code case study | Claude by Anthropic](shopify.md) — See Claude Code in action—from concept to commit in one seamless workflow.
+- [Shopify Claude Code case study | Claude by Anthropic](shopify.md) — Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
 - [Shortcut Claude Platform (API) case study | Claude by Anthropic](shortcut.md) — Shortcut scaled from a consumer app to supporting more than 1,000 companies
 - [SK Telecom Claude Platform (API) case study | Claude by Anthropic](skt.md) — in LLM response quality ratings
 - [Skillfully Claude Platform (API) case study | Claude by Anthropic](skillfully.md) — to convert to full-time hires vs traditional methods
@@ -287,10 +293,13 @@
 - [Tines Claude Platform (API) case study | Claude by Anthropic](tines.md) — in complex data transformations
 - [tl;dv Claude Platform (API) case study | Claude by Anthropic](tldv.md) — tl;dv, a platform specializing in meeting intelligence, revolutionized its offering by integrating Claude. This partnership transformed tl;dv from a meeting…
 - [Tome Claude Platform (API) case study | Claude by Anthropic](tome.md) — researching accounts daily
+- [Travelers Case Study | Claude by Anthropic | Claude by Anthropic](travelers.md) — - Nearly 25K: Employees with Claude assistants
 - [Trellix Claude Platform (API) case study | Claude by Anthropic](trellix.md) — for every 100 security alerts processed
+- [Tribe AI Q and A | Claude by Anthropic | Claude by Anthropic](tribe-ai.md) — for a new engineer to ship a first code change, down from months
 - [Triple Whale Claude Platform (API) case study | Claude by Anthropic](triple-whale.md) — in north star metrics for early customers
 - [TRY Claude Enterprise case study | Claude by Anthropic](try.md) — reduction in routine tasks
 - [Twilio Claude Code case study | Claude by Anthropic](twilio-qa.md) — packaged into a Claude Code plugin
+- [UST Case Study | Claude by Anthropic | Claude by Anthropic](ust-case-study.md) — - 20,000: Associates training on Claude worldwide
 - [Vambe Claude Platform (API) case study | Claude by Anthropic](vambe.md) — 95%+ multi-agent reliability
 - [Vanta Claude Platform (API) case study | Claude by Anthropic](vanta.md) — accelerated implementation timeframe
 - [Vapi Claude Platform (API) case study | Claude by Anthropic](vapi.md) — ~3x higher deep activation rate

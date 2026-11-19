@@ -2,7 +2,7 @@
 title: "Why Claude switched models in your conversation with Opus 5 or Opus 5.5 | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16049681-why-claude-switched-models-in-your-conversation-with-opus-5-or-opus-5-5"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:32Z"
+fetched_at: "2026-11-18T06:28:03Z"
 tags: ["billing", "claude-ai"]
 ---
 
@@ -67,7 +67,7 @@ After the switch, the model picker stays on the less capable model for the rest 
 
 Opus 4.8 has its own safety systems. If your request is also blocked on Opus 4.8, you can edit your message and retry.
 
-For cybersecurity specifically, if your use case has a legitimate defensive purpose and is affected by these safeguards, you can apply for the Cyber Verification Program (CVP). Learn more about **[real-time cyber safeguards on Claude Opus and Sonnet](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet)**.
+For cybersecurity specifically, if your use case has a legitimate defensive purpose and is affected by these safeguards, you can apply for the Cyber Verification Program (CVP). Learn more about **[real-time cyber safeguards on Claude Opus and Sonnet](../21-Account-Support/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md)**.
 
 For biology, if your organization does legitimate life sciences research and is affected by these safeguards, you can apply for the Life Sciences Verification Program (LSVP). The LSVP gives verified life sciences organizations access to Claude's most capable models for internal research and development. Learn more in our blog: **[Introducing the Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md)**.
 

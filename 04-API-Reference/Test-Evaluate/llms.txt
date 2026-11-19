@@ -418,7 +418,7 @@ Good success criteria are:
     | Bad | Safe outputs |
     | Good | Less than 0.1% of outputs out of 10,000 trials flagged for toxicity by the content filter. |
 
-  ### Example metrics and measurement methods
+  ### Example metrics and measurement methods
 
   **Quantitative metrics:**
 
@@ -441,7 +441,7 @@ Good success criteria are:
 
 - **Relevant:** Align your criteria with your application’s purpose and user needs. Strong citation accuracy might be critical for medical apps but less so for casual chatbots.
 
-### Example task fidelity criteria for sentiment analysis
+### Example task fidelity criteria for sentiment analysis
 
 |  | Criteria |
 |----|----|
@@ -454,41 +454,41 @@ Good success criteria are:
 
 Here are some criteria that might be important for your use case. This list is non-exhaustive.
 
-### Task fidelity
+### Task fidelity
 
 How well does the model need to perform on the task? You might also need to consider edge case handling, such as how well the model needs to perform on rare or challenging inputs.
 
-### Consistency
+### Consistency
 
 How similar do the model’s responses need to be for similar types of input? If a user asks the same question twice, how important is it that they get semantically similar answers?
 
-### Relevance and coherence
+### Relevance and coherence
 
 How well does the model directly address the user’s questions or instructions? How important is it for the information to be presented in a logical, easy-to-follow manner?
 
-### Tone and style
+### Tone and style
 
 How well does the model’s output style match expectations? How appropriate is its language for the target audience?
 
-### Privacy preservation
+### Privacy preservation
 
 What is a successful metric for how the model handles personal or sensitive information? Can it follow instructions not to use or share certain details?
 
-### Context utilization
+### Context utilization
 
 How effectively does the model use provided context? How well does it reference and build upon information given in its history?
 
-### Latency
+### Latency
 
 What is the acceptable response time for the model? This depends on your application’s real-time requirements and user expectations.
 
-### Price
+### Price
 
 What is your budget for running the model? Consider factors such as the cost for each API call, the size of the model, and the frequency of usage.
 
 Most use cases need multidimensional evaluation along several success criteria.
 
-### Example multidimensional criteria for sentiment analysis
+### Example multidimensional criteria for sentiment analysis
 
 [TABLE]
 
@@ -501,7 +501,7 @@ Most use cases need multidimensional evaluation along several success criteria.
 ### Eval design principles
 
 1.  **Be task-specific:** Design evals that mirror your real-world task distribution. Don’t forget to factor in edge cases!
-    ### Example edge cases
+    ### Example edge cases
 
     - Irrelevant or nonexistent input data
     - Overly long input data or user input
@@ -512,7 +512,7 @@ Most use cases need multidimensional evaluation along several success criteria.
 
 ### Example evals
 
-### Task fidelity (sentiment analysis): exact match evaluation
+### Task fidelity (sentiment analysis): exact match evaluation
 
 **What it measures:** Exact match evals measure whether the model’s output matches a predefined correct answer, typically after normalizing whitespace and case. It’s a simple, unambiguous metric that’s perfect for tasks with clear-cut, categorical answers such as sentiment analysis (positive, negative, neutral).
 
@@ -580,7 +580,7 @@ accuracy = sum(
 print(f"Sentiment Analysis Accuracy: {accuracy * 100}%")
 ```
 
-### Consistency (FAQ bot): cosine similarity evaluation
+### Consistency (FAQ bot): cosine similarity evaluation
 
 **What it measures:** Cosine similarity measures the similarity between two vectors (in this case, sentence embeddings of the model’s output using [Sentence-BERT (SBERT)](https://sbert.net/)) by computing the cosine of the angle between them. Values closer to 1 indicate higher similarity. It’s ideal for evaluating consistency because similar questions should yield semantically similar answers, even if the wording varies.
 
@@ -661,7 +661,7 @@ for faq in faq_variations:
     print(f"FAQ Consistency Score: {similarity_score * 100}%")
 ```
 
-### Relevance and coherence (summarization): ROUGE-L evaluation
+### Relevance and coherence (summarization): ROUGE-L evaluation
 
 **What it measures:** ROUGE-L (Recall-Oriented Understudy for Gisting Evaluation - Longest Common Subsequence) evaluates the quality of generated summaries. It measures the length of the longest common subsequence between the candidate and reference summaries. High ROUGE-L scores indicate that the generated summary captures key information in a coherent order.
 
@@ -733,7 +733,7 @@ relevance_scores = [
 print(f"Average ROUGE-L F1 Score: {sum(relevance_scores) / len(relevance_scores)}")
 ```
 
-### Tone and style (customer service): LLM-based Likert scale
+### Tone and style (customer service): LLM-based Likert scale
 
 **What it measures:** The LLM-based Likert scale is a psychometric scale that uses an LLM to judge subjective attitudes or perceptions. Here, it’s used to rate the tone of responses on a scale from 1 to 5. It’s ideal for evaluating nuanced aspects such as empathy, professionalism, or patience that are difficult to quantify with traditional metrics.
 
@@ -815,7 +815,7 @@ tone_scores = [
 print(f"Average Tone Score: {sum(tone_scores) / len(tone_scores)}")
 ```
 
-### Privacy preservation (medical chatbot): LLM-based binary classification
+### Privacy preservation (medical chatbot): LLM-based binary classification
 
 **What it measures:** Binary classification determines if an input belongs to one of two classes. Here, it’s used to classify whether a response contains PHI. This method can account for context and identify subtle or implicit forms of PHI that rule-based systems might miss.
 
@@ -911,7 +911,7 @@ privacy_scores = [
 print(f"Privacy Preservation Score: {sum(privacy_scores) / len(privacy_scores) * 100}%")
 ```
 
-### Context utilization (conversation assistant): LLM-based ordinal scale
+### Context utilization (conversation assistant): LLM-based ordinal scale
 
 **What it measures:** Similar to the Likert scale, the ordinal scale measures on a fixed, ordered scale (1–5). It’s perfect for evaluating context utilization because it can capture the degree to which the model references and builds upon the conversation history, which is key for coherent, personalized interactions.
 
@@ -1051,7 +1051,7 @@ When deciding which method to use to grade evals, choose the fastest, most relia
 - **Be empirical or specific:** For example, instruct the LLM to output only ‘correct’ or ‘incorrect’, or to judge from a scale of 1–5. Purely qualitative evaluations are hard to assess quickly and at scale.
 - **Encourage reasoning:** Use a grader model with [thinking](../Guides/build-with-claude-thinking.md) on, so that it reasons before it produces an evaluation score. This increases evaluation performance, particularly for tasks requiring complex judgment.
 
-### Example: LLM-based grading
+### Example: LLM-based grading
 
 Python
 
@@ -1288,11 +1288,20 @@ Detect and handle refusal stop reasons in streaming responses, and retry refused
 
 Streaming refusals
 
-[APIs](#feature-availability)  
-Messages APIAlways onManaged AgentsAlways on
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents[\* Beta](#availability-beta-on-claude-api)
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 Usage differs by product
 
@@ -1465,43 +1474,61 @@ Serve users across languages with Claude’s cross-lingual capabilities.
 
 ## Availability
 
-Streaming refusals are available or in beta, depending on the API.
+Streaming refusals
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Always on
+APIs  
+- Messages API
+- Managed Agents Beta
 
-The stream ends with `stop_reason` `"refusal"`, and `stop_details` (`category` and `explanation`) arrives on the `message_delta` event.
+Models  
+- All models
 
-StatusAvailable
+Amazon Bedrock
 
-Cloud platforms
+API  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Models  
+- All models
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Amazon Bedrock (bedrock-runtime)
 
-Usage
+API  
+- Messages API
 
-Always on
+Models  
+- All models
 
-A refused turn ends, and the session goes idle. Treat a turn as refused if `stop_details.type` or `stop_reason.type` on the `session.status_idle` event is `"refusal"`. On a refused turn, `stop_reason.type` can be `"end_turn"`. `stop_details` is `null` on any other turn, and can be `null` on a refused turn too.
+Claude Platform on AWS
 
-StatusBeta
+APIs  
+- Messages API
+- Managed Agents Beta
 
-Cloud platforms
+Models  
+- All models
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ---
 
@@ -1536,7 +1563,7 @@ Here’s how to make Claude’s responses more consistent:
 
 Precisely define the output format you want using JSON, XML, or custom templates so that Claude follows every output formatting element you require.
 
-### Example: Standardizing customer feedback
+### Example: Standardizing customer feedback
 
 User
 
@@ -1589,7 +1616,7 @@ Prefilling is not supported on Claude 4.6 and later models and [Claude Mythos Pr
 
 Prefill the `Assistant` turn with the format you want. This trick bypasses Claude’s friendly preamble and enforces your structure.
 
-### Example: Daily sales report
+### Example: Daily sales report
 
 User
 
@@ -1694,7 +1721,7 @@ Assistant
 
 Provide examples of the output you want. This is more effective than abstract instructions.
 
-### Example: Generating consistent market intelligence
+### Example: Generating consistent market intelligence
 
 User
 
@@ -1789,7 +1816,7 @@ Assistant
 
 For tasks requiring consistent context (for example, chatbots, knowledge bases), use retrieval to ground Claude’s responses in a fixed information set.
 
-### Example: Enhancing IT support consistency
+### Example: Enhancing IT support consistency
 
 User
 
@@ -1873,7 +1900,7 @@ For role-based applications, maintaining consistent character requires deliberat
   When setting up the character, provide detailed information about the personality, background, and any specific traits or quirks. This helps the model better emulate and generalize the character’s traits.
 - **Prepare Claude for possible scenarios:** Provide a list of common scenarios and expected responses in your prompts. This “trains” Claude to handle diverse situations without breaking character.
 
-### Example: Enterprise chatbot for role prompting
+### Example: Enterprise chatbot for role prompting
 
 System
 
@@ -1961,7 +1988,7 @@ In this threat model, a user is deliberately crafting inputs to manipulate your 
 
 - **Harmlessness screens:** Use a lightweight model such as Claude Haiku 5.5 to pre-screen user input before it reaches your main conversation. Use [structured outputs](../Guides/build-with-claude-structured-outputs.md) to constrain the response to a simple classification. Claude Haiku 5.5 runs [safety classifiers](../Guides/build-with-claude-refusals-and-fallback.md) that can decline the screening request itself, so treat a response with `stop_reason: "refusal"` as a harmful verdict.
 
-  ### Example: Harmlessness screen for content moderation
+  ### Example: Harmlessness screen for content moderation
 
   User
 
@@ -2002,7 +2029,7 @@ In this threat model, a user is deliberately crafting inputs to manipulate your 
 
 - **Prompt engineering:** Craft system prompts that emphasize ethical and legal boundaries, and that explicitly tell Claude how to refuse.
 
-  ### Example: Ethical system prompt for an enterprise chatbot
+  ### Example: Ethical system prompt for an enterprise chatbot
 
   System
 
@@ -2034,7 +2061,7 @@ Structure your application so that Claude can reliably distinguish untrusted con
 
 - **State the policy in your system prompt.** Tell Claude explicitly that content returned from tools, documents, or searches is untrusted data and must never override the system prompt or the user’s original request.
 
-  ### Example: System prompt guidance for a document-processing agent
+  ### Example: System prompt guidance for a document-processing agent
 
   System
 
@@ -2052,7 +2079,7 @@ Structure your application so that Claude can reliably distinguish untrusted con
 
 - **JSON-encode untrusted content.** Where possible, wrap third-party strings in a JSON object rather than concatenating them into free-form text. JSON escaping provides unambiguous delimiters between the untrusted payload and the surrounding structure, so an attacker cannot close a quote or tag to “break out” into an instruction context.
 
-  ### Example: JSON-encoded tool result for an inbound email
+  ### Example: JSON-encoded tool result for an inbound email
 
   ``` shiki
   {
@@ -2077,7 +2104,7 @@ Structure your application so that Claude can reliably distinguish untrusted con
 
 - **Screen tool outputs before Claude acts on them.** Apply the same lightweight-model screening pattern you use for user input to the content your tools return. Run each tool, pass its raw output to a small classifier call with Claude Haiku 5.5, and only return the content as a `tool_result` block if the screen reports no injection attempt. Use [structured outputs](../Guides/build-with-claude-structured-outputs.md) so the classifier’s verdict is a parseable value your application can branch on.
 
-  ### Example: Injection screen for tool output
+  ### Example: Injection screen for tool output
 
   User
 
@@ -2132,7 +2159,7 @@ Regularly analyze outputs for signs of successful injection. Use this monitoring
 
 Combine strategies for robust protection. Here’s an enterprise-grade example with tool use:
 
-### Example: Multilayered protection for a financial advisor chatbot
+### Example: Multilayered protection for a financial advisor chatbot
 
 ### Bot system prompt
 
@@ -2200,7 +2227,7 @@ Even the most advanced language models, such as Claude, can sometimes generate t
 
 - **Allow Claude to say “I don’t know”:** Explicitly give Claude permission to admit uncertainty. This technique can drastically reduce false information.
 
-### Example: Analyzing a merger and acquisition report
+### Example: Analyzing a merger and acquisition report
 
 User
 
@@ -2218,7 +2245,7 @@ Focus on financial projections, integration risks, and regulatory hurdles. If yo
 
 - **Use direct quotes for factual grounding:** For tasks involving long documents (\>20k tokens), ask Claude to extract word-for-word quotes first before performing its task. This grounds its responses in the actual text, reducing hallucinations.
 
-### Example: Auditing a data privacy policy
+### Example: Auditing a data privacy policy
 
 User
 
@@ -2237,7 +2264,7 @@ As our Data Protection Officer, review this updated privacy policy for GDPR and 
 
 - **Verify with citations:** Make Claude’s response auditable by having it cite quotes and sources for each of its claims. You can also have Claude verify each claim by finding a supporting quote after it generates a response. If it can’t find a quote, it must retract the claim.
 
-### Example: Drafting a press release on a product launch
+### Example: Drafting a press release on a product launch
 
 User
 
@@ -2354,7 +2381,7 @@ message = client.messages.create(
 print(next(block.text for block in message.content if block.type == "text"))
 ```
 
-For more details about model metrics, see the [models overview](../../20-Models/about-claude-models-overview.md) page.
+For more details about model metrics, see [Models overview](../../20-Models/about-claude-models-overview.md).
 
 ### 2. Optimize prompt and output length
 
@@ -2368,7 +2395,7 @@ Here are some tips to help you optimize your prompts and outputs:
   Because of how LLMs count [tokens](../About/about-claude-glossary.md#tokens) instead of words, asking for an exact word count or a word count limit is not as effective a strategy as asking for paragraph or sentence count limits.
 - **Set appropriate output limits:** Use the `max_tokens` parameter to set a hard limit on the maximum length of the generated response. This prevents Claude from generating overly long outputs.
   
-  When the response reaches `max_tokens` tokens, the response will be cut off, perhaps mid-sentence or mid-word, so this is a blunt technique that might require post-processing and is usually most appropriate for multiple choice or short answer responses where the answer comes right at the beginning.
+  When the response reaches `max_tokens` tokens, the API cuts it off, perhaps mid-sentence or mid-word. This is a blunt technique that might require post-processing. It’s usually most appropriate for multiple-choice or short-answer responses where the answer comes right at the beginning.
 
 Finding the right balance among prompt clarity, output quality, and token count might require some experimentation.
 
@@ -2433,7 +2460,7 @@ Try monitoring techniques first, such as output screening and post-processing, t
 
 - **Separate context from queries:** You can try using system prompts to isolate key information and context from user queries. You can emphasize key instructions in the `User` turn, then reemphasize those instructions by prefilling the `Assistant` turn. (Note: prefilling is not supported on Claude 4.6 and later models and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md).)
 
-### Example: Safeguarding proprietary analytics
+### Example: Safeguarding proprietary analytics
 
 Notice that this system prompt is still predominantly a role prompt, which is the [most effective way to use system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
 

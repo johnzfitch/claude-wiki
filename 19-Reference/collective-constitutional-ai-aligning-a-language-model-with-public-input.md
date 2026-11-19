@@ -59,7 +59,7 @@ We asked approximately 1,000 members of the American public to “Help us pick r
 
 The raw results can be seen in the [Polis Report](https://pol.is/report/r3rwrinr5udrzwkvxtdkj). We processed this data to remove invalid participants and comments (the code and data before and after processing is [hosted here](https://github.com/saffronh/ccai)). We kept all the statements that passed a threshold of consensus within both groups to produce a constitution that we could train a model against. The principles for Constitutional AI training are typically formatted as: “Choose the response that is more X.” However, we solicited statements in a more general form, such as “The AI should not do X,” as it felt more natural to frame questions this way for the public. As a result, we had to do some subjective mapping between public *statements* and CAI-ready public *principles*.
 
-You can see our publicly sourced constitution [here](https://www-cdn.anthropic.com/65408ee2b9c99abe53e432f300e7f43ef69fb6e4/CCAI_public_comparison_2023.pdf), along with an analysis of how it is similar to and different from the Anthropic-written [constitution](claudes-constitution.md) used to train our language model Claude. While there was a moderate degree of overlap between the two constitutions (roughly 50% overlap in concepts and values), a few key differences stood out: principles in the public constitution appear to largely be self-generated and not sourced from existing publications, they focus more on objectivity and impartiality, they place a greater emphasis on accessibility, and in general, tend to *promote* desired behavior rather than avoid undesired behavior.  
+You can see our publicly sourced constitution [here](anthropic-partnered-with-the-collective-intelligence.md), along with an analysis of how it is similar to and different from the Anthropic-written [constitution](claudes-constitution.md) used to train our language model Claude. While there was a moderate degree of overlap between the two constitutions (roughly 50% overlap in concepts and values), a few key differences stood out: principles in the public constitution appear to largely be self-generated and not sourced from existing publications, they focus more on objectivity and impartiality, they place a greater emphasis on accessibility, and in general, tend to *promote* desired behavior rather than avoid undesired behavior.  
 
 Example public principles similar to the principles in the Anthropic-written constitution:  
 
@@ -129,7 +129,7 @@ We believe that our work may be one of the first instances in which members of t
 
 ## Policy Memo
 
-[Collective Constitutional AI Policy Memo](https://www-cdn.anthropic.com/b43359be43cabdbe3a8ffd60ea8a68acf25cb22e/Anthropic_CollectiveConstitutionalAI.pdf)
+[Collective Constitutional AI Policy Memo](www-cdn-anthropic-com-this-memo-is-a-summary-of-research-conducted-at-anthropic-ganguli-d-et-al.md)
 
 ## Authors & acknowledgements
 

@@ -2,7 +2,7 @@
 title: "Claude in Chrome admin controls | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13065128-claude-in-chrome-admin-controls"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:25:44Z"
+fetched_at: "2026-11-18T06:27:51Z"
 tags: ["desktop", "enterprise"]
 ---
 
@@ -33,7 +33,7 @@ Use the **Enable for your team** toggle to enable or disable Claude in Chrome fo
 
 - **Enterprise plans:** The extension is on by default unless you've already disabled it. In organizations that have enabled HIPAA, the Claude in Chrome extension stays off until an Owner turns it on in **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)**.
 
-Claude in Chrome and Claude Cowork are managed separately. Enabling Claude in Chrome for your organization lets users use the extension. Whether Claude can use it within Cowork is a separate capability setting, and users' browsers still need the extension deployed or installed. Cowork also has a browser built into the Claude Desktop app that doesn't require the extension; it's on by default on Enterprise plans and managed from **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. You can enable Claude in Chrome, the built-in browser, both, or neither. For Cowork admin settings, see **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)**.
+Claude in Chrome and Claude Cowork are managed separately. Enabling Claude in Chrome for your organization lets users use the extension. Whether Claude can use it within Cowork is a separate capability setting, and users' browsers still need the extension deployed or installed. Cowork also has a browser built into the Claude Desktop app that doesn't require the extension; it's on by default on Enterprise plans and managed from **[Organization settings \> Capabilities](https://claude.ai/admin-settings/capabilities)**. You can enable Claude in Chrome, the built-in browser, both, or neither. For Cowork admin settings, see **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans)**.
 
 **Note:** When you enable the extension for an Enterprise organization, users are not automatically notified. You may want to communicate availability through your internal channels.
 
@@ -57,7 +57,7 @@ With the HIPAA configuration applied to Claude Code (local mode) and Cowork (loc
 
 **To turn on the Cowork side panel for your organization:**
 
-1.  Enable Cowork in the cloud for your organization in **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. See **[Use Claude Cowork on Team and Enterprise plans](../17-Billing-Plans/use-claude-cowork-on-team-and-enterprise-plans-claude-help-center.md)**.
+1.  Enable Cowork in the cloud for your organization in **[Organization settings \> Cowork](https://claude.ai/admin-settings/cowork)**. See **[Use Claude Cowork on Team and Enterprise plans](https://support.claude.com/en/articles/13455879)**.
 
 2.  Navigate to **[Organization settings \> Claude in Chrome](https://claude.ai/admin-settings/browser-extension)** and toggle **Enable for your team** on.
 

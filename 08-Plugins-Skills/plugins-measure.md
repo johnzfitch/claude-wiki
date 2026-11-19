@@ -2,8 +2,8 @@
 title: "Measure plugin cost and usage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/measure"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-31T06:24:43Z"
-last_modified: "Sat, 31 Oct 2026 02:23:18 GMT"
+fetched_at: "2026-11-13T06:34:56Z"
+last_modified: "Fri, 13 Nov 2026 06:15:17 GMT"
 tags: ["claude-code", "plugins"]
 ---
 

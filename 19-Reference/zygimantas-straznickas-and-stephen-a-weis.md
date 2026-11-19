@@ -1,9 +1,8 @@
 ---
 title: "Zygimantas Straznickas and Stephen A. Weis"
-source_url: "https://www-cdn.anthropic.com/e8d50c167ad47beeb03d6109a4a484be95cb38ea/aes_attacks.pdf"
+source_url: "https://www-cdn.anthropic.com/e8d50c167ad47beeb03d6109a4a484be95cb38ea/hawk_key_recovery.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:37:48Z"
-last_modified: "Tue, 28 Jul 2026 15:27:23 GMT"
+fetched_at: "2026-11-18T06:28:46Z"
 tags: ["news-research"]
 ---
 

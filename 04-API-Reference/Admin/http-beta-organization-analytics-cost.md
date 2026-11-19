@@ -2,7 +2,7 @@
 title: "Cost - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/cost"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-07T06:23:42Z"
+fetched_at: "2026-11-15T06:23:47Z"
 tags: ["api"]
 ---
 
@@ -27,7 +27,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/analytics/cost
 
-Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get cost in USD across a date range, broken out by dimension.
 
@@ -35,7 +35,7 @@ Get cost in USD across a date range, broken out by dimension.
 
 
 
-BetaAnalyticsCostGroup object{ actor, actor_type, agent_id, 18 more }
+BetaAnalyticsCostGroup object{ actor, actor_type, agent_id, 19 more }
 
 
 
@@ -43,7 +43,7 @@ The dimension values one cost row is broken out by, including `cost_type` and `t
 
 
 
-BetaAnalyticsCostGroupBy = "actor" or "actor_type" or "agent_id" or 18 more
+BetaAnalyticsCostGroupBy = "actor" or "actor_type" or "agent_id" or 19 more
 
 
 

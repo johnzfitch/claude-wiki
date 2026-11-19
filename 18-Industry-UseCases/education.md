@@ -2,7 +2,7 @@
 title: "Claude for higher education | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/education"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:00Z"
+fetched_at: "2026-11-18T06:29:36Z"
 tags: ["case-studies"]
 ---
 

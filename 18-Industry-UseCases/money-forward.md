@@ -2,7 +2,7 @@
 title: "Money Forward Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/money-forward"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:44Z"
+fetched_at: "2026-11-18T06:29:01Z"
 tags: ["case-studies", "claude-code", "evaluation"]
 ---
 
@@ -84,13 +84,13 @@ Money Forward plans to extend Claude Code across the full software development l
 ## Related stories
 
 
+### Transforming e-commerce in Latin America
+
+
+### Scaling AI for over 12K employees
+
+
 ### How Qonto delegates financial admin for small businesses with Claude on Amazon Bedrock
 
 
 ### Pictet turns weeks of work into hours with Claude Code
-
-
-### How Satispay’s engineers write 75% of their code with Claude
-
-
-### OffDeal powers every stage of M&A advisory with one Claude-based agent

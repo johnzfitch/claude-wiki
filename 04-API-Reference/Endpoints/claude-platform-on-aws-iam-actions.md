@@ -2,7 +2,7 @@
 title: "IAM actions for Claude Platform on AWS - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/claude-platform-on-aws-iam-actions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:00Z"
+fetched_at: "2026-11-13T06:36:03Z"
 tags: ["api"]
 ---
 

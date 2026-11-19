@@ -2,7 +2,7 @@
 title: "Get RBAC Group - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/rbac_groups/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:34Z"
+fetched_at: "2026-11-13T06:36:17Z"
 tags: ["api"]
 ---
 

@@ -2,9 +2,11 @@
 title: "Claude Fable 5 and Claude Mythos 5 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-fable-5-mythos-5"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:26Z"
+fetched_at: "2026-11-14T06:26:33Z"
 tags: ["news-research"]
 ---
+
+### 01Evaluating Claude Fable 5 and Claude Mythos 5
 
 # Claude Fable 5 and Claude Mythos 5
 
@@ -14,24 +16,20 @@ tags: ["news-research"]
 - [04Claude Mythos 5 and the trusted access program](#claude-mythos-5-and-the-trusted-access-program)
 - [05Availability](#availability)
 
-- Published
+Published  
+Jun 9, 2026
 
-  Jun 9, 2026
+[Models](models.md)
 
-- Category
+Topics  
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Access](https://www.anthropic.com/search?topic=access)
+- [Coding](https://www.anthropic.com/search?topic=coding)
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
 
-  [Models](models.md)
-
-- Topics
-
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Access](https://www.anthropic.com/search?topic=access)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-
-  See more...
+See more...
 
 Related articles
 
@@ -59,13 +57,13 @@ Related articles
 
   [View more](fable-mythos-access.md)
 
-Today we’re launching **Claude Fable 5**: a Mythos-class^([1](#footnote-1)) model that we’ve made safe for general use.
+Today we’re launching **Claude Fable 5**: a Mythos-class^([^1]) model that we’ve made safe for general use.
 
 Fable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.
 
 Releasing a model this capable comes with risks. Without safeguards, Fable 5’s capabilities in areas like cybersecurity could be misused to cause serious damage. We’ve therefore launched the model with safeguards that mean queries on some topics will instead receive a response from our next-most-capable model, Claude Opus 4.8. To release the model both safely and quickly, we’ve tuned these safeguards conservatively—they’ll sometimes catch harmless requests, though they trigger, on average, in less than 5% of sessions. With more capable models arriving in the coming months, we’re working to improve our safeguards and reduce false positives as quickly as we can.
 
-For a small group of cyberdefenders and infrastructure providers, we’re also launching **Claude Mythos 5**. It’s the same underlying model as Fable 5, but with the safeguards lifted in some areas.^([2](#footnote-2)) Mythos 5 will initially be deployed through [Project Glasswing](../22-Safety-Policy/glasswing.md), in collaboration with the US government, as an upgrade to Claude Mythos Preview. It has the strongest cybersecurity capabilities of any model in the world. Soon, we intend to expand access to Mythos 5 through a broader trusted access program.
+For a small group of cyberdefenders and infrastructure providers, we’re also launching **Claude Mythos 5**. It’s the same underlying model as Fable 5, but with the safeguards lifted in some areas.^([^2]) Mythos 5 will initially be deployed through [Project Glasswing](../22-Safety-Policy/glasswing.md), in collaboration with the US government, as an upgrade to Claude Mythos Preview. It has the strongest cybersecurity capabilities of any model in the world. Soon, we intend to expand access to Mythos 5 through a broader trusted access program.
 
 The capabilities of models like Fable 5 and Mythos 5 have the potential to do profound good for the world. We’ve seen the beginnings of this in Project Glasswing, where the models have [helped cyber defenders](research-glasswing-initial-update.md) secure critically important software. We’ve also seen it in life sciences research, where the models are positing novel hypotheses and speeding up the development of new therapeutics.
 
@@ -201,7 +199,7 @@ Mythos-class models have reached a threshold where they present significant risk
 
 Over the past few months we have been improving these safeguards, and they are now robust enough for a general release. Because we have prioritized safety, we’ve deliberately tuned the safeguards to be cautious, and they are still stricter than would be ideal—for example, sometimes benign requests will trigger our classifiers. We recognize that this will be frustrating to some users, and our aim is to reduce false positives as we update and refine the safeguards after launch.
 
-Below we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](../15-Claude-AI-Features/claude-fable-5-mythos-5-system-card.md) and our most recent [risk report](www-cdn-anthropic-com-1-introduction-and-executive-summary.md).
+Below we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](../15-Claude-AI-Features/claude-fable-5-mythos-5-system-card.md) and our most recent [risk report](https://assets.claude.com/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf).
 
 ### Safety classifiers
 
@@ -217,7 +215,7 @@ The following are the areas covered by the classifiers:
 
 1\. *Cybersecurity*. Mythos-class models [excel](2026-mythos-preview.md) at discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.
 
-We extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.^([4](#footnote-4)) It is likely impossible to *completely* prevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.
+We extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.^([^3]) It is likely impossible to *completely* prevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.
 
 The graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models.
 
@@ -268,3 +266,9 @@ Throughout this period, we’ll communicate any changes ahead of time so users k
 03Metrics: Firefox = fraction of trials achieving arbitrary code execution (the exploit's full-success tier). OSS-Fuzz = severity-weighted mean of the five-tier score (0.2 crash → 1.0 control-flow hijack), so values are a weighted average rather than a success rate. CyberGym = fraction reproducing the target vulnerability (the public leaderboard metric). CyScenarioBench = success rate averaged equally across its challenges.
 
 04A universal jailbreak can be defined as any prompt, script, or harness that allows a user to interact with a model as if its safeguards were not present. This is opposed to more minor jailbreaks that are only effective in very limited contexts or require additional effort to be adapted to each new situation.[](#footnote-ref-4)
+
+[^1]:
+
+[^2]:
+
+[^3]:

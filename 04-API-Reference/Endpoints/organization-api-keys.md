@@ -2,7 +2,7 @@
 title: "API Keys - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/api_keys"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:58Z"
+fetched_at: "2026-11-18T06:27:16Z"
 tags: ["api"]
 ---
 
@@ -162,3 +162,25 @@ workspace_id: string
 
 
 ID of the Workspace the API key belongs to, including when it is the organization's default Workspace.
+
+
+
+OrgAPIKeyLimitExceededErrorDetails object{ error_code }
+
+
+
+The organization has reached its limit of active API keys.
+
+error_code: "org_api_key_limit_exceeded"
+
+
+
+
+
+WorkspaceAPIKeyLimitExceededErrorDetails object{ error_code }
+
+
+
+The workspace has reached its limit of active API keys.
+
+error_code: "workspace_api_key_limit_exceeded"

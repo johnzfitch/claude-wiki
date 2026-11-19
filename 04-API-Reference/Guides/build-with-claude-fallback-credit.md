@@ -2,7 +2,7 @@
 title: "Fallback credit - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/fallback-credit"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:25Z"
+fetched_at: "2026-11-13T06:33:55Z"
 tags: ["api"]
 ---
 
@@ -20,20 +20,30 @@ Avoid paying the prompt-cache cost twice when you retry a refused request on ano
 
 Fallback credit
 
+Beta
+
 Feature of  
 [Classifier refusals](build-with-claude-refusals-and-fallback.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- Claude Fable 5.2Includes Mythos
+- Claude Opus 5.5
+- Claude Sonnet 5.5
+- Limited support for other models; see details
 
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+- Messages API
+- Managed Agents Not supported
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
-[Beta header](#feature-beta-headers)  
-Varies; see details
+[Beta header](#feature-availability)  
+- Varies; see details
 
 Prompt caches are per-model. When a model declines a request and you retry on another model, the conversation prefix already cached for the first model must be written into the new model’s cache in full. Cache writes cost more than cache reads. Fallback credit removes that extra cost. The refusal carries a credit token, you echo the token on the retry, and the retry is billed as though the conversation had been on the new model from the start.
 
@@ -164,11 +174,11 @@ print(json.dumps({"stop_reason": response.stop_reason, "model": response.model})
 
 Fallback credit is in beta on the Claude API, Amazon Bedrock, Claude Platform on AWS, Claude Models on Google Cloud (Google managed), and Microsoft Foundry. Refusals in [Message Batches](build-with-claude-batch-processing.md) don’t mint credit tokens, and redemption applies only to direct Messages API requests: a token passed on a batch request is accepted but ignored. A Claude Haiku 5.5 refusal carries no fallback credit, so a retry after one pays the full cost of writing the fallback model’s prompt cache.
 
-The retry model must be one of the refused model’s permitted fallback targets. For Claude Fable 5.1, Claude Fable 5, and Claude Opus 5.5, those are Claude Opus 4.8 (`claude-opus-4-8`) and Claude Opus 5 (`claude-opus-5`). For Claude Opus 5, it is Claude Opus 4.8. For Claude Sonnet 5.5, it is Claude Sonnet 5 (`claude-sonnet-5`).
+The retry model must be one of the refused model’s permitted fallback targets. For Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, and Claude Opus 5.5, those are Claude Opus 4.8 (`claude-opus-4-8`) and Claude Opus 5 (`claude-opus-5`). For Claude Opus 5, it is Claude Opus 4.8. For Claude Sonnet 5.5, it is Claude Sonnet 5 (`claude-sonnet-5`).
 
-### Looking up permitted fallback targets programmatically
+### Looking up permitted fallback targets programmatically
 
-On the Claude API and Claude Platform on AWS, the target list is published as `allowed_fallback_models` on each model’s entry in the [Models API](../Endpoints/http-beta-models-list.md) when the `server-side-fallback-2026-07-01` beta header is set. The list is not yet visible under the `fallback-credit-*` header alone. It is not exposed on Amazon Bedrock, Claude Models on Google Cloud (Google managed), or Microsoft Foundry.
+On the Claude API and Claude Platform on AWS, the target list is published as `allowed_fallback_models` on each model’s entry in the [Models API](../Endpoints/http-beta-models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. when the `server-side-fallback-2026-07-01` beta header is set. The list is not yet visible under the `fallback-credit-*` header alone. It is not exposed on Amazon Bedrock, Claude Models on Google Cloud (Google managed), or Microsoft Foundry.
 
 ## Checking that the credit applied
 
@@ -194,7 +204,7 @@ Most retries redeem on the first attempt. When one does not, the API returns a 4
 
 If the refused request ran server tools, a tokenless retry re-runs and re-bills those tools. In that case, surface the 400 error to your caller instead of falling through to a tokenless retry.
 
-### If the error says ‘redemption temporarily unavailable’
+### If the error says ‘redemption temporarily unavailable’
 
 This rejection is transient, not a verdict on your retry shape. Retry the same request, with the same token, within the token’s 5-minute window. Do not move to the next step of the ladder.
 
@@ -202,7 +212,7 @@ This rejection is transient, not a verdict on your retry shape. Retry the same r
 
 The following sections cover edge cases and the complete redemption rules. Most integrations do not need them.
 
-### Fields that must match the refused request
+### Fields that must match the refused request
 
 Redemption compares the retry against the refused request. Every field that shapes the prompt must match exactly. Fields that do not shape the prompt may change on the retry.
 
@@ -215,7 +225,7 @@ The continuation shape (`fallback_has_prefill_claim: true`) is the one exception
 
 Do not strip `thinking` or `redacted_thinking` blocks from earlier turns on the retry, even though a plain retry without a token usually strips them. The body must match the refused request, and the server handles those blocks itself.
 
-### Beta headers must match too
+### Beta headers must match too
 
 Send the same `anthropic-beta` headers on the retry as on the refused request. A beta header present on one of the two requests but not the other can fail the match even when the bodies are identical. The resulting 400 error carries the same `request body ... does not match` message as a body difference, so a header difference is easy to misread as a body problem. In particular, do not add or drop beta headers based on which model the request targets.
 
@@ -226,13 +236,13 @@ Two header families are exempt from the match, for the retry’s sake:
 
 
 
-On models that include the 1M token context window by default, such as Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Sonnet 5, the `context-1m-2025-08-07` beta header has no effect. To keep the two requests identical, omit that header on both rather than sending it on one and not the other.
+On models that include the 1M token context window by default, such as Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Sonnet 5, the `context-1m-2025-08-07` beta header has no effect. To keep the two requests identical, omit that header on both rather than sending it on one and not the other.
 
-### When fallback_has_prefill_claim is absent
+### When fallback_has_prefill_claim is absent
 
 The field has no value only when the token has none either, so while you hold a token the field has a value, except on Amazon Bedrock, Claude Models on Google Cloud (Google managed), and Microsoft Foundry, where it can still be absent while their support for the field rolls out. In that case, treat the retry shape as unknown rather than as `False`. Try the appended-assistant-message shape first, and rely on the rejection handling in [When a retry is rejected](#when-a-retry-is-rejected), which falls back to the unchanged body.
 
-### Echoing the refused response’s content
+### Echoing the refused response’s content
 
 When a refusal’s token supports the continuation shape, the response `content` carries only the model’s own output, and the refusal explanation is delivered in `stop_details.explanation`. You can therefore echo `content` into the appended assistant message as-is.
 
@@ -243,13 +253,13 @@ Two adjustments might still be needed before sending:
 
 If the echoed content includes a `fallback` block from an earlier [server-side fallback](build-with-claude-refusals-and-fallback.md#server-side-fallback), keep the block exactly where it appeared. It is accepted on any request without a beta header. The API uses its position to validate the thinking blocks around it, so a request that echoes thinking blocks from both sides of that boundary is rejected if the block is omitted or moved.
 
-### Token scope and lifetime
+### Token scope and lifetime
 
 The token redeems only from the organization and workspace that received the refusal, including on Microsoft Foundry. On Claude Models on Google Cloud (Google managed) and Amazon Bedrock, which do not have workspaces, the token is bound to the platform’s caller identity instead.
 
 The token expires 5 minutes after the refusal. After that, send the retry without it. The token is also stateless: the server stores nothing about it, and there is no endpoint to inspect or revoke it.
 
-### When a token cannot be redeemed by either shape
+### When a token cannot be redeemed by either shape
 
 When the refusal arrived after server tools had already run within the request, the token redeems only by continuing the partial response. That restriction is what prevents the completed tool calls from running, and billing, again.
 
@@ -288,84 +298,169 @@ The SDK helper that applies fallback credit automatically.
 
 ## Availability
 
-Fallback credit is in beta on select models.
+Fallback credit
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Needed only when you write the retry yourself: send the `fallback-credit-2026-07-01` beta header and put the refusal’s `fallback_credit_token` on the retry.
+Status  
+Beta
 
-StatusBeta
+APIs  
+- Messages API
 
-Cloud platforms
+- Managed Agents Not supported
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+Beta headers  
+Requires either
 
-Models
+fallback-credit-2026-07-01
 
-- [Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md)
-- [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md)
-- [Claude Fable 5](../../20-Models/models-fable-5-overview.md)
-- [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
-- [Claude Opus 5](../../20-Models/models-opus-5-overview.md)
-- [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
+,
 
-StatusBeta
+server-side-fallback-2026-07-01
 
-Cloud platforms
+, or
 
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+fallback-credit-2026-06-01
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
 
-- [Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md)
-- [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md)
-- [Claude Fable 5](../../20-Models/models-fable-5-overview.md)
-- [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
-- [Claude Opus 5](../../20-Models/models-opus-5-overview.md)
-- [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
+Amazon Bedrock
 
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta headers  
+Requires either
+
+fallback-credit-2026-07-01
+
+or
+
+fallback-credit-2026-06-01
+
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+
+Note  
 On Amazon Bedrock and Google Cloud the token is bound to your caller identity (there are no workspaces), and `allowed_fallback_models` is not exposed.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Claude Platform on AWS
 
-StatusNot available
+Status  
+Beta
 
-### Required beta headers
+APIs  
+- Messages API
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+- Managed Agents Not supported
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Beta headers  
+Requires either
 
-Header
+fallback-credit-2026-07-01
 
-- `fallback-credit-2026-07-01`
-  
-- or`server-side-fallback-2026-07-01`
-  
-- or`fallback-credit-2026-06-01`
-  
+,
 
-Cloud platforms
+server-side-fallback-2026-07-01
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+, or
 
-Header
+fallback-credit-2026-06-01
 
-- `fallback-credit-2026-07-01`
-  
-- or`fallback-credit-2026-06-01`
-  
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
 
-Cloud platforms
+Claude Models on Google Cloud (Google managed)
 
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta headers  
+Requires either
+
+fallback-credit-2026-07-01
+
+or
+
+fallback-credit-2026-06-01
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+
+Note  
+On Amazon Bedrock and Google Cloud the token is bound to your caller identity (there are no workspaces), and `allowed_fallback_models` is not exposed.
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta headers  
+Requires either
+
+fallback-credit-2026-07-01
+
+,
+
+server-side-fallback-2026-07-01
+
+, or
+
+fallback-credit-2026-06-01
+
+Models  
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta headers  
+Requires either
+
+fallback-credit-2026-07-01
+
+,
+
+server-side-fallback-2026-07-01
+
+, or
+
+fallback-credit-2026-06-01
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5

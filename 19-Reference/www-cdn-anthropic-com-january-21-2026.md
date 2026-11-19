@@ -1,9 +1,8 @@
 ---
 title: "January 21, 2026"
-source_url: "https://www-cdn.anthropic.com/cffd979fd050fbc0d8874b8c58b24cc10554e208/claudes-constitution_webPDF_26-02.02a.pdf"
+source_url: "https://www-cdn.anthropic.com/cffd979fd050fbc0d8874b8c58b24cc10554e208/claudes-constitution_webPDF_26-01.26a.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:40:36Z"
-last_modified: "Wed, 28 Jan 2026 00:17:12 GMT"
+fetched_at: "2026-11-18T06:28:31Z"
 tags: ["news-research"]
 ---
 

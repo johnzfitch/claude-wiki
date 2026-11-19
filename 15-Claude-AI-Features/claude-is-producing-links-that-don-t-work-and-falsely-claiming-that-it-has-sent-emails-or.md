@@ -2,7 +2,7 @@
 title: "Claude is producing links that don’t work and falsely claiming that it has sent emails or produced external documents. What’s going on? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8241188-claude-is-producing-links-that-don-t-work-and-falsely-claiming-that-it-has-sent-emails-or-produced-external-documents-what-s-going-on"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:00Z"
+fetched_at: "2026-11-18T06:28:11Z"
 tags: ["claude-ai"]
 ---
 

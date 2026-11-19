@@ -2,7 +2,7 @@
 title: "Use Claude for Education at your university | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11139144-use-claude-for-education-at-your-university"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:34Z"
+fetched_at: "2026-11-18T06:27:39Z"
 tags: ["claude-ai"]
 ---
 
@@ -133,17 +133,17 @@ All platforms synchronize your conversations, allowing you to start on one devic
 
 Review the following resources to help you get the most out of your usage with Claude:
 
-- **[Upload files to Claude](https://support.claude.com/en/articles/8241126)**
+- **[Upload files to Claude](upload-files-to-claude-claude-help-center.md)**
 
-- **[What are projects?](https://support.claude.com/en/articles/9517075)**
+- **[What are projects?](what-are-projects-claude-help-center.md)**
 
 - **[How can I create and manage projects?](https://support.claude.com/en/articles/9519177)**
 
-- **[Manage project visibility and sharing](https://support.claude.com/en/articles/9519189)**
+- **[Manage project visibility and sharing](manage-project-visibility-and-sharing-claude-help-center.md)**
 
 - **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
 
-- **[Usage limit best practices](https://support.claude.com/en/articles/9797557)**
+- **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices-claude-help-center.md)**
 
 - **[Create and edit files with Claude](create-and-edit-files-with-claude.md)**
 
@@ -169,7 +169,7 @@ Your SSO configuration is managed by the Primary Owner or Owner on your account.
 
 ### I'm seeing a warning message about remaining messages
 
-Claude has a usage limit that varies based on message length, file attachments, and conversation length. You'll receive warning messages before reaching the limit. When you see the first warning, consider following these **[usage tips](https://support.claude.com/en/articles/9797557)**.
+Claude has a usage limit that varies based on message length, file attachments, and conversation length. You'll receive warning messages before reaching the limit. When you see the first warning, consider following these **[usage tips](../17-Billing-Plans/usage-limit-best-practices-claude-help-center.md)**.
 
 ### I'm seeing an error message about length limit
 
@@ -181,7 +181,9 @@ This appears when your prompt exceeds Claude's available context window. When th
 
 ### I already have a Claude account using my university email
 
-When you log in, you can select between your previous account and the new university-sponsored account. You can't migrate data between accounts, but you can **[export data](../22-Safety-Policy/export-your-claude-data-claude-help-center.md)** from your existing account and upload the conversation data (JSON format) to your new account.
+When you log in, you can select between your previous account and the new university-sponsored account. You can keep both accounts, or close your previous account and bring what can move into your university's organization. Your university can access what moves. Not everything can move: see **[Move your personal Claude account to a Team or Enterprise organization](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md)**. If you want a copy of your data, **[export it](../22-Safety-Policy/export-your-claude-data.md)** and download every file before you start. Exported data can't be imported into your university-sponsored account.
+
+If your university has claimed your account, you can't keep both. See **[Respond to an Enterprise domain claim on your Claude account](../21-Account-Support/respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
 
 ------------------------------------------------------------------------
 
@@ -193,8 +195,8 @@ Review these resources and visit the **[Privacy Center](https://privacy.claude.c
 
 - **[How long do you store my organization’s data?](https://privacy.claude.com/en/articles/7996866)**
 
-- **[Can you delete data that I sent via Claude?](../17-Billing-Plans/can-you-delete-data-that-i-sent-via-team-and-enterprise-plans-claude-help-center.md)**
+- **[Can you delete data that I sent via Claude?](https://support.claude.com/en/articles/9796617)**
 
 - **[How can I delete or rename a conversation?](https://privacy.claude.com/en/articles/11117329)**
 
-- **[Who owns and manages the data of my university account?](https://support.claude.com/en/articles/9265372)**
+- **[Who owns and manages the data of my university account?](../13-Enterprise-Admin/who-owns-and-manages-the-data-of-my-team-claude-help-center.md)**

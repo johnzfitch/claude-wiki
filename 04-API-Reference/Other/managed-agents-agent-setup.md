@@ -2,7 +2,7 @@
 title: "Define your agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/agent-setup"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:22Z"
+fetched_at: "2026-11-13T06:36:41Z"
 tags: ["agents", "api"]
 ---
 
@@ -23,15 +23,23 @@ Agent configurations
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Status](#feature-availability)  
+Beta
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 An agent is a reusable, versioned configuration that defines persona and capabilities. It bundles the model, system prompt, tools, MCP servers, and skills that shape how Claude behaves during a session.
 
@@ -55,9 +63,9 @@ You can also override `model`, `system`, `tools`, `mcp_servers`, and `skills` fo
 
 ## Create an agent
 
-The following example defines a coding agent that uses the newest Claude Opus model with access to the pre-built agent toolset. The toolset lets the agent write code, read files, search the web, and more. See the [agent tools reference](managed-agents-tools.md) for the full list of supported tools.
+The following example defines a coding agent that uses the newest Claude Opus model with access to the pre-built agent toolset. The toolset lets the agent write code, read files, search the web, and more. See [Tools](managed-agents-tools.md) for the full list of supported tools.
 
-The examples use curl, the `ant` CLI, or the SDK. If you haven’t set one up, the [quickstart](managed-agents-quickstart.md#before-you-begin) covers installation and client setup.
+The examples use curl, the `ant` CLI, or the SDK. If you haven’t set one up, [Get started with Claude Managed Agents](managed-agents-quickstart.md#before-you-begin) covers installation and client setup.
 
 cURL
 
@@ -143,7 +151,7 @@ The `default_config` on the toolset shows its default [permission policy](manage
 
 
 
-To use Claude Opus 5.5, Claude Opus 5, or Claude Opus 4.8 with [fast mode](../Guides/build-with-claude-fast-mode.md), pass `model` as an object, for example: `{"id": "claude-opus-5-5", "speed": "fast"}`. See the fast mode page’s [supported models](../Guides/build-with-claude-fast-mode.md#supported-models).
+To use [fast mode](../Guides/build-with-claude-fast-mode.md), pass `model` as an object, for example: `{"id": "claude-opus-5-5", "speed": "fast"}`. Fast mode on Claude Opus 4.8 is deprecated. See the fast mode page’s [supported models](../Guides/build-with-claude-fast-mode.md#supported-models) for the models that support it on Claude Managed Agents.
 
 
 
@@ -198,15 +206,17 @@ model:
 You are a helpful assistant.
 ```
 
-An `inference_geo` pin is validated against the workspace’s [`allowed_inference_geos`](manage-claude-data-residency.md#workspace-level-restrictions) when the agent is saved, when a session is created from it, and on every turn the session serves. If the workspace allowlist narrows so a pin is no longer allowed, new sessions can’t be created from the agent and running sessions refuse further turns; pins are never exempted, because workspaces rely on them for compliance and data residency.
+To change or clear the pin later, update the agent’s `model` object. Supplying `model` without `inference_geo` clears the pin, as described under [Update semantics](#update-semantics).
 
-Setting `inference_geo` on a model that doesn’t support geographic inference pinning returns a 400 error; see [Model availability](manage-claude-data-residency.md#model-availability) for the models that do. In a `multiagent` configuration, the agent’s pin and the pin of every agent listed in the `predefined_agents` list of `subagents` or `workflows` must all be set to the same value or all be unset; see [Multiagent orchestration](managed-agents-multiagent-orchestration.md). To change or clear the pin later, update the agent’s `model` object; supplying `model` without `inference_geo` clears it, as described under [Update semantics](#update-semantics).
+Setting `inference_geo` on a model that doesn’t support it returns a 400 error. See [Model availability](manage-claude-data-residency.md#model-availability) for the models that do.
+
+In a `multiagent` configuration, `subagents` and `workflows` each have a `predefined_agents` list. The agent and every agent in those lists must all pin the same geo, or all have no pin. See [Multiagent orchestration](managed-agents-multiagent-orchestration.md).
+
+The API checks an `inference_geo` pin against the workspace’s [`allowed_inference_geos`](manage-claude-data-residency.md#workspace-level-restrictions) list. The check runs when you set the pin, when you create a session from the agent, and on every turn of that session. If the list changes and no longer allows the pin, you can’t create new sessions from the agent. Running sessions also refuse further turns. This applies even to a pin that was allowed when you set it, because workspaces rely on these checks for compliance and data residency.
 
 ## Update an agent
 
-Updating an agent generates a new version when the configuration changes. The `version` field is optional: supply it for optimistic concurrency (a mismatch returns a 409), or omit it to apply the update unconditionally (last write wins). Updates to archived agents are rejected.
-
-With the CLI, edit the agent’s file and run `ant apply` again; apply supplies `version` for you.
+Updating an agent generates a new version when the configuration changes. The `version` field is optional. Supply the version that you last read, and the update applies only if the agent is still at that version. Otherwise, the request returns a 409 error. Omit `version` to apply the update whatever the agent’s current version. In that case, if two updates set the same field or `metadata` key, the last write wins. The API rejects updates to archived agents.
 
 cURL
 
@@ -251,7 +261,9 @@ tools:
 You are a helpful coding agent. Always write tests.
 ```
 
-The preceding example supplies `version` from the create response, so the update only applies if nothing else has changed the agent since you read it. To apply an update unconditionally, omit `version` from the request:
+Edit the agent’s file and run `ant apply` again. The command supplies `version` for you.
+
+The preceding example supplies `version`, so the update only applies if the agent is still at that version. To apply an update unconditionally, omit `version` from the request:
 
 cURL
 
@@ -286,21 +298,26 @@ print(f"New version: {unconditional_agent.version}")
 
 ### Update semantics
 
-- **`version`** is optional and must be at least 1 when supplied. When supplied, the request returns a 409 if it doesn’t match the agent’s current version, even when the fields you send already match the stored values; re-read the agent and retry. When omitted, the update applies unconditionally and the most recent update silently replaces any concurrent one, with no error to either caller. Supplying `version` is the recommended default for interactive callers, and omitting it fits declarative apply loops, such as a CI job that syncs checked-in agent definitions, where the loop owns the agent.
+- **`version`** is optional and must be at least 1 when supplied. When supplied, it must match the agent’s current version. If it doesn’t, the request returns a 409, even when the fields you send already match the stored values. Reread the agent and retry. When omitted, the update applies unconditionally. If two concurrent updates set the same field or `metadata` key, the later value is kept, with no error to either caller. When too many writes reach the agent at once, a request can fail with a 429 error. Supplying `version` is the recommended default for interactive callers. Omitting it fits declarative apply loops where the loop owns the agent, such as a CI job that syncs checked-in agent definitions.
 
 - **Omitted fields are preserved.** You only need to include the fields you want to change.
 
-- **Scalar fields** (`model`, `system`, `name`, `description`) are replaced with the new value. `system` and `description` can be cleared by passing `None`. `model` and `name` are mandatory and cannot be cleared. Within a `model` object you supply, `effort` is the sole exception: if the model `id` is unchanged, omitting `effort` leaves the stored effort level unchanged. If you change the model `id`, an omitted `effort` resets to the new model’s default. Other `model` fields are replaced along with the object: supplying `model` without `inference_geo` clears the agent’s inference geo pin.
+- **`model`, `system`, `name`, and `description`** are replaced with the new value. To clear `system` or `description`, pass `None`. Every agent needs a `model` and a `name`, so those two can’t be cleared. When you supply `model`, it replaces the stored object as a whole, so `model` fields that you omit aren’t kept. For example, supplying `model` without `inference_geo` clears the agent’s inference geo pin. The one exception to this rule is `effort`. If the model `id` is unchanged, omitting `effort` leaves the stored effort level unchanged. If you change the model `id`, an omitted `effort` resets to the new model’s default.
 
 - **Array fields** (`tools`, `mcp_servers`, `skills`) are fully replaced by the new array. To clear an array field entirely, pass `None` or an empty array.
 
-- **`multiagent`** is merged into the stored block level by level when the update keeps the `multiagent_20261001` type. A setting that you omit keeps its stored value, and a `predefined_agents` list that you send replaces the stored list. Any other update that sends `multiagent` replaces the stored block as a whole, and the settings that it omits take their defaults. Pass `multiagent=None` to clear the whole block. Inside the block, `null` resets a setting to its default, so setting `workflows` to `null` turns dynamic workflows on. See [Turn on dynamic workflows](managed-agents-multiagent-orchestration.md#turn-on-dynamic-workflows).
+- **`multiagent`** updates merge or replace, depending on the type:
+
+  - When the stored block and the update both use the `multiagent_20261001` type, the update is merged into the stored block. A setting that you omit keeps its stored value, both at the top of the block and inside `subagents` or `workflows`. A `predefined_agents` list that you send replaces the stored list. A setting that you send with a new `type`, such as `{"type": "disabled"}`, replaces the stored setting. Fields that it omits take their defaults.
+  - If the stored block or the update uses the [`coordinator` type](managed-agents-multiagent-orchestration.md#move-from-the-coordinator-type), the update replaces the stored block as a whole. Settings that it omits take their defaults.
+
+  To clear the whole block, pass `multiagent=None`. To reset one setting to its default, set it to `null` inside the block. For example, setting `workflows` to `null` turns dynamic workflows on, because that is its default. See [Turn on dynamic workflows](managed-agents-multiagent-orchestration.md#turn-on-dynamic-workflows).
 
 - **Metadata** is merged at the key level. Keys you provide are added or updated. Keys you omit are preserved. To delete a specific key, set its value to `null`.
 
 - **No-op detection.** If the update produces no change relative to the current version, no new version is created and the existing version is returned.
 
-- **Other agents’ `predefined_agents` lists are not updated.** Agents that list this agent in the `predefined_agents` list of `subagents` or `workflows` keep the version that was pinned when they were created or when an update last sent that list, even if the reference omits `version`. To delegate to the new version, [update the agent that lists it](managed-agents-multiagent-orchestration.md#list-the-subagents) so that the list references the new version.
+- **Other agents’ `predefined_agents` lists are not updated.** Updating this agent doesn’t change any agent that lists it in the `predefined_agents` list of `subagents` or `workflows`. A listing agent keeps referencing the same version of this agent. That version is set when the listing agent is created, and again whenever an update to the listing agent includes that list. A reference that omits `version` is set to the latest version at that moment, and it doesn’t follow later versions. To delegate to the new version, [update the agent that lists it](managed-agents-multiagent-orchestration.md#list-the-subagents) so that the list references the new version.
 
 The following update clears the description, deletes the `team` key from `metadata`, and sets `workflows` to `null`, which turns dynamic workflows on:
 
@@ -352,7 +369,7 @@ multiagent:
 You are a helpful coding agent.
 ```
 
-The file no longer has `description` or the `team` key, so `ant apply` sends `null` for them. Deleting a setting inside `multiagent` keeps its stored value, so the file sets `workflows` to `null`.
+The stored agent has a `description` and a `team` key in `metadata`, but the file doesn’t, so `ant apply` sends `null` for them. `multiagent` is different: for a setting missing from inside it, `ant apply` sends nothing, so the API keeps the stored value. To reset `workflows`, the file sets it to `null`.
 
 ## Agent lifecycle
 
@@ -364,7 +381,7 @@ The file no longer has `description` or the `team` key, so `ant apply` sends `nu
 
 ### List versions
 
-Fetch the full version history to track how an agent has changed over time. Results are paginated, and the SDK examples fetch every page automatically.
+Fetch the full version history to track how an agent has changed over time. Results are paginated, and the SDK can fetch every page for you.
 
 cURL
 
@@ -443,7 +460,7 @@ Attach reusable, filesystem-based expertise to your agent for domain-specific wo
 
 [Start a session](managed-agents-sessions.md)
 
-Create a session to run your agent and start running tasks.
+Create a session to start running tasks with your agent.
 
 
 
@@ -453,32 +470,61 @@ Event types, self-hosted worker CLI flags, supported MCP server types, rate limi
 
 ## Availability
 
-Agent configurations are available on every model.
+Agent configurations
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Agent configurations are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+Claude API
 
-Models
+Status  
+Beta
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+API  
+- Managed Agents
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+managed-agents-2026-04-01
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- All models
 
-Header
+Claude Platform on AWS
 
-- `managed-agents-2026-04-01`
-  
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -492,8 +538,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

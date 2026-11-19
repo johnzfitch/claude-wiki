@@ -2,7 +2,7 @@
 title: "What CMEK covers on Claude Platform - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-coverage-claude-platform"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:25:46Z"
+fetched_at: "2026-11-17T06:24:58Z"
 tags: ["api"]
 ---
 

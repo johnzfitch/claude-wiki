@@ -2,7 +2,7 @@
 title: "Claude Duet | A proactive AI agent to assist you"
 source_url: "https://www.claude.com/product/claude-duet"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:27:24Z"
+fetched_at: "2026-11-18T06:29:21Z"
 tags: ["agents", "claude-ai", "connectors", "plugins"]
 ---
 

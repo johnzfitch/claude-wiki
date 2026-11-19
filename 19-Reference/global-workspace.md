@@ -2,9 +2,11 @@
 title: "A global workspace in language models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/global-workspace"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:26Z"
+fetched_at: "2026-11-14T06:26:40Z"
 tags: ["news-research"]
 ---
+
+### 01How we found the J-space
 
 # A global workspace in language models
 
@@ -20,24 +22,21 @@ tags: ["news-research"]
 - [08What about consciousness?](#what-about-consciousness)
 - [09External commentary](#external-commentary)
 
-- Published
+Published  
+Jul 6, 2026
 
-  Jul 6, 2026
+Team  
+[Interpretability](team-interpretability.md)
 
-- Team
+Topics  
+- [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+- [Model welfare](https://www.anthropic.com/search?topic=model-welfare)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
 
-  [Interpretability](team-interpretability.md)
-
-- Topics
-
-  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
-  - [Model welfare](https://www.anthropic.com/search?topic=model-welfare)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
-  - [Open source](https://www.anthropic.com/search?topic=open-source)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-
-  See more...
+See more...
 
 Related articles
 
@@ -69,7 +68,7 @@ None of this tells us whether Claude is *conscious* in the way people are, or wh
 
 More broadly, these findings have changed our understanding of how Claude’s mind works, revealing a privileged mental workspace that can be used for deliberate reasoning, operating amidst a sea of more automatic, inflexible processing. Rather than being a chaotic jumble of numbers, Claude’s internals have organized themselves in a way that is reminiscent of our own minds.
 
-This post is a short summary of a much more extensive [research paper](http://transformer-circuits.pub/2026/workspace/index.html), where you can find more detail on our experiments. We’ve also released a code repository with an [open-source implementation](https://github.com/anthropics/jacobian-lens) of the core methods, and have partnered with Neuronpedia to provide an [interactive demo](http://neuronpedia.org/jlens) of our methods on open-weights models. To provide additional perspectives on the broader implications of this work, we also invited commentary from several experts in neuroscience, philosophy, and LLM interpretability, which can be viewed [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf).
+This post is a short summary of a much more extensive [research paper](http://transformer-circuits.pub/2026/workspace/index.html), where you can find more detail on our experiments. We’ve also released a code repository with an [open-source implementation](https://github.com/anthropics/jacobian-lens) of the core methods, and have partnered with Neuronpedia to provide an [interactive demo](http://neuronpedia.org/jlens) of our methods on open-weights models. To provide additional perspectives on the broader implications of this work, we also invited commentary from several experts in neuroscience, philosophy, and LLM interpretability, which can be viewed [here](https://assets.claude.com/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf).
 
 ## How we found the J-space
 
@@ -149,7 +148,7 @@ We think our results do have something substantial to say about access conscious
 
 It’s important to note that there are several key differences between the workspace we identified in Claude and the global workspace model in humans. The brain’s workspace is sustained by recurrent loops—signals cycling back through the same circuits over time. In contrast, Claude’s workspace evolves over a single pass through the network, with the network’s depth playing the role that time plays in the brain. In this sense, Claude’s internal workspace processing is time-limited relative to humans’ (though it can compensate for this constraint by “thinking out loud” using its scratchpad). In other ways, however, Claude’s workspace is *more* powerful than that of humans. Human working memory fades within seconds, so the brain’s workspace has limited ability to retain information over time; in contrast, due to the attention mechanism in its neural network architecture, Claude can simply recall memories it cached at any earlier point in the text. Another important difference is the *content* of the workspace. While human conscious thoughts come in many formats—images, sounds, planned movements—Claude’s workspace is built almost entirely out of words. We suspect this is because producing words is the only kind of action Claude can take, which is not the case for humans.
 
-We hope the similarities and differences between the J-space and the global workspace model can feed back into neuroscience. The similarities present an exciting scientific opportunity: to the extent that the J-space mirrors our own mechanisms of conscious access, studying mechanisms in language models (much easier than studying human brains!) could inspire hypotheses in neuroscience. For instance, the J-space is constructed by identifying representations of potential outputs—words the model might say. If something similar holds in humans, it would suggest that the global workspace might be fundamentally tied to brain regions that prepare actions and speech, more so than to sensory areas. The differences between language models and human brains are instructive as well. They suggest that some aspects of our neural architecture, such as built-in recurrent connections, may not be strictly necessary to support the functions associated with conscious access. For an independent perspective on the neuroscientific implications of our work, see the invited [commentary](https://www-cdn.anthropic.com/files/4zrzovbb/website/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf) from Stanislas Dehaene and Lionel Naccache, two of the neuroscientists central to the development of global neuronal workspace theory.
+We hope the similarities and differences between the J-space and the global workspace model can feed back into neuroscience. The similarities present an exciting scientific opportunity: to the extent that the J-space mirrors our own mechanisms of conscious access, studying mechanisms in language models (much easier than studying human brains!) could inspire hypotheses in neuroscience. For instance, the J-space is constructed by identifying representations of potential outputs—words the model might say. If something similar holds in humans, it would suggest that the global workspace might be fundamentally tied to brain regions that prepare actions and speech, more so than to sensory areas. The differences between language models and human brains are instructive as well. They suggest that some aspects of our neural architecture, such as built-in recurrent connections, may not be strictly necessary to support the functions associated with conscious access. For an independent perspective on the neuroscientific implications of our work, see the invited [commentary](https://assets.claude.com/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf) from Stanislas Dehaene and Lionel Naccache, two of the neuroscientists central to the development of global neuronal workspace theory.
 
 We mentioned that our experiments don’t answer whether AI models might have experiences. But that doesn’t make the question less important. Building systems with experiences like humans and animals have would raise very difficult ethical questions. Handling it correctly—and deciding whether it’s even morally acceptable—would require input from philosophers, scientists, religious leaders, governments, and the public. Thus, even if we’re not sure that we’ve crossed that bridge yet, we think it’s time to start thinking about it. We hope our work inspires further scientific investigation of forms of consciousness that might be present in AI systems, and a broader discussion of the implications.
 
@@ -165,4 +164,4 @@ We invited several outside experts to write independent commentaries on this wor
 - **Patrick Butlin, Dillon Plunkett, Robert Long** (Eleos AI Research) and **Derek Shiller** (Rethink Priorities) study the potential for consciousness and moral status in AI systems.
 - **Neel Nanda** leads the language model interpretability team at Google DeepMind. His commentary includes an independent replication of some of our findings on an open-weight model.
 
-Read their commentaries [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf).
+Read their commentaries [here](https://assets.claude.com/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf).

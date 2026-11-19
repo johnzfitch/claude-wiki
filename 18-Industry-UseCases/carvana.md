@@ -2,7 +2,7 @@
 title: "Carvana Claude Tag case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/carvana"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:27Z"
+fetched_at: "2026-11-18T06:28:51Z"
 tags: ["agents", "case-studies"]
 ---
 
@@ -88,6 +88,9 @@ The change shows up in more than the two numbers above. People filed issues befo
 The next frontier for AI coding assistants is bigger than triage. Half a dozen teams inside Carvana are now building multiplayer flows on top of Claude Tag. “This evolution is a more collaborative environment where product managers and engineers can move from identifying a bug or proposing an idea to developing and shipping a solution together,” he said. “That work can begin in the tools where teams already collaborate, without every step requiring someone to open a code editor. That’s the key in a multiplayer environment.”
 
 ## Related stories
+
+
+### How a family shop builds portable sinks by hand and its business with Claude
 
 
 ### How a family business uses Claude to compete in a global seafood market

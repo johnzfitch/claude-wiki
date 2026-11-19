@@ -2,7 +2,7 @@
 title: "Scheduled deployments - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/scheduled-deployments"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:28Z"
+fetched_at: "2026-11-13T06:36:45Z"
 tags: ["api"]
 ---
 
@@ -23,15 +23,23 @@ Scheduled deployments
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Status](#feature-availability)  
+Beta
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 A **scheduled deployment** allows an [agent](managed-agents-agent-setup.md) to start [sessions](managed-agents-sessions.md) autonomously, so the agent can complete tasks on a predictable cadence. You create and manage deployments with the Deployments API, part of the Claude API.
 
@@ -128,7 +136,7 @@ The upcoming run timestamps reflect the exact schedule configured. However, to d
 
 A maximum of **1,000 scheduled deployments** is supported for each organization. Contact Anthropic support if you need more.
 
-See the [Create Deployment](../Endpoints/beta-deployments-create.md) reference for full parameters and response schema.
+See the [Create Deployment](../Endpoints/beta-deployments-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ### Cron and timezone semantics
 
@@ -268,7 +276,7 @@ for run in client.beta.deployment_runs.list(
     print(run.created_at, run.error.type, run.error.message)
 ```
 
-A failed run includes an `error` with a `type` describing why session creation was rejected (for example, `environment_archived_error`, `agent_archived_error`, or `session_rate_limited_error`). See the [List Deployment Runs](../Endpoints/beta-deployment-runs-list.md) reference for all filter parameters and the response schema.
+A failed run includes an `error` with a `type` describing why session creation was rejected (for example, `environment_archived_error`, `agent_archived_error`, or `session_rate_limited_error`). See the [List Deployment Runs](../Endpoints/beta-deployment-runs-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for all filter parameters and the response schema.
 
 ```python
 {
@@ -288,7 +296,7 @@ A failed run includes an `error` with a `type` describing why session creation w
 
 
 
-To retrieve a single run by ID, call [`GET /v1/deployment_runs/{deployment_run_id}`](../Endpoints/beta-deployment-runs-retrieve.md). A [`deployment_run` webhook event](managed-agents-webhooks.md#supported-event-types) carries the run ID as its `data.id`.
+To retrieve a single run by ID, call [`GET /v1/deployment_runs/{deployment_run_id}`](../Endpoints/beta-deployment-runs-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. A [`deployment_run` webhook event](managed-agents-webhooks.md#supported-event-types) carries the run ID as its `data.id`.
 
 ## Managing deployment lifecycle
 
@@ -386,7 +394,7 @@ If a deployment’s agent has been archived, the deployment is automatically arc
 
 ## Trigger a manual run
 
-To run a deployment outside its schedule, call the [`run` endpoint](../Endpoints/beta-deployments-run.md). This creates a session immediately and writes a deployment run with `trigger_context.type: "manual"`. This allows you to test a deployment before committing to the schedule.
+To run a deployment outside its schedule, call the [`run` endpoint](../Endpoints/beta-deployments-run.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. This creates a session immediately and writes a deployment run with `trigger_context.type: "manual"`. This allows you to test a deployment before committing to the schedule.
 
 cURL
 
@@ -416,32 +424,61 @@ run = client.beta.deployments.run(deployment.id)
 
 ## Availability
 
-Scheduled deployments are available on every model.
+Scheduled deployments
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Scheduled deployments are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+Claude API
 
-Models
+Status  
+Beta
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+API  
+- Managed Agents
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+managed-agents-2026-04-01
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- All models
 
-Header
+Claude Platform on AWS
 
-- `managed-agents-2026-04-01`
-  
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -455,8 +492,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

@@ -2,7 +2,7 @@
 title: "Connectors and plugins | Claude Marketplace | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/mcp"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:27:23Z"
+fetched_at: "2026-11-18T06:29:20Z"
 tags: ["api", "connectors", "plugins"]
 ---
 
@@ -61,7 +61,7 @@ SortRecommendedMost popularTrendingNewestA–Z
 
 ## Top connectors
 
-Show all 1095
+Show all 1150
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -99,15 +99,6 @@ Search, create, autofill, and export Canva designs
 
 Add Canva in Claude (opens in new tab)
 
-### [Microsoft 365](https://www.claude.com/marketplace/connectors/microsoft-365)
-
-Anthropic verified
-
-Access SharePoint, OneDrive, Outlook, and Teams directly in Claude
-
-
-Add Microsoft 365 in Claude (opens in new tab)
-
 ### [Notion](https://www.claude.com/marketplace/connectors/notion)
 
 Anthropic verified
@@ -116,6 +107,15 @@ Connect your Notion workspace to search, update, and power workflows across tool
 
 
 Add Notion in Claude (opens in new tab)
+
+### [Microsoft 365](https://www.claude.com/marketplace/connectors/microsoft-365)
+
+Anthropic verified
+
+Access SharePoint, OneDrive, Outlook, and Teams directly in Claude
+
+
+Add Microsoft 365 in Claude (opens in new tab)
 
 ### [Figma](https://www.claude.com/marketplace/connectors/figma)
 
@@ -173,7 +173,7 @@ Add Linear in Claude (opens in new tab)
 
 ## Top plugins
 
-[Show all 529](https://www.claude.com/marketplace/plugins)
+[Show all 532](https://www.claude.com/marketplace/plugins)
 
 ### [Frontend Design](https://www.claude.com/marketplace/plugins/frontend-design)
 
@@ -213,7 +213,7 @@ Browser automation and end-to-end testing MCP server by Microsoft. Enables Claud
 
 ## Trending connectors
 
-Show all 6
+Show all 7
 
 ### [Picsart Media Studio](https://www.claude.com/marketplace/connectors/picsart-media-studio)
 
@@ -223,15 +223,6 @@ Turn your clips and photos into finished videos
 
 
 Add Picsart Media Studio in Claude (opens in new tab)
-
-### [Intuit QuickBooks Labs](https://www.claude.com/marketplace/connectors/intuit-quickbooks-labs)
-
-Anthropic verifiedTrending
-
-(Beta) Categorize bank transactions, reconcile accounts, send invoices, and run reports with Quickbooks in Claude.
-
-
-Add Intuit QuickBooks Labs in Claude (opens in new tab)
 
 ### [Scriptivox](https://www.claude.com/marketplace/connectors/scriptivox)
 
@@ -251,27 +242,81 @@ Create motion graphics, brand assets, and animations by describing them to Claud
 
 Add Stewdio in Claude (opens in new tab)
 
-### [Moneytree](https://www.claude.com/marketplace/connectors/moneytree)
+### [Product Hunt](https://www.claude.com/marketplace/connectors/product-hunt)
 
 Anthropic verifiedTrending
 
-Explore your financial data through conversation
+Explore over a decade of Product Hunt launches, compare tools using community reviews, and discover startups worth researching. Create and manage your own launches in Claude.
 
 
-Add Moneytree in Claude (opens in new tab)
+Add Product Hunt in Claude (opens in new tab)
 
-### [Clio](https://www.claude.com/marketplace/connectors/clio)
+### [Fiverr](https://www.claude.com/marketplace/connectors/fiverr-mcp)
 
 Anthropic verifiedTrending
 
-Research the law, analyze dockets and develop case strategy with Clio Library and Clio Docket, with citations back to the sources.
+Find and hire freelancers
 
 
-Add Clio in Claude (opens in new tab)
+Add Fiverr in Claude (opens in new tab)
+
+### [Ample Computer](https://www.claude.com/marketplace/connectors/ample-computer)
+
+Anthropic verifiedTrending
+
+Deploy apps, databases and storage from Claude and get a live URL, with no servers or cloud console to set up.
+
+
+Add Ample Computer in Claude (opens in new tab)
+
+### [Jetpost](https://www.claude.com/marketplace/connectors/jetpost)
+
+Anthropic verifiedTrending
+
+Send messages, notes, and docs to your team, email anyone, and share memory and context across Claude, ChatGPT, and other AI tools. Collaborate, hand off work, and stay in sync.
+
+
+Add Jetpost in Claude (opens in new tab)
 
 ## New connectors
 
-Show all 5
+Show all 6
+
+### [Product Hunt](https://www.claude.com/marketplace/connectors/product-hunt)
+
+Anthropic verifiedTrending
+
+Explore over a decade of Product Hunt launches, compare tools using community reviews, and discover startups worth researching. Create and manage your own launches in Claude.
+
+
+Add Product Hunt in Claude (opens in new tab)
+
+### [Ontora](https://www.claude.com/marketplace/connectors/ontora)
+
+Anthropic verifiedNew
+
+Understand how your company works, uncover bottlenecks, and improve processes with knowledge from your team.
+
+
+Add Ontora in Claude (opens in new tab)
+
+### [Arca FDA, Trials & PubMed](https://www.claude.com/marketplace/connectors/arca-life-sciences)
+
+Anthropic verifiedNew
+
+Free biomedical research and regulatory intelligence: FDA guidance, warning letters, drug labels, device approvals & scientific literature, with original-source citations. No account needed.
+
+
+Add Arca FDA, Trials & PubMed in Claude (opens in new tab)
+
+### [Rystad Energy - Ask Data](https://www.claude.com/marketplace/connectors/rystad-energy-ask-data)
+
+Anthropic verifiedNew
+
+Connect to Rystad Energy databases and extract data intelligence across all energy markets.
+
+
+Add Rystad Energy - Ask Data in Claude (opens in new tab)
 
 ### [Check](https://www.claude.com/marketplace/connectors/pending-check)
 
@@ -282,45 +327,27 @@ Run payroll, manage workers, and file taxes via Check
 
 Add Check in Claude (opens in new tab)
 
-### [New Relic](https://www.claude.com/marketplace/connectors/newrelic)
+### [Ask Analytics](https://www.claude.com/marketplace/connectors/ask-analytics)
 
 Anthropic verifiedNew
 
-Query observability data, triage incidents, and analyze telemetry in Claude.
+Search Rystad Energy's analytics library and bring the latest research, insights and data commentary into Claude.
 
 
-Add New Relic in Claude (opens in new tab)
-
-### [Squarespace](https://www.claude.com/marketplace/connectors/squarespace)
-
-Anthropic verifiedNew
-
-Find a domain name for your next idea, and run your Squarespace store's orders, products and customers, all from Claude.
-
-
-Add Squarespace in Claude (opens in new tab)
-
-### [Intuit QuickBooks Labs](https://www.claude.com/marketplace/connectors/intuit-quickbooks-labs)
-
-Anthropic verifiedTrending
-
-(Beta) Categorize bank transactions, reconcile accounts, send invoices, and run reports with Quickbooks in Claude.
-
-
-Add Intuit QuickBooks Labs in Claude (opens in new tab)
-
-### [Flipsnack](https://www.claude.com/marketplace/connectors/flipsnack)
-
-Anthropic verifiedNew
-
-Find, create, update, share, embed, and get analytics for the flipbooks in your Flipsnack account.
-
-
-Add Flipsnack in Claude (opens in new tab)
+Add Ask Analytics in Claude (opens in new tab)
 
 ## All connectors
 
-1095 connectors
+1150 connectors
+
+### [Picsart Media Studio](https://www.claude.com/marketplace/connectors/picsart-media-studio)
+
+Anthropic verifiedTrending
+
+Turn your clips and photos into finished videos
+
+
+Add Picsart Media Studio in Claude (opens in new tab)
 
 ### [Google Drive](https://www.claude.com/marketplace/connectors/google-drive)
 
@@ -358,6 +385,15 @@ Access SharePoint, OneDrive, Outlook, and Teams directly in Claude
 
 Add Microsoft 365 in Claude (opens in new tab)
 
+### [Notion](https://www.claude.com/marketplace/connectors/notion)
+
+Anthropic verified
+
+Connect your Notion workspace to search, update, and power workflows across tools
+
+
+Add Notion in Claude (opens in new tab)
+
 ### [Canva](https://www.claude.com/marketplace/connectors/canva)
 
 Anthropic verified
@@ -367,23 +403,23 @@ Search, create, autofill, and export Canva designs
 
 Add Canva in Claude (opens in new tab)
 
-### [Picsart Media Studio](https://www.claude.com/marketplace/connectors/picsart-media-studio)
+### [Stewdio](https://www.claude.com/marketplace/connectors/stewdio)
 
 Anthropic verifiedTrending
 
-Turn your clips and photos into finished videos
+Create motion graphics, brand assets, and animations by describing them to Claude, then refine them in Stewdio's visual editor.
 
 
-Add Picsart Media Studio in Claude (opens in new tab)
+Add Stewdio in Claude (opens in new tab)
 
-### [Notion](https://www.claude.com/marketplace/connectors/notion)
+### [Scriptivox](https://www.claude.com/marketplace/connectors/scriptivox)
 
-Anthropic verified
+Anthropic verifiedTrending
 
-Connect your Notion workspace to search, update, and power workflows across tools
+Transcribe meetings, interviews, podcasts and videos into accurate text with speaker labels, then turn them into minutes, show notes or subtitles.
 
 
-Add Notion in Claude (opens in new tab)
+Add Scriptivox in Claude (opens in new tab)
 
 ### [Slack](https://www.claude.com/marketplace/connectors/slack)
 
@@ -412,6 +448,24 @@ Generate diagrams and better code from Figma context
 
 Add Figma in Claude (opens in new tab)
 
+### [Windsor.ai for Social Media](https://www.claude.com/marketplace/connectors/windsor-ai-for-social-media)
+
+Anthropic verified
+
+Analyze and post organic social content across Instagram, Facebook, TikTok, YouTube, LinkedIn, and Google Business Profile.
+
+
+Add Windsor.ai for Social Media in Claude (opens in new tab)
+
+### [Ample Computer](https://www.claude.com/marketplace/connectors/ample-computer)
+
+Anthropic verifiedTrending
+
+Deploy apps, databases and storage from Claude and get a live URL, with no servers or cloud console to set up.
+
+
+Add Ample Computer in Claude (opens in new tab)
+
 ### [HubSpot](https://www.claude.com/marketplace/connectors/hubspot)
 
 Anthropic verified
@@ -420,15 +474,6 @@ CRM context for every answer, insight, and action
 
 
 Add HubSpot in Claude (opens in new tab)
-
-### [Moneytree](https://www.claude.com/marketplace/connectors/moneytree)
-
-Anthropic verifiedTrending
-
-Explore your financial data through conversation
-
-
-Add Moneytree in Claude (opens in new tab)
 
 ### [Asana](https://www.claude.com/marketplace/connectors/asana)
 
@@ -457,6 +502,15 @@ monday.com project management & CRM for projects, tasks, portfolios, boards, wor
 
 Add monday.com in Claude (opens in new tab)
 
+### [Jetpost](https://www.claude.com/marketplace/connectors/jetpost)
+
+Anthropic verifiedTrending
+
+Send messages, notes, and docs to your team, email anyone, and share memory and context across Claude, ChatGPT, and other AI tools. Collaborate, hand off work, and stay in sync.
+
+
+Add Jetpost in Claude (opens in new tab)
+
 ### [Supabase](https://www.claude.com/marketplace/connectors/supabase)
 
 Anthropic verified
@@ -484,15 +538,6 @@ Search, edit and get insights on your Box content
 
 Add Box in Claude (opens in new tab)
 
-### [Webex for Claude](https://www.claude.com/marketplace/connectors/webex-suite)
-
-Anthropic verified
-
-Access your Webex meetings, messaging, and Vidcast content securely in Claude.
-
-
-Add Webex for Claude in Claude (opens in new tab)
-
 ### [Granola](https://www.claude.com/marketplace/connectors/granola)
 
 Anthropic verified
@@ -502,40 +547,13 @@ The AI notepad for meetings, now in Claude. Ask about your notes, transcripts an
 
 Add Granola in Claude (opens in new tab)
 
-### [Configure Memory](https://www.claude.com/marketplace/connectors/configure)
+### [ThunderPhone](https://www.claude.com/marketplace/connectors/thunderphone)
 
 Anthropic verified
 
-Portable memory you own, across your AI assistants
+Build, test and run AI phone agents from Claude: create agents, get numbers, place calls, run test suites and campaigns, and review recordings and transcripts.
 
 
-Add Configure Memory in Claude (opens in new tab)
-
-### [Vercel](https://www.claude.com/marketplace/connectors/vercel)
-
-Anthropic verified
-
-Analyze, debug, and manage projects and deployments
-
-
-Add Vercel in Claude (opens in new tab)
-
-### [OnChainDiligence](https://www.claude.com/marketplace/connectors/onchaindiligence)
-
-Anthropic verified
-
-Inspect autonomous payments before execution and independently verify evidence afterward.
-
-
-Add OnChainDiligence in Claude (opens in new tab)
-
-### [Claude Academy](https://www.claude.com/marketplace/connectors/claude-academy)
-
-Anthropic verified
-
-Search and read Claude Academy courses and tutorials
-
-
-Add Claude Academy in Claude (opens in new tab)
+Add ThunderPhone in Claude (opens in new tab)
 
 View more

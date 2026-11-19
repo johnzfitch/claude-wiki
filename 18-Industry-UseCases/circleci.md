@@ -2,7 +2,7 @@
 title: "CircleCI Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/circleci"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:27Z"
+fetched_at: "2026-11-18T06:28:52Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -36,9 +36,11 @@ The Claude Agent SDK is a collection of tools that helps developers build powerf
 
 [Read more](https://claude.com/resources/articles/building-agents-with-the-claude-agent-sdk)
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [CircleCI](https://circleci.com/), whose CI/CD platform processes billions of jobs annually for teams at Okta, Hinge, and Hugging Face, set out to tackle the growing maintenance burden that slows engineering teams down. The result is CircleCI’s autonomous AI agent [Chunk](https://circleci.com/product/chunk/), built with Claude, which identifies and resolves CI/CD-related maintenance issues with minimal human intervention.
 
@@ -84,6 +86,9 @@ CircleCI’s roadmap builds on Claude’s advancing reasoning capabilities: auto
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -91,6 +96,3 @@ CircleCI’s roadmap builds on Claude’s advancing reasoning capabilities: auto
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

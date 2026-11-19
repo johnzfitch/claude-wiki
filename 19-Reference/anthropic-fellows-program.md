@@ -2,7 +2,7 @@
 title: "Anthropic Fellows Program"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/dd5feddcb3b7d20aadda6af4093ac1fb0c9d419e.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-31T06:28:20Z"
+fetched_at: "2026-11-18T06:28:37Z"
 tags: ["evaluation", "news-research"]
 ---
 
@@ -66,9 +66,9 @@ than others, and picking a poor initial direction can waste substantial time or 
 
                                                                                                       Expert human performance 77%
                75
+
+
 Accuracy (%)
-
-
                65
                                                                                                               Fable 5
                                                                                                                   Grok 4.5   Kimi K3
@@ -315,10 +315,9 @@ human performance (77%) (Figure 1).
                80                                                                          80
                                    Expert human performance 77%                                          Expert human performance 77%
                70                                                                          70
-Accuracy (%)
 
 
-                                                                            Accuracy (%)
+Accuracy (%)                                                                Accuracy (%)
                60                                                 Fable 5                  60
                                                                   Kimi K3                                                               Fable 5
                                                                   Opus 4.8
@@ -457,10 +456,9 @@ agreement. Among strong-confidence, post-discussion judgments, increasing the mi
                 100                                                                                   100                           83                                     79
                                                           68                                                              68
                                                                                                                                                                    64
-Agreement (%)
 
 
-                                                                                      Agreement (%)
+Agreement (%)                                                                         Agreement (%)
                                                     59
                         56    46                                             49
                                        49    42                   53
@@ -1207,9 +1205,9 @@ within-prompt and the distinct-prompt estimator, while the other cells stay near
                                                                            68
                                                                                                       52
                                                                      59
+
+
       Agreement (%)
-
-
                                                                                                53                50                  46
                               56      46                                                                                 45
                                                  49     42
@@ -1229,9 +1227,9 @@ within-prompt and the distinct-prompt estimator, while the other cells stay near
                       100                                                              100
 
                                                                            64                                                        59
+
+
       Agreement (%)
-
-
                                                                                                                          56
                                                                      54                               48         52
                                       49                51
@@ -1278,9 +1276,9 @@ though it is more evenly split in the capped benchmark (TASTE).
                   100                                                              96
                                                           86
                    80
+
+
 Number of pairs
-
-
                                                                          64
                    60
                                                                                             43                                                                                              43
@@ -1316,10 +1314,10 @@ in TASTE, each at its anchor rater’s overall score.
                                                                397                                                                                        19
                                                 379
                                                                                                                                                                          17
+
+
                                                                                                                     # distinct proposals
                    # ratings
-
-
                                      145                                      130                                                            6                                          6
 
                                                                                                                                                                                                       2
@@ -1441,9 +1439,9 @@ a larger selection of models (Figure 16, Figure 17).
 
                       60 60                               62                                                                  62
                                                                          55 55                                          56              56 58
+
+
 Accuracy (%)
-
-
                                              51                                           52                                                              54
                                                                                                                                                                                      50          49 47
                50                                                                                 46       50                                                   46              45
@@ -1463,9 +1461,9 @@ Accuracy (%)
 
 
                                                                                  56
+
+
 Accuracy (%)
-
-
                       48 47                  48                          48
                50
                                                           41
@@ -1484,9 +1482,9 @@ Accuracy (%)
 
                            58                                  59         60
                                                                                                                                                                                             56
+
+
 Accuracy (%)
-
-
                                        50                                                 52       50                                  50       52                                                  52
                50                                                                                            46         47                                                 45
                                                                                                                                                                41
@@ -1514,9 +1512,9 @@ dependent.
                80                                                                       80
                                      Expert human performance 77%                                           Expert human performance 77%
                70                                                                       70
+
+
 Accuracy (%)
-
-
                                                                      Opus 5
                60                                                    Fable 5            60
                                                                                                                                                Sonnet 4.6
@@ -1533,9 +1531,9 @@ Accuracy (%)
                80                                                                       80
                                      Expert human performance 77%                                           Expert human performance 77%
                70                                                                       70
+
+
 Accuracy (%)
-
-
                60                                                                       60                                                     Kimi K3
                                                                      GPT-5.6-luna
                                                                                                                                                Gemini 3.5 Flash
@@ -1559,9 +1557,9 @@ to the situational framing in Figure 5.
                80                                                                       80
                                      Expert human performance 77%                                           Expert human performance 77%
                70                                                                       70
+
+
 Accuracy (%)
-
-
                60                                                    Fable 5            60
                                                                      Opus 4.8                                                                  Sonnet 4.6
                                                                      Sonnet 5
@@ -1576,9 +1574,9 @@ Accuracy (%)
                80                                                                       80
                                      Expert human performance 77%                                           Expert human performance 77%
                70                                                                       70
+
+
 Accuracy (%)
-
-
                60                                                                       60                                                     Kimi K3
                                                                                                                                                Grok 4.5
                                                                                                                                                Gemini 3.5 Flash
@@ -1602,9 +1600,9 @@ response, one panel per model family, situational framing with the rubric in con
                80                                                           80
                              Expert human performance 77%                                Expert human performance 77%
                70                                                           70
+
+
 Accuracy (%)
-
-
                60                                                           60
                                                             Fable 5
 
@@ -1621,9 +1619,9 @@ Accuracy (%)
                80                                                           80
                              Expert human performance 77%                                Expert human performance 77%
                70                                                           70
+
+
 Accuracy (%)
-
-
                60                                                           60
                                                             GPT-5.6-luna
                                                             GPT-5.6-sol                                                 Kimi K3
@@ -1655,9 +1653,9 @@ much of its error is concentrated among proposals that appear repeatedly in the 
                           60                                                                                                        63 64
                                     59
                                                                         55               55           56                       56                 56 57 56
+
+
 Accuracy (%)
-
-
                                54               51                                53          52 55                       52                 51
                                                                                                                                                                      54 52
                                                                                                                                                                              51                53 54                   53
@@ -1681,9 +1679,9 @@ Accuracy (%)
 
                                                       61 60
                                                                              56 56
+
+
 Accuracy (%)
-
-
                                53 54
                                            50 48                        48
                50   46 48
@@ -1703,9 +1701,9 @@ Accuracy (%)
                                                                        65 66                                                                         65
                                                           58 59                                                                                                                                                   61
                                58                                                                                                                         58                                            56 55
+
+
 Accuracy (%)
-
-
                                            54                                                 52                          53 52                                                   53
                                       48                                                                50    50                            48 50                                      48         50
                50     46                                                                44         45               46                                               44 41
@@ -2047,9 +2045,9 @@ rubric in context, and at maximal reasoning effort settings (Figure 19, Figure 2
                                                           Expert human performance 70%                                                                        Expert human performance 70%
                      62                                   62
                                  57         56
+
+
 Accuracy (%)
-
-
                                                                                 54                                            53    51        54                                             52
                                                                    50                   47
                50                                                                               45       50                                            44                                            42
@@ -2071,9 +2069,9 @@ Accuracy (%)
                                        Current GPT
 
                                  Expert human performance 70%
+
+
 Accuracy (%)
-
-
                                                                                 50
                50    44          44
                                                                    40
@@ -2093,9 +2091,9 @@ Accuracy (%)
                                                                                                                                                               Expert human performance 70%
 
                                                                          58
+
+
 Accuracy (%)
-
-
                                                            52                                                                                 51
                50         45                                                                     44                                                                                     47        44
                                        41                                              42                               41         42
@@ -2125,9 +2123,9 @@ TASTE benchmark.
                                                                     Fable 5
                60                                                                    60
                                                                     Opus 5
+
+
 Accuracy (%)
-
-
                                                                                                                                        Opus 4.7
                50                                                   Opus 4.8         50                                                Sonnet 4.6
                                                                     Sonnet 5
@@ -2145,9 +2143,9 @@ Accuracy (%)
                                     Expert human performance 70%                                        Expert human performance 70%
 
                60                                                                    60
+
+
 Accuracy (%)
-
-
                                                                                                                                        Kimi K3
                50                                                                    50
                                                                                                                                        Gemini 3.5 Flash
@@ -2282,8 +2280,11 @@ and for a distinct-prompt pair:
                                           39
                                                                       Within-prompt pairs                            Distinct-prompt pairs               Within-prompt, question hidden (control)
 
-Prompt-driven justifications (%)
+
                                                           Current-generation Claude                                                                                             Older Claude
+
+
+Prompt-driven justifications (%)
                                                                                                                      60
                                    60                                                            56                                      60
                                                                                                                                                     51                                                                   53
@@ -2307,9 +2308,9 @@ Prompt-driven justifications (%)
 
 
                                                            Current GPT
+
+
 Prompt-driven justifications (%)
-
-
                                    60
                                                                                                  47
 
@@ -2330,9 +2331,9 @@ Prompt-driven justifications (%)
                                     GPT              GPT                                GPT
 
                                                                                                                                        Other frontier
+
+
 Prompt-driven justifications (%)
-
-
                                    60
                                           53
                                                                                                                                         50
@@ -2361,9 +2362,9 @@ into Figure 1.
                                                                                              Question shown                   Question hidden
                                                                                                                                                                      Held-out researcher agreement
                                                                            80
+
+
                                                            Accuracy (%)
-
-
                                                                            60
 
 
@@ -2390,10 +2391,9 @@ Figure 1.
 
 
                60
-Accuracy (%)
 
 
-               40
+Accuracy (%)   40
 
 
                20
@@ -2491,9 +2491,9 @@ across models (Figure 26, Figure 27).
                                                                                                             Qwen3.7-Max
                                            Gemini 3.1 Pro
                                  0.25
+
+
 Absolute change in probability
-
-
                                                                                                                                 Gemini 3.5 Flash
                                  0.20
                                                                                       GPT-5.6-luna
@@ -2528,9 +2528,9 @@ r = −0.46 (Pearson).
 
 
                                  0.25
+
+
 Resample |ΔP| (same order)
-
-
                                  0.20   Gemini 3.1 Pro
 
                                                                                                                 Qwen3.7-Max
@@ -2564,9 +2564,9 @@ but the trend is less strong than for positional consistency.
 
                                         Current-generation Claude                                                                                   Older Claude
                  30                                                                                        30
+
+
 Mean |ΔP| (pp)
-
-
                  15                                                                                        15
                                                                                                                       10    10        11                                    10
                                                                                                                                                          9                                     8
@@ -2585,9 +2585,9 @@ Mean |ΔP| (pp)
 
                                          Current GPT
                  30
+
+
 Mean |ΔP| (pp)
-
-
                                                                          17
                  15    12
                                               11
@@ -2604,9 +2604,9 @@ Mean |ΔP| (pp)
                                                                                                          Other frontier
                  30
                                                                                           25                                                                 24
+
+
 Mean |ΔP| (pp)
-
-
                                                                                                                                                                                         20
                                                                                                                                                                           19
                                                                                                    16      16
@@ -2692,9 +2692,9 @@ Each (pair, attribute) is queried separately with the following prompts:
                                                                                                                                                 +0.51
              0.5                                                                                                                        +0.39                   +0.40
                                                                                                                                 +0.36                   +0.36
+
+
 Pearson r
-
-
                            +0.23
                                                                +0.18
                                             +0.09                                                                        +0.12

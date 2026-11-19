@@ -2,7 +2,7 @@
 title: "How enterprises are building AI agents in 2026 | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/how-enterprises-are-building-ai-agents-in-2026"
 category: "09-Agents-Patterns"
-fetched_at: "2026-11-09T06:25:35Z"
+fetched_at: "2026-11-18T06:26:55Z"
 tags: ["agents", "enterprise"]
 ---
 
@@ -22,6 +22,12 @@ How are organizations deploying AI agents today—and what's in store for tomorr
 - 
 
 
+Contents
+
+1.  [What the data shows](#what-the-data-shows)
+2.  [What this looks like in practice](#what-this-looks-like-in-practice)
+3.  [The path forward](#the-path-forward)
+
 AI agents have moved from experimental to an essential part of an organization’s tech stack. But how are enterprises actually using them?
 
 In partnership with research firm Material, we surveyed over 500 technical leaders across industries and company sizes to understand how organizations are deploying agents today and where they see opportunity ahead.
@@ -40,7 +46,7 @@ Perhaps most notably, 80% of organizations report their AI agent investments are
 
 ## **What this looks like in practice**
 
-The organizations seeing results are treating agents as a core part of their infrastrucuture, not experiments.
+The organizations seeing results are treating agents as a core part of their infrastructure, not experiments.
 
 [Thomson Reuters](../18-Industry-UseCases/thomson-reuters.md) uses Claude to power CoCounsel, their AI legal platform. Lawyers who once spent hours manually searching through documents can now access 150 years of case law and 3,000 domain experts in minutes.
 
@@ -65,6 +71,24 @@ We're also finding that while coding has been the proving ground for AI agents,
 Explore more product news and best practices for teams building with Claude.
 
 
+ArticleNov 9, 2026
+
+### Claude can design electronic prototypes from start to finish
+
+We asked Claude to design three electronic devices: a speakerphone, a voice-assistant hub, and a handheld virtual pet. The prototypes worked without any fixes to their circuitry.
+
+(opens in new tab)[](../19-Reference/components-of-agent-memory.md)
+
+ArticleNov 6, 2026
+
+### The components of agent memory
+
+For Claude to learn from experience, it has to decide what's worth remembering before it knows what's next. Here's how "dreaming" helps it organize memory and correct mistakes.
+
+Claude Platform
+
+(opens in new tab)[](../19-Reference/formal-verification.md)
+
 ArticleOct 22, 2026
 
 ### LLMs are making formal software verification feasible at a much larger scale
@@ -81,21 +105,4 @@ The same token price can cost very different amounts per task. Learn what Claude
 
 Claude Code
 
-(opens in new tab)[](https://www.claude.com/resources/articles/claude-opus-5-5-built-for-coding-sessions-that-use-more-context)
-
-ArticleSep 24, 2026
-
-### Coding sessions are longer and use more context. Claude Opus 5.5 is built with that in mind.
-
-Our latest Opus model is priced and trained to optimize costs for how developers code now.
-
-Claude CodeClaude Enterprise
-
-
-ArticleSep 2, 2026
-
-### Building commerce agents with Claude
-
-Retailers running shopping agents on Claude have seen carts up to 35% larger and shoppers 60% more likely to complete a purchase.
-
-Claude Platform
+(opens in new tab)

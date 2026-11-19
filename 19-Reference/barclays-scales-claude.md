@@ -2,29 +2,25 @@
 title: "Barclays scales Claude to upgrade operations and improve client experience \\ Anthropic"
 source_url: "https://www.anthropic.com/news/barclays-scales-claude"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:45Z"
+fetched_at: "2026-11-17T06:25:27Z"
 tags: ["cli", "news-research"]
 ---
 
 # Barclays scales Claude to upgrade operations and improve client experience
 
-- Published
+Published  
+Oct 1, 2026
 
-  Oct 1, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Financial services](https://www.anthropic.com/search?topic=financial-services)
+- [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
 
-  [Announcements](announcements.md)
-
-- Topics
-
-  - [Financial services](https://www.anthropic.com/search?topic=financial-services)
-  - [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-
-  See more...
+See more...
 
 Related articles
 

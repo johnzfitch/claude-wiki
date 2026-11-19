@@ -2,7 +2,7 @@
 title: "Early progress on accelerating drug development with Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/early-progress-drug-development"
 category: "19-Reference"
-fetched_at: "2026-11-06T06:28:02Z"
+fetched_at: "2026-11-14T06:26:39Z"
 tags: ["news-research"]
 ---
 
@@ -13,23 +13,20 @@ tags: ["news-research"]
 - [01Case studies](#case-studies)
 - [02Extending our work in the life sciences](#extending-our-work-in-the-life-sciences)
 
-- Published
+Published  
+Oct 27, 2026
 
-  Oct 27, 2026
+Team  
+[Science](https://www.anthropic.com/science)
 
-- Team
+Topics  
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Healthcare](https://www.anthropic.com/search?topic=healthcare)
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Beneficial Deployments](https://www.anthropic.com/search?topic=beneficial-deployments)
 
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Healthcare](https://www.anthropic.com/search?topic=healthcare)
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Beneficial Deployments](https://www.anthropic.com/search?topic=beneficial-deployments)
-
-  See more...
+See more...
 
 Related articles
 
@@ -71,7 +68,7 @@ More recently, we’ve also begun working with [Bristol Myers Squibb](https://ww
 
 ***Michael Pourdehnad, MD**, Senior Vice President, Head of Early Clinical Development, Hematology, Oncology and Cell Therapy.*
 
-In addition to our work with these partners, we’ve begun to run some research programs ourselves. We’ve acquired Mithril Medicine, a one-person company that has been developing treatments for two rare forms of muscular dystrophy. Its founder, Cody Tranbarger, used Claude to organize contracts, logistics, and experiments with 11 external labs, and delegated many other aspects of Mithril’s operations to Claude. As a result, Mithril took a possible treatment for one form of muscular dystrophy from an idea to promising results in mice in less than 18 months. Now at Anthropic, Cody is continuing this research, and plans to start several new programs. If his drug candidates continue to hold up, we expect a drug to be ready to start clinical trials in humans as soon as late 2028. Read more and see [our technical report](technical-report.md).
+In addition to our work with these partners, we’ve begun to run some research programs ourselves. We’ve acquired Mithril Medicine, a one-person company that has been developing treatments for two rare forms of muscular dystrophy. Its founder, Cody Tranbarger, used Claude to organize contracts, logistics, and experiments with 11 external labs, and delegated many other aspects of Mithril’s operations to Claude. As a result, Mithril took a possible treatment for one form of muscular dystrophy from an idea to promising results in mice in less than 18 months. Now at Anthropic, Cody is continuing this research, and plans to start several new programs. If his drug candidates continue to hold up, we expect a drug to be ready to start clinical trials in humans as soon as late 2028. Read more and see [our technical report](https://assets.claude.com/52e1f5d50c47ca3818f56704c27cf19e59b62e77.pdf).
 
 ## Extending our work in the life sciences
 

@@ -2,7 +2,7 @@
 title: "Use Claude Code with your Team or Enterprise plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11845131-using-claude-code-with-your-team-or-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:48Z"
+fetched_at: "2026-11-18T06:27:43Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
@@ -37,7 +37,7 @@ If your organization is on a new or self-serve Enterprise plan, Claude Code is a
 
 **Note:** On a HIPAA-ready Enterprise plan, after the Primary Owner applies the HIPAA configuration to Claude Code (local mode) and Cowork (local mode), your Business Associate Agreement (BAA) covers Claude Code in the terminal and in the Code tab of Claude Desktop. Without that configuration or zero data retention (ZDR) for Claude Code, Claude Code is included in your seat, and it's available but not covered under your BAA. Don't use it with protected health information (PHI). See **[Use Claude Code (local mode) and Cowork (local mode) on a HIPAA-ready Enterprise plan](https://support.claude.com/en/articles/17318731)**.
 
-If your organization is on an older Enterprise plan with Chat and Chat + Claude Code seats, or Standard and Premium seats, you'll need to ensure you have a seat type that includes Claude Code. Owners can purchase or reassign **Chat + Claude Code / Premium seats** in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**. See **[Purchase and manage seats on Enterprise plans](purchase-and-manage-seats-on-enterprise-plans.md)** for details.
+If your organization is on an older Enterprise plan with Chat and Chat + Claude Code seats, or Standard and Premium seats, you'll need to ensure you have a seat type that includes Claude Code. Owners can purchase or reassign **Chat + Claude Code / Premium seats** in **[Organization settings \> Organization](https://claude.ai/admin-settings/organization)**. See **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)** for details.
 
 ### Step 2: Open Claude Code
 
@@ -91,4 +91,4 @@ If your organization is on a **usage-based Enterprise plan** (including self-ser
 
 If your organization is on a Team plan or a seat-based Enterprise plan, you can enable usage credits to allow team members to continue working with Claude, Cowork, and Claude Code after reaching their included usage limits. For more information, see **[Manage usage credits for Team and seat-based Enterprise plans](https://support.claude.com/en/articles/12005970-)**.
 
-Monthly API credits included with Team plans can’t be used in Claude Code or the Claude apps, including for extra usage. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+Monthly API credits included with Team plans can’t be used in Claude Code or the Claude apps, including for extra usage. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.

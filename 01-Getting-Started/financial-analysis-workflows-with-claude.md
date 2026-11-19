@@ -2,7 +2,7 @@
 title: "Financial analysis workflows with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220298-financial-analysis-workflows-with-claude"
 category: "01-Getting-Started"
-fetched_at: "2026-11-09T06:25:55Z"
+fetched_at: "2026-11-18T06:28:15Z"
 tags: ["getting-started"]
 ---
 

@@ -159,7 +159,7 @@ Apply for credits
 
 When a project outgrows existing capacity, apply for extra usage credits through the AI for Science program.
 
-\*Extra [usage limits](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax and may change at Anthropic’s discretion.
+\*Extra [usage limits](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax and may change at Anthropic’s discretion.
 
 Promotional pricing is not guaranteed, given limited availability. Final pricing confirmed after verification at sign up.
 

@@ -2,7 +2,7 @@
 title: "Get started with Claude for Education at your university (for Owners/Admins) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11139094-getting-started-with-claude-for-education-at-your-university-for-owners-admins"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:09Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["enterprise"]
 ---
 
@@ -23,7 +23,7 @@ Before setting up your Claude for Education account, review these essential reso
 
 - **[Important considerations before enabling single sign-on (SSO) and JIT/SCIM provisioning](https://support.claude.com/en/articles/10276682)**
 
-- **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**
+- **[Set up single sign-on (SSO)](../21-Account-Support/set-up-single-sign-on-sso.md)**
 
 - **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195)**
 
@@ -50,7 +50,7 @@ When enforcing SSO on your Education account, there are two distinct categories 
 
 After getting started with your plan, choose which Education features you’d like use and configure them in your account:
 
-- **[Project visibility and sharing](../15-Claude-AI-Features/project-visibility-and-sharing.md)**
+- **[Project visibility and sharing](https://support.claude.com/en/articles/9519189-project-visibility-and-sharing)**
 
 - **[Use connectors to extend Claude's capabilities](https://support.claude.com/en/articles/11176164)**
 
@@ -58,19 +58,19 @@ After getting started with your plan, choose which Education features you’d li
 
 Familiarize yourself with audit logs, data retention controls, and other administrative features:
 
-- **[How to access audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**
+- **[How to access audit logs](how-to-access-audit-logs.md)**
 
-- **[Purchase and manage seats on Enterprise plans](https://support.claude.com/en/articles/13393991)**
+- **[Purchase and manage seats on Enterprise plans](../17-Billing-Plans/purchase-and-manage-seats-on-enterprise-plans-claude-help-center.md)**
 
 - **[Configure custom data retention controls](https://support.claude.com/en/articles/10440198)**
 
 - **[Manage user feedback settings](https://support.claude.com/en/articles/10504844)**
 
-- **[How can I disable public projects?](../15-Claude-AI-Features/how-can-i-disable-public-projects.md)**
+- **[How can I disable public projects?](https://support.claude.com/en/articles/9927533-how-can-i-disable-public-projects)**
 
 ## Set up support paths
 
-Anthropic Support assists Primary Owners and Owners directly. See **[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for more information on your support options.
+Anthropic Support assists Primary Owners and Owners directly. See **[How to get support](../15-Claude-AI-Features/how-to-get-support.md)** for more information on your support options.
 
 Individual users should follow one of two paths to receive support:
 

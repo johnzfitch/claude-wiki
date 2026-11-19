@@ -2,7 +2,7 @@
 title: "Get Skill Version - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/skills/versions/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-07T06:23:54Z"
+fetched_at: "2026-11-15T06:23:20Z"
 tags: ["api"]
 ---
 

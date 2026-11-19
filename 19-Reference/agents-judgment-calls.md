@@ -2,34 +2,51 @@
 title: "How AI agents shape experts’ judgment calls \\ Anthropic"
 source_url: "https://www.anthropic.com/research/agents-judgment-calls"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:40:43Z"
+fetched_at: "2026-11-14T06:26:00Z"
 tags: ["agents", "news-research"]
 ---
 
-### Chapter 01: Study design
+### 01Study design
 
 # How AI agents shape experts’ judgment calls
 
-[Read the paper](whos-aligned-to-whom-how-ai-agents-shape-experts.md)
+[Read the paper](https://assets.claude.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf)
 
 - [01Study design](#study-design)
 - [02Results](#results)
 - [03Our study’s limitations](#our-studys-limitations)
 - [04What this means](#what-this-means)
 
-- Published
+Published  
+Oct 27, 2026
 
-  Oct 27, 2026
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
 
-  [Alignment](team-alignment.md)
+See more...
+
+Related articles
+
+- Economics
+
+  Jun 16, 2026
+
+  [Agentic coding and persistent returns to expertise](claude-code-expertise.md)
+
+[View more](https://www.anthropic.com/search?topic=how-people-use-ai)
 
 *Amaç Herdağdelen, Hailey Joren, Alex Tamkin*
 
 When experts hand their work to an AI agent, the usual assumption is that they still make the decisions that matter. The agent writes the code, runs the numbers, and offers advice, but the expert decides what to measure, how to interpret ambiguous evidence, and what the next steps should be. Often there is more than one reasonable answer to these questions, and the decision will come down to the experience and values of whoever makes the call.
 
-We wanted to look at whether experts really do make those important decisions, or whether in practice they defer to their AI agents. In a study we report [in a new paper](whos-aligned-to-whom-how-ai-agents-shape-experts.md), we asked 50 professional analysts to do a realistic statistical analysis with Claude Code. They all had experience in causal inference—that is, working out from data whether one thing causes another. Their task was to advise a farming cooperative on whether an advisory service it was running was effective and should be expanded.
+We wanted to look at whether experts really do make those important decisions, or whether in practice they defer to their AI agents. In a study we report [in a new paper](https://assets.claude.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf), we asked 50 professional analysts to do a realistic statistical analysis with Claude Code. They all had experience in causal inference—that is, working out from data whether one thing causes another. Their task was to advise a farming cooperative on whether an advisory service it was running was effective and should be expanded.
 
 Along the way, the analysts had to make four choices between two reasonable options, such as whether to measure productivity as crop yield per hectare or as yield per unit of operating cost, and then make a final decision. To see whether they were making these calls themselves, we set up each analyst’s agent to favor one option on each decision, which the analysts weren’t told about. Which way the agents would “lean” would be decided by coin flip. The agent was told to make the best honest case for its lean, to change its mind if the evidence demanded it, and never to mislead.
 
@@ -99,7 +116,7 @@ For individual experts, this could mean losing agency over their own work, a for
 
 The stakes extend beyond individuals, though, because so much of science and policy rests on judgment calls like these. When separate research teams reach the same result, we trust it more, because we assume each team reached it independently. If those teams all defer to models with the same preferences, their agreement [may no longer be independent](https://doi.org/10.1126/sciadv.adn5290). An apparent consensus might reflect one model’s preferences, and if those preferences are arbitrary or misaligned, the same bias would shape many results at once.
 
-The same problem applies to AI safety research. Researchers [have begun to use AI agents](https://alignment.anthropic.com/2025/automated-auditing/) to run and analyze experiments, in part because there is more work than human staff can keep up with. Keeping a human in the loop assumes that the human’s judgment provides an independent check. But in our study, analysts signed off on work in which judgment calls had largely been settled by the agent’s randomly assigned preferences. Our [full paper](whos-aligned-to-whom-how-ai-agents-shape-experts.md) also shows that agents without an assigned lean have weaker preferences of their own, and sometimes push back against users.
+The same problem applies to AI safety research. Researchers [have begun to use AI agents](https://alignment.anthropic.com/2025/automated-auditing/) to run and analyze experiments, in part because there is more work than human staff can keep up with. Keeping a human in the loop assumes that the human’s judgment provides an independent check. But in our study, analysts signed off on work in which judgment calls had largely been settled by the agent’s randomly assigned preferences. Our [full paper](https://assets.claude.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf) also shows that agents without an assigned lean have weaker preferences of their own, and sometimes push back against users.
 
 Deferral of this kind is hard to detect. Checking AI-assisted work for errors, or against a reference answer, assumes there is a correct answer. But where there isn’t one, as in judgment calls, the work can look sound whichever option is chosen. Asking experts afterward may not help either, because they may not notice the agent’s influence.
 
@@ -125,7 +142,7 @@ We would like to thank Joe Benton, Mojmir Stehlik, and Avery Griffin for making 
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @misc{herdagdelen2026judgmentcalls,
   author = {Herdağdelen, Amaç and Joren, Hailey and Tamkin, Alex},
   title = {How AI agents shape experts’ judgment calls},

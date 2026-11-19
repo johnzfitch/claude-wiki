@@ -2,7 +2,7 @@
 title: "Browse skills, connectors, and plugins in one directory | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:26:05Z"
+fetched_at: "2026-11-18T06:27:57Z"
 tags: ["connectors", "plugins", "skills"]
 ---
 
@@ -33,7 +33,7 @@ Skills you install from the directory are view-only. You can use them, but you c
 
 On Team and Enterprise plans, the "Your organization" tab lists skills available to your entire organization. This includes skills that owners have provisioned centrally and skills that colleagues have published to the organization. You can't fully delete these skills from your list. Only an organization owner can remove them from the directory.
 
-**Note:** Skills and plugins shared with you directly by a colleague don’t appear in the directory, they go straight to your skills list. See **[Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)** and **[Use plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)** for details on how shared skills and plugins work.
+**Note:** Skills and plugins shared with you directly by a colleague don’t appear in the directory, they go straight to your skills list. See **[Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)** and **[Use plugins in Claude](../15-Claude-AI-Features/use-plugins-in-claude.md)** for details on how shared skills and plugins work.
 
 ### Connectors
 

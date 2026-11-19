@@ -2,11 +2,11 @@
 title: "Coding agents in the social sciences \\ Anthropic"
 source_url: "https://www.anthropic.com/research/coding-agents-social-sciences"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:39:55Z"
+fetched_at: "2026-11-14T06:26:28Z"
 tags: ["agents", "news-research", "search"]
 ---
 
-### Chapter 01: How are AI coding agents changing how we study the economy and society?
+### 01How are AI coding agents changing how we study the economy and society?
 
 # Coding agents in the social sciences
 
@@ -19,31 +19,35 @@ tags: ["agents", "news-research", "search"]
 - [07Researchers expect AI tools to raise productivity, but are less confident that they will improve social science overall](#researchers-expect-ai-tools-to-raise-productivity-but-are-less-confident-that-they-will-improve-social-science-overall)
 - [08Discussion](#discussion)
 
-- Published
+Published  
+May 27, 2026
 
-  May 27, 2026
+Authors  
+- Thomas Lyttelton
+- Maxim Massenkoff
+- Nathan Wilmers
 
-- Team
+See more...
 
-  [Societal Impacts](team-societal-impacts.md)
+Team  
+[Societal Impacts](team-societal-impacts.md)
 
-- Topics
+Topics  
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
 
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-
-  See more...
+See more...
 
 Related articles
 
-- Announcements
+- Economics
 
-  Sep 15, 2026
+  Nov 5, 2026
 
-  [Introducing Claude Mythos and Fable 5.1](../15-Claude-AI-Features/claude-fable-and-mythos-5-1.md)
+  [AI for scientific discovery: How researchers use Claude](how-researchers-use-claude.md)
 
 [View more](https://www.anthropic.com/search?topic=how-people-use-ai)
 
@@ -67,7 +71,7 @@ In this post, we offer a first look, drawing on a survey of 1,260 quantitative s
 
 ## A new survey on AI coding agent use among quantitative social scientists
 
-We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/403415e54964751190003985896630e56829e797.pdf)).
+We fielded the survey in late February and March 2026, targeting active quantitative social scientists. This was not a representative sample—respondents were recruited for a study that offered access to Claude Max accounts, so selection into the sample could tilt toward researchers curious about AI tools. However, the respondents were fairly similar to an earlier sample that received a more generic invitation (see Table A2 in the [Appendix](https://assets.claude.com/403415e54964751190003985896630e56829e797.pdf)).
 
 Respondents were evenly split between economics, political science and sociology, each around a fifth of the sample, with management sciences and psychology close behind (see Table A1). We also received a smaller number of responses from public health, education and communications researchers. Roughly 40% were full or associate professors, 25% were assistant professors, and about 30% were doctoral students.
 
@@ -125,7 +129,7 @@ Notwithstanding these limitations, we show that coding agents are diffusing into
 
 ### Appendix
 
-Available [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/403415e54964751190003985896630e56829e797.pdf).
+Available [here](https://assets.claude.com/403415e54964751190003985896630e56829e797.pdf).
 
 ### References
 
@@ -145,6 +149,16 @@ Wilmers, N., & Engzell, P. (2026). The Paper Factory. SocArXiv Preprints.
 
 ## Authors & acknowledgements
 
+- [Thomas Lyttelton\*→](https://www.anthropic.com/search?author=thomas-lyttelton)
+
+- [Maxim Massenkoff\*→](https://www.anthropic.com/search?author=maxim-massenkoff)
+
+  Co-author of this article.
+
+- [Nathan Wilmers\*→](https://www.anthropic.com/search?author=nathan-wilmers)
+
+\*Lead authors. Contributed equally to this report
+
 ### Contributors
 
 Thomas Lyttelton, Maxim Massenkoff, Nathan Wilmers
@@ -157,7 +171,7 @@ Tim Belonax, Keir Bradwell, Jake Eaton, Rebecca Hiscott, Peter McCrory, Kerry Pe
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{lyttelton2026agents,
  author = {Thomas Lyttelton and Maxim Massenkoff and Nathan Wilmers},
  title = {Coding Agents in the Social Sciences},

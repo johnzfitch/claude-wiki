@@ -2,7 +2,7 @@
 title: "Spellbook Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/spellbook"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:17Z"
+fetched_at: "2026-11-18T06:29:08Z"
 tags: ["api", "case-studies", "claude-code"]
 ---
 

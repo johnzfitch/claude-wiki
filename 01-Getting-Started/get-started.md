@@ -2,7 +2,7 @@
 title: "Get started with Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/get-started"
 category: "01-Getting-Started"
-fetched_at: "2026-11-05T06:37:12Z"
+fetched_at: "2026-11-13T06:36:41Z"
 tags: ["api", "getting-started"]
 ---
 
@@ -55,7 +55,7 @@ Make your first API call to Claude and build a simple web search assistant.
     For Linux environments, download the release binary directly.
 
     ``` shiki
-    VERSION=2.6.0
+    VERSION=2.9.0
     OS=$(uname -s | tr '[:upper:]' '[:lower:]')
     case $(uname -m) in
       x86_64) ARCH=amd64 ;;
@@ -71,7 +71,7 @@ Make your first API call to Claude and build a simple web search assistant.
 
     go install
 
-    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+    You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
     ``` shiki
     go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -79,7 +79,7 @@ Make your first API call to Claude and build a simple web search assistant.
 
     
 
-    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+    `go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
     ``` shiki
     export PATH="$PATH:$(go env GOPATH)/bin"

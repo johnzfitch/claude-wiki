@@ -2,16 +2,16 @@
 title: "How up-to-date is Claude's training data? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:00Z"
+fetched_at: "2026-11-18T06:28:11Z"
 tags: ["safety"]
 ---
 
 # How up-to-date is Claude's training data?
 
-October 7, 2026
-
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:
+
+- Claude Fable 5.2 was trained on data up until June 2026.
 
 - Claude Haiku 5.5 was trained on data up until June 2026.
 

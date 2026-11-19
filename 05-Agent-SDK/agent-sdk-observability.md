@@ -2,11 +2,14 @@
 title: "Observability with OpenTelemetry - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/observability"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-23T06:28:14Z"
+fetched_at: "2026-11-13T06:34:33Z"
+last_modified: "Fri, 13 Nov 2026 06:15:44 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [How telemetry flows from the SDK](#how-telemetry-flows-from-the-sdk)
 - [Enable telemetry export](#enable-telemetry-export)
@@ -51,11 +54,11 @@ The Agent SDK runs the Claude Code CLI as a child process and communicates with 
 
 The CLI exports three independent OpenTelemetry signals. Each has its own enable switch and its own exporter, so you can turn on only the ones you need.
 
-| Signal     | What it contains                                                            | Enable with                                                         |
-|------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------|
-| Metrics    | Counters for tokens, cost, sessions, lines of code, and tool decisions      | `OTEL_METRICS_EXPORTER`                                             |
-| Log events | Structured records for each prompt, API request, API error, and tool result | `OTEL_LOGS_EXPORTER`                                                |
-| Traces     | Spans for each interaction, model request, tool call, and hook (beta)       | `OTEL_TRACES_EXPORTER` plus `CLAUDE_CODE_ENHANCED_TELEMETRY_BETA=1` |
+| Signal | What it contains | Enable with |
+|----|----|----|
+| Metrics | Counters for tokens, cost, sessions, lines of code, and tool decisions | `OTEL_METRICS_EXPORTER` |
+| Log events | Structured records for each prompt, API request, API error, and tool result | `OTEL_LOGS_EXPORTER` |
+| Traces | Spans for each interaction, model request, tool call, and hook (beta) | `OTEL_TRACES_EXPORTER` plus `CLAUDE_CODE_ENHANCED_TELEMETRY_BETA=1` |
 
 For the complete list of metric names, event names, and attributes, see the Claude Code [Monitoring](../13-Enterprise-Admin/monitoring-usage.md) reference. The Agent SDK emits the same data because it runs the same CLI. Span names are listed in [Read agent traces](#read-agent-traces) below.
 
@@ -253,11 +256,10 @@ const options = {
 After you attach end-user identity, these events become a per-user audit trail you can forward to a Security Information and Event Management (SIEM) platform:
 
 - `tool_decision` and `tool_result`: each tool call, whether it was allowed or denied, and its result
-- `safety_event`: which check refused a tool call or required a permission prompt for it, such as a permission rule or the auto mode classifier. Some calls [have no safety event](../13-Enterprise-Admin/monitoring-usage.md#calls-without-a-safety-event). Requires Claude Code v2.1.307 or later
 - `mcp_server_connection`: MCP server connections and connection failures
 - `permission_mode_changed`: permission mode changes
 
-These events export as log records named with a `claude_code.` prefix, such as `claude_code.safety_event`. See [Audit security events](../13-Enterprise-Admin/monitoring-usage.md#audit-security-events) in the Monitoring reference for the full list of security-relevant events and the attributes each one carries.
+These events export as log records named with a `claude_code.` prefix, such as `claude_code.tool_decision`. See [Audit security events](../13-Enterprise-Admin/monitoring-usage.md#audit-security-events) in the Monitoring reference for the full list of security-relevant events and the attributes each one carries.
 
 
 [​](#control-sensitive-data-in-exports)
@@ -266,11 +268,11 @@ Control sensitive data in exports
 
 Telemetry is structural by default. Durations, model names, and tool names are recorded on every span; token counts are recorded when the underlying API request returns usage data, so spans for failed or aborted requests may omit them. The content your agent reads and writes is not recorded by default. These opt-in variables add content to the exported data:
 
-| Variable                  | Adds                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `OTEL_LOG_USER_PROMPTS=1` | Prompt text on `claude_code.user_prompt` events and on the `claude_code.interaction` span                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| `OTEL_LOG_TOOL_DETAILS=1` | Tool input arguments such as file paths, shell commands, and search patterns on `claude_code.tool_result` events, and real agent, skill, plugin, and MCP server names on the [cost and token metrics](../13-Enterprise-Admin/monitoring-usage.md#cost-counter). The built-in rule the auto mode classifier named when it blocked a call, as [`classifier_category`](../13-Enterprise-Admin/monitoring-usage.md#tool-decision-event) on `claude_code.tool_decision` and `claude_code.safety_event` events                                                                                                                           |
-| `OTEL_LOG_TOOL_CONTENT=1` | A [`tool.output` span event](../13-Enterprise-Admin/monitoring-usage.md#tool-output-span-event) on `claude_code.tool` with file contents, Bash output, and what MCP tools, WebFetch, and WebSearch return, truncated at 60 KB by default, configurable via `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH`, which requires Claude Code v2.1.214 or later. Results from MCP tools, WebFetch, and WebSearch require Claude Code v2.1.283 or later. Requires [tracing](#read-agent-traces) to be enabled. Span attributes carry tool content under [their own gates](../13-Enterprise-Admin/monitoring-usage.md#new-context-gates)              |
+| Variable | Adds |
+|----|----|
+| `OTEL_LOG_USER_PROMPTS=1` | Prompt text on `claude_code.user_prompt` events and on the `claude_code.interaction` span |
+| `OTEL_LOG_TOOL_DETAILS=1` | Tool input arguments such as file paths, shell commands, and search patterns on `claude_code.tool_result` events, and real agent, skill, plugin, and MCP server names on the [cost and token metrics](../13-Enterprise-Admin/monitoring-usage.md#cost-counter). The built-in rule the auto mode classifier named when it blocked a call, as [`classifier_category`](../13-Enterprise-Admin/monitoring-usage.md#tool-decision-event) on `claude_code.tool_decision` events |
+| `OTEL_LOG_TOOL_CONTENT=1` | A [`tool.output` span event](../13-Enterprise-Admin/monitoring-usage.md#tool-output-span-event) on `claude_code.tool` with file contents, Bash output, and what MCP tools, WebFetch, and WebSearch return, truncated at 60 KB by default, configurable via `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH`, which requires Claude Code v2.1.214 or later. Results from MCP tools, WebFetch, and WebSearch require Claude Code v2.1.283 or later. Requires [tracing](#read-agent-traces) to be enabled. Span attributes carry tool content under [their own gates](../13-Enterprise-Admin/monitoring-usage.md#new-context-gates) |
 | `OTEL_LOG_RAW_API_BODIES` | Full Anthropic Messages API request and response JSON as `claude_code.api_request_body` and `claude_code.api_response_body` log events. Set to `1` for inline bodies truncated at 60 KB by default, or `file:<dir>` for untruncated bodies on disk with a `body_ref` path in the event. `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` configures the inline truncation limit, and requires Claude Code v2.1.214 or later. Bodies include the entire conversation history and have extended-thinking content redacted. Enabling this implies consent to everything the three variables above would reveal |
 
 Leave these unset unless your observability pipeline is approved to store the data your agent handles. See [Security and privacy](../13-Enterprise-Admin/monitoring-usage.md#security-and-privacy) in the Monitoring reference for the full list of attributes and redaction behavior.

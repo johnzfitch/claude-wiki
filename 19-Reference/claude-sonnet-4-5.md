@@ -51,7 +51,7 @@ Claude Sonnet 4.5 makes this possible. We're releasing it along with a set of ma
 
 We're also giving developers the building blocks we use ourselves to make Claude Code. We're calling this the [Claude Agent SDK](https://anthropic.com/engineering/building-agents-with-the-claude-agent-sdk). The infrastructure that powers our frontier products—and allows them to reach their full potential—is now yours to build with.
 
-This is the [most aligned frontier model](../15-Claude-AI-Features/claude-sonnet-4-5-system-card.md) we’ve ever released, showing large improvements across several areas of alignment compared to previous Claude models.
+This is the [most aligned frontier model](updated-footnote-24-stress-testing-deliberative-alignment-to-correct.md) we’ve ever released, showing large improvements across several areas of alignment compared to previous Claude models.
 
 Claude Sonnet 4.5 is available everywhere today. If you’re a developer, simply use `claude-sonnet-4-5` via [the Claude API](https://docs.claude.com/en/docs/about-claude/models/overview). Pricing remains the same as Claude Sonnet 4, at \$3/\$15 per million tokens.
 
@@ -163,7 +163,7 @@ Head of AI and Machine Learning
 
 As well as being our most capable model, Claude Sonnet 4.5 is our most aligned frontier model yet. Claude’s improved capabilities and our extensive safety training have allowed us to substantially improve the model’s behavior, reducing concerning behaviors like sycophancy, deception, power-seeking, and the tendency to encourage delusional thinking. For the model’s agentic and computer use capabilities, we’ve also made considerable progress on defending against prompt injection attacks, one of the most serious risks for users of these capabilities.
 
-You can read a detailed set of safety and alignment evaluations, which for the first time includes tests using techniques from mechanistic interpretability, in the Claude Sonnet 4.5 [system card](../15-Claude-AI-Features/claude-sonnet-4-5-system-card.md).
+You can read a detailed set of safety and alignment evaluations, which for the first time includes tests using techniques from mechanistic interpretability, in the Claude Sonnet 4.5 [system card](updated-footnote-24-stress-testing-deliberative-alignment-to-correct.md).
 
 Claude Sonnet 4.5 is being released under our AI Safety Level 3 (ASL-3) protections, as per [our framework](announcing-our-updated-responsible-scaling-policy.md) that matches model capabilities with appropriate safeguards. These safeguards include filters called classifiers that aim to detect potentially dangerous inputs and outputs—in particular those related to chemical, biological, radiological, and nuclear (CBRN) weapons.
 
@@ -191,7 +191,7 @@ It's a fun demonstration showing what Claude Sonnet 4.5 can do—a way to see wh
 
 We recommend upgrading to Claude Sonnet 4.5 for all uses. Whether you’re using Claude through our apps, our API, or Claude Code, Sonnet 4.5 is a drop-in replacement that provides much improved performance for the same price. Claude Code updates are available to all users. [Claude Developer Platform](https://claude.com/platform/api) updates, including the Claude Agent SDK, are available to all developers. Code execution and file creation are available on all paid plans in the Claude apps.
 
-For complete technical details and evaluation results, see our [system card](../15-Claude-AI-Features/claude-sonnet-4-5-system-card.md), [model page](../15-Claude-AI-Features/claude-sonnet.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview). For more information, explore our [engineering](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk) [posts](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and research post on [cybersecurity](https://red.anthropic.com/2025/ai-for-cyber-defenders).
+For complete technical details and evaluation results, see our [system card](updated-footnote-24-stress-testing-deliberative-alignment-to-correct.md), [model page](../15-Claude-AI-Features/claude-sonnet.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview). For more information, explore our [engineering](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk) [posts](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and research post on [cybersecurity](https://red.anthropic.com/2025/ai-for-cyber-defenders).
 
 ### Methodology
 

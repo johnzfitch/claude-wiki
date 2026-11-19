@@ -2,7 +2,7 @@
 title: "Dreams - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/dreams"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:21Z"
+fetched_at: "2026-11-13T06:33:10Z"
 tags: ["api"]
 ---
 
@@ -25,7 +25,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/dreams
 
-Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``dreaming-2026-04-21`. Learn [how to send beta headers](beta-headers.md).
 
 Start an asynchronous job that uses past sessions to produce a reorganized version of a memory store and get back the dream to poll for the result.
 
@@ -33,7 +33,7 @@ Start an asynchronous job that uses past sessions to produce a reorganized versi
 
 GET/v1/dreams
 
-Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``dreaming-2026-04-21`. Learn [how to send beta headers](beta-headers.md).
 
 List the dreams in the workspace, newest first.
 
@@ -41,7 +41,7 @@ List the dreams in the workspace, newest first.
 
 GET/v1/dreams/{dream_id}
 
-Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``dreaming-2026-04-21`. Learn [how to send beta headers](beta-headers.md).
 
 Get a dream by ID to check its status, output memory store, and token usage.
 
@@ -49,7 +49,7 @@ Get a dream by ID to check its status, output memory store, and token usage.
 
 POST/v1/dreams/{dream_id}/cancel
 
-Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``dreaming-2026-04-21`. Learn [how to send beta headers](beta-headers.md).
 
 Stop a `pending` or `running` dream.
 
@@ -57,7 +57,7 @@ Stop a `pending` or `running` dream.
 
 POST/v1/dreams/{dream_id}/archive
 
-Requires `anthropic-beta: ``dreaming-2026-04-21`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``dreaming-2026-04-21`. Learn [how to send beta headers](beta-headers.md).
 
 Hide a `completed`, `failed`, or `canceled` dream from the default list of dreams.
 
@@ -73,7 +73,7 @@ An asynchronous job that reads a memory store and past sessions, then writes a r
 
 By default the dream writes its result to a new memory store and doesn't change the input memory store. With `output_behavior` set to `update_existing`, it writes its result into the input memory store instead.
 
-The Dreams API is in research preview: the request and response shapes are volatile and may change without the deprecation period that applies to generally-available endpoints.
+The Dreams API is in research preview: the request and response shapes are volatile and may change without the deprecation period that applies to stable endpoints.
 
 See the [Dreams guide](../Other/managed-agents-dreams.md#how-it-works) for what a dream reads and produces.
 
@@ -554,13 +554,3 @@ BetaTargetStoreHeldError object{ type: "conflict_error", message }
 Returned with status 409 when a request to create a dream sets `output_behavior` to `update_existing` and another dream that writes into the same memory store hasn't fully stopped.
 
 The other dream is `pending` or `running`, or it has just stopped and is still finishing its last writes. `message` gives the ID of the other dream when the server can identify it. If that dream has already reached `completed`, `failed`, or `canceled`, retry after a short wait. Otherwise, wait for the other dream to end or cancel it, then retry. The response sets the `x-should-retry` header to `false`.
-
-type: "conflict_error"
-
-
-
-message: optional string
-
-
-
-A human-readable explanation of why the memory store can't be used yet, with the ID of the dream that is using it when the server can identify it.

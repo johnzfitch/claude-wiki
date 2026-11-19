@@ -2,7 +2,7 @@
 title: "Session threads - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/session-threads"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-03T06:23:10Z"
+fetched_at: "2026-11-18T06:27:34Z"
 tags: ["api"]
 ---
 
@@ -20,21 +20,28 @@ List, interrupt, and archive the threads of a multiagent session, read their eve
 
 Session threads
 
+Beta
+
 Feature of  
 [Multiagent orchestration](managed-agents-multiagent-orchestration.md)
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Managed AgentsAlways on
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 In a [multiagent session](managed-agents-multiagent-orchestration.md), each agent works in its own **session thread**. This page covers how to list, interrupt, and archive threads, the events they send, and how tool permissions work across them. A [workflow run](managed-agents-workflow-runs.md) creates session threads too.
 
@@ -50,7 +57,7 @@ A [session budget](managed-agents-budgets.md) is a single shared cap across all 
 
 
 
-A session can have at most 25 child threads at a time. Idle threads count until you archive them, and the primary thread doesn’t count. The primary thread’s agent can call multiple copies of a single subagent, creating multiple threads associated with one `agent`. [Advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) consultation threads are exempt from this limit. So are a [workflow run](managed-agents-workflow-runs.md)’s threads.
+A session can have at most 25 child threads at a time. Idle threads count until you archive them, and the primary thread doesn’t count. The primary thread’s agent can call multiple copies of a single subagent, creating multiple threads associated with one `agent`. [Advisor consultation threads](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) are exempt from this limit. So are a [workflow run](managed-agents-workflow-runs.md)’s threads.
 
 ## List threads
 
@@ -155,7 +162,7 @@ archived = client.beta.sessions.threads.archive(thread.id, session_id=session.id
 print(archived.status, archived.archived_at)
 ```
 
-Archive only succeeds if the thread is `idle`. A thread parked on `requires_action` counts as idle, so you can archive it directly. To archive a running thread, interrupt it first:
+Archiving succeeds only if the thread is `idle`. A thread that waits on `requires_action` counts as idle, so you can archive it directly. To archive a running thread, interrupt it first:
 
 cURL
 
@@ -197,18 +204,18 @@ These events surface multiagent activity on the primary thread at `/v1/sessions/
 | `session.thread_created` | A thread was created. Includes `session_thread_id` and `agent_name`. |
 | `session.thread_status_running` | A thread started activity. |
 | `session.thread_status_idle` | The agent associated with the thread is awaiting input. Includes a `stop_reason` indicating why the agent stopped. |
-| `session.thread_status_terminated` | A thread terminated and accepts no further input, for example because it was archived or encountered an unrecoverable error. An advisor thread also terminates when its consultation ends. |
+| `session.thread_status_terminated` | A thread terminated and accepts no further input, for example, because it was archived or encountered an unrecoverable error. An advisor thread also terminates when its consultation ends. |
 | `agent.thread_message_received` | On the primary thread, a subagent sent the primary thread’s agent a report or question. Includes `from_session_thread_id`, `from_agent_name`, and `content`. |
 | `agent.thread_message_sent` | On the primary thread, the primary thread’s agent sent a subagent a task or follow-up message. Includes `to_session_thread_id`, `to_agent_name`, and `content`. |
 
-Advisor consultations emit these same thread events under the reserved name `anthropic.advisor` (as `agent_name` on the thread lifecycle events and `from_agent_name` on the advice delivery); see [Give the session an advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) for the sequence.
+Advisor consultations emit these same thread events under the reserved name `anthropic.advisor`. The name appears as `agent_name` on the thread lifecycle events and as `from_agent_name` on the advice delivery. See [Give the session an advisor](managed-agents-multiagent-orchestration.md#give-the-session-an-advisor) for the sequence.
 
 A [workflow run](managed-agents-workflow-runs.md)’s threads show on the primary stream as follows:
 
 - **Lifecycle events:** Each run thread sends `session.thread_created`, with the run’s `workflow_run_id`, and its `session.thread_status_running`, `session.thread_status_idle`, and `session.thread_status_terminated` events.
 - **Message events:** A run thread’s prompt, an `agent.thread_message_received` event, stays on its own stream.
 - **Run events:** `workflow_run.*` events also arrive on this stream; see [Run events](managed-agents-workflow-runs.md#run-events).
-- **Tool calls that wait on you:** A run thread’s tool calls that need your client are cross-posted to this stream, as for any child thread. See [Tool permissions and custom tools](#tool-permissions-and-custom-tools).
+- **Tool calls that wait on you:** The server cross-posts a run thread’s tool calls that need your client to this stream, as for any child thread. See [Tool permissions and custom tools](#tool-permissions-and-custom-tools).
 
 ## Session thread events
 
@@ -364,32 +371,61 @@ The previous pattern answers the calls that an idle event lists. On the primary 
 
 ## Availability
 
-Session threads are available on every model.
+Session threads
 
-### API support
+Cloud platform
 
-[Managed Agents](managed-agents-overview.md)
+Cloud platform: Claude API
 
-Usage
+Availability requirements for Session threads are the same across all supported platforms.
 
-Always on
+Claude API
 
-StatusAvailable
+Status  
+Beta
 
-Cloud platforms
+API  
+- Managed Agents
 
-- All supported platforms
+Beta header  
+Requires
 
-### Required beta headers
+managed-agents-2026-04-01
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Models  
+- All models
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Claude Platform on AWS
 
-Header
+Status  
+Beta
 
-- `managed-agents-2026-04-01`
-  
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -403,8 +439,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

@@ -2,7 +2,7 @@
 title: "List Plugin Versions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugins/versions/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-02T06:26:57Z"
+fetched_at: "2026-11-18T06:27:23Z"
 tags: ["api"]
 ---
 
@@ -25,6 +25,8 @@ API version 2026-10-21
 cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/plugins/{plugin_id}/versions
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List a Plugin's versions, newest first.
 
@@ -64,7 +66,7 @@ organization_id: optional string
 
 
 
-For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
 
 
 
@@ -80,7 +82,7 @@ maxLength2048
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
+"anthropic-beta": array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -92,14 +94,6 @@ string
 
 
 
-"message-batches-2024-09-24"
-
-
-
-"prompt-caching-2024-07-31"
-
-
-
 "computer-use-2024-10-22"
 
 
@@ -108,23 +102,7 @@ string
 
 
 
-"pdfs-2024-09-25"
-
-
-
-"token-counting-2024-11-01"
-
-
-
-"token-efficient-tools-2025-02-19"
-
-
-
 "output-128k-2025-02-19"
-
-
-
-"files-api-2025-04-14"
 
 
 
@@ -148,10 +126,6 @@ string
 
 
 
-"extended-cache-ttl-2025-04-11"
-
-
-
 "context-1m-2025-08-07"
 
 
@@ -161,10 +135,6 @@ string
 
 
 "model-context-window-exceeded-2025-08-26"
-
-
-
-"skills-2025-10-02"
 
 
 
@@ -193,10 +163,6 @@ string
 
 
 "managed-agents-2026-04-01"
-
-
-
-"cache-diagnosis-2026-04-07"
 
 
 
@@ -256,10 +222,6 @@ string
 
 
 
-"ce-user-management-2026-07-13"
-
-
-
 "mid-conversation-output-config-2026-07-01"
 
 
@@ -300,6 +262,10 @@ string
 
 
 
+"admin-user-sign-out-2026-10-08"
+
+
+
 "message-threads-2026-08-12"
 
 
@@ -311,6 +277,90 @@ string
 "experimental-claude-tag-2026-10-21"
 
 
+
+"user-profiles-billing-2026-10-01"
+
+
+
+
+
+"message-batches-2024-09-24"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"prompt-caching-2024-07-31"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"pdfs-2024-09-25"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-counting-2024-11-01"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-efficient-tools-2025-02-19"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"files-api-2025-04-14"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14
+
+
+
+"extended-cache-ttl-2025-04-11"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"skills-2025-10-02"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/skills-guide#migrate-from-skills-2025-10-02
+
+
+
+"cache-diagnosis-2026-04-07"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"ce-user-management-2026-07-13"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
 
 ##### Returns
 
@@ -428,7 +478,7 @@ reason: string or null
 
 
 
-The primary mechanism behind a `warn` or `fail`, such as `credential-exposure` or `guardrail-tampering`; a mechanism this API does not yet name reads as `other`. Null on a `pass`, whenever `assessment` is null, and when no mechanism is reported for the verdict.
+The primary mechanism behind a `warn` or `fail`, such as `credential-exposure` or `guardrail-tampering`; a mechanism this API does not yet name reads as `other`. Read `status` first: on an `errored` scan it is not a finding but why there is no verdict: `scan-invalid-archive`, the scan refused the version's archive, or could not process it, before checking what its files say, and running it again will not help, so change the files and store a new version; `scan-did-not-finish`, the scan did not finish or its result is no longer available, so retry the scan in claude.ai if it offers a retry; `scan-unavailable`, the scan could not run or its result cannot be read right now, so read the version again later, then retry the scan in claude.ai if it offers a retry. If these steps do not help, contact support. Null on a `pass`, while a scan runs, and when no mechanism is reported for the verdict. On an errored scan, null means that a compliance configuration ruled out the scan.
 
 
 
@@ -526,7 +576,7 @@ description: string or null
 
 
 
-The manifest's description; null when it declares none.
+The manifest's description; null when it declares none. The value can be longer than 500 characters, the limit on `description` in an uploaded manifest. A description that the manifest takes from a `SKILL.md` is cut to its first 500 characters. So if the manifest's description is the first 500 characters of exactly one distinct skill `description` in `components`, that skill `description` is returned instead.
 
 display_name: string or null
 

@@ -2,7 +2,7 @@
 title: "September 24, 2026"
 source_url: "https://www-cdn.anthropic.com/3818cf6119b88f9714d995f6549fa8aac0bd5ab5/Project-Swap.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-27T06:27:57Z"
+fetched_at: "2026-11-18T06:28:22Z"
 tags: ["news-research"]
 ---
 

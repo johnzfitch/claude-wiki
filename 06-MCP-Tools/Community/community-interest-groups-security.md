@@ -2,8 +2,8 @@
 title: "Security Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/security"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-11-01T06:23:59Z"
-last_modified: "Sun, 01 Nov 2026 06:23:32 GMT"
+fetched_at: "2026-11-12T06:24:39Z"
+last_modified: "Wed, 11 Nov 2026 20:29:20 GMT"
 tags: ["mcp", "mcp-community", "security"]
 ---
 
@@ -23,7 +23,7 @@ Back to top
 - [Discussion Topics](#discussion-topics)
 - [Changelog](#changelog)
 
-Interest Group Charters
+Interest Groups
 
 # Security Charter
 
@@ -136,7 +136,6 @@ The following items form the IG’s current discussion agenda. This list is not 
 
 | Item | Name | Status | Champion |
 |----|----|----|----|
-| [SEP-2809](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2809) | Attested Tool-Server Admission (ATSA) | Draft | [@metereconsulting](https://github.com/metereconsulting) |
 | — | SDK vulnerability disclosure | In progress | Facilitators |
 | — | Runtime drift: `list_changed` semantics after approval | Open | — |
 | — | Supply-chain integrity: protocol, registry, or companion standard | Open | — |

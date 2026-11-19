@@ -2,28 +2,24 @@
 title: "Claude is now available in the EU \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-europe"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:05Z"
+fetched_at: "2026-11-14T06:26:25Z"
 tags: ["news-research"]
 ---
 
 # Claude is now available in Europe
 
-- Published
+Published  
+May 14, 2024
 
-  May 14, 2024
+[Product](product.md)
 
-- Category
+Topics  
+- [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
+- [Claude apps](https://www.anthropic.com/search?topic=claude-apps)
+- [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
+- [Access](https://www.anthropic.com/search?topic=access)
 
-  [Product](product.md)
-
-- Topics
-
-  - [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
-  - [Claude apps](https://www.anthropic.com/search?topic=claude-apps)
-  - [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
-  - [Access](https://www.anthropic.com/search?topic=access)
-
-  See more...
+See more...
 
 Related articles
 
@@ -49,4 +45,4 @@ Both Claude.ai and the Claude iOS app are available for free. The Claude app is 
 
 At Anthropic, we're dedicated to creating AI systems that put people first. We look forward to bringing the unique capabilities of the Claude 3 model family to more people throughout Europe.
 
-*Read this post in [French](https://www-cdn.anthropic.com/files/4zrzovbb/website/bfbafc8f692634001f9f5fb7d05d12a4ef71ad24.pdf), [German](https://www-cdn.anthropic.com/files/4zrzovbb/website/397335b3ce79aff658ba1a35f73c26cce0ea5490.pdf), [Italian](https://www-cdn.anthropic.com/files/4zrzovbb/website/c2e15095e05250d9feecef8a1b9e9fd319acd7c7.pdf), or [Spanish](https://www-cdn.anthropic.com/files/4zrzovbb/website/5686521fb5eaa65ae0a3e79c7d7713760942e6d2.pdf).*
+*Read this post in [French](https://assets.claude.com/bfbafc8f692634001f9f5fb7d05d12a4ef71ad24.pdf), [German](https://assets.claude.com/397335b3ce79aff658ba1a35f73c26cce0ea5490.pdf), [Italian](https://assets.claude.com/c2e15095e05250d9feecef8a1b9e9fd319acd7c7.pdf), or [Spanish](https://assets.claude.com/5686521fb5eaa65ae0a3e79c7d7713760942e6d2.pdf).*

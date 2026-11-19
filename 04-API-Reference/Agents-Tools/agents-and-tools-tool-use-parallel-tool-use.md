@@ -2,7 +2,7 @@
 title: "Parallel tool use - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/parallel-tool-use"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:31Z"
+fetched_at: "2026-11-13T06:35:17Z"
 tags: ["api"]
 ---
 
@@ -20,11 +20,20 @@ Enable, format, and disable parallel tool calls, with message-history guidance a
 
 Parallel tool use
 
-[APIs](#feature-availability)  
-Messages APIOn by defaultManaged AgentsAlways on
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents[\* Beta](#availability-beta-on-claude-api)
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 By default, Claude may call multiple tools in a single response. This page covers how to run those calls, how to format the message history so parallelism keeps working, and how to disable parallel tool use when you need to. For the single-call flow, see [Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md).
 
@@ -189,7 +198,7 @@ The summary lines at the end restate the two formatting rules that keep parallel
 
 Claude 4 and later models make parallel tool calls by default when a request benefits from multiple tools. For all models, you can increase the likelihood of parallel tool calls with targeted prompting:
 
-### System prompts for parallel tool use
+### System prompts for parallel tool use
 
 For Claude 4 and later models, add this to your system prompt:
 
@@ -209,7 +218,7 @@ For maximum efficiency, whenever you perform multiple independent operations, in
 
 
 
-### User message prompting
+### User message prompting
 
 You can also encourage parallel tool use within specific user messages:
 
@@ -297,7 +306,7 @@ print(response.content)
 
 ### Exactly one tool call
 
-When `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 don’t support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
+When the `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, and Claude Sonnet 5.5 don’t support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
 
 cURL
 
@@ -457,36 +466,58 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Parallel tool use is available or in beta, depending on the API.
+Parallel tool use
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-To turn it off, set `disable_parallel_tool_use: true` inside `tool_choice`.
+APIs  
+- Messages API
+- Managed Agents Beta
 
-StatusOn by default
+Models  
+- All models
 
-Cloud platforms
+Amazon Bedrock
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Amazon Bedrock (bedrock-runtime)
 
-Always on
+API  
+- Messages API
 
-StatusBeta
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+APIs  
+- Messages API
+- Managed Agents Beta
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models

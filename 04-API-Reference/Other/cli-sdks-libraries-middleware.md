@@ -2,7 +2,7 @@
 title: "SDK middleware - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/middleware"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:08Z"
+fetched_at: "2026-11-13T06:36:38Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -20,13 +20,17 @@ Intercept and modify the SDK’s requests and responses.
 
 SDK middleware
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents[\* Beta](#availability-beta-on-claude-api)
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[Cloud platforms](#feature-availability)  
+- All platforms
 
-The Claude SDK provides a middleware (or interceptor) hook that lets you run code before a request is sent and after the response is received. Use middleware for cross-cutting concerns such as logging, custom retries, request annotation, and refusal fallback handling.
+The Anthropic SDK provides a middleware (or interceptor) hook that runs your code before the SDK sends a request and after it receives the response. Use middleware for cross-cutting concerns such as logging, custom retries, request annotation, and retrying a declined request on a [fallback model](#built-in-middleware).
 
 Each middleware can inspect or replace the request before calling `next()`, and the response after `next()` returns.
 
@@ -73,7 +77,7 @@ client = Anthropic(middleware=[logging_middleware])
 
 When you register multiple middleware, they apply in the order given: the first middleware’s “before” code runs first, and its “after” code runs last. Middleware registered on the client runs before middleware passed as a per-request option.
 
-In the Go SDK, repeated `option.WithMiddleware` calls concatenate (client first, then method). In the other SDKs, pass an array; later entries wrap inner.
+To register more than one middleware, pass them all, as in `middleware=[first, second]`.
 
 ## Replacing the HTTP client
 
@@ -85,27 +89,66 @@ The SDK ships a refusal-fallback middleware that automatically retries a request
 
 ## Availability
 
-SDK middleware is available or in beta, depending on the API.
+SDK middleware
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
+- Managed Agents Beta
 
-- All supported platforms
+Models  
+- All models
 
-[Managed Agents](managed-agents-overview.md)
+Amazon Bedrock
 
-Usage
+API  
+- Messages API
 
-Runs on your SDK client’s calls to the Managed Agents API. It does not see the model calls the agent makes inside its loop.
+Models  
+- All models
 
-StatusBeta
+Amazon Bedrock (bedrock-runtime)
 
-Cloud platforms
+API  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Models  
+- All models
+
+Claude Platform on AWS
+
+APIs  
+- Messages API
+- Managed Agents Beta
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models

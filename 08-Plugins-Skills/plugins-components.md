@@ -2,7 +2,8 @@
 title: "Add components to a plugin - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/components"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-26T06:30:18Z"
+fetched_at: "2026-11-13T06:32:45Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -27,7 +28,6 @@ Back to top
   - [Include a packaged MCPB server](#include-a-packaged-mcpb-server)
   - [LSP servers](#lsp-servers)
   - [Executables](#executables)
-  - [Default settings](#default-settings)
   - [Themes and output styles](#themes-and-output-styles)
   - [Channels](#channels)
   - [Monitors](#monitors)
@@ -43,7 +43,7 @@ Create plugins
 
 Copy pageCopy page
 
-Add skills, hooks, MCP servers, and every other component type to a Claude Code plugin, with an example that validates for each.
+Add skills, hooks, MCP servers, and other component types to a Claude Code plugin, with an example that validates for each.
 
 Copy pageCopy page
 
@@ -60,7 +60,7 @@ These cases are covered on other pages:
 
 Explore the plugin directory
 
-The explorer shows an example plugin, `my-plugin`, that has one of every kind of component in its default location:
+The explorer shows an example plugin, `my-plugin`, that has these components in their default locations:
 
 - A review skill and an `about` command
 - A security-review subagent
@@ -69,7 +69,6 @@ The explorer shows an example plugin, `my-plugin`, that has one of every kind of
 - An output style and a color theme
 - A route-audit workflow
 - A `hello-plugin` executable
-- Default settings
 - A local MCP server and a Go language server
 
 Each file is the smallest valid example of its format, there to show the shape rather than to be useful: a real skill or agent carries full instructions and often supporting files, and a real hook or monitor does real work. The sections after the explorer use the same files as their examples and link to fuller ones. Select a file or folder to read what it’s for, see what goes in it, and find the section that covers it.
@@ -354,29 +353,6 @@ echo "hello from my-plugin"
 ```
 
 Make it executable with `chmod +x bin/hello-plugin` and load the plugin. When you ask Claude to run `hello-plugin`, the Bash tool result shows the script’s output. Plugin `bin/` directories come after the user’s own `PATH` entries, so a plugin can’t shadow `git`, `ls`, or another system command. claude.ai and Cowork don’t install a plugin that has a top-level `bin/` directory, including one you [distribute through claude.ai organization settings](https://claude.com/docs/plugins/org-sync#keep-executables-out-of-the-top-level-bin-directory).
-
-
-[​](#default-settings)
-
-Default settings
-
-To set defaults that apply while the plugin is enabled, add a `settings.json` at the plugin root, or put the same object inline in the `settings` manifest key. Two keys take effect, `agent` and `subagentStatusLine`, and every other key is dropped. Set `agent` to run one of the plugin’s own agents as the main thread:
-
-settings.json
-
-```python
-{
-  "agent": "security-reviewer"
-}
-```
-
-Load the plugin and start a session. Claude then answers in the main conversation with the `security-reviewer` agent’s system prompt and model. For everything the key controls, see the [`agent` setting](../02-Claude-Code-CLI/settings-reference.md#agent). When the same key is set in more than one place, these rules decide which value applies:
-
-- **File over manifest**: when both exist and `settings.json` sets at least one supported key, `settings.json` applies and the manifest’s `settings` is ignored
-- **User settings over plugin defaults**: across settings sources, plugin defaults are the lowest layer, so a user’s own `agent` in `~/.claude/settings.json` overrides yours
-- **Two plugins set the same key**: the value from the plugin loaded last applies, and `claude --debug` logs `overrides setting`
-
-For the `subagentStatusLine` shape, see [subagent status lines](../02-Claude-Code-CLI/statusline.md#subagent-status-lines).
 
 
 [​](#themes-and-output-styles)

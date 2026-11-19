@@ -2,7 +2,7 @@
 title: "How to use Shop Pay with Claude Duet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17666489-how-to-use-shop-pay-with-claude-duet"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:58Z"
+fetched_at: "2026-11-18T06:28:19Z"
 tags: ["claude-ai"]
 ---
 

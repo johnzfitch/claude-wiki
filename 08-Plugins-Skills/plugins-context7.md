@@ -2,7 +2,7 @@
 title: "Context7 | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/context7"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:26Z"
+fetched_at: "2026-11-18T06:26:44Z"
 tags: ["plugins"]
 ---
 
@@ -18,7 +18,7 @@ Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Con
   Claude Code
 - 
 
-  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/0412be76f50ab4f4f8abff3753efa9269fbbca5b/external_plugins/context7)
+  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/fd30cee3ecd5a8ee772733c5d20c0f2bae2da2f0/external_plugins/context7)
 - 
 
   Installs417,801

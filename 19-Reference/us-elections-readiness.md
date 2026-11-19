@@ -2,29 +2,25 @@
 title: "U.S. elections readiness \\ Anthropic"
 source_url: "https://www.anthropic.com/news/us-elections-readiness"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:33Z"
+fetched_at: "2026-11-14T06:26:36Z"
 tags: ["news-research"]
 ---
 
 # U.S. elections readiness
 
-- Published
+Published  
+Oct 8, 2024
 
-  Oct 8, 2024
+[Safeguards](safeguards.md)
 
-- Category
+Topics  
+- [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
 
-  [Safeguards](safeguards.md)
-
-- Topics
-
-  - [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
-  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-
-  See more...
+See more...
 
 Related articles
 
@@ -87,4 +83,4 @@ Additional resources:
 Relevant safety work: 
 
 - June 2024, [Claude 3.5 Sonnet launch](claude-3-5-sonnet.md),
-- June 2024, [Claude 3.5 Model Card Addendum](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf)
+- June 2024, [Claude 3.5 Model Card Addendum](https://assets.claude.com/fed9cc193a14b84131812372d8d5857f8f304c52.pdf)

@@ -2,7 +2,7 @@
 title: "Code Simplifier | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/code-simplifier"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:37Z"
+fetched_at: "2026-11-18T06:26:57Z"
 tags: ["plugins"]
 ---
 

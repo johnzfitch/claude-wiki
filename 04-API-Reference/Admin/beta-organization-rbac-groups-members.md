@@ -2,7 +2,7 @@
 title: "Members - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_groups/members"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:20Z"
+fetched_at: "2026-11-13T06:35:46Z"
 tags: ["api"]
 ---
 

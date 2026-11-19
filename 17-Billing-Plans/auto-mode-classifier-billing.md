@@ -2,8 +2,8 @@
 title: "Auto mode classifier request charges - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/auto-mode-classifier-billing"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-07T06:23:11Z"
-last_modified: "Sat, 07 Nov 2026 04:14:10 GMT"
+fetched_at: "2026-11-11T06:25:32Z"
+last_modified: "Tue, 10 Nov 2026 23:54:59 GMT"
 tags: ["billing", "claude-code"]
 ---
 
@@ -56,7 +56,7 @@ If a gateway keeps auto mode’s server-side checks from reaching your sessions 
 - **Requests**: to let the checks through, the gateway forwards both the `anthropic-beta` header and the `safeguards` body field unchanged, because [the two travel as a pair](../13-Enterprise-Admin/llm-gateway-protocol.md#beta-header-and-body-field-pairs). On the [Amazon Bedrock InvokeModel format](../13-Enterprise-Admin/llm-gateway-protocol.md#api-formats), it forwards the `anthropic_beta` body field in place of the header.
 - **Responses**: the gateway returns responses and streaming events without dropping fields or rewriting tool-use IDs. To let the checks’ results through, it keeps the `safeguard_results` field.
 
-A gateway that passes traffic through this way keeps working with this feature and with future ones. New sessions then use the server’s checks again. If you already know that your gateway can’t provide the server’s checks, tell Claude Code not to ask for them there by setting `CLAUDE_CODE_AUTO_MODE_SERVER` to `0` before you start the session, in your shell or in the [`env` settings key](../02-Claude-Code-CLI/settings-reference.md#env):
+Once your gateway does this, new sessions use the server’s checks again. If you already know that your gateway can’t provide the server’s checks, tell Claude Code not to ask for them there by setting `CLAUDE_CODE_AUTO_MODE_SERVER` to `0` before you start the session, in your shell or in the [`env` settings key](../02-Claude-Code-CLI/settings-reference.md#env):
 
 ```python
 export CLAUDE_CODE_AUTO_MODE_SERVER=0

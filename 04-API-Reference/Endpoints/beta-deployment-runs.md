@@ -2,7 +2,7 @@
 title: "Deployment Runs - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/deployment_runs"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:19Z"
+fetched_at: "2026-11-13T06:33:07Z"
 tags: ["api"]
 ---
 
@@ -25,13 +25,13 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/deployment_runs
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Get Deployment Run](https://platform.claude.com/docs/en/api/http/beta/deployment_runs/retrieve)
 
 GET/v1/deployment_runs/{deployment_run_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 

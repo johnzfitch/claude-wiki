@@ -1,8 +1,8 @@
 ---
 title: "Customer stories | Claude by Anthropic"
-source_url: "https://www.claude.com/customers"
+source_url: "https://www.anthropic.com/customers"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:53Z"
+fetched_at: "2026-11-18T06:29:01Z"
 tags: ["case-studies"]
 ---
 
@@ -78,9 +78,9 @@ on
 
 Claude
 
-[Contact sales](https://www.claude.com/contact-sales)
+[Contact sales](https://www.anthropic.com/contact-sales)
 
-[Read customer story Stripe](stripe.md)
+[Read customer story Stripe](https://www.anthropic.com/customers/stripe)
 
 ## Browse more customer stories
 
@@ -203,7 +203,22 @@ Grid
 
 List
 
-286 stories
+294 stories
+
+
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
+### Transforming e-commerce in Latin America
+
+
+### Deepening risk expertise through AI
+
+
+### Scaling AI for over 12K employees
+
+
+### Reinventing commercial underwriting
 
 
 ### Mid-Ohio Food Collective rebuilds the software behind 2,500 food pantries with Claude
@@ -235,25 +250,10 @@ List
 
 ### Pictet turns weeks of work into hours with Claude Code
 
-
-### DXC brings Claude to the insurance backbone running billions of policies
-
-
-### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Spellbook runs 530,000 contract reviews a month with Claude
-
-
-### EvenUp cuts document drafting from 15 hours to 15 minutes with Claude
-
-
-### Rocket Money on building agents that fix their own code
-
 View more
 
 ## Count on Claude
 
 Hear from the teams who choose Claude for the work they have to get right.
 
-[Contact sales](https://www.claude.com/contact-sales)[Try Claude](https://claude.ai/)
+[Contact sales](https://www.anthropic.com/contact-sales)[Try Claude](https://claude.ai/)

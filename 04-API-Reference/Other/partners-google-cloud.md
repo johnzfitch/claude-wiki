@@ -2,7 +2,7 @@
 title: "Google Cloud | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/google-cloud-vertex-ai"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:26:46Z"
+fetched_at: "2026-11-18T06:29:34Z"
 tags: ["api"]
 ---
 
@@ -93,7 +93,7 @@ Building winning AI with Claude on Google Cloud
 
 See how teams start, scale, and succeed with Claude on Google Cloud.
 
-[Read guide (opens in new tab)](https://www-cdn.anthropic.com/38a1fb9db81446402a70bc45d104327aab12f3fe.pdf)
+[Read guide (opens in new tab)](../../19-Reference/todays-innovative-businesses-need-two-things-to-stay-ahead.md)
 
 1 of 2
 

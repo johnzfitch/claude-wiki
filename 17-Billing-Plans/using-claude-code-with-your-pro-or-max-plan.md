@@ -2,7 +2,7 @@
 title: "Use Claude Code with your Pro, Max, or Ultra plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:34Z"
+fetched_at: "2026-11-18T06:27:39Z"
 tags: ["billing", "claude-code"]
 ---
 
@@ -99,7 +99,7 @@ When you reach your usage limits, you can select from a few options based on you
 
 - Switch to a Claude Console account and **[purchase API usage credits](../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)** for intensive coding sprints.
 
-- Monthly API credits included with the Max plan can’t be used in Claude Code or the Claude apps, including for usage credits. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+- Monthly API credits included with the Max plan can’t be used in Claude Code or the Claude apps, including for usage credits. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 - Wait until your usage limits reset.
 
@@ -109,11 +109,11 @@ When you reach your usage limits, you can select from a few options based on you
 
 - Switch to a Claude Console account and **[purchase API usage credits](../22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md)** for intensive coding sprints.
 
-- Monthly API credits included with the Ultra plan can’t be used in Claude Code or the Claude apps, including for usage credits. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+- Monthly API credits included with the Ultra plan can’t be used in Claude Code or the Claude apps, including for usage credits. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 - Wait until your usage limits reset.
 
-For more details on efficient usage, refer to our **[Usage limit best practices](usage-limit-best-practices.md)**.
+For more details on efficient usage, refer to our **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ------------------------------------------------------------------------
 

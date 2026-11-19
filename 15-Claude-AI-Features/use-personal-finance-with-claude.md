@@ -2,7 +2,7 @@
 title: "Use Personal Finance in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/18185620-use-personal-finance-with-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:59Z"
+fetched_at: "2026-11-18T06:28:20Z"
 tags: ["claude-ai"]
 ---
 
@@ -217,6 +217,6 @@ When you delete your account, Claude unlinks your banks automatically. This happ
 
 ## Get help
 
-On the web, click your initials or name in the lower left corner, then click “Get help.” Learn **[how to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+On the web, click your initials or name in the lower left corner, then click “Get help.” Learn **[how to get support](how-to-get-support.md)**.
 
 **Important:** Don’t share your bank login or full account numbers with anyone, including Support.

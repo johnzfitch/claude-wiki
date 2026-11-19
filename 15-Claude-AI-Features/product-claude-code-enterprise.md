@@ -2,59 +2,33 @@
 title: "Claude Code for Enterprise | The AI coding agent for businesses"
 source_url: "https://www.claude.com/product/claude-code/enterprise"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:47Z"
-tags: ["agents", "claude-ai", "claude-code", "enterprise", "security"]
+fetched_at: "2026-11-18T06:29:35Z"
+tags: ["agents", "claude-ai", "claude-code", "enterprise"]
 ---
 
-# The enterprise coding agent for every environment
+# Claude Code for Enterprise
 
-Claude Code for enterprise autonomously writes, debugs, and refactors code with support for terminal and any IDE to help teams ship faster.
+Steer what you ship
+
+Hand your team the coding agent enterprises count on with access to real systems.
 
 [Get Enterprise plan](https://claude.ai/create/enterprise)[Try Claude Code (opens in new tab)](https://claude.ai/code)
 
+Muralidhar Krishnaprasad, and Richard Pack, Salesforce
+
+\*Salesforce Ventures is an investor in Anthropic.
+
+1 of 6: Muralidhar Krishnaprasad, and Richard Pack, Salesforce
+
+[More from Office Hours](https://www.claude.com/office-hours#salesforce)
+
 ## Trusted by leading engineering teams
 
-> “The level of support has built trust in both Claude Code and Anthropic, making it easier for us to expand our use of the tool.”
-
-Austin Ray, Senior Software Engineer
-
-[Read story](../18-Industry-UseCases/ramp.md)
-
-> “Claude Code has helped me become a better engineer," said Signoretti. "As AI continues to evolve, I expect my role to become more and more creative—unlocking a lot of time for system design, as well as understanding the ideal us”
-
-Francesco Signoretti, Engineering Lead, Developer Experience AI
-
-[Read story](../18-Industry-UseCases/hubspot.md)
-
-> “Claude Code has transformed how we build internal tools at Shopify.”
-
-Andrew McNamara, Director of Applied AI
-
-[Read story](../18-Industry-UseCases/shopify.md)
-
-> “This project would never have happened without Claude Code. The amount of effort and time that we would have needed to invest—we just wouldn’t do it.”
-
-Liran Benodis, Team Lead, Data Security Posture Management
-
-[Read story](../18-Industry-UseCases/wiz.md)
-
 > “Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn't possible before. It's a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
 
 Max Charas, Senior Staff Engineer
 
 [Read story](../18-Industry-UseCases/spotify.md)
-
-79%
-
-reduced time to market for new features (from 24 days to 5 days)
-
-[Read story](../18-Industry-UseCases/rakuten.md)
-
-> “Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
-
-Simon Last, Co-founder
-
-[Read story](../18-Industry-UseCases/notion.md)
 
 89%
 
@@ -62,35 +36,31 @@ employee adoption, 800+ AI agents deployed, 10x app usage growth
 
 [Read story](../18-Industry-UseCases/zapier.md)
 
-> “The level of support has built trust in both Claude Code and Anthropic, making it easier for us to expand our use of the tool.”
+> “Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
 
-Austin Ray, Senior Software Engineer
+Simon Last, Co-founder
 
-[Read story](../18-Industry-UseCases/ramp.md)
+[Read story](../18-Industry-UseCases/notion.md)
 
-> “Claude Code has helped me become a better engineer," said Signoretti. "As AI continues to evolve, I expect my role to become more and more creative—unlocking a lot of time for system design, as well as understanding the ideal us”
+1.5x
 
-Francesco Signoretti, Engineering Lead, Developer Experience AI
-
-[Read story](../18-Industry-UseCases/hubspot.md)
-
-> “Claude Code has transformed how we build internal tools at Shopify.”
-
-Andrew McNamara, Director of Applied AI
-
-[Read story](../18-Industry-UseCases/shopify.md)
-
-> “This project would never have happened without Claude Code. The amount of effort and time that we would have needed to invest—we just wouldn’t do it.”
-
-Liran Benodis, Team Lead, Data Security Posture Management
+increase in merged PRs among top 100 contributors, with 90%+ of engineers using Claude Code daily
 
 [Read story](../18-Industry-UseCases/wiz.md)
 
-> “Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn't possible before. It's a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
+> “We intentionally let the model open PRs, review code, and query our logging systems and analytical databases, all to help people move faster. That’s where Anthropic’s built-in safeguards are really critical.”
 
-Max Charas, Senior Staff Engineer
+Bradley Axen, Head of AI Capabilities
 
-[Read story](../18-Industry-UseCases/spotify.md)
+~36%
+
+of pull requests start as a prompt, with the work done in an isolated dev box
+
+[Watch Office Hours](https://www.claude.com/office-hours#stripe)
+
+> “Citi chose to leverage Claude as part of its AI powered Developer Platform because of its advanced planning and agentic coding capabilities, focus on safety and reliability, and compatibility with our workloads.”
+
+David Griffiths, Group Head of Artificial Intelligence
 
 79%
 
@@ -98,11 +68,17 @@ reduced time to market for new features (from 24 days to 5 days)
 
 [Read story](../18-Industry-UseCases/rakuten.md)
 
-> “Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
+> “Enterprise AI requires pairing frontier intelligence with inline runtime security and agent governance. Our collaboration with Anthropic helps to turn the promise of secure autonomous AI into an enterprise reality.”
 
-Simon Last, Co-founder
+Jaimin Patel, VP of Product, Prisma AIRS
 
-[Read story](../18-Industry-UseCases/notion.md)
+[Read story](../18-Industry-UseCases/palo-alto-networks.md)
+
+> “Our engineers are now able to execute fleet-wide migrations at a pace that simply wasn't possible before. It's a promising sign of how AI can reduce the complexity of maintaining large code bases and a clear signal of how AI is reshaping development velocity.”
+
+Max Charas, Senior Staff Engineer
+
+[Read story](../18-Industry-UseCases/spotify.md)
 
 89%
 
@@ -110,122 +86,217 @@ employee adoption, 800+ AI agents deployed, 10x app usage growth
 
 [Read story](../18-Industry-UseCases/zapier.md)
 
-1/8
+> “Claude Code is moving our team up a level: we decide what needs to happen, and smooth the process so it can build and verify end-to-end. A big part of my job now is to keep as many instances of Claude Code busy as possible.”
+
+Simon Last, Co-founder
+
+[Read story](../18-Industry-UseCases/notion.md)
+
+1.5x
+
+increase in merged PRs among top 100 contributors, with 90%+ of engineers using Claude Code daily
+
+[Read story](../18-Industry-UseCases/wiz.md)
+
+> “We intentionally let the model open PRs, review code, and query our logging systems and analytical databases, all to help people move faster. That’s where Anthropic’s built-in safeguards are really critical.”
+
+Bradley Axen, Head of AI Capabilities
+
+~36%
+
+of pull requests start as a prompt, with the work done in an isolated dev box
+
+[Watch Office Hours](https://www.claude.com/office-hours#stripe)
+
+> “Citi chose to leverage Claude as part of its AI powered Developer Platform because of its advanced planning and agentic coding capabilities, focus on safety and reliability, and compatibility with our workloads.”
+
+David Griffiths, Group Head of Artificial Intelligence
+
+79%
+
+reduced time to market for new features (from 24 days to 5 days)
+
+[Read story](../18-Industry-UseCases/rakuten.md)
+
+1/9
 
 ## The Claude Code difference
 
-Approved by enterprise engineering leaders at global organizations.
+Designed for your most ambitious work, with safety, privacy, and security built in.
 
-### Agentic, not autocomplete
+### Agentic, within limits you set
 
-Claude Code builds entire features in natural language. It writes the code, creates the tests, and opens the PR so your team spends less time on implementation and more time on decisions.
+Claude Code helps you build features in natural language. It writes code, creates tests, and opens PRs so your team spends time on decisions instead of implementation. Your admins set its baseline permissions, and managed rules take precedence over the ones developers add.
 
-### Works everywhere
+### Full context, clear boundaries
 
-Terminal, desktop, any IDE, Slack, or web. Claude Code fits into your team's existing workflow instead of replacing it, so developers adopt it without changing how they work.
+Claude reads your entire codebase, helping to make [legacy migrations (opens in new tab)](../18-Industry-UseCases/code-modernization.md) and cross-file debugging easier to manage. With the sandbox on, the operating system limits which files and sites Claude's commands can reach.
 
-### Full codebase context
+### Reviews before risky actions
 
-Claude searches your whole codebase, not just the open file. That full context is what enables [legacy codebase migration (opens in new tab)](../18-Industry-UseCases/code-modernization.md), debugging across files, and meaningful code reviews.
+In auto mode, a separate model checks higher-risk actions before they run. In an Anthropic study of 1,053 paid testers in a test environment, people caught 13.6% of injected dangerous commands, and auto mode blocked 89% of the same commands. Auto mode reduces risk but doesn't eliminate it.
 
-### Built on leading models
+[Read the results (opens in new tab)](https://claude.com/blog/auto-mode-default-in-claude-code)
 
-Claude consistently is a leader on coding benchmarks. As our models improve, your team gets the benefit automatically with no workflow changes, no migrations, and no retraining.
+### Frontier models with safeguards built in
 
-2026 Agentic Coding Trends Report
+Current Claude models are trained to decline destructive actions, tested before release, and documented in published system cards. On the Anthropic API, new models can reach your team automatically.
 
-How is AI changing the way software gets built—and what should engineering leaders expect in 2026? We analyzed the patterns emerging across the industry.
+Blog
 
-[Read more](https://www.claude.com/resources/articles/eight-trends-defining-how-software-gets-built-in-2026)
+How Anthropic secures its AI-native software development lifecycle
 
-Code modernization
+How our security team keeps pace when Claude writes about 80% of merged code.
 
-Claude Code helps leading enterprises modernize legacy codebases, assisting with scalable migration while maintaining business logic integrity.
+[Read more](https://www.claude.com/resources/articles/how-anthropic-secures-its-ai-native-software-development-lifecycle)
 
-[Learn more](../18-Industry-UseCases/code-modernization.md)
+Research
+
+How we contain Claude
+
+Inside the sandbox: what the operating system enforces, why the code is open source.
+
+[Read more (opens in new tab)](../19-Reference/how-we-contain-claude.md)
 
 ## Built for enterprise engineering
 
-Manage Claude Code across your org with the visibility and guardrails enterprise teams need.
+Deploy and manage Claude Code across your organization.
 
 ### Contribution metrics
+
+Beta
 
 See usage patterns and productivity gains from your team in a single dashboard, including PRs and committed code written with Claude Code's help.
 
 ### Server managed settings
 
-Configure Claude Code centrally for your org. Set tool permissions, file access restrictions, and MCP server configurations from one admin panel. No MDM required.
+Set tool permissions, file access, and MCP servers for your whole org from one admin panel, no MDM required. Managed rules take precedence over those developers add.
 
-### OpenTelemetry monitoring
+### Monitoring and auditing
 
-Export real-time Claude Code metrics to your observability stack with OpenTelemetry. Track session activity, token usage, and costs without building custom integrations.
+Export session, token, and cost metrics with OpenTelemetry. On Enterprise, the Compliance API lets you pull activity and audit logs into your SIEM.
 
 ### Access and permissions
 
-Control access with fine-grained role-based permissions and manage seats with SSO. Enterprise plans add SCIM for automated provisioning, audit trails, and seat allocation visibility.
+Control access with SSO. Enterprise adds role-based permissions, SCIM provisioning, tenant restrictions for personal accounts, and IP allowlisting.
 
-## Security taken seriously
+### Spend and model control
 
-Enterprise governance is built in with SOC 2 Type II compliance, SSO, role-based permissions, and organization-wide policy enforcement.
+On Enterprise, set spend limits for your org, groups, or individuals, choose which models people can use, and cap effort levels by role.
 
-Read more about Anthropic's safety and compliance in our [Trust Center](https://trust.anthropic.com/).
+### Security Center
 
-- 
-  Bring your own keys
+Beta
 
-  Run Claude Code using keys from Amazon Bedrock, Google Vertex AI, or Microsoft Foundry within your existing VPC.
-- 
-  SSO and SCIM
+Compare your security settings to our recommended configuration, where there is one, in Organization settings (Enterprise plans only).
 
-  Integrate with Okta, Azure AD, or any SAML 2.0 provider. Enterprise plans add SCIM for automated provisioning.
-- 
-  Encrypted everywhere
+## Protection at every layer, from model to platform
 
-  TLS 1.3 in transit, AES-256 at rest. Our platform leverages encryption for data protection.
+Enterprise governance is built in with SOC 2 Type II, ISO 27001, and ISO 42001 certified. Claude Code for Enterprise is encrypted in transit and at rest.
 
-## Solve problems that slow developers down
+### Controls you set
+
+Permissions, sandboxing (macOS, Linux and WSL2), and deny rules can be enforced through managed settings.
+
+- [Managed settings](../02-Claude-Code-CLI/permissions.md)
+
+  (opens in new tab)
+- [Compliance API](https://support.claude.com/en/articles/13015708-access-the-compliance-api)
+
+  (opens in new tab)
+- [Trust center](https://trust.anthropic.com/)
+
+  (opens in new tab)
+
+### Models trained for safety
+
+Current Claude models are trained to decline destructive actions and are tested before release.
+
+- [Claude Opus 5.5](https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf)
+
+  (opens in new tab)
+- [Petri, our open-source audit tool](../19-Reference/petri-open-source-auditing.md)
+
+  (opens in new tab)
+- [How auto mode reviews higher-risk actions](https://www.claude.com/resources/articles/auto-mode-default-in-claude-code)
+
+### Open communication
+
+We post service incidents on our [status page (opens in new tab)](https://status.claude.com/), and share the methods behind our safeguards for transparency.
+
+- [Improving our alignment and security efforts](../19-Reference/improving-alignment-security-efforts.md)
+
+  (opens in new tab)
+- [The open-source sandbox on GitHub](https://github.com/anthropic-experimental/sandbox-runtime)
+
+  (opens in new tab)
+- [Outside evaluators at Anthropic](../19-Reference/accenture-embedded-evaluation.md)
+
+  (opens in new tab)
+
+## Hand off tasks, not oversight
 
 [Get Enterprise plan](https://claude.ai/create/enterprise)
 
-Terminal and IDE
+Claude Tag
 
-Slack
+Scheduled tasks
 
-Code reviews
+Code Review
 
-### Development without leaving your environment
+### Hand off work from Slack
 
-Debug, review, and ship code directly in your terminal or editor of choice. Claude Code is available in any IDE plus in VS Code via its native extension.
+Beta
 
-### Collaborate without leaving Slack
+Tag @Claude in a thread with a bug report or a feature request. Claude reads the whole thread, works through the task in stages, and posts the pull request back in the thread. Everything stays in the channel history, where your team can see it.
 
-Debug, review, and ship code directly in Slack. Your team's conversations become development sessions, with Claude Code providing context-aware assistance right in your channels.
+### Set recurring work to run on its own
 
-### Review code faster
+Beta
 
-Analyze PRs automatically before human review. Claude Code checks against your organization's standards, flags issues, and suggests improvements right in your workflow.
+Save a prompt, your repositories, and your connectors once. Claude Code runs them in the cloud on a schedule, from an API call, or when a GitHub event fires. Each run is a full session you can open, follow, and steer.
+
+### Code Review on your pull requests
+
+Code Review can check pull requests automatically, in the repositories you choose. The optional security guidance plugin reviews the code Claude writes as it goes, and Claude Security (beta) finds and suggests fixes for issues in the code you already have.
+
+[Explore Code Review](product-code-review.md)
 
 ## Do more with Claude Code for Enterprise
-
-### Enterprise
-
-Enterprise plan premium seats include everything in the Team plan, plus advanced security, data, and user management.
-
-[Get Enterprise plan](https://claude.ai/create/enterprise)[Talk to sales (opens in new tab)](https://www.claude.com/contact-sales)
 
 ### Team
 
 Claude Code is included with Team plan. Includes self-serve seat management and additional usage at standard API rates.
 
-\$100
+From \$20
 
-Per person / month. Minimum 2 members.
+Per seat / month, billed annually
 
 [Get Team plan](https://claude.ai/upgrade?initialPlanType=team)[Learn more](../17-Billing-Plans/pricing.md#team-&-enterprise)
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+- Claude Code with Code Review, scheduled tasks (beta), and contribution metrics (beta)
+- Claude Cowork, Artifacts, and more
+- Claude Tag (beta), Microsoft 365, and enterprise search
+- SSO, central billing, and admin controls
+- Mixed seat types and up to \$500 a month in pooled API credits
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+### Enterprise
+
+Enterprise includes everything in the Team plan, plus advanced security, data, and user management.
+
+[Get Enterprise plan](https://claude.ai/create/enterprise)[Talk to sales (opens in new tab)](https://www.claude.com/contact-sales)
+
+All Team plan features, plus:
+
+- Claude Security for managed vulnerability scanning (beta)
+- Group spend limits and role-based permissions
+- SCIM, audit logs, and the Compliance API
+- Custom data retention controls
+- Network-level access control and IP allowlisting
+
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 Trusted by engineering teams at leading global organizations
 
@@ -268,13 +339,13 @@ Already using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry?
 [Read API docs (opens in new tab)](../02-Claude-Code-CLI/third-party-integrations.md)
 
 
-### Is Claude Code secure?
+### Is Claude Code for enterprise secure?
 
-Claude Code is designed with security in mind. When used in your terminal, Claude Code runs locally and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
+Your admins set permissions, sandboxing, and deny rules through managed settings, and managed rules take precedence over the ones developers add. Claude is trained to resist hidden instructions and decline destructive actions. We post service incidents on our status page and share the methods behind our safeguards. Local sessions run on your machine and call the model API directly. Cloud sessions run in isolated virtual machines.
 
 ### How does Claude Code integrate with our existing security infrastructure?
 
-Claude Code deploys through Amazon Bedrock, Gemini Enterprise Agent Platform, or Microsoft Foundry, integrating with your existing IAM, CloudTrail logging, and VPC configurations. Claude Code is designed for all data to stay within your control and comply with SOC 2 Type II standards.
+Claude Code deploys through Amazon Bedrock, Gemini Enterprise Agent Platform, or Microsoft Foundry, integrating with your existing IAM configurations, plus CloudTrail logging on AWS. You can export usage and activity to your observability stack with OpenTelemetry, and on Claude Enterprise the Compliance API lets security teams pull Claude Code session records from the CLI and desktop app for audits and eDiscovery.
 
 ### Can we enforce organization-wide coding standards?
 
@@ -286,15 +357,11 @@ Everything in Team, plus advanced security, data, and user management, including
 
 ### What’s included in enterprise support?
 
-Enterprise plans include dedicated support, custom deployment guidance, onboarding assistance, and priority response times. We work with your team to ensure successful rollout.
-
-### How do you handle data privacy and training?
-
-By default, we don't train our models on your Enterprise data, including your code, conversations, and proprietary information. The exception is feedback you choose to send us, such as thumbs up/down ratings. Like all Claude services, Enterprise usage is subject to automated safety monitoring to detect misuse.
+Support options vary by agreement. Contact sales for details.
 
 ### What are the deployment options?
 
-Deploy through Anthropic Cloud (SaaS), Amazon Bedrock, Gemini Enterprise Agent Platform, and Microsoft Foundry. Enterprise teams can use VPC isolation and private endpoints for increased security.
+Deploy through Anthropic Cloud (SaaS), Amazon Bedrock, Gemini Enterprise Agent Platform, and Microsoft Foundry. VPC isolation and private endpoints may be available through your cloud provider.
 
 2x
 
@@ -312,12 +379,27 @@ faster execution speed for delivering features and fixes
 
 accuracy on complex code modifications
 
-## Get the technical  rundown
+## Get the technical rundown
 
 
-Claude Code documentation
+Claude Code security
 
 Developer docs
+
+
+Zero Trust for AI agents
+
+Guide
+
+
+Claude Enterprise administrator guide
+
+Guide
+
+
+The AI-native SDLC playbook
+
+Playbook
 
 
 Common workflows
@@ -329,7 +411,6 @@ How Anthropic teams use Claude Code
 
 Case study
 
+## Start your Claude Code rollout
 
-Claude Code: AI-powered coding assistant for developers
-
-Website
+[Get Enterprise plan](https://claude.ai/create/enterprise)[Contact sales](https://www.claude.com/contact-sales)

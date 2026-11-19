@@ -2,7 +2,7 @@
 title: "What's new in Claude Haiku 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5"
 category: "20-Models"
-fetched_at: "2026-11-07T06:23:56Z"
+fetched_at: "2026-11-15T06:23:32Z"
 tags: ["models"]
 ---
 

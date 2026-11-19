@@ -2,7 +2,7 @@
 title: "Compaction at a token threshold - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-threshold"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-08T06:24:41Z"
+fetched_at: "2026-11-16T06:26:15Z"
 tags: ["api"]
 ---
 
@@ -20,22 +20,30 @@ Have the API summarize older context automatically, inside an ordinary request, 
 
 Threshold compaction
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAlways on
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
-[Beta header](#feature-beta-headers)  
-Messages API
-- `compact-2026-01-12`
-  
+[Beta header](#feature-availability)  
+- Varies; see details
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -151,7 +159,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
     model="claude-opus-5-5",
@@ -170,9 +178,9 @@ response = client.beta.messages.create(
 
 ### Custom summarization instructions
 
-The default summarization prompt varies by model. Each default instructs Claude to write a summary inside `<summary></summary>` tags with the information needed to continue the task in a future context window. For example, some models use the following prompt:
+The default summarization prompt varies by model. Each default instructs Claude to write a summary inside `<summary></summary>` tags with the information needed to continue the task in a future context window. For example, this is one of the default prompts:
 
-``` block
+```
 You have written a partial transcript for the initial task above. Please write a summary of the transcript. The purpose of this summary is to provide continuity so you can continue to make progress towards solving the task in a future context, where the raw history above may not be accessible and will be replaced with this summary. Write down anything that would be helpful, including the state, next steps, learnings etc. You must wrap your summary in a <summary></summary> block.
 ```
 
@@ -204,7 +212,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
     model="claude-opus-5-5",
@@ -221,7 +229,7 @@ response = client.beta.messages.create(
 )
 ```
 
-On Claude 5.1 and later models, a request with custom `instructions` summarizes from the visible conversation only: earlier thinking blocks are not part of the summarizer’s input.
+On some models, a request with custom `instructions` summarizes from the visible conversation only, without earlier thinking blocks. Those models are Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5.
 
 ### Pausing after compaction
 
@@ -253,7 +261,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
     model="claude-opus-5-5",
@@ -285,7 +293,11 @@ The API pauses even if no summary is generated. The `compaction` block’s `cont
 
 When a model works on long tasks with many tool-use iterations, total token consumption can grow significantly. You can combine `pause_after_compaction` with a compaction counter to estimate cumulative usage and gracefully conclude the task once a budget is reached.
 
-This example appears in the SDK languages only: its value is the budget-tracking logic around the request. The raw request combines the `trigger` from [Trigger configuration](#trigger-configuration) with `pause_after_compaction` from [Pausing after compaction](#pausing-after-compaction).
+The request combines the `trigger` from [Trigger configuration](#trigger-configuration) with `pause_after_compaction` from [Pausing after compaction](#pausing-after-compaction).
+
+cURL
+
+CLI
 
 Python
 
@@ -307,7 +319,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 TRIGGER_THRESHOLD = 100_000
 TOTAL_TOKEN_BUDGET = 3_000_000
 n_compactions = 0
@@ -395,7 +407,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
     model="claude-opus-5-5",
@@ -418,7 +430,7 @@ response = client.beta.messages.create(
 )
 ```
 
-In Python, use `client.beta.messages`, as the samples on this page do. If you call `client.messages` and serialize blocks yourself, a plain `model_dump()` adds `text: null` and `citations: null` to the `compaction` block. The API then rejects the request with a 400 error (`Extra inputs are not permitted`). Use `to_dict()` or `model_dump(exclude_none=True)` instead. [Continue from the summary](build-with-claude-compaction-on-demand.md#continue-from-the-summary) gives the same advice for on-demand compaction.
+In Python, use `client.beta.messages`, as the samples on this page do. If you call `client.messages` and serialize blocks yourself, a plain `model_dump()` adds `text: null` and `citations: null` to the `compaction` block. The API then rejects the request with a 400 error (`Extra inputs are not permitted`). Use `to_dict()` or `model_dump(exclude_none=True)` instead.
 
 When the API receives a `compaction` block, all content blocks before it are ignored. You can either:
 
@@ -427,7 +439,7 @@ When the API receives a `compaction` block, all content blocks before it are ign
 
 If no summary is generated, the block’s `content` is `null` and the API ignores the block. Nothing is compacted, so keep the original messages.
 
-On Claude 5.1 and later models, thinking blocks from before a `compaction` block aren’t carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
+Thinking blocks from before a `compaction` block aren’t carried forward, so the summary is all the model has of that earlier work. If you write your own `instructions`, tell the model what the summary must retain; see [Tell the model what to preserve in compaction summaries](../../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md#tell-the-model-what-to-preserve-in-compaction-summaries).
 
 ### Streaming
 
@@ -457,7 +469,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 
 with client.beta.messages.stream(
     betas=["compact-2026-01-12"],
@@ -545,7 +557,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 response = client.beta.messages.create(
     betas=["compact-2026-01-12"],
     model="claude-opus-5-5",
@@ -601,7 +613,7 @@ The `iterations` array shows usage for each sampling iteration. When compaction 
 
 The top-level `input_tokens` and `output_tokens` do not include compaction iteration usage. They reflect the sum of all non-compaction iterations. To calculate total tokens consumed and billed for a request, sum across all entries in the `usage.iterations` array.
 
-If you previously relied on `usage.input_tokens` and `usage.output_tokens` for cost tracking or auditing, you’ll need to update your tracking logic to aggregate across `usage.iterations` when compaction is enabled. With the compaction beta enabled, every response includes `usage.iterations`, even if no compaction occurred. A `compaction` entry appears only when a new compaction is triggered during the request. Re-applying a previous `compaction` block incurs no additional compaction cost, and the top-level usage fields remain accurate in that case.
+To track cost or audit usage when compaction is enabled, aggregate across `usage.iterations` instead of reading only `usage.input_tokens` and `usage.output_tokens`. With the compaction beta enabled, every response includes `usage.iterations`, even if no compaction occurred. A `compaction` entry appears only when a new compaction is triggered during the request. Re-applying a previous `compaction` block incurs no additional compaction cost, and the top-level usage fields remain accurate in that case.
 
 ## Combining with other features
 
@@ -637,7 +649,7 @@ Python
 
 ```python
 client = anthropic.Anthropic()
-messages = [{"role": "user", "content": "Hello, Claude"}]
+messages = [{"role": "user", "content": "Help me build a website"}]
 count_response = client.beta.messages.count_tokens(
     betas=["compact-2026-01-12"],
     model="claude-opus-5-5",
@@ -713,7 +725,15 @@ print(chat("Briefly, add rate limiting and error handling"))
 # Continue calling chat() for as long as the conversation needs
 ```
 
-On Claude 5.1 and later models, thinking blocks in any assistant turn you reinsert after the compaction block fail the [prefix check](build-with-claude-thinking.md#preserved-in-conversation), because they were produced when the full history was present. Strip the `thinking` and `redacted_thinking` blocks from those turns. Alternatively, send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"` with the `thinking-binding-controls-2026-08-01` [beta header](../Endpoints/beta-headers.md). The preserved text and tool blocks can stay as they are. Letting the API summarize everything, without reinserting earlier turns, avoids this. On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With any other thinking setting on those models, strip the blocks.
+When you reinsert an earlier assistant turn after the compaction block, that turn’s thinking blocks fail the [prefix check](build-with-claude-thinking.md#preserved-in-conversation) on some models. Those models are Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5. The blocks fail because they were produced when the full history was present.
+
+To avoid the failure, do one of the following:
+
+- **Strip the blocks:** Remove the `thinking` and `redacted_thinking` blocks from the turns you reinsert. The preserved text and tool blocks can stay as they are.
+- **Have the API drop the blocks:** Send `thinking.block_binding.prefix_mismatch_behavior: "drop_block"`. This needs the `thinking-binding-controls-2026-08-01` beta header (see [Beta headers](../Endpoints/beta-headers.md)).
+- **Don’t reinsert earlier turns:** Let the API summarize everything.
+
+On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With any other thinking setting on those two models, strip the blocks.
 
 Here’s an example that uses `pause_after_compaction` to preserve the prior exchange and the current user message (three messages total) instead of summarizing them. It keeps their text and tool blocks unchanged, removes the `thinking` and `redacted_thinking` blocks from the preserved assistant turn, and drops that turn if nothing else is left:
 
@@ -790,7 +810,9 @@ def chat(user_message: str) -> str:
             else message
             for message in messages[-3:]
         ]
-        preserved_messages = [m for m in preserved_messages if m["content"]]
+        preserved_messages = [
+            message for message in preserved_messages if message["content"]
+        ]
 
         # Build new message list: compaction + preserved messages
         new_assistant_content = [compaction_block]
@@ -832,7 +854,7 @@ print(chat("Briefly, add rate limiting and error handling"))
 
 - **Compaction might fail when tools are defined:** When your request includes `tools`, the model occasionally calls a tool during the internal summarization step instead of writing a summary. When this occurs, the response contains a `compaction` block with `content: null`. To prevent this, set [`instructions`](#custom-summarization-instructions) to a prompt that explicitly tells the model not to call tools, for example:
 
-  ``` block
+  ```
   Summarize the transcript inside <summary></summary> tags. Include relevant information in the summary for continuing the task in the next context window. Do not call any tools while writing this summary; respond with text only.
   ```
 
@@ -858,70 +880,147 @@ Explore a practical implementation that manages long-running conversations with 
 
 ## Availability
 
-Threshold compaction is in beta on select models and eligible for zero data retention.
+Threshold compaction
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Opt in with a `compact_20260112` edit in `context_management.edits`. Compaction starts when input tokens reach the trigger, 150,000 by default and at least 50,000.
+Status  
+Beta
 
-StatusBeta
+APIs  
+- 
+  Messages API
+  requires
+  compact-2026-01-12
+  Only with Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Mythos Preview, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, Claude Haiku 5.5
+- Managed Agents
 
-Cloud platforms
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5, Haiku 4.5
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+Amazon Bedrock
 
-Models
+Status  
+Beta
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Beta header  
+Requires
 
-Usage
+compact-2026-01-12
 
-Always on
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-It compacts the session’s conversation history to fit the context window, and each compaction emits an `agent.thread_context_compacted` event.
+Amazon Bedrock (bedrock-runtime)
 
-StatusBeta
+Status  
+Beta
 
-Cloud platforms
+API  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+Beta header  
+Requires
 
-Models
+compact-2026-01-12
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2
+- Claude Mythos 5.2
+- Claude Opus 4.6
+- Claude Sonnet 4.6
 
-### Required beta headers
+Claude Platform on AWS
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Status  
+Beta
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+APIs  
+- 
+  Messages API
+  requires
+  compact-2026-01-12
+  Only with Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, Claude Haiku 5.5
+- Managed Agents
 
-Header
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5, Haiku 4.5
 
-- `compact-2026-01-12`
-  
+Claude Models on Google Cloud (Google managed)
 
-APIs
+Status  
+Beta
 
-- [Messages API](build-with-claude-working-with-messages.md)
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-01-12
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-01-12
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-01-12
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
 
 ### Data handling
 

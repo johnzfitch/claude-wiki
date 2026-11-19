@@ -2,7 +2,7 @@
 title: "Query the Activity Feed - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-activity-feed"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:18Z"
+fetched_at: "2026-11-13T06:36:37Z"
 tags: ["api"]
 ---
 
@@ -28,7 +28,7 @@ To enable the Compliance API, see [Set up the Compliance API](manage-claude-comp
 
 Both Compliance Access Keys (`sk-ant-api01-...`) carrying this scope and Admin API keys (`sk-ant-admin01-...`) can call the Activity Feed. See [Set up the Compliance API](manage-claude-compliance-api-access.md) for the conditions under which each key type carries the scope.
 
-The Activity Feed records authentication, chat, file, project, administrative, and platform activity across your organization and returns it in reverse chronological order. Activities are queryable within 1 minute of occurring and are retained for 6 years. Recording is not retroactive: it begins when the Compliance API is first enabled for your organization, and activity from before enablement is not backfilled. Access Transparency events are an exception. If your organization is enrolled in [Access Transparency](manage-claude-access-transparency.md), these events are recorded even while the Compliance API is off. The feed can therefore include some from before the Compliance API was first enabled.
+The Activity Feed records authentication, chat, file, project, administrative, and platform activity across your organization and returns it in reverse chronological order. Activities are queryable within 1 minute of occurring and are retained for 6 years. Security posture activities can take longer than 1 minute to become queryable; see [Send Security posture events to your SIEM](manage-claude-compliance-security-posture-send-events.md#run-it-on-a-schedule). Recording is not retroactive: it begins when the Compliance API is first enabled for your organization, and activity from before enablement is not backfilled. Access Transparency events are an exception. If your organization is enrolled in [Access Transparency](manage-claude-access-transparency.md), these events are recorded even while the Compliance API is off. The feed can therefore include some from before the Compliance API was first enabled.
 
 cURL
 
@@ -73,7 +73,7 @@ Response
 
 ## Filter activities
 
-Filter by organization, actor, activity type, or a `created_at` time window using the dotted sub-parameters `created_at.gte`, `.gt`, `.lte`, and `.lt`. See the [API reference](../Admin/compliance-activities-list.md) for each parameter’s type and accepted values.
+Filter by organization, actor, activity type, or a `created_at` time window using the dotted sub-parameters `created_at.gte`, `.gt`, `.lte`, and `.lt`. See the [API reference](../Admin/compliance-activities-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for each parameter’s type and accepted values.
 
 Repeatable parameters use array-bracket query syntax: pass `activity_types[]=...`, `actor_ids[]=...`, or `organization_ids[]=...` once for each value.
 
@@ -91,11 +91,11 @@ curl --fail-with-body -sS -G \
   -H "anthropic-version: 2026-10-21"
 ```
 
-The Activity Feed produces hundreds of distinct activity types. See [Query compliance activities](../Admin/compliance-activities-list.md) in the API reference for the full list of values that `activity_types[]` accepts.
+The Activity Feed produces hundreds of distinct activity types. See [Query compliance activities](../Admin/compliance-activities-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference for the full list of values that `activity_types[]` accepts.
 
 ## Paginate results
 
-Activities are returned newest first, with ties in `created_at` broken by activity ID, and capped at `limit` results in each response (default 100, max 5,000). See the [API reference](../Admin/compliance-activities-list.md) for the full response schema.
+Activities are returned newest first, with ties in `created_at` broken by activity ID, and capped at `limit` results in each response (default 100, max 5,000). See the [API reference](../Admin/compliance-activities-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for the full response schema.
 
 The Compliance API uses two pagination schemes depending on the endpoint family:
 
@@ -178,7 +178,7 @@ Every entry in `data` is an Activity with this top-level shape:
 | `organization_uuid` | string or null | Same scoping as `organization_id`, expressed as a UUID. |
 | `actor` | Actor union | Who or what performed the activity. See the following actor table. |
 | `type` | string | The activity type, for example `claude_chat_created`. |
-| *additional fields* | varies | Type-specific fields, for example `claude_chat_id` on chat events or `claude_file_id` on file events. See [Query compliance activities](../Admin/compliance-activities-list.md) in the API reference for the per-type field list. |
+| *additional fields* | varies | Type-specific fields, for example `claude_chat_id` on chat events or `claude_file_id` on file events. See [Query compliance activities](../Admin/compliance-activities-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference for the per-type field list. |
 
 The `actor` field is a discriminated union. The `type` discriminator tells you which other fields are present:
 

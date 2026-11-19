@@ -2,7 +2,7 @@
 title: "Claude Opus 4 8 System Card E3783Fada3"
 source_url: "https://www.anthropic.com/claude-opus-4-8-system-card"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:07Z"
+fetched_at: "2026-11-18T06:28:37Z"
 tags: ["news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Using Aiera for earnings intelligence and market analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12651818-using-aiera-for-earnings-intelligence-and-market-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:58Z"
+fetched_at: "2026-11-18T06:28:19Z"
 tags: ["claude-ai"]
 ---
 
@@ -45,13 +45,13 @@ Claude applies Aiera’s intelligence platform to support real-time market analy
 
 ## Setting Up Aiera Integration[](#setting-up-aiera-integration)
 
-Technical details of the Aiera Integration can be found in Aiera’s MCP Server Documentation. You will need to contact Aiera to obtain API access credentials for the MCP server.
+For technical details of the Aiera integration, see [Aiera’s MCP Server Documentation(opens in new tab)](https://rest.aiera.com/docs/mcp). Contact Aiera to obtain API access credentials for the MCP server.
 
 ### For Organization Owners[](#for-organization-owners)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
-2.  Click “Add custom connector.”
-3.  Enter integration URL: [https://mcp-pub.aiera.com/?api_key={YOUR_API_KEY(opens in new tab)](https://mcp-pub.aiera.com/?api_key=%7BYOUR_API_KEY)}
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
+3.  Enter integration URL: `https://mcp-pub.aiera.com/?api_key={YOUR_API_KEY}`
 4.  Name the integration (e.g., “Aiera MCP”)
 5.  Click “Add”
 
@@ -119,7 +119,7 @@ Search earnings transcripts for S&P 500 companies in the last quarter for mentio
 
 **Note:** Combine with sector filters to focus analysis on relevant industry groups.
 
-## Upcoming Events Planning[](#upcoming-events-planning)
+### Upcoming Events Planning[](#upcoming-events-planning)
 
 Example input prompt:
 
@@ -175,5 +175,4 @@ Find Third Bridge expert interviews discussing the semiconductor industry from t
 - [How Claude Uses Aiera Data](#how-claude-uses-aiera-data)
 - [Setting Up Aiera Integration](#setting-up-aiera-integration)
 - [Common Use Cases](#common-use-cases)
-- [Upcoming Events Planning](#upcoming-events-planning)
 - [Tips for Using Aiera](#tips-for-using-aiera)

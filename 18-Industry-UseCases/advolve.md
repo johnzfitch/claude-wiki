@@ -2,7 +2,7 @@
 title: "Advolve Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/advolve"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:23Z"
+fetched_at: "2026-11-18T06:29:05Z"
 tags: ["api", "case-studies", "enterprise", "git"]
 ---
 

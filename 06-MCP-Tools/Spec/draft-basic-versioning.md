@@ -1,9 +1,9 @@
 ---
 title: "Versioning and Compatibility - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/basic/versioning"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:24:57Z"
-last_modified: "Fri, 30 Oct 2026 21:55:37 GMT"
+fetched_at: "2026-11-10T06:32:00Z"
+last_modified: "Mon, 09 Nov 2026 22:55:52 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -43,7 +43,7 @@ This page uses the following terms for interoperability across protocol revision
 
 Protocol Version Negotiation
 
-Every request declares the protocol version it is using in its [`_meta`](https://modelcontextprotocol.io/specification/draft/basic/index#meta) field. On HTTP, this is also carried in the [`MCP-Protocol-Version` header](draft-basic-transports-streamable-http.md#protocol-version-header). If the server does not implement the requested version (whether the version is unknown to the server, or is a known version the server has chosen not to support), it **MUST** respond with an [`UnsupportedProtocolVersionError`](draft-schema.md#unsupportedprotocolversionerror) listing the versions it does support:
+Every request declares the protocol version it is using in its [`_meta`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta) field. On HTTP, this is also carried in the [`MCP-Protocol-Version` header](2026-07-28-basic-transports-streamable-http.md#protocol-version-header). If the server does not implement the requested version (whether the version is unknown to the server, or is a known version the server has chosen not to support), it **MUST** respond with an [`UnsupportedProtocolVersionError`](2026-07-28-schema.md#unsupportedprotocolversionerror) listing the versions it does support:
 
 ```python
 {
@@ -67,7 +67,7 @@ The client **SHOULD** select a mutually supported version from the `supported` l
 
 Extension Negotiation
 
-Clients and servers can negotiate support for optional [extensions](https://modelcontextprotocol.io/docs/extensions/overview) beyond the core protocol. Extensions are advertised in the `extensions` field of capabilities, which is a map of extension identifiers to per-extension settings objects. Extension identifiers **MUST** follow the [`_meta` key naming rules](https://modelcontextprotocol.io/specification/draft/basic/index#meta), with a mandatory prefix. The following is an example of a client that advertises the [MCP Apps extension](../Extensions/extensions-apps-overview.md) identified as `io.modelcontextprotocol/ui`:
+Clients and servers can negotiate support for optional [extensions](https://modelcontextprotocol.io/docs/extensions/overview) beyond the core protocol. Extensions are advertised in the `extensions` field of capabilities, which is a map of extension identifiers to per-extension settings objects. Extension identifiers **MUST** follow the [`_meta` key naming rules](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta), with a mandatory prefix. The following is an example of a client that advertises the [MCP Apps extension](../Extensions/extensions-apps-overview.md) identified as `io.modelcontextprotocol/ui`:
 
 ```python
 {
@@ -105,9 +105,9 @@ Backward Compatibility with Initialization-Based Versions
 A server that wishes to support both [legacy](#terminology) clients (which expect an `initialize` handshake) and [modern](#terminology) clients (which use per-request metadata) **MAY** implement both behaviors. A client that needs to interoperate with both kinds of servers detects the server’s era with transport-specific mechanics, specified in the binding pages:
 
 - [stdio](2026-07-28-basic-transports-stdio.md#backward-compatibility): probe with `server/discover` and fall back on any error that is not a recognized modern error.
-- [Streamable HTTP](draft-basic-transports-streamable-http.md#backward-compatibility): attempt a modern request and inspect the body of a `400 Bad Request` before falling back.
+- [Streamable HTTP](2026-07-28-basic-transports-streamable-http.md#backward-compatibility): attempt a modern request and inspect the body of a `400 Bad Request` before falling back.
 
-In both cases, a recognized modern JSON-RPC error (such as [`UnsupportedProtocolVersionError`](draft-schema.md#unsupportedprotocolversionerror)) identifies a modern server: the client retries with a supported version rather than falling back. Anything else identifies a legacy server. The era determination is a property of the server, not of an individual request. Clients **SHOULD** cache the result for the lifetime of the server process (stdio) or origin (HTTP), and **MAY** persist it across restarts of the same server configuration, re-probing if the cached assumption later fails. A server that supports only [modern](#terminology) versions **SHOULD** name the protocol versions it supports in any error it returns to an `initialize` request, on any transport: legacy clients have no fall-forward mechanism, and this message may be the only diagnostic they can surface to users.
+In both cases, a recognized modern JSON-RPC error (such as [`UnsupportedProtocolVersionError`](2026-07-28-schema.md#unsupportedprotocolversionerror)) identifies a modern server: the client retries with a supported version rather than falling back. Anything else identifies a legacy server. The era determination is a property of the server, not of an individual request. Clients **SHOULD** cache the result for the lifetime of the server process (stdio) or origin (HTTP), and **MAY** persist it across restarts of the same server configuration, re-probing if the cached assumption later fails. A server that supports only [modern](#terminology) versions **SHOULD** name the protocol versions it supports in any error it returns to an `initialize` request, on any transport: legacy clients have no fall-forward mechanism, and this message may be the only diagnostic they can surface to users.
 
 
 [​](#compatibility-matrix)
@@ -122,7 +122,7 @@ The following matrix summarizes the expected outcome of every combination of cli
 | Modern | Legacy | Fails. The server may reject the request with an implementation-defined error, stay silent, or even process an era-ambiguous method under legacy semantics. On stdio, clients **SHOULD** send `server/discover` first to fail deterministically; the client then surfaces an actionable error to the user. |
 | Dual-era | Modern | Works. The stdio probe returns a `DiscoverResult` (or `UnsupportedProtocolVersionError`); on HTTP, the first modern request succeeds or returns a modern error. The client stays modern. |
 | Dual-era | Legacy | Works. stdio: the probe returns a non-modern error or times out, and the client falls back to `initialize`. HTTP: the modern request returns a `4xx` without a recognized modern error body, and the client falls back to `initialize` (and possibly further to the deprecated HTTP+SSE transport). |
-| Legacy | Modern | Fails. stdio: the server rejects `initialize` with a JSON-RPC error; the exact code is implementation-defined (`initialize` is an unknown method and the request also lacks the required `_meta` fields). HTTP: the request is missing the required headers and is rejected per [server validation](draft-basic-transports-streamable-http.md#server-validation) with `400 Bad Request` (a client on the deprecated HTTP+SSE transport fails at its opening `GET` instead). Legacy clients have no fall-forward mechanism. |
+| Legacy | Modern | Fails. stdio: the server rejects `initialize` with a JSON-RPC error; the exact code is implementation-defined (`initialize` is an unknown method and the request also lacks the required `_meta` fields). HTTP: the request is missing the required headers and is rejected per [server validation](2026-07-28-basic-transports-streamable-http.md#server-validation) with `400 Bad Request` (a client on the deprecated HTTP+SSE transport fails at its opening `GET` instead). Legacy clients have no fall-forward mechanism. |
 | Legacy | Dual-era | Works. The server answers `initialize` and serves the client according to the negotiated legacy revision. |
 | Legacy | Legacy | Works according to the legacy revision; out of scope for this document. |
 

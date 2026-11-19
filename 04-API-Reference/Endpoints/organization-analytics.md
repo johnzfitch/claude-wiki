@@ -2,7 +2,7 @@
 title: "Analytics - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/analytics"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:43Z"
+fetched_at: "2026-11-13T06:34:40Z"
 tags: ["api"]
 ---
 
@@ -114,6 +114,26 @@ AnalyticsClaudeCodeMetrics object{ core_metrics, tool_actions }
 
 
 Claude Code activity metrics for a single user on a given day.
+
+
+
+AnalyticsClaudeTagMetrics object{ active_day_count, active_message_count }
+
+
+
+Claude Tag activity metrics for a single linked user on a given day.
+
+active_day_count: number or null
+
+
+
+1 on a day the user was active in Claude Tag in Slack, otherwise 0. Summed over the window in date-range mode, so it is the number of active days; on grouped rows, the total of each member's active days. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
+
+active_message_count: number or null
+
+
+
+Number of the user's Slack messages that made them active: @-mentions, direct messages, group direct message asks, and thread posts Claude answered. Other messages are not counted. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
 
 
 
@@ -595,7 +615,7 @@ Total number of skill invocations in Claude Science sessions
 
 
 
-AnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
+AnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 32 more }
 
 
 
@@ -819,7 +839,7 @@ Email address of the user
 
 
 
-AnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 10 more }
+AnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 11 more }
 
 
 

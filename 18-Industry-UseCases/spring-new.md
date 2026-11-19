@@ -2,7 +2,7 @@
 title: "Customer story | Spring.new | Claude | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/spring-new"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:42Z"
+fetched_at: "2026-11-18T06:29:14Z"
 tags: ["case-studies", "vertex"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Montgomery County Food Bank Claude case study | Claude by Anthropic | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/montgomery-county-food-bank"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:26Z"
+fetched_at: "2026-11-18T06:29:19Z"
 tags: ["case-studies"]
 ---
 

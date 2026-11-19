@@ -1,8 +1,8 @@
 ---
 title: "Descript Claude Platform (API) case study | Claude by Anthropic"
-source_url: "https://www.claude.com/customers/descript"
+source_url: "https://www.anthropic.com/customers/descript"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:29Z"
+fetched_at: "2026-11-18T06:29:02Z"
 tags: ["agents", "api", "case-studies"]
 ---
 
@@ -54,7 +54,7 @@ Claude Platform
 
 Use the Claude API to create new user experiences, products, and ways to work with the most advanced AI models on the market.
 
-[Read more](https://www.claude.com/platform/api)
+[Read more](https://www.anthropic.com/platform/api)
 
 ## The solution
 
@@ -97,6 +97,9 @@ For the Descript team, the most meaningful impact isn’t efficiency gains for p
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -104,6 +107,3 @@ For the Descript team, the most meaningful impact isn’t efficiency gains for p
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

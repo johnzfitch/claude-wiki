@@ -2,7 +2,7 @@
 title: "Use artifacts with a keyboard or screen reader | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17457950-use-artifacts-with-a-keyboard-or-screen-reader"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:58Z"
+fetched_at: "2026-11-18T06:28:18Z"
 tags: ["claude-ai"]
 ---
 
@@ -139,11 +139,11 @@ These work for every artifact that opens in the current artifact panel, beside y
 
 - Claude Docs: see **[Get started with Claude Docs](get-started-with-claude-docs.md#h_3762015b90)**, and the full list in **[Claude Docs keyboard shortcuts](https://support.claude.com/en/articles/17458093)**.
 
-- Claude Slides: see **[What are artifacts and how do I use them?](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_11975db891)**
+- Claude Slides: see **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them#h_11975db891)**
 
 - Claude Design: see **[Get started with Claude Design](get-started-with-claude-design.md#h_f646e56e6f)**.
 
-- Design systems: see **[Set up your design system in Claude Design](../21-Account-Support/set-up-your-design-system-in-claude-design.md#h_3a2152de27)**.
+- Design systems: see **[Set up your design system in Claude Design](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design#h_3a2152de27)**.
 
 ------------------------------------------------------------------------
 
@@ -153,4 +153,4 @@ One thing to be aware of in any artifact:
 
 - **Web page artifacts:** If an artifact that Claude wrote as a web page has no links or buttons, Tab skips it and the arrow keys don't scroll it.
 
-If something doesn't work with your keyboard or screen reader, we'd like to hear about it. Learn more about **[how to get support](how-to-get-support-claude-help-center.md)**.
+If something doesn't work with your keyboard or screen reader, we'd like to hear about it. Learn more about **[how to get support](https://support.claude.com/en/articles/9015913)**.

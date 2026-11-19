@@ -2,7 +2,7 @@
 title: "Monitor and troubleshoot self-hosted workers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-operations"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-03T06:23:16Z"
+fetched_at: "2026-11-18T06:27:33Z"
 tags: ["api"]
 ---
 
@@ -23,21 +23,29 @@ Read queue depth, stop sessions and workers without losing work, and fix common 
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](managed-agents-self-hosted-sandboxes.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Status](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+Beta
 
-[Beta header](managed-agents-self-hosted-sandboxes.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Models](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- All models
+
+[Cloud platforms](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-self-hosted-sandboxes.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
-The monitoring calls on this page run from your monitoring or operations tooling, authenticated with your Claude API key. The worker helpers handle the claim and keep-alive loop, so you don’t call those endpoints directly.
+The queue statistics and stop calls on this page run from your monitoring or operations tooling, authenticated with your organization API key. The worker helpers handle the claim and keep-alive loop, so you don’t call those endpoints directly.
 
 
 
-These endpoints accept either your organization API key or the environment key. Call them from outside the worker host with your organization API key. Setting `ANTHROPIC_API_KEY` on the worker host exposes an organization-scoped credential to agent tool calls.
+The queue statistics and stop endpoints accept either your organization API key or the environment key. Call them from outside the worker host with your organization API key. Setting `ANTHROPIC_API_KEY` on the worker host exposes an organization-scoped credential to agent tool calls.
 
 ## Read queue depth
 
@@ -103,7 +111,7 @@ By default the work item moves to `stopping`. The worker detects this on its nex
 
 Pass `force=True` to mark the work item `stopped` immediately instead of waiting for the worker’s confirmation. A forced stop doesn’t end an in-flight tool call any sooner, because the worker still detects the stop on its next heartbeat.
 
-Because these calls run from your operations tooling rather than the worker host, `ANTHROPIC_WORK_ID` isn’t set automatically. Set it to the target work item’s ID before running the following examples. To find a work item’s ID, list the environment’s work items through the [Environments Work endpoints](../Endpoints/beta-environments-work.md).
+Because these calls run from your operations tooling rather than the worker host, `ANTHROPIC_WORK_ID` isn’t set automatically. Set it to the target work item’s ID before running the following examples. To find a work item’s ID, call [List Work Items](../Endpoints/beta-environments-work-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. with the environment key, sent as `Authorization: Bearer $ANTHROPIC_ENVIRONMENT_KEY`. That endpoint rejects your organization API key.
 
 cURL
 

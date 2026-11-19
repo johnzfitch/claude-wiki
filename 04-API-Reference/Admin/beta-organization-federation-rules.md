@@ -2,7 +2,7 @@
 title: "Rules - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/federation/rules"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:26:51Z"
+fetched_at: "2026-11-14T06:24:40Z"
 tags: ["api"]
 ---
 

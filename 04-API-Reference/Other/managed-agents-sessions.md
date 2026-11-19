@@ -2,7 +2,7 @@
 title: "Start a session - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/sessions"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:24Z"
+fetched_at: "2026-11-13T06:36:56Z"
 tags: ["api", "authentication", "mcp"]
 ---
 
@@ -20,18 +20,22 @@ Create a session to run your agent and start running tasks.
 
 [Managed Agents](managed-agents-overview.md)
 
-[Status](managed-agents-overview.md#availability-feature-support)  
 Beta
 
-[Cloud platforms](managed-agents-overview.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](managed-agents-overview.md#feature-availability)  
+- All models
 
-[Beta header](managed-agents-overview.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](managed-agents-overview.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-overview.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-overview.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 A session is an agent instance within an environment. Each session references an [agent](managed-agents-agent-setup.md) and an [environment](managed-agents-environments.md) (both created separately), and maintains conversation history across multiple interactions. Sessions follow a two-step lifecycle: first [create the session](#creating-a-session), then [send a user event](#starting-the-session) to start work. You can also collapse both steps into one call with [`initial_events`](#seed-the-session-with-initial-events).
 

@@ -2,11 +2,14 @@
 title: "SEP-2640: Skills Extension - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2640-skills-extension"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-10-18T06:26:37Z"
+fetched_at: "2026-11-13T06:35:10Z"
+last_modified: "Fri, 13 Nov 2026 02:17:14 GMT"
 tags: ["mcp", "mcp-seps", "skills"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Abstract](#abstract)
 - [Motivation](#motivation)
@@ -52,16 +55,16 @@ FinalExtensions Track
 
 This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not reflected here. Refer to the [current specification](https://modelcontextprotocol.io/specification/latest) and its changelog for authoritative requirements.
 
-| Field         | Value                                                                                                                                                                                                                                                                                        |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SEP**       | 2640                                                                                                                                                                                                                                                                                         |
-| **Title**     | Skills Extension                                                                                                                                                                                                                                                                             |
-| **Status**    | Final                                                                                                                                                                                                                                                                                        |
-| **Type**      | Extensions Track                                                                                                                                                                                                                                                                             |
-| **Created**   | 2026-04-23                                                                                                                                                                                                                                                                                   |
+| Field | Value |
+|----|----|
+| **SEP** | 2640 |
+| **Title** | Skills Extension |
+| **Status** | Final |
+| **Type** | Extensions Track |
+| **Created** | 2026-04-23 |
 | **Author(s)** | Peter Alexander ([@pja-ant](https://github.com/pja-ant)), Ola Hungerford ([@olaservo](https://github.com/olaservo)), Sambhav Kothari ([@sambhav](https://github.com/sambhav)), Aditya Kumar ([@aditya-scio](https://github.com/aditya-scio)), on behalf of the Skills Over MCP Working Group |
-| **Sponsor**   | [@pja-ant](https://github.com/pja-ant)                                                                                                                                                                                                                                                       |
-| **PR**        | [\#2640](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2640)                                                                                                                                                                                                             |
+| **Sponsor** | [@pja-ant](https://github.com/pja-ant) |
+| **PR** | [\#2640](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2640) |
 
 ------------------------------------------------------------------------
 
@@ -130,20 +133,20 @@ The resource for the skill’s required `SKILL.md` is therefore always addressab
 - A `SKILL.md` MAY appear in a descendant directory of a skill, so skills can nest. See [Nested skills](#nested-skills).
 - The final `<skill-path>` segment, being the skill `name`, MUST satisfy the Agent Skills specification’s naming rules. The first `<skill-path>` segment occupies the authority component and SHOULD be a valid `reg-name` per [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986); any other prefix segments SHOULD be valid URI path segments; no further constraints are imposed on them.
 
-Per RFC 3986, the first segment of `<skill-path>` occupies the authority component. This carries no special semantics under this convention and clients MUST NOT attempt DNS or network resolution of it. A server MAY serve skills under another scheme native to its domain (e.g., `github://owner/repo/skills/refunds/SKILL.md`). No scheme is privileged: the structural constraints above (`<skill-path>` ending in the skill name, `SKILL.md` explicit in the URI) apply regardless of scheme, and [`skills/list`](#enumeration-via-skillslist) enumerates a server’s skills whatever scheme they use. Skill identity does not depend on the scheme. A host learns that a resource is a skill in one of two ways: from a [`skills/list`](#enumeration-via-skillslist) entry, the authoritative record of the skills a server publishes; or from an explicit reference (the server’s `instructions` field, another skill, or the user), which [`skills/get`](#retrieval-via-skillsget) confirms, the server answering for a skill it serves and erroring otherwise. This holds for every scheme, `skill://` included. A host MUST NOT conclude that a resource is a skill merely because its URI carries a particular scheme.
+Per RFC 3986, the first segment of `<skill-path>` occupies the authority component. This carries no special semantics under this convention and clients MUST NOT attempt DNS or network resolution of it. A server MAY serve skills under another scheme native to its domain (e.g., `github://owner/repo/skills/refunds/SKILL.md`). No scheme is privileged: the structural constraints above (`<skill-path>` ending in the skill name, `SKILL.md` explicit in the URI) apply regardless of scheme, and [`skills/list`](#enumeration-via-skills%2Flist) enumerates a server’s skills whatever scheme they use. Skill identity does not depend on the scheme. A host learns that a resource is a skill in one of two ways: from a [`skills/list`](#enumeration-via-skills%2Flist) entry, the authoritative record of the skills a server publishes; or from an explicit reference (the server’s `instructions` field, another skill, or the user), which [`skills/get`](#retrieval-via-skills%2Fget) confirms, the server answering for a skill it serves and erroring otherwise. This holds for every scheme, `skill://` included. A host MUST NOT conclude that a resource is a skill merely because its URI carries a particular scheme.
 
 
 [​](#examples)
 
 Examples
 
-| Skill path             | File                  | Resource URI                                     |
-|------------------------|-----------------------|--------------------------------------------------|
-| `git-workflow`         | `SKILL.md`            | `skill://git-workflow/SKILL.md`                  |
-| `pdf-processing`       | `references/FORMS.md` | `skill://pdf-processing/references/FORMS.md`     |
-| `pdf-processing`       | `scripts/extract.py`  | `skill://pdf-processing/scripts/extract.py`      |
-| `acme/billing/refunds` | `SKILL.md`            | `skill://acme/billing/refunds/SKILL.md`          |
-| `acme/billing/refunds` | `examples/email.md`   | `skill://acme/billing/refunds/examples/email.md` |
+| Skill path | File | Resource URI |
+|----|----|----|
+| `git-workflow` | `SKILL.md` | `skill://git-workflow/SKILL.md` |
+| `pdf-processing` | `references/FORMS.md` | `skill://pdf-processing/references/FORMS.md` |
+| `pdf-processing` | `scripts/extract.py` | `skill://pdf-processing/scripts/extract.py` |
+| `acme/billing/refunds` | `SKILL.md` | `skill://acme/billing/refunds/SKILL.md` |
+| `acme/billing/refunds` | `examples/email.md` | `skill://acme/billing/refunds/examples/email.md` |
 
 
 [​](#resource-metadata)
@@ -167,7 +170,7 @@ A skill directory MAY contain further skills in descendant directories. A nested
 
 - **Nested content is supporting content.** From the enclosing skill’s perspective, a nested skill’s directory and files are ordinary supporting files, and reading them is ordinary reading. A nested `SKILL.md` read this way is ordinary markdown: hosts MUST NOT act on its frontmatter.
 - **Activation requires fresh consent.** Approval is per skill: approving a skill approves that skill alone and says nothing about skills nested within it. Activating a nested skill (loading it as a skill in its own right, whether through the host’s skill-loading machinery or by giving effect to its frontmatter) requires fresh, explicit user consent; approval of the enclosing skill does not substitute for it. Once activated, a nested skill is an ordinary skill: its frontmatter takes effect under the same rules as any other MCP-served skill, including the approval gate on `allowed-tools`.
-- **Publication is flat.** A nested skill is published like any other: through its own [`skills/list`](#enumeration-via-skillslist) entry, or by explicit reference. The listing remains flat: an entry for a nested skill is an ordinary entry whose `uri` happens to share a path prefix with the enclosing skill’s, and nothing in the listing marks nesting.
+- **Publication is flat.** A nested skill is published like any other: through its own [`skills/list`](#enumeration-via-skills%2Flist) entry, or by explicit reference. The listing remains flat: an entry for a nested skill is an ordinary entry whose `uri` happens to share a path prefix with the enclosing skill’s, and nothing in the listing marks nesting.
 
 
 [​](#discovery)
@@ -282,15 +285,15 @@ The result carries the skill entries:
 
 Result fields:
 
-| Field                         | Required | Description                                                                                                                  |
-|-------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------|
-| `skills`                      | Yes      | Array of skill entries.                                                                                                      |
-| `skills[].frontmatter`        | Yes      | Verbatim copy of the skill’s `SKILL.md` YAML frontmatter, rendered as JSON. See [Frontmatter](#frontmatter).                 |
-| `skills[].uri`                | Yes      | Resource URI of the skill’s `SKILL.md`. See [Skill URIs](#skill-uris).                                                       |
-| `skills[].resources`          | Yes      | The skill’s files: an array enumerating them with digests and sizes, or the string `"dynamic"`. See [Resources](#resources). |
-| `skills[].resources[].uri`    | Yes      | Resource URI of the file.                                                                                                    |
-| `skills[].resources[].digest` | Yes      | SHA-256 digest of the file. See [Integrity](#integrity-and-verification).                                                    |
-| `skills[].resources[].size`   | Yes      | Length in bytes of the file’s raw content. See [Limits](#limits).                                                            |
+| Field | Required | Description |
+|----|----|----|
+| `skills` | Yes | Array of skill entries. |
+| `skills[].frontmatter` | Yes | Verbatim copy of the skill’s `SKILL.md` YAML frontmatter, rendered as JSON. See [Frontmatter](#frontmatter). |
+| `skills[].uri` | Yes | Resource URI of the skill’s `SKILL.md`. See [Skill URIs](#skill-uris). |
+| `skills[].resources` | Yes | The skill’s files: an array enumerating them with digests and sizes, or the string `"dynamic"`. See [Resources](#resources). |
+| `skills[].resources[].uri` | Yes | Resource URI of the file. |
+| `skills[].resources[].digest` | Yes | SHA-256 digest of the file. See [Integrity](#integrity-and-verification). |
+| `skills[].resources[].size` | Yes | Length in bytes of the file’s raw content. See [Limits](#limits). |
 
 A skill whose content is generated dynamically carries `"resources": "dynamic"` in place of the array. An entry with no `resources` at all is invalid. Pagination mirrors the base protocol’s list methods: the request accepts an optional `cursor`, and when the result includes `nextCursor` the client passes it back to retrieve the next page. An entry is atomic: a skill’s `resources` set is never split across pages. In protocol versions 2026-07-28 and later, the result also carries the base protocol’s list-caching attributes, `ttlMs` and `cacheScope`, as defined for `tools/list` and `resources/list` ([SEP-2549](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2549)), with the same semantics: a freshness hint for the listing and a cache-scope marker, not an integrity property. [Integrity and verification](#integrity-and-verification) governs content regardless of how fresh a cached listing is. A server whose skill catalog is large, generated on demand, or otherwise unenumerable MAY return an empty or partial listing. Hosts MUST NOT treat an empty or partial listing as proof that a server has no skills. The method serves entries for a server’s skills whatever URI scheme they use. Enumeration is uniform across schemes.
 
@@ -318,16 +321,16 @@ A skill’s `name` is a label, not an identifier. A skill is identified by its `
 
 ##### Integrity and verification
 
-Digests are SHA-256 hashes of an artifact’s raw bytes, formatted as `sha256:{hex}` where `{hex}` is 64 lowercase hexadecimal characters. Each entry in a skill’s `resources` carries the digest of the file at its `uri`. When a host retrieves a file listed in a skill’s `resources`, it MUST verify the content against that entry’s digest. A mismatch means the content is not what the listing promised. It may be corrupted, tampered with, or simply stale because the skill was updated after the listing was fetched. Whatever the cause, hosts MUST NOT use the unverified content; to recover from staleness, call [`skills/get`](#retrieval-via-skillsget) for that skill (or `skills/list` to refresh the catalog) and proceed from the current `resources` set, which, being different, revokes any content-bound approval ([Security Implications](#security-implications)). A host is *acting on* a skill from the moment it loads the skill’s `SKILL.md` into the model’s context until, at the earliest, that `SKILL.md` leaves context; hosts MAY hold the window open longer, never shorter. For the whole of that window the host holds the entry from which it loaded the skill. Because `resources` is complete, an unlisted file is a change to the skill: while acting on a skill, a host MUST resolve reads of the skill’s files only to URIs listed in that entry’s `resources`, and MUST treat a read of an unlisted file within the skill as a verification failure equivalent to a digest mismatch. Hosts MUST NOT retrieve a skill’s files ahead of need, whether on connection, on listing, or at approval. A `SKILL.md` is fetched when the skill is loaded, and a supporting file when it is read. A server may publish many skills with many files each, and every host that connects retrieving all of them would impose load proportional to the catalog rather than to use. Hosts SHOULD instead cache what they do retrieve, and digests make that cache cheap to validate: a cached file whose digest matches the current entry can be served without fetching it again, and one whose digest does not match must be fetched again. A cached copy is only as trustworthy as the host’s certainty that its bytes have not changed since they were verified; the requirements on a disk cache are in [Security Implications](#security-implications). Lazy retrieval is compatible with content-bound approval, which binds to the entry’s `resources` set rather than to retrieved bytes; a file fetched long after approval is verified against that set when it is read. Digests are unsigned and supplied by the same server that supplies the content. A match proves the two are consistent, not that either is trustworthy. Any intermediary on the path, such as a gateway, can rewrite both the listing and the content together. Hosts MUST NOT treat a digest match as a security boundary. After fetching a `SKILL.md` for which the host holds an entry, from either `skills/list` or `skills/get` (digest-verified when the entry’s `resources` is an array, and unverifiable when it is `"dynamic"`), hosts MUST parse its YAML frontmatter and compare it field-by-field against the entry’s `frontmatter`. Any discrepancy MUST be treated as a verification failure equivalent to a digest mismatch, and the skill MUST NOT be loaded. This enforces the [Frontmatter](#frontmatter) identity requirement on the host side, so that what a user approves from the listing is what the model actually receives.
+Digests are SHA-256 hashes of an artifact’s raw bytes, formatted as `sha256:{hex}` where `{hex}` is 64 lowercase hexadecimal characters. Each entry in a skill’s `resources` carries the digest of the file at its `uri`. When a host retrieves a file listed in a skill’s `resources`, it MUST verify the content against that entry’s digest. A mismatch means the content is not what the listing promised. It may be corrupted, tampered with, or simply stale because the skill was updated after the listing was fetched. Whatever the cause, hosts MUST NOT use the unverified content; to recover from staleness, call [`skills/get`](#retrieval-via-skills%2Fget) for that skill (or `skills/list` to refresh the catalog) and proceed from the current `resources` set, which, being different, revokes any content-bound approval ([Security Implications](#security-implications)). A host is *acting on* a skill from the moment it loads the skill’s `SKILL.md` into the model’s context until, at the earliest, that `SKILL.md` leaves context; hosts MAY hold the window open longer, never shorter. For the whole of that window the host holds the entry from which it loaded the skill. Because `resources` is complete, an unlisted file is a change to the skill: while acting on a skill, a host MUST resolve reads of the skill’s files only to URIs listed in that entry’s `resources`, and MUST treat a read of an unlisted file within the skill as a verification failure equivalent to a digest mismatch. Hosts MUST NOT retrieve a skill’s files ahead of need, whether on connection, on listing, or at approval. A `SKILL.md` is fetched when the skill is loaded, and a supporting file when it is read. A server may publish many skills with many files each, and every host that connects retrieving all of them would impose load proportional to the catalog rather than to use. Hosts SHOULD instead cache what they do retrieve, and digests make that cache cheap to validate: a cached file whose digest matches the current entry can be served without fetching it again, and one whose digest does not match must be fetched again. A cached copy is only as trustworthy as the host’s certainty that its bytes have not changed since they were verified; the requirements on a disk cache are in [Security Implications](#security-implications). Lazy retrieval is compatible with content-bound approval, which binds to the entry’s `resources` set rather than to retrieved bytes; a file fetched long after approval is verified against that set when it is read. Digests are unsigned and supplied by the same server that supplies the content. A match proves the two are consistent, not that either is trustworthy. Any intermediary on the path, such as a gateway, can rewrite both the listing and the content together. Hosts MUST NOT treat a digest match as a security boundary. After fetching a `SKILL.md` for which the host holds an entry, from either `skills/list` or `skills/get` (digest-verified when the entry’s `resources` is an array, and unverifiable when it is `"dynamic"`), hosts MUST parse its YAML frontmatter and compare it field-by-field against the entry’s `frontmatter`. Any discrepancy MUST be treated as a verification failure equivalent to a digest mismatch, and the skill MUST NOT be loaded. This enforces the [Frontmatter](#frontmatter) identity requirement on the host side, so that what a user approves from the listing is what the model actually receives.
 
 ##### Limits
 
 This extension fixes two per-skill limits so that servers know what every conforming host will accept and hosts know what they must be prepared to handle:
 
-| Limit                     | Value                     | Counted over                                                |
-|---------------------------|---------------------------|-------------------------------------------------------------|
-| Resources per skill       | 512 entries               | The entries of the skill’s `resources`, `SKILL.md` included |
-| Total file size per skill | 16 MiB (16,777,216 bytes) | The sum of `size` over the skill’s `resources`              |
+| Limit | Value | Counted over |
+|----|----|----|
+| Resources per skill | 512 entries | The entries of the skill’s `resources`, `SKILL.md` included |
+| Total file size per skill | 16 MiB (16,777,216 bytes) | The sum of `size` over the skill’s `resources` |
 
 Hosts MUST support skills up to and including these limits, and MAY support larger ones. Servers SHOULD NOT serve a skill that exceeds either limit; a skill that does is not guaranteed to be loadable by any conforming host. Because `resources` is complete, both limits are checkable from the entry alone, by counting entries and summing `size`, before the host retrieves a single file, and a host that declines a skill on this basis SHOULD tell the user why rather than fail silently on a later read. For a skill whose `resources` is `"dynamic"`, the entry offers nothing to count. A host that chooses to load such a skill applies the total-size limit to what it actually retrieves and MAY stop loading the skill once that limit is reached. These limits bound a host’s exposure to a single skill. They say nothing about how many skills a server may serve or a host must accept; a listing may be arbitrarily large, which is one reason hosts retrieve files only on demand ([Integrity and verification](#integrity-and-verification)).
 
@@ -437,11 +440,11 @@ Per [SEP-2133](https://github.com/modelcontextprotocol/modelcontextprotocol/pull
 
 One extension-specific setting is defined:
 
-| Setting         | Type    | Default | Meaning                                                                 |
-|-----------------|---------|---------|-------------------------------------------------------------------------|
+| Setting | Type | Default | Meaning |
+|----|----|----|----|
 | `directoryRead` | boolean | `false` | The server implements [`resources/directory/read`](#directory-listing). |
 
-An empty object indicates support for the extension with no optional features. Declaring the extension itself commits the server to [`skills/list`](#enumeration-via-skillslist) and [`skills/get`](#retrieval-via-skillsget); clients MUST NOT call `resources/directory/read` against a server that has not declared `directoryRead: true`. A server declaring this extension MUST also declare the `resources` capability.
+An empty object indicates support for the extension with no optional features. Declaring the extension itself commits the server to [`skills/list`](#enumeration-via-skills%2Flist) and [`skills/get`](#retrieval-via-skills%2Fget); clients MUST NOT call `resources/directory/read` against a server that has not declared `directoryRead: true`. A server declaring this extension MUST also declare the `resources` capability.
 
 
 [​](#reading)
@@ -523,7 +526,7 @@ A server that declares `directoryRead` MUST support the method for every directo
 
 Directory reads and the held entry
 
-For a skill whose entry carries `resources`, the host already holds a complete manifest of the skill’s files ([Resources](#resources)); a directory read tells it nothing about that skill’s contents that the entry did not. Directory reading earns its place elsewhere: for dynamically generated skills, whose `resources` is `"dynamic"`; for resource trees that are not skills at all; and for obtaining the server’s current view of a directory without first refreshing the entry. When a host acting on a skill with a manifest wants to know what `templates/` contains, it MAY answer from the entry alone. The two views can disagree. If the server adds a file to a skill after the host obtained its entry, a directory read may list that file while the held manifest does not. This is the stale-snapshot case that [Integrity and verification](#integrity-and-verification) already governs, and the recovery path is the one specified there: while acting on the skill under the held entry, the host MUST NOT read the newly listed child (an unlisted file is a verification failure, exactly as a digest mismatch is) and MUST NOT surface it to the model as a file of the skill. To reach it, the host refreshes the entry with [`skills/get`](#retrieval-via-skillsget), at which point the `resources` set has changed and any persisted content-bound approval is revoked and must be obtained again ([Security Implications](#security-implications)). Only under the refreshed entry is the new file readable. Hosts SHOULD expect this sequence and present it as a skill that has changed and needs re-approval, rather than as a read error. Conversely, a child present in the manifest but absent from a directory read is a file the server no longer serves; a read of it will fail, and the same refresh applies. This extension defines no shared version or cache token that would let a host determine whether a directory result and an entry describe the same snapshot of the server. The manifest is authoritative for what the host may read under its current approval; a directory read is a live observation that may run ahead of or behind it. Hosts MUST NOT treat the directory result as extending the manifest. For a dynamically generated skill, whose `resources` is `"dynamic"`, none of this changes the skill’s standing: it offers no content integrity and cannot be content-bound, and a host MAY decline to load it ([Resources](#resources)). A directory read is how such a skill’s files are discovered at all, but it does not supply the integrity the entry lacks.
+For a skill whose entry carries `resources`, the host already holds a complete manifest of the skill’s files ([Resources](#resources)); a directory read tells it nothing about that skill’s contents that the entry did not. Directory reading earns its place elsewhere: for dynamically generated skills, whose `resources` is `"dynamic"`; for resource trees that are not skills at all; and for obtaining the server’s current view of a directory without first refreshing the entry. When a host acting on a skill with a manifest wants to know what `templates/` contains, it MAY answer from the entry alone. The two views can disagree. If the server adds a file to a skill after the host obtained its entry, a directory read may list that file while the held manifest does not. This is the stale-snapshot case that [Integrity and verification](#integrity-and-verification) already governs, and the recovery path is the one specified there: while acting on the skill under the held entry, the host MUST NOT read the newly listed child (an unlisted file is a verification failure, exactly as a digest mismatch is) and MUST NOT surface it to the model as a file of the skill. To reach it, the host refreshes the entry with [`skills/get`](#retrieval-via-skills%2Fget), at which point the `resources` set has changed and any persisted content-bound approval is revoked and must be obtained again ([Security Implications](#security-implications)). Only under the refreshed entry is the new file readable. Hosts SHOULD expect this sequence and present it as a skill that has changed and needs re-approval, rather than as a read error. Conversely, a child present in the manifest but absent from a directory read is a file the server no longer serves; a read of it will fail, and the same refresh applies. This extension defines no shared version or cache token that would let a host determine whether a directory result and an entry describe the same snapshot of the server. The manifest is authoritative for what the host may read under its current approval; a directory read is a live observation that may run ahead of or behind it. Hosts MUST NOT treat the directory result as extending the manifest. For a dynamically generated skill, whose `resources` is `"dynamic"`, none of this changes the skill’s standing: it offers no content integrity and cannot be content-bound, and a host MAY decline to load it ([Resources](#resources)). A directory read is how such a skill’s files are discovered at all, but it does not supply the integrity the entry lacks.
 
 
 [​](#implementation-guidelines)

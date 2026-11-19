@@ -2,7 +2,7 @@
 title: "Jumpcut Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/jumpcut"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:34Z"
+fetched_at: "2026-11-18T06:29:16Z"
 tags: ["api", "case-studies"]
 ---
 

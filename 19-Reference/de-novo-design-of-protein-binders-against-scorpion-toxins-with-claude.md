@@ -2,8 +2,7 @@
 title: "De novo design of protein binders against scorpion toxins with Claude"
 source_url: "https://www-cdn.anthropic.com/31ac578806cffd8b3d92d8affe6edc4c04d502e1.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:40:35Z"
-last_modified: "Tue, 20 Oct 2026 13:11:07 GMT"
+fetched_at: "2026-11-18T06:28:22Z"
 tags: ["news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "FutureHouse Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/futurehouse"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:20Z"
+fetched_at: "2026-11-18T06:28:58Z"
 tags: ["agents", "api", "case-studies"]
 ---
 

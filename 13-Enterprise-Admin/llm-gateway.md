@@ -2,11 +2,14 @@
 title: "Other LLM gateways - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/llm-gateway"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-01T06:33:43Z"
+fetched_at: "2026-11-14T06:25:10Z"
+last_modified: "Sat, 14 Nov 2026 04:52:05 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What a gateway provides](#what-a-gateway-provides)
 - [Roll out a gateway](#roll-out-a-gateway)
@@ -31,10 +34,7 @@ This section covers using a gateway product your organization already runs, rath
 
 Any gateway that exposes a [supported API format](llm-gateway-protocol.md#api-formats) works. Anthropic doesn’t endorse, maintain, or audit third-party gateway products, and doesn’t support routing Claude Code to non-Claude models through any gateway. Deploy the gateway following its own documentation, then complete the Claude Code side with the [rollout steps below](#roll-out-a-gateway).
 
-
-[​](#what-a-gateway-provides)
-
-What a gateway provides
+## [](#what-a-gateway-provides)What a gateway provides
 
 A gateway gives your organization one place to manage:
 
@@ -46,10 +46,7 @@ A gateway gives your organization one place to manage:
 
 All of these except provider switching apply whether the upstream is Anthropic’s API or a [cloud provider](../02-Claude-Code-CLI/third-party-integrations.md). Provider switching without reconfiguring developer machines also depends on the gateway exposing a single [Anthropic-format endpoint](llm-gateway-protocol.md#api-formats) regardless of upstream. A gateway that exposes a provider’s own format ties the client configuration to that provider and changes [what Claude Code sends and which defaults it applies](llm-gateway-protocol.md#how-the-connection-method-changes-client-behavior). The tradeoff is that the gateway becomes infrastructure your organization operates. Claude Code adds capabilities with each release, and a gateway that doesn’t forward them breaks the corresponding features, so the gateway product needs to be kept updated as Claude Code evolves. The [gateway compatibility guide](llm-gateway-protocol.md) covers what to forward.
 
-
-[​](#roll-out-a-gateway)
-
-Roll out a gateway
+## [](#roll-out-a-gateway)Roll out a gateway
 
 When you’re ready to roll out an LLM gateway to your organization, the sequence is the same whichever gateway product you choose:
 
@@ -60,17 +57,13 @@ When you’re ready to roll out an LLM gateway to your organization, the sequenc
 
 [Roll out an LLM gateway for your organization](llm-gateway-rollout.md) walks each step and shows the configuration files to distribute at each one. The gateway is one part of organization setup; for policy enforcement, usage visibility, and data handling decisions, see [Set up Claude Code for your organization](admin-setup.md). To make a gateway reached through `ANTHROPIC_BASE_URL` the only destination a managed machine may use, set [`allowedProviders`](../02-Claude-Code-CLI/settings-reference.md#allowedproviders) to `["customEndpoint"]` in the same managed settings file and put the gateway’s `ANTHROPIC_BASE_URL` in that file’s `env` block. Claude Code then refuses a session pointed anywhere else, including at Anthropic directly or at a developer’s own proxy, and accepts `ANTHROPIC_BASE_URL` only with the value you set there. For a gateway reached through a provider-specific endpoint variable such as `ANTHROPIC_BEDROCK_BASE_URL`, the `allowedProviders` entry says which variable to pin. Requires Claude Code v2.1.285 or later.
 
+With Desktop signed in to claude.ai, a Cowork session on the user’s machine counts as [`"anthropic"`](../02-Claude-Code-CLI/settings-reference.md#allowedproviders). If you leave it out of this list in an MDM policy or managed settings file, that session is refused. With it in, sessions sent to Anthropic directly also pass this list.
 
-[​](#subscriptions-and-gateways)
+## [](#subscriptions-and-gateways)Subscriptions and gateways
 
-Subscriptions and gateways
+While a [gateway credential variable](llm-gateway-connect.md#set-the-credential-variable) or `apiKeyHelper` is active, requests carry that credential in place of a developer’s claude.ai subscription login, and the subscription’s usage limits don’t apply to them. Claude Code keeps a saved claude.ai login on the machine but doesn’t send it with those requests. That traffic is billed per token to whoever owns the credential the gateway forwards, such as your organization’s Anthropic Console account, or your Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry account when the gateway routes there. [`ANTHROPIC_BASE_URL`](llm-gateway-connect.md#set-the-base-url-and-credential) is the variable that points Claude Code at the gateway. Setting only that variable, without a gateway credential, doesn’t replace the subscription. Requests still route through the gateway, but a saved claude.ai login remains the active credential, so its usage limits and billing apply. Gateways that pass this traffic on to Anthropic must forward `Authorization` and the OAuth capability in `anthropic-beta`; see the [request headers reference](llm-gateway-protocol.md#request-headers).
 
-While a [gateway credential variable](llm-gateway-connect.md#set-the-credential-variable) or `apiKeyHelper` is active, requests carry that credential in place of a developer’s claude.ai subscription login, and the subscription’s usage limits don’t apply to them. Claude Code keeps a saved claude.ai login on the machine but doesn’t send it with those requests. That traffic is billed per token to whoever owns the credential the gateway forwards, such as your organization’s Anthropic Console account, or your Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry account when the gateway routes there. [`ANTHROPIC_BASE_URL`](llm-gateway-connect.md#set-the-base-url-and-credential) is the variable that points Claude Code at the gateway. Setting only that variable, without a gateway credential, doesn’t replace the subscription. Requests still route through the gateway, but a saved claude.ai login remains the active credential, so its usage limits and billing apply. Gateways that pass this traffic on to Anthropic must forward the OAuth capability in `anthropic-beta`; see the [request headers reference](llm-gateway-protocol.md#request-headers).
-
-
-[​](#related-pages)
-
-Related pages
+## [](#related-pages)Related pages
 
 - [Gateway overview](gateways.md): how a gateway works and how to choose between Claude apps gateway and another product
 - [Claude apps gateway](claude-apps-gateway.md): Anthropic’s self-hosted gateway with SSO sign-in and OTLP telemetry

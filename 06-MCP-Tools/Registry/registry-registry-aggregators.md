@@ -2,8 +2,8 @@
 title: "MCP Registry Aggregators - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/registry-aggregators"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-31T06:24:50Z"
-last_modified: "Fri, 30 Oct 2026 22:17:56 GMT"
+fetched_at: "2026-11-13T06:35:05Z"
+last_modified: "Fri, 13 Nov 2026 01:50:45 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
@@ -14,6 +14,7 @@ Back to top
 - [Consuming the MCP Registry REST API](#consuming-the-mcp-registry-rest-api)
   - [Pagination](#pagination)
   - [Filtering Since](#filtering-since)
+  - [Efficient synchronization](#efficient-synchronization)
 - [Server Status](#server-status)
 - [Acting as a Subregistry](#acting-as-a-subregistry)
 
@@ -85,6 +86,13 @@ The `GET /v0.1/servers` endpoint supports filtering servers that have been updat
 ```python
 curl "https://registry.modelcontextprotocol.io/v0.1/servers?updated_since=2025-10-23T00:00:00.000Z"
 ```
+
+
+[​](#efficient-synchronization)
+
+Efficient synchronization
+
+After the initial paginated download, use `updated_since` for subsequent syncs instead of downloading the entire registry again. Keep the same timestamp while following every `nextCursor`, and save a new checkpoint only after all pages have been applied successfully. Keep a small overlap between sync windows and deduplicate by server name and version so retries and timestamp boundaries do not lose updates. Incremental results include deleted servers; apply those status changes to your local copy too. Use a client that negotiates and decodes HTTP compression, for example `curl --compressed`. Persist results locally and avoid repeating a full crawl for each user request. If a request fails or is rate limited, retry with backoff rather than restarting concurrent full downloads.
 
 
 [​](#server-status)

@@ -2,9 +2,11 @@
 title: "Building AI for cyber defenders \\ Anthropic"
 source_url: "https://www.anthropic.com/research/building-ai-cyber-defenders"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:59Z"
+fetched_at: "2026-11-14T06:26:38Z"
 tags: ["evaluation", "news-research", "skills"]
 ---
+
+### 01Claude Sonnet 4.5: emphasizing cyber skills
 
 # Building AI for cyber defenders
 
@@ -13,23 +15,20 @@ tags: ["evaluation", "news-research", "skills"]
 - [03Conferring with trusted partners](#conferring-with-trusted-partners)
 - [04What's next?](#whats-next)
 
-- Published
+Published  
+Sep 29, 2025
 
-  Sep 29, 2025
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
+- [Coding](https://www.anthropic.com/search?topic=coding)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-
-  See more...
+See more...
 
 Related articles
 
@@ -53,7 +52,7 @@ For several years, our team has carefully tracked the cybersecurity-relevant cap
 
 In this summer’s DARPA [AI Cyber Challenge](https://aicyberchallenge.com/), teams used LLMs (including Claude) to build “cyber reasoning systems” that examined millions of lines of code for vulnerabilities to patch. In addition to inserted vulnerabilities, teams found (and sometimes patched) [previously undiscovered, non-synthetic vulnerabilities](https://aicyberchallenge.com/Finals-winners-announcement/). Beyond a competition setting, other frontier labs now apply models to [discover and report novel vulnerabilities](https://blog.google/technology/safety-security/cybersecurity-updates-summer-2025/).
 
-At the same time, as part of our Safeguards work, we have found and disrupted threat actors on our own platform who leveraged AI to scale their operations. Our [Safeguards](building-safeguards-for-claude.md) team recently discovered (and disrupted) a case of “[vibe hacking](detecting-countering-misuse-aug-2025.md),” in which a cybercriminal used Claude to build a large-scale data extortion scheme that previously would have required an entire team of people. Safeguards has also detected and countered Claude's use in increasingly [complex espionage operations](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf), including the targeting of critical telecommunications infrastructure, by an actor that demonstrated characteristics consistent with Chinese APT operations.
+At the same time, as part of our Safeguards work, we have found and disrupted threat actors on our own platform who leveraged AI to scale their operations. Our [Safeguards](building-safeguards-for-claude.md) team recently discovered (and disrupted) a case of “[vibe hacking](detecting-countering-misuse-aug-2025.md),” in which a cybercriminal used Claude to build a large-scale data extortion scheme that previously would have required an entire team of people. Safeguards has also detected and countered Claude's use in increasingly [complex espionage operations](https://assets.claude.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf), including the targeting of critical telecommunications infrastructure, by an actor that demonstrated characteristics consistent with Chinese APT operations.
 
 All of these lines of evidence lead us to think we are at an important inflection point in the cyber ecosystem, and progress from here could become quite fast or usage could grow quite quickly.
 
@@ -79,13 +78,13 @@ As we ran these evaluations, one thing that stood out was the importance of runn
 
 ### Cybench
 
-One of the evaluations we have tracked for over a year is [Cybench](https://cybench.github.io/), a benchmark drawn from CTF competition challenges.^([1](#footnote-1)) On this evaluation, we see striking improvement from Claude Sonnet 4.5, not just over Claude Sonnet 4, but even over Claude Opus 4 and 4.1 models. Perhaps most striking, *Sonnet 4.5 achieves a higher probability of success given one attempt per task than Opus 4.1 when given ten attempts per task*. The challenges that are part of this evaluation reflect somewhat complex, long-duration workflows. For example, one challenge involved analyzing network traffic, extracting malware from that traffic, and decompiling and decrypting the malware. We estimate that this would have taken a skilled human at least an hour, and possibly much longer; Claude took 38 minutes to solve it.
+One of the evaluations we have tracked for over a year is [Cybench](https://cybench.github.io/), a benchmark drawn from CTF competition challenges.^([^1]) On this evaluation, we see striking improvement from Claude Sonnet 4.5, not just over Claude Sonnet 4, but even over Claude Opus 4 and 4.1 models. Perhaps most striking, *Sonnet 4.5 achieves a higher probability of success given one attempt per task than Opus 4.1 when given ten attempts per task*. The challenges that are part of this evaluation reflect somewhat complex, long-duration workflows. For example, one challenge involved analyzing network traffic, extracting malware from that traffic, and decompiling and decrypting the malware. We estimate that this would have taken a skilled human at least an hour, and possibly much longer; Claude took 38 minutes to solve it.
 
 When we give Claude Sonnet 4.5 10 attempts at the Cybench evaluation, it succeeds on 76.5% of the challenges. This is particularly noteworthy because we have doubled this success rate in just the past six months (Sonnet 3.7, released in February 2025, had only a 35.9% success rate when given 10 trials).
 
 ### CyberGym
 
-In another external evaluation, we evaluated Claude Sonnet 4.5 on [CyberGym](https://www.cybergym.io/), a benchmark that evaluates the ability of agents to (1) find (previously-discovered) vulnerabilities in real open-source software projects given a high-level description of the weakness, and (2) discover new (previously-undiscovered) vulnerabilities.^([2](#footnote-2)) The CyberGym team previously found that Claude Sonnet 4 was the strongest model on their [public leaderboard](https://www.cybergym.io/).
+In another external evaluation, we evaluated Claude Sonnet 4.5 on [CyberGym](https://www.cybergym.io/), a benchmark that evaluates the ability of agents to (1) find (previously-discovered) vulnerabilities in real open-source software projects given a high-level description of the weakness, and (2) discover new (previously-undiscovered) vulnerabilities.^([^2]) The CyberGym team previously found that Claude Sonnet 4 was the strongest model on their [public leaderboard](https://www.cybergym.io/).
 
 Claude Sonnet 4.5 scores significantly better than either Claude Sonnet 4 or Claude Opus 4. When using the same cost constraints as the public CyberGym leaderboard (i.e., a limit of \$2 of LLM API queries per vulnerability) we find that Sonnet 4.5 achieves a new state-of-the-art score of 28.9%. But true attackers are rarely limited in this way: they can attempt many attacks, for far more than \$2 per trial. When we remove these constraints and give Claude 30 trials per task, we find that Sonnet 4.5 reproduces vulnerabilities in 66.7% of programs. And although the relative price of this approach is higher, the absolute cost—about \$45 to try one task 30 times—remains quite low.
 
@@ -120,3 +119,7 @@ But even building and adopting to advantage defenders is only part of the soluti
 01Andy K Zhang et al., "Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models," in The Thirteenth International Conference on Learning Representations (2025), <https://openreview.net/forum?id=tc90LV0yRL>.[](#footnote-ref-1)
 
 02Zhun Wang et al., "CyberGym: Evaluating AI Agents' Cybersecurity Capabilities with Real-World Vulnerabilities at Scale," arXiv preprint arXiv:2506.02548 (2025), <https://arxiv.org/abs/2506.02548>.[](#footnote-ref-2)
+
+[^1]:
+
+[^2]:

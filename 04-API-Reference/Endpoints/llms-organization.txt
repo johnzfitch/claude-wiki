@@ -478,7 +478,7 @@ filter: optional array of string
 
 
 
-Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `artifact_type`, `is_shared`, `product`, `rbac_group_id`, `user_id`. Value forms: `artifact_type` is a canonical artifact MIME type (e.g. `text/markdown`) or `other`; `is_shared` is `true` or `false`; `product` is `chat_cowork_unified`, `chat`, `claude_code`, or `cowork` (the surfaces that create artifacts); `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only on deployments that offer Chat and Cowork unified.
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `artifact_type`, `is_shared`, `product`, `rbac_group_id`, `user_id`. Value forms: `artifact_type` is a canonical artifact MIME type (e.g. `text/markdown`) or `other`; `is_shared` is `true` or `false`; `product` is `chat_cowork_unified`, `chat`, `claude_code`, or `cowork` (the surfaces that create artifacts); `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only where Chat and Cowork unified is available.
 
 maxItems100
 
@@ -753,7 +753,7 @@ filter: optional array of string
 
 
 
-Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `connector_name`, `product`, `rbac_group_id`, `user_id`. Value forms: `connector_name` matches case-insensitively, a display name such as 'GitHub MCP' also matches its normalized stored form ('github'), and for rows whose `connector_name` is an opaque connector id the connector's display name (`connector_display_name`) also matches; `product` is one of `chat_cowork_unified`, `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only on deployments that offer Chat and Cowork unified.
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `connector_name`, `product`, `rbac_group_id`, `user_id`. Value forms: `connector_name` matches case-insensitively, a display name such as 'GitHub MCP' also matches its normalized stored form ('github'), and for rows whose `connector_name` is an opaque connector id the connector's display name (`connector_display_name`) also matches; `product` is one of `chat_cowork_unified`, `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only where Chat and Cowork unified is available.
 
 maxItems100
 
@@ -957,7 +957,7 @@ chat_cowork_unified_metrics: optional [AnalyticsConnectorChatCoworkUnifiedMetric
 
 
 
-Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Connector use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response where Chat and Cowork unified is not available.
 
 
 
@@ -1234,7 +1234,7 @@ filter: optional array of string
 
 
 
-Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `plugin_name`, `product`, `rbac_group_id`, `user_id`. Value forms: `plugin_name` matches case-insensitively; `product` is `chat_cowork_unified`, `claude_code`, or `cowork` (the only surfaces with plugin attribution); `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only on deployments that offer Chat and Cowork unified.
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `plugin_name`, `product`, `rbac_group_id`, `user_id`. Value forms: `plugin_name` matches case-insensitively; `product` is `chat_cowork_unified`, `claude_code`, or `cowork` (the only surfaces with plugin attribution); `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only where Chat and Cowork unified is available.
 
 maxItems100
 
@@ -1398,7 +1398,7 @@ chat_cowork_unified_metrics: optional [AnalyticsPluginChatCoworkUnifiedMetrics](
 
 
 
-Plugin use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Plugin use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on. A count is null in date-range mode where it cannot be computed. Omitted from the response where Chat and Cowork unified is not available.
 
 distinct_session_plugin_used_count: number or null
 
@@ -1603,7 +1603,7 @@ filter: optional array of string
 
 
 
-Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `product`, `rbac_group_id`, `share_status`, `skill_name`, `user_id`. Value forms: `product` is one of `chat_cowork_unified`, `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `share_status` is one of `organization`, `private`, or `public`; `skill_name` matches case-insensitively; `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only on deployments that offer Chat and Cowork unified.
+Filters as `dimension:value`, e.g. `filter[]=rbac_group_id:{id}`. Repeat the param for OR within a dimension and across dimensions for AND. Supported dimensions on this endpoint: `product`, `rbac_group_id`, `share_status`, `skill_name`, `user_id`. Value forms: `product` is one of `chat_cowork_unified`, `chat`, `claude_code`, `cowork`, or `office_agent`; `rbac_group_id` takes the tagged id (`rbac_group_...`, as emitted in responses and by the spend-limits API) or a bare group UUID, and matches users who held the group at any point during each covered UTC day (time-of-usage attribution); `share_status` is one of `organization`, `private`, or `public`; `skill_name` matches case-insensitively; `user_id` takes a tagged user id (`user_...`), as emitted in responses. An unsupported dimension returns 400. At most 100 entries. `chat_cowork_unified` is accepted as a `product` value only where Chat and Cowork unified is available.
 
 maxItems100
 
@@ -1829,7 +1829,7 @@ chat_cowork_unified_metrics: optional [AnalyticsSkillChatCoworkUnifiedMetrics](h
 
 
 
-Skill use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Skill use recorded while members had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into chat conversations and Cowork sessions. A count is null in date-range mode where it cannot be computed. Omitted from the response where Chat and Cowork unified is not available.
 
 
 
@@ -2146,7 +2146,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-data: array of [AnalyticsSingleDayActivitySummary](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
+data: array of [AnalyticsSingleDayActivitySummary](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 32 more }
 
 
 
@@ -2242,19 +2242,19 @@ chat_cowork_unified_daily_active_user_count: optional number or null
 
 
 
-Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response where Chat and Cowork unified is not available.
 
 chat_cowork_unified_monthly_active_user_count: optional number or null
 
 
 
-Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response where Chat and Cowork unified is not available.
 
 chat_cowork_unified_weekly_active_user_count: optional number or null
 
 
 
-Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response where Chat and Cowork unified is not available.
 
 chat_daily_active_user_count: optional number or null
 
@@ -2309,6 +2309,24 @@ claude_design_weekly_active_user_count: optional number or null
 
 
 Number of users with Claude Design activity in the 7-day rolling window. Omitted from the response while the per-product breakdown is not enabled for this organization.
+
+claude_tag_daily_active_user_count: optional number or null
+
+
+
+Number of Slack users active in Claude Tag on the requested day. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+
+claude_tag_monthly_active_user_count: optional number or null
+
+
+
+Number of Slack users active in Claude Tag in the 28-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+
+claude_tag_weekly_active_user_count: optional number or null
+
+
+
+Number of Slack users active in Claude Tag in the 7-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
 
 office_agent_daily_active_user_count: optional number or null
 
@@ -2403,6 +2421,9 @@ Response 200
       "claude_design_daily_active_user_count": 0,
       "claude_design_monthly_active_user_count": 0,
       "claude_design_weekly_active_user_count": 0,
+      "claude_tag_daily_active_user_count": 0,
+      "claude_tag_monthly_active_user_count": 0,
+      "claude_tag_weekly_active_user_count": 0,
       "office_agent_daily_active_user_count": 0,
       "office_agent_monthly_active_user_count": 0,
       "office_agent_weekly_active_user_count": 0,
@@ -2451,6 +2472,9 @@ Response 200
       "claude_design_daily_active_user_count": 0,
       "claude_design_monthly_active_user_count": 0,
       "claude_design_weekly_active_user_count": 0,
+      "claude_tag_daily_active_user_count": 0,
+      "claude_tag_monthly_active_user_count": 0,
+      "claude_tag_weekly_active_user_count": 0,
       "office_agent_daily_active_user_count": 0,
       "office_agent_monthly_active_user_count": 0,
       "office_agent_weekly_active_user_count": 0,
@@ -2636,7 +2660,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-data: array of [AnalyticsUserActivity](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_user_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 10 more }
+data: array of [AnalyticsUserActivity](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_user_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 11 more }
 
 
 
@@ -2790,7 +2814,7 @@ chat_cowork_unified_metrics: optional [AnalyticsChatCoworkUnifiedMetrics](https:
 
 
 
-Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response where Chat and Cowork unified is not available.
 
 
 
@@ -2807,6 +2831,26 @@ sessions: [AnalyticsChatCoworkUnifiedSessionsMetrics](https://platform.claude.co
 
 
 Cowork session activity recorded while members had Chat and Cowork unified turned on.
+
+
+
+claude_tag_metrics: optional [AnalyticsClaudeTagMetrics](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_claude_tag_metrics) { active_day_count, active_message_count } or null
+
+
+
+Claude Tag activity in Slack by a user who has linked a Claude account. Activity by Slack users who have not linked an account appears only in the `/summaries` Claude Tag counts, so these rows do not add up to those counts. Omitted from the response on deployments that do not offer Claude Tag reporting.
+
+active_day_count: number or null
+
+
+
+1 on a day the user was active in Claude Tag in Slack, otherwise 0. Summed over the window in date-range mode, so it is the number of active days; on grouped rows, the total of each member's active days. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
+
+active_message_count: number or null
+
+
+
+Number of the user's Slack messages that made them active: @-mentions, direct messages, group direct message asks, and thread posts Claude answered. Other messages are not counted. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
 
 
 
@@ -3008,6 +3052,10 @@ Response 200
           "write_tool_count": 0
         }
       },
+      "claude_tag_metrics": {
+        "active_day_count": 0,
+        "active_message_count": 0
+      },
       "last_activity_date": "2019-12-27",
       "rbac_group_id": "rbac_group_id",
       "rbac_group_name": "rbac_group_name"
@@ -3179,6 +3227,10 @@ Response 200
           "write_tool_count": 0
         }
       },
+      "claude_tag_metrics": {
+        "active_day_count": 0,
+        "active_message_count": 0
+      },
       "last_activity_date": "2019-12-27",
       "rbac_group_id": "rbac_group_id",
       "rbac_group_name": "rbac_group_name"
@@ -3331,6 +3383,26 @@ AnalyticsClaudeCodeMetrics object{ core_metrics, tool_actions }
 
 
 Claude Code activity metrics for a single user on a given day.
+
+
+
+AnalyticsClaudeTagMetrics object{ active_day_count, active_message_count }
+
+
+
+Claude Tag activity metrics for a single linked user on a given day.
+
+active_day_count: number or null
+
+
+
+1 on a day the user was active in Claude Tag in Slack, otherwise 0. Summed over the window in date-range mode, so it is the number of active days; on grouped rows, the total of each member's active days. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
+
+active_message_count: number or null
+
+
+
+Number of the user's Slack messages that made them active: @-mentions, direct messages, group direct message asks, and thread posts Claude answered. Other messages are not counted. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
 
 
 
@@ -3812,7 +3884,7 @@ Total number of skill invocations in Claude Science sessions
 
 
 
-AnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
+AnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 32 more }
 
 
 
@@ -4036,7 +4108,7 @@ Email address of the user
 
 
 
-AnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 10 more }
+AnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 11 more }
 
 
 
@@ -4987,6 +5059,28 @@ workspace_id: string
 
 ID of the Workspace the API key belongs to, including when it is the organization's default Workspace.
 
+
+
+OrgAPIKeyLimitExceededErrorDetails object{ error_code }
+
+
+
+The organization has reached its limit of active API keys.
+
+error_code: "org_api_key_limit_exceeded"
+
+
+
+
+
+WorkspaceAPIKeyLimitExceededErrorDetails object{ error_code }
+
+
+
+The workspace has reached its limit of active API keys.
+
+error_code: "workspace_api_key_limit_exceeded"
+
 ---
 
 ## Get Compliance Settings - Claude API Reference
@@ -5597,7 +5691,7 @@ user_profile_id: optional string or null
 
 
 
-ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+ID of a user profile to bind the key to. A user profile represents one of your customers: bind a customer's key to that customer's user profile. A key bound to a user profile can only be attached to a Workspace that has the same user profile, and the binding cannot be changed later. Omit this field only for your organization's own key, never a customer's. A key created without a user profile ID can't be attached to a Workspace that has a user profile, and you can't add one to the key later.
 
 ##### Returns
 
@@ -5934,7 +6028,7 @@ geo: string
 
 
 
-Data residency geo. Selects the region that handles this key's encrypt/decrypt roundtrips.
+Data residency geo. Selects the region this key is used in.
 
 
 
@@ -6040,7 +6134,7 @@ user_profile_id: string or null
 
 
 
-ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can be attached to a Workspace whatever its user profile.
+ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can only be attached to a Workspace that has no user profile.
 
 next_page: string or null
 
@@ -6813,6 +6907,30 @@ defaultattached
 
 
 
+ExternalKeyChangedErrorDetails object{ error_code }
+
+
+
+The external key changed while the request was validating it. Send the request again.
+
+error_code: "external_key_changed"
+
+
+
+
+
+ExternalKeyInWorkspacePolicyErrorDetails object{ error_code }
+
+
+
+The External Key can't be deleted or reconfigured while the organization's Workspace Policy lists it as an allowed key.
+
+error_code: "external_key_in_workspace_policy"
+
+
+
+
+
 ExternalKeyUnattachedAttachment object{ type: "unattached" }
 
 
@@ -6824,6 +6942,30 @@ type: "unattached"
 
 
 defaultunattached
+
+
+
+ExternalKeyValidationFailedErrorDetails object{ error_code }
+
+
+
+The External Key failed Anthropic's validation, so the request was refused. The message gives the reason, if there is one.
+
+error_code: "external_key_validation_failed"
+
+
+
+
+
+ExternalKeyValidationTimedOutErrorDetails object{ error_code }
+
+
+
+Anthropic's validation of the External Key did not finish in time, so the request was refused. Wait a moment, then send the request again.
+
+error_code: "external_key_validation_timed_out"
+
+
 
 
 
@@ -11263,6 +11405,54 @@ Delete a pending invite.
 
 
 
+AlreadyMemberErrorDetails object{ error_code }
+
+
+
+The email address already belongs to a user in the organization. The message names the user.
+
+error_code: "already_member"
+
+
+
+
+
+CannotInviteEmailsWithUnverifiedDomainsErrorDetails object{ error_code }
+
+
+
+The email address's domain is not one of the verified domains of the organization's parent organization.
+
+error_code: "cannot_invite_emails_with_unverified_domains"
+
+
+
+
+
+EmailDomainNotAllowedErrorDetails object{ error_code }
+
+
+
+The organization restricts invites to an allowed list of email domains, and the list is empty or does not include the email address's domain.
+
+error_code: "email_domain_not_allowed"
+
+
+
+
+
+InviteAlreadyExistsErrorDetails object{ error_code }
+
+
+
+A pending invite already exists for the email address. The message names the invite.
+
+error_code: "invite_already_exists"
+
+
+
+
+
 OrganizationInvite object{ type: "invite", id, accepted_at, 6 more }
 
 
@@ -13496,6 +13686,30 @@ RFC 3339 timestamp of when the RBAC Group was last updated.
 
 formatdate-time
 
+
+
+RBACGroupGrantsOwnerAccessErrorDetails object{ error_code }
+
+
+
+A role attached to an RBAC Group in the request grants owner access, so this API does not add members to that group (directly or through an invite), remove its members, or delete it. Make the change in the organization's admin settings in Claude.
+
+error_code: "rbac_group_grants_owner_access"
+
+
+
+
+
+RBACGroupOwnerAccessUnconfirmedErrorDetails object{ error_code }
+
+
+
+The API could not finish checking whether an RBAC Group in the request grants owner access, so it made no change. Retrying the same request will not help. Make the change in the organization's admin settings in Claude.
+
+error_code: "rbac_group_owner_access_unconfirmed"
+
+
+
 #### RBAC Groups[Members](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members)
 
 ##### [List RBAC Group Members](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members/list)
@@ -13589,7 +13803,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-data: array of [RBACRole](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role) { type: "rbac_role", id, created_at, 2 more }
+data: array of [RBACRole](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role) { type: "rbac_role", id, created_at, 3 more }
 
 
 
@@ -13625,7 +13839,49 @@ display_name: string
 
 
 
-Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
+Name of the RBAC Role. For a built-in role, this is Anthropic's name for the access that the role grants. Anthropic may change this name, so to keep a lasting reference to a role, store its `id`.
+
+
+
+source: [RBACRoleSource](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role_source)
+
+
+
+Whether the RBAC Role is built-in or custom. More values of `type` may be added, so do not treat every role that is not `built_in` as `custom`.
+
+One of the following:
+
+
+
+RBACRoleSourceBuiltIn object{ type: "built_in" }
+
+
+
+
+
+type: "built_in"
+
+
+
+Anthropic provisions the RBAC Role, and the organization's administrators cannot change or delete it.
+
+defaultbuilt_in
+
+
+
+RBACRoleSourceCustom object{ type: "custom" }
+
+
+
+
+
+type: "custom"
+
+
+
+The organization's administrators can change and delete the RBAC Role.
+
+defaultcustom
 
 
 
@@ -13672,6 +13928,9 @@ Response 200
       "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
       "created_at": "2024-10-30T23:58:27.427722Z",
       "display_name": "Project Editor",
+      "source": {
+        "type": "built_in"
+      },
       "type": "rbac_role",
       "updated_at": "2024-10-30T23:58:27.427722Z"
     }
@@ -13694,6 +13953,9 @@ Response 200
       "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
       "created_at": "2024-10-30T23:58:27.427722Z",
       "display_name": "Project Editor",
+      "source": {
+        "type": "built_in"
+      },
       "type": "rbac_role",
       "updated_at": "2024-10-30T23:58:27.427722Z"
     }
@@ -13807,7 +14069,7 @@ action: string
 
 Action the permission grants on the resource.
 
-The vocabulary follows the resource: an `organization` grant carries a product-feature entitlement (for example `chat`), an admin-panel permission entitlement (`permission_*`), or a blanket capability-access mode — `capability_access_all` grants every product-feature entitlement except `inference_hooks_inspection`, which a role holds only through its own row, and `capability_access_all_ga` grants the generally-available subset of those as it stands at permission-check time; neither mode grants model-access entitlements. A consumer enumerating a role's per-feature grants should treat a blanket row as granting every product-feature entitlement it covers, or it will under-report the role's effective access. A `connector_tool` grant carries a tool-access action (`use` or `always_allow`); a `connector_scope` grant carries the scope action `grant` (the role may receive the named OAuth scope when tokens are minted for the connector); `connector` and `all_connectors` grants carry a tool-access action, the scope action, or an authentication-method action (`interactive` or `managed`).
+The vocabulary follows the resource: an `organization` grant carries a product-feature entitlement (for example `chat`), an admin-panel permission entitlement (`permission_*`), or a blanket capability-access mode — `capability_access_all` grants every product-feature entitlement except `inference_hooks_inspection`, which a role holds only through its own row, and `capability_access_all_ga` grants the subset of those for stable features as it stands at permission-check time; neither mode grants model-access entitlements. A consumer enumerating a role's per-feature grants should treat a blanket row as granting every product-feature entitlement it covers, or it will under-report the role's effective access. A `connector_tool` grant carries a tool-access action (`use` or `always_allow`); a `connector_scope` grant carries the scope action `grant` (the role may receive the named OAuth scope when tokens are minted for the connector); `connector` and `all_connectors` grants carry a tool-access action, the scope action, or an authentication-method action (`interactive` or `managed`).
 
 
 
@@ -14231,53 +14493,9 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-RBACRole object{ type: "rbac_role", id, created_at, 2 more }
+RBACRole object{ type: "rbac_role", id, created_at, 3 more }
 
 
-
-
-
-type: "rbac_role"
-
-
-
-Object type.
-
-For RBAC Roles, this is always `"rbac_role"`.
-
-defaultrbac_role
-
-id: string
-
-
-
-ID of the RBAC Role.
-
-
-
-created_at: string
-
-
-
-RFC 3339 datetime string indicating when the RBAC Role was created.
-
-formatdate-time
-
-display_name: string
-
-
-
-Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
-
-
-
-updated_at: string
-
-
-
-RFC 3339 datetime string indicating when the RBAC Role was last updated.
-
-formatdate-time
 
 Get RBAC Role
 
@@ -14300,6 +14518,9 @@ Response 200
   "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
   "created_at": "2024-10-30T23:58:27.427722Z",
   "display_name": "Project Editor",
+  "source": {
+    "type": "built_in"
+  },
   "type": "rbac_role",
   "updated_at": "2024-10-30T23:58:27.427722Z"
 }
@@ -14316,6 +14537,9 @@ Response 200
   "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
   "created_at": "2024-10-30T23:58:27.427722Z",
   "display_name": "Project Editor",
+  "source": {
+    "type": "built_in"
+  },
   "type": "rbac_role",
   "updated_at": "2024-10-30T23:58:27.427722Z"
 
@@ -14361,53 +14585,81 @@ Retrieve an RBAC Role by ID.
 
 
 
-RBACRole object{ type: "rbac_role", id, created_at, 2 more }
+RBACRole object{ type: "rbac_role", id, created_at, 3 more }
 
 
 
 
 
-type: "rbac_role"
+RBACRoleSource = [RBACRoleSourceBuiltIn](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role_source_built_in) or [RBACRoleSourceCustom](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role_source_custom)
 
 
 
-Object type.
-
-For RBAC Roles, this is always `"rbac_role"`.
-
-defaultrbac_role
-
-id: string
-
-
-
-ID of the RBAC Role.
+One of the following:
 
 
 
-created_at: string
+RBACRoleSourceBuiltIn object{ type: "built_in" }
 
 
-
-RFC 3339 datetime string indicating when the RBAC Role was created.
-
-formatdate-time
-
-display_name: string
-
-
-
-Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
 
 
 
-updated_at: string
+type: "built_in"
 
 
 
-RFC 3339 datetime string indicating when the RBAC Role was last updated.
+Anthropic provisions the RBAC Role, and the organization's administrators cannot change or delete it.
 
-formatdate-time
+defaultbuilt_in
+
+
+
+RBACRoleSourceCustom object{ type: "custom" }
+
+
+
+
+
+type: "custom"
+
+
+
+The organization's administrators can change and delete the RBAC Role.
+
+defaultcustom
+
+
+
+RBACRoleSourceBuiltIn object{ type: "built_in" }
+
+
+
+
+
+type: "built_in"
+
+
+
+Anthropic provisions the RBAC Role, and the organization's administrators cannot change or delete it.
+
+defaultbuilt_in
+
+
+
+RBACRoleSourceCustom object{ type: "custom" }
+
+
+
+
+
+type: "custom"
+
+
+
+The organization's administrators can change and delete the RBAC Role.
+
+defaultcustom
 
 #### RBAC Roles[Permissions](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/permissions)
 
@@ -18945,6 +19197,18 @@ Remove a member from the organization.
 
 
 
+CannotRemoveLastMemberErrorDetails object{ error_code }
+
+
+
+The user is the organization's only member. Add another member before removing this one.
+
+error_code: "cannot_remove_last_member"
+
+
+
+
+
 OrganizationUser object{ type: "user", id, added_at, 3 more }
 
 
@@ -19298,7 +19562,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces \
     -H 'anthropic-version: 2026-10-21' \
     -H "Authorization: Bearer $ANTHROPIC_API_KEY" \
     -d '{
-          "name": "x",
+          "name": "Workspace Name",
           "display_color": "#6C5BB9",
           "external_key_id": "ekey_01SDCCSbTxrXDpWc1phhtcfK",
           "tags": {
@@ -19407,6 +19671,12 @@ before_id: optional string
 
 
 ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
+
+ids: optional array of string
+
+
+
+Only the Workspaces with these IDs, at most 100. `include_archived` and `include_default` still apply, and IDs of Workspaces the caller can't list are left out.
 
 
 
@@ -22790,7 +23060,7 @@ user_profile_id: optional string
 
 
 
-ID of a user profile to attach to the Workspace. Every inference request through the Workspace must then name this user profile; the API rejects a request that names none or a different one. Once set, it can't be replaced or removed (sending the same ID again changes nothing); only deleting the user profile clears it. The default Workspace can't have a user profile.
+ID of a user profile to attach to the Workspace. Every inference request through the Workspace must then name this user profile; the API rejects a request that names none or a different one. Once set, it can't be replaced or removed (sending the same ID again changes nothing); only deleting the user profile clears it. It can't be set on a Workspace whose External Key isn't bound to this user profile. The default Workspace can't have a user profile.
 
 ##### Returns
 
@@ -22814,6 +23084,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID \
     -d '{
           "display_color": "#6C5BB9",
           "external_key_id": "ekey_01SDCCSbTxrXDpWc1phhtcfK",
+          "name": "Workspace Name",
           "tags": {
             "env": "prod",
             "team": "platform"
@@ -23116,6 +23387,18 @@ One of the following:
 
 
 
+KeyProfileMismatchErrorDetails object{ error_code }
+
+
+
+After this request, the External Key and the Workspace would not have the same user profile. A key and its Workspace must have the same user profile, or both have none.
+
+error_code: "key_profile_mismatch"
+
+
+
+
+
 NoBillingWorkspaceRole = "workspace_admin" or "workspace_developer" or "workspace_restricted_developer" or "workspace_user"
 
 
@@ -23203,6 +23486,40 @@ One of the following:
 "workspace_user"
 
 
+
+
+
+WorkspaceMemberLimitExceededErrorDetails object{ error_code }
+
+
+
+The workspace has reached the member limit that Anthropic set for it.
+
+error_code: "workspace_member_limit_exceeded"
+
+
+
+WorkspacePolicyField = "external_key_id"
+
+
+
+
+
+WorkspacePolicyViolationErrorDetails object{ error_code, field }
+
+
+
+The request breaks the organization's Workspace Policy. The message says which rule it broke; an organization admin can see and change the policy in the Console.
+
+error_code: "workspace_policy_violation"
+
+
+
+field: [WorkspacePolicyField](https://platform.claude.com/docs/en/api/http/organization/workspaces#workspace_policy_field)
+
+
+
+The request field the broken rule applies to.
 
 
 
@@ -23335,6 +23652,30 @@ Retrieve information about the organization associated with the authenticated AP
 
 
 
+ConcurrentMembershipChangeErrorDetails object{ error_code }
+
+
+
+Another change to the organization's members is in progress. Retry the request once it completes.
+
+error_code: "concurrent_membership_change"
+
+
+
+
+
+OrgMemberLimitExceededErrorDetails object{ error_code }
+
+
+
+The organization has reached the member limit that Anthropic set for it. Pending invites count toward the limit.
+
+error_code: "org_member_limit_exceeded"
+
+
+
+
+
 OrganizationInfo object{ type: "organization", id, name }
 
 
@@ -23408,6 +23749,18 @@ One of the following:
 
 
 "user"
+
+
+
+
+
+RBACRoleNotFoundErrorDetails object{ error_code }
+
+
+
+No RBAC Role with this ID was found.
+
+error_code: "rbac_role_not_found"
 
 
 
@@ -23764,3 +24117,167 @@ Retrieve your organization's Compliance Settings.
 POST/v1/organizations/compliance_settings
 
 Update your organization's Compliance Settings.
+
+#### OrganizationAnalytics[Summaries](https://platform.claude.com/docs/en/api/http/organization/analytics/summaries)
+
+##### [Get Activity Summaries](https://platform.claude.com/docs/en/api/http/organization/analytics/summaries/list)
+
+GET/v1/organizations/analytics/summaries
+
+Get organization-wide activity summaries for a date range.
+
+#### OrganizationAnalytics[Users](https://platform.claude.com/docs/en/api/http/organization/analytics/users)
+
+##### [List User Activity](https://platform.claude.com/docs/en/api/http/organization/analytics/users/list)
+
+GET/v1/organizations/analytics/users
+
+Get per-user activity for a given day, with cursor-based pagination.
+
+#### OrganizationAnalyticsAppsChat[Projects](https://platform.claude.com/docs/en/api/http/organization/analytics/apps/chat/projects)
+
+##### [Get Chat Project Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/apps/chat/projects/list)
+
+GET/v1/organizations/analytics/apps/chat/projects
+
+Get per-project activity for a given day, with cursor-based pagination.
+
+#### OrganizationAnalytics[Connectors](https://platform.claude.com/docs/en/api/http/organization/analytics/connectors)
+
+##### [Get Connector Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/connectors/list)
+
+GET/v1/organizations/analytics/connectors
+
+Get per-connector usage for a given day, with cursor-based pagination.
+
+#### OrganizationAnalytics[Plugins](https://platform.claude.com/docs/en/api/http/organization/analytics/plugins)
+
+##### [Get Plugin Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/plugins/list)
+
+GET/v1/organizations/analytics/plugins
+
+Get per-plugin install + invocation usage for a given day, with pagination.
+
+#### OrganizationAnalytics[Skills](https://platform.claude.com/docs/en/api/http/organization/analytics/skills)
+
+##### [Get Skill Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/skills/list)
+
+GET/v1/organizations/analytics/skills
+
+Get per-skill usage for a given day, with cursor-based pagination.
+
+#### OrganizationAnalytics[Artifacts](https://platform.claude.com/docs/en/api/http/organization/analytics/artifacts)
+
+##### [Get Artifact Activity](https://platform.claude.com/docs/en/api/http/organization/analytics/artifacts/list)
+
+GET/v1/organizations/analytics/artifacts
+
+Get artifact-creation activity for a given day, broken out by MIME type.
+
+#### OrganizationSpend Limits[Effective](https://platform.claude.com/docs/en/api/http/organization/spend_limits/effective)
+
+##### [List Effective Spend Limits](https://platform.claude.com/docs/en/api/http/organization/spend_limits/effective/list)
+
+GET/v1/organizations/spend_limits/effective
+
+List each member's effective spend limit and period-to-date spend.
+
+#### OrganizationSpend Limits[Increase Requests](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests)
+
+##### [List Spend Limit Increase Requests](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/list)
+
+GET/v1/organizations/spend_limit_increase_requests
+
+List spend limit increase requests, most recent first.
+
+##### [Get Spend Limit Increase Request](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/retrieve)
+
+GET/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}
+
+Retrieve a spend limit increase request.
+
+##### [Approve Spend Limit Increase Request](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/approve)
+
+POST/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}/approve
+
+Approve a pending spend limit increase request.
+
+##### [Deny Spend Limit Increase Request](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/deny)
+
+POST/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}/deny
+
+Deny a pending spend limit increase request.
+
+#### Organization[RBAC Groups](https://platform.claude.com/docs/en/api/http/organization/rbac_groups)
+
+##### [Create RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/create)
+
+POST/v1/organizations/rbac_groups
+
+Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`.
+
+##### [List RBAC Groups](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/list)
+
+GET/v1/organizations/rbac_groups
+
+List RBAC Groups in the Claude Enterprise tenant.
+
+##### [Get RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/retrieve)
+
+GET/v1/organizations/rbac_groups/{rbac_group_id}
+
+Retrieve an RBAC Group by ID.
+
+##### [Update RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/update)
+
+POST/v1/organizations/rbac_groups/{rbac_group_id}
+
+Update an RBAC Group's name. Groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+##### [Delete RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/delete)
+
+DELETE/v1/organizations/rbac_groups/{rbac_group_id}
+
+Delete an RBAC Group. Groups provisioned by an identity provider (source type `"scim"`) cannot be deleted via the API while an organization in the tenant uses SCIM provisioning.
+
+#### OrganizationRBAC Groups[Members](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members)
+
+##### [List RBAC Group Members](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members/list)
+
+GET/v1/organizations/rbac_groups/{rbac_group_id}/members
+
+List members of an RBAC Group.
+
+##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members/add)
+
+POST/v1/organizations/rbac_groups/{rbac_group_id}/members
+
+Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members/remove)
+
+DELETE/v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}
+
+Remove a User from an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+#### Organization[RBAC Roles](https://platform.claude.com/docs/en/api/http/organization/rbac_roles)
+
+##### [List RBAC Roles](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/list)
+
+GET/v1/organizations/rbac_roles
+
+List RBAC Roles in the organization.
+
+##### [Get RBAC Role](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/retrieve)
+
+GET/v1/organizations/rbac_roles/{rbac_role_id}
+
+Retrieve an RBAC Role by ID.
+
+#### OrganizationRBAC Roles[Permissions](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/permissions)
+
+##### [List RBAC Role Permissions](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/permissions/list)
+
+GET/v1/organizations/rbac_roles/{rbac_role_id}/permissions
+
+List the permissions an RBAC Role grants.

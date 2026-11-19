@@ -2,13 +2,11 @@
 title: "Ping Identity SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917875-ping-identity-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:04Z"
+fetched_at: "2026-11-18T06:27:55Z"
 tags: ["enterprise"]
 ---
 
 # Ping Identity SSO/SCIM email mismatch
-
-March 24, 2026
 
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. Ping Identity products (PingOne and PingFederate) have flexible, layered attribute configuration. When SCIM provisioning and SAML/OIDC SSO pull from different user attributes, a mismatch blocks access.
@@ -25,7 +23,7 @@ People may experience one or more of the following when attempting to access you
 
 - **Landing on a free personal account** — If organization creation is not restricted, the person bypasses your organization entirely.
 
-- **"Please confirm your email" mismatch** — The SSO callback shows a different email than the one the person entered at login.
+- **"Check which account you're signed in to" mismatch** — The SSO callback shows a different email than the one the person entered at login.
 
 - **Claude Code authentication failure** — The Claude Code CLI shows an email mismatch error during the authentication flow.
 
@@ -115,7 +113,7 @@ Claude requires an exact string match between the SCIM-provisioned email and the
 
 After correcting the attribute mapping and completing the full sync:
 
-- **Rogue free accounts:** If organization creation was not restricted before the fix, some people may have inadvertently created free personal Claude accounts. Contact **[our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to have these removed.
+- **Rogue free accounts:** If organization creation was not restricted before the fix, some people may have inadvertently created free personal Claude accounts. Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support.md)** to have these removed.
 
 - **Ghost accounts (wrong-email seats):** Contact our Support team to deprovision these.
 
@@ -147,7 +145,7 @@ After correcting the attribute mapping and completing the full sync:
 
 ## **When to contact Support**
 
-Contact **[our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** with your organization's domain, the affected person's email, and screenshots of your attribute mappings when:
+Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support.md)** with your organization's domain, the affected person's email, and screenshots of your attribute mappings when:
 
 - SCIM and SSO attributes appear identical but people still cannot access their seats.
 

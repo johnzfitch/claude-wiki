@@ -2,7 +2,7 @@
 title: "Notice regarding consumption tax (JCT) for Japanese customers | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14051822-notice-regarding-consumption-tax-jct-for-japanese-customers"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:01Z"
+fetched_at: "2026-11-18T06:28:26Z"
 tags: ["billing"]
 ---
 

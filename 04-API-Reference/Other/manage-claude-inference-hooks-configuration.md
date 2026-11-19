@@ -2,7 +2,7 @@
 title: "Configure Inference hooks - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/inference-hooks-configuration"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-07T06:23:45Z"
+fetched_at: "2026-11-15T06:24:21Z"
 tags: ["api", "hooks", "prompting", "security"]
 ---
 

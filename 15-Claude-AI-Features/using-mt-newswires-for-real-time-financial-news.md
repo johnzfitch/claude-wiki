@@ -2,7 +2,7 @@
 title: "Using MT Newswires for real-Time financial news · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12663693-using-mt-newswires-for-real-time-financial-news"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:58Z"
+fetched_at: "2026-11-18T06:28:19Z"
 tags: ["claude-ai"]
 ---
 
@@ -52,7 +52,7 @@ You will need to contact MT Newswires to get access to the MCP server.
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector” at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Enter integration URL provided by MT Newswires
 

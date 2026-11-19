@@ -2,7 +2,7 @@
 title: "Accessing GitHub - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/github"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:21Z"
+fetched_at: "2026-11-13T06:36:50Z"
 tags: ["api", "git", "github", "mcp"]
 ---
 
@@ -19,21 +19,25 @@ Connect your agent to GitHub repositories for cloning, reading, and creating pul
 
 
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 You can mount a GitHub repository to your session sandbox and connect to the GitHub MCP for making pull requests.
 
@@ -311,24 +315,59 @@ Mount files in the sandbox alongside your repositories
 ## Availability
 
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for GitHub access are the same across all supported platforms.
 
-- All supported platforms
+Claude API
 
-### Required beta headers
+Status  
+Beta
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Managed Agents
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Beta header  
+Requires
 
-Header
+managed-agents-2026-04-01
 
-- `managed-agents-2026-04-01`
-  
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -342,8 +381,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

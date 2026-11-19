@@ -2,9 +2,9 @@
 title: "OAuth Client Credentials - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/auth/oauth-client-credentials"
 category: "06-MCP-Tools/Extensions"
-fetched_at: "2026-11-01T06:24:03Z"
-last_modified: "Sat, 31 Oct 2026 19:50:35 GMT"
-tags: ["cli", "mcp", "mcp-extensions", "oauth"]
+fetched_at: "2026-11-16T06:25:49Z"
+last_modified: "Mon, 16 Nov 2026 06:23:10 GMT"
+tags: ["cli", "mcp", "mcp-extensions", "oauth", "sdk"]
 ---
 
 ## On this page
@@ -41,17 +41,11 @@ The OAuth Client Credentials extension (`io.modelcontextprotocol/oauth-client-cr
 
 Full technical specification for the OAuth Client Credentials extension.
 
-
-[​](#what-it-is)
-
-What it is
+## [](#what-it-is)What it is
 
 The standard MCP authorization flow requires a user to interactively approve access — a browser opens, the user logs in, and grants permission. That works well for humans, but breaks down when there’s no user present. The OAuth Client Credentials extension solves this by letting a client authenticate using application-level credentials (a client ID and secret, or a signed JWT assertion) rather than delegated user credentials. The client proves its identity directly to the authorization server, which issues an access token without requiring a browser redirect or user interaction.
 
-
-[​](#when-to-use-it)
-
-When to use it
+## [](#when-to-use-it)When to use it
 
 Use OAuth Client Credentials when:
 
@@ -62,30 +56,21 @@ Use OAuth Client Credentials when:
 
 If your integration has a human user who should explicitly authorize access, use the standard MCP authorization flow instead.
 
-
-[​](#how-it-works)
-
-How it works
+## [](#how-it-works)How it works
 
 The extension supports two credential formats:
 
-
-[​](#jwt-bearer-assertions-recommended)
-
-JWT Bearer Assertions (recommended)
+### [](#jwt-bearer-assertions-recommended)JWT Bearer Assertions (recommended)
 
 Defined in [RFC 7523](https://datatracker.ietf.org/doc/html/rfc7523), JWT Bearer Assertions let the client sign a token with its private key and present it as proof of identity. The authorization server validates the signature using the client’s registered public key. The JWT assertion typically includes:
 
 - `iss`: Client ID (the issuer)
 - `sub`: Client ID (subject being authenticated)
-- `aud`: Authorization server token endpoint URL
+- `aud`: Authorization server issuer identifier (the `issuer` value from its metadata), as the only value. [RFC 10070](https://www.rfc-editor.org/rfc/rfc10070.html) disallows the token endpoint URL, which RFC 7523 permitted
 - `exp`: Expiration time
 - `iat`: Issued-at time
 
-
-[​](#client-secrets)
-
-Client Secrets
+### [](#client-secrets)Client Secrets
 
 For simpler deployments, the extension also supports the standard client credentials flow using a `client_id` and `client_secret`. The client sends its credentials directly to the authorization server’s token endpoint and receives an access token in return.
 
@@ -96,15 +81,9 @@ Client secrets are **long-lived credentials** that grant access without user int
 - Scope credentials to the minimum permissions required.
 - Prefer JWT assertions when possible — they are short-lived and do not require transmitting the signing key.
 
+## [](#implementation-guide)Implementation guide
 
-[​](#implementation-guide)
-
-Implementation guide
-
-
-[​](#for-mcp-clients)
-
-For MCP clients
+### [](#for-mcp-clients)For MCP clients
 
 To use the OAuth Client Credentials extension, your client must:
 
@@ -155,10 +134,7 @@ Handle token refresh
 
 Client credentials tokens typically have shorter lifetimes than user-delegated tokens. Implement token refresh logic to obtain a new token before expiry.
 
-
-[​](#for-mcp-servers)
-
-For MCP servers
+### [](#for-mcp-servers)For MCP servers
 
 To accept client credentials tokens, your server must:
 
@@ -195,10 +171,7 @@ Optionally (but recommended for discoverability), include the extension in the `
 }
 ```
 
-
-[​](#sdk-examples)
-
-SDK examples
+## [](#sdk-examples)SDK examples
 
 The official MCP SDKs provide built-in support for client credentials authentication. Both handle token acquisition and refresh automatically.
 
@@ -224,10 +197,7 @@ Create a provider and connect
 
 Each sample pins the issuer of the authorization server that provisioned the credentials, so the client refuses to send them to any other authorization server the MCP server might advertise.Choose the credential format that matches your setup:
 
-
-[​](#using-a-client-secret)
-
-Using a client secret
+#### [](#using-a-client-secret)Using a client secret
 
 - TypeScript
 
@@ -325,10 +295,7 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-
-[​](#using-a-jwt-private-key)
-
-Using a JWT private key
+#### [](#using-a-jwt-private-key)Using a JWT private key
 
 - TypeScript
 
@@ -438,19 +405,13 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-
-[​](#client-support)
-
-Client support
+## [](#client-support)Client support
 
 Support for this extension varies by client. Extensions are opt-in and never active by default.
 
 Check the [client matrix](extensions-client-matrix.md) for current implementation status across MCP clients.
 
-
-[​](#related-resources)
-
-Related resources
+## [](#related-resources)Related resources
 
 ## ext-auth repository
 

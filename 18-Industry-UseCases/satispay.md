@@ -2,7 +2,7 @@
 title: "Satispay Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/satispay"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:16Z"
+fetched_at: "2026-11-18T06:29:07Z"
 tags: ["agents", "case-studies", "claude-code"]
 ---
 
@@ -93,13 +93,13 @@ Two pilots already running point to what comes next. Issue-to-PR automation has 
 ## Related stories
 
 
+### Transforming e-commerce in Latin America
+
+
+### Scaling AI for over 12K employees
+
+
 ### How Qonto delegates financial admin for small businesses with Claude on Amazon Bedrock
 
 
 ### Pictet turns weeks of work into hours with Claude Code
-
-
-### OffDeal powers every stage of M&A advisory with one Claude-based agent
-
-
-### Money Forward builds an AI-native engineering organization with Claude Code

@@ -2,7 +2,7 @@
 title: "Thinking in tool and multi-turn workflows - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/thinking-tool-workflows"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:31Z"
+fetched_at: "2026-11-13T06:34:00Z"
 tags: ["api"]
 ---
 
@@ -22,22 +22,25 @@ Walk through a complete two-turn tool-use round trip that preserves thinking blo
 
 To learn how zero data retention (ZDR) applies to this feature, see [API and data retention](../Other/manage-claude-api-and-data-retention.md).
 
-This page walks through a complete two-turn tool-use round trip with thinking enabled: Claude thinks, requests a tool call, receives the result, and finishes its answer, with the thinking blocks handled correctly at every step. The full rules live on the [Thinking](build-with-claude-thinking.md) page, in [Thinking with tool use](build-with-claude-thinking.md#thinking-with-tool-use) and [Preserving thinking blocks](build-with-claude-thinking.md#preserving-thinking-blocks); this page shows those rules applied in runnable code.
+This page walks through a complete two-turn tool-use round trip with thinking enabled. Claude thinks, requests a tool call, receives the result, and finishes its answer. At every step, your code handles the thinking blocks correctly. The full rules are on the Thinking page, in [Thinking with tool use](build-with-claude-thinking.md#thinking-with-tool-use) and [Preserving thinking blocks](build-with-claude-thinking.md#preserving-thinking-blocks).
 
 ## The rules this walkthrough applies
 
-Each link leads to the full statement on the Thinking page:
+Each rule links to its full statement:
 
-- [Limit tool choice to `auto` or `none` in manual mode](build-with-claude-thinking.md#thinking-with-tool-use): `tool_choice` options that force tool use return an error with manual extended thinking (`thinking: {type: "enabled"}`). Adaptive thinking supports forced tool use, except on Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, which return a 400 error. Where forced tool use is accepted, it skips thinking: the response starts with the tool call.
+- [Limit tool choice to `auto` or `none` in manual mode](build-with-claude-thinking.md#thinking-with-tool-use): with manual extended thinking (`thinking: {type: "enabled"}`), `tool_choice` options that force tool use return an error.
+- [Check forced tool use on your model in adaptive mode](build-with-claude-thinking.md#thinking-with-tool-use): with adaptive thinking, the result depends on the model:
+  - **Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, and Claude Mythos 5.1:** Forced tool use returns a 400 error.
+  - **Other models:** Forced tool use is accepted, and it skips thinking. The response starts with the tool call.
 - [Keep one thinking configuration per assistant turn](build-with-claude-thinking.md#thinking-with-tool-use): a tool-use loop is one assistant turn, so change the configuration only between turns.
 - [Pass thinking blocks back complete and unmodified](build-with-claude-thinking.md#preserving-thinking-blocks): when you return a tool result, the thinking blocks from the assistant message must come back with it.
-- [Echo the assistant message exactly as received](build-with-claude-thinking.md#preserving-thinking-blocks): rebuilding the message or filtering out `redacted_thinking` blocks triggers a 400 error.
+- [Echo the assistant message exactly as received](build-with-claude-thinking.md#preserving-thinking-blocks): dropping thinking blocks loses the reasoning in them, even without an error.
 
-The samples use adaptive thinking; on models that support only extended thinking, substitute `thinking: {type: "enabled", budget_tokens: N}`. The round-trip rules are identical.
+The samples use adaptive thinking. On Claude Opus 4.5, Claude Sonnet 4.5, Claude Haiku 4.5, and earlier Claude 4 models, substitute `thinking: {type: "enabled", budget_tokens: N}`. Echo the assistant turn the same way.
 
 ## Walk through a two-turn tool-use round trip
 
-The example defines a `get_weather` tool, lets Claude think and request a tool call, then returns the tool result along with the assistant turn echoed exactly as received, thinking block included.
+The example defines a `get_weather` tool, lets Claude think and request a tool call, then returns the tool result with the assistant turn echoed exactly as received, thinking block included.
 
 1.  1
 
@@ -214,7 +217,7 @@ The example defines a `get_weather` tool, lets Claude think and request a tool c
 
 Interleaved thinking lets Claude think between tool calls, reasoning about each tool result before acting on it. The concept and per-model availability are covered in [Interleaved thinking](build-with-claude-thinking.md#interleaved-thinking) on the Thinking page; interleaving changes where thinking blocks appear, not whether tool calls can chain. The following comparison shows what interleaved thinking changes in a two-tool workflow:
 
-### Tool use without interleaved thinking
+### Tool use without interleaved thinking
 
 Without interleaved thinking, Claude thinks once at the start of the assistant turn. Subsequent responses after tool results continue without new thinking blocks.
 
@@ -237,7 +240,7 @@ Response 3: [text] "The total revenue is $7,500, which is 44% above your
 
 
 
-### Tool use with interleaved thinking
+### Tool use with interleaved thinking
 
 With interleaved thinking enabled, Claude can think after receiving each tool result, allowing it to reason about intermediate results before continuing.
 
@@ -278,4 +281,4 @@ Steer how often and how deeply Claude thinks with effort levels and prompt-based
 
 [Extended thinking](build-with-claude-extended-thinking.md)
 
-Manual thinking budgets on older models: `budget_tokens` mechanics and migration to adaptive.
+Manual thinking budgets: `budget_tokens` mechanics and migration to adaptive thinking.

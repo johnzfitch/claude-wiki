@@ -2,7 +2,7 @@
 title: "Use incognito chats | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12260368-using-incognito-chats"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:40Z"
+fetched_at: "2026-11-18T06:27:46Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -35,7 +35,7 @@ These differ from regular chats in several ways:
 
   - Incognito chats will not be included in future memory entries.
 
-- Incognito chats aren't included in **[your monthly recap](see-your-monthly-recap-claude-help-center.md)**.
+- Incognito chats aren't included in **[your monthly recap](https://support.claude.com/en/articles/15672559)**.
 
 ------------------------------------------------------------------------
 

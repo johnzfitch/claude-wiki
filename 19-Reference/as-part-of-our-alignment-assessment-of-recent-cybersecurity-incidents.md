@@ -2,8 +2,7 @@
 title: "As part of our alignment assessment of recent cybersecurity incidents"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/8359003bfb12a2f01ce84ad3df1d3a3e2f15a8eb.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:37:55Z"
-last_modified: "Wed, 09 Sep 2026 18:50:42 GMT"
+fetched_at: "2026-11-18T06:28:56Z"
 tags: ["news-research", "security"]
 ---
 

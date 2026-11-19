@@ -136,7 +136,7 @@ This research represents just the beginning. As AI capabilities expand and inter
 
 ## Appendices
 
-We provide more details in the [PDF Appendix](https://www-cdn.anthropic.com/bd374a9430babc8f165af95c0db9799bdaf64900.pdf) to this post.
+We provide more details in the [PDF Appendix](this-appendix-contains-additional-details-analyses-and-results-for-how.md) to this post.
 
 ## Footnotes
 

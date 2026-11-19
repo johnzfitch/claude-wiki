@@ -2,11 +2,14 @@
 title: "Antitrust Policy - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/antitrust"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-02T05:36:35Z"
+fetched_at: "2026-11-10T06:27:34Z"
+last_modified: "Tue, 10 Nov 2026 00:26:22 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Introduction](#introduction)
 - [Participation](#participation)
@@ -14,7 +17,7 @@ tags: ["mcp", "mcp-community"]
 - [Requirements/Standard Setting](#requirements%2Fstandard-setting)
 - [Contact Information](#contact-information)
 
-Governance
+Policies
 
 # Antitrust Policy
 
@@ -24,9 +27,7 @@ MCP Project Antitrust Policy for participants and contributors
 
 Copy pageCopy page
 
-**Effective: September 29, 2025**
-
-This policy applies when participating in MCP meetings, Working Groups, Interest Groups, and other collaborative forums where competitors may be present. Most individual contributors working on code or documentation don’t need to worry about this in day-to-day work - it’s primarily relevant for group discussions about standards and specifications.
+**Effective: September 29, 2025** This policy applies to MCP meetings, working groups, interest groups, and any other project forum where competitors may be present. See [Meetings and channels](community-working-interest-groups.md#meetings-and-channels) for how group meetings are run.
 
 
 [​](#introduction)

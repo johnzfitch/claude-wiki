@@ -2,7 +2,7 @@
 title: "Authentication - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:17Z"
+fetched_at: "2026-11-13T06:36:36Z"
 tags: ["api", "authentication"]
 ---
 
@@ -64,7 +64,7 @@ content-type: application/json
 
 You can also send the key in the legacy `x-api-key: YOUR_API_KEY` header in place of `Authorization`.
 
-Store API keys in a secrets manager, rotate them periodically, and disable or delete any key you suspect has leaked. On the [API keys](playground.md) page in the Claude Console, **Disable** is reversible (the Admin API reports the key’s `status` as `"inactive"`, and **Re-enable** returns it to `"active"`), whereas **Delete** is permanent: the key is archived and still appears in [List API Keys](../Endpoints/organization-api-keys-list.md) with `status: "archived"`. Expired keys can only be deleted. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable.
+Store API keys in a secrets manager, rotate them periodically, and disable or delete any key you suspect has leaked. On the [API keys](playground.md) page in the Claude Console, **Disable** is reversible (the Admin API reports the key’s `status` as `"inactive"`, and **Re-enable** returns it to `"active"`), whereas **Delete** is permanent: the key is archived and still appears in [List API Keys](../Endpoints/organization-api-keys-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. with `status: "archived"`. Expired keys can only be deleted. You can also set an [expiration](#key-expiration) when you create a key to limit how long a leaked credential stays usable. To limit where a leaked key works, turn on [IP allowlisting](manage-claude-ip-allowlist.md).
 
 cURL
 
@@ -102,7 +102,7 @@ If your API key isn’t scoped to a workspace, you must specify the workspace ID
 
 The [Admin API](manage-claude-admin-api.md) accepts a personal key or service account key only if the key isn’t scoped to a specific workspace.
 
-You can find a workspace’s ID in the **ID** column on the [Workspaces](playground.md) page (`platform.claude.com/settings/workspaces`) in the Claude Console, or by calling the [List Workspaces](../Endpoints/organization-workspaces-list.md) endpoint. List Workspaces includes the Default Workspace only when you pass `include_default=true`; its ID is also in the `anthropic-workspace-id` [response header](manage-claude-workspaces.md#identify-the-workspace-behind-an-api-response) of any request that runs there.
+You can find a workspace’s ID in the **ID** column on the [Workspaces](playground.md) page (`platform.claude.com/settings/workspaces`) in the Claude Console, or by calling the [List Workspaces](../Endpoints/organization-workspaces-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint. List Workspaces includes the Default Workspace only when you pass `include_default=true`; its ID is also in the `anthropic-workspace-id` [response header](manage-claude-workspaces.md#identify-the-workspace-behind-an-api-response) of any request that runs there.
 
 cURL
 
@@ -174,7 +174,7 @@ Anthropic emails the key’s creator as the expiration approaches: 7 days before
 
 After a key expires, requests made with it return a `401 authentication_error`. Create a new key to restore access; expired keys cannot be reactivated.
 
-The Console API keys table shows each key’s expiration, and the Admin API reports each key’s `expires_at` timestamp on the [List API Keys](../Endpoints/organization-api-keys-list.md) and [Retrieve API Key](../Endpoints/organization-api-keys-retrieve.md) endpoints, so you can audit and rotate keys before they expire. The field is `null` for keys without an expiration.
+The Console API keys table shows each key’s expiration, and the Admin API reports each key’s `expires_at` timestamp on the [List API Keys](../Endpoints/organization-api-keys-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. and [Retrieve API Key](../Endpoints/organization-api-keys-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoints, so you can audit and rotate keys before they expire. The field is `null` for keys without an expiration.
 
 Expiration limits the lifetime of a leaked credential, but it is not a substitute for secret hygiene. Regardless of expiration, store keys in a secrets manager and disable or delete any key you suspect has leaked.
 
@@ -212,7 +212,7 @@ To configure federation, you create three resources in the Claude Console (a ser
 
 ## App Attest
 
-App Attest authenticates iOS and macOS apps that call the Claude API directly from the device. Each installation proves that it is a genuine, unmodified build of an app you registered in the Claude Console, using Apple’s App Attest service. Anthropic then issues the device a short-lived access token that bills usage to your workspace. Tokens are scoped to your workspace, expire after 1 hour, and authorize only [Messages API](../Endpoints/messages-create.md) calls.
+App Attest authenticates iOS and macOS apps that call the Claude API directly from the device. Each installation proves that it is a genuine, unmodified build of an app you registered in the Claude Console, using Apple’s App Attest service. Anthropic then issues the device a short-lived access token that bills usage to your workspace. Tokens are scoped to your workspace, expire after 1 hour, and authorize only [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. calls.
 
 To register your app and get a client ID, see [App Attest for iOS and macOS apps](manage-claude-app-attest.md).
 

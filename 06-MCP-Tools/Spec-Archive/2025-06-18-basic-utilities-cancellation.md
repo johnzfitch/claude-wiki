@@ -1,9 +1,9 @@
 ---
 title: "Cancellation - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2025-03-26/basic/utilities/cancellation"
+source_url: "https://modelcontextprotocol.io/specification/2025-06-18/basic/utilities/cancellation"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:25:22Z"
-last_modified: "Sat, 31 Oct 2026 02:27:36 GMT"
+fetched_at: "2026-11-10T06:31:56Z"
+last_modified: "Mon, 09 Nov 2026 22:46:46 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

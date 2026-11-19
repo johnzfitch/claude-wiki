@@ -2,7 +2,7 @@
 title: "Business Associate Agreements (BAA) for Commercial Customers | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:14Z"
+fetched_at: "2026-11-18T06:28:13Z"
 tags: ["enterprise", "rag"]
 ---
 
@@ -21,7 +21,7 @@ For clarity, the BAA only covers the single organization that accepted it, and e
 
 Not all API features are covered. See the **[Implementation Guide](https://trust.anthropic.com/resources?s=l1wrssd9hsbi4gak0tp5a6&name=%5Banthropic%5D-hipaa-ready-offering-implementation-guide)** for the full list of eligible and non-eligible features.
 
-**Important: [Covered Models](https://support.claude.com/en/articles/15425695-covered-models)** require 30-day data retention and aren't available with zero data retention (ZDR) enabled unless Anthropic has expressly authorized it for your organization. With the **[HIPAA configuration applied to Claude Code (local mode) and Claude Cowork (local mode)](https://support.claude.com/en/articles/17318731)** on a HIPAA-ready Enterprise plan, members can use Covered Models in both products under the BAA. Claude Code can't use Covered Models while your organization has ZDR for Claude Code, unless Anthropic has expressly authorized it for your organization.
+**Important: [Covered Models](../15-Claude-AI-Features/covered-models.md)** require 30-day data retention and aren't available with zero data retention (ZDR) enabled unless Anthropic has expressly authorized it for your organization. With the **[HIPAA configuration applied to Claude Code (local mode) and Claude Cowork (local mode)](https://support.claude.com/en/articles/17318731)** on a HIPAA-ready Enterprise plan, members can use Covered Models in both products under the BAA. Claude Code can't use Covered Models while your organization has ZDR for Claude Code, unless Anthropic has expressly authorized it for your organization.
 
 Below is a breakdown of what’s covered under the BAA, by feature and product surface. This article covers:
 

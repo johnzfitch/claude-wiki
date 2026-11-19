@@ -2,7 +2,7 @@
 title: "Cyber Verification Program Security Requirements | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17202708-cyber-verification-program-security-requirements"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:25:57Z"
+fetched_at: "2026-11-18T06:28:34Z"
 tags: ["account", "security"]
 ---
 
@@ -15,7 +15,7 @@ Customer must meet and maintain the following security requirements for each Cyb
 
 1.  **Security Contact.** Customer must provide Anthropic with a named security contact who may receive security and misuse alerts and is able to act on them.
 
-2.  **Incident Reporting.** Customer must report suspected breaches or misuse involving the grant to Anthropic within 72 hours, or within 24 hours for a security incident. Reporting can be done at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#daa9bfb9afa8b3aea39abbb4aeb2a8b5aab3b9f4b9b5b7) or your Account team contact.
+2.  **Incident Reporting.** Customer must report suspected breaches or misuse involving the grant to Anthropic within 72 hours, or within 24 hours for a security incident. Reporting can be done at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#deadbbbdabacb7aaa79ebfb0aab6acb1aeb7bdf0bdb1b3) or your Account team contact.
 
 3.  **Cooperation.** Customer must investigate any abuse that Anthropic identifies within 48 hours, work with Anthropic to remediate it, and respond to misuse inquiries within seven (7) days.
 

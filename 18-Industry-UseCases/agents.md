@@ -2,7 +2,7 @@
 title: "AI agents | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/agents"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:48Z"
+fetched_at: "2026-11-18T06:29:22Z"
 tags: ["agents", "case-studies"]
 ---
 
@@ -70,7 +70,7 @@ Please include a rationale for the classification.
 
 You are an AI assistant specialized in classifying customer support tickets. Your task is to analyze the content of a given ticket and assign it to the most appropriate category from a predefined list. You will also provide reasoning for your classification decision.
 
-First, let's review the available categories:
+First, let’s review the available categories:
 
 \<category_list\>  
 {{CATEGORY_LIST}}  
@@ -123,15 +123,21 @@ Claude Code is an agentic tool. Developers work with Claude directly from their 
 
 - 
 
-  > “Claude Fable 5.1 is the most capable model we've run on CursorBench 3.2, scoring 73.4% at max effort. We found it especially skilled at verifying its own work, allowing it to take on difficult coding tasks from start to finish.”
+  > “You can just throw Claude Fable 5.2 at new, ambiguous systems it has never seen before, and it will figure out how to actually work within them. It’s almost like an incident commander that can send out faster models to get quick signals and coordinate, which removes that burden from me as an operator.”
 
-  Sualeh Asif, Director of ML
+  Matt Lee, Senior Staff Engineer
 
 - 
 
-  > “As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”
+  > “The model is in my head. It understands the intent behind every prompt I’ve given it. I haven’t had to say ‘No, I meant…’ a single time. Projects we’ve been pushing along with other models for weeks got finished and approved by our teammates in a few days with Claude Fable 5.2, and the humans reviewing its code had less to say.”
 
-  Josh Boyer, Distinguished Engineer
+  Joe Haddad, Member of Technical Staff
+
+- 
+
+  > “I had Claude Fable 5.2 run a 10–12 hour security audit. It sent out about 170 reviewer agents and came back with a write-up, fix pull requests and a policy proposal. It works until the job is actually complete instead of stopping at a plausible checkpoint. Its self-correction and honesty about gaps impressed me. At high effort, I’d use this over what I run today for long unattended audits and doc-heavy work.”
+
+  Andrew Mager, Staff Engineer, Agentic Systems
 
 - 
 

@@ -2,7 +2,7 @@
 title: "Claude Code Best Practices \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-code-best-practices"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:49Z"
+fetched_at: "2026-11-18T06:29:02Z"
 tags: ["claude-code", "news-research"]
 ---
 

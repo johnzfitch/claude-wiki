@@ -2,7 +2,7 @@
 title: "C# SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/csharp"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:14Z"
+fetched_at: "2026-11-13T06:36:33Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -466,7 +466,7 @@ export ANTHROPIC_LOG=debug
 
 ### OpenTelemetry tracing
 
-When your application adds the SDK’s sources to its OpenTelemetry tracer provider with `AddSource("com.anthropic.sdk.csharp*")`, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
+When your application adds the SDK’s sources to its OpenTelemetry tracer provider with `AddSource("com.anthropic.sdk.csharp*")`, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Anthropic SDK](manage-claude-opentelemetry-sdk.md).
 
 ### Undocumented API functionality
 
@@ -478,8 +478,8 @@ The SDK is typed for convenient usage of the documented API. However, it also su
 
 For detailed platform setup guides with code examples, see:
 
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
+- [Amazon Bedrock (`bedrock-mantle`)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 - [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
@@ -489,11 +489,11 @@ See also [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-wit
 The C# SDK supports the following platforms through separate NuGet packages:
 
 - **Claude Models on Google Cloud (Google managed):** `Anthropic.Vertex`. See [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md) for client setup.
-- **Bedrock:** `Anthropic.Bedrock`. Use `AnthropicBedrockMantleClient` for the Messages-API Bedrock endpoint, or `AnthropicBedrockClient` (`bedrock-runtime` path). `AnthropicBedrockMantleClient` takes an optional `MantleAwsClientOptions` config object; `AnthropicBedrockClient` accepts `AnthropicBedrockCredentialsHelper.FromEnv()` or explicit credentials.
+- **Bedrock:** `Anthropic.Bedrock`. Which client you use depends on the endpoint:
+  - **`bedrock-mantle`:** `AnthropicBedrockMantleClient`. It takes an optional `MantleAwsClientOptions` config object.
+  - **`bedrock-runtime`:** `AnthropicBedrockClient`, for the `InvokeModel` API. It accepts `AnthropicBedrockCredentialsHelper.FromEnv()` or explicit credentials.
 - **Claude Platform on AWS:** `Anthropic.Aws`. Use `AnthropicAwsClient`; set `WorkspaceId` on the client or the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable (see [Workspaces](../Guides/build-with-claude-claude-platform-on-aws.md#workspaces)). Available in beta.
 - **Foundry:** `Anthropic.Foundry`. Use `AnthropicFoundryClient` with `DefaultAnthropicFoundryCredentials.FromEnv()` or explicit credentials.
-
-Use `AnthropicBedrockMantleClient` for new projects; `AnthropicBedrockClient` remains for existing applications using the Bedrock `InvokeModel` API.
 
 The C# SDK also supports Claude Models on Google Cloud (Anthropic managed) through `AnthropicGoogleCloudClient`, from the `Anthropic.GoogleCloud` package. This client is in beta. Set `WorkspaceId` on an optional `GoogleCloudClientOptions` value, or set the `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID` environment variable. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution).
 

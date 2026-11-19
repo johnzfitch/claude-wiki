@@ -2,38 +2,35 @@
 title: "Investigating unintended model actions in our evaluations and internal use \\ Anthropic"
 source_url: "https://www.anthropic.com/research/investigating-unintended-model-actions"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:49Z"
+fetched_at: "2026-11-14T06:26:02Z"
 tags: ["evaluation", "news-research"]
 ---
 
 # Investigating unintended model actions in our evaluations and internal use
 
-- Published
+Published  
+Oct 9, 2026
 
-  Oct 9, 2026
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-
-  See more...
+See more...
 
 Related articles
 
 - Alignment
 
-  Sep 9, 2026
+  Oct 23, 2026
 
-  [An alignment assessment of recent cybersecurity incidents](alignment-assessment-cybersecurity-incidents.md)
+  [An alignment assessment of the UK AISI cybertesting incident](alignment-assessment-ukaisi.md)
 
 [View more](https://www.anthropic.com/search?topic=alignment)
 
@@ -48,7 +45,7 @@ The behaviors can be grouped into four categories:
 
 We have chosen not to name the organizations involved in the examples below to avoid exposing vulnerabilities in their systems, and at their request. For this reason, we also provide less detail about each case than we otherwise would. Some of the cases described below involved websites run by U.S. government agencies at the federal, state, and local levels. We have briefed the White House on these cases and notified each agency involved.
 
-The cases we’ve identified to date in these categories had minimal real-world impact. We consider these behaviors to be significantly less severe from an alignment and security perspective than the cybersecurity incidents we reported on [July 30](investigating-incidents-cybersecurity-evals.md) and [September 9](alignment-assessment-cybersecurity-incidents.md). They resemble behaviors that we’ve described in our system cards since [Claude Mythos Preview](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf). Most are forms of *persistence*, in which Claude, when it cannot complete a task as given, works around a restriction instead of stopping.
+The cases we’ve identified to date in these categories had minimal real-world impact. We consider these behaviors to be significantly less severe from an alignment and security perspective than the cybersecurity incidents we reported on [July 30](investigating-incidents-cybersecurity-evals.md) and [September 9](alignment-assessment-cybersecurity-incidents.md). They resemble behaviors that we’ve described in our system cards since [Claude Mythos Preview](https://assets.claude.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf). Most are forms of *persistence*, in which Claude, when it cannot complete a task as given, works around a restriction instead of stopping.
 
 Although the impact of these behaviors was minimal and we had already turned off live internet access for some high-risk and cybersecurity evaluations, we have now decided to expand that to include all our internal evaluations until we have confirmed that our security and monitoring measures (described in the remediation section of this post) reliably catch behaviors like these. Below, we also discuss alignment considerations and give more detail on how we’re modifying training to reduce the likelihood of further misbehavior.
 

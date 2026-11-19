@@ -2,7 +2,7 @@
 title: "Resources - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/resources"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:10Z"
+fetched_at: "2026-11-13T06:33:29Z"
 tags: ["api"]
 ---
 
@@ -26,31 +26,31 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/sessions/{session_id}/resources
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [List Session Resources](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/list)
 
 GET/v1/sessions/{session_id}/resources
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Get Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/retrieve)
 
 GET/v1/sessions/{session_id}/resources/{resource_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Update Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/update)
 
 POST/v1/sessions/{session_id}/resources/{resource_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Delete Session Resource](https://platform.claude.com/docs/en/api/http/beta/sessions/resources/delete)
 
 DELETE/v1/sessions/{session_id}/resources/{resource_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 

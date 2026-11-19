@@ -2,8 +2,8 @@
 title: "Verify session identity in self-hosted environments - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments-identity"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-30T06:26:01Z"
-last_modified: "Fri, 30 Oct 2026 02:09:30 GMT"
+fetched_at: "2026-11-13T06:32:49Z"
+last_modified: "Fri, 13 Nov 2026 06:21:45 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 

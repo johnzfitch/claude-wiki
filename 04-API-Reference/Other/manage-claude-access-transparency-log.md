@@ -2,7 +2,7 @@
 title: "Verify Access Transparency events with the transparency log - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/access-transparency-log"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-07T06:23:17Z"
+fetched_at: "2026-11-15T06:24:20Z"
 tags: ["api"]
 ---
 
@@ -140,7 +140,7 @@ curl --fail-with-body -sS \
 
 The response is `text/plain`: a C2SP [signed note](https://c2sp.org/signed-note). The body lines are the origin, the tree size in decimal, and the base64 root hash. A blank line follows, then the signature line, which starts with an em dash (U+2014), names the origin, and ends with a base64 value. Values here are illustrative:
 
-``` block
+```
 axt.anthropic.com/25f6429a-3293-49bf-afed-cb312911554b
 1207
 C6C4HzGRqDNlbu54LWCvpDX0NcB5DRTmLcjM4u5vWUI=

@@ -2,7 +2,7 @@
 title: "Pricing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/pricing"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-05T06:35:23Z"
+fetched_at: "2026-11-13T06:35:11Z"
 tags: ["agents", "billing"]
 ---
 
@@ -20,7 +20,7 @@ Learn about Anthropic’s pricing structure for models and features
 
 This page provides detailed pricing information for Anthropic’s models and features. All prices are in USD.
 
-For the most current pricing information, visit [claude.com/pricing](pricing.md).
+For the most current pricing information, see the [Claude pricing](pricing.md) page.
 
 ## Model pricing
 
@@ -56,12 +56,12 @@ Starting with Claude Sonnet 4.5, Haiku 4.5, and Opus 4.5:
 
 Regional and multi-region endpoints include a 10 percent premium over global endpoints. The Claude API (first-party) is global by default; for first-party data residency options and pricing, see [Data residency pricing](#data-residency-pricing).
 
-**Scope:** This pricing structure applies to Claude Sonnet 4.5 (deprecated), Haiku 4.5, Opus 4.5, and all future models. Earlier models (Claude Opus 4.1 and prior releases) retain their existing pricing.
+**Scope:** This pricing structure applies to Claude Sonnet 4.5 (deprecated), Haiku 4.5, Opus 4.5, and later models. It doesn’t apply to earlier models (Claude Opus 4.1 and prior releases).
 
 For implementation details and code examples:
 
-- [Amazon Bedrock global versus regional endpoints](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md#regions) for Opus 4.7, Haiku 4.5, and later models, or the [legacy integration](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md#global-vs-regional-endpoints) for all other models on Bedrock
-- [Claude Models on Google Cloud (Google managed) global, multi-region, and regional endpoints](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md#global-multi-region-and-regional-endpoints)
+- Amazon Bedrock global versus regional endpoints: [Claude in Amazon Bedrock (`bedrock-mantle`)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md#regions) or [Claude on Amazon Bedrock (`bedrock-runtime`)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md#global-vs-regional-endpoints), depending on whether you call `bedrock-mantle` or `bedrock-runtime`
+- Google Cloud global, multi-region, and regional endpoints: [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md#global-multi-region-and-regional-endpoints)
 
 ## Claude Platform on AWS pricing
 
@@ -108,9 +108,24 @@ Prompt caching uses the following pricing multipliers relative to base input tok
 |:---|:---|:---|
 | 5-minute cache write | 1.25x base input price | Cache valid for 5 minutes |
 | 1-hour cache write | 2x base input price | Cache valid for 1 hour |
-| Cache read (hit) | 0.1x base input price (0.025x on Claude Fable 5.1 and Claude Mythos 5.1; 0.05x on Claude Opus 5.5 and Claude Sonnet 5.5) | Same duration as the preceding write |
+| Cache read (hit) | 0.1x base input price on most models | Same duration as the preceding write |
 
-Cache write tokens are charged when content is first stored. Cache read tokens are charged when a subsequent request retrieves the cached content. A cache hit costs 10% of the standard input price, which means caching pays off after one cache read for the 5-minute duration (1.25x write), or after two cache reads for the 1-hour duration (2x write). On Claude Fable 5.1 and Claude Mythos 5.1, a cache hit costs 2.5% of the standard input price (\$0.25 USD per million tokens). On Claude Opus 5.5 and Claude Sonnet 5.5, a cache hit costs 5% of the standard input price (\$0.20 USD per million tokens on Claude Opus 5.5, \$0.10 USD on Claude Sonnet 5.5).
+Cache write tokens are charged when content is first stored. Cache read tokens are charged when a subsequent request retrieves the cached content.
+
+Caching saves money after a small number of cache reads:
+
+- **5-minute duration (1.25x write):** after one cache read
+- **1-hour duration (2x write):** after two cache reads
+
+What a cache hit costs depends on the model:
+
+| Model | Cache hit multiplier | Cache hit price per million tokens |
+|:---|:---|:---|
+| Claude Fable 5.2 and Claude Mythos 5.2 | 0.025x | \$0.20 USD |
+| Claude Fable 5.1 and Claude Mythos 5.1 | 0.025x | \$0.25 USD |
+| Claude Opus 5.5 | 0.05x | \$0.20 USD |
+| Claude Sonnet 5.5 | 0.05x | \$0.10 USD |
+| All other models | 0.1x | See [Model pricing](#model-pricing) |
 
 These multipliers stack with other pricing modifiers, including the Batch API discount and data residency.
 
@@ -120,16 +135,30 @@ For implementation details, supported models, and code examples, see [Prompt cac
 
 For Claude 4.6 and later models, specifying US-only inference through the `inference_geo` parameter incurs a 1.1x multiplier on all token pricing categories, including input tokens, output tokens, cache writes, and cache reads. On Claude Haiku 5.5, the multiplier also applies to the higher prices for prompts over 100,000 tokens (see [Long context pricing](#long-context-pricing)). Global routing (the default) uses standard pricing.
 
-This applies to the Claude API (first-party), Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed). On Claude in Microsoft Foundry, the same 1.1x multiplier applies to deployments that use the US Data Zone Standard deployment type (see [Inference geography](#foundry-inference-geography)). Partner-operated platforms, Claude Models on Google Cloud (Google managed) and Bedrock, have independent regional pricing. See [Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) and [Google Cloud pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing#claude-models) for details. Earlier models do not support the `inference_geo` parameter and always use standard pricing; requests that include the parameter on these models return a 400 error.
+This applies to the Claude API (first-party), Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed). On Claude in Microsoft Foundry, the same 1.1x multiplier applies to deployments that use the US Data Zone Standard deployment type (see [Inference geography](#foundry-inference-geography)). Partner-operated platforms, Claude Models on Google Cloud (Google managed) and Amazon Bedrock, have independent regional pricing. See [Amazon Bedrock pricing](https://aws.amazon.com/bedrock/pricing/) and [Google Cloud pricing](https://cloud.google.com/vertex-ai/generative-ai/pricing#claude-models) for details. Earlier models do not support the `inference_geo` parameter and always use standard pricing; requests that include the parameter on these models return a 400 error.
 
 For more information, see [Data residency](../04-API-Reference/Other/manage-claude-data-residency.md).
 
 ### Fast mode pricing
 
-[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) provides significantly faster output for Claude Opus 5.5, Claude Opus 5, and Claude Opus 4.8 at premium pricing. Fast mode for Claude Opus 5 and Claude Opus 4.8 is in research preview. Fast mode pricing applies across the full context window, including requests over 200k input tokens. Fast mode is available on the Claude API (first-party) and, for Claude Opus 5.5, on [Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#billing) and on [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md) for deployments hosted on Azure.
+[Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) provides up to 2.5x higher output tokens per second at premium pricing. It is available for Claude Fable 5.2, Claude Opus 5.5, Claude Opus 5, and Claude Opus 4.8. Fast mode is in research preview for Claude Opus 5 and deprecated for Claude Opus 4.8.
+
+Fast mode pricing applies across the full context window, including requests over 200k input tokens.
+
+Fast mode is available on the Claude API (first-party). For Claude Opus 5.5, it is also available on [Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#billing) and on [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md) for deployments hosted on Azure.
+
+Fast mode for Claude Fable 5.2 is also available on [Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#billing).
+
+Fast mode for Claude Fable 5.2 is also available on [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md). Google Cloud sets its prices there. See [Cloud platform pricing](#cloud-platform-pricing).
+
+Fast mode for Claude Fable 5.2 is also available on Claude in Microsoft Foundry for deployments hosted on Anthropic. See [Claude in Microsoft Foundry pricing](#claude-in-microsoft-foundry-pricing).
+
+Fast mode is also available for Claude Mythos 5.2 on the Claude API. [Availability of fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md#feature-availability) lists every platform where Claude Mythos 5.2 has fast mode.
 
 | Model                           | Input           | Output          |
-|:--------------------------------|:----------------|:----------------|
+|---------------------------------|-----------------|-----------------|
+| Claude Fable 5.2                | \$16 USD / MTok | \$80 USD / MTok |
+| Claude Mythos 5.2               | \$16 USD / MTok | \$80 USD / MTok |
 | Claude Opus 5.5                 | \$8 USD / MTok  | \$40 USD / MTok |
 | Claude Opus 5 / Claude Opus 4.8 | \$10 USD / MTok | \$50 USD / MTok |
 
@@ -160,9 +189,9 @@ Claude Haiku 5.5 is priced by prompt length: a request whose prompt is over 100,
 
 Tool use requests are priced based on:
 
-1.  The total number of input tokens sent to the model (including in the `tools` parameter)
-2.  The number of output tokens generated
-3.  For server-side tools, additional usage-based pricing (for example, web search charges per search performed)
+1.  The total number of input tokens sent to the model (including in the `tools` parameter).
+2.  The number of output tokens generated.
+3.  For server-side tools, additional usage-based pricing (for example, web search charges per search performed).
 
 Client-side tools are priced the same as any other Claude API request, although server-side tools can incur additional charges based on their specific usage.
 
@@ -172,7 +201,7 @@ The additional tokens from tool use come from:
 - `tool_use` content blocks in API requests and responses
 - `tool_result` content blocks in API requests
 
-When you use `tools`, the API also automatically includes a special system prompt for the model that enables tool use. The number of tool use tokens required for each model is listed in the following table (excluding the additional tokens listed earlier). Note that the table assumes at least 1 tool is provided. If no `tools` are provided, then a tool choice of `none` uses 0 additional system prompt tokens.
+When you use `tools`, the API also automatically includes a special system prompt for the model that enables tool use. The following table lists the number of tool use tokens that each model requires (excluding the additional tokens listed earlier). The table assumes that you provide at least one tool. If you provide no `tools`, a tool choice of `none` uses 0 additional system prompt tokens.
 
 [TABLE]
 
@@ -180,7 +209,7 @@ These token counts are added to your normal input and output tokens to calculate
 
 For current per-model prices, refer to the [model pricing](#model-pricing) section.
 
-For more information about tool use implementation and best practices, see [Tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md).
+For more information about tool use implementation and best practices, see [Tool use with Claude](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md).
 
 ### Specific tool pricing
 
@@ -263,7 +292,7 @@ Web search usage is charged in addition to token usage:
 
 Web search is available on the Claude API for **\$10 USD per 1,000 searches**, plus standard token costs for search-generated content. Web search results retrieved throughout a conversation are counted as input tokens, in search iterations run during a single turn and in subsequent conversation turns.
 
-Each web search counts as one use, regardless of the number of results returned. If an error occurs during web search, the web search will not be billed.
+Each web search counts as one use, regardless of the number of results returned. A web search that fails with an error is not billed.
 
 #### Web fetch tool
 
@@ -297,18 +326,18 @@ Example token usage for typical content:
 
 #### Computer use tool
 
-Computer use follows the standard [tool use pricing](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md#pricing). When using the computer use tool:
+Computer use follows the standard [tool use pricing in the tool use overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md#pricing). When using the computer use tool:
 
-**Toolset definition overhead:** Declaring `computer_toolset_20260801` with its default members adds about 4,500 input tokens to a request (about 4,590 on Claude Sonnet 5 and about 4,520 on the other supported models), which covers the member tool definitions and the tool use system prompt. Disabling `zoom` with `configs` removes about 410 of those tokens. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../04-API-Reference/Guides/build-with-claude-token-counting.md).
+**Toolset definition overhead:** Declaring `computer_toolset_20260801` with its default members adds about 4,500 input tokens to a request: about 4,590 on Claude Sonnet 5 and about 4,520 on the other supported models. These tokens cover the member tool definitions and the tool use system prompt. Disabling `zoom` with `configs` removes about 410 of those tokens. The response `usage` reports the exact count for a request, and you can estimate it in advance with the [token counting endpoint](../04-API-Reference/Guides/build-with-claude-token-counting.md).
 
 **Earlier tool versions:** The following figures apply to the `computer_20251124` and `computer_20250124` tool versions, not to `computer_toolset_20260801`:
 
 - System prompt overhead: 466–499 tokens added to the system prompt
-- Tool definition: about 735 input tokens per tool definition (measured with `computer_20250124`)
+- Tool definition: about 735 input tokens for each tool definition (measured with `computer_20250124`)
 
 **Additional token consumption:**
 
-- Screenshot and zoom images returned in tool results, billed as image input (see [Vision pricing](../04-API-Reference/Guides/build-with-claude-vision.md#evaluate-image-size))
+- Screenshot and zoom images returned in tool results, billed as image input (see [Resolution and token cost](../04-API-Reference/Guides/build-with-claude-vision.md#evaluate-image-size))
 - Tool execution results returned to Claude
 
 
@@ -317,13 +346,13 @@ If you’re also using bash or text editor tools alongside computer use, those t
 
 #### Browser use tool
 
-Browser use follows the standard [tool use pricing](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md#pricing). When using the browser use tool:
+Browser use follows the standard [tool use pricing in the tool use overview](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md#pricing). When using the browser use tool:
 
-**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request (about 6,670 on Claude Sonnet 5 and about 6,610 on the other supported models), which covers the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../04-API-Reference/Guides/build-with-claude-token-counting.md).
+**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request: about 6,670 on Claude Sonnet 5 and about 6,610 on the other supported models. These tokens cover the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The response `usage` reports the exact count for a request, and you can estimate it in advance with the [token counting endpoint](../04-API-Reference/Guides/build-with-claude-token-counting.md).
 
 **Additional token consumption:**
 
-- Screenshot and zoom images returned in tool results, billed as image input (see [Vision pricing](../04-API-Reference/Guides/build-with-claude-vision.md#evaluate-image-size))
+- Screenshot and zoom images returned in tool results, billed as image input (see [Resolution and token cost](../04-API-Reference/Guides/build-with-claude-vision.md#evaluate-image-size))
 - Text tool results returned to Claude, such as accessibility trees, page text, and console or network entries
 
 
@@ -333,6 +362,8 @@ If you also use the computer use tool, bash tool, text editor tool, or your own 
 ## Claude Managed Agents pricing
 
 [Claude Managed Agents](../04-API-Reference/Other/managed-agents-overview.md) is billed on two dimensions: tokens and session runtime.
+
+For pricing of [self-hosted Claude Managed Agents](../04-API-Reference/Other/managed-agents-self-hosted.md), contact your Anthropic account team.
 
 ### Tokens
 
@@ -412,7 +443,7 @@ For limits beyond the Scale tier or custom pricing arrangements, [contact the sa
 Volume discounts might be available for high-volume users. These are negotiated on a case-by-case basis.
 
 - Standard usage tiers use the pricing shown in [Model pricing](#model-pricing).
-- Enterprise customers can [contact sales](mailto:sales@anthropic.com) for custom pricing.
+- Enterprise customers can [email sales](mailto:sales@anthropic.com) for custom pricing.
 - Academic and research discounts might be available.
 
 ### Enterprise pricing
@@ -424,14 +455,14 @@ For enterprise customers with specific needs:
 - Dedicated support
 - Custom terms
 
-Contact the sales team at <sales@anthropic.com> or through the [Claude Console](../04-API-Reference/Other/playground.md) to discuss enterprise pricing options.
+To discuss enterprise pricing options, email <sales@anthropic.com> or [contact sales from the Claude Console](../04-API-Reference/Other/playground.md).
 
 ## Billing and payment
 
 - Billing is based on actual monthly usage.
 - All payments are in USD.
 - Credit card and invoicing options are available.
-- Usage tracking is available in the Claude Console at [platform.claude.com](../04-API-Reference/Other/playground.md).
+- Usage tracking is available in the [Claude Console](../04-API-Reference/Other/playground.md).
 
 ## Frequently asked questions
 
@@ -441,7 +472,7 @@ Tokens are pieces of text that models process. How many tokens the same text pro
 
 ### Are there free tiers or trials?
 
-New users receive a small amount of free credits to test the API. [Contact sales](mailto:sales@anthropic.com) for information about extended trials for enterprise evaluation.
+New users receive free credits to test the API. [Email sales](mailto:sales@anthropic.com) for information about extended trials for enterprise evaluation.
 
 ### How do discounts stack?
 

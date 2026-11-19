@@ -2,8 +2,7 @@
 title: "​When someone asks for personal guidance, our goal for how Claude should behave…"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/0a540acdf3e1678274f0fe04b3a70ea7fd99ed36.pdf"
 category: "19-Reference"
-fetched_at: "2026-11-02T06:27:32Z"
-last_modified: "Thu, 30 Apr 2026 18:22:09 GMT"
+fetched_at: "2026-11-18T06:28:47Z"
 tags: ["news-research"]
 ---
 

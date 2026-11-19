@@ -2,7 +2,7 @@
 title: "Claude Campus program | Claude by Anthropic"
 source_url: "https://www.claude.com/programs/campus"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:48Z"
+fetched_at: "2026-11-18T06:29:22Z"
 tags: ["claude-ai"]
 ---
 

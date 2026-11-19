@@ -2,7 +2,7 @@
 title: "Claude can now connect to your world | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/integrations"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:25:40Z"
+fetched_at: "2026-11-18T06:27:25Z"
 tags: ["connectors"]
 ---
 
@@ -65,29 +65,31 @@ Integrations and Research are now available on the Pro, Max, Ultra, Team, and En
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleNov 5, 2026
+ArticleNov 17, 2026
 
-### Introducing Personal Finance in Claude
-
-Ask Claude about your money and get straight answers from the accounts you connect.
-
-
-ArticleNov 5, 2026
-
-### More visibility and control over Claude Enterprise for security teams
-
-Claude EnterpriseClaude apps
-
-
-ArticleNov 4, 2026
-
-### New agents and products for security, productivity, and creative work on Claude Marketplace
-
-
-ArticleNov 2, 2026
-
-### Make long-running agents faster with message threads
-
-New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
+### Linked billing on the Claude Platform
 
 Claude Platform
+
+
+ArticleNov 12, 2026
+
+### Operate Claude Managed Agents inside your security perimeter
+
+Introducing self-hosted Claude Managed Agents. Now you can run agents in your own environment, whether that’s in your own cloud or on-premise. You host the agents, credentials, and session history, and choose where requests to Claude are sent.
+
+Claude PlatformClaude Managed Agents
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude for Manufacturing
+
+A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude Meetings
+
+Add Claude to your video call and get the work started while you talk

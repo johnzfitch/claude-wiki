@@ -2,13 +2,13 @@
 title: "Economic Index report: Economic primitives \\ Anthropic"
 source_url: "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:59Z"
+fetched_at: "2026-11-14T06:26:37Z"
 tags: ["news-research"]
 ---
 
 # **Anthropic Economic Index report: **Economic primitives
 
-[Download PDF](https://www-cdn.anthropic.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf)
+[Download PDF](https://assets.claude.com/096d94c1a91c6480806d8f24b2344c7e2a4bc666.pdf)
 
 - [01Introduction](#introduction)
 - [02Chapter 1: What has changed since our last report](#chapter-1-what-has-changed-since-our-last-report)
@@ -17,23 +17,20 @@ tags: ["news-research"]
 - [05Chapter 4: Tasks and productivity](#chapter-4-tasks-and-productivity)
 - [06Concluding Remarks](#concluding-remarks)
 
-- Published
+Published  
+Jan 15, 2026
 
-  Jan 15, 2026
+Team  
+[Economics](team-economics.md)
 
-- Team
+Topics  
+- [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
 
-  [Economics](team-economics.md)
-
-- Topics
-
-  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
-
-  See more...
+See more...
 
 Related articles
 
@@ -59,10 +56,10 @@ The data we release alongside this report are the most comprehensive to date, co
 
 In the first chapter, we revisit findings from our previous [Economic Index report](anthropic-economic-index-september-2025-report.md) published in September 2025. We find:
 
-- **Claude usage remains concentrated among certain tasks, most of them related to coding  
-  **While we see over 3,000 unique work tasks in Claude.ai, the top 10 most common tasks account for 24% of our sampled conversations, a slight increase since our last report. Augmentation patterns (conversations where the user learns, iterates on a task, or gets feedback from Claude) edged to just over half of conversations on Claude.ai. In contrast, automated use remains dominant in 1P API traffic, reflecting its programmatic nature.
-- **Global usage remains persistently uneven while US states converge  
-  **The US, India, Japan, the UK, and South Korea lead in overall Claude.ai use. Worldwide, uneven adoption remains well-explained by GDP per capita. Within the US, workforce composition plays a key role in shaping uneven adoption as states with more computer and mathematical professionals show systematically more Claude usage.
+- **Claude usage remains concentrated among certain tasks, most of them related to coding  **
+  While we see over 3,000 unique work tasks in Claude.ai, the top 10 most common tasks account for 24% of our sampled conversations, a slight increase since our last report. Augmentation patterns (conversations where the user learns, iterates on a task, or gets feedback from Claude) edged to just over half of conversations on Claude.ai. In contrast, automated use remains dominant in 1P API traffic, reflecting its programmatic nature.
+- **Global usage remains persistently uneven while US states converge  **
+  The US, India, Japan, the UK, and South Korea lead in overall Claude.ai use. Worldwide, uneven adoption remains well-explained by GDP per capita. Within the US, workforce composition plays a key role in shaping uneven adoption as states with more computer and mathematical professionals show systematically more Claude usage.
 
 While substantial concentration remains, since our last report Claude usage has become noticeably more evenly distributed across US states. If sustained, usage per capita would be equalized across the country in 2-5 years.
 
@@ -70,14 +67,14 @@ While substantial concentration remains, since our last report Claude usage has 
 
 In the second chapter we discuss the motivation for and introduce our new economic primitives, including how they were selected and operationalized, and their limitations. We additionally present evidence that our primitives capture directionally accurate aspects of underlying usage patterns as compared to external benchmarks. In chapters three and four we use these primitives to further investigate implications for adoption and productivity. We find:
 
-- **Claude use diversifies with higher adoption and income  
-  **While the most common use of Claude is for work, coursework use is highest in countries with the lowest GDP per capita, while rich countries show the highest rates of personal use. This aligns with a simple adoption curve story: early adopters in less developed countries tend to be technical users with specific, high-value applications or use Claude for education, whereas mature markets see usage diversify toward casual and personal purposes.
-- **Claude succeeds on most tasks, but less so on the most complex ones  
-  **We find that Claude generally succeeds at the tasks it is given, and that the education level of its responses tends to match the user's input. Claude struggles on more complex tasks: As the time it would take a human to do the task increases, Claude’s success rate falls, much like [prominent evals measuring the longest tasks that AIs can reliably perform](https://arxiv.org/abs/2503.14499).
-- **Job exposure to AI looks different when success rates are factored in  
-  **We also use the success rate primitive to better understand job exposure to AI, calculating the share of each occupation that Claude can perform by weighting task coverage by both success rates and the importance of each task within the job. For some occupations, like data entry keyers and database architects, Claude shows proficiency in large swaths of the job.
-- **Claude is used for higher-skill tasks than those in the broader economy  
-  **The tasks we observe in Claude usage tend to require more education than those in the broader economy. If we assume that AI-assisted tasks diminish as a share of worker responsibilities, removing them would leave behind less-skilled work. But this simple task displacement would not affect white-collar workers uniformly—for some occupations it removes the most skill-intensive tasks, for others the least.  
+- **Claude use diversifies with higher adoption and income  **
+  While the most common use of Claude is for work, coursework use is highest in countries with the lowest GDP per capita, while rich countries show the highest rates of personal use. This aligns with a simple adoption curve story: early adopters in less developed countries tend to be technical users with specific, high-value applications or use Claude for education, whereas mature markets see usage diversify toward casual and personal purposes.
+- **Claude succeeds on most tasks, but less so on the most complex ones  **
+  We find that Claude generally succeeds at the tasks it is given, and that the education level of its responses tends to match the user's input. Claude struggles on more complex tasks: As the time it would take a human to do the task increases, Claude’s success rate falls, much like [prominent evals measuring the longest tasks that AIs can reliably perform](https://arxiv.org/abs/2503.14499).
+- **Job exposure to AI looks different when success rates are factored in  **
+  We also use the success rate primitive to better understand job exposure to AI, calculating the share of each occupation that Claude can perform by weighting task coverage by both success rates and the importance of each task within the job. For some occupations, like data entry keyers and database architects, Claude shows proficiency in large swaths of the job.
+- **Claude is used for higher-skill tasks than those in the broader economy  **
+  The tasks we observe in Claude usage tend to require more education than those in the broader economy. If we assume that AI-assisted tasks diminish as a share of worker responsibilities, removing them would leave behind less-skilled work. But this simple task displacement would not affect white-collar workers uniformly—for some occupations it removes the most skill-intensive tasks, for others the least.  
     
   Without the tasks that we observe Claude performing, travel agents would experience deskilling as complex planning work gives way to routine ticket purchasing and payment collection. Property managers, by contrast, would experience upskilling as bookkeeping tasks give way to contract negotiations and stakeholder management.
 
@@ -99,16 +96,16 @@ In this chapter we analyze how Claude usage and diffusion patterns changed from 
 
 1.  **Usage remains highly concentrated across tasks**:  
     The ten most common tasks represent 24% of observed usage on Claude.ai, up from 23% in our last report. For first-party (1P) API enterprise customers, concentration among tasks increased more notably: the top ten tasks now represent 32% of traffic, up from 28% in the last report.
-2.  **Augmentation is once again more common than automation on Claude.ai:  
-    **In our previous report we noted that automated use had risen to exceed augmented use on Claude.ai, perhaps capturing both improving capabilities and greater familiarity among users with LLMs. Data from November 2025 points to a broad-based shift back toward augmented use on Claude.ai: The share of conversations classified as augmented jumped 5pp to 52% and the share deemed automated fell 4pp to 45%.² Product changes during this period—including [file creation capabilities](https://claude.com/blog/create-files), [persistent memory](https://claude.com/blog/memory), and [Skills for workflow customization](https://claude.com/blog/skills)—may have shifted usage patterns toward more collaborative, human-in-the-loop interactions.
-3.  **Within the US, lower usage states have relatively faster gains in adoption  
-    **Within the US, usage per capita remains largely shaped by how well-matched the workforce is to broader Claude usage: For example, states with a larger share of workers in computer and mathematical occupations tend to have higher usage. Indeed, the top five US states account for nearly half (50%) of all usage despite representing only 38% of the working-age population.  
+2.  **Augmentation is once again more common than automation on Claude.ai:  **
+    In our previous report we noted that automated use had risen to exceed augmented use on Claude.ai, perhaps capturing both improving capabilities and greater familiarity among users with LLMs. Data from November 2025 points to a broad-based shift back toward augmented use on Claude.ai: The share of conversations classified as augmented jumped 5pp to 52% and the share deemed automated fell 4pp to 45%.² Product changes during this period—including [file creation capabilities](https://claude.com/blog/create-files), [persistent memory](https://claude.com/blog/memory), and [Skills for workflow customization](https://claude.com/blog/skills)—may have shifted usage patterns toward more collaborative, human-in-the-loop interactions.
+3.  **Within the US, lower usage states have relatively faster gains in adoption  **
+    Within the US, usage per capita remains largely shaped by how well-matched the workforce is to broader Claude usage: For example, states with a larger share of workers in computer and mathematical occupations tend to have higher usage. Indeed, the top five US states account for nearly half (50%) of all usage despite representing only 38% of the working-age population.  
       
     Nevertheless, there are early signs of rapid regional convergence in adoption: usage has increased relatively faster for states that had lower usage in our last report. If sustained, usage per capita would be equalized across the country in 2-5 years, a pace of diffusion roughly 10x faster than the spread of previous economically consequential technologies in the 20th century.³  
       
     While this is consistent with rapid AI adoption and diffusion, this estimate comes with uncertainty given that it is based on a change observed over a three month period. Diffusion may ultimately proceed more slowly in the months and years to come.
-4.  **Global usage shows little sign of increasing or decreasing regional convergence  
-    **Globally, Claude usage per capita—as captured by the Anthropic AI Usage Index (AUI)—remains highly uneven and strongly correlated with GDP. These gaps are stable: we see no evidence that low-use countries are catching up or that high-use countries are pulling away.
+4.  **Global usage shows little sign of increasing or decreasing regional convergence  **
+    Globally, Claude usage per capita—as captured by the Anthropic AI Usage Index (AUI)—remains highly uneven and strongly correlated with GDP. These gaps are stable: we see no evidence that low-use countries are catching up or that high-use countries are pulling away.
 
 ### Shifting patterns of usage across tasks and associated occupations
 
@@ -216,7 +213,7 @@ The new dimensions of AI use captured in our data were informed by our recent wo
 
 We propose that multiple simple primitives, even if somewhat noisy and not perfectly accurate by themselves, can together provide important signals on how AI is being used. We therefore mainly tested for directional accuracy.
 
-For classifying task duration with and without AI, we used minimally modified versions of our [prior productivity work](https://www-cdn.anthropic.com/e5645986a7ce8fbcc48fa6d2fc67753c87642c30.pdf). For net new classifiers¹, implemented via our [privacy-preserving tooling](https://arxiv.org/abs/2412.13678), our validation process was as follows. We designed multiple potential measures to capture concepts such as task complexity. For Claude.ai, we evaluated the classifier performance compared to a human researcher on a small set of transcripts in which users gave feedback to Claude.ai and for which we thus have permission to look at underlying transcripts. For first-party API (1P API) data, we validate the classifiers using a mix of internal and synthetic data. Neither data sources are fully representative of Claude.ai or 1P API traffic, but they allow us to check that the classifiers are working on data that resembles real usage data, while ensuring privacy.
+For classifying task duration with and without AI, we used minimally modified versions of our [prior productivity work](https://assets.claude.com/e5645986a7ce8fbcc48fa6d2fc67753c87642c30.pdf). For net new classifiers¹, implemented via our [privacy-preserving tooling](https://arxiv.org/abs/2412.13678), our validation process was as follows. We designed multiple potential measures to capture concepts such as task complexity. For Claude.ai, we evaluated the classifier performance compared to a human researcher on a small set of transcripts in which users gave feedback to Claude.ai and for which we thus have permission to look at underlying transcripts. For first-party API (1P API) data, we validate the classifiers using a mix of internal and synthetic data. Neither data sources are fully representative of Claude.ai or 1P API traffic, but they allow us to check that the classifiers are working on data that resembles real usage data, while ensuring privacy.
 
 Based on initial performance, we revised the classifiers that needed tweaking or discarded classifiers that did not perform well. Interestingly, we find that in some instances (e.g., to measure task success), a simple classifier performed better than a nuanced, complex classifier when compared to human ratings. We then compared performance of classifier versions with vs. without chain of thought prompting, and decided to keep chain of thought prompting only for three facets (human time estimate, human with AI time estimate, and AI autonomy) where we found that it substantially improved performance. We selected a final set of nine new classifiers for the five primitives, all of which are directionally accurate even if they may deviate somewhat from human ratings.
 
@@ -487,10 +484,12 @@ Xabi Azagirre, Tim Belonax, Keir Bradwell, Andy Braden, Dexter Callender III, Sy
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{anthropic2026aeiv4,
         author = {Ruth Appel and Maxim Massenkoff and Peter McCrory and Miles McCain and Ryan Heller and Tyler Neylon and Alex Tamkin},
         title = {Anthropic Economic Index report: economic primitives},
         date = {2026-01-15},
         year = {2026},
         url = {https://www.anthropic.com/research/anthropic-economic-index-january-2026-report},
+}
+```

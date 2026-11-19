@@ -2,7 +2,7 @@
 title: "Freedom Forever Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/freedom-forever"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:39Z"
+fetched_at: "2026-11-18T06:29:14Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -30,9 +30,11 @@ on complex web automation tests (39 of 40 runs passed), compared to 20–60% for
 
 in the first month of production
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [Freedom Forever](https://www.freedomforever.com), the largest residential solar installer in the United States, handles the full lifecycle of solar installation—from sales and permitting through design, installation, and ongoing monitoring. The company has 3,000 employees, primarily field operations and installation crews, and a 50-person software and product team.
 

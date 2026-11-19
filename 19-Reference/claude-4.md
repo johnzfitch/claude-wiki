@@ -2,9 +2,11 @@
 title: "Introducing Claude 4 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-4"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:04Z"
+fetched_at: "2026-11-13T06:35:57Z"
 tags: ["claude-code", "news-research"]
 ---
+
+### 01Claude 4
 
 # Introducing Claude 4
 
@@ -13,24 +15,20 @@ tags: ["claude-code", "news-research"]
 - [03Claude Code](#claude-code)
 - [04Getting started](#getting-started)
 
-- Published
+Published  
+May 22, 2025
 
-  May 22, 2025
+[Models](models.md)
 
-- Category
+Topics  
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+- [Coding](https://www.anthropic.com/search?topic=coding)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [Tool use](https://www.anthropic.com/search?topic=tool-use)
 
-  [Models](models.md)
-
-- Topics
-
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
-
-  See more...
+See more...
 
 Related articles
 

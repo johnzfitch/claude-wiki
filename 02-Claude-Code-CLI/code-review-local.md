@@ -2,8 +2,8 @@
 title: "Review locally with /code-review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-local"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-04T06:23:30Z"
-last_modified: "Wed, 04 Nov 2026 02:01:01 GMT"
+fetched_at: "2026-11-13T06:34:41Z"
+last_modified: "Fri, 13 Nov 2026 06:15:52 GMT"
 tags: ["claude-code"]
 ---
 
@@ -37,7 +37,7 @@ Copy pageCopy page
 
 To have every pull request in a repository reviewed automatically on GitHub, see [Code Review](code-review.md), a managed service that an Owner turns on for your organization.
 
-`/review` is an alias of `/code-review`. Before v2.1.223, `/review` was a separate command that ran a single-pass, read-only review of a GitHub pull request.
+`/review` is an alias of `/code-review`.
 
 1
 
@@ -123,8 +123,6 @@ Pass an [effort level](model-config.md#adjust-effort-level) to trade coverage fo
 - **Non-interactive runs**: a level you pass in a non-interactive `-p` run doesn’t update the remembered level
 - **`ultra`**: the review neither uses nor updates the remembered level
 - **No level ever typed**: the review uses the session’s current effort
-
-Before v2.1.223, a `/code-review` without a level always used the session’s current effort.
 
 
 [​](#post-findings-to-a-gitlab-merge-request)

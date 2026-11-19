@@ -2,8 +2,8 @@
 title: "Persist sessions to external storage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/session-storage"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-30T06:25:43Z"
-last_modified: "Fri, 30 Oct 2026 01:46:51 GMT"
+fetched_at: "2026-11-13T06:32:23Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["agents", "claude-code", "rag", "sdk"]
 ---
 
@@ -350,7 +350,7 @@ When the store has nothing for the session, the SDK runs under your real config 
 
 Mirror writes are best-effort
 
-If `append()` rejects, the SDK retries the batch up to two more times with a short backoff, for at most three attempts in total. A call that times out isn’t retried, since the original call may still land. If the batch still fails, the SDK logs the error, emits a `{ type: "system", subtype: "mirror_error" }` message into the iterator, drops the batch, and continues the query. Because a retried batch can re-deliver entries that already landed, deduplicate by `entry.uuid` in your `append()` implementation. A store outage doesn’t interrupt the agent, since the subprocess writes locally first. Monitor for `mirror_error` if you need to detect store data loss. On a run [resumed from the store](#resume-from-the-store), a dropped batch has no surviving copy once the run ends.
+If `append()` rejects, the SDK retries the batch up to two more times with a short backoff, for at most three attempts in total. A call that times out isn’t retried, since the original call may still land. Because a retried batch can re-deliver entries that already landed, deduplicate by `entry.uuid` in your `append()` implementation, and keep every entry that has no `uuid`. If the batch still fails, the SDK logs the error, emits a `{ type: "system", subtype: "mirror_error" }` message into the iterator, drops the batch, and continues the query. A store outage doesn’t interrupt the agent, since the subprocess writes locally first. Monitor for `mirror_error` to detect store data loss. On a run [resumed from the store](#resume-from-the-store), a dropped batch has no surviving copy once the run ends.
 
 
 [​](#getsessionmessages-returns-the-post-compaction-chain)

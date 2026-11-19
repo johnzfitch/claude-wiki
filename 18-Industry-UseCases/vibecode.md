@@ -2,7 +2,7 @@
 title: "Vibecode Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/vibecode"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:20Z"
+fetched_at: "2026-11-18T06:29:17Z"
 tags: ["api", "case-studies", "mobile"]
 ---
 
@@ -82,6 +82,9 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -89,6 +92,3 @@ As Anthropic releases new models, Vibecode plans to integrate them immediately. 
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

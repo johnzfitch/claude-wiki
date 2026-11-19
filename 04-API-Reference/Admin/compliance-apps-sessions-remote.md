@@ -2,7 +2,7 @@
 title: "Remote - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/remote"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-07T06:23:43Z"
+fetched_at: "2026-11-15T06:23:18Z"
 tags: ["api"]
 ---
 

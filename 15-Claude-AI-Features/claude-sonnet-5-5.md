@@ -265,7 +265,7 @@ As we described in our [recent alignment assessment](../19-Reference/alignment-a
 
 ### Safeguards
 
-**Cybersecurity.** Sonnet 5.5’s cyber capabilities are a large improvement over Sonnet 5’s, so we’re deploying it with safeguards similar to those on Opus 5.5. Users can still find and fix bugs in their code as part of routine software development, but higher-risk cybersecurity tasks will visibly fall back to Sonnet 5. Soon, cyberdefenders will be able to apply to our expanded [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet) for tiered access to more advanced capabilities on Sonnet 5.5, Opus 5.5, and Claude Mythos models.
+**Cybersecurity.** Sonnet 5.5’s cyber capabilities are a large improvement over Sonnet 5’s, so we’re deploying it with safeguards similar to those on Opus 5.5. Users can still find and fix bugs in their code as part of routine software development, but higher-risk cybersecurity tasks will visibly fall back to Sonnet 5. Soon, cyberdefenders will be able to apply to our expanded [Cyber Verification Program](../21-Account-Support/real-time-cyber-safeguards-on-claude-opus-and-sonnet.md) for tiered access to more advanced capabilities on Sonnet 5.5, Opus 5.5, and Claude Mythos models.
 
 **Biology.** Sonnet 5.5 uses the same set of biology safeguards as Sonnet 5. These target harmful requests; most research, education, and clinical work is unaffected, though some microbiology and virology requests may be flagged in error. Organizations can apply to our [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md) for access to safeguards designed for the full breadth of biology-related work.
 

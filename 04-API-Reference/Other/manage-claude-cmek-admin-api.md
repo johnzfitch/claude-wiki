@@ -2,7 +2,7 @@
 title: "Add and attach an encryption key with the Admin API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-admin-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:25:42Z"
+fetched_at: "2026-11-17T06:24:44Z"
 tags: ["api"]
 ---
 

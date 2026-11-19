@@ -2,7 +2,8 @@
 title: "Plugin loading reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/loading"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-26T06:30:33Z"
+fetched_at: "2026-11-14T06:24:28Z"
+last_modified: "Sat, 14 Nov 2026 06:21:05 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -25,6 +26,7 @@ Back to top
   - [Control which synced plugins load](#control-which-synced-plugins-load)
 - [Find where a plugin is enabled](#find-where-a-plugin-is-enabled)
   - [Disabled in user settings but still loads](#disabled-in-user-settings-but-still-loads)
+  - [Enabled in an --add-dir directory but not loaded](#enabled-in-an-add-dir-directory-but-not-loaded)
   - [Enabled in project settings but not installed](#enabled-in-project-settings-but-not-installed)
 - [Find plugins on disk](#find-plugins-on-disk)
   - [In-place and copied plugins](#in-place-and-copied-plugins)
@@ -70,10 +72,7 @@ Start with [Check which stage a plugin reached](#check-which-stage-a-plugin-reac
 - A `--plugin-dir` plugin didn’t load, or a same-named plugin loaded instead: [Name conflicts](#name-conflicts)
 - A plugin under `~/.claude/skills/` or `.claude/skills/` didn’t load, and no error says why: [Skills-directory plugins blocked by managed settings](#skills-directory-plugins-blocked-by-managed-settings)
 
-
-[​](#check-which-stage-a-plugin-reached)
-
-Check which stage a plugin reached
+## [](#check-which-stage-a-plugin-reached)Check which stage a plugin reached
 
 An `enabledPlugins` entry becomes a plugin you can use in stages: your settings declare it, Claude Code fetches it to disk, and the running session loads it. When a plugin doesn’t behave as a settings file suggests, check which stage it reached:
 
@@ -84,10 +83,7 @@ An `enabledPlugins` entry becomes a plugin you can use in stages: your settings 
   - `cache/` holds the plugin files
 - **Loaded, in the running session**: the plugin set Claude Code loaded at startup or at the last `/reload-plugins`. Changes to settings or to disk don’t reach this layer until you run `/reload-plugins` or start a new session. That is why `claude plugin update` ends with `Restart to apply changes.` and background updates prompt you with `Run /reload-plugins to apply`
 
-
-[​](#plugins-and-marketplaces-that-aren’t-on-disk-at-session-start)
-
-Plugins and marketplaces that aren’t on disk at session start
+### [](#plugins-and-marketplaces-that-aren’t-on-disk-at-session-start)Plugins and marketplaces that aren’t on disk at session start
 
 Plugins load at session start from `installed_plugins.json` and the cache without using the network. After the session starts, Claude Code checks the declared marketplaces in the background:
 
@@ -96,10 +92,7 @@ Plugins load at session start from `installed_plugins.json` and the cache withou
 
 An enabled plugin that neither path fetched and that has no usable cache directory shows `Plugin "<name>" not cached at <path>` in the `/plugin` **Errors** tab. For the fix, see [`Plugin "<name>" not cached at <path>`](plugins-troubleshooting.md#plugin-not-cached-at).
 
-
-[​](#find-where-a-plugin-came-from)
-
-Find where a plugin came from
+## [](#find-where-a-plugin-came-from)Find where a plugin came from
 
 Every plugin has an id of the form `<name>@<origin>`, which is what you see in settings files and in `claude plugin list --json`. The part after `@` tells you where Claude Code found the plugin:
 
@@ -112,27 +105,18 @@ Every plugin has an id of the form `<name>@<origin>`, which is what you see in s
 
 For a marketplace plugin, `<name>` is the entry name in `marketplace.json`; for `@inline` and `@skills-dir` it’s the `name` in the plugin’s manifest. The origin names in this table are reserved, so no marketplace can be named `inline`, `skills-dir`, or `synced`.
 
-
-[​](#entry-name-and-manifest-name)
-
-Entry name and manifest name
+### [](#entry-name-and-manifest-name)Entry name and manifest name
 
 A marketplace plugin has two names, and they can differ:
 
 - **The entry name in `marketplace.json`**: the install and enable key. It’s what you write in `enabledPlugins`, what the cache directory is named after, and what `claude plugin list` shows
 - **The `name` in the manifest**: what the plugin’s components are namespaced under, and what [name conflicts](#name-conflicts) compare
 
-
-[​](#plugins-shared-through-a-repository)
-
-Plugins shared through a repository
+### [](#plugins-shared-through-a-repository)Plugins shared through a repository
 
 To share a plugin through a repository, list it under `enabledPlugins` in `.claude/settings.json` or place it under `.claude/skills/`. Claude Code doesn’t scan a project’s `.claude/plugins/` directory. A cloud session doesn’t add the marketplaces a repository lists under [`extraKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#extraknownmarketplaces), because that requires the workspace trust dialog, which a cloud session never shows.
 
-
-[​](#trust-check-and-component-limits-for-repository-plugins)
-
-Trust check and component limits for repository plugins
+#### [](#trust-check-and-component-limits-for-repository-plugins)Trust check and component limits for repository plugins
 
 A project-scope plugin is checked into the repository and reaches every collaborator who clones it. Because that content comes from the repository rather than from you, it loads only after the same trust check that applies to project allow rules in `.claude/settings.json`. Trusting a parent folder or running with `-p` isn’t enough. Components that run code are restricted further:
 
@@ -142,10 +126,7 @@ A project-scope plugin is checked into the repository and reaches every collabor
 
 Neither the trust check nor these component limits apply to a plugin under your own `~/.claude/skills/`. For how to write `--plugin-dir` and skills-directory plugins, see [Create plugins](plugins-create.md).
 
-
-[​](#check-why-a-repository-plugin-didnt-load)
-
-Check why a repository plugin didn’t load
+#### [](#check-why-a-repository-plugin-didnt-load)Check why a repository plugin didn’t load
 
 If a plugin in your repository’s `.claude/skills/` doesn’t load, check for these causes:
 
@@ -154,10 +135,7 @@ If a plugin in your repository’s `.claude/skills/` doesn’t load, check for t
 - **In a folder you haven’t trusted**: the plugin loads only after you accept the [workspace trust dialog](../02-Claude-Code-CLI/permissions.md#what-runs-before-you-trust-a-folder) for that folder
 - **In an organization that manages Claude Code**: see [Skills-directory plugins blocked by managed settings](#skills-directory-plugins-blocked-by-managed-settings)
 
-
-[​](#skills-directory-plugins-blocked-by-managed-settings)
-
-Skills-directory plugins blocked by managed settings
+### [](#skills-directory-plugins-blocked-by-managed-settings)Skills-directory plugins blocked by managed settings
 
 If a plugin folder in `~/.claude/skills/` or a project’s `.claude/skills/` didn’t load and you see no error, your administrator may have blocked it through [managed settings](../13-Enterprise-Admin/managed-settings.md). These folders come from you or your repository rather than from a marketplace, so Claude Code skips them when your administrator sets one of these restrictions:
 
@@ -167,36 +145,24 @@ If a plugin folder in `~/.claude/skills/` or a project’s `.claude/skills/` did
 `/plugin` and `claude plugin list` show no plugin and no error for a skipped folder. Its `/<name>:<skill>` commands and agents are missing, as are its hooks and MCP servers. Unless skills are among the locked kinds, a `SKILL.md` at the folder’s root still loads as a plain skill. In that case `/<name>` keeps working, and the `/plugin` **Installed** tab lists that skill under **Skills**.
 
 - **Confirm the cause**: run `/status` in a Claude Code session. If the `Setting sources` line lists `Enterprise managed settings`, ask your administrator whether one of these settings applies to you. If it doesn’t, see [Check why a repository plugin didn’t load](#check-why-a-repository-plugin-didnt-load) for other causes.
-- **Load the whole plugin**: add it to a [marketplace](plugin-marketplaces.md#create-a-marketplace) your organization allows and install it from there. To load it for one session instead, start `claude` from your shell with [`--plugin-dir`](plugins-cli-reference.md#flags-that-load-a-plugin-for-one-session) and the folder’s path, which works unless your administrator has also turned off that flag.
+- **Load the whole plugin**: add it to a [marketplace](plugins-create-marketplace.md#create-a-marketplace) your organization allows and install it from there. To load it for one session instead, start `claude` from your shell with [`--plugin-dir`](plugins-cli-reference.md#flags-that-load-a-plugin-for-one-session) and the folder’s path, which works unless your administrator has also turned off that flag.
 
-
-[​](#synced-plugins)
-
-Plugins synced from claude.ai
+### [](#synced-plugins)Plugins synced from claude.ai
 
 A plugin you turn on for your claude.ai account also loads in Claude Code, alongside the plugins you install from marketplaces. That includes plugins your organization turns on for its members. Each of these plugins loads as `<name>@synced`, with no marketplace and no [install record](#check-which-stage-a-plugin-reached). In terminal sessions, a synced plugin’s skills, agents, hooks, MCP servers, and LSP servers all load, with the same trust as a marketplace plugin you installed. For the components Cowork loads, see the [component support table](https://claude.com/docs/plugins/platform-support#compare-component-support-by-app) on claude.com. Synced plugins load in Cowork sessions and in terminal sessions where you sign in with your claude.ai account:
 
 - **[Cowork](../15-Claude-AI-Features/product-cowork.md)**: Claude Code downloads them into the session’s own environment when the session starts
 - **Terminal sessions**: each time you start Claude Code, it syncs once in the background, downloading new and updated plugins and removing the ones that you or your organization turned off. Syncing in terminal sessions requires Claude Code v2.1.273 or later
 
-
-[​](#sync-timing-in-cloud-cowork-sessions)
-
-Sync timing in cloud Cowork sessions
+#### [](#sync-timing-in-cloud-cowork-sessions)Sync timing in cloud Cowork sessions
 
 If you turn a plugin on or off for your claude.ai account during a Cowork session that runs in the cloud, keep working in that session. If nothing has changed after a few messages, start a new session.
 
-
-[​](#sync-timing-in-terminal-sessions)
-
-Sync timing in terminal sessions
+#### [](#sync-timing-in-terminal-sessions)Sync timing in terminal sessions
 
 Because the terminal sync runs in the background, it can finish after your session has started. When it adds, updates, or removes a synced plugin in an interactive session, you see `Plugins changed. Run /reload-plugins to activate.` Run `/reload-plugins` to load the change in that session, or leave it for the next time you start Claude Code. If you turn a plugin on or off for your claude.ai account during a terminal session, Claude Code downloads or removes it the next time you start Claude Code.
 
-
-[​](#sign-in-requirements-for-terminal-sync)
-
-Sign-in requirements for terminal sync
+#### [](#sign-in-requirements-for-terminal-sync)Sign-in requirements for terminal sync
 
 In your terminal, plugins sync only in sessions where you sign in with your claude.ai account. Claude Code neither downloads nor loads synced plugins in these terminal sessions, even after you sign in with `/login`:
 
@@ -207,10 +173,7 @@ In your terminal, plugins sync only in sessions where you sign in with your clau
 
 If you signed in on an earlier version of Claude Code, that sign-in doesn’t cover plugins until Claude Code renews it in the background. To get access sooner, run `/login` again. Plugin sync then starts the next time you start Claude Code.
 
-
-[​](#control-which-synced-plugins-load)
-
-Control which synced plugins load
+#### [](#control-which-synced-plugins-load)Control which synced plugins load
 
 You can turn synced plugins off one at a time, except a plugin your organization requires, or turn off every synced plugin on the machine:
 
@@ -220,10 +183,7 @@ You can turn synced plugins off one at a time, except a plugin your organization
 
 For removing a plugin on claude.ai, see [Manage installed plugins](discover-plugins.md#manage-installed-plugins).
 
-
-[​](#find-where-a-plugin-is-enabled)
-
-Find where a plugin is enabled
+## [](#find-where-a-plugin-is-enabled)Find where a plugin is enabled
 
 You can set an `enabledPlugins` entry in any of six sources. The table lists them from lowest precedence to highest, and who each one applies to. For the settings files themselves, see [Settings files and who they affect](../02-Claude-Code-CLI/settings.md#where-settings-live).
 
@@ -238,29 +198,48 @@ You can set an `enabledPlugins` entry in any of six sources. The table lists the
 
 These sources merge key by key. For each plugin id, the value that applies is the one from the highest-precedence source that mentions the id. A source that doesn’t mention the id leaves the value from the lower-precedence source in effect.
 
-
-[​](#disabled-in-user-settings-but-still-loads)
-
-Disabled in user settings but still loads
+### [](#disabled-in-user-settings-but-still-loads)Disabled in user settings but still loads
 
 If you set a plugin to `false` in `~/.claude/settings.json` and it still loads, a `true` in a higher-precedence source is overriding it. The plugin’s row in `claude plugin list` and in `/plugin` shows `Disabled in ~/.claude/settings.json but still loads — project settings enable it, which overrides your user setting`. The message names the source that overrode you: `project`, `project, gitignored` for `.claude/settings.local.json`, `cli flag`, or `managed`. To opt out of a project-enabled plugin on your machine, set the id to `false` in `.claude/settings.local.json`, which has higher precedence than the project file.
 
+### [](#enabled-in-an-add-dir-directory-but-not-loaded)Enabled in an `--add-dir` directory but not loaded
 
-[​](#enabled-in-project-settings-but-not-installed)
+Claude Code reads an `enabledPlugins` entry of `true` in one of the added directory’s files only when that file’s setting sources are on:
 
-Enabled in project settings but not installed
+- **`.claude/settings.json`**: `project`
+- **`.claude/settings.local.json`**: `project` and `local`
 
-When a plugin’s only `true` is in the project’s `.claude/settings.json`, Claude Code doesn’t fetch it onto a machine where it isn’t installed, unless its marketplace entry has a [relative-path source](plugins-marketplace-reference.md#plugin-sources) or a [seed directory](plugins-org.md#seed-containers-and-ci) already holds it. Instead, the `/plugin` **Errors** tab shows `Plugin "<name>" is enabled in project settings but isn't installed here`. A relative-path plugin needs no install record because it loads from the marketplace itself. Claude Code fetches a plugin with an external source only when one of these sources sets it to `true`:
+Check which setting sources the session loads. You set them with [`--setting-sources`](../02-Claude-Code-CLI/cli-reference.md#cli-flags). In the CLI, `user`, `project`, and `local` are all on by default. For example, if you run `claude --setting-sources user --add-dir ./shared` in your shell, Claude Code reads neither file in `./shared`. Pass the flag for the file that holds the `true`:
+
+- **`settings.json`**: `--setting-sources user,project`
+- **`settings.local.json`**: `--setting-sources user,project,local`
+
+### [](#enabled-in-project-settings-but-not-installed)Enabled in project settings but not installed
+
+By default, a plugin enabled only in your project’s `.claude/settings.json` doesn’t load at session start until you install it on your machine. With the marketplace on your machine, the `/plugin` **Errors** tab shows [`Plugin "<name>" is enabled in project settings but isn't installed here`](plugins-troubleshooting.md#plugin-is-enabled-in-project-settings-but-isnt-installed-here) or [`Plugin "<name>" not cached at <path>`](plugins-troubleshooting.md#plugin-not-cached-at).
+
+If the tab shows neither message, [add the marketplace](discover-plugins.md#add-a-marketplace) before you install. Find its source in the `extraKnownMarketplaces` setting of `.claude/settings.json`, or ask your maintainer.
+
+To install, run this in a shell from the project, using the plugin’s key in `enabledPlugins`:
+
+```python
+claude plugin install <name>@<marketplace> --scope project
+```
+
+To load the plugin, run `/reload-plugins` in your session or start a new session. Repeat the install in each of your clones, or use `--scope user` to cover all your projects. You can load a plugin without an install in these cases:
+
+- **In a [seed directory](plugins-org.md#seed-containers-and-ci)**: you have nothing to run
+- **Listed by a [relative path](plugins-marketplace-reference.md#plugin-sources) in a marketplace you added from a local path**: you have nothing to run, because the plugin loads at session start
+- **Listed by a relative path, such as `./plugins/formatter`, in the `marketplace.json` of a git marketplace you’ve added**: run `/reload-plugins` to load it for the current session only. To load it for one [non-interactive `-p` run](../02-Claude-Code-CLI/headless.md), set [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL=1`](../02-Claude-Code-CLI/env-vars.md).
+
+Claude Code fetches a plugin with an external source only when one of these sources sets the plugin to `true`:
 
 - Your user settings
 - A `.claude/settings.local.json` that git doesn’t track
 - The `--settings` flag
 - Managed settings
 
-
-[​](#find-plugins-on-disk)
-
-Find plugins on disk
+## [](#find-plugins-on-disk)Find plugins on disk
 
 Claude Code keeps plugin files and state records under one plugins root, which is `~/.claude/plugins` unless you set [`CLAUDE_CODE_PLUGIN_CACHE_DIR`](../02-Claude-Code-CLI/env-vars.md). Every path in the table is relative to that root.
 
@@ -269,6 +248,7 @@ Claude Code keeps plugin files and state records under one plugins root, which i
 | `cache/<marketplace>/<plugin>/<version>/` | One directory per installed version of a marketplace plugin. `<plugin>` is the marketplace entry name and `<version>` is the [resolved version](#versions-and-updates). `${CLAUDE_PLUGIN_ROOT}` points at this directory |
 | `data/<plugin-id>/` | The plugin’s persistent directory, exposed as `${CLAUDE_PLUGIN_DATA}`. For how `<plugin-id>` is formed, see [Path variables and persistent data](plugins-components.md#path-variables-and-persistent-data). Claude Code creates it when a plugin component first uses it and keeps it across updates. By default, Claude Code deletes it when you uninstall the plugin from its last scope. For `--keep-data` and the other cases where it stays, see [plugin uninstall](plugins-cli-reference.md#plugin-uninstall) |
 | `marketplaces/<name>/` | The clone or download of a marketplace added from GitHub, another Git host, or a URL. A marketplace added from a local `file` or `directory` source has no copy here, and its `installLocation` in `known_marketplaces.json` is the path you gave |
+| `mcpb/` | The files Claude Code extracts from the [MCP bundles](plugins-components.md#include-a-packaged-mcpb-server) that plugins declare. Requires Claude Code v2.1.324 or later |
 | `synced/` | The plugins Claude Code [synced from your claude.ai account](#synced-plugins) |
 | `.trash/` | Plugins that the claude.ai sync removed, such as after you turn one off on claude.ai or stop syncing |
 | `installed_plugins.json` and `known_marketplaces.json` | The records of what Claude Code has installed and which marketplaces it has fetched, described under [Check which stage a plugin reached](#check-which-stage-a-plugin-reached). A [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai) is recorded in `known_marketplaces_claudeai.json` instead |
@@ -277,10 +257,7 @@ Claude Code keeps plugin files and state records under one plugins root, which i
 
 Because `${CLAUDE_PLUGIN_ROOT}` points at a version directory, a plugin’s root path changes with every version. Keep a plugin’s durable files in `${CLAUDE_PLUGIN_DATA}` instead.
 
-
-[​](#in-place-and-copied-plugins)
-
-In-place and copied plugins
+### [](#in-place-and-copied-plugins)In-place and copied plugins
 
 Claude Code loads some plugins in place from where you keep them and copies the rest into the cache, according to their origin:
 
@@ -289,10 +266,7 @@ Claude Code loads some plugins in place from where you keep them and copies the 
 - **`command`-source plugins in [link mode](plugins-marketplace-reference.md#command-plugin-source)**: the directory the command printed loads in place, through links in the cache entry
 - **Every other marketplace plugin**: Claude Code copies the plugin into `cache/<marketplace>/<plugin>/<version>/` at install and loads that copy. Files outside the plugin directory aren’t copied, so when a script inside a copied plugin reads a path above the plugin root, such as `../shared`, it doesn’t find them
 
-
-[​](#paths-that-escape-the-plugin-directory)
-
-Paths that escape the plugin directory
+### [](#paths-that-escape-the-plugin-directory)Paths that escape the plugin directory
 
 Whether a plugin loads in place or from a cached copy, Claude Code doesn’t let it declare components outside its own directory. It rejects a component path that resolves outside the plugin root, whether the path is declared in `plugin.json` or in a marketplace entry:
 
@@ -302,24 +276,15 @@ Whether a plugin loads in place or from a cached copy, Claude Code doesn’t let
 
 A rejected path appears as a [`path escapes plugin directory`](../02-Claude-Code-CLI/errors.md#path-escapes-plugin-directory) error, and the plugin loads without that component.
 
-
-[​](#cleanup-of-previous-versions)
-
-Cleanup of previous versions
+### [](#cleanup-of-previous-versions)Cleanup of previous versions
 
 When you update or uninstall a plugin, Claude Code writes an `.orphaned_at` marker into the previous version directory. It removes that directory in a background cleanup 14 days later, so a session that already loaded the old version keeps running. The sweep runs only while `installed_plugins.json` records at least one install. After you uninstall your last plugin, orphaned directories stay until you install another.
 
-
-[​](#node-js-package-dependencies)
-
-Node.js package dependencies
+### [](#node-js-package-dependencies)Node.js package dependencies
 
 When Claude Code copies a plugin into the cache, it also installs the plugin’s Node.js package dependencies there, so the plugin’s hooks and MCP servers can load them. This section covers the npm and Bun packages a plugin declares in its own `package.json`. For plugins that depend on other plugins, see [plugin dependency versions](plugins-dependencies.md).
 
-
-[​](#when-the-dependency-install-runs)
-
-When the dependency install runs
+#### [](#when-the-dependency-install-runs)When the dependency install runs
 
 Claude Code installs the dependencies into the copied version directory each time it creates one:
 
@@ -342,10 +307,7 @@ If a plugin contains more than one of these lockfiles, Claude Code uses the firs
 
 Include an npm lockfile to reach the most users. Claude Code runs the matched lockfile’s package manager from the user’s PATH and doesn’t try the other lockfile instead if that package manager is missing. For a plugin distributed through an npm source, use `npm-shrinkwrap.json`, because npm excludes `package-lock.json` from published packages.
 
-
-[​](#limits-on-the-dependency-install)
-
-Limits on the dependency install
+#### [](#limits-on-the-dependency-install)Limits on the dependency install
 
 Claude Code constrains this dependency install so that no code from the plugin or its packages executes during it, and bounds how long it can run:
 
@@ -359,24 +321,15 @@ Claude Code constrains this dependency install so that no code from the plugin o
 
 Claude Code fetches an npm-source plugin before this dependency install, and none of the package’s own install scripts run during the fetch. See [npm plugin source](plugins-marketplace-reference.md#npm-plugin-source). You can’t turn the automatic install off. No setting or environment variable disables it. In restricted networks, see the [network access requirements](../13-Enterprise-Admin/network-config.md#network-access-requirements) for the hosts to allow.
 
-
-[​](#when-the-dependency-install-fails-or-is-skipped)
-
-When the dependency install fails or is skipped
+#### [](#when-the-dependency-install-fails-or-is-skipped)When the dependency install fails or is skipped
 
 If the install fails or is skipped, the plugin still loads, but the parts of it that need the missing packages may not work. `/plugin` and `claude plugin list` show a note on an enabled plugin whose cached copy has a lockfile and a `package.json` that lists runtime dependencies, but no `node_modules` directory. The note says whether the install didn’t finish or can’t run for this plugin. See [the troubleshooting entry](plugins-troubleshooting.md#the-packages-it-lists-are-not-installed) for what to do about each. When the automatic install can’t provide a dependency, install it from a hook into the [persistent data directory](plugins-components.md#path-variables-and-persistent-data). That includes packages that need their lifecycle scripts to build, Python dependencies, plugins locked with Yarn or pnpm, and dependencies that aren’t registry packages, such as git dependencies.
 
-
-[​](#versions-and-updates)
-
-Versions and updates
+## [](#versions-and-updates)Versions and updates
 
 If a plugin’s author pushed new commits and `claude plugin update` prints `<name> is already at the latest version (<version>).`, the version Claude Code computes for the plugin is unchanged, so the plugin’s files on disk don’t change. Claude Code computes a version for every plugin it installs, and that version is how it detects an update. `claude plugin update` and background auto-update compute the version again and don’t replace the cached copy when it matches what `installed_plugins.json` records. An update that you start can still [retry an unfinished dependency install](plugins-troubleshooting.md#the-packages-it-lists-are-not-installed) in that copy. The version also names the plugin’s cache directory. A manifest that pins `"version"` is one way the computed version stays the same across commits. See [How Claude Code computes the version](#how-claude-code-computes-the-version) for the resolution order. A plugin [loaded in place](#in-place-and-copied-plugins) from a marketplace you added from a local path loads its current source files at every session start, whatever its version string says. For a plugin from a [marketplace hosted on claude.ai](discover-plugins.md#add-from-claude-ai), the version claude.ai records for the plugin is its version, and the manifest’s `version` isn’t read.
 
-
-[​](#how-claude-code-computes-the-version)
-
-How Claude Code computes the version
+### [](#how-claude-code-computes-the-version)How Claude Code computes the version
 
 For a marketplace you added by source, Claude Code picks the rule by the `source` type of the plugin’s marketplace entry. The [marketplace reference](plugins-marketplace-reference.md#plugin-sources) lists the source types. For every source type in that list except `command`:
 
@@ -394,10 +347,7 @@ For a marketplace you added by source, Claude Code picks the rule by the `source
 
 Claude Code doesn’t take the version from a repository that encloses the install path, such as a git-managed `~/.claude`. For a `command` source, Claude Code always derives the version from what the command produced: a 12-character hash on its own, or `<manifest version>-<hash>` when the manifest sets one. The marketplace entry’s `version` is ignored for command sources. For what the hash covers, see [Copy mode and link mode](plugins-marketplace-reference.md#copy-mode-and-link-mode). Because the manifest comes first, a manifest that pins `"version": "1.0.0"` keeps every user on the cached copy until its author changes the string, however many commits they push. To let users track commits instead, leave `version` out of both the manifest and the entry. [Host a marketplace](plugins-host-marketplace.md) covers which choice fits which release setup.
 
-
-[​](#when-claude-code-refreshes-a-marketplace-before-an-install)
-
-When Claude Code refreshes a marketplace before an install
+### [](#when-claude-code-refreshes-a-marketplace-before-an-install)When Claude Code refreshes a marketplace before an install
 
 When you install a plugin, Claude Code looks it up in its local copy of the marketplace catalog. You can run `/plugin install` in a session or `claude plugin install` in your shell, and name the plugin with or without its marketplace. The table shows which of those combinations refresh the local copy.
 
@@ -415,17 +365,11 @@ The refresh before a `name@marketplace` install doesn’t depend on the marketpl
 - You set `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`
 - [Managed settings](plugins-org.md#restrict-what-users-can-install) block the marketplace, in which case Claude Code also refuses the install
 
-
-[​](#when-auto-update-runs)
-
-When auto-update runs
+### [](#when-auto-update-runs)When auto-update runs
 
 In an interactive session, after you send your first message, Claude Code waits a random delay of up to ten minutes. It then refreshes every marketplace with auto-update on and updates the plugins installed from them on disk. The running session keeps the versions it loaded, and you see `Plugin updated: <name> · Run /reload-plugins to apply`. Whether or not you reload, the new versions load on your next launch.
 
-
-[​](#which-marketplaces-and-plugins-auto-update)
-
-Which marketplaces and plugins auto-update
+#### [](#which-marketplaces-and-plugins-auto-update)Which marketplaces and plugins auto-update
 
 Whether a marketplace auto-updates follows the first of these that is set:
 
@@ -435,10 +379,7 @@ Whether a marketplace auto-updates follows the first of these that is set:
 
 If you set `DISABLE_UPDATES=1`, `DISABLE_AUTOUPDATER=1`, or `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1`, the whole pass is off and the **Enable auto-update** toggle is hidden, unless you also set `FORCE_AUTOUPDATE_PLUGINS=1`. The [environment variables reference](../02-Claude-Code-CLI/env-vars.md) covers each variable’s wider effect. Auto-update also skips a plugin whose marketplace entry declares a `headersHelper`. [Installs and updates that refuse a command instead of asking](plugins-host-marketplace.md#installs-and-updates-that-refuse-the-command-instead-of-asking) explains when such a plugin appears in the `/plugin` **Errors** tab and how you update it from there. When a copied plugin updates mid-session, hook commands, monitors, MCP servers, and LSP servers keep using the previous version’s path. Run `/reload-plugins` to switch hooks, MCP servers, and LSP servers to the new path. Monitors require a session restart.
 
-
-[​](#when-a-command-source-re-runs)
-
-When a command source re-runs
+### [](#when-a-command-source-re-runs)When a command source re-runs
 
 Plugins with a `command` source don’t wait for the [auto-update pass](#when-auto-update-runs). The printed directory reflects the tool’s state at the time the command ran, so Claude Code runs the [command you accepted](plugins-host-marketplace.md#change-the-command-of-a-command-source) again at these times:
 
@@ -448,10 +389,7 @@ Plugins with a `command` source don’t wait for the [auto-update pass](#when-au
 
 Claude Code skips the two background runs when you set [`CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`](../02-Claude-Code-CLI/env-vars.md). Explicit installs and updates still run the command with that variable set. When the command’s hashed output has changed, Claude Code installs the result as a new version and reloads it in the running interactive session, switching [the same components that `/reload-plugins` switches](plugins-cli-reference.md#reload-plugins). You see a notification that the plugin was reloaded. If reloading in place would invalidate the session’s prompt cache, Claude Code instead prompts you to run `/reload-plugins`, which [warns about the cache cost and applies when rerun with `--force`](../02-Claude-Code-CLI/prompt-caching.md#enabling-or-disabling-a-plugin).
 
-
-[​](#name-conflicts)
-
-Name conflicts
+## [](#name-conflicts)Name conflicts
 
 When enabled plugins from different origins share a manifest name, this order decides which one loads, from highest precedence to lowest:
 
@@ -465,24 +403,15 @@ When enabled plugins from different origins share a manifest name, this order de
 
 Because the order compares manifest names, a `--plugin-dir` plugin named `hello-plugin` replaces `hello@example-marketplace` when that plugin’s manifest also says `"name": "hello-plugin"`.
 
-
-[​](#hooks-when-two-enabled-plugins-share-a-name)
-
-Hooks when two enabled plugins share a name
+### [](#hooks-when-two-enabled-plugins-share-a-name)Hooks when two enabled plugins share a name
 
 When you install and enable two plugins with the same manifest name from different marketplaces, both appear as enabled in `/plugin`, but the hooks of one of them are left out. One plugin per name registers the hooks in its `hooks/hooks.json`, and one plugin per name loads a [hooks module](plugins-mods-overview.md). When your organization’s managed settings turn on one of the copies, that copy holds the name. Otherwise the copy Claude Code loads first holds it. To see which copy holds the name, run `/plugin` in your session and open the **Errors** tab. A note there for the copy whose hooks were left out names the copy that holds the name, and the left-out copy’s details show the same note. For `hooks/hooks.json` hooks the note begins `Its hooks.json hooks do not run`, and for a hooks module it begins `Its hooks module does not load`. The note requires Claude Code v2.1.296 or later. To run the left-out copy’s hooks instead, disable or uninstall the copy that holds the name, then run `/reload-plugins` in your session. The reload registers the remaining copy’s hooks and clears the note. When the copy that holds the name is one your managed settings turn on, you can’t disable it, and the other copy’s hooks stay off while both are installed.
 
-
-[​](#keep-a-session-only-plugin-from-loading)
-
-Keep a session-only plugin from loading
+### [](#keep-a-session-only-plugin-from-loading)Keep a session-only plugin from loading
 
 To keep a `--plugin-dir` plugin from shadowing anything, or to turn one off when a parent process passes the flag for you, set its id to `false` in any settings file. For a plugin whose manifest name is `hello-plugin`, the entry is `"enabledPlugins": {"hello-plugin@inline": false}`. A disabled session-only plugin doesn’t shadow, so the marketplace or skills-directory copy loads instead.
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 - [Install and manage plugins](discover-plugins.md): the install, enable, disable, and update steps themselves
 - [Troubleshoot plugins](plugins-troubleshooting.md): error messages by the stage that produces them

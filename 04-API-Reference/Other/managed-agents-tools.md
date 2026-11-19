@@ -2,7 +2,7 @@
 title: "Tools - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/tools"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:30Z"
+fetched_at: "2026-11-13T06:36:48Z"
 tags: ["api"]
 ---
 
@@ -20,21 +20,24 @@ Configure tools available to your agent.
 
 Agent toolset
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Claude Managed Agents provides a set of built-in tools that Claude can use autonomously within a [session](managed-agents-sessions.md). You control which tools are available by specifying them in the agent configuration.
 
@@ -61,7 +64,7 @@ When a tool output exceeds 100,000 characters (about 25,000 tokens), it is autom
 
 Enable the full toolset with `agent_toolset_20260401` when creating an agent. Use the `configs` array to disable specific tools or override their settings. Each entry is identified by its `name`, which takes a value from the Name column in [Available tools](#available-tools). An entry also accepts an optional `type` field with the same value.
 
-Each config entry can also set a `permission_policy`. The policy controls whether the tool’s calls run without confirmation, require confirmation, or are evaluated individually by the server. See [Permission policies](managed-agents-permission-policies.md) for the available policy types.
+Each config entry can also set a `permission_policy`. The policy controls whether the tool’s calls run without confirmation, require confirmation, or go to the server, which evaluates each call. See [Permission policies](managed-agents-permission-policies.md) for the available policy types.
 
 The following example enables the toolset and disables `web_fetch`:
 
@@ -214,7 +217,7 @@ tools:
 ---
 ```
 
-A custom tool’s name can’t start with `mcp__` or `ant__`, or match the name of a built-in agent tool. A request that breaks this rule returns a 400 error. An agent that already has a custom tool whose name starts with `ant__` accepts an update only if the update sends `tools` without that name, so rename or remove the tool in your next update. A new session is refused with a 400 error if such a tool is on its agent (after any [overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session)), on an agent in the `predefined_agents` list of `subagents`, or on an agent in the `predefined_agents` list of `workflows`. Sessions that already exist aren’t affected.
+New custom tool names can’t start with `mcp__` or `ant__`, or match the name of a built-in agent tool. A request that breaks this rule returns a 400 error. However, an existing custom tool might start with `ant__`. An agent with such a tool accepts an update only if the update sends `tools` without that name, so rename or remove the tool in your next update. A new session is refused with a 400 error if such a tool is on its agent (after any [overrides](managed-agents-sessions.md#override-agent-configuration-for-a-session)), on an agent in the `predefined_agents` list of `subagents`, or on an agent in the `predefined_agents` list of `workflows`. Sessions that already exist aren’t affected.
 
 The agent calls its custom tools during a session. To receive the calls and return results, see [Answer tool calls that pause the session](managed-agents-events-and-streaming.md#handling-custom-tool-calls).
 
@@ -259,27 +262,45 @@ Send events, stream responses, and interrupt or redirect your session while it r
 
 ## Availability
 
-Agent toolset is in beta on every model.
+Agent toolset
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Agent toolset are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Claude API
 
-### Required beta headers
+Status  
+Beta
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Managed Agents
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Beta header  
+Requires
 
-Header
+managed-agents-2026-04-01
 
-- `managed-agents-2026-04-01`
-  
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -293,8 +314,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

@@ -2,7 +2,7 @@
 title: "CLI authentication options - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/authentication"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:32Z"
+fetched_at: "2026-11-13T06:34:01Z"
 tags: ["api", "authentication", "cli"]
 ---
 

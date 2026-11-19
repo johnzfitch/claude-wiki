@@ -2,7 +2,7 @@
 title: "Tool runner (SDK) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-runner"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:35Z"
+fetched_at: "2026-11-13T06:33:58Z"
 tags: ["api", "sdk"]
 ---
 
@@ -20,14 +20,17 @@ Use the SDK’s tool runner to handle the agentic loop, error wrapping, and type
 
 Tool runner
 
-[Status](#availability-feature-support)  
 Beta
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 The tool runner handles the agentic loop, error wrapping, and type safety so you don’t have to. When you need human-in-the-loop approval, custom logging, or conditional execution, use the [manual loop](agents-and-tools-tool-use-handle-tool-calls.md) instead.
 
@@ -445,27 +448,87 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Tool runner is in beta on every model.
+Tool runner
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- All supported platforms
+APIs  
+- Messages API
+- Managed Agents
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Amazon Bedrock
 
-The Python, TypeScript and Go SDKs have a session tool runner that runs your tools for a session’s custom tool calls. The session itself runs the agent loop.
+Status  
+Beta
 
-StatusBeta
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- All models
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Amazon Bedrock (bedrock-runtime)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models

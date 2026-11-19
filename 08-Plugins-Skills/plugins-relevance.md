@@ -2,7 +2,8 @@
 title: "Recommend plugins for your org - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/relevance"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-27T06:26:31Z"
+fetched_at: "2026-11-13T06:35:04Z"
+last_modified: "Fri, 13 Nov 2026 06:21:51 GMT"
 tags: ["claude-code", "plugins"]
 ---
 

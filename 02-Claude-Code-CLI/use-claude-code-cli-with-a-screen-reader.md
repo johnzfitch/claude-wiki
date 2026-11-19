@@ -2,7 +2,7 @@
 title: "Use Claude Code CLI with a screen reader | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15924927-use-claude-code-cli-with-a-screen-reader"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:26:07Z"
+fetched_at: "2026-11-18T06:28:31Z"
 tags: ["claude-code", "cli"]
 ---
 

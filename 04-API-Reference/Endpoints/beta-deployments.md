@@ -2,7 +2,7 @@
 title: "Deployments - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/deployments"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:38Z"
+fetched_at: "2026-11-13T06:35:24Z"
 tags: ["api"]
 ---
 
@@ -25,49 +25,49 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/deployments
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [List Deployments](https://platform.claude.com/docs/en/api/http/beta/deployments/list)
 
 GET/v1/deployments
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Get Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/retrieve)
 
 GET/v1/deployments/{deployment_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Update Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/update)
 
 POST/v1/deployments/{deployment_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Archive Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/archive)
 
 POST/v1/deployments/{deployment_id}/archive
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Run Deployment Now](https://platform.claude.com/docs/en/api/http/beta/deployments/run)
 
 POST/v1/deployments/{deployment_id}/run
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Pause Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/pause)
 
 POST/v1/deployments/{deployment_id}/pause
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Unpause Deployment](https://platform.claude.com/docs/en/api/http/beta/deployments/unpause)
 
 POST/v1/deployments/{deployment_id}/unpause
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 

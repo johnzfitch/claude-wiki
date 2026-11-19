@@ -2,7 +2,7 @@
 title: "Claim and migrate accounts on your domain | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625619-claim-and-migrate-accounts-on-your-domain"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:26:28Z"
+fetched_at: "2026-11-18T06:28:01Z"
 tags: ["account"]
 ---
 
@@ -27,7 +27,7 @@ Before you can enable domain claiming, your organization must have all of the fo
 
 2.  Complete domain verification (DNS).
 
-3.  Enforce SSO (not just configured—SSO must be actively enforced). See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+3.  Enforce SSO (not just configured—SSO must be actively enforced). See **[Set up single sign-on (SSO)](set-up-single-sign-on-sso.md)**.
 
 4.  Enable JIT provisioning or SCIM. See **[Set up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-set-up-jit-or-scim-provisioning)**.
 
@@ -79,7 +79,7 @@ During this window, each person on the domain can sign in and choose how to migr
 
 - Once all accounts are migrated or closed, no personal accounts exist on your domain. App Store subscribers’ accounts stay open for a few weeks after they move.
 
-- People who don’t choose before the deadline are emailed a link to download their data. The link only opens if they can sign in, so make sure they’re in your IdP before the deadline (see **[SSO and provisioning sequencing](#h_3eceece083)** below). To use Claude in your organization, they'll sign in with single sign-on (SSO). Ask people to export and download their data before the deadline: Claude for Teachers and FERPA-covered accounts don’t get a download link. For Claude for Teachers, they go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, they go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If they can’t export, they should **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** before the deadline.
+- People who don’t choose before the deadline are emailed a link to download their data. The link only opens if they can sign in, so before the deadline, make sure anyone who needs their data is in your IdP and can be added to your organization, with a seat available (see **[SSO and provisioning sequencing](#h_3eceece083)** below). To use Claude in your organization, they'll sign in with single sign-on (SSO). Ask people to export and download their data before the deadline: Claude for Teachers and FERPA-covered accounts don’t get a download link. For Claude for Teachers, they go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, they go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If they can’t export, they should **[contact Support](../15-Claude-AI-Features/how-to-get-support.md#h_d6fc679aa4)** before the deadline.
 
 New accounts created on the domain after domain capture is enabled go directly through SSO and your Enterprise workspace—no personal account is created.
 
@@ -91,7 +91,7 @@ To migrate accounts on a domain you verified later:
 
 1.  Wait for the current claim's 30-day window to end. Only one claim can be in progress at a time.
 
-2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+2.  Verify the new domain if you haven't already. See **[Set up single sign-on (SSO)](set-up-single-sign-on-sso.md)**.
 
 3.  Review the accounts on the new domain, then initiate a new claim. This claim has its own 30-day window, and the accounts on the new domain receive the same email and in-product notifications.
 
@@ -99,7 +99,7 @@ To migrate accounts on a domain you verified later:
 
 ## What’s not supported
 
-- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only start fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+- Migrating data into organizations with HIPAA readiness or customer-managed encryption keys (CMEK) turned on. You can still claim your domain, and people on it are notified as usual, but they can only start fresh. Nothing from their personal accounts moves over. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](../22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek-claude-help-center.md)**.
 
 - Claiming Team plan accounts. Only individual accounts (Free, Pro, Max, Ultra) and, for schools and districts, individual Claude for Teachers accounts can be claimed.
 
@@ -123,6 +123,6 @@ Domain claiming integrates with your existing SSO and provisioning setup:
 
 ### What happens if my organization doesn’t have enough seats available for migrated users?
 
-If you purchased your Enterprise plan directly through Anthropic, you'll see an error message in organization settings prompting you to **[buy more seats](../17-Billing-Plans/purchase-and-manage-seats-on-enterprise-plans.md)**.
+If you purchased your Enterprise plan directly through Anthropic, you'll see an error message in organization settings prompting you to **[buy more seats](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans)**.
 
 If you purchased your Enterprise plan through the AWS Marketplace, migrated users will see a message asking them to contact their admin when they try to log in after the migration.

@@ -2,14 +2,16 @@
 title: "Contributor Ladder - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/contributor-ladder"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-02T05:36:35Z"
+fetched_at: "2026-11-14T06:25:07Z"
+last_modified: "Sat, 14 Nov 2026 02:52:05 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
 
-- [Guiding Principles](#guiding-principles)
-- [Roles at a Glance](#roles-at-a-glance)
+Back to top
+
+- [Roles at a glance](#roles-at-a-glance)
 - [Contributor](#contributor)
 - [Member](#member)
 - [Maintainer](#maintainer)
@@ -17,16 +19,14 @@ tags: ["mcp", "mcp-community"]
 - [Lead Maintainer](#lead-maintainer)
   - [Succession](#succession)
 - [Community Moderator](#community-moderator)
-- [Working Group and Interest Group Leadership](#working-group-and-interest-group-leadership)
-- [Advancement Process](#advancement-process)
-  - [Self-Nomination vs. Recognition](#self-nomination-vs-recognition)
-  - [Process Steps](#process-steps)
-- [Decision-Making and Escalation](#decision-making-and-escalation)
-  - [Delegation as Default](#delegation-as-default)
-  - [Escalation Matrix](#escalation-matrix)
-- [Contribution Pathways](#contribution-pathways)
-- [Stepping Down and Emeritus Status](#stepping-down-and-emeritus-status)
-- [Recognition and Visibility](#recognition-and-visibility)
+- [Leading a working or interest group](#leading-a-working-or-interest-group)
+- [Advancement process](#advancement-process)
+- [Escalation](#escalation)
+- [Inactivity, stepping down and removal](#inactivity-stepping-down-and-removal)
+  - [Inactivity](#inactivity)
+  - [Stepping down](#stepping-down)
+  - [Emeritus status](#emeritus-status)
+  - [Removal](#removal)
 
 Governance
 
@@ -34,384 +34,126 @@ Governance
 
 Copy pageCopy page
 
-Roles, responsibilities, and advancement criteria for MCP contributors, from first contribution to Core Maintainer
+The contributor roles in the MCP project, what each requires and grants, and how people move between them.
 
 Copy pageCopy page
 
-The Model Context Protocol contributor ladder defines roles, responsibilities, and advancement criteria for the project. It shows community members how to grow their involvement from a first contribution to project leadership. This document implements [SEP-2148](../SEPs/seps-2148-contributor-ladder.md). For Working Group and Interest Group governance, see [SEP-2149](../SEPs/seps-2149-working-group-charter-template.md).
+This page defines the contributor roles in the MCP project, what each requires and grants, and how people move between them. It was adopted by [SEP-2148](https://modelcontextprotocol.io/seps/2148), a Specification Enhancement Proposal (SEP), and is changed by a Process SEP. Authority between roles is defined in [Governance](community-governance.md#roles), and the group-level roles (WG Member, WG Lead, IG Facilitator) in [Working Groups and Interest Groups](community-working-interest-groups.md).
 
+## [](#roles-at-a-glance)Roles at a glance
 
-[​](#guiding-principles)
+| Role | What it is | Access granted | Minimum time |
+|----|----|----|----|
+| [Contributor](#contributor) | Anyone who has contributed to MCP in any form | None. Issues and group meetings are open to all. [Pull requests](community-contributing.md#change-the-specification-or-docs) vary by repository | None |
+| [Member](#member) | Established, active contributor | GitHub organization membership, triage rights | 2-3 months of active participation |
+| [Maintainer](#maintainer) | Steward of a named area (an SDK, a tool, a docs area, a group) | Merge rights in the area, listed in [`MAINTAINERS.md`](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) | 6 months as Member |
+| [Core Maintainer](#core-maintainer) | Project-wide technical leadership; authority in [Governance](community-governance.md#roles) | Administrative rights on all repositories | By invitation after sustained Maintainer contribution |
+| [Lead Maintainer](#lead-maintainer) | Founding role; authority in [Governance](community-governance.md#roles) | Administrative rights on all repositories and infrastructure | Founders and their successors only |
+| [Community Moderator](#community-moderator) | Code of Conduct enforcement and incident handling | Moderation tools on Discord and GitHub Discussions | Member status; parallel track |
 
-Guiding Principles
+Timelines are minimums, advancement is discretionary, and an exception requires Core Maintainer approval with written rationale. Code, specification text, documentation, triage, security work, community work and moderation all count equally toward every role.
 
-- **Earned Trust.** Advancement follows from demonstrated contributions, good judgment, and sustained engagement. Tenure alone is not enough.
-- **Multiple Growth Pathways.** Code, specification work, documentation, and community building all lead to advancement.
-- **Transparency.** Criteria for advancement are explicit and applied consistently.
-- **Alignment With MCP Goals.** Contributors must show commitment to MCP beyond any single employer’s interests.
+## [](#contributor)Contributor
 
+A Contributor is anyone who has contributed to MCP in any form: issues, pull requests, group discussion, documentation, or help to others. There are no formal requirements. Start at [Contributing](community-contributing.md#where-to-start) and join the channels listed in [Communication](community-communication.md). Pull requests on the specification repository are opened by [Members](#member). Other repositories set their own rules in their contributing guides.
 
-[​](#roles-at-a-glance)
+## [](#member)Member
 
-Roles at a Glance
+**Requirements.** Several contributions to MCP, including at least one merged pull request or accepted contribution. Ongoing engagement over 2-3 months rather than one-off contributions. Two-factor authentication enabled on GitHub. No objection from existing Members within 7 days of nomination. **Sponsorship and approval.** Sponsored by two Members or Maintainers from different organizations, or by one Core Maintainer or Lead Maintainer. Approved by no-objection. **Duties.** Respond to issues and pull requests assigned to you. Help onboard new contributors when you can. Follow the [Code of Conduct](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CODE_OF_CONDUCT.md). **Privileges.** GitHub organization membership with triage rights. Can be assigned issues and pull requests and use review commands such as `/lgtm`. Can open pull requests on the specification repository, as set out in [Contributing](community-contributing.md#change-the-specification-or-docs). Eligible to serve as WG Lead or IG Facilitator. The member lists in the [access repository](https://github.com/modelcontextprotocol/access) are the roster. No separate list is published. **Minimum time.** 2-3 months of active participation.
 
-| Role                                            | Summary                                       | Key Privileges                                                            | Minimum Timeline                                      |
-|-------------------------------------------------|-----------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------|
-| [**Contributor**](#contributor)                 | Anyone who contributes to MCP                 | Submit issues, PRs, participate in discussions                            | Immediate                                             |
-| [**Member**](#member)                           | Established, active contributor               | GitHub org membership, triage rights, eligible for WG/IG leadership       | 2-3 months of meaningful contributions                |
-| [**Maintainer**](#maintainer)                   | Area steward with operational responsibility  | Merge rights, release participation                                       | 6+ months as Member                                   |
-| [**Core Maintainer**](#core-maintainer)         | Technical leadership and protocol stewardship | Final decision authority, governance participation                        | By invitation after sustained Maintainer contribution |
-| [**Lead Maintainer**](#lead-maintainer)         | Ultimate project authority (founders)         | All Core Maintainer privileges, veto authority, appoints Core Maintainers | Reserved for project founders; succession only        |
-| [**Community Moderator**](#community-moderator) | CoC enforcement and community health          | Moderation rights on community platforms, incident handling               | Parallel track: Member status + appointment           |
+## [](#maintainer)Maintainer
 
-Timelines are minimums, not guarantees. They protect the project from rapid privilege escalation and ensure a high bar of demonstrated commitment. Actual advancement is discretionary and may take longer. Exceptions require explicit Core Maintainer approval with documented rationale.
+**Requirements.** Six or more months as a Member with sustained contributions. Leadership or ownership of something concrete: an SDK, a tool, a documentation area, a working or interest group, or a significant initiative. Acting for the project over the interests of any employer. Knowledge of the [roadmap](../General/development-roadmap.md), the [design principles](community-design-principles.md) and how the area is used in practice. Completed security and governance onboarding. **Sponsorship and approval.** Sponsored by one Maintainer or Core Maintainer. Approved by Core Maintainers. **Duties.**
 
-------------------------------------------------------------------------
+- Own the operational health of the area, including test stability, documentation currency, the release process and milestone planning.
+- Review escalated decisions within the timelines under [Escalation](#escalation), and make sure proposals that reach Core Maintainers are refined and account for ecosystem-wide impact.
+- Mentor Members and sponsor future Maintainers.
+- Speak for the area’s users, represent MCP externally when asked, and take part in roadmap and governance discussions and in the project’s GitHub and Discord channels.
 
+**Privileges.** Merge rights in owned areas. May sponsor Members, Maintainers and SEPs (see [SEP Guidelines](community-sep-guidelines.md#sponsors)). Included in roadmap and prioritization discussions. Listed in [`MAINTAINERS.md`](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md). **Minimum time.** 6 months as Member.
 
-[​](#contributor)
+## [](#core-maintainer)Core Maintainer
 
-Contributor
+**Requirements.** Six or more months as a Maintainer or in equivalent standing. Demonstrated judgment on project-wide decisions. Trusted across organizations. **Sponsorship and approval.** Nominated by a majority of Core Maintainers and approved by Lead Maintainers, or appointed directly by Lead Maintainers. Removal is by Lead Maintainers (see [Governance](community-governance.md#roles)). **Duties.** Steward the design principles and the roadmap, and hold to long-term restraint in protocol evolution. Decide contested and cross-cutting technical questions and governance matters under the [decision process](community-governance.md#decision-process). Represent the project externally, plan succession, and watch community health. Attend the Core Maintainer meeting every two weeks and [Steering Group](community-governance.md#roles) meetups. **Privileges.** Vote on SEPs and governance matters. Approve Maintainers, breaking changes and major specification revisions. Administrative rights on all MCP repositories. Listed in [`MAINTAINERS.md`](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md). **Minimum time.** By invitation after sustained Maintainer contribution. The group is kept small and delegates to Maintainers, WG Leads and IG Facilitators rather than growing. When evaluating candidates, Core Maintainers consider whether it reflects the breadth of MCP adoption, including enterprise adopters running MCP in production.
 
-Anyone who has contributed to MCP in any form is a Contributor. This includes opening issues, submitting pull requests, participating in working group discussions, improving documentation, or helping other community members. **There are no formal requirements.** We welcome all contributions that follow our contributing guidelines. **Getting started:**
+## [](#lead-maintainer)Lead Maintainer
 
-- Review the [Contributing Guide](community-contributing.md)
-- Join community channels (Discord, GitHub Discussions)
-- Look for issues tagged `good-first-issue` or `help-wanted`
-- Attend working group meetings
+Lead Maintainer is the founding role, held for life, with no advancement path into it. A Lead Maintainer holds every Core Maintainer duty and privilege plus the powers listed in [Governance](community-governance.md#roles) (veto, appointment and removal of Core Maintainers, acting alone).
 
-------------------------------------------------------------------------
+### [](#succession)Succession
 
+If a Lead Maintainer leaves the role for any reason, succession begins on their written notice or, if they cannot give notice, when the remaining Lead Maintainers or the Core Maintainers determine that the Lead Maintainer is unable to continue serving. While one or more Lead Maintainers remain, they appoint the successor, by majority vote if more than one remains, and continue to govern until the successor is appointed. If no Lead Maintainers remain, the Core Maintainers appoint a successor by majority vote within 30 days, and the project operates by two-thirds vote of Core Maintainers until a new Lead Maintainer is appointed.
 
-[​](#member)
+## [](#community-moderator)Community Moderator
 
-Member
+**Requirements.** Member status. Composure and good judgment in community interactions. Working knowledge of the [Code of Conduct](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CODE_OF_CONDUCT.md). Discretion and fairness in sensitive situations. **Sponsorship and approval.** Sponsored and approved by one Core Maintainer or Lead Maintainer. Core Maintainers may remove a moderator for failure to uphold moderation standards or for Code of Conduct violations. A moderator may step down at any time. **Duties.**
 
-Members are established contributors with a record of ongoing commitment to MCP. **Requirements:**
+- Watch community channels, including Discord and GitHub Discussions, for Code of Conduct violations.
+- Triage and respond to Code of Conduct reports, and escalate serious or complex incidents to Core Maintainers.
+- Coordinate with other moderators so that enforcement is consistent.
+- Record moderation actions and keep incident details confidential.
+- Recuse from any incident you are party to. Those incidents go directly to Core Maintainers.
 
-- Multiple contributions to MCP (code, documentation, and/or community)
-- At least one merged PR or accepted contribution
-- Ongoing engagement with the community, not just one-off contributions
-- Two-factor authentication enabled on GitHub
-- No objections from existing Members within 7 days
+**Privileges.** Moderation rights and tools on Discord and GitHub Discussions, and access to private moderator channels. May warn, mute or temporarily ban users for Code of Conduct violations. Listed in [`MAINTAINERS.md`](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md#community-moderators). **Minimum time.** None beyond Member status. Community Moderator is a parallel track that may be held alongside any other role and is not a prerequisite for technical advancement. Moderation work counts toward every role.
 
-**Sponsorship:**
+## [](#leading-a-working-or-interest-group)Leading a working or interest group
 
-- Sponsored by two existing Members or Maintainers from different organizations, **or**
-- Sponsored by one Core Maintainer or Lead Maintainer
+WG Lead and IG Facilitator require Member status, not Maintainer status, and the work counts toward advancement to Maintainer. Their requirements, sponsorship and duties are defined in [Working Groups and Interest Groups](community-working-interest-groups.md#leadership).
 
-**Minimum timeline:** 2-3 months of active participation **Responsibilities:**
+## [](#advancement-process)Advancement process
 
-- Continue contributing in good faith
-- Respond to assigned issues and PRs
-- Follow community guidelines and the code of conduct
-- Help onboard new contributors when possible
+You may nominate yourself or be nominated by a sponsor. Self-nominees still need the sponsors listed below.
 
-**Privileges:**
+1.  The nominee or a sponsor opens an issue in the [specification repository](https://github.com/modelcontextprotocol/modelcontextprotocol) using the nomination template, with links to the contributions that meet the role’s requirements.
+2.  Sponsors confirm their support in the thread.
+3.  A 7-day community comment period runs.
+4.  The approving body decides and records the outcome in the thread.
+5.  Access is provisioned through the [access repository](https://github.com/modelcontextprotocol/access) and the new role-holder completes onboarding.
 
-- GitHub organization membership with triage rights
-- Can be assigned to issues and PRs
-- Can use shortcut approval or review commands on PRs, such as `/lgtm`
-- Listed in the community membership roster
-- Can create PRs in restricted repositories
-- Eligible for Working Group Lead or Interest Group Facilitator roles
+| Role | Sponsors | Approved by |
+|----|----|----|
+| Member | 2 Members or Maintainers from different organizations, or 1 Core or Lead Maintainer | No objection from existing Members within 7 days |
+| Maintainer | 1 Maintainer or Core Maintainer | Core Maintainers |
+| Core Maintainer | Nominated by a majority of Core Maintainers | Lead Maintainers, who may instead appoint directly |
+| Community Moderator | 1 Core or Lead Maintainer | The sponsoring Core or Lead Maintainer |
 
-**Inactivity:** Members with no contributions for 3 months may be moved to emeritus status. Re-engagement follows a simplified re-familiarization process.
+## [](#escalation)Escalation
 
-------------------------------------------------------------------------
+Decisions are made at the lowest level that owns the matter and are recorded in writing. Maintainers, WG Leads and IG Facilitators handle day-to-day decisions within their scope. Core Maintainers act on escalation, on cross-cutting questions, and where a process requires them, such as specification changes and Maintainer approval. Lead Maintainers act only on contested governance decisions or when Core Maintainers cannot reach a decision. Escalate only when you are blocked, when the decision has project-wide effect, or when a process on these pages requires it.
 
+| Issue type | First escalation | Second escalation | Response time |
+|----|----|----|----|
+| Technical disagreement in a pull request | Maintainer in scope | Core Maintainer | 5 business days |
+| Technical disagreement in a working group | WG Lead | Core Maintainer | 5 business days |
+| Technical disagreement in an interest group | IG Facilitator | Core Maintainer | 5 business days |
+| Disagreement with a WG Lead or IG Facilitator | Core Maintainer | Lead Maintainer | 7 business days |
+| Disagreement with a Maintainer decision | Core Maintainer | Lead Maintainer | 7 business days |
+| Disagreement among Core Maintainers | Lead Maintainer | None | 10 business days |
+| Code of Conduct violation | Community Moderator | Core Maintainer | Immediate |
+| Security issue | Core Maintainer | Lead Maintainer | Immediate |
 
-[​](#maintainer)
+A vulnerability is reported through a private advisory first (see [Reporting a vulnerability](community-policies.md#reporting-a-vulnerability)). The security row is the maintainer-internal escalation once a report exists. Maintainers who learn of an actively exploited vulnerability or a severe incident must follow the [EU Cyber Resilience Act (CRA) escalation rule](community-policies.md#eu-cyber-resilience-act-cra-stewardship). They must notify a Core Maintainer or Lead Maintainer immediately in `#security-disclosures` on Discord while they fix the problem, and that Core Maintainer or Lead Maintainer works with the Linux Foundation CRA steward. To escalate:
 
-Maintainer
+1.  Document the decision, the options considered and the points of disagreement.
+2.  Present it to the escalation authority with a clear ask.
+3.  The escalation authority gives binding guidance, asks for more information, or escalates further.
 
-Maintainers are trusted stewards who take operational responsibility for specific areas. **Requirements:**
+Disputes inside a working or interest group follow [Working Groups and Interest Groups](community-working-interest-groups.md#escalation), which lists the disputes that go straight to Core Maintainers and requires that the Core Maintainer designated to resolve a group dispute share no organizational affiliation with the parties.
 
-- Member for at least 6 months with sustained, high-quality contributions
-- Demonstrated leadership in working groups or significant initiatives
-- Ability to represent MCP’s interests above those of any single employer or organization
-- Deep understanding of the MCP vision, roadmap, and design principles
-- Understanding of how the area impacts real-world AI integration and model interaction patterns
-- Completed security and governance onboarding
+## [](#inactivity-stepping-down-and-removal)Inactivity, stepping down and removal
 
-**Sponsorship and Approval:**
+### [](#inactivity)Inactivity
 
-- Sponsored by an existing Maintainer or Core Maintainer
-- Approved by Core Maintainers
+Members with no contributions for 3 months may be moved to emeritus status. Returning Members go through a simplified re-familiarization. Maintainers with no contributions for 6 months may be moved to emeritus status after Core Maintainer review, and the move revokes their merge rights. Returning Maintainers repeat the security and governance onboarding. Lead Maintainers review a Core Maintainer after 6 months without participation in governance or technical decisions and may move them to emeritus status. Core Maintainers should say early when their availability drops.
 
-**Responsibilities:**
+### [](#stepping-down)Stepping down
 
-- Own the operational health of the area (test stability, documentation currency)
-- Run release processes and milestone planning for the scope
-- Provide timely review of escalated decisions
-- Participate actively in governance discussions
-- Mentor Members and develop future Maintainers
-- Represent MCP in external contexts when appropriate
-- Engage with the area ecosystem and stakeholders; understand real-world usage and represent community needs
-- Ensure proposals reaching Core Maintainers are refined, well-considered, and account for ecosystem-wide impact
-- Participate actively in discussions on communication channels (GitHub issues, Discord)
+You may step down from any role for any reason. Tell the WG Lead, IG Facilitator, Maintainer or Core Maintainer you work with, hand over open work, and move to emeritus status.
 
-**Privileges:**
+### [](#emeritus-status)Emeritus status
 
-- Merge privileges for owned areas
-- Can sponsor new Maintainers
-- Participate in roadmap and prioritization discussions
-- Listed in `MAINTAINERS.md`
+Emeritus role-holders keep their recognition in [`MAINTAINERS.md`](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/MAINTAINERS.md) and release notes and hold no duties or privileges.
 
-**Inactivity:** Maintainers with no contributions for 6 months may be moved to emeritus status following review by Core Maintainers. Merge rights are revoked upon emeritus transition. Re-engagement requires completing security and governance onboarding again. All contribution pathways can lead to Maintainer. The specific scope will align with the contribution type.
+### [](#removal)Removal
 
-------------------------------------------------------------------------
-
-
-[​](#core-maintainer)
-
-Core Maintainer
-
-Core Maintainers hold final decision-making authority for MCP’s technical direction. This is the highest level of trust in the community.
-
-The Core Maintainer role is intentionally limited. This ensures a coherent technical vision while the project scales. Bandwidth concerns are addressed through delegation to Maintainers, Working Group Leads, and Interest Group Facilitators, not by expanding Core Maintainer numbers.
-
-**Requirements:**
-
-- Sustained contribution as Maintainer or similar role over at least 6 months
-- Demonstrated judgment on complex, project-wide decisions
-- Trust and respect across organizational boundaries
-- Deep commitment to MCP’s long-term success
-
-**Appointment:**
-
-- Nominated by a majority of Core Maintainers and approved by Lead Maintainers, **or**
-- Direct appointment by Lead Maintainers
-
-When evaluating candidates, Core Maintainers should consider whether the current composition adequately represents the breadth of the MCP ecosystem. This includes enterprise adopters deploying MCP in production. **Responsibilities:**
-
-- Final technical decision authority for contested or cross-cutting issues
-- Stewardship of project vision and design principles
-- Governance and policy decisions
-- External representation of MCP
-- Succession planning and community health
-- Ensure restraint and sustainability in protocol evolution
-- Attend Core Maintainer meetings and meetups
-
-**Privileges:**
-
-- Final approval on breaking changes and major spec revisions
-- Voting rights on [SEPs](community-sep-guidelines.md)
-- Approval of Maintainers
-- Governance voting rights and expectation of governance participation
-- Administrative rights to all MCP GitHub repositories
-- Listed in `MAINTAINERS.md` as Core Maintainer
-
-**Inactivity:** Core Maintainers with no participation in governance or technical decisions for 6 months may be moved to emeritus status following review by Lead Maintainers. Given the visibility of this role, Core Maintainers should proactively communicate reduced availability.
-
-------------------------------------------------------------------------
-
-
-[​](#lead-maintainer)
-
-Lead Maintainer
-
-Lead Maintainers hold ultimate authority over MCP’s direction and governance. This is a lifetime appointment reserved for project founders. There is no advancement path to this role. It is only assumed through succession (see [Succession](#succession)). **Responsibilities:**
-
-- All Core Maintainer responsibilities
-- Appoint and remove Core Maintainers
-- Final authority on contested governance decisions
-- Project-wide strategic direction
-
-**Privileges:**
-
-- Can act alone where Core Maintainers require multiple approvals
-- Veto authority over any decision
-- Appoints successor
-
-
-[​](#succession)
-
-Succession
-
-If a Lead Maintainer leaves the role for any reason, succession begins upon their written notice. If they cannot give notice, the remaining Lead Maintainers or Core Maintainers may determine that the Lead Maintainer is unable to continue serving. If one or more Lead Maintainers remain, they appoint a successor. If more than one remains, they decide by majority vote. The remaining Lead Maintainers continue to govern until a successor is appointed. If no Lead Maintainers remain, the Core Maintainers appoint a successor by majority vote within 30 days. Until a new Lead Maintainer is appointed, the project operates by two-thirds vote of Core Maintainers.
-
-------------------------------------------------------------------------
-
-
-[​](#community-moderator)
-
-Community Moderator
-
-Community Moderators help keep the MCP community healthy, safe, and welcoming. This role focuses on moderation and Code of Conduct enforcement rather than technical contribution. **Requirements:**
-
-- Member status minimum
-- Demonstrated good judgment and composure in community interactions
-- Understanding of the MCP Code of Conduct and community guidelines
-- Ability to handle sensitive situations with discretion and fairness
-
-**Sponsorship:**
-
-- Sponsored by a Core Maintainer or Lead Maintainer
-
-**Responsibilities:**
-
-- Monitor community channels (Discord, GitHub Discussions, etc.) for Code of Conduct adherence
-- Handle Code of Conduct incident reports, including initial triage and response
-- Escalate serious or complex incidents to Core Maintainers
-- Help maintain a welcoming and inclusive environment
-- Coordinate with other moderators to ensure consistent enforcement
-- Document moderation actions and maintain confidentiality of incident details
-- Recuse from any incident involving them personally; such incidents go directly to Core Maintainers
-
-**Privileges:**
-
-- Moderation rights on community platforms (Discord, GitHub Discussions)
-- Access to moderation tools and private moderation channels
-- Authority to issue warnings, mute, or temporarily ban users for Code of Conduct violations
-- Listed in the community moderator roster
-
-**Relationship to Contributor Ladder:** Community Moderator is a parallel track, not a prerequisite for technical advancement. Moderator experience counts toward any role, especially where community judgment matters. Moderators may hold other roles at the same time (Member, Maintainer, etc.). **Removal:** Core Maintainers may remove Community Moderators for failure to uphold moderation standards or for Code of Conduct violations. Moderators may step down voluntarily at any time.
-
-------------------------------------------------------------------------
-
-
-[​](#working-group-and-interest-group-leadership)
-
-Working Group and Interest Group Leadership
-
-Working Group (WG) Leads and Interest Group (IG) Facilitators are a form of community leadership that does not require Maintainer status. WG and IG leadership centers on facilitation and coordination rather than merge authority. The full governance rules for WGs and IGs are defined in [SEP-2149: MCP Group Governance and Charter Template](../SEPs/seps-2149-working-group-charter-template.md). These include participation tiers, decision-making process, meeting requirements, and lifecycle. **Requirements:**
-
-- Member status minimum
-- Demonstrated sustained engagement with the group’s scope
-- Good facilitation and communication skills
-- Ability to represent multiple perspectives fairly
-- Group and its leadership sponsored by at least two Core Maintainers or one Lead Maintainer
-
-**Relationship to Contributor Ladder:**
-
-- WG Lead and IG Facilitator experience is valuable for advancement to Maintainer
-- Leads and Facilitators without Maintainer status work with Maintainers for merge decisions
-- Leads and Facilitators have authority over group operations but not spec approval
-- WG Leads and Maintainers may sponsor SEPs
-- WG Leads may triage SEPs in their scope area. This includes closing SEPs that do not fit the roadmap. Closures require documented rationale, and authors may appeal to Core Maintainers.
-
-------------------------------------------------------------------------
-
-
-[​](#advancement-process)
-
-Advancement Process
-
-
-[​](#self-nomination-vs-recognition)
-
-Self-Nomination vs. Recognition
-
-Contributors may either:
-
-1.  **Self-nominate** when they believe they meet the requirements
-2.  **Be nominated** by a sponsor who has observed their contributions
-
-Both paths are equally valid. Self-nomination is encouraged. It shows initiative and self-awareness of one’s contribution scope.
-
-
-[​](#process-steps)
-
-Process Steps
-
-1.  **Nomination.** The nominee or sponsor opens an issue using the nomination template. It must include links to contributions that demonstrate the requirements, plus sponsor confirmations.
-2.  **Community Review.** A 7-day period follows for community input.
-3.  **Decision.** The approving authority reviews and decides.
-4.  **Onboarding.** The new role-holder receives appropriate access and onboarding.
-
-| Advancement To      | Approved By                                                                     |
-|---------------------|---------------------------------------------------------------------------------|
-| Member              | 2 existing Members+ from different organizations, **or** 1 Core/Lead Maintainer |
-| Maintainer          | 1 Maintainer or Core Maintainer sponsor + Core Maintainer approval              |
-| Core Maintainer     | Lead Maintainers                                                                |
-| Community Moderator | 1 Core Maintainer or Lead Maintainer                                            |
-
-Nominees who self-nominate must still secure the required sponsorship. Sponsors confirm support in the nomination issue.
-
-------------------------------------------------------------------------
-
-
-[​](#decision-making-and-escalation)
-
-Decision-Making and Escalation
-
-
-[​](#delegation-as-default)
-
-Delegation as Default
-
-MCP operates on a principle of delegation. Decisions should be made at the lowest appropriate level. This lets the project move quickly while preserving Core Maintainer bandwidth for cross-cutting concerns.
-
-- **Maintainers, WG Leads, and IG Facilitators** handle day-to-day decisions within scope.
-- **Core Maintainers** intervene on escalation, cross-cutting issues, or when required by process (spec changes, Maintainer approval).
-- **Lead Maintainers** intervene only on contested governance decisions or when Core Maintainers cannot reach consensus.
-
-When in doubt, make the decision at your level and document it. Escalate only when blocked, when the decision has project-wide implications, or when process explicitly requires it. The detailed escalation procedure for Working Group and Interest Group disputes is defined in [SEP-2149 §1.5](../SEPs/seps-2149-working-group-charter-template.md). It includes the designation of a Core Maintainer without shared organizational affiliation to resolve the issue.
-
-
-[​](#escalation-matrix)
-
-Escalation Matrix
-
-| Issue Type                                 | First Escalation    | Second Escalation | Timeline         |
-|--------------------------------------------|---------------------|-------------------|------------------|
-| Technical disagreement in PR               | Maintainer in scope | Core Maintainer   | 5 business days  |
-| Technical disagreement in WG               | WG Lead             | Core Maintainer   | 5 business days  |
-| Technical disagreement in IG               | IG Facilitator      | Core Maintainer   | 5 business days  |
-| Disagreement with WG Lead / IG Facilitator | Core Maintainer     | Lead Maintainer   | 7 business days  |
-| Disagreement with Maintainer decision      | Core Maintainer     | Lead Maintainer   | 7 business days  |
-| Core Maintainer disagreement               | Lead Maintainer     | N/A               | 10 business days |
-| Code of Conduct violation                  | Community Moderator | Core Maintainer   | Immediate        |
-| Security issue                             | Core Maintainer     | Lead Maintainer   | Immediate        |
-
-**Escalation process:**
-
-1.  Document the decision, the options considered, and the points of disagreement
-2.  Present to the escalation authority with a clear ask
-3.  The escalation authority either (a) provides binding guidance, (b) requests more information, or (c) escalates further if needed
-
-------------------------------------------------------------------------
-
-
-[​](#contribution-pathways)
-
-Contribution Pathways
-
-MCP values diverse contributions. All of these pathways can lead to advancement. **Code Contributions.** SDK development (TypeScript, Python, etc.), testing infrastructure, tooling and developer experience. **Specification Work.** Drafting or refining spec text, [SEP](community-sep-guidelines.md) authorship or co-authorship, protocol design participation, compatibility analysis. **Documentation.** User guides and tutorials, API documentation, architecture documentation, keeping content current. **Community Building.** Onboarding new contributors, working group facilitation, community support (Discord, GitHub discussions), event organization or representation. **Quality and Security.** Bug triage and reproduction, security review and analysis, test coverage improvement, release validation.
-
-------------------------------------------------------------------------
-
-
-[​](#stepping-down-and-emeritus-status)
-
-Stepping Down and Emeritus Status
-
-Contributors may step down from roles for any reason. This is normal and healthy. **Process:**
-
-1.  Notify relevant leadership (WG Lead, IG Facilitator, Maintainer, or Core Maintainer as appropriate)
-2.  Help transition any ongoing work
-3.  Move to emeritus status
-
-**Emeritus status:**
-
-- Recognized for past contributions
-- May return to active status with abbreviated re-onboarding
-- No ongoing responsibilities or privileges
-
-**Involuntary Removal.** Roles may be revoked for code of conduct violations or sustained non-participation. Removal follows appropriate review processes.
-
-------------------------------------------------------------------------
-
-
-[​](#recognition-and-visibility)
-
-Recognition and Visibility
-
-The community recognizes contributors through:
-
-- **Contributor lists** such as `MAINTAINERS.md`
-- **GitHub teams** for appropriate access
-- **Public acknowledgment** in release notes
-- **Speaking opportunities** at community events
-- **Badges** (if implemented) on community platforms
+A role may be revoked for Code of Conduct violations or sustained non-participation, following appropriate review.

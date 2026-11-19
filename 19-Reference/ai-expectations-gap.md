@@ -2,13 +2,15 @@
 title: "The AI expectations gap \\ Anthropic"
 source_url: "https://www.anthropic.com/research/ai-expectations-gap"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:14Z"
+fetched_at: "2026-11-14T06:26:27Z"
 tags: ["news-research"]
 ---
 
+### 01Key findings
+
 # The AI expectations gap
 
-[Read in PDF](https://www-cdn.anthropic.com/a28f24814c56e2834a3eae7b13946f19d3e97ec4/The%20AI%20Expectations%20Gap.pdf)
+[Read in PDF](https://assets.claude.com/a28f24814c56e2834a3eae7b13946f19d3e97ec4.pdf)
 
 - [01Key findings](#key-findings)
 - [02Introduction](#introduction)
@@ -21,23 +23,20 @@ tags: ["news-research"]
 - [09Inside the lab](#inside-the-lab)
 - [10Conclusion](#conclusion)
 
-- Published
+Published  
+Oct 16, 2026
 
-  Oct 16, 2026
+Team  
+[Economics](team-economics.md)
 
-- Team
+Topics  
+- [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
 
-  [Economics](team-economics.md)
-
-- Topics
-
-  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
-
-  See more...
+See more...
 
 Related articles
 
@@ -64,7 +63,7 @@ How will AI reshape the economy in the years ahead? AI capabilities are advancin
 
 What is the core source of disagreement about AI's future impact on the economy? Is it principally due to differences in beliefs about how quickly AI capabilities will improve? Or does it reflect disagreement about how quickly and in what form those capabilities translate to real-world adoption? Which views on the future path of AI are consistent with rapid economic growth?
 
-This note presents new survey evidence on these questions. In August 2026, we surveyed two groups: a sample of US adults that was nationally representative and Anthropic staff.^([1](#footnote-1)) The questions covered, among other things, AI’s capabilities, how widely it will be used, how much time it saves, how autonomous it will be, and how difficult it will be for a displaced worker to find a job in a different occupation.^([2](#footnote-2)) Anthropic staff build and use frontier AI every day. The second survey therefore shows how people closest to the technology anticipate its future, both in capabilities and in broader economic impact.
+This note presents new survey evidence on these questions. In August 2026, we surveyed two groups: a sample of US adults that was nationally representative and Anthropic staff.^([^1]) The questions covered, among other things, AI’s capabilities, how widely it will be used, how much time it saves, how autonomous it will be, and how difficult it will be for a displaced worker to find a job in a different occupation.^([^2]) Anthropic staff build and use frontier AI every day. The second survey therefore shows how people closest to the technology anticipate its future, both in capabilities and in broader economic impact.
 
 We report the following main findings. First, the two groups largely agree about what AI can do today but disagree about the pace of future progress. Anthropic staff expect capabilities to advance faster, AI to be used more widely and with less human involvement, and the time it saves on a task to be much larger. For example, 91% of staff expect AI to be able to make a Nobel-level discovery by 2030, compared to 39% of US adults.
 
@@ -99,7 +98,7 @@ The impact of AI on the labor market will in part depend on whether AI completes
 
 How much AI raises output depends not only on which tasks it can do and how widely it is used, but also on how much faster and better it does them. A technology that is just good enough to replace workers—what Acemoglu and Restrepo (2019) call a "so-so" technology—displaces work without much increase in GDP. By contrast, a technology that completes tasks at a small fraction of cost or in a fraction of time can meaningfully raise GDP.
 
-To measure perceptions about the productivity lift from AI, we asked the general public and Anthropic staff how long a task for which AI is well suited takes with AI, compared with doing it without AI. A task done in half the time corresponds to a doubling of output per hour.^([3](#footnote-3))
+To measure perceptions about the productivity lift from AI, we asked the general public and Anthropic staff how long a task for which AI is well suited takes with AI, compared with doing it without AI. A task done in half the time corresponds to a doubling of output per hour.^([^3])
 
 Anthropic staff report much larger expected savings, with 85% saying that it takes half the time or less. Among US adults who use AI at work, the typical answer is half the time, and 29% say the task takes just as long or longer, while only 5% of staff say so. Among US adults, 26% of those who use AI at work say a task takes a quarter of the time or less, and 21% of those who do not use AI at work say the same. For staff, that share is 59% (Figure 4).
 
@@ -125,13 +124,13 @@ Even though their own reported exposure is much higher, the same gradient appear
 
 Even though Anthropic staff expect AI to be able to do most of their work, they also expect Anthropic to keep hiring. 95% of Anthropic staff expect headcount to grow over the next 12 months, the median staff member expects it to grow by 66%, and 27% expect it at least to double. These are the personal expectations of staff members in an internal poll and do not represent Anthropic's plans or its view of its headcount. Even so, they show that automating tasks and shedding jobs are different forecasts, at least at a frontier AI lab.
 
-Anthropic staff, however, are slightly more pessimistic than US adults about how quickly workers displaced by AI can find new work. We asked how long it would take a person who loses their job to AI automation in 2030—and who needs to switch occupations—to find a new one.^([4](#footnote-4)) The median Anthropic staff member expects that a worker displaced by AI would take 12 months to find a role in a new occupation. This compares to the median US adult response in the range of 7-12 months.
+Anthropic staff, however, are slightly more pessimistic than US adults about how quickly workers displaced by AI can find new work. We asked how long it would take a person who loses their job to AI automation in 2030—and who needs to switch occupations—to find a new one.^([^4]) The median Anthropic staff member expects that a worker displaced by AI would take 12 months to find a role in a new occupation. This compares to the median US adult response in the range of 7-12 months.
 
 ##  Expectations about AI and their economic implications
 
 ### Mapping survey responses to model-implied economic scenarios
 
-In [*Economic Scenarios for Transformative AI*](economic-scenarios-for-transformative-ai.md) we introduced a structured framework for assessing how different future paths for AI capabilities and diffusion might translate into differences in economic outcomes. The model allows us to translate each respondent’s answers across five dimensions — capabilities, diffusion, automation, productivity, and worker transition frictions — into model-implied economic outcomes.^([5](#footnote-5)) Across both our US adult and Anthropic staff samples, we identify every respondent who answered all questions related to the key model inputs (3,259 US adults and 1,093 staff). We then evaluate the economic scenario implied by those answers for each respondent, focusing below on implications for GDP growth in 2030.
+In [*Economic Scenarios for Transformative AI*](https://assets.claude.com/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf) we introduced a structured framework for assessing how different future paths for AI capabilities and diffusion might translate into differences in economic outcomes. The model allows us to translate each respondent’s answers across five dimensions — capabilities, diffusion, automation, productivity, and worker transition frictions — into model-implied economic outcomes.^([^5]) Across both our US adult and Anthropic staff samples, we identify every respondent who answered all questions related to the key model inputs (3,259 US adults and 1,093 staff). We then evaluate the economic scenario implied by those answers for each respondent, focusing below on implications for GDP growth in 2030.
 
 The median US adult's answers imply GDP growth of 5.4% in 2030, according to the model. The median staff member's answers imply GDP growth accelerating to 17.1% by 2030. There is significant variation within each group, so the distributions overlap widely (Figure 7). Figure A1 in the appendix shows how much each belief contributes to this gap.
 
@@ -145,7 +144,7 @@ The interactive explorer asked shorter form versions of the questions we fielded
 
 One reason staff are more optimistic about AI capabilities may be that they have greater visibility into the development process. The Anthropic Institute recently published a report on progress toward recursive self-improvement (RSI), a process where AI systems increasingly improve their own capabilities (Favaro and Clark, 2026).
 
-To shed light on whether staff themselves expect this to happen, we asked Anthropic staff what share of the work of building an early-2026 frontier model is done by AI today, and what they expect it to be in the future (Figure 8).^([6](#footnote-6)) Among surveyed Anthropic staff, the median answer today is 51%, 80% by the end of 2027 and 95% by the end of 2030.
+To shed light on whether staff themselves expect this to happen, we asked Anthropic staff what share of the work of building an early-2026 frontier model is done by AI today, and what they expect it to be in the future (Figure 8).^([^6]) Among surveyed Anthropic staff, the median answer today is 51%, 80% by the end of 2027 and 95% by the end of 2030.
 
 Estimates of the share of work that AI does in AI development vary far more within teams than between them. Still, staff on research teams, who are closest to the work of building models, put AI's share today somewhat higher: 60% on average, against 53% for all other survey respondents. This is consistent with information playing some role, although researchers—by virtue of the nature of their work—may also use AI more in their own work than other employees.
 
@@ -163,7 +162,7 @@ The day-to-day experience with AI varies widely between the two groups. Most Ant
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @techreport{sacher2026expectations,
     author = {Sacher, Szymon and Cotter, Tess and Jones, Charles I. and Korinek, Anton and McCrory, Peter},
     title = {The {AI} Expectations Gap: Public and Frontier Lab Views on {AI}'s Impact on Work},
@@ -189,7 +188,7 @@ Wilmers, N., R. Catipon, M. Massenkoff and P. McCrory (2026). “How Employment 
 
 ### Appendix
 
-Available [here](https://www-cdn.anthropic.com/1bc1a3067f9c9883d6d556b38f26fd4f1e1b640f/The%20AI%20Expectations%20Gap%20-%20Appendix.pdf).
+Available [here](https://assets.claude.com/1bc1a3067f9c9883d6d556b38f26fd4f1e1b640f.pdf).
 
 ## Footnotes
 
@@ -201,7 +200,7 @@ Available [here](https://www-cdn.anthropic.com/1bc1a3067f9c9883d6d556b38f26fd4f1
 
 04Both groups were asked the following: In normal times, someone who loses a job typically takes about 3 months to find a new one. Now think about a person who loses their job in 2030 due to AI automation and needs to switch into a different occupation. How long do you think it would take them to find a new job? For the general public the answer options ranged from "less than 1 month" to "more than 3 years, or would never find a new job”. Anthropic staff answered in months on a slider.[](#footnote-ref-4)
 
-05We follow the procedure outlined in [*Economic Scenarios for Transformative AI*](economic-scenarios-for-transformative-ai.md) for mapping raw survey answers into implied paths for key inputs into the model. See Appendix B therein. For this exercise, we hold all other parameters in the model at their values in the “Substantial” scenario.[](#footnote-ref-5)
+05We follow the procedure outlined in [*Economic Scenarios for Transformative AI*](https://assets.claude.com/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf) for mapping raw survey answers into implied paths for key inputs into the model. See Appendix B therein. For this exercise, we hold all other parameters in the model at their values in the “Substantial” scenario.[](#footnote-ref-5)
 
 06This is a broader question than how much code AI writes. Favaro and Clark (2026) report that more than 80% of the code merged into Anthropic's codebase is now written by Claude, but building a frontier model also involves research direction, experiment design and evaluation, and more.[](#footnote-ref-6)
 
@@ -210,3 +209,15 @@ Available [here](https://www-cdn.anthropic.com/1bc1a3067f9c9883d6d556b38f26fd4f1
 ### Acknowledgements
 
 Scott Booth, Meredith Callan, Yena Cho, Adam Farina, Ben Fowler, Ryan Heller, Aisling Keenan, Eva Lyubich, Maxim Massenkoff, Matt Mohn (Morning Consult), Matt Monday (Morning Consult), Kerry Persen, Sarah Pollack, Santi Ruiz, Monika Tuchowska, Heather Whitney, Nathan Wilmers, Kim Withee, Charles Yang, Jack Clark, Dario Amodei
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:

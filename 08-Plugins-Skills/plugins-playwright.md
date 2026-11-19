@@ -2,7 +2,7 @@
 title: "Playwright | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/playwright"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:26Z"
+fetched_at: "2026-11-18T06:26:45Z"
 tags: ["plugins"]
 ---
 

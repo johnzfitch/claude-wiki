@@ -2,7 +2,7 @@
 title: "How do I sign up for Claude Pro on the Claude app for iOS? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266495-how-do-i-sign-up-for-claude-pro-on-the-claude-app-for-ios"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:26:17Z"
+fetched_at: "2026-11-18T06:28:17Z"
 tags: ["account"]
 ---
 

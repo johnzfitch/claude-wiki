@@ -2,7 +2,7 @@
 title: "Organizations - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:47Z"
+fetched_at: "2026-11-13T06:34:37Z"
 tags: ["api"]
 ---
 
@@ -37,7 +37,7 @@ List organizations under the parent organization.
 
 
 
-OrganizationListResponse object{ created_at, name, uuid }
+OrganizationListResponse object{ created_at, name, uuid, organization_type }
 
 
 
@@ -60,6 +60,28 @@ uuid: string
 
 
 Unique identifier for the organization (UUID format)
+
+
+
+organization_type: optional "claude_enterprise" or "claude_platform" or "claude_team" or null
+
+
+
+The kind of organization: `claude_enterprise` for a claude.ai organization on the Enterprise plan, `claude_team` for a claude.ai organization on the Team plan, or `claude_platform` for a Claude Console organization. Null for an organization of any other kind. More values can be added; treat a value you don't recognize as you would null.
+
+One of the following:
+
+"claude_enterprise"
+
+
+
+"claude_platform"
+
+
+
+"claude_team"
+
+
 
 #### Organizations[Users](https://platform.claude.com/docs/en/api/http/compliance/organizations/users)
 
@@ -100,3 +122,11 @@ This endpoint is in beta.
 GET/v1/compliance/organizations/{organization_id}/settings
 
 Retrieve the effective settings for an organization.
+
+#### Organizations[Security Posture](https://platform.claude.com/docs/en/api/http/compliance/organizations/security_posture)
+
+##### [Get an organization's security posture](https://platform.claude.com/docs/en/api/http/compliance/organizations/security_posture/retrieve)
+
+GET/v1/compliance/organizations/{organization_id}/security_posture
+
+Get an organization's security controls and their current results.

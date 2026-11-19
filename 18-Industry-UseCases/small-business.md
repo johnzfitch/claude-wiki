@@ -2,7 +2,7 @@
 title: "Claude for Small Business | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/small-business"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:28Z"
+fetched_at: "2026-11-18T06:29:37Z"
 tags: ["case-studies"]
 ---
 
@@ -198,11 +198,6 @@ In-person
 
 Virtual
 
-titleLocationDate
-
-- [FLTampa \| Claude SMB WorkshopTampa, FLNovember 10, 2026](https://anthropic.swoogo.com/claude-smb-workshop-tampa/rta)
-- [NCRaleigh \| Claude SMB WorkshopRaleigh, NCNovember 12, 2026](https://anthropic.swoogo.com/claude-smb-workshop-raleigh/rta)
-
 Course
 
 Can’t make an in-person event? Take the AI Fluency course, co-presented with PayPal.
@@ -271,7 +266,7 @@ Pro for one person, Team for a business with more than one; both are month to mo
 
 ### What happens if I get stuck?
 
-Visit the resources section for support, review the [small business tutorial](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin), or [file a ticket](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Visit the resources section for support, review the [small business tutorial](https://academy.claude.com/tutorials/how-to-install-the-claude-for-small-business-plugin), or [file a ticket](../15-Claude-AI-Features/how-to-get-support.md).
 
 ### Privacy & security
 

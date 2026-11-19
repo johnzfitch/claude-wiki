@@ -2,7 +2,7 @@
 title: "Tool combinations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-combinations"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:14Z"
+fetched_at: "2026-11-13T06:33:04Z"
 tags: ["agents", "api", "search"]
 ---
 

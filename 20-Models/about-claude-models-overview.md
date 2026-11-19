@@ -2,7 +2,7 @@
 title: "Models overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/en/docs/about-claude/models/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:35Z"
+fetched_at: "2026-11-13T06:35:19Z"
 tags: ["api", "models", "prompting"]
 ---
 
@@ -20,13 +20,19 @@ Claude is a family of state-of-the-art large language models developed by Anthro
 
 
 
-## Compare models
+## Latest models
 
-If you’re unsure which model to use, start with [Claude Opus 5.5](models-opus-5-5-overview.md) for most workloads. Use [Claude Fable 5.1](models-fable-5-1-overview.md) for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use. Each model’s page lists the platforms it’s available on.
+If you’re unsure which model to use, start with [Claude Opus 5.5](models-opus-5-5-overview.md) for most workloads. Use [Claude Fable 5.2](models-fable-5-2-overview.md) for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use.
 
 [TABLE]
 
-Once you’ve picked a model, [learn how to make your first API call](../01-Getting-Started/get-started.md). To understand how model IDs, aliases, and snapshots work, see [Model IDs and versioning](about-claude-models-model-ids-and-versions.md); for the reliable-knowledge and training-data cutoffs behind each model, see Anthropic’s [Transparency Hub](https://www.anthropic.com/transparency).
+Once you’ve picked a model, [learn how to make your first API call](../01-Getting-Started/get-started.md). To understand how model IDs, aliases, and snapshots work, see [Model IDs and versioning](about-claude-models-model-ids-and-versions.md). For the reliable-knowledge and training-data cutoffs behind each model, see Anthropic’s [Transparency Hub](https://www.anthropic.com/transparency).
+
+## All models
+
+Older models might still be available, but where possible, you should default to the [latest models](#latest-models-comparison). To move to a newer model, see the [migration guides](about-claude-models-migration-guide.md). For retirement dates, see [model deprecations](about-claude-model-deprecations.md).
+
+[TABLE]
 
 ## Using the Models API
 
@@ -50,25 +56,19 @@ The API reference lists the List Models endpoint’s parameters and full respons
 
 List available models.
 
-##### Query parameters `after_id` `before_id` `lifecycle` `limit`
+##### Query parameters `after_id` `before_id` `lifecycle` `limit`
 
 after_id: optional string
-
-
 
 ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately after this object.
 
 before_id: optional string
-
-
 
 ID of the object to use as a cursor for pagination. When provided, returns the page of results immediately before this object.
 
 
 
 lifecycle: optional array of "active" or "deprecated" or "retired"
-
-
 
 Filter the list to models in any of the given lifecycle stages (`active`, `deprecated`, or `retired`). Up to 3 values. When omitted, the list contains the `active` and `deprecated` models; `retired` models appear only when `retired` is requested explicitly.
 
@@ -78,21 +78,13 @@ One of the following:
 
 "active"
 
-
-
 "deprecated"
 
-
-
 "retired"
-
-
 
 
 
 limit: optional number
-
-
 
 Number of items to return per page.
 
@@ -104,13 +96,11 @@ minimum1
 
 maximum1000
 
-##### Headers `anthropic-version` `anthropic-workspace-id`
+##### Headers `anthropic-version` `anthropic-workspace-id`
 
 
 
 "anthropic-version": optional string
-
-
 
 The version of the Claude API you want to use.
 
@@ -120,25 +110,19 @@ Read more about versioning and our version history [here](../04-API-Reference/En
 
 "anthropic-workspace-id": optional string
 
-
-
 Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
 
 Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
 
-##### Returns `data` `first_id` `has_more` `last_id`
+##### Returns `data` `first_id` `has_more` `last_id`
 
 
 
 data: array of [ModelInfo](../04-API-Reference/Endpoints/models.md#model_info) { type: "model", id, capabilities, 8 more }
 
-
-
 
 
 type: "model"
-
-
 
 Object type.
 
@@ -148,23 +132,17 @@ defaultmodel
 
 id: string
 
-
-
 Unique model identifier.
 
 
 
 capabilities: [ModelCapabilities](../04-API-Reference/Endpoints/models.md#model_capabilities) { batch, citations, code_execution, 7 more } or null
 
-
-
 Object mapping capability names to their support details. Keys are always present for all known capabilities.
 
 
 
 created_at: string
-
-
 
 RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.
 
@@ -174,23 +152,17 @@ formatdate-time
 
 deprecated_at: string or null
 
-
-
 RFC 3339 datetime string representing the time of the model's most recent deprecation. Populated for `deprecated` and `retired` models; `null` while the model is `active`.
 
 formatdate-time
 
 display_name: string
 
-
-
 A human-readable name for the model.
 
 
 
 lifecycle: "active" or "deprecated" or "retired"
-
-
 
 The model's current lifecycle stage.
 
@@ -204,21 +176,13 @@ One of the following:
 
 "active"
 
-
-
 "deprecated"
 
-
-
 "retired"
-
-
 
 
 
 line: [ModelLine](../04-API-Reference/Endpoints/models.md#model_line) or null
-
-
 
 The model line this model belongs to, such as `opus` for both Claude Opus 4.5 and Claude Opus 4.6. More lines may be added. `null` when the model belongs to no line; do not infer a line from the `id`.
 
@@ -226,33 +190,19 @@ One of the following:
 
 "haiku"
 
-
-
 "sonnet"
-
-
 
 "opus"
 
-
-
 "fable"
-
-
 
 "mythos"
 
-
-
 max_input_tokens: number or null
-
-
 
 Maximum input context window size in tokens for this model.
 
 max_tokens: number or null
-
-
 
 Maximum value for the `max_tokens` parameter when using this model.
 
@@ -260,27 +210,19 @@ Maximum value for the `max_tokens` parameter when using this model.
 
 retires_at: string or null
 
-
-
 RFC 3339 datetime string representing the model's currently scheduled retirement date. The schedule can be revised until retirement occurs; `null` while the model is `active` or while no retirement is scheduled. A past date on a `deprecated` model means retirement is overdue, not that it has occurred: `lifecycle` is the retirement signal.
 
 formatdate-time
 
 first_id: string or null
 
-
-
 First ID in the `data` list. Can be used as the `before_id` for the previous page.
 
 has_more: boolean
 
-
-
 Indicates if there are more results in the requested page direction.
 
 last_id: string or null
-
-
 
 Last ID in the `data` list. Can be used as the `after_id` for the next page.
 

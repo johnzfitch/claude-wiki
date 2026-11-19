@@ -2,7 +2,7 @@
 title: "Files - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/files"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:47Z"
+fetched_at: "2026-11-13T06:34:07Z"
 tags: ["api"]
 ---
 

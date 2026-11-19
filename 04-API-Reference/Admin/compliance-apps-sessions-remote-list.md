@@ -2,7 +2,7 @@
 title: "List remote sessions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/remote/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:33:40Z"
+fetched_at: "2026-11-14T06:24:54Z"
 tags: ["api"]
 ---
 
@@ -37,6 +37,8 @@ List remote sessions (Cowork sessions that run in Anthropic-managed cloud enviro
 Each entry carries session metadata only; retrieve a session's transcript from the messages endpoint. By default the list spans every such organization; pass up to 500 `organization_ids[]` values to narrow it. Pass 1 to 10 `user_ids[]` values to scope the list to specific users: that filter matches the session's owning user, so agent-owned sessions are excluded whenever it is set. Bound results in time with the `created_at` range parameters (`created_at.gte`, `created_at.gt`, `created_at.lt`, `created_at.lte`; RFC 3339). There is no `updated_at` filter.
 
 Results are sorted newest first by `created_at`, with at most `limit` sessions per page (default 100, maximum 500). Pagination is forward-only: pass the response's `next_page` value back as `page` to retrieve the next page, and stop when `next_page` is null.
+
+Returns 403 with the `error_code` `organization_compliance_restricted` in `error.details` when an organization the request covers, or the key's own organization, has compliance settings that do not allow its remote sessions to be listed through the Compliance API. No sessions are returned, and the error does not say which organization it is.
 
 ##### Query parameters
 
@@ -130,13 +132,13 @@ maxItems10
 
 
 
-"anthropic-version": optional string
+"anthropic-version": string
 
 
 
-The version of the Claude API you want to use.
+The version of the Claude API to use. Send an available version on every request. A request that sends any other value, including an empty one, returns a 400 error. This endpoint treats a request that omits this header as version `2023-06-01`; some other Compliance API endpoints return a 400 error instead.
 
-Read more about versioning and our version history [here](../Endpoints/versioning.md).
+See [API versions](../Endpoints/versioning.md) for the available versions.
 
 "x-api-key": optional string
 
@@ -188,7 +190,7 @@ product_surface: string or null
 
 
 
-The Claude product the session was created from. Currently `cowork_remote`, for Cowork sessions started on claude.ai web or mobile. More values will appear as other surfaces launch, so treat any unrecognized value as an unclassified surface rather than an error. Null for sessions created before this field was recorded, for surfaces that do not stamp it, and for unrecognized tag values.
+The Claude product the session was created from. Currently `cowork_remote`, for Cowork sessions started on claude.ai web or mobile, and `claude_tag`, for Claude Tag sessions started in Slack. More values will appear as other surfaces launch, so treat any unrecognized value as an unclassified surface rather than an error. Null for sessions created before this field was recorded, for surfaces that do not stamp it, and for unrecognized tag values.
 
 
 
@@ -260,7 +262,7 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/compliance/apps/sessions/remote \
-    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-version: 2026-10-21' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 

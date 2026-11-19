@@ -2,7 +2,7 @@
 title: "Access Claude for iOS on your Lock Screen, Control Center, and Action button | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10302511-access-claude-for-ios-on-your-lock-screen-control-center-and-action-button"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:30Z"
+fetched_at: "2026-11-18T06:27:36Z"
 tags: ["desktop"]
 ---
 

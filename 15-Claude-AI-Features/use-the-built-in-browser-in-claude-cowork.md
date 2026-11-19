@@ -1,0 +1,90 @@
+---
+title: "Use the built-in browser in Claude Cowork | Claude Help Center"
+source_url: "https://support.claude.com/en/articles/16607400-use-the-built-in-browser-in-claude-cowork"
+category: "15-Claude-AI-Features"
+fetched_at: "2026-11-18T06:28:15Z"
+tags: ["claude-ai", "enterprise"]
+---
+
+# Use the built-in browser in Claude Cowork
+
+
+Claude Cowork has a browser built into the Claude Desktop app. This article explains how the built-in browser works, how it differs from Claude in Chrome, and how to choose which one Claude uses.
+
+## Availability
+
+The built-in browser is available in Cowork in Claude Desktop for macOS, Windows, and Linux (beta) on Pro, Max, and Ultra plans, and on Team and Enterprise plans unless an owner has turned it off. When the desktop app is online, it's also available in Cowork on web or mobile.
+
+The new Claude experience, which combines chat and Cowork, is rolling out to Pro, Max, and Ultra plans. On Team and Enterprise plans, it's available where **Chat and Cowork unified** is turned on. If your message box no longer shows "Chat" and "Cowork" options, you have the new experience, and some steps in this article may look different. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
+
+## How the built-in browser works
+
+When a Cowork task involves a website, a browser opens in the side panel next to your task. Claude opens sites, reads pages, clicks, types, and fills forms while you watch, with no need to switch windows. Links in the task transcript open in the same panel.
+
+The built-in browser has the same browsing capabilities as Claude in Chrome. It doesn't rely on your own browser and works regardless of which browser you normally use.
+
+The built-in browser lives in the desktop app, so Claude Desktop needs to be open and online for Claude to use it, even though your Cowork session runs in the cloud. If you start a task on desktop, you can keep steering it from Claude on the web or Claude Mobile as long as the desktop app stays open.
+
+## Sign in to sites
+
+The first time the built-in browser opens, you'll see the option to "Stay signed in to your sites." Click the "Import cookies" button, choose the browser to import from, and confirm. Import works site by site. Every site in the list starts selected, so clear any you don't want. Banking, email, and sign-in provider sites are labeled and listed first.
+
+Importing is available from Chrome, Edge, Brave, Chromium, and Firefox on macOS and Linux (beta), and from Firefox on Windows. Import isn't available from Safari.
+
+On Team and Enterprise plans, an owner can turn off cookie import for the organization. When it's off, you won't see any option to import cookies. You can still sign in to sites directly in the built-in browser.
+
+You can also sign in to sites as you go, and Claude remembers your logins across Cowork sessions so you don't have to sign in again.
+
+## What Claude can see
+
+The built-in browser is separate from your own browser. Claude doesn't see your saved logins unless you choose to import them.
+
+**Note:** Anything you sign in to inside the built-in browser is available to Claude in future Cowork sessions on that computer. Be deliberate about which sites you sign in to, especially sites that handle money or personal information.
+
+## Built-in browser or Claude in Chrome
+
+Cowork can use the web in two ways:
+
+- **Built-in browser.** Claude works in its own browser in the side panel. Nothing to install, and it doesn't touch your tabs or logins. Use it when you want to hand off the web part of a task and keep working.
+
+- **Claude in Chrome.** Claude works in your own Chrome browser through the Claude in Chrome extension, on the page you're already on, with the accounts you're already signed in to. Use it when the work is on a page in front of you. Learn more in **[Get started with Claude in Chrome](https://support.claude.com/en/articles/12012173)**.
+
+If you already use Claude in Chrome, it stays your default for web tasks in Cowork. If you don't have the extension, or you're new to browser use in Cowork, Claude uses the built-in browser.
+
+## Change which browser Claude uses
+
+You can switch the default at any time:
+
+1.  Open the Claude Desktop app and go to **Settings \> Cowork**.
+
+2.  Under **Preferred browser**, choose “Built-in browser” or “Chrome (Claude in Chrome)”.
+
+Claude uses your preferred browser for web tasks unless you ask it to use the other one.
+
+If you choose the built-in browser as your preferred browser, tasks started on web or mobile use the browser in your desktop app as long as the app is open and online. If your preferred browser is Claude in Chrome, tasks on web or mobile use the extension directly; your session needs to be connected to a desktop, but the app doesn't have to be open.
+
+If your preferred browser isn't available, Claude tells you and continues with the other one. If you ask for a specific browser by name and it isn't available, Claude tells you and asks before using the other one.
+
+------------------------------------------------------------------------
+
+## Safety
+
+The built-in browser runs the same safeguards as Claude in Chrome:
+
+- Claude asks for your permission before acting on a site for the first time.
+
+- High-risk sites are blocked.
+
+- Every action runs through safety checks that compare what Claude is doing with what you asked for.
+
+Any AI agent that acts in a browser can be targeted by prompt injection, where instructions hidden in a webpage try to redirect Claude. These safeguards reduce that risk but can't remove it. Start with sites you trust, stay close to tasks with real consequences, and stop the task if something looks off.
+
+Learn more in **[Use Claude in Chrome safely](https://support.claude.com/en/articles/12902428)** and **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
+
+**Important:** We strongly advise against using the built-in browser or Claude in Chrome to manage or take actions involving sensitive information, such as financial accounts, medical information, or other people's personal data.
+
+------------------------------------------------------------------------
+
+## On Team and Enterprise plans
+
+Your organization's owner controls whether the built-in browser and Claude in Chrome are available. If you don't see the built-in browser, or the **Preferred browser** setting is missing an option, contact your admin. For admin documentation, see **[Set up browser use in Claude Cowork for Team and Enterprise plans](https://support.claude.com/en/articles/16635803)**.

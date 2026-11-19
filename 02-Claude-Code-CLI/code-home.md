@@ -2,8 +2,8 @@
 title: "Overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:39Z"
-last_modified: "Sun, 08 Nov 2026 19:51:15 GMT"
+fetched_at: "2026-11-18T06:26:59Z"
+last_modified: "Wed, 18 Nov 2026 02:19:24 GMT"
 tags: ["claude-code"]
 ---
 
@@ -28,10 +28,7 @@ Copy pageCopy page
 
 Claude Code is an AI-powered coding assistant that helps you build features, fix bugs, and automate development tasks. It understands your entire codebase and can work across multiple files and tools to get things done.
 
-
-[​](#get-started)
-
-Get started
+## [](#get-started)Get started
 
 Claude Code runs on several surfaces: the terminal, IDE extensions, a desktop app, and the web. Choose one from the tabs below to get started. Most surfaces require a [Claude subscription](../17-Billing-Plans/pricing.md) or [Anthropic Console](../04-API-Reference/Other/playground.md) account. The Terminal CLI, VS Code, and JetBrains also support [third-party providers](third-party-integrations.md).
 
@@ -120,10 +117,7 @@ Run Claude Code in your browser with no local setup. Kick off long-running tasks
 
 A plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with interactive diff viewing and selection context sharing.Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE. The plugin requires the Claude Code CLI, installed separately; see the [JetBrains setup steps](../03-IDE-Integrations/jetbrains.md#installation).[Get started with JetBrains →](../03-IDE-Integrations/jetbrains.md)
 
-
-[​](#what-you-can-do)
-
-What you can do
+## [](#what-you-can-do)What you can do
 
 Here are some of the ways you can use Claude Code:
 
@@ -196,10 +190,7 @@ Sessions aren’t tied to a single surface. Move work between them as your conte
 - Run `/desktop` to continue your current terminal session in the [Desktop app](../16-Mobile-Desktop/desktop.md), where you can review diffs visually. The `/desktop` handoff requires a claude.ai subscription. Available on macOS and x64 Windows.
 - Route tasks from team chat: mention `@Claude` in [Slack](../14-Connectors/slack.md) with a bug report and get a pull request back
 
-
-[​](#use-claude-code-everywhere)
-
-Use Claude Code everywhere
+## [](#use-claude-code-everywhere)Use Claude Code everywhere
 
 Each [surface](glossary.md#surface) connects to the same underlying Claude Code engine, so your repo’s CLAUDE.md files, settings, and MCP servers work across all of them. Beyond the [Terminal](../01-Getting-Started/quickstart.md), [VS Code](../03-IDE-Integrations/vs-code.md), [JetBrains](../03-IDE-Integrations/jetbrains.md), [Desktop](../16-Mobile-Desktop/desktop.md), and [Web](claude-code-on-the-web.md) surfaces above, Claude Code integrates with CI/CD, chat, and browser workflows:
 
@@ -215,10 +206,7 @@ Each [surface](glossary.md#surface) connects to the same underlying Claude Code 
 | Debug live web applications | [Chrome](../03-IDE-Integrations/chrome.md) |
 | Build custom agents for your own workflows | [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) |
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 Once you’ve installed Claude Code, these guides help you go deeper.
 

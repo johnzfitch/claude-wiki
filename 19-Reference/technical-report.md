@@ -2,8 +2,7 @@
 title: "TECHNICAL REPORT"
 source_url: "https://www-cdn.anthropic.com/52e1f5d50c47ca3818f56704c27cf19e59b62e77.pdf"
 category: "19-Reference"
-fetched_at: "2026-11-08T06:25:37Z"
-last_modified: "Tue, 27 Oct 2026 20:02:12 GMT"
+fetched_at: "2026-11-18T06:28:24Z"
 tags: ["news-research"]
 ---
 

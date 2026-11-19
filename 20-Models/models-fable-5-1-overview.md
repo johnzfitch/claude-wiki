@@ -2,13 +2,17 @@
 title: "Claude Fable 5.1 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5-1/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:26Z"
+fetched_at: "2026-11-13T06:35:12Z"
 tags: ["models"]
 ---
 
-# Claude Fable 5.1Latest
+Although Claude Fable 5.1 is still available, you should consider migrating to Claude Fable 5.2.
 
-For demanding reasoning and long-horizon agentic work
+[See Claude Fable 5.2](models-fable-5-2-overview.md)
+
+[Models & pricing](about-claude-models-overview.md)Legacy models
+
+# Claude Fable 5.1Legacy
 
 Copy page
 
@@ -16,13 +20,13 @@ For demanding reasoning and long-horizon agentic work
 
 claude-fable-5-1
 
-[Try in playground](../04-API-Reference/Other/playground.md)
+[Migrate to Claude Fable 5.2](models-fable-5-2-migration-guide.md#migrating-from-claude-fable-5-1-to-claude-fable-5-2)
 
 Copy page
 
 
 
-[Announcement(opens in new tab)](../15-Claude-AI-Features/claude-fable-and-mythos-5-1.md)[What’s new](models-fable-5-1-whats-new-fable-5-1.md)[Migration guide](models-fable-5-1-migration-guide.md)
+[Announcement(opens in new tab)](../15-Claude-AI-Features/claude-fable-and-mythos-5-1.md)
 
 Context window  
 1Mtokens
@@ -36,32 +40,11 @@ Input pricing
 Output pricing  
 \$50/ MTok
 
-## Overview
-
-Claude Fable 5.1 extends Claude Fable 5 at the same input and output prices, with cache reads at a quarter of the cost, and brings stronger long-running agentic coding, multistep research, and document, spreadsheet, and slide work. For most workloads, start with Claude Opus 5.5 (see [Choosing a model](about-claude-models-choosing-a-model.md)). Use Claude Fable 5.1 for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still don’t meet your requirements. Claude Mythos 5.1 offers the same capabilities only to organizations verified through Anthropic’s verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842).
-
-If you already call Claude Fable 5, four changes are breaking:
-
-- [Forced tool use returns an error](models-fable-5-1-whats-new-fable-5-1.md#forced-tool-use-is-not-supported).
-- Only Claude Fable 5.1 and Claude Mythos 5.1 can [read Claude Fable 5.1’s thinking blocks](models-fable-5-1-whats-new-fable-5-1.md#thinking-blocks-are-tied-to-the-model-that-produced-them).
-- [Editing earlier turns invalidates thinking blocks](models-fable-5-1-whats-new-fable-5-1.md#editing-earlier-turns-invalidates-thinking-blocks).
-- [Some advisor tool pairings are not supported](models-fable-5-1-whats-new-fable-5-1.md#advisor-tool-pairings).
-
-Five changes are additive:
-
-- [Mid-conversation effort changes](models-fable-5-1-whats-new-fable-5-1.md#change-effort-mid-conversation-beta) (beta)
-- [Turn-scoped system messages](models-fable-5-1-whats-new-fable-5-1.md#turn-scoped-system-messages-beta) (beta)
-- [Readable progress updates between tool calls](models-fable-5-1-whats-new-fable-5-1.md#progress-updates-between-tool-calls-beta) (`display: "updates"`, beta)
-- A [lower cache read price](models-fable-5-1-whats-new-fable-5-1.md#pricing)
-- [Content provenance](models-fable-5-1-whats-new-fable-5-1.md#content-provenance)
-
-[What’s new in Claude Fable 5.1](models-fable-5-1-whats-new-fable-5-1.md)
-
 ## Claude Fable 5.1 and Claude Mythos 5.1
 
 [Claude Mythos 5.1](models-mythos-5-1-overview.md) offers the same capabilities only to organizations verified through Anthropic’s verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). It shares Claude Fable 5.1’s specifications and pricing. To request access, apply to the program that covers your use case, or contact your Anthropic, AWS, or Google Cloud account team.
 
-## How it compares
+## How it compares to the current lineup
 
 [TABLE]
 
@@ -123,9 +106,6 @@ Adaptive (always on)
 [Default effort](../04-API-Reference/Guides/build-with-claude-effort.md)  
 `high`
 
-Comparative latency  
-Slower
-
 Input → output  
 Text and images → text
 
@@ -138,7 +118,7 @@ Jun 2026
 ### Availability
 
 [Status](about-claude-model-deprecations.md)  
-Active (latest)
+Active (legacy)
 
 Released  
 September 1, 2026
@@ -151,17 +131,21 @@ Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-i
 
 ## Resources
 
+[Migrate to Claude Fable 5.2](models-fable-5-2-migration-guide.md#migrating-from-claude-fable-5-1-to-claude-fable-5-2)
+
+What changes when moving from Claude Fable 5.1 to Claude Fable 5.2.
+
+
+
+[Claude Fable 5.2](models-fable-5-2-overview.md)
+
+The current Fable model: overview, specs, and resources.
+
 
 
 [Prompting Claude Fable 5.1](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-1.md)
 
 Model-specific prompting guidance for long-horizon and agentic work.
-
-
-
-[Claude Fable 5.1 migration guide](models-fable-5-1-migration-guide.md)
-
-What changes when you move from Claude Fable 5, Claude Opus 5, or Claude Opus 4.8.
 
 
 
@@ -171,7 +155,7 @@ When this model’s thinking blocks stay usable: across model switches and acros
 
 
 
-[Per-message effort](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta)
+[Per-message effort](../04-API-Reference/Guides/build-with-claude-effort-per-message.md)
 
 Change the effort level partway through a conversation without invalidating the prompt cache.
 

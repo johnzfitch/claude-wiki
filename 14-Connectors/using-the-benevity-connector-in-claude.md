@@ -2,7 +2,7 @@
 title: "Using the Benevity connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923227-using-the-benevity-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-11-07T06:23:42Z"
+fetched_at: "2026-11-18T06:28:20Z"
 tags: ["connectors"]
 ---
 

@@ -2,7 +2,7 @@
 title: "How to redeem a Claude gift subscription | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12938695-how-to-redeem-a-claude-gift-subscription"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:19Z"
+fetched_at: "2026-11-18T06:28:00Z"
 tags: ["billing", "mobile"]
 ---
 

@@ -2,9 +2,11 @@
 title: "AI agents find smart contract exploits \\ Anthropic"
 source_url: "https://www.anthropic.com/research/smart-contracts"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:42Z"
+fetched_at: "2026-11-14T06:26:30Z"
 tags: ["agents", "news-research"]
 ---
+
+### 01Introduction
 
 # AI agents find \$4.6M in blockchain smart contract exploits
 
@@ -15,23 +17,20 @@ tags: ["agents", "news-research"]
 - [05Conclusion](#conclusion)
 - [06Appendix](#appendix)
 
-- Published
+Published  
+Dec 1, 2025
 
-  Dec 1, 2025
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-
-  See more...
+See more...
 
 Related articles
 
@@ -54,15 +53,15 @@ AI models are increasingly good at cyber tasks, as we've [written about before](
 
 ## Introduction
 
-AI cyber capabilities are accelerating rapidly: they are now capable of tasks from orchestrating [complex network intrusions](https://red.anthropic.com/2025/cyber-toolkits/) to augmenting [state-level espionage](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf). Benchmarks, like [CyberGym](https://www.cybergym.io/) and [Cybench](https://cybench.github.io/), are valuable for tracking and preparing for future improvements in such capabilities.
+AI cyber capabilities are accelerating rapidly: they are now capable of tasks from orchestrating [complex network intrusions](https://red.anthropic.com/2025/cyber-toolkits/) to augmenting [state-level espionage](https://assets.claude.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf). Benchmarks, like [CyberGym](https://www.cybergym.io/) and [Cybench](https://cybench.github.io/), are valuable for tracking and preparing for future improvements in such capabilities.
 
-However, existing cyber benchmarks miss a critical dimension: they do not quantify the exact financial consequences of AI cyber capabilities. Compared to arbitrary success rates, quantifying capabilities in monetary terms is more useful for assessing and communicating risks to policymakers, engineers, and the public. Yet estimating the real value of software vulnerabilities requires speculative modelling of downstream impacts, user base, and remediation costs.^([1](#footnote-1))
+However, existing cyber benchmarks miss a critical dimension: they do not quantify the exact financial consequences of AI cyber capabilities. Compared to arbitrary success rates, quantifying capabilities in monetary terms is more useful for assessing and communicating risks to policymakers, engineers, and the public. Yet estimating the real value of software vulnerabilities requires speculative modelling of downstream impacts, user base, and remediation costs.^([^1])
 
 Here, we take an alternate approach and turn to a domain where software vulnerabilities can be priced directly: smart contracts. Smart contracts are programs deployed on blockchains like Ethereum. They power financial blockchain applications which offer services similar to those of PayPal, but all of their source code and transaction logic—such as for transfers, trades, and loans—are public on the blockchain and handled entirely by software without a human in the loop. As a result, vulnerabilities can allow for direct theft from contracts, and we can measure the dollar value of exploits by running them in simulated environments. These properties make smart contracts an ideal testing ground for AI agents’ exploitation capabilities.
 
 To give a concrete example of what such an exploit could look like: [Balancer](https://messari.io/project/balancer/profile) is a blockchain application that allows users to trade cryptocurrencies. In November 2025, an attacker exploited a rounding direction issue to withdraw other users’ funds, [stealing over \$120 million](https://blog.trailofbits.com/2025/11/07/balancer-hack-analysis-and-guidance-for-the-defi-ecosystem/). Since smart contract and traditional software exploits draw on a similar set of core skills (e.g. control-flow reasoning, boundary analysis, and programming fluency), assessing AI agents on smart contract exploitations gives a concrete lower bound on the economic impact of their broader cyber capabilities.
 
-We introduce SCONE-bench—the first benchmark that evaluates agents’ ability to exploit smart contracts, measured by the total dollar value^([2](#footnote-2)) of simulated stolen funds. For each target contract(s), the agent is prompted to identify a vulnerability and produce an exploit script that takes advantage of the vulnerability so that, when executed, the executor’s native token balance increases by a minimum threshold. Instead of relying on bug bounty or speculative models, SCONE-bench uses on-chain assets to directly quantify losses. SCONE-bench provides:
+We introduce SCONE-bench—the first benchmark that evaluates agents’ ability to exploit smart contracts, measured by the total dollar value^([^2]) of simulated stolen funds. For each target contract(s), the agent is prompted to identify a vulnerability and produce an exploit script that takes advantage of the vulnerability so that, when executed, the executor’s native token balance increases by a minimum threshold. Instead of relying on bug bounty or speculative models, SCONE-bench uses on-chain assets to directly quantify losses. SCONE-bench provides:
 
 1.  **A benchmark comprising 405 smart contracts with real-world vulnerabilities** exploited between 2020 and 2025 across 3 Ethereum-compatible blockchains (Ethereum, Binance Smart Chain, and Base), derived from the [DefiHackLabs repository](https://github.com/SunWeb3Sec/DeFiHackLabs/tree/main).
 2.  **A baseline agent **running in each sandboxed environment that attempts to exploit the provided contract(s) within a time limit (60 minutes) using tools exposed via the Model Context Protocol (MCP).
@@ -71,23 +70,23 @@ We introduce SCONE-bench—the first benchmark that evaluates agents’ ability 
 
 We present three main evaluation results.
 
-First, we evaluated 10 models^([3](#footnote-3)) across all 405 benchmark problems. Collectively, these models produced turnkey exploits for 207 (51.11%) of these problems, yielding \$550.1 million in simulated stolen funds.^([4](#footnote-4)) 
+First, we evaluated 10 models^([^3]) across all 405 benchmark problems. Collectively, these models produced turnkey exploits for 207 (51.11%) of these problems, yielding \$550.1 million in simulated stolen funds.^([^4]) 
 
-econd, to control for potential data contamination, we evaluated the same 10 models on vulnerabilities that were exploited after their knowledge cutoffs (June 1, 2025 for Opus 4.5 and March 1, 2025 for all other models). Collectively, Opus 4.5, Sonnet 4.5, and GPT-5 produced exploits for 19 of these problems (55.8%), yielding a maximum of \$4.6 million in simulated stolen funds.^([5](#footnote-5)) The top performing model, Opus 4.5, successfully exploited 13 of the 20 problems (65%) that occurred after June 1, 2025, corresponding to \$3.7 million in simulated stolen funds—an estimate of how much these AI agents could have stolen had they been pointed to these smart contracts throughout 2025.^([6](#footnote-6)) 
+econd, to control for potential data contamination, we evaluated the same 10 models on vulnerabilities that were exploited after their knowledge cutoffs (June 1, 2025 for Opus 4.5 and March 1, 2025 for all other models). Collectively, Opus 4.5, Sonnet 4.5, and GPT-5 produced exploits for 19 of these problems (55.8%), yielding a maximum of \$4.6 million in simulated stolen funds.^([^5]) The top performing model, Opus 4.5, successfully exploited 13 of the 20 problems (65%) that occurred after June 1, 2025, corresponding to \$3.7 million in simulated stolen funds—an estimate of how much these AI agents could have stolen had they been pointed to these smart contracts throughout 2025.^([^6]) 
 
-Third, to assess our agent’s ability to uncover completely novel zero-day exploits, we evaluated the Sonnet 4.5 and GPT-5 agents on October 3, 2025 against 2,849 recently deployed contracts that contained no known vulnerabilities. The agents both uncovered two novel zero-day vulnerabilities and produced exploits worth \$3,694,^([7](#footnote-7)) with GPT-5 doing so at an API cost of \$3,476, demonstrating as a proof-of-concept that profitable, real-world autonomous exploitation is technically feasible.^([8](#footnote-8))
+Third, to assess our agent’s ability to uncover completely novel zero-day exploits, we evaluated the Sonnet 4.5 and GPT-5 agents on October 3, 2025 against 2,849 recently deployed contracts that contained no known vulnerabilities. The agents both uncovered two novel zero-day vulnerabilities and produced exploits worth \$3,694,^([^7]) with GPT-5 doing so at an API cost of \$3,476, demonstrating as a proof-of-concept that profitable, real-world autonomous exploitation is technically feasible.^([^8])
 
 ## Evaluating AI agents on SCONE-bench
 
 We evaluated 10 frontier AI models across all 405 benchmark challenges using Best@8. As mentioned above, this yielded exploits in 207 of these problems, corresponding to a total simulated revenue of \$550.1 million dollars from simulated stolen funds. Importantly, it is not possible for us to determine the profit of such an attack, as we have already down-selected those contracts that are known to be vulnerable.
 
-To evaluate exploitation capabilities over time, we plotted the total exploit revenue of each model against its release date, using only the contracts that were exploited after their knowledge cutoffs to control for potential data contamination. Although total exploit revenue is an imperfect metric—since a few outlier exploits dominate the total revenue^([9](#footnote-9))—we highlight it over attack success rate^([10](#footnote-10))because attackers care about how much money AI agents can extract, not the number or difficulty of the bugs they find.
+To evaluate exploitation capabilities over time, we plotted the total exploit revenue of each model against its release date, using only the contracts that were exploited after their knowledge cutoffs to control for potential data contamination. Although total exploit revenue is an imperfect metric—since a few outlier exploits dominate the total revenue^([^9])—we highlight it over attack success rate^([^10])because attackers care about how much money AI agents can extract, not the number or difficulty of the bugs they find.
 
 A second motivation for evaluating exploitation capabilities in dollars stolen rather than attack success rate (ASR) is that ASR ignores how effectively an agent can monetize a vulnerability once it finds one. Two agents can both "solve" the same problem, yet extract vastly different amounts of value. For example, on the benchmark problem ["FPC"](https://github.com/SunWeb3Sec/DeFiHackLabs/blob/dd6934579014a65dc6d9fc2394469100d22ab1b3/src/test/2025-07/FPC_exp.sol#L4), GPT-5 exploited \$1.12M in simulated stolen funds, while Opus 4.5 exploited \$3.5M. Opus 4.5 was substantially better at maximizing the revenue per exploit by systematically exploring and attacking many smart contracts affected by the same vulnerability (e.g., draining all liquidity pools listing the vulnerable token rather than just a single pool, targeting all tokens that reused the same vulnerable pattern rather than a single instance). ASR treats both runs as equal “successes,” but the dollar metric captures this economically meaningful gap in capability.
 
 Over the last year, frontier models' exploit revenue on the 2025 problems doubled roughly every 1.3 months (Figure 1). We attribute the increase in total exploit revenue to improvements in agentic capabilities like [tool use](https://gorilla.cs.berkeley.edu/leaderboard.html), error recovery, and [long-horizon task execution](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/). Even though we expect this doubling trend to plateau eventually, it remains a striking demonstration of how fast exploit revenue increased based on capability improvements in just a year.
 
-We also analyzed how exploit complexity, as measured through various proxies (i.e. time from deployment to attack, code complexity), affects exploit profitability in our benchmark dataset: none of the complexity metrics we evaluated show meaningful correlation with exploit revenue.^([11](#footnote-11)) The exploit revenue appears to be primarily dependent on the amount of assets held by the contract at the time of the exploit.
+We also analyzed how exploit complexity, as measured through various proxies (i.e. time from deployment to attack, code complexity), affects exploit profitability in our benchmark dataset: none of the complexity metrics we evaluated show meaningful correlation with exploit revenue.^([^11]) The exploit revenue appears to be primarily dependent on the amount of assets held by the contract at the time of the exploit.
 
 The complete benchmark is currently available in the [SCONE-bench repo](https://github.com/safety-research/SmartContract-bench), with the full harness to be released there in the coming weeks. We recognize the dual-use concerns with releasing our benchmark. However, attackers already have strong financial incentives to build these tools independently. By open-sourcing our benchmark, we aim to give defenders the tools to stress-test and fix their contracts before attackers can exploit them.
 
@@ -919,7 +918,7 @@ We reached out to the developers via information left in the source code, but re
 
 *See the exploit code for Vulnerability \#1 below.*
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 import {console} from "forge-std/console.sol";
@@ -1027,7 +1026,7 @@ We found no way to contact the developer, a common issue due to the anonymous na
 
 *See the exploit code for Vulnerability \#2 below.*
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 interface IERC20 {
@@ -1263,3 +1262,25 @@ We would like to thank Nicholas Marwell for guidance on our evaluation harness. 
 *Edited December 8, 2025:*
 
 - *Modified text to reflect accurate knowledge cutoff date for Claude Opus 4.5*
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:
+
+[^7]:
+
+[^8]:
+
+[^9]:
+
+[^10]:
+
+[^11]:

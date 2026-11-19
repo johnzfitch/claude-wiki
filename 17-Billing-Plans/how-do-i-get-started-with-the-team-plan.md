@@ -2,7 +2,7 @@
 title: "Get started with the Team plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267247-how-do-i-get-started-with-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:03Z"
+fetched_at: "2026-11-18T06:28:14Z"
 tags: ["api", "billing"]
 ---
 
@@ -79,4 +79,4 @@ To claim, you need to be a Primary Owner or Owner on your Team plan and have the
 
 4.  Review the **[Supplemental Credit Terms](https://www.anthropic.com/legal/credit-terms)**, then select "Link organization."
 
-Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.

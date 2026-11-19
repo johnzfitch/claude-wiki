@@ -2,7 +2,7 @@
 title: "Claude Haiku 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/haiku-5-5/overview"
 category: "20-Models"
-fetched_at: "2026-11-06T06:33:52Z"
+fetched_at: "2026-11-14T06:25:36Z"
 tags: ["models"]
 ---
 

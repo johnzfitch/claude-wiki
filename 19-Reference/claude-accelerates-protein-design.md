@@ -2,11 +2,11 @@
 title: "Claude accelerates protein design and analytical chemistry \\ Anthropic"
 source_url: "https://www.anthropic.com/research/Claude-accelerates-protein-design"
 category: "19-Reference"
-fetched_at: "2026-11-03T06:23:55Z"
+fetched_at: "2026-11-14T06:26:01Z"
 tags: ["news-research"]
 ---
 
-### Chapter 01: Claude designs proteins
+### 01Claude designs proteins
 
 # How Claude is accelerating protein design and analytical chemistry
 
@@ -14,30 +14,29 @@ tags: ["news-research"]
 - [02Claude’s performance on the targets](#claudes-performance-on-the-targets)
 - [03Claude runs the analytical chemistry workflow](#claude-runs-the-analytical-chemistry-workflow)
 
-- Published
+Published  
+Aug 18, 2026
 
-  Aug 18, 2026
+Team  
+[Science](https://www.anthropic.com/science)
 
-- Team
+Topics  
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Healthcare](https://www.anthropic.com/search?topic=healthcare)
+- [Access](https://www.anthropic.com/search?topic=access)
+- [Agents](https://www.anthropic.com/search?topic=agents)
 
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Healthcare](https://www.anthropic.com/search?topic=healthcare)
-  - [Access](https://www.anthropic.com/search?topic=access)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-
-  See more...
+See more...
 
 Related articles
 
-- Sep 23, 2026
+- Science
 
-  [Claude discovers a novel enzyme system with CRISPR-like repeats](research-claude-discovers-novel-enzyme-system.md)
+  Nov 4, 2026
+
+  [Investigating vault particles with Claude](investigating-vault-particles-with-claude.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 
@@ -89,7 +88,7 @@ For each of the 15 targets, we asked Claude to design 30 protein binders. Claude
 
 ## Claude’s performance on the targets
 
-By the end of this effort, we produced 354 binders against 14 of 15 targets using a total of 1,320 designs. This represents a significant contribution to the total corpus of publicly available *de novo* protein designs; for example, the two largest collections, [proteinbase.com](https://proteinbase.com) and the collection curated by [Overath et al.](https://www.biorxiv.org/content/10.1101/2025.08.14.670059v2), consist of approximately 770 binders out of 5,700 designs against 40 targets. Below, we share three examples highlighting Claude’s capabilities, and one showing its limitations. You can find more detail in our technical report ([link](autonomous-de-novo-protein-binder-design-with-claude.md)).
+By the end of this effort, we produced 354 binders against 14 of 15 targets using a total of 1,320 designs. This represents a significant contribution to the total corpus of publicly available *de novo* protein designs; for example, the two largest collections, [proteinbase.com](https://proteinbase.com) and the collection curated by [Overath et al.](https://www.biorxiv.org/content/10.1101/2025.08.14.670059v2), consist of approximately 770 binders out of 5,700 designs against 40 targets. Below, we share three examples highlighting Claude’s capabilities, and one showing its limitations. You can find more detail in our technical report ([link](https://assets.claude.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf)).
 
 #### Claude’s designs are competitive with entries in Adaptyv Bio’s protein design competition
 
@@ -142,8 +141,8 @@ Protein minibinders are not a standard therapeutic modality for drugs and even f
 Below is a list of documents that provide further technical depth and more detailed information about the results described above:
 
 - [Prompts and data for the protein design campaign](https://huggingface.co/datasets/Anthropic/claude-protein-binder-design/tree/main);
-- [Protein design technical report](autonomous-de-novo-protein-binder-design-with-claude.md);
-- [Chemical analysis technical report](chemists-learn-whether-they-made-the-compound-they-intended-to-and-how-pure-it.md).
+- [Protein design technical report](https://assets.claude.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf);
+- [Chemical analysis technical report](https://assets.claude.com/9f08da5189ac269b3242ca760de9823805c3f5f6.pdf).
 
 ## Footnotes
 

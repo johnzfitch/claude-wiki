@@ -2,7 +2,7 @@
 title: "How Anthropic teams use Claude Code | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/how-anthropic-teams-use-claude-code"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:26Z"
+fetched_at: "2026-11-18T06:28:43Z"
 tags: ["claude-code", "news-research"]
 ---
 
@@ -113,38 +113,37 @@ Get started with Claude Code.
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 27, 2026
+ArticleNov 13, 2026
 
-### Manage costs and demonstrate ROI for Claude Code on Google Cloud
+### Building always-on agents
 
-Best practices for managing costs and measuring return on investment for Claude Code on Google Cloud.
-
-Claude Code
-
-
-ArticleOct 22, 2026
-
-### Building agents: When to fold subagents into your main agent loop
-
-When building agents in Claude Platform, using fewer subagents in favor of progressively disclosed context and tools can improve quality while reducing cost and latency. Here’s when and how to migrate.
+Always-on agents run indefinitely, deciding how and when to act across many sessions. This guide walks through their core primitives and how they fit together.
 
 Claude Platform
 
 
-ArticleOct 19, 2026
+ArticleNov 13, 2026
 
-### Redesigning source control at Anthropic
+### The Claude Tag guide for startups
 
-As merges to Anthropic's monorepo grew from about 2,500 to more than 30,000 a day, source control became the biggest development bottleneck. Here is how the team built Scion, an in-house version control system designed for always-online agents, and migrated off git in five months.
+How leading startups use Claude Tag to ship faster and scale operations
 
-Claude Code
+Claude Tag
 
-(opens in new tab)[](https://www.anthropic.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day)
 
-ArticleOct 16, 2026
+ArticleNov 10, 2026
 
-### How an Anthropic BDR in Japan runs his day with Claude Managed Agents
+### How Curative is building a national provider network with agents on Claude
 
-How one business development representative clears his inbound queue and drafts bilingual customer emails with Claude Managed Agents and Claude Tag.
+Curative’s deal-making agent negotiates 2,000+ provider contracts a week.
 
-Claude Managed Agents
+Claude PlatformClaude Code
+
+
+ArticleNov 9, 2026
+
+### Safely scaling multi-agent teams with Claude Fable 5.2
+
+How a team of 1,000 agents running an early version of Claude Fable 5.2 reproduced a formal proof of Fermat's Last Theorem with general tools, a shared database, and layered safety controls.
+
+(opens in new tab)

@@ -2,7 +2,7 @@
 title: "Tool use with Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:33Z"
+fetched_at: "2026-11-13T06:33:57Z"
 tags: ["api"]
 ---
 
@@ -48,9 +48,9 @@ Python
 client = anthropic.Anthropic()
 response = client.messages.create(
     model="claude-opus-5-5",
-    max_tokens=1024,
+    max_tokens=4096,
     tools=[{"type": "web_search_20260209", "name": "web_search"}],
-    messages=[{"role": "user", "content": "What's the latest on the Mars rover?"}],
+    messages=[{"role": "user", "content": "What is the latest on the Mars rover?"}],
 )
 print(response.content)
 ```
@@ -173,7 +173,7 @@ Add `strict: true` to your custom tool definitions to ensure Claude’s tool cal
 
 Each server tool’s page describes its own trigger boundary in more detail.
 
-### When required parameters are missing
+### When required parameters are missing
 
 If the user’s prompt doesn’t include enough information to fill all the required parameters for a tool, Claude Opus is much more likely to recognize that a parameter is missing and ask for it. Claude Sonnet might ask, especially when prompted to think before outputting a tool request. But it might also infer a reasonable value.
 
@@ -292,9 +292,9 @@ Connect to remote MCP servers from the Messages API without a separate MCP clien
 
 Tool use requests are priced based on:
 
-1.  The total number of input tokens sent to the model (including in the `tools` parameter)
-2.  The number of output tokens generated
-3.  For server-side tools, additional usage-based pricing (for example, web search charges per search performed)
+1.  The total number of input tokens sent to the model (including in the `tools` parameter).
+2.  The number of output tokens generated.
+3.  For server-side tools, additional usage-based pricing (for example, web search charges per search performed).
 
 Client-side tools are priced the same as any other Claude API request, although server-side tools can incur additional charges based on their specific usage.
 
@@ -304,13 +304,13 @@ The additional tokens from tool use come from:
 - `tool_use` content blocks in API requests and responses
 - `tool_result` content blocks in API requests
 
-When you use `tools`, the API also automatically includes a special system prompt for the model that enables tool use. The number of tool use tokens required for each model is listed in the following table (excluding the additional tokens listed earlier). Note that the table assumes at least 1 tool is provided. If no `tools` are provided, then a tool choice of `none` uses 0 additional system prompt tokens.
+When you use `tools`, the API also automatically includes a special system prompt for the model that enables tool use. The following table lists the number of tool use tokens that each model requires (excluding the additional tokens listed earlier). The table assumes that you provide at least one tool. If you provide no `tools`, a tool choice of `none` uses 0 additional system prompt tokens.
 
 [TABLE]
 
 These token counts are added to your normal input and output tokens to calculate the total cost of a request.
 
-See the [Models overview](../../20-Models/about-claude-models-overview.md#latest-models-comparison) table for current per-model prices.
+See the [All models](../../20-Models/about-claude-models-overview.md#all-models) table for current per-model prices.
 
 When you send a tool use prompt, like any other API request, the response includes both input and output token counts in the reported `usage` metrics.
 

@@ -2,7 +2,7 @@
 title: "Task budgets - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/task-budgets"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:30Z"
+fetched_at: "2026-11-13T06:33:59Z"
 tags: ["api"]
 ---
 
@@ -20,21 +20,28 @@ Give Claude an advisory token budget for the full agentic loop to help the model
 
 Task budgets
 
+Beta
+
 Feature of  
 [Messages API](build-with-claude-working-with-messages.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+- Messages API
+- Managed Agents Not supported
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
-[Beta header](#feature-beta-headers)  
-- `task-budgets-2026-03-13`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`task-budgets-2026-03-13`
 
 Task budgets let you tell Claude how many tokens it has for a full agentic loop, including thinking, tool calls, tool results, and output. The model receives a running countdown and uses it to prioritize work and finish gracefully as the budget is consumed.
 
@@ -363,6 +370,8 @@ The minimum accepted `task_budget.total` is **20,000 tokens** on every model tha
 
 | Model             | Support                                     |
 |-------------------|---------------------------------------------|
+| Claude Fable 5.2  | Beta (set `task-budgets-2026-03-13` header) |
+| Claude Mythos 5.2 | Beta (set `task-budgets-2026-03-13` header) |
 | Claude Fable 5.1  | Beta (set `task-budgets-2026-03-13` header) |
 | Claude Mythos 5.1 | Beta (set `task-budgets-2026-03-13` header) |
 | Claude Opus 5.5   | Beta (set `task-budgets-2026-03-13` header) |
@@ -408,50 +417,109 @@ Reduce cost and latency on repeated prompts by caching prompt prefixes.
 
 ## Availability
 
-Task budgets are in beta on select models.
+Task budgets
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Advisory: set in `output_config.task_budget`. The API does not stop Claude at the budget.
+Status  
+Beta
 
-StatusBeta
+APIs  
+- Messages API
 
-Cloud platforms
+- Managed Agents Not supported
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+Beta header  
+Requires
 
-Models
+task-budgets-2026-03-13
 
-- [Claude Sonnet 5](../../20-Models/models-sonnet-5-overview.md)Not supported
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Claude Platform on AWS
 
-Usage
+Status  
+Beta
 
-Use [Session budgets](../Other/managed-agents-budgets.md) instead.
+APIs  
+- Messages API
 
-StatusNot available
+- Managed Agents Not supported
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+task-budgets-2026-03-13
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-Header
+Claude Models on Google Cloud (Google managed)
 
-- `task-budgets-2026-03-13`
-  
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+task-budgets-2026-03-13
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+task-budgets-2026-03-13
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+task-budgets-2026-03-13
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5
+- Claude Haiku 5.5

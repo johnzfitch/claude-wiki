@@ -224,7 +224,7 @@ As society begins to plug AI models into more and more important functions, desi
 
 01That is, similar to phase one, we didn’t add any new sophisticated guardrails or classifiers to defend against jailbreaks.[](#footnote-ref-1)
 
-02This might remind some readers of our discussion of the “spiritual bliss attractor state” from the [Claude 4 system card](../15-Claude-AI-Features/claude-4-system-card.md) (p. 63).[](#footnote-ref-2)
+02This might remind some readers of our discussion of the “spiritual bliss attractor state” from the [Claude 4 system card](fixed-some-minor-formatting-errors-e-g-changed-a-semicolon-to-a-comma.md) (p. 63).[](#footnote-ref-2)
 
 ## Authors & acknowledgements
 

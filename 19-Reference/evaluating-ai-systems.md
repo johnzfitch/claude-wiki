@@ -2,7 +2,7 @@
 title: "Challenges in evaluating AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/evaluating-ai-systems"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:26Z"
+fetched_at: "2026-11-18T06:28:42Z"
 tags: ["news-research"]
 ---
 

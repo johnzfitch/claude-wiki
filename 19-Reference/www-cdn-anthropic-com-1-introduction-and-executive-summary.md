@@ -2,8 +2,7 @@
 title: "​1 Introduction and executive summary​"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:39:50Z"
-last_modified: "Thu, 28 May 2026 15:22:29 GMT"
+fetched_at: "2026-11-18T06:28:57Z"
 tags: ["news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Claude Design | More than an AI design assistant"
 source_url: "https://www.claude.com/product/design"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:27:25Z"
+fetched_at: "2026-11-18T06:29:17Z"
 tags: ["claude-ai"]
 ---
 
@@ -177,15 +177,19 @@ From your Claude Code session on desktop or from the terminal, ask Claude to tur
 
 ### How do I bring in my company's design system?
 
-The new, integrated Claude Design has a revamped Design Systems feature, which you can manage in Settings \> Design Systems. To bring an existing design system over, open the Design tab at the bottom of the sidebar and click Migrate team design systems in the banner. Each design system becomes an artifact Claude can use in any conversation, including in Claude Code. Migrated systems aren't perfect, so each one shows a banner: click Let Claude clean it up and Claude tidies the guide, the tokens and the components. You can create a design system using Claude Code, which works best for organizations with existing React design systems, or in any conversation with Claude, which works best for brand design systems with fonts, colors and brand guidelines. [Learn more](../21-Account-Support/set-up-your-design-system-in-claude-design.md).
+The new, integrated Claude Design has a revamped Design Systems feature, which you can manage in Settings \> Design Systems. To bring an existing design system over, open the Design tab at the bottom of the sidebar and click Migrate team design systems in the banner. Each design system becomes an artifact Claude can use in any conversation, including in Claude Code. Migrated systems aren't perfect, so each one shows a banner: click Let Claude clean it up and Claude tidies the guide, the tokens and the components. You can create a design system using Claude Code, which works best for organizations with existing React design systems, or in any conversation with Claude, which works best for brand design systems with fonts, colors and brand guidelines. [Learn more](https://support.claude.com/en/articles/14604397-set-up-your-design-system-in-claude-design).
 
 ### What’s included in my plan?
 
-Claude Design, Claude Slides, and Claude Docs are included within every plan, including the Free plan. Claude Dashboards is in beta on paid plans. Claude Motion is in beta on Team and Enterprise plans. See the pricing page for details.
+Claude Design, Claude Slides, and Claude Docs come with every plan, Free included.
+
+Paid plans add Claude Data. They also include Claude Sheets and Claude Whiteboards, both in beta.
+
+Team and Enterprise also get Claude Motion in beta. See pricing for what’s in each plan.
 
 ### Are Artifacts on for my Enterprise organization?
 
-Claude Design, Claude Slides, and Claude Docs turn on by default on October 15, 2026, except in HIPAA-enabled organizations. Claude Dashboards and Claude Motion stay off until an admin enables them. Admins can manage each one in Organization settings \> Artifacts.
+Claude Design, Claude Slides, and Claude Docs are on by default, except in HIPAA-enabled organizations and those with organization-wide zero data retention (ZDR). Claude Data turns on by default on November 20, 2026. Claude Sheets, Claude Whiteboards, and Claude Motion stay off until an admin enables them in Organization settings \> Artifacts. On Team plans, Claude Data, Claude Sheets, and Claude Whiteboards are on from day one. In HIPAA-enabled organizations and those with organization-wide zero data retention (ZDR), nothing here turns on by default, and some types aren’t available.
 
 ### What are my usage limits?
 

@@ -2,7 +2,7 @@
 title: "Using Chronograph for portfolio monitoring · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12662597-using-chronograph-for-portfolio-monitoring"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-08T06:24:52Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["claude-ai"]
 ---
 

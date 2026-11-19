@@ -2,7 +2,7 @@
 title: "Apps - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/apps"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-03T06:23:30Z"
+fetched_at: "2026-11-18T06:27:08Z"
 tags: ["api"]
 ---
 

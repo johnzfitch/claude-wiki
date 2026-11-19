@@ -2,7 +2,7 @@
 title: "Handle streaming refusals - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/handle-streaming-refusals"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-11-05T06:36:36Z"
+fetched_at: "2026-11-13T06:34:18Z"
 tags: ["api"]
 ---
 
@@ -20,11 +20,20 @@ Detect and handle refusal stop reasons in streaming responses, and retry refused
 
 Streaming refusals
 
-[APIs](#feature-availability)  
-Messages APIAlways onManaged AgentsAlways on
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents[\* Beta](#availability-beta-on-claude-api)
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 Usage differs by product
 
@@ -197,40 +206,58 @@ Serve users across languages with Claude’s cross-lingual capabilities.
 
 ## Availability
 
-Streaming refusals are available or in beta, depending on the API.
+Streaming refusals
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Always on
+APIs  
+- Messages API
+- Managed Agents Beta
 
-The stream ends with `stop_reason` `"refusal"`, and `stop_details` (`category` and `explanation`) arrives on the `message_delta` event.
+Models  
+- All models
 
-StatusAvailable
+Amazon Bedrock
 
-Cloud platforms
+API  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Models  
+- All models
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Amazon Bedrock (bedrock-runtime)
 
-Usage
+API  
+- Messages API
 
-Always on
+Models  
+- All models
 
-A refused turn ends, and the session goes idle. Treat a turn as refused if `stop_details.type` or `stop_reason.type` on the `session.status_idle` event is `"refusal"`. On a refused turn, `stop_reason.type` can be `"end_turn"`. `stop_details` is `null` on any other turn, and can be `null` on a refused turn too.
+Claude Platform on AWS
 
-StatusBeta
+APIs  
+- Messages API
+- Managed Agents Beta
 
-Cloud platforms
+Models  
+- All models
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models

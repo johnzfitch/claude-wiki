@@ -2,7 +2,7 @@
 title: "Security model - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-security"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:12Z"
+fetched_at: "2026-11-13T06:34:12Z"
 tags: ["api", "security"]
 ---
 
@@ -23,15 +23,23 @@ Shared responsibility model for self-hosted sandbox environments.
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](managed-agents-self-hosted-sandboxes.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Status](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+Beta
 
-[Beta header](managed-agents-self-hosted-sandboxes.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Models](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- All models
+
+[Cloud platforms](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-self-hosted-sandboxes.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 In every environment, Anthropic secures the parts it runs: session and work queue integrity, multitenant isolation, and agent-context minimization. When you self-host sandboxes, the following responsibilities fall to you.
 

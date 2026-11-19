@@ -2,7 +2,7 @@
 title: "Set up the Compliance API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-api-access"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:13Z"
+fetched_at: "2026-11-13T06:36:43Z"
 tags: ["api"]
 ---
 
@@ -100,9 +100,9 @@ A Compliance Access Key with `read:compliance_user_data` can read every chat, fi
     | Scope | Grants |
     |----|----|
     | `read:compliance_activities` | Read the Activity Feed. A key covering the parent organization reads events for the parent organization and all linked organizations. |
-    | `read:compliance_user_data` | Read user chats, messages, files, projects, session metadata and transcripts, organization users, user preferences, and group members |
+    | `read:compliance_user_data` | Read user chats, messages, files, projects, session metadata and transcripts, organization users, user preferences, and group members. Together with `read:compliance_org_data`, also read who made a [Security posture attestation](manage-claude-compliance-security-posture-results-reference.md#who-attested-and-comments), where the endpoint returns it: a user ID. |
     | `delete:compliance_user_data` | Delete user chats, files, and projects |
-    | `read:compliance_org_data` | Read organization metadata (names, types, roles, and groups) and the effective settings in force for organizations under the parent organization. User listings and group membership require `read:compliance_user_data`. |
+    | `read:compliance_org_data` | Read organization metadata (names, types, roles, and groups) and the effective settings in force for organizations under the parent organization. Also read an organization’s [Security posture](manage-claude-compliance-security-posture-results-reference.md): the current results of most of its security controls, with the attestations that the response shows. User listings and group membership require `read:compliance_user_data`. |
 
     With the Plugins API, `read:compliance_org_data` also reads your organization’s plugin and plugin marketplace inventory through the Admin API, including members’ personal plugins and their files. That inventory identifies members: it carries the user ID of each member who owns or created a plugin, or with whom a plugin has been shared individually, and the email address of a plugin’s creator while they are still a member; see [Read plugins and plugin marketplaces](manage-claude-compliance-org-data.md#read-plugins-and-plugin-marketplaces).
 

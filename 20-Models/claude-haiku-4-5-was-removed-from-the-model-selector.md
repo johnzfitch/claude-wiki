@@ -2,7 +2,7 @@
 title: "Claude Haiku 4.5 was removed from the model selector | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17444146-claude-haiku-4-5-was-removed-from-the-model-selector"
 category: "20-Models"
-fetched_at: "2026-11-09T06:26:36Z"
+fetched_at: "2026-11-18T06:28:06Z"
 tags: ["models"]
 ---
 
@@ -29,7 +29,7 @@ This change didn't affect Haiku 4.5 in:
 
 Your Haiku 4.5 chats are still in your account, and nothing was deleted. When you continue one after October 29, Claude responds using Haiku 5.5. You can switch to a different model at any time.
 
-To keep a copy of your chats, you can export your data at any time. Learn more about **[exporting your Claude data](../22-Safety-Policy/export-your-claude-data-claude-help-center.md)**.
+To keep a copy of your chats, you can export your data at any time. Learn more about **[exporting your Claude data](https://support.claude.com/en/articles/9450526)**.
 
 ## Switch models in a chat
 

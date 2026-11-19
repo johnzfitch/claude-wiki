@@ -2,7 +2,7 @@
 title: "IAM permissions for Claude Models on Google Cloud (Anthropic managed) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/claude-models-on-google-cloud-anthropic-managed-iam-permissions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-08T06:25:18Z"
+fetched_at: "2026-11-16T06:25:59Z"
 tags: ["api"]
 ---
 

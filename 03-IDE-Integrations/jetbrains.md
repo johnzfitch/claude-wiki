@@ -2,8 +2,8 @@
 title: "JetBrains IDEs - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/jetbrains"
 category: "03-IDE-Integrations"
-fetched_at: "2026-11-04T06:23:57Z"
-last_modified: "Wed, 04 Nov 2026 01:45:28 GMT"
+fetched_at: "2026-11-13T06:32:42Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code", "ide"]
 ---
 

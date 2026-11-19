@@ -2,7 +2,7 @@
 title: "Claude for nonprofits partnership success guide for admins · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923668-claude-for-nonprofits-partnership-success-guide-for-admins"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-07T06:22:26Z"
+fetched_at: "2026-11-18T06:27:49Z"
 tags: ["enterprise"]
 ---
 
@@ -24,6 +24,7 @@ The framework below is flexible and self-paced. Move through the phases at whate
 
 - [Getting started guides(opens in new tab)](getting-started-with-claude-for-enterprise.md) covering SSO, user management, and technical configuration
 - [Driving adoption at your organization(opens in new tab)](https://anthropic.skilljar.com/driving-enterprise-adoption-of-claude) course with customizable templates for change management
+- [Deploying Claude Enterprise with confidence(opens in new tab)](https://support.claude.com/courses/deploying-claude-enterprise-with-confidence) course on the five decisions that shape a rollout, for Enterprise plans
 
 #### Recommended actions
 
@@ -80,7 +81,7 @@ The framework below is flexible and self-paced. Move through the phases at whate
 
 1.  Build a weekly use case spotlight schedule
 2.  Track activity metrics in your usage analytics dashboard and with surveys
-3.  Enable appropriate connectors and capabilities in admin settings
+3.  Enable appropriate connectors and capabilities in [Organization settings(opens in new tab)](https://claude.ai/admin-settings)
 
 #### Implementation tips
 

@@ -2,7 +2,7 @@
 title: "Zapier Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/zapier"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:56Z"
+fetched_at: "2026-11-18T06:29:13Z"
 tags: ["api", "case-studies", "enterprise"]
 ---
 
@@ -80,6 +80,9 @@ Zapier continues to push the boundaries of what’s possible with their MCP plat
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -87,6 +90,3 @@ Zapier continues to push the boundaries of what’s possible with their MCP plat
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

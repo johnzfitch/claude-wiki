@@ -2,7 +2,7 @@
 title: "Open the Claude mobile app with a link | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14898120-open-the-claude-mobile-app-with-a-link"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:52Z"
+fetched_at: "2026-11-18T06:28:11Z"
 tags: ["desktop", "mobile"]
 ---
 

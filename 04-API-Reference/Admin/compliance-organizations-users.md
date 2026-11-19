@@ -2,7 +2,7 @@
 title: "Users - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/users"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:36:08Z"
+fetched_at: "2026-11-13T06:36:15Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,8 @@
 title: "Explore the context window - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/context-window"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-27T06:26:20Z"
+fetched_at: "2026-11-17T06:24:28Z"
+last_modified: "Tue, 17 Nov 2026 03:13:49 GMT"
 tags: ["claude-code"]
 ---
 
@@ -16,24 +17,53 @@ Copy pageCopy page
 
 Claude Code’s context window holds everything Claude knows about your session: your instructions, the files it reads, its own responses, and content that never appears in your terminal. The timeline below plays a full session from startup to compaction: what loads before you type, what each file read, rule, and hook adds as Claude works, and how a subagent keeps large reads out of your context. See [the written breakdown](#what-the-timeline-shows) for the same content as a list.
 
-
-[​](#what-the-timeline-shows)
-
-What the timeline shows
-
-The session walks through a realistic flow with representative token counts:
+## [](#what-the-timeline-shows)What the timeline shows
 
 - **Before you type anything**: CLAUDE.md, auto memory, MCP tool names, and skill descriptions all load into context. [AGENTS.md files](memory.md#agents-md) can load in place of CLAUDE.md. Your own setup may add more here, like an [output style](output-styles.md) or text from [`--append-system-prompt`](cli-reference.md).
 - **As Claude works**: each file read adds to context, [path-scoped rules](memory.md#path-specific-rules) load automatically alongside matching files, and a [PostToolUse hook](../07-Hooks/hooks-guide.md) fires after each edit.
 - **The follow-up prompt**: a [subagent](../09-Agents-Patterns/sub-agents.md) handles the research in its own separate context window, so the large file reads stay out of yours. Only the summary and a small metadata trailer come back.
-- **At the end of the walkthrough**: you run `/compact`, which replaces the conversation with a structured summary. Most startup content reloads automatically; the table below shows what happens to each mechanism.
+- **At the end of the session**: you run `/compact`, which replaces the conversation with a structured summary. Most startup content reloads automatically. See [what survives compaction](#what-survives-compaction) for what reloads and what gets summarized.
 
+Token counts for each step
 
-[​](#what-survives-compaction)
+Compare how many tokens each step adds in the timeline’s example session. The counts are illustrative and vary with your CLAUDE.md size, MCP servers, and file lengths. For real numbers, [check your own session](#check-your-own-session).
 
-What survives compaction
+| Phase              | What enters context             | Example tokens |
+|:-------------------|:--------------------------------|---------------:|
+| Before you type    | System prompt                   |          4,200 |
+| Before you type    | Auto memory (`MEMORY.md`)       |            680 |
+| Before you type    | Environment info                |            280 |
+| Before you type    | MCP tool names                  |            120 |
+| Before you type    | Skill descriptions              |            450 |
+| Before you type    | `~/.claude/CLAUDE.md`           |            320 |
+| Before you type    | Project CLAUDE.md               |          1,800 |
+| First prompt       | Your prompt                     |             45 |
+| As Claude works    | Read `src/api/auth.ts`          |          2,400 |
+| As Claude works    | Read `src/lib/tokens.ts`        |          1,100 |
+| As Claude works    | Rule `api-conventions.md`       |            380 |
+| As Claude works    | Read `middleware.ts`            |          1,800 |
+| As Claude works    | Read `auth.test.ts`             |          1,600 |
+| As Claude works    | Rule `testing.md`               |            290 |
+| As Claude works    | Search for `refreshToken`       |            600 |
+| As Claude works    | Claude’s analysis               |            800 |
+| As Claude works    | Edit `auth.ts`                  |            400 |
+| As Claude works    | Prettier hook output            |            120 |
+| As Claude works    | Edit `auth.test.ts`             |            600 |
+| As Claude works    | Prettier hook output            |            100 |
+| As Claude works    | `npm test` output               |          1,200 |
+| As Claude works    | Claude’s summary of its changes |            400 |
+| Follow-up prompt   | Your follow-up prompt           |             40 |
+| Follow-up prompt   | Claude’s call to the subagent   |             80 |
+| Follow-up prompt   | Subagent’s summary              |            420 |
+| Follow-up prompt   | Claude’s response               |          1,200 |
+| End of the session | `!git status` and its output    |            180 |
+| End of the session | `/commit-push` skill body       |            620 |
 
-When a long session compacts, Claude Code summarizes the conversation history to fit the context window. As of v2.1.198, the summarization request inherits your session’s [extended thinking](model-config.md#extended-thinking) configuration, so it reasons with thinking enabled when your session has it enabled and stays off otherwise. Thinking affects only how the summary is produced; your session settings are unchanged afterward. What happens to each kind of content depends on how it was loaded:
+Before `/compact`, 22,225 tokens are in use. The subagent uses another 9,890 tokens in its own context window.After `/compact`, 17,095 tokens are in use: the “Before you type” rows, a 1,725-token conversation summary, the four files read under “As Claude works”, and the `/commit-push` skill body.
+
+## [](#what-survives-compaction)What survives compaction
+
+When a long session compacts, Claude Code summarizes the conversation history to fit the context window.
 
 | Mechanism | After compaction |
 |:---|:---|
@@ -53,10 +83,7 @@ When a long session compacts, Claude Code summarizes the conversation history to
 
 Right after compaction, Claude Code re-reads up to five of the files Claude has read or edited in the session, choosing the ones modified most recently. A file over 5,000 tokens comes back as a path reference without its content, shown as `Referenced file` instead of `Read`. Path-scoped rules and nested CLAUDE.md files load into message history when Claude reads, writes, or edits their trigger file, so compaction summarizes them away with everything else. If a rule must persist across compaction, drop the `paths:` frontmatter or move it to the project-root CLAUDE.md. Skill bodies are re-injected after compaction, but large skills are truncated to fit the per-skill cap, and the oldest invoked skills are dropped once the total budget is exceeded. Truncation keeps the start of the file, so put the most important instructions near the top of `SKILL.md`.
 
-
-[​](#when-your-context-fills-up)
-
-When your context fills up
+## [](#when-your-context-fills-up)When your context fills up
 
 Claude Code compacts automatically as you approach the limit, so a full context window doesn’t end your session. The automatic pass works the same way as the `/compact` step in the timeline. See [When context fills up](how-claude-code-works.md#when-context-fills-up) for what it preserves. For when Claude Code also compacts a conversation you leave idle, see [idle compaction](settings-reference.md#idlecompaction). You can also act before the automatic pass runs:
 
@@ -68,17 +95,11 @@ Claude Code compacts automatically as you approach the limit, so a full context 
 
 If you need a larger window rather than a smaller conversation, Fable models, Sonnet 5 and later, Haiku 5.5, Opus 4.6 and later, and Sonnet 4.6 support a 1 million token context window. See [Extended context](model-config.md#extended-context) for availability by plan and how to select a `[1m]` model variant. Compaction works the same way at the larger limit. The point where automatic compaction runs depends on your model and configuration. See [Default auto-compact thresholds](model-config.md#default-auto-compact-thresholds) for the boundaries per model, and [Correct the window for a gateway or custom model ID](model-config.md#correct-the-window-for-a-gateway-or-custom-model-id) if Claude Code assumes the wrong window for your model ID, such as an [LLM gateway](../13-Enterprise-Admin/llm-gateway.md) alias.
 
-
-[​](#check-your-own-session)
-
-Check your own session
+## [](#check-your-own-session)Check your own session
 
 The visualization uses representative numbers. To see your actual context usage at any point, run `/context` for a live breakdown by category with optimization suggestions, including which CLAUDE.md and auto memory files loaded. Run `/memory` to open and edit those files.
 
-
-[​](#related-resources)
-
-Related resources
+## [](#related-resources)Related resources
 
 For deeper coverage of the features shown in the timeline, see these pages:
 

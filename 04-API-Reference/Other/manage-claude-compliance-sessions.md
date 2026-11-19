@@ -2,7 +2,7 @@
 title: "Retrieve session transcripts - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-sessions"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-06T06:33:48Z"
+fetched_at: "2026-11-14T06:25:42Z"
 tags: ["api"]
 ---
 
@@ -54,7 +54,7 @@ Capture of local sessions is tied to the Compliance API being enabled for your o
 - Local sessions from products other than Cowork and Claude Code in organizations with [HIPAA readiness](manage-claude-api-and-data-retention.md#hipaa-readiness) enabled. In those organizations, the local session endpoints return Cowork and Claude Code sessions only, and captured session content is stored for 30 days.
 - Local sessions for which [zero data retention (ZDR)](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) is in effect. These sessions are excluded from list results, and the retrieve and messages endpoints return 404 for them.
 
-Anthropic recommends the Compliance API for retrieving session content. The following table compares [local sessions](#retrieve-local-sessions) and [remote sessions](#retrieve-remote-sessions) with the OpenTelemetry-based alternatives available for Cowork and Claude Code, [Cowork’s OpenTelemetry logging](../../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md).
+Anthropic recommends the Compliance API for retrieving session content. The following table compares [local sessions](#retrieve-local-sessions) and [remote sessions](#retrieve-remote-sessions) with the OpenTelemetry-based alternatives available for Cowork and Claude Code, [Cowork’s OpenTelemetry logging](https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md).
 
 |  | Local sessions (on users’ machines) | Remote sessions (in the cloud) | OpenTelemetry logging |
 |----|----|----|----|

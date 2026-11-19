@@ -2,17 +2,17 @@
 title: "Anthropic’s Responsible Scaling Policy \\ Anthropic"
 source_url: "https://www.anthropic.com/safety"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:52Z"
+fetched_at: "2026-11-18T06:28:46Z"
 tags: ["safety"]
 ---
 
 # Anthropic’s Responsible Scaling Policy
 
-Anticipating and securing against emerging threats that accompany increasingly powerful models
+A voluntary framework for addressing catastrophic risks from advanced AI systems.
 
 Last updated Aug 14, 2026
 
-[Read Anthropic's Responsible Scaling Policy](../19-Reference/www-cdn-anthropic-com-for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md)
+[Read Anthropic's Responsible Scaling Policy](https://assets.claude.com/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf)
 
 As frontier AI models advance, we believe they will bring about transformative benefits for our society and economy. AI could accelerate scientific discoveries, revolutionize healthcare, enhance our education system, and create entirely new domains for human creativity and innovation. Frontier AI models also, however, present new challenges and risks that warrant careful study and effective safeguards.
 
@@ -22,19 +22,21 @@ In September 2023, we released the first version of our Responsible Scaling Poli
 
 ### Read the current version of the RSP
 
-[See the pdf](https://cdn.sanity.io/files/4zrzovbb/website/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf)
+[See the pdf](https://assets.claude.com/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf)
 
 ### RSP Noncompliance Reporting and Anti-Retaliation Policy
 
-- [Version 3.4](../19-Reference/www-cdn-anthropic-com-for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/for-more-information-seew-ww-anthropic-com-responsible-scaling-policy-f8f0b47b.md) (effective July 8, 2026)
-- [Version 3.3](../19-Reference/for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/effectivemay-26-2026april-29-2026.md) (effective May 26, 2026)
-- [Version 3.2](../19-Reference/for-more-information-see-www-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/effectiveapril-29-2026april-2-2026.md) (effective April 29, 2026)
-- [Version 3.1](https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf) and [redline](../19-Reference/effectiveapril-2-2026february-24-2026.md) (effective April 2, 2026)
+[See the PDF](https://assets.claude.com/b7a5629e40b391b2adfb4cc8c0888ac9d6bfddf6.pdf)
+
+- [Version 3.4](https://assets.claude.com/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf) and [redline](https://assets.claude.com/fbfdce5e4e825a3e089085205a842a9ae8ffac99.pdf) (effective July 8, 2026)
+- [Version 3.3](https://assets.claude.com/c11e84981d0a7281a1b229f3fa6af0da66eaf43f.pdf) and [redline](https://assets.claude.com/dd0ec579bee2cd144069c478ede3e35ea080ad02.pdf) (effective May 26, 2026)
+- [Version 3.2](https://assets.claude.com/28c6241900d90410628a8a2003a5572faae4365a.pdf) and [redline](https://assets.claude.com/7c534a9e7a82d4411dd568d85ffbcd14ac243a62.pdf) (effective April 29, 2026)
+- [Version 3.1](https://assets.claude.com/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf) and [redline](https://assets.claude.com/64cb0ac5eb0f8030187131f490827323e3d53308.pdf) (effective April 2, 2026)
 - [Version 3.0](https://anthropic.com/responsible-scaling-policy/rsp-v3-0) (effective February 24, 2026)
-- [Version 2.2](https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) and [redline](../19-Reference/supplementary-info-available-atw-ww-anthropic-com-rsp-updates.md) (effective May 14, 2025)
-- [Version 2.1](https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf) (effective March 31, 2025)
-- [Version 2.0](https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf) (effective October 15, 2024)
-- [Version 1.0](https://www-cdn.anthropic.com/1adf000c8f675958c2ee23805d91aaade1cd4613/responsible-scaling-policy.pdf) (effective September 19, 2023)
+- [Version 2.2](https://assets.claude.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) and [redline](https://assets.claude.com/ee775bdcf76b2e2af32d658c934f460383d07c46.pdf) (effective May 14, 2025)
+- [Version 2.1](https://assets.claude.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf) (effective March 31, 2025)
+- [Version 2.0](https://assets.claude.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf) (effective October 15, 2024)
+- [Version 1.0](https://assets.claude.com/1adf000c8f675958c2ee23805d91aaade1cd4613.pdf) (effective September 19, 2023)
 
 ### Risk Reports
 
@@ -170,7 +172,7 @@ The following sections outline the key security controls we plan to implement as
 
 #### Planned Capability Assessments
 
-We plan to publish additional details on our capability assessment methodology in the near future. For information about our past capability assessments, please see our overviews for [Claude 3.0 Opus](https://www-cdn.anthropic.com/f2986af8d052f26236f6251da62d16172cfabd6e/claude-3-model-card.pdf) and [Claude 3.5 Sonnet](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf).
+We plan to publish additional details on our capability assessment methodology in the near future. For information about our past capability assessments, please see our overviews for [Claude 3.0 Opus](https://assets.claude.com/f2986af8d052f26236f6251da62d16172cfabd6e.pdf) and [Claude 3.5 Sonnet](https://assets.claude.com/fed9cc193a14b84131812372d8d5857f8f304c52.pdf).
 
 #### Learning from Experience
 

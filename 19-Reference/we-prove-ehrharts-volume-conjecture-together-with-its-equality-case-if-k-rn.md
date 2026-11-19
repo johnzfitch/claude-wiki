@@ -2,7 +2,7 @@
 title: "We prove Ehrhart’s volume conjecture together with its equality case: if K ⊂ Rn…"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/cfcc6aabc79542930d3a37fec61db8f5bdc35fe4.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-09T06:48:24Z"
+fetched_at: "2026-11-18T06:28:36Z"
 tags: ["news-research"]
 ---
 
@@ -98,8 +98,8 @@ Lemma 1.1 (Invariant dictionary). If ψ : Rn → R is smooth and convex and Ψ =
               (i∂ ∂Ψ)                                           hence         L∗ mΨ = det D2 ψ dx.
 Proof. Locally Lj = log zj + log z̄j , so Ψj k̄ = ψjk (L)/(zj z̄k ), whence
                                                              Y
-                               ¯ n = n! 2n det(ψjk (L))
-                           (i∂ ∂Ψ)                                 |zj |−2 dV ;
+                           (i∂ ¯
+                              ∂Ψ)n = n! 2n det(ψjk (L))            |zj |−2 dV ;
                                                                       j
 
 now use (1.1). Integrating out θ produces the factor (2π)n cancelled by (1.2).
@@ -111,26 +111,26 @@ near B, with u = v on a neighbourhood N of ∂B. Then B (i∂ ∂u)         ¯ n
 
 Proof. Choose a concentric ball B ′ ⊃ B with B ′ \ B ⊂ N and χ ∈ Cc∞ (B ′ ) with χ ≡ 1 on a
 neighbourhood of B; then supp dχ ⊂ B ′ \ B ⊂ N (where dχ vanishes on an open set, χ is
-                                   ¯ ⊆ supp dχ). By locality of the Monge–Ampère operator the
-locally constant, so also supp(i∂R ∂χ)
-two measures agree on N , so χ[(i∂ ∂u)   ¯ n − (i∂ ∂v)
+locally constant, so also supp(i∂R ¯
+                                  ∂χ) ⊆ supp dχ). By locality of the Monge–Ampère operator the
+two measures agree on N , so χ[(i∂ ∂u)  ¯ n − (i∂ ∂v)
                                                     ¯ n ] equals the difference of the masses over
 B. Writing (i∂ ∂u) − (i∂ ∂v) = i∂ ∂(u − v) ∧ T with T = n−1
-                ¯   n       ¯  n       ¯                                 ¯ k       ¯ n−1−k closed
+                ¯   n       ¯  n      ¯                                  ¯ k       ¯ n−1−k closed
                                                                P
                                                                  k=0 (i∂ ∂u) ∧ (i∂ ∂v)
 positive,
      R two integrations by  R parts (legitimate for locally bounded psh functions, Bedford–Taylor)
            ¯ − v) ∧ T = (u − v) i∂ ∂χ
-give χ i∂ ∂(u                            ¯ ∧ T = 0, since u − v ≡ 0 on supp dχ.
+give χ i∂ ∂(u                           ¯ ∧ T = 0, since u − v ≡ 0 on supp dχ.
 
 
                                                           2
                                                          n            ε2
 Lemma 1.3 (Model masses). (a) i∂ ∂¯ log(|z|2 + ε2 ) = n! 2n (|z|2 +ε     2 )n+1 dV , of total mass
 
-(2π) on C , concentrating at 0 as ε ↓ 0. (b) For s > 0, vs := max(log |z|2 , −s) has (i∂ ∂v
-    n     n                                                                                   ¯ s )n
+(2π) on C , concentrating at 0 as ε ↓ 0. (b) For s > 0, vs := max(log |z|2 , −s) has (i∂ ¯
+    n     n                                                                                  ∂vs )n
 supported on {|z| = e−s/2 } with total mass (2π)n . (c) For λ > 0, a ∈ Cn , s > 0, the truncated
 model λ max(log |z − a|2 , −s) has Monge–Ampère mass λn (2π)n carried by {|z − a| = e−s/2 }; in
 the normalization (1.2) its m-mass is λn /n!.
@@ -155,17 +155,18 @@ sits on the sphere. For the mass: vsε := max(log(|z|    2     2
 the part of this mass on {|z| > ρ1 } tends to 0 for every fixed ρ1 > e−s/2 , while on {|z| < ρ0 }
 with ρ0 < e−s/2 the measure vanishes for small ε (vsε ≡ −s there once ρ20 + ε2 < e−s ). Fix
 ρ0 < e−s/2 < ρ1 < 1 and χ ∈ Cc (B(0, 1)), 0 ≤ χ ≤ 1, χ ≡ 1 on Ra neighbourhood of the
-closed annulus {ρ0 ≤ |z| ≤  R ρ1 }; theε sandwich   µε ({ρ0 ≤ |z| ≤ ρ1 }) ≤ χ dµε ≤ µε (B(0, 1)) for
-          ¯  ε n                    ¯    n         n
+closed annulus {ρ0 ≤ |z| ≤ R ρ1 }; theε sandwich   µε ({ρ0 ≤ |z| ≤ ρ1 }) ≤ χ dµε ≤ µε (B(0, 1)) for
+          ¯    n                   ¯    n         n
 µε := (i∂ ∂vs ) then gives χ (i∂ ∂vs ) → (2π) . Since vsε ↓ vs with all functions locally bounded,
-Bedford–Taylor    decreasing convergence gives weak∗ convergence of the Monge–Ampère measures,
-           ¯ s ) = (2π)n ; as this measure sits on the sphere, where χ ≡ 1, its total mass is (2π)n .
-                n
+            ε
+
+Bedford–Taylor   decreasing convergence gives weak∗ convergence of the Monge–Ampère measures,
+so χ (i∂ ¯∂vs ) = (2π)n ; as this measure sits on the sphere, where χ ≡ 1, its total mass is (2π)n .
+               n
    R
-so χ (i∂ ∂v
-                              ¯
-(c) Translate and scale: (i∂ ∂(λu))              ¯ n.
-                                      n = λn (i∂ ∂u)
+                             ¯
+(c) Translate and scale: (i∂ ∂(λu))             ¯ n.
+                                     n = λn (i∂ ∂u)
 
 
 Lelong numbers. For u psh near p, Mu (r) := sup|z−p|=r u is, as a function of t = log r2 , convex
@@ -567,14 +568,14 @@ Theorem 6.1. For every λ > 0,
     Only smoothness and strict psh-ness of Φ0 are used. (If Pλ ≡ −∞ the convention is
 {Pλ < Φ0 } = T ; the proof below covers this case.) We use the Bedford–Taylor comparison
 principle   in the form:  if u, v are locally bounded psh on bounded open Ω and {u < v} ⋐ Ω, then
-            ¯ n≤                ¯ n
+            ¯   n ≤             ¯ n
 R                   R
   {u<v} (i∂ ∂v)       {u<v} (i∂ ∂u) . This follows from the usual boundary form (Bedford–Taylor;
 Guedj–Zeriahi, Degenerate Complex Monge–Ampère Equations, Cor. 3.30): choose open Ω′ with
 {u < v} ⊂ Ω′ ⋐ Ω; then u ≥ v on a neighbourhood of ∂Ω′ , i.e. lim inf z→∂Ω′ (u − v) ≥ 0, and
 the boundary form applies on Ω′ . We also use Bedford–Taylor decreasing convergence, plurifine
-locality in the precise form 1{u>v} (i∂ ∂¯ max(u, v))n = 1{u>v} (i∂ ∂u)
-                                                                    ¯ n for locally bounded psh u, v
+locality in the precise form 1{u>v} (i∂ ∂¯ max(u, v))n = 1{u>v} (i∂ ¯
+                                                                   ∂u)n for locally bounded psh u, v
 — valid for the possibly non-open set {u > v} (Bedford–Taylor 1987; Guedj–Zeriahi, Prop. 3.27)
 — the Perron–Bremermann solution on balls (existence, continuity and maximality: Bremermann,
 Walsh, Bedford–Taylor), the gluing lemma, and the Green function gA (·, a) of a plane annulus.
@@ -627,7 +628,7 @@ Proof. Fix z0 ∈ W , ρ′ > 0 with B(z0 , ρ′ ) ⊂ W , and set δ := minB(z
 psh), r := min(ρ′ , 2nδ/A), B := B(z0 , r).
                    p
 
-    Claim: every w ∈ PSH(B) with lim supz→ζ w(z) ≤ u(ζ) for all ζ ∈ ∂B satisfies w ≤ u
+     Claim: every w ∈ PSH(B) with lim supz→ζ w(z) ≤ u(ζ) for all ζ ∈ ∂B satisfies w ≤ u
 on B. First, w ≤ HB [Φ0 ] − δ where HB [Φ0 ] is the harmonic extension of Φ0 |∂B (as w is
                                                                                    A
 subharmonic with boundary values ≤ u ≤ Φ0 − δ). The function HB [Φ0 ] − Φ0 − 4n       (r2 − |z − z0 |2 )
@@ -637,10 +638,10 @@ is subharmonic on B (Laplacian = −∆Φ0 + A ≥ 0 in R2n ) with zero boundary
                            4n ≤ Φ0 + 2 and w ≤ Φ0 − 2 on B. Glue: w           b := max(w, u) on B,
 := u elsewhere on DR ; psh by the boundary condition; w       b ≤ Φ0 ; w
                                                                        b = u near p (as p ∈ / B), so
-    b ≥ λ; hence w
-νp (w)                              b ≤ PλDR = u, i.e. w ≤ u on B.
+    w) ≥ λ; hence w
+νp ( b                              b ≤ PλDR = u, i.e. w ≤ u on B.
                    b ∈ Fλ (DR ), so w
-    Now choose continuous hk ↓ u|∂B (u.s.c. on a compact), and Perron–Bremermann solutions
+     Now choose continuous hk ↓ u|∂B (u.s.c. on a compact), and Perron–Bremermann solutions
 uk ∈ PSH(B) ∩ C(B), uk |∂B = hk , (i∂ ∂u ¯ k )n = 0. Then u ≤ uk (u competes for data hk ), uk
 decreases to some ũ ≥ u with lim supz→ζ ũ ≤ hk (ζ) ∀k, so ≤ u(ζ); the Claim gives ũ ≤ u, so uk ↓ u
 on B, all bounded on B; Bedford–Taylor decreasing convergence gives (i∂ ∂u) ¯ n = lim(i∂ ∂u¯ k )n = 0
@@ -666,12 +667,12 @@ locally bounded, {uj < Φ0 − ε} = O ⋐ DR ) gives
                                                                         ¯ j )n = 1{u>Φ −j} (i∂ ∂u)
 Φ0 − j are locally bounded, and plurifine locality gives 1{u>Φ0 −j} (i∂ ∂u                     ¯ n
                                                                                       0
-there; on O \ {p} ⊆ W this vanishes by Lemma 6.3. Also p ∈      / {u > Φ0 − j} (u(p) = −∞). By
+there; on O \ {p} ⊆ W this vanishes by Lemma 6.3. Also p ∈     / {u > Φ0 − j} (u(p) = −∞). By
 Lemma 6.2(c), O ∩ {u ≤ Φ0 − j} ⊆ B(p, rj ). Hence
-                                 Z                Z
-                                         ¯ j )n ≤
-                                     (i∂ ∂u                ¯ j )n .
-                                                       (i∂ ∂u                                  (6.3)
+                                 Z               Z
+                                     (i∂ ¯
+                                        ∂uj )n ≤       (i∂ ¯
+                                                          ∂uj )n .                             (6.3)
                                     O               B(p,rj )
 
 
@@ -830,10 +831,8 @@ exclusion of products, and the volume pinch give K = A(S). Section 12 assembles 
 9     The energy bound at s = 0
 Standing notation for Part II: ω0 := i∂ ∂Φ  ¯ 0 , a smooth strictly positive (1, 1)-form; by Lemma
                                                                                            n
-                         ¯ 0 )n , i.e. the measure (2π)n m is the Riemannian volume ω0 of ω0 ; in
-2.3(c), e−Φ0 µΩ = n! (i∂ ∂Φ
-                   1
-                                                                                          n!
+                   1     ¯ 0 )n , i.e. the measure (2π)n m is the Riemannian volume ω0 of ω0 ; in
+2.3(c), e−Φ0 µΩ = n! (i∂ ∂Φ                                                               n!
 the log chart below, Ric(ω0 ) = −i∂ ∂¯ log det(ϕjk (x)) = i∂ ∂ϕ¯ = ω0 by det D2 ϕ = e−ϕ : (T, ω0 )
                                                                                        n
 is Kähler–Einstein with constant 1, noncompact, of finite volume. Set c := n+2           ; fix p ∈ T ,
@@ -871,11 +870,8 @@ by (P1)). For (1, 0)-fields W =                                                 
 we set |α|ω0 := |U |ω0 , where U is the unique field with ak̄ = j gj k̄ U ; equivalently |α|2ω0 =
           2           2                                                              j
                                                                            P
-
-                                                          ¯ 2 .
-supW ̸=0 | k ak̄ W k |2 /|W |2ω0 . For real u, |∂u|2ω0 = |∂u|
-          P
-                                                              ω0
+          P                                               ¯ 2 .
+supW ̸=0 | k ak̄ W k |2 /|W |2ω0 . For real u, |∂u|2ω0 = |∂u| ω0
 (C3) Measures. dm0 := e−Φ0 µΩ , m0 (T ) = (2π)n Rn e−ϕ dx = (2π)n V by (P1); m = (2π)−n m0 ,
                                                           R
 
@@ -1200,9 +1196,8 @@ Cc∞ (X), f ≥ 0. Define
                                        b(s) :=             Ψs ∂ζj ∂ζ̄k Hjk µΩ .
                                                  j,k   T
 
-Then:
-                                                                               (2π)n V −
-                          Z           hZ                 Z
+Then:                                 hZ                                       (2π)n V −
+                          Z                              Z
                       1                          i     1
                               ρe−Φ0                        e−Φ0 Ψ̇h− − v0 µΩ =
                                                                          
@@ -1216,8 +1211,8 @@ Then:
                                                         h
     (ii) Mδ =               χδ (s) s L(s) ds −−−→ − L(h). Moreover |L(s)| ≤ τ CW with CW :=
 P                    2 0                       δ↓0      2
-  k ∥∂ ζ̄k G k ∥L1 (µ Ω ) < ∞; L  is continuous on  (0, ∞); and L(s)
-                                                                   P→ L(0) as s ↓ 0.
+  k ∥∂ ζ̄k G k ∥L1 (µ Ω ) < ∞; L  is continuous on  (0, ∞);        P→ L(0) as s ↓ 0.
+                                                            and L(s)
     (iii) b ≥ 0 on [0, ∞), |b(s) − b(0)| ≤ sτ CW    ′ with C ′ :=
                                                               W        j,k ∥∂ζj ∂ζ̄k Hjk ∥L1 (µΩ ) < ∞,
                                           Z                   Z
@@ -1287,7 +1282,7 @@ supported — no boundary terms, no flux at infinity):
                                                      gj k̄ W j W k e−Φ0 µΩ = |W |2ω0 dm0 .
                                     
           b(0) =         ∂ζ̄k ∂ζj Φ0 Hjk µΩ =
-                     j,k   T                            j,k
+                      j,k   T                             j,k
 
                Rh                     ′
                                    τ CW
@@ -1297,47 +1292,49 @@ Finally Bδ ≤                            2
 
 Theorem 9.6 (the s = 0 energy bound).
 Under the standing equality assumption τ = n + 1, for every p ∈ T : the distributional
-            ¯ 0 = ∂¯Ψ̇0+ , which coincides with ∂λ
-(0, 1)-form ∂v                                  ¯ ∗ in D′ (T ), is represented by a form α ∈ L2 ,
-                                                  p                                           (0,1)
+(0, 1)-form ¯
+            ∂v0 = ∂¯Ψ̇0+ , which coincides with ¯
+                                                ∂λ∗p in D′ (T ), is represented by a form α ∈ L2(0,1) ,
 unique as an L2 -class, with
-                                                   Z
-                                                                           n
-                                     E0 (λ∗p ) =        ¯ ∗ |2 dβ ≤
-                                                       |∂λp ω0
-                                                   T                      n+2
-               Z                                              Z
-                     ¯ ∗ |2 dm0 ≤    n                               ¯ ∗ |2 dm ≤    n
-equivalently        |∂λp ω0             (2π)n V and                 |∂λp ω0            V.
-               T                    n+2                       T                    n+2
+                                                     Z
+                                                                               n
+                                       E0 (λ∗p ) =        ∂λ∗p |2ω0 dβ ≤
+                                                         |¯
+                                                     T                        n+2
+               Z                                                 Z
+                                        n                                                 n
+equivalently         ∂λ∗p |2ω0 dm0 ≤
+                    |¯                     (2π)n V and                  ∂λ∗p |2ω0 dm ≤
+                                                                       |¯                    V.
+               T                       n+2                       T                       n+2
 Proof. Step 1 (slab Cauchy–Schwarz). Fix W, ρ, κ as in Lemma 9.5, and 0 < h ≤ h1 ,
 0 < δ < h/2. Apply Lemma 9.4(c) on X to u = Ψ (psh and locally bounded by (9.F1)),
 with weight f = χδ κρe−Φ0 , constant field ξ = (1, 0, . . . , 0) (= ∂σ -direction) and field η =
 (0, W 1 (z), . . . , W n (z)):
                                     |Mδ |2 ≤ Aδ · Bδ .
 By Lemma 9.5(i),(iii), the right side is bounded uniformly in δ:
-                                                                       ′
-                                           (2π)n V                τ CW    
-                               |Mδ |2 ≤            q(h) · h b(0) +       h2 .
-                                              4                      2
+                                                                         ′
+                                             (2π)n V                τ CW    
+                                |Mδ |2 ≤             q(h) · h b(0) +       h2 .
+                                                4                      2
 Let δ ↓ 0 and use Lemma 9.5(ii):
 
-h2           (2π)n V            τ C′                                q(h)       τ C′ 
-   |L(h)|2 ≤         q(h) h b(0)+ W h2 ,                          i.e.   |L(h)|2 ≤ (2π)n V
-                                                                             b(0)+ W h .
-4               4                  2                                   h            2
-                                                                                    (9.5a)
-   Step 2 (h ↓ 0). By Lemma 9.5(ii), L(h) → L(0); by Lemma 9.3, q(h)/h → c. Hence
-                                               Z
-                          |L(0)|2 ≤ c (2π)n V     |W |2ω0 dm0 .                     (9.5b)
-                                                                    T
+h2           (2π)n V            τ C′                                 q(h)       τ C′ 
+   |L(h)|2 ≤         q(h) h b(0)+ W h2 ,                             i.e.    |L(h)|2 ≤ (2π)n V
+                                                                              b(0)+ W h .
+4               4                  2                                    h            2
+                                                                                     (9.5a)
+    Step 2 (h ↓ 0). By Lemma 9.5(ii), L(h) → L(0); by Lemma 9.3, q(h)/h → c. Hence
+                                                Z
+                           |L(0)|2 ≤ c (2π)n V     |W |2ω0 dm0 .                     (9.5b)
+                                                                       T
 
-   Step 3 (Riesz representation). Define, on smooth compactly supported fields,
-                                       XZ
-                                              v0 ∂ζ̄k e−Φ0 W k µΩ .
-                                                              
-                    ℓ(W ) := −L(0) = −
-                                                        k     T
+    Step 3 (Riesz representation). Define, on smooth compactly supported fields,
+                                        XZ
+                                               v0 ∂ζ̄k e−Φ0 W k µΩ .
+                                                               
+                     ℓ(W ) := −L(0) = −
+                                                           k     T
 
 
 This is conjugate-linear in W and, by (9.5b) (the bound is independent of the auxiliary ρ),
@@ -1345,13 +1342,13 @@ This is conjugate-linear in W and, by (9.5b) (the bound is independent of the au
                                                         2
                                    n
                   |ℓ(W )| ≤ c (2π) V ∥W ∥m0 ,       ∥W ∥m0 :=     |W |2ω0 dm0 .
-                                                                                T
+                                                                                     T
 
 Let L2 Γ be the Hilbert space of measurable (1, 0)-fields with finite ∥ · ∥m0 (the fiber metric is
 smooth, m0 is σ-finite), and H the closure of the smooth compactly supported fields. Extending
 
 
-                                                         19
+                                                            19
 ℓ continuously to H and applying the Riesz representation theorem for bounded conjugate-linear
 functionals, there is a unique U ∈ H ⊂ L2 Γ with
           Z                   XZ
@@ -1539,21 +1536,20 @@ Lemma 10.1 (Structural identities of the KE metric)
                                                                                         n dVω0 : the
 weighted measure is the metric volume.
 (b) (Divergence identities.) ∂j det g g j k̄ = 0 and ∂k̄ det g g j k̄ =
-                                                                      
+                                                                      
                                                                            R 0. Consequently, for
 any smooth compactly supported field Z = Z m̄ ∂ζ̄m (resp. Y = Y j ∂ζj ), T ∇m̄ Z m̄ dβ = 0 (resp.
         j
 R
   T ∇j Y dβ = 0).
-                                                 1
+                                                1
 (c) (Drift cancellation.) For u ∈ C 2 , −Φ0 ∂j e−Φ0 g j k̄ ∂k̄ u = g j k̄ ∂j ∂k̄ u = ∆u. Thus the
                                                                 
-                                              e
+                                             e
 Witten drift of the weight e−Φ0 relative to µΩ cancels exactly against the metric divergence: the
 weighted adjoint operator is the metric Laplacian.
-(d) Ric(ω0 ) := −i∂ ∂¯ log det g = i∂ ∂Φ
-                                      ¯ 0 = ω0 , i.e. R = g .
-                                                              j k̄   j k̄
+(d) Ric(ω0 ) := −i∂ ∂¯ log det g = i∂ ¯
+                                     ∂Φ0 = ω0 , i.e. R = g .  j k̄   j k̄
 (e) (Toric transport.) ϕ is proper: since b(K) = 0, 0 ∈ int K, pick r > 0 with B̄(0, r) ⊂ int K;
 then ϕ(x) ≥ sup|y|≤r (⟨x, y⟩ − ϕ∗ (y)) ≥ r|x| − Cr by (F8). For torus-invariant f = f (x):
  ¯ |2 = ⟨(D2 ϕ)−1 ∇f, ∇f ⟩, and for any Borel G ≥ 0 on Rn ,
@@ -1585,12 +1581,10 @@ bounded, on the interior of their domain.
 L = ω ∧ · and Λ = L∗ . In particular [ω0 , Λω0 ] = Id on (n, 1)-forms.
 
 Proof. Fix a unitary coframe e1 , . . . , en , ω = j iej ∧ ēj , L = j Lj . Since ej ∧ ēj is of even
-                                                      P                   P
+                                                      P                     P
 degree, Lj and Λj act on the j-th tensor factor of the monomial basis without Koszul signs, and
-the inner product is multiplicative on monomials; hence for j =           ̸ k, [Lj , Λk ] = 0 (they act on
-disjoint factors). For fixed j, on the four basis forms 1, e , ē , e ∧ ēj one computes Lj (1) = iej ∧ ēj ,
-                                                                j  j   j
-
+the inner product is multiplicative on monomials; hence for j ̸= k, [Lj , Λk ] = 0 (they act on
+disjoint factors). For fixed j, on the four basis forms 1, ej , ēj , ej ∧ ēj one computes Lj (1) = iej ∧ ēj ,
 Λj (ej ∧ ēj ) = −i, Lj , Λj kill the rest; hence [Lj , Λj ] = (aj + bj − 1)Id where aj , bj ∈ {0, 1} record
                      j j
            P of e , ē (verified on each of the four basis elements: −1, 0, 0, +1). Summing,
@@ -1652,9 +1646,9 @@ Proof. We invoke:
                                                        ¯ Λω ] is positive definite on (n, 1)-
        forms. Then                                  2                 ¯ = 0 distributionally
                           every (n, 1)-form g with Lloc coefficients, ∂g
-                    R for−1       −φ dV < ∞, there is an (n, 0)-form h with ∂h  ¯ = g and
+                    R for−1       −φ dV < ∞, there is an (n, 0)-form h with ¯
        R M2 :=
-       and           X ⟨A g, g⟩ω e      ω
+       and           X ⟨A g, g⟩ω e      ω                                       ∂h = g and
                  −φ
         X |h|ω e    dVω ≤ M .
        (J.-P. Demailly, Complex Analytic and Differential Geometry, Ch. VIII, Thm (6.1) —
@@ -1679,8 +1673,9 @@ positive definite, and ⟨A g, g⟩ = |g|2 .
                                                        R
 ties are locally bounded above and below): M = (2π) V R |α|ω0 dβ < ∞ by Lemma       R 10.3(b).  Write
                                                              2         1 n supE Φ0        2 −Φ
-the solution h = vΩ (Ω nonvanishing; on a compact E, E |v| dλζ ≤R2 e                 E |v| e
-                                                                                               0 µΩ <
+the solution h = vΩ (Ω nonvanishing; on a compact E, E |v| dλζ ≤R2 e                 E |v| e     µΩ <
+                                                                                               0
+
 ∞, so v ∈ L2loc ); Lemma 10.3(b),(c) give ∂v ¯ = α and (2π)n V |v|2 dβ ≤ M . Divide by
 (2π)n V .
 
@@ -1723,11 +1718,10 @@ with the maximal form domain — nothing below requires the minimal one).
 
 Proof. (a) Density: Cc∞ ⊂ D is dense in L2 (β) (β finite with smooth positive density). Closedness:
                          ¯ k → α in L2 , then both convergences hold in L1 of the charts
-if uk → u in L2 (β) and ∂u              (0,1)                                      loc
-(densities locally bounded below), so ∂u¯ = α distributionally and u ∈ D. (b) Test Q(u, v) =
+if uk → u in L2 (β) and ∂u               (0,1)                                     loc
+(densities locally bounded below), so ¯ ∂u = α distributionally and u ∈ D. (b) Test Q(u, v) =
 ⟨L0 u, v⟩ with v ∈ Cc∞ and integrate by parts in ζ (Lebesgue measure, compact support); then
-apply Lemma 10.1(c). (c) Q(u) = 0 ⇒ ∂u      ¯ = 0 ⇒ u ∈ HΦ ∩ L2 = C (as in Theorem 10.5).
-                                                                0
+apply Lemma 10.1(c). (c) Q(u) = 0 ⇒ ¯       ∂u = 0 ⇒ u ∈ HΦ0 ∩ L2 = C (as in Theorem 10.5).
 1 ∈ dom(L0 ), L0 1 = 0, and ⟨L0 u, 1⟩ = Q(u, 1) = 0, so 1⊥ reduces L0 . For u ∈ D ∩ 1⊥ , Theorem
 10.5 gives Q(u) ≥ Varβ (u) = ∥u∥2 ; by the variational characterization, spec(L0 |1⊥ ) ⊆ [1, ∞).
 
@@ -1769,10 +1763,9 @@ R 02∥ = dµ. Hence (t − 1) dµ = 0 with t − 1 ≥ 0 2on the R support, so 
 is no essential-spectrum escape: the extremizer is an explicit vector in the form domain and the
 spectral calculus converts saturation into a genuine eigenvector. By Lemma 10.6(b), −∆u0 = u0
 distributionally.
-     (iii) u0 is a weak (Hloc          0
-                                          ¯ 0 ∈ L2 and u0 real, so both ∂x - and ∂θ -derivatives lie in
+     (iii) u0 is a weak (Hloc             ¯ 0 ∈ L2 and u0 real, so both ∂x - and ∂θ -derivatives lie in
                             1 , since u , ∂u
-                                                 loc
+                                       0         loc
 L2loc ) solution of the linear divergence-form elliptic equation −∂j (e−ϕ g j k̄ ∂k̄ u0 ) = e−ϕ u0 . In the
 real coordinates (x, θ) this is the scalar equation
                           −∂xj e−ϕ ϕjk ∂xk u0 − 14 ∂θj e−ϕ ϕjk ∂θk u0 = e−ϕ u0 ,
@@ -1889,7 +1882,8 @@ is pseudoconvex with Levi form ≥ 0 on all of Tz Cn , not just complex-tangenti
                                                                 26
 Lemma 10.9 (divergence and flux). For a C 1 (1, 0)-field U on D, D = DR :
                 Z                      Z
-                       j                                  dSeuc (x) dθ
+                                                          dSeuc (x) dθ
+                       j
                    ∇j U dV = Fl(U ) :=      detG U j ρxj               ,
                  D                      ∂D                  |∇x ρ|
 
@@ -1984,22 +1978,23 @@ on ∂D:
             j                  j              j
                       k
            U ρj = W (∇k̄ W )ρj = −ρj k̄ W W      k   =⇒ −Fl(U ) =          ρj k̄ W j W k dσ.
-                                                                            ∂D
+                                                                                 ∂D
 
      Step 5 (the crossed term). ∇k̄ W j = g m̄j Sk̄m̄ and ∇j̄ W k = ∇j W k , so C = ⟨S, S t ⟩
 (transpose pairing), and with S = S s +S a (symmetric/antisymmetric parts — pointwise Hermitian-
 orthogonal: the pairing is invariant under simultaneous transposition of both arguments, so
 ⟨S s , S a ⟩ = ⟨(S s )t , (S a )t ⟩ = −⟨S s , S a ⟩ = 0),
-                                         C = ∥S s ∥2 − ∥S a ∥2 .
-        ¯                            a                                                   1    ¯ 2 1   a 2
-Since (∂γ)  k̄l̄ = Sk̄l̄ − Sl̄k̄ = 2Sk̄l̄ and the (0, 2)-form norm carries the factor 2 , ∥∂γ∥ = 2 ∥2S ∥ =
+                                            C = ∥S s ∥2 − ∥S a ∥2 .
+Since ( ¯
+        ∂γ)k̄l̄ = Sk̄l̄ − Sl̄k̄ = 2Sk̄al̄ and the (0, 2)-form norm carries the factor 12 , ∥ ¯
+                                                                                             ∂γ∥2 = 12 ∥2S a ∥2 =
 2∥S a ∥2 . Adding,
                                                                       Z
-                          ¯     2             2        s 2      a 2
+                         ¯     2              2        s 2      a 2
                                                                             ρj k̄ W j W k dσ,
                                                                     
-                         ∥∂γ∥ + A = ∥γ∥ + ∥S ∥ + ∥S ∥ +
-                                                                   ∂D
+                        ∥∂γ∥ + A = ∥γ∥ + ∥S ∥ + ∥S ∥ +
+                                                                       ∂D
 which is (MKH) since ∥∇γ∥   ¯ 2 = ∥S∥2 = ∥S s ∥2 + ∥S a ∥2 . Positivity of the boundary term:
          2
 ρj k̄ = ∂xj xk ρR ≥ 0 as a matrix.
@@ -2016,14 +2011,14 @@ compact boundary and smooth hermitian data up to the boundary, both of which hol
 Corollary 10.12 (closed MKH inequality). For every γ ∈ dom(T ∗ ) ∩ dom(S): the distribu-
        ¯ (in D) lies in L2 (D), and
 tional ∇γ
-                                 ∥Sγ∥2 + ∥T ∗ γ∥2 ≥ ∥γ∥2 + ∥∇γ∥
-                                                            ¯ 2.                                     (‡1)
+                                   ∥Sγ∥2 + ∥T ∗ γ∥2 ≥ ∥γ∥2 + ∥ ¯
+                                                              ∇γ∥2 .                                        (‡1)
 Proof. Take smooth γν → γ in graph norm (Lemma 10.11); being smooth on D and in dom(T ∗ ),
 each γν satisfies (Neu) (by the necessity direction above), so (MKH) applies to it. By (MKH),
  ¯ ν ∥2 ≤ ∥Sγν ∥2 + ∥T ∗ γν ∥2 , bounded; extract ∇γ
-∥∇γ                                               ¯ ν ⇀ η in L2 (D). Since ∇¯ is first order with
-                                     2
-smooth coefficients and γν → γ in L , η = ∇γ¯ distributionally in D. Pass to the limit in (MKH)
+∥∇γ                                               ¯ ν ⇀ η in L2 (D). Since ∇ ¯ is first order with
+smooth coefficients and γν → γ in L , η = ¯
+                                     2      ∇γ distributionally in D. Pass to the limit in (MKH)
                                        ¯
 using weak lower semicontinuity of ∥∇ · ∥ and dropping the boundary term (≥ 0).
    Remark. In particular (‡1) yields the basic estimate (‡0) of Lemma 10.13 below with
@@ -2032,18 +2027,18 @@ normalization) and the sign of the boundary term from ρj k̄ ≥ 0; the saturat
 Theorem 10.14 depends on this uniformity.
 
 
-                                                   28
+                                                       28
 Abstract lemma (Neumann solution with potentials)
 
 Lemma 10.13. Let H0 , H1 , H2 be Hilbert spaces, T : H0 → H1 , S : H1 → H2 closed densely
 defined with ran T ⊆ ker S, and suppose
 
-                        ∥γ∥2 ≤ ∥T ∗ γ∥2 + ∥Sγ∥2            ∀ γ ∈ dom(T ∗ ) ∩ dom(S).                              (‡0)
+                        ∥γ∥2 ≤ ∥T ∗ γ∥2 + ∥Sγ∥2              ∀ γ ∈ dom(T ∗ ) ∩ dom(S).                              (‡0)
 
 Then for every α ∈ ker S there exists γ⋆ ∈ dom(T ∗ ) ∩ ker S such that v := T ∗ γ⋆ satisfies T v = α,
 v is the minimal-norm solution of T v = α, and
 
-                           ∥v∥2 = ⟨α, γ⋆ ⟩,       ∥γ⋆ ∥ ≤ ∥α∥,           ∥v∥ ≤ ∥α∥.
+                            ∥v∥2 = ⟨α, γ⋆ ⟩,        ∥γ⋆ ∥ ≤ ∥α∥,           ∥v∥ ≤ ∥α∥.
 
 Proof. Let h := ker S (closed), α ∈ h. Since ran T ⊆ h, h⊥ ⊆ (ran T )⊥ = ker T ∗ ; hence the
 orthogonal projection P onto h preserves dom(T ∗ ) and T ∗ P = T ∗ on dom(T ∗ ) (for γ ∈ dom(T ∗ ),
@@ -2057,11 +2052,12 @@ and T v = α. v ∈ ran T ∗ ⊆ (ker T )⊥ , so v is minimal. Finally ∥v∥
 
 
 The Matsushima theorem: holomorphy of the gradient field
-                                                                    ¯ (smooth), and
-Theorem 10.14 (Matsushima). Let u := up be as in Theorem 10.7, α := ∂u
 
-                                  Vp := grad1,0
-                                            ω0 up ,         Vpj := g k̄j ∂k̄ up .
+Theorem 10.14 (Matsushima). Let u := up be as in Theorem 10.7, α := ¯
+                                                                    ∂u (smooth), and
+
+                                    Vp := grad1,0
+                                              ω0 up ,         Vpj := g k̄j ∂k̄ up .
 
 Then:
 
@@ -2078,28 +2074,27 @@ Then:
    2. ∆up + up = n (already Theorem 10.7(ii); restated for completeness).
 
    3. (Holomorphy.) ∂V     ¯ p = 0, i.e. each component Vpj is holomorphic on T ; equivalently
-        0,2                        ¯
-      ∇ up ≡ 0. Moreover the ∂-Neumann           potentials of the exhaustion converge, γR ⇀ ∂u¯ p
+      ∇ up ≡ 0. Moreover the ¯
+        0,2                        ∂-Neumann potentials of the exhaustion converge, γR ⇀ ¯     ∂up
                  2
       weakly in Lloc (full sequence; the limit form is smooth), and the integrated Bochner identity
       (⋆) holds:
 
-            ∥∂¯β∗ α∥2L2 (β) − ∥α∥2L2 (β) = ∥∂V
-                                            ¯ p ∥2 2
-                                                 L (β) (= c − c = 0),               div Vp := ∇j Vpj = n − up .
+            ∥∂¯β∗ α∥2L2 (β) − ∥α∥2L2 (β) = ∥ ¯
+                                            ∂Vp ∥2L2 (β) (= c − c = 0),               div Vp := ∇j Vpj = n − up .
 
-                                                                           ¯ Pointwise, |V |2 = g V j V k =
-Proof. (1) ιV (i gj k̄ dζ j ∧ dζ̄ k ) = i V j gj k̄ dζ̄ k = i uk̄ dζ̄ k = i∂u.                 ω0      j k̄
-                 ¯ 2 (real frame: ϕjk ϕlj ϕmk u um = ϕml u um ). Integrate and use Theorem 10.7(i,iii).
-g k̄j uj uk̄ = |∂u|  ω0                               l̄              l̄
+Proof. (1) ιV (i gj k̄ dζ j ∧ dζ̄ k ) = i V j gj k̄ dζ̄ k = i uk̄ dζ̄ k = i ¯
+                                                                           ∂u. Pointwise, |V |2ω0 = gj k̄ V j V k =
+g k̄j uj uk̄ = | ¯
+                 ∂u|2ω0 (real frame: ϕjk ϕlj ϕmk ul̄ um = ϕml ul̄ um ). Integrate and use Theorem 10.7(i,iii).
 Vp (p) = 0 since dup (p) = 0 (Theorem 10.7(iv)).
       (3) Work in L2 (dV ); recall E = (2π)n V c, and by Theorem 10.7(i,iii):
        Z
-            |α|2ω0 dV = (2π)n V E0 (λ∗ ) = E,            min ∥u − c1 ∥2L2 (dV ) = (2π)n V Varβ (λ∗ ) = E.   (‡2)
-        T                                         c1 ∈C
+            |α|2ω0 dV = (2π)n V E0 (λ∗ ) = E,            min ∥u − c1 ∥2L2 (dV ) = (2π)n V Varβ (λ∗ ) = E.       (‡2)
+        T                                           c1 ∈C
 
 
-                                                      29
+                                                        29
    Step 1 (Neumann data on DR ). On each DR (the smoothed boxes defined after Lemma 10.9)
 apply Lemma 10.13 with T = ∂¯0 , S = ∂¯1 (maximal extensions); (‡0) holds by Corollary 10.12
 and its Remark,R with constant 1 uniformly in R. Since α|DR ∈ ker S (distributional restriction)
@@ -2117,8 +2112,8 @@ By Corollary 10.12 with ∂¯1 γR = 0:
 
      Step 2 (saturation forced by pinching). Claim: PR → E. Upper bound: PR ≤ ∥α∥2R ≤ E.
 Lower bound: along any subsequence, a further subsequence gives vR ⇀ w weakly in L2 (DS , dV )
-                                                             ¯ = α on T (distributional limits
-for every S (uniform bounds (‡3), diagonal extraction), with ∂w
+for every S (uniform bounds (‡3), diagonal extraction), with ¯
+                                                             ∂w = α on T (distributional limits
            ∞                      2
 against Cc test forms) and ∥w∥L2 (T ) ≤ lim inf PR (lsc on each DS , then S → ∞ by monotone
 convergence). Now ∂(w ¯ − u) = 0 distributionally, so w − u is a.e. holomorphic (Weyl); and
@@ -2137,16 +2132,17 @@ every subsequence, proving the claim; moreover then ∥α∥2R → E as well (PR
     Step 3 (limit potential). By (‡3), extract a subsequence with γR ⇀ γ and vR ⇀ w weakly
 in L2 (DS ) for every S (and, by Step 2, w = u − c0 for some constant c0 ). For any compactly
 supported smooth (0, 2)-type test tensor φ on T (support in some DS ):
-                               ¯ ∗ φ⟩ = lim⟨γR , ∇
-                           ⟨γ, ∇                 ¯ ∗ φ⟩ = lim⟨∇γ
-                                                              ¯ R , φ⟩ = 0
+
+                              ∇∗ φ⟩ = lim⟨γR , ∇
+                           ⟨γ, ¯               ¯ ∗ φ⟩ = lim⟨ ¯
+                                                            ∇γR , φ⟩ = 0
                                          R                 R
 
 by Cauchy–Schwarz and (‡5) (here ∇γ¯ R is the L2 (DR ) object of Corollary 10.12, which represents
                    ¯
 the distributional ∇γR in the interior). Hence
-                                   ¯ = 0 on T (distributions).
-                                   ∇γ                                                              (‡6)
+                                   ¯
+                                   ∇γ = 0 on T (distributions).                                    (‡6)
 
 Also, testing T ∗ against Cc∞ : vR = −g k̄j ∇j γR,k̄ distributionally in the interior, so in the limit
 
@@ -2154,12 +2150,11 @@ Also, testing T ∗ against Cc∞ : vR = −g k̄j ∇j γR,k̄ distributionally
 
      Step 4 (regularity of γ). From (‡6): for every smooth compactly supported (0, 1)-test ψ,
 ⟨γ, ∇¯ ∗ ∇ψ⟩
-         ¯     = 0, i.e. γ ∈ L2loc solves the second-order system ∇ ¯ ∗ ∇γ
-                                                                        ¯ = 0 in the very weak
+         ¯     = 0, i.e. γ ∈ L2loc solves the second-order system ∇  ¯ ∗ ∇γ
+                                                                         ¯ = 0 in the very weak
                                                       0,1 2
-(distributional) sense; its principal symbol is |ξ |ω0 · Id > 0 for real ξ =  ̸ 0 — diagonal to
-                                                              ω
-principal order — so the system is elliptic with smooth (C ) coefficients. Since γ is a priori only
+(distributional) sense; its principal symbol is |ξ |ω0 · Id > 0 for real ξ ̸= 0 — diagonal to
+principal order — so the system is elliptic with smooth (C ω ) coefficients. Since γ is a priori only
 L2loc (not Hloc1 ), we invoke hypoellipticity of elliptic operators with smooth coefficients
 
 acting on distributions (parametrix construction; Hörmander, The Analysis of Linear Partial
@@ -2193,7 +2188,7 @@ Remark. Rank-one (lattice hypothesis) entered three times: Theorem 10.5; ker L0 
 entered only through (P1) (existence of the KE potential, Ric = ω0 ), which produced the exact
 constant 1 in (MKH) and in Hörmander. Extremality (τ = n + 1) entered through (E1)–(E2)
 via Theorem 9.6 and the pinching, which is what forces the saturation (‡5): the Levi flux of
-the smooth approximants and the ∇-energy   ¯          are squeezed to zero by the spectral
+the smooth approximants and the ¯         ∇-energy are squeezed to zero by the spectral
 equality — this is the rigorous form of “flux terms vanish along subsequences”, with no cutoff at
 infinity required.
 
@@ -2261,8 +2256,7 @@ of products, and the conclusion K = A(S)).
 
 11A. The Laurent-mode structure of up
 Throughout this subsection u = up , Vp = grad1,0 up (holomorphic, by Theorem 10.14), v j :=
-Vpj ∈ O(T ) with Laurent coefficients cjm , cm = (c1m , . . . , cnm ), Λ = Λ(p) := {m : cm =
-                                                                                           ̸ 0},
+Vpj ∈ O(T ) with Laurent coefficients cjm , cm = (c1m , . . . , cnm ), Λ = Λ(p) := {m : cm ̸= 0},
 σm (x) := ⟨m, x⟩, y = ∇ϕ(x), M (y) := D2 ϕ∗ (y), N := n + 1.
 
 
@@ -2285,7 +2279,7 @@ valid for w ∈ C 1 (Rn × Tn ): (∂\ xk w)m = ∂xk ŵm (differentiation unde
 uniform); (∂                                               n
              θk w)m = imk ŵm (integration by parts on T ); multiplication by a θ-independent
                                                          ′
-g(x) commutes with b· m ; and if w = m′ Am′ (x)ei⟨m ,θ⟩ converges normally on compacts then
+g(x) commutes with ·b m ; and if w = m′ Am′ (x)ei⟨m ,θ⟩ converges normally on compacts then
                                        P
 ŵm = Am (termwise integration and orthogonality). Laurent series of holomorphic functions on
 (C∗ )n converge normally on compacts, so these rules apply to v j and, since ∆ = ϕjk (x) ∂xj −
@@ -2306,15 +2300,13 @@ connected, e−σm /2 ûm = ⟨cm , ∇ϕ⟩ + bm .
                                                                             jk
 
 clm ∂xl log det D2 ϕ = −⟨cm , ∇ϕ⟩, and ϕjk mj ϕkl clm = ⟨m, cm ⟩. The mode-m part of ∆u = n − u is
-−ûm for m =  ̸ 0 (resp. n−û0 ), whence −⟨cm , ∇ϕ⟩+⟨m, cm ⟩ = −⟨cm , ∇ϕ⟩−bm , i.e. bm = −⟨m, cm ⟩;
+−ûm for m ̸= 0 (resp. n−û0 ), whence −⟨cm , ∇ϕ⟩+⟨m, cm ⟩ = −⟨cm , ∇ϕ⟩−bm , i.e. bm = −⟨m, cm ⟩;
 for m = 0, b0 = n, and reality of u forces c0 real. (PR) is û−m = ûm rewritten.
 
 
                                                     32
-Corollary 11A.2. Λ := {m : cm =   ̸ 0} satisfies Λ = −Λ; qm := ℓm ℓ−m is, on intK, real-valued
-with qm = e |ℓm | = |ûm | ∈ [0, N 2 ]; hence qm is a real quadratic polynomial, 0 ≤ qm ≤ N 2
-           σm    2        2
-
+Corollary 11A.2. Λ := {m : cm ̸= 0} satisfies Λ = −Λ; qm := ℓm ℓ−m is, on intK, real-valued
+with qm = eσm |ℓm |2 = |ûm |2 ∈ [0, N 2 ]; hence qm is a real quadratic polynomial, 0 ≤ qm ≤ N 2
 on K, and |ℓm ◦ ∇ϕ| ≤ CK,m e−σm , |ûm | ≤ CK,m e−σm /2 with CK,m = supK |ℓ−m |.
 
 Proof. If cm ̸= 0 then ûm ̸≡ 0 (ℓm nonconstant affine cannot vanish on the open set intK), so
@@ -2404,14 +2396,11 @@ proportionality as the case (ii) just excluded — ℓ−m = eiχ−m L−m with
 ±1, so eσm = ±L−m /Lm on intK off zeros. If Lm (y 0 ) = 0, y 0 ∈ intK, finiteness and positivity
           0
 of eσm (y ) force L−m (y 0 ) = 0; two affine hyperplanes meeting intK in the same nonempty set
-coincide, giving L−m = cLm and eσm constant — contradiction. So L±m =        ̸ 0 on intK; fixing
-                                      σ
-signs ε±m and using positivity of e yields (FE), and qm = Λm Λ−m .
-                                       m
-
+coincide, giving L−m = cLm and eσm constant — contradiction. So L±m ̸= 0 on intK; fixing
+signs ε±m and using positivity of eσm yields (FE), and qm = Λm Λ−m .
      (3) σm is unbounded above on intK while Λ−m is bounded on K; by (FE), inf Λm = 0,
 attained on K̄; since Λm > 0 on intK and vanishes exactly on Hm , Hm supports K̄, and
-Λm (m) = 0, i.e. m ∈ Hm . A supporting hyperplane misses intK, so m ∈         / intK. The same
+Λm (m) = 0, i.e. m ∈ Hm . A supporting hyperplane misses intK, so m ∈        / intK. The same
 argument applied to −m (using unboundedness of σ−m = −σm ) gives inf intK Λ−m = 0 and the
 supporting hyperplane H−m ∋ −m.
      (4) Differentiate (FE): ∇y σm = D2 ϕ∗ (y)m.
@@ -2512,7 +2501,7 @@ Then up is invariant under the (isometric, Φ0 -preserving) action of TW : for e
                                                                                              W , the
 continuous functions up (x, θ + β) and up (x, θ) of θ ∈ Tn have identical Fourier coefficients
 (ûm 7→ ei⟨m,β⟩ ûm = ûm on the support Λ(p) ∪ {0} of the Fourier expansion — modes with cm = 0,
-m= ̸ 0, vanish by pinning), hence are equal. By invariance and up (p) = 0, up vanishes identically
+m ̸= 0, vanish by pinning), hence are equal. By invariance and up (p) = 0, up vanishes identically
 on the orbit O := p · T⊥                                               ′         ⊥
                          W , a compact embedded torus of dimension d = dim TW ≥ 1 (the rotation
 action is free). Since moreover up ≥ 0, every point of O is a minimum: dup = 0 on O. Taylor
@@ -2664,7 +2653,7 @@ normalize the affine forms of coinciding hyperplanes to agree (rescalings shift 
 hyperplanes on a small ball U ⊂ int K where all forms are positive: the coefficient of every
 hyperplane appearing in only one list must vanish — contradicting nonzeroness — and the shared
 coefficients and κ agree. By Theorem 11A.5(3) each listed H supports K and contains its lattice
-point ±m(i) . Note Hm =   ̸ H−m always: otherwise Λ−m = cΛm and (FE) makes eσm constant,
+point ±m(i) . Note Hm ̸= H−m always: otherwise Λ−m = cΛm and (FE) makes eσm constant,
 impossible since σm = ⟨m, ∇ϕ∗ ⟩ is onto R (∇ϕ∗ is onto Rn ).
     Now take any m ∈ Λ \ 0 and match coefficients in (FE) against (11B:B.1) using Lemma 11B.2
 applied to the union family {ℓα } ∪ {ℓH±m }: if Hm (or H−m ) were not in the list, the coefficient
@@ -2700,21 +2689,22 @@ Let dα := ℓα (0) > 0 (centroid 0 ∈ int K). Integrating (11B:B.1):
 Since ⟨nα , y⟩ − ℓα = −dα , the Legendre/KE relation det M = e⟨y,∇ϕ ⟩−ϕ becomes, on int K,
                    Y         X Y                 Y             P       Y
  P (y) := det M ·     ℓα =            γα det(nA )2    ℓα = e−C e α γα ℓα   ℓα1−γα dα , (11B:C.2)
-                    α       |A|=n    α∈A                      α∈A
-                                                               /                            α
+                    α       |A|=n    α∈A                       ∈A
+                                                              α/                            α
 
 using Cauchy–Binet; P is a polynomial, P > 0 on int K.
-Lemma 11B.5   Q (exp-affine vs. polynomial). Let P ̸≡ Q     0 be a polynomial, L affine, eα ∈ R,
-with P = eL α ℓαeα on a nonempty open subset U of { ℓα =          ̸ 0} on which every ℓα > 0
-(distinct hyperplanes; the positivity makes  the real powers well  defined). Then ∇L = 0, and
+Lemma 11B.5   Q (exp-affine vs. polynomial). Let P ̸≡ Q      0 be a polynomial, L affine, eα ∈ R,
+with P = eL α ℓαeα on a nonempty open subset U of { ℓα ̸= 0} on which every ℓα > 0
+
                                         L
-                                          Q kα
+                                          Q kαthe real powers well defined). Then ∇L = 0, and
+(distinct hyperplanes; the positivity makes
 eα = kα := ordℓα P ∈ Z≥0 , and P = e       ℓα globally.
                    Q kα
 Proof. Write P = ℓα Q, ℓα ∤ Q. Logarithmic differentiation and clearing denominators give
 the polynomial identity
                    Y          X           Y             Y         X          Y
-               ∇Q      ℓα + Q     k α nα    ℓβ = Q ∇L     ℓα + Q      e α nα   ℓβ ,
+               ∇Q      ℓα + Q     k α nα    ℓβ = Q ∇L      ℓα + Q     e α nα   ℓβ ,
                         α        α         β̸=α                     α           α           β̸=α
 
 
@@ -2722,7 +2712,7 @@ the polynomial identity
 valid on U , hence on Rn . Since ℓα ∤ Q, Q does not vanish identically on Hα (in affine coordinates
 with ℓα = y1 , a polynomial vanishing identically on {y1 = 0} is divisible by y1 ); so generic
 points of Hα — off the other Hβ and off {Q = 0} — exist, and restricting there yields kα = eα .
-Subtracting, ∇Q = Q ∇L with ∇L =: v constant; if v =     ̸ 0 then deg(Qv) = deg Q > deg ∇Q —
+Subtracting, ∇Q = Q ∇L with ∇L =: v constant; if v ̸= 0 then deg(Qv) = deg Q > deg ∇Q —
 impossible; so v = 0, ∇Q = 0, and Q is a nonzero constant.
                                          r
                                          X               X
@@ -2760,7 +2750,7 @@ bounded — contradiction. Hence ∂K ⊆ Hα . Each Hα supports K, so K ⊆ P 
 Conversely if z ∈ P \ K, the segment [0, z] (0 ∈ int K) exits K at some y ∗ ∈ ∂K strictly before z;
 then y ∗ ∈ Hα0 for some α0 , and ℓα0 is affine with ℓα0 (0) > 0, ℓα0 (y ∗ ) = 0, hence ℓα0 (z) < 0, i.e.
 z∈/ P — contradiction.
-                  S      If a facet F of K, with hyperplane HF , had HF =     ̸ Hα for every α, then
+                  S      If a facet F of K, with hyperplane HF , had HF ̸= Hα for every α, then
 relint F ⊂ ∂K ⊆ α Hα would be covered by the finitely many sets HF ∩Hα of dimension ≤ n−2
 — impossible, since relint F has positive Hn−1 -measure while those sets are Hn−1 -null. So each
 facet hyperplane equals some Hα , which contains a lattice point m ∈ 2K ∩ Zn by Theorem
@@ -2773,87 +2763,87 @@ for all c ∈ R; let C1 , . . . , Ck be the classes, Wj := span{wα : α ∈ Cj 
 (annihilator), nj := dim Wj ≥ 1, rj := |Cj |.
 TheoremL11B.8. (a) For every mL      ∈ Λ\0: α(m) ∼ α(−m) and m ∈ Uj(m) , where Cj(m) ∋ α(m).
       n                        n
-(b) R = j Wj and   Pdually R = j Uj with dim Uj = nj and ⟨Wi , Uj ⟩ = 0 for i =      ̸ j. (c) Every
-class is balanced:    α∈Cj w α  = 0; the only relations are class-constants, so rj = n j + 1, any nj
-                                                                          P
+(b) R = j Wj and   Pdually R = j Uj with dim Uj = nj and ⟨Wi , Uj ⟩ = 0 for i ̸= j. (c) Every
+class is balanced:    α∈Cj wα = 0; the only relations are class-constants,
+                                                                        P
+                                                                           so rj = nj + 1, any nj
 of {wα }α∈Cj are linearly independent, and r = n + k. (d) Along y = j yj (yj ∈ Uj ), each ℓα
 (α ∈ Cj ) depends only on yj ; hence K = kj=1 Kj with Kj ⊂ Uj cut out by the nj + 1 conditions
-                                           Q
+                                         Q
 {ℓα ≥ 0}α∈Cj . (e) Within each class all γα have the same sign, each Kj is a nondegenerate
 nj -simplex, every condition {ℓα ≥ 0} defines a facet of Kj , hence of K; i.e. every Hα is a
 facet hyperplane of K.
 
                                                     39
-                                                                                        P
+                                                                                                  P
 Proof. (a) Pairing the pattern (11B:B.2) with a relation c ∈ R: 0 = α cα ⟨m, wα ⟩ = cα(−m) −
-cα(m) ; hence α(m) ∼ α(−m), and then (11B:B.2) gives ⟨m, wβ ⟩ = 0 for all β ∈                           / Cj(m) , i.e.
+cα(m) ; hence α(m) ∼ α(−m), and then (11B:B.2) gives ⟨m, wβ ⟩ = 0 for all β ∈                                       / Cj(m) , i.e.
 m ∈ Uj(m) .
-     (b) By (a) and Lemma 11A.8, Rn = span Λ ⊆ P                                    ⊥
-                                                                P           T              T               P
-                                                                   j Uj = ( j Vj ) , so      j Vj = 0. If    j xj = 0
-with xj ∈ Wj and some          x j 0 ̸
-                                     =   0,  then  x j 0  =     −          x
-                                                                      j̸=j0 Lj ∈  V j 0 while  x j 0 ∈ W j0 ⊆  Vl for
-                                                                               Wj = Rn (the sum is all of Rn
-                          T
-all l ≠ Pj0 , so xj0 ∈ Vl = 0 — contradiction. Hence
-                                       n
-since
-P           j Wj ⊇ span{wα } = R by Corollary 11B.4); then dim Uj = n − dim Vj = nj and
-P dim Uj = n. Independence of the Uj : note Wi ⊆ VjPfor i ̸= j, so ⟨Wi , Uj ⟩ = 0 for i ̸= j. If
-   j uj = 0 withP uj ∈ Uj , then for any x ∈ W             0 = ⟨x, j uj ⟩ = ⟨x, uj0 ⟩; since also uj0 ⊥ Wi for
-                                                      j0 : L
-i≠ j0 and i Wi = Rn , uj0 = 0. Hence             R n =
-                                                                j Uj , and the pairing Wj × Uj → R is perfect:
-                                                           n , so x = 0; dimensions match.
-                                            L
-if x ∈ Wj has ⟨x,PUj ⟩ = 0, then x ⊥ P           U
-                                               i i  =   R                P
-     (c) Balance α wα = 0 splits as j sj = 0, sj := Cj wα ∈ Wj ; by (b), sj = 0. Every
+      (b) By (a) and Lemma 11A.8, Rn = span Λ ⊆ P                                           ⊥
+                                                                     P            T                  T                 P
+                                                                        j Uj = ( j Vj ) , so            j Vj = 0. If      j xj = 0
+with xj ∈ Wj and some              xj 0 ̸
+                                        =   0,  then    x j 0  =     −          x
+                                                                           j̸=j0 Lj   ∈  V  j 0 while     x j 0 ∈ W  j0 ⊆     Vl for
+                                                                                                    n (the sum is all of Rn
+                             T
+all l ̸= P0 j  , so   x j0 ∈   V l  =   0  —   contradiction.           Hence         W  j   =    R
+since         W     ⊇   span{w   }  =   R n by Corollary 11B.4); then dim U = n − dim V = n and
+P           j    j             α                                                                j                   j         j
+
+P    dim  U j  =   n.  Independence     of the   U j : note     W   i  ⊆  V jPfor i ̸ =  j,   so  ⟨W  i , Uj ⟩  = 0 for i  ̸ =  j. If
+    j uj = 0 withP uj ∈ Uj , then for any x ∈ W                 0 = ⟨x, j uj ⟩ = ⟨x, uj0 ⟩; since also uj0 ⊥ Wi for
+                                                           j0 : L
+i ̸= j0 and i Wi = Rn , uj0 = 0. Hence                 R n =
+                                                                     j Uj , and the pairing Wj × Uj → R is perfect:
+                                                                n , so x = 0; dimensions match.
+                                               L
+if x ∈ Wj has ⟨x,PUj ⟩ = 0, then x ⊥ P            i iU   =   R                P
+      (c) Balance α wα = 0 splits as j sj = 0, sj := Cj wα ∈ Wj ; by (b), sj = 0. Every
 relation is class-constant by definition of ∼; a relation supported in Cj is then t1Cj , admissible
 since sj = 0. Hence relations = class-constants (dim = k, so r = n + k), and the only relation
 among {wα }Cj is 1Cj : rj = nj + 1, any nj of them independent.
-     (d) ℓα (y) = γα−1 (1 − kα ) + ⟨wα , y⟩ (from Theorem 11B.6(ii): γα ℓα = γα ⟨nα , y⟩ + γα dα =
-⟨wα , y⟩ + 1 − kα )Qand ⟨wα , y⟩ = ⟨wα , yj ⟩ for α ∈ Cj , since wα ∈          LWj ⊥ Ui P     ̸ j). Theorem 11B.7
-                                                                                           (i =
+      (d) ℓα (y) = γα−1 (1 − kα ) + ⟨wα , y⟩ (from Theorem 11B.6(ii): γα ℓα = γα ⟨nα , y⟩ + γα dα =
+⟨wα , y⟩ + 1 − kα )Qand ⟨wα , y⟩ = ⟨wα , yj ⟩ for α ∈ Cj , since wα ∈               LWj ⊥ Ui P       (i ̸= j). Theorem 11B.7
 then gives K = Kj , meaning the internal direct sum K = j Kj = { j yj : yj ∈ Kj }.
-     (e) K bounded ⇒ Kj bounded. The family {να }α∈Cj , να := sgn(γα )wα , positively spans Wj :
+      (e) K bounded ⇒ Kj bounded. The family {να }α∈Cj , να := sgn(γα )wα , positively spans Wj :
 rewriting each constraint, Kj = {yj ∈ Uj : ⟨να , yj ⟩ ≥ c′α (α ∈ Cj )} with c′α := − sgn(γα )(1 − kα ).
 If the closed convex cone generated by {να } were a proper subset of Wj , a separation in Wj (using
 the perfect pairing Wj × Uj from (b)) would give v ∈ Uj \ {0} with ⟨να , v⟩ ≥ 0 for all α ∈ Cj ;
 then Kj + R≥0 v ⊆ Kj , contradicting boundedness. A positively spanning finite family carries
-                                                                                                           P (β)
+                                                                                                                       P (β)
 a strictly positive relation: each −νβ (β ∈ Cj ) is a nonnegative combination −νβ = α sα να ;
-                            P                                       P (β)
+                              P                                          P (β)
 summing
 P              over β gives α tα να = 0 with tα = 1 + β sα ≥ 1 > 0. Now a positive relation
-    tα sgn(γα )wα = 0 must, by (c), have tα sgn(γα ) = c · 1 on Cj , forcing all signs in Cj equal.
+     tα sgn(γα )wα = 0 must, by (c), have tα sgn(γα ) = c · 1 on Cj , forcing all signs in Cj equal.
 So Kj is the intersection of the rj = nj + 1 (by (c)) half-spaces {⟨να , yj ⟩ ≥ c′α } in Uj , whose
 normals
 P           να are nj -wise independent (by (c), after sign flips) and carry a strictly positive relation
-    µα να = 0, unique up to scale (relations among {wα }Cj areLR1Cj by (c)). Interior points are
-strictly feasible: Kj has nonempty interior in Uj (else K =                      Ki would have empty interior);
+     µα να = 0, unique up to scale (relations among {wα }Cj areLR1Cj by (c)). Interior points are
+strictly feasible: Kj has nonempty interior in Uj (else K =                             Ki would have empty interior);
 if ⟨να , y ◦ ⟩ = c′α at an interior point y ◦ , moving in a direction u ∈ Uj with ⟨να , u⟩ < 0 (which
-exists by the perfect pairing of (b)) stays inP          Kj for small steps    P and′ violates the constraint —
-contradiction. Hence, at any interior y ◦ , 0 = µα ⟨να , y ◦ ⟩ > P               α µα cα . Vertex classification: no
-point of Kj has all nj + 1 constraints active (that would give                     µα c′α = 0); every vertex of the
+exists by the perfect pairing of (b)) stays inP               Kj for small steps    P and′ violates the constraint —
+contradiction. Hence, at any interior y ◦ , 0 = µα ⟨να , y ◦ ⟩ > P                      α µα cα . Vertex classification: no
+point of Kj has all nj + 1 constraints active (that would give                             µα c′α = 0); every vertex of the
 compact polyhedron Kj has at least nj linearly independent active constraints, hence active
-set exactly Cj \ {α} for some α, and equals the unique point pα solving ⟨νβ , pα ⟩ = c′β (β =                   ̸ α).
-                                     −1              ′        ′
-                                         P
+set exactly Cj \ {α} for some α, and equals the unique point pα solving ⟨νβ , pα ⟩ = c′β (β ̸= α).
+                                        −1                ′        ′
+                                           P
 P ′pα satisfies ⟨να , pα ⟩ = −µα
-Each                                        β̸=α µβ cβ > cα (computed from the relation; the inequality is
-    µc < 0), so each pα is feasible, hence a vertex. Therefore Kj = conv{pα : α ∈ Cj } has exactly
+Each                                           β̸=α µβ cβ > cα (computed from the relation; the inequality is
+     µc < 0), so each pα is feasible, hence a vertex. Therefore Kj = conv{pα : α ∈ Cj } has exactly
 nj + 1 vertices; full-dimensionality forces them affinely independent: Kj is a nondegenerate
-nj -simplex. The face {⟨νβ , ·⟩ = c′β } ∩ Kj contains the nj affinelyL             independent vertices {pα }α̸=β ,
+nj -simplex. The face {⟨νβ , ·⟩ = c′β } ∩ Kj contains the nj affinelyL                     independent vertices {pα }α̸=β ,
 hence is a facet of Kj . Finally a facet F of Kj gives the facet F ⊕ i̸=j Ki of K, lying in Hβ .
 
 
 11B-F. The facet sign law: γα > 0, kα = 0, all heights = −1 Lemma 11B.9 (normal
 asymptotics). ϕ∗ is bounded on int K (by (11B:C.1)). If xk = tk ξˆ + O(1) with tk → ∞, |ξ|
                                                                                         ˆ = 1,
-               ˆ → hK (ξ).
-then ⟨∇ϕ(xk ), ξ⟩      ˆ
+then ⟨∇ϕ(xk ), ˆ
+               ξ⟩ → hK ( ˆ
+                        ξ).
 
 Proof. With yk = ∇ϕ(xk ), Legendre gives ⟨xk , yk ⟩ = ϕ(xk ) + ϕ∗ (yk ) ≥ hK (xk ) − osc ϕ∗ , using
 ϕ(x) = supint K (⟨x, y⟩ − ϕ∗ ) ≥ hK (x) − sup ϕ∗ (hK (x) = supK̄ ⟨x, ·⟩ = supint K ⟨x, ·⟩). Writing
@@ -2862,30 +2852,28 @@ xk = tk ξˆ+ek , |ek | ≤ C, R := maxK |y|: on one side ⟨xk , yk ⟩ = tk �
                                                                                                ˆ yk ⟩+CR;
 
 
-                                                         40
-on the other, hK (xk ) = hK (tk ξˆ + ek ) ≥ hK (tk ξ)
-                                                   ˆ − hK (−ek ) ≥ tk hK (ξ)
-                                                                          ˆ − CR (subadditivity and
-                                    ˆ               ˆ               ∗
+                                                                40
+on the other, hK (xk ) = hK (tk ξˆ + ek ) ≥ hK (tk ˆ
+                                                  ξ) − hK (−ek ) ≥ tk hK ( ˆ
+                                                                          ξ) − CR (subadditivity and
+                                    ˆ              ˆ                ∗
 hK (w) ≤ |w|R). Combining, tk ⟨ξ, yk ⟩ ≥ tk hK (ξ) − 2CR − osc ϕ ; divide by tk → ∞. The upper
         ˆ yk ⟩ ≤ hK (ξ)
 bound ⟨ξ,             ˆ is trivial.
 
 Theorem 11B.10. For every α: γα > 0, hence kα = 0, γα = 1/dα , and
 
-             γα ℓα (y) = 1 + ⟨wα , y⟩,       K = {y ∈ Rn : ⟨wα , y⟩ ≥ −1, α = 1, . . . , r},
+              γα ℓα (y) = 1 + ⟨wα , y⟩,      K = {y ∈ Rn : ⟨wα , y⟩ ≥ −1, α = 1, . . . , r},
 
 and each Kj = {yj ∈ Uj : ⟨wα , yj ⟩ ≥ −1, α ∈ Cj }.
 
 Proof. By Theorem 11B.8(e), Hα0 carries a facet F of K. Choose y 0 ∈ relint F not on any
 other Hβ (possible: the sets Hβ ∩ Hα0 are ≤ (n − 2)-dimensional). Let yt = (1 − t)y 0 , t ∈ (0, 1];
 then yt ∈ int K (segment from the interior point 0 to the boundary point y 0 ), and ℓα0 (yt ) =
-(1 − t)ℓα0 (y 0 ) + t ℓα0 (0) = t dα0 ↓ 0 (affinity) while ℓβ (yt ) → ℓβ (y 0 ) > 0 for β =
-                                                                                          ̸ α0 . By (11B:B.1),
-                                         1
-with the O(1) uniform for t ∈ (0, 2 ],
+(1 − t)ℓα0 (y 0 ) + t ℓα0 (0) = t dα0 ↓ 0 (affinity) while ℓβ (yt ) → ℓβ (y 0 ) > 0 for β ̸= α0 . By (11B:B.1),
+with the O(1) uniform for t ∈ (0, 12 ],
 
-      xt := ∇ϕ∗ (yt ) = γα0 nα0 log(tdα0 ) + O(1) = t′ ξˆ + O(1),      t′ → ∞, ξˆ = − sgn(γα0 )n̂α0
+      xt := ∇ϕ∗ (yt ) = γα0 nα0 log(tdα0 ) + O(1) = t′ ξˆ + O(1),       t′ → ∞, ξˆ = − sgn(γα0 )n̂α0
 
 (note log(tdα0 ) < 0 for small t). Applying Lemma 11B.9 along a sequence tk ↓ 0 and using
                        ˆ = hK (ξ).
@@ -2924,17 +2912,17 @@ P (c) Each L m ∈ Λ nlies in some Uj(m) (Theorem 11B.8(a)), hence in Lj(m) . S
    j Lj =    j Lj ⊆ Z .
 
 
-                                                                                               (m + 1)m
-11B-H. Exclusion of products: k = 1 Throughout this subsection set F (m) :=                             —
-                                                                                                  m!
+                                                                                                (m + 1)m
+11B-H. Exclusion of products: k = 1 Throughout this subsection set F (m) :=                              —
+                                                                                                   m!
 the conjectured sharp volume bound in dimension m, proved in Part I.
-                                                                                                  P
+                                                                                                   P
 Lemma
-Q          11B.12 (strict superadditivity of F ). For k ≥ 2 and n1 , . . . , nk ≥ 1 with              nj = n:
+Q          11B.12 (strict superadditivity of F ). For k ≥ 2 and n1 , . . . , nk ≥ 1 with               nj = n:
   j F (nj ) < F (n).
 
 
-                                                     41
+                                                      41
                  Qm                          1 i
 Proof. F (m) =     i=1 ei with ei := (1 + i ) , by telescoping. ei is strictly increasing (AM–GM on i
                                          1/(i+1)

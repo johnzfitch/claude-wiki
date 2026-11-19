@@ -2,7 +2,7 @@
 title: "Claude Frontier Academy | Claude by Anthropic"
 source_url: "https://www.claude.com/programs/frontier-academy"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:27:25Z"
+fetched_at: "2026-11-18T06:29:17Z"
 tags: ["claude-ai", "enterprise"]
 ---
 

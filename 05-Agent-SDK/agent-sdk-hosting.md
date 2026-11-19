@@ -2,7 +2,8 @@
 title: "Hosting the Agent SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/hosting"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-28T06:37:23Z"
+fetched_at: "2026-11-13T06:34:32Z"
+last_modified: "Fri, 13 Nov 2026 06:15:20 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 

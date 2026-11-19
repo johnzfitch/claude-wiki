@@ -2,35 +2,32 @@
 title: "Teaching Claude why \\ Anthropic"
 source_url: "https://www.anthropic.com/research/teaching-claude-why"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:11Z"
+fetched_at: "2026-11-14T06:26:43Z"
 tags: ["news-research"]
 ---
+
+### 01Generalization and persistence through RL
 
 # Teaching Claude why
 
 - [01Generalization and persistence through RL](#generalization-and-persistence-through-rl)
 - [02Diverse training is important for generalization](#diverse-training-is-important-for-generalization)
 
-- Share
 
+Published  
+May 8, 2026
 
-- Published
+Team  
+[Alignment](team-alignment.md)
 
-  May 8, 2026
+Topics  
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Training](https://www.anthropic.com/search?topic=training)
+- [Constitutional AI](https://www.anthropic.com/search?topic=constitutional-ai)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
 
-- Team
-
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Training](https://www.anthropic.com/search?topic=training)
-  - [Constitutional AI](https://www.anthropic.com/search?topic=constitutional-ai)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-
-  See more...
+See more...
 
 Related articles
 
@@ -44,9 +41,9 @@ Related articles
 
 Last year, we released a case study on [agentic misalignment](agentic-misalignment.md). In experimental scenarios, we showed that AI models from many different developers sometimes took egregiously misaligned actions when they encountered (fictional) ethical dilemmas. For example, in one heavily discussed example, the models blackmailed engineers to avoid being shut down.
 
-When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we ran a live alignment assessment during training;^([1](#footnote-1)) agentic misalignment was one of several behavioral issues that surfaced. Thus, after Claude 4, it was clear we needed to improve our safety training and, since then, we have made significant updates to our safety training.
+When we first published this research, our most capable frontier models were from the Claude 4 family. This was also the first model family for which we ran a live alignment assessment during training;^([^1]) agentic misalignment was one of several behavioral issues that surfaced. Thus, after Claude 4, it was clear we needed to improve our safety training and, since then, we have made significant updates to our safety training.
 
-We use agentic misalignment as a case study to highlight some of the techniques we found to be surprisingly effective. Indeed, since Claude Haiku 4.5, every Claude model^([2](#footnote-2)) has achieved a perfect score on the agentic misalignment evaluation—that is, the models never engage in blackmail, where previous models would sometimes do so up to 96% of the time (Opus 4). Not only that, but we’ve continued to see improvements to other behaviors on [our automated alignment assessment](https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf).
+We use agentic misalignment as a case study to highlight some of the techniques we found to be surprisingly effective. Indeed, since Claude Haiku 4.5, every Claude model^([^2]) has achieved a perfect score on the agentic misalignment evaluation—that is, the models never engage in blackmail, where previous models would sometimes do so up to 96% of the time (Opus 4). Not only that, but we’ve continued to see improvements to other behaviors on [our automated alignment assessment](https://assets.claude.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf).
 
 In this post, we’ll discuss a few of the updates we’ve made to alignment training. We’ve learned four main lessons from this work:
 
@@ -77,7 +74,7 @@ However, training directly against the evaluation scenario is non-optimal for a 
 
 We ultimately settled on a more OOD training set where the user faces an ethically ambiguous situation in which they can achieve a reasonable goal by violating norms or subverting oversight. The assistant is trained (using supervised learning) to give a thoughtful, nuanced response that is aligned with Claude’s constitution. Notably, it is the *user* who faces an ethical dilemma, and the AI provides them advice. This makes this training data substantially different from our honeypot distribution, where the AI itself is in an ethical dilemma and needs to take actions. We call this the “difficult advice” dataset.
 
-Strikingly, **we achieved the same improvement on our eval with just 3M tokens of this much more OOD** **dataset**. Beyond the 28× efficiency improvement, this dataset is more likely to generalize to a wider set of scenarios, since it is much less similar to the evaluation set we are using. Indeed, this model performs better on (an older version of) our automated alignment assessment. This is consistent with the fact that Claude Sonnet 4.5 reached a blackmail rate near zero by training on the set of synthetic honeypots but still engaged in misaligned behavior in situations that were far from the training distribution [much more frequently than Claude Opus 4.5](https://www-cdn.anthropic.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf) or later models.
+Strikingly, **we achieved the same improvement on our eval with just 3M tokens of this much more OOD** **dataset**. Beyond the 28× efficiency improvement, this dataset is more likely to generalize to a wider set of scenarios, since it is much less similar to the evaluation set we are using. Indeed, this model performs better on (an older version of) our automated alignment assessment. This is consistent with the fact that Claude Sonnet 4.5 reached a blackmail rate near zero by training on the set of synthetic honeypots but still engaged in misaligned behavior in situations that were far from the training distribution [much more frequently than Claude Opus 4.5](https://assets.claude.com/bf10f64990cfda0ba858290be7b8cc6317685f47.pdf) or later models.
 
 ### Teaching Claude the constitution
 
@@ -115,6 +112,10 @@ We are optimistic about further efforts to discover alignment failures in curren
 
 ## Footnotes
 
-01Published in the [Claude 4 system card](../15-Claude-AI-Features/claude-4-system-card.md), beginning on p.22.[](#footnote-ref-1)
+01Published in the [Claude 4 system card](fixed-some-minor-formatting-errors-e-g-changed-a-semicolon-to-a-comma.md), beginning on p.22.[](#footnote-ref-1)
 
 02Sonnet 4.5 scored well under 1%, but not quite 0; Haiku 4.5, Opus 4.5, Opus 4.6, Sonnet 4.6, Mythos preview, and Opus 4.7 all score 0. The results on more recent models may be confounded by the presence of information about the evaluation in the pre-training corpus.[](#footnote-ref-2)
+
+[^1]:
+
+[^2]:

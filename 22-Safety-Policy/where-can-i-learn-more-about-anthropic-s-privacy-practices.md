@@ -2,7 +2,7 @@
 title: "Where can I learn more about Anthropic's Privacy practices? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10035659-where-can-i-learn-more-about-anthropic-s-privacy-practices"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:25:47Z"
+fetched_at: "2026-11-18T06:28:07Z"
 tags: ["safety"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Claude Cowork | Claude by Anthropic"
 source_url: "https://www.claude.com/product/cowork"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:47Z"
+fetched_at: "2026-11-18T06:29:22Z"
 tags: ["claude-ai", "plugins"]
 ---
 
@@ -194,13 +194,13 @@ See how Anthropic uses Claude Cowork to answer questions on past decisions.
 
 Claude Cowork takes real actions on your files and in connected tools. Enterprise admins can configure permissions to customize security according to their needs.
 
-[Read our safety guide (opens in new tab)](using-cowork-safely.md)
+[Read our safety guide (opens in new tab)](https://support.claude.com/en/articles/13364135-using-cowork-safely)
 
 ### You decide what Claude can access
 
 You choose the folders and tools. Claude is designed to work only within what you choose. Deleting anything needs your approval.
 
-[Learn more (opens in new tab)](https://support.claude.com/en/articles/13364135-use-cowork-safely)
+[Learn more (opens in new tab)](use-cowork-safely.md)
 
 ### Claude asks before acting
 
@@ -300,9 +300,9 @@ Per month
 
 [Try Claude](https://claude.ai/upgrade/max?plan=max_20x)
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ### Team
 
@@ -320,9 +320,9 @@ Claude Cowork is included in your Enterprise plan. Admin controls, usage analyti
 
 [Get Enterprise plan](http://claude.ai/create/enterprise)
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## FAQ
 
@@ -382,13 +382,13 @@ Getting started with Claude Cowork
 
 This article explains how to use Claude Cowork to bring Claude Code's agentic capabilities to Claude Desktop for knowledge work beyond coding.
 
-[Read more (opens in new tab)](getting-started-with-cowork.md)
+[Read more (opens in new tab)](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
 
 Getting started with Claude Cowork
 
 This article explains how to use Claude Cowork to bring Claude Code's agentic capabilities to Claude Desktop for knowledge work beyond coding.
 
-[Read more (opens in new tab)](getting-started-with-cowork.md)
+[Read more (opens in new tab)](https://support.claude.com/en/articles/13345190-getting-started-with-cowork)
 
 ## Get started with Claude Cowork
 

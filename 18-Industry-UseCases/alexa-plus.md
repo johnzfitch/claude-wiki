@@ -2,7 +2,7 @@
 title: "Alexa+ Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/alexa-plus"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:23Z"
+fetched_at: "2026-11-18T06:28:47Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -41,6 +41,9 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -48,6 +51,3 @@ Alexa+ accesses Claude through Amazon Bedrock. It will start rolling out in the 
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

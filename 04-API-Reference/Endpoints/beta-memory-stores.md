@@ -2,7 +2,7 @@
 title: "Memory Stores - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:28Z"
+fetched_at: "2026-11-13T06:33:15Z"
 tags: ["api"]
 ---
 
@@ -25,37 +25,37 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/memory_stores
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [List Memory Stores](https://platform.claude.com/docs/en/api/http/beta/memory_stores/list)
 
 GET/v1/memory_stores
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Retrieve a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Update a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/update)
 
 POST/v1/memory_stores/{memory_store_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Delete a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/delete)
 
 DELETE/v1/memory_stores/{memory_store_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Archive a Memory Store](https://platform.claude.com/docs/en/api/http/beta/memory_stores/archive)
 
 POST/v1/memory_stores/{memory_store_id}/archive
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 
@@ -159,31 +159,31 @@ formatdate-time
 
 POST/v1/memory_stores/{memory_store_id}/memories
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [List Memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/list)
 
 GET/v1/memory_stores/{memory_store_id}/memories
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Retrieve a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Update a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/update)
 
 POST/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Delete a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/delete)
 
 DELETE/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 #### Memory Stores[Memory Versions](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions)
 
@@ -191,16 +191,16 @@ formatdate-time
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Retrieve a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Redact a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/redact)
 
 POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).

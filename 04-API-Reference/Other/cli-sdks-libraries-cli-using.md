@@ -2,7 +2,7 @@
 title: "Using the CLI - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/using"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:33Z"
+fetched_at: "2026-11-13T06:34:01Z"
 tags: ["api", "cli"]
 ---
 
@@ -244,7 +244,7 @@ Authorization: Bearer <REDACTED>
 
 ## Available resources
 
-Every API resource the CLI exposes is documented in the [API reference](../Endpoints/cli-messages-create.md). For a local list, run `ant --help`, and append `--help` to any subcommand for its flags and parameters.
+Every API resource the CLI exposes is documented in the [API reference](../Endpoints/cli-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. For a local list, run `ant --help`, and append `--help` to any subcommand for its flags and parameters.
 
 ## Next steps
 

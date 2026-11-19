@@ -2,8 +2,8 @@
 title: "CLI reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/cli-reference"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-04T06:23:50Z"
-last_modified: "Wed, 04 Nov 2026 01:46:48 GMT"
+fetched_at: "2026-11-18T06:27:03Z"
+last_modified: "Wed, 18 Nov 2026 02:19:26 GMT"
 tags: ["claude-code", "cli"]
 ---
 
@@ -27,10 +27,7 @@ Complete reference for Claude Code command-line interface, including commands an
 
 Copy pageCopy page
 
-
-[​](#cli-commands)
-
-CLI commands
+## [](#cli-commands)CLI commands
 
 You can start sessions, pipe content, resume conversations, and manage updates with these commands:
 
@@ -51,7 +48,7 @@ You can start sessions, pipe content, resume conversations, and manage updates w
 | `claude auth status` | Show authentication status as JSON. Use `--text` for human-readable output. Exits with code 0 if logged in, 1 if not. The JSON includes a `configDirectory` field naming the [configuration directory](claude-directory.md) the CLI uses. The field requires Claude Code v2.1.268 or later. The JSON’s `authMethod` field is one of `none`, `claude.ai`, `oauth_token`, `api_key`, `api_key_helper`, or `third_party` | `claude auth status` |
 | `claude agents` | Open [agent view](../09-Agents-Patterns/agent-view.md) to monitor and dispatch parallel background sessions. Use `--cwd <path>` to show only sessions started under that directory, or `--json` to print active sessions as a JSON array for scripting (`--json --all` also includes completed background sessions). Pass `--permission-mode`, `--model`, `--effort`, or `--agent` to set [defaults for dispatched sessions](../09-Agents-Patterns/agent-view.md#permission-mode-model-and-effort). Accepts `--settings`, `--add-dir`, `--plugin-dir`, and `--mcp-config` like the top-level `claude` command. Opening agent view requires an interactive terminal | `claude agents --json` |
 | `claude attach <id|name>` | Attach to a [background session](../09-Agents-Patterns/agent-view.md#manage-sessions-from-the-shell) in this terminal. Passing part of a running session’s name in place of the ID requires Claude Code v2.1.290 or later | `claude attach 7c5dcf5d` |
-| `claude auto-mode defaults` | Print the built-in [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) classifier rules as JSON. Use `claude auto-mode config` to see your effective config with settings applied. `--label <prefix>` prints only the rules whose label starts with that prefix, matched case-insensitively. Requires Claude Code v2.1.208 or later | `claude auto-mode defaults --label 'Git Destructive'` |
+| `claude auto-mode defaults` | Print the [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) classifier rules built into Claude Code as JSON. Use `claude auto-mode config` to see those rules with your settings applied. `--label <prefix>` prints only the rules whose label starts with that prefix, matched case-insensitively. Requires Claude Code v2.1.208 or later | `claude auto-mode defaults --label 'Git Destructive'` |
 | `claude auto-mode reset` | Restore the default [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode) configuration by removing the `autoMode` section from your user settings file. Prompts for confirmation before writing; pass `-y`/`--yes` to skip the prompt. Rules from [managed settings](../13-Enterprise-Admin/server-managed-settings.md) or the `--settings` flag still apply. Requires Claude Code v2.1.212 or later. See [Inspect the defaults and your effective config](auto-mode-config.md#inspect-the-defaults-and-your-effective-config) | `claude auto-mode reset --yes` |
 | `claude daemon logs` | Follow the background-session [supervisor’s](../09-Agents-Patterns/agent-view.md#the-supervisor-process) log file, `~/.claude/daemon.log`, printing new lines as they arrive until you press `Ctrl+C` | `claude daemon logs` |
 | `claude daemon run` | Run the background-session [supervisor](../09-Agents-Patterns/agent-view.md#the-supervisor-process) in the foreground of this terminal, printing its log | `claude daemon run` |
@@ -63,11 +60,11 @@ You can start sessions, pipe content, resume conversations, and manage updates w
 | `claude mcp` | Configure Model Context Protocol (MCP) servers | See the [Claude Code MCP documentation](../06-MCP-Tools/General/mcp.md). |
 | `claude mcp login <name>` | Run a configured MCP server’s OAuth flow without opening the interactive `/mcp` panel. Works for HTTP, SSE, and claude.ai connector servers. Add `--no-browser` over SSH to print the authorization URL instead of opening a browser. For an HTTP or SSE server, paste the redirect URL back at the prompt. For a claude.ai connector, see [Authorize a connector again from your shell](remote-control.md#authorize-a-connector-again-from-your-shell). See [Authenticate from the command line](../06-MCP-Tools/General/mcp.md#authenticate-from-the-command-line) | `claude mcp login sentry` |
 | `claude mcp logout <name>` | Clear stored OAuth credentials for an MCP server | `claude mcp logout sentry` |
-| `claude plugin` | Manage Claude Code [plugins](../08-Plugins-Skills/plugins.md). Alias: `claude plugins`. See [plugin reference](../08-Plugins-Skills/plugins-cli-reference.md#claude-plugin-commands) for subcommands | `claude plugin install code-review@claude-plugins-official` |
+| `claude plugin` | Manage Claude Code [plugins](../08-Plugins-Skills/plugins-overview.md). Alias: `claude plugins`. See [plugin reference](../08-Plugins-Skills/plugins-cli-reference.md#claude-plugin-commands) for subcommands | `claude plugin install code-review@claude-plugins-official` |
 | `claude purge [path]` | Delete all local Claude Code state for a project: transcripts, task lists, debug logs, file-edit history, prompt history lines, and the project’s entry in `~/.claude.json`. Omit `[path]` to pick from an interactive list. Flags: `--dry-run` to preview, `-y`/`--yes` to skip confirmation, `-i`/`--interactive` to confirm each item, `--all` for every project. See [Clear local data](claude-directory.md#clear-local-data) | `claude purge ~/work/repo --dry-run` |
-| `claude remote-control` | Start a [Remote Control](remote-control.md) server to control Claude Code from Claude.ai or the Claude app. Runs in server mode (no local interactive session). See [Server mode flags](remote-control.md#start-a-remote-control-session). After you stop the server, you can bring back the sessions it was serving. See [Resume sessions after stopping the server](remote-control.md#resume-sessions-after-stopping-the-server) | `claude remote-control --name "My Project"` |
+| `claude remote-control` | Start a [Remote Control](remote-control.md) server to control Claude Code from claude.ai or the Claude app. Alias: `claude rc`. Runs in server mode (no local interactive session). See [Server mode flags](remote-control.md#start-a-remote-control-session). After you stop the server, you can bring back the sessions it was serving. See [Resume sessions after stopping the server](remote-control.md#resume-sessions-after-stopping-the-server) | `claude remote-control --name "My Project"` |
 | `claude respawn <id>` | Restart a [background session](../09-Agents-Patterns/agent-view.md#manage-sessions-from-the-shell), running or stopped, with its conversation intact. Use `--all` to restart every running session, e.g. to pick up an updated Claude Code binary | `claude respawn 7c5dcf5d` |
-| `claude rm <id>` | Remove a [background session](../09-Agents-Patterns/agent-view.md#manage-sessions-from-the-shell) from the list. When the removal is [refused over the session’s worktree](../09-Agents-Patterns/agent-view.md#what-deleting-a-session-removes) and a second `claude rm` can resolve it, the refusal prints the exact flag and value to pass: `--discard-unpushed <commit>@<worktree-id>` discards a worktree that has unpushed commits along with those commits, and `--force-remove-worktree <worktree-id>` deletes a worktree directory that git or the `WorktreeRemove` hook couldn’t remove. `--discard-unpushed` requires Claude Code v2.1.260 or later, and `--force-remove-worktree` requires v2.1.268 or later. The conversation transcript stays on your local machine, available through `claude --resume` | `claude rm 7c5dcf5d` |
+| `claude rm <id>` | Remove a [background session](../09-Agents-Patterns/agent-view.md#manage-sessions-from-the-shell) from the list. If Claude Code refuses to delete the session because of its worktree, see [Delete a session after Claude Code refuses](../09-Agents-Patterns/agent-view.md#delete-a-session-after-claude-code-refuses). The conversation transcript stays on your local machine, available through `claude --resume` | `claude rm 7c5dcf5d` |
 | `claude self-hosted-runner` | Start a runner process that registers this machine or container with a [self-hosted environment](../13-Enterprise-Admin/self-hosted-environments.md) and hosts Claude Code cloud sessions on your infrastructure. Run `claude self-hosted-runner setup` for a guided operator walkthrough, `claude self-hosted-runner doctor` to [diagnose a deployed runner](../13-Enterprise-Admin/self-hosted-environments-deploy.md#troubleshooting), and `claude self-hosted-runner orchestrator` to spawn [on-demand runners](../13-Enterprise-Admin/self-hosted-environments-configuration.md#on-demand-runners). Requires Claude Code v2.1.224 or later | `claude self-hosted-runner setup` |
 | `claude setup-token` | Generate a long-lived OAuth token for CI and scripts. Prints the token to the terminal without saving it. Requires a Claude subscription. See [Generate a long-lived token](authentication.md#generate-a-long-lived-token) | `claude setup-token` |
 | `claude stop <id>` | Stop a [background session](../09-Agents-Patterns/agent-view.md#manage-sessions-from-the-shell). Also accepts `claude kill` | `claude stop 7c5dcf5d` |
@@ -75,19 +72,13 @@ You can start sessions, pipe content, resume conversations, and manage updates w
 
 If you mistype a subcommand, Claude Code suggests the closest match and exits without starting a session. For example, `claude udpate` prints `Did you mean claude update?`. `claude --dangerously-skip-permissions daemon <subcommand>` runs the `daemon` subcommand, so the subcommand works when `claude` is aliased to include the flag. Only a leading `--dangerously-skip-permissions` or `--allow-dangerously-skip-permissions` routes to `daemon` this way; with any other flag ahead of `daemon`, the subcommand doesn’t run.
 
-
-[​](#cli-flags)
-
-CLI flags
+## [](#cli-flags)CLI flags
 
 Customize Claude Code’s behavior with these command-line flags. `claude --help` does not list every flag, so a flag’s absence from `--help` does not mean it is unavailable.
 
 [TABLE]
 
-
-[​](#system-prompt-flags)
-
-System prompt flags
+### [](#system-prompt-flags)System prompt flags
 
 Claude Code provides five flags for customizing the system prompt. Four set its text, and with `--system-prompt-snapshot` you control whether a conversation keeps the text it started with. All five work in both interactive and non-interactive modes.
 
@@ -107,17 +98,11 @@ claude -p --append-system-prompt-file ./style.md --append-system-prompt "Always 
 
 Claude receives the default system prompt followed by the contents of `style.md`, a blank line, and then `Always reply in French`. The file’s contents come first even if you pass `--append-system-prompt` before `--append-system-prompt-file`. When the replacement text combines instructions that are the same on every run with context that changes per run, add a line containing only `__SYSTEM_PROMPT_DYNAMIC_BOUNDARY__` between the instructions and the context. Claude Code splits the prompt at the first such line and removes that line, so the part above it stays cached while the part below changes. Requires Claude Code v2.1.275 or later. [Cache the static part of a custom prompt](../05-Agent-SDK/agent-sdk-modifying-system-prompts.md#cache-the-static-part-of-a-custom-prompt) lists the configurations where the split applies. Choose based on whether Claude Code’s default identity still fits your task. Use an append flag when Claude should remain a coding assistant that also follows your extra rules: per-invocation instructions, output formatting, or domain context for a `-p` script. Appending preserves the default tool guidance, safety instructions, and coding conventions, so you only supply what differs. Use a replacement flag when the surface, identity, or permission model differs from Claude Code’s, like a non-coding agent in a pipeline that no human watches. Replacing drops all of the default prompt, including tool guidance and safety instructions, so you take responsibility for whatever your task still needs. For persistent personas you can switch between and share across a project, use [output styles](output-styles.md). For project conventions Claude should always follow, use [CLAUDE.md](memory.md). The [Agent SDK guide on system prompts](../05-Agent-SDK/agent-sdk-modifying-system-prompts.md#decide-on-a-starting-point) covers the same decision in more depth.
 
-
-[​](#system-prompt-flags-in-resumed-conversations)
-
-System prompt flags in resumed conversations
+#### [](#system-prompt-flags-in-resumed-conversations)System prompt flags in resumed conversations
 
 By default, Claude Code builds the system prompt once, on a conversation’s first request, with the text from any system prompt flags applied, and records it in the session. Until the conversation is compacted, every later request uses that recorded prompt, including after you return to the conversation with `--resume` or `--continue`. If you pass different system prompt flag text, or none, on that later launch, it takes effect once the conversation is compacted or when you start a new conversation. Outside of [cloud sessions](cloud-environments.md), if you start Claude Code in [bare mode](headless.md#start-faster-with-bare-mode) by passing `--bare` or setting `CLAUDE_CODE_SIMPLE=1`, recording stays off unless you pass `--system-prompt-snapshot on`. Before v2.1.268, sessions that don’t [fetch feature flags](env-vars.md#features-that-need-feature-flag-fetching), including sessions on Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, rebuilt the prompt on every request and `--system-prompt-snapshot` had no effect. To rebuild the prompt on every request instead, for example while you iterate on its wording across `--continue` runs, pass `--system-prompt-snapshot off`. Before v2.1.265, passing any of the system prompt flags also turned recording off unless you passed `--system-prompt-snapshot on`.
 
-
-[​](#see-also)
-
-See also
+## [](#see-also)See also
 
 - [Chrome extension](../03-IDE-Integrations/chrome.md) - Browser automation and web testing
 - [Interactive mode](interactive-mode.md) - Shortcuts, input modes, and interactive features

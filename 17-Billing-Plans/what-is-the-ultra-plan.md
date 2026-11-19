@@ -2,7 +2,7 @@
 title: "What is the Ultra plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:37Z"
+fetched_at: "2026-11-18T06:28:10Z"
 tags: ["billing"]
 ---
 
@@ -25,7 +25,7 @@ This article is about paid Ultra plans for individual consumers. If you're part 
 
 - **Longer, multi-step tasks:** Hand Claude work like reports, spreadsheets, and presentations, and it keeps going in the background. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
 
-- **Monthly API credits:** Ultra plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+- **Monthly API credits:** Ultra plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ## What changed from Max 20x?
 
@@ -63,9 +63,9 @@ Ultra plans have a weekly usage limit that applies across all models, and a sepa
 
 Additional usage limits may apply to manage capacity and ensure fair access to all users. For example, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion. We don't guarantee uninterrupted service.
 
-Learn more about **[usage and length limits](https://support.claude.com/en/articles/11647753)** and **[usage limit best practices](https://support.claude.com/en/articles/9797557)**.
+Learn more about **[usage and length limits](https://support.claude.com/en/articles/11647753)** and **[usage limit best practices](usage-limit-best-practices-claude-help-center.md)**.
 
-**Note:** If you have a limit reset, you can use it to reset your weekly usage limits back to full. Learn more **[about limit resets](https://support.claude.com/en/articles/17007452)**.
+**Note:** If you have a limit reset, you can use it to restore your usage. Learn more **[about limit resets](https://support.claude.com/en/articles/17007452)**.
 
 ## What is a verified Ultra account?
 

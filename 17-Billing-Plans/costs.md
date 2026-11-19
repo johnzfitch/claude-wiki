@@ -2,9 +2,9 @@
 title: "Manage costs effectively - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/costs"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-03T06:22:56Z"
-last_modified: "Tue, 03 Nov 2026 06:18:10 GMT"
-tags: ["billing", "claude-code"]
+fetched_at: "2026-11-17T06:24:49Z"
+last_modified: "Tue, 17 Nov 2026 03:16:43 GMT"
+tags: ["billing", "claude-code", "cli"]
 ---
 
 ## On this page
@@ -57,19 +57,13 @@ Copy pageCopy page
 
 Claude Code charges by API token consumption. For subscription plan pricing (Pro, Max, Ultra, Team, Enterprise), see [claude.com/pricing](pricing.md). Per-developer costs vary widely based on model selection, codebase size, and usage patterns such as running multiple instances or automation. Across enterprise deployments, the average cost is around \$13 per developer per active day and \$150-250 per developer per month, with costs remaining below \$30 per active day for 90% of users. To estimate spend for your own team, start with a small pilot group and use the tracking tools below to establish a baseline before wider rollout. This page covers Claude Code usage only: how to [track your costs](#track-your-costs), [manage costs for your organization](#manage-costs-for-your-organization), and [reduce token usage](#reduce-token-usage). For usage limits in other Claude products, see the [Claude Help Center](https://support.claude.com).
 
+## [](#track-your-costs)Track your costs
 
-[​](#track-your-costs)
-
-Track your costs
-
-
-[​](#using-the-/usage-command)
-
-Using the `/usage` command
+### [](#using-the-/usage-command)Using the `/usage` command
 
 The Session block in `/usage` shows API token usage and is intended for API users. Claude Pro, Max, and Ultra subscribers have usage included in their subscription, so the session cost figure isn’t relevant for billing purposes. Subscribers see plan usage bars, activity stats, and a usage breakdown on the same screen.
 
-The Session block at the top of `/usage` shows detailed token usage statistics for your current session. Claude Code computes the dollar figure locally from token counts at list price, unless a [`modelPricing`](../02-Claude-Code-CLI/settings-reference.md#modelpricing) table is in effect. An administrator sets one in your organization’s managed settings so the figure uses your contracted rates, and while a table is in effect the `Total cost` line carries the note `at your organization's configured rates`. The figure is an estimate, so for authoritative billing see [Manage costs for your organization](#manage-costs-for-your-organization).
+Run `/usage` at the Claude Code prompt and look under the **Session** heading for your current session’s token usage. Claude Code computes the dollar figure locally from token counts at list price, unless a [`modelPricing`](../02-Claude-Code-CLI/settings-reference.md#modelpricing) table is in effect. An administrator sets one in your organization’s managed settings so the figure uses your contracted rates, and while a table is in effect the `Total cost` line carries the note `at your organization's configured rates`. The figure is an estimate, so for authoritative billing see [Manage costs for your organization](#manage-costs-for-your-organization).
 
 ```python
 Total cost:            $0.55
@@ -82,10 +76,7 @@ Usage by model:
 
 These totals reset when `/clear` starts a new session, so the next session’s total cost starts at \$0. Before v2.1.211, they kept accumulating across `/clear` for the lifetime of the Claude Code process. For a response from the Claude API billed at the 1.1× [data residency rate](about-claude-pricing.md#data-residency-pricing), Claude Code multiplies the list price of that response’s tokens by 1.1 in the session cost figure. The same total appears in the [status line’s cost field](../02-Claude-Code-CLI/statusline.md#cost-and-duration-tracking), and the multiplied figure also counts toward [`--max-budget-usd`](../02-Claude-Code-CLI/cli-reference.md#cli-flags).
 
-
-[​](#prompt-cache-statistics)
-
-Prompt cache statistics
+#### [](#prompt-cache-statistics)Prompt cache statistics
 
 After the main conversation’s first API response, Claude Code also adds a `Prompt cache (main)` line to the Session block, summarizing the session’s [prompt cache](../02-Claude-Code-CLI/prompt-caching.md) use: the request count, the share of input tokens served from cache, cache misses, and whether the cache is warm right now. Requires Claude Code v2.1.251 or later.
 
@@ -101,10 +92,7 @@ The misses, expected rebuilds, and warm or cold parts of the line mean the follo
 
 The counts come from the cache token fields in the API’s responses, so the line works on every provider and gateway. It covers the main conversation only, not subagents. `/clear` resets it with the rest of the Session block. Status line scripts can read the same numbers from the [`prompt_cache` object](../02-Claude-Code-CLI/statusline.md#prompt-cache-fields).
 
-
-[​](#plan-usage-breakdown)
-
-Plan usage breakdown
+#### [](#plan-usage-breakdown)Plan usage breakdown
 
 On a Pro, Max, Ultra, Team, or Enterprise plan, `/usage` also shows a breakdown of what counts against your plan limits, with recommendations:
 
@@ -118,10 +106,7 @@ On a Pro, Max, Ultra, Team, or Enterprise plan, `/usage` also shows a breakdown 
 
 Press `d` or `w` to switch between the last 24 hours and the last 7 days. The figures are approximate and computed from local session history on this machine, so usage from other devices or claude.ai is not included. In the [VS Code extension](../03-IDE-Integrations/vs-code.md#check-account-and-usage), the attribution shares and recommendations appear in the Account & usage dialog with a Day and Week toggle, without the Loops rows.
 
-
-[​](#apply-recommendations-with-the-fix-shortcut)
-
-Apply recommendations with the fix shortcut
+#### [](#apply-recommendations-with-the-fix-shortcut)Apply recommendations with the fix shortcut
 
 When the `/usage` footer shows a hint such as `f to fix 2 of 3`, press `f` to have Claude Code act on the recommendations it can. The `f` shortcut requires Claude Code v2.1.305 or later.
 
@@ -138,10 +123,7 @@ To see what pressing `f` does with each of your rows, find the row’s shape in 
 
 In `f to fix 2 of 3`, the first number counts the rows Claude Code acts on when you press `f`, and the second counts the rows shown. A hint with no `of` in it, such as `f to fix both`, means Claude Code acts on every row shown. While [Remote Control](../02-Claude-Code-CLI/remote-control.md) is connected, the footer shows no `f` hint. If pressing `f` closes `/usage` with `Nothing was sent. Turn off Remote Control to use fixes.`, Remote Control connected while `/usage` was open. To use `f` again, [disconnect Remote Control](../02-Claude-Code-CLI/remote-control.md#check-connection-status), then run `/usage` at the Claude Code prompt and press `f` again.
 
-
-[​](#check-your-usage-credits-spend)
-
-Check your usage-credits spend
+#### [](#check-your-usage-credits-spend)Check your usage-credits spend
 
 `/usage` also shows a usage-credits row while [usage credits](#add-usage-credits-to-your-subscription) are on. What the row shows depends on your plan:
 
@@ -150,17 +132,11 @@ Check your usage-credits spend
 
 When you have a spend limit, the row appears as soon as usage credits are on and shows 0% until you first spend usage credits. Before v2.1.236, `/usage` showed the row only on Pro, Max, and Ultra plans, and a row with a spend limit stayed hidden until you had spent something.
 
-
-[​](#when-the-usage-request-fails)
-
-When the usage request fails
+#### [](#when-the-usage-request-fails)When the usage request fails
 
 When the request for your plan limits fails, most often because the usage endpoint is rate limited, `/usage` shows the last usage bars it loaded on this machine within the past 60 minutes, along with a `Showing last-known usage` note stating how long ago that data was fetched. Press `r` to retry; a successful retry replaces the last-known bars with fresh data. Without a snapshot from the past 60 minutes, `/usage` reports that the usage endpoint is rate limited and offers the same retry shortcut. Before v2.1.208, a rate-limited request in a session that hadn’t loaded usage yet always showed the error with no bars. A message such as `rate limited until 3:14am` in `/usage` means Claude Code can’t fetch your plan limits again until then, not that your work with Claude is limited. If you press `r` earlier, expect the same message. Press `r` after that time for fresh data.
 
-
-[​](#read-the-token-count-beside-the-spinner)
-
-Read the token count beside the spinner
+### [](#read-the-token-count-beside-the-spinner)Read the token count beside the spinner
 
 While Claude works in the main conversation, the line beside the spinner can end with an elapsed time and a token count, as in `Deciphering… (10m 27s · ↓ 5.5k tokens)`. It is a live, approximate count of the output the current turn has produced so far. The arrow beside the count points down while output arrives or tools run.
 
@@ -171,17 +147,11 @@ While Claude works in the main conversation, the line beside the spinner can end
 
 It won’t match the `Usage by model` output figures in the `/usage` Session block, which add up the whole session rather than one turn. It also differs from the token count [verbose mode adds](../02-Claude-Code-CLI/statusline.md#notifications-share-the-status-line-row), because that count measures the size of your context rather than one turn’s output.
 
-
-[​](#analyze-your-usage-patterns)
-
-Analyze your usage patterns
+### [](#analyze-your-usage-patterns)Analyze your usage patterns
 
 Run [`/insights`](../02-Claude-Code-CLI/commands.md#all-commands) for a report on how you work rather than how many tokens you’ve used. It analyzes your recent sessions on this machine and writes an HTML report covering what you work on, friction points such as misunderstood requests or buggy code, and suggestions for using Claude Code more effectively. A single run analyzes up to 200 sessions it hasn’t seen before and skips very short ones. When sessions are left out, the report header shows the analyzed count with the total in parentheses, for example `200 sessions (412 total)`. When [auto mode](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode) is available to the session and your recent sessions mostly ran without it, the report can also include an estimate of how many permission prompts auto mode could have handled across those sessions. Claude Code writes the latest report to `~/.claude/usage-data/report.html` and saves a timestamped copy of each run in the same directory, so earlier reports aren’t overwritten. Claude Code deletes reports on the same schedule as the rest of your session data: at startup, it removes files older than [`cleanupPeriodDays`](../02-Claude-Code-CLI/claude-directory.md#cleaned-up-automatically), 30 days by default. You can run `/insights` on any plan and with any provider. The analysis runs through the same provider and account as your regular sessions, and the tokens count against your plan or API usage. Sessions from other devices and claude.ai aren’t included.
 
-
-[​](#add-usage-credits-to-your-subscription)
-
-Add usage credits to your subscription
+### [](#add-usage-credits-to-your-subscription)Add usage credits to your subscription
 
 [Usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) let you keep working past your plan’s usage limit. To manage them, run `/usage-credits` after signing in with your claude.ai subscription through `/login`; the command isn’t available with API key authentication. In self-serve Enterprise organizations, Enterprise trials, and Enterprise organizations billed through AWS Marketplace, the command requires Claude Code v2.1.248 or later; earlier versions reject it with [`Unknown command: /usage-credits`](../02-Claude-Code-CLI/errors.md#unknown-command). What it opens depends on your role:
 
@@ -193,10 +163,7 @@ Add usage credits to your subscription
 
 For Team and Enterprise members without billing access, the confirmation appears only in interactive sessions: in non-interactive mode with the `-p` flag and from [Remote Control](../02-Claude-Code-CLI/remote-control.md), the command sends no request and tells you to run it in an interactive session instead. If you run `/usage-credits` again while your earlier request is waiting on an admin, Claude Code tells you a request has already been sent rather than sending a duplicate. After an admin dismisses your request, running the command again sends a new one. Before v2.1.222, a dismissed request also blocked new requests. On Pro, Max, and Ultra plans, when you reach your spend limit with usage credits left, Claude Code prompts you to raise or remove the limit without leaving the CLI. If the server rejects the change, see [Could not update your spend limit](../02-Claude-Code-CLI/errors.md#could-not-update-your-spend-limit).
 
-
-[​](#manage-costs-for-your-organization)
-
-Manage costs for your organization
+## [](#manage-costs-for-your-organization)Manage costs for your organization
 
 Which controls you have depends on how your organization accesses Claude Code: a Claude for Teams or Enterprise plan, the Claude Console, or a cloud provider. On Teams and Enterprise plans, usage draws from each member’s seat allowance. On the Console and on cloud providers, usage is billed per token to your organization. If your organization mixes sign-in methods, each developer is metered according to the one they authenticated with. The table maps each setup to where you see spend, where you cap it, and how you pull per-user numbers. On an individual Pro, Max, or Ultra plan you have no organization to manage, so track your own usage-credit spend, including [fast mode](../02-Claude-Code-CLI/fast-mode.md#see-where-fast-mode-spend-appears), under [Add usage credits to your subscription](#add-usage-credits-to-your-subscription).
 
@@ -208,10 +175,7 @@ Which controls you have depends on how your organization accesses Claude Code: a
 
 [OpenTelemetry export](../13-Enterprise-Admin/monitoring-usage.md) works on every setup and is the only option that streams per-user token and cost metrics into your own observability stack in near real time.
 
-
-[​](#report-spend-at-your-contracted-rates)
-
-Report spend at your contracted rates
+### [](#report-spend-at-your-contracted-rates)Report spend at your contracted rates
 
 By default, Claude Code computes every cost figure it shows developers at list price, so if your organization pays contracted rates, the figures in `/usage`, the status line, and OpenTelemetry don’t match your bill. To make them match, set the [`modelPricing`](../02-Claude-Code-CLI/settings-reference.md#modelpricing) managed setting to your rates. The setting changes what Claude Code reports, not what Anthropic charges. Requires Claude Code v2.1.242 or later.
 
@@ -235,10 +199,7 @@ Deliver it as [managed settings](../13-Enterprise-Admin/managed-settings.md): se
 
 To confirm the rates are in effect, run `/usage` in a session that has [received the managed settings](../13-Enterprise-Admin/managed-settings.md#read-the-source-in-%2Fstatus): the Session block’s `Total cost` line carries the note `at your organization's configured rates`. The figures are still estimates, not an invoice. The per-million-token prices in the `/model` picker stay at list price.
 
-
-[​](#claude-for-teams-and-enterprise)
-
-Claude for Teams and Enterprise
+### [](#claude-for-teams-and-enterprise)Claude for Teams and Enterprise
 
 On Claude for Teams and Enterprise plans, each member’s Claude Code usage draws from a per-seat allowance that resets on a rolling five-hour window and a weekly window. The allowance is shared with Claude chat and Cowork, and its size depends on the member’s [seat tier](https://support.claude.com/en/articles/11845131-use-claude-code-with-your-team-or-enterprise-plan) (Standard or Premium). Your controls live in the claude.ai admin console, not the Claude Console.
 
@@ -249,10 +210,7 @@ On Claude for Teams and Enterprise plans, each member’s Claude Code usage draw
 
 The [Claude Enterprise consumption guide](../13-Enterprise-Admin/claude-enterprise-consumption-guide.md) is the planning reference for admins. It explains how consumption differs across Claude chat, Claude Code, and Cowork, and gives per-user dollar starting points for budgeting. Budget more for a coding seat than a chat seat: each Claude Code turn carries file contents, tool calls, and multi-step reasoning, so one debugging session can consume more than a day of chat.
 
-
-[​](#claude-console)
-
-Claude Console
+### [](#claude-console)Claude Console
 
 API organizations manage Claude Code spend through [workspaces](../04-API-Reference/Guides/build-with-claude-workspaces.md). You can [set workspace spend limits](../04-API-Reference/Guides/build-with-claude-workspaces.md#workspace-limits) on total Claude Code spend and [view cost and usage reporting](../04-API-Reference/Guides/build-with-claude-workspaces.md#usage-and-cost-tracking) in the Console.
 
@@ -260,10 +218,7 @@ When you first authenticate Claude Code with your Claude Console account, a work
 
 For per-user reporting, the [Console dashboard](../04-API-Reference/Other/playground.md) shows spend and lines accepted per member, and the [Claude Code Analytics API](../04-API-Reference/Guides/build-with-claude-claude-code-analytics-api.md) returns daily per-user metrics programmatically with an [Admin API key](../04-API-Reference/Other/playground.md). See [analytics for API customers](../13-Enterprise-Admin/analytics.md#access-analytics-for-api-customers).
 
-
-[​](#rate-limit-recommendations)
-
-Rate limit recommendations
+#### [](#rate-limit-recommendations)Rate limit recommendations
 
 When setting up Claude Code for teams, consider these Token Per Minute (TPM) and Request Per Minute (RPM) per-user recommendations based on your organization size:
 
@@ -280,10 +235,7 @@ For example, if you have 200 users, you might request 20k TPM for each user, or 
 
 If you anticipate scenarios with unusually high concurrent usage (such as live training sessions with large groups), you may need higher TPM allocations per user.
 
-
-[​](#cloud-providers)
-
-Cloud providers
+### [](#cloud-providers)Cloud providers
 
 On Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, Claude Code is billed per token to your cloud account, and spend controls live in your cloud provider’s billing console. Claude Code does not send metrics from your cloud back to Anthropic, so the [analytics dashboards](../13-Enterprise-Admin/analytics.md) and the Claude Code Analytics API do not cover this usage. For per-user cost attribution, you have three options:
 
@@ -291,10 +243,7 @@ On Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry, Claud
 - **A Claude apps gateway**: a self-hosted [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md) provides per-user usage attribution, OTLP metrics with token counts, and [per-user spend limits](../13-Enterprise-Admin/claude-apps-gateway-spend-limits.md) on these providers.
 - **An LLM gateway**: route all Claude Code traffic through a proxy that tracks spend per key. Several large enterprises reported using [LiteLLM](../13-Enterprise-Admin/llm-gateway.md), an open-source tool that [tracks spend by key](https://docs.litellm.ai/docs/proxy/virtual_keys#tracking-spend). This project is unaffiliated with Anthropic and has not been audited for security.
 
-
-[​](#when-a-developer-asks-about-a-limit)
-
-When a developer asks about a limit
+### [](#when-a-developer-asks-about-a-limit)When a developer asks about a limit
 
 Developers usually bring limit questions to their admin, so it helps to know which ceiling they hit. These situations mean different things:
 
@@ -302,14 +251,11 @@ Developers usually bring limit questions to their admin, so it helps to know whi
   - Run `/usage-credits` to request usage beyond the allowance, if you have [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans) turned on.
   - On Claude Code v2.1.234 or later, [wait and continue the interrupted task automatically after the reset](../02-Claude-Code-CLI/interactive-mode.md#wait-for-a-usage-limit-to-reset); that section lists when Claude Code starts the wait on its own and when the developer picks it from `/rate-limit-options`. To control for your fleet whether Claude Code starts that wait on its own, set [`autoContinueAtUsageLimit`](../02-Claude-Code-CLI/settings-reference.md#autocontinueatusagelimit) in [managed settings](../02-Claude-Code-CLI/settings.md#settings-precedence).
 - **“You’ve hit your individual spend limit”, “org’s monthly spend limit”, or “team’s shared budget”**: the developer’s request would be billed to usage credits, and those credits have reached a spend limit you set. To let the developer continue, go to [**Organization settings \> Usage**](https://claude.ai/admin-settings/usage) and increase the limit the message names. When the message also names a plan reset time, the developer can instead wait until then. See [the error reference](../02-Claude-Code-CLI/errors.md#youve-hit-your-monthly-spend-limit) for each variant.
-- **A spend limit message from a [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md)**: the developer passed a spend cap you set on your self-hosted gateway, and the gateway blocks their requests until the period resets or you raise the cap. See [gateway spend limits](../13-Enterprise-Admin/claude-apps-gateway-spend-limits.md) for caps, reset schedules, and the message the developer sees.
+- **A spend limit message from a [Claude apps gateway](../13-Enterprise-Admin/claude-apps-gateway.md)**: the developer passed a spend cap you set on your self-hosted gateway. The gateway blocks their requests until you raise the cap, or until the cap resets if it’s above \$0. See [gateway spend limits](../13-Enterprise-Admin/claude-apps-gateway-spend-limits.md) for caps, reset schedules, and the message the developer sees.
 - **A context or auto-compact warning**: not a usage limit. The conversation has grown close to the session’s [auto-compact window](../02-Claude-Code-CLI/model-config.md#set-the-auto-compact-window), the threshold where Claude Code summarizes older history to free space. Point the developer at [reduce token usage](#reduce-token-usage).
 - **Unexpectedly high spend on an API or cloud-provider plan**: usually traces back to long sessions that were never cleared or to Opus left as the default model. The highest-impact habits to share are clearing between unrelated tasks and matching the model to the job, both covered in [reduce token usage](#reduce-token-usage).
 
-
-[​](#agent-team-token-costs)
-
-Agent team token costs
+### [](#agent-team-token-costs)Agent team token costs
 
 [Agent teams](../09-Agents-Patterns/agent-teams.md) spawn multiple Claude Code instances, each with its own context window. Token usage scales with the number of active teammates and how long each one runs. To keep agent team costs manageable:
 
@@ -319,17 +265,11 @@ Agent team token costs
 - Shut down teammates when their work is done. Each active teammate continues consuming tokens until it exits or the session ends.
 - Agent teams are disabled by default. Set `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` in your [settings.json](../02-Claude-Code-CLI/settings.md) or environment to enable them. See [enable agent teams](../09-Agents-Patterns/agent-teams.md#enable-agent-teams).
 
-
-[​](#reduce-token-usage)
-
-Reduce token usage
+## [](#reduce-token-usage)Reduce token usage
 
 Token costs scale with context size: the more context Claude processes, the more tokens you use. Claude Code automatically optimizes costs through [prompt caching](../02-Claude-Code-CLI/prompt-caching.md), which reduces costs for repeated content like system prompts, and auto-compaction, which summarizes conversation history when approaching context limits. The following strategies help you keep context small and reduce per-message costs.
 
-
-[​](#manage-context-proactively)
-
-Manage context proactively
+### [](#manage-context-proactively)Manage context proactively
 
 Use `/usage` to check your current token usage, or [configure your status line](../02-Claude-Code-CLI/statusline.md#context-window-usage) to display it continuously.
 
@@ -344,36 +284,24 @@ You can also customize compaction behavior in your CLAUDE.md file at the root of
 When you are using compact, please focus on test output and code changes
 ```
 
-
-[​](#choose-the-right-model)
-
-Choose the right model
+### [](#choose-the-right-model)Choose the right model
 
 Sonnet handles most coding tasks well and costs less than Opus. Reserve Opus for complex architectural decisions or multi-step reasoning. Use `/model` to switch models mid-session, or set a default in `/config`. A switch to Opus also applies to the [subagents that inherit your session’s model](../02-Claude-Code-CLI/model-config.md#setting-your-model). For simple subagent tasks, specify `model: haiku` in your [subagent configuration](../09-Agents-Patterns/sub-agents.md#choose-a-model).
 
-
-[​](#reduce-mcp-server-overhead)
-
-Reduce MCP server overhead
+### [](#reduce-mcp-server-overhead)Reduce MCP server overhead
 
 MCP tool definitions are [deferred by default](../06-MCP-Tools/General/mcp.md#scale-with-mcp-tool-search), so only tool names and server instructions enter context until Claude uses a specific tool. Run `/context` to see what’s consuming space.
 
 - **Prefer CLI tools when available**: Tools like `gh`, `aws`, `gcloud`, and `sentry-cli` are still more context-efficient than MCP servers because they don’t add any per-tool listing. Claude can run CLI commands directly.
 - **Disable unused servers**: Run `/mcp` to see configured servers and disable any you’re not actively using.
 
-
-[​](#install-code-intelligence-plugins-for-typed-languages)
-
-Install code intelligence plugins for typed languages
+### [](#install-code-intelligence-plugins-for-typed-languages)Install code intelligence plugins for typed languages
 
 [Code intelligence plugins](../08-Plugins-Skills/plugins-code-intelligence.md) give Claude precise symbol navigation instead of text-based search, reducing unnecessary file reads when exploring unfamiliar code. A single “go to definition” call replaces what might otherwise be a grep followed by reading multiple candidate files. Installed language servers also report type errors automatically after edits, so Claude catches mistakes without running a compiler.
 
+### [](#offload-processing-to-hooks-and-skills)Offload processing to hooks and skills
 
-[​](#offload-processing-to-hooks-and-skills)
-
-Offload processing to hooks and skills
-
-Custom [hooks](../07-Hooks/hooks.md) can preprocess data before Claude sees it. Instead of Claude reading a 10,000-line log file to find errors, a hook can grep for `ERROR` and return only matching lines, reducing context from tens of thousands of tokens to hundreds. A [skill](../08-Plugins-Skills/skills.md) can give Claude domain knowledge so it doesn’t have to explore. For example, a “codebase-overview” skill could describe your project’s architecture, key directories, and naming conventions. When Claude invokes the skill, it gets this context immediately instead of spending tokens reading multiple files to understand the structure. For example, this PreToolUse hook filters test output to show only failures:
+Custom [hooks](../07-Hooks/hooks.md) can preprocess data before Claude sees it. Instead of Claude reading a 10,000-line log file to find errors, a hook can grep for `ERROR` and return only matching lines, reducing context from tens of thousands of tokens to hundreds. This PreToolUse hook trims test output to its last 100 lines:
 
 - settings.json
 
@@ -399,17 +327,17 @@ Add this to your [settings.json](../02-Claude-Code-CLI/settings.md#where-setting
 }
 ```
 
-The hook calls this script. Create the folder with `mkdir -p ~/.claude/hooks`, save the script below as `~/.claude/hooks/filter-test-output.sh`, and make it executable with `chmod +x ~/.claude/hooks/filter-test-output.sh`. It checks if the command is a test runner and modifies it to show only failures:
+The hook calls this script. Create the folder with `mkdir -p ~/.claude/hooks`, save the script below as `~/.claude/hooks/filter-test-output.sh`, and make it executable with `chmod +x ~/.claude/hooks/filter-test-output.sh`. It checks if the command is a test runner and, if so, keeps only the last 100 lines of its output:
 
 ```python
 #!/bin/bash
 input=$(cat)
 cmd=$(echo "$input" | jq -r '.tool_input.command')
 
-# If running tests, filter to show only failures
+# If running tests, keep only the last 100 lines
 pattern='^(npm test|pytest|go test)( [^;&|<>`$#\\[:cntrl:]]*)?$'
 if [[ "$cmd" =~ $pattern ]]; then
-  filtered_cmd="$cmd 2>&1 | grep -A 5 -E '(FAIL|ERROR|error:)' | head -100"
+  filtered_cmd="$cmd 2>&1 | tail -n 100"
   echo "$input" | jq --arg filtered "$filtered_cmd" \
     '{hookSpecificOutput: {hookEventName: "PreToolUse", updatedInput: (.tool_input + {command: $filtered})}}'
 else
@@ -417,47 +345,29 @@ else
 fi
 ```
 
-To verify the setup, run `/hooks` and check that the hook appears under PreToolUse. You can also start Claude Code with `claude --debug-file ./claude-debug.txt` and ask Claude to run `npm test`. When the hook rewrites the command, that log file contains a `modified tool input keys` line listing `command` and the other Bash input fields.
+To verify the setup, run `/hooks` and check that the hook appears under PreToolUse. You can also start Claude Code with `claude --debug-file ./claude-debug.txt` and ask Claude to run `npm test`. When the hook rewrites the command, that log file contains a `modified tool input keys` line listing `command` and the other Bash input fields. A [skill](../08-Plugins-Skills/skills.md) can give Claude domain knowledge so it doesn’t have to explore. For example, a “codebase-overview” skill could describe your project’s architecture, key directories, and naming conventions. When Claude invokes the skill, it gets this context immediately instead of spending tokens reading multiple files to understand the structure.
 
-
-[​](#move-instructions-from-claude-md-to-skills)
-
-Move instructions from CLAUDE.md to skills
+### [](#move-instructions-from-claude-md-to-skills)Move instructions from CLAUDE.md to skills
 
 Your [CLAUDE.md](../02-Claude-Code-CLI/memory.md) file is loaded into context at session start. If it contains detailed instructions for specific workflows (like PR reviews or database migrations), those tokens are present even when you’re doing unrelated work. [Skills](../08-Plugins-Skills/skills.md) load on-demand only when invoked, so moving specialized instructions into skills keeps your base context smaller. Aim to keep CLAUDE.md under 200 lines by including only essentials.
 
-
-[​](#adjust-extended-thinking)
-
-Adjust extended thinking
+### [](#adjust-extended-thinking)Adjust extended thinking
 
 Extended thinking is enabled by default because it significantly improves performance on complex planning and reasoning tasks. Thinking tokens are billed as output tokens, and the default budget can be tens of thousands of tokens per request depending on the model. For simpler tasks where deep reasoning isn’t needed, you can reduce costs by lowering the [effort level](../02-Claude-Code-CLI/model-config.md#adjust-effort-level) with `/effort` or in `/model`, or by disabling thinking in `/config`. You can’t turn off thinking on Opus 5.5, Sonnet 5.5, Haiku 5.5, or the Fable models, which always use extended thinking. On models with a [fixed thinking budget](../02-Claude-Code-CLI/model-config.md#adaptive-reasoning-and-fixed-thinking-budgets), you can also lower the budget by setting the `MAX_THINKING_TOKENS` [environment variable](../02-Claude-Code-CLI/env-vars.md), for example `MAX_THINKING_TOKENS=8000`. Adaptive-reasoning models ignore nonzero budgets, so use effort levels there instead.
 
-
-[​](#delegate-verbose-operations-to-subagents)
-
-Delegate verbose operations to subagents
+### [](#delegate-verbose-operations-to-subagents)Delegate verbose operations to subagents
 
 Running tests, fetching documentation, or processing log files can consume significant context. Delegate these to [subagents](../09-Agents-Patterns/sub-agents.md#isolate-high-volume-operations) so the verbose output stays in the subagent’s context while only a summary returns to your main conversation. The subagent’s own requests still draw on your usage. To spend less on them, [choose a smaller model for a subagent](../09-Agents-Patterns/sub-agents.md#choose-a-model) or [run every subagent on one model](../09-Agents-Patterns/sub-agents.md#run-every-subagent-on-one-model).
 
-
-[​](#manage-agent-team-costs)
-
-Manage agent team costs
+### [](#manage-agent-team-costs)Manage agent team costs
 
 Agent teams use approximately 7x more tokens than standard sessions when teammates run in plan mode, because each teammate maintains its own context window and runs as a separate Claude instance. Keep team tasks small and self-contained to limit per-teammate token usage. See [agent teams](../09-Agents-Patterns/agent-teams.md) for details.
 
-
-[​](#write-specific-prompts)
-
-Write specific prompts
+### [](#write-specific-prompts)Write specific prompts
 
 Vague requests like “improve this codebase” trigger broad scanning. Specific requests like “add input validation to the login function in auth.ts” let Claude work efficiently with minimal file reads.
 
-
-[​](#work-efficiently-on-complex-tasks)
-
-Work efficiently on complex tasks
+### [](#work-efficiently-on-complex-tasks)Work efficiently on complex tasks
 
 For longer or more complex work, these habits help avoid wasted tokens from going down the wrong path:
 
@@ -466,17 +376,11 @@ For longer or more complex work, these habits help avoid wasted tokens from goin
 - **Give verification targets**: Include test cases, paste screenshots, or define expected output in your prompt. When Claude can verify its own work, it catches issues before you need to request fixes.
 - **Test incrementally**: Write one file, test it, then continue. This catches issues early.
 
-
-[​](#background-token-usage)
-
-Background token usage
+## [](#background-token-usage)Background token usage
 
 Session recap and idle compaction can use tokens while you’re idle. See [session recap](../02-Claude-Code-CLI/interactive-mode.md#session-recap) and [idle compaction](../02-Claude-Code-CLI/settings-reference.md#idlecompaction) for when each runs and how to turn it off. When prompt suggestions are on, Claude Code also sends a short request to the model your session is using after Claude responds, to [suggest your next prompt](../02-Claude-Code-CLI/interactive-mode.md#prompt-suggestions). That request reuses the conversation’s prompt cache, so it is mostly cache reads plus a few output tokens. Claude Code [skips it while your account is close to or at its usage limit](../02-Claude-Code-CLI/interactive-mode.md#when-claude-code-skips-suggestions). To stop these requests, [turn prompt suggestions off](../02-Claude-Code-CLI/interactive-mode.md#turn-prompt-suggestions-off).
 
-
-[​](#why-usage-climbs-in-a-long-session)
-
-Why usage climbs in a long session
+## [](#why-usage-climbs-in-a-long-session)Why usage climbs in a long session
 
 A session that has been open for hours can use far more of your plan limits than your activity suggests, usually for one of these reasons:
 
@@ -491,14 +395,11 @@ A session that has been open for hours can use far more of your plan limits than
 
 To see what to change on a Pro, Max, Ultra, Team, or Enterprise plan, run [`/usage`](#plan-usage-breakdown) at the Claude Code prompt. Its breakdown recommends a change for behaviors behind 10% or more of your recent usage. Those behaviors include long context and cache misses.
 
-
-[​](#understanding-changes-in-claude-code-behavior)
-
-Understanding changes in Claude Code behavior
+## [](#understanding-changes-in-claude-code-behavior)Understanding changes in Claude Code behavior
 
 Claude Code regularly receives updates that may change how features work, including cost reporting. Run `claude --version` to check your current version. For billing questions about your specific account, contact Anthropic support through the in-product messenger:
 
 - **Subscription plans** (Pro, Max, Ultra, Team, Enterprise): sign in at [claude.ai](https://claude.ai), click your initials in the lower left, and select **Get help**
 - **Console (API) billing**: sign in at [platform.claude.com](../04-API-Reference/Other/playground.md), click your initials, and select **Get help**
 
-See [How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support) for the full flow, including who can reach a human agent on each plan.
+See [How to get support](../15-Claude-AI-Features/how-to-get-support.md) for the full flow, including who can reach a human agent on each plan.

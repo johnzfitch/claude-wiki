@@ -2,7 +2,7 @@
 title: "Claude for Cybersecurity | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/cybersecurity"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:26Z"
+fetched_at: "2026-11-18T06:29:18Z"
 tags: ["case-studies", "security"]
 ---
 
@@ -277,7 +277,7 @@ Frontier capabilities
 
 Claude reads code carefully, understands real risks, and sustains the long workflows that continuous defense requires. Verified practitioners can request [adjusted safeguards](https://support.claude.com/en/articles/14604842) for dual-use work.
 
-[Learn more (opens in new tab)](../21-Account-Support/real-time-cyber-safeguards-on-claude.md)
+[Learn more (opens in new tab)](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude)
 
 ## Anthropic’s commitment to cyberdefense
 

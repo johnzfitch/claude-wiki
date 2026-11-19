@@ -28,7 +28,7 @@ terminal
 claude --plugin-url https://example.com/my-plugin.zip
 ```
 
-[Plugins guide](../08-Plugins-Skills/plugins.md)
+[Plugins guide](../08-Plugins-Skills/plugins-overview.md)
 
 History search across all your projectsv2.1.129
 

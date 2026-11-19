@@ -2,7 +2,7 @@
 title: "How do I sign up for the Max plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11049752-how-do-i-sign-up-for-the-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:34Z"
+fetched_at: "2026-11-18T06:27:38Z"
 tags: ["billing"]
 ---
 
@@ -55,4 +55,4 @@ If you're moving from an annual Pro plan to a Max plan and the remaining balance
 
 ## How does subscription renewal work for Max plans?
 
-After subscribing for a Max plan, your subscription will be set to automatically renew at the end of each billing period by default. This ensures uninterrupted access to Max features. However, you have the flexibility to **[cancel your paid plan](cancel-your-pro-max-or-ultra-subscription-claude-help-center.md)** at any time if you choose not to continue.
+After subscribing for a Max plan, your subscription will be set to automatically renew at the end of each billing period by default. This ensures uninterrupted access to Max features. However, you have the flexibility to **[cancel your paid plan](https://support.claude.com/en/articles/8325617)** at any time if you choose not to continue.

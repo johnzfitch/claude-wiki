@@ -2,7 +2,7 @@
 title: "Delete Skill - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/skills/delete"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:27:12Z"
+fetched_at: "2026-11-14T06:25:01Z"
 tags: ["api"]
 ---
 

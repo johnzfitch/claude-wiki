@@ -2,7 +2,7 @@
 title: "Prompting Claude Opus 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-11-05T06:37:03Z"
+fetched_at: "2026-11-13T06:36:34Z"
 tags: ["agents", "prompting", "subagents"]
 ---
 

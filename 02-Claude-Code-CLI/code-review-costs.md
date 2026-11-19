@@ -2,8 +2,8 @@
 title: "Code Review costs and usage - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-costs"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-30T06:25:12Z"
-last_modified: "Fri, 30 Oct 2026 04:56:11 GMT"
+fetched_at: "2026-11-17T06:24:48Z"
+last_modified: "Tue, 17 Nov 2026 04:09:16 GMT"
 tags: ["claude-code"]
 ---
 
@@ -33,17 +33,11 @@ Copy pageCopy page
 - **Cost of each review**: scales with the [review level](code-review-setup.md#set-the-default-review-level), the size of the change, the complexity of the surrounding code, and how many candidate issues need verification
 - **Number of reviews**: set by [how often reviews run](#how-often-reviews-run) in each repository
 
-
-[​](#pricing)
-
-Pricing
+## [](#pricing)Pricing
 
 Code Review is billed on token usage through [usage credits](https://support.claude.com/en/articles/12429409-extra-usage-for-paid-claude-plans), separately from your plan’s included usage. Reviews are billed to your organization, not to the developer who opened the PR or requested the review. Costs appear on your Anthropic bill regardless of whether your organization uses Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry for other Claude Code features.
 
-
-[​](#how-often-reviews-run)
-
-How often reviews run
+### [](#how-often-reviews-run)How often reviews run
 
 A repository you add from the admin page starts at **After every push**, which runs the most reviews. Each repository’s [**Review runs** setting](code-review-setup.md#set-when-reviews-run) decides how many reviews a pull request gets:
 
@@ -58,10 +52,7 @@ Comment commands, drafts, and pull requests from forks adjust those counts:
 - **`@claude review`**: runs a single review without subscribing to future pushes
 - **Drafts and pull requests from forks**: [automatic reviews skip both](code-review-pull-requests.md#review-drafts-and-pull-requests-from-forks), so pushes to them don’t add reviews
 
-
-[​](#estimate-your-spend)
-
-Estimate your spend
+## [](#estimate-your-spend)Estimate your spend
 
 Before a wide rollout, run a small pilot to estimate monthly spend from your own pull requests.
 
@@ -72,10 +63,7 @@ Before a wide rollout, run a small pilot to estimate monthly spend from your own
 
 A repository’s average moves with the size of its pull requests and with the review level you choose.
 
-
-[​](#limit-your-spend)
-
-Limit your spend
+## [](#limit-your-spend)Limit your spend
 
 To set a monthly spend limit for Code Review, go to [claude.ai/admin-settings/usage](https://claude.ai/admin-settings/usage) and configure the limit for the Claude Code Review service. The limit applies to the whole organization. Code Review skips reviews when any of these runs out:
 
@@ -85,27 +73,21 @@ To set a monthly spend limit for Code Review, go to [claude.ai/admin-settings/us
 
 Code Review also skips reviews once what’s left is less than the expected cost of one review. When a review is skipped, developers see a [comment on the PR](code-review-troubleshooting.md#review-didn%E2%80%99t-run-and-the-pr-shows-a-budget-message) that names the cause and links to the usage settings. To monitor spend, use the [analytics dashboard](#view-usage).
 
-
-[​](#view-usage)
-
-View usage
+## [](#view-usage)View usage
 
 Go to [claude.ai/analytics/code-review](https://claude.ai/analytics/code-review) to see Code Review activity across your organization.
 
 | Section | What it shows |
 |:---|:---|
-| PRs reviewed | Daily count of pull requests reviewed over the selected time range |
+| PRs reviewed by Code Review | Daily count of pull requests reviewed over the selected time range |
 | Code Review cost | Code Review spend so far this month |
-| Feedback | Count of review comments that were auto-resolved because a developer addressed the issue |
+| Code Review feedback | Count of review comments that were auto-resolved because a developer addressed the issue |
 | Code Review findings | Daily count of [findings by severity level](code-review-pull-requests.md#severity-levels), from reviews Claude posted over the selected time range |
 | Repository breakdown | Per-repo counts of PRs reviewed, comments resolved, and review runs, with estimated cost and a per-PR view |
 
 The Code Review cost card shows an amount only when the current month is selected. Cost figures in analytics can differ from your invoice. Repository breakdown costs are estimated at list price, before any discounts or credits, and cover only reviews that Claude posted on a pull request. For invoice-accurate spend, refer to your Anthropic bill.
 
-
-[​](#related-resources)
-
-Related resources
+## [](#related-resources)Related resources
 
 - [Set up Code Review](code-review-setup.md): where to choose the review level and when reviews run in each repository
 - [Read and request reviews on a pull request](code-review-pull-requests.md): the comment commands, pull requests from forks, and the budget message developers see when a review is skipped

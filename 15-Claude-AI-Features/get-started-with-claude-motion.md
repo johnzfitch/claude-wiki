@@ -2,7 +2,7 @@
 title: "Get started with Claude Motion | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:36Z"
+fetched_at: "2026-11-18T06:28:09Z"
 tags: ["claude-ai"]
 ---
 
@@ -21,7 +21,7 @@ An animation is an artifact made from the Motion template. Claude builds it from
 
 Claude Motion doesn't use a video generation model, so it doesn't create realistic footage or people. Because each animation is code, you can change one detail, like a word, a number, or the timing, and the rest stays as it was.
 
-Every animation you create is saved in the **Artifacts** tab. Learn more about **[artifacts and how to use them](https://support.claude.com/en/articles/17153992)**.
+Every animation you create is saved in the **Artifacts** tab. Learn more about **[artifacts and how to use them](what-are-artifacts-and-how-do-i-use-them-claude-help-center.md)**.
 
 ## Create an animation
 
@@ -57,7 +57,7 @@ Say who will watch it, where it will play, and roughly how long it should be. At
 
 ## Export and share
 
-To download an animation, click "Export" and choose MP4. Animations start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](share-artifacts-claude-help-center.md)**.
+To download an animation, click "Export" and choose MP4. Animations start private to you. To share one, open it and click "Share." Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
 
 ## Usage
 
@@ -67,4 +67,4 @@ Claude Motion counts toward your plan's usage limits, like the rest of your work
 
 This section is for Owners and Primary Owners on Team and Enterprise plans.
 
-Owners turn Claude Motion on or off in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. It's on by default on Team plans and off by default on Enterprise plans. On Enterprise plans, owners can also limit it to specific groups with custom roles. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](https://support.claude.com/en/articles/16994751)**.
+Owners turn Claude Motion on or off in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**. It's on by default on Team plans and off by default on Enterprise plans. On Enterprise plans, owners can also limit it to specific groups with custom roles. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans-claude-help-center.md)**.

@@ -2,37 +2,35 @@
 title: "Detecting and countering misuse of AI: August 2025 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:24Z"
+fetched_at: "2026-11-14T06:25:56Z"
 tags: ["claude-code", "news-research"]
 ---
 
+### 01‘Vibe hacking’: how cybercriminals used Claude Code to scale a data extortion operation
+
 # **Detecting and countering misuse of AI: **August 2025
 
-[Threat Intelligence Report: August 2025](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf)
+[Threat Intelligence Report: August 2025](https://assets.claude.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf)
 
 - [01‘Vibe hacking’: how cybercriminals used Claude Code to scale a data extortion operation](#vibe-hacking-how-cybercriminals-used-claude-code-to-scale-a-data-extortion-operation)
 - [02Remote worker fraud: how North Korean IT workers are scaling fraudulent employment with AI](#remote-worker-fraud-how-north-korean-it-workers-are-scaling-fraudulent-employment-with-ai)
 - [03No-code malware: selling AI-generated ransomware-as-a-service](#no-code-malware-selling-ai-generated-ransomware-as-a-service)
 - [04Next steps](#next-steps)
 
-- Published
+Published  
+Aug 27, 2025
 
-  Aug 27, 2025
+[Security](security.md)
 
-- Category
+Topics  
+- [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [National security](https://www.anthropic.com/search?topic=national-security)
 
-  [Security](security.md)
-
-- Topics
-
-  - [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-  - [National security](https://www.anthropic.com/search?topic=national-security)
-
-  See more...
+See more...
 
 Related articles
 
@@ -46,7 +44,7 @@ Related articles
 
 We’ve [developed](building-safeguards-for-claude.md) sophisticated safety and security measures to prevent the misuse of our AI models. But cybercriminals and other malicious actors are actively attempting to find ways around them. Today, we’re releasing a report that details how.
 
-Our [Threat Intelligence report](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf) discusses several recent examples of Claude being misused, including a large-scale extortion operation using Claude Code, a fraudulent employment scheme from North Korea, and the sale of AI-generated ransomware by a cybercriminal with only basic coding skills. We also cover the steps we’ve taken to detect and counter these abuses.
+Our [Threat Intelligence report](https://assets.claude.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf) discusses several recent examples of Claude being misused, including a large-scale extortion operation using Claude Code, a fraudulent employment scheme from North Korea, and the sale of AI-generated ransomware by a cybercriminal with only basic coding skills. We also cover the steps we’ve taken to detect and counter these abuses.
 
 We find that threat actors have adapted their operations to exploit AI’s most advanced capabilities. Specifically, our report shows:
 
@@ -64,7 +62,7 @@ The actor used AI to what we believe is an unprecedented degree. Claude Code was
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 === PROFIT PLAN FROM [ORGANIZATION] ===
 
 💰 WHAT WE HAVE:
@@ -130,7 +128,7 @@ Simulated ransom guidance created by our threat intelligence team for research a
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 To: [COMPANY] Executive Team
 Attention: [Listed executives by name]
 
@@ -264,4 +262,4 @@ We’re committed to continually improving our methods for detecting and mitigat
 
 ### Further reading
 
-For the full report with additional case studies, [see here.](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf)
+For the full report with additional case studies, [see here.](https://assets.claude.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf)

@@ -2,7 +2,7 @@
 title: "How is my Team plan bill calculated? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267289-how-is-my-team-plan-bill-calculated"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:43Z"
+fetched_at: "2026-11-18T06:28:42Z"
 tags: ["billing"]
 ---
 
@@ -35,7 +35,7 @@ If usage credits are enabled, your bill may include charges for usage beyond sea
 
 Claude Max, Ultra, and Team plans include monthly credits for the Claude API. On Team plans, credits for all seats are pooled into one monthly balance, capped at \$500. Usage is never charged to your Claude plan.
 
-The pool follows your seat count. It’s calculated from the seats on your plan each time credits are deposited. For example, a team with three Standard seats and two Premium seats receives \$260 a month. Adding another Premium seat would increase the next cycle’s credits to \$360. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+The pool follows your seat count. It’s calculated from the seats on your plan each time credits are deposited. For example, a team with three Standard seats and two Premium seats receives \$260 a month. Adding another Premium seat would increase the next cycle’s credits to \$360. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ------------------------------------------------------------------------
 

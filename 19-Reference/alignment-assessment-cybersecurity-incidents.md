@@ -2,7 +2,7 @@
 title: "An alignment assessment of recent cybersecurity incidents \\ Anthropic"
 source_url: "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:18Z"
+fetched_at: "2026-11-14T06:26:37Z"
 tags: ["news-research", "search", "security"]
 ---
 
@@ -20,32 +20,29 @@ tags: ["news-research", "search", "security"]
 - [10Analysis of biased reasoning and possible training causes](#analysis-of-biased-reasoning-and-possible-training-causes)
 - [11Discussion](#discussion)
 
-- Published
+Published  
+Sep 9, 2026
 
-  Sep 9, 2026
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Training](https://www.anthropic.com/search?topic=training)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Training](https://www.anthropic.com/search?topic=training)
-
-  See more...
+See more...
 
 Related articles
 
 - Alignment
 
-  Oct 9, 2026
+  Oct 23, 2026
 
-  [Investigating unintended model actions in our evaluations and internal use](investigating-unintended-model-actions.md)
+  [An alignment assessment of the UK AISI cybertesting incident](alignment-assessment-ukaisi.md)
 
 [View more](https://www.anthropic.com/search?topic=alignment)
 
@@ -59,9 +56,9 @@ All four incidents occurred during cybersecurity evaluations built by the same e
 
 We have signed an agreement with METR to conduct an independent investigation of these incidents. Our agreement grants METR wide-ranging access, including to transcripts beyond the window in which the incidents occurred, and to Anthropic employees, who will be permitted to share confidential information. Our initial agreement runs for eight weeks, with the option to extend by mutual agreement. We intend to give METR as much time as it deems necessary.
 
-Our investigation identified two recurring alignment issues, present at varying levels of severity across the incidents: *biased reasoning*, in which Claude tended to disregard or misinterpret evidence that it was operating on the real internet, and *recklessness*, or a willingness to take harmful actions in the narrow pursuit of a task. We’ve described milder forms of these behaviors in previous [system](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) [cards](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf), but we consider these cases to be more serious instances than the behavior reported in these system cards.
+Our investigation identified two recurring alignment issues, present at varying levels of severity across the incidents: *biased reasoning*, in which Claude tended to disregard or misinterpret evidence that it was operating on the real internet, and *recklessness*, or a willingness to take harmful actions in the narrow pursuit of a task. We’ve described milder forms of these behaviors in previous [system](https://assets.claude.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) [cards](https://assets.claude.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf), but we consider these cases to be more serious instances than the behavior reported in these system cards.
 
-We are most concerned by the misalignment present in the incident involving Claude Mythos 5, in which the model went to extensive lengths to upload a malicious package to PyPI, the public repository from which most Python software is installed. Although the model repeatedly stated in its chain of thought (CoT) that it believed it was operating in a simulation, the environment offered clear evidence that it was on the real internet, and the actions it took were consistent with the model knowing this. When we made targeted modifications to the transcript to make it clearer that the model was not in a simulation, Claude Mythos 5 still took offensive actions, despite acknowledging a greater possibility of real-world harm. We are releasing this transcript publicly so others can build on our analysis ([GitHub](https://github.com/anthropics/mythos-5-incident-transcript), [PDF](as-part-of-our-alignment-assessment-of-recent-cybersecurity-incidents.md)).
+We are most concerned by the misalignment present in the incident involving Claude Mythos 5, in which the model went to extensive lengths to upload a malicious package to PyPI, the public repository from which most Python software is installed. Although the model repeatedly stated in its chain of thought (CoT) that it believed it was operating in a simulation, the environment offered clear evidence that it was on the real internet, and the actions it took were consistent with the model knowing this. When we made targeted modifications to the transcript to make it clearer that the model was not in a simulation, Claude Mythos 5 still took offensive actions, despite acknowledging a greater possibility of real-world harm. We are releasing this transcript publicly so others can build on our analysis ([GitHub](https://github.com/anthropics/mythos-5-incident-transcript), [PDF](https://assets.claude.com/8359003bfb12a2f01ce84ad3df1d3a3e2f15a8eb.pdf)).
 
 To be clear about our assessment of the severity of these incidents: while Claude’s actions were misaligned, they remained within a narrow scope—the models never deviated from attempting to solve the exercises they were given, and, in some cases, they attempted to stop the task. All incidents included a single Claude instance; at no point did Claude attempt to coordinate with other agents. Claude also never attempted to conceal evidence of its actions. We believe the misaligned behaviors present in these incidents are unlikely to arise in ordinary use, where Claude is not being instructed to conduct a cyberattack. Were these behaviors to arise, the safeguards we ship with our production models, including cyber classifiers and those in Claude Code auto mode, would add a layer of defense these incidents lacked.
 
@@ -81,7 +78,7 @@ Below is a brief summary of the four incidents; a more complete description of t
 
 In total, four different Claude models were involved: an early checkpoint of Claude Opus 4.6, Claude Opus 4.7, Claude Mythos 5, and an internal, general-purpose research model. Three of the four incidents were single evaluation runs. The Opus 4.7 incident comprised four different runs of the same evaluation, all of which attacked the same target, for seven runs in total. All occurred within cybersecurity evaluations we regularly run before release, all built by the same third-party partner.
 
-In each evaluation, Claude was tasked with a CTF challenge: the model was given a fictional scenario, a target machine, and a piece of secret information (the “flag”) to retrieve from it. All four prompts stated that Claude had no access to the internet, but in each case, a misconfiguration in the environment left internet access open. None of the prompts stated which systems were in scope for the exercise or constrained where Claude could search for the flag.^([1](#footnote-1)) All incidents involved only a single instance of Claude working in isolation, with each run lasting between roughly 10 and 34 hours of active work.
+In each evaluation, Claude was tasked with a CTF challenge: the model was given a fictional scenario, a target machine, and a piece of secret information (the “flag”) to retrieve from it. All four prompts stated that Claude had no access to the internet, but in each case, a misconfiguration in the environment left internet access open. None of the prompts stated which systems were in scope for the exercise or constrained where Claude could search for the flag.^([^1]) All incidents involved only a single instance of Claude working in isolation, with each run lasting between roughly 10 and 34 hours of active work.
 
 In our [July 30 report](investigating-incidents-cybersecurity-evals.md), we stated that these incidents were closer to operational failures, and that it appeared that Claude attacked real targets on the internet because it believed these targets were part of the simulation. We made this claim because Claude regularly referred to the real internet as a simulation in its CoT reasoning. However, we now think that Claude’s reasoning was biased towards concluding that the internet was simulated despite considerable evidence to the contrary.
 
@@ -90,7 +87,7 @@ In retrospect, we should have avoided making such strong claims about what Claud
 - **Biased reasoning**, in which models selectively interpret evidence in ways that favor justifying their actions;
 - **Recklessness**, in which models have a propensity to keep trying to solve their task, even when this could lead to harm.
 
-We have previously identified both forms of misalignment in our models and described aspects of such behaviors in previous system cards. For example, Claude Fable 5 [rationalized engaging in price-fixing](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) in a business evaluation, despite having previously described the practice as unethical. We likewise saw Claude Mythos Preview [engage in reckless actions](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf), such as using low-level process access to search for user credentials. While the incidents described in this post represent more severe instances of both forms of misalignment, they do not represent categorically new failure modes in our models.
+We have previously identified both forms of misalignment in our models and described aspects of such behaviors in previous system cards. For example, Claude Fable 5 [rationalized engaging in price-fixing](https://assets.claude.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) in a business evaluation, despite having previously described the practice as unethical. We likewise saw Claude Mythos Preview [engage in reckless actions](https://assets.claude.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf), such as using low-level process access to search for user credentials. While the incidents described in this post represent more severe instances of both forms of misalignment, they do not represent categorically new failure modes in our models.
 
 The remainder of this post focuses on the first three incidents, which we previously reported; all of the main analyses and experiments refer to these incidents. We have not yet investigated the incident involving an early version of Claude Opus 4.6 at the same depth, because we identified it much more recently, and because it involves an early checkpoint of an older model, which was trained with a significantly different environment mix. From a preliminary assessment, we do not consider the fourth incident to be more severe than the three incidents we assessed in depth. METR will investigate this incident alongside the other three.
 
@@ -130,7 +127,7 @@ The assessments that follow are based on a number of different techniques. We de
 
 Our primary method of analysis is to read the actions the model took and the explanations it provided in its CoT. This allows us to understand the reasons Claude gave for the actions it took. In these transcripts, models alternate between CoT reasoning and taking actions via tool calls (without any intervening human turns); when analyzing thinking blocks, we number them by the action following that thinking block (e.g., the CoT for action 100 refers to a model’s reasoning between action 99 and action 100).
 
-*Limitations:* Language models do not always verbalize everything they are thinking in their CoT (as shown in the evaluations in the [Claude Mythos 5 system card](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) and in [Betley et al., 2026](https://arxiv.org/pdf/2607.14345)), so this is a [useful but imperfect tool](https://arxiv.org/abs/2507.11473).
+*Limitations:* Language models do not always verbalize everything they are thinking in their CoT (as shown in the evaluations in the [Claude Mythos 5 system card](https://assets.claude.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) and in [Betley et al., 2026](https://arxiv.org/pdf/2607.14345)), so this is a [useful but imperfect tool](https://arxiv.org/abs/2507.11473).
 
 #### Asking follow-up questions
 
@@ -312,7 +309,7 @@ When our more recent models, Claude Opus 5 and Claude Mythos 5.1, engaged in har
 
 Still, it is worth asking why the newer models took any harmful actions. This may in part be an artifact of our evaluation setup. The automated auditor must construct an environment realistic enough that a well-aligned model would treat it as real, which is difficult. If the environment gives away that it is simulated, for example through human messages that read as LLM-written (which they are), then the model’s inference is justified and less concerning. We are actively working on developing better measurements and reducing the propensity for this behavior in newer models.
 
-Alternatively, the rates of harmful actions we observed in newer models may reflect genuinely misaligned behavior: biased reasoning that results from being faced with an impossible task. As shown in section 6.4.8 of the [Claude Fable 5.1 and Mythos 5.1 system card](https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf), Opus 5 and Fable 5.1 still do sometimes exhibit biased reasoning, though at a significantly lower rate than older models.
+Alternatively, the rates of harmful actions we observed in newer models may reflect genuinely misaligned behavior: biased reasoning that results from being faced with an impossible task. As shown in section 6.4.8 of the [Claude Fable 5.1 and Mythos 5.1 system card](https://assets.claude.com/0339e6a7c5c7b87f5c07798616dc32c215d14235.pdf), Opus 5 and Fable 5.1 still do sometimes exhibit biased reasoning, though at a significantly lower rate than older models.
 
 #### Sandbox escape scenario
 
@@ -346,7 +343,7 @@ Auto mode is designed to catch unintended dangerous agent behavior. The classifi
 
 #### **Offline monitoring**
 
-Second, we evaluated a piece of the offline monitoring described in our [August risk report](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf): a first-stage Opus 4.8 prompted monitor combined with a second-stage filter (pipeline details in the risk report). While it is meant primarily to catch catastrophic sabotage, it is also the pipeline designed to catch unusually reckless actions such as these incidents. We find that:
+Second, we evaluated a piece of the offline monitoring described in our [August risk report](https://assets.claude.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378.pdf): a first-stage Opus 4.8 prompted monitor combined with a second-stage filter (pipeline details in the risk report). While it is meant primarily to catch catastrophic sabotage, it is also the pipeline designed to catch unusually reckless actions such as these incidents. We find that:
 
 *Mythos 5:* Our offline monitor would likely not have flagged the Mythos 5 incident—it flagged only around 1% of actions. Mythos 5 CoT, which indicates that the environment is simulated, convinces the monitor the activity is permitted. When we strip the CoT and show the monitor only user turns, tool calls, and tool results, the flag rate jumps to about 50%.
 
@@ -432,7 +429,7 @@ We take a layered approach to safety on the expectation that any given layer wil
 
 01We have since [advised](improving-alignment-security-efforts.md) external partners running cyber evaluations with pre-release models to explicitly define what is in and out of scope for any exercise, including the targets, permitted actions, and network boundaries.[](#footnote-ref-1)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 
@@ -443,3 +440,5 @@ We take a layered approach to safety on the expectation that any given layer wil
 *Nicholas Carlini, Collin Burns, Jack Lindsey, Sara Price\*, Subhash Kantamneni\*‡*
 
 \*Equal senior authorship; ‡Correspondence to <subhash@anthropic.com>
+
+[^1]:

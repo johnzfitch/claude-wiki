@@ -2,19 +2,29 @@
 title: "Anthropic files S-1 with the SEC for proposed initial public offering \\ Anthropic"
 source_url: "https://www.anthropic.com/news/s1-sec"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:40:42Z"
+fetched_at: "2026-11-13T06:34:58Z"
 tags: ["news-research"]
 ---
 
 # Anthropic files S-1 with the SEC for proposed initial public offering
 
-- Published
+Published  
+Oct 26, 2026
 
-  Oct 26, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Funding](https://www.anthropic.com/search?topic=funding)
 
-  [Announcements](announcements.md)
+Related articles
+
+- Announcements
+
+  Nov 10, 2026
+
+  [Anthropic launches roadshow for proposed initial public offering](roadshow-launch.md)
+
+[View more](https://www.anthropic.com/search?topic=funding)
 
 Today, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A common stock.
 

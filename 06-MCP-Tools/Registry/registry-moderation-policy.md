@@ -2,8 +2,8 @@
 title: "The MCP Registry Moderation Policy - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/moderation-policy"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-31T06:24:48Z"
-last_modified: "Fri, 30 Oct 2026 20:34:15 GMT"
+fetched_at: "2026-11-10T06:31:53Z"
+last_modified: "Mon, 09 Nov 2026 23:57:36 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 

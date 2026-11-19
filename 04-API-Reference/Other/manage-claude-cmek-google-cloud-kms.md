@@ -2,7 +2,7 @@
 title: "Set up CMEK with Google Cloud KMS - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-google-cloud-kms"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:18Z"
+fetched_at: "2026-11-13T06:36:37Z"
 tags: ["api"]
 ---
 

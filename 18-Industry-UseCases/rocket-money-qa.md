@@ -2,7 +2,7 @@
 title: "Rocket Money Q&A | Claude Platform (API) | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/rocket-money-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:31Z"
+fetched_at: "2026-11-18T06:29:27Z"
 tags: ["agents", "api", "case-studies"]
 ---
 
@@ -69,6 +69,9 @@ Read how Rocket Money built its personal finance agent with Claude.
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -76,6 +79,3 @@ Read how Rocket Money built its personal finance agent with Claude.
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### How Rocket Money built its personal finance agent with Claude

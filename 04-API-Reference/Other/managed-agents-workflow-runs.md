@@ -2,7 +2,7 @@
 title: "Workflow runs - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/workflow-runs"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-03T06:23:35Z"
+fetched_at: "2026-11-18T06:27:35Z"
 tags: ["api"]
 ---
 
@@ -20,21 +20,28 @@ Follow an agent’s workflow runs: their states and events, when the work is don
 
 Dynamic workflows
 
+Beta
+
 Feature of  
 [Multiagent orchestration](managed-agents-multiagent-orchestration.md)
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Managed AgentsAvailable
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 A **workflow** is a program that an agent writes to run many agents and combine what they return. A **workflow run** is the execution of one workflow. **[Dynamic workflows](managed-agents-multiagent-orchestration.md#dynamic-workflows)** is the feature that lets an agent write workflows and start runs. You turn it on or off with the `workflows` setting in the agent’s `multiagent` block.
 
@@ -48,7 +55,7 @@ The diagram shows one example. Each workflow that the agent writes has its own p
 
 - **Workflow run:** The server runs the workflow in the background, as one workflow run. A session can have several runs open at the same time.
 - **Phases:** A workflow can divide its work into phases. A phase is a named stage of the run, such as “Read the contracts.” You follow a run’s progress by its phase events.
-- **Agent threads:** In a phase, the program runs agents. Each agent works in its own [session thread](managed-agents-session-threads.md), on a prompt that the program wrote. An agent in a run can be an inline agent, which the program defines itself, or a [predefined agent](managed-agents-multiagent-orchestration.md#predefined-and-inline-agents), which you list in the `predefined_agents` list of `workflows`. For what each thread shows, see [A run’s threads](#a-runs-threads).
+- **Agent threads:** In a phase, the program runs agents. Each agent works in its own [session thread](managed-agents-session-threads.md), on a prompt that the program wrote. An agent in a run can be an inline agent, which the program defines itself. It can also be a [predefined agent](managed-agents-multiagent-orchestration.md#predefined-and-inline-agents), which you list in the `predefined_agents` list of `workflows`. For what each thread shows, see [A run’s threads](#a-runs-threads).
 
 The program can do the following:
 
@@ -60,25 +67,25 @@ The program can do the following:
 
 When the run ends, the agent that the session runs gets a turn to read what the run did. It can then answer you or start another run. [Run events](#run-events) lists the cases where that turn comes later or doesn’t come.
 
-You can guide how a run does the work, for example how it splits the work and what it does when an agent fails. See [Tell the agent when to use a run](managed-agents-multiagent-orchestration.md#tell-the-agent-when-to-use-a-run).
+You can guide how a run does the work, for example, how it splits the work and what it does when an agent fails. See [Tell the agent when to use a run](managed-agents-multiagent-orchestration.md#tell-the-agent-when-to-use-a-run).
 
 There’s no approval step before a run starts: the agent starts a run in the same turn that it writes the workflow. To review a plan first, tell the agent to describe the run and wait for your approval. As a run starts, `workflow_run.created` shows its name, description, and phases. If a run starts that you didn’t approve, ask the agent to stop it (see [Interrupt a session with runs open](#interrupt-a-session-with-runs-open)).
 
 ## How a run moves through its states
 
-A run starts as running or as idle. Reaching the budget, for example, pauses a running run, which makes it idle; raising or removing the budget then makes it run again, unless an interrupt paused it too. A running run ends when its workflow completes, the agent stops it, it fails, its lifetime passes, or the session is archived. An idle run can end too, for example when the agent stops it or the session is archived.
+A run starts as running or as idle. Reaching the budget, for example, pauses a running run, which makes it idle. Raising or removing the budget then makes it run again, unless an interrupt paused it too. A running run ends when its workflow completes, the agent stops it, it fails, its lifetime passes, or the session is archived. An idle run can end too, for example, when the agent stops it or the session is archived.
 
-A run is **open** from its `workflow_run.created` event until its `workflow_run.status_ended` event, whether it’s running or idle. A run is idle while it’s paused, for example at the session’s budget. A run has a [lifetime](#limits), which the agent can set when it starts the run. Time that a run spends waiting on your client counts toward that lifetime. A pause doesn’t stop a run’s lifetime from passing, so a run that stays paused can end with `timeout_error`. The following events report a run’s start, its phases, and its end. A pause at the budget sends one too. A pause after an interrupt might send none. Every `workflow_run.*` event includes `workflow_run_id`, which is `None` only on a `workflow_run.error` when no run was created.
+A run is **open** from its `workflow_run.created` event until its `workflow_run.status_ended` event, whether it’s running or idle. A run is idle while it’s paused, for example, at the session’s budget. A run has a [lifetime limit](#limits), which the agent can set when it starts the run. Time that a run spends waiting on your client counts toward that lifetime. A pause doesn’t stop a run’s lifetime from passing, so a run that stays paused can end with `timeout_error`. The following events report a run’s start, its phases, and its end. A pause at the budget sends one too. A pause after an interrupt might send none. Every `workflow_run.*` event includes `workflow_run_id`, which is `None` only on a `workflow_run.error` when no run was created.
 
 ## Run events
 
-Run events arrive on the session’s event stream, which is the primary thread’s stream, and listing the session’s events returns them too. Run events don’t trigger [webhooks](managed-agents-webhooks.md). Status events from the run’s threads arrive on the same stream. Each names its thread in `session_thread_id`, and a run’s threads are the ones whose `session.thread_created` event had the run’s `workflow_run_id`.
+Run events arrive on the session’s event stream, which is the primary thread’s stream, and listing the session’s events returns them too. Run events don’t [trigger webhooks](managed-agents-webhooks.md). Status events from the run’s threads arrive on the same stream. Each names its thread in `session_thread_id`, and a run’s threads are the ones whose `session.thread_created` event had the run’s `workflow_run_id`.
 
 | Event | When it arrives | What to do |
 |----|----|----|
 | `workflow_run.created` | The agent started a run. Includes `workflow_run_id` (`wrun_…`), the run’s `name` and `description`, and `phases`, the phases the workflow declares, each with an `id`, a `name`, and a `description`. A `description` is `None` when the workflow gives none. `phases` is always present and can be empty. The run’s and phases’ `name` and `description` are text the model wrote, so they can repeat words from your request. A run’s `name` can also be one the server assigned. | Track the run as open. Show its `name`, and progress against `phases`. |
 | `workflow_run.status_running` | When the run starts its work, which can be a while after `created`, and each time it resumes after a pause at the budget. A resume after an interrupt might not send it. A run that starts idle might get `workflow_run.status_idle` first. | Show the run as running. |
-| `workflow_run.status_idle` | The run was paused, for example at the session’s budget. The event doesn’t say why. A pause after an interrupt might not send it. | To continue, see [Cost and budgets](#cost-and-budgets) or [Interrupt a session with runs open](#interrupt-a-session-with-runs-open). |
+| `workflow_run.status_idle` | The run paused, for example, at the session’s budget. The event doesn’t say why. A pause after an interrupt might not send it. | To continue, see [Cost and budgets](#cost-and-budgets) or [Interrupt a session with runs open](#interrupt-a-session-with-runs-open). |
 | `workflow_run.phase_started`, `workflow_run.phase_ended` | The workflow entered or left a phase, or the run’s end closed a phase that was still open. The end event doesn’t say whether the phase’s work completed. Both include `workflow_run_phase_id`. The end also has `phase_started_id`, the `id` of the start event it closes. Neither has the phase’s name: look it up by `workflow_run_phase_id` in the `phases` of `workflow_run.created`. | Update progress. Phases run one at a time, in the order of `phases`, each at most once, but the API doesn’t guarantee it. Match a phase’s end to its start by `phase_started_id`. Handle more than one open phase, a phase that isn’t in `phases`, and a listed phase that never starts, even in a run that completes. Every phase that starts also ends, before the run’s `workflow_run.status_ended`. |
 | `workflow_run.status_ended` | The run ended. Always the last of the run’s `workflow_run.*` events. Includes `result`. | Read `result` (next table). The agent then gets a turn to read how the run ended. At the budget, or while the primary thread waits on your client, that turn comes later. After an interrupt, that turn might not come: send a `user.message`, or read `result` yourself. After an archive or termination, it doesn’t come. |
 | `workflow_run.error` | The server reports an error of a run, or a start that it refused. A run that ends in `error` gets this event, with the same error, before its `workflow_run.status_ended`. Includes `error`: a `type` and a `message` that is safe to log. `workflow_run_id` is `None` when no run was created. | Log it, and don’t take it as the run’s end. If `workflow_run_id` is `None`, no run started. Otherwise keep tracking the run until its `workflow_run.status_ended`. |
@@ -87,7 +94,7 @@ Run events arrive on the session’s event stream, which is the primary thread�
 |----|----|
 | `{"type": "completed"}` | The workflow finished running. The result doesn’t say whether the work passed. A run can end `completed` even though work on its threads failed, or a thread couldn’t be created. To find failed work, read the events of each of the [run’s threads](#a-runs-threads). |
 | `{"type": "stopped"}` | The agent stopped the run, or the session was archived. The event doesn’t say which. Don’t treat these as the only causes. |
-| `error` with `timeout_error` | The run reached its [lifetime](#limits), which the agent can set. |
+| `error` with `timeout_error` | The run reached its [lifetime limit](#limits), which the agent can set. |
 | `error` with `program_error` | The workflow failed. Its code failed, or it broke a rule for workflows, other than a limit. Or one of the run’s threads failed, or couldn’t be created, and the workflow let that end the run. |
 | `error` with `thread_limit_error` | The run went over its [limit on the agents that a workflow starts](#limits). |
 | `error` with `unknown_error` | The server couldn’t continue the run, or the run went over one of the server’s other limits on workflows. |
@@ -157,18 +164,18 @@ The run’s last event reports how it ended:
 Each agent in a run works in its own [session thread](managed-agents-session-threads.md), which the server creates as the workflow needs it. You can list, read, and stream a run’s threads like any child thread, and answer their tool calls from the primary stream. To stop them, ask the agent to stop the run (see [Interrupt a session with runs open](#interrupt-a-session-with-runs-open)).
 
 - **Grouping:** A run’s thread has the run’s `workflow_run_id`, as does the `session.thread_created` event that announces it. Other threads, and the `session.thread_created` events that announce them, have `workflow_run_id` set to `None`.
-- **Agent:** `agent` shows the agent the thread runs. For an agent you listed in the [`predefined_agents` list of `workflows`](managed-agents-multiagent-orchestration.md#turn-on-dynamic-workflows) in `multiagent`, `agent` has that agent’s `id` and `version`, as on the thread of a subagent you listed. For an agent the workflow defines (an inline agent), `agent` has `type` `inline` and no `id` or `version`. It has the system prompt the workflow wrote, not the session agent’s. It also has the name and description the workflow gave it. The server assigns a name if the workflow gave none. It uses the model of the session agent, the agent the session runs. Its tools, MCP servers, and skills are a subset of the session agent’s. It gets all of them, but the API doesn’t guarantee that. Its tools keep their permission policies.
+- **Agent:** `agent` shows the agent the thread runs. For an agent you listed in the [`predefined_agents` list of `workflows`](managed-agents-multiagent-orchestration.md#turn-on-dynamic-workflows) in `multiagent`, `agent` has that agent’s `id` and `version`. The thread of a subagent you listed shows them too. For an agent the workflow defines (an inline agent), `agent` has `type` `inline` and no `id` or `version`. It has the system prompt the workflow wrote, not the session agent’s. It also has the name and description the workflow gave it. The server assigns a name if the workflow gave none. It uses the model of the session agent, the agent the session runs. Its tools, MCP servers, and skills are a subset of the session agent’s. It gets all of them, but the API doesn’t guarantee that. Its tools keep their permission policies.
 - **What the threads share:** A run’s threads work in the session’s sandbox, so every thread works with the same files. That includes the files of a memory store the session mounts. An agent the workflow defines uses its MCP servers with the credentials the session resolves for them. Each thread has its own conversation history.
-- **Events:** A run thread’s `session.thread_created`, `session.thread_status_running`, `session.thread_status_idle`, and `session.thread_status_terminated` events also arrive on the primary stream (see [Run events](#run-events)). Its message events stay on its own stream. Its thread webhooks are sent as for any child thread. For what the thread’s own stream records, see [Session thread events](managed-agents-session-threads.md#session-thread-events).
+- **Events:** A run thread’s `session.thread_created`, `session.thread_status_running`, `session.thread_status_idle`, and `session.thread_status_terminated` events also arrive on the primary stream (see [Run events](#run-events)). Its message events stay on its own stream. The server sends its thread webhooks as for any child thread. For what the thread’s own stream records, see [Session thread events](managed-agents-session-threads.md#session-thread-events).
 - **Phases:** No event or field says which phase a thread works in, and threads of one run can have the same `agent_name`. Follow a run’s progress by its phase events, and tell its threads apart by `session_thread_id`.
 - **Archiving:** The server archives each thread no later than the end of its run. It can archive one sooner, once the thread returns its result or the run finishes with it. If the thread is still running or waiting on your client at that point, the server stops it first. An archived thread stays in the thread list, with status `terminated`. You don’t need to archive a run’s threads yourself.
 - **Tools:** A run can create more than one thread for the same piece of work, so make the tools your agents call safe to call twice.
 
 
 
-You can ask the agent for the workflow that it wrote for your request. Wait until the run has ended and the session is `idle`. Then send a `user.message` that asks the agent to print the workflow that it started the run with, word for word, and not to start another run.
+You can ask the agent for the workflow that it wrote for your request. Wait until the run has ended and the session is `idle`. Then send a `user.message` that asks the agent to print that workflow word for word, and not to start another run.
 
-``` block
+```
 Print the workflow that you started the run with, word for word, in one code block. Do not start another run.
 ```
 
@@ -192,7 +199,10 @@ This sample follows a session from your message to the agent’s answer. It open
 
 - **Tracks each run** from its `workflow_run.created` to its `workflow_run.status_ended`, and prints each phase as it starts.
 - **Answers custom tool calls** when each `agent.custom_tool_use` arrives, because a run’s thread can wait on your client while the session stays `running`. If your agent’s tools [ask for confirmation](managed-agents-events-and-streaming.md#tool-confirmation), add a branch that answers each `agent.tool_use` or `agent.mcp_tool_use` whose `evaluated_permission` is `ask`. The sample has none, because a branch that allows every call would turn `always_ask` into always allow.
-- **Stops** when the [work is done](#know-when-the-work-is-done): no run is open, and the session goes idle with `end_turn`. It also stops if the session terminates. On an idle with any other stop reason except `requires_action`, such as `budget_reached`, `retries_exhausted`, or `refusal`, it prints the reason and stops, so handle those in your own code. It stops on `retries_exhausted` even when the server is about to start a new turn by itself. It keeps waiting on `requires_action`, and on `end_turn` while a run is open.
+- **Stops** when the [work is done](#know-when-the-work-is-done): no run is open, and the session goes idle with `end_turn`. It also stops in these cases:
+  - The session terminates.
+  - The session goes idle with any stop reason other than `end_turn` or `requires_action`, such as `budget_reached`, `retries_exhausted`, or `refusal`. The sample prints the reason and stops, so handle those in your own code. It stops on `retries_exhausted` even when the server is about to start a new turn by itself.
+- **Keeps waiting** on `requires_action`, and on `end_turn` while a run is open.
 
 cURL
 
@@ -287,9 +297,9 @@ with client.beta.sessions.events.stream(session_id) as stream:
 
 Send [`user.interrupt`](managed-agents-events-and-streaming.md#interrupt-the-agent) with no `session_thread_id`, or with the primary thread’s ID. It stops the agent’s turn. It ends no run. The session’s runs might pause or keep running, and their events might not show which. A paused run’s lifetime keeps passing, so the run can end with `timeout_error` while it’s paused.
 
-- **Waiting tool calls:** After the interrupt, a run thread’s tool call might still wait on your client. Answer each one. To cancel a call that asks for confirmation, deny it. To cancel a custom tool call, send a result with `is_error` set to `true` and a text in `content` that says why. While the session is `idle` with `requires_action`, a `user.message` returns 400, so answer the calls first.
-- **To stop the runs:** Send a `user.message` asking the agent to stop its runs. A stopped run ends with `result` `{"type": "stopped"}`. While the session is `idle` with `budget_reached`, a `user.message` returns 400 until you raise or remove the budget. Raising or removing it also resumes the runs that the budget paused, unless the interrupt also paused them.
-- **To continue:** Send a `user.message` asking the agent to continue its runs. After an interrupt, the runs might wait for this message. If the session is `idle` with `budget_reached`, raise or remove the budget first.
+- **Waiting tool calls:** After the interrupt, a run thread’s tool call might still wait on your client. Answer each one. To cancel a call that asks for confirmation, deny it. To cancel a custom tool call, send a result with `is_error` set to `true` and text in `content` that says why. While the session is `idle` with `requires_action`, a `user.message` returns 400, so answer the calls first.
+- **Stopping the runs:** Send a `user.message` asking the agent to stop its runs. A stopped run ends with `result` `{"type": "stopped"}`. While the session is `idle` with `budget_reached`, a `user.message` returns 400 until you raise or remove the budget. Raising or removing it also resumes the runs that the budget paused, unless the interrupt also paused them.
+- **Continuing the runs:** Send a `user.message` asking the agent to continue its runs. After an interrupt, the runs might wait for this message. If the session is `idle` with `budget_reached`, raise or remove the budget first.
 - **Run results:** A run that ends after the interrupt still sends `workflow_run.status_ended`.
 
 ## While a run is open
@@ -323,9 +333,9 @@ A run’s model requests count toward the [session’s budget](managed-agents-bu
 
 The server shortens a run’s or phase’s `name` to 64 characters and its `description` to 256. The server has other limits on workflows, and rules for them, that aren’t listed here. What you see depends on when the server finds the problem:
 
-| What happens | What you see |
+| What occurs | What you see |
 |----|----|
-| The workflow is over one of the other limits when the agent starts the run | The start is refused. You get a `workflow_run.error`, and no run. |
+| The workflow is over one of the other limits when the agent starts the run | The server refuses the start. You get a `workflow_run.error`, and no run. |
 | The run goes over one of the other limits later | You get a `workflow_run.error`, and then the run can end with `unknown_error`. |
 | The server finds after the start that the workflow breaks a rule for workflows, other than a limit | You get a `workflow_run.error`, and the run can then end with `program_error`. |
 
@@ -346,7 +356,7 @@ A run’s work counts toward rate limits that your organization already has.
 | Your client’s requests to retrieve or list the session, its threads, and their events | The read limit for [Managed Agents endpoints](managed-agents-reference.md#rate-limits) | Follow a run on the session’s event stream instead of polling. |
 | Model requests from a run’s threads | Your [Messages API rate limits](../Endpoints/rate-limits.md) for the model each thread uses, along with your other traffic | Leave room for a run in those limits, or [request higher limits](../Endpoints/rate-limits.md#requesting-higher-limits). |
 
-When a model request from one of a run’s threads is rate limited, or the model is overloaded, the thread’s own stream can get a `session.error` of type `model_rate_limited_error` or `model_overloaded_error`:
+A thread’s own stream can get a `session.error` when one of its model requests is rate limited or the model is overloaded. The error’s type is `model_rate_limited_error` or `model_overloaded_error`:
 
 - If its `retry_status.type` is `retrying`, the server is retrying the request, and the thread is still working.
 - If it’s `exhausted`, the thread has failed. If the workflow lets that failure end the run, the run ends with `program_error`, which doesn’t name the cause. Read the failed threads’ events to find it.
@@ -355,28 +365,61 @@ The server also limits how much all of your organization’s sessions do each mi
 
 ## Availability
 
-Dynamic workflows are available on every model.
+Dynamic workflows
 
-### API support
+Cloud platform
 
-[Managed Agents](managed-agents-overview.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Availability requirements for Dynamic workflows are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- All supported platforms
+Status  
+Beta
 
-### Required beta headers
+API  
+- Managed Agents
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Beta header  
+Requires
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+managed-agents-2026-04-01
 
-Header
+Models  
+- All models
 
-- `managed-agents-2026-04-01`
-  
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -390,8 +433,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

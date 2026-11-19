@@ -66,7 +66,7 @@ Getting Claude to write your evaluations (evals) for you is a powerful tool and 
 - Claude may reference “this document” or “this passage” without specifying what passage it means. This is problematic because when we stitch together multiple documents to form the long context, Claude has no way to know which document the question is asking about.
 - There’s also the risk of going too far and making the questions so explicit that they contain the answer. For example, “What is the publication date of the Department of the Interior’s July 2, 2023 notice about additional in-season actions for fisheries?” would be an ineffective question.
 
-To help navigate these pitfalls, we used a prompt template that includes two sample meeting chunks along with hand-written questions to act as few-shot question writing examples, as well as some writing guidelines to get Claude to specify details about the passage. The template and all other prompts used in this experiment are available [here](https://www-cdn.anthropic.com/d1198e53f52c64b6f647fa49fc3399c7eafb2b78/Prompt_Eng_pdf.pdf).
+To help navigate these pitfalls, we used a prompt template that includes two sample meeting chunks along with hand-written questions to act as few-shot question writing examples, as well as some writing guidelines to get Claude to specify details about the passage. The template and all other prompts used in this experiment are available [here](example-passage1-department-of-housing-and-urban-development.md).
 
 ## Evaluation
 

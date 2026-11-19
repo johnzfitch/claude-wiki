@@ -2,7 +2,7 @@
 title: "Users - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/users"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:45Z"
+fetched_at: "2026-11-18T06:27:25Z"
 tags: ["api"]
 ---
 
@@ -50,6 +50,18 @@ Update a member's organization role.
 Remove a member from the organization.
 
 ##### Models
+
+
+
+CannotRemoveLastMemberErrorDetails object{ error_code }
+
+
+
+The user is the organization's only member. Add another member before removing this one.
+
+error_code: "cannot_remove_last_member"
+
+
 
 
 

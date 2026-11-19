@@ -2,8 +2,7 @@
 title: "Our sample covers interactive Claude Code sessions between October 2025"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/7426c33b0e75ab4771c465d30d5bc1019bdd0c9c.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:40:37Z"
-last_modified: "Mon, 22 Jun 2026 21:41:30 GMT"
+fetched_at: "2026-11-18T06:28:35Z"
 tags: ["claude-code", "news-research"]
 ---
 

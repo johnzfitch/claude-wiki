@@ -2,7 +2,7 @@
 title: "This system card describes Claude Sonnet 5, the latest model in Anthropic’s…"
 source_url: "https://www-cdn.anthropic.com/480e0bb54327b9622282e9c39a83a4f490ed377e.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-13T06:29:18Z"
+fetched_at: "2026-11-18T06:28:48Z"
 tags: ["news-research"]
 ---
 

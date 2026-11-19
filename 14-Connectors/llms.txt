@@ -11,6 +11,8 @@ Path: 14-Connectors/11176164.md
 
 # Use connectors to extend Claude's capabilities
 
+Updated today
+
 
 This guide explains how to enable and use connectors with Claude to enhance its capabilities.
 
@@ -179,6 +181,8 @@ To manage your connected services:
 2.  View all your connected services in the **Connectors** section.
 
 3.  For each service, you can disconnect it, modify connection settings, or review permissions and access levels.
+
+To have Claude ask before each use of a specific connector tool in chat and Cowork, see **[Have Claude always ask before using a connector tool](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_b24dec5b5a)**.
 
 ------------------------------------------------------------------------
 
@@ -851,7 +855,7 @@ Skills you install from the directory are view-only. You can use them, but you c
 
 On Team and Enterprise plans, the "Your organization" tab lists skills available to your entire organization. This includes skills that owners have provisioned centrally and skills that colleagues have published to the organization. You can't fully delete these skills from your list. Only an organization owner can remove them from the directory.
 
-**Note:** Skills and plugins shared with you directly by a colleague don’t appear in the directory, they go straight to your skills list. See **[Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)** and **[Use plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)** for details on how shared skills and plugins work.
+**Note:** Skills and plugins shared with you directly by a colleague don’t appear in the directory, they go straight to your skills list. See **[Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)** and **[Use plugins in Claude](../15-Claude-AI-Features/use-plugins-in-claude.md)** for details on how shared skills and plugins work.
 
 ### Connectors
 
@@ -1024,7 +1028,7 @@ Path: 14-Connectors/claude-and-slack.md
 
 # Claude and Slack
 
-Access Claude directly into Slack so you can get help in channels and threads, or connect your Slack workspace to Claude for searching conversations and pulling context when you need it.
+Access Claude directly in Slack so you can get help in channels and threads, or connect your Slack workspace to Claude for searching conversations and pulling context when you need it.
 
 - 
 
@@ -1098,32 +1102,34 @@ Get started with Claude and Slack.
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleNov 5, 2026
+ArticleNov 17, 2026
 
-### Introducing Personal Finance in Claude
-
-Ask Claude about your money and get straight answers from the accounts you connect.
-
-
-ArticleNov 5, 2026
-
-### More visibility and control over Claude Enterprise for security teams
-
-Claude EnterpriseClaude apps
-
-
-ArticleNov 4, 2026
-
-### New agents and products for security, productivity, and creative work on Claude Marketplace
-
-
-ArticleNov 2, 2026
-
-### Make long-running agents faster with message threads
-
-New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
+### Linked billing on the Claude Platform
 
 Claude Platform
+
+
+ArticleNov 12, 2026
+
+### Operate Claude Managed Agents inside your security perimeter
+
+Introducing self-hosted Claude Managed Agents. Now you can run agents in your own environment, whether that’s in your own cloud or on-premise. You host the agents, credentials, and session history, and choose where requests to Claude are sent.
+
+Claude PlatformClaude Managed Agents
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude for Manufacturing
+
+A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude Meetings
+
+Add Claude to your video call and get the work started while you talk
 
 ---
 
@@ -1151,8 +1157,6 @@ Build slides in your template, edit what you've selected, and generate native ch
 ## Claude for Word
 
 Edit with tracked changes, respond to comment threads, and update content using company styles.
-
-Beta
 
 ## Claude for Outlook
 
@@ -1212,7 +1216,7 @@ Find 30 minutes with everyone on this thread next week
 
 Blog post
 
-Claude for Excel, PowerPoint, and Word are now generally available on all paid plans, with Claude for Outlook joining in beta.
+Claude for Excel, PowerPoint, Word, and Outlook are generally available on all paid plans.
 
 [Read blog](https://www.claude.com/resources/articles/collaborate-with-claude-across-excel-powerpoint-word-and-outlook)
 
@@ -1298,7 +1302,7 @@ Pull context from outside sources directly from the sidebar.
 
 ### Where is this available?
 
-Claude for Excel, PowerPoint, and Word are generally available on all paid Claude plans. Claude for Outlook is in beta on all paid plans.
+Claude for Excel, PowerPoint, Word, and Outlook are generally available on all paid Claude plans.
 
 ### Can I connect through my cloud provider?
 
@@ -1320,10 +1324,12 @@ No. Drafts and calendar invites open in Outlook's native compose form and wait f
 
 ## Connect to Microsoft 365 | Claude Help Center
 
-Source: https://support.claude.com/en/articles/15183774
-Path: 14-Connectors/connect-to-microsoft-365-claude-help-center.md
+Source: https://support.claude.com/en/articles/15183774-connect-to-microsoft-365
+Path: 14-Connectors/connect-to-microsoft-365.md
 
 # Connect to Microsoft 365
+
+Updated today
 
 
 Connecting Microsoft 365 lets Claude search, analyze, and act on your Outlook email, calendar, and your OneDrive files, plus SharePoint and Teams with a work or school account. Ask Claude for what you need, and it pulls the right information or takes the action.
@@ -1406,7 +1412,13 @@ When Claude sends an email, it includes a message header identifying it as agent
 
 **Note:** Attachments aren't currently supported in write tools. Claude can't send, forward, or draft emails with attachments.
 
-**Note:** Your admin turns on each Teams write tool separately. Sending a chat message and posting or replying in a channel always ask you to confirm before Claude sends anything on Team and Enterprise plans.
+**Note:** On Team and Enterprise plans, your admin can set each Teams write tool separately. If your organization added the Microsoft 365 connector before the Teams write tools launched in September 2026, these tools may be blocked by default until your admin turns them on.
+
+On Team and Enterprise plans, in chat and Cowork, Claude asks you to confirm each time before it sends a chat message or posts or replies in a channel, unless your admin has set the Teams tool for that action to **Always allow** on or after November 9, 2026, or your organization added the Microsoft 365 connector for the first time after November 9, 2026. In those cases, Claude asks by default, and you can choose **Always allow** for the tool if your admin allows it. If you chose **Always allow** for the tool in the past, that earlier choice can take effect right away, so Claude can stop asking you.
+
+On or after December 9, 2026, you can choose **Always allow** for any of these tools your admin sets to **Always allow**.
+
+These exceptions don't apply in organizations that have enabled HIPAA. On Free, Pro, Max, and Ultra plans, outside “Automatically approve” mode, Claude asks by default, and you can choose **Always allow** for these tools, as for any other tool. "Automatically approve" mode and scheduled tasks are different: if your admin sets one of these tools to **Always allow**, Claude may use it without asking anyone first. This applies in "Automatically approve" mode and in some scheduled tasks, such as a cloud scheduled task set to "Automatically approve" or a Claude Code routine.
 
 Claude can always search and analyze your data. Your admin decides whether Claude can also take actions like sending email, updating your calendar, creating files, or sending Teams messages. Claude can't change Teams settings or permissions.
 
@@ -1456,11 +1468,15 @@ Yes. Claude can search shared mailboxes you have delegate access to in Microsoft
 
 **Why don't I see write tools?**
 
-Write tools require extra setup on the admin side: a Microsoft Entra administrator needs to consent to updated permissions, and your organization needs to enable write tools for your account. If you connected before write tools launched, ask your admin to complete both steps. For details, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
+Write tools require extra setup on the admin side: a Microsoft Entra administrator needs to consent to updated permissions, and your organization needs to enable write tools for your account. If you connected before write tools, or the Teams write tools, launched, ask your admin to complete both steps. On or after December 9, 2026, write tools that are still blocked by default will be turned on and set to **Needs approval**, unless your admin has set them, or the whole connector, to **Blocked**. For details, see **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector)**.
 
-**Why does Claude ask me to confirm before sending a Teams message?**
+**Why does Claude ask me to confirm before it sends or changes something?**
 
-Sending a chat message and posting or replying in a channel always require your confirmation. Your admin can't set these to send automatically. Starting a new chat can be set to run without confirmation if your admin allows it.
+By default, outside “Automatically approve” mode, in chat and Cowork, Claude asks you to confirm each time it sends or forwards an email, sends a Teams message, creates, changes, deletes, or responds to a calendar event, or sets an automatic reply. In **[“Automatically approve” mode](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)**, these actions can run without asking you, unless an automated check flags them as risky or your organization requires approval. The check can miss risky actions. To approve them yourself, use Manual or set the tool's permission to **["Always ask"](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)** if that option is available. On Free, Pro, Max, and Ultra plans, you can choose **Always allow** for any of these tools, and Claude will then use it without asking you each time.
+
+On Team and Enterprise plans, Claude asks each time for these tools, unless your admin has set that tool to **Always allow** on or after November 9, 2026, or your organization added the Microsoft 365 connector for the first time after November 9, 2026. In those cases, you can choose **Always allow** for the tool if your admin allows it. If you chose **Always allow** for the tool in the past, that earlier choice can take effect right away, so Claude can stop asking you. These exceptions don't apply in organizations that have enabled HIPAA.
+
+"Automatically approve" mode and scheduled tasks are different: if your admin sets one of these tools to Always allow, Claude may use it without asking anyone first. This applies in "Automatically approve" mode and in some scheduled tasks, such as a cloud scheduled task set to "Automatically approve" or a Claude Code routine.
 
 **Can Claude access private Teams channels?**
 
@@ -1469,7 +1485,6 @@ Only ones you're a member of. Claude mirrors your Microsoft 365 permissions, so 
 **What if I try to connect before my admin has set things up?**
 
 You'll see an error indicating that an administrator must grant app permissions before you can connect. Ask your organization’s Microsoft Entra Global Administrator to complete consent. If you're on a Team or Enterprise plan, your Claude organization owner also needs to enable Microsoft 365 in organization settings.
-
 
 ------------------------------------------------------------------------
 
@@ -1521,7 +1536,7 @@ Write tools are included. Claude can always search and analyze your data, and wh
 
 - Create, update, rename, move, and delete files in OneDrive (deleted files go to the recycle bin).
 
-In chat, Claude asks before it sends, creates, changes, moves, or deletes anything. Searching and reading run without asking. You can change each tool under **Tool permissions**.
+In chat, outside “Automatically approve” and “Skip all approvals” modes, Claude asks before it sends, creates, changes, moves, or deletes anything. In **[“Automatically approve” mode](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)**, these actions can run without asking you, unless an automated check flags them as risky or your organization requires approval. The check can miss risky actions. To approve them yourself, use Manual or set the tool's permission to **["Always ask"](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)** if that option is available. Searching and reading run without asking. You can change each tool under **Tool permissions**.
 
 Emails Claude sends, forwards, or drafts include a header identifying the emails as agent-initiated. Drafts Claude didn’t create and calendar invitations aren’t tagged. Write tools are subject to per-user limits.
 
@@ -1587,7 +1602,6 @@ Example queries:
 
 Examples that name SharePoint or Teams need a work or school account.
 
-
 ------------------------------------------------------------------------
 
 ## Supported file types
@@ -1603,7 +1617,6 @@ When reading files from SharePoint and OneDrive, Claude can open these formats:
 Files in any other format can't be read. They still appear in search results because they're ordinary files in your libraries, but when Claude tries to open one, you'll see a "mime type '...' is not allowed" error.
 
 **Note:** OneNote isn't supported. With a work or school account, notebooks show up in search results, but read attempts return a "mime type 'application/msonenote' is not allowed" error. To bring OneNote content into Claude, export pages or sections to Word or PDF in the same library.
-
 
 ------------------------------------------------------------------------
 
@@ -1633,7 +1646,6 @@ You can also enable or disable Microsoft 365 in a specific conversation.
 
 On Free, Pro, Max, and Ultra plans, to switch between a work or school account and a personal account, disconnect and connect again.
 
-
 ------------------------------------------------------------------------
 
 ## What Claude can access
@@ -1645,7 +1657,6 @@ Microsoft 365 stays under your control once connected. A few things to keep in m
 - **On your request.** Claude accesses Microsoft 365 when you ask, or when a scheduled task you set up needs it.
 
 - **You can disconnect any time.** Use the steps for your account to remove Claude's access.
-
 
 ------------------------------------------------------------------------
 
@@ -1663,6 +1674,8 @@ Microsoft 365 stays under your control once connected. A few things to keep in m
 
 5.  Search by exact file name or unique keywords from the document.
 
+6.  If SharePoint’s own search finds a file but Claude doesn’t, ask your Microsoft 365 admin to see **[Claude doesn’t find files that SharePoint search finds](https://support.claude.com/en/articles/12542951-set-up-the-microsoft-365-connector#h_cfbc8cb240)**.
+
 ### Search results are incomplete or irrelevant
 
 - Be specific about what you're looking for.
@@ -1674,7 +1687,6 @@ Microsoft 365 stays under your control once connected. A few things to keep in m
 - Break complex questions into simpler, more focused ones.
 
 - Double-check spelling of names, projects, or technical terms.
-
 
 ------------------------------------------------------------------------
 
@@ -1720,9 +1732,9 @@ This article walks admins through enabling the Microsoft 365 connector for their
 
 The Microsoft 365 connector is available on all Claude plans: Free, Pro, Max, Ultra, Team, and Enterprise.
 
-For end-user instructions on connecting and using Microsoft 365 once setup is complete, see **[Connect to Microsoft 365](connect-to-microsoft-365-claude-help-center.md)**.
+For end-user instructions on connecting and using Microsoft 365 once setup is complete, see **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774)**.
 
-**Important:** This article covers work and school accounts, which require a Microsoft Entra tenant. Personal Microsoft accounts need no admin setup and aren't shown on Team and Enterprise plans. Learn more in **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365#h_cffabf2c6c)**.
+**Important:** This article covers work and school accounts, which require a Microsoft Entra tenant. Personal Microsoft accounts need no admin setup and aren't shown on Team and Enterprise plans. Learn more in **[Connect to Microsoft 365](connect-to-microsoft-365.md#h_cffabf2c6c)**.
 
 ------------------------------------------------------------------------
 
@@ -1736,7 +1748,7 @@ Two things need to happen before anyone in your organization can connect Microso
 
 3.  **To enable write tools:** A Microsoft Entra administrator consents to the updated permission set, and you enable write tools for your organization. See **[Enable write tools](#h_a51d877afd)** below.
 
-After completing these steps, members can connect Microsoft 365 to their own Claude accounts following the steps in **[Connect to Microsoft 365](connect-to-microsoft-365-claude-help-center.md)**.
+After completing these steps, members can connect Microsoft 365 to their own Claude accounts following the steps in **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774)**.
 
 ## Enable the connector for your organization
 
@@ -1862,13 +1874,71 @@ The connector's permission set now includes additional Microsoft Graph scopes to
 
 **2. Enable write tools for your organization**
 
-If your organization was using the connector before write tools launched, they will be blocked by default. Enable them for everyone by going to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, finding “Microsoft 365,” and setting the appropriate permissions. Enterprise plans can enable them for a subset of users through **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**. For Microsoft Teams specifically, set each Teams write tool individually: the send, post, and reply tools can be set to Ask or Blocked (members confirm each send), and starting a new chat can also be set to Allow. The connector-wide "all tools" permission on its own doesn't turn these on.
+Go to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, find “Microsoft 365,” and choose a setting for each write tool: **Always allow**, **Needs approval**, or **Blocked**. Your changes apply as soon as you save. Enterprise plans can enable write tools for a subset of users through **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**.
+
+For Microsoft Teams specifically, set each Teams write tool individually: the send, post, and reply tools can be set to **Needs approval** or **Blocked** (members confirm each send), and starting a new chat can also be set to **Always allow**. If your organization added the Microsoft 365 connector for the first time after November 9, 2026, the send, post, and reply tools can also be set to **Always allow**, and members can then choose **Always allow** for them. Removing the connector and adding it again usually keeps your organization's original install date.
+
+If you see a notice about these tools, you can set them to **Always allow** now in **Review write tools**, in **Review tool restrictions**, or on the **Tools** tab. The limit ends right away for each tool you set to **Always allow**, and members can then choose **Always allow** for it. Some members may have chosen **Always allow** for that tool in the past. That earlier choice can take effect right away, so Claude can stop asking them. Outside "Automatically approve" mode, Claude asks everyone else by default until they choose it.
+
+If you have more than one Microsoft 365 connector, save the tool on each one. An **Always allow** saved before November 9, 2026 doesn't end the limit until you save it again. For the rest of these tools, members must still approve each use until the limit is removed on or after December 9, 2026. Any of these tools you haven't set by then will change to **Needs approval**, unless the whole connector is set to **Blocked**.
+
+Changes you save apply right away. A tool set to **Always allow** turns on right away if it was blocked by default. With **Always allow**, Claude may use a tool without asking anyone first, including in "Automatically approve" mode and in some scheduled tasks, such as a cloud scheduled task set to "Automatically approve" or a Claude Code routine. Scheduled tasks can lose access to tools on **Needs approval**. In Cowork, members can choose **Always allow** for write tools only when the organization setting **Allow “Always allow” for connector tools** is on.
+
+Setting a connector's default restriction to **No restriction** doesn't turn on a tool that is blocked by default.
+
+Organizations that have enabled HIPAA aren't part of these changes to default blocks and limits: they don't get a notice, and neither setting **Always allow** nor adding the connector for the first time ends this limit.
+
+If your Team or Enterprise organization added the connector before November 9, 2026, two limits apply until at least December 9, 2026:
+
+- If your organization was using the connector before write tools or the Teams write tools launched, some write tools are blocked by default until at least December 9, 2026. To turn them on sooner, go to **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**, find "Microsoft 365," and choose a setting for each tool. On or after December 9, 2026, any tool that is still blocked by default will be set to **Needs approval**, unless the whole connector is set to **Blocked**. If one of these tools is among the 11 Outlook, Calendar, and Teams tools with a limit that Anthropic will remove on or after that date, you can set it to **Always allow** now. It turns on right away. Once it's saved on each of your Microsoft 365 connectors, the limit ends for that tool, and members can choose **Always allow** for it. Claude may then use it without asking anyone first, including in “Automatically approve” mode and in some scheduled tasks, such as a cloud scheduled task set to “Automatically approve” or a Claude Code routine. Scheduled tasks can lose access to tools on **Needs approval**. Organizations that have enabled HIPAA aren't part of these changes to default blocks and limits. Enterprise plans can enable write tools for a subset of users through **[custom roles](../17-Billing-Plans/manage-custom-roles-on-enterprise-plans.md#h_979e558d00)**.
+
+- Users can't choose **Always allow** for 11 tools, so in chat and Cowork, they confirm each use. These are the tools that send email or Teams messages, create, change, delete, or respond to calendar events, or set automatic replies. Starting a new Teams chat is not one of them and can be set to **Always allow**.
+
+Both limits end on or after December 9, 2026. See **[Coming on or after December 9, 2026: changes to write tools](#h_2f203e56aa)** below.
 
 **3. Verify**
 
 Once enabled, ask Claude to perform a low-risk write action, such as "Draft an email to myself, but don't send it," to confirm write tools are active.
 
 **Note:** Emails Claude sends include an attribution header identifying them as agent-initiated. File writes, calendar writes, and Teams messages aren't currently tagged. When Claude creates or updates a calendar event, Microsoft 365 automatically sends attendees an invitation or update notice. Attachments aren’t supported in write tools, so sending, forwarding, and drafting all reject messages with attachments. Write tools are also subject to per-user limits on writes, sends, and recipients.
+
+## Coming on or after December 9, 2026: changes to write tools
+
+This applies to Team and Enterprise organizations that added the Microsoft 365 connector before November 9, 2026.
+
+On or after December 9, 2026, Anthropic will remove a limit on 11 tools. Until then, in chat and Cowork, Claude asks users before every use of these tools.
+
+**The 11 tools:**
+
+- **Outlook:** send an email, forward an email, send a draft, set automatic replies
+
+- **Calendar:** create, change, delete, or respond to an event
+
+- **Teams:** send a chat message, post in a channel, reply in a channel
+
+**What you can do now:**
+
+- Choose a setting for any write tool. Your changes apply as soon as you save.
+
+- If you see a notice about these tools, you can set them to **Always allow** now. Users must still approve each use until the limit is removed.
+
+- A blocked tool turns on right away when you set it to **Always allow** or **Needs approval**.
+
+- A cloud scheduled task set to **Automatically approve**, or a Claude Code routine, can use a tool set to **Always allow** without asking anyone. Scheduled tasks can lose access to tools on **Needs approval**.
+
+**When the limit is removed:**
+
+- Any of the 11 tools you have not set individually will be set to **Needs approval**, even if the connector's default restriction is **No restriction**.
+
+- Settings you have saved are kept. A tool you set to **Blocked** stays **Blocked**.
+
+- Users can choose **Always allow** for one of these tools only if you set that tool to **Always allow**. In Cowork, **Allow "Always allow" for connector tools** must also be on. It is off by default.
+
+- Write tools that are still blocked by default, and that you have not changed, will be turned on and set to **Needs approval**. To keep a tool off, set it to **Blocked**.
+
+- If you have set the whole connector to **Blocked**, its tools stay blocked.
+
+Removing the connector and adding it again doesn't remove the limit. Organizations that add the connector for the first time after November 9, 2026 don't have it.
 
 ------------------------------------------------------------------------
 
@@ -2022,6 +2092,34 @@ The connector’s permission set now includes `Team.ReadBasic.All`, which Claude
 
 3.  Have the member disconnect and reconnect Microsoft 365 in **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
+### Claude doesn’t find files that SharePoint search finds
+
+This only applies when SharePoint’s own search finds a file and Claude doesn’t. When Claude searches SharePoint and OneDrive files, it adds `isDocument=true` to every query, so it only finds files that your tenant’s search index marks as documents. If the index doesn’t mark some files, Claude won’t find them, and no error is shown.
+
+To check whether this is the cause:
+
+1.  Sign in to Graph Explorer as a user who can open a missing file. Consent to `Files.Read.All`, if you’re asked.
+
+2.  Run this search, replacing `budget` with a word from the missing file. Choose a word that few other files contain:
+
+    1.  POST https://graph.microsoft.com/v1.0/search/query 
+            {"requests":[{"entityTypes":["driveItem"],"query":{"queryString":"
+            (budget)"},"size":100,"sortProperties":
+            [{"name":"LastModifiedTime","isDescending":true}]}]}
+
+3.  Run it again with the document filter added, using the same word:
+
+    1.  POST https://graph.microsoft.com/v1.0/search/query 
+            {"requests":[{"entityTypes":["driveItem"],"query":{"queryString":"(budget) AND
+            isDocument=true"},"size":100,"sortProperties":
+            [{"name":"LastModifiedTime","isDescending":true}]}]}
+
+4.  Compare the results:
+
+    1.  If a Word, Excel, PowerPoint, or PDF file you expected appears only in the first search, your search index isn’t marking it as a document. Open a case with Microsoft Support and share both searches.
+
+    2.  If the file doesn’t appear in either search, this isn’t the cause.
+
 ### Conditional Access is blocking the connection
 
 A Conditional Access block shows up in one of three ways:
@@ -2086,7 +2184,7 @@ Yes. When enterprise search is enabled, it can query Microsoft 365 alongside oth
 
 ### What file types can the connector read?
 
-Claude reads Word, Excel, PowerPoint (including older .doc, .xls, and .ppt files), PDF, and plain-text formats such as .txt, .md, and .csv from SharePoint and OneDrive. Other formats, including OneNote, can't be read. For the full list, see **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365#h_ddeb82923f)**.
+Claude reads Word, Excel, PowerPoint (including older .doc, .xls, and .ppt files), PDF, and plain-text formats such as .txt, .md, and .csv from SharePoint and OneDrive. Other formats, including OneNote, can't be read. For the full list, see **[Connect to Microsoft 365](connect-to-microsoft-365.md#h_ddeb82923f)**.
 
 ### Can the integration modify Microsoft 365 data?
 
@@ -2362,6 +2460,8 @@ For Claude Platform, contact your Anthropic sales team. Review **[Compliance API
 
 - **Twine Security:** Twine's AI digital employee, Alex, uses the Compliance API to bring identity governance to Claude Enterprise - mapping who has access, which roles, groups, and connectors they hold, and flagging risks such as accounts provisioned outside the identity provider, with remediation routed for human approval. To set up this integration, see the **[Twine Security setup guide](https://www.twinesecurity.com/resources/twine-anthropic-governing-claude-enterprise)**.
 
+- **Upwind Security:** Upwind uses the Compliance API to stream Claude Enterprise conversations, audit logs, and user accounts into its platform, giving security teams visibility into Claude usage alongside the rest of their cloud and AI stack for ongoing monitoring, detection, and response. To set up this integration, see the **[Upwind Security setup guide](https://www.upwind.io/integrations/anthropic-claude)**.
+
 - **Valence Security:** Valence integrates with the Compliance API to give security teams visibility into how Claude Enterprise and Claude Platform are used, including users, agents, MCP servers, connectors, and tools. Valence correlates this activity with identities and configurations across the rest of the environment, helping teams detect risky behavior and remediate exposure. To set up this integration, see the **[Valence Security setup guide](https://www.valencesecurity.com/resources/blogs/securing-agentic-identities-in-claude-the-valence-integration-with-the-compliance-api)**.
 
 - **Vanta:** Vanta uses the Compliance API to build an AI inventory from Claude Enterprise chats and Claude Code and Cowork sessions in its AI Governance product, so compliance teams can monitor Claude usage and produce audit-ready reports against their policies and controls. Note on availability: This integration is available in beta to select Vanta AI Governance customers using Claude Enterprise, with general availability planned for January 2027. To set up this integration, see the **[Vanta setup guide](https://www.vanta.com/integrations/claudes-compliance-api)**.
@@ -2424,7 +2524,7 @@ Remote MCP servers give models access to internet-hosted tools and data, transfo
 
 When you add a custom connector, Claude connects to your remote MCP server from Anthropic's cloud infrastructure, rather than from your local device. This is true across every Claude client, including claude.ai, Claude Desktop, Cowork, and the mobile apps.
 
-This means your MCP server must be reachable over the public internet from Anthropic's IP ranges. Servers hosted on a private corporate network, behind a VPN, or blocked by a firewall won't connect, even if you can reach them from your own machine.
+This means your MCP server must be reachable over the public internet from Anthropic's IP ranges. Servers hosted on a private corporate network, behind a VPN, or blocked by a firewall won't connect, even if you can reach them from your own machine. Your server must also be reachable on the standard HTTPS port (443). Claude can't connect to a URL that specifies another port (for example, [https://example.com:8443/mcp](https://example.com:8443/mcp)).
 
 ### If your server is on a private network
 
@@ -2432,7 +2532,7 @@ You’ll need to allowlist Anthropic's IP addresses in your firewall so inbound 
 
 ### Why this applies to Cowork and Claude Desktop
 
-Even though Cowork and Claude Desktop run on your computer, remote connectors are configured and brokered through your Claude account. The connection to your MCP server originates from Anthropic's servers, not from your machine's network interface. Local MCP servers configured in Claude Desktop via `claude_desktop_config.json` are a separate mechanism and do use your local network, but those aren't available in Cowork or claude.ai.
+Even though Cowork and Claude Desktop run on your computer, remote connectors are configured and brokered through your Claude account. The connection to your MCP server originates from Anthropic's servers, not from your machine's network interface. Local MCP servers configured in Claude Desktop via `claude_desktop_config.json` are a separate mechanism and do use your local network. They aren't available in claude.ai or in Cowork sessions that run in the cloud; a Cowork session running locally on your device can use them.
 
 ------------------------------------------------------------------------
 
@@ -2454,13 +2554,13 @@ Before members of Team and Enterprise plans can configure custom connectors, an 
 
 4.  Enter a name for the connector. This is the name users see in the connectors list.
 
-5.  Add your connector's remote MCP server URL. Click “Continue.”
+5.  Add your connector's remote MCP server URL exactly as the provider documents it, including any path (for example, [https://example.com/mcp](https://example.com/mcp)). Click “Continue.”
 
 6.  Review the authentication settings Claude detected, and change them if your server needs something different. Click “Continue.”
 
 7.  Under **Authentication**, choose how people connect to the server: “Sign in now,” “Sign in when needed,” or “No sign in.”
 
-8.  Under **OAuth client**, choose how Claude identifies itself to the server’s authorization server: “Use Claude’s published identity (Recommended),” “Register automatically,” or “Use your own OAuth client.” **Note:** You won’t see the **OAuth client** setting if you selected "No sign in" under **Authentication**.
+8.  Under **OAuth client**, choose how Claude identifies itself to the server’s authorization server: “Use Claude’s published identity (Recommended),” “Register automatically,” or “Use your own OAuth client.” **Note:** You won’t see the **OAuth client** setting if you selected "No sign in" under **Authentication**. Choose "Use your own OAuth client" only if the server's documentation says it requires a client you register yourself. Enter both the Client ID and the Client Secret if the server issued a secret, and register [https://claude.ai/api/mcp/auth_callback](https://claude.ai/api/mcp/auth_callback) as the redirect URL for that client.
 
 9.  Under **Request headers**, add fixed credentials such as API keys that Claude sends on every request if your MCP server authenticates with an API key, bearer token, or other fixed credential instead of OAuth. Learn how to **[authenticate with request headers](https://claude.com/docs/connectors/custom/add-unlisted#authenticate-with-request-headers).**
 
@@ -2486,13 +2586,13 @@ If you are using an individual Pro or Max plan, follow these steps to add a cust
 
 3.  Enter a name for the connector. This is the name users see in the connectors list.
 
-4.  Add your connector's remote MCP server URL. Click “Continue.”
+4.  Add your connector's remote MCP server URL exactly as the provider documents it, including any path (for example, [https://example.com/mcp](https://example.com/mcp)). Click “Continue.”
 
 5.  Review the authentication settings Claude detected, and change them if your server needs something different. Click “Continue.”
 
 6.  Under **Authentication**, choose how people connect to the server: “Sign in now,” “Sign in when needed,” or “No sign in.”
 
-7.  Under **OAuth client**, choose how Claude identifies itself to the server’s authorization server: “Use Claude’s published identity (Recommended),” “Register automatically,” or “Use your own OAuth client.” **Note:** You won’t see the **OAuth client** setting if you selected "No sign in" under **Authentication**.
+7.  Under **OAuth client**, choose how Claude identifies itself to the server’s authorization server: “Use Claude’s published identity (Recommended),” “Register automatically,” or “Use your own OAuth client.” **Note:** You won’t see the **OAuth client** setting if you selected "No sign in" under **Authentication**. Choose "Use your own OAuth client" only if the server's documentation says it requires a client you register yourself. Enter both the Client ID and the Client Secret if the server issued a secret, and register [https://claude.ai/api/mcp/auth_callback](https://claude.ai/api/mcp/auth_callback) as the redirect URL for that client.
 
 8.  Under **Request headers**, add fixed credentials such as API keys that Claude sends on every request if your MCP server authenticates with an API key, bearer token, or other fixed credential instead of OAuth. Learn how to **[authenticate with request headers](https://claude.com/docs/connectors/custom/add-unlisted#authenticate-with-request-headers)**.
 
@@ -2510,7 +2610,7 @@ You can remove a custom connector by following these steps:
 
 1.  Navigate to **[Customize \> Connectors](https://claude.ai/customize/connectors)**.
 
-    1.  Team and Enterprise Owners can do this on their organization's behalf in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
+    1.  Team and Enterprise Owners and Primary Owners can do this on their organization's behalf in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**. On Enterprise plans, people with a custom role that includes Manage access to Libraries can too.
 
 2.  Locate the "Connectors" section.
 
@@ -2833,32 +2933,34 @@ Integrations and Research are now available on the Pro, Max, Ultra, Team, and En
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleNov 5, 2026
+ArticleNov 17, 2026
 
-### Introducing Personal Finance in Claude
-
-Ask Claude about your money and get straight answers from the accounts you connect.
-
-
-ArticleNov 5, 2026
-
-### More visibility and control over Claude Enterprise for security teams
-
-Claude EnterpriseClaude apps
-
-
-ArticleNov 4, 2026
-
-### New agents and products for security, productivity, and creative work on Claude Marketplace
-
-
-ArticleNov 2, 2026
-
-### Make long-running agents faster with message threads
-
-New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
+### Linked billing on the Claude Platform
 
 Claude Platform
+
+
+ArticleNov 12, 2026
+
+### Operate Claude Managed Agents inside your security perimeter
+
+Introducing self-hosted Claude Managed Agents. Now you can run agents in your own environment, whether that’s in your own cloud or on-premise. You host the agents, credentials, and session history, and choose where requests to Claude are sent.
+
+Claude PlatformClaude Managed Agents
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude for Manufacturing
+
+A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude Meetings
+
+Add Claude to your video call and get the work started while you talk
 
 ---
 
@@ -2887,6 +2989,8 @@ Source: https://support.claude.com/en/articles/12684923-microsoft-365-connector-
 Path: 14-Connectors/microsoft-365-connector-security-guide.md
 
 # Microsoft 365 connector security guide
+
+Updated today
 
 
 The Microsoft 365 connector is an **Anthropic-hosted integration** that enables Claude to securely access Microsoft 365 services (Outlook, SharePoint, OneDrive, Teams) through user-delegated permissions. Anthropic has completed Microsoft's publisher verification process, associating our verified Microsoft Partner Network account with these applications to confirm our organizational identity.
@@ -3009,7 +3113,9 @@ The connector provides **read-only** access to:
 
 [TABLE]
 
-**Note:** “Always allow” is not supported for the following tools on Team and Enterprise plans:
+**Note:** The `sharepoint_*` file tools also work in OneDrive, wherever the user already has edit access. OneDrive for Business stores files in a SharePoint library, so the same tools cover both. `sharepoint_delete_item` moves the file or folder, including its contents, to the recycle bin. It doesn’t delete it permanently.
+
+**Note:** On Team and Enterprise plans, users can't choose **Always allow** for the following tools, unless an admin has set that tool to **Always allow** on or after November 9, 2026:
 
 - `outlook_send_mail`
 
@@ -3021,27 +3127,51 @@ The connector provides **read-only** access to:
 
 - `outlook_update_event`
 
+- `outlook_delete_event`
+
+- `outlook_respond_to_event`
+
+- `outlook_set_vacation`
+
 - `teams_send_chat_message`
 
 - `teams_send_channel_message`
 
 - `teams_reply_channel_message`
 
-**Note:** The `sharepoint_*` file tools also work in OneDrive, wherever the user already has edit access. OneDrive for Business stores files in a SharePoint library, so the same tools cover both. `sharepoint_delete_item` moves the file or folder, including its contents, to the recycle bin. It doesn’t delete it permanently.
+This limit doesn't apply to organizations that added the Microsoft 365 connector for the first time after November 9, 2026. There, admins can set each of these tools to **Always allow**, **Needs approval**, or **Blocked**, as for any other write tool. Removing the connector and adding it again usually keeps the organization's original install date, so it usually doesn't change whether the limit applies. Admins in other organizations who see a notice about these tools can set them to **Always allow** now in **Review write tools**, in **Review tool restrictions**, or on the **Tools** tab. The limit ends right away for each tool an admin sets to **Always allow**, and users can then choose **Always allow** for it. Some users may have chosen **Always allow** for that tool in the past. That earlier choice can take effect right away, so Claude can stop asking them. Claude asks everyone else by default until they choose it.
 
-When an organization enables write tools, the connector also exposes write tools for sending and organizing email, managing drafts and calendar events, updating mailbox settings, creating and updating files in OneDrive and SharePoint, and sending Teams messages. Teams write tools are off by default and are enabled individually in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)** within “Microsoft 365”; the connector-wide "all tools" permission doesn't turn them on. Claude can send messages in Teams but can't change Teams settings, memberships, or permissions.
+If the organization has more than one Microsoft 365 connector, the tool must be saved on each one. An **Always allow** saved before November 9, 2026 doesn't end the limit until an admin saves it again. For the rest of these tools, users must still approve each use until the limit is removed on or after December 9, 2026. Any of these tools an admin hasn't set by then will change to **Needs approval**, unless the whole connector is set to **Blocked**.
+
+Organizations that have enabled HIPAA aren't part of these changes to default blocks and limits: they don't get a notice, and neither setting **Always allow** nor adding the connector for the first time ends this limit.
+
+In Cowork, users can choose **Always allow** only when the organization setting **Allow “Always allow” for connector tools** is on. Changes an admin saves apply right away. A tool set to **Always allow** turns on right away if it was blocked by default. With **Always allow**, Claude may use a tool without asking anyone first, including in “Automatically approve” mode and in some scheduled tasks, such as a cloud scheduled task set to “Automatically approve” or a Claude Code routine. Scheduled tasks can lose access to tools on **Needs approval**. On Free, Pro, Max, and Ultra plans, users can choose **Always allow** for these tools.
+
+When an organization enables write tools, the connector also exposes write tools for sending and organizing email, managing drafts and calendar events, updating mailbox settings, creating and updating files in OneDrive and SharePoint, and sending Teams messages. In organizations that added the connector before the Teams write tools launched in September 2026, Admins can set each Teams write tool individually in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)** within “Microsoft 365”. If a Teams write tool is blocked by default, setting the connector's default restriction to No restriction doesn't turn it on. Claude can send messages in Teams but can't change Teams settings, memberships, or permissions.
 
 Write tools include the following built-in safeguards:
 
-- **Attribution:** Emails Claude sends include an attribution header identifying them as agent-initiated. File writes, calendar writes, and Teams messages aren't currently tagged.
+**Attribution.** Emails Claude sends include an attribution header identifying them as agent-initiated. File writes, calendar writes, and Teams messages aren't currently tagged.
 
-- **Rate limits:** Per-user limits apply to writes, sends, and recipients.
+**Rate limits.** Per-user limits apply to writes, sends, and recipients.
 
-- **Attachment restriction:** Attachments aren't supported in any write tool—sending, forwarding, and drafting all reject messages with attachments.
+**Attachment restriction.** Attachments aren't supported in any write tool—sending, forwarding, and drafting all reject messages with attachments.
 
-- **Blocked by default:** Organizations that used the connector before write tools launched have write tools blocked by default until an admin enables them. Teams write tools are blocked by default for every organization and must each be enabled individually.
+**Blocked by default until at least December 9, 2026.** Organizations that used the connector before write tools or the Teams write tools launched have some write tools blocked by default. Admins can choose a setting for each of these tools now in **[Organization settings \> Connectors](https://claude.ai/admin-settings/connectors)**.
 
-- **Confirmation required:** Sending a Teams chat message and posting or replying in a channel can only be set to Ask, so the user confirms every send.
+On or after December 9, 2026, any of these tools that an admin hasn't changed will be set to **Needs approval**, unless the whole connector is set to **Blocked**. If one of these tools is among the 11 Outlook, Calendar, and Teams tools with a limit that Anthropic will remove on or after that date, admins can set it to **Always allow** now. It turns on right away.
+
+Once it's saved on each of the organization's Microsoft 365 connectors, the limit ends for that tool, and members can choose **Always allow** for it. Claude may then use it without asking anyone first, including in “Automatically approve” mode and in some scheduled tasks, such as a cloud scheduled task set to “Automatically approve” or a Claude Code routine. Scheduled tasks can lose access to tools on **Needs approval**. Organizations that have enabled HIPAA aren't part of these changes to default blocks and limits.
+
+**Confirmation required.** Outside "Automatically approve" and "Skip all approvals" modes, in chat and Cowork, Claude asks the user to confirm before it sends or forwards an email, sends a Teams message, creates, changes, deletes, or responds to a calendar event, or sets an automatic reply. In **["Automatically approve" mode](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)**, these actions can run without asking the user, unless an automated check flags them as risky or the user’s organization requires approval. The check can miss risky actions. To approve them, the user can use Manual or set the tool's permission to **["Always ask"](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)** if that option is available. On Team and Enterprise plans, users can't choose **Always allow** for these tools, unless an admin has set that tool to **Always allow** on or after November 9, 2026. Otherwise the user confirms each use. The exception is organizations that added the Microsoft 365 connector for the first time after November 9, 2026. There, admins can set each of these tools to **Always allow**, **Needs approval**, or **Blocked**, and when an admin sets a tool to **Always allow**, each user can choose **Always allow** for it.
+
+In Cowork, users can choose **Always allow** for these tools only when the organization setting **Allow “Always allow” for connector tools** is on. Removing the connector and adding it again usually keeps the organization's original install date, so it usually doesn't change whether the limit applies. In other organizations, admins who see a notice about these tools can set them to **Always allow** now. The limit ends right away for each tool an admin sets to **Always allow**, and each user can then choose **Always allow** for it.
+
+Some users may have chosen **Always allow** for that tool in the past. That earlier choice can take effect right away, so Claude can stop asking them. If the organization has more than one Microsoft 365 connector, the tool must be saved on each one. For the rest of these tools, users must still confirm each use until the limit is removed on or after December 9, 2026.
+
+With **Always allow**, Claude may use a tool without asking anyone first, including in “Automatically approve” mode and in some scheduled tasks, such as a cloud scheduled task set to “Automatically approve” or a Claude Code routine. On Free, Pro, Max, and Ultra plans, outside "Automatically approve" mode, Claude asks by default, and each user can choose **Always allow** for any of these tools. Claude then uses that tool without asking them.
+
+Organizations that have enabled HIPAA aren't part of these changes to default blocks and limits.
 
 ### Permissions list
 
@@ -3135,7 +3265,7 @@ Requested as part of the updated consent set; used only when write tools are ena
 
 ### Current limitations
 
-- **Teams write access is limited to messaging**: Claude can send a chat message, post or reply in a channel, or start a new chat, but can't modify Teams settings, memberships, or permissions. All write tools require an admin to enable them, and Teams write tools are enabled individually.
+- **Teams write access is limited to messaging**: Claude can send a chat message, post or reply in a channel, or start a new chat, but can't modify Teams settings, memberships, or permissions. All write tools require an admin to enable them.
 
 - **User-level access only**: Access with service principal authentication is not supported.
 
@@ -3175,7 +3305,7 @@ It depends on which option they choose:
 
 - **Personal account option:** On Free, Pro, Max, and Ultra plans, people can connect a personal account here. This option isn't shown on Team and Enterprise plans.
 
-Learn more about **[personal Microsoft accounts](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365#h_cffabf2c6c)**.
+Learn more about **[personal Microsoft accounts](connect-to-microsoft-365.md#h_cffabf2c6c)**.
 
 **Do you have audit logging for compliance?**
 
@@ -3197,7 +3327,7 @@ There are multiple revocation methods:
 
 ## Personal Microsoft accounts
 
-On Free, Pro, Max, and Ultra plans, people can connect a personal Microsoft account, such as an Outlook.com, Hotmail, Live, or MSN account. This option isn't shown on Team and Enterprise plans. Learn more in **[Connect to Microsoft 365](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365)**.
+On Free, Pro, Max, and Ultra plans, people can connect a personal Microsoft account, such as an Outlook.com, Hotmail, Live, or MSN account. This option isn't shown on Team and Enterprise plans. Learn more in **[Connect to Microsoft 365](connect-to-microsoft-365.md)**.
 
 - **Separate applications:** Personal accounts use their own Microsoft applications, which accept only personal accounts. Your tenant's applications and consent aren't involved.
 
@@ -3233,9 +3363,11 @@ Anthropic has the following certifications:
 
 - **[Set up the Microsoft 365 connector](https://support.claude.com/en/articles/12542951-)**
 
-- **[Connect Claude to Microsoft 365](connect-to-microsoft-365-claude-help-center.md)**
+- **[Connect Claude to Microsoft 365](https://support.claude.com/en/articles/15183774)**
 
 - **[Overview of Microsoft Graph permissions: Delegated permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http#delegated-permissions)**
+
+- **[Microsoft 365 connector for Claude: architecture and data flows (Anthropic Trust Center)](https://trust.anthropic.com/resources?s=z7e632bdv3hjh3j4bufuzn&name=microsoft-365-connector-for-claude:-architecture-and-data-flows)**
 
 ---
 
@@ -4405,17 +4537,11 @@ On it. I’ll compare latency before and after the deploy, track down the cause,
 
 Done: Pulled p99 latency from DatadogDone: Diffed deploy 4f2c1 against mainDone: Reproduced the slow query locallyIn progress: Opening a pull request with the fix…
 
-
-[​](#plans-that-include-claude-tag)
-
-Plans that include Claude Tag
+## [](#plans-that-include-claude-tag)Plans that include Claude Tag
 
 Claude Tag is available on Team and Enterprise plans, on Anthropic’s first-party service. It isn’t available on individual plans (Free, Pro, Max, or Ultra), or for third-party deployments. To use it, your organization pairs its Slack workspace with its Claude organization; see [the setup overview](https://support.claude.com/docs/claude-tag/admins/setup-overview) for the full prerequisites. If you’re choosing between Claude products for Slack-shaped work, [how Claude Tag differs from Cowork and Claude Code](https://support.claude.com/docs/claude-tag/concepts/how-it-works#how-claude-tag-differs-from-cowork-and-claude-code) compares them directly: team work in shared channels is Claude Tag; personal work on your own files is Cowork or Claude Code.
 
-
-[​](#who-needs-a-claude-seat)
-
-Who needs a Claude seat
+### [](#who-needs-a-claude-seat)Who needs a Claude seat
 
 Slack users don’t each need a Claude seat to work with Claude in channels.
 
@@ -4423,10 +4549,7 @@ Slack users don’t each need a Claude seat to work with Claude in channels.
 - **In group DMs**: the same restriction on who can use Claude applies, and the work bills to your organization’s usage balance. See [Group DMs](https://support.claude.com/docs/claude-tag/admins/restrict-access#group-dms).
 - **In one-to-one DMs**: a DM from a member who has connected a Claude account runs on that account and bills to that person’s seat. For the DM to work, that person needs either a seat that includes Claude Code or, on the Enterprise plan, Cowork access on a **Standard** seat or a usage-based **Chat** seat. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can bill to your organization for a limited time.
 
-
-[​](#where-claude-tag-runs)
-
-Where Claude Tag runs
+## [](#where-claude-tag-runs)Where Claude Tag runs
 
 Claude Tag works in Slack. You interact with it by writing in a Slack channel, thread, or direct message, and it replies there. Mention `@Claude` in a channel to guarantee it picks the message up. When Claude works on a task, it runs in an ephemeral sandbox, not on your computer. The sandbox is created when a conversation starts, holds any code or files Claude is working with, and is discarded when the conversation goes idle. See [how Claude Tag works](https://support.claude.com/docs/claude-tag/concepts/how-it-works) for the full lifecycle. You extend what Claude can reach, like your repositories, ticketing systems, data warehouses, and custom tools, through [Claude Tag connectors](https://support.claude.com/docs/claude-tag/admins/add-connections), [plugins, and skills](https://support.claude.com/docs/claude-tag/admins/customize). An Owner or a [Claude Tag admin](https://support.claude.com/docs/claude-tag/admins/restrict-access#delegate-claude-tag-administration) configures these for all of Slack, for one workspace, or for one channel. Members’ own claude.ai connectors are separate from that configuration; Claude can use them in a channel for the member’s own requests, as [personal connectors in channels](https://support.claude.com/docs/claude-tag/concepts/personal-connectors) describes.
 
@@ -4438,26 +4561,17 @@ Claude Tag works in Slack. You interact with it by writing in a Slack channel, t
 
 [How do I hand Claude Tag a task?Mention Claude in any channel it’s in, with nothing to install](https://support.claude.com/docs/claude-tag/users/getting-started)[What is Claude Tag good at?Use cases for coding, data, incidents, and go-to-market](https://support.claude.com/docs/claude-tag/users/use-cases)[How do I get good results?Good habits for scoping and reviewing work](https://support.claude.com/docs/claude-tag/users/good-habits)[What does Claude Tag remember?Channel memory, what’s shared across the workspace, and who can see what](https://support.claude.com/docs/claude-tag/users/memory)[Can Claude Tag run tasks on a schedule?Scheduled jobs, channel watching, and triggers](https://support.claude.com/docs/claude-tag/users/proactivity)
 
-
-[​](#billing-and-spend-limits)
-
-Billing and spend limits
+## [](#billing-and-spend-limits)Billing and spend limits
 
 Adding Claude to Slack doesn’t add a per-seat charge. Channel, thread, and group DM work is billed by usage instead: it draws from a **usage balance**, an amount in your organization’s billing currency that an Owner funds. A [spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) caps how much of that balance Claude Tag can use each billing period. One-to-one direct messages from members who have connected a Claude account don’t draw from this balance. Such a DM runs on the sender’s own claude.ai account and follows that seat’s usual usage limits, so the organization spend limit doesn’t apply to it. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can draw from this balance. To learn what your team’s usage costs, run a pilot with a spend limit set and watch the per-channel breakdown on the [usage page in your admin settings](https://claude.ai/admin-settings/usage/claude-tag). [Set a spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) covers how to fund the balance on each plan, set the limit, and what happens when usage reaches it.
 
 For end users
 
-
-[​](#put-claude-tag-to-work)
-
-Put Claude Tag to work
+## [](#put-claude-tag-to-work)Put Claude Tag to work
 
 If Claude Tag is in your channel, you can use it now. (If it isn’t there yet, an Owner in your Claude organization runs setup: see [Set up Claude Tag](https://support.claude.com/docs/claude-tag/admins/setup-overview).) Anyone in the channel can hand it work, and channel work bills to the organization, not to you. What it can reach starts with the channel you’re in. The fastest way to find out is to ask it: `@Claude what can you access from this channel?` Or, if you’re signed in to your Claude organization, click **Configure** in the footer of a Claude reply in the channel to see its [connections](https://support.claude.com/docs/claude-tag/concepts/glossary#connection), the external services an admin has connected for that channel. Replies in org-shared channels have no Configure link. For your own requests, Claude can also [use the connectors on your claude.ai account](https://support.claude.com/docs/claude-tag/concepts/personal-connectors), after you allow it. In a one-to-one DM, Claude runs on your own claude.ai account instead of a channel’s setup. An Owner can turn off DMs for the whole organization; see [Allow or disable direct messages](https://support.claude.com/docs/claude-tag/admins/restrict-access#allow-or-disable-direct-messages).
 
-
-[​](#common-uses)
-
-Common uses
+### [](#common-uses)Common uses
 
 Each link opens a guide with the prompts to paste and the connections the task needs.
 
@@ -4474,10 +4588,7 @@ Each link opens a guide with the prompts to paste and the connections the task n
 
 For administrators
 
-
-[​](#set-claude-tag-up-once-for-everyone)
-
-Set Claude Tag up once for everyone
+## [](#set-claude-tag-up-once-for-everyone)Set Claude Tag up once for everyone
 
 You set up Claude Tag once, at [`claude.ai/admin-settings/claude-tag`](https://claude.ai/admin-settings/claude-tag), and you must be an Owner in your Claude organization to do it. The setup page at that URL walks you through it:
 
@@ -4492,10 +4603,7 @@ Security review
 
 The security model, what admins can and can’t restrict, audit trails, and network requirements.
 
-
-[​](#where-to-start-with-claude-tag)
-
-Where to start with Claude Tag
+## [](#where-to-start-with-claude-tag)Where to start with Claude Tag
 
 ## Set up Claude Tag
 
@@ -4523,13 +4631,15 @@ Path: 14-Connectors/using-interactive-connectors-in-claude.md
 # Use interactive connectors in Claude
 
 
-Interactive connectors are available for all users on Claude, Cowork, Claude Desktop, and Claude for iOS/Android.
+Interactive connectors are available for all users on Claude, Cowork, Claude Desktop, and Claude for iOS/Android. The side panel, full-site views, and opening or pinning interactive connectors from Claude’s navigation are rolling out on the web and in Claude Desktop to accounts with the new Claude experience. They aren’t available on Claude Mobile yet.
 
 ## What are interactive connectors?
 
 Some connectors can now display live, interactive apps directly within your Claude conversations. Instead of returning text-only responses, these connectors render interfaces—like analytics dashboards, task boards, or design tools—that you can interact with without leaving the chat.
 
 For example, you might ask Claude about your project status, and instead of just describing it, Claude opens your Asana board right in the conversation. You can check off tasks, update statuses, and keep chatting with Claude—all in one place.
+
+Some interactive connectors can also open a tool’s site in Claude. You can make changes yourself or ask Claude to make them. Each connector’s developer chooses which of these views and actions to support, so what you see varies by connector.
 
 Claude can also generate its own custom visuals—diagrams, charts, and simple interactive elements built from scratch for your question. When a connected service offers an interactive interface that handles your request, like an MCP app, Claude will use it. Custom visuals fill the gaps when no connector interface fits what you’re asking for.
 
@@ -4539,11 +4649,15 @@ For more on Claude-generated visuals, see **[Custom visuals in chat](https://sup
 
 ## How interactive connectors appear
 
-Interactive connectors display in two ways:
+Interactive connectors display in three ways:
 
 **Inline cards** are compact components embedded directly in the conversation. They're ideal for quick summaries, confirmations, and single actions—like a status update or a message draft ready to send.
 
+**Side panel** keeps the interactive connector open beside your chat, so you can keep chatting and watch it update. Expand it to full screen from the panel’s title bar.
+
 **Fullscreen view** provides an immersive interface for complex interactions like data visualizations, document editing, or detailed project views. The conversation input remains available so you can continue talking to Claude while interacting with the connector.
+
+If you need to ask Claude to modify something, refine a result, or navigate to a different context, type in the conversation input—Claude can interpret your request and update the interface accordingly. Claude can only take actions the connector’s developer has made available. You approve these actions the same way you approve any connector’s actions.
 
 ## Interact with connectors
 
@@ -4557,7 +4671,15 @@ You can interact directly with elements inside the connector:
 
 - Expand and collapse content sections
 
+- Ask Claude to make changes in the interactive connector you have open
+
 If you need to ask Claude to modify something, refine a result, or navigate to a different context, type in the conversation input—Claude can interpret your request and update the interface accordingly.
+
+## Open and pin interactive connectors
+
+You can open a supported interactive connector from Claude’s navigation without asking Claude first, and pin it to your sidebar. When an interactive connector is open full page, ask Claude about it in the box at the bottom, or work in it yourself.
+
+**Note:** Pins are saved per browser, so a pin you add on the web doesn’t appear in Claude Desktop.
 
 ## Which connectors are interactive?
 
@@ -4605,15 +4727,19 @@ Yes. Team and Enterprise owners can disable the specific tool calls that render 
 
 ### How are interactive connectors secured?
 
-Interactive connectors run in sandboxed iframes with strict Content Security Policies. All communication between the interface and Claude uses auditable JSON-RPC messaging. Servers must predeclare which external domains they need, and the host can review HTML content before rendering.
+In-chat views run in sandboxed iframes with strict Content Security Policies. All communication between the interface and Claude uses auditable JSON-RPC messaging. Servers must predeclare which external domains they need, and the host can review HTML content before rendering.
 
 ### Do interactive connectors require additional permissions beyond the connector itself?
 
-No. Interactive connectors use the same permissions you granted when connecting the tool. They don't request additional access to your data.
+Interactive connectors use the same permissions you granted when connecting the tool.
+
+### Who provides interactive connectors?
+
+Third-party interactive connectors are provided by the connector’s developer, who is responsible for the content shown.
 
 ### Can interactive connectors make purchases or financial transactions?
 
-No. Purchases through third-party interactive connectors are not supported.
+No. Purchases through a connector's in-chat views aren't supported.
 
 ------------------------------------------------------------------------
 
@@ -5442,20 +5568,18 @@ The Blackbaud integration relies on Claude's ability to [use remote connectors(o
 
 ### For organization owners[](#for-organization-owners)
 
-1.  Go to [Claude.ai Settings(opens in new tab)](https://claude.ai/settings)
-2.  Select Connectors or Integrations
-3.  Choose `Add server` or `Browse connectors`
-4.  Search for and select Blackbaud
-5.  Select `Add to your team`
-6.  Confirm authorization
+1.  Open the [connectors directory(opens in new tab)](https://claude.ai/directory)
+2.  Search for Blackbaud and open its page
+3.  Select `Connect for your team` or `Add for your team`
+4.  Follow any prompts to finish
 
 ### For individual users[](#for-individual-users)
 
 1.  Log in to Claude with your enterprise account
-2.  Access [Settings(opens in new tab)](https://claude.ai/settings) \> Connectors
-3.  Select the Blackbaud connector and authorize
+2.  Open the [connectors directory(opens in new tab)](https://claude.ai/directory)
+3.  Search for Blackbaud, open its page, and connect it to Claude
 4.  Sign in with your Blackbaud ID and grant permissions
-5.  Your account displays as "Linked" when complete
+5.  The connector shows as "Connected" when complete
 
 ## Common use cases[](#common-use-cases)
 
@@ -6614,7 +6738,7 @@ All data comes from official NCBI sources, but may not reflect the most current/
 
 ## Need More Help?[](#need-more-help)
 
-If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) or visit our help center for additional troubleshooting guides.
+If you're experiencing issues with the PubMed integration or have questions not covered here, please [contact Claude support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md) or visit our help center for additional troubleshooting guides.
 
 - [What this integration provides](#what-this-integration-provides)
 - [Setting up the PubMed integration](#setting-up-the-pubmed-integration)

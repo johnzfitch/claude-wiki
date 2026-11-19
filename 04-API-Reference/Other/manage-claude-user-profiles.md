@@ -2,7 +2,7 @@
 title: "User profiles for end-customer attribution - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/user-profiles"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-06T06:33:49Z"
+fetched_at: "2026-11-14T06:25:44Z"
 tags: ["api"]
 ---
 
@@ -192,7 +192,7 @@ Message Batches is the exception: creating a batch checks only the ID’s format
 
 ### Attribute requests on Claude Models on Google Cloud (Google managed) and Amazon Bedrock
 
-A profile ID of either access type also works on Claude Models on Google Cloud (Google managed) and on [Claude in Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md). It doesn’t work with the [earlier Amazon Bedrock integration](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) that you call with `InvokeModel` or `Converse`. You use your Anthropic organization’s credentials only to create and manage profiles. Inference stays on your existing AWS or Google Cloud credentials.
+A profile ID of either access type also works on Claude Models on Google Cloud (Google managed) and on [Claude in Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md). It doesn’t work on [Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md), which you call with `InvokeModel` or `Converse`. You use your Anthropic organization’s credentials only to create and manage profiles. Inference stays on your existing AWS or Google Cloud credentials.
 
 | Platform | Create profiles | Send the profile ID in |
 |----|----|----|

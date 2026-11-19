@@ -2,7 +2,7 @@
 title: "Nonprofits | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/nonprofits"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:42Z"
+fetched_at: "2026-11-18T06:29:25Z"
 tags: ["case-studies"]
 ---
 
@@ -12,7 +12,7 @@ tags: ["case-studies"]
 
 Claude helps nonprofits turn limited resources into lasting impact. Fund your mission, change how your organization runs, and build new tools or services for the communities you serve, with the security and trust your work depends on.
 
-[Get started](#pricing)[Get help choosing a plan](https://claude.ai/buying-specialist?src=dotcom_nonprofit_enterprise)
+[Get started](#pricing)[Get help choosing a plan](https://claude.ai/account-advisor?src=dotcom_nonprofit_enterprise)
 
 ## Trusted by more than 25,000 nonprofits
 
@@ -237,7 +237,7 @@ Per month. For nonprofits based in [low- or middle-income countries (opens in ne
 
 For organizations operating at scale
 
-[Chat with buying specialist](https://claude.ai/buying-specialist?src=dotcom_nonprofit_enterprise)
+[Chat about your plan](https://claude.ai/account-advisor?src=dotcom_nonprofit_enterprise)
 
 Everything in Team, plus:
 
@@ -248,9 +248,9 @@ Everything in Team, plus:
 - System for Cross-domain Identity Management (SCIM)
 - Custom data retention controls
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic’s discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic’s discretion.
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## More products for nonprofits
 
@@ -344,4 +344,4 @@ Claude for Nonprofits plans include advanced permissions that help you protect w
 
 ## Put Claude to work for your mission
 
-[Get started](#pricing)[Get help choosing a plan](https://claude.ai/buying-specialist?src=dotcom_nonprofit_enterprise)
+[Get started](#pricing)[Get help choosing a plan](https://claude.ai/account-advisor?src=dotcom_nonprofit_enterprise)

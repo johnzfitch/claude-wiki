@@ -2,9 +2,11 @@
 title: "Challenges in red teaming AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/challenges-in-red-teaming-ai-systems"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:19Z"
+fetched_at: "2026-11-14T06:26:32Z"
 tags: ["evaluation", "news-research"]
 ---
+
+### 01What is red teaming?
 
 # Challenges in red teaming AI systems
 
@@ -17,23 +19,22 @@ tags: ["evaluation", "news-research"]
 - [07How do we go from qualitative red teaming to quantitative evaluations?](#how-do-we-go-from-qualitative-red-teaming-to-quantitative-evaluations)
 - [08Conclusion](#conclusion)
 
-- Published
+Published  
+Jun 12, 2024
 
-  Jun 12, 2024
+[Safeguards](safeguards.md)
 
-- Category
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-  [Safeguards](safeguards.md)
+Topics  
+- [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [National security](https://www.anthropic.com/search?topic=national-security)
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
 
-- Topics
-
-  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [National security](https://www.anthropic.com/search?topic=national-security)
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-
-  See more...
+See more...
 
 Related articles
 
@@ -108,7 +109,7 @@ Red teaming in new modalities involves testing AI systems that can process and r
 
 ### Multimodal red teaming
 
-The [Claude 3](../15-Claude-AI-Features/product-overview.md) family of models are multimodal—while they do not *generate* images, they can take in visual information (e.g., photos, sketches, charts) and provide text-based outputs in response, a capability that presents potential new risks (e.g., fraudulent activity, threats to child safety, violent extremism, etc.). Prior to deploying Claude 3, our Trust & Safety team [red teamed our systems](the-claude-3-model-family-opus-sonnet-haiku.md) for image and text-based risks, and also worked with external red teamers to assess how well our models refuse to engage with harmful inputs (both image and text). Pre-deployment red teaming is critical for any release, especially those that include new model capabilities and modalities.
+The [Claude 3](../15-Claude-AI-Features/product-overview.md) family of models are multimodal—while they do not *generate* images, they can take in visual information (e.g., photos, sketches, charts) and provide text-based outputs in response, a capability that presents potential new risks (e.g., fraudulent activity, threats to child safety, violent extremism, etc.). Prior to deploying Claude 3, our Trust & Safety team [red teamed our systems](https://assets.claude.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627.pdf) for image and text-based risks, and also worked with external red teamers to assess how well our models refuse to engage with harmful inputs (both image and text). Pre-deployment red teaming is critical for any release, especially those that include new model capabilities and modalities.
 
 ## Open-ended, general red teaming
 

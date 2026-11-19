@@ -2,7 +2,7 @@
 title: "Respond to an Enterprise domain claim on your Claude account | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14625626-respond-to-an-enterprise-domain-claim-on-your-claude-account"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:26:04Z"
+fetched_at: "2026-11-18T06:28:29Z"
 tags: ["account", "enterprise"]
 ---
 
@@ -23,7 +23,7 @@ The notification is a banner at the top of Claude, on the web and in Claude Desk
 
 ## Your two options
 
-**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the **Bring what you can** option isn't available. Your only option is to start fresh. **[Export your data](https://support.claude.com/en/articles/9450526-export-your-claude-data)** before the deadline if you want a copy. The export doesn’t include the original files you uploaded. Your subscription is still handled as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+**Note:** If your organization has turned on HIPAA readiness or customer-managed encryption keys (CMEK), the **Bring what you can** option isn't available. Your only option is to start fresh. **[Export your data](../22-Safety-Policy/export-your-claude-data.md)** before the deadline if you want a copy. The export doesn’t include the original files you uploaded. Your subscription is still handled as described below. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](../22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek-claude-help-center.md)**.
 
 ### Bring what you can
 
@@ -39,7 +39,7 @@ If you want a copy, you can get one in two ways:
 
 - Before you choose "Start fresh," sign in to your personal account, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**, export your data, and download the file.
 
-- After you choose "Start fresh," pick "Download your data." We’ll email you a link after your personal account closes. The link expires after 24 hours and may work only once, so download the file right away. Claude for Teachers and FERPA-covered accounts don’t get a download link. Export and download your data before you choose **Start fresh**. For Claude for Teachers, go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If you can’t export, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** before you choose **Start fresh**.
+- After you choose "Start fresh," pick "Download your data." We’ll email you a link after your personal account closes. The link expires after 24 hours and may work only once, so download the file right away. Claude for Teachers and FERPA-covered accounts don’t get a download link. Export and download your data before you choose **Start fresh**. For Claude for Teachers, go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If you can’t export, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md#h_d6fc679aa4)** before you choose **Start fresh**.
 
 Note that exported data can’t be imported into your organization’s workspace, and it’s for your personal records only. Neither copy includes the original files you uploaded.
 
@@ -47,9 +47,9 @@ Note that exported data can’t be imported into your organization’s workspace
 
 **If you don’t make a choice before the deadline, your personal account closes and will be deleted, along with its data**, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data).** You’ll get an email with a link to download your data. The download doesn’t include the original files you uploaded.
 
-Download the file right away: the link expires after 24 hours and may only work only. It opens only when you’re signed in to Claude with the same email address. If it has expired or won’t open, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** (an Owner of your organization may need to reach out for you). Claude for Teachers and FERPA-covered accounts don’t get a download link. Export and download your data before the deadline.
+Download the file right away: the link expires after 24 hours and may only work only. It opens only when you’re signed in to Claude with the same email address. If it has expired or won’t open, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md#h_d6fc679aa4)** (an Owner of your organization may need to reach out for you). Claude for Teachers and FERPA-covered accounts don’t get a download link. Export and download your data before the deadline.
 
-For Claude for Teachers, go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If you can’t export, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** before the deadline. To use Claude in your organization, sign in with single sign-on (SSO). If you don’t see your organization after you sign in, ask your admin for access.
+For Claude for Teachers, go to **[Organization settings \> Data and privacy](https://claude.ai/admin-settings/data-privacy-controls)**. For FERPA-covered accounts, go to **[Settings \> Privacy](https://claude.ai/settings/data-privacy-controls)**. If you can’t export, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md#h_d6fc679aa4)** before the deadline. To use Claude in your organization, sign in with single sign-on (SSO). If you can't sign in or don’t see your organization after you sign in, ask your admin to add you. The download link won’t open until you can sign in.
 
 Sign in before the deadline to make your choice.
 
@@ -93,7 +93,7 @@ Domain claiming only affects accounts tied to your organization’s verified dom
 
 ### Will my organization be able to see my old conversations?
 
-Yes. Your organization can access what moves, the same way it can access the rest of its data. For example, its Primary Owner can export it. Your organization’s data retention policies apply to it too. For more information, see **[Who owns and manages the data of my team?](../13-Enterprise-Admin/who-owns-and-manages-the-data-of-my-team.md)**
+Yes. Your organization can access what moves, the same way it can access the rest of its data. For example, its Primary Owner can export it. Your organization’s data retention policies apply to it too. For more information, see **[Who owns and manages the data of my team?](https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team)**
 
 ### What if I’m not in my company’s identity provider?
 

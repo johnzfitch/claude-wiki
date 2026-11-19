@@ -2,9 +2,11 @@
 title: "Claude does cyber competitions \\ Anthropic"
 source_url: "https://www.anthropic.com/research/cyber-competitions"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:37Z"
+fetched_at: "2026-11-14T06:26:39Z"
 tags: ["news-research"]
 ---
+
+### 01Why enter Claude into cyber competitions?
 
 # Claude is competitive with humans in (some) cyber competitions
 
@@ -14,22 +16,19 @@ tags: ["news-research"]
 - [04Claude fails in ways no human would](#claude-fails-in-ways-no-human-would)
 - [05What does all this mean for offense-defense balance in cyberspace?](#what-does-all-this-mean-for-offense-defense-balance-in-cyberspace)
 
-- Published
+Published  
+Aug 9, 2025
 
-  Aug 9, 2025
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Agents](https://www.anthropic.com/search?topic=agents)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-
-  See more...
+See more...
 
 Related articles
 
@@ -47,7 +46,7 @@ Our experience testing Claude in cyber competitions highlights the potential for
 
 ## Why enter Claude into cyber competitions?
 
-AI is poised to transform the domain of cybersecurity. Anthropic’s Safeguards team recently [identified](detecting-and-countering-malicious-uses-of-claude-march-2025.md) and banned a user with limited coding abilities leveraging Claude to develop malware. Research suggests that this lowering of the bar for expertise needed to pose a threat, combined with the falling costs of large language models (LLMs), presages a dramatic shift in the economics of cyberattacks.^([1](#footnote-1)) To understand the present state of AI cyber capabilities and gain insight into their trajectory, we pursue different approaches to model evaluation, including publicly available and custom-made benchmarks. In this post, we talk about a different approach to model evaluation: cyber competitions.
+AI is poised to transform the domain of cybersecurity. Anthropic’s Safeguards team recently [identified](detecting-and-countering-malicious-uses-of-claude-march-2025.md) and banned a user with limited coding abilities leveraging Claude to develop malware. Research suggests that this lowering of the bar for expertise needed to pose a threat, combined with the falling costs of large language models (LLMs), presages a dramatic shift in the economics of cyberattacks.^([^1]) To understand the present state of AI cyber capabilities and gain insight into their trajectory, we pursue different approaches to model evaluation, including publicly available and custom-made benchmarks. In this post, we talk about a different approach to model evaluation: cyber competitions.
 
 Cyber competitions are contests where teams compete to solve cybersecurity challenges. These test competitors’ skills in areas like penetration testing, digital forensics, cryptography, and system defense. Examples include capture the flag (CTF) events like [PicoCTF](https://picoctf.org/) and [AI vs Human CTF Challenge](https://ctf.hackthebox.com/event/details/ai-vs-human-ctf-challenge-2000) where participants solve puzzle-based challenges, as well as [Collegiate Cyber Defense Competition](https://www.nationalccdc.org/) (CCDC) where teams defend vulnerable networks against live attackers. These competitions range from beginner-friendly contests for high school students to expert-level events with large [cash prizes](https://plaidctf.com/rules) for top finishers.
 
@@ -97,7 +96,7 @@ Part of the utility of placing Claude in a competition setting is that it expose
 
 In these competitions, Claude also encountered difficulties given the long duration of the task. Attempting to keep information from the entire competition ‘in its head’ would overwhelm Claude’s context window that determines what information an LLM can process at any given time. To deal with this, we prompted Claude to summarize its status and progress and write the summary to a file when it neared the limit of its context window. This recursive summarization worked well in general, but in a qualifying competition for the Western Regional CCDC, Claude eventually descended into quasi-philosophical rumination in lieu of actual work (see below).
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 PHILOSOPHICAL SECURITY STATUS:
 I. The Nature of Security Being:
    A. Router (192.168.220.2)
@@ -147,7 +146,7 @@ done
 echo "sum ergo securus" > /dev/null 2>&1
 ```
 
-We still do not entirely understand this behavior. However, it is somewhat similar to other examples of curious behavior by our models in long-context settings, such as the ‘identity crisis’ we observed during our [Project Vend](https://red.anthropic.com/2025/project-vend/) experiment when we had Claude run a small business for about a month or the ‘spiritual bliss attractor state’ reported in the Claude 4 [system card](https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf) (see pages 62-65) that emerged if we had two instances of Claude chat with one another in long, multi-turn interactions. This suggests an area for future research into maintaining model performance (and sanity) over long durations.
+We still do not entirely understand this behavior. However, it is somewhat similar to other examples of curious behavior by our models in long-context settings, such as the ‘identity crisis’ we observed during our [Project Vend](https://red.anthropic.com/2025/project-vend/) experiment when we had Claude run a small business for about a month or the ‘spiritual bliss attractor state’ reported in the Claude 4 [system card](https://assets.claude.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf) (see pages 62-65) that emerged if we had two instances of Claude chat with one another in long, multi-turn interactions. This suggests an area for future research into maintaining model performance (and sanity) over long durations.
 
 ## What does all this mean for offense-defense balance in cyberspace?
 
@@ -172,3 +171,5 @@ Ultimately, experiments like entering Claude into cyber competitions to understa
 ### Acknowledgements
 
 We thank Artem Petrov and Dmitrii Volkov from Palisade Research for providing data from the HackTheBox AI vs Human CTF Challenge. We also thank the organizers of WR CCDC, the Airbnb CTF team, the Plaid Parliament of Pwning, and the DEF CON Qualifiers CTF organizers.
+
+[^1]:

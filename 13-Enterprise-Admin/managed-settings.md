@@ -2,8 +2,8 @@
 title: "Deploy managed settings - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/managed-settings"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-03T06:23:04Z"
-last_modified: "Tue, 03 Nov 2026 06:21:46 GMT"
+fetched_at: "2026-11-15T06:23:12Z"
+last_modified: "Sat, 14 Nov 2026 20:13:17 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -46,10 +46,7 @@ Copy pageCopy page
 
 Managed settings are the settings your organization deploys to every developer’s machine. Claude Code applies them above every other level, so no user, project, local, or `--settings` value overrides them, apart from a few [security-sensitive exceptions](../02-Claude-Code-CLI/settings.md#exceptions-to-managed-settings-precedence) where a stricter value from a lower level still counts. This page is for the administrator who deploys managed settings or debugs why one isn’t applying. To decide what to enforce, start with the [Decide what to enforce](admin-setup.md#decide-what-to-enforce) table. For the claude.ai console path, see [Server-managed settings](server-managed-settings.md). For which file a developer’s own values go in, see [Settings](../02-Claude-Code-CLI/settings.md).
 
-
-[​](#deploy-a-managed-settings-file)
-
-Deploy a managed settings file
+## [](#deploy-a-managed-settings-file)Deploy a managed settings file
 
 This is the quickest way to put a policy on each machine: a `managed-settings.json` file. If you haven’t picked how to deliver managed settings yet, or your devices are under MDM or developers run cloud sessions, read [Choose a delivery mechanism](#choose-a-delivery-mechanism) first.
 
@@ -92,17 +89,14 @@ Confirm the policy applied
 
 On one machine, run `/status` inside Claude Code. The `Setting sources` line shows `Enterprise managed settings (file)`. Roll out to the rest of the fleet after that; [Check that a policy is in force](#check-that-a-policy-is-in-force) covers what to look at when the line is missing.
 
-
-[​](#choose-a-delivery-mechanism)
-
-Choose a delivery mechanism
+## [](#choose-a-delivery-mechanism)Choose a delivery mechanism
 
 The file in the steps above is one of four ways to get managed settings onto a machine. Every mechanism carries the same policy keys as a `settings.json` file, so the [settings reference](../02-Claude-Code-CLI/settings-reference.md) applies to all of them. A few keys are tied to particular sources, and each entry’s Scope line says which:
 
 - **Delivery controls**: [`policyHelper`](../02-Claude-Code-CLI/settings-reference.md#policyhelper), [`wslInheritsWindowsSettings`](../02-Claude-Code-CLI/settings-reference.md#wslinheritswindowssettings), and [`managedSourcesBehavior`](../02-Claude-Code-CLI/settings-reference.md#managedsourcesbehavior)
 - **Gateway login keys**: [`forceLoginGatewayUrl`](../02-Claude-Code-CLI/settings-reference.md#forcelogingatewayurl), [`gatewayInternalNetworks`](../02-Claude-Code-CLI/settings-reference.md#gatewayinternalnetworks), and the `"gateway"` value of [`forceLoginMethod`](../02-Claude-Code-CLI/settings-reference.md#forceloginmethod)
 
-A managed settings file, an MDM profile, or the claude.ai console applies one policy to everyone it reaches. To give one group of developers a different policy, deploy a different file or profile to that group; the claude.ai console [can’t target a group yet](server-managed-settings.md#current-limitations), while a self-hosted [Claude apps gateway](claude-apps-gateway.md) delivers managed settings per IdP group. When more than one mechanism delivers a policy to the same machine, Claude Code by default uses one and ignores the others. [How Claude Code combines managed sources](#how-claude-code-combines-managed-sources) gives the order and the opt-in that applies every source. The MDM and file rows are together called endpoint-managed settings, because the policy is stored on the developer’s device, as opposed to the server-managed row, where Claude Code fetches it. Pick a mechanism by how you already manage devices, using the table below.
+With a managed settings file or an MDM profile, everyone it reaches gets one policy. To give one group of developers a different policy, deploy a different file or profile to that group. On an Enterprise plan, you can also [give each group its own configuration](server-managed-settings.md#give-groups-different-settings) in server-managed settings. A self-hosted [Claude apps gateway](claude-apps-gateway.md) delivers managed settings per IdP group. When more than one mechanism delivers a policy to the same machine, Claude Code by default uses one and ignores the others. [How Claude Code combines managed sources](#how-claude-code-combines-managed-sources) gives the order and the opt-in that applies every source. The MDM and file rows are together called endpoint-managed settings, because the policy is stored on the developer’s device, as opposed to the server-managed row, where Claude Code fetches it. Pick a mechanism by how you already manage devices, using the table below.
 
 | Mechanism | How you deliver it | When Claude Code reads it | Use it when |
 |:---|:---|:---|:---|
@@ -113,10 +107,7 @@ A managed settings file, an MDM profile, or the claude.ai console applies one po
 
 Starter templates for Jamf, Iru, Intune, and Group Policy are in the [MDM examples repository](https://github.com/anthropics/claude-code/tree/main/examples/mdm). If your organization has the [HIPAA configuration](../02-Claude-Code-CLI/hipaa-setup.md#deploy-managed-settings) applied, see `settings-hipaa.json` and `README-hipaa.md` in the [settings examples repository](https://github.com/anthropics/claude-code/tree/main/examples/settings) for a fuller `managed-settings.json` with sandboxing, a network allowlist, credential protections, and local data retention. For managed MCP servers, which you deploy alongside any of these through `managed-mcp.json` or provide through the [`managedMcpServers`](../02-Claude-Code-CLI/settings-reference.md#managedmcpservers) key, see [Managed MCP configuration](../06-MCP-Tools/General/managed-mcp.md).
 
-
-[​](#where-and-when-a-policy-applies)
-
-Where and when a policy applies
+### [](#where-and-when-a-policy-applies)Where and when a policy applies
 
 A deployed policy reaches the developer’s sessions as follows:
 
@@ -135,23 +126,17 @@ A deployed policy reaches the developer’s sessions as follows:
 - **Changes that need approval**: apart from the [updates that wait for the next launch](server-managed-settings.md#fetch-and-caching-behavior), a server-managed change to a setting that [needs approval](server-managed-settings.md#security-approval-dialogs), such as a hook or an `env` variable, waits for the developer to accept the dialog in an interactive session, and applies for the current run in a session an IDE extension or the Agent SDK hosts. Other server-managed changes apply on the next poll.
 - **Long-lived sessions**: a session left open for weeks can still lag a rollout. [`requiredMinimumVersion`](../02-Claude-Code-CLI/settings-reference.md#requiredminimumversion) blocks an outdated binary from starting and doesn’t end a session that’s already running.
 
-
-[​](#where-each-mechanism-stores-the-policy)
-
-Where each mechanism stores the policy
+### [](#where-each-mechanism-stores-the-policy)Where each mechanism stores the policy
 
 The keys are the same everywhere, but each mechanism stores them in a different place and shape:
 
-- **Server-managed**: Anthropic’s servers, or your gateway, hold the policy. Claude Code keeps a local cache that it applies at startup and [replaces on each successful fetch](server-managed-settings.md#security-considerations).
+- **Server-managed**: Anthropic’s servers, or your gateway, hold the policy. Claude Code keeps a local cache that it [can apply at startup](server-managed-settings.md#fetch-and-caching-behavior) and [replaces on each successful fetch](server-managed-settings.md#security-considerations).
 - **macOS configuration profile**: the `com.anthropic.claudecode` managed preferences domain. Use the same top-level keys as `managed-settings.json`, with nested settings as dictionaries and lists as plist arrays.
 - **Windows HKLM registry**: the JSON as a `REG_SZ` or `REG_EXPAND_SZ` value named `Settings` under `HKLM\SOFTWARE\Policies\ClaudeCode`.
 - **File-based**: `managed-settings.json`, an optional `managed-settings.d/` directory, and `managed-mcp.json` in the system directory: `/Library/Application Support/ClaudeCode/` on macOS, `/etc/claude-code/` on Linux and WSL, and `C:\Program Files\ClaudeCode\` on Windows. Claude Code doesn’t read the legacy Windows path `C:\ProgramData\ClaudeCode\managed-settings.json`. You can deploy any of these files as a symbolic link, and Claude Code reads the file the link leads to. The policy still applies when the link leads outside the system directory or Claude Code can’t confirm that it stays inside. A warning naming the file then appears in `/status` and `claude doctor`. To clear the warning, point the link at a target inside the system directory.
 - **Windows HKCU registry**: the same `Settings` value under `HKCU\SOFTWARE\Policies\ClaudeCode`.
 
-
-[​](#split-a-file-based-policy-across-teams)
-
-Split a file-based policy across teams
+### [](#split-a-file-based-policy-across-teams)Split a file-based policy across teams
 
 If several teams own parts of one policy, put each part in its own file in `managed-settings.d/`, next to `managed-settings.json` in the same system directory, instead of editing one shared file. Claude Code merges `managed-settings.json` first, then every `*.json` file in the directory in alphabetical order. Name the files with numeric prefixes to control the order, such as `10-telemetry.json` and `20-security.json`. Claude Code ignores hidden files and files that don’t end in `.json`. When two files set the same key, Claude Code combines them by these rules:
 
@@ -162,10 +147,7 @@ If several teams own parts of one policy, put each part in its own file in `mana
 - **[`extraKnownMarketplaces`](../02-Claude-Code-CLI/settings-reference.md#extraknownmarketplaces) and [`managedMcpServers`](../02-Claude-Code-CLI/settings-reference.md#managedmcpservers)**: a later entry with the same name replaces the earlier one whole
 - **[`modelPicker`](../02-Claude-Code-CLI/settings-reference.md#modelpicker)**: the later lineup replaces the earlier one whole
 
-
-[​](#how-claude-code-combines-managed-sources)
-
-How Claude Code combines managed sources
+## [](#how-claude-code-combines-managed-sources)How Claude Code combines managed sources
 
 When your organization delivers more than one managed source to the same machine, the [`managedSourcesBehavior`](../02-Claude-Code-CLI/settings-reference.md#managedsourcesbehavior) key decides what Claude Code does with the others:
 
@@ -186,10 +168,7 @@ Claude Code checks the sources in this order, highest priority first:
 
 This diagram shows the ranking, with examples of the cross-source keys Claude Code reads from the first three sources under either setting:
 
-
-[​](#present-admin-documents)
-
-When an admin document counts as present
+### [](#present-admin-documents)When an admin document counts as present
 
 In the [ranking of managed sources](#how-claude-code-combines-managed-sources), Claude Code never applies the user-writable HKCU registry beneath an admin document that is present. A document is present when:
 
@@ -198,10 +177,7 @@ In the [ranking of managed sources](#how-claude-code-combines-managed-sources), 
 
 On WSL, `/etc/claude-code` is user-writable as well, and the [`wslInheritsWindowsSettings`](../02-Claude-Code-CLI/settings-reference.md#wslinheritswindowssettings) entry says when the Windows documents stand above it.
 
-
-[​](#keys-read-from-every-admin-source)
-
-Keys read from every admin source
+### [](#keys-read-from-every-admin-source)Keys read from every admin source
 
 Under the default `"first-wins"` setting, Claude Code reads most keys only from the [source it selected](#how-claude-code-combines-managed-sources), and ignores a value in a lower-ranked source even when the selected source leaves that key unset. A few keys work differently. Claude Code reads them from every admin source, so a lower-ranked MDM policy or managed settings file can still set them when the selected source doesn’t. Claude Code leaves the user-writable HKCU registry out of that scan; when HKCU is the only source and no host supplies parent settings, HKCU applies like any selected source. The cross-source keys include:
 
@@ -223,20 +199,14 @@ Under the default `"first-wins"` setting, Claude Code reads most keys only from 
 
 [`allowedProviders`](../02-Claude-Code-CLI/settings-reference.md#allowedproviders) has its own rule: its entry’s Scope note says how a list set on the machine combines with a server-managed one. Requires Claude Code v2.1.285 or later. When an admin source sets `allowManagedMcpServersOnly` or an `allowedMcpServers` list and that value isn’t the one in force, `/status` and `claude doctor` name that source and key.
 
-
-[​](#which-managed-source-supplies-login-keys)
-
-Which managed source supplies login keys
+#### [](#which-managed-source-supplies-login-keys)Which managed source supplies login keys
 
 On a machine with an MDM policy or managed settings file, Claude Code takes the login keys from that policy or file, even for a key [remote settings](#how-claude-code-combines-managed-sources) also set. Settings from the claude.ai admin console are remote settings, so set login keys such as [`forceLoginOrgUUID`](../02-Claude-Code-CLI/settings-reference.md#forceloginorguuid) in the MDM policy or file. If a machine has both an MDM policy and a managed settings file, use the MDM policy. When that policy sets any [policy key](#how-claude-code-combines-managed-sources), Claude Code ignores login keys in the file, [even under `managedSourcesBehavior: "merge"`](#compose-every-managed-source). The login keys are:
 
 - `forceLoginOrgUUID` and `forceLoginMethod` set to `"claudeai"` or `"console"`: if the policy or file omits either key, the value in remote settings applies. Until every client runs v2.1.299 or later, set the keys in [server-managed settings](server-managed-settings.md) from claude.ai as well
 - The [gateway login keys](#choose-a-delivery-mechanism): Claude Code doesn’t use a value in remote settings for the gateway sign-in
 
-
-[​](#compose-every-managed-source)
-
-Compose every managed source
+### [](#compose-every-managed-source)Compose every managed source
 
 To have Claude Code apply every admin source your organization delivers, set [`managedSourcesBehavior`](../02-Claude-Code-CLI/settings-reference.md#managedsourcesbehavior) to `"merge"` in the highest-ranked source you deploy. Claude Code reads the key only from the highest-ranked source that carries either the key or a policy key, so a lower source can’t opt itself into merging with the source above it, and a machine that never receives server-managed settings needs the key in its MDM profile too. The user-writable HKCU registry never merges with another source. Requires Claude Code v2.1.242 or later. Under `"merge"`, Claude Code adds a lower source’s list entries, such as `permissions.allow` rules and hooks, to the policy, so turn it on only when every source ranked below your highest one is under an administrator’s control. This table shows how Claude Code combines each kind of key under `"merge"`. The [`managedSourcesBehavior` entry](../02-Claude-Code-CLI/settings-reference.md#managedsourcesbehavior) names every key in three of the rows: restriction allowlists, values taken whole, and keys read from the highest-ranked source only.
 
@@ -254,10 +224,7 @@ To have Claude Code apply every admin source your organization delivers, set [`m
 
 To confirm which sources combined on a machine, [read the `Setting sources` line in `/status`](#read-the-source-in-/status); that section says what each label means.
 
-
-[​](#compute-the-policy-with-a-helper-program)
-
-Compute the policy with a helper program
+### [](#compute-the-policy-with-a-helper-program)Compute the policy with a helper program
 
 A [`policyHelper`](../02-Claude-Code-CLI/settings-reference.md#policyhelper) is an executable your MDM policy or managed settings file names, and Claude Code runs it to compute managed settings at startup. When the selected source configures one and the helper emits a `managedSettings` object, that output changes what Claude Code reads:
 
@@ -265,10 +232,7 @@ A [`policyHelper`](../02-Claude-Code-CLI/settings-reference.md#policyhelper) is 
 
 For which helper runs fail, and what Claude Code does when one does, see [Helper failures](../02-Claude-Code-CLI/settings-reference.md#helper-failures).
 
-
-[​](#let-an-embedding-host-add-policy)
-
-Let an embedding host add policy
+### [](#let-an-embedding-host-add-policy)Let an embedding host add policy
 
 When another application launches Claude Code, such as Claude Desktop, an IDE extension, or an Agent SDK app, that host can pass its own managed settings through the SDK `managedSettings` option. Claude Code calls these parent settings. By default, Claude Code ignores parent settings whenever an admin source is present: server-managed settings, an MDM or OS-level policy, or a managed settings file. To have Claude Code merge parent settings alongside an admin source, set [`parentSettingsBehavior`](../02-Claude-Code-CLI/settings-reference.md#parentsettingsbehavior) to `"merge"` in the highest-priority managed source; Claude Code reads the key from that source only. Claude Code then keeps only the host’s values that restrict what Claude can do, with one gap to know about: unless you also set the `allowManaged*Only` locks, the host’s permission allow rules and sandbox allowlists still apply. See [Restrict parent settings](claude-apps-gateway.md#restrict-parent-settings) for the locks. A [`policyHelper`](../02-Claude-Code-CLI/settings-reference.md#policyhelper) can turn parent merging off regardless of this key; its entry says when. Claude Code also applies these checks to parent-supplied values on their own:
 
@@ -279,10 +243,7 @@ When another application launches Claude Code, such as Claude Desktop, an IDE ex
 - For `allowedProviders`, a list in the [selected managed source](#which-managed-source-claude-code-uses) blocks a parent-supplied one, and under the [`managedSourcesBehavior`](../02-Claude-Code-CLI/settings-reference.md#managedsourcesbehavior) `"merge"` opt-in a list in any admin source does. Requires Claude Code v2.1.285 or later
 - A parent-supplied `blockedMarketplaces` applies in addition to any blocklist that a managed source sets. Requires Claude Code v2.1.282 or later
 
-
-[​](#keep-cowork-folder-access-when-only-managed-rules-apply)
-
-Keep Cowork folder access when only managed rules apply
+#### [](#keep-cowork-folder-access-when-only-managed-rules-apply)Keep Cowork folder access when only managed rules apply
 
 [Cowork](https://claude.com/docs/cowork/overview) in the Claude Desktop app runs its sessions on Claude Code and grants each session access to its working folders, such as the folder the user connects, through allow rules it supplies when it launches the session. When your managed policy sets [`allowManagedPermissionRulesOnly`](../02-Claude-Code-CLI/settings-reference.md#allowmanagedpermissionrulesonly), Claude Code keeps only the allow rules in the managed policy: it drops allow rules a host supplies as parent settings, as `--allowedTools`, or in a settings file, so writes to those folders lose their pre-approval. In a Cowork session that asks before edits, Cowork can’t show the prompt, and Claude reports each write as blocked because the path resolves to a protected location or a path outside the connected folder. To restore the writes, add allow rules for those folders to the managed source Claude Code [selects](#precedence-within-the-managed-tier) on those machines: on an MDM-managed fleet, that’s the MDM policy rather than a separate managed settings file. This example uses the file form, and an MDM policy takes the same keys. It keeps `allowManagedPermissionRulesOnly` set and allows edits under a `CoworkProjects` folder in each user’s home directory; replace the path with the folders your users connect:
 
@@ -301,10 +262,7 @@ managed-settings.json
 
 After you deploy the policy, Claude can save files under that folder in a new Cowork session. [Read and Edit rules](../02-Claude-Code-CLI/permissions.md#read-and-edit) cover the path syntax, including the `//` form for absolute paths.
 
-
-[​](#what-a-developer-can-change)
-
-What a developer can change
+### [](#what-a-developer-can-change)What a developer can change
 
 A developer’s own settings files, `--settings` values, and project files never override a managed value; the [exceptions](../02-Claude-Code-CLI/settings.md#exceptions-to-managed-settings-precedence) only let a stricter lower-level value count. These cases sit outside that rule:
 
@@ -314,17 +272,11 @@ A developer’s own settings files, `--settings` values, and project files never
 - **The server-managed cache**: server-managed settings come from Anthropic’s servers, and an edit to the local cache [lasts only until the next successful fetch](server-managed-settings.md#security-considerations).
 - **Other tools**: managed settings bind Claude Code only. A developer who calls the API from another tool isn’t under them.
 
-
-[​](#check-that-a-policy-is-in-force)
-
-Check that a policy is in force
+## [](#check-that-a-policy-is-in-force)Check that a policy is in force
 
 A developer reports that a policy isn’t applying, or you want to confirm a rollout landed before pushing it to the fleet. Two commands on that machine answer it: `/status` shows which managed source Claude Code selected, and `claude doctor` lists what it dropped.
 
-
-[​](#read-the-source-in-/status)
-
-Read the source in /status
+### [](#read-the-source-in-/status)Read the source in /status
 
 On the developer’s machine, run `/status` inside Claude Code and read the `Setting sources` line. When a managed source is in effect, the line lists `Enterprise managed settings` with the source Claude Code selected in parentheses:
 
@@ -341,10 +293,7 @@ When Claude Code found a managed source on the machine and didn’t select it, a
 - **The line is missing**: Claude Code found no managed source that delivers a policy key. If you deployed a managed settings file, check that it sits at the path for the OS and that it contains a [policy key](#how-claude-code-combines-managed-sources) rather than only the control keys. A file that isn’t valid JSON doesn’t produce this state; Claude Code [refuses to start](#find-entries-claude-code-dropped) instead. When you deployed through server-managed settings instead, run `claude doctor`, which reports the [fetch outcome](server-managed-settings.md#verify-settings-delivery).
 - **The line names a source other than the one you deployed**: a higher-priority source is present and Claude Code ignored yours, and `Skipped sources` lists it. [How Claude Code combines managed sources](#how-claude-code-combines-managed-sources) gives the order.
 
-
-[​](#find-entries-claude-code-dropped)
-
-Find entries Claude Code dropped
+### [](#find-entries-claude-code-dropped)Find entries Claude Code dropped
 
 If your managed settings file, MDM profile, registry value, or server-managed payload fails schema validation, Claude Code first skips each individual entry it can repair, such as one invalid permission rule, and warns about each one. Claude Code then drops any value that still fails, unless the value belongs to one of the keys that [fail closed](#keys-that-fail-closed) instead. Claude Code is stricter with the `managedSettings` a [`policyHelper`](../02-Claude-Code-CLI/settings-reference.md#policyhelper) emits: it makes the same entry repairs, but any schema violation that survives fails the whole helper run, and at startup Claude Code refuses to start, the same as for a helper that exits non-zero. When a managed settings file, drop-in file, MDM plist, or HKLM registry value is present but can’t be parsed as a JSON object, Claude Code refuses to start and prints [an error naming the source](../02-Claude-Code-CLI/errors.md#managed-settings-document-could-not-be-parsed), even when another admin source delivers a valid policy. Each source fails this way when:
 
@@ -369,10 +318,7 @@ To find a dropped entry, look in one of three places:
 - Non-interactive runs with `-p` print a summary to stderr.
 - [`claude doctor`](../02-Claude-Code-CLI/debug-your-config.md) lists each invalid entry with its source and field.
 
-
-[​](#keys-that-fail-closed)
-
-Keys that fail closed
+#### [](#keys-that-fail-closed)Keys that fail closed
 
 When a managed source sets a top-level key that has a single restrictive value, such as `allowManagedPermissionRulesOnly`, `disableAutoMode`, or `skipDangerousModePermissionPrompt`, to something Claude Code can’t read, the key reads as that value until you fix it. The report says the key `was present but invalid` and names the value Claude Code treats it as. For a key inside `sandbox`, see [Invalid values inside `sandbox`](#invalid-values-inside-sandbox). These cases don’t fail closed:
 
@@ -412,10 +358,7 @@ The fail-closed rule for keys with a single restrictive value and the per-field 
 
 `allowedHttpHookUrls` and `httpHookAllowedEnvVars` merge across settings files, so entries in your user, project, or local settings still apply while the managed list is empty. The fallbacks for those two keys and for `allowedChannelPlugins` require Claude Code v2.1.267 or later; earlier versions drop the whole key when its value or any entry is invalid. The `strictKnownMarketplaces` and `blockedMarketplaces` fallbacks require Claude Code v2.1.277 or later; earlier versions drop the whole key when its value or any entry is invalid. The `strictPluginOnlyCustomization` and `enabledPlugins` fallbacks require Claude Code v2.1.282 or later. `requiredMinimumVersion` and `requiredMaximumVersion` fail open by design: an invalid value is dropped rather than enforced. This tolerance applies only to managed settings. User, project, and local settings files remain strict: a file whose JSON or top-level shape fails validation is rejected as a whole and reported, and an individual entry that fails, such as a malformed permission rule, is skipped with a warning while the rest of the file applies.
 
-
-[​](#invalid-values-inside-sandbox)
-
-Invalid values inside `sandbox`
+#### [](#invalid-values-inside-sandbox)Invalid values inside `sandbox`
 
 When one value in your managed `sandbox` block is invalid, Claude Code doesn’t drop the whole block, because it validates each field on its own. This per-field handling requires Claude Code v2.1.283 or later. On versions before v2.1.283, Claude Code drops every `sandbox` field except [`credentials`](../02-Claude-Code-CLI/settings-reference.md#invalid-credential-entries-in-managed-settings) when a value outside `credentials` is invalid. The warning you get for an invalid field names the field and tells you what happens to it. What happens depends on what the field controls:
 
@@ -426,10 +369,7 @@ When one value in your managed `sandbox` block is invalid, Claude Code doesn’t
 - While `network.deniedDomains` or any entry in it is invalid, Claude Code also withholds `network.allowedDomains`, so the managed allowlist grants nothing until you fix the deny list.
 - While `filesystem.denyRead`, `filesystem.denyWrite`, or any entry in either is invalid, Claude Code also withholds both `filesystem.allowRead` and `filesystem.allowWrite` until you fix the deny list.
 
-
-[​](#keys-only-a-managed-source-can-set)
-
-Keys only a managed source can set
+## [](#keys-only-a-managed-source-can-set)Keys only a managed source can set
 
 Claude Code reads the following keys only from a managed source; placing them in user or project settings files has no effect. Most of them are locks: the value a lock governs, such as permission rules or `sandbox.network.allowedDomains`, is an ordinary key that any level can set, and the lock tells Claude Code to honor only the managed value. The table covers the permission, plugin, and delivery controls. For any key not listed here, the Scope column of the [settings reference](../02-Claude-Code-CLI/settings-reference.md#all-settings) index says whether it’s managed-only.
 
@@ -459,10 +399,7 @@ Claude Code reads the following keys only from a managed source; placing them in
 
 On Team and Enterprise plans, an Owner enables or disables [Remote Control](../02-Claude-Code-CLI/remote-control.md) and [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md) organization-wide in [Claude Code admin settings](https://claude.ai/admin-settings/claude-code). When an Owner turns Remote Control off, already-connected sessions that run Claude Code v2.1.286 or later disconnect too. Each one disconnects the next time it refreshes your organization’s policy, about once an hour. For what happens in those sessions, see [`Remote Control was turned off by your organization's policy`](../02-Claude-Code-CLI/remote-control.md#remote-control-was-turned-off-by-your-organizations-policy).Remote Control can additionally be disabled per device with the [`disableRemoteControl`](../02-Claude-Code-CLI/settings-reference.md#disableremotecontrol) setting. Cloud sessions have no per-device managed settings key.To check whether these organization settings reached a given machine, run `claude doctor` there and read the `Organization policy` line, which says where Claude Code loaded the policy from or why it didn’t load. Requires Claude Code v2.1.261 or later. In a running session, `/status` shows the same line when the policy didn’t load.
 
-
-[​](#turn-telemetry-off-for-your-organization)
-
-Turn telemetry off for your organization
+## [](#turn-telemetry-off-for-your-organization)Turn telemetry off for your organization
 
 Claude Code sends Anthropic operational [telemetry](data-usage.md#telemetry-services) by default on sessions that use the Anthropic API, whether directly, through an LLM gateway, or through a custom `ANTHROPIC_BASE_URL`; [Default behaviors by API provider](data-usage.md#default-behaviors-by-api-provider) says which providers send it. To turn it off for every developer without relying on each person’s shell, deliver `DISABLE_TELEMETRY` through the `env` block of your managed settings. This example sets `DISABLE_TELEMETRY` for everyone the policy reaches:
 
@@ -476,10 +413,7 @@ Claude Code sends Anthropic operational [telemetry](data-usage.md#telemetry-serv
 
 Claude Code applies a value of `1` without showing the user the [approval dialog](server-managed-settings.md#environment-variables-and-the-approval-dialog). If you turn telemetry off, Claude Code stops sending the usage data that feeds your organization’s [analytics dashboard](analytics.md) for the developers the policy reaches. The variable also turns off [feature-flag fetching](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching) for those developers. For Remote Control, see the [Remote Control requirements](../02-Claude-Code-CLI/remote-control.md#requirements). [Where and when a policy applies](#where-and-when-a-policy-applies) says which delivery mechanism reaches each surface, and [Platform availability](server-managed-settings.md#platform-availability) says which sessions skip the server-managed settings fetch. If your organization uses customer-managed encryption keys and routes Claude Code through a gateway, [Configure proxies and gateways](../02-Claude-Code-CLI/third-party-integrations.md#configure-proxies-and-gateways) says why those sessions need this variable.
 
-
-[​](#see-also)
-
-See also
+## [](#see-also)See also
 
 - [Set up Claude Code for your organization](admin-setup.md): decide what to enforce and how
 - [Server-managed settings](server-managed-settings.md): deliver policy from the claude.ai console or a gateway

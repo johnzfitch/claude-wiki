@@ -2,7 +2,7 @@
 title: "Agents - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/agents"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:17Z"
+fetched_at: "2026-11-13T06:33:06Z"
 tags: ["agents", "api"]
 ---
 
@@ -25,31 +25,31 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/agents
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [List Agents](https://platform.claude.com/docs/en/api/http/beta/agents/list)
 
 GET/v1/agents
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Get Agent](https://platform.claude.com/docs/en/api/http/beta/agents/retrieve)
 
 GET/v1/agents/{agent_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Update Agent](https://platform.claude.com/docs/en/api/http/beta/agents/update)
 
 POST/v1/agents/{agent_id}
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Archive Agent](https://platform.claude.com/docs/en/api/http/beta/agents/archive)
 
 POST/v1/agents/{agent_id}/archive
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 
@@ -387,7 +387,7 @@ BetaManagedAgentsAutoPolicy object{ type: "auto" }
 
 
 
-The server decides each tool call individually: it judges, from the tool, its input, and the session content so far, whether the call is safe to execute or high-risk, and evaluates it to allow when judged safe and to deny when judged high-risk. A call the server cannot reach a judgement on evaluates to ask.
+The server decides each tool call individually: it judges, from the tool, its input, and the session content so far, whether the call is safe to execute or high-risk, and evaluates it to allow when judged safe and to deny when judged high-risk. A call the server cannot reach a judgement on evaluates to ask, or for some causes to deny, for example when the organization is out of credits or has reached a spend limit.
 
 type: "auto"
 
@@ -885,7 +885,7 @@ Configuration for tools from an MCP server defined in `mcp_servers`.
 
 
 
-BetaManagedAgentsModel = "claude-haiku-5-5" or "claude-sonnet-5-5" or "claude-opus-5-5" or 14 more or string
+BetaManagedAgentsModel = "claude-fable-5-2" or "claude-haiku-5-5" or "claude-sonnet-5-5" or 15 more or string
 
 
 
@@ -1993,4 +1993,4 @@ Configuration override for the write tool.
 
 GET/v1/agents/{agent_id}/versions
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).

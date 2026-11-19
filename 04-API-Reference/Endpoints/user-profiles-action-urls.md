@@ -2,7 +2,7 @@
 title: "Action URLs - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/user_profiles/action_urls"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:33:45Z"
+fetched_at: "2026-11-14T06:25:41Z"
 tags: ["api"]
 ---
 

@@ -2,8 +2,8 @@
 title: "Understanding MCP servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-11-25/learn/server-concepts"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-31T06:24:46Z"
-last_modified: "Sat, 31 Oct 2026 02:28:17 GMT"
+fetched_at: "2026-11-10T06:27:36Z"
+last_modified: "Tue, 10 Nov 2026 02:38:23 GMT"
 tags: ["mcp"]
 ---
 

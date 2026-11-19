@@ -2,7 +2,7 @@
 title: "Account management FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13325567-account-management-faqs"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:25:45Z"
+fetched_at: "2026-11-18T06:28:22Z"
 tags: ["account", "enterprise"]
 ---
 

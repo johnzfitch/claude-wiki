@@ -2,29 +2,25 @@
 title: "Investing in the public benefit \\ Anthropic"
 source_url: "https://www.anthropic.com/news/public-benefit-fund"
 category: "19-Reference"
-fetched_at: "2026-10-22T06:30:46Z"
+fetched_at: "2026-11-17T06:25:30Z"
 tags: ["news-research"]
 ---
 
 # Investing in the public benefit
 
-- Published
+Published  
+Oct 18, 2026
 
-  Oct 18, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Funding](https://www.anthropic.com/search?topic=funding)
+- [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [Nonprofits](https://www.anthropic.com/search?topic=nonprofits)
+- [Leadership](https://www.anthropic.com/search?topic=leadership)
 
-  [Announcements](announcements.md)
-
-- Topics
-
-  - [Funding](https://www.anthropic.com/search?topic=funding)
-  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [Nonprofits](https://www.anthropic.com/search?topic=nonprofits)
-  - [Leadership](https://www.anthropic.com/search?topic=leadership)
-
-  See more...
+See more...
 
 Related articles
 

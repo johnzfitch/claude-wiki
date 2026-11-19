@@ -2,7 +2,7 @@
 title: "Navigating the Claude desktop app · Claude Academy"
 source_url: "https://www.claude.com/resources/tutorials/navigating-the-claude-desktop-app"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-07T06:23:35Z"
+fetched_at: "2026-11-18T06:26:45Z"
 tags: ["desktop"]
 ---
 
@@ -29,7 +29,7 @@ In this guide
 
 ## 1. Claude is one shortcut away[](#1-claude-is-one-shortcut-away)
 
-In the [Claude desktop app(opens in new tab)](https://claude.com/download), quick entry is a small Claude window that opens on top of whatever app you're in and stays in front as you switch apps. Reach it a few ways:
+In the [Claude desktop app(opens in new tab)](https://claude.com/download), quick entry is a small Claude window that opens on top of whatever app you're in. Reach it a few ways:
 
 - **Type:** Double-tap Option on a Mac, or use the shortcut you set in [Settings(opens in new tab)](https://claude.ai/desktop/settings/desktop) on Windows or Linux (beta), then type your question.
 - **Speak (Mac):** Press Caps Lock, talk, then press it again (turn it on in Settings).
@@ -39,7 +39,7 @@ On a Mac you can also show your screen. Hover over a window to send a screenshot
 
 Voice, dictation, and uploads work on the web, your phone, and the desktop app (dictation isn't available on Linux yet); the desktop app lets you reach these features in Claude quickly, from whatever app you're in.
 
-Things to ask:
+Things to ask with a screenshot:
 
 - *What do these numbers mean, and which one should I keep an eye on?*
 - *Summarize what's on my screen right now.*
@@ -58,7 +58,7 @@ See [Use quick entry on Mac(opens in new tab)](use-quick-entry-with-claude-deskt
 
 ## 2. Claude can work in your files, apps, and websites[](#2-claude-can-work-in-your-files-apps-and-websites)
 
-On the desktop app, Claude can work directly in the files, apps, and websites where your work already is. Instead of carrying material to Claude and results away, you let Claude handle the whole task in place. You choose what Claude can use, and Claude works only with what you share: folders, apps, websites, or your screen.
+On the desktop app, Claude can work directly in the files, apps, and websites where your work already is. Instead of carrying material to Claude and results away, you let Claude handle the whole task in place. You can give Claude access to folders, apps, websites, or your screen.
 
 ### Folders[](#folders)
 
@@ -66,7 +66,7 @@ On the web you might upload or drag in files. On the desktop app, Claude can go 
 
 To give access:
 
-1.  Under the message box, add a folder.
+1.  From the message box, add a folder.
 2.  Allow Claude to edit the files in it.
 
 With that permission, Claude reads what it needs from the folder and saves finished work back to it.
@@ -95,7 +95,7 @@ The built-in browser is a browser panel inside the desktop app, next to your tas
 
 1.  In Settings, set the built-in browser as your preferred browser.
 2.  Ask Claude to use a website.
-3.  The first time Claude acts on that site, you choose to allow it once, allow it always for that site, or deny it.
+3.  The first time Claude acts on that site, you choose to allow it once, allow it always for that site, or deny it. In [Auto mode(opens in new tab)](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5), Claude acts on most sites without asking first.
 
 Things to ask:
 
@@ -109,7 +109,7 @@ A task in Claude, on the web or the desktop app, can also work in your own Chrom
 
 
 
-Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) and [Use the built-in browser(opens in new tab)](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork-claude-help-center.md).
+Some pages carry hidden text meant to mislead an AI, and safety checks reduce that risk without removing it. Start with sites you trust, and handle anything sensitive yourself, like bank accounts or health records. See [Use Claude in Chrome safely(opens in new tab)](https://support.claude.com/en/articles/12902428-using-claude-for-chrome-safely) and [Use the built-in browser(opens in new tab)](https://support.claude.com/en/articles/16607400).
 
 ### Your screen, through computer use (beta)[](#your-screen-through-computer-use-beta)
 
@@ -127,7 +127,7 @@ Things to ask:
 
 
 
-By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork).
+By default, Claude asks before using an app, and you can stop Claude at any time. Claude can see what's on your screen while it works, so close anything sensitive first. See [Let Claude use your computer(opens in new tab)](../15-Claude-AI-Features/let-claude-use-your-computer-in-cowork.md).
 
 ### Record a skill[](#record-a-skill)
 
@@ -135,7 +135,7 @@ By default, Claude asks before using an app, and you can stop Claude at any time
 
 1.  Start it from the plus menu in the message box.
 2.  Do the task once, saying what you're doing as you go.
-3.  Choose **Done**, and Claude turns the recording into a skill.
+3.  Choose **Done**, then review the skill Claude proposes and save it.
 
 The skill is then available in Claude. While recording, don't type passwords or secrets, or show sensitive information or private conversations.
 

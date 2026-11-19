@@ -2,13 +2,13 @@
 title: "Models \\ Anthropic"
 source_url: "https://www.anthropic.com/news/models"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:27Z"
+fetched_at: "2026-11-18T06:28:43Z"
 tags: ["news-research"]
 ---
 
 # Models
 
-28
+29
 
 ARTICLES
 
@@ -26,6 +26,18 @@ Title
 Description
 
 
+  ### Introducing Claude Fable 5.2 and Claude Mythos 5.2
+
+  Our most capable models for daunting technical work, Claude Fable 5.2 and Claude Mythos 5.2 set a new bar in coding, finance, and the sciences.
+
+  Nov 9, 2026
+
+  Nov 9, 2026
+
+  ### Introducing Claude Fable 5.2 and Claude Mythos 5.2
+
+  Our most capable models for daunting technical work, Claude Fable 5.2 and Claude Mythos 5.2 set a new bar in coding, finance, and the sciences.
+
   ### Introducing Claude Haiku 5.5
 
   Claude Haiku 5.5 is our fastest, most capable small model. Built for high-volume work like summarization, subagents, and browser use.
@@ -301,18 +313,6 @@ Description
   ### Claude 3 Haiku: our fastest model yet
 
   Claude 3 Haiku is the fastest and most affordable model in its intelligence class.
-
-  ### Introducing the next generation of Claude
-
-  The Claude 3 model family—Haiku, Sonnet, and Opus—sets new industry benchmarks across a wide range of cognitive tasks.
-
-  Mar 4, 2024
-
-  Mar 4, 2024
-
-  ### Introducing the next generation of Claude
-
-  The Claude 3 model family—Haiku, Sonnet, and Opus—sets new industry benchmarks across a wide range of cognitive tasks.
 
 See more
 
@@ -324,7 +324,7 @@ See more
 
 ### Support
 
-[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)
+[How to get support](../15-Claude-AI-Features/how-to-get-support.md)
 
 ### Media assets
 

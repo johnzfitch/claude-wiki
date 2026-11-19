@@ -2,7 +2,7 @@
 title: "List organizations - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:36:24Z"
+fetched_at: "2026-11-13T06:36:13Z"
 tags: ["api"]
 ---
 
@@ -60,13 +60,13 @@ Opaque pagination token from a previous response's `next_page` field. Pass this 
 
 
 
-"anthropic-version": optional string
+"anthropic-version": string
 
 
 
-The version of the Claude API you want to use.
+The version of the Claude API to use. Send an available version on every request. A request that sends any other value, including an empty one, returns a 400 error. This endpoint treats a request that omits this header as version `2023-06-01`; some other Compliance API endpoints return a 400 error instead.
 
-Read more about versioning and our version history [here](../Endpoints/versioning.md).
+See [API versions](../Endpoints/versioning.md) for the available versions.
 
 "x-api-key": optional string
 
@@ -76,7 +76,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: array of object{ created_at, name, uuid }
+data: array of object{ created_at, name, uuid, organization_type }
 
 
 
@@ -100,6 +100,28 @@ uuid: string
 
 Unique identifier for the organization (UUID format)
 
+
+
+organization_type: optional "claude_enterprise" or "claude_platform" or "claude_team" or null
+
+
+
+The kind of organization: `claude_enterprise` for a claude.ai organization on the Enterprise plan, `claude_team` for a claude.ai organization on the Team plan, or `claude_platform` for a Claude Console organization. Null for an organization of any other kind. More values can be added; treat a value you don't recognize as you would null.
+
+One of the following:
+
+"claude_enterprise"
+
+
+
+"claude_platform"
+
+
+
+"claude_team"
+
+
+
 has_more: boolean
 
 
@@ -120,7 +142,7 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/compliance/organizations \
-    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-version: 2026-10-21' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 
@@ -134,7 +156,8 @@ Response 200
     {
       "created_at": "2025-03-12T18:22:41.123456+00:00",
       "name": "Acme Corp",
-      "uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde"
+      "uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde",
+      "organization_type": "claude_enterprise"
     }
   ],
   "has_more": true,
@@ -154,7 +177,8 @@ Response 200
     {
       "created_at": "2025-03-12T18:22:41.123456+00:00",
       "name": "Acme Corp",
-      "uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde"
+      "uuid": "a1b2c3d4-e5f6-4789-a012-3456789abcde",
+      "organization_type": "claude_enterprise"
     }
   ],
   "has_more": true,

@@ -2,7 +2,7 @@
 title: "How to create a skill with Claude through conversation · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-07T06:24:14Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["claude-ai", "skills"]
 ---
 
@@ -42,13 +42,13 @@ You'll get questions about concrete usage ("Can you give examples of when you'd 
 
 ### 3. Claude builds the Skill[](#3-claude-builds-the-skill)
 
-In Claude's thinking, you will see it read a *skill-creator* skill to follow best practices in creating a properly structured skill. Claude will create a SKILL.md file (the instruction file every skill needs), organize any materials you've provided, and generate code for operations you've described that need to happen consistently. Claude then packages everything into a skill file.
+If you open the steps Claude took, you will see it load a *skill-creator* skill to follow best practices in creating a properly structured skill. Claude will create a SKILL.md file (the instruction file every skill needs), organize any materials you've provided, and generate code for operations you've described that need to happen consistently. Claude then packages everything into a skill file.
 
-### 4. Activate and test the skill[](#4-activate-and-test-the-skill)
+### 4. Save and test the skill[](#4-save-and-test-the-skill)
 
-Save the the skill file that Claude creates. In [Settings \> Capabilities \> Skills(opens in new tab)](https://claude.ai/settings/capabilities), you can view your library of skills and turn them on or off as needed.
+Save the skill file that Claude creates. In [your skills(opens in new tab)](https://claude.ai/customize/skills/yours), you can see the skills you have and add or remove them as needed.
 
-Try using your skill by describing a task the skill should address. See if Claude recognizes the situation (you'll see "Using \[skill name\]" in Claude's thinking) and whether it produces the expected outcome. If something's off, ask Claude to update the skill with your desired changes. Repeat this process until your skill works effectively.
+Try using your skill by describing a task the skill should address. See if Claude recognizes the situation (open the steps Claude took and look for one that loads the skill) and whether it produces the expected outcome. If something's off, ask Claude to update the skill with your desired changes. Repeat this process until your skill works effectively.
 
 ## Skills you can build[](#skills-you-can-build)
 

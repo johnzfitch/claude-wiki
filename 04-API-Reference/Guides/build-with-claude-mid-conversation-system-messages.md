@@ -2,7 +2,7 @@
 title: "Mid-conversation system messages and tool changes - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/mid-conversation-system-messages"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:46Z"
+fetched_at: "2026-11-13T06:34:52Z"
 tags: ["api", "prompting"]
 ---
 
@@ -20,14 +20,19 @@ Change system instructions or tool availability partway through a conversation w
 
 Mid-conversation system messages
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Usage differs by product
 
@@ -45,15 +50,18 @@ Mid-conversation system messages close that gap. You append a `{"role": "system"
 
 
 
-Mid-conversation system messages are available on Claude Fable 5.1, [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md), Claude Fable 5, [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md), Claude Opus 5.5, Claude Opus 4.8, Claude Opus 5, Claude Sonnet 5.5, and Claude Haiku 5.5. No beta header is required for mid-conversation system messages. This feature is not available on Claude Sonnet 5. Use the top-level `system` field there instead.
+Mid-conversation system messages are available on Claude Fable 5.2, [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md), Claude Fable 5.1, [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md), Claude Fable 5, [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md), Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Haiku 5.5. This feature is not available on Claude Sonnet 5. Use the top-level `system` field there instead.
 
-[Mid-conversation tool changes](#mid-conversation-tool-changes) are in beta on the same models. On the Claude API, Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed), send the `inline-tools-2026-09-15` beta header, which also covers [defining a tool inside a `tool_addition` block](#define-tools-in-a-message-beta). [Adding an MCP server that way](#add-an-mcp-server-mid-conversation-beta) needs a second beta header, `mcp-client-2026-09-15`, which is available on the Claude API. The `mid-conversation-tool-changes-2026-07-01` header works for changes that name a tool by reference, on the Claude API, Amazon Bedrock, Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed), and Claude Models on Google Cloud (Google managed).
+[Mid-conversation tool changes](#mid-conversation-tool-changes) are in beta on the same models. Two beta headers enable these changes. Where both work on your platform, send `inline-tools-2026-09-15`:
 
-[Turn-scoped system messages](#turn-scoped-system-messages) (`clear_at`) are in beta and require the `mid-conversation-system-clear-at-2026-08-21` beta header, on the same models and platforms as mid-conversation system messages.
+- `inline-tools-2026-09-15` works on the Claude API, Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed), and Microsoft Foundry. It also covers [defining a tool inside a `tool_addition` block](#define-tools-in-a-message-beta). [Adding an MCP server that way](#add-an-mcp-server-mid-conversation-beta) also needs the `mcp-client-2026-09-15` beta header, which is available on the Claude API.
+- `mid-conversation-tool-changes-2026-07-01` works on Claude Models on Google Cloud (Google managed) and Amazon Bedrock, and on the four platforms listed for `inline-tools-2026-09-15`. It doesn’t cover defining a tool inside a `tool_addition` block.
+
+[Turn-scoped system messages](#turn-scoped-system-messages) (`clear_at`) are in beta and require the `mid-conversation-system-clear-at-2026-08-21` beta header, on the [same models and platforms](#feature-availability) as mid-conversation system messages.
 
 ## Mid-conversation tool changes
 
-The `tools` array sits even earlier in the hashed request prefix than the top-level `system` field, so editing it invalidates the [prompt cache](build-with-claude-prompt-caching.md) for the entire conversation. Mid-conversation tool changes are the tools counterpart to mid-conversation system messages. Instead of fixing the tool list for the lifetime of the conversation, you change which tools are offered to the model between turns: declare the full tool set in `tools` up front, then use `tool_addition` and `tool_removal` blocks to offer a tool to the model, or withdraw it, from a specific point in the conversation onward. The `tools` array itself never changes, so the cached prefix stays intact. Mid-conversation tool changes are in beta and use the `inline-tools-2026-09-15` beta header on the Claude API, Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed).
+The `tools` array sits even earlier in the hashed request prefix than the top-level `system` field, so editing it invalidates the [prompt cache](build-with-claude-prompt-caching.md) for the entire conversation. Mid-conversation tool changes are the tools counterpart to mid-conversation system messages. Instead of fixing the tool list for the lifetime of the conversation, you change which tools are offered to the model between turns. Declare the full tool set in `tools` up front, then use `tool_addition` and `tool_removal` blocks to offer a tool to the model, or withdraw it, from a specific point in the conversation onward. The `tools` array itself never changes, so the cached prefix stays intact. Mid-conversation tool changes are in beta and use the beta headers named earlier on this page.
 
 `tool_addition` and `tool_removal` are content blocks in the `content` array of a `role: "system"` message, and they can be mixed with `text` blocks in the same message. The message follows the placement rules for any mid-conversation system message, with one extra restriction after a paused turn (see [Limitations](#limitations)), and the change applies from that point in the conversation onward. Each block’s `tool` field references a tool rather than defining one: `{"type": "tool_reference", "name": "..."}` names a tool declared in the request’s `tools` array, and [MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md) tools can be referenced individually with `mcp_tool_reference` (`server_name` and `name`) or as a whole toolset with `mcp_toolset_reference` (`server_name`). Referencing a name that is not declared in `tools` returns a 400 error (on the Claude API, with `error.details.error_code` set to `tool_reference_unresolved`). A `tool_addition` block can instead [carry the tool’s full definition](#define-tools-in-a-message-beta), which the `mid-conversation-tool-changes-2026-07-01` header doesn’t support.
 
@@ -134,7 +142,7 @@ for block in response.content:
 
 With the `inline-tools-2026-09-15` beta header, a `tool_addition` block can define a tool by value, carrying its full definition, instead of naming it by reference. This lets you introduce a tool that is unknown at the start of the conversation, or whose schema changes later, by appending a `role: "system"` message. The `tools` array and every earlier message stay exactly as sent, so the prompt cache still hits and only the appended message is processed as new input. The one exception, a `tools` array with no non-deferred tool, is covered in the rules that follow. The header also covers adding and removing tools by reference, so you don’t need to send `mid-conversation-tool-changes-2026-07-01` as well.
 
-Wrap the definition in a `tool` object of type `tool_definition`. The `definition` is a `tools` entry, such as a custom tool or an Anthropic-defined client or server tool, with its usual configuration, including `cache_control` and `defer_loading`. During the beta, some tool types (the computer use tool among them) can’t be defined in a message yet and return a 400 error that says so; declare those in `tools` and add them by reference. For example, to define a custom tool mid-conversation:
+Wrap the definition in a `tool` object of type `tool_definition`. The `definition` is a `tools` entry, such as a custom tool or an Anthropic-defined client or server tool, with its usual configuration, including `cache_control` and `defer_loading`. During the beta, the computer use and browser use tools can’t be defined in a message and return a 400 error that says so; declare those in `tools` and add them by reference. For example, to define a custom tool mid-conversation:
 
 ```python
 {
@@ -261,7 +269,7 @@ To change a tool’s schema, or to move a server tool to a newer version, send a
 A few rules follow from where the definition renders:
 
 - **Declare what you know up front.** A tool you know about at the first request belongs in `tools`, with `defer_loading: true` and a later `tool_addition` reference if you don’t want to offer it to the model yet. Define by value only what is unknown at the first request or changes later.
-- **Keep at least one non-deferred tool in `tools`.** A conversation whose `tools` array has no non-deferred tool is accepted, but the first tool it defines by value changes the start of the rendered prompt, which costs one full cache miss on that request. A [tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md) counts as non-deferred.
+- **Keep at least one non-deferred tool in `tools`.** If every tool is deferred, the request gets a 400 error, unless it sends the `inline-tools-2026-09-15` header and `messages` holds a `tool_addition` block. Then the first tool defined by value costs one full cache miss. A [tool search tool](../Agents-Tools/agents-and-tools-tool-use-tool-search-tool.md) counts as non-deferred.
 - **Dated tool types keep their own beta headers.** If a server tool you define by value requires its own beta header, send that header on every later request in the conversation.
 - **`cache_control` goes on the block or in the definition, not both,** and counts toward the request’s breakpoint limit. A deferred definition can’t carry `cache_control`.
 
@@ -348,7 +356,7 @@ response = client.beta.messages.create(
         },
     ],
     messages=[
-        {"role": "user", "content": "What's on my calendar tomorrow?"},
+        {"role": "user", "content": "What is on my calendar tomorrow?"},
         # Make the calendar server's tools available from this point onward.
         # The block names the server; it never holds a URL or token.
         {
@@ -393,7 +401,7 @@ Mid-conversation system messages let you add the instruction at the **end** of t
 
 A few situations where this matters:
 
-- **Mid-session policy or persona changes.** A long agentic session needs a new constraint (“from now on, write all SQL as parameterized queries”) after dozens of cached turns. Adding it to the top-level `system` field would re-process the entire history.
+- **Mid-session policy or persona changes.** A long agentic session needs a new constraint (“from now on, write all SQL as parameterized queries”) after dozens of cached turns. Adding it to the top-level `system` field would reprocess the entire history.
 - **Per-turn context that must be authoritative.** You want to inject a freshness note, a session deadline, or a tool-availability change with system-level weight, and it changes too often to live in the cached prefix.
 - **Per-turn reminders that shouldn’t pile up.** A harness nudges the model after each batch of tool results (“request independent reads together,” “the user hasn’t heard from you in a while”) and needs the model to receive only the newest copy. A [turn-scoped system message](#turn-scoped-system-messages) renders for one turn and then costs nothing, without deleting anything from the history.
 - **State changes your application observes.** Your application detects something Claude should treat as an operator-level fact: files changed on disk, the user toggled an auto-approve setting, available tools changed, or the remaining token budget dropped below a threshold.
@@ -408,7 +416,7 @@ Add a message with `"role": "system"` to the `messages` array. Use a plain strin
 
 You can still set the top-level `system` field for instructions that should apply to the entire conversation. Reserve mid-conversation system messages for instructions that only become relevant later, or that you want to add without invalidating the cached prefix.
 
-A `role: "system"` message can also carry `output_config.effort` to change the [effort](build-with-claude-effort.md) level partway through a conversation, in beta. See [Per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta).
+A `role: "system"` message can also carry `output_config.effort` to change the [effort](build-with-claude-effort.md) level partway through a conversation, in beta. See [Per-message effort](build-with-claude-effort-per-message.md).
 
 cURL
 
@@ -473,7 +481,9 @@ for block in response.content:
 
 This example enables [automatic caching](build-with-claude-prompt-caching.md#automatic-caching) with the top-level `cache_control` field. Prompt caching is opt-in: if a request has no `cache_control` field (automatic or an [explicit breakpoint](build-with-claude-prompt-caching.md#explicit-cache-breakpoints)), nothing is cached and every request pays the regular input token price for the full conversation. With caching enabled, appending the system message leaves the already-cached turns unchanged, so the request that carries the new instruction still reads them from cache instead of processing them again. Caching also requires the conversation to meet the [minimum cacheable prompt length](build-with-claude-prompt-caching.md#cache-limitations); an example as short as this one falls below it, so `cache_creation_input_tokens` and `cache_read_input_tokens` stay at 0 until the conversation grows.
 
-A mid-conversation system message that carries content (`text`, `tool_addition`, or `tool_removal` blocks) must immediately follow a `user` turn (or an `assistant` turn ending in a server tool result), and must either be the last entry in `messages` or be immediately followed by an `assistant` turn. A `user` message that carries `tool_result` blocks counts: in an agentic loop you can place the system message right after the tool results, before Claude’s next turn. Any other position for a message that carries content, including between an `assistant` `tool_use` block and the `tool_result` that answers it, returns a 400 error. A message with empty `content` that only sets [`output_config.effort`](build-with-claude-effort.md#change-effort-mid-conversation-beta) is accepted anywhere in `messages`. Consecutive `system` messages are judged together, so an effort-only message next to one that carries content follows the rule for content.
+A mid-conversation system message that carries content (`text`, `tool_addition`, or `tool_removal` blocks) must immediately follow a `user` turn (or an `assistant` turn ending in a server tool result). It must then end `messages` or be immediately followed by an `assistant` turn. A `user` message that carries `tool_result` blocks counts: in an agentic loop you can place the system message right after the tool results, before Claude’s next turn.
+
+Any other position for a message that carries content, including between an `assistant` `tool_use` block and the `tool_result` that answers it, returns a 400 error. A message with empty `content` that only sets [`output_config.effort`](build-with-claude-effort-per-message.md) can follow any turn, but goes after everything already sent. Consecutive `system` messages are judged together, so an effort-only message next to one that carries content follows the rule for content.
 
 ### Placement after tool results
 
@@ -532,7 +542,7 @@ For more on this behavior, see [Prompting Claude Sonnet 5.5](../../10-Prompting-
 
 To scope a `role: "system"` message to the current turn, set its `clear_at` field. It takes one of two values:
 
-- `"never"` (the default): the message renders at its position on every request that includes it. Omitting the field is identical.
+- `"never"` (the default): the message renders at its position on every request that includes it. Omitting the field has the same effect.
 - `"next_user_message"`: the message is **turn-scoped**. Its text renders only while no `role: "user"` message comes after it in `messages`. A user message that carries only `tool_result` blocks counts as a user message here. Once a later user message exists, the message is **cleared**: it stays in the array but renders nothing and costs no input tokens, on that request and every later one.
 
 Turn-scoped system messages are in beta. Include the [beta header](../Endpoints/beta-headers.md) `mid-conversation-system-clear-at-2026-08-21`. Without it, `clear_at` is rejected as an unknown field.
@@ -547,13 +557,17 @@ Turn-scoped system messages are in beta. Include the [beta header](../Endpoints/
 
 
 
-The main use is a per-turn reminder in a tool loop. Each time you want the model to see the reminder, append it after the `tool_result` message. Leave every earlier copy where it is. The model sees only the copies that come after the last user message, so the reminder never piles up. Nothing earlier in `messages` changes, so the [prompt cache](build-with-claude-prompt-caching.md) keeps matching. On Claude 5.1 and later models, this also keeps later [thinking blocks valid](build-with-claude-thinking.md#preserved-in-conversation). Deleting an earlier reminder would change the conversation before those blocks, so they would fail the prefix check. A cleared message stays in the array and leaves the conversation before those blocks unchanged.
+The main use is a per-turn reminder in a tool loop. Each time you want the model to see the reminder, append it after the `tool_result` message. Leave every earlier copy where it is. The model sees only the copies that come after the last user message, so the reminder never piles up. Nothing earlier in `messages` changes, so the [prompt cache](build-with-claude-prompt-caching.md) keeps matching. On Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, this also keeps later [thinking blocks valid](build-with-claude-thinking.md#preserved-in-conversation). Deleting an earlier reminder would change the conversation before those blocks, so they would fail the prefix check. A cleared message stays in the array and leaves the conversation before those blocks unchanged.
 
-The following request is a later step of an agent loop. `messages[3]` rendered on the earlier request, when it was the last message in the array. Once `messages[5]` (a later user message) exists, `messages[3]` is cleared: the cleared message stays in the array, so the conversation before the thinking block in `messages[4]` is unchanged, but the model no longer receives its text. `messages[6]` and `messages[7]` both render, in order.
+The following request is a later step of an agent loop:
+
+- `messages[3]` rendered on the earlier request, as the last message in the array.
+- `messages[5]` is a later user message, so `messages[3]` is cleared. The cleared message stays in the array, so the conversation before the thinking block in `messages[4]` is unchanged, but the model no longer receives its text.
+- `messages[6]` and `messages[7]` both render, in order.
 
 ```python
 {
-  "model": "claude-fable-5-1",
+  "model": "claude-opus-5-5",
   "max_tokens": 16000,
   "messages": [
     { "role": "user", "content": "Fix the failing test." },
@@ -626,13 +640,17 @@ The following request is a later step of an agent loop. `messages[3]` rendered o
 
 Rules for turn-scoped messages:
 
-- **Resend cleared messages verbatim.** A cleared message is still part of the conversation history. Rebuilding it from current state (a fresh token count, a timestamp), dropping it as redundant, or changing its `clear_at` value is an edit to an earlier message. On Claude 5.1 and later models, every thinking block produced after it fails the [prefix check](build-with-claude-thinking.md#preserved-in-conversation).
+- **Resend cleared messages verbatim.** A cleared message is still part of the conversation history. Rebuilding it from current state (a fresh token count, a timestamp), dropping it as redundant, or changing its `clear_at` value is an edit to an earlier message. On Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, every thinking block produced after it fails the [prefix check](build-with-claude-thinking.md#preserved-in-conversation).
 - **Text only.** `content` is one or more `text` blocks (or a string). `tool_addition` and `tool_removal` blocks return a 400 error on a turn-scoped message, and so does `output_config`. Use a separate `role: "system"` message without `clear_at` for those.
-- **No `cache_control` on its blocks.** A cleared message is never part of a cache key, so a breakpoint on it could never match. Put the breakpoint on the last block of the preceding user turn instead, as the example does. The top-level [automatic caching](build-with-claude-prompt-caching.md#automatic-caching) field skips turn-scoped messages when it picks a breakpoint. On the request that clears a message, the reusable cached prefix ends at the user turn before it, so only the one assistant turn between that message and the new user message is reprocessed.
-- **Placement rules still apply**, cleared or not. A turn-scoped message must follow a `user` turn (or an `assistant` turn ending in a server tool result) and precede an `assistant` turn or end the array, like any mid-conversation system message. One that ends the array always renders. One followed directly by another `user` message is a 400 error, not a cleared message: put all of a tool round’s results in one user message and the reminders after it.
-- **Assistant turns don’t clear it.** A prefilled or [paused](build-with-claude-handling-stop-reasons.md#pause-turn) assistant turn after the message, or a server-side tool loop, adds no user message, so the message still renders on that continuation. To keep a reminder in view through a client-side tool loop, append it again after each `tool_result` message.
+- **No `cache_control` on its blocks.** A cleared message is never part of a cache key, so a breakpoint on it could never match. Put the breakpoint on the last block of the preceding user turn instead, as the example does. The top-level [automatic caching](build-with-claude-prompt-caching.md#automatic-caching) field skips turn-scoped messages when it picks a breakpoint. On the request that appends the next user message, a cache breakpoint on the turn that the cleared message followed, or anywhere earlier, still matches. With the breakpoint on that turn, only the one assistant turn between the cleared message and the new user message is reprocessed.
+- **Placement rules still apply**, cleared or not. As with any mid-conversation system message that carries content, a turn-scoped message:
+  - Must follow a `user` turn, or an `assistant` turn ending in a server tool result.
+  - Must precede an `assistant` turn or end the array. If it ends the array, it always renders.
+  - Can’t have a `user` message directly after it: the request returns a 400 error. A later user message clears it only when an `assistant` turn comes between them. In a tool loop, put all of a round’s tool results in one user message, with the reminders after that message.
+  - Is judged together with any `system` message directly before or after it. These placement rules apply to the group as a whole.
+- **Assistant turns don’t clear it.** An assistant turn [paused with `pause_turn`](build-with-claude-handling-stop-reasons.md#pause-turn) after the message, or a server-side tool loop, adds no user message, so the message still renders on that continuation. To keep a reminder in view through a client-side tool loop, append it again after each `tool_result` message.
 - **Token counting follows what renders.** A cleared message adds nothing to `usage.input_tokens` or to a [token count](build-with-claude-token-counting.md).
-- **Imported history.** In a transcript you construct in one step (few-shot examples, a migrated conversation), a turn-scoped message that already has an assistant turn and a user message after it is cleared from the first request and never renders. That is the right state for a per-turn reminder you are carrying over. Leave `clear_at` unset only on a message that should render on every request.
+- **History you write yourself.** In few-shot examples or a transcript from another system, a turn-scoped message with an assistant turn and a user message after it never renders. If the model should see that text, leave `clear_at` unset, and the message renders on every request. If not, leave the message out. This applies only to history you write yourself: when you resend a conversation with the thinking blocks Claude returned, keep each message exactly as it was, `clear_at` included. See **Resend cleared messages verbatim**.
 
 The validation errors are:
 
@@ -647,9 +665,9 @@ messages.3.content.0: cache_control is not permitted on a turn-scoped system mes
 
 
 
-The first is the error returned without the beta header. On [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed), and Claude Models on Google Cloud (Google managed), send the beta value in the `anthropic-beta` header, as on the Claude API (see [Beta headers](../Endpoints/beta-headers.md)). With the Amazon Bedrock [InvokeModel API](build-with-claude-claude-on-amazon-bedrock-legacy.md), put it in the `anthropic_beta` array of the request body instead.
+The first is the error returned without the beta header. Send `mid-conversation-system-clear-at-2026-08-21` in the `anthropic-beta` header (see [Beta headers](../Endpoints/beta-headers.md)). With the InvokeModel API on [Amazon Bedrock (`bedrock-runtime`)](build-with-claude-claude-on-amazon-bedrock-legacy.md), put it in the `anthropic_beta` array of the request body instead.
 
-Through the SDK, set `clear_at` on the `role: "system"` entry in `messages` and send the beta header. The following example appends a turn-scoped reminder after the user turn; on the next request, once a later user message exists, the reminder stays in the array but no longer renders:
+Set `clear_at` on the `role: "system"` entry in `messages` and send the beta header. The following example appends a turn-scoped reminder after the user turn. On the next request, once a later user message exists, the reminder stays in the array but no longer renders:
 
 cURL
 
@@ -677,14 +695,14 @@ Python
 client = anthropic.Anthropic()
 
 response = client.beta.messages.create(
-    model="claude-fable-5-1",
+    model="claude-opus-5-5",
     max_tokens=4096,
     messages=[
         {
             "role": "user",
             "content": "Draft a short status update on the database migration for the team channel.",
         },
-        # Turn-scoped reminder: renders for this turn, then clears once a later user message exists.
+        # Turn-scoped reminder: renders for this turn, then stops rendering once a later user message exists.
         {
             "role": "system",
             "clear_at": "next_user_message",
@@ -708,12 +726,12 @@ Mid-conversation system messages and [prompt caching](build-with-claude-prompt-c
 - **Append the system message after the breakpoint.** Because it comes after the cached prefix, it does not change the prefix hash and the cache still hits.
 - **A mid-conversation system message is itself cacheable.** Once it is in the conversation, it becomes part of the stable history. On the next turn you can move your cache breakpoint past it (or rely on [automatic caching](build-with-claude-prompt-caching.md#automatic-caching) to do so) and the system message is read from cache like any other turn.
 
-Avoid editing or removing a mid-conversation system message that has already been sent. Like any other change to earlier messages, editing or removing it invalidates the cache from that point forward. On Claude 5.1 and later models, it also invalidates the [thinking blocks](build-with-claude-thinking.md#preserved-in-conversation) in every later assistant turn. For guidance that should apply to one turn only, use a [turn-scoped system message](#turn-scoped-system-messages) and leave it in place. If the instruction needs to evolve, append a new system message rather than rewriting the old one. Consecutive system messages are accepted and treated as a single system section, which follows the same placement rule as a whole.
+Avoid editing or removing a mid-conversation system message that has already been sent. Like any other change to earlier messages, editing or removing it invalidates the cache from that point forward. On Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5, it also invalidates the [thinking blocks](build-with-claude-thinking.md#preserved-in-conversation) in every later assistant turn. For guidance that should apply to one turn only, use a [turn-scoped system message](#turn-scoped-system-messages) and leave it in place. If the instruction needs to evolve, append a new system message rather than rewriting the old one. Consecutive system messages are accepted and treated as a single system section, which follows the same placement rule as a whole.
 
 ## Limitations
 
 - **Not for the first message.** A `system` message that carries content cannot be the first entry in `messages`. Use the top-level `system` field for instructions that apply from the very start.
-- **Placement is constrained.** A `system` message that carries content (`text`, `tool_addition`, or `tool_removal` blocks) must immediately follow a `user` turn (including a `user` turn that carries `tool_result` blocks) or an `assistant` turn ending in a server tool result, and must precede an `assistant` turn or end the array. It cannot sit between a `tool_use` block and its `tool_result`. Placing it elsewhere returns a 400 error. One exception: `tool_addition` and `tool_removal` blocks are not accepted immediately after a [paused](build-with-claude-handling-stop-reasons.md#pause-turn) `assistant` turn (one ending in a server tool result), though `text` blocks are; resume the paused turn first, then send the tool change in the next `system` message. A message with empty `content` that only sets [`output_config.effort`](build-with-claude-effort.md#change-effort-mid-conversation-beta) renders nothing at its position and is accepted anywhere in `messages`, including first or between an `assistant` turn and a `user` turn. Consecutive `system` messages are judged together, so adding a text-carrying message next to an effort-only one makes the whole group follow the content rule.
+- **Placement is constrained.** A `system` message that carries content (`text`, `tool_addition`, or `tool_removal` blocks) must immediately follow a `user` turn or an `assistant` turn ending in a server tool result. A `user` turn that carries `tool_result` blocks counts. The message must precede an `assistant` turn or end the array. It cannot sit between a `tool_use` block and its `tool_result`. Placing it elsewhere returns a 400 error. One exception: `tool_addition` and `tool_removal` blocks are not accepted immediately after a [paused](build-with-claude-handling-stop-reasons.md#pause-turn) `assistant` turn (one ending in a server tool result), though `text` blocks are. Resume the paused turn first, then send the tool change in the next `system` message. A message with empty `content` that only sets [`output_config.effort`](build-with-claude-effort-per-message.md) renders nothing at its position. It can follow any turn, or come first, but goes after everything already sent. Consecutive `system` messages are judged together, so adding a text-carrying message next to an effort-only one makes the whole group follow the content rule.
 - **Turn-scoped messages are text-only and re-sent verbatim.** A `clear_at: "next_user_message"` message carries no `tool_addition`, `tool_removal`, `output_config`, or `cache_control`, and once cleared it must stay in `messages` byte-for-byte on later requests. See [Turn-scoped system messages](#turn-scoped-system-messages).
 - **Not a place for untrusted content.** Claude treats system content as operator instructions and follows it. Do not place text from outside the conversation, such as raw tool output, retrieved documents, or web content, directly in a system message; doing so gives that text operator-level authority. Keep that data in `tool_result` blocks and continue to follow [Mitigate jailbreaks and prompt injections](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md).
 
@@ -729,7 +747,7 @@ How caching works, where to place breakpoints, and how to read cache usage field
 
 [Cache diagnostics](build-with-claude-cache-diagnostics.md)
 
-Find out exactly where two requests diverged when a cache hit you expected does not occur.
+Find out what changed between two requests when a cache hit you expected does not occur.
 
 
 
@@ -751,59 +769,110 @@ How `tool_use` and `tool_result` blocks are structured in the `messages` array.
 
 ## Availability
 
-Mid-conversation system messages are available on select models and eligible for zero data retention and HIPAA readiness.
+Mid-conversation system messages
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Append a message with `role` `"system"` to `messages` at the point where the instruction starts to apply.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-Cloud platforms
+Amazon Bedrock
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+API  
+- Messages API
 
-Models
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-- [Claude Sonnet 5](../../20-Models/models-sonnet-5-overview.md)Not supported
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Amazon Bedrock (bedrock-runtime)
 
-[Managed Agents](../Other/managed-agents-overview.md)
+API  
+- Messages API
 
-Usage
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-Send a `system.message` event. It applies to that turn and all later turns; the agent’s own `system` field cannot change during a session.
+Note  
+Through InvokeModel only (not Converse).
 
-StatusAvailable
+Claude Platform on AWS
 
-Cloud platforms
+APIs  
+- Messages API
+- Managed Agents
 
-- All supported platforms
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-Models
+Claude Models on Google Cloud (Anthropic managed)
 
-- [Claude Sonnet 5](../../20-Models/models-sonnet-5-overview.md)Not supported
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
 ### Data handling
 

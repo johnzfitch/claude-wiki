@@ -2,32 +2,29 @@
 title: "Automated researchers can reliably mitigate alignment failures \\ Anthropic"
 source_url: "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:20Z"
+fetched_at: "2026-11-14T06:26:01Z"
 tags: ["news-research", "search"]
 ---
 
 # Automated researchers can reliably mitigate alignment failures
 
-[Read the paper](automated-researchers-can-reliably-mitigate.md)
+[Read the paper](https://assets.claude.com/7b1c44894e980876479947dcdd40716278aeeffd.pdf)
 
-- Published
+Published  
+Aug 28, 2026
 
-  Aug 28, 2026
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+- [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
+- [Training](https://www.anthropic.com/search?topic=training)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-  - [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
-  - [Training](https://www.anthropic.com/search?topic=training)
-
-  See more...
+See more...
 
 Related articles
 
@@ -65,7 +62,7 @@ For the most part, the agents converged on methods favored in the research liter
 
 ### Monitoring cheating behaviors
 
-We [recently learned](https://alignment.anthropic.com/2026/automated-w2s-researcher/) that Claude can cheat by exfiltrating test labels from a remote API and cherry-picking results. To catch cheating behaviors, we prompted Claude Opus 4.8 to monitor ~1,600 research agent transcripts across all 10 alignment failures, finding cheating attempts in 39 (2.4%). Since Opus 4.8’s [misbehavior attempts still tend to appear in its reasoning](https://www-cdn.anthropic.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf), we are cautiously optimistic that our monitor has caught most of the cheating in our study. However, this might not be true for future models, and we believe that maintaining high monitorability in future models is critical.
+We [recently learned](https://alignment.anthropic.com/2026/automated-w2s-researcher/) that Claude can cheat by exfiltrating test labels from a remote API and cherry-picking results. To catch cheating behaviors, we prompted Claude Opus 4.8 to monitor ~1,600 research agent transcripts across all 10 alignment failures, finding cheating attempts in 39 (2.4%). Since Opus 4.8’s [misbehavior attempts still tend to appear in its reasoning](https://assets.claude.com/0b4915911bb0d19eca5b5ee635c80fef830a37ea.pdf), we are cautiously optimistic that our monitor has caught most of the cheating in our study. However, this might not be true for future models, and we believe that maintaining high monitorability in future models is critical.
 
 ### Are we measuring the right things?
 
@@ -73,6 +70,6 @@ Despite these encouraging findings, our experiment had several limitations: the 
 
 We plan to continue improving Claude’s ability to measure subtle failures, further study automating alignment post-training on production-grade models, and run more comprehensive analyses. Overall, we view these results as early positive signals that automated alignment post-training could become practical in the near term, and we will share updates as this work progresses.
 
-We outline detailed future directions in our [full report](automated-researchers-can-reliably-mitigate.md).
+We outline detailed future directions in our [full report](https://assets.claude.com/7b1c44894e980876479947dcdd40716278aeeffd.pdf).
 
 *We open-source our automated alignment research harness so that others can build on it and use it to align their own models. For additional details, read the full report on the [Alignment Science blog](https://alignment.anthropic.com/2026/automated-alignment-researchers/), which covers the agents’ environment, results for all 10 failures, and the agents’ proposals, with benchmark validation and example write-ups in the appendix.*

@@ -2,7 +2,7 @@
 title: "How scientists use Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-researchers-use-claude"
 category: "19-Reference"
-fetched_at: "2026-11-07T06:24:39Z"
+fetched_at: "2026-11-14T06:26:28Z"
 tags: ["news-research", "search"]
 ---
 
@@ -10,7 +10,7 @@ tags: ["news-research", "search"]
 
 # **AI for scientific discovery: **How researchers use Claude
 
-[Download the PDF](https://www-cdn.anthropic.com/6e7c6446c0d8405dba73b91dabd36aac069dea2e/AI-for-Scientific-Discovery.pdf)
+[Download the PDF](https://assets.claude.com/6e7c6446c0d8405dba73b91dabd36aac069dea2e.pdf)
 
 - [01Summary](#summary)
 - [02Introduction](#introduction)
@@ -23,23 +23,20 @@ tags: ["news-research", "search"]
 - [09Appendix](#appendix)
 - [10References](#references)
 
-- Published
+Published  
+Nov 5, 2026
 
-  Nov 5, 2026
+Team  
+[Economics](team-economics.md)
 
-- Team
+Topics  
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
 
-  [Economics](team-economics.md)
-
-- Topics
-
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-
-  See more...
+See more...
 
 Related articles
 
@@ -80,11 +77,11 @@ While faster scientific discovery could bring substantial benefits to humanity, 
 
 ## How we conducted this research
 
-Our goal with this research is to measure the different ways scientists use Claude while protecting the details of their work. To do this, we use privacy-preserving infrastructure to analyze the scientific use of Claude on consumer plans. A language model, used here as a “classifier,” reads each session transcript and labels it with a fixed set of categories, such as the field and the research task it involves, according to a predefined taxonomy (SciNet taxonomy by Alamos and Althoff 2026). The resulting labels, such as “chemistry” or “data cleaning,” are the only information from these conversations retained and analyzed by the research team for this report. No classifier employed in this study extracts and stores open-ended information or details on research content, such as research datasets, hypotheses, experimental methods, early findings, or unpublished papers. Results are reported only in aggregate and only for cells that meet a minimum number of distinct accounts. All classifiers introduced in this study are listed in the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).
+Our goal with this research is to measure the different ways scientists use Claude while protecting the details of their work. To do this, we use privacy-preserving infrastructure to analyze the scientific use of Claude on consumer plans. A language model, used here as a “classifier,” reads each session transcript and labels it with a fixed set of categories, such as the field and the research task it involves, according to a predefined taxonomy (SciNet taxonomy by Alamos and Althoff 2026). The resulting labels, such as “chemistry” or “data cleaning,” are the only information from these conversations retained and analyzed by the research team for this report. No classifier employed in this study extracts and stores open-ended information or details on research content, such as research datasets, hypotheses, experimental methods, early findings, or unpublished papers. Results are reported only in aggregate and only for cells that meet a minimum number of distinct accounts. All classifiers introduced in this study are listed in the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).
 
 Our measurement involves two steps. A first classifier identifies whether a session transcript involves scientific work. A second classifier then assigns each of these transcripts to a field, subfield, and task in the SciNet taxonomy. SciNet contains 7,262 tasks, spanning 34 fields and 318 subfields. Some tasks in the taxonomy, such as drafting manuscripts, are universal to all fields. Others are specific to individual fields or subfields. For instance, in the taxonomy, the task of predicting optical absorption and emission spectra is specific to materials science. Together, the tasks cover the full process of producing a new research finding.
 
-Our main sample consists of 207,049 sessions on consumer plans from August 2 to September 30, 2026, which were assigned a scientific field and a research task: 128,914 from Chat and Cowork, two general-purpose interfaces for conversation and knowledge work, hereafter referred to as “Claude,” and 78,135 from Claude Code, an agentic coding tool that works directly with a user’s files, writing and running code. We also study a supplemental sample of Claude Science sessions. For details on sample construction, see the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).
+Our main sample consists of 207,049 sessions on consumer plans from August 2 to September 30, 2026, which were assigned a scientific field and a research task: 128,914 from Chat and Cowork, two general-purpose interfaces for conversation and knowledge work, hereafter referred to as “Claude,” and 78,135 from Claude Code, an agentic coding tool that works directly with a user’s files, writing and running code. We also study a supplemental sample of Claude Science sessions. For details on sample construction, see the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).
 
 Combining usage data and a structured taxonomy of research tasks allows us to study which fields adopt Claude and for which parts of the research process. This research contributes to a growing body of work attempting to measure the adoption of AI technology for scientific discovery (Kobak et al. 2025; Liang et al. 2025; Hao et al. 2026; Codreanu et al. 2026).
 
@@ -102,7 +99,7 @@ We observe similar patterns when comparing usage across 318 subfields within tho
 
 Beyond understanding which fields use Claude, we also want to understand what scientists use it for. Research involves many different tasks, from generating hypotheses and analyzing data to writing up findings in a research paper. To better discern how Claude supports scientific discovery, we study how usage varies across these tasks. To do so, we assign each session to one of the 7,262 tasks in SciNet. These tasks can be universal to all fields, such as drafting manuscripts, or specific to fields or subfields, such as performing differential gene expression analysis to compare tumor subtypes, which is associated with cancer biology. The taxonomy distinguishes between research tasks, which researchers perform to produce new scientific findings, and non-research tasks, such as teaching, peer review, and service to the department or field.^([^5]) We limit our analysis to research tasks spanning eight categories: (1) data analysis, (2) writing and communication, (3) data gathering, (4) reading and knowledge acquisition, (5) theoretical analysis, (6) design and development (of software, materials, and creative works), (7) ideation and hypothesis generation, and (8) other, such as administering research.
 
-For each task category, we calculate its share of Claude and Claude Code sessions separately. To assess whether usage in a category is high or low, we consider the share of their time that researchers typically spend on that category, as estimated by SciNet. These time estimates are based on an LLM classifier, validated using both wet-lab research protocols that record researcher time spent per task and the frequency of tasks across thousands of academic papers (see the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf)). This provides a benchmark to assess whether the share of Claude use across different task categories follows or deviates from how researchers spend their time.
+For each task category, we calculate its share of Claude and Claude Code sessions separately. To assess whether usage in a category is high or low, we consider the share of their time that researchers typically spend on that category, as estimated by SciNet. These time estimates are based on an LLM classifier, validated using both wet-lab research protocols that record researcher time spent per task and the frequency of tasks across thousands of academic papers (see the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf)). This provides a benchmark to assess whether the share of Claude use across different task categories follows or deviates from how researchers spend their time.
 
 **Usage by task category.** Data analysis tasks have the highest usage in absolute terms and are overrepresented relative to researcher time. Data analysis accounts for 33.7% of sessions on Claude and 48.1% on Claude Code, compared with 27.6% of researcher time. Writing and communication tasks also show high usage, especially on Claude (32.0%, compared with 16.0% of researcher time).^([^6]) Data gathering tasks have low relative usage, accounting for 28.6% of researcher time but only 11.5% of sessions on Claude and 11.9% on Claude Code. The underrepresentation of data gathering is particularly strong for tasks with physical barriers, such as the collection of clinical or biochemical data. Data gathering tasks that can rely on more digital processes, such as retrieving archival documents or text, are less underrepresented, while purely digital data collection tasks, such as collecting online data, can be overrepresented. Ideation and hypothesis generation tasks also have low usage, accounting for 4.2% of sessions on Claude and 2.1% on Claude Code, compared with 7.1% of researcher time.
 
@@ -120,19 +117,19 @@ We find that researchers use Claude Science for more specialized tasks than Clau
 
 Focusing on biomedical sciences and biology, and using measures from our economic primitives framework introduced in [prior work](anthropic-economic-index-january-2026-report.md) (Appel et al. 2026), we find that tasks on Claude Science are longer, more sophisticated, and performed more autonomously than those on Claude and Claude Code (Figure 6). This is consistent with specialized AI tools being used for more demanding tasks.^([^8]) Sessions on Claude Science contain work that would take nearly twice as many human hours to complete without AI as work on Claude and Claude Code. The content of these sessions is also more advanced. Over 80% of Claude Science use is estimated to require doctoral-level training (20 years of education), compared with about 50–70% on other interfaces. Over 70% of Claude Science sessions are performed with a high degree of AI autonomy, far higher than on Claude (23.7%) and somewhat higher than on Claude Code (64.1%).
 
-**Outputs of Claude use.** Finally, the artifacts produced with Claude show clear differences across fields (Figure 7).^([^9]) Written artifacts such as documents, reports, or academic papers are more common in the social sciences and humanities, relative to the natural and formal sciences. Conversely, technical artifacts such as code, software outputs, and data are more frequent in the natural and formal sciences. The health sciences overall are more similar to the social sciences in terms of artifacts produced. Technical artifacts are about twice as common on Claude Code as on Claude, but the broad pattern across fields is similar (see the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf)).
+**Outputs of Claude use.** Finally, the artifacts produced with Claude show clear differences across fields (Figure 7).^([^9]) Written artifacts such as documents, reports, or academic papers are more common in the social sciences and humanities, relative to the natural and formal sciences. Conversely, technical artifacts such as code, software outputs, and data are more frequent in the natural and formal sciences. The health sciences overall are more similar to the social sciences in terms of artifacts produced. Technical artifacts are about twice as common on Claude Code as on Claude, but the broad pattern across fields is similar (see the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf)).
 
 ## How use relates to capabilities
 
 Does AI usage track AI capabilities? Field size explains some of the variation in Claude use, but not all of it. For example, researchers in computer science use Claude far more than the field’s size predicts, while those in nutrition use Claude far less. Similarly, where researchers spend their own time does not fully predict where they use Claude the most. Some broad task categories, such as data analysis and writing, have a much larger share of usage than of research time, while others, such as data gathering and ideation and hypothesis generation, have a much smaller share. Here, we test whether these differences in usage reflect what AI can actually do.
 
-To measure task-specific AI capabilities, we first construct capability scores using an LLM classifier. For each task, SciNet provides a list of individual steps that a scientist needs to perform to complete the task. For instance, in chemistry, one task involves purifying reaction mixtures, and one of that task’s steps involves packing a chromatography column. The classifier is shown pairs of steps across the taxonomy and asked which one AI can perform better. We aggregate these comparisons using a Bradley–Terry model—the same model behind the Elo ratings that rank chess players based on head-to-head results. A step’s score rises when it wins comparisons and falls when it loses them. We then average each task’s steps to obtain a task-level score (see the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) for details). We label this measure *theoretical AI capability*. We refer to a task’s specific score as its *AI capability score*.
+To measure task-specific AI capabilities, we first construct capability scores using an LLM classifier. For each task, SciNet provides a list of individual steps that a scientist needs to perform to complete the task. For instance, in chemistry, one task involves purifying reaction mixtures, and one of that task’s steps involves packing a chromatography column. The classifier is shown pairs of steps across the taxonomy and asked which one AI can perform better. We aggregate these comparisons using a Bradley–Terry model—the same model behind the Elo ratings that rank chess players based on head-to-head results. A step’s score rises when it wins comparisons and falls when it loses them. We then average each task’s steps to obtain a task-level score (see the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) for details). We label this measure *theoretical AI capability*. We refer to a task’s specific score as its *AI capability score*.
 
 To compare usage across tasks, we ask whether Claude use is higher or lower for a task, relative to the time researchers spend on that task. For example, a task that takes 5% of researchers’ time but accounts for 10% of Claude sessions would represent twice as much use as expected, a ratio of 2. A ratio of 1 indicates that Claude use is in line with researcher time spent on the task. A ratio below 1 indicates that Claude is used less than expected based on the amount of researcher time the task takes.
 
 Figure 8 shows that this use ratio rises sharply with a task’s AI capability score. For tasks in the lowest 20% of capability scores, like purifying reaction mixtures and conducting participant observation, Claude is barely used. At median capability scores, the ratio is roughly 1, so usage is in line with researcher time. For tasks in the top 20% of capability scores, like visualizing data and applying statistical tests, usage is about twice as high on Claude and about four times as high on Claude Code, compared with the typical time researchers spend on those tasks. These patterns suggest that scientists’ use of Claude closely tracks AI capability scores. The steeper gradient for Claude Code reflects its focus on computational work, which has higher capability scores.
 
-Theoretical AI capabilities can differ across tasks for many reasons. To understand these differences, we relate each task’s AI capability score to three groups of LLM-derived task characteristics: its suitability for reinforcement learning (RL); whether the work is predominantly cognitive, interpersonal, or physical; and whether regulatory restrictions limit AI use (Figure 9; see the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) for definitions and data sources).
+Theoretical AI capabilities can differ across tasks for many reasons. To understand these differences, we relate each task’s AI capability score to three groups of LLM-derived task characteristics: its suitability for reinforcement learning (RL); whether the work is predominantly cognitive, interpersonal, or physical; and whether regulatory restrictions limit AI use (Figure 9; see the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) for definitions and data sources).
 
 Consider RL suitability. In RL, an AI model tries a task repeatedly and is rewarded when it succeeds, allowing the model to learn how to perform that task. Tasks are particularly suitable for RL when success is easy to verify, when many examples can be simulated in a computing environment, and when feedback can be delivered quickly (Lambert et al. 2024; Guo et al. 2025). We use task-specific measures from SciNet for these three RL-related components and summarize them in a single index. A task’s capability score is highly correlated with its RL index score, which was classified separately (correlation of 0.78). This suggests that AI is most capable at the research tasks where RL is easiest to apply.
 
@@ -160,9 +157,9 @@ We consider three scenarios of scientific acceleration through AI. Scenario 1 as
 
 For each scenario, we report two measures. The first is the *AI share*: the fraction of researcher time spent on a study that AI could take on. Given how researchers currently allocate their time, it measures how much human research time AI could free up, and it follows directly from our analyses above. Researchers can redirect that freed-up time to other work, increasing research output. Our second measure, the *acceleration*, estimates this gain: the increase in research output for a fixed research budget, relative to the research output without AI. It tells us how many more research results the same budget could produce. Freed-up time does not translate one-for-one into more output, both because researchers redirect their effort toward the tasks where AI helps less, and because AI itself has costs.
 
-We build the AI share for Scenario 1 from our survey, which records five levels of AI use: none, assistive, shared, delegated, and autonomous. We assume these levels correspond to AI taking on 0%, 25%, 50%, 75%, and 100% of a researcher’s time for a given task step. Within each task category, we rank task steps by AI capability score. We then assign a level of AI use to each task step, in the same proportions reported in our survey, with the highest levels going to the highest-scoring steps. For ideation and hypothesis generation, for example, 17% of responses report no AI use, and 53% report assistive use. The 17% of ideation task steps with the lowest AI capability scores are therefore assigned no AI share, the next 53% are assigned 25%, and so on up the scale. Because respondents are likely to be heavy AI adopters, we treat their reported use as a proxy for what AI can do today. Finally, we aggregate researcher time freed up by AI from steps to fields (see the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf)).
+We build the AI share for Scenario 1 from our survey, which records five levels of AI use: none, assistive, shared, delegated, and autonomous. We assume these levels correspond to AI taking on 0%, 25%, 50%, 75%, and 100% of a researcher’s time for a given task step. Within each task category, we rank task steps by AI capability score. We then assign a level of AI use to each task step, in the same proportions reported in our survey, with the highest levels going to the highest-scoring steps. For ideation and hypothesis generation, for example, 17% of responses report no AI use, and 53% report assistive use. The 17% of ideation task steps with the lowest AI capability scores are therefore assigned no AI share, the next 53% are assigned 25%, and so on up the scale. Because respondents are likely to be heavy AI adopters, we treat their reported use as a proxy for what AI can do today. Finally, we aggregate researcher time freed up by AI from steps to fields (see the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf)).
 
-To compute the acceleration, we use an ideas production function, a standard economic model of how research inputs, such as researcher time, are turned into research outputs. In this model, a paper requires many research tasks (Jones 2026). The tasks are complementary, such that strength in one cannot fully make up for weakness in another. As AI makes some tasks cheaper, researchers shift their effort toward tasks where AI helps less, thereby easing the bottlenecks that limit the overall gain. For example, researchers could spend more time coming up with new questions or running more physical experiments to expand empirical evidence. We calibrate how much these bottlenecks limit the overall gain using Ahmadpoor and Jones (2019). For AI’s cost, we assume that an hour of AI agent time costs \$30, compared with \$95 for an hour of a researcher’s time, and that AI runs for 0.2 hours for each researcher hour it saves. These are illustrative assumptions: the AI cost uses today’s public list prices. The smaller these costs, the more research can be done within a given budget and the larger the acceleration, as we discuss below. The [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) describes the model and assumptions.
+To compute the acceleration, we use an ideas production function, a standard economic model of how research inputs, such as researcher time, are turned into research outputs. In this model, a paper requires many research tasks (Jones 2026). The tasks are complementary, such that strength in one cannot fully make up for weakness in another. As AI makes some tasks cheaper, researchers shift their effort toward tasks where AI helps less, thereby easing the bottlenecks that limit the overall gain. For example, researchers could spend more time coming up with new questions or running more physical experiments to expand empirical evidence. We calibrate how much these bottlenecks limit the overall gain using Ahmadpoor and Jones (2019). For AI’s cost, we assume that an hour of AI agent time costs \$30, compared with \$95 for an hour of a researcher’s time, and that AI runs for 0.2 hours for each researcher hour it saves. These are illustrative assumptions: the AI cost uses today’s public list prices. The smaller these costs, the more research can be done within a given budget and the larger the acceleration, as we discuss below. The [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) describes the model and assumptions.
 
 ### Scenario 1: Current capabilities
 
@@ -210,7 +207,7 @@ Finally, the work that researchers undertake may change substantially. One effec
 
 ## Appendix
 
-[Available here](https://www-cdn.anthropic.com/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).
+[Available here](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).
 
 ## References
 
@@ -288,7 +285,7 @@ Wang, Hanchen et al., “Scientific Discovery in the Age of Artificial Intellige
 
 01We exclude countries in which Claude is not available when calculating the number of global researchers in each field.[](#footnote-ref-1)
 
-02We obtain researcher counts from SciNet. For details on the measure, see the [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).[](#footnote-ref-2)
+02We obtain researcher counts from SciNet. For details on the measure, see the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf).[](#footnote-ref-2)
 
 03Transcripts are assigned to fields by the research being pursued rather than the tools used, so coding work in other computational sciences is not counted as computer science.[](#footnote-ref-3)
 
@@ -298,7 +295,7 @@ Wang, Hanchen et al., “Scientific Discovery in the Age of Artificial Intellige
 
 06In terms of individual tasks, drafting manuscripts is the most frequent task on both Claude (18.6%) and Claude Code (11.1%). On Claude, the next most frequent tasks are reviewing and synthesizing literature (6.8%) and responding to peer reviewer comments (6.7%). On Claude Code, they are designing, building, and refining artifacts (4.8%) and visualizing data and results (4.6%).[](#footnote-ref-6)
 
-07Respondents were recruited from applicants to Anthropic’s AI for Science and related grant programs and are affiliated with research institutions in the US and Canada. Because they applied for AI research credits, they are likely more intensive AI users than the typical scientist. See the [Appendix](https://cdn.sanity.io/files/4zrzovbb/website/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) for details.[](#footnote-ref-7)
+07Respondents were recruited from applicants to Anthropic’s AI for Science and related grant programs and are affiliated with research institutions in the US and Canada. Because they applied for AI research credits, they are likely more intensive AI users than the typical scientist. See the [Appendix](https://assets.claude.com/fafb3d4237f9b53fe114fef4fb5109b9cf5b5e60.pdf) for details.[](#footnote-ref-7)
 
 08The differences in tasks performed on Claude Science may partly reflect who uses it. Any paid user can access Claude Science, but adopters are likely those with more specialized or demanding use cases. We therefore describe the differences across products as patterns of use.[](#footnote-ref-8)
 

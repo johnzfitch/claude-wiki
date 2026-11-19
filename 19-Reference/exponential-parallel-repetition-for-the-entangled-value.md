@@ -2,7 +2,7 @@
 title: "Exponential parallel repetition for the entangled value"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/bf2a107323136383e9efc8e6ac6659068e8bc561.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-06T07:08:00Z"
+fetched_at: "2026-11-18T06:28:58Z"
 tags: ["news-research"]
 ---
 
@@ -223,8 +223,8 @@ remains true when the seed also selects which classical pre- and post-processing
 These are projective (resp. POVM) measurements if the blocks are, and ψ is a unit vector since the
 blocks HA,r ⊗ HB,r are pairwise orthogonal in HA ⊗ HB . For r ̸= r′ the operator Axa ⊗ Bby maps
 the block of r′ into itself, which is orthogonal to the block of r; hence all cross terms vanish:
-
-                             ⟨ψ|Axa ⊗ Bby |ψ⟩ =                      y,r
+                                                                     y,r
+                             ⟨ψ|Axa ⊗ Bby |ψ⟩ =
                                                 X
                                                    p(r) ⟨ψr |Ax,r
                                                               a ⊗ Bb |ψr ⟩.
@@ -306,8 +306,8 @@ Gκ — so val(S) ≤ κ pκ val∗ (Gκ ).
 Form the product state ψ :=           κ ψκ on         κ HA,κ ⊗      κ HB,κ and define, for x ∈ Xκ , the
 measurement Axa := Ax,κ a  ⊗I other factors , likewise for Bob. Each letter determines its own component,
 so this is well defined, and for (x, y) in component κ,
-
-                             ⟨ψ|Axa ⊗ Bby |ψ⟩ = ⟨ψκ |Ax,κ    y,κ
+                                                             y,κ
+                             ⟨ψ|Axa ⊗ Bby |ψ⟩ = ⟨ψκ |Ax,κ
                                                       a ⊗ Bb |ψκ ⟩.
 
 Hence the value is κ pκ val(Sκ ) ≥ κ pκ val∗ (Gκ ) − ε. Let ε ↓ 0.
@@ -554,8 +554,8 @@ Define, for the run of Rφ [S]:
 where Live ⊆ [M ] denotes the set of live coordinates, etc. Let t := |Live|. For Σ ⊆ [N ] let
                                           O                 O
                                  νΣ :=         µA ⊗ µB ⊗          µ
-                                             i∈Σ                 i∈Σ
-                                                                  /
+                                             i∈Σ                  ∈Σ
+                                                                 i/
 
 denote the product question law on (X × Y)N which is severed (independent halves, correct
 marginals) on Σ and honest elsewhere. Finally set
@@ -606,9 +606,8 @@ automatically at every coordinate with at least one ⊥, i.e. at every non-live 
 coordinate c it requires V (x◦c , yc◦ , āι(c) , b̄ι(c) ) = 1. So acceptance = win at every slot of T , which
 reads only the T -components of the answers of S.
      (b) Conditionally on the types, consider the severance markers σc := 1[c ∈ Asev ∪ Bsev] ∨ 1[c ∈
-Null, c ∈ F ] for c ∈/ Live: by (5.1) and independence of the flags, conditionally on Live the markers
-(σc )c∈Live
-      /     are i.i.d. Bernoulli with
+Null, c ∈ F ] for c ∈  / Live: by (5.1) and independence of the flags, conditionally on Live the markers
+(σc )c /∈Live are i.i.d. Bernoulli with
 
                         Pr[σc = 1] = q + (1 − q)φ = 1 − (1 − q)(1 − φ) = 1 − λ,
 
@@ -701,12 +700,11 @@ expanding it in the orthonormal basis {Φk } of L2 (µ⊗U
                              j∈U                                EµA [ϕs ] EµB [ψs′ ] = δs0 δs′ 0                        j ∈ Σ,
 
 using Lemma 3.1 at honest slots and, at severed slots, EµA [ϕs ] = ⟨ϕs , ϕ0 ⟩ = δs0 (orthonormality).
-Hence only the terms with k′ = k (entrywise) and suppk∩ Σ = ∅ survive, with coefficient j ∈Σ
+Hence only the terms with k′ = k (entrywise) and suppk∩ Σ = ∅ survive, with coefficient j /∈Σ ϱkj ·
                                                                                            Q
-                                                                                              / ϱkj ·
-              (k)
+              (k) (recall ϱ = 1; and if some k ≥ min(|X |, |Y|) then ϱ
 Q
-  j∈Σ 1 = ϱ       (recall ϱ0 = 1; and if some kj ≥ min(|X |, |Y|) then ϱkj = 0, killing the term).
+  j∈Σ 1 = ϱ                0                  j                           kj = 0, killing the term).
 Substituting the two expansions into (5.3) and interchanging the finite sums with the expectation
 yields (6.1).
 
@@ -923,10 +921,8 @@ If t = M or w = 0 then H ≡ 0 and the claim is trivial (1 ≤ ρ−w ). Otherwi
 K := M − t ≥ 1 and note the key identity
 
                              n−K +1 = N −M +1                  for every t,
-
-so that, with Rt := 1 + ln(1/ρ) n−K+1      K
                                                                                                 K
-                                               , we have R ≤ Rt (because K ≤ M ) and (R − 1) n−K+1  ≤
+so that, with Rt := 1 + ln(1/ρ) n−K+1      K   , we have R ≤ Rt (because K ≤ M ) and (R − 1) n−K+1  ≤
 ln(1/ρ).
     Case w ≤ n − K + 1. Sample C ′ by K sequential            P draws without replacement and let ξi
 indicate that draw i hits the fixed w-set W , so H = i≤K ξi . For every i ≤ K and any history,

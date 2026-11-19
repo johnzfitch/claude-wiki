@@ -2,7 +2,7 @@
 title: "Delete Workspace Member - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/workspaces/members/remove"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:26:49Z"
+fetched_at: "2026-11-14T06:25:28Z"
 tags: ["api"]
 ---
 

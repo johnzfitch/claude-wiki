@@ -1,9 +1,9 @@
 ---
 title: "Pagination - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/utilities/pagination"
+source_url: "https://modelcontextprotocol.io/specification/draft/server/utilities/pagination"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:24:56Z"
-last_modified: "Fri, 30 Oct 2026 20:41:45 GMT"
+fetched_at: "2026-11-10T06:28:03Z"
+last_modified: "Tue, 10 Nov 2026 04:52:30 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -29,7 +29,7 @@ Copy pageCopy page
 
 The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller chunks rather than all at once. Pagination is especially important when connecting to external services over the internet, but also useful for local integrations to avoid performance issues with large data sets.
 
-For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta).
+For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/draft/basic/index#meta).
 
 
 [​](#pagination-model)

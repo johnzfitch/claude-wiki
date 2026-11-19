@@ -2,7 +2,7 @@
 title: "Use Claude in Google Docs, Sheets, and Slides | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16951679-use-claude-in-google-docs-sheets-and-slides"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:26:09Z"
+fetched_at: "2026-11-18T06:28:33Z"
 tags: ["connectors", "security"]
 ---
 

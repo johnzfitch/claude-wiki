@@ -161,7 +161,7 @@ Claude Mythos 5.1 is available to vetted organizations through our trusted acces
 
 ### How does the fallback work?
 
-For most Claude applications, queries flagged by our cybersecurity safeguards automatically route to Opus 4.8 and biology safeguards route to Opus 5. API customers must configure their settings with our new Fallback API. [Learn more](why-claude-switched-models-in-your-conversation-with-fable-5-or-fable-5-1.md)
+For most Claude applications, queries flagged by our cybersecurity safeguards automatically route to Opus 4.8 and biology safeguards route to Opus 5. API customers must configure their settings with our new Fallback API. [Learn more](https://www.anthropic.com/99-Other/why-claude-switched-models-in-your-conversation-with-fable-5-claude-help-center-ef3cfd057a.md)
 
 ### How much does it cost to use Claude Fable 5.1?
 

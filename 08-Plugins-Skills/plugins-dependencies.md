@@ -2,11 +2,14 @@
 title: "Plugin dependencies - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/dependencies"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-14T06:26:23Z"
+fetched_at: "2026-11-13T06:35:01Z"
+last_modified: "Fri, 13 Nov 2026 06:21:51 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Declare dependencies](#declare-dependencies)
   - [Declare a dependency with a version constraint](#declare-a-dependency-with-a-version-constraint)
@@ -72,11 +75,11 @@ List dependencies in the `dependencies` array of your plugin’s `.claude-plugin
 
 An entry can be a string: the plugin name alone, such as `"audit-logger"` in this manifest, or `"name@marketplace"` to resolve it in another marketplace. With a bare string, your plugin depends on whatever version that plugin’s marketplace provides. To set a version constraint, use an object with these fields, each a string:
 
-| Field         | Description                                                                                                                                                                                                                                                                                      |
-|:--------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`        | The dependency’s plugin name, as it appears in its marketplace entry. Claude Code looks it up in the same marketplace as the declaring plugin unless you set `marketplace`. Required.                                                                                                            |
-| `version`     | A [semantic-version range](https://github.com/npm/node-semver#ranges) such as `~2.1.0`, `^2.0`, `>=1.4`, or `=2.1.0`. The dependency installs at the highest git tag that satisfies this range, so the dependency’s maintainer must [tag releases](#tag-plugin-releases-for-version-resolution). |
-| `marketplace` | A different marketplace to resolve `name` in. An allowlist controls cross-marketplace dependencies, described in [Depend on a plugin from another marketplace](#depend-on-a-plugin-from-another-marketplace).                                                                                    |
+| Field | Description |
+|:---|:---|
+| `name` | The dependency’s plugin name, as it appears in its marketplace entry. Claude Code looks it up in the same marketplace as the declaring plugin unless you set `marketplace`. Required. |
+| `version` | A [semantic-version range](https://github.com/npm/node-semver#ranges) such as `~2.1.0`, `^2.0`, `>=1.4`, or `=2.1.0`. The dependency installs at the highest git tag that satisfies this range, so the dependency’s maintainer must [tag releases](#tag-plugin-releases-for-version-resolution). |
+| `marketplace` | A different marketplace to resolve `name` in. An allowlist controls cross-marketplace dependencies, described in [Depend on a plugin from another marketplace](#depend-on-a-plugin-from-another-marketplace). |
 
 A range doesn’t match pre-release versions such as `2.0.0-beta.1` unless you opt in with a pre-release suffix such as `^2.0.0-0`.
 
@@ -236,11 +239,11 @@ Combine constraints from several plugins
 
 When several installed plugins constrain the same dependency, the dependency resolves to the highest version that satisfies all of their ranges. Common combinations resolve like this:
 
-| Plugin A requires | Plugin B requires | Result                                                                                                                          |
-|:------------------|:------------------|:--------------------------------------------------------------------------------------------------------------------------------|
-| `^2.0`            | `>=2.1`           | One install at the highest `2.x` tag at or above `2.1.0`. Both plugins load.                                                    |
-| `~2.1`            | `~3.0`            | Installing plugin B fails with a `has conflicting version requirements` message. Plugin A and the dependency stay as they were. |
-| `=2.1.0`          | none              | The dependency stays at `2.1.0`. Auto-update skips newer versions while plugin A is installed.                                  |
+| Plugin A requires | Plugin B requires | Result |
+|:---|:---|:---|
+| `^2.0` | `>=2.1` | One install at the highest `2.x` tag at or above `2.1.0`. Both plugins load. |
+| `~2.1` | `~3.0` | Installing plugin B fails with a `has conflicting version requirements` message. Plugin A and the dependency stay as they were. |
+| `=2.1.0` | none | The dependency stays at `2.1.0`. Auto-update skips newer versions while plugin A is installed. |
 
 Auto-update fetches a constrained dependency at the highest git tag that satisfies every installed plugin’s range, rather than at the marketplace’s latest version. If the installed plugins’ ranges don’t overlap, auto-update leaves that dependency at its current version, and the `/plugin` **Errors** tab shows an entry naming the constraining plugin. If they overlap but no tag falls in the range, auto-update fetches the marketplace’s current copy and skips the update when that copy’s `version` falls outside any installed plugin’s range. When a user uninstalls the last plugin that constrains a dependency, the dependency is no longer constrained to a version range and resumes tracking its marketplace entry on the next update.
 

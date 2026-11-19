@@ -2,7 +2,7 @@
 title: "Workspaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:50Z"
+fetched_at: "2026-11-18T06:28:00Z"
 tags: ["api"]
 ---
 
@@ -239,6 +239,18 @@ One of the following:
 
 
 
+KeyProfileMismatchErrorDetails object{ error_code }
+
+
+
+After this request, the External Key and the Workspace would not have the same user profile. A key and its Workspace must have the same user profile, or both have none.
+
+error_code: "key_profile_mismatch"
+
+
+
+
+
 NoBillingWorkspaceRole = "workspace_admin" or "workspace_developer" or "workspace_restricted_developer" or "workspace_user"
 
 
@@ -326,6 +338,40 @@ One of the following:
 "workspace_user"
 
 
+
+
+
+WorkspaceMemberLimitExceededErrorDetails object{ error_code }
+
+
+
+The workspace has reached the member limit that Anthropic set for it.
+
+error_code: "workspace_member_limit_exceeded"
+
+
+
+WorkspacePolicyField = "external_key_id"
+
+
+
+
+
+WorkspacePolicyViolationErrorDetails object{ error_code, field }
+
+
+
+The request breaks the organization's Workspace Policy. The message says which rule it broke; an organization admin can see and change the policy in the Console.
+
+error_code: "workspace_policy_violation"
+
+
+
+field: [WorkspacePolicyField](https://platform.claude.com/docs/en/api/http/organization/workspaces#workspace_policy_field)
+
+
+
+The request field the broken rule applies to.
 
 
 

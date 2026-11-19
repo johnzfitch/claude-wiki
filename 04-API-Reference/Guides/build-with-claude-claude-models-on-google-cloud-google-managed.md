@@ -2,7 +2,7 @@
 title: "Claude Models on Google Cloud (Google managed) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/google-managed"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-08T06:24:57Z"
+fetched_at: "2026-11-16T06:24:41Z"
 tags: ["api", "billing"]
 ---
 
@@ -27,11 +27,11 @@ To use Claude Models on Google Cloud (Google managed), you need:
 1.  A Google Cloud project that can use Agent Platform. For setup steps, see Google Cloud’s [Anthropic Claude models on Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/claude) page.
 2.  The [gcloud CLI](https://cloud.google.com/sdk/docs/install) installed, for local development.
 3.  For the identity making the calls, an IAM role that includes the `aiplatform.endpoints.predict` permission, such as Agent Platform User (`roles/aiplatform.user`). For details, see Google Cloud’s [Agent Platform partner models](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/partner-models/use-partner-models) page.
-4.  Google Cloud credentials for that identity. For the SDK examples, you might need to run `gcloud auth application-default login` to authenticate with Google Cloud. The cURL examples for Claude Models on Google Cloud (Google managed) get their token with `gcloud auth print-access-token`. That command uses the gcloud CLI’s own login, not Application Default Credentials. For those examples, run `gcloud auth login` or `gcloud init` first.
+4.  Google Cloud credentials for that identity. To authenticate the SDK with Google Cloud, you might need to run `gcloud auth application-default login`. A cURL request to Claude Models on Google Cloud (Google managed) can get its token from `gcloud auth print-access-token`. That command uses the gcloud CLI’s own login, not Application Default Credentials, so run `gcloud auth login` or `gcloud init` before you use it.
 
 ### Install an SDK
 
-Anthropic’s [client SDKs](../Other/cli-sdks-libraries-overview.md) support Claude Models on Google Cloud (Google managed) through `AnthropicVertex`. Install the package that provides it:
+The [client SDK](../Other/cli-sdks-libraries-overview.md) supports Claude Models on Google Cloud (Google managed) through `AnthropicVertex`. Install the package that provides it:
 
 Python
 
@@ -115,6 +115,8 @@ print(message)
 
 | Model | Agent Platform API model ID |
 |----|----|
+| Claude Fable 5.2 | claude-fable-5-2 |
+| Claude Mythos 5.2 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | claude-mythos-5-2 |
 | Claude Fable 5.1 | claude-fable-5-1 |
 | Claude Mythos 5.1 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | claude-mythos-5-1 |
 | Claude Fable 5 | claude-fable-5 |
@@ -222,6 +224,7 @@ Features supported on Claude Models on Google Cloud (Google managed) include the
   - [Web search tool](../Agents-Tools/agents-and-tools-tool-use-web-search-tool.md)
 - [Citations](build-with-claude-citations.md)
 - [Structured outputs](build-with-claude-structured-outputs.md)
+- [Fast mode](build-with-claude-fast-mode.md) on [supported models](build-with-claude-fast-mode.md#feature-availability)
 
 [Features overview](build-with-claude-overview.md) lists every feature. Each feature’s page shows whether Claude Models on Google Cloud (Google managed) supports it.
 
@@ -242,8 +245,12 @@ Instead of server-side fallback, use the [client-side fallback pattern](build-wi
 
 Claude Models on Google Cloud (Google managed) offers a [1M-token context window](build-with-claude-context-windows.md) for these models:
 
+- Claude Fable 5.2
+- Claude Mythos 5.2
 - Claude Fable 5.1
+- Claude Mythos 5.1
 - Claude Fable 5
+- Claude Mythos 5
 - Claude Opus 5.5
 - Claude Opus 5
 - Claude Opus 4.8

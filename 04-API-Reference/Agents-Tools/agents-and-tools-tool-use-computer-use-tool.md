@@ -2,7 +2,7 @@
 title: "Computer use tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/computer-use-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:31Z"
+fetched_at: "2026-11-13T06:33:55Z"
 tags: ["api", "security"]
 ---
 
@@ -23,17 +23,24 @@ Give Claude screenshot, mouse, and keyboard control of a desktop environment wit
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+- Messages API
+- Managed Agents Not supported
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
-
-[Beta header](#feature-beta-headers)  
-Varies; see details
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 
 
@@ -62,15 +69,15 @@ To minimize risks, consider taking precautions such as:
 
 In some circumstances, Claude follows commands found in content even when they conflict with your instructions. For example, instructions on webpages or contained in images might override your instructions or cause Claude to make mistakes. Take precautions to isolate Claude from sensitive data and actions to avoid risks related to prompt injection.
 
-Anthropic has trained the model to resist these prompt injections and has added an extra layer of defense. If you use the computer use tools, classifiers will automatically scan what the tools return, such as screenshots, to flag potential prompt injections. When these classifiers identify a potential prompt injection, they will automatically steer the model to check whether the instruction really came from you before acting on it.
+Anthropic has trained the model to resist these prompt injections and has added an extra layer of defense. If you use the computer use tool, classifiers automatically scan what the tool returns, such as screenshots, to flag potential prompt injections. When these classifiers identify a potential prompt injection, they steer the model to check whether the instruction really came from you before acting on it.
 
 This extra protection isn’t ideal for every use case (for example, use cases without a human in the loop), so if you’d like to opt out and turn it off, [contact support](https://support.claude.com/en/). The precautions listed earlier remain important even with these classifiers in place.
 
-Inform end users of relevant risks and obtain their consent prior to enabling computer use in your own products.
+Inform end users of relevant risks and obtain their consent before enabling computer use in your own products.
 
 ## Quick start
 
-Add the computer use toolset to the `tools` array of a [Messages API](../Endpoints/messages-create.md) request as `{"type": "computer_toolset_20260801"}`. The request needs no beta header. This example also declares the [text editor tool](agents-and-tools-tool-use-text-editor-tool.md) and [bash tool](agents-and-tools-tool-use-bash-tool.md), which Claude typically uses alongside computer use:
+Add the computer use toolset to the `tools` array of a [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. request as `{"type": "computer_toolset_20260801"}`. The request needs no beta header. This example also declares the [text editor tool](agents-and-tools-tool-use-text-editor-tool.md) and [bash tool](agents-and-tools-tool-use-bash-tool.md), which Claude typically uses alongside computer use:
 
 cURL
 
@@ -184,7 +191,7 @@ Your application runs each call in order in your own environment, returns one `t
     - If Claude determines more actions are needed, it responds with another `tool_use` `stop_reason`; return to step 3.
     - Otherwise, it returns a text response to the user.
 
-The repetition of steps 3 and 4 without user input is referred to as the “agent loop” (that is, Claude responding with a tool use request and your application responding to Claude with the results of evaluating that request).
+Steps 3 and 4, repeated without user input, form the “agent loop”: Claude responds with a tool use request, and your application responds to Claude with the results of evaluating that request.
 
 ### Batch actions
 
@@ -292,7 +299,7 @@ Computer use requires a sandboxed computing environment where Claude can safely 
 
 2.  **Desktop environment:** A lightweight UI with window manager (Mutter) and panel (Tint2) running on Linux, which provides a consistent graphical interface for Claude to interact with.
 
-3.  **Applications:** Pre-installed Linux applications such as Firefox, LibreOffice, text editors, and file managers that Claude can use to complete tasks.
+3.  **Applications:** Preinstalled Linux applications such as Firefox, LibreOffice, text editors, and file managers that Claude can use to complete tasks.
 
 4.  **Tool implementations:** Integration code that translates Claude’s abstract tool requests (such as “move mouse” or “take screenshot”) into actual operations in the virtual environment.
 
@@ -300,10 +307,10 @@ Computer use requires a sandboxed computing environment where Claude can safely 
 
 When you use computer use, Claude doesn’t directly connect to this environment. Instead, your application:
 
-1.  Receives Claude’s tool use requests
-2.  Translates them into actions in your computing environment
-3.  Captures the results (such as screenshots and command outputs)
-4.  Returns these results to Claude
+1.  Receives Claude’s tool use requests.
+2.  Translates them into actions in your computing environment.
+3.  Captures the results (such as screenshots and command outputs).
+4.  Returns these results to Claude.
 
 For security and isolation, the reference implementation runs all of this inside a Docker container with appropriate port mappings for viewing and interacting with the environment.
 
@@ -315,7 +322,7 @@ Upgrading an existing `computer_20251124` integration? Start with [Migrate from 
 
 
 
-The [computer use reference implementation](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo) is a complete working example: a [containerized environment](https://github.com/anthropics/anthropic-quickstarts/blob/main/computer-use-demo/Dockerfile) suitable for computer use, implementations of [the computer use tools](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo/computer_use_demo/tools), an [agent loop](https://github.com/anthropics/anthropic-quickstarts/blob/main/computer-use-demo/computer_use_demo/loop.py) that calls the Claude API and runs the tools, and a web interface for the container, loop, and tools.
+The [computer use reference implementation](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo) is a complete working example: a [containerized environment](https://github.com/anthropics/claude-quickstarts/blob/main/computer-use-demo/Dockerfile) suitable for computer use, implementations of [the computer use tools](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo/computer_use_demo/tools), an [agent loop](https://github.com/anthropics/claude-quickstarts/blob/main/computer-use-demo/computer_use_demo/loop.py) that calls the Claude API and runs the tools, and a web interface for the container, loop, and tools. To use `computer_toolset_20260801`, choose a [model that supports it](#availability-feature-support), then select the toolset under **Tool Versions** in the web interface’s sidebar.
 
 ### Understand the agent loop
 
@@ -371,7 +378,7 @@ The loop continues until either Claude responds without requesting any tools (ta
 
 ### Optimize model performance with prompting
 
-1.  Specify simple, well-defined tasks and provide explicit instructions for each step.
+1.  Specify well-defined tasks and provide explicit instructions for each step.
 2.  Claude sometimes acts as if its actions succeeded without explicitly checking their results. To prevent this, you can prompt Claude with `After each step, take a screenshot and carefully evaluate if you have achieved the right outcome. State in one sentence what the screenshot shows and whether the step succeeded. If it didn't, try again. Only when you confirm a step was executed correctly should you move on to the next one.`
 3.  Some UI elements (such as dropdowns and scrollbars) might be tricky for Claude to manipulate using mouse movements. If you experience this, try prompting the model to use keyboard shortcuts.
 4.  For repeatable tasks or UI interactions, include example screenshots and tool calls of successful outcomes in your prompt.
@@ -380,11 +387,7 @@ The loop continues until either Claude responds without requesting any tools (ta
 7.  Claude uses the `zoom` action to inspect a region at full resolution when asked about small text or specific UI elements that aren’t legible at the screenshot’s default resolution, such as file names in a sidebar, tab titles, status-bar text, line numbers, or button labels. If Claude isn’t zooming when you expect, ask about a specific region or element rather than the screen as a whole.
 8.  If you want every [batch action](#batch-actions) to end with a screenshot, say so in the system prompt, for example, `End each group of actions with a screenshot so you can verify the result before continuing.`
 
-
-
-If you repeatedly encounter a clear set of issues or know in advance the tasks Claude will need to complete, use the system prompt to provide Claude with explicit tips or instructions on how to do the tasks successfully.
-
-
+If you repeatedly encounter a clear set of issues, or know in advance the tasks Claude has to complete, give Claude explicit tips or instructions for them in the system prompt.
 
 For agents that span multiple sessions, run end-to-end verification at the start of each session, not only after implementation. Browser-based checks catch regressions from prior sessions that code-level review alone misses. See [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) for details.
 
@@ -422,7 +425,7 @@ Keep the following in mind when implementing the members:
 - **All members are enabled by default, including `zoom`.** If your environment can’t produce zoom images, withhold the member with `configs` (see [Tool parameters](#tool-parameters)) rather than leaving it enabled and returning errors. If Claude calls a member that you have withheld or don’t implement, return a `tool_result` with `is_error: true` for that block.
 - **Dispatch on the pair (`toolset_name`, `name`).** `toolset_name` is what marks a block as a computer action: a custom tool in the same request can share a member’s name, and a later toolset version can add members (see [Client toolsets](agents-and-tools-tool-use-tool-reference.md#client-toolsets)).
 
-### Example actions
+### Example actions
 
 Each example is a complete `tool_use` block as it appears in Claude’s response.
 
@@ -571,7 +574,7 @@ For tasks that stay inside webpages, you can also [declare the browser use tool 
 
 ### Build a custom computer use environment
 
-The [reference implementation](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo) is meant to help you get started with computer use. It includes all of the components needed to have Claude use a computer. However, you can build your own environment for computer use to suit your needs. You need:
+The [reference implementation](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo) is meant to help you get started with computer use. It includes all of the components needed to have Claude use a computer. However, you can build your own environment for computer use to suit your needs. You need:
 
 - A virtualized or containerized environment suitable for computer use with Claude
 - An implementation of the computer use tool’s actions
@@ -586,7 +589,7 @@ The computer use tool is implemented as a schema-less tool. When using this tool
 
     ### Set up your computing environment
 
-    Create a virtual display or connect to an existing display that Claude will interact with. This typically involves setting up Xvfb (X Virtual Framebuffer) or similar technology.
+    Create a virtual display or connect to an existing display that Claude interacts with. This typically involves setting up Xvfb (X Virtual Framebuffer) or similar technology.
 
 2.  2
 
@@ -740,7 +743,7 @@ Screenshots and zoom images that you return to the computer use toolset must alr
 
 
 
-Limits vary by model. Claude Opus 4.7 and later models, including every model that supports `computer_toolset_20260801`, accept up to 2,576 pixels on the long edge and 4,784 visual tokens total (`⌈width / 28⌉ × ⌈height / 28⌉`, approximately 3.75 megapixels); earlier models accept up to 1,568 pixels on the long edge and approximately 1.15 megapixels total (see [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size) for each model’s tier). The following example uses the earlier-model 1,568 px / 1.15 MP limits. For a high-resolution-tier model, size to the visual-token limit rather than a pixel total, for example with the resize helper in [Resize your image before uploading](../Guides/build-with-claude-vision-coordinates.md#resize-your-image-before-uploading).
+Limits vary by model. Claude Opus 4.7 and later models, including every model that supports `computer_toolset_20260801`, accept up to 2,576 pixels on the long edge and 4,784 visual tokens total (`⌈width / 28⌉ × ⌈height / 28⌉`, approximately 3.75 megapixels). Earlier models accept up to 1,568 pixels on the long edge and approximately 1.15 megapixels total. See [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size) for each model’s tier. The following example uses the earlier-model 1,568 px / 1.15 MP limits. For a high-resolution-tier model, size to the visual-token limit rather than a pixel total, for example with the resize helper in [Resize your image before uploading](../Guides/build-with-claude-vision-coordinates.md#resize-your-image-before-uploading).
 
 If your screen is larger than the limit, resize each screenshot before returning it and scale Claude’s returned coordinates back to the original screen space. Because the toolset takes no display dimensions, the resize and the coordinate scaling in your application code are all you need:
 
@@ -809,13 +812,18 @@ When you choose a display resolution and return screenshots:
 
 ### Manage screenshot history
 
-Long agent loops accumulate screenshots quickly (roughly 1,000–1,800 input tokens each). The API’s [request limits](../Guides/build-with-claude-vision.md#request-limits) also apply. Once a single request carries more than 20 images, every image in it is held to a stricter per-side limit. A loop that keeps its screenshot history reaches that count within a few dozen turns, so either resize each screenshot to stay under that limit or prune older screenshots to keep 20 or fewer in the request.
+Long agent loops accumulate screenshots quickly (roughly 1,000–1,800 input tokens each). The API’s [request limits](../Guides/build-with-claude-vision.md#request-limits) also apply.
+
+Once a single request carries more than 20 images, every image in it is held to a stricter per-side limit. A loop that keeps its screenshot history can reach that count. Either resize each screenshot to stay under that limit, or prune older screenshots to keep 20 or fewer in the request.
 
 To keep [Prompt caching](../Guides/build-with-claude-prompt-caching.md) effective while bounding context:
 
 - Place one `cache_control` breakpoint after the system prompt and tool definitions, and up to three more on the last `tool_result` block of each of the most recent turns, advancing them each turn. Within a [batch action](#batch-actions), markers on several blocks act as a single breakpoint, but each still counts toward the limit of four, so use at most one in any turn.
 - Prune old screenshots in *batches*, not one each turn. Dropping a screenshot every turn changes the prefix every turn and invalidates the cache. A reasonable default is to keep the last three screenshots and prune every 25 turns, so the prefix stays byte-identical between prune events; if your screenshots exceed the stricter limit, choose an interval that keeps each request at 20 or fewer images.
-- On Claude 5.1 and later models, avoid pruning on the client: removing an earlier screenshot from a request [invalidates every later thinking block](../Guides/build-with-claude-thinking.md#preserved-in-conversation) in that request and in every later request. Resize screenshots to stay under the stricter limit instead and use server-side [tool result clearing](../Guides/build-with-claude-context-editing.md#tool-result-clearing) to drop old ones from the context. If you must prune, keep [`prefix_mismatch_behavior: "drop_block"`](../Guides/build-with-claude-thinking.md#preserved-thinking-controls) set from then on; after each prune, Claude continues without the thinking produced since the pruned screenshot, on that request and every later one. On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With any other thinking setting on those models, keep the history append-only or strip every `thinking` and `redacted_thinking` block after the pruned screenshot.
+- Avoid client-side pruning on Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, and Claude Mythos 5.1. The same goes for Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5. On these models, removing an earlier screenshot from a request [invalidates every later thinking block already in the history](../Guides/build-with-claude-thinking.md#preserved-in-conversation) of that and every later request.
+  - **Instead:** Resize screenshots to stay under the stricter limit. [Tool result clearing](../Guides/build-with-claude-context-editing.md#tool-result-clearing) saves tokens, but cleared screenshots still count toward [request limits](../Guides/build-with-claude-vision.md#request-limits), so use [on-demand compaction](../Guides/build-with-claude-compaction-on-demand.md) before a loop reaches them.
+  - **If you must prune:** Keep [`prefix_mismatch_behavior: "drop_block"`](../Guides/build-with-claude-preserved-thinking-prefix-checks.md#preserved-thinking-controls) set from then on. After each prune, the API drops the invalidated thinking blocks, on that request and every later one. So Claude continues without the thinking that it produced after the pruned screenshot.
+  - **If you must prune on Claude Sonnet 5.5 or Claude Haiku 5.5:** `prefix_mismatch_behavior` works only with `thinking: {"type": "adaptive"}`. With any other thinking setting on those models, keep the history append-only or strip every `thinking` and `redacted_thinking` block after the pruned screenshot.
 
 ### Diagnose click issues
 
@@ -834,7 +842,7 @@ If clicks miss their targets, the cause is usually one of the following:
 
 ### Follow implementation best practices
 
-### Add action delays
+### Add action delays
 
 Some applications need time to respond to actions:
 
@@ -862,7 +870,7 @@ def click_and_wait(x, y, wait_time=0.5):
     time.sleep(wait_time)  # Allow UI to update
 ```
 
-### Validate actions before running them
+### Validate actions before running them
 
 Check that requested actions are safe and valid:
 
@@ -896,7 +904,7 @@ def validate_action(action_type, params):
     return True, None
 ```
 
-### Log actions for debugging
+### Log actions for debugging
 
 Keep a log of all actions for troubleshooting:
 
@@ -930,7 +938,7 @@ def log_action(action_type, params, result):
 
 ## Migrate from `computer_20251124`
 
-A `computer_20251124` integration works without changes on the models listed for that version under [Earlier tool versions](#earlier-tool-versions). Upgrade the integration before you move it to a model that doesn’t accept `computer_20251124`, such as a Claude 5.5 model on the Claude API.
+A `computer_20251124` integration works without changes on the models listed for that version under [Earlier tool versions](#earlier-tool-versions). Upgrade the integration before you move it to a model that doesn’t accept `computer_20251124`, such as Claude Opus 5.5 on the Claude API.
 
 To upgrade, make the following changes together:
 
@@ -998,20 +1006,20 @@ The following pair shows a `tool_use` block before and after the change. The act
 
 ## Earlier tool versions
 
-Two earlier versions of the computer use tool are available in beta. Each requires its [beta header](../Endpoints/beta-headers.md) on every request, and their parameters are documented in the [beta Messages API reference](../Endpoints/beta-messages-create.md). With the SDK, pass the header through `betas` and use the beta namespace; only the computer use tool needs the header, not the bash or text editor tools in the same request.
+Two earlier versions of the computer use tool are available in beta. Each requires its [beta header](../Endpoints/beta-headers.md) on every request, and their parameters are documented in the [beta Messages API reference](../Endpoints/beta-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. With the SDK, pass the header through `betas` and use the beta namespace; only the computer use tool needs the header, not the bash or text editor tools in the same request.
 
 | Tool version | Beta header | Use with | Parameters |
 |----|----|----|----|
-| `computer_20251124` | `computer-use-2025-11-24` | Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.5 | [API reference](../Endpoints/beta-messages-create.md) |
-| `computer_20250124` | `computer-use-2025-01-24` | Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)), Claude Haiku 4.5, Claude Opus 4.1 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), Claude Sonnet 4 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), and Claude Opus 4 ([retired, except on Claude Models on Google Cloud (Google managed)](../../20-Models/about-claude-model-deprecations.md)) | [API reference](../Endpoints/beta-messages-create.md) |
+| `computer_20251124` | `computer-use-2025-11-24` | Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.5 | [API reference](../Endpoints/beta-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. |
+| `computer_20250124` | `computer-use-2025-01-24` | Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)), Claude Haiku 4.5, Claude Opus 4.1 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), Claude Sonnet 4 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), and Claude Opus 4 ([retired, except on Claude Models on Google Cloud (Google managed)](../../20-Models/about-claude-model-deprecations.md)) | [API reference](../Endpoints/beta-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. |
 
-On Amazon Bedrock, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5 also accept the `computer_20251124` tool with the `computer-use-2025-11-24` beta header.
+On Amazon Bedrock, Claude Fable 5.2, Claude Mythos 5.2, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5 also accept the `computer_20251124` tool with the `computer-use-2025-11-24` beta header. With Amazon Bedrock’s InvokeModel API, send `computer-use-2025-11-24` in the `anthropic_beta` array of the request body instead of in a header. For that API, see [Claude on Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md).
 
 ------------------------------------------------------------------------
 
 ## Limitations
 
-1.  **Latency:** The current computer use latency for human-AI interactions might be too slow compared to regular human-directed computer actions. Focus on use cases where speed isn’t critical (for example, background information gathering, automated software testing) in trusted environments.
+1.  **Latency:** Computer use latency for human-AI interactions might be too slow compared with regular human-directed computer actions. Focus on use cases where speed isn’t critical (for example, background information gathering, automated software testing) in trusted environments.
 2.  **Computer vision accuracy and reliability:** Claude might make mistakes or hallucinate when outputting specific coordinates while generating actions. Claude’s [summarized thinking](../Guides/build-with-claude-thinking.md#summarized-thinking) output can help you understand the model’s reasoning and identify potential issues; set `display: "summarized"` on the thinking configuration, because the models that support the toolset omit thinking text by default.
 3.  **Tool selection accuracy and reliability:** Claude might make mistakes or hallucinate when selecting tools while generating actions or take unexpected actions to solve problems. Additionally, reliability might be lower when interacting with niche applications or multiple applications at once. Prompt the model carefully when requesting complex tasks.
 4.  **Scrolling reliability:** The scroll action supports direction control (up, down, left, right) and a specified amount. In applications where scrolling doesn’t take effect, keyboard alternatives such as Page Down can help.
@@ -1030,18 +1038,18 @@ Because your application controls where and how computer use data is stored, com
 
 ## Pricing
 
-Computer use follows the standard [tool use pricing](agents-and-tools-tool-use-overview.md#pricing). When using the computer use tool:
+Computer use follows the standard [tool use pricing in the tool use overview](agents-and-tools-tool-use-overview.md#pricing). When using the computer use tool:
 
-**Toolset definition overhead:** Declaring `computer_toolset_20260801` with its default members adds about 4,500 input tokens to a request (about 4,590 on Claude Sonnet 5 and about 4,520 on the other supported models), which covers the member tool definitions and the tool use system prompt. Disabling `zoom` with `configs` removes about 410 of those tokens. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
+**Toolset definition overhead:** Declaring `computer_toolset_20260801` with its default members adds about 4,500 input tokens to a request: about 4,590 on Claude Sonnet 5 and about 4,520 on the other supported models. These tokens cover the member tool definitions and the tool use system prompt. Disabling `zoom` with `configs` removes about 410 of those tokens. The response `usage` reports the exact count for a request, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
 
 **Earlier tool versions:** The following figures apply to the `computer_20251124` and `computer_20250124` tool versions, not to `computer_toolset_20260801`:
 
 - System prompt overhead: 466–499 tokens added to the system prompt
-- Tool definition: about 735 input tokens per tool definition (measured with `computer_20250124`)
+- Tool definition: about 735 input tokens for each tool definition (measured with `computer_20250124`)
 
 **Additional token consumption:**
 
-- Screenshot and zoom images returned in tool results, billed as image input (see [Vision pricing](../Guides/build-with-claude-vision.md#evaluate-image-size))
+- Screenshot and zoom images returned in tool results, billed as image input (see [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size))
 - Tool execution results returned to Claude
 
 
@@ -1062,9 +1070,9 @@ Start from a partner’s driver, or write your own in Python or TypeScript. The 
 
 Fix the most common tool-use errors with symptom-to-fix diagnostic tables.
 
-[Reference implementation](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo)
+[Reference implementation](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo)
 
-Get started with the complete Docker-based implementation
+Get started with the complete Docker-based implementation.
 
 
 
@@ -1076,7 +1084,7 @@ Connect Claude to external tools and APIs. See where tools run, when Claude call
 
 [Best practices in detail](https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude)
 
-Benchmarked recommendations for resolution, thinking effort, and context management
+Benchmarked recommendations for resolution, thinking effort, and context management.
 
 [Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)
 
@@ -1084,98 +1092,211 @@ Let Claude navigate, read, and interact with webpages in your own browser enviro
 
 ## Availability
 
-Computer use tool is available or in beta on select models and eligible for zero data retention and HIPAA readiness.
+Computer use tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Amazon Bedrock
 
-StatusAvailable
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Amazon Bedrock (bedrock-runtime)
 
-Models
+API  
+- Messages API
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-StatusBeta
+Claude Platform on AWS
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)
+Claude Models on Google Cloud (Google managed)
 
-[Managed Agents](../Other/managed-agents-overview.md)
+API  
+- Messages API
 
-StatusNot available
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-### Required beta headers
+Microsoft Foundry (hosted on Azure)
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Messages API
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-Header
+Microsoft Foundry (hosted on Anthropic)
 
-- `computer-use-2025-11-24`
-  
+API  
+- Messages API
 
-Models
-
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)
-
-Header
-
-- `computer-use-2025-01-24`
-  
-
-Models
-
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
 ### Data handling
 

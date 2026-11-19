@@ -2,7 +2,7 @@
 title: "Agent Skills - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-06T06:33:22Z"
+fetched_at: "2026-11-14T06:25:13Z"
 tags: ["agents", "api", "security", "skills"]
 ---
 
@@ -20,14 +20,21 @@ Agent Skills are modular capabilities that extend Claude’s functionality. Each
 
 Agent Skills
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryHosted on AnthropicAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft FoundryHosted on Anthropic
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -364,43 +371,49 @@ Learn how to write effective Skills that Claude can discover and use successfull
 
 ## Availability
 
-Agent Skills are available on every model.
+Agent Skills
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-List `skill_ids` in the `container` parameter and include the code execution tool, whose container the skills run in.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Models on Google Cloud (Anthropic managed)
 
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+APIs  
+- Messages API
+- Managed Agents
 
+Models  
+- All models
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
 Hosted on Anthropic deployments only; the skill version download endpoint (`GET /v1/skills/{skill_id}/versions/{version}/content`) is not supported on Foundry.
-
-[Managed Agents](../Other/managed-agents-overview.md)
-
-Usage
-
-Attach skills in the agent’s `skills` array, or load them from a GitHub repository mounted on the session.
-
-StatusAvailable
-
-Cloud platforms
-
-- All supported platforms
 
 ### Data handling
 

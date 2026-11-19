@@ -2,13 +2,36 @@
 title: "Strengthening our defenses against distillation attacks \\ Anthropic"
 source_url: "https://www.anthropic.com/research/distillation-defenses"
 category: "19-Reference"
-fetched_at: "2026-10-14T06:28:14Z"
+fetched_at: "2026-11-18T06:28:44Z"
 tags: ["news-research"]
 ---
 
 # Strengthening our defenses against distillation attacks
 
+Published  
 Oct 12, 2026
+
+[Safeguards](safeguards.md)
+
+Topics  
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+- [National security](https://www.anthropic.com/search?topic=national-security)
+- [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
+- [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+
+See more...
+
+Related articles
+
+- Security
+
+  Sep 10, 2026
+
+  [Detecting and countering misuse of AI: September 2026](https://www.anthropic.com/threat-intelligence-report-september-2026)
+
+[View more](https://www.anthropic.com/search?topic=safeguards)
 
 In recent months, we’ve made substantial progress on reducing the effectiveness of distillation attacks on Claude using new methods, as we outline in this blog. Early evidence suggests that these methods have reduced the amount of data harvested by distillers by around 90 to 99%.
 
@@ -24,7 +47,7 @@ In response to the increasing sophistication and scale of these attacks, we’ve
 
 Distillation is a problem that every model developer faces and must confront. We hope this post helps developers and platforms better understand how they can prevent these attacks, what the trade-offs with these measures might be, and why the costs are worth bearing.
 
-## Simple defenses are not enough
+### Simple defenses are not enough
 
 Distillers aim to generate millions of responses from a larger, more capable model (in this case, Claude), then use those responses to teach a smaller model to mimic the more capable model’s behavior. The most valuable kind of data for this purpose is transcripts of Claude’s reasoning—the thinking process that Claude writes out before it responds. This is much more useful than its output alone, since it helps the smaller model understand *how* Claude reaches its final answer. Our defenses against distillation therefore focus almost entirely on making Claude’s reasoning harder for distillers to access.
 
@@ -36,7 +59,7 @@ In general, requests like these are possible for us to spot because ordinary use
 
 Yet our initial, relatively simple designs for these safeguards weren’t sufficient. Distillers found ways around the first safeguards we built. They then scaled up these methods, creating proxy networks that control hundreds of thousands of fraudulent accounts, each of which would send requests that eluded our safeguards. These networks also resold access to Claude in regions where it is not offered, and [created accounts](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26) with false identities and stolen payment details. As [we described in our February report](detecting-and-preventing-distillation-attacks.md), one network managed more than 20,000 fraudulent accounts at once. The sheer magnitude and persistence of these distillation campaigns demonstrated that distillers would not be easily deterred, and that we would need much more sophisticated defenses.
 
-## Our new methods
+### Our new methods
 
 Our defenses against distillation now disrupt attacks in three separate ways, with minimal impacts to legitimate users:
 
@@ -52,7 +75,7 @@ The system we use is constantly being improved. We expect that attackers will fi
 
 **Making repeated attempts difficult.** It’s often possible for us to detect when a specific account is being used for distillation. Users who continually try to extract reasoning from Claude face stricter usage limits, and when we detect repeated and persistent attempts at distillation, we ban the associated accounts. Additionally, since September 24, we have [resumed charging for requests](https://x.com/ClaudeDevs/status/2103170368794185758) that are blocked by our safeguards before Claude responds, in the specific areas (including distillation) where they have a \<0.1% false positive rate. These measures make attempts to circumvent our defenses more challenging for attackers.
 
-## How well our new methods work
+### How well our new methods work
 
 Overall, we believe that our new distillation defenses reliably prevent many more attempts to distill our frontier models. On our most capable generally available models, our two-stage classifier now catches all of the distillation techniques we described in our [September report](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26).
 
@@ -62,7 +85,7 @@ We don’t yet know how long these gains will last. We expect that distillation 
 
 There are also trade-offs inherent in our techniques. In February, we wrote that we were working to make distillation harder [without affecting the experience](detecting-and-preventing-distillation-attacks.md) for legitimate users. We haven’t met this goal completely: preserved thinking has required some developers to update their integrations, our classifiers can (in fewer than 0.1% of cases) misidentify or block benign requests, and we now charge users for those blocked requests.
 
-## Distillation is a problem for every developer and platform
+### Distillation is a problem for every developer and platform
 
 In spite of the trade-offs, we believe these measures are clearly worth the cost. Preventing distillation is important both for our national security and for ensuring that powerful models, especially publicly available ones, are released with adequate safeguards.
 
@@ -71,132 +94,3 @@ We’ve gone to great lengths to prevent our models from being misused by bad ac
 Distillers distribute traffic across Anthropic’s API, third-party cloud platforms, and other inference providers. For that reason, platforms—as well as developers—have a role to play in reducing distillation. They can materially slow down distillation by quickly detecting and disrupting abuse, and by offboarding fraudulent accounts.
 
 The incentives in the industry often cut the other way. Defenses are expensive, and illicit distillers are still paying customers. Against that backdrop, it would be easy for companies to do nothing, or not enough. We’re publishing our methods to show that there’s a workable alternative.
-
-
-## Related content
-
-### AI models may be capable of self-replicating without access to a datacenter
-
-Our experiments suggest that small AI models may be only months away from being capable enough to self-replicate on commercial IoT devices, like Android TVs and smart ovens.
-
-[Read more](self-replicating-ai.md)
-
-### Investigating unintended model actions in our evaluations and internal use
-
-This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude.
-
-[Read more](investigating-unintended-model-actions.md)
-
-### The missing map of the sky
-
-Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light.
-
-[Read more](the-missing-map-of-the-sky.md)
-
-[](https://www.anthropic.com/)
-
-### Products
-
-- [Claude](../15-Claude-AI-Features/product-overview.md)
-- [Claude Code](../15-Claude-AI-Features/product-claude-code.md)
-- [Claude Code Enterprise](../15-Claude-AI-Features/product-claude-code-enterprise.md)
-- [Claude Cowork](../15-Claude-AI-Features/product-cowork.md)
-- [@Claude](../15-Claude-AI-Features/product-tag.md)
-- [Claude Design](../15-Claude-AI-Features/product-design.md)
-- [Claude Science](../15-Claude-AI-Features/product-claude-science.md)
-- [Claude Security](../15-Claude-AI-Features/product-claude-security.md)
-- [Claude in Chrome](https://claude.com/claude-in-chrome)
-- [Claude for Microsoft 365](https://claude.com/claude-for-microsoft-365)
-- [Skills](https://www.claude.com/skills)
-- [Download app](https://claude.ai/download)
-- [Pricing](../17-Billing-Plans/pricing.md)
-- [Log in to Claude](https://claude.ai/)
-
-### Models
-
-- [Mythos](../15-Claude-AI-Features/claude-mythos.md)
-- [Fable](../15-Claude-AI-Features/claude-fable.md)
-- [Opus](../15-Claude-AI-Features/claude-opus.md)
-- [Sonnet](../15-Claude-AI-Features/claude-sonnet.md)
-- [Haiku](../15-Claude-AI-Features/claude-haiku.md)
-
-### Solutions
-
-- [AI agents](../18-Industry-UseCases/agents.md)
-- [Code modernization](../18-Industry-UseCases/code-modernization.md)
-- [Coding](../18-Industry-UseCases/coding.md)
-- [Commerce](../18-Industry-UseCases/commerce.md)
-- [Customer support](../18-Industry-UseCases/customer-support.md)
-- [Cybersecurity](../18-Industry-UseCases/cybersecurity.md)
-- [Enterprise](../18-Industry-UseCases/enterprise.md)
-- [Financial advisors](../18-Industry-UseCases/financial-advisors.md)
-- [Financial services](../18-Industry-UseCases/finance.md)
-- [Government](../18-Industry-UseCases/government.md)
-- [Healthcare](../18-Industry-UseCases/healthcare.md)
-- [Higher education](../18-Industry-UseCases/education.md)
-- [K-12 teachers](../18-Industry-UseCases/teachers.md)
-- [Legal](../18-Industry-UseCases/legal.md)
-- [Life sciences](../18-Industry-UseCases/life-sciences.md)
-- [Nonprofits](../18-Industry-UseCases/nonprofits.md)
-- [Sales](../18-Industry-UseCases/sales.md)
-- [Small business](../18-Industry-UseCases/small-business.md)
-
-### Claude Platform
-
-- [Overview](https://claude.com/platform/api)
-- [Developer docs](../04-API-Reference/Other/home.md)
-- [Pricing](../17-Billing-Plans/pricing.md#api)
-- [Ecosystem](https://claude.com/ecosystem)
-- [Marketplace](https://claude.com/platform/marketplace)
-- [Regional compliance](https://claude.com/regional-compliance)
-- [Claude on AWS](../04-API-Reference/Other/partners-claude-on-aws.md)
-- [Google Cloud](../04-API-Reference/Other/partners-google-cloud.md)
-- [Microsoft Foundry](../04-API-Reference/Other/partners-microsoft-foundry.md)
-- [Console login](../04-API-Reference/Other/playground.md)
-
-### Resources
-
-- [Blog](https://claude.com/blog)
-- [Claude partner network](../04-API-Reference/Other/partners.md)
-- [Community](https://claude.com/community)
-- [Connectors](../04-API-Reference/Other/partners-mcp.md)
-- [Courses](https://academy.claude.com)
-- [Customer stories](../18-Industry-UseCases/customers.md)
-- [Developer blog](https://claude.dev)
-- [Engineering at Anthropic](https://www.anthropic.com/engineering)
-- [Events](https://www.anthropic.com/events)
-- [Plugins](../08-Plugins-Skills/claude-com-plugins.md)
-- [Powered by Claude](../04-API-Reference/Other/partners-powered-by-claude.md)
-- [Service partners](../04-API-Reference/Other/partners-services.md)
-- [Tutorials](https://claude.com/resources/tutorials)
-- [Use cases](https://claude.com/resources/use-cases)
-
-### Programs
-
-- [Campus](../15-Claude-AI-Features/programs-campus.md)
-- [Frontier Academy](../15-Claude-AI-Features/programs-frontier-academy.md)
-- [Scientists](../15-Claude-AI-Features/programs-team-plan-for-scientists.md)
-- [Startups](../15-Claude-AI-Features/programs-startups.md)
-
-### Help and security
-
-- [Availability](https://www.anthropic.com/legal/supported-regions)
-- [Status](https://status.anthropic.com/)
-- [Support center](https://support.claude.com/en/)
-
-### Company
-
-- [Anthropic](company.md)
-- [Careers](https://www.anthropic.com/careers)
-- [Leadership](company-leadership.md)
-- [Policy](https://www.anthropic.com/policy)
-- [Economic Futures](https://www.anthropic.com/economic-futures)
-- [Research](anthropic-com-research.md)
-- [News](news.md)
-- [Claude’s Constitution](https://www.anthropic.com/constitution)
-- [Claude Corps](../15-Claude-AI-Features/claude-corps.md)
-- [Keep thinking](https://www.anthropic.com/path-to-hope)
-- [Policy on the AI Exponential](https://www.anthropic.com/policy-on-the-ai-exponential)
-- [Responsible Scaling Policy](announcing-our-updated-responsible-scaling-policy.md)
-- [Security and compliance](https://trust.anthropic.com/)
-- [Transparency](https://www.anthropic.com/transparency)

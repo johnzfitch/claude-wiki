@@ -2,7 +2,8 @@
 title: "Interface gallery for mods - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/gallery"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-28T06:36:04Z"
+fetched_at: "2026-11-14T06:24:29Z"
+last_modified: "Sat, 14 Nov 2026 06:04:27 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -45,10 +46,7 @@ Copy pageCopy page
 
 A mod draws its interface from elements: text, boxes, buttons, fields, and a few that format content for you. The samples here show the code that draws an element, and most come with a screenshot of the result in a terminal pane, so you can pick an element by how it looks. To learn how drawing works, start with [Draw in the interface](plugins-mods-interface.md). For the main props and which apps draw each element, see the [elements reference](plugins-mods-reference.md#elements). The [type declarations](plugins-mods-create.md#get-the-types-for-your-build) list every prop.
 
-
-[​](#try-a-sample)
-
-Try a sample
+## [](#try-a-sample)Try a sample
 
 The samples on this page are snippets, not whole mods. Each one is the code for one element and anything nested inside it. To see a sample in your own terminal, create the small mod in these steps and paste the sample into it. The mod adds a `/gallery` command that opens a pane and draws the sample there. A [pane](plugins-mods-interface.md#pick-where-to-draw) is a sidebar beside the transcript in a wide fullscreen terminal, or a framed region above the prompt otherwise.
 
@@ -134,10 +132,7 @@ Swap in a sample
 
 Copy a sample from this page. In `register.js`, paste it over `Text({ children: ['Plain text'] })`, so that it follows `return`, and save the file. Claude Code reloads the module each time you save, so run `/gallery` again to see the new sample.
 
-
-[​](#pick-an-element)
-
-Pick an element
+## [](#pick-an-element)Pick an element
 
 The samples are grouped by what you want to put on screen:
 
@@ -147,17 +142,11 @@ The samples are grouped by what you want to put on screen:
 - **[Take input](#take-input)**: `Button`, `Input`, and `Select`
 - **[Draw pictures](#draw-pictures)**: `Raster`, `Svg`, `Image`, and `Client`
 
-
-[​](#show-text)
-
-Show text
+## [](#show-text)Show text
 
 Three elements put words on screen: `Text` for your own styling, `Markdown` for content that’s already formatted, and `Link` for a URL.
 
-
-[​](#text)
-
-`Text`
+### [](#text)`Text`
 
 `Text` draws a string with the styles you give it. This sample shows plain text and eight styles, one on each line:
 
@@ -180,10 +169,7 @@ Box({
 
 `dimColor` draws the text in gray. `backgroundColor` fills only as wide as the text.
 
-
-[​](#markdown)
-
-`Markdown`
+### [](#markdown)`Markdown`
 
 `Markdown` formats text the way Claude’s replies are formatted. Pass the content in `text`, not in `children`:
 
@@ -195,10 +181,7 @@ Markdown({
 
 A heading draws in bold without its `#` marks. Inline code draws in color without its backticks. A quote draws in italics with a bar on its left.
 
-
-[​](#link)
-
-`Link`
+### [](#link)`Link`
 
 `Link` draws a label followed by its URL:
 
@@ -208,17 +191,11 @@ Link({ href: 'https://code.claude.com/docs', label: 'Claude Code docs' })
 
 The terminal draws the URL as text after the label. Whether a click opens it depends on the user’s terminal.
 
-
-[​](#show-code-and-changes)
-
-Show code and changes
+## [](#show-code-and-changes)Show code and changes
 
 `Code` draws source text with Claude Code’s own syntax colors, or a diff. In the VS Code extension, `Code` shows its `source` as plain text, with none of the colors, line numbers, or diff shading in these screenshots.
 
-
-[​](#code)
-
-`Code`
+### [](#code)`Code`
 
 Name the `language`, or pass a `path` for Claude Code to infer it from. With `startLine`, the lines are numbered from that number:
 
@@ -232,10 +209,7 @@ Code({
 
 The colors come from the user’s theme.
 
-
-[​](#code-as-a-diff)
-
-`Code` as a diff
+### [](#code-as-a-diff)`Code` as a diff
 
 With `format: 'diff'`, `source` is one or more unified diff hunks:
 
@@ -248,15 +222,9 @@ Code({
 
 Claude Code draws line numbers in place of the `@@` line. Where a removed line and an added line are alike, the words that changed get a stronger shade.
 
+## [](#arrange-elements)Arrange elements
 
-[​](#arrange-elements)
-
-Arrange elements
-
-
-[​](#box)
-
-`Box`
+### [](#box)`Box`
 
 `Box` lays out what’s inside it in a row or a column, and can draw a border. This sample puts a row of words above a bordered box:
 
@@ -281,17 +249,11 @@ Box({
 
 The border stretches to the width of the pane.
 
-
-[​](#take-input)
-
-Take input
+## [](#take-input)Take input
 
 `Button`, `Input`, and `Select` are controls: the user moves between them with Tab and uses the one that has the focus. [Keyboard focus and hotkeys](plugins-mods-interface.md#know-which-keys-your-mod-can-receive) covers which keys reach them. Open a pane with `focus: true` to request keyboard focus for it. Typed letters reach an `Input` once it has the focus. To choose which field has the focus when the pane opens, see [Set a hotkey and the first focus](plugins-mods-interface.md#set-a-hotkey-and-the-first-focus).
 
-
-[​](#button)
-
-`Button`
+### [](#button)`Button`
 
 A button runs `onPress`. This sample shows the default form, a `plain` button with a hotkey, and a dim one:
 
@@ -308,10 +270,7 @@ Box({
 
 A button that has the focus draws in inverse video. Here the user has pressed Tab twice:
 
-
-[​](#input)
-
-`Input`
+### [](#input)`Input`
 
 An `Input` is a text field that holds one line by default and runs `onSubmit` when the user presses Enter:
 
@@ -350,10 +309,7 @@ The terminal and the Desktop app draw the rows. In the VS Code extension, the fi
 - In the terminal, Up and Down move between the field’s rows. From its first and last row they move to the control before or after.
 - `onSubmit` and `onInput` receive the whole text with its lines joined by `\n`.
 
-
-[​](#select)
-
-`Select`
+### [](#select)`Select`
 
 A `Select` lets the user pick one of several options, and runs `onSelect` with the option’s `value`:
 
@@ -379,15 +335,9 @@ Open, it lists its options and marks one:
 
 After the user picks an option, the list closes:
 
+## [](#draw-pictures)Draw pictures
 
-[​](#draw-pictures)
-
-Draw pictures
-
-
-[​](#raster)
-
-`Raster`
+### [](#raster)`Raster`
 
 A `Raster` is a grid of colored character cells, for a heat map, a sparkline, or a game board. The terminal draws it. This sample uses the `cellsOf` function in the starter module, which packs the cells into the string a `Raster` takes. [Draw a grid of colored cells](plugins-mods-interface.md#draw-a-grid-of-colored-cells) explains it:
 
@@ -405,10 +355,7 @@ Raster({
 
 A `Raster` rounds each color to a smaller palette, so `0x2e7d32` draws as `#337733`.
 
-
-[​](#svg)
-
-`Svg`
+### [](#svg)`Svg`
 
 An `Svg` draws an SVG document in the Desktop app and the VS Code extension:
 
@@ -424,12 +371,9 @@ Svg({
 
 In the terminal, a pane that returns only an `Svg` opens empty. To draw something else there, check [`e.surface`](plugins-mods-interface.md#pick-where-to-draw) and return a different tree.
 
+### [](#image-and-client)`Image` and `Client`
 
-[​](#image-and-client)
-
-`Image` and `Client`
-
-Two more elements have no sample here. `Image` draws a PNG or raw pixels in the terminal. `Client` is a region that a second file of yours draws, for animation and pointer input. The [elements reference](plugins-mods-reference.md#elements) lists their props. An `Image` draws as a picture in these terminals:
+`Image` and `Client` have no sample here. `Image` draws a PNG or raw pixels in the terminal. `Client` is a region that a second file of yours draws, for animation and pointer input. The [elements reference](plugins-mods-reference.md#elements) lists their props. An `Image` draws as a picture in these terminals:
 
 - kitty 0.28 or later
 - Ghostty
@@ -445,10 +389,7 @@ In any other terminal, the user sees the `Image`’s `alt` text, dimmed, in plac
 
 If your mod’s users see the dimmed text in a terminal that draws kitty graphics protocol images with Unicode placeholders, they can set [`CLAUDE_CODE_FORCE_TERMINAL_IMAGES`](../02-Claude-Code-CLI/env-vars.md) to `1`. They shouldn’t set it inside GNU screen, inside tmux older than 3.3, in a tmux popup, or with tmux’s `allow-passthrough` off. There they see no picture and a box in place of the `alt` text.
 
-
-[​](#draw-an-image-inside-tmux)
-
-Draw an `Image` inside tmux
+#### [](#draw-an-image-inside-tmux)Draw an `Image` inside tmux
 
 If an `Image` shows its `alt` text inside tmux, check these requirements along with the [other `alt` text cases](#image-and-client) such as a background session:
 
@@ -470,10 +411,7 @@ tmux set -g focus-events on
 
 Then detach from tmux, attach again, and restart Claude Code. Restart it again whenever you attach tmux from a different terminal. To keep both options across tmux server restarts, [add both lines to `~/.tmux.conf`](../02-Claude-Code-CLI/terminal-config.md#configure-tmux) too.
 
-
-[​](#see-where-a-mod-can-draw)
-
-See where a mod can draw
+## [](#see-where-a-mod-can-draw)See where a mod can draw
 
 The samples all draw in a pane. A mod can also draw in other places, and call Claude Code to show something for it:
 
@@ -482,10 +420,7 @@ The samples all draw in a pane. A mod can also draw in other places, and call Cl
 - **Toast, status line, and log line**: [Show something without starting a turn](plugins-mods-api.md#show-something-without-starting-a-turn)
 - **Question dialog**: [Hold a tool call until the user decides](plugins-mods-events.md#hold-a-tool-call-until-the-user-decides)
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 - [Draw in the interface](plugins-mods-interface.md): build a pane with tabs, step by step
 - [Test a drawing](plugins-mods-test.md#test-a-drawing): press your buttons from a test

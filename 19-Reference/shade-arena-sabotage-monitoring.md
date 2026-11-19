@@ -100,7 +100,7 @@ At present, the answer is “not very often”. But that might change in the nea
 
 SHADE-Arena is the first comprehensive attempt to build sabotage evaluations for these agentic AI models—and it appears that there’s a lot of space for models to improve before the eval is saturated (that is, before the scores are maxed out because the models are too capable).
 
-These or similar evaluations could be included in pre-deployment safety evaluations—like those we recently described in our [system card](../15-Claude-AI-Features/claude-4-system-card.md) for Claude Opus 4 and Claude Sonnet 4—for new frontier AI models.
+These or similar evaluations could be included in pre-deployment safety evaluations—like those we recently described in our [system card](fixed-some-minor-formatting-errors-e-g-changed-a-semicolon-to-a-comma.md) for Claude Opus 4 and Claude Sonnet 4—for new frontier AI models.
 
 Read [the full paper](https://www.arxiv.org/abs/2506.15740).
 

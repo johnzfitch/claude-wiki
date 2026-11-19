@@ -2,7 +2,7 @@
 title: "Service tiers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/service-tiers"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:20Z"
+fetched_at: "2026-11-13T06:36:25Z"
 tags: ["api"]
 ---
 
@@ -23,14 +23,18 @@ Service tiers
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Legacy
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- Limited model support; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
 
 Service tiers are legacy
 
@@ -175,28 +179,30 @@ Priority Tier targets 99.5 percent uptime with prioritized computational resourc
 
 ### Supported models
 
-Priority Tier is supported on all available Claude models except Claude Fable 5.1, Claude Haiku 5.5, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Sonnet 5.
+Priority Tier is supported on all available Claude models except Claude Fable 5.2, Claude Fable 5.1, Claude Haiku 5.5, Claude Mythos 5.2, Claude Mythos 5.1, Claude Mythos 5, [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md), Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Sonnet 5.
 
 Check the [Models overview](../../20-Models/about-claude-models-overview.md) for more details on available models.
 
 ## Availability
 
-Service tiers are available on every model.
+Service tiers
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Needs a Priority Tier commitment, which is no longer sold. With one, requests use Priority Tier by default; set `service_tier` to `"standard_only"` to use only standard capacity.
+Status  
+Legacy
 
-StatusAvailable
+APIs  
+- Messages API
 
-Cloud platforms
+- Managed Agents Not supported
 
-- Claude API
-
-[Managed Agents](../Other/managed-agents-overview.md)
-
-StatusNot available
+Models  
+- Claude Fable 5
+- Claude Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5
+- Claude Sonnet 4.6, Sonnet 4.5
+- Claude Haiku 4.5

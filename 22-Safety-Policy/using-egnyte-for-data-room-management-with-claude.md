@@ -2,7 +2,7 @@
 title: "Using Egnyte for data room management with Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12651659-using-egnyte-for-data-room-management-with-claude"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-08T06:24:52Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["safety"]
 ---
 
@@ -41,20 +41,20 @@ Claude applies Egnyte capabilities in several ways to support comprehensive cont
 
 ## Setting up the Egnyte Connector[](#setting-up-the-egnyte-connector)
 
-Technical details of the Egnyte connector can be found in [Egnyte’s MCP Server Documentation(opens in new tab)](https://developers.egnyte.com/api-docs/remote-mcp-server). Authentication is handled via OAuth 2.0, providing secure access to your Egnyte content.
+For technical details of the Egnyte connector, see [Egnyte’s MCP Server Documentation(opens in new tab)](https://developers.egnyte.com/api-docs/remote-mcp-server). You authenticate through OAuth 2.0, which provides secure access to your Egnyte content.
 
 ### Prerequisites[](#prerequisites)
 
 Before setting up the Egnyte connector, ensure you have:
 
 - An active Egnyte account on Essential, Elite, or Ultimate plans (Gen 4), OR Platform Enterprise or Platform Enterprise Light with the Co-Pilot add-on (Gen 3)
-- An MCP-compatible AI client ([Claude.ai(opens in new tab)](http://claude.ai/), Claude Desktop, ChatGPT, etc.)
+- An MCP-compatible AI client ([Claude.ai(opens in new tab)](http://claude.ai/) or Claude Desktop)
 - Your Egnyte domain name and credentials for authentication
 
 ### Adding the Connector as an Organization Owner[](#adding-the-connector-as-an-organization-owner)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors)
-2.  Click “Add custom connector”
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 3.  Enter the integration URL: [https://mcp-server.egnyte.com/mcp(opens in new tab)](https://mcp-server.egnyte.com/mcp)
 4.  Name the integration (e.g., “Egnyte”)
 5.  Click “Add”

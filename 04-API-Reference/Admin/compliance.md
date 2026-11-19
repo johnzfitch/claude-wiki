@@ -2,7 +2,7 @@
 title: "Compliance API - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:40Z"
+fetched_at: "2026-11-13T06:34:32Z"
 tags: ["api"]
 ---
 
@@ -81,6 +81,14 @@ This endpoint is in beta.
 GET/v1/compliance/organizations/{organization_id}/settings
 
 Retrieve the effective settings for an organization.
+
+#### Compliance APIOrganizations[Security Posture](https://platform.claude.com/docs/en/api/http/compliance/organizations/security_posture)
+
+##### [Get an organization's security posture](https://platform.claude.com/docs/en/api/http/compliance/organizations/security_posture/retrieve)
+
+GET/v1/compliance/organizations/{organization_id}/security_posture
+
+Get an organization's security controls and their current results.
 
 #### Compliance API[Groups](https://platform.claude.com/docs/en/api/http/compliance/groups)
 
@@ -274,7 +282,7 @@ List Claude Code Artifacts owned by organizations under the parent organization.
 
 GET/v1/compliance/apps/code/artifacts/{artifact_id}/versions/{version_id}
 
-Streams the content of one version of an Artifact as the response body, in chunks with no `Content-Length`. With `multi_file_format=zip`, a version with more than one file, other than a Claude Doc's (an Artifact whose `artifact_type` is `claude_docs`), comes back as a ZIP archive of its files.
+Streams the content of one version of an Artifact as the response body, in chunks with no `Content-Length`. With `multi_file_format=zip`, a version with more than one file, other than a Claude Doc's or a Claude Sheet's (an Artifact whose `artifact_type` is `claude_docs` or `claude_sheets`), comes back as a ZIP archive of its files.
 
 ##### [Download Code Artifact Content](https://platform.claude.com/docs/en/api/http/compliance/apps/code/artifacts/download)
 

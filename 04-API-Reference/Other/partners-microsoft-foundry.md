@@ -2,7 +2,7 @@
 title: "Claude in Microsoft Foundry | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/microsoft-foundry"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:26:57Z"
+fetched_at: "2026-11-18T06:29:15Z"
 tags: ["api"]
 ---
 

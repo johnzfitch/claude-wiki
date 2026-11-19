@@ -2,7 +2,7 @@
 title: "Manage usage credits for Team and seat-based Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12005970-manage-usage-credits-for-team-and-seat-based-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:38Z"
+fetched_at: "2026-11-18T06:27:43Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -45,7 +45,9 @@ After an organization Owner or Primary Owner configures your account for usage c
 
 6.  Set a monthly spend limit to apply organization-wide.
 
-7.  Enable usage credits for specific users or the entire organization.
+7.  Enable usage credits for the entire organization, or for specific users where available.
+
+**Note:** Spend limits for individual members aren't available to every Team organization. If usage credits are on and **Organization settings \> Usage** shows **Spend by org member** instead of **Spend limits by user**, they aren't available for yours. Owners and Primary Owners can still set an organization-wide spend limit.
 
 ### For seat-based Enterprise owners
 
@@ -91,13 +93,15 @@ Select the "By group" tab to see **Standard seats** and **Premium seats** groups
 
 ## User-level spend limits
 
-Owners and Primary Owners can also set individual monthly spend limits for each member by finding **Spend limits by user** and clicking the "..." button next to the user, then "Edit limit."
+Owners and Primary Owners can also set individual monthly spend limits, where available, for each member by finding **Spend limits by user** and clicking the "..." button next to the user, then "Edit limit."
 
 Enter the amount and click "Set limit." Alternatively, selecting "Set to unlimited" will remove that member's monthly spend limit (they will still be subject to any organization or seat-level spend limits).
 
 This allows owners fine control over usage credits, so you can set limits for different members based on their roles or individual needs. Once a user reaches their defined spend limit, this will automatically pause their usage credits until the end of the month. They will need to wait for their usage limits to reset before using Claude again.
 
 Note that the **Spend limits by user** section has a **MTD Spend** column, so you can track members' usage patterns and optimize seat assignments.
+
+**Note:** Spend limits for individual members aren't available to every Team organization. If usage credits are on and **Organization settings \> Usage** shows **Spend by org member** instead of **Spend limits by user**, they aren't available for yours. Owners and Primary Owners can still set an organization-wide spend limit.
 
 ------------------------------------------------------------------------
 
@@ -133,7 +137,7 @@ If you want to prevent users from submitting requests for usage credits, an orga
 
 ### Do usage credits expire or get refunded?
 
-Usage credits purchased for Team and seat-based Enterprise plans expire 12 months after purchase, and purchases are non-refundable. See the **[Supplemental Credit Terms](https://www.anthropic.com/legal/credit-terms)** for details. If your organization moves from Team to Enterprise, any unused balance carries over. Learn more about **[migrating your organization from Team to Enterprise](https://support.claude.com/en/articles/13779868)**.
+Usage credits purchased for Team and seat-based Enterprise plans expire 12 months after purchase, and purchases are non-refundable. See the **[Supplemental Credit Terms](https://www.anthropic.com/legal/credit-terms)** for details. If your organization moves from Team to Enterprise, any unused balance carries over. Learn more about **[migrating your organization from Team to Enterprise](../13-Enterprise-Admin/migrate-your-organization-from-team-to-enterprise-claude-help-center.md)**.
 
 ### What happens when I reach my spend limit?
 

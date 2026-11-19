@@ -2,7 +2,7 @@
 title: "Manage user feedback settings on Claude Console | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10504853-managing-user-feedback-settings-on-claude-console"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:07Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["safety"]
 ---
 

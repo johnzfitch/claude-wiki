@@ -149,9 +149,9 @@ If you don’t have a Claude Console organization, create one in the Console at 
 
 
 
-Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can’t change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can’t change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
 
-Subscribers who aren’t eligible don’t see API credits in their settings page. If you think you should be eligible but don’t see the API credits, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Subscribers who aren’t eligible don’t see API credits in their settings page. If you think you should be eligible but don’t see the API credits, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
 
 ## What the credits cover
 
@@ -192,7 +192,7 @@ Credits don’t change how [rate limits and spend limits](../Endpoints/rate-limi
 
 When the balance is exhausted, requests return:
 
-``` block
+```
 Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
 ```
 
@@ -200,7 +200,7 @@ Your credit balance is too low to access the Anthropic API. Please go to Plans &
 
 If an organization holds only these credits and sends a request they don’t cover, such as a Claude Code session, Claude Code displays:
 
-``` block
+```
 Credit balance too low · Add funds: https://platform.claude.com/settings/billing
 ```
 
@@ -229,7 +229,7 @@ Your monthly cost depends mainly on the model you choose and how often your appl
 - [Rate limits and spend limits](../Endpoints/rate-limits.md)
 - [Workspaces](../Other/manage-claude-workspaces.md)
 - [Pricing](../../17-Billing-Plans/about-claude-pricing.md)
-- [Help Center: API credits for Max, Ultra, and Team plans](../../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)
+- [Help Center: API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)
 
 ---
 
@@ -594,31 +594,31 @@ This guide is focused on moderating user-generated content within your applicati
 
 Here are some key indicators that you should use an LLM such as Claude instead of a traditional ML or rules-based approach for content moderation:
 
-### You want a cost-effective and rapid implementation
+### You want a cost-effective and rapid implementation
 
 Traditional ML methods require significant engineering resources, ML expertise, and infrastructure costs. Human moderation systems incur even higher costs. With Claude, you can have a sophisticated moderation system operational in significantly less time and at a much lower cost.
 
-### You want both semantic understanding and quick decisions
+### You want both semantic understanding and quick decisions
 
 Traditional ML approaches, such as bag-of-words models or simple pattern matching, often have difficulty capturing the tone, intent, and context of the content. Although human moderation systems excel at understanding semantic meaning, they require time for content to be reviewed. Claude addresses both needs by combining semantic understanding with the ability to deliver moderation decisions quickly.
 
-### You need consistent policy decisions
+### You need consistent policy decisions
 
 With its advanced reasoning capabilities, Claude can interpret and apply complex moderation guidelines uniformly. This consistency helps ensure fair treatment of all content, reducing the risk of inconsistent or biased moderation decisions that can undermine user trust.
 
-### Your moderation policies are likely to change or evolve over time
+### Your moderation policies are likely to change or evolve over time
 
 Once a traditional ML approach has been established, changing it is a laborious and data-intensive undertaking. On the other hand, as your product or customer needs evolve, Claude can easily adapt to changes or additions to moderation policies without extensive relabeling of training data.
 
-### You need interpretable reasoning for your moderation decisions
+### You need interpretable reasoning for your moderation decisions
 
 If you want to provide users or regulators with clear explanations behind moderation decisions, Claude can generate detailed and coherent justifications. This transparency is important for building trust and ensuring accountability in content moderation practices.
 
-### You need multilingual support without maintaining separate models
+### You need multilingual support without maintaining separate models
 
 Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Human moderation requires hiring a workforce fluent in each supported language. Claude’s multilingual capabilities allow it to classify content in various languages without the need for separate models or extensive translation processes, streamlining moderation for global customer bases.
 
-### You need multimodal support
+### You need multimodal support
 
 Claude’s multimodal capabilities allow it to analyze and interpret content across both text and images. This makes it a versatile tool for comprehensive content moderation in environments where different media types need to be evaluated together.
 
@@ -1126,7 +1126,7 @@ Explanation: {violation["explanation"]}
 """)
 ```
 
-In this example, the `batch_moderate_messages` function handles the moderation of an entire batch of messages with a single Claude API call. Inside the function, a prompt is created that includes the list of messages to evaluate and the unsafe content categories. The prompt directs Claude to return a JSON object listing all messages that contain violations. Each message in the response is identified by its `id`, which corresponds to the message’s position in the batch. Keep in mind that finding the optimal batch size for your specific needs might require some experimentation. Although larger batch sizes can lower costs, they might also lead to a slight decrease in quality. Additionally, you might need to increase the `max_tokens` parameter in the Claude API call to accommodate longer responses. For details on the maximum number of tokens your chosen model can output, refer to the [model comparison table](../../20-Models/about-claude-models-overview.md#latest-models-comparison).
+In this example, the `batch_moderate_messages` function handles the moderation of an entire batch of messages with a single Claude API call. Inside the function, a prompt is created that includes the list of messages to evaluate and the unsafe content categories. The prompt directs Claude to return a JSON object listing all messages that contain violations. Each message in the response is identified by its `id`, which corresponds to the message’s position in the batch. Keep in mind that finding the optimal batch size for your specific needs might require some experimentation. Although larger batch sizes can lower costs, they might also lead to a slight decrease in quality. Additionally, you might need to increase the `max_tokens` parameter in the Claude API call to accommodate longer responses. For details on the maximum number of tokens your chosen model can output, refer to the [All models](../../20-Models/about-claude-models-overview.md#all-models) table.
 
 
 
@@ -1180,23 +1180,23 @@ pip install anthropic streamlit python-dotenv
 
 Here are some key indicators that you should employ an LLM such as Claude to automate portions of your customer support process:
 
-### High volume of repetitive queries
+### High volume of repetitive queries
 
 Claude excels at handling a large number of similar questions efficiently, freeing up human agents for more complex issues.
 
-### Need for quick information synthesis
+### Need for quick information synthesis
 
 Claude can quickly retrieve, process, and combine information from vast knowledge bases, whereas human agents might need time to research or consult multiple sources.
 
-### 24/7 availability requirement
+### 24/7 availability requirement
 
 Claude can provide support at all hours without fatigue, whereas staffing human agents for continuous coverage can be costly and challenging.
 
-### Rapid scaling during peak periods
+### Rapid scaling during peak periods
 
 Claude can handle sudden increases in query volume without the need for hiring and training additional staff.
 
-### Consistent brand voice
+### Consistent brand voice
 
 You can instruct Claude to consistently represent your brand’s tone and values, whereas human agents might vary in their communication styles.
 
@@ -1274,49 +1274,49 @@ Work with your support team to [define success criteria and write detailed evalu
 
 Here are criteria and benchmarks that can be used to evaluate how successfully Claude performs the defined tasks:
 
-### Query comprehension accuracy
+### Query comprehension accuracy
 
 This metric evaluates how accurately Claude interprets customer inquiries across various topics. Measure this by reviewing a sample of conversations and assessing whether Claude has the correct interpretation of customer intent, critical next steps, what successful resolution looks like, and more. Aim for a comprehension accuracy of 95 percent or higher.
 
-### Response relevance
+### Response relevance
 
 This assesses how well Claude’s response addresses the customer’s specific question or issue. Evaluate a set of conversations and rate the relevance of each response (using LLM-based grading for scale). Target a relevance score of 90 percent or above.
 
-### Response accuracy
+### Response accuracy
 
 Assess the correctness of general company and product information provided to the user, based on the information provided to Claude in context. Target 100 percent accuracy in this introductory information.
 
-### Citation provision relevance
+### Citation provision relevance
 
 Track the frequency and relevance of links or sources offered. Target providing relevant sources in 80 percent of interactions where additional information could be beneficial.
 
-### Topic adherence
+### Topic adherence
 
 Measure how well Claude stays on topic, such as the topic of car insurance in the example implementation. Aim for 95 percent of responses to be directly related to car insurance or the customer’s specific query.
 
-### Content generation effectiveness
+### Content generation effectiveness
 
 Measure how successful Claude is at determining when to generate informational content and how relevant that content is. For example, in this implementation, you would be determining how well Claude identifies when to generate a quote and how accurate that quote is. Target 100 percent accuracy, as this is vital information for a successful customer interaction.
 
-### Escalation efficiency
+### Escalation efficiency
 
 This measures Claude’s ability to recognize when a query needs human intervention and escalate appropriately. Track the percentage of correctly escalated conversations versus those that should have been escalated but weren’t. Aim for an escalation accuracy of 95 percent or higher.
 
 Here are criteria and benchmarks that can be used to evaluate the business impact of employing Claude for support:
 
-### Sentiment maintenance
+### Sentiment maintenance
 
 This assesses Claude’s ability to maintain or improve customer sentiment throughout the conversation. Use sentiment analysis tools to measure sentiment at the beginning and end of each conversation. Aim for maintained or improved sentiment in 90 percent of interactions.
 
-### Deflection rate
+### Deflection rate
 
 The percentage of customer inquiries successfully handled by the chatbot without human intervention. Typically aim for a 70–80 percent deflection rate, depending on the complexity of inquiries.
 
-### Customer satisfaction score
+### Customer satisfaction score
 
 A measure of how satisfied customers are with their chatbot interaction. Usually done through post-interaction surveys. Aim for a CSAT score of 4 out of 5 or higher.
 
-### Average handle time
+### Average handle time
 
 The average time it takes for the chatbot to resolve an inquiry. This varies widely based on the complexity of issues, but generally, aim for a lower AHT compared to human agents.
 
@@ -1886,23 +1886,23 @@ This guide walks through how to use Claude’s advanced natural language process
 
 Here are some key indicators that you should employ an LLM such as Claude to summarize legal documents:
 
-### You want to review a high volume of documents efficiently and affordably
+### You want to review a high volume of documents efficiently and affordably
 
 Large-scale document review can be time-consuming and expensive when done manually. Claude can process and summarize vast amounts of legal documents rapidly, significantly reducing the time and cost associated with document review. This capability is particularly valuable for tasks such as due diligence, contract analysis, or litigation discovery, where efficiency is crucial.
 
-### You need automated extraction of key metadata
+### You need automated extraction of key metadata
 
 Claude can efficiently extract and categorize important metadata from legal documents, such as parties involved, dates, contract terms, or specific clauses. This automated extraction can help organize information, making it easier to search, analyze, and manage large document sets. It’s especially useful for contract management, compliance checks, or creating searchable databases of legal information.
 
-### You want to generate clear, concise, and standardized summaries
+### You want to generate clear, concise, and standardized summaries
 
 Claude can generate structured summaries that follow predetermined formats, making it easier for legal professionals to quickly grasp the key points of various documents. These standardized summaries can improve readability, facilitate comparison between documents, and enhance overall comprehension, especially when dealing with complex legal language or technical jargon.
 
-### You need precise citations for your summaries
+### You need precise citations for your summaries
 
 When creating legal summaries, proper attribution and citation are crucial to ensure credibility and compliance with legal standards. Claude can be prompted to include accurate citations for all referenced legal points, making it easier for legal professionals to review and verify the summarized information.
 
-### You want to streamline and expedite your legal research process
+### You want to streamline and expedite your legal research process
 
 Claude can help with legal research by quickly analyzing large volumes of case law, statutes, and legal commentary. It can identify relevant precedents, extract key legal principles, and summarize complex legal arguments. This capability can significantly speed up the research process, allowing legal professionals to focus on higher-level analysis and strategy development.
 
@@ -1945,27 +1945,27 @@ details_to_extract = [
 
 Evaluating the quality of summaries is a notoriously challenging task. Unlike many other natural language processing tasks, evaluation of summaries often lacks clear-cut, objective metrics. The process can be highly subjective, with different readers valuing different aspects of a summary. Here are criteria you might want to consider when assessing how well Claude performs legal summarization.
 
-### Factual correctness
+### Factual correctness
 
 The summary should accurately represent the facts, legal concepts, and key points in the document.
 
-### Legal precision
+### Legal precision
 
 Terminology and references to statutes, case law, or regulations must be correct and aligned with legal standards.
 
-### Conciseness
+### Conciseness
 
 The summary should condense the legal document to its essential points without losing important details.
 
-### Consistency
+### Consistency
 
 If summarizing multiple documents, the LLM should maintain a consistent structure and approach to each summary.
 
-### Readability
+### Readability
 
 The text should be clear and easy to understand. If the audience is not legal experts, the summarization should not include legal jargon that could confuse the audience.
 
-### Bias and fairness
+### Bias and fairness
 
 The summary should present an unbiased and fair depiction of the legal arguments and positions.
 
@@ -2159,23 +2159,23 @@ Because the code outputs each section of the summary within tags, each section c
 
 Prompting often requires testing and optimization for it to be production ready. To determine the readiness of your solution, evaluate the quality of your summaries using a systematic process combining quantitative and qualitative methods. Creating a [strong empirical evaluation](../Test-Evaluate/test-and-evaluate-develop-tests.md#build-evaluations) based on your defined success criteria allows you to optimize your prompts. Here are some metrics you might want to include within your empirical evaluation:
 
-### ROUGE scores
+### ROUGE scores
 
 This measures the overlap between the generated summary and an expert-created reference summary. This metric primarily focuses on recall and is useful for evaluating content coverage.
 
-### BLEU scores
+### BLEU scores
 
 Although originally developed for machine translation, this metric can be adapted for summarization tasks. BLEU scores measure the precision of n-gram matches between the generated summary and reference summaries. A higher score indicates that the generated summary contains similar phrases and terminology to the reference summary.
 
-### Contextual embedding similarity
+### Contextual embedding similarity
 
 This metric involves creating vector representations (embeddings) of both the generated and reference summaries. The similarity between these embeddings is then calculated, often using cosine similarity. Higher similarity scores indicate that the generated summary captures the semantic meaning and context of the reference summary, even if the exact wording differs.
 
-### LLM-based grading
+### LLM-based grading
 
 This method involves using an LLM such as Claude to evaluate the quality of generated summaries against a scoring rubric. The rubric can be tailored to your specific needs, assessing key factors such as accuracy, completeness, and coherence. For implementation guidance, see [Tips for LLM-based grading](../Test-Evaluate/test-and-evaluate-develop-tests.md#tips-for-llm-based-grading).
 
-### Human evaluation
+### Human evaluation
 
 In addition to creating the reference summaries, legal experts can also evaluate the quality of the generated summaries. Although this is expensive and time-consuming at scale, this is often done on a few summaries as a validation check before deploying to production.
 
@@ -2392,7 +2392,7 @@ This guide walks through how to use Claude’s advanced natural language underst
 
 ## Prerequisites
 
-- A Claude API key and the Claude SDK installed
+- A Claude API key and the Anthropic SDK installed
 - Access to, and familiarity with, your existing support ticketing system
 - A sample set of historical support tickets for testing
 
@@ -2400,31 +2400,31 @@ This guide walks through how to use Claude’s advanced natural language underst
 
 Here are some key indicators that you should use an LLM such as Claude instead of traditional ML approaches for your classification task:
 
-### You have limited labeled training data available
+### You have limited labeled training data available
 
 Traditional ML processes require massive labeled datasets. Claude’s pre-trained model can effectively classify tickets with just a few dozen labeled examples, significantly reducing data preparation time and costs.
 
-### Your classification categories are likely to change or evolve over time
+### Your classification categories are likely to change or evolve over time
 
 Once a traditional ML approach has been established, changing it is a laborious and data-intensive undertaking. On the other hand, as your product or customer needs evolve, Claude can easily adapt to changes in class definitions or new classes without extensive relabeling of training data.
 
-### You need to handle complex, unstructured text inputs
+### You need to handle complex, unstructured text inputs
 
 Traditional ML models often struggle with unstructured data and require extensive feature engineering. Claude’s advanced language understanding allows for accurate classification based on content and context, rather than relying on strict ontological structures.
 
-### Your classification rules are based on semantic understanding
+### Your classification rules are based on semantic understanding
 
 Traditional ML approaches often rely on bag-of-words models or simple pattern matching. Claude excels at applying underlying rules when classes are defined by conditions rather than examples.
 
-### You need interpretable reasoning for classification decisions
+### You need interpretable reasoning for classification decisions
 
 Many traditional ML models provide little insight into their decision-making process. Claude can provide human-readable explanations for its classification decisions, building trust in the automation system and facilitating easy adaptation if needed.
 
-### You want to handle edge cases and ambiguous tickets more effectively
+### You want to handle edge cases and ambiguous tickets more effectively
 
 Traditional ML systems often struggle with outliers and ambiguous inputs, frequently misclassifying them or defaulting to a catch-all category. Claude’s natural language processing capabilities allow it to better interpret context and nuance in support tickets, potentially reducing the number of misrouted or unclassified tickets that require manual intervention.
 
-### You need multilingual support without maintaining separate models
+### You need multilingual support without maintaining separate models
 
 Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Claude’s multilingual capabilities allow it to classify tickets in various languages without the need for separate models or extensive translation processes, streamlining support for global customer bases.
 
@@ -2452,80 +2452,80 @@ A well-defined list of user intent categories is crucial for accurate support ti
 
 Here are some example user intent categories and subcategories.
 
-### Technical issue
+### Technical issue
 
 - Hardware problem
 - Software bug
 - Compatibility issue
 - Performance problem
 
-### Account management
+### Account management
 
 - Password reset
 - Account access issues
 - Billing inquiries
 - Subscription changes
 
-### Product information
+### Product information
 
 - Feature inquiries
 - Product compatibility questions
 - Pricing information
 - Availability inquiries
 
-### User guidance
+### User guidance
 
 - How-to questions
 - Feature usage assistance
 - Best practices advice
 - Troubleshooting guidance
 
-### Feedback
+### Feedback
 
 - Bug reports
 - Feature requests
 - General feedback or suggestions
 - Complaints
 
-### Order-related
+### Order-related
 
 - Order status inquiries
 - Shipping information
 - Returns and exchanges
 - Order modifications
 
-### Service request
+### Service request
 
 - Installation assistance
 - Upgrade requests
 - Maintenance scheduling
 - Service cancellation
 
-### Security concerns
+### Security concerns
 
 - Data privacy inquiries
 - Suspicious activity reports
 - Security feature assistance
 
-### Compliance and legal
+### Compliance and legal
 
 - Regulatory compliance questions
 - Terms of service inquiries
 - Legal documentation requests
 
-### Emergency support
+### Emergency support
 
 - Critical system failures
 - Urgent security issues
 - Time-sensitive problems
 
-### Training and education
+### Training and education
 
 - Product training requests
 - Documentation inquiries
 - Webinar or workshop information
 
-### Integration and API
+### Integration and API
 
 - Integration assistance
 - API usage questions
@@ -2539,73 +2539,73 @@ Work with your support team to [define clear success criteria](../Test-Evaluate/
 
 Here are some standard criteria and benchmarks when using LLMs for support ticket routing:
 
-### Classification consistency
+### Classification consistency
 
 This metric assesses how consistently Claude classifies similar tickets over time. It’s crucial for maintaining routing reliability. Measure this by periodically testing the model with a set of standardized inputs and aiming for a consistency rate of 95 percent or higher.
 
-### Adaptation speed
+### Adaptation speed
 
 This measures how quickly Claude can adapt to new categories or changing ticket patterns. Test this by introducing new ticket types and measuring the time it takes for the model to achieve satisfactory accuracy (for example, more than 90 percent) on these new categories. Aim for adaptation within 50–100 sample tickets.
 
-### Multilingual handling
+### Multilingual handling
 
 This assesses Claude’s ability to accurately route tickets in multiple languages. Measure the routing accuracy across different languages, aiming for no more than a 5–10 percent drop in accuracy for non-primary languages.
 
-### Edge case handling
+### Edge case handling
 
 This evaluates Claude’s performance on unusual or complex tickets. Create a test set of edge cases and measure the routing accuracy, aiming for at least 80 percent accuracy on these challenging inputs.
 
-### Bias mitigation
+### Bias mitigation
 
 This measures Claude’s fairness in routing across different customer demographics. Regularly audit routing decisions for potential biases, aiming for consistent routing accuracy (within 2–3 percent) across all customer groups.
 
-### Prompt efficiency
+### Prompt efficiency
 
 In situations where minimizing token count is crucial, this criterion assesses how well Claude performs with minimal context. Measure routing accuracy with varying amounts of context provided, aiming for at least 90 percent accuracy with just the ticket title and a brief description.
 
-### Explainability score
+### Explainability score
 
 This evaluates the quality and relevance of Claude’s explanations for its routing decisions. Human raters can score explanations on a scale (for example, 1–5), with the goal of achieving an average score of 4 or higher.
 
 Here are some common success criteria that might be useful regardless of whether an LLM is used:
 
-### Routing accuracy
+### Routing accuracy
 
 Routing accuracy measures how often tickets are correctly assigned to the appropriate team or individual on the first try. This is typically measured as a percentage of correctly routed tickets out of total tickets. Industry benchmarks often aim for 90–95 percent accuracy, though this can vary based on the complexity of the support structure.
 
-### Time-to-assignment
+### Time-to-assignment
 
 This metric tracks how quickly tickets are assigned after being submitted. Faster assignment times generally lead to quicker resolutions and improved customer satisfaction. Best-in-class systems often achieve average assignment times of under 5 minutes, with many aiming for near-instantaneous routing (which is possible with LLM implementations).
 
-### Rerouting rate
+### Rerouting rate
 
 The rerouting rate indicates how often tickets need to be reassigned after initial routing. A lower rate suggests more accurate initial routing. Aim for a rerouting rate below 10 percent, with top-performing systems achieving rates as low as 5 percent or less.
 
-### First-contact resolution rate
+### First-contact resolution rate
 
 This measures the percentage of tickets resolved during the first interaction with the customer. Higher rates indicate efficient routing and well-prepared support teams. Industry benchmarks typically range from 70 to 75 percent, with top performers achieving rates of 80 percent or higher.
 
-### Average handling time
+### Average handling time
 
 Average handling time measures how long it takes to resolve a ticket from start to finish. Efficient routing can significantly reduce this time. Benchmarks vary widely by industry and complexity, but many organizations aim to keep average handling time under 24 hours for non-critical issues.
 
-### Customer satisfaction scores
+### Customer satisfaction scores
 
 Often measured through post-interaction surveys, these scores reflect overall customer happiness with the support process. Effective routing contributes to higher satisfaction. Aim for CSAT scores of 90 percent or higher, with top performers often achieving satisfaction rates of at least 95 percent.
 
-### Escalation rate
+### Escalation rate
 
 This measures how often tickets need to be escalated to higher tiers of support. Lower escalation rates often indicate more accurate initial routing. Strive for an escalation rate below 20 percent, with best-in-class systems achieving rates of 10 percent or less.
 
-### Agent productivity
+### Agent productivity
 
 This metric looks at how many tickets agents can handle effectively after implementing the routing solution. Improved routing should increase productivity. Measure this by tracking tickets resolved per agent per day or hour, aiming for a 10–20 percent improvement after implementing a new routing system.
 
-### Self-service deflection rate
+### Self-service deflection rate
 
 This measures the percentage of potential tickets resolved through self-service options before entering the routing system. Higher rates indicate effective pre-routing triage. Aim for a deflection rate of 20–30 percent, with top performers achieving rates of 40 percent or higher.
 
-### Cost per ticket
+### Cost per ticket
 
 This metric calculates the average cost to resolve each support ticket. Efficient routing should help reduce this cost over time. Although benchmarks vary widely, many organizations aim to reduce cost per ticket by 10–15 percent after implementing an improved routing system.
 
@@ -2708,7 +2708,7 @@ def classify_support_request(ticket_contents):
 
 
 
-This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
+This prompt is written for Claude Haiku 5.5, which runs here at `low` effort. On Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5, ask for the intent and a one-sentence summary of the request instead. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
 Here are the key components of this prompt:
 
@@ -2929,19 +2929,19 @@ This approach, outlined in detail in the [classification recipe](https://platfor
 
 Here are some scenarios where Claude might misclassify tickets (there might be others that are unique to your situation). In these scenarios, consider providing explicit instructions or examples in the prompt of how Claude should handle the edge case:
 
-### Customers make implicit requests
+### Customers make implicit requests
 
 Customers often express needs indirectly. For example, “I’ve been waiting for my package for over two weeks now” might be an indirect request for order status.
 
 - **Solution:** Provide Claude with some real customer examples of these kinds of requests, along with what the underlying intent is. You can get even better results if you include a classification rationale for particularly nuanced ticket intents, so that Claude can better generalize the logic to other tickets.
 
-### Claude prioritizes emotion over intent
+### Claude prioritizes emotion over intent
 
 When customers express dissatisfaction, Claude might prioritize addressing the emotion over solving the underlying problem.
 
 - **Solution:** Provide Claude with directions on when to prioritize customer sentiment or not. For example: “Ignore all customer emotions. Focus only on analyzing the intent of the customer’s request and what information the customer might be asking for.”
 
-### Multiple issues cause issue prioritization confusion
+### Multiple issues cause issue prioritization confusion
 
 When customers present multiple issues in a single interaction, Claude might have difficulty identifying the primary concern.
 

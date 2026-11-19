@@ -2,7 +2,7 @@
 title: "Delete Service Account Workspace Member - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces/service_accounts/remove"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:49Z"
+fetched_at: "2026-11-18T06:27:39Z"
 tags: ["api"]
 ---
 

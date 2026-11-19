@@ -2,7 +2,7 @@
 title: "Audience Strategies Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/audience-strategies"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:14Z"
+fetched_at: "2026-11-18T06:29:07Z"
 tags: ["case-studies", "enterprise", "search"]
 ---
 

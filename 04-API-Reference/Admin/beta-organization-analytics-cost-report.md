@@ -2,7 +2,7 @@
 title: "Cost Report - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/cost_report"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-03T06:23:28Z"
+fetched_at: "2026-11-18T06:27:16Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,7 @@
 title: "INFINITELY MANY PAIRWISE NON-ISOMORPHIC ICC GROUPS WITH"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/aa58ac140721d83f9850ce35c507daf387ba6334.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-07T06:39:13Z"
+fetched_at: "2026-11-18T06:28:35Z"
 tags: ["news-research"]
 ---
 
@@ -143,8 +143,7 @@ diagonal
 to f du/dt. (iv) |Fq | = q − 1 is odd, so the scalar arising in the normalizer computation of
 §10 is automatically a square, and no similitude-type outer automorphisms appear.
     Split versus twisted. G0 is the split extension; each Gf with f ̸= 0 is a non-split twist of
-the same pair (H, A), and Gf ∼  ̸ G0 (Theorem 10.15). The twist is visible to group cohomology
-                                 =
+the same pair (H, A), and Gf ∼  ̸= G0 (Theorem 10.15). The twist is visible to group cohomology
 with coefficients in A but becomes invisible after pushing the coefficients into the unitary group
 of L∞ (A):
          b that is the precise sense in which these groups are identical to the von Neumann
@@ -593,8 +592,8 @@ supported in BN for some N ; for v ∈ B−N ′ with N ≥ N large, Tv1 ξ = ξ
 for x ∈ BN  , v2 ∈ B−N  −2 (then ⟨x, v2 ⟩ ∈ B−2 ⊆ ker ψ); so uv ξ = ξ for v small.                 □
    Let ξ0 := 1mg ∈ H, a unit vector (Haar(mg ) = 1).
    We record a consequence of Lemma 3.1(iii) for use in the next proof. The map mg → R   cg , m 7→
-ψ(⟨m, ·⟩)|Rg , is a group isomorphism: by the R-clause
-                                              b        of Lemma 3.1(iii), applied coordinatewise,
+ψ(⟨m, ·⟩)|Rg , is a group isomorphism: by the b
+                                              R-clause of Lemma 3.1(iii), applied coordinatewise,
                          g
 every character of R equals ψ(⟨m, ·⟩)|R for a unique m ∈ mg . It is continuous: for fixed
                                            g
@@ -647,9 +646,9 @@ Lemma 4.3 (irreducibility). {uv : v ∈ V∞ }′ = C1; consequently {uv : v ∈
 Proof. Let T commute with all uv . In particular T ∈ A′ = A (Lemma 4.2(iii)), say T = JS (F ),
 F ∈ L∞ (S).b Fix v ∈ V∞ and let χv := ψ(ω(v, ·))|S ∈ S. b By Lemma 4.1(iii), Ad uv maps un 7→
                                        ∞
-χv (n) un and preserves A. Let τv : L (S)         ∞
-                                          b → L (S)  b be the translation (τv F )(x) := F (χ−1 x),
-                                                                                            v
+χv (n) un and preserves A. Let τv : L ( b         ∞
+                                          S) → L ( b S) be the translation (τv F )(x) := F (χ−1
+                                                                                             v x),
                                           −1
 an automorphism with τv (en ) = χv (n) en ; it is normal by Lemma 2.5, being a unital ∗-
 homomorphism      of an abelian von Neumann algebra which preserves the faithful normal state
@@ -880,9 +879,8 @@ and β|S×S = 1,
 Ṽγ Ṽγ ′ = zγ zγ ′ unγ Vγ′ unγ ′ Vγ′∗ Vγ′ Vγ′′ = zγ zγ ′ µ(γ, γ ′ ) unγ +γnγ ′ +d(γ,γ ′ ) Vγγ
                                                                                              ′                         ′
                                                                                                                         
-                                                                                               ′ = zγ zγ ′ zγγ ′ µ(γ, γ ) u ˜
                                                                                                                            d(γ,γ ′ ) Ṽγγ
-                                                                                                                                          ′
+                                                                                               ′ = zγ zγ ′ zγγ ′ µ(γ, γ ) u ˜             ′
 
 
 with d˜ = d + ∂n, (∂n)(γ, γ ′ ) = γnγ ′ − nγγ ′ + nγ (signs irrelevant: exponent 2). So [d]
@@ -1602,8 +1600,9 @@ to prove
                                 ψ(uy 2 ) = ψ D(u) y
                                                     
                                                          (y ∈ k∞ ).
-                        i                                    2              k
-             P                                                      P          P 2 2i 
+             P          i                                    2
+                                                                    P       k
+                                                                               P 2 2i 
 Write y =       i≤N yi t . By the additivity of squaring, uy =        k uk t     i yi t  , and the
                 −1
 coefficient of t collects the finitely many pairs with k+2i = −1, i.e. k odd and i = −(k+1)/2:
@@ -1899,8 +1898,7 @@ B = B ′ = A, c = f d, c′ = f ′ d, we obtain α ∈ Aut(A), β ∈ Aut(H) w
                                    α∗ [f d] = β ∗ [f ′ d] in H 2 (H, Aβ ).                              (10.3)
 
 Corollary 10.8. If f ̸= 0 then Gf ∼
-                                  ̸ G0 .
-                                   =
+                                  ̸= G0 .
 34                    NON-ISOMORPHIC ICC (T) GROUPS WITH A COMMON L(G)
 
 Proof. Suppose Ψ : Gf → G0 is an isomorphism. With f ′ = 0, (10.3) gives α∗ [f d] = 0; since
@@ -2031,17 +2029,16 @@ D = λI. Invariance under the yc symmetrically forces M22 = 0. Hence M = λ I0 I
 Gram matrix of λω.
    Step 2. Let h normalize H. For γ ∈ H: hγh−1 ∈ H preserves ω, so γ T (hT Jh)γ = hT Jh:
 the form with Gram matrix hT Jh is H-invariant, so hT Jh = cJ with c ∈ R by Step 1.
-Taking determinants: c2g det J = (det h)2 det J, and det J ̸= 0, so c2g = (det h)2 ∈ R× = F×       q
-(h ∈ GL2g (R)). Since degrees add in the domain R, c2g ∈ F×    q   forces deg c =  0 and  c ̸
-                                                                                            = 0, i.e.
+Taking determinants: c2g det J = (det h)2 det J, and det J ̸= 0, so c2g = (det h)2 ∈ R× = F×         q
+(h ∈ GL2g (R)). Since degrees add in the domain R, c2g ∈ F×    q   forces deg c =  0 and  c ̸ = 0, i.e.
 c ∈ F×            ×                                                 ×           2
       q . Since |Fq | = q − 1 is odd, squaring is a bijection of Fq , so c = ζ for some ζ ∈ Fq ;
-                                                                                                  ×
+                                                                                                    ×
         −1   T    −1       −2                −1
 then (ζ h) J(ζ h) = ζ cJ = J, i.e. ζ h ∈ H and h ∈ Fq H.        ×
 
    Step 3. Conversely, scalars are central in GL2g (R) and H normalizes itself, so F×q H normalizes
-H.                                                                                                 □
+H.                                                                                                   □
 
 10.5 Transports on H 2 (H, S). Definition. A transport pair is a pair (T, β) where β ∈
 Aut(H) and T : S → S is an additive bijection with T (γs) = β(γ)T (s) for all γ ∈ H, s ∈ S. It
@@ -2127,8 +2124,9 @@ Now apply the whole analysis to the isomorphism Ψ−1 : Gf ′ → Gf . Its res
 α−1 = Λ−1 θ•−1 G−1 . We bring it to canonical form: θ•−1 G−1 = G    e θ−1 with G
                                                                        •
                                                                                  e := diag(g̃, g̃),
-       −1   −1                      −1 e  e   −1
+       −1   −1                      −1        −1
 g̃ := θ∗ (g ) (by (10.5)); and Λ G = GΛ (leg-matrices commute with doubled matrices:
+                                       e  e
 both act by R-linear operations, one across legs with scalar coefficients, the other within legs),
 and Λ−1 θ•−1 = θ•−1 θ+ (Λ−1 ) where θ+ (Λ−1 ) applies θ to the entries of Λ−1 (check on (s1 , s2 ),
 using θ•−1 (θ(r)s) = rθ•−1 (s)). Hence
@@ -2164,8 +2162,7 @@ Substituting into (10.7) (with λ(i) = λ): f ′ κ = θ(λ)θ(f ) ζ κθ = ξ
 Theorem 10.15 (separation). Fix f ∈ R ∖ {0}. Then
             #{f ′ ∈ R : Gf ′ ∼
                              = Gf } ≤ (q − 1) · |Θfin | = q(q − 1)2 s < ∞.
-Moreover Gf ′ ∼ ̸ G0 for every f ′ ̸= 0.
-                 =
+Moreover Gf ′ ∼ ̸= G0 for every f ′ ̸= 0.
 Proof. If Gf ′ ∼ = Gf then f ′ ̸= 0: otherwise Gf ∼     = Gf ′ = G0 , contradicting Corollary 10.8
 (as f ̸= 0). So by Proposition 10.14 there are ξ ∈ F×                                ′
                                                              q and θ ∈ Θfin with f κ = ξ θ(f ) κθ .

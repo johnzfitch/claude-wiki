@@ -2,7 +2,7 @@
 title: "Claude Sonnet 4 6 System Card 8E91D5E0C0"
 source_url: "https://www.anthropic.com/claude-sonnet-4-6-system-card"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:20Z"
+fetched_at: "2026-11-18T06:29:01Z"
 tags: ["claude-ai"]
 ---
 

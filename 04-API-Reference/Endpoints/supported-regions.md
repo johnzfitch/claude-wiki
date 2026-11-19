@@ -2,7 +2,7 @@
 title: "Supported regions - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/supported-regions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:52Z"
+fetched_at: "2026-11-13T06:34:47Z"
 tags: ["api"]
 ---
 

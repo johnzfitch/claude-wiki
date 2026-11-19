@@ -2,7 +2,7 @@
 title: "MCP tunnels security - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/security"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:30Z"
+fetched_at: "2026-11-13T06:33:54Z"
 tags: ["api", "mcp", "security"]
 ---
 
@@ -73,7 +73,7 @@ If you believe your tunnel token, TLS keys, or proxy host has been compromised:
 
     ### Archive the tunnel
 
-    Archiving invalidates the tunnel token and detaches the domain. In the Console, [archive the tunnel](agents-and-tools-mcp-tunnels-console.md#archive-a-tunnel) from the **MCP tunnels** list. To archive over the API instead, see [Archive a tunnel](../Endpoints/http-beta-tunnels-archive.md).
+    Archiving invalidates the tunnel token and detaches the domain. In the Console, [archive the tunnel](agents-and-tools-mcp-tunnels-console.md#archive-a-tunnel) from the **MCP tunnels** list. To archive over the API instead, see [Archive a tunnel](../Endpoints/http-beta-tunnels-archive.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 4.  4
 

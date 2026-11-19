@@ -2,7 +2,7 @@
 title: "Troubleshoot Claude error messages | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12466728-understanding-claude-error-messages"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:25:51Z"
+fetched_at: "2026-11-18T06:27:46Z"
 tags: ["safety"]
 ---
 
@@ -17,7 +17,7 @@ Your plan has a weekly limit and, except on verified Ultra accounts, a five-hour
 
 If you reach a limit and don’t have usage credits enabled, you’ll see an error message letting you know when you can use Claude again: "5-hour limit reached - resets \[time\]" or "You've reached your weekly limit. It resets \[day\] at \[time\]."
 
-Looking for ways to maximize your Claude usage? Refer to **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices.md)**.
+Looking for ways to maximize your Claude usage? Refer to **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ### Usage credits
 

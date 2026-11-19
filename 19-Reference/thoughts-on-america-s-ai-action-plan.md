@@ -2,30 +2,26 @@
 title: "Thoughts on America’s AI Action Plan \\ Anthropic"
 source_url: "https://www.anthropic.com/news/thoughts-on-america-s-ai-action-plan"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:37Z"
+fetched_at: "2026-11-14T06:26:26Z"
 tags: ["news-research"]
 ---
 
 # Thoughts on America’s AI Action Plan
 
-- Published
+Published  
+Jul 23, 2025
 
-  Jul 23, 2025
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+- [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
+- [Democratic lead](https://www.anthropic.com/search?topic=democratic-lead)
+- [Government capacity](https://www.anthropic.com/search?topic=government-capacity)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [National security](https://www.anthropic.com/search?topic=national-security)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-  - [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
-  - [Democratic lead](https://www.anthropic.com/search?topic=democratic-lead)
-  - [Government capacity](https://www.anthropic.com/search?topic=government-capacity)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [National security](https://www.anthropic.com/search?topic=national-security)
-
-  See more...
+See more...
 
 Related articles
 
@@ -43,7 +39,7 @@ Today, the White House released "Winning the Race: America's AI Action Plan"—a
 
 The Action Plan prioritizes AI infrastructure and adoption, consistent with Anthropic’s submission to OSTP in March.
 
-We applaud the Administration's commitment to streamlining data center and energy permitting to address AI’s power needs. As we stated in our OSTP submission and at [the Pennsylvania Energy and Innovation Summit](https://www.youtube.com/watch?v=KO8vMSsjmGY), without adequate domestic energy capacity, American AI developers may be forced to relocate operations overseas, potentially exposing sensitive technology to foreign adversaries. Our recently published [“Build AI in America” report](https://www-cdn.anthropic.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf) details the steps the Administration can take to accelerate the buildout of our nation’s AI infrastructure, and we look forward to working with the Administration on measures to expand domestic energy capacity.
+We applaud the Administration's commitment to streamlining data center and energy permitting to address AI’s power needs. As we stated in our OSTP submission and at [the Pennsylvania Energy and Innovation Summit](https://www.youtube.com/watch?v=KO8vMSsjmGY), without adequate domestic energy capacity, American AI developers may be forced to relocate operations overseas, potentially exposing sensitive technology to foreign adversaries. Our recently published [“Build AI in America” report](https://assets.claude.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf) details the steps the Administration can take to accelerate the buildout of our nation’s AI infrastructure, and we look forward to working with the Administration on measures to expand domestic energy capacity.
 
 The Plan’s recommendations to increase the federal government's adoption of AI also includes proposals that are closely aligned with Anthropic’s policy priorities and recommendations to the White House. These include:
 
@@ -68,7 +64,7 @@ We're glad the Action Plan affirms the National Institute of Standards and Techn
 
 ### The need for a national standard
 
-Beyond testing, we believe basic AI development transparency requirements, such as public reporting on safety testing and capability assessments, are essential for responsible AI development. Leading AI model developers should be held to basic and publicly-verifiable standards of assessing and managing the catastrophic risks posed by their systems. Our [proposed framework](https://www-cdn.anthropic.com/19cc4bf9eb6a94f9762ac67368f3322cf82b09fe.pdf) for frontier model transparency focuses on these risks. We would have liked to see the report do more on this topic.
+Beyond testing, we believe basic AI development transparency requirements, such as public reporting on safety testing and capability assessments, are essential for responsible AI development. Leading AI model developers should be held to basic and publicly-verifiable standards of assessing and managing the catastrophic risks posed by their systems. Our [proposed framework](https://assets.claude.com/19cc4bf9eb6a94f9762ac67368f3322cf82b09fe.pdf) for frontier model transparency focuses on these risks. We would have liked to see the report do more on this topic.
 
 Leading labs, including Anthropic, OpenAI, and Google DeepMind, have already implemented voluntary safety frameworks, which demonstrates that responsible development and innovation can coexist. In fact, with the launch of Claude Opus 4, we proactively [activated ASL-3 protections](activating-asl3-protections.md) to prevent misuse for chemical, biological, radiological, and nuclear (CBRN) weapons development. This precautionary step shows that far from slowing innovation, robust safety protections help us build better, more reliable systems.
 
@@ -90,4 +86,4 @@ The alignment between many of our recommendations and the AI Action Plan demonst
 
 We look forward to working with the Administration to implement these initiatives while ensuring appropriate attention to catastrophic risks and maintaining strong export controls. Together, we can ensure that powerful AI systems are developed safely in America, by American companies, reflecting American values and interests.
 
-For more details on our policy recommendations, see our full [submission to OSTP](https://assets.anthropic.com/m/4e20a4ab6512e217/original/Anthropic-Response-to-OSTP-RFI-March-2025-Final-Submission-v3.pdf), and our ongoing work on [responsible AI development](anthropics-responsible-scaling-policy.md) and our recent report on [increasing domestic energy capacity](https://www-cdn.anthropic.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf).
+For more details on our policy recommendations, see our full [submission to OSTP](https://assets.anthropic.com/m/4e20a4ab6512e217/original/Anthropic-Response-to-OSTP-RFI-March-2025-Final-Submission-v3.pdf), and our ongoing work on [responsible AI development](anthropics-responsible-scaling-policy.md) and our recent report on [increasing domestic energy capacity](https://assets.claude.com/0dc382a2086f6a054eeb17e8a531bd9625b8e6e5.pdf).

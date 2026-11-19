@@ -125,7 +125,7 @@ Add users
 You can add users through either method:
 
 - Bulk invite users from within the Console: Settings -\> Members -\> Invite
-- [Set up SSO](../21-Account-Support/setting-up-single-sign-on-sso.md)
+- [Set up SSO](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)
 
 3
 

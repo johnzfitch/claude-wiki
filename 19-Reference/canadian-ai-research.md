@@ -2,9 +2,11 @@
 title: "Anthropic commits $10 million to Canadian AI research \\ Anthropic"
 source_url: "https://www.anthropic.com/news/canadian-ai-research"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:25Z"
+fetched_at: "2026-11-17T06:25:16Z"
 tags: ["news-research", "search"]
 ---
+
+### 01Investing in Canadian research
 
 # Anthropic commits \$10 million to Canadian AI research
 
@@ -13,24 +15,20 @@ tags: ["news-research", "search"]
 - [03A shared view on the future of AI](#a-shared-view-on-the-future-of-ai)
 - [04Anthropic s’engage à verser 10 millions de dollars à la recherche canadienne en IA](#anthropic-sengage-verser-10-millions-de-dollars-la-recherche-canadienne-en-ia)
 
-- Published
+Published  
+Jul 14, 2026
 
-  Jul 14, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Funding](https://www.anthropic.com/search?topic=funding)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
+- [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
+- [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+- [Healthcare](https://www.anthropic.com/search?topic=healthcare)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
 
-  [Announcements](announcements.md)
-
-- Topics
-
-  - [Funding](https://www.anthropic.com/search?topic=funding)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-  - [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
-  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
-  - [Healthcare](https://www.anthropic.com/search?topic=healthcare)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-
-  See more...
+See more...
 
 *Le français suit.*
 

@@ -2,7 +2,7 @@
 title: "Claude Code on the web | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/claude-code-on-the-web"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:24Z"
+fetched_at: "2026-11-18T06:26:42Z"
 tags: ["claude-code", "security"]
 ---
 
@@ -22,6 +22,13 @@ tags: ["claude-code", "security"]
   Reading time4 min
 - 
 
+
+Contents
+
+1.  [Run coding tasks in parallel](#run-coding-tasks-in-parallel)
+2.  [Flexible for every workflow](#flexible-for-every-workflow)
+3.  [Security-first cloud execution](#security-first-cloud-execution)
+4.  [Getting started](#getting-started)
 
 ***Update:** Cloud sessions (previously known as Claude Code on the web) are now generally available for Pro, Max, Ultra, and Team users, and for Enterprise users with premium seats or Chat + Claude Code seats. Read the [docs](claude-code-on-the-web.md) for the latest information, or our [field guide to cloud sessions](https://claude.dev/blog/claude-code-in-the-cloud/). September 23, 2026.*
 
@@ -66,29 +73,31 @@ Cloud-based sessions share rate limits with all other Claude Code usage. [Explor
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleNov 5, 2026
+ArticleNov 17, 2026
 
-### Introducing Personal Finance in Claude
-
-Ask Claude about your money and get straight answers from the accounts you connect.
-
-
-ArticleNov 5, 2026
-
-### More visibility and control over Claude Enterprise for security teams
-
-Claude EnterpriseClaude apps
-
-
-ArticleNov 4, 2026
-
-### New agents and products for security, productivity, and creative work on Claude Marketplace
-
-
-ArticleNov 2, 2026
-
-### Make long-running agents faster with message threads
-
-New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
+### Linked billing on the Claude Platform
 
 Claude Platform
+
+
+ArticleNov 12, 2026
+
+### Operate Claude Managed Agents inside your security perimeter
+
+Introducing self-hosted Claude Managed Agents. Now you can run agents in your own environment, whether that’s in your own cloud or on-premise. You host the agents, credentials, and session history, and choose where requests to Claude are sent.
+
+Claude PlatformClaude Managed Agents
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude for Manufacturing
+
+A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude Meetings
+
+Add Claude to your video call and get the work started while you talk

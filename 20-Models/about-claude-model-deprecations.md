@@ -2,7 +2,7 @@
 title: "Model deprecations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/model-deprecations"
 category: "20-Models"
-fetched_at: "2026-11-05T06:34:33Z"
+fetched_at: "2026-11-13T06:35:09Z"
 tags: ["api", "models"]
 ---
 
@@ -35,7 +35,7 @@ Anthropic uses the following terms to describe the model lifecycle:
 
 Deprecated models are likely to be less reliable than active models. Move workloads to active models to maintain the highest level of support and reliability.
 
-The dates on this page apply to Anthropic-operated platforms: the Claude API, [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md), and [Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md). Partner-operated platforms, Claude Models on Google Cloud (Google managed) and Amazon Bedrock, set their own retirement schedules, so a model’s lifecycle status and dates can differ. See the [Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md#supported-models), [Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md#api-model-ids), and [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md#api-model-ids) model tables.
+The dates on this page apply to Anthropic-operated platforms: the Claude API, [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md), and [Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md). Partner-operated platforms, Claude Models on Google Cloud (Google managed) and Amazon Bedrock, set their own retirement schedules, so a model’s lifecycle status and dates can differ. See the [Amazon Bedrock (`bedrock-mantle`)](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md#supported-models), [Amazon Bedrock (`bedrock-runtime`)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md#api-model-ids), and [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md#api-model-ids) model tables.
 
 ## Migrating to replacements
 
@@ -82,6 +82,8 @@ Current and recently retired models are listed in the following table with their
 
 | API model name | Current state | Deprecated | Tentative retirement date |
 |----|----|----|----|
+| claude-fable-5-2 | Active | N/A | Not sooner than November 9, 2027 |
+| claude-mythos-5-2 | Active | N/A | Not sooner than November 9, 2027 |
 | claude-fable-5-1 | Active | N/A | Not sooner than September 1, 2027 |
 | claude-mythos-5-1 | Active | N/A | Not sooner than September 1, 2027 |
 | claude-fable-5 | Active | N/A | Not sooner than June 9, 2027 |

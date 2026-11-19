@@ -2,7 +2,7 @@
 title: "Claude Sonnet 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-5/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:17Z"
+fetched_at: "2026-11-13T06:34:16Z"
 tags: ["models"]
 ---
 
@@ -132,7 +132,7 @@ Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-i
 
 - On the [Message Batches API](../04-API-Reference/Guides/build-with-claude-batch-processing.md#extended-output-beta), Claude Sonnet 5 supports up to 300k output tokens with the `output-300k-2026-03-24` beta header.
 - Setting `temperature`, `top_p`, or `top_k` returns a 400 error.
-- Query limits and capabilities programmatically with the [Models API](../04-API-Reference/Endpoints/models-list.md).
+- Query limits and capabilities programmatically with the [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 ## Resources
 

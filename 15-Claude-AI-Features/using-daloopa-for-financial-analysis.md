@@ -2,7 +2,7 @@
 title: "Using Daloopa for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220011-using-daloopa-for-financial-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:40Z"
+fetched_at: "2026-11-18T06:27:45Z"
 tags: ["claude-ai"]
 ---
 
@@ -54,13 +54,13 @@ Claude applies Daloopa's financial data to support your analysis.
 
 ## Setting Up Daloopa Integration[](#setting-up-daloopa-integration)
 
-Technical details of the Daloopa Integration can be found in Daloopa's [MCP Server Documentation(opens in new tab)](https://docs.daloopa.com/docs/daloopa-mcp). You will need to contact Daloopa to get access to the MCP server.
+For technical details of the Daloopa integration, see Daloopa's [MCP Server Documentation(opens in new tab)](https://docs.daloopa.com/docs/daloopa-mcp). Contact Daloopa to get access to the MCP server.
 
 ### For Organization Owners[](#for-organization-owners)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector" at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Enter integration URL: [https://mcp.daloopa.com/server/mcp(opens in new tab)](https://mcp.daloopa.com/server/mcp)
 

@@ -2,7 +2,7 @@
 title: "Tahoe Lead Removal Project Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/tahoe-lead-removal-project"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:34Z"
+fetched_at: "2026-11-18T06:29:30Z"
 tags: ["case-studies", "enterprise", "search"]
 ---
 

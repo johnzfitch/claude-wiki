@@ -2,11 +2,14 @@
 title: "Migrate to Claude Agent SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/migration-guide"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-10T06:24:21Z"
+fetched_at: "2026-11-13T06:34:47Z"
+last_modified: "Fri, 13 Nov 2026 06:21:50 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Overview](#overview)
 - [What’s Changed](#what%E2%80%99s-changed)
@@ -41,11 +44,11 @@ The Claude Code SDK has been renamed to the **Claude Agent SDK** and its documen
 
 What’s Changed
 
-| Aspect                     | Old                         | New                                                                           |
-|:---------------------------|:----------------------------|:------------------------------------------------------------------------------|
-| **Package Name (TS/JS)**   | `@anthropic-ai/claude-code` | `@anthropic-ai/claude-agent-sdk`                                              |
-| **Python Package**         | `claude-code-sdk`           | `claude-agent-sdk`                                                            |
-| **Documentation Location** | Claude Code docs            | Claude Code docs → dedicated [Agent SDK](agent-sdk-overview.md) section |
+| Aspect | Old | New |
+|:---|:---|:---|
+| **Package Name (TS/JS)** | `@anthropic-ai/claude-code` | `@anthropic-ai/claude-agent-sdk` |
+| **Python Package** | `claude-code-sdk` | `claude-agent-sdk` |
+| **Documentation Location** | Claude Code docs | Claude Code docs → dedicated [Agent SDK](agent-sdk-overview.md) section |
 
 
 [​](#migration-steps)

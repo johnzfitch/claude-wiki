@@ -2,11 +2,13 @@
 title: "Provision and manage skills for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13119606-provisioning-and-managing-skills-for-your-organization"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:44Z"
+fetched_at: "2026-11-18T06:27:51Z"
 tags: ["claude-ai", "plugins", "skills"]
 ---
 
 # Provision and manage skills for your organization
+
+Updated today
 
 
 This article explains how organization owners can provision skills for everyone in their organization, and how to scope skills to specific groups using plugins. Provisioning skills lets you distribute approved workflows and capabilities across your organization from one place.
@@ -49,7 +51,7 @@ For example, if you have 10 skills for your marketing team, add them to a plugin
 
 Skills provisioned this way appear in chat (on the web and the "Chat" tab in Claude Desktop), in Claude Cowork, and in Claude Code in the terminal for users who sign in with their Claude account. Group targeting you've already set up for Cowork carries over to chat with no extra steps.
 
-To set this up, see **[Manage plugins for your organization](https://support.claude.com/en/articles/13837433)**.
+To set this up, see **[Manage plugins for your organization](../22-Safety-Policy/manage-plugins-for-your-organization-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -245,7 +247,7 @@ Here's what your users see:
 
 - A skill or plugin with malicious content is blocked and can't be used.
 
-A blocked skill can't be overridden by the user who uploaded it, and can't be approved for the organization at this time. Scanning isn't available for organizations using customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA configurations. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
+A blocked skill can't be overridden by the person who uploaded it, unless they're an Owner, Primary Owner, or have a role with Libraries permission that's set to "Can manage." Scanning isn't available for organizations using customer-managed encryption keys (CMEK), zero data retention (ZDR), or HIPAA configurations. Learn more about **[skill and plugin scanning](https://support.claude.com/en/articles/15927065)**.
 
 ------------------------------------------------------------------------
 

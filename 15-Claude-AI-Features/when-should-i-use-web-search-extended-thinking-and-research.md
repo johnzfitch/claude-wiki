@@ -2,7 +2,7 @@
 title: "When should I use web search, extended thinking, and research? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11095361-when-should-i-use-web-search-extended-thinking-and-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:45Z"
+fetched_at: "2026-11-18T06:27:40Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -17,7 +17,7 @@ For more information on availability, enabling, and using each feature, explore 
 
 - **[Web search](enable-and-use-web-search-claude-help-center.md)**
 
-- **[Extended thinking](change-the-model-effort-and-thinking-settings.md#h_fe39272335)**
+- **[Extended thinking](https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings#h_fe39272335)**
 
 - **[Research](https://support.claude.com/en/articles/11088861)**
 

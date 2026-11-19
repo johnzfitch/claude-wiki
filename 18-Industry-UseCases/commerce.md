@@ -2,7 +2,7 @@
 title: "Build commerce agents with Claude | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/commerce"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:41Z"
+fetched_at: "2026-11-18T06:29:38Z"
 tags: ["agents", "case-studies"]
 ---
 

@@ -2,22 +2,10 @@
 title: "Code Review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-25T06:26:40Z"
+fetched_at: "2026-11-13T06:33:33Z"
+last_modified: "Fri, 13 Nov 2026 06:15:49 GMT"
 tags: ["claude-code"]
 ---
-
-## On this page
-
-- [Availability](#availability)
-- [Set up and use Code Review](#set-up-and-use-code-review)
-- [How reviews work](#how-reviews-work)
-  - [Review levels](#review-levels)
-  - [What a review can access](#what-a-review-can-access)
-  - [Who controls a review](#who-controls-a-review)
-- [Compare ways to get a review](#compare-ways-to-get-a-review)
-- [Related resources](#related-resources)
-
-Code Review
 
 # Code Review
 
@@ -132,13 +120,13 @@ Compare ways to get a review
 
 To find the options open to you, check the **Who can use it** column against your plan and code host:
 
-| Option                                                                                                         | What starts a review                                                             | Where it runs                | Who can use it                                                                                                     |
-|:---------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------|:-----------------------------|:-------------------------------------------------------------------------------------------------------------------|
-| [Code Review](#how-reviews-work)                                                                               | Pull request activity, as each repository is set, or an `@claude review` comment | Anthropic infrastructure     | Organizations on a Team or Enterprise plan with GitHub repositories, once an Owner turns it on                     |
-| [`/code-review`](code-review-local.md)                                                                   | You run the command on your branch                                               | Your Claude Code session     | Anyone, on any plan                                                                                                |
-| [Ultrareview](ultrareview.md)                                                                            | You start it from Claude Code                                                    | A cloud sandbox              | Requires signing in with a claude.ai account. See [Ultrareview](ultrareview.md) for where it isn’t available |
-| Claude in your own CI, with [GitHub Actions](github-actions.md) or [GitLab CI/CD](gitlab-ci-cd.md) | Your pipeline’s events, such as every pull request or merge request              | Your own CI runners          | Anyone with a Claude API key or cloud provider credentials, on GitHub or GitLab                                    |
-| Your own reviewer, as a [subagent](../09-Agents-Patterns/sub-agents.md) or [skill](../08-Plugins-Skills/skills.md)                            | You or Claude invoke it during a session                                         | Wherever you run Claude Code | Anyone who writes one                                                                                              |
+| Option | What starts a review | Where it runs | Who can use it |
+|:---|:---|:---|:---|
+| [Code Review](#how-reviews-work) | Pull request activity, as each repository is set, or an `@claude review` comment | Anthropic infrastructure | Organizations on a Team or Enterprise plan with GitHub repositories, once an Owner turns it on |
+| [`/code-review`](code-review-local.md) | You run the command on your branch | Your Claude Code session | Anyone, on any plan |
+| [Ultrareview](ultrareview.md) | You start it from Claude Code | A cloud sandbox | Requires signing in with a claude.ai account. See [Ultrareview](ultrareview.md) for where it isn’t available |
+| Claude in your own CI, with [GitHub Actions](github-actions.md) or [GitLab CI/CD](gitlab-ci-cd.md) | Your pipeline’s events, such as every pull request or merge request | Your own CI runners | Anyone with a Claude API key or cloud provider credentials, on GitHub or GitLab |
+| Your own reviewer, as a [subagent](../09-Agents-Patterns/sub-agents.md) or [skill](../08-Plugins-Skills/skills.md) | You or Claude invoke it during a session | Wherever you run Claude Code | Anyone who writes one |
 
 
 [​](#related-resources)

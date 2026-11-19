@@ -2,7 +2,7 @@
 title: "Restrict verified-domain connectors to your Enterprise | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15402193-restrict-verified-domain-connectors-to-your-enterprise"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:08Z"
+fetched_at: "2026-11-18T06:28:12Z"
 tags: ["connectors", "enterprise"]
 ---
 
@@ -61,7 +61,7 @@ This setting applies to the following connectors:
 
 - Tableau
 
-You can also view the current list in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**. Contact **[our support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to request additional connectors.
+You can also view the current list in **[Organization settings \> Organization and access](https://claude.ai/admin-settings/organization)**. Contact **[our support team](../15-Claude-AI-Features/how-to-get-support.md)** to request additional connectors.
 
 For example, someone has two Claude accounts: a personal account using their personal email, and a work account using their work email. The work email is on a domain your Enterprise organization has verified.
 

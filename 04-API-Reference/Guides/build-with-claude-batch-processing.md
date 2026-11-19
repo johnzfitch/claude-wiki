@@ -2,7 +2,7 @@
 title: "Batch processing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/batch-processing"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:39Z"
+fetched_at: "2026-11-13T06:36:21Z"
 tags: ["api", "rag"]
 ---
 
@@ -23,14 +23,20 @@ Process large volumes of Messages requests asynchronously with the Message Batch
 Feature of  
 [Messages API](build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Batch processing is a powerful approach for handling large volumes of requests efficiently. Instead of processing requests one at a time with immediate responses, batch processing allows you to submit multiple requests together for asynchronous processing. This pattern is particularly useful when:
 
@@ -39,13 +45,13 @@ Batch processing is a powerful approach for handling large volumes of requests e
 - You want to optimize for cost efficiency
 - You’re running large-scale evaluations or analyses
 
-The Message Batches API is Anthropic’s first implementation of this pattern.
+The Message Batches API implements this pattern.
 
 # Message Batches API
 
 The Message Batches API is a powerful, cost-effective way to asynchronously process large volumes of [Messages](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. requests. This approach is well-suited to tasks that do not require immediate responses, with most batches finishing in less than 1 hour while reducing costs by 50 percent and increasing throughput.
 
-You can [explore the API reference directly](../Endpoints/messages-batches-create.md), in addition to this guide.
+You can [explore the API reference directly](../Endpoints/messages-batches-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., in addition to this guide.
 
 ## How the Message Batches API works
 
@@ -66,10 +72,10 @@ This is especially useful for bulk operations that don’t require immediate res
 
 - A Message Batch is limited to either 100,000 Message requests or 256 MB in size, whichever is reached first.
 - The system processes each batch as fast as possible, with most batches completing within 1 hour. You can access batch results when all messages have completed or after 24 hours, whichever comes first. Batches expire if processing does not complete within 24 hours.
-- Batch results are available for 29 days after creation. After that, you can still view the Batch, but its results will no longer be available for download.
-- Batches are scoped to a [Workspace](../Other/playground.md) in the Claude Console. You may view all batches (and their results) that were created within the Workspace your request runs in.
+- Batch results are available for 29 days after creation. After that, you can still view the batch, but its results are no longer available for download.
+- Batches are scoped to a [Workspace in the Claude Console](../Other/playground.md). You can view all batches (and their results) that were created within the Workspace your request runs in.
 - Rate limits apply to both Batches API HTTP requests and the number of requests within a batch waiting to be processed. See [Message Batches API rate limits](../Endpoints/rate-limits.md#message-batches-api). Additionally, processing might be slowed down based on current demand and your request volume. In that case, you might see more requests expiring after 24 hours.
-- Because of high throughput and concurrent processing, batches may go slightly over the [spend limit](../Other/playground.md) configured in the Claude Console for your Workspace.
+- Because of high throughput and concurrent processing, batches might go slightly over the [spend limit](../Other/manage-claude-workspaces.md#setting-workspace-limits) configured in the Claude Console for your Workspace.
 - Each batched request must have [`max_tokens`](../Endpoints/messages-create.md#create.max_tokens)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. of at least `1`. `max_tokens: 0` ([cache pre-warming](build-with-claude-prompt-caching.md#pre-warming-the-cache)) is not supported inside a batch, because an ephemeral cache entry written during batch processing would likely expire before the follow-up request runs.
 
 ### Supported models
@@ -115,7 +121,7 @@ The Batches API offers significant cost savings. All usage is charged at 50 perc
 A Message Batch is composed of a list of requests to create a Message. The shape of an individual request comprises:
 
 - A unique [`custom_id`](../Endpoints/messages-batches-create.md#create.requests.custom_id)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for identifying the Messages request. Must be 1 to 64 characters and contain only alphanumeric characters, hyphens, and underscores (matching `^[a-zA-Z0-9_-]{1,64}$`).
-- A [`params`](../Endpoints/messages-batches-create.md#create.requests.params)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. object with the standard [Messages API](../Endpoints/messages-create.md) parameters
+- A [`params`](../Endpoints/messages-batches-create.md#create.requests.params)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. object with the standard [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. parameters
 
 You can [create a batch](../Endpoints/messages-batches-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. by passing this list into the `requests` parameter:
 
@@ -187,7 +193,7 @@ In this example, two separate requests are batched together for asynchronous pro
 
 **Test your batch requests with the Messages API**
 
-Validation of the `params` object for each message request is performed asynchronously, and validation errors are returned when processing of the entire batch has ended. You can ensure that you are building your input correctly by verifying your request shape with the [Messages API](../Endpoints/messages-create.md) first.
+The API validates the `params` object of each message request asynchronously, and returns validation errors when processing of the entire batch has ended. To check that you build your input correctly, verify your request shape with the [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. first.
 
 When a batch is first created, the response has a processing status of `in_progress`.
 
@@ -225,21 +231,17 @@ The Message Batch’s [`processing_status`](../Endpoints/messages-batches-retrie
 
 This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the `results_url` field in the response.
 
-##### Path parameters `message_batch_id`
+##### Path parameters `message_batch_id`
 
 message_batch_id: string
 
-
-
 ID of the Message Batch.
 
-##### Headers `anthropic-version` `anthropic-workspace-id`
+##### Headers `anthropic-version` `anthropic-workspace-id`
 
 
 
 "anthropic-version": optional string
-
-
 
 The version of the Claude API you want to use.
 
@@ -249,19 +251,15 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 "anthropic-workspace-id": optional string
 
-
-
 Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
 
 Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
 
-##### Returns `type` `id` `archived_at` `cancel_initiated_at` `created_at` `ended_at` +4 more
+##### Returns `type` `id` `archived_at` `cancel_initiated_at` `created_at` `ended_at` +4 more
 
 
 
 MessageBatch object{ type: "message_batch", id, archived_at, 7 more }
-
-
 
 #### Polling for Message Batch completion
 
@@ -309,7 +307,7 @@ print(message_batch)
 
 ### Listing all Message Batches
 
-You can list all Message Batches in your Workspace using the [list endpoint](../Endpoints/messages-batches-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. The API supports pagination, automatically fetching additional pages as needed:
+You can list all Message Batches in your Workspace using the [list endpoint](../Endpoints/messages-batches-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. Results are paginated. The SDK fetches additional pages as needed:
 
 cURL
 
@@ -348,17 +346,15 @@ Once batch processing has ended, each Messages request in the batch has a result
 | Result type | Description |
 |----|----|
 | `succeeded` | Request was successful. Includes the message result. |
-| `errored` | Request encountered an error and a message was not created. Possible errors include invalid requests and internal server errors. You will not be billed for these requests. |
-| `canceled` | User canceled the batch before this request could be sent to the model. You will not be billed for these requests. |
-| `expired` | Batch reached its 24-hour expiration before this request could be sent to the model. You will not be billed for these requests. |
+| `errored` | Request encountered an error and a message was not created. Possible errors include invalid requests and internal server errors. You aren’t billed for these requests. |
+| `canceled` | User canceled the batch before this request could be sent to the model. You aren’t billed for these requests. |
+| `expired` | Batch reached its 24-hour expiration before this request could be sent to the model. You aren’t billed for these requests. |
 
 The batch’s `request_counts` object counts the requests still processing and the requests with each result type.
 
 
 
 request_counts: [MessageBatchRequestCounts](https://platform.claude.com/docs/en/api/http/messages/batches#message_batch_request_counts) { canceled, errored, expired, 2 more }
-
-
 
 Tallies requests within the Message Batch, categorized by their status.
 
@@ -367,8 +363,6 @@ Requests start as `processing` and move to one of the other statuses only once p
 
 
 canceled: number
-
-
 
 Number of requests in the Message Batch that have been canceled.
 
@@ -380,8 +374,6 @@ default0
 
 errored: number
 
-
-
 Number of requests in the Message Batch that encountered an error.
 
 This is zero until processing of the entire Message Batch has ended.
@@ -391,8 +383,6 @@ default0
 
 
 expired: number
-
-
 
 Number of requests in the Message Batch that have expired.
 
@@ -404,8 +394,6 @@ default0
 
 processing: number
 
-
-
 Number of requests in the Message Batch that are processing.
 
 default0
@@ -414,15 +402,13 @@ default0
 
 succeeded: number
 
-
-
 Number of requests in the Message Batch that have completed successfully.
 
 This is zero until processing of the entire Message Batch has ended.
 
 default0
 
-Results of the batch are available for download at the [`results_url`](../Endpoints/messages-batches-retrieve.md#message_batch.results_url)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. property on the Message Batch, and if the organization permission allows, in the Console. Because of the potentially large size of the results, it’s recommended to [stream results](../Endpoints/messages-batches-results.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. back rather than download them all at once.
+Results of the batch are available for download at the [`results_url`](../Endpoints/messages-batches-retrieve.md#message_batch.results_url)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. property on the Message Batch and, if your organization’s permissions allow, in the Console. Because the results can be large, [stream results](../Endpoints/messages-batches-results.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. back rather than download them all at once.
 
 cURL
 
@@ -485,13 +471,13 @@ Batch results use the API version of the request that created the batch.
 
 
 
-**Batch results may not match input order**
+**Batch results might not match input order**
 
-Batch results can be returned in any order, and may not match the ordering of requests when the batch was created. In the preceding example, the result for the second batch request is returned before the first. To correctly match results with their corresponding requests, always use the `custom_id` field.
+Batch results can be returned in any order, and might not match the ordering of requests when the batch was created. In the preceding example, the result for the second batch request is returned before the first. To correctly match results with their corresponding requests, always use the `custom_id` field.
 
 ### Canceling a Message Batch
 
-You can cancel a Message Batch that is currently processing using the [cancel endpoint](../Endpoints/messages-batches-cancel.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. Immediately after cancellation, a batch’s `processing_status` will be `canceling`. You can use the same polling technique described earlier to wait until cancellation is finalized. Canceled batches end up with a status of `ended` and may contain partial results for requests that were processed before cancellation.
+You can cancel a Message Batch that is currently processing using the [cancel endpoint](../Endpoints/messages-batches-cancel.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. Immediately after cancellation, a batch’s `processing_status` is `canceling`. You can use the same polling technique described earlier to wait until cancellation is finalized. Canceled batches end up with a status of `ended` and might contain partial results for requests that were processed before cancellation.
 
 cURL
 
@@ -662,7 +648,7 @@ The `output-300k-2026-03-24` beta header raises the `max_tokens` cap to 300,000 
 
 
 
-Extended output is available on the Message Batches API only, not the synchronous Messages API. It is supported on the Claude API and Claude Platform on AWS, and is not currently available on Amazon Bedrock, Claude Models on Google Cloud (Google managed), or Microsoft Foundry.
+Extended output is available on the Message Batches API only, not the synchronous Messages API. It is available on the Claude API and Claude Platform on AWS.
 
 Use extended output for long-form generation such as book-length drafts and technical documentation, exhaustive structured data extraction, large code-generation scaffolds, and long reasoning chains.
 
@@ -734,7 +720,7 @@ If experiencing unexpected behavior:
 - Verify that the total batch request size doesn’t exceed 256 MB. If the request size is too large, you might get a 413 `request_too_large` error.
 - Check that you’re using [supported models](#supported-models) for all requests in the batch.
 - Ensure each request in the batch has a unique `custom_id`.
-- Ensure that it has been less than 29 days since batch `created_at` (not processing `ended_at`) time. If over 29 days have passed, results will no longer be viewable.
+- Ensure that it has been less than 29 days since batch `created_at` (not processing `ended_at`) time. After 29 days, results are no longer available for download.
 - Confirm that the batch has not been canceled.
 
 Note that the failure of one request in a batch does not affect the processing of other requests.
@@ -747,35 +733,35 @@ Note that the failure of one request in a batch does not affect the processing o
 
 ## FAQ
 
-### How long does it take for a batch to process?
+### How long does it take for a batch to process?
 
 Batches might take up to 24 hours for processing, but many complete sooner. Actual processing time depends on the size of the batch, current demand, and your request volume. It is possible for a batch to expire and not complete within 24 hours.
 
-### Is the Batches API available for all models?
+### Is the Batches API available for all models?
 
 See [Supported models](#supported-models) for the list of supported models.
 
-### Can I use the Message Batches API with other API features?
+### Can I use the Message Batches API with other API features?
 
 Yes, the Message Batches API supports nearly all features available in the Messages API, including most beta features. A small number of parameters (`stream`, `speed`, `fallbacks`, and `max_tokens: 0`) are not supported. See [What can be batched](#what-can-be-batched) for the full list.
 
-### How does the Message Batches API affect pricing?
+### How does the Message Batches API affect pricing?
 
 The Message Batches API offers a 50 percent discount on all usage compared to standard API prices. This applies to input tokens, output tokens, and any special tokens. For more on pricing, visit [Pricing](../../17-Billing-Plans/pricing.md#anthropic-api).
 
-### Can I update a batch after it’s been submitted?
+### Can I update a batch after it’s been submitted?
 
 No, once a batch has been submitted, it cannot be modified. If you need to make changes, cancel the current batch and submit a new one. Note that cancellation might not take immediate effect.
 
-### Are there Message Batches API rate limits and do they interact with the Messages API rate limits?
+### Are there Message Batches API rate limits and do they interact with the Messages API rate limits?
 
 The Message Batches API has HTTP requests-based rate limits in addition to limits on the number of requests in need of processing. See [Message Batches API rate limits](../Endpoints/rate-limits.md#message-batches-api). Usage of the Batches API does not affect rate limits in the Messages API.
 
-### How do I handle errors in my batch requests?
+### How do I handle errors in my batch requests?
 
-When you retrieve the results, each request has a `result` field indicating whether it `succeeded`, `errored`, was `canceled`, or `expired`. For `errored` results, additional error information is provided. View the error response object in the [API reference](../Endpoints/messages-batches-create.md).
+When you retrieve the results, each request has a `result` field indicating whether it `succeeded`, `errored`, was `canceled`, or `expired`. For `errored` results, additional error information is provided. View the error response object in the [API reference](../Endpoints/messages-batches-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
-### How does the Message Batches API handle privacy and data separation?
+### How does the Message Batches API handle privacy and data separation?
 
 The Message Batches API is designed with strong privacy and data separation measures:
 
@@ -784,29 +770,49 @@ The Message Batches API is designed with strong privacy and data separation meas
 3.  Results are only available for a limited time (29 days), and follow Anthropic’s [data retention policy](../../13-Enterprise-Admin/how-long-do-you-store-personal-data.md).
 4.  Downloading batch results in the Console can be disabled on the organization level or on a per-workspace basis.
 
-### Can I use prompt caching in the Message Batches API?
+### Can I use prompt caching in the Message Batches API?
 
 Yes, it is possible to use prompt caching with the Message Batches API. However, because asynchronous batch requests can be processed concurrently and in any order, cache hits are provided on a best-effort basis.
 
 ## Availability
 
-Batch processing is available on every model.
+Batch processing
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Availability requirements for Batch processing are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+APIs  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+- Managed Agents Not supported
 
-StatusNot available
+Models  
+- All models
+
+Claude Platform on AWS
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
 
 ### Data handling
 

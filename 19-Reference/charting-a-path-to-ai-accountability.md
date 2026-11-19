@@ -37,7 +37,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=informed-lawmakers)
 
-This week, Anthropic submitted [a response](https://www-cdn.anthropic.com/257e6352c677beeffcbce24233211887173a41dc/2023.06.06-Anthropic_NTIA_Comment_v2.pdf) to the National Telecommunications and Information Administration’s (NTIA) [Request for Comment on AI Accountability](https://ntia.gov/issues/artificial-intelligence/request-for-comments). Today, we want to share our recommendations as they capture some of Anthropic’s core AI policy proposals.
+This week, Anthropic submitted [a response](anthropic-welcomes-this-opportunity-to-provide-feedback-to-the-national.md) to the National Telecommunications and Information Administration’s (NTIA) [Request for Comment on AI Accountability](https://ntia.gov/issues/artificial-intelligence/request-for-comments). Today, we want to share our recommendations as they capture some of Anthropic’s core AI policy proposals.
 
 There is currently no robust and comprehensive process for evaluating today’s advanced artificial intelligence (AI) systems, let alone the more capable systems of the future. Our submission presents our perspective on the processes and infrastructure needed to ensure AI accountability. Our recommendations consider the NTIA’s potential role as a coordinating body that sets standards in collaboration with other government agencies like the [National Institute of Standards and Technology (NIST)](an-ai-policy-tool-for-today-ambitiously-invest-in-nist.md).
 
@@ -72,4 +72,4 @@ We believe this set of recommendations will bring us meaningfully closer to esta
 
 We believe that AI could have transformative effects in our lifetime and we want to ensure that these effects are positive. The creation of robust AI accountability and auditing mechanisms will be vital to realizing this goal. We are grateful for the chance to respond to this Request For Comment.
 
-You can read our submission in full [here](https://www-cdn.anthropic.com/257e6352c677beeffcbce24233211887173a41dc/2023.06.06-Anthropic_NTIA_Comment_v2.pdf).
+You can read our submission in full [here](anthropic-welcomes-this-opportunity-to-provide-feedback-to-the-national.md).

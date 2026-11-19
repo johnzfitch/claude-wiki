@@ -2,8 +2,8 @@
 title: "Launch sessions from links - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/deep-links"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-06T06:26:36Z"
-last_modified: "Fri, 06 Nov 2026 05:16:37 GMT"
+fetched_at: "2026-11-13T06:34:55Z"
+last_modified: "Fri, 13 Nov 2026 06:20:55 GMT"
 tags: ["claude-code"]
 ---
 

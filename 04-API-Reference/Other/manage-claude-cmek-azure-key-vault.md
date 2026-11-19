@@ -2,7 +2,7 @@
 title: "Set up CMEK with Azure Key Vault - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-azure-key-vault"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:38Z"
+fetched_at: "2026-11-13T06:34:05Z"
 tags: ["api"]
 ---
 

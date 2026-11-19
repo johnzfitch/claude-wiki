@@ -2,7 +2,7 @@
 title: "Shopify Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/shopify"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:32Z"
+fetched_at: "2026-11-18T06:29:28Z"
 tags: ["case-studies", "claude-code", "rag"]
 ---
 
@@ -10,9 +10,11 @@ tags: ["case-studies", "claude-code", "rag"]
 
 [Contact sales](https://www.claude.com/contact-sales)
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [Shopify](https://www.shopify.com/) powers commerce for millions of businesses worldwide, from first-time entrepreneurs to enterprise brands. The platform makes it simple for anyone to start, run, and grow a business through online stores, brick-and-mortar locations, and everything in between.
 

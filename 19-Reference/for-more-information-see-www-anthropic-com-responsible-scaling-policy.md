@@ -2,7 +2,7 @@
 title: "For more information, see www.anthropic.com/responsible-scaling-policy​"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/28c6241900d90410628a8a2003a5572faae4365a.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:51Z"
+fetched_at: "2026-11-18T06:28:34Z"
 tags: ["news-research"]
 ---
 

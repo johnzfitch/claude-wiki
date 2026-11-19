@@ -2,7 +2,7 @@
 title: "Plugin Marketplaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugin_marketplaces"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-02T06:26:33Z"
+fetched_at: "2026-11-18T06:27:44Z"
 tags: ["api"]
 ---
 
@@ -26,11 +26,15 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/plugin_marketplaces
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
+
 List the plugin marketplaces Plugins live in, newest first: the organization's own and its members' personal ones.
 
 ##### [Get Plugin Marketplace](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/retrieve)
 
 GET/v1/organizations/plugin_marketplaces/{marketplace_id}
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Retrieve a plugin marketplace by ID.
 
@@ -38,17 +42,23 @@ Retrieve a plugin marketplace by ID.
 
 POST/v1/organizations/plugin_marketplaces/{marketplace_id}
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
+
 Set the default installation setting of one of the organization's own plugin marketplaces. Every Plugin in it without a setting of its own gets this default as its organization-wide setting, including Plugins added later.
 
 ##### [Validate Plugin Marketplace Repository](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/validate_repository)
 
 POST/v1/organizations/plugin_marketplaces/validate_repository
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
+
 Check whether a plugin marketplace held in a public GitHub repository would synchronize into claude.ai, without connecting or storing it.
 
 ##### [Validate Plugin Marketplace Archive](https://platform.claude.com/docs/en/api/http/beta/organization/plugin_marketplaces/validate_archive)
 
 POST/v1/organizations/plugin_marketplaces/validate_archive
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Check whether a plugin marketplace, uploaded as a `.zip` of the marketplace directory, would synchronize into claude.ai, without connecting or storing it.
 

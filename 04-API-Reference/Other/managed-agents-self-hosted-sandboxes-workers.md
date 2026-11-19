@@ -2,7 +2,7 @@
 title: "Deploy self-hosted workers - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-workers"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-03T06:23:36Z"
+fetched_at: "2026-11-18T06:27:34Z"
 tags: ["api", "hooks"]
 ---
 
@@ -23,21 +23,25 @@ Self-hosted workers
 Feature of  
 [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Managed AgentsAvailable
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 The [quickstart](managed-agents-self-hosted-sandboxes.md#quickstart) runs one `ant` CLI worker that polls continuously and runs every session in one process. This page covers the other ways to run a worker and how to choose among them.
 
@@ -241,7 +245,7 @@ A poller on the host claims work and calls your script once for each work item. 
 
     ``` shiki
     FROM your-base-image
-    ARG ANT_VERSION=2.5.0
+    ARG ANT_VERSION=2.11.0
     ARG TARGETARCH
     RUN ARCH=$([ "$TARGETARCH" = "arm64" ] && echo arm64 || echo amd64) && \
         curl -fsSL "https://github.com/anthropics/anthropic-cli/releases/download/v${ANT_VERSION}/ant_${ANT_VERSION}_linux_${ARCH}.tar.gz" \
@@ -483,29 +487,45 @@ Shared responsibility model for self-hosted sandbox environments.
 
 ## Availability
 
-Self-hosted workers are in beta on every model.
+Self-hosted workers
 
-### API support
+Cloud platform
 
-[Managed Agents](managed-agents-overview.md)
+Cloud platform: Claude API
 
-StatusBeta
+Availability requirements for Self-hosted workers are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Status  
+Beta
 
-### Required beta headers
+API  
+- Managed Agents
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Beta header  
+Requires
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+managed-agents-2026-04-01
 
-Header
+Models  
+- All models
 
-- `managed-agents-2026-04-01`
-  
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -519,8 +539,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

@@ -2,7 +2,7 @@
 title: "Partners | Claude by Anthropic"
 source_url: "https://www.claude.com/partners"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:26:45Z"
+fetched_at: "2026-11-18T06:29:34Z"
 tags: ["api", "connectors", "mcp"]
 ---
 

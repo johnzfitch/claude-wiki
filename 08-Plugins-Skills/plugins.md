@@ -2,8 +2,8 @@
 title: "Plugins overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:28Z"
-last_modified: "Sun, 08 Nov 2026 19:52:38 GMT"
+fetched_at: "2026-11-18T06:27:14Z"
+last_modified: "Wed, 18 Nov 2026 02:19:28 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -44,10 +44,7 @@ To try a plugin now, run `/plugin` in a Claude Code terminal session and install
 - [Create a plugin](plugins-create.md): build your own
 - [Decide whether you need a plugin](#decide-whether-you-need-a-plugin): whether a plugin is the right tool for what you want
 
-
-[​](#understand-what-a-plugin-is)
-
-Understand what a plugin is
+## [](#understand-what-a-plugin-is)Understand what a plugin is
 
 A plugin is a directory of components, usually with a manifest. The manifest, a JSON file at `.claude-plugin/plugin.json`, gives the plugin its name and can add a version, a description, and other [metadata](plugins-reference.md). The components are what the plugin adds to Claude Code, such as:
 
@@ -59,19 +56,13 @@ A plugin is a directory of components, usually with a manifest. The manifest, a 
 
 This diagram shows a plugin named `my-plugin` that holds a skill, an agent, hooks, and an MCP server, and what you get from each file once the plugin loads.
 
-For every component type a plugin can hold, with an example of each, see [Plugin components](plugins-components.md). To see where each piece is located in a plugin’s directory, use the [plugin explorer](plugins-components.md#explore-the-plugin-directory) on that page.
+For component types a plugin can hold, with an example of each, see [Plugin components](plugins-components.md). To see where each piece is located in a plugin’s directory, use the [plugin explorer](plugins-components.md#explore-the-plugin-directory) on that page.
 
-
-[​](#decide-whether-you-need-a-plugin)
-
-Decide whether you need a plugin
+### [](#decide-whether-you-need-a-plugin)Decide whether you need a plugin
 
 Skills, subagents, hooks, and MCP servers all work on their own, without a plugin. A skill you save in `~/.claude/skills/`, for example, is available in every project on your machine. To set one up on its own, see [Skills](skills.md), [Subagents](../09-Agents-Patterns/sub-agents.md), [Hooks](../07-Hooks/hooks-guide.md), or [MCP](../06-MCP-Tools/General/mcp.md). Use a plugin when you want several skills, subagents, hooks, or MCP servers packaged as one unit. Install one to get a setup someone else built, with one command and updates from its marketplace. Make one to give your own setup to teammates, install it in many projects, or publish versioned releases.
 
-
-[​](#what-an-enabled-plugin-adds-to-your-sessions)
-
-What an enabled plugin adds to your sessions
+### [](#what-an-enabled-plugin-adds-to-your-sessions)What an enabled plugin adds to your sessions
 
 An enabled plugin is part of every session, not only the sessions where you use it. That has a few consequences worth knowing before you install one:
 
@@ -85,10 +76,7 @@ You can check a plugin’s footprint at each stage:
 - **After you install**: [Measure what a plugin costs](plugins-measure.md#measure-what-a-plugin-costs) shows how to read a plugin’s footprint, and the **Installed** tab’s **Not used recently** group lists plugins you could turn off.
 - **To stop it without uninstalling**: disable the plugin with `/plugin` or, in your shell, `claude plugin disable`. See [Manage installed plugins](discover-plugins.md#manage-installed-plugins).
 
-
-[​](#get-plugins-from-a-marketplace)
-
-Get plugins from a marketplace
+## [](#get-plugins-from-a-marketplace)Get plugins from a marketplace
 
 A marketplace is a repository or directory with a `.claude-plugin/marketplace.json` file that lists plugins and where to fetch each one. It’s a catalog, not a hosted store. You add a marketplace once, then install plugins from it by name, such as `commit-commands@claude-plugins-official`.
 
@@ -98,10 +86,7 @@ Claude Code adds Anthropic’s official marketplace the first time you start an 
 
 [Install and manage plugins](discover-plugins.md#install-a-plugin) has the install steps for each place you run Claude Code. While you’re developing a plugin, you don’t need a marketplace: load it straight from its folder with `--plugin-dir`, as [Develop without a marketplace](plugins-create.md#develop-without-a-marketplace) shows.
 
-
-[​](#make-an-installed-plugin-available-in-your-session)
-
-Make an installed plugin available in your session
+### [](#make-an-installed-plugin-available-in-your-session)Make an installed plugin available in your session
 
 Before a plugin you installed gives you a skill you can run, it has to be present at each of these layers:
 
@@ -111,10 +96,7 @@ Before a plugin you installed gives you a skill you can run, it has to be presen
 
 Read [Plugin loading reference](plugins-loading.md) for the rules at each layer, including which settings file takes precedence and where the files are on disk.
 
-
-[​](#tell-anthropic’s-marketplaces-from-third-party-ones)
-
-Tell Anthropic’s marketplaces from third-party ones
+## [](#tell-anthropic’s-marketplaces-from-third-party-ones)Tell Anthropic’s marketplaces from third-party ones
 
 A marketplace’s name places it in one of three tiers. Claude Code accepts the official and community names only for marketplaces sourced from `github.com/anthropics/` repositories:
 
@@ -124,10 +106,7 @@ A marketplace’s name places it in one of three tiers. Claude Code accepts the 
 
 Whatever the tier, a plugin you install can run code with your user privileges. Read [Plugin security and trust](plugins-security.md) for how to review a plugin before you install it. Through [managed settings](../02-Claude-Code-CLI/settings.md#settings-files), an organization can allowlist or block marketplaces, force-install plugins, and turn off session-only loading. Read [Manage plugins for your organization](plugins-org.md) for those controls.
 
-
-[​](#understand-install-scopes)
-
-Understand install scopes
+## [](#understand-install-scopes)Understand install scopes
 
 When you install a plugin, you pick a scope, and the scope decides who the plugin is enabled for:
 
@@ -139,15 +118,12 @@ A plugin you install at user scope in the terminal, the desktop app’s local se
 
 The same plugin format also installs on claude.ai and in Cowork, where a different set of components loads. For those surfaces, see [Plugins on claude.ai and in Cowork](https://claude.com/docs/plugins/overview) on claude.com and its [component support table](https://claude.com/docs/plugins/platform-support#compare-component-support-by-app).
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 Most people start by installing a plugin from Anthropic’s official marketplace, which Claude Code adds the first time you start an interactive terminal session. Run `/plugin` in a terminal session to browse it, or follow [Install and manage plugins](discover-plugins.md), which also covers the desktop app and VS Code. To see what’s in that marketplace before you open Claude Code, browse [Claude Marketplace](https://claude.com/marketplace/plugins) on the web. To build your own, [Create a plugin](plugins-create.md) starts with an empty directory and ends with a working plugin. Once you’ve installed or built a plugin, these pages cover what comes next:
 
 - **Share what you built**: [Publish and distribute a plugin](plugins-publish.md), through your own marketplace or [Anthropic’s directory](plugins-publish.md#submit-to-anthropics-directory)
 - **Check whether it works and is used**: [Test plugins with evals](plugin-evals.md) and [Measure plugin cost and usage](plugins-measure.md)
-- **Run a marketplace for your team**: [Create a marketplace](plugin-marketplaces.md), then [Host and maintain a marketplace](plugins-host-marketplace.md)
+- **Run a marketplace for your team**: [Create a marketplace](plugins-create-marketplace.md), then [Host and maintain a marketplace](plugins-host-marketplace.md)
 - **Set plugin policy for an organization**: [Manage plugins for your organization](plugins-org.md)
 - **Fix a problem**: [Troubleshoot plugins](plugins-troubleshooting.md)

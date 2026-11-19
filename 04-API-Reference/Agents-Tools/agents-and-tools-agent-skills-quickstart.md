@@ -2,7 +2,7 @@
 title: "Get started with Agent Skills in the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:27Z"
+fetched_at: "2026-11-13T06:33:52Z"
 tags: ["agents", "api", "skills"]
 ---
 
@@ -59,7 +59,7 @@ You need a [client SDK](../Other/cli-sdks-libraries-overview.md) for your langua
     For Linux environments, download the release binary directly.
 
     ``` shiki
-    VERSION=2.6.0
+    VERSION=2.9.0
     OS=$(uname -s | tr '[:upper:]' '[:lower:]')
     case $(uname -m) in
       x86_64) ARCH=amd64 ;;
@@ -75,7 +75,7 @@ You need a [client SDK](../Other/cli-sdks-libraries-overview.md) for your langua
 
     go install
 
-    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+    You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
     ``` shiki
     go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -83,7 +83,7 @@ You need a [client SDK](../Other/cli-sdks-libraries-overview.md) for your langua
 
     
 
-    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+    `go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
     ``` shiki
     export PATH="$PATH:$(go env GOPATH)/bin"
@@ -142,7 +142,7 @@ curl (Linux/WSL)
 For Linux environments, download the release binary directly.
 
 ```python
-VERSION=2.6.0
+VERSION=2.9.0
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 case $(uname -m) in
   x86_64) ARCH=amd64 ;;
@@ -158,7 +158,7 @@ You can find all releases on the [GitHub releases page](https://github.com/anthr
 
 go install
 
-You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
 ```python
 go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -166,7 +166,7 @@ go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
 
 
 
-The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+`go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
 ```python
 export PATH="$PATH:$(go env GOPATH)/bin"

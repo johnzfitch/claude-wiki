@@ -2,7 +2,7 @@
 title: "Anthropic Education Report: The AI Fluency Index · Claude Academy"
 source_url: "https://www.anthropic.com/research/AI-fluency-index"
 category: "19-Reference"
-fetched_at: "2026-11-07T06:23:00Z"
+fetched_at: "2026-11-18T06:29:03Z"
 tags: ["news-research"]
 ---
 

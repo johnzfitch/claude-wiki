@@ -2,7 +2,7 @@
 title: "Reduce prompt leak - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-prompt-leak"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-11-05T06:37:21Z"
+fetched_at: "2026-11-13T06:36:55Z"
 tags: ["api", "prompting"]
 ---
 
@@ -36,7 +36,7 @@ Try monitoring techniques first, such as output screening and post-processing, t
 
 - **Separate context from queries:** You can try using system prompts to isolate key information and context from user queries. You can emphasize key instructions in the `User` turn, then reemphasize those instructions by prefilling the `Assistant` turn. (Note: prefilling is not supported on Claude 4.6 and later models and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md).)
 
-### Example: Safeguarding proprietary analytics
+### Example: Safeguarding proprietary analytics
 
 Notice that this system prompt is still predominantly a role prompt, which is the [most effective way to use system prompts](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#give-claude-a-role).
 

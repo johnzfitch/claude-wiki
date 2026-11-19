@@ -2,22 +2,10 @@
 title: "Agent SDK overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/overview"
 category: "05-Agent-SDK"
-fetched_at: "2026-09-22T06:29:36Z"
+fetched_at: "2026-11-13T06:33:24Z"
+last_modified: "Fri, 13 Nov 2026 06:20:10 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
-
-## On this page
-
-- [Compare the Agent SDK to other Claude tools](#compare-the-agent-sdk-to-other-claude-tools)
-- [Capabilities](#capabilities)
-- [Get started](#get-started)
-- [Changelog](#changelog)
-- [Report bugs](#report-bugs)
-- [Branding guidelines](#branding-guidelines)
-- [License and terms](#license-and-terms)
-- [Next steps](#next-steps)
-
-Agent SDK
 
 # Agent SDK overview
 
@@ -36,12 +24,12 @@ Compare the Agent SDK to other Claude tools
 
 The Agent SDK, the CLI, the Client SDK, and Managed Agents differ in who runs the agent, what comes built in, and how you reach it. Find the row that matches how you want to build and run yours.
 
-| You want to                                                                                      | Use                                                                               | What you get                                                                                                                                                                                                                                                                                                                                                                                  |
-|--------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Embed Claude Code’s agent in your own Python or TypeScript application, in a process you operate | **Agent SDK**                                                                     | A library that runs the Claude Code binary, with Claude Code’s [capabilities](#capabilities), such as built-in tools, permissions, sessions, and hooks.                                                                                                                                                                                                                                       |
-| Do interactive development or run one-off tasks from a terminal                                  | [**Claude Code CLI**](../01-Getting-Started/overview.md)                                          | The terminal interface, built for daily interactive use.                                                                                                                                                                                                                                                                                                                                      |
-| Call the Claude API directly from your own code                                                  | [**Client SDK**](../04-API-Reference/Other/cli-sdks-libraries-overview.md) | Direct access to the Claude API from any of the client SDK languages. You write the tool loop yourself, or let the client SDK’s beta [tool runner](https://code.claude.com/docs/en/04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner-8ab76faf78.md) drive it.                                                                                                                                                       |
-| Have Anthropic host the agent, configured through the Claude API                                 | [**Managed Agents**](https://code.claude.com/docs/en/04-API-Reference/Other/managed-agents-overview-b12cd03916.md) | A hosted agent harness that runs the agent loop, with sessions in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure. Use it from the [SDK for your language](https://code.claude.com/docs/en/04-API-Reference/Other/managed-agents-quickstart-841ac0c596.md#install-the-sdk), the `ant` CLI, or the REST API. |
+| You want to | Use | What you get |
+|----|----|----|
+| Embed Claude Code’s agent in your own Python or TypeScript application, in a process you operate | **Agent SDK** | A library that runs the Claude Code binary, with Claude Code’s [capabilities](#capabilities), such as built-in tools, permissions, sessions, and hooks. |
+| Do interactive development or run one-off tasks from a terminal | [**Claude Code CLI**](../01-Getting-Started/overview.md) | The terminal interface, built for daily interactive use. |
+| Call the Claude API directly from your own code | [**Client SDK**](../04-API-Reference/Other/cli-sdks-libraries-overview.md) | Direct access to the Claude API from any of the client SDK languages. You write the tool loop yourself, or let the client SDK’s beta [tool runner](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-tool-runner.md) drive it. |
+| Have Anthropic host the agent, configured through the Claude API | [**Managed Agents**](../04-API-Reference/Other/managed-agents-overview.md) | A hosted agent harness that runs the agent loop, with sessions in an Anthropic-managed cloud sandbox or a [self-hosted sandbox](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md) on your own infrastructure. Use it from the [SDK for your language](../04-API-Reference/Other/managed-agents-quickstart.md#install-the-sdk), the `ant` CLI, or the REST API. |
 
 To drive the same agent loop from a language other than Python or TypeScript, [run the CLI as a subprocess](../02-Claude-Code-CLI/headless.md) with the `-p` flag and `--output-format json`.
 
@@ -52,16 +40,16 @@ Capabilities
 
 These Claude Code capabilities are available in the SDK:
 
-| Capability                   | What it does                                                                                 | Learn more                                                                                                                                                                                                                         |
-|------------------------------|----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Built-in tools               | Read, write, edit files, run commands, and search the web                                    | [Tools reference](../02-Claude-Code-CLI/tools-reference.md)                                                                                                                                                                                        |
-| Hooks                        | Run custom code at key points in the agent lifecycle                                         | [Hooks](agent-sdk-hooks.md)                                                                                                                                                                                                  |
-| Subagents                    | Spawn specialized agents for focused subtasks                                                | [Subagents](agent-sdk-subagents.md)                                                                                                                                                                                          |
-| MCP                          | Connect external tools and data sources via the Model Context Protocol                       | [MCP](agent-sdk-mcp.md)                                                                                                                                                                                                      |
-| Permissions                  | Control which tools run automatically, which need approval                                   | [Permissions](agent-sdk-permissions.md)                                                                                                                                                                                      |
-| Sessions                     | Maintain context across exchanges, resume or fork later                                      | [Sessions](agent-sdk-sessions.md)                                                                                                                                                                                            |
+| Capability | What it does | Learn more |
+|----|----|----|
+| Built-in tools | Read, write, edit files, run commands, and search the web | [Tools reference](../02-Claude-Code-CLI/tools-reference.md) |
+| Hooks | Run custom code at key points in the agent lifecycle | [Hooks](agent-sdk-hooks.md) |
+| Subagents | Spawn specialized agents for focused subtasks | [Subagents](agent-sdk-subagents.md) |
+| MCP | Connect external tools and data sources via the Model Context Protocol | [MCP](agent-sdk-mcp.md) |
+| Permissions | Control which tools run automatically, which need approval | [Permissions](agent-sdk-permissions.md) |
+| Sessions | Maintain context across exchanges, resume or fork later | [Sessions](agent-sdk-sessions.md) |
 | Skills, commands, and memory | Load automatically from your project’s `.claude/` and from `~/.claude/`, same as Claude Code | [Skills](agent-sdk-skills.md), [Commands](agent-sdk-skills.md#commands-in-agent-sdk-sessions), [Memory](agent-sdk-modifying-system-prompts.md), [Configuration loading](agent-sdk-claude-code-features.md) |
-| Plugins                      | Package skills, agents, hooks, and MCP servers, and load them by local path                  | [Plugins](agent-sdk-plugins.md)                                                                                                                                                                                              |
+| Plugins | Package skills, agents, hooks, and MCP servers, and load them by local path | [Plugins](agent-sdk-plugins.md) |
 
 
 [​](#get-started)

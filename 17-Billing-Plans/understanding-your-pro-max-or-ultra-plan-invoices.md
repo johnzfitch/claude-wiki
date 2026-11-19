@@ -2,7 +2,7 @@
 title: "Understanding your Pro, Max, or Ultra plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607638-understanding-your-pro-max-or-ultra-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:33Z"
+fetched_at: "2026-11-18T06:28:04Z"
 tags: ["billing"]
 ---
 
@@ -54,9 +54,9 @@ You can also open any invoice from your account:
 
 The name and address on an invoice come from your payment method at the time the invoice was issued. To show a different name, such as a company name, check "Use a different name on invoices" when you add or update your payment method in **[Settings \> Billing](https://claude.ai/settings/billing)**.
 
-You can also add a tax or VAT ID. Learn more about **[adding a tax or VAT ID to your paid Claude account](add-or-update-your-paid-claude-accounts-tax-or-vat-id-claude-help-center.md)**.
+You can also add a tax or VAT ID. Learn more about **[adding a tax or VAT ID to your paid Claude account](https://support.claude.com/en/articles/9889408)**.
 
-For help updating your payment method or other billing details, see **[Paid plan billing FAQs](paid-plan-billing-faqs-claude-help-center.md)**.
+For help updating your payment method or other billing details, see **[Paid plan billing FAQs](https://support.claude.com/en/articles/8325618)**.
 
 Changes to your billing details apply to future invoices only. Once an invoice has been issued, we can't edit or reissue it.
 
@@ -80,4 +80,4 @@ Some subscribers pay their subscriptions using a different currency than the cur
 
 ### Where can I see my monthly API credits?
 
-In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.

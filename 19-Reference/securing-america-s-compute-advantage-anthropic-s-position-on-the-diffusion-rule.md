@@ -2,31 +2,27 @@
 title: "Anthropic's position on the diffusion rule \\ Anthropic"
 source_url: "https://www.anthropic.com/news/securing-america-s-compute-advantage-anthropic-s-position-on-the-diffusion-rule"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:56Z"
+fetched_at: "2026-11-14T06:25:58Z"
 tags: ["news-research"]
 ---
 
 # **Securing America's compute advantage: **Anthropic’s position on the diffusion rule
 
-[Read the submission here](https://www-cdn.anthropic.com/7449887b6715e3a35f362b1301e5b5d8a6b116e5.pdf)
+[Read the submission here](https://assets.claude.com/7449887b6715e3a35f362b1301e5b5d8a6b116e5.pdf)
 
-- Published
+Published  
+Apr 30, 2025
 
-  Apr 30, 2025
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Democratic lead](https://www.anthropic.com/search?topic=democratic-lead)
+- [National security](https://www.anthropic.com/search?topic=national-security)
+- [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+- [Government capacity](https://www.anthropic.com/search?topic=government-capacity)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Democratic lead](https://www.anthropic.com/search?topic=democratic-lead)
-  - [National security](https://www.anthropic.com/search?topic=national-security)
-  - [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-  - [Government capacity](https://www.anthropic.com/search?topic=government-capacity)
-
-  See more...
+See more...
 
 Related articles
 
@@ -38,7 +34,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=democratic-lead)
 
-In response to the Department of Commerce's "Framework for Artificial Intelligence Diffusion" interim final rule, Anthropic has [submitted detailed analysis and recommendations](https://www-cdn.anthropic.com/7449887b6715e3a35f362b1301e5b5d8a6b116e5.pdf) for maintaining and strengthening export controls on advanced semiconductors. At the heart of our recommendations is a clear message: maintaining America's compute advantage through export controls is essential for national security and economic prosperity as powerful new AI systems are developed in the coming years.
+In response to the Department of Commerce's "Framework for Artificial Intelligence Diffusion" interim final rule, Anthropic has [submitted detailed analysis and recommendations](https://assets.claude.com/7449887b6715e3a35f362b1301e5b5d8a6b116e5.pdf) for maintaining and strengthening export controls on advanced semiconductors. At the heart of our recommendations is a clear message: maintaining America's compute advantage through export controls is essential for national security and economic prosperity as powerful new AI systems are developed in the coming years.
 
 The "Diffusion Rule," published in January 2025, establishes export controls on advanced AI chips and model weights worldwide. The Diffusion Framework also creates a three-tier system based on national security risk. Tier 1 includes close allies with few restrictions, Tier 2 includes most other countries with some limits, and Tier 3 includes adversarial nations with strict controls.
 

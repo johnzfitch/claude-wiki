@@ -2,7 +2,7 @@
 title: "Users - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/users"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:33:32Z"
+fetched_at: "2026-11-14T06:25:25Z"
 tags: ["api"]
 ---
 
@@ -46,7 +46,87 @@ Update a member's organization role.
 
 Remove a member from the organization.
 
+##### [Sign Out User](https://platform.claude.com/docs/en/api/http/beta/organization/users/sign_out)
+
+POST/v1/organizations/users/{user_id}/sign_out
+
+Requires `anthropic-beta: ``admin-user-sign-out-2026-10-08`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
+
+Sign a member out of Claude everywhere, without removing them from the organization. This ends their sign-in sessions and removes their trusted devices wherever they use Claude, including other organizations and individual plans. It also ends the OAuth tokens issued to them for this organization, so apps such as Claude Code must sign in again.
+
 ##### Models
+
+
+
+BetaCannotSignOutManagedMemberErrorDetails object{ error_code }
+
+
+
+The member has the `managed` role, and this API key or token cannot sign them out. The error message says which keys and tokens can.
+
+error_code: "cannot_sign_out_managed_member"
+
+
+
+
+
+BetaCannotSignOutMembershipAdminErrorDetails object{ error_code }
+
+
+
+The member is a membership admin, and the person the API key or token belongs to is not allowed to sign out membership admins.
+
+error_code: "cannot_sign_out_membership_admin"
+
+
+
+
+
+BetaCannotSignOutOwnerErrorDetails object{ error_code }
+
+
+
+The member is an owner or has owner permissions, and this API key or token cannot sign them out. In a Claude Enterprise organization, an API key with the `write:members` scope can.
+
+error_code: "cannot_sign_out_owner"
+
+
+
+
+
+BetaCannotSignOutPrimaryOwnerErrorDetails object{ error_code }
+
+
+
+The member is the organization's primary owner, whom no API key or token can sign out.
+
+error_code: "cannot_sign_out_primary_owner"
+
+
+
+
+
+BetaCannotSignOutPrivilegedMemberErrorDetails object{ error_code }
+
+
+
+This OAuth token cannot sign out a membership admin or a member whose roles grant owner, user management, or identity and access management.
+
+error_code: "cannot_sign_out_privileged_member"
+
+
+
+
+
+BetaCannotSignOutSelfErrorDetails object{ error_code }
+
+
+
+The member is the user the API key or token belongs to.
+
+error_code: "cannot_sign_out_self"
+
+
 
 
 

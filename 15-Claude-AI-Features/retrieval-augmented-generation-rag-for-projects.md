@@ -2,7 +2,7 @@
 title: "Retrieval augmented generation (RAG) for projects | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11473015-retrieval-augmented-generation-rag-for-projects"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:10Z"
+fetched_at: "2026-11-18T06:27:50Z"
 tags: ["claude-ai", "rag"]
 ---
 

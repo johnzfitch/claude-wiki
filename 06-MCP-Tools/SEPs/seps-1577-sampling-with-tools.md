@@ -2,11 +2,14 @@
 title: "SEP-1577: Sampling With Tools - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/1577--sampling-with-tools"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-08-03T07:17:27Z"
+fetched_at: "2026-11-13T06:33:49Z"
+last_modified: "Fri, 13 Nov 2026 05:33:17 GMT"
 tags: ["mcp", "mcp-seps"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Abstract](#abstract)
 - [Motivation](#motivation)
@@ -36,16 +39,16 @@ FinalStandards Track
 
 This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not reflected here. Refer to the [current specification](https://modelcontextprotocol.io/specification/latest) and its changelog for authoritative requirements.
 
-| Field         | Value                                                                            |
-|---------------|----------------------------------------------------------------------------------|
-| **SEP**       | 1577                                                                             |
-| **Title**     | Sampling With Tools                                                              |
-| **Status**    | Final                                                                            |
-| **Type**      | Standards Track                                                                  |
-| **Created**   | 2025-09-30                                                                       |
-| **Author(s)** | Olivier Chafik ([@ochafik](https://github.com/ochafik))                          |
-| **Sponsor**   | None                                                                             |
-| **PR**        | [\#1577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1577) |
+| Field | Value |
+|----|----|
+| **SEP** | 1577 |
+| **Title** | Sampling With Tools |
+| **Status** | Final |
+| **Type** | Standards Track |
+| **Created** | 2025-09-30 |
+| **Author(s)** | Olivier Chafik ([@ochafik](https://github.com/ochafik)) |
+| **Sponsor** | None |
+| **PR** | [\#1577](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/1577) |
 
 ------------------------------------------------------------------------
 
@@ -62,7 +65,7 @@ This SEP introduces `tools` & `toolChoice` params to `sampling/createMessage` an
 Motivation
 
 - [Sampling](../Spec-Archive/2025-06-18-client-sampling.md) doesn’t support tool calling, although it’s a cornerstone of modern agentic behaviour. Without explicit support for it, MCP servers that use Sampling can either try and emulate tool calling w/ complex prompting / custom parsing of the outputs, or are limited to simpler, non-agentic requests. Adding support for tool calling could unlock many novel use cases in the MCP ecosystem.
-- Context inclusion is ambiguously defined (see [this doc](https://docs.google.com/document/d/1KUsloHpsjR4fdXdJuofb9jUuK0XWi88clbRm9sWE510/edit?tab=t.0#heading=h.edw7oyac2e87)): it makes it particularly tricky to fully implement sampling, which along with other precautions needed for sampling (unaffected by this SEP) may have contributed to [low adoption of the feature in clients](https://modelcontextprotocol.io/seps/General/mcp-clients.md#feature-support-matrix) (feature was introduced in the MCP Nov 2024 spec).
+- Context inclusion is ambiguously defined (see [this doc](https://docs.google.com/document/d/1KUsloHpsjR4fdXdJuofb9jUuK0XWi88clbRm9sWE510/edit?tab=t.0#heading=h.edw7oyac2e87)): it makes it particularly tricky to fully implement sampling, which along with other precautions needed for sampling (unaffected by this SEP) may have contributed to [low adoption of the feature in clients](../General/clients.md#feature-support-matrix) (feature was introduced in the MCP Nov 2024 spec).
 
 Please note some related work:
 
@@ -71,7 +74,7 @@ Please note some related work:
   - Deprecate `includeContext` (doc explains why its semantics are ambiguous)
   - (goes further to suggest explicit context sharing, which is out of scope from this proposal)
 - [Allow Prompt/Sampling Messages to contain multiple content blocks. \#198](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/198)
-  - In this PR we’ve made `{CreateMessageResult,SamplingMessage}.content` to accept a single content or an array of contents. The `result.content` change is backwards incompatible but is required to support parallel tool calls. The `SamplingMessage.content` change then makes it much more natural to write a tool loop (see example in reference implementation: [toolLoopSampling.ts](https://github.com/modelcontextprotocol/typescript-sdk/blob/ochafik/sep1577/src/examples/server/toolLoopSampling.ts))
+  - In this PR we’ve made `{CreateMessageResult,SamplingMessage}.content` to accept a single content or an array of contents. The `result.content` change is backwards incompatible but is required to support parallel tool calls. The `SamplingMessage.content` change then makes it much more natural to write a tool loop (see example in reference implementation: [toolLoopSampling.ts](https://github.com/modelcontextprotocol/typescript-sdk/blob/d372eff7a764c72619b15a9f31c2756fa402fa14/src/examples/server/toolLoopSampling.ts))
 
 In the “Possible Follow ups” Section below, we give examples of features that were kept out of scope from this SEP but which we took care to make this SEP reasonably compatible with.
 

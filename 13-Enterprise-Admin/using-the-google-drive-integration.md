@@ -2,11 +2,13 @@
 title: "Use Google Workspace connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10166901-using-the-google-drive-integration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:25:30Z"
+fetched_at: "2026-11-18T06:27:35Z"
 tags: ["connectors", "enterprise"]
 ---
 
 # Use Google Workspace connectors
+
+Updated today
 
 
 Connect your Gmail, Google Calendar, and Google Drive to Claude so you can search and send emails, manage your calendar, work with documents, and save files, all without leaving the conversation.
@@ -25,7 +27,7 @@ For Team and Enterprise plans, an Owner or Primary Owner must enable these conne
 
 - **Draft emails** with proper formatting and context
 
-- **Send, reply to, and forward emails** from Gmail. By default, Claude asks for your approval before each of these actions. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
+- **Send, reply to, and forward emails** from Gmail. By default, outside Auto mode, Claude asks for your approval before each of these actions. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
 
 - **Access email metadata**, including attachment metadata (not attachment content)
 
@@ -49,7 +51,7 @@ For Team and Enterprise plans, an Owner or Primary Owner must enable these conne
 
 - **Search and retrieve Google Docs** from your Drive.
 
-- **Share, move, and trash files** in Google Drive. By default, Claude asks for your approval before each of these actions. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
+- **Share, move, and trash files** in Google Drive. By default, outside Auto mode, Claude asks for your approval before each of these actions. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
 
 - **Look up file metadata** and preview directly without searching first.
 
@@ -81,7 +83,7 @@ These are separate connectors from Google Drive. Google Drive still handles sear
 
 ## How to use the connectors
 
-Ask Claude a question that requires access to your Gmail, Calendar, or Drive. Claude automatically detects which tools it needs and uses them to respond. By default, each action Claude takes on your behalf requires your explicit approval. On Team and Enterprise plans, owners decide whether members can allow certain actions to run without asking each time.
+Ask Claude a question that requires access to your Gmail, Calendar, or Drive. Claude automatically detects which tools it needs and uses them to respond. By default, outside Auto mode, each action Claude takes on your behalf requires your explicit approval. In **[Auto mode](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)**, these actions can run without asking you, unless an automated check flags them as risky or your organization requires approval. The check can miss risky actions. To approve them yourself, use Manual or set the tool's permission to **["Always ask"](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)** if that option is available. On Team and Enterprise plans, owners decide whether members can allow certain actions to run without asking each time.
 
 Claude's response includes citations indicating which emails, calendar events, or documents were used as sources, with links to the originals when available. You can ask follow-up questions to dig deeper into any source.
 
@@ -121,7 +123,7 @@ Google Docs added to chats and projects sync directly from Google Drive, so you'
 
 3.  The file opens in a pane next to the conversation, and you can keep working in it while Claude edits.
 
-    1.  The pane works on Claude on the web in Chrome, and on Claude Desktop when the **[built-in browser](../15-Claude-AI-Features/use-the-built-in-browser-in-claude-cowork-claude-help-center.md)** is turned on. If the pane isn't available, select “Open in Google” on the file card to open the file in your regular browser.
+    1.  The pane works on Claude on the web in Chrome, and on Claude Desktop when the **[built-in browser](https://support.claude.com/en/articles/16607400)** is turned on. If the pane isn't available, select “Open in Google” on the file card to open the file in your regular browser.
 
 4.  Use the pane header to copy the file's Google link or open it directly in Google.
 
@@ -163,9 +165,11 @@ Live editing uses separate Google Docs, Google Sheets, and Google Slides connect
 
 - Data is encrypted at rest and in transit.
 
+- Claude Meetings (beta) also uses your Google Calendar connection, and works differently from the above. See **[Use Claude Meetings](../15-Claude-AI-Features/use-claude-meetings.md)**.
+
 ### A note on Gmail permissions
 
-During authentication, Google's OAuth screen mentions email sending permissions. Claude can send, reply to, and forward emails, but only does so with your explicit approval by default. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
+During authentication, Google's OAuth screen mentions email sending permissions. Claude can send, reply to, and forward emails, but outside Auto mode only does so with your explicit approval by default. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
 
 ------------------------------------------------------------------------
 
@@ -255,7 +259,7 @@ The connector lets Claude change your file, and the pane needs its own Google se
 
 ### Can Claude send emails on my behalf?
 
-Yes. Claude can send, reply to, and forward emails from Gmail, and asks for your approval by default before each of these actions. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
+Yes. Claude can send, reply to, and forward emails from Gmail, and, outside Auto mode, asks for your approval by default before each of these actions. In **[Auto mode](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)**, these actions can run without asking you, unless an automated check flags them as risky or your organization requires approval. The check can miss risky actions. To approve them yourself, use Manual or set the tool's permission to **["Always ask"](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_c274f6c9b5)** if that option is available. On Team and Enterprise plans, owners decide whether members can allow these actions to run without asking each time.
 
 ### Can I opt out of using these connectors?
 

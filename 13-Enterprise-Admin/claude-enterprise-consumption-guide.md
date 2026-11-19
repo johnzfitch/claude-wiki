@@ -2,7 +2,7 @@
 title: "Claude Enterprise consumption guide | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14782391-claude-enterprise-consumption-guide"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:29Z"
+fetched_at: "2026-11-18T06:28:01Z"
 tags: ["enterprise"]
 ---
 
@@ -47,7 +47,7 @@ Think about groups in terms of job function and use case, not organizational hie
 
 - Limit group proliferation. More than 8–10 groups becomes hard to manage. Start with 4–6 and split only if usage patterns clearly diverge.
 
-- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only. Access is granted by the custom roles you assign to each group, and it only takes effect for members whose organization role is set to Custom. Members left on the built-in User role keep everything enabled org-wide. Groups can be created manually or synced from your identity provider. See **[Set up role-based permissions on Enterprise plans](../17-Billing-Plans/set-up-role-based-permissions-on-enterprise-plans.md)**.
+- Use groups to gate access to high-intensity surfaces. For example: only members of the "Engineering" group can access Claude Code; other users see Chat and Cowork only. Access is granted by the custom roles you assign to each group, and it only takes effect for members whose organization role is set to Custom. Members left on the built-in User role keep everything enabled org-wide. Groups can be created manually or synced from your identity provider. See **[Set up role-based permissions on Enterprise plans](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)**.
 
 - Assign group-level spend caps as a starting point, then override at the user level for outliers (e.g., a non-technical PM who needs Claude Code for a specific project).
 
@@ -135,17 +135,17 @@ Beyond guiding users toward the right model, you can set the model that new conv
 
 You have two options:
 
-- **Anthropic recommended** — automatically updates as new models ship, so your org always starts on our current recommended general-purpose model with no manual upkeep.
+- **Anthropic recommended** — automatically updates as new models ship, so your org always starts on our current recommended model for each product with no manual upkeep. Today, that's Sonnet in chat and the unified Claude experience, and Opus in Claude Code and Claude Cowork.
 
 - **Choose your own** — sets a specific model as the org default and holds it there until you change it. Use this when you want to standardize on a known model for consumption predictability (for example, defaulting to Opus and giving Fable to the roles that do the hardest work).
 
-This setting applies to new conversations in chat, Claude Cowork, Claude Code (CLI 2.1.199 or later), and Claude for Microsoft 365. If the selected model isn't available in a product, Anthropic's recommended default is used. If you also pin a model for Claude Code through managed settings, that setting takes precedence for the CLI and IDE. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization)**.
+This setting applies to new conversations in chat, Claude Cowork, the unified Claude experience, Claude Code (CLI 2.1.199 or later), and Claude for Microsoft 365. If the selected model isn't available in a product, Anthropic's recommended default is used. If you also pin a model for Claude Code through managed settings, that setting takes precedence for the CLI and IDE. See **[Set a default model for your organization](set-a-default-model-for-your-organization.md)**.
 
 **Sticky defaults - always start with the default model and effort level.** By default, the model picker is sticky: new conversations start on whatever model a member last used. To change that, turn on **Always start with the default model and effort level** in **Organization settings \> Models**. Every new conversation then starts on the org's default model and default effort level. Members can still change both within a conversation.
 
-Sticky defaults upgrade automatically. When a launch changes the default model, the sticky model moves to the new default, so no one is left on an older model. Roles that set their own default model have the same switch in the role editor. It works in chat, Claude Cowork, Claude Code, Claude for Microsoft 365, Claude Design, and Claude Science. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization)**.
+Sticky defaults upgrade automatically. When a launch changes the default model, the sticky model moves to the new default, so no one is left on an older model. Roles that set their own default model have the same switch in the role editor. It works in chat, Claude Cowork, Claude Code, Claude for Microsoft 365, Claude Design, and Claude Science. See **[Set a default model for your organization](set-a-default-model-for-your-organization.md)**.
 
-To follow the recommended configuration above, set defaults by role through Custom Roles. For example, you might make Claude Opus the org default and Claude Fable the default for your research and analysis roles. This builds on the RBAC groups you've already set up (see **Role-based access controls** above).
+You can also set defaults by role through Custom Roles. For example, you might make Claude Opus the org default and Claude Fable the default for your research and analysis roles. This builds on the RBAC groups you've already set up (see **Role-based access controls** above).
 
 **How to configure:** **Organization settings \> Models** for the org default. For role defaults, go to **Organization settings \> Roles \> select a role \> Models tab**.
 
@@ -163,27 +163,27 @@ If a member belongs to multiple groups with different custom roles, access is **
 
 Beyond restricting which models a role can use, you can cap the **maximum effort level** members on that role can select per model — a more granular version of the effort guidance already covered above. You can also set an effort cap for the whole organization, which is the highest level any role can allow. If a member has multiple roles, the highest effort cap across those roles wins.
 
-You can also set a **default effort level** for a role's default model, so new conversations start at the level you choose, either Anthropic's recommended default or a specific level. The default can't be higher than the effort cap for that model. See **[Set a default model for your organization](https://support.claude.com/en/articles/15330088-set-a-default-model-for-your-organization?utm_source=it&utm_medium=email&utm_campaign=2026_Q3_PMM_MKTG_EntAdmin_Newsletter_Sept16&utm_term=ent_admins&utm_content=inline_link&campaign=19893371#h_d5373c4106)** to learn more.
+You can also set a **default effort level** for a role's default model, so new conversations start at the level you choose, either Anthropic's recommended default or a specific level. The default can't be higher than the effort cap for that model. See **[Set a default model for your organization](set-a-default-model-for-your-organization.md#h_d5373c4106)** to learn more.
 
 **Where this applies**
 
-Model access and effort restrictions are enforced across most Claude products, including chat (web, desktop, mobile), Claude Cowork, and Claude Code (CLI 2.1.199 or later—earlier versions still show restricted options but requests using them are rejected). Claude in Chrome and Claude Security don't support this yet. For the current list of supported products, see **[Manage model access for your organization](manage-model-access-for-your-organization-claude-help-center.md)**.
+Model access and effort restrictions are enforced across most Claude products, including chat (web, desktop, mobile), Claude Cowork, and Claude Code (CLI 2.1.199 or later—earlier versions still show restricted options but requests using them are rejected). Claude in Chrome and Claude Security don't support this yet. For the current list of supported products, see **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**.
 
-**How to configure:** **Organization settings \> Roles \> select a role \> Models tab**. Set model access, an optional effort cap per model, an optional role-level default model, default effort level, and the **Always start with the default model and effort level** switch. To manage configuration across the org, go to **Organization settings \> Models**. More details in **[Manage model access for your organization](manage-model-access-for-your-organization-claude-help-center.md)**.
+**How to configure:** **Organization settings \> Roles \> select a role \> Models tab**. Set model access, an optional effort cap per model, an optional role-level default model, default effort level, and the **Always start with the default model and effort level** switch. To manage configuration across the org, go to **Organization settings \> Models**. More details in **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**.
 
 ### Admin configuration recommendations
 
 - If you have high-volume, low-complexity workflows (e.g., summarizing support tickets, generating first-draft emails), evaluate whether Haiku is a better fit—it can significantly reduce consumption for these use cases.
 
-- Periodically audit which models your users are actually selecting. If most of your consumption is on Opus, that's a signal that your model guidance isn't landing.
+- Periodically audit which models your users are actually selecting. If usage is far from your defaults, check whether your model guidance is landing.
 
 ### What to tell your users about model choice
 
-**Sonnet is your daily driver.** It's fast, highly capable, and is designed for the vast majority of tasks—writing, analysis, coding help, and Q&A.
+**Sonnet is** **for everyday work.** It's fast, highly capable, and is designed for well-scoped tasks—writing, analysis, and Q&A.
 
-**Opus is for the harder, more complex work.** Use it when you're working on a genuinely complex multi-step problem, or when quality matters more than speed.
+**Opus is for the harder, more complex work, including coding and agentic tasks.** Use it when you're working on a genuinely complex multi-step problem, or when quality matters more than speed.
 
-**When in doubt, start with Sonnet.** You can always switch the model mid conversation to Opus if you need more depth.
+**When in doubt, start with** **your organization's default.** The Anthropic recommended default is Sonnet in chat and the unified Claude experience, and Opus in Claude Code and Claude Cowork**.** You can always switch the model mid conversation if you need more depth.
 
 ------------------------------------------------------------------------
 
@@ -197,7 +197,7 @@ A few ways you can use organization instructions to manage consumption and usage
 
 - **Point users to internal resources.** Reference your team's wiki, best-practices docs, or usage guidelines directly in the preference. Claude will surface them when relevant—steering users toward the right internal context instead of reinventing it each time.
 
-- **Reinforce model selection norms.** Remind Claude (and by extension, users) that Sonnet is the default and Opus is reserved for specific workflows. This complements user education without requiring everyone to internalize it up front.
+- **Reinforce model selection norms.** Remind Claude (and by extension, users) which model is your default and which workflows need a different one. This complements user education without requiring everyone to internalize it up front.
 
 ------------------------------------------------------------------------
 
@@ -227,7 +227,7 @@ If you need a one-off detailed breakdown, you can export a per-user, per-model s
 
 ### Spend by project (beta)
 
-Eligible organizations can add project tags, such as a WBS code or client-matter number, to see spend by tag in **Organization settings \> Usage \> Spend by project**. Project tags only work inside projects, and not every Claude product is covered. Tag names and values are visible to all users in your organization, and amounts may not match your invoice. Learn more about **[tracking spend by cost code with project tags](../15-Claude-AI-Features/track-spend-by-project-with-tags.md)**.
+Eligible organizations can add project tags, such as a WBS code or client-matter number, to see spend by tag in **Organization settings \> Usage \> Spend by project**. Project tags only work inside projects, and not every Claude product is covered. Tag names and values are visible to all users in your organization, and amounts may not match your invoice. Learn more about **[tracking spend by cost code with project tags](https://support.claude.com/en/articles/18251257-track-spend-by-project-with-tags)**.
 
 ### Analytics chat
 
@@ -251,7 +251,7 @@ This is useful for the same per-skill ROI questions above, just broken down by i
 
 For organizations managing limits across many groups, the **[Admin API](claude-enterprise-admin-api-reference-guide.md)** moves cost-control workflows into scripts — automating increase-request reviews, flagging members near their limits, and surfacing rapidly changing usage at scale. The API reads every member's effective limit and month-to-date spend and sets or clears per-user overrides. Group, seat-type, org-level limits, and pooled group budgets are still configured in Organization settings. The Admin API's user-management endpoints (currently in beta for Enterprise organizations) also let you create groups, add or remove members, and read your custom roles programmatically. See **[User management](../04-API-Reference/Other/manage-claude-user-management.md)**.
 
-The Admin API can also list project tags (beta), add values to a tag's list, and set a project's tags. Learn more about **[tracking spend by cost code with project tags](../15-Claude-AI-Features/track-spend-by-project-with-tags.md)**.
+The Admin API can also list project tags (beta), add values to a tag's list, and set a project's tags. Learn more about **[tracking spend by cost code with project tags](https://support.claude.com/en/articles/18251257-track-spend-by-project-with-tags)**.
 
 ### Spend-threshold alerts
 
@@ -283,7 +283,7 @@ For consumption management, focus on these sections:
 
 Smart reports are designed to help you understand adoption and plan investment, not to evaluate individual performance. For availability, setup, and how to create and share reports, see **[Get started with smart reports](../15-Claude-AI-Features/get-started-with-smart-reports.md)**.
 
-### Surveys (beta)
+### Surveys
 
 You can run a short survey inside Claude to learn what people use Claude for, what it's worth to them, and where they're stuck. Then compare their answers with your spend data.
 
@@ -319,7 +319,7 @@ When you onboard users, share the following:
 
 **How to choose a model**
 
-- Sonnet is the default and handles most tasks well. Use Opus only when Sonnet isn't getting you where you need to go.
+- Sonnet handles most everyday tasks well. Use Opus for complex, multi-step work, such as coding.
 
 - Your org has a default model set for new conversations; you can still pick a different model. Choose it at the start of a task.
 
@@ -341,4 +341,4 @@ When you onboard users, share the following:
 
 - **[Anthropic Academy](https://www.anthropic.com/learn)**
 
-- **[Change the model, effort, and thinking settings](../15-Claude-AI-Features/change-the-model-effort-and-thinking-settings.md)**
+- **[Change the model, effort, and thinking settings](https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings)**

@@ -1,8 +1,8 @@
 ---
 title: "How do Anthropic-hosted browsers identify themselves when they browse the web on a user's behalf? | Claude Help Center"
-source_url: "https://support.claude.com/en/articles/18234133-how-do-anthropic-hosted-browsers-identify-themselves-when-they-browse-the-web-on-a-user-s-behalf"
+source_url: "https://support.claude.com/en/articles/18234133"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:12Z"
+fetched_at: "2026-11-18T06:28:10Z"
 tags: ["agents", "claude-ai"]
 ---
 

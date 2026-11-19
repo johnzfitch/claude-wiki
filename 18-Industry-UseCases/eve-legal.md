@@ -2,7 +2,7 @@
 title: "Eve Legal Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/eve-legal"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:02Z"
+fetched_at: "2026-11-18T06:28:54Z"
 tags: ["api", "case-studies"]
 ---
 

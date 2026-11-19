@@ -2,7 +2,7 @@
 title: "Fast mode - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/fast-mode"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:02Z"
+fetched_at: "2026-11-13T06:36:24Z"
 tags: ["api"]
 ---
 
@@ -20,17 +20,23 @@ Get up to 2.5x higher output tokens per second from supported Claude models.
 
 Fast mode
 
+[Models](#feature-availability)  
+- Claude Fable 5.2Includes Mythos
+- Claude Opus 5.5
+- Limited support for other models; see details
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryHosted on AzureAvailable
-
-[Beta header](#feature-beta-headers)  
-Varies; see details
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Models on Google CloudAnthropic managed
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Usage differs by product
 
@@ -42,7 +48,7 @@ Set `speed: "fast"` on the request.
 
 Set `speed` on the agent’s model object, for example `{"id": "claude-opus-5-5", "speed": "fast"}`.
 
-Fast mode delivers up to 2.5x higher output tokens per second at premium pricing. Set `speed: "fast"` on your request to opt in. Fast mode is available on Claude Opus 5.5 and in research preview on Claude Opus 5 and Claude Opus 4.8.
+Fast mode delivers up to 2.5x higher output tokens per second at premium pricing. Set `speed: "fast"` on your request to opt in. Fast mode is available on Claude Fable 5.2, Claude Mythos 5.2, and Claude Opus 5.5. Fast mode is in research preview on Claude Opus 5 and deprecated on Claude Opus 4.8.
 
 ## How fast mode works
 
@@ -95,11 +101,21 @@ for block in response.content:
         print(block.text)
 ```
 
+On [Claude in Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md), fast mode has its own model IDs, and the deployment sets the speed. Send fast mode requests to a deployment of the fast mode model, and leave out `speed`:
+
+| Model             | Fast mode model ID       |
+|:------------------|:-------------------------|
+| Claude Fable 5.2  | `claude-fable-5-2-fast`  |
+| Claude Mythos 5.2 | `claude-mythos-5-2-fast` |
+| Claude Opus 5.5   | `claude-opus-5-5-fast`   |
+
+A request that sets `speed` on a deployment of the standard model, such as `claude-opus-5-5`, returns an error.
+
 ## Rate limits
 
-Fast mode has a dedicated rate limit that is separate from standard Opus rate limits. When your fast mode rate limit is exceeded, the API returns a `429` error with a `retry-after` header indicating when capacity will be available.
+Fast mode has a dedicated rate limit that is separate from standard rate limits. When you exceed your fast mode rate limit, the API returns a `429` error with a `retry-after` header that says when capacity is available. On [Claude Models on Google Cloud (Google managed)](build-with-claude-claude-models-on-google-cloud-google-managed.md#rate-limits), Google Cloud manages rate limits and quotas.
 
-Claude Opus 5.5 has a default fast mode rate limit in the Start, Build, and Scale [usage tiers](../Endpoints/rate-limits.md), so you don’t need to request access to use fast mode with it. Organizations in the Evaluation tier can use fast mode with Claude Opus 5.5 once they move to the Start, Build, or Scale tier.
+Claude Fable 5.2, Claude Mythos 5.2, and Claude Opus 5.5 have a default fast mode rate limit. The default limit applies in the Start, Build, and Scale [usage tiers](../Endpoints/rate-limits.md). You don’t need to request fast mode access for these models. Organizations in the Evaluation tier can use fast mode with these models once they move to the Start, Build, or Scale tier.
 
 The response includes headers that indicate your fast mode rate limit status:
 
@@ -116,7 +132,7 @@ To see your fast mode rate limits, go to the [Rate limits](../Other/playground.m
 
 ## Checking which speed was used
 
-The response `usage` object includes a `speed` field that indicates which speed was used, either `"fast"` or `"standard"`. Requesting `speed: "fast"` on a [model that doesn’t support fast mode](#availability-feature-support) returns an error, and so does exceeding fast mode’s rate limits or capacity (a `429` or `529`). When a request with `speed: "fast"` succeeds, `usage.speed` is `"fast"`. Claude Opus 4.6 is an exception: instead of returning an error, a request with `speed: "fast"` and the `fast-mode-2026-02-01` beta header succeeds, but runs at standard speed. This behavior is correctly reflected in `usage.speed`, which shows `"standard"` in this situation. On Claude Models on Google Cloud (Anthropic managed), a Claude Opus 4.6 request with `speed: "fast"` returns a `400` error even with the header.
+The response `usage` object includes a `speed` field that indicates which speed was used, either `"fast"` or `"standard"`. Requesting `speed: "fast"` on a [model that doesn’t support fast mode](#feature-availability) returns an error, and so does exceeding fast mode’s rate limits or capacity (a `429` or `529`). When a request with `speed: "fast"` succeeds, `usage.speed` is `"fast"`. Claude Opus 4.6 is an exception: instead of returning an error, a request with `speed: "fast"` and the `fast-mode-2026-02-01` beta header succeeds, but runs at standard speed. In this situation, `usage.speed` shows `"standard"`. On Claude Models on Google Cloud (Anthropic managed), a Claude Opus 4.6 request with `speed: "fast"` returns a `400` error even with the header.
 
 cURL
 
@@ -177,17 +193,17 @@ To track fast mode usage and costs across your organization, see the [Usage and 
 
 ### Automatic retries
 
-The SDK automatically retries fast mode `429` errors up to 2 times by default (configurable with `max_retries`), waiting for the delay in the `retry-after` header before each retry. Because fast mode uses continuous token replenishment, the `retry-after` delay is typically short and requests succeed once capacity is available.
+The SDK automatically retries fast mode `429` errors up to two times by default (configurable with `max_retries`), waiting for the delay in the `retry-after` header before each retry. Because fast mode uses continuous token replenishment, the `retry-after` delay is typically short and requests succeed once capacity is available.
 
 ### Falling back to standard speed
 
-If you’d prefer to fall back to standard speed rather than wait for fast mode capacity, catch the rate limit error and retry without `speed: "fast"`. Set `max_retries` to `0` on the initial fast request to skip automatic retries and fail immediately on rate limit errors.
+If you’d prefer to fall back to standard speed rather than wait for fast mode capacity, catch the rate limit error and retry without `speed: "fast"`. On Claude in Microsoft Foundry, the deployment sets the speed, so retry on a deployment of the standard model instead. Set `max_retries` to `0` on the initial fast request to skip automatic retries and fail immediately on rate limit errors.
 
 
 
 Falling back from fast to standard speed results in a [prompt cache](build-with-claude-prompt-caching.md) miss. Requests at different speeds do not share cached prefixes.
 
-Because setting `max_retries` to `0` also disables retries for other transient errors (overloaded, internal server errors), the following examples reissue the original request with default retries for those cases.
+Because setting `max_retries` to `0` also disables retries for other transient errors (overloaded, internal server errors), the following examples resend the request after those errors.
 
 Python
 
@@ -248,10 +264,12 @@ message = create_message_with_fast_fallback(
 
 ## Pricing
 
-Fast mode is priced at a multiplier on standard rates across the full context window, including requests over 200k input tokens.
+Fast mode is priced at a multiplier on standard rates across the full context window, including requests over 200k input tokens. On Claude Models on Google Cloud (Google managed), Google Cloud sets fast mode prices. See [Cloud platform pricing](../../17-Billing-Plans/about-claude-pricing.md#cloud-platform-pricing).
 
 | Model                           | Input           | Output          |
-|:--------------------------------|:----------------|:----------------|
+|---------------------------------|-----------------|-----------------|
+| Claude Fable 5.2                | \$16 USD / MTok | \$80 USD / MTok |
+| Claude Mythos 5.2               | \$16 USD / MTok | \$80 USD / MTok |
 | Claude Opus 5.5                 | \$8 USD / MTok  | \$40 USD / MTok |
 | Claude Opus 5 / Claude Opus 4.8 | \$10 USD / MTok | \$50 USD / MTok |
 
@@ -264,89 +282,80 @@ For complete pricing details, see the [Pricing](../../17-Billing-Plans/about-cla
 
 ## Availability
 
-Fast mode is available or in research preview on select models and eligible for zero data retention and HIPAA readiness.
-
-### API support
-
 Fast mode is available only on the following models. If you were using fast mode on an earlier model, [migrate to a model that supports fast mode](../../20-Models/models-opus-5-5-migration-guide.md).
 
 To access fast mode on Claude Opus 5, contact your account manager or [join the waitlist](https://claude.com/fast-mode).
 
-
+Fast mode
 
-Fast mode on Claude Opus 4.8 is deprecated and will be removed on November 30, 2026. After removal, requests to `claude-opus-4-8` with `speed: "fast"` will return an error. To continue using fast mode, migrate to Claude Opus 5.5. See [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8).
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Set `speed: "fast"` on the request.
+APIs  
+- Messages API
+- Managed AgentsOnly with Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8
 
-StatusAvailable
+Models  
+- Claude Fable 5.2
+- Claude Mythos 5.2
+- Claude Opus 5.5
+- 
+  Claude Opus 5
+  Research preview,
+  requires
+  fast-mode-2026-02-01
+- 
+  Claude Opus 4.8
+  Deprecated,
+  requires
+  fast-mode-2026-02-01
 
-Cloud platforms
+Removal date: November 30, 2026. After removal, requests to `claude-opus-4-8` with `speed: "fast"` will return an error. To continue using fast mode, migrate to Claude Opus 5.5. See [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8).
 
-- Claude API
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)Hosted on Azure
+Claude Models on Google Cloud (Anthropic managed)
 
-Models
+API  
+- Messages API
 
-- [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
+Models  
+- Claude Fable 5.2
+- Claude Mythos 5.2
+- Claude Opus 5.5
 
-StatusResearch preview
+Claude Models on Google Cloud (Google managed)
 
-Cloud platforms
+API  
+- Messages API
 
-- Claude API
+Models  
+- Claude Fable 5.2
+- Claude Mythos 5.2
 
-Models
+Microsoft Foundry (hosted on Azure)
 
-- [Claude Opus 5](../../20-Models/models-opus-5-overview.md)
-- [Claude Opus 4.8](../../20-Models/models-opus-4-8-overview.md)
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Model  
+- Claude Opus 5.5
 
-Usage
+Note  
+On Microsoft Foundry, fast mode has its own model IDs, which end in `-fast`. Send requests to a deployment of the fast mode model, and leave out `speed`.
 
-Set `speed` on the agent’s model object, for example `{"id": "claude-opus-5-5", "speed": "fast"}`.
+Microsoft Foundry (hosted on Anthropic)
 
-StatusAvailable
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- Claude Fable 5.2
+- Claude Mythos 5.2
 
-- Claude API
-
-Models
-
-- [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
-
-StatusResearch preview
-
-Cloud platforms
-
-- Claude API
-
-Models
-
-- [Claude Opus 5](../../20-Models/models-opus-5-overview.md)
-- [Claude Opus 4.8](../../20-Models/models-opus-4-8-overview.md)
-
-### Required beta headers
-
-[Beta headers overview](../Endpoints/beta-headers.md)
-
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
-
-Header
-
-- `fast-mode-2026-02-01`
-  
-
-Models
-
-- [Claude Opus 5](../../20-Models/models-opus-5-overview.md)
-- [Claude Opus 4.8](../../20-Models/models-opus-4-8-overview.md)
+Note  
+On Microsoft Foundry, fast mode has its own model IDs, which end in `-fast`. Send requests to a deployment of the fast mode model, and leave out `speed`.
 
 ### Data handling
 

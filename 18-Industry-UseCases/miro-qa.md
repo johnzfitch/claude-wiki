@@ -2,7 +2,7 @@
 title: "Miro Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/miro-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:09Z"
+fetched_at: "2026-11-18T06:29:05Z"
 tags: ["case-studies"]
 ---
 
@@ -115,6 +115,9 @@ And don’t let a lack of control paralyze you. Early on, I was actually afraid 
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -122,6 +125,3 @@ And don’t let a lack of control paralyze you. Early on, I was actually afraid 
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

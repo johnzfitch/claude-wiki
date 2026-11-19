@@ -48,7 +48,7 @@ Opus 4.1 advances our state-of-the-art coding performance to 74.5% on [SWE-bench
 
 ### Getting started
 
-We recommend upgrading from Opus 4 to Opus 4.1 for all uses. If you’re a developer, simply use `claude-opus-4-1-20250805` via the API. You can also explore our [system card](../15-Claude-AI-Features/claude-opus-4-1-system-card.md), [model page](../15-Claude-AI-Features/claude-opus.md), [pricing page](https://www.anthropic.com/pricing#api), and [docs](../20-Models/about-claude-models-overview.md) to learn more.
+We recommend upgrading from Opus 4 to Opus 4.1 for all uses. If you’re a developer, simply use `claude-opus-4-1-20250805` via the API. You can also explore our [system card](updated-section-6-3-to-acknowledge-partners-that-we-worked-with-to-develop.md), [model page](../15-Claude-AI-Features/claude-opus.md), [pricing page](https://www.anthropic.com/pricing#api), and [docs](../20-Models/about-claude-models-overview.md) to learn more.
 
 As always, your [feedback](mailto:%20feedback@anthropic.com) helps us improve, especially as we continue to release new and more capable models.
 

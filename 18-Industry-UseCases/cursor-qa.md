@@ -2,7 +2,7 @@
 title: "Cursor Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/cursor-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:00Z"
+fetched_at: "2026-11-18T06:28:51Z"
 tags: ["agents", "case-studies"]
 ---
 
@@ -87,6 +87,9 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -94,6 +97,3 @@ Learn when to use Haiku, Sonnet, or Opus to get better results and stay inside y
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

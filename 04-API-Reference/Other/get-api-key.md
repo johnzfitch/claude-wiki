@@ -2,7 +2,7 @@
 title: "Get your Claude API key - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/get-api-key"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:59Z"
+fetched_at: "2026-11-13T06:35:01Z"
 tags: ["api"]
 ---
 
@@ -70,7 +70,7 @@ To make your first request, follow the [Quickstart](../../01-Getting-Started/get
 
 ## API keys and the Admin API
 
-The [Admin API](../Endpoints/organization.md) includes endpoints for managing your organization’s API keys programmatically, such as [Retrieve API Key](../Endpoints/organization-api-keys-retrieve.md) and [List API Keys](../Endpoints/organization-api-keys-list.md). These endpoints are for organization admins automating key management. They accept an [Admin API key](manage-claude-admin-api-keys.md), an OAuth token with the `org:admin` scope, or a personal or service account key that isn’t scoped to a specific workspace; workspace keys don’t work there. They never return a key’s secret value, only a partially redacted hint.
+The [Admin API](../Endpoints/organization.md) includes endpoints for managing your organization’s API keys programmatically, such as [Retrieve API Key](../Endpoints/organization-api-keys-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. and [List API Keys](../Endpoints/organization-api-keys-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. These endpoints are for organization admins automating key management. They accept an [Admin API key](manage-claude-admin-api-keys.md), an OAuth token with the `org:admin` scope, or a personal or service account key that isn’t scoped to a specific workspace; workspace keys don’t work there. They never return a key’s secret value, only a partially redacted hint.
 
 
 

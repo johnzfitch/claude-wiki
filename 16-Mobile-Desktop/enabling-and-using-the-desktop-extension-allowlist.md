@@ -2,7 +2,7 @@
 title: "Enabling and using the desktop extension allowlist | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12592343-enabling-and-using-the-desktop-extension-allowlist"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:52Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["desktop"]
 ---
 

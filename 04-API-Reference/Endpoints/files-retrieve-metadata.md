@@ -2,7 +2,7 @@
 title: "Get File Metadata - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/files/retrieve_metadata"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-07T06:23:17Z"
+fetched_at: "2026-11-15T06:23:30Z"
 tags: ["api"]
 ---
 

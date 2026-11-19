@@ -2,7 +2,7 @@
 title: "Detecting and countering misuse of AI: September 2026"
 source_url: "https://www-cdn.anthropic.com/e50be2e51e7695dc4b1366a37a245a597377d3b5/Anthropic-Detecting-and-countering-091026.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-12T06:31:31Z"
+fetched_at: "2026-11-18T06:28:55Z"
 tags: ["news-research"]
 ---
 

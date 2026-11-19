@@ -2,11 +2,14 @@
 title: "Example settings files - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/settings-example"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-22T06:28:08Z"
+fetched_at: "2026-11-15T06:24:12Z"
+last_modified: "Sat, 14 Nov 2026 19:07:40 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Your own settings](#your-own-settings)
 - [A team’s shared settings](#a-teams-shared-settings)
@@ -30,10 +33,7 @@ This page holds three example `settings.json` files, one for each place you save
 
 Each one is a plausible file for that reader, so you can see the shape and copy the parts you want. None of them is a recommended baseline. Every value comes from the key’s entry on the [settings reference](settings-reference.md), which has its type, default, and where it can be set. Each example has two tabs. **Copyable settings file** is the file as you’d save it. **What each key does** is the same file with a comment above each key; Claude Code doesn’t accept comments in a settings file, so copy from the first tab.
 
-
-[​](#your-own-settings)
-
-Your own settings
+## [](#your-own-settings)Your own settings
 
 One developer’s personal settings. It picks a model and effort, adjusts the terminal, and pre-approves a read-only command and one file read. Everything not listed keeps its default. A file like this goes in `~/.claude/settings.json`, where it applies to every project you open.
 
@@ -111,10 +111,7 @@ The same file with a comment above each key. Read it here; copy from the other t
 }
 ```
 
-
-[​](#a-teams-shared-settings)
-
-A team’s shared settings
+## [](#a-teams-shared-settings)A team’s shared settings
 
 One team’s shared settings, committed to the repository so everyone who clones it gets the same permissions, hooks, and plugin marketplace. Save a file like this at `.claude/settings.json` at the top of the repository. What to know before you commit one:
 
@@ -258,10 +255,7 @@ The same file with a comment above each key. Read it here; copy from the other t
 }
 ```
 
-
-[​](#an-organizations-managed-settings)
-
-An organization’s managed settings
+## [](#an-organizations-managed-settings)An organization’s managed settings
 
 A `managed-settings.json` file that shows the shape of the managed keys, with one plausible value for each. It isn’t a recommended policy: pick the keys that match your own requirements and set your own values. The example sets these keys:
 
@@ -271,12 +265,12 @@ A `managed-settings.json` file that shows the shape of the managed keys, with on
 - [`allowManagedPermissionRulesOnly`](settings-reference.md#allowmanagedpermissionrulesonly) and [`allowManagedMcpServersOnly`](settings-reference.md#allowmanagedmcpserversonly) make the managed permission and MCP allowlists the only ones that apply
 - `allowedMcpServers` pins the MCP server by URL
 - `strictKnownMarketplaces` allows one plugin marketplace
-- `sandbox` sandboxes commands with a fixed network allowlist and no unsandboxed retry. Its `failIfUnavailable` key [stops Claude Code from starting where the sandbox can’t run](sandboxing.md#enforce-sandboxing-with-managed-settings)
+- `sandbox` sandboxes commands with a fixed network allowlist and no unsandboxed retry. Its `failIfUnavailable` key [stops Claude Code from starting where the sandbox can’t run](sandboxing.md#enforce-sandboxing-with-managed-settings), except in an Anthropic-hosted environment
 - `requiredMinimumVersion` sets a minimum Claude Code version
 - `cleanupPeriodDays` shortens retention of session transcripts and other local data to seven days
 - `companyAnnouncements` shows a message at startup
 
-Administrators deploy a file like this as `managed-settings.json`, or the same JSON through MDM or [server-managed settings](../13-Enterprise-Admin/server-managed-settings.md). One deployed file applies to every machine or account it reaches. To give a group different values, deploy a different file or profile to that group, since [server-managed settings don’t support per-group policy yet](../13-Enterprise-Admin/server-managed-settings.md#current-limitations).
+Administrators deploy a file like this as `managed-settings.json`, or the same JSON through MDM or [server-managed settings](../13-Enterprise-Admin/server-managed-settings.md). One deployed file applies to every machine or account it reaches. To give a group different values, deploy a different file or profile to that group. On an Enterprise plan, you can instead [give the group its own configuration](../13-Enterprise-Admin/server-managed-settings.md#give-groups-different-settings) in server-managed settings.
 
 - Copyable settings file
 

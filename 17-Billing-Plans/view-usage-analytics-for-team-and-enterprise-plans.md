@@ -2,7 +2,7 @@
 title: "View usage analytics for Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12883420-view-usage-analytics-for-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:18Z"
+fetched_at: "2026-11-18T06:27:59Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
@@ -73,7 +73,7 @@ Use the dropdown on the **Active members and assigned seats** chart to filter by
 
 ### How much is Claude costing?
 
-**Note:** If you're on a **[seat-based Enterprise plan](purchase-and-manage-seats-on-enterprise-plans.md#h_6a78e30e26)**, spend reports only appear if your organization has **[enabled usage credits](https://support.claude.com/en/articles/12005970-)**. The spend data covers overage spend only—usage within seat-based allotments isn't included.
+**Note:** If you're on a **[seat-based Enterprise plan](https://support.claude.com/en/articles/13393991-purchase-and-manage-seats-on-enterprise-plans#h_6a78e30e26)**, spend reports only appear if your organization has **[enabled usage credits](https://support.claude.com/en/articles/12005970-)**. The spend data covers overage spend only—usage within seat-based allotments isn't included.
 
 This section includes the following analytics:
 

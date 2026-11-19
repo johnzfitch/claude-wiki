@@ -2,7 +2,7 @@
 title: "List organizations, users, roles, groups, and settings - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-org-data"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:40Z"
+fetched_at: "2026-11-13T06:34:06Z"
 tags: ["api", "plugins"]
 ---
 
@@ -26,15 +26,15 @@ To enable the Compliance API, see [Set up the Compliance API](manage-claude-comp
 
 **Required scope:** `read:compliance_org_data` on the Compliance Access Key. The user, user-preference, and group-member endpoints require `read:compliance_user_data` instead.
 
-Compliance Access Keys (`sk-ant-api01-...`) created in claude.ai are the only key type accepted; see [Set up the Compliance API](manage-claude-compliance-api-access.md) to provision one. Calls authenticated with an Admin API key (`sk-ant-admin01-...`) return [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden).
+Compliance Access Keys (`sk-ant-api01-...`) created in claude.ai are the only key type accepted. See [Set up the Compliance API](manage-claude-compliance-api-access.md) to provision one. Calls authenticated with an Admin API key (`sk-ant-admin01-...`) return [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden).
 
 The endpoints on this page expose the directory side of a Claude Enterprise organization: its linked organizations, the users in each one, the roles defined on each, and its role-based access control (RBAC) or SCIM (System for Cross-domain Identity Management)-provisioned groups and their members. Use them to seed eDiscovery user lists, build reporting dashboards, and reconcile group membership against an external system of record. A Compliance Access Key that covers the parent organization returns data from every linked organization underneath, so a single key reaches the entire tree. The [effective-settings endpoint](#get-effective-organization-settings) complements the directory: it returns the data-privacy, security, and capability settings actually in force for one organization.
 
 ## List organizations
 
-The [List organizations](../Admin/compliance-organizations-list.md) endpoint returns every organization under the parent the key is bound to.
+The [List organizations](../Admin/compliance-organizations-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint returns every organization under the parent the key is bound to.
 
-The following call lists every organization under your parent. The response is a `data` array of organization records sorted by `created_at` ascending, plus `has_more` and `next_page` for pagination. When `has_more` is `true`, pass the returned `next_page` token back unchanged as the `page` query parameter on your next request. See [List organizations](../Admin/compliance-organizations-list.md) in the API reference for the `limit` and `page` parameter defaults and ranges.
+The following call lists every organization under your parent. The response is a `data` array of organization records sorted by `created_at` ascending, plus `has_more` and `next_page` for pagination. When `has_more` is `true`, pass the returned `next_page` token back unchanged as the `page` query parameter on your next request. See [List organizations](../Admin/compliance-organizations-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference for the `limit` and `page` parameter defaults and ranges.
 
 cURL
 
@@ -86,11 +86,11 @@ To track organization-membership changes over time, relist this endpoint periodi
 
 ## List organization users
 
-The [List organization users](../Admin/compliance-organizations-users-list.md) endpoint returns a paginated list of user records for one organization.
+The [List organization users](../Admin/compliance-organizations-users-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint returns a paginated list of user records for one organization.
 
 This endpoint requires `read:compliance_user_data`, not `read:compliance_org_data`. Create the Compliance Access Key with both scopes when you intend to use it for directory enumeration; otherwise the call returns [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden).
 
-See [List organization users](../Admin/compliance-organizations-users-list.md) in the API reference for the `limit` and `page` query parameter defaults and ranges.
+See [List organization users](../Admin/compliance-organizations-users-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference for the `limit` and `page` query parameter defaults and ranges.
 
 Results are sorted by organization join date ascending. Unlike the Activity Feed’s `before_id`/`after_id` cursors (see [Paginate results](manage-claude-compliance-activity-feed.md#paginate-results)), the directory endpoints paginate with a `next_page` token: when `has_more` is `true`, pass `next_page` back unchanged as the `page` query parameter on the next request.
 
@@ -172,7 +172,7 @@ Response
 
 ## List roles
 
-The [List Compliance Roles](../Admin/compliance-organizations-roles-list.md) endpoint returns a paginated list of role records defined on one organization, and [Get Compliance Role](../Admin/compliance-organizations-roles-retrieve.md) returns one role by ID.
+The [List Compliance Roles](../Admin/compliance-organizations-roles-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint returns a paginated list of role records defined on one organization, and [Get Compliance Role](../Admin/compliance-organizations-roles-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. returns one role by ID.
 
 Both role endpoints require `read:compliance_org_data`. The list endpoint accepts the same `limit` and `page` parameters as the [organization users endpoint](#list-organization-users).
 
@@ -207,15 +207,15 @@ Response
 }
 ```
 
-See the [List Compliance Roles](../Admin/compliance-organizations-roles-list.md) response schema for the full role record shape. To list the permissions currently granted to a role, use [List Compliance Role Permissions](../Admin/compliance-organizations-roles-permissions-list.md). To audit historical role assignments and permission changes, query the RBAC activity types (for example, `rbac_role_assigned` and `rbac_role_permission_added`) through the Activity Feed; see [Filter activities](manage-claude-compliance-activity-feed.md#filter-activities).
+See the [List Compliance Roles](../Admin/compliance-organizations-roles-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. response schema for the full role record shape. To list the permissions currently granted to a role, use [List Compliance Role Permissions](../Admin/compliance-organizations-roles-permissions-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. To audit historical role assignments and permission changes, query the RBAC activity types (for example, `rbac_role_assigned` and `rbac_role_permission_added`) through the Activity Feed; see [Filter activities](manage-claude-compliance-activity-feed.md#filter-activities).
 
 ## List groups and members
 
-The [List Compliance Groups](../Admin/compliance-groups-list.md) endpoint returns a paginated list of RBAC and SCIM-provisioned groups, and [Get Compliance Group](../Admin/compliance-groups-retrieve.md) returns one group by ID. The [List Compliance Group Members](../Admin/compliance-groups-members-list.md) endpoint returns the members of one group.
+The [List Compliance Groups](../Admin/compliance-groups-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint returns a paginated list of RBAC and SCIM-provisioned groups, and [Get Compliance Group](../Admin/compliance-groups-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. returns one group by ID. The [List Compliance Group Members](../Admin/compliance-groups-members-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint returns the members of one group.
 
 The group list and retrieval endpoints require `read:compliance_org_data`. The members endpoint requires `read:compliance_user_data`. Create the key with both scopes to walk groups end to end. Both list endpoints accept the same `limit` and `page` parameters as the [organization users endpoint](#list-organization-users).
 
-See the [List Compliance Groups](../Admin/compliance-groups-list.md) response schema for the full group record shape. The `roles` array lists role IDs assigned to the group, matching IDs from [List roles](#list-roles). `source_type` is the discriminator between groups created manually through claude.ai (`direct`) and groups synced from an external identity provider through SCIM (`scim`).
+See the [List Compliance Groups](../Admin/compliance-groups-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. response schema for the full group record shape. The `roles` array lists role IDs assigned to the group, matching IDs from [List roles](#list-roles). `source_type` is the discriminator between groups created manually through claude.ai (`direct`) and groups synced from an external identity provider through SCIM (`scim`).
 
 List groups, then for each group list its members:
 
@@ -284,11 +284,11 @@ Response
 }
 ```
 
-See the [List Compliance Group Members](../Admin/compliance-groups-members-list.md) response schema for the full member record shape. The `user_id` field is the same `user_...` identifier that the Activity Feed, chat list, and remote session list accept; it also matches `user.id` on local session objects and on user-owned remote session objects (agent-owned remote sessions carry the human’s ID in `started_by_user.id` instead). To get a member’s full name, look it up through the organization users list.
+See the [List Compliance Group Members](../Admin/compliance-groups-members-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. response schema for the full member record shape. The `user_id` field is the same `user_...` identifier that the Activity Feed, chat list, and remote session list accept; it also matches `user.id` on local session objects and on user-owned remote session objects (agent-owned remote sessions carry the human’s ID in `started_by_user.id` instead). To get a member’s full name, look it up through the organization users list.
 
 ## Get effective organization settings
 
-The [Get effective organization settings](../Admin/compliance-organizations-settings-retrieve.md) endpoint returns the settings in force for one organization under your parent: the enforced state after regulatory restrictions (such as HIPAA), feature-availability rules, organization-type defaults, and inter-feature dependencies are applied, which can differ from what an administrator configured. Use it to attest that retention windows, content redaction, single sign-on enforcement, the IP allowlist, and session-duration controls match your documented baseline, without administrator Console access.
+The [Get effective organization settings](../Admin/compliance-organizations-settings-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint returns the settings in force for one organization under your parent: the enforced state after regulatory restrictions (such as HIPAA), feature-availability rules, organization-type defaults, and inter-feature dependencies are applied, which can differ from what an administrator configured. Use it to attest that retention windows, content redaction, single sign-on enforcement, the IP allowlist, and session-duration controls match your documented baseline, without administrator Console access.
 
 This endpoint requires `read:compliance_org_data`; a key without that scope returns [403 Forbidden](manage-claude-compliance-errors.md#403-forbidden). The target must be one of the parent’s linked organizations: the parent organization itself is not a valid target. All of the following return the same [404 Not Found](manage-claude-compliance-errors.md#404-not-found):
 
@@ -362,7 +362,7 @@ Response
 }
 ```
 
-Each row carries `name`, `type`, and `value`; the `type` field (`boolean`, `integer`, `string_list`, `provisioning_mode`, or `data_retention`) tells you the shape of `value`. The full list of setting names, and the `value` schema for each type, is in [Get effective organization settings](../Admin/compliance-organizations-settings-retrieve.md) in the API reference.
+Each row carries `name`, `type`, and `value`; the `type` field (`boolean`, `integer`, `string_list`, `provisioning_mode`, or `data_retention`) tells you the shape of `value`. The full list of setting names, and the `value` schema for each type, is in [Get effective organization settings](../Admin/compliance-organizations-settings-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 The `api_keys` array lists every Compliance Access Key configured for your parent organization, so the same list is returned regardless of which linked organization you query. Each entry carries the key’s `type` (`compliance_api_key`), `id`, `name`, `scopes`, `is_active` flag, `created_at` and `expires_at` timestamps, and `created_by_id` (the ID of the user who created the key, or `null`). The key’s secret value is never returned. Deactivated keys are included with `is_active: false` so you can review keys that previously had access, and keys that carry only the retired `read:compliance_org_settings` scope remain in the list for audit and cleanup visibility even though that scope no longer grants access.
 
@@ -374,20 +374,20 @@ Rows reflect the enforced state rather than the last-stored configuration, as in
 - `ip_allowlist_enabled` is `true` only while the allowlist is on and has at least one active range.
 - `code_execution_network_egress_enabled` is `false` whenever code execution is off.
 
-The response reflects the state at read time; nothing is snapshotted. Changes to most of these settings surface as events in the [Activity Feed](manage-claude-compliance-activity-feed.md); use this endpoint for the current resolved state and the feed to audit who changed what, and when.
+The response reflects the state at read time; nothing is snapshotted. Changes to most of these settings surface as events in the [Activity Feed](manage-claude-compliance-activity-feed.md); use this endpoint for the current resolved state and the feed to audit who changed what, and when. For the current results of Anthropic’s recommended security controls, see [Security posture in the Compliance API](manage-claude-compliance-security-posture-overview.md).
 
 ## Read plugins and plugin marketplaces
 
-Your organization’s plugins and plugin marketplaces are part of the [Admin API](manage-claude-plugins-api.md) rather than the Compliance API, but a Compliance Access Key with `read:compliance_org_data` can call the Plugins API’s read endpoints directly:
+Your organization’s plugins and plugin marketplaces are part of the Admin API’s [Plugins API](manage-claude-plugins-api.md) rather than the Compliance API, but a Compliance Access Key with `read:compliance_org_data` can call the Plugins API’s read endpoints directly:
 
 - List plugins and retrieve a plugin
 - List a plugin’s versions, retrieve a version, and download a version’s files
 - List a plugin’s installation settings and its shares
 - List plugin marketplaces and retrieve a marketplace
 
-Send the `anthropic-beta: ce-plugins-2026-09-01` header on every request; without it these endpoints return [404 Not Found](manage-claude-plugins-api.md#error-responses). Each call reads one organization: a key that covers the parent organization reads the linked organization it was created in unless you pass the `organization_id` query parameter (a linked organization’s UUID or its `org_`-prefixed ID) to [read a different one](manage-claude-plugins-api.md#reading-another-organization-under-the-same-parent), and a key restricted to one organization reads only that organization. These calls count against the Admin API’s [rate limits](manage-claude-plugins-api.md#rate-limiting), not the Compliance API’s.
+Send the `anthropic-beta: ce-plugins-2026-09-01` header on every request; without it these endpoints return 404 Not Found (see the Plugins API’s [Error responses](manage-claude-plugins-api.md#error-responses)). Each call reads one organization. A key that covers the parent organization reads the linked organization it was created in. To [read a different organization](manage-claude-plugins-api.md#reading-another-organization-under-the-same-parent), pass the `organization_id` query parameter (a linked organization’s UUID or its `org_`-prefixed ID). A key restricted to one organization reads only that organization. These calls count against the Admin API’s [rate limits](manage-claude-plugins-api.md#rate-limiting), not the Compliance API’s.
 
-Creating or changing plugins, their installation settings, or a marketplace’s settings requires an Admin API key with `write:plugins`. Of the read calls, only downloading the files of a plugin in a member’s personal marketplace records an [Activity Feed](manage-claude-compliance-activity-feed.md) event (`claude_plugin_archive_accessed`). See the [Plugins API guide](manage-claude-plugins-api.md) for each endpoint, request examples, and the [events the API records](manage-claude-plugins-api.md#activity-feed-events).
+Creating or changing plugins, their installation settings, or a marketplace’s settings requires an Admin API key with `write:plugins`. Of the read calls, only downloading the files of a plugin in a member’s personal marketplace records an [Activity Feed](manage-claude-compliance-activity-feed.md) event (`claude_plugin_archive_accessed`). See the [Plugins API](manage-claude-plugins-api.md) guide for each endpoint, request examples, and the [events the API records](manage-claude-plugins-api.md#activity-feed-events).
 
 ## Next steps
 

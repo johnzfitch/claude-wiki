@@ -2,7 +2,7 @@
 title: "Skills - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/analytics/skills"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:31Z"
+fetched_at: "2026-11-13T06:36:15Z"
 tags: ["api", "skills"]
 ---
 

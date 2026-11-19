@@ -2,7 +2,7 @@
 title: "How can I create and manage projects? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:04Z"
+fetched_at: "2026-11-18T06:28:16Z"
 tags: ["safety"]
 ---
 
@@ -25,7 +25,7 @@ Projects are available to all users, including those with free Claude accounts. 
 
     - **Share with your broader organization:** Everyone in your organization can view and use this project (where enabled by administrators).
 
-5.  If you're on an Enterprise plan and your organization requires project tags (beta), set a value for each required tag. See **[Track spend by cost code with project tags](../15-Claude-AI-Features/track-spend-by-project-with-tags.md)**. Tag names and values are visible to all users in your organization, so keep sensitive information out of them.
+5.  If you're on an Enterprise plan and your organization requires project tags (beta), set a value for each required tag. See **[Track spend by cost code with project tags](https://support.claude.com/en/articles/18251257-track-spend-by-project-with-tags)**. Tag names and values are visible to all users in your organization, so keep sensitive information out of them.
 
 Once your project is set up, you can initiate chats with Claude within the project.
 

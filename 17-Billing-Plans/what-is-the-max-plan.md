@@ -2,7 +2,7 @@
 title: "What is the Max plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11049741-what-is-the-max-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:08Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["billing"]
 ---
 
@@ -25,7 +25,7 @@ The Max plan is designed for users who collaborate with Claude frequently and ne
 
 - **Longer, multi-step tasks:** Hand Claude work like reports, spreadsheets, and presentations, and it keeps going in the background. Learn more in **[Claude Cowork and chat are one Claude](https://support.claude.com/en/articles/16761823)**.
 
-- **Monthly API credits:** Claude Max, Ultra, and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+- **Monthly API credits:** Claude Max, Ultra, and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 **Need more usage?** Learn more about the **[Ultra plan](https://support.claude.com/en/articles/17728952)**.
 
@@ -75,6 +75,6 @@ Max plans have a five-hour limit, a weekly usage limit that applies across all m
 
 Additional usage limits may apply to manage capacity and ensure fair access to all users. For example, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion. We don't guarantee uninterrupted service.
 
-For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Max or Ultra capacity efficiently, we also have **[Usage limit best practices](usage-limit-best-practices.md)**.
+For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Max or Ultra capacity efficiently, we also have **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 **Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](https://support.claude.com/en/articles/17007452)**.

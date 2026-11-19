@@ -2,7 +2,7 @@
 title: "Mercy Corps Q&A | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/prosper-global-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:30Z"
+fetched_at: "2026-11-18T06:29:25Z"
 tags: ["case-studies"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Log in to your Console account | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13371040-logging-in-to-your-console-account"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:26:22Z"
+fetched_at: "2026-11-18T06:27:53Z"
 tags: ["account"]
 ---
 
@@ -58,7 +58,7 @@ It's not possible to create a dedicated password for your Console account at thi
 
 ### Does my organization use Single Sign-On (SSO)?
 
-If you're a member of an organization that has configured single sign-on for the Console, you'll be redirected to your SSO provider when you attempt to log in. For information about setting up SSO for your organization, see **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+If you're a member of an organization that has configured single sign-on for the Console, you'll be redirected to your SSO provider when you attempt to log in. For information about setting up SSO for your organization, see **[Set up single sign-on (SSO)](set-up-single-sign-on-sso.md)**.
 
 ### I have multiple Console accounts – how can I switch between them?
 

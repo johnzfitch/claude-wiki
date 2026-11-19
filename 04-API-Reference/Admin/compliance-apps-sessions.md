@@ -2,7 +2,7 @@
 title: "Sessions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-07T06:23:51Z"
+fetched_at: "2026-11-15T06:24:17Z"
 tags: ["api"]
 ---
 

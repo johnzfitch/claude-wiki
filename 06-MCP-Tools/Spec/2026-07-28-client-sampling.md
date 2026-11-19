@@ -1,9 +1,9 @@
 ---
 title: "Sampling - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/client/sampling"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/client/sampling"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:24:57Z"
-last_modified: "Fri, 30 Oct 2026 21:03:19 GMT"
+fetched_at: "2026-11-10T06:32:01Z"
+last_modified: "Mon, 09 Nov 2026 22:53:23 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

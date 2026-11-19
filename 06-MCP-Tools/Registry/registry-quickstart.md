@@ -2,8 +2,8 @@
 title: "Quickstart: Publish an MCP Server to the MCP Registry - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/quickstart"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-31T06:24:35Z"
-last_modified: "Fri, 30 Oct 2026 21:39:39 GMT"
+fetched_at: "2026-11-13T06:32:55Z"
+last_modified: "Fri, 13 Nov 2026 03:11:27 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
@@ -11,6 +11,7 @@ tags: ["mcp", "mcp-registry"]
 
 Back to top
 
+- [Remote-only servers](#remote-only-servers)
 - [Prerequisites](#prerequisites)
 - [Step 1: Add verification information to the package](#step-1-add-verification-information-to-the-package)
 - [Step 2: Publish the package](#step-2-publish-the-package)
@@ -31,19 +32,52 @@ The MCP Registry is currently in preview. Breaking changes or data resets may oc
 
 This tutorial will show you how to publish an MCP server written in TypeScript to the MCP Registry using the official `mcp-publisher` CLI tool.
 
+If you are publishing a non-npm package (PyPI, NuGet, OCI, MCPB), the overall flow is identical, but the ownership-verification step in [Step 1](#step-1-add-verification-information-to-the-package) is different per package type. See [Package Types](registry-package-types.md) for the verification mechanism that applies to your package, then return here and follow the remaining steps.
+
+
+[​](#remote-only-servers)
+
+Remote-only servers
+
+If your MCP server is available only at a public remote endpoint, you can publish its metadata without a package. Skip the Node.js and npm prerequisites and Steps 1–2, then continue with [Step 3](#step-3-install-mcp-publisher). Your `server.json` must include a `remotes` entry and can omit `packages`:
+
+server.json
+
+```python
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.my-username/weather",
+  "title": "Weather",
+  "description": "A remote MCP server for weather information.",
+  "repository": {
+    "url": "https://github.com/my-username/mcp-weather-server",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://weather.example.com/mcp"
+    }
+  ]
+}
+```
+
+The remote URL must be publicly accessible. See [Publishing Remote Servers](registry-remote-servers.md) for transport, URL variable, and header options. With any authentication method, the Registry verifies that you control the namespace in `name`; it does not verify that you control the remote URL. See [Ownership Verification](registry-remote-servers.md#ownership-verification) for details.
+
 
 [​](#prerequisites)
 
 Prerequisites
 
 - **Node.js** — This tutorial assumes the MCP server is written in TypeScript.
-- **npm account** — The MCP Registry only hosts metadata, not artifacts. Before publishing to the MCP Registry, we will publish the MCP server’s package to npm, so you will need an [npm](https://www.npmjs.com) account.
+- **npm account (package-based servers only)** — The MCP Registry only hosts metadata, not artifacts. Before publishing a package-based MCP server to the MCP Registry, we will publish the package to npm, so you will need an [npm](https://www.npmjs.com) account.
 - **GitHub account** — The MCP Registry supports [multiple authentication methods](registry-authentication.md). For simplicity, this tutorial will use GitHub-based authentication, so you will need a [GitHub](https://github.com/) account.
 
 If you do not have an MCP server written in TypeScript, you can copy the `weather-server-typescript` server from the [`modelcontextprotocol/quickstart-resources` repository](https://github.com/modelcontextprotocol/quickstart-resources) to follow along with this tutorial:
 
 ```python
-git clone --depth 1 git@github.com:modelcontextprotocol/quickstart-resources.git
+git clone --depth 1 https://github.com/modelcontextprotocol/quickstart-resources.git
 cp -r quickstart-resources/weather-server-typescript .
 rm -rf quickstart-resources
 cd weather-server-typescript
@@ -102,9 +136,6 @@ Step 2: Publish the package
 The MCP Registry only hosts metadata, not artifacts, so we must publish the package to npm before publishing the server to the MCP Registry. Ensure the distribution files are built:
 
 ```python
-# Navigate to project directory
-cd weather-server-typescript
-
 # Install dependencies
 npm install
 
@@ -134,6 +165,8 @@ Install the `mcp-publisher` CLI tool using a pre-built binary or [Homebrew](http
 macOS/Linux
 
 Windows
+
+Homebrew
 
 ```python
 curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" | tar xz mcp-publisher && sudo mv mcp-publisher /usr/local/bin/
@@ -169,6 +202,10 @@ Commands:
   login         Authenticate with the registry
   logout        Clear saved authentication
   publish       Publish server.json to the registry
+  status        Update the status of a server version
+  validate      Validate server.json without publishing
+
+Use 'mcp-publisher <command> --help' for more information about a command.
 ```
 
 
@@ -176,7 +213,7 @@ Commands:
 
 Step 4: Create `server.json`
 
-The `mcp-publisher init` command can generate a `server.json` template file with some information derived from your project. In your server project directory, run `mcp-publisher init`:
+The `mcp-publisher init` command can generate a `server.json` template file with some information derived from your project. The Registry limits the `description` field to 100 characters. Keep the description focused on what the server does; longer descriptions fail validation. In your server project directory, run `mcp-publisher init`:
 
 ```python
 mcp-publisher init
@@ -195,12 +232,12 @@ server.json
     "url": "https://github.com/my-username/mcp-weather-server",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "@my-username/mcp-weather-server",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "transport": {
         "type": "stdio"
       },
@@ -231,14 +268,12 @@ server.json
      "url": "https://github.com/my-username/mcp-weather-server",
      "source": "github"
    },
--  "version": "1.0.0",
-+  "version": "1.0.1",
+   "version": "1.0.1",
    "packages": [
      {
        "registryType": "npm",
        "identifier": "@my-username/mcp-weather-server",
--      "version": "1.0.0",
-+      "version": "1.0.1",
+       "version": "1.0.1",
        "transport": {
          "type": "stdio"
 -      },
@@ -258,6 +293,8 @@ server.json
 ```
 
 The `name` property in `server.json` **must** match the `mcpName` property in `package.json`.
+
+For a [remote-only server](#remote-only-servers), `mcp-publisher init` still generates a `packages` entry. Replace the `packages` array with a `remotes` array, as shown in the remote-only example above.
 
 
 [​](#step-5-authenticate-with-the-mcp-registry)
@@ -335,7 +372,7 @@ Troubleshooting
 
 | Error Message | Action |
 |----|----|
-| ”Registry validation failed for package” | Ensure your package includes the required validation information (e.g, `mcpName` property in `package.json`). |
+| ”Registry validation failed for package” | Ensure your package includes the required ownership-verification marker for its package type. For npm this is `mcpName` in `package.json`; for PyPI and NuGet it is an `mcp-name: <server-name>` line (or HTML comment) in the package README; for other types see [Package Types](registry-package-types.md). |
 | ”Invalid or expired Registry JWT token” | Re-authenticate by running `mcp-publisher login github`. |
 | ”You do not have permission to publish this server” | Your authentication method doesn’t match your server’s namespace format. With GitHub auth, your server name must start with `io.github.your-username/`. |
 

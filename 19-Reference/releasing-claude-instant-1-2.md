@@ -44,4 +44,4 @@ Claude Instant 1.2 outperforms Claude Instant 1.1 on math and coding, achieving 
 
 Our latest model has also improved on safety. It hallucinates less and is more resistant to jailbreaks, as shown in our automated red-teaming evaluation.
 
-Developers looking to work with Claude Instant 1.2 can now call our latest model over our API (pricing can be found [here](https://www-cdn.anthropic.com/90df03aed08b794ab03c5a7bf28b2ad9cf26cf3c/model_pricing_july2023.pdf)). If you’re a business and you’d like to work with us, you can indicate your interest [here](https://www.anthropic.com/contact-sales).
+Developers looking to work with Claude Instant 1.2 can now call our latest model over our API (pricing can be found [here](model-family-017318b2.md)). If you’re a business and you’d like to work with us, you can indicate your interest [here](https://www.anthropic.com/contact-sales).

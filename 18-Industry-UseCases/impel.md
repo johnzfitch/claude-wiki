@@ -2,7 +2,7 @@
 title: "Impel Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/impel"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:06Z"
+fetched_at: "2026-11-18T06:29:15Z"
 tags: ["case-studies"]
 ---
 

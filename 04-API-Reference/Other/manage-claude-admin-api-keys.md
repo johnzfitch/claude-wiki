@@ -2,7 +2,7 @@
 title: "Create an Admin API key - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/admin-api-keys"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:16Z"
+fetched_at: "2026-11-13T06:36:35Z"
 tags: ["api", "enterprise"]
 ---
 
@@ -90,7 +90,7 @@ When you create a Claude Enterprise key, select every scope that the APIs you pl
 | To call... | Select these scopes |
 |----|----|
 | Admin API [user management](manage-claude-user-management.md): list and look up members and invites; read custom roles and their permissions | `read:members` |
-| Admin API [user management](manage-claude-user-management.md): change member roles, remove members, and create and withdraw invites (to assign the `managed` role on a role change or an invite, also select `write:rbac_groups`) | `write:members` |
+| Admin API [user management](manage-claude-user-management.md): change member roles, remove members, [sign members out everywhere](manage-claude-user-management.md#sign-a-member-out-everywhere) (beta), and create and withdraw invites (to assign the `managed` role on a role change or an invite, also select `write:rbac_groups`) | `write:members` |
 | Admin API [user management](manage-claude-user-management.md): read groups and their members | `read:rbac_groups` |
 | Admin API [user management](manage-claude-user-management.md): create, rename, and delete groups; add and remove group members; with `write:members`, assign the `managed` role (on an invite or a role change) or assign groups on an invite | `write:rbac_groups` |
 | [Plugins API](manage-claude-plugins-api.md): read plugins, versions, installation settings, shares, and marketplaces; download plugin files, including the files of members’ personal plugins; validate a marketplace before you connect it | `read:plugins` |
@@ -101,9 +101,9 @@ When you create a Claude Enterprise key, select every scope that the APIs you pl
 | [Spend Limits API](manage-claude-spend-limits-api.md): set or clear per-user spend limits; approve or deny increase requests | `write:spend_limits` |
 | [Claude Enterprise Analytics API](manage-claude-analytics-api.md): engagement, adoption, cost, and usage reports; [Usage and Cost Analytics API](manage-claude-usage-cost-analytics-api.md): token usage and cost reports | `read:analytics` |
 | [Compliance API Activity Feed](manage-claude-compliance-activity-feed.md): organization-wide activity events | `read:compliance_activities` |
-| [Compliance API chat, file, and project endpoints](manage-claude-compliance-content-data.md) and [Compliance API session endpoints](manage-claude-compliance-sessions.md): read chats, files, projects, session transcripts, and [organization users](manage-claude-compliance-org-data.md#list-organization-users) | `read:compliance_user_data` |
+| [Compliance API chat, file, and project endpoints](manage-claude-compliance-content-data.md) and [Compliance API session endpoints](manage-claude-compliance-sessions.md): read chats, files, projects, session transcripts, and [organization users](manage-claude-compliance-org-data.md#list-organization-users); together with `read:compliance_org_data`, also who made a [Security posture attestation](manage-claude-compliance-security-posture-results-reference.md#who-attested-and-comments), where the endpoint returns it: a user ID | `read:compliance_user_data` |
 | [Compliance API chat, file, and project endpoints](manage-claude-compliance-content-data.md): delete chats, files, and projects | `delete:compliance_user_data` |
-| [Compliance API organization endpoints](manage-claude-compliance-org-data.md): read organization metadata and effective settings; [Plugins API](manage-claude-plugins-api.md): every `GET` endpoint, including file downloads | `read:compliance_org_data` |
+| [Compliance API organization endpoints](manage-claude-compliance-org-data.md): read organization metadata and effective settings, and an organization’s [Security posture](manage-claude-compliance-security-posture-results-reference.md); [Plugins API](manage-claude-plugins-api.md): every `GET` endpoint, including file downloads | `read:compliance_org_data` |
 | Admin API [user management](manage-claude-user-management.md) read endpoints, every Compliance API read endpoint, and every [Plugins API](manage-claude-plugins-api.md) `GET` endpoint, including file downloads, with a single read-only scope (for security-audit integrations; does not include the Spend Limits or Analytics APIs) | `read:org_audit` |
 
 The Compliance and Analytics APIs must be enabled for your organization before keys with those scopes can be used. See [Set up the Compliance API](manage-claude-compliance-api-access.md#set-up-the-compliance-api) and [Get access to the Claude Enterprise Analytics API](manage-claude-analytics-api.md#get-access-to-the-claude-enterprise-analytics-api).

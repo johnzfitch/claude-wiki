@@ -2,7 +2,7 @@
 title: "Skills - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/skills"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:33:44Z"
+fetched_at: "2026-11-14T06:25:39Z"
 tags: ["api", "skills"]
 ---
 
@@ -73,6 +73,18 @@ The format and length of IDs may change over time.
 
 
 Skill object{ type: "skill", id, created_at, 4 more }
+
+
+
+
+
+SkillReadBlockedUndecryptableErrorDetails object{ error_code }
+
+
+
+A custom skill the request names is stored under an encryption key state the workspace cannot currently decrypt.
+
+error_code: "skill_read_blocked_undecryptable"
 
 
 

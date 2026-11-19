@@ -2,7 +2,7 @@
 title: "What is Anthropic’s policy for handling governmental requests for user information? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9519291-what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:04Z"
+fetched_at: "2026-11-18T06:28:16Z"
 tags: ["safety"]
 ---
 

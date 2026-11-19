@@ -2,7 +2,7 @@
 title: "Activities - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/activities"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:36:18Z"
+fetched_at: "2026-11-13T06:36:07Z"
 tags: ["api"]
 ---
 
@@ -37,4 +37,4 @@ List compliance activities for the authenticated tenant.
 
 
 
-ActivityListResponse = AbuseDecisionReceived or AccountDeleted or AccountMigrationCompleted or 571 more
+ActivityListResponse = AbuseDecisionReceived or AccountDeleted or AccountMigrationCompleted or 589 more

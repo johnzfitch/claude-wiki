@@ -2,7 +2,7 @@
 title: "Query compliance activities - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/activities/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-07T06:23:15Z"
+fetched_at: "2026-11-16T06:26:08Z"
 tags: ["api"]
 ---
 
@@ -38,7 +38,7 @@ The tenant is the caller's parent organization, or — for an organization with 
 
 
 
-activity_types: optional array of "abuse_decision_received" or "account_deleted" or "account_migration_completed" or 571 more
+activity_types: optional array of "abuse_decision_received" or "account_deleted" or "account_migration_completed" or 589 more
 
 
 
@@ -410,6 +410,18 @@ A user duplicated an artifact they could view into a new artifact that they own.
 
 An organization admin allowed one artifact to be shared outside the organization by link while the organization-wide external sharing setting was off, or revoked that permission.
 
+"claude_artifact_folder_created"
+
+
+
+A folder for artifacts was created, inside another folder or in none.
+
+"claude_artifact_folder_moved"
+
+
+
+A folder for artifacts was moved into, out of or between other folders, by its owner or by someone else, whether or not a folder is shared; the artifacts and folders inside it moved with it and were not recorded as moves of their own.
+
 "claude_artifact_invite_accepted"
 
 
@@ -434,11 +446,17 @@ A member withdrew an invitation to an artifact for someone outside the organizat
 
 A member changed the access level of an email invitation to an artifact for someone outside the organization, whether the invitation was still pending or had been accepted; recorded in the artifact owner's organization with that member as the actor.
 
+"claude_artifact_moved"
+
+
+
+An artifact was moved into, out of or between folders, by its owner or by someone else, whether or not a folder is shared; an artifact that leaves its folder as part of another event, such as its own deletion or the erasure of an account, might not be recorded as a move.
+
 "claude_artifact_published"
 
 
 
-A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts, except that automatic saves made while a person keeps editing may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
+A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts and, for some artifacts, edits to stored content that make no new version, except that such edits, and automatic saves made while a person keeps editing, may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
 
 "claude_artifact_sent_to_partner"
 
@@ -1194,13 +1212,13 @@ Ownership of a Claude Security scan project was transferred to a member of the o
 
 
 
-A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why. A member turning a skill off themselves is recorded as claude_skill_disabled.
+A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why.
 
 "claude_skill_auto_enabled"
 
 
 
-A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them. A member turning a skill on themselves is recorded as claude_skill_enabled.
+A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them.
 
 "claude_skill_created"
 
@@ -1249,6 +1267,18 @@ A security scan of a skill completed and produced a verdict.
 
 
 An administrator allowed a skill version despite its security scan's verdict, or that allowance was revoked.
+
+"claude_skill_served_version_updated"
+
+
+
+A skill's served version, the version that members get, was updated: an administrator or the owner chose a version, a saved version became the served version, or an accepted library submission was published into the skill. A new version that is served as soon as it is saved may appear only as claude_skill_version_created.
+
+"claude_skill_version_created"
+
+
+
+A new version of a skill was created.
 
 "claude_survey_closed"
 
@@ -1804,13 +1834,13 @@ An MCP server was removed from the organization.
 
 
 
-A user attempted to obtain an access token for an MCP server via enterprise managed authorization. This event reports the outcomes of attempted token exchanges. Repeated failures with the same cause may be reported once until the cause changes, and requests refused before a token exchange is attempted are not reported, except the "connector_scope_not_granted" and "identity_assertion_refused" failures described under error_type.
+A user attempted to obtain an access token for an MCP server via enterprise managed authorization (auto-connect). This event reports the outcomes of attempted token exchanges. Repeated failures with the same cause may be reported once until the cause changes, and requests refused before a token exchange is attempted are not reported, except the "connector_scope_not_granted" and "identity_assertion_refused" failures described under error_type.
 
 "mcp_server_managed_auth_updated"
 
 
 
-An MCP server's enterprise managed authorization settings were set, changed, or cleared, including when they were supplied while the server was being added or edited. Fields without a "previous\_" prefix describe the settings after the change and are null when the server has no managed authorization settings afterwards; "previous\_" fields describe the settings before the change and are null when the server had none before (always the case for a newly added server).
+An MCP server's enterprise managed authorization (auto-connect) settings were set, changed, or cleared, including when they were supplied while the server was being added or edited. Fields without a "previous\_" prefix describe the settings after the change and are null when the server has no managed authorization settings afterwards; "previous\_" fields describe the settings before the change and are null when the server had none before (always the case for a newly added server).
 
 "mcp_server_updated"
 
@@ -2100,6 +2130,18 @@ Organization domain verification was initiated.
 
 Organization domain was removed.
 
+"org_domain_sso_enforcement_updated"
+
+
+
+A verified domain's single sign-on requirement changed, per surface.
+
+"org_domain_sso_routing_updated"
+
+
+
+A verified domain's single sign-on routing was saved or changed. Lists the identity provider connections the domain's users sign in through before and after; the two lists are the same when a save changed nothing.
+
 "org_domain_verified"
 
 
@@ -2153,6 +2195,24 @@ The HIPAA configuration was applied to Claude Code (local mode) and Cowork (loca
 
 
 A primary owner accepted the Business Associate Agreement and enabled the HIPAA configuration for the organization through the self-serve flow.
+
+"org_idp_connection_created"
+
+
+
+An identity provider connection was added to the parent organization.
+
+"org_idp_connection_deleted"
+
+
+
+An identity provider connection was removed from the parent organization, along with the settings that referenced it.
+
+"org_idp_connection_updated"
+
+
+
+An identity provider connection's settings were changed.
 
 "org_invite_link_disabled"
 
@@ -2303,6 +2363,12 @@ Organization parent join proposal was created.
 
 
 Organization parent search was performed.
+
+"org_security_control_attestation_updated"
+
+
+
+The organization's attestation for a security control was recorded, changed, renewed or cleared by an administrator, or was ended automatically.
 
 "org_sso_add_initiated"
 
@@ -2489,6 +2555,48 @@ Organization's custom icon uploaded or replaced.
 
 
 Access to owned projects was restored.
+
+"parent_organization_centralized_management_enrolled"
+
+
+
+A parent organization was enrolled in centralized management.
+
+"parent_organization_centralized_management_organization_updated"
+
+
+
+An organization's approval of its parent organization's Centralized Management setup changed, or its administrators were reminded to approve.
+
+"parent_organization_centralized_management_setup_updated"
+
+
+
+The Centralized Management setup of a parent organization changed: it was started or abandoned, its proposed administrators changed, its remaining organizations were force approved, or it completed.
+
+"parent_organization_centralized_management_unenrolled"
+
+
+
+A parent organization was unenrolled from centralized management.
+
+"parent_organization_member_removed"
+
+
+
+A parent-organization admin role was removed from a user.
+
+"parent_organization_member_updated"
+
+
+
+A parent-organization admin role was granted or changed for a user.
+
+"parent_organization_settings_updated"
+
+
+
+Parent organization settings were updated.
 
 "payment_method_updated"
 
@@ -3154,9 +3262,9 @@ Records the admin's change to the role. Whether the grant is currently in effect
 
 
 
-Admin added a permission to an RBAC custom role.
+A permission was added to an RBAC custom role.
 
-Emitted once per requested permission, including permissions the role already had, so a retried request still produces a complete audit record.
+A request records one activity per permission it asks to add, including any the role already had, so a retry still leaves a complete audit record.
 
 
 
@@ -3164,9 +3272,9 @@ Emitted once per requested permission, including permissions the role already ha
 
 
 
-Admin removed a permission from an RBAC custom role.
+A permission was removed from an RBAC custom role.
 
-Emitted once per requested permission, including permissions the role already lacked, so a retried request still produces a complete audit record.
+A request records one activity per permission it asks to remove, including any the role already lacked, so a retry still leaves a complete audit record.
 
 "rbac_role_unassigned"
 
@@ -3580,7 +3688,7 @@ formatdate-time
 
 
 
-exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "account_migration_completed" or 571 more
+exclude_activity_types: optional array of "abuse_decision_received" or "account_deleted" or "account_migration_completed" or 589 more
 
 
 
@@ -3952,6 +4060,18 @@ A user duplicated an artifact they could view into a new artifact that they own.
 
 An organization admin allowed one artifact to be shared outside the organization by link while the organization-wide external sharing setting was off, or revoked that permission.
 
+"claude_artifact_folder_created"
+
+
+
+A folder for artifacts was created, inside another folder or in none.
+
+"claude_artifact_folder_moved"
+
+
+
+A folder for artifacts was moved into, out of or between other folders, by its owner or by someone else, whether or not a folder is shared; the artifacts and folders inside it moved with it and were not recorded as moves of their own.
+
 "claude_artifact_invite_accepted"
 
 
@@ -3976,11 +4096,17 @@ A member withdrew an invitation to an artifact for someone outside the organizat
 
 A member changed the access level of an email invitation to an artifact for someone outside the organization, whether the invitation was still pending or had been accepted; recorded in the artifact owner's organization with that member as the actor.
 
+"claude_artifact_moved"
+
+
+
+An artifact was moved into, out of or between folders, by its owner or by someone else, whether or not a folder is shared; an artifact that leaves its folder as part of another event, such as its own deletion or the erasure of an account, might not be recorded as a move.
+
 "claude_artifact_published"
 
 
 
-A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts, except that automatic saves made while a person keeps editing may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
+A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts and, for some artifacts, edits to stored content that make no new version, except that such edits, and automatic saves made while a person keeps editing, may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
 
 "claude_artifact_sent_to_partner"
 
@@ -4736,13 +4862,13 @@ Ownership of a Claude Security scan project was transferred to a member of the o
 
 
 
-A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why. A member turning a skill off themselves is recorded as claude_skill_disabled.
+A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why.
 
 "claude_skill_auto_enabled"
 
 
 
-A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them. A member turning a skill on themselves is recorded as claude_skill_enabled.
+A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them.
 
 "claude_skill_created"
 
@@ -4791,6 +4917,18 @@ A security scan of a skill completed and produced a verdict.
 
 
 An administrator allowed a skill version despite its security scan's verdict, or that allowance was revoked.
+
+"claude_skill_served_version_updated"
+
+
+
+A skill's served version, the version that members get, was updated: an administrator or the owner chose a version, a saved version became the served version, or an accepted library submission was published into the skill. A new version that is served as soon as it is saved may appear only as claude_skill_version_created.
+
+"claude_skill_version_created"
+
+
+
+A new version of a skill was created.
 
 "claude_survey_closed"
 
@@ -5346,13 +5484,13 @@ An MCP server was removed from the organization.
 
 
 
-A user attempted to obtain an access token for an MCP server via enterprise managed authorization. This event reports the outcomes of attempted token exchanges. Repeated failures with the same cause may be reported once until the cause changes, and requests refused before a token exchange is attempted are not reported, except the "connector_scope_not_granted" and "identity_assertion_refused" failures described under error_type.
+A user attempted to obtain an access token for an MCP server via enterprise managed authorization (auto-connect). This event reports the outcomes of attempted token exchanges. Repeated failures with the same cause may be reported once until the cause changes, and requests refused before a token exchange is attempted are not reported, except the "connector_scope_not_granted" and "identity_assertion_refused" failures described under error_type.
 
 "mcp_server_managed_auth_updated"
 
 
 
-An MCP server's enterprise managed authorization settings were set, changed, or cleared, including when they were supplied while the server was being added or edited. Fields without a "previous\_" prefix describe the settings after the change and are null when the server has no managed authorization settings afterwards; "previous\_" fields describe the settings before the change and are null when the server had none before (always the case for a newly added server).
+An MCP server's enterprise managed authorization (auto-connect) settings were set, changed, or cleared, including when they were supplied while the server was being added or edited. Fields without a "previous\_" prefix describe the settings after the change and are null when the server has no managed authorization settings afterwards; "previous\_" fields describe the settings before the change and are null when the server had none before (always the case for a newly added server).
 
 "mcp_server_updated"
 
@@ -5642,6 +5780,18 @@ Organization domain verification was initiated.
 
 Organization domain was removed.
 
+"org_domain_sso_enforcement_updated"
+
+
+
+A verified domain's single sign-on requirement changed, per surface.
+
+"org_domain_sso_routing_updated"
+
+
+
+A verified domain's single sign-on routing was saved or changed. Lists the identity provider connections the domain's users sign in through before and after; the two lists are the same when a save changed nothing.
+
 "org_domain_verified"
 
 
@@ -5695,6 +5845,24 @@ The HIPAA configuration was applied to Claude Code (local mode) and Cowork (loca
 
 
 A primary owner accepted the Business Associate Agreement and enabled the HIPAA configuration for the organization through the self-serve flow.
+
+"org_idp_connection_created"
+
+
+
+An identity provider connection was added to the parent organization.
+
+"org_idp_connection_deleted"
+
+
+
+An identity provider connection was removed from the parent organization, along with the settings that referenced it.
+
+"org_idp_connection_updated"
+
+
+
+An identity provider connection's settings were changed.
 
 "org_invite_link_disabled"
 
@@ -5845,6 +6013,12 @@ Organization parent join proposal was created.
 
 
 Organization parent search was performed.
+
+"org_security_control_attestation_updated"
+
+
+
+The organization's attestation for a security control was recorded, changed, renewed or cleared by an administrator, or was ended automatically.
 
 "org_sso_add_initiated"
 
@@ -6031,6 +6205,48 @@ Organization's custom icon uploaded or replaced.
 
 
 Access to owned projects was restored.
+
+"parent_organization_centralized_management_enrolled"
+
+
+
+A parent organization was enrolled in centralized management.
+
+"parent_organization_centralized_management_organization_updated"
+
+
+
+An organization's approval of its parent organization's Centralized Management setup changed, or its administrators were reminded to approve.
+
+"parent_organization_centralized_management_setup_updated"
+
+
+
+The Centralized Management setup of a parent organization changed: it was started or abandoned, its proposed administrators changed, its remaining organizations were force approved, or it completed.
+
+"parent_organization_centralized_management_unenrolled"
+
+
+
+A parent organization was unenrolled from centralized management.
+
+"parent_organization_member_removed"
+
+
+
+A parent-organization admin role was removed from a user.
+
+"parent_organization_member_updated"
+
+
+
+A parent-organization admin role was granted or changed for a user.
+
+"parent_organization_settings_updated"
+
+
+
+Parent organization settings were updated.
 
 "payment_method_updated"
 
@@ -6696,9 +6912,9 @@ Records the admin's change to the role. Whether the grant is currently in effect
 
 
 
-Admin added a permission to an RBAC custom role.
+A permission was added to an RBAC custom role.
 
-Emitted once per requested permission, including permissions the role already had, so a retried request still produces a complete audit record.
+A request records one activity per permission it asks to add, including any the role already had, so a retry still leaves a complete audit record.
 
 
 
@@ -6706,9 +6922,9 @@ Emitted once per requested permission, including permissions the role already ha
 
 
 
-Admin removed a permission from an RBAC custom role.
+A permission was removed from an RBAC custom role.
 
-Emitted once per requested permission, including permissions the role already lacked, so a retried request still produces a complete audit record.
+A request records one activity per permission it asks to remove, including any the role already lacked, so a retry still leaves a complete audit record.
 
 "rbac_role_unassigned"
 
@@ -7094,7 +7310,7 @@ organization_ids: optional array of string
 
 
 
-Filter activities by organization IDs (accepts `org_...` or organization UUID). Enumerate IDs via `GET /v1/compliance/organizations`.
+Filter activities by organization IDs (accepts `org_...` or organization UUID, up to 20). Enumerate IDs via `GET /v1/compliance/organizations`.
 
 user_ids: optional array of string
 
@@ -7106,13 +7322,13 @@ Alias for `actor_ids[]`, for consistency with other compliance routes. If both a
 
 
 
-"anthropic-version": optional string
+"anthropic-version": string
 
 
 
-The version of the Claude API you want to use.
+The version of the Claude API to use. Send an available version on every request. A request that sends any other value, including an empty one, returns a 400 error. This endpoint treats a request that omits this header as version `2023-06-01`; some other Compliance API endpoints return a 400 error instead.
 
-Read more about versioning and our version history [here](../Endpoints/versioning.md).
+See [API versions](../Endpoints/versioning.md) for the available versions.
 
 "x-api-key": optional string
 
@@ -7122,7 +7338,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: optional array of AbuseDecisionReceived or AccountDeleted or AccountMigrationCompleted or 571 more
+data: optional array of AbuseDecisionReceived or AccountDeleted or AccountMigrationCompleted or 589 more
 
 
 
@@ -7298,7 +7514,7 @@ ClaudeArtifactPublished object{ type: "claude_artifact_published", actor, artifa
 
 
 
-A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts, except that automatic saves made while a person keeps editing may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
+A new version of an artifact was published — for an artifact created in a chat this is the action that made it publicly viewable; for an artifact created outside a chat it is recorded when the artifact is saved, including saves of private artifacts and, for some artifacts, edits to stored content that make no new version, except that such edits, and automatic saves made while a person keeps editing, may be recorded periodically for that person rather than once per save; changes to who can access the artifact are recorded separately as claude_artifact_sharing_updated.
 
 
 
@@ -7678,6 +7894,22 @@ An organization admin allowed one artifact to be shared outside the organization
 
 
 
+ClaudeArtifactFolderCreated object{ type: "claude_artifact_folder_created", actor, claude_artifact_folder_id, 5 more }
+
+
+
+A folder for artifacts was created, inside another folder or in none.
+
+
+
+ClaudeArtifactFolderMoved object{ type: "claude_artifact_folder_moved", actor, claude_artifact_folder_id, 12 more }
+
+
+
+A folder for artifacts was moved into, out of or between other folders, by its owner or by someone else, whether or not a folder is shared; the artifacts and folders inside it moved with it and were not recorded as moves of their own.
+
+
+
 ClaudeArtifactInviteAccepted object{ type: "claude_artifact_invite_accepted", actor, claude_artifact_id, 8 more }
 
 
@@ -7707,6 +7939,14 @@ ClaudeArtifactInviteRoleUpdated object{ type: "claude_artifact_invite_role_updat
 
 
 A member changed the access level of an email invitation to an artifact for someone outside the organization, whether the invitation was still pending or had been accepted; recorded in the artifact owner's organization with that member as the actor.
+
+
+
+ClaudeArtifactMoved object{ type: "claude_artifact_moved", actor, claude_artifact_id, 11 more }
+
+
+
+An artifact was moved into, out of or between folders, by its owner or by someone else, whether or not a folder is shared; an artifact that leaves its folder as part of another event, such as its own deletion or the erasure of an account, might not be recorded as a move.
 
 
 
@@ -7982,7 +8222,7 @@ A Claude Code Security vulnerability finding was permanently deleted.
 
 
 
-ClaudeCodeSecurityVulnerabilityFixSessionCreated object{ type: "claude_code_security_vulnerability_fix_session_created", actor, scan_id, 6 more }
+ClaudeCodeSecurityVulnerabilityFixSessionCreated object{ type: "claude_code_security_vulnerability_fix_session_created", actor, scan_id, 8 more }
 
 
 
@@ -8354,7 +8594,7 @@ ClaudeSkillAutoDisabled object{ type: "claude_skill_auto_disabled", actor, reaso
 
 
 
-A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why. A member turning a skill off themselves is recorded as claude_skill_disabled.
+A skill that had been turned on for a member automatically was turned off for them automatically, not by the member; reason says why.
 
 
 
@@ -8362,7 +8602,7 @@ ClaudeSkillAutoEnabled object{ type: "claude_skill_auto_enabled", actor, trigger
 
 
 
-A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them. A member turning a skill on themselves is recorded as claude_skill_enabled.
+A skill was turned on for a member automatically, not by the member; trigger gives the cause, such as another member sharing an eligible skill with them.
 
 
 
@@ -8379,6 +8619,22 @@ ClaudeSkillSecurityScanOverrideUpdated object{ type: "claude_skill_security_scan
 
 
 An administrator allowed a skill version despite its security scan's verdict, or that allowance was revoked.
+
+
+
+ClaudeSkillServedVersionUpdated object{ type: "claude_skill_served_version_updated", actor, scope, 10 more }
+
+
+
+A skill's served version, the version that members get, was updated: an administrator or the owner chose a version, a saved version became the served version, or an accepted library submission was published into the skill. A new version that is served as soon as it is saved may appear only as claude_skill_version_created.
+
+
+
+ClaudeSkillVersionCreated object{ type: "claude_skill_version_created", actor, scope, 8 more }
+
+
+
+A new version of a skill was created.
 
 
 
@@ -9193,15 +9449,15 @@ McpServerManagedAuthTokenExchanged object{ type: "mcp_server_managed_auth_token_
 
 
 
-A user attempted to obtain an access token for an MCP server via enterprise managed authorization. This event reports the outcomes of attempted token exchanges. Repeated failures with the same cause may be reported once until the cause changes, and requests refused before a token exchange is attempted are not reported, except the "connector_scope_not_granted" and "identity_assertion_refused" failures described under error_type.
+A user attempted to obtain an access token for an MCP server via enterprise managed authorization (auto-connect). This event reports the outcomes of attempted token exchanges. Repeated failures with the same cause may be reported once until the cause changes, and requests refused before a token exchange is attempted are not reported, except the "connector_scope_not_granted" and "identity_assertion_refused" failures described under error_type.
 
 
 
-McpServerManagedAuthUpdated object{ type: "mcp_server_managed_auth_updated", actor, mcp_server_id, 15 more }
+McpServerManagedAuthUpdated object{ type: "mcp_server_managed_auth_updated", actor, mcp_server_id, 19 more }
 
 
 
-An MCP server's enterprise managed authorization settings were set, changed, or cleared, including when they were supplied while the server was being added or edited. Fields without a "previous\_" prefix describe the settings after the change and are null when the server has no managed authorization settings afterwards; "previous\_" fields describe the settings before the change and are null when the server had none before (always the case for a newly added server).
+An MCP server's enterprise managed authorization (auto-connect) settings were set, changed, or cleared, including when they were supplied while the server was being added or edited. Fields without a "previous\_" prefix describe the settings after the change and are null when the server has no managed authorization settings afterwards; "previous\_" fields describe the settings before the change and are null when the server had none before (always the case for a newly added server).
 
 
 
@@ -9589,6 +9845,22 @@ Organization domain was removed.
 
 
 
+OrgDomainSSOEnforcementUpdated object{ type: "org_domain_sso_enforcement_updated", actor, claudeai_sso_enforced, 9 more }
+
+
+
+A verified domain's single sign-on requirement changed, per surface.
+
+
+
+OrgDomainSSORoutingUpdated object{ type: "org_domain_sso_routing_updated", actor, domain, 6 more }
+
+
+
+A verified domain's single sign-on routing was saved or changed. Lists the identity provider connections the domain's users sign in through before and after; the two lists are the same when a save changed nothing.
+
+
+
 OrgDomainVerified object{ type: "org_domain_verified", actor, id, 4 more }
 
 
@@ -9682,6 +9954,30 @@ OrgIPRestrictionUpdated object{ type: "org_ip_restriction_updated", actor, id, 7
 
 
 Organization IP restriction was updated.
+
+
+
+OrgIdpConnectionCreated object{ type: "org_idp_connection_created", actor, display_name, 5 more }
+
+
+
+An identity provider connection was added to the parent organization.
+
+
+
+OrgIdpConnectionDeleted object{ type: "org_idp_connection_deleted", actor, directory_removed, 9 more }
+
+
+
+An identity provider connection was removed from the parent organization, along with the settings that referenced it.
+
+
+
+OrgIdpConnectionUpdated object{ type: "org_idp_connection_updated", action, actor, 8 more }
+
+
+
+An identity provider connection's settings were changed.
 
 
 
@@ -9941,6 +10237,14 @@ Organization SSO was toggled on or off.
 
 
 
+OrgSecurityControlAttestationUpdated object{ type: "org_security_control_attestation_updated", action, actor, 8 more }
+
+
+
+The organization's attestation for a security control was recorded, changed, renewed or cleared by an administrator, or was ended automatically.
+
+
+
 OrgSyncDeletingSynchronizedFilesStarted object{ type: "org_sync_deleting_synchronized_files_started", actor, id, 3 more }
 
 
@@ -10114,6 +10418,62 @@ OwnedProjectsAccessRestored object{ type: "owned_projects_access_restored", acto
 
 
 Access to owned projects was restored.
+
+
+
+ParentOrganizationCentralizedManagementEnrolled object{ type: "parent_organization_centralized_management_enrolled", actor, parent_organization_id, 5 more }
+
+
+
+A parent organization was enrolled in centralized management.
+
+
+
+ParentOrganizationCentralizedManagementOrganizationUpdated object{ type: "parent_organization_centralized_management_organization_updated", action, actor, 7 more }
+
+
+
+An organization's approval of its parent organization's Centralized Management setup changed, or its administrators were reminded to approve.
+
+
+
+ParentOrganizationCentralizedManagementSetupUpdated object{ type: "parent_organization_centralized_management_setup_updated", action, actor, 8 more }
+
+
+
+The Centralized Management setup of a parent organization changed: it was started or abandoned, its proposed administrators changed, its remaining organizations were force approved, or it completed.
+
+
+
+ParentOrganizationCentralizedManagementUnenrolled object{ type: "parent_organization_centralized_management_unenrolled", actor, parent_organization_id, 5 more }
+
+
+
+A parent organization was unenrolled from centralized management.
+
+
+
+ParentOrganizationMemberRemoved object{ type: "parent_organization_member_removed", actor, parent_organization_id, 6 more }
+
+
+
+A parent-organization admin role was removed from a user.
+
+
+
+ParentOrganizationMemberUpdated object{ type: "parent_organization_member_updated", action, actor, 7 more }
+
+
+
+A parent-organization admin role was granted or changed for a user.
+
+
+
+ParentOrganizationSettingsUpdated object{ type: "parent_organization_settings_updated", actor, parent_organization_id, 5 more }
+
+
+
+Parent organization settings were updated.
 
 
 
@@ -11203,9 +11563,9 @@ RbacRolePermissionAdded object{ type: "rbac_role_permission_added", action, acto
 
 
 
-Admin added a permission to an RBAC custom role.
+A permission was added to an RBAC custom role.
 
-Emitted once per requested permission, including permissions the role already had, so a retried request still produces a complete audit record.
+A request records one activity per permission it asks to add, including any the role already had, so a retry still leaves a complete audit record.
 
 
 
@@ -11213,9 +11573,9 @@ RbacRolePermissionRemoved object{ type: "rbac_role_permission_removed", action, 
 
 
 
-Admin removed a permission from an RBAC custom role.
+A permission was removed from an RBAC custom role.
 
-Emitted once per requested permission, including permissions the role already lacked, so a retried request still produces a complete audit record.
+A request records one activity per permission it asks to remove, including any the role already lacked, so a retry still leaves a complete audit record.
 
 
 
@@ -11251,7 +11611,7 @@ Role assignment was revoked.
 
 
 
-SSOLoginFailed object{ type: "sso_login_failed", actor, id, 3 more }
+SSOLoginFailed object{ type: "sso_login_failed", actor, id, 4 more }
 
 
 
@@ -11259,7 +11619,7 @@ An SSO sign-in attempt failed.
 
 
 
-SSOLoginInitiated object{ type: "sso_login_initiated", actor, id, 3 more }
+SSOLoginInitiated object{ type: "sso_login_initiated", actor, id, 4 more }
 
 
 
@@ -11267,7 +11627,7 @@ A user started an SSO sign-in flow.
 
 
 
-SSOLoginSucceeded object{ type: "sso_login_succeeded", actor, id, 5 more }
+SSOLoginSucceeded object{ type: "sso_login_succeeded", actor, id, 6 more }
 
 
 
@@ -11755,7 +12115,7 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/compliance/activities \
-    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-version: 2026-10-21' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 

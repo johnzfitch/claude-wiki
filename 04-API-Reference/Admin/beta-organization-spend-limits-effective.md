@@ -2,7 +2,7 @@
 title: "Effective - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/effective"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-03T06:23:15Z"
+fetched_at: "2026-11-18T06:27:23Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Browser use tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-06T06:26:40Z"
+fetched_at: "2026-11-14T06:24:44Z"
 tags: ["api", "security"]
 ---
 
@@ -23,14 +23,24 @@ Browser use tool
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 
 
@@ -791,7 +801,7 @@ Report a failed call to Claude as an ordinary error result: `is_error: true`, te
 
 Make error text specific, because Claude reads it and adapts: `Error: Navigation to https://example.com/status timed out after 30 seconds. The page may be unavailable.` gives Claude something to act on where a bare `Error: navigation failed` doesn’t. Other common cases:
 
-### Refused navigation scheme
+### Refused navigation scheme
 
 ```python
 {
@@ -805,7 +815,7 @@ Make error text specific, because Claude reads it and adapts: `Error: Navigation
 
 
 
-### Stale or unknown element reference
+### Stale or unknown element reference
 
 ```python
 {
@@ -819,7 +829,7 @@ Make error text specific, because Claude reads it and adapts: `Error: Navigation
 
 
 
-### Disabled or unimplemented member
+### Disabled or unimplemented member
 
 ```python
 {
@@ -833,7 +843,7 @@ Make error text specific, because Claude reads it and adapts: `Error: Navigation
 
 
 
-### Skipped after an earlier failure in the turn
+### Skipped after an earlier failure in the turn
 
 When the `left_click` on `ref_3` from [Batch actions](#batch-actions) fails with the stale-reference error shown earlier, the `type` and `key` calls after it each get this result:
 
@@ -873,13 +883,13 @@ The API validates the toolset entry and every member `tool_use` and `tool_result
 
 ## Pricing and data retention
 
-Browser use follows the standard [tool use pricing](agents-and-tools-tool-use-overview.md#pricing). When using the browser use tool:
+Browser use follows the standard [tool use pricing in the tool use overview](agents-and-tools-tool-use-overview.md#pricing). When using the browser use tool:
 
-**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request (about 6,670 on Claude Sonnet 5 and about 6,610 on the other supported models), which covers the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
+**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request: about 6,670 on Claude Sonnet 5 and about 6,610 on the other supported models. These tokens cover the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The response `usage` reports the exact count for a request, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
 
 **Additional token consumption:**
 
-- Screenshot and zoom images returned in tool results, billed as image input (see [Vision pricing](../Guides/build-with-claude-vision.md#evaluate-image-size))
+- Screenshot and zoom images returned in tool results, billed as image input (see [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size))
 - Text tool results returned to Claude, such as accessibility trees, page text, and console or network entries
 
 
@@ -920,50 +930,96 @@ Browse client toolsets and every other Anthropic-provided tool, with their versi
 
 ## Availability
 
-Browser use tool is available on select models and eligible for zero data retention.
+Browser use tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Amazon Bedrock
 
-StatusAvailable
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Amazon Bedrock (bedrock-runtime)
 
-Models
+API  
+- Messages API
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Claude Platform on AWS
 
-StatusNot available
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
 ### Data handling
 

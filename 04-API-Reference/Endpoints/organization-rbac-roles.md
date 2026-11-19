@@ -2,7 +2,7 @@
 title: "RBAC Roles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/rbac_roles"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:17Z"
+fetched_at: "2026-11-13T06:36:22Z"
 tags: ["api"]
 ---
 
@@ -41,53 +41,81 @@ Retrieve an RBAC Role by ID.
 
 
 
-RBACRole object{ type: "rbac_role", id, created_at, 2 more }
+RBACRole object{ type: "rbac_role", id, created_at, 3 more }
 
 
 
 
 
-type: "rbac_role"
+RBACRoleSource = [RBACRoleSourceBuiltIn](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role_source_built_in) or [RBACRoleSourceCustom](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role_source_custom)
 
 
 
-Object type.
-
-For RBAC Roles, this is always `"rbac_role"`.
-
-defaultrbac_role
-
-id: string
-
-
-
-ID of the RBAC Role.
+One of the following:
 
 
 
-created_at: string
+RBACRoleSourceBuiltIn object{ type: "built_in" }
 
 
-
-RFC 3339 datetime string indicating when the RBAC Role was created.
-
-formatdate-time
-
-display_name: string
-
-
-
-Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
 
 
 
-updated_at: string
+type: "built_in"
 
 
 
-RFC 3339 datetime string indicating when the RBAC Role was last updated.
+Anthropic provisions the RBAC Role, and the organization's administrators cannot change or delete it.
 
-formatdate-time
+defaultbuilt_in
+
+
+
+RBACRoleSourceCustom object{ type: "custom" }
+
+
+
+
+
+type: "custom"
+
+
+
+The organization's administrators can change and delete the RBAC Role.
+
+defaultcustom
+
+
+
+RBACRoleSourceBuiltIn object{ type: "built_in" }
+
+
+
+
+
+type: "built_in"
+
+
+
+Anthropic provisions the RBAC Role, and the organization's administrators cannot change or delete it.
+
+defaultbuilt_in
+
+
+
+RBACRoleSourceCustom object{ type: "custom" }
+
+
+
+
+
+type: "custom"
+
+
+
+The organization's administrators can change and delete the RBAC Role.
+
+defaultcustom
 
 #### RBAC Roles[Permissions](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/permissions)
 

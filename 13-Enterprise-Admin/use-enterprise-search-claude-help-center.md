@@ -2,13 +2,11 @@
 title: "Use enterprise search | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12489464"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:25:41Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["enterprise", "search"]
 ---
 
 # Use enterprise search
-
-October 1, 2026
 
 
 Enterprise search capabilities are available for users on Team and Enterprise plans.
@@ -17,7 +15,7 @@ Enterprise search adds a dedicated project for searching across your organizatio
 
 ## What is enterprise search?
 
-We’ve added a pre-configured “Ask Your Org” **[project](../15-Claude-AI-Features/what-are-projects.md)** that appears in your sidebar. This project is designed specifically for unified knowledge access across your company's tools and data sources. This dedicated workspace provides:
+We’ve added a pre-configured “Ask Your Org” **[project](https://support.claude.com/en/articles/9517075-what-are-projects)** that appears in your sidebar. This project is designed specifically for unified knowledge access across your company's tools and data sources. This dedicated workspace provides:
 
 - **Guided setup:** Easy onboarding flow for connecting your work apps.
 
@@ -194,6 +192,14 @@ Enterprise search is particularly valuable for:
 - Have an owner check that the feature is enabled for your organization.
 
 - Try refreshing your browser or signing out and back in.
+
+### The search project isn't appearing in my sidebar after confirming it is enabled (Primary Owner)
+
+1.  Open claude.ai/ask-your-org directly on web or desktop. It opens the project even when it isn't pinned.
+
+2.  In the project header, click the star or pin icon (or the three-dot menu, then "Star"). The project returns to the left sidebar.
+
+3.  Hard refresh the browser if the sidebar doesn't update right away.
 
 ### I can't connect a recommended connector
 

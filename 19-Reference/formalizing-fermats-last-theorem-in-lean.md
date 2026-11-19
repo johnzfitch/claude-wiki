@@ -2,7 +2,7 @@
 title: "Formalizing Fermat’s Last Theorem in Lean"
 source_url: "https://www-cdn.anthropic.com/9e431dff043da6538d99d6c2d231b670aa3da263.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-07T06:28:21Z"
+fetched_at: "2026-11-18T06:28:29Z"
 tags: ["news-research"]
 ---
 
@@ -24,9 +24,9 @@ Formalizing Fermat’s Last Theorem in Lean
                                                                                                                                                 Recheck passes
                                                                                               Modularity lifting (the case needed),
                                       30,000                                                                          Ribet, and FLT
+
+
     Theorems proved (running total)
-
-
                                       25,000                                                              Eichler–Shimura steps
 
 
@@ -230,7 +230,7 @@ DAY 5, 6:09 PM. Checking the Taylor–Wiles step [13], Claude tries to remember 
 needs special care, finds the reason, and checks that it does no harm here. In the passage, ad⁰ is the
 trace-zero adjoint representation, and ε is the cyclotomic character.
   “And for p = 5 with Proj im = PGL₂(F5 ): note PGL₂(F5 ) ≅ S5 , PSL₂(F5 ) ≅ A5 , and ℚ(√5) ⊂ ℚ(ζ5 ): if
-  Proj im ρ̄ = PGL₂(F5 ) and the quadratic subfield cut out by PGL₂/PSL₂ equals ℚ(√5), then ρ|̄ ℚ(√5) has
+  Proj im ρ̄ = PGL₂(F5 ) and the quadratic subfield cut out by PGL₂/PSL₂ equals ℚ(√5), then ρ̄|ℚ(√5) has
   projective image PSL₂(F5 )=A5 , still abs. irreducible! So hTW doesn't exclude it. Is H¹(Gal(F/ℚ), ad⁰(1))
   ≠ 0 there? I recall from Wiles §1 / TW: "Lemma (TW 1995?): if p ≥ 5? H¹(..)=0 ... except p = 5 and im
   = PGL₂(F5 )? " Hmm. Honestly: In Taylor–Wiles p.566? they say: "We need H¹(Gal(Fn /ℚ), ad⁰(1)) = 0;
@@ -246,12 +246,12 @@ trace-zero adjoint representation, and ε is the cyclotomic character.
   needs extra care: TW handle it — in TW paper §4? "Lemma: H¹(Gal(Fn /ℚ), ad⁰(1)) = 0" proof splits
   cases and for p = 5 uses that ζ5 ∉ ... the twist by ε: Gal(Fn /ℚ) ⊋ SL₂ part, and the ε-twist makes the
   relevant H¹ vanish unless ε is trivial on the center-ish... The known precise condition (from later
-  literature, e.g. Kisin/"adequate" or DDT Thm 2.49 statement): DDT 2.49 requires only "ρ|̄ Gℚ(√(-1)(p-1)/2 p)
+  literature, e.g. Kisin/"adequate" or DDT Thm 2.49 statement): DDT 2.49 requires only "ρ̄|Gℚ(√(-1)(p-1)/2 p)
   absolutely irreducible". And DDT Lemma 2.48 proof handles p=5 & im ⊇ SL₂(F5 ) via the cyclotomic
   twist: H¹(Gal(F0 /ℚ), ad⁰(1)): the subgroup Gal(F0 /ℚ(ζp )) ... if scalar matrices/ε nontrivial on the part
-  acting trivially on ad⁰... I recall the argument: let Z = Gal(F0 /ℚ(ad⁰ρ)̄ ) which acts trivially on ad⁰ but
+  acting trivially on ad⁰... I recall the argument: let Z = Gal(F0 /ℚ(ad⁰ρ̄)) which acts trivially on ad⁰ but
   via ε on ad⁰(1); if ε|Z nontrivial then H⁰(Z, ad⁰(1)) = 0 and H¹(Z, ad⁰(1)) = 0 (order prime to p), so
-  inflation-restriction gives H¹ = 0. If ε|Z trivial, then ℚ(ζp ) ⊂ ℚ(ad⁰ρ)̄ , i.e. Proj im ρ̄ has a quotient
+  inflation-restriction gives H¹ = 0. If ε|Z trivial, then ℚ(ζp ) ⊂ ℚ(ad⁰ρ̄), i.e. Proj im ρ̄ has a quotient
   Gal(ℚ(ζp )/ℚ) ≅ (ℤ/p)× of order p − 1 ≥ 4 for p = 5: PGL₂(F5 ) ≅ S5 has abelianization ℤ/2, so no ℤ/4
   quotient ⇒ for p=5 with proj image PGL₂(F5 ) or PSL₂(F5 ), ε|Z is nontrivial ⇒ fine.”
   — From Claude’s reasoning while it worked
@@ -310,23 +310,20 @@ identities and the Brauer–Nesbitt theorem).
 
                                                       6
   “For c3d5e163 (twisted by ℓi , and extra finite exceptional set S): differences: (1) congruence aℓ (f) ≡ ℓi
-  aℓ (W) — i.e. ρf̄ ≅ ρW̄ ⊗ χ̄i where χ̄ = mod-p cyclotomic character; det side: det ρf̄ (Frobℓ ) = ℓ (weight 2
-  trivial nebentypus) vs det(ρW    ̄ ⊗ χ̄i )(Frobℓ ) = ℓ · ℓ2i — these must agree mod 𝔪 for the charpoly
-              2i
-  method: ℓ ≡ 1 mod p for all ℓ ∤ pN... false unless (p−1) | 2i. Hmm! Unless the statement intends i with
-  χi such that ... DDT 3.1(a)?? Let me think: DDT Lemma 3.1? Hmm, in DDT "ρ̄ ≅ ρḡ ⊗ χi " arises when
+  aℓ (W) — i.e. ρ̄f ≅ ρ̄W ⊗ χ̄i where χ̄ = mod-p cyclotomic character; det side: det ρ̄f (Frobℓ ) = ℓ (weight 2
+  trivial nebentypus) vs det(ρ̄W ⊗ χ̄i )(Frobℓ ) = ℓ · ℓ2i — these must agree mod 𝔪 for the charpoly
+  method: ℓ2i ≡ 1 mod p for all ℓ ∤ pN... false unless (p−1) | 2i. Hmm! Unless the statement intends i with
+  χi such that ... DDT 3.1(a)?? Let me think: DDT Lemma 3.1? Hmm, in DDT "ρ̄ ≅ ρ̄g ⊗ χi " arises when
   lowering weight/level: eigenforms of weight k and level N give ρ̄ with twists. With f of weight 2 on Γ₀(N)
-  (trivial character), ρf̄ ⊗χ̄-i has det = χ̄1−2i . ρW
-                                                     ̄ has det χ̄. So a congruence ρW̄ ≅ ρf̄ ⊗ χ̄-i forces χ̄2i = 1 i.e.
+  (trivial character), ρ̄f ⊗χ̄-i has det = χ̄1−2i . ρ̄W has det χ̄. So a congruence ρ̄W ≅ ρ̄f ⊗ χ̄-i forces χ̄2i = 1 i.e.
   (p−1) | 2i. The statement c3d5e163 quantifies ARBITRARY i with the trace congruence only at good ℓ
   — if no such f exists for bad i the statement is vacuous-hypothesis true. But can the traces match while
-  dets don't? The hypothesis only gives traces: tr ρf̄ (Frobℓ ) ≡ ℓi tr ρW   ̄ (Frobℓ ). To conclude ρW ̄ ss ≅ (ρf̄ ⊗
-    -i ss
-  χ̄ ) via Brauer–Nesbitt in char p one needs charpolys (trace AND det) for p > 2, or traces suffice when
+  dets don't? The hypothesis only gives traces: tr ρ̄f (Frobℓ ) ≡ ℓi tr ρ̄W (Frobℓ ). To conclude ρ̄W ss ≅ (ρ̄f ⊗
+  χ̄-i )ss via Brauer–Nesbitt in char p one needs charpolys (trace AND det) for p > 2, or traces suffice when
   p > dim = 2? Brauer–Nesbitt: for p > n (here p ≥ 3 > 2 = n ✓ hp2!), equality of traces on a dense
   set ⇒ isomorphic semisimplifications ✓ (trace determines charpoly coefficients via Newton identities
-  when p > n). So with p ≠ 2, traces suffice ✓ — that's why hp2 is there. Then ρW         ̄ irreducible (hirr) ⇒ ρW   ̄
-  ≅ ρf̄ ⊗ χ̄-i ⇒ unramified at q ∤ pN ✓ (χ̄ unramified away from p).”
+  when p > n). So with p ≠ 2, traces suffice ✓ — that's why hp2 is there. Then ρ̄W irreducible (hirr) ⇒ ρ̄W
+  ≅ ρ̄f ⊗ χ̄-i ⇒ unramified at q ∤ pN ✓ (χ̄ unramified away from p).”
   — From Claude’s reasoning while it worked
 
 
@@ -366,7 +363,7 @@ j-invariants (j = 0 and j = 1728), and concludes h = 2.
   supersingular. Number of ss j-invariants = (p−1)/12 + ε₂ + ε₃ where... the standard formula: #ss =
 
 
-                                                          7
+                                                           7
    p/12 + {0 if p≡1(12), 1/2 if ...}. For p=11: I believe there are 2 supersingular j-invariants (j=0 and
    j=1728, since 11≡2 mod 3 and 11≡3 mod 4 make both singular)... actually let me just trust [another
    agent]'s "h=2" claim for B11,∞ — [that agent] says h=2 and asks [a second agent] to verify via the two

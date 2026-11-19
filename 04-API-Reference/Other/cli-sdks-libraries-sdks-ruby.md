@@ -2,7 +2,7 @@
 title: "Ruby SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/ruby"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:58Z"
+fetched_at: "2026-11-13T06:35:00Z"
 tags: ["api", "sdk"]
 ---
 
@@ -387,7 +387,7 @@ Unless otherwise specified, other classes in the SDK do not have locks protectin
 
 ## OpenTelemetry tracing
 
-When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
+When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Anthropic SDK](manage-claude-opentelemetry-sdk.md).
 
 ## Making custom or undocumented requests
 
@@ -445,8 +445,8 @@ response = anthropic.request(
 
 For detailed platform setup guides with code examples, see:
 
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
+- [Amazon Bedrock (`bedrock-mantle`)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 - [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
@@ -460,7 +460,7 @@ The Ruby SDK supports the following platforms:
 - **Claude Platform on AWS:** Part of the main `anthropic` gem (requires the `aws-sdk-core` gem). Provides `Anthropic::AWSClient`. Pass `workspace_id:` to the constructor or set the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable (see [Workspaces](../Guides/build-with-claude-claude-platform-on-aws.md#workspaces)). Available in beta.
 - **Foundry:** Part of the main `anthropic` gem. Provides `Anthropic::FoundryClient`. Pass `resource:` and `api_key:` (or `azure_ad_token_provider:` for Microsoft Entra ID) to the constructor, or set the `ANTHROPIC_FOUNDRY_RESOURCE` and `ANTHROPIC_FOUNDRY_API_KEY` environment variables.
 
-Use `Anthropic::BedrockMantleClient` for new projects; `Anthropic::BedrockClient` remains for existing applications using the Bedrock `InvokeModel` API.
+Use `Anthropic::BedrockMantleClient` with the `bedrock-mantle` endpoint, and `Anthropic::BedrockClient` with the `InvokeModel` API on the `bedrock-runtime` endpoint.
 
 The Ruby SDK also supports Claude Models on Google Cloud (Anthropic managed) through `Anthropic::GoogleCloudClient`. This client is in beta. It ships in the main `anthropic` gem and needs the `googleauth` gem. Pass `workspace_id:` to the constructor or set the `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID` environment variable. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution) for how the client resolves the workspace ID.
 

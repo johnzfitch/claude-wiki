@@ -2,7 +2,7 @@
 title: "Tutorial: Build a tool-using agent - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/build-a-tool-using-agent"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:10Z"
+fetched_at: "2026-11-13T06:33:01Z"
 tags: ["agents", "api", "sdk"]
 ---
 

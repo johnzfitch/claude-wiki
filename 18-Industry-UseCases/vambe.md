@@ -2,7 +2,7 @@
 title: "Vambe Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/vambe"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:43Z"
+fetched_at: "2026-11-18T06:29:31Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -34,9 +34,11 @@ Introducing Claude Opus 4.6
 
 We’re upgrading our smartest model. The new Claude Opus 4.6 improves on its predecessor’s coding skills. It plans more carefully, sustains agentic tasks for longer, and features a 1M token context window.
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [Vambe](https://www.vambe.ai/) is a Chilean startup building conversational AI that helps mid-sized businesses across Latin America. The platform turns customer interactions into revenue by automating sales conversations, qualifying leads, and completing transactions directly within WhatsApp and Instagram.
 
@@ -100,6 +102,9 @@ Vambe’s immediate focus is Brazil, Latin America’s largest market. Beyond ge
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -107,6 +112,3 @@ Vambe’s immediate focus is Brazil, Latin America’s largest market. Beyond ge
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

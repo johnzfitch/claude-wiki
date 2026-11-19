@@ -2,7 +2,7 @@
 title: "Get started with Claude Compliance API integrations | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15167101-get-started-with-claude-compliance-api-integrations"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:26:29Z"
+fetched_at: "2026-11-18T06:28:02Z"
 tags: ["api", "connectors"]
 ---
 
@@ -268,6 +268,8 @@ For Claude Platform, contact your Anthropic sales team. Review **[Compliance API
 - **TrendAI:** TrendAI's integration with the Claude Compliance API automatically collects and monitors Claude chat activity across your organization, scans for prompt injection, harmful content, and sensitive-data leakage, and correlates findings with your broader security signals through SIEM and XDR for investigation and audit-ready compliance and governance. To set up this integration, see the **[TrendAI setup guide](https://www.trendmicro.com/en_us/research/26/f/governing-claude-enterprise.html)**.
 
 - **Twine Security:** Twine's AI digital employee, Alex, uses the Compliance API to bring identity governance to Claude Enterprise - mapping who has access, which roles, groups, and connectors they hold, and flagging risks such as accounts provisioned outside the identity provider, with remediation routed for human approval. To set up this integration, see the **[Twine Security setup guide](https://www.twinesecurity.com/resources/twine-anthropic-governing-claude-enterprise)**.
+
+- **Upwind Security:** Upwind uses the Compliance API to stream Claude Enterprise conversations, audit logs, and user accounts into its platform, giving security teams visibility into Claude usage alongside the rest of their cloud and AI stack for ongoing monitoring, detection, and response. To set up this integration, see the **[Upwind Security setup guide](https://www.upwind.io/integrations/anthropic-claude)**.
 
 - **Valence Security:** Valence integrates with the Compliance API to give security teams visibility into how Claude Enterprise and Claude Platform are used, including users, agents, MCP servers, connectors, and tools. Valence correlates this activity with identities and configurations across the rest of the environment, helping teams detect risky behavior and remediate exposure. To set up this integration, see the **[Valence Security setup guide](https://www.valencesecurity.com/resources/blogs/securing-agentic-identities-in-claude-the-valence-integration-with-the-compliance-api)**.
 

@@ -2,7 +2,7 @@
 title: "Autonomous de novo protein binder design with Claude"
 source_url: "https://www-cdn.anthropic.com/30bf50e22a01388bb29bf077ee3f244531594b7a.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-20T06:27:16Z"
+fetched_at: "2026-11-18T06:28:47Z"
 tags: ["news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Web fetch tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-fetch-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:37Z"
+fetched_at: "2026-11-13T06:33:59Z"
 tags: ["api", "prompting", "search"]
 ---
 
@@ -20,14 +20,21 @@ Fetch and read content from specific URLs to augment Claude’s context with liv
 
 Web fetch tool
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -66,7 +73,7 @@ However, there is still residual risk that you should carefully consider when us
 If data exfiltration is a concern, consider:
 
 - Disabling the web fetch tool entirely
-- Using the `max_uses` parameter to limit the number of requests
+- Using the [`max_uses`](#max-uses) parameter to limit the number of fetches in a turn
 - Using the `allowed_domains` parameter to restrict to known safe domains
 - Using the `url_sources` parameter to stop client-side tool results from counting as a source (see [URL sources](#url-sources))
 
@@ -189,7 +196,7 @@ client = anthropic.Anthropic()
 
 response = client.messages.create(
     model="claude-opus-5-5",
-    max_tokens=1024,
+    max_tokens=4096,
     messages=[
         {
             "role": "user",
@@ -214,7 +221,7 @@ JSON
   "type": "web_fetch_20250910",
   "name": "web_fetch",
 
-  // Optional: Limit the number of fetches for each request
+  // Optional: Limit the number of fetches
   "max_uses": 10,
 
   // Optional: Only fetch from these domains
@@ -242,7 +249,9 @@ Later tool versions add two more optional parameters: `use_cache` requires `web_
 
 ### Max uses
 
-The `max_uses` parameter limits the number of web fetches performed. Failed fetches count against the limit. If Claude attempts more fetches than allowed, the `web_fetch_tool_result` is an error with the `max_uses_exceeded` error code. There is currently no default limit.
+The `max_uses` parameter limits the number of web fetches in a single turn. Failed fetches count against the limit. If Claude calls web fetch directly more times than allowed, the `web_fetch_tool_result` is an error with the `max_uses_exceeded` error code. If Claude calls web fetch from code execution more times than allowed, the code execution run ends with an error. There is no default limit.
+
+A turn can span several requests. A request continues a turn when it resumes after [`pause_turn`](agents-and-tools-tool-use-server-tools.md#the-server-side-loop-and-pause-turn) or when its last message contains only `tool_result` blocks. Fetches from earlier requests in that turn count against the limit, unless Claude ran them from code execution through [dynamic filtering](#dynamic-filtering).
 
 ### Domain filtering
 
@@ -286,7 +295,7 @@ The `use_cache` parameter controls whether cached content may be returned. Set `
 
 Requires `web_fetch_20260318` or later.
 
-The `response_inclusion` parameter controls how fetch result blocks appear in the API response when the result was consumed by a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same turn. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, reducing output token costs for agentic workflows that don’t need to echo raw page content back to the client. The default is `"full"`. Results from direct calls, or from code execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
+The `response_inclusion` parameter controls how fetch result blocks appear in the API response when a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same response consumed the result. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, for agentic workflows that don’t need the raw page content. Token usage is unaffected, because Claude reads the code’s output rather than these blocks. The default is `"full"`. The API always returns results from direct calls, or from code execution calls that paused before completing, in full so that you can send them back in the next request.
 
 ```python
 {
@@ -616,7 +625,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "web
 
 ## Batch requests
 
-You can include the web fetch tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md). Web fetch tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
+You can include the web fetch tool in the [Message Batches API](../Guides/build-with-claude-batch-processing.md). Web fetch tool calls through the Message Batches API are priced the same as those in regular Messages API requests.
 
 ## Usage and pricing
 
@@ -670,45 +679,56 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Web fetch tool is available on every model and eligible for zero data retention.
+Web fetch tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Add a `web_fetch` tool to the request’s `tools`. Settings such as `max_uses`, domain lists, `citations` and `max_content_tokens` go on that tool.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Models on Google Cloud (Anthropic managed)
 
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Azure
+API  
+- Messages API
 
+Models  
+- All models
+
+Microsoft Foundry (hosted on Azure)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
 Deployments hosted on Azure support only `web_fetch_20250910`: no dynamic filtering, response inclusion or cache bypass.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Microsoft Foundry (hosted on Anthropic)
 
-Usage
+API  
+- Messages API
 
-Part of the agent toolset, and on by default once the toolset is added. Domain lists (with no paths) and `max_content_tokens` go on the toolset’s `web_fetch` entry; `max_uses`, `citations` and `cache_control` are not available.
-
-StatusAvailable
-
-Cloud platforms
-
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Models  
+- All models
 
 ### Data handling
 

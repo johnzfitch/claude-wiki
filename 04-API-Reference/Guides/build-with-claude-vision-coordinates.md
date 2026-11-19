@@ -2,7 +2,7 @@
 title: "Coordinates and bounding boxes - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/vision-coordinates"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:32Z"
+fetched_at: "2026-11-13T06:34:00Z"
 tags: ["api"]
 ---
 

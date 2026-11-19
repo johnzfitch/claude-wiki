@@ -2,29 +2,25 @@
 title: "Anthropic is donating $20 million to Public First Action \\ Anthropic"
 source_url: "https://www.anthropic.com/news/donate-public-first-action"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:50Z"
+fetched_at: "2026-11-14T06:25:56Z"
 tags: ["news-research"]
 ---
 
 # Anthropic is donating \$20 million to Public First Action
 
-- Published
+Published  
+Feb 12, 2026
 
-  Feb 12, 2026
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Funding](https://www.anthropic.com/search?topic=funding)
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+- [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Democratic lead](https://www.anthropic.com/search?topic=democratic-lead)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Funding](https://www.anthropic.com/search?topic=funding)
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-  - [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [Democratic lead](https://www.anthropic.com/search?topic=democratic-lead)
-
-  See more...
+See more...
 
 Related articles
 
@@ -38,7 +34,7 @@ Related articles
 
 AI will bring enormous [benefits](https://darioamodei.com/essay/machines-of-loving-grace)—for science, technology, medicine, economic growth, and much more. But a technology this powerful also comes with considerable [risks](https://darioamodei.com/essay/the-adolescence-of-technology).
 
-Those risks might come from the misuse of the models: AI is already being exploited to [automate cyberattacks](disrupting-ai-espionage.md); in the future it might assist in the production of [dangerous weapons](https://red.anthropic.com/2025/biorisk/). Risks might also come from the models themselves: powerful AI systems can [take harmful actions](https://www-cdn.anthropic.com/f21d93f21602ead5cdbecb8c8e1c765759d9e232.pdf) contrary to the intentions—and out of the control—of their users.
+Those risks might come from the misuse of the models: AI is already being exploited to [automate cyberattacks](disrupting-ai-espionage.md); in the future it might assist in the production of [dangerous weapons](https://red.anthropic.com/2025/biorisk/). Risks might also come from the models themselves: powerful AI systems can [take harmful actions](https://assets.claude.com/f21d93f21602ead5cdbecb8c8e1c765759d9e232.pdf) contrary to the intentions—and out of the control—of their users.
 
 AI models are improving in their capabilities at a [dizzying, increasing pace](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/), from simple chatbots in 2023 to today’s “agents” that complete complex tasks. At Anthropic, we’ve had to redesign a notoriously difficult technical test for hiring software engineers [multiple times](https://www.anthropic.com/engineering/AI-resistant-technical-evaluations) as successive AI models defeated each version. This rate of progress will not be confined to software engineering; indeed, many other professions are [already seeing an impact](https://www.anthropic.com/economic-index).
 

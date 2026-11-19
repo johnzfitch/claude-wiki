@@ -2,7 +2,7 @@
 title: "Go SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/go"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:57Z"
+fetched_at: "2026-11-13T06:35:00Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -28,7 +28,7 @@ For API feature documentation with code examples, see the [API reference](../End
 
 ```python
 import (
-    "github.com/anthropics/anthropic-sdk-go/v2" // imported as anthropic
+ "github.com/anthropics/anthropic-sdk-go/v2" // imported as anthropic
 )
 ```
 
@@ -52,32 +52,32 @@ This library requires Go 1.25+.
 package main
 
 import (
-    "context"
-    "fmt"
+ "context"
+ "fmt"
 
-    "github.com/anthropics/anthropic-sdk-go/v2"
-    "github.com/anthropics/anthropic-sdk-go/v2/option"
+ "github.com/anthropics/anthropic-sdk-go/v2"
+ "github.com/anthropics/anthropic-sdk-go/v2/option"
 )
 
 func main() {
     client := anthropic.NewClient(
         option.WithAPIKey("my-anthropic-api-key"), // defaults to os.LookupEnv("ANTHROPIC_API_KEY")
-    )
+ )
     message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
         MaxTokens: 1024,
         Messages: []anthropic.MessageParam{
             anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
-        },
+     },
         Model: anthropic.ModelClaudeOpus5_5,
-    })
-    if err != nil {
-        panic(err.Error())
-    }
-    for _, block := range message.Content {
-        if textBlock, ok := block.AsAny().(anthropic.TextBlock); ok {
+ })
+ if err != nil {
+     panic(err.Error())
+ }
+ for _, block := range message.Content {
+     if textBlock, ok := block.AsAny().(anthropic.TextBlock); ok {
             fmt.Println(textBlock.Text)
-        }
-    }
+     }
+ }
 }
 ```
 
@@ -85,7 +85,7 @@ func main() {
 
 For authentication options including Workload Identity Federation, see [Authentication](manage-claude-authentication.md). If your API key is a [personal or service account key](manage-claude-authentication.md#key-types) that isn’t scoped to a workspace, set the workspace ID in the `anthropic-workspace-id` request header; [Select a workspace](manage-claude-authentication.md#select-a-workspace) shows the per-request option for this SDK.
 
-### Conversations
+### Conversations
 
 ```python
 messages := []anthropic.MessageParam{
@@ -98,7 +98,7 @@ message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
     MaxTokens: 1024,
 })
 if err != nil {
-    panic(err)
+ panic(err)
 }
 
 fmt.Printf("%+v\n", message.Content)
@@ -114,7 +114,7 @@ message, err = client.Messages.New(context.TODO(), anthropic.MessageNewParams{
     MaxTokens: 1024,
 })
 if err != nil {
-    panic(err)
+ panic(err)
 }
 
 fmt.Printf("%+v\n", message.Content)
@@ -122,26 +122,26 @@ fmt.Printf("%+v\n", message.Content)
 
 
 
-### System prompts
+### System prompts
 
 ```python
 message, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
     Model:     anthropic.ModelClaudeOpus5_5,
     MaxTokens: 1024,
     System: []anthropic.TextBlockParam{
-        {Text: "Be very serious at all times."},
-    },
+     {Text: "Be very serious at all times."},
+ },
     Messages: messages,
 })
 if err != nil {
-    panic(err)
+ panic(err)
 }
 fmt.Printf("%+v\n", message.Content)
 ```
 
 
 
-### Streaming
+### Streaming
 
 ```python
 content := "What is a quaternion?"
@@ -151,35 +151,35 @@ stream := client.Messages.NewStreaming(context.TODO(), anthropic.MessageNewParam
     MaxTokens: 1024,
     Messages: []anthropic.MessageParam{
         anthropic.NewUserMessage(anthropic.NewTextBlock(content)),
-    },
+ },
 })
 
 message := anthropic.Message{}
 for stream.Next() {
     event := stream.Current()
     err := message.Accumulate(event)
-    if err != nil {
-        panic(err)
-    }
+ if err != nil {
+     panic(err)
+ }
 
-    switch eventVariant := event.AsAny().(type) {
-    case anthropic.ContentBlockDeltaEvent:
-        switch deltaVariant := eventVariant.Delta.AsAny().(type) {
-        case anthropic.TextDelta:
-            print(deltaVariant.Text)
-        }
+ switch eventVariant := event.AsAny().(type) {
+ case anthropic.ContentBlockDeltaEvent:
+     switch deltaVariant := eventVariant.Delta.AsAny().(type) {
+     case anthropic.TextDelta:
+         print(deltaVariant.Text)
+     }
 
-    }
+ }
 }
 
 if stream.Err() != nil {
-    panic(stream.Err())
+ panic(stream.Err())
 }
 ```
 
 
 
-### Tool calling
+### Tool calling
 
 ```python
 messages := []anthropic.MessageParam{
@@ -187,11 +187,11 @@ messages := []anthropic.MessageParam{
 }
 
 toolParams := []anthropic.ToolParam{
-    {
+ {
         Name:        "get_coordinates",
         Description: anthropic.String("Accepts a place as an address, then returns the latitude and longitude coordinates."),
         InputSchema: GetCoordinatesInputSchema,
-    },
+ },
 }
 tools := make([]anthropic.ToolUnionParam, len(toolParams))
 for i, toolParam := range toolParams {
@@ -204,62 +204,62 @@ for {
         MaxTokens: 1024,
         Messages:  messages,
         Tools:     tools,
-    })
+ })
 
-    if err != nil {
-        panic(err)
-    }
+ if err != nil {
+     panic(err)
+ }
 
-    print(color("[assistant]: "))
-    for _, block := range message.Content {
-        switch block := block.AsAny().(type) {
-        case anthropic.TextBlock:
-            println(block.Text)
-            println()
-        case anthropic.ToolUseBlock:
+ print(color("[assistant]: "))
+ for _, block := range message.Content {
+     switch block := block.AsAny().(type) {
+     case anthropic.TextBlock:
+         println(block.Text)
+         println()
+     case anthropic.ToolUseBlock:
             inputJSON, _ := json.Marshal(block.Input)
-            println(block.Name + ": " + string(inputJSON))
-            println()
-        }
-    }
+         println(block.Name + ": " + string(inputJSON))
+         println()
+     }
+ }
 
     messages = append(messages, message.ToParam())
     toolResults := []anthropic.ContentBlockParamUnion{}
 
-    for _, block := range message.Content {
-        switch variant := block.AsAny().(type) {
-        case anthropic.ToolUseBlock:
-            print(color("[user (" + block.Name + ")]: "))
+ for _, block := range message.Content {
+     switch variant := block.AsAny().(type) {
+     case anthropic.ToolUseBlock:
+         print(color("[user (" + block.Name + ")]: "))
 
-            var response interface{}
-            switch block.Name {
-            case "get_coordinates":
-                var input struct {
+         var response interface{}
+         switch block.Name {
+         case "get_coordinates":
+             var input struct {
                     Location string `json:"location"`
-                }
+             }
 
                 err := json.Unmarshal([]byte(variant.JSON.Input.Raw()), &input)
-                if err != nil {
-                    panic(err)
-                }
+             if err != nil {
+                 panic(err)
+             }
 
                 response = GetCoordinates(input.Location)
-            }
+         }
 
             b, err := json.Marshal(response)
-            if err != nil {
-                panic(err)
-            }
+         if err != nil {
+             panic(err)
+         }
 
-            println(string(b))
+         println(string(b))
 
             toolResults = append(toolResults, anthropic.NewToolResultBlock(block.ID, string(b), false))
-        }
+     }
 
-    }
-    if len(toolResults) == 0 {
-        break
-    }
+ }
+ if len(toolResults) == 0 {
+     break
+ }
     messages = append(messages, anthropic.NewUserMessage(toolResults...))
 }
 ```
@@ -286,8 +286,8 @@ p := anthropic.ExampleParams{
     Point: anthropic.Point{
         X: 0,                // required field will serialize as 0
         Y: anthropic.Int(1), // optional field will serialize as 1
-        // ... omitted non-required fields will not be serialized
-    },
+     // ... omitted non-required fields will not be serialized
+ },
 
     Origin: anthropic.Origin{}, // the zero value of [Origin] is considered omitted
 }
@@ -319,7 +319,7 @@ To send a custom value instead of a struct, use the generic function `param.Over
 // In cases where the API specifies a given type,
 // but you want to send something else, use [SetExtraFields]:
 p.SetExtraFields(map[string]any{
-    "x": 0.01, // send "x" as a float instead of int
+ "x": 0.01, // send "x" as a float instead of int
 })
 
 // Send a number instead of an object
@@ -346,8 +346,8 @@ animal := AnimalUnionParam{
         Name: "Whiskers",
         Owner: PersonParam{
             Address: AddressParam{Street: "3333 Coyote Hill Rd", ZipCode: 0},
-        },
-    },
+     },
+ },
 }
 
 // Mutating a field
@@ -372,13 +372,13 @@ If you need to reconstruct parameters from raw JSON (for example, from a databas
 // Serialize params (for example, for storage or forwarding)
 b, err := json.Marshal(original)
 if err != nil {
-    panic(err)
+ panic(err)
 }
 
 // Later, reconstruct params from the stored JSON
 var params anthropic.MessageNewParams
 if err := params.UnmarshalJSON(b); err != nil {
-    panic(err)
+ panic(err)
 }
 param.SetJSON(b, &params)
 
@@ -408,7 +408,7 @@ type Animal struct {
         Owners      respjson.Field
         Age         respjson.Field
         ExtraFields map[string]respjson.Field
-    } `json:"-"`
+ } `json:"-"`
 }
 ```
 
@@ -463,23 +463,23 @@ If a response value union contains primitive values, primitive fields will be al
 
 ```python
 type AnimalUnion struct {
-    // From variants [Dog], [Cat]
+ // From variants [Dog], [Cat]
     Owner Person `json:"owner"`
-    // From variant [Dog]
+ // From variant [Dog]
     DogBreed string `json:"dog_breed"`
-    // From variant [Cat]
+ // From variant [Cat]
     CatBreed string `json:"cat_breed"`
-    // ...
+ // ...
 
     JSON struct {
         Owner respjson.Field
-        // ...
-    } `json:"-"`
+     // ...
+ } `json:"-"`
 }
 
 // If animal variant
 if animal.Owner.Address.ZipCode == "" {
-    panic("missing zip code")
+ panic("missing zip code")
 }
 
 // Switch on the variant
@@ -487,7 +487,7 @@ switch variant := animal.AsAny().(type) {
 case Dog:
 case Cat:
 default:
-    panic("unexpected type")
+ panic("unexpected type")
 }
 ```
 
@@ -504,17 +504,17 @@ _, err := client.Messages.New(context.TODO(), anthropic.MessageNewParams{
     MaxTokens: 1024,
     Messages: []anthropic.MessageParam{
         anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
-    },
+ },
     Model: anthropic.ModelClaudeOpus5_5,
 })
 if err != nil {
-    var apierr *anthropic.Error
-    if errors.As(err, &apierr) {
-        println("Request ID:", apierr.RequestID)
-        println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
-        println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
-    }
-    panic(err.Error()) // POST "/v1/messages": 400 Bad Request (Request-ID: req_xxx) { ... }
+ var apierr *anthropic.Error
+ if errors.As(err, &apierr) {
+     println("Request ID:", apierr.RequestID)
+     println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
+     println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
+ }
+ panic(err.Error()) // POST "/v1/messages": 400 Bad Request (Request-ID: req_xxx) { ... }
 }
 ```
 
@@ -538,15 +538,15 @@ client := anthropic.NewClient(
 // ...
     client.Messages.New(
         context.TODO(),
-        anthropic.MessageNewParams{
+     anthropic.MessageNewParams{
             MaxTokens: 1024,
             Messages: []anthropic.MessageParam{
                 anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
-            },
+         },
             Model: anthropic.ModelClaudeOpus5_5,
-        },
+     },
         option.WithMaxRetries(5),
-    )
+ )
 ```
 
 
@@ -564,16 +564,16 @@ defer cancel()
 // ...
     client.Messages.New(
         ctx,
-        anthropic.MessageNewParams{
+     anthropic.MessageNewParams{
             MaxTokens: 1024,
             Messages: []anthropic.MessageParam{
                 anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
-            },
+         },
             Model: anthropic.ModelClaudeOpus5_5,
-        },
-        // This sets the per-retry timeout
+     },
+     // This sets the per-retry timeout
         option.WithRequestTimeout(20*time.Second),
-    )
+ )
 ```
 
 
@@ -625,7 +625,7 @@ for iter.Next() {
     fmt.Println(messageBatch.ID)
 }
 if err := iter.Err(); err != nil {
-    panic(err.Error())
+ panic(err.Error())
 }
 ```
 
@@ -638,13 +638,13 @@ page, err := client.Messages.Batches.List(context.TODO(), anthropic.MessageBatch
     Limit: anthropic.Int(20),
 })
 for page != nil {
-    for _, batch := range page.Data {
+ for _, batch := range page.Data {
         fmt.Println(batch.ID)
-    }
+ }
     page, err = page.GetNextPage()
 }
 if err != nil {
-    panic(err.Error())
+ panic(err.Error())
 }
 ```
 
@@ -656,14 +656,14 @@ This library uses the functional options pattern. Functions defined in the `opti
 
 ```python
 client := anthropic.NewClient(
-    // Adds a header to every request made by the client
+ // Adds a header to every request made by the client
     option.WithHeader("X-Some-Header", "custom_header_info"),
 )
 
 client.Messages.New(context.TODO(), // ...,
-    // Override the header
+ // Override the header
     option.WithHeader("X-Some-Header", "some_other_custom_header_info"),
-    // Add an undocumented field to the request body, using sjson syntax
+ // Add an undocumented field to the request body, using sjson syntax
     option.WithJSONSet("some.json.path", map[string]string{"my": "object"}),
 )
 ```
@@ -684,8 +684,8 @@ For request middleware (`option.WithMiddleware`) and replacing the default `http
 
 For detailed platform setup guides with code examples, see:
 
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
+- [Amazon Bedrock (`bedrock-mantle`)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 - [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
@@ -695,11 +695,11 @@ See also [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-wit
 The Go SDK supports the following platforms:
 
 - **Claude Models on Google Cloud (Google managed):** `import "github.com/anthropics/anthropic-sdk-go/v2/vertex"`. Use `vertex.WithGoogleAuth(ctx, region, projectID)` or `vertex.WithCredentials(ctx, region, projectID, creds)`.
-- **Bedrock:** `import "github.com/anthropics/anthropic-sdk-go/v2/bedrock"`. Use `bedrock.NewMantleClient` for the Messages-API Bedrock endpoint (streams over SSE), or `bedrock.WithLoadDefaultConfig(ctx)` / `bedrock.WithConfig(cfg)` (`bedrock-runtime` path). Importing the `bedrock` package globally registers a decoder for `application/vnd.amazon.eventstream` with the SDK’s streaming layer (through package `init()`). This applies whether you use the `bedrock-runtime` `WithConfig`/`WithLoadDefaultConfig` path or `NewMantleClient`.
+- **Bedrock:** `import "github.com/anthropics/anthropic-sdk-go/v2/bedrock"`. What you use depends on the endpoint:
+  - **`bedrock-mantle`:** `bedrock.NewMantleClient`. It streams over SSE.
+  - **`bedrock-runtime`:** `bedrock.WithLoadDefaultConfig(ctx)` or `bedrock.WithConfig(cfg)`, for the `InvokeModel` API.
 - **Claude Platform on AWS:** `import anthropicaws "github.com/anthropics/anthropic-sdk-go/v2/aws"`. Use `anthropicaws.NewClient(ctx, cfg)` with an `anthropicaws.ClientConfig` value to construct a client; set `WorkspaceID` on the config or the `ANTHROPIC_AWS_WORKSPACE_ID` environment variable. The `anthropicaws` import alias avoids a name collision with `github.com/aws/aws-sdk-go-v2/aws` when both are imported. Available in beta.
 - **Foundry:** `import "github.com/anthropics/anthropic-sdk-go/v2/foundry"`. Use `foundry.NewClient(cfg)` with a `foundry.ClientConfig` value to construct a client; set `APIKey` (or `AzureADTokenProvider` for Microsoft Entra ID) and `Resource` on the config, or the `ANTHROPIC_FOUNDRY_API_KEY` and `ANTHROPIC_FOUNDRY_RESOURCE` environment variables.
-
-Use `bedrock.NewMantleClient` for new projects; `bedrock.WithLoadDefaultConfig`/`WithConfig` remain for existing applications using the Bedrock `InvokeModel` API.
 
 The Go SDK also supports Claude Models on Google Cloud (Anthropic managed) through the `github.com/anthropics/anthropic-sdk-go/v2/googlecloud` package. To construct a client, call `googlecloud.NewClient(ctx, cfg)` with a `googlecloud.ClientConfig` value. This client is in beta. Set `WorkspaceID` on the config or set the `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID` environment variable. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution) for how the client resolves the workspace ID.
 
@@ -714,17 +714,17 @@ You can access the raw HTTP response data by using the `option.WithResponseInto(
 var response *http.Response
 message, err := client.Messages.New(
     context.TODO(),
-    anthropic.MessageNewParams{
+ anthropic.MessageNewParams{
         MaxTokens: 1024,
         Messages: []anthropic.MessageParam{
             anthropic.NewUserMessage(anthropic.NewTextBlock("What is a quaternion?")),
-        },
+     },
         Model: anthropic.ModelClaudeOpus5_5,
-    },
+ },
     option.WithResponseInto(&response),
 )
 if err != nil {
-    // handle error
+ // handle error
 }
 fmt.Printf("%+v\n", message.Content)
 
@@ -736,7 +736,7 @@ fmt.Printf("Headers: %+#v\n", response.Header)
 
 ### OpenTelemetry tracing
 
-When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
+When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Anthropic SDK](manage-claude-opentelemetry-sdk.md).
 
 ### Making custom/undocumented requests
 
@@ -748,17 +748,17 @@ To make requests to undocumented endpoints, you can use `client.Get`, `client.Po
 
 ```python
 var (
-    // params can be an io.Reader, a []byte, an encoding/json serializable object,
-    // or a "...Params" struct defined in this library.
+ // params can be an io.Reader, a []byte, an encoding/json serializable object,
+ // or a "...Params" struct defined in this library.
     params map[string]any
 
-    // result can be an []byte, *http.Response, a encoding/json deserializable object,
-    // or a model defined in this library.
+ // result can be an []byte, *http.Response, a encoding/json deserializable object,
+ // or a model defined in this library.
     result *http.Response
 )
 err := client.Post(context.Background(), "/unspecified", params, &result)
 if err != nil {
-    // ...
+ // ...
 }
 ```
 
@@ -773,7 +773,7 @@ params := FooNewParams{
     ID: "id_xxxx",
     Data: FooNewParamsData{
         FirstName: anthropic.String("John"),
-    },
+ },
 }
 client.Foo.New(context.Background(), params, option.WithJSONSet("data.last_name", "Doe"))
 ```

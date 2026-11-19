@@ -2,8 +2,8 @@
 title: "Customize Code Review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-customize"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-06T06:26:29Z"
-last_modified: "Fri, 06 Nov 2026 05:17:17 GMT"
+fetched_at: "2026-11-13T06:32:34Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code"]
 ---
 

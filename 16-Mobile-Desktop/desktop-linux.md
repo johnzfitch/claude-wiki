@@ -2,8 +2,8 @@
 title: "Claude Desktop on Linux (beta) - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-linux"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-07T06:23:39Z"
-last_modified: "Sat, 07 Nov 2026 04:22:00 GMT"
+fetched_at: "2026-11-13T06:33:34Z"
+last_modified: "Fri, 13 Nov 2026 06:19:25 GMT"
 tags: ["claude-code", "desktop"]
 ---
 
@@ -109,7 +109,7 @@ sudo apt update && sudo apt install claude-desktop
 
 Launch and sign in
 
-Launch **Claude** from your application launcher, or run `claude-desktop` from a terminal, and sign in with your Anthropic account.The Linux app signs in the same way as on macOS and Windows: with a claude.ai subscription, or through your organization’s SSO. For API-key authentication, use the [CLI](../01-Getting-Started/quickstart.md). To use Desktop with Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, or an LLM gateway instead, see [Claude Desktop on 3P](https://claude.com/docs/third-party/claude-desktop/overview). For proxy servers and custom certificate authorities in those deployments, see [network configuration](../13-Enterprise-Admin/network-config.md).
+Launch **Claude** from your application launcher, or run `claude-desktop` from a terminal, and sign in with your Anthropic account.The Linux app signs in the same way as on macOS and Windows: with a claude.ai subscription, or through your organization’s SSO. To use Desktop with a Claude API key, Amazon Bedrock, Google Cloud’s Agent Platform, Microsoft Foundry, or an LLM gateway instead, see [Claude Desktop on 3P](https://claude.com/docs/third-party/claude-desktop/overview). For proxy servers and custom certificate authorities in those deployments, see [network configuration](../13-Enterprise-Admin/network-config.md).
 
 
 [​](#install-from-a-downloaded-file)

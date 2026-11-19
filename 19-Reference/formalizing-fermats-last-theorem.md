@@ -2,9 +2,11 @@
 title: "Formalizing Fermat's Last Theorem \\ Anthropic"
 source_url: "https://www.anthropic.com/research/formalizing-fermats-last-theorem"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:45Z"
+fetched_at: "2026-11-14T06:26:03Z"
 tags: ["news-research"]
 ---
+
+### 01The challenge of verifying mathematical proofs
 
 # Formalizing Fermat's Last Theorem
 
@@ -13,23 +15,20 @@ tags: ["news-research"]
 - [03Reducing the burden of formal verification](#reducing-the-burden-of-formal-verification)
 - [04Learn more](#learn-more)
 
-- Published
+Published  
+Sep 4, 2026
 
-  Sep 4, 2026
+Team  
+[Science](https://www.anthropic.com/science)
 
-- Team
+Topics  
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Coding](https://www.anthropic.com/search?topic=coding)
+- [Reasoning](https://www.anthropic.com/search?topic=reasoning)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
 
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-
-  See more...
+See more...
 
 Related articles
 
@@ -42,12 +41,12 @@ Related articles
 [View more](https://www.anthropic.com/search?topic=discovery)
 
 *We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language. Below, we describe how the formalization was done and share some thoughts about what this work could mean for research mathematics.  
-  
-*Around 1637, Pierre de Fermat jotted down a claim in the margin of his copy of Diophantus’s Arithmetica that would become one of the most famous mathematical conjectures of all time: no positive integers a, b, c satisfy aⁿ + bⁿ = cⁿ for any n \> 2. [Fermat’s Last Theorem](https://www.youtube.com/watch?v=1BSFyEIY2BY) (FLT), as the conjecture became known, turned out to be incredibly difficult to prove. The first proof, from Sir Andrew Wiles in 1995, ran to 129 pages and required months of painstaking work to verify.
+  *
+Around 1637, Pierre de Fermat jotted down a claim in the margin of his copy of Diophantus’s Arithmetica that would become one of the most famous mathematical conjectures of all time: no positive integers a, b, c satisfy aⁿ + bⁿ = cⁿ for any n \> 2. [Fermat’s Last Theorem](https://www.youtube.com/watch?v=1BSFyEIY2BY) (FLT), as the conjecture became known, turned out to be incredibly difficult to prove. The first proof, from Sir Andrew Wiles in 1995, ran to 129 pages and required months of painstaking work to verify.
 
 A decade later, Dutch computer scientist Jan Bergstra proposed “formalizing” Wiles’s proof: converting the mathematical reasoning into a form computers can check automatically. Since then, mathematicians have been developing the methods needed to encode such a complex proof, including a multi-year community effort kicked off in 2024 by Kevin Buzzard at Imperial College London [to complete the formalization](https://lean-lang.org/use-cases/flt/) using the [Lean proof assistant](https://en.wikipedia.org/wiki/Lean_(proof_assistant)).
 
-Recently, Tianyi Peng, an Anthropic researcher whose group at Columbia University builds tools for AI formalization, set out to test whether Claude could make progress on formalizing FLT.^([1](#footnote-1)) The result went further than he expected. In 11 days, working largely autonomously, Claude produced the first end-to-end, computer-checked proof of FLT. Along the way, it wrote 13 million lines of Lean and proved 29,500 intermediate theorems.
+Recently, Tianyi Peng, an Anthropic researcher whose group at Columbia University builds tools for AI formalization, set out to test whether Claude could make progress on formalizing FLT.^([^1]) The result went further than he expected. In 11 days, working largely autonomously, Claude produced the first end-to-end, computer-checked proof of FLT. Along the way, it wrote 13 million lines of Lean and proved 29,500 intermediate theorems.
 
 We shared the [resulting proof](https://github.com/anthropics/fermats-last-theorem) with Kevin Buzzard, who said:
 
@@ -59,7 +58,7 @@ Automatically formalizing a proof as complex as FLT is a significant step toward
 
 Unlike [recent AI-driven](riemann-zeta.md) work on the Riemann hypothesis, which produced novel *mathematics*, what’s novel here is the *verification*—checking a mathematical proof as one would check a mathematical computation with a calculator. Proving math theorems requires assembling complex logical chains, and if a single link is broken, everything that follows it might turn out to be false. Understanding a novel result deeply enough to be confident in its correctness can take months, or even years, of work.
 
-Fermat’s Last Theorem is an illustrative example.^([2](#footnote-2)) Fermat wrote down the theorem’s statement in the margin of a book, alongside a tantalizing note:
+Fermat’s Last Theorem is an illustrative example.^([^2]) Fermat wrote down the theorem’s statement in the margin of a book, alongside a tantalizing note:
 
 > I have discovered a truly marvelous proof of this, which this margin is too narrow to contain.
 
@@ -75,11 +74,11 @@ One way to check a proof’s correctness is to ask a computer to do it. Proof as
 
 For FLT, the formalization process was expected to take years. Just the [blueprint](https://imperialcollegelondon.github.io/FLT/blueprint.pdf) the mathematical community has been using to describe the initial phase of the project runs to 86 pages.
 
-Claude completed the proof in 11 days, producing computer-verifiable proofs of 30,300 theorems along the way (using 29,500 in the final proof). Dozens of Claude agents collaborated to define concepts, prove intermediate theorems, and use those theorems to prove ever harder statements. At 13 million lines of Lean code, Claude’s proof is over 5x the size of Mathlib, the principal community library of mathematical proofs this theorem builds on.^([3](#footnote-3))
+Claude completed the proof in 11 days, producing computer-verifiable proofs of 30,300 theorems along the way (using 29,500 in the final proof). Dozens of Claude agents collaborated to define concepts, prove intermediate theorems, and use those theorems to prove ever harder statements. At 13 million lines of Lean code, Claude’s proof is over 5x the size of Mathlib, the principal community library of mathematical proofs this theorem builds on.^([^3])
 
-Claude’s proof follows [a simplified version of Wiles’s proof from Darmon, Diamond, and Taylor](https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf). Mathematical input from humans was limited to occasional high-level instructions from Tianyi: “Jacobian as a scheme sounds high priority,” “push \[the\] Mazur \[theorem\] to be done soon.” You can find excerpts of Claude’s thinking [here](formalizing-fermats-last-theorem-in-lean.md).
+Claude’s proof follows [a simplified version of Wiles’s proof from Darmon, Diamond, and Taylor](https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf). Mathematical input from humans was limited to occasional high-level instructions from Tianyi: “Jacobian as a scheme sounds high priority,” “push \[the\] Mazur \[theorem\] to be done soon.” You can find excerpts of Claude’s thinking [here](https://assets.claude.com/9e431dff043da6538d99d6c2d231b670aa3da263.pdf).
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 “THE FLT root reads Proved on the site. Historic moment (modulo re-check).”
 
 “!!! The FLT ROOT 62eb32c0 reads PROVED. R = T closed and cascaded to the root. This is the campaign's goal: e2e FLT on prove2me.”
@@ -135,10 +134,16 @@ The full proof is available on [GitHub](https://github.com/anthropics/fermats-la
 
 03This is partly because Mathlib is concise and well-reviewed, while our proof is likely much longer than it needs to be.[](#footnote-ref-3)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 
 Our formalization effort is a small piece of the long history of Fermat’s theorem and the development of formal mathematics. The first full proof from Andrew Wiles together with Richard Taylor was a culmination of more than 300 years of mathematics, integrating ideas from Gerhard Frey, Jean-Pierre Serre, Ken Ribet, Barry Mazur, Robert Langlands, Jerrold Tunnell, Yutaka Taniyama, Goro Shimura, and André Weil, among others. Claude’s proof follows [the exposition by Henri Darmon, Fred Diamond, and Richard Taylor.](https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf)
 
 Our proof adapts pieces from the [Imperial College London FLT project](https://github.com/ImperialCollegeLondon/FLT) led by Kevin Buzzard and the [flt-regular project](https://github.com/leanprover-community/flt-regular). Lean and Mathlib are both their own labors of love and have received contributions from hundreds of mathematicians, many working with the [Lean FRO](https://lean-lang.org/fro/). We thank Kevin Buzzard for reviewing the proof and for his comments.
+
+[^1]:
+
+[^2]:
+
+[^3]:

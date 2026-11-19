@@ -2,7 +2,7 @@
 title: "Trigger a routine through the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/claude-code/routines-fire"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:17Z"
+fetched_at: "2026-11-13T06:36:06Z"
 tags: ["api", "authentication", "sdk"]
 ---
 

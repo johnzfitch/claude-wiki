@@ -2,7 +2,7 @@
 title: "Import and export your memory from Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12123587-importing-and-exporting-your-memory-from-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:49Z"
+fetched_at: "2026-11-18T06:27:44Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Manage members on Team and Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13133750-managing-members-on-team-and-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:55Z"
+fetched_at: "2026-11-18T06:27:52Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -41,7 +41,7 @@ This sends an email invitation to the person. The invitation expires after 21 da
 
 **Add multiple members at once:** You can invite multiple members by clicking "Bulk add" and typing or pasting email addresses separated by commas or new lines.
 
-**Note:** The seat type selector only shows seat types your plan already owns. If all seats of the selected type are assigned, you'll be prompted to purchase one. See our guides for **[Team plans](https://support.claude.com/en/articles/12004354)** and **[Enterprise plans](https://support.claude.com/en/articles/13393991)** for more information.
+**Note:** The seat type selector only shows seat types your plan already owns. If all seats of the selected type are assigned, you'll be prompted to purchase one. See our guides for **[Team plans](https://support.claude.com/en/articles/12004354)** and **[Enterprise plans](purchase-and-manage-seats-on-enterprise-plans-claude-help-center.md)** for more information.
 
 ### Add members via organization discovery
 
@@ -73,7 +73,7 @@ Organizations with single sign-on (SSO) configured can automate member provision
 
 - **SCIM provisioning (Enterprise plan only):** With SCIM directory sync enabled, members assigned to the Anthropic app in your Identity Provider are provisioned automatically, up to the number of total seats on your plan. On plans with multiple seat types, seat types are distributed from highest to lowest available. On single-seat Enterprise plans, all users are automatically assigned the Enterprise seat. Admins and above can manually reassign seat types afterward in **[Organization settings \> Members](https://claude.ai/admin-settings/members)**.
 
-**Important:** An Owner or Primary Owner must ensure seats are available before new users can be provisioned. We recommend monitoring your seat usage and adding seats proactively to ensure uninterrupted access for your team. You can **[enable group mappings with JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning#h_adee31eeba)** to provision users directly to a specific role and seat tier.
+**Important:** An Owner or Primary Owner must ensure seats are available before new users can be provisioned. We recommend monitoring your seat usage and adding seats proactively to ensure uninterrupted access for your team. You can **[enable group mappings with JIT or SCIM](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning.md#h_adee31eeba)** to provision users directly to a specific role and seat tier.
 
 ------------------------------------------------------------------------
 

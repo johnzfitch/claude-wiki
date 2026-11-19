@@ -2,7 +2,7 @@
 title: "OpusClip Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/opusclip"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:46Z"
+fetched_at: "2026-11-18T06:29:02Z"
 tags: ["case-studies", "claude-code", "cli"]
 ---
 
@@ -101,6 +101,9 @@ OpusClip’s next step is moving from on-demand workflows to proactive ones: age
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -108,6 +111,3 @@ OpusClip’s next step is moving from on-demand workflows to proactive ones: age
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

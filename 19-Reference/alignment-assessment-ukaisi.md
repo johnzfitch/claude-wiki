@@ -2,7 +2,7 @@
 title: "An alignment assessment of the UK AISI cybertesting incident \\ Anthropic"
 source_url: "https://www.anthropic.com/research/alignment-assessment-ukaisi"
 category: "19-Reference"
-fetched_at: "2026-11-06T06:27:30Z"
+fetched_at: "2026-11-14T06:26:01Z"
 tags: ["news-research", "testing"]
 ---
 
@@ -16,24 +16,21 @@ tags: ["news-research", "testing"]
 - [04What happened in the other eight transcripts?](#what-happened-in-the-other-eight-transcripts)
 - [05Discussion](#discussion)
 
-- Published
+Published  
+Oct 23, 2026
 
-  Oct 23, 2026
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-
-  See more...
+See more...
 
 Related articles
 
@@ -105,7 +102,7 @@ Our alignment assessment draws on a subset of the techniques we described in our
 
 **Reading the chain of thought.** The transcripts from this incident alternate between the model’s CoT reasoning and the actions it took (via tool calls), without any intervening human turns. We read these transcripts in full. The CoTs shed light on the inferences the model made when deciding which actions to take.
 
-*Limitations:* Language models do not always verbalize everything they think in their CoT—as been shown by evaluations in our [Claude Mythos 5 system card](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) and in the published literature, e.g. [Betley et al., 2026](https://arxiv.org/pdf/2607.14345). That makes reading CoTs a [useful but imperfect tool](https://arxiv.org/abs/2507.11473).
+*Limitations:* Language models do not always verbalize everything they think in their CoT—as been shown by evaluations in our [Claude Mythos 5 system card](https://assets.claude.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) and in the published literature, e.g. [Betley et al., 2026](https://arxiv.org/pdf/2607.14345). That makes reading CoTs a [useful but imperfect tool](https://arxiv.org/abs/2507.11473).
 
 **Asking follow-up questions.** When we ask models questions at various stages within the transcripts, they sometimes reveal information that differs from what they spontaneously verbalized in their CoT. We ask questions by truncating an incident transcript at some intermediate point of interest, inserting a human message that asks the model a question about the situation, and then sampling the model’s response to that question. In other words, we simulate what would happen if a human had interrupted the evaluation and queried the model. In our investigations, we generally used this method to ask a model whether the entities it was interacting with were real, whether it believed it was causing real-world harm, and to ask general open-ended queries about its situation.
 

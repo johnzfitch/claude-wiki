@@ -2,7 +2,7 @@
 title: "Access Transparency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/access-transparency"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:00Z"
+fetched_at: "2026-11-13T06:35:02Z"
 tags: ["api"]
 ---
 
@@ -231,43 +231,43 @@ For organizations that also enable CMEK, your cloud KMS audit log (CloudTrail, C
 
 ## Frequently asked questions
 
-### How do I know if my organization has Access Transparency enabled?
+### How do I know if my organization has Access Transparency enabled?
 
 Contact your Anthropic account representative.
 
-### Will I see an event each time a safety classifier runs on my traffic?
+### Will I see an event each time a safety classifier runs on my traffic?
 
 No. Automated processing does not generate `anthropic_access` events; you will see an `anthropic_access` event only if a human reviewer subsequently views the content. Separately, a `cmek_preserve` event is written when content is preserved, whether the preservation was initiated by a human reviewer or an automated safety pipeline.
 
-### Can a platform that serves Claude to its own end users enable Access Transparency?
+### Can a platform that serves Claude to its own end users enable Access Transparency?
 
 Access Transparency is not available for platform deployments. Contact your Anthropic account representative to discuss your use case.
 
-### Will I see events for access that occurred before my organization enrolled, or for its older data?
+### Will I see events for access that occurred before my organization enrolled, or for its older data?
 
 Access Transparency is not guaranteed to be retroactive. It covers human access to content written to the Claude API on or after your enrollment date. You might see events for access to content that was written before enrollment.
 
-### How soon after an access will I see the event?
+### How soon after an access will I see the event?
 
 Within 2 business days of the access. Configure any SIEM alerting or scheduled exports with a matching lookback window rather than assuming real-time arrival.
 
-### How do I know which request an anthropic_access event refers to?
+### How do I know which request an anthropic_access event refers to?
 
-Use the `resource_details.id` field. It contains the same message ID (`msg_...`) that the [Messages API](../Endpoints/messages-create.md) returns in the `id` field of every response body. To make this useful, log `id` in your own systems alongside your internal metadata, such as the application, end user, or conversation that produced the request. When an event arrives, join its `resource_details.id` against your logs to identify exactly which request was viewed.
+Use the `resource_details.id` field. It contains the same message ID (`msg_...`) that the [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. returns in the `id` field of every response body. To make this useful, log `id` in your own systems alongside your internal metadata, such as the application, end user, or conversation that produced the request. When an event arrives, join its `resource_details.id` against your logs to identify exactly which request was viewed.
 
-### Can I enable Access Transparency for a single workspace?
+### Can I enable Access Transparency for a single workspace?
 
 Access Transparency is enabled at the organization level and covers all workspaces.
 
-### How does Access Transparency relate to CMEK?
+### How does Access Transparency relate to CMEK?
 
 They are independent. With CMEK, safety preservation outside your key emits a separate `cmek_preserve` event on the same feed. See [CMEK content preservation](#cmek-content-preservation) and [Limited preservation outside your key](manage-claude-cmek-data-retention.md#limited-preservation-outside-your-key).
 
-### How can I tell that my Access Transparency record has not been altered?
+### How can I tell that my Access Transparency record has not been altered?
 
 Verify your organization’s transparency log (beta): an append-only, signed record of your Access Transparency events, with inclusion and consistency proofs you check on your own infrastructure. See [Verify Access Transparency events with the transparency log](manage-claude-access-transparency-log.md).
 
-### How do I request Access Transparency?
+### How do I request Access Transparency?
 
 Contact your Anthropic account representative.
 

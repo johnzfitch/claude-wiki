@@ -2,7 +2,7 @@
 title: "1 Introduction and executive summary​"
 source_url: "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%2BRisk%2BReport%2BAugust%2B2026%2B.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-16T06:25:32Z"
+fetched_at: "2026-11-18T06:28:33Z"
 tags: ["news-research"]
 ---
 

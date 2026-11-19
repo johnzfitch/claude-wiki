@@ -2,7 +2,7 @@
 title: "Build in Console - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/onboarding"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:47Z"
+fetched_at: "2026-11-13T06:34:11Z"
 tags: ["agents", "api", "testing"]
 ---
 
@@ -23,18 +23,22 @@ Console agent builder
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailable
+[Models](#feature-availability)  
+- All models
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 The [Claude Console](https://platform.claude.com/workspaces/default/agent-quickstart) provides a visual interface for creating and configuring agents. It lets you iterate on configuration interactively before writing code.
 
@@ -92,27 +96,45 @@ session = client.beta.sessions.create(
 
 ## Availability
 
-Console agent builder is in beta on every model.
+Console agent builder
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Console agent builder are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Claude API
 
-### Required beta headers
+Status  
+Beta
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Managed Agents
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Beta header  
+Requires
 
-Header
+managed-agents-2026-04-01
 
-- `managed-agents-2026-04-01`
-  
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -126,8 +148,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

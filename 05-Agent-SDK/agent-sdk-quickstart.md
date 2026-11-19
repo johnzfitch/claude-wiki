@@ -2,7 +2,8 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/quickstart"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-28T06:35:52Z"
+fetched_at: "2026-11-17T06:24:23Z"
+last_modified: "Tue, 17 Nov 2026 03:41:13 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -36,18 +37,12 @@ Use the Agent SDK to build an AI agent that reads your code, finds bugs, and fix
 2.  Create a file with some buggy code
 3.  Run an agent that finds and fixes the bugs automatically
 
-
-[​](#prerequisites)
-
-Prerequisites
+## [](#prerequisites)Prerequisites
 
 - **Node.js 18.14+** or **Python 3.10+**
 - An **Anthropic account**. If you don’t have one, [sign up here](../04-API-Reference/Other/playground.md).
 
-
-[​](#setup)
-
-Setup
+## [](#setup)Setup
 
 1
 
@@ -151,10 +146,7 @@ See the setup guides for [Amazon Bedrock](../02-Claude-Code-CLI/amazon-bedrock.m
 
 Unless previously approved, Anthropic does not allow third party developers to offer claude.ai login or rate limits for their products, including agents built on the Claude Agent SDK. Use the API key authentication methods described in this document instead.
 
-
-[​](#create-a-buggy-file)
-
-Create a buggy file
+## [](#create-a-buggy-file)Create a buggy file
 
 This quickstart walks you through building an agent that can find and fix bugs in code. First, you need a file with some intentional bugs for the agent to fix. Create `utils.py` in the `my-agent` directory and paste the following code:
 
@@ -175,10 +167,7 @@ This code has two bugs:
 1.  `calculate_average([])` crashes with division by zero
 2.  `get_user_name(None)` crashes with a TypeError
 
-
-[​](#build-an-agent-that-finds-and-fixes-bugs)
-
-Build an agent that finds and fixes bugs
+## [](#build-an-agent-that-finds-and-fixes-bugs)Build an agent that finds and fixes bugs
 
 Create `agent.py` if you’re using the Python SDK, or `agent.ts` for TypeScript. Use `agent.mts` instead if your existing project uses CommonJS:
 
@@ -248,12 +237,9 @@ This code has three main parts:
 
 The `async for` loop keeps running as Claude thinks, calls tools, observes results, and decides what to do next. Each iteration yields a message: Claude’s reasoning, a tool call, a tool result, or the final outcome. The SDK handles the orchestration, tool execution, context management, and retries, so you consume the stream. The loop ends when Claude finishes the task or hits an error. The message handling inside the loop filters for human-readable output. Without filtering, you’d see raw message objects including system initialization and internal state, which is useful for debugging but noisy otherwise.
 
-This example uses streaming to show progress in real-time. If you don’t need live output (for example, for background jobs or CI pipelines), you can collect all messages at once. See [Streaming vs. single-turn mode](agent-sdk-streaming-vs-single-mode.md) for details.
+This example prints Claude’s text and tool calls as the loop receives them. If you don’t need live output, collect the messages in the loop and read them after the loop ends. To choose between a single-shot `query()` and streaming input, see [Choose single-shot or streaming input](agent-sdk-streaming-vs-single-mode.md#choose-single-shot-or-streaming-input).
 
-
-[​](#run-your-agent)
-
-Run your agent
+### [](#run-your-agent)Run your agent
 
 Your agent is ready. Run it with the following command:
 
@@ -289,10 +275,7 @@ This is what makes the Agent SDK different: Claude executes tools directly inste
 
 If you see an authentication error such as `Not logged in` or `Invalid API key`, make sure you’ve set the `ANTHROPIC_API_KEY` environment variable in the shell where you run your agent. The SDK doesn’t load `.env` files automatically.For the causes and fixes behind these and other authentication errors, see [Authentication errors](../02-Claude-Code-CLI/errors.md#authentication-errors) in the Error reference.
 
-
-[​](#try-other-prompts)
-
-Try other prompts
+### [](#try-other-prompts)Try other prompts
 
 Now that your agent is set up, try some different prompts:
 
@@ -300,10 +283,7 @@ Now that your agent is set up, try some different prompts:
 - `"Add type hints to all functions in utils.py"`
 - `"Create a README.md documenting the functions in utils.py"`
 
-
-[​](#customize-your-agent)
-
-Customize your agent
+### [](#customize-your-agent)Customize your agent
 
 You can modify your agent’s behavior by changing the options. Here are a few examples: **Add web search capability:**
 
@@ -373,10 +353,7 @@ const _ = {
 
 With `Bash` enabled, try: `"Write unit tests for utils.py, run them, and fix any failures"` Each of these snippets sets fields on the same options object. For more information, see [Configure your agent](agent-sdk-configuration.md).
 
-
-[​](#key-concepts)
-
-Key concepts
+## [](#key-concepts)Key concepts
 
 **Tools** control what your agent can do:
 
@@ -386,12 +363,9 @@ Key concepts
 | `Read`, `Edit`, `Glob`                 | Analyze and modify code |
 | `Read`, `Edit`, `Bash`, `Glob`, `Grep` | Full automation         |
 
-**Permission modes** control how much human oversight you want. The SDK evaluates the active mode together with your allow and deny rules in a fixed order, described in [How permissions are evaluated](agent-sdk-permissions.md#how-permissions-are-evaluated). For the full list of modes, their behavior, and when to use each, see [Permission mode in How the agent loop works](agent-sdk-agent-loop.md#permission-mode).
+To limit the agent’s built-in tools to one of these sets, pass it as `tools`. If you list a set in `allowedTools` instead, you [pre-approve those tools](agent-sdk-custom-tools.md#configure-allowed-tools), and the agent can still call the others, subject to your permission mode. **Permission modes** control how much human oversight you want. The SDK evaluates the active mode together with your allow and deny rules in a fixed order, described in [How permissions are evaluated](agent-sdk-permissions.md#how-permissions-are-evaluated). For the full list of modes, their behavior, and when to use each, see [Permission mode in How the agent loop works](agent-sdk-agent-loop.md#permission-mode).
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 Now that you’ve created your first agent, learn how to extend its capabilities and tailor it to your use case:
 

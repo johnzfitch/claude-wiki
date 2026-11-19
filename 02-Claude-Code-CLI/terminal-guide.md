@@ -2,8 +2,8 @@
 title: "Terminal guide for new users - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/terminal-guide"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:43Z"
-last_modified: "Sun, 08 Nov 2026 19:55:21 GMT"
+fetched_at: "2026-11-18T06:27:07Z"
+last_modified: "Wed, 18 Nov 2026 02:19:25 GMT"
 tags: ["claude-code"]
 ---
 
@@ -38,10 +38,7 @@ You can use Claude Code even if you’ve never used a terminal before. This guid
 
 Don’t want to use the terminal? The Claude Code desktop app lets you skip the terminal entirely. Download it for [macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect?utm_source=claude_code&utm_medium=docs) or [Windows](https://claude.com/download?utm_source=claude_code&utm_medium=docs), then see the [Desktop quickstart](../16-Mobile-Desktop/desktop-quickstart.md) to get started. On Linux, install the app with apt by following the [Linux install instructions](../16-Mobile-Desktop/desktop-linux.md).
 
-
-[​](#install-claude-code-on-macos-or-linux)
-
-Install Claude Code on macOS or Linux
+## [](#install-claude-code-on-macos-or-linux)Install Claude Code on macOS or Linux
 
 Follow these steps to install and start Claude Code from a macOS or Linux terminal. Claude Code requires macOS 13.0 or later. See the [system requirements](../01-Getting-Started/setup.md#system-requirements) for supported Linux distributions.
 
@@ -88,10 +85,7 @@ Once logged in, you can start asking Claude questions about your code or anythin
 
 ------------------------------------------------------------------------
 
-
-[​](#install-claude-code-on-windows)
-
-Install Claude Code on Windows
+## [](#install-claude-code-on-windows)Install Claude Code on Windows
 
 Follow these steps to optionally install Git for Windows, set up PowerShell, and start Claude Code on Windows. Claude Code requires Windows 10 version 1809 or later. See the [system requirements](../01-Getting-Started/setup.md#system-requirements) for full details.
 
@@ -162,17 +156,11 @@ Once logged in, you can start asking Claude questions about your code or anythin
 
 ------------------------------------------------------------------------
 
-
-[​](#what’s-next)
-
-What’s next?
+## [](#what’s-next)What’s next?
 
 Once you see the Claude Code welcome screen, you’re ready to go. You don’t need to know how to code. Describe what you want in plain English, and Claude writes the code for you.
 
-
-[​](#build-something)
-
-Build something
+### [](#build-something)Build something
 
 Claude can create projects from a description:
 
@@ -182,10 +170,7 @@ make me a simple webpage that says hello world
 
 If Claude asks for your permission before creating or changing files, press `Enter` to choose **Yes** and approve. Once Claude creates the files, double-click the HTML file to open it in your browser.
 
-
-[​](#work-with-files-on-your-computer)
-
-Work with files on your computer
+### [](#work-with-files-on-your-computer)Work with files on your computer
 
 Claude can read and organize files you already have:
 
@@ -193,10 +178,7 @@ Claude can read and organize files you already have:
 look at the screenshots on my Desktop and rename them based on what's in each image
 ```
 
-
-[​](#ask-questions)
-
-Ask questions
+### [](#ask-questions)Ask questions
 
 Claude can explain things, help you learn, or plan out a project:
 
@@ -206,10 +188,7 @@ I want to build a personal budget tracker. What would I need?
 
 If you don’t have a project yet, that’s fine. Claude can help you start a new one.
 
-
-[​](#other-ways-to-use-claude-code)
-
-Other ways to use Claude Code
+### [](#other-ways-to-use-claude-code)Other ways to use Claude Code
 
 You don’t have to use the terminal. Claude Code is also available in:
 
@@ -218,10 +197,7 @@ You don’t have to use the terminal. Claude Code is also available in:
 - The [web](claude-code-on-the-web.md) at claude.ai/code for cloud sessions
 - [GitHub Actions](github-actions.md) and [GitLab CI/CD](gitlab-ci-cd.md) for automation
 
-
-[​](#learn-more)
-
-Learn more
+### [](#learn-more)Learn more
 
 - [Quickstart](../01-Getting-Started/quickstart.md): a guided walkthrough of your first project with Claude Code
 - [How Claude Code works](how-claude-code-works.md): understand how Claude reads your files, runs commands, and makes edits
@@ -231,15 +207,9 @@ Learn more
 
 ------------------------------------------------------------------------
 
+## [](#troubleshooting)Troubleshooting
 
-[​](#troubleshooting)
-
-Troubleshooting
-
-
-[​](#macos-and-linux-troubleshooting)
-
-macOS and Linux troubleshooting
+### [](#macos-and-linux-troubleshooting)macOS and Linux troubleshooting
 
 If you run into problems installing on macOS or Linux, check these common issues:
 
@@ -277,10 +247,7 @@ If you see `dyld: cannot load`, `dyld: Symbol not found`, or `built for Mac OS X
 
 For other errors, see the full [installation troubleshooting guide](troubleshoot-install.md).
 
-
-[​](#windows-troubleshooting)
-
-Windows troubleshooting
+### [](#windows-troubleshooting)Windows troubleshooting
 
 If you run into problems installing on Windows, check these common issues:
 

@@ -2,7 +2,7 @@
 title: "Vision - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/vision"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:37:08Z"
+fetched_at: "2026-11-13T06:36:38Z"
 tags: ["api"]
 ---
 
@@ -20,11 +20,15 @@ Claude’s vision capabilities allow it to process and analyze images, opening u
 
 Vision (images)
 
-[APIs](#feature-availability)  
-Messages APIAlways onManaged AgentsAlways on
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 This guide describes how to send images to Claude, the limits and costs that apply, and where to find guidance for [coordinate-based workflows](build-with-claude-vision-coordinates.md).
 
@@ -210,7 +214,7 @@ message = client.messages.create(
 print(message.content)
 ```
 
-See [Messages API examples](../Endpoints/messages-create.md) for more example code and parameter details.
+See [Messages API examples](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for more example code and parameter details.
 
 ### Multiple images
 
@@ -375,35 +379,35 @@ Always carefully review and verify Claude’s image interpretations, especially 
 
 ## FAQ
 
-### What image file types does Claude support?
+### What image file types does Claude support?
 
 JPEG, PNG, GIF, and WebP. See [Supported formats](#supported-formats).
 
-### Can Claude read image URLs?
+### Can Claude read image URLs?
 
 Yes. Use the `url` source type instead of `base64` in the `image` content block. See the [URL-based image example](#url-based-image-example).
 
-### Is there a limit to the image file size I can upload?
+### Is there a limit to the image file size I can upload?
 
 Yes. See [Request limits](#request-limits) for per-image and overall request size limits across the Claude API, Amazon Bedrock, Claude Models on Google Cloud (Google managed), and claude.ai.
 
-### How many images can I include in one request?
+### How many images can I include in one request?
 
 Up to 600 for each API request (100 for models with a 200k-token context window) and 20 for each turn on claude.ai. See [Request limits](#request-limits) for details and the lower per-image dimension limit that applies above 20 images.
 
-### Does Claude read image metadata?
+### Does Claude read image metadata?
 
 No, Claude does not parse or receive any metadata from images passed to it.
 
-### Can I delete images I’ve uploaded?
+### Can I delete images I’ve uploaded?
 
 No. See [API and data retention](../Other/manage-claude-api-and-data-retention.md) for how long images are kept. If you upload images with the [Files API](build-with-claude-files.md), you can delete them there.
 
-### Where can I find details on data privacy for image uploads?
+### Where can I find details on data privacy for image uploads?
 
 Refer to the Anthropic privacy policy page for information on how uploaded images and other data are handled. Anthropic does not use uploaded images to train models.
 
-### What if Claude’s image interpretation seems wrong?
+### What if Claude’s image interpretation seems wrong?
 
 If Claude’s image interpretation seems incorrect:
 
@@ -413,7 +417,7 @@ If Claude’s image interpretation seems incorrect:
 
 Your feedback helps improve Claude!
 
-### Can Claude generate or edit images?
+### Can Claude generate or edit images?
 
 No, Claude is an image understanding model only. It can interpret and analyze images, but it cannot generate, produce, edit, manipulate, or create images.
 
@@ -435,43 +439,76 @@ See the Messages API documentation, including example API calls involving images
 
 ## Availability
 
-Vision (images) is available on every model.
+Vision (images)
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Always on
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Amazon Bedrock
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
-
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-
+Note  
 Only base64 image sources; per-image limit 5 MB (base64-encoded) and a lower total request size.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Amazon Bedrock (bedrock-runtime)
 
-Usage
+API  
+- Messages API
 
-Always on
+Models  
+- All models
 
-StatusAvailable
+Note  
+Only base64 image sources; per-image limit 5 MB (base64-encoded) and a lower total request size.
 
-Cloud platforms
+Claude Platform on AWS
 
-- All supported platforms
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
+Only base64 image sources; per-image limit 5 MB (base64-encoded) and a lower total request size.
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models

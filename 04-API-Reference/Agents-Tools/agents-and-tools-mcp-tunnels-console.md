@@ -2,7 +2,7 @@
 title: "Manage tunnels in the Claude Console - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/console"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-06T06:26:38Z"
+fetched_at: "2026-11-14T06:25:19Z"
 tags: ["agents", "api"]
 ---
 

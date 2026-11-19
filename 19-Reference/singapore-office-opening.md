@@ -2,29 +2,25 @@
 title: "Singapore office and government MOU | Anthropic \\ Anthropic"
 source_url: "https://www.anthropic.com/news/singapore-office-opening"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:31Z"
+fetched_at: "2026-11-17T06:25:46Z"
 tags: ["news-research"]
 ---
 
 # Anthropic opens Singapore office and signs MOU with the Government of Singapore
 
-- Published
+Published  
+Oct 14, 2026
 
-  Oct 14, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Government capacity](https://www.anthropic.com/search?topic=government-capacity)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Financial services](https://www.anthropic.com/search?topic=financial-services)
 
-  [Announcements](announcements.md)
-
-- Topics
-
-  - [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Government capacity](https://www.anthropic.com/search?topic=government-capacity)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Financial services](https://www.anthropic.com/search?topic=financial-services)
-
-  See more...
+See more...
 
 Related articles
 

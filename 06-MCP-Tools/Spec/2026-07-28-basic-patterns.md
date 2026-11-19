@@ -1,9 +1,9 @@
 ---
 title: "Overview - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:24:56Z"
-last_modified: "Sat, 31 Oct 2026 01:43:07 GMT"
+fetched_at: "2026-11-10T06:32:00Z"
+last_modified: "Mon, 09 Nov 2026 23:55:40 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -24,7 +24,7 @@ Copy pageCopy page
 
 Copy pageCopy page
 
-This page defines the message patterns of the core protocol: the ways a client and server compose JSON-RPC [requests, responses, and notifications](https://modelcontextprotocol.io/specification/draft/basic/index#messages) into interactions. Every [transport](draft-basic-transports.md) carries all of these patterns; transports differ only in how messages are framed and delivered. Every interaction begins with the client:
+This page defines the message patterns of the core protocol: the ways a client and server compose JSON-RPC [requests, responses, and notifications](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#messages) into interactions. Every [transport](draft-basic-transports.md) carries all of these patterns; transports differ only in how messages are framed and delivered. Every interaction begins with the client:
 
 - The **client** sends JSON-RPC *requests* and *notifications*.
 - The **server** answers each request with a JSON-RPC *response* (a result or error), optionally preceded by *notifications* scoped to that request.

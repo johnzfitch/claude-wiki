@@ -2,11 +2,14 @@
 title: "Troubleshoot the Agent SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/troubleshooting"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-21T06:28:43Z"
-tags: ["agents", "claude-code", "sdk"]
+fetched_at: "2026-11-17T06:24:45Z"
+last_modified: "Tue, 17 Nov 2026 05:33:02 GMT"
+tags: ["agents", "claude-code", "cli", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [CLI startup](#cli-startup)
   - [CLINotFoundError: Claude Code not found](#clinotfounderror-claude-code-not-found)
@@ -17,6 +20,12 @@ tags: ["agents", "claude-code", "sdk"]
   - [ProcessError: Command failed with exit code](#processerror-command-failed-with-exit-code)
   - [Claude Code process exited with code N](#claude-code-process-exited-with-code-n)
   - [Claude Code returned an error result](#claude-code-returned-an-error-result)
+- [Large tool calls and results](#large-tool-calls-and-results)
+  - [CLIJSONDecodeError: JSON message exceeded maximum buffer size](#clijsondecodeerror-json-message-exceeded-maximum-buffer-size)
+- [Streaming input](#streaming-input)
+  - [Operation aborted](#operation-aborted)
+  - [Prompt stream failed; closing stdin](#prompt-stream-failed-closing-stdin)
+  - [Image could not be processed](#image-could-not-be-processed)
 - [Structured outputs](#structured-outputs)
   - [structured_output is None but the result says success](#structured_output-is-none-but-the-result-says-success)
 - [Report a new issue](#report-a-new-issue)
@@ -27,33 +36,29 @@ Agent SDK
 
 Copy pageCopy page
 
-Fix Agent SDK errors when the Claude Code CLI fails to start, the CLI process exits, or a successful result arrives without structured output.
+Fix Agent SDK errors: the Claude Code CLI fails to start or exits, your prompt generator throws, a tool message is too large, or structured output is missing.
 
 Copy pageCopy page
 
-This page covers Agent SDK errors in CLI startup, CLI process exit, and structured outputs. Entries on this page are keyed to the error you see. Each entry names the cause and what to do. Symptoms tied to a feature, such as a hook not firing or a skill not being used, have a troubleshooting section on that feature’s page. The table names the section or page that covers each symptom:
+This page covers Agent SDK errors in CLI startup, CLI process exit, large tool calls and results, streaming input, and structured outputs. Entries on this page are keyed to the error you see. Each entry names the cause and what to do. Symptoms tied to a feature, such as a hook not firing or a skill not being used, have a troubleshooting section on that feature’s page. Look up your symptom in this table to find the section or page that covers it:
 
-| Symptom                                                                                                                                                                                                                                                                               | Go to                                                                                                                          |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------|
-| Skills not found, a skill not being used, `Invalid skill name` error                                                                                                                                                                                                                  | [Skills troubleshooting](agent-sdk-skills.md#troubleshooting)                                                            |
-| MCP server shows `failed` status, tools not being called, a tool missing from an SDK MCP server, connection timeouts, tool output that exceeds the maximum allowed tokens                                                                                                             | [MCP troubleshooting](agent-sdk-mcp.md#troubleshooting)                                                                  |
-| Plugin not loading, plugin skills not appearing                                                                                                                                                                                                                                       | [Plugins troubleshooting](agent-sdk-plugins.md#troubleshooting)                                                          |
-| Claude not delegating to subagents, filesystem-based agents not loading                                                                                                                                                                                                               | [Subagents troubleshooting](agent-sdk-subagents.md#troubleshooting)                                                      |
-| Checkpointing options not recognized, user messages without UUIDs, `No file checkpoint found`, `File rewinding is not enabled`, `ProcessTransport is not ready for writing`                                                                                                           | [File checkpointing troubleshooting](agent-sdk-file-checkpointing.md#troubleshooting)                                    |
-| Hook not firing, matcher not filtering as expected, hook timeout, tool blocked unexpectedly, modified input not applied, session hooks not available in Python, subagent permission prompts multiplying, recursive hook loops with subagents, `systemMessage` not appearing in output | [Fix common issues](agent-sdk-hooks.md#fix-common-issues) on the hooks page                                              |
-| An agent that works on your machine fails in a deployed service or container                                                                                                                                                                                                          | [Troubleshoot deployment failures](agent-sdk-hosting.md#troubleshoot-deployment-failures)                                |
-| `Not logged in`, `Invalid API key`, `API Error`, `429`, `There's an issue with the selected model`                                                                                                                                                                                    | [Error reference](../02-Claude-Code-CLI/errors.md#find-your-error)                                                                             |
-| `CLINotFoundError`, `CLIConnectionError`, `ProcessError`, `Claude Code process exited with code N`, `Claude Code returned an error result`, `structured_output` is `None`                                                                                                             | [CLI startup](#cli-startup), [CLI process exit](#cli-process-exit), and [Structured outputs](#structured-outputs) on this page |
+| Symptom | Go to |
+|:---|:---|
+| Skills not found, a skill not being used, `Invalid skill name` error | [Skills troubleshooting](agent-sdk-skills.md#troubleshooting) |
+| MCP server shows `failed` status, tools not being called, a tool missing from an SDK MCP server, connection timeouts, tool output that exceeds the maximum allowed tokens | [MCP troubleshooting](agent-sdk-mcp.md#troubleshooting) |
+| Plugin not loading, plugin skills not appearing | [Plugins troubleshooting](agent-sdk-plugins.md#troubleshooting) |
+| Claude not delegating to subagents, filesystem-based agents not loading | [Subagents troubleshooting](agent-sdk-subagents.md#troubleshooting) |
+| Checkpointing options not recognized, user messages without UUIDs, `No file checkpoint found`, `File rewinding is not enabled`, `ProcessTransport is not ready for writing` | [File checkpointing troubleshooting](agent-sdk-file-checkpointing.md#troubleshooting) |
+| Hook not firing, matcher not filtering as expected, hook timeout, tool blocked unexpectedly, modified input not applied, session hooks not available in Python, subagent permission prompts multiplying, recursive hook loops with subagents, `systemMessage` not appearing in output | [Fix common issues](agent-sdk-hooks.md#fix-common-issues) on the hooks page |
+| An agent that works on your machine fails in a deployed service or container | [Troubleshoot deployment failures](agent-sdk-hosting.md#troubleshoot-deployment-failures) |
+| `Not logged in`, `Invalid API key`, `API Error`, `429`, `There's an issue with the selected model` | [Error reference](../02-Claude-Code-CLI/errors.md#find-your-error) |
+| `CLINotFoundError`, `CLIConnectionError`, `ProcessError`, `Claude Code process exited with code N`, `Claude Code returned an error result`, `CLIJSONDecodeError`, `structured_output` is `None` | [CLI startup](#cli-startup), [CLI process exit](#cli-process-exit), [Large tool calls and results](#large-tool-calls-and-results), and [Structured outputs](#structured-outputs) on this page |
+| `Operation aborted`, `Claude Code process aborted by user`, `Prompt stream failed; closing stdin`, or a Python `query()` loop that stops, with no exception, before all your messages are answered | [Streaming input](#streaming-input) on this page |
+| `Image could not be processed` | [Image could not be processed](#image-could-not-be-processed) on this page |
 
+## [](#cli-startup)CLI startup
 
-[​](#cli-startup)
-
-CLI startup
-
-
-[​](#clinotfounderror-claude-code-not-found)
-
-CLINotFoundError: Claude Code not found
+### [](#clinotfounderror-claude-code-not-found)CLINotFoundError: Claude Code not found
 
 The Python SDK launches the Claude Code CLI as a subprocess. When it can’t find a `claude` executable, connecting fails with a `CLINotFoundError`:
 
@@ -72,10 +77,7 @@ The TypeScript SDK looks for the CLI in its bundled platform package and the pat
 - `Native CLI binary for <platform>-<arch> not found`: the bundled platform package is missing, most often because the install skipped optional dependencies. Reinstall `@anthropic-ai/claude-agent-sdk` without skipping optional dependencies, or point `pathToClaudeCodeExecutable` at a [native install](../01-Getting-Started/setup.md#install-claude-code). In a single-file executable built with `bun build --compile`, the same message has a different cause and fix. See [Compile to a single executable](agent-sdk-typescript.md#compile-to-a-single-executable).
 - `Claude Code native binary not found at <path>` or `Claude Code executable not found at <path>. Is options.pathToClaudeCodeExecutable set?`: the file at the resolved path is missing, or the process can’t access it. Confirm the file exists at that path and that the process can access it.
 
-
-[​](#cliconnectionerror-refusing-to-execute-batch-script)
-
-CLIConnectionError: Refusing to execute batch script
+### [](#cliconnectionerror-refusing-to-execute-batch-script)CLIConnectionError: Refusing to execute batch script
 
 On Windows, connecting fails with a `CLIConnectionError` when the CLI path the Python SDK uses is a `.bat` or `.cmd` batch script, including the `claude.cmd` shim that an npm install creates:
 
@@ -96,19 +98,16 @@ To fix it, give the SDK a native executable instead of a batch script:
 
 Before `claude-agent-sdk` 0.2.124, the Python SDK spawned batch scripts through `cmd.exe` without this check.
 
-
-[​](#cliconnectionerror-failed-to-start-claude-code)
-
-CLIConnectionError: Failed to start Claude Code
+### [](#cliconnectionerror-failed-to-start-claude-code)CLIConnectionError: Failed to start Claude Code
 
 The SDK found a file at the resolved path but couldn’t launch it. Python raises these failures as a `CLIConnectionError`. TypeScript rejects the message iteration with an error carrying no SDK class. The table below maps each message to what it tells you. Match the message you see:
 
-| Message                                                           | SDK        | What it tells you                                                    |
-|-------------------------------------------------------------------|------------|----------------------------------------------------------------------|
-| `Failed to start Claude Code: <detail>`                           | Python     | The rest of the message is the operating system’s own error          |
-| `Claude Code executable at <path> exists but failed to launch`    | TypeScript | The script at the configured path can’t run                          |
+| Message | SDK | What it tells you |
+|----|----|----|
+| `Failed to start Claude Code: <detail>` | Python | The rest of the message is the operating system’s own error |
+| `Claude Code executable at <path> exists but failed to launch` | TypeScript | The script at the configured path can’t run |
 | `Claude Code native binary at <path> exists but failed to launch` | TypeScript | The binary can’t run, with a libc suggestion appended to the message |
-| `Failed to spawn Claude Code process: <detail>`                   | TypeScript | Any other launch failure                                             |
+| `Failed to spawn Claude Code process: <detail>` | TypeScript | Any other launch failure |
 
 In both SDKs, the usual cause is a resolved path that points at something that can’t run, such as a text file, a directory, or a file without execute permission. Read the native-binary message’s libc suggestion as one possible cause. To fix it in either SDK:
 
@@ -116,10 +115,7 @@ In both SDKs, the usual cause is a resolved path that points at something that c
 - If you don’t need a custom path, remove `cli_path` in Python or `pathToClaudeCodeExecutable` in TypeScript so the SDK finds a CLI on its own, preferring its bundled copy.
 - When the failing binary is the SDK’s bundled copy in a container image, reinstall the SDK during the image build so the bundled binary matches the container’s platform, or rebuild the image for the architecture it runs on. The usual cause is a binary that doesn’t match the container’s architecture or libc, or one that lost its execute permission in the image build.
 
-
-[​](#cliconnectionerror-not-connected)
-
-CLIConnectionError: Not connected
+### [](#cliconnectionerror-not-connected)CLIConnectionError: Not connected
 
 Calling a `ClaudeSDKClient` method in Python before the client has connected, or after it has disconnected, raises a `CLIConnectionError` with this message:
 
@@ -129,17 +125,11 @@ Not connected. Call connect() first.
 
 Do what the message says. Either call `await client.connect()` before any other client method, or open the client with `async with ClaudeSDKClient() as client:`, which connects on entry.
 
-
-[​](#cli-process-exit)
-
-CLI process exit
+## [](#cli-process-exit)CLI process exit
 
 The entries in this section mean the Claude Code process ended while your application was using it. Which error you see depends on the SDK language and on whether the CLI reported an error result before it exited.
 
-
-[​](#processerror-command-failed-with-exit-code)
-
-ProcessError: Command failed with exit code
+### [](#processerror-command-failed-with-exit-code)ProcessError: Command failed with exit code
 
 The Python SDK raises a `ProcessError` when the Claude Code process exits with a nonzero code:
 
@@ -150,10 +140,7 @@ Error output: Check stderr output for details
 
 The message states the exit code twice, and the `Error output` line is fixed text rather than your process’s error output. The same fixed text fills the exception’s `stderr` attribute. The exception’s `exit_code` attribute carries the code. To capture what the CLI actually wrote to stderr, pass a `stderr` callback in `ClaudeAgentOptions` and log what it receives. A bare `ProcessError` means the CLI exited without reporting an error result. When the CLI did report one, the SDK raises [`ResultError`](agent-sdk-python.md#resulterror) instead, covered in [Claude Code returned an error result](#claude-code-returned-an-error-result). `ResultError` subclasses `ProcessError`, so `except ProcessError` catches both. To handle them differently, put the `except ResultError` clause first. Before `claude-agent-sdk` 0.2.140, the Python SDK raised error-result exits as a plain `Exception` rather than a `ResultError`.
 
-
-[​](#claude-code-process-exited-with-code-n)
-
-Claude Code process exited with code N
+### [](#claude-code-process-exited-with-code-n)Claude Code process exited with code N
 
 IDE wrappers print this message too, and the [error reference](../02-Claude-Code-CLI/errors.md#claude-code-process-exited-with-code-n) covers it for VS Code and other launchers. This entry covers what your TypeScript SDK code receives. The SDK surfaces a nonzero CLI exit as a plain `Error` that rejects the `for await` loop over `query()`’s messages. There’s no SDK error class to catch, so wrap the loop in `try`/`catch` and match on the message:
 
@@ -163,10 +150,7 @@ Claude Code process exited with code 1. stderr: <tail of the CLI's stderr>
 
 When the CLI wrote to stderr, the message ends with the tail of it. To capture the full stream, pass a `stderr` callback in the query options. A process killed by a signal reports `Claude Code process terminated by signal <name>` in the same form.
 
-
-[​](#claude-code-returned-an-error-result)
-
-Claude Code returned an error result
+### [](#claude-code-returned-an-error-result)Claude Code returned an error result
 
 Both SDKs replace the process-exit error with this message when the CLI reported an error result before exiting:
 
@@ -176,24 +160,77 @@ Claude Code returned an error result: <the CLI's own error report>
 
 The text after the colon is the CLI’s report of what went wrong, so start there rather than with the exit itself. Python raises this as a [`ResultError`](agent-sdk-python.md#resulterror), whose `data` attribute carries the full error result. TypeScript rejects the message loop with a plain `Error` carrying the same message shape.
 
+## [](#large-tool-calls-and-results)Large tool calls and results
 
-[​](#structured-outputs)
+### [](#clijsondecodeerror-json-message-exceeded-maximum-buffer-size)CLIJSONDecodeError: JSON message exceeded maximum buffer size
 
-Structured outputs
+The Python SDK raises this error when one message from Claude Code is longer than the [`max_buffer_size`](agent-sdk-python.md#claudeagentoptions) option, which defaults to 1,048,576 characters. The error calls them bytes:
 
+```python
+Failed to decode JSON: JSON message exceeded maximum buffer size of 1048576 bytes...
+```
 
-[​](#structured_output-is-none-but-the-result-says-success)
+For example, PDFs, screenshots, and text files can produce messages that reach that limit:
 
-structured_output is None but the result says success
+- **PDFs and screenshots**: when Claude reads a whole PDF of about 393 KB or more with the Read tool, the tool result can reach the limit, because it holds the file’s base64 twice. A tool result with a screenshot, from Read or an MCP tool, holds the base64 twice too.
+- **Text files**: messages from the Edit and Write tools can reach the limit on a file well under 1 MB, depending on how much of the file changes.
 
-A result message can end with `subtype: "success"` while `structured_output` is `None` in Python or `undefined` in TypeScript. The run completes, but no validated output exists. Treat this result as a failure in application code. Check both that `subtype` is `success` and that `structured_output` is present before using it. The [Error handling](agent-sdk-structured-outputs.md#error-handling) section shows this pattern for both SDKs. Then check for these causes:
+To stop the error, set a larger limit in `ClaudeAgentOptions`:
+
+```python
+options = ClaudeAgentOptions(max_buffer_size=64 * 1024 * 1024)
+```
+
+That value is enough for a screenshot, and for a Read of a whole PDF up to Read’s 20 MB limit. If the error comes back, for example on an Edit of a very large file, set a higher value. Any change a tool already made stays in place, and the tool call whose message was too long may have made one. To pick up the work that stopped:
+
+1.  If you hold a `ClaudeSDKClient` open, call `disconnect()`. The client receives no more messages after this error, but Claude Code keeps running and can still make changes.
+2.  Start a new `query()` or `ClaudeSDKClient` with the larger limit and [`continue_conversation=True`](agent-sdk-sessions.md#continue-resume-and-fork), which picks the most recent session in the working directory. To pick a specific session, set `resume` to `data["session_id"]` from the init [`SystemMessage`](agent-sdk-python.md#systemmessage).
+
+## [](#streaming-input)Streaming input
+
+### [](#operation-aborted)Operation aborted
+
+In TypeScript, your `for await` loop over `query()` throws one of these messages as an `AbortError`. Either one means the query was aborted:
+
+```python
+Operation aborted
+Claude Code process aborted by user
+```
+
+Check for these causes:
+
+- **Your code aborted the query**: if your code calls `abort()` on the `AbortController` you passed as the [`abortController`](agent-sdk-typescript.md#options) option, the loop throws one of these errors. If you didn’t intend the abort, check where your code calls `abort()`.
+- **Your async generator threw**: the error doesn’t include your generator’s own error message. To see that message, wrap the generator’s body in `try`/`catch`, log the caught error, and rethrow it. Then fix the error you logged.
+
+### [](#prompt-stream-failed-closing-stdin)Prompt stream failed; closing stdin
+
+In Python, when the async generator you passed to the `query()` function raises an exception, your `async for` loop over `query()` ends with no exception. The SDK logs this line at `ERROR` level. If you haven’t configured logging, Python prints the line to stderr:
+
+```python
+Prompt stream failed; closing stdin: <your exception's message>
+```
+
+To see the exception’s traceback, wrap the generator’s body in `try`/`except`. Log the exception with its traceback and raise it again. Then fix the exception you logged.
+
+### [](#image-could-not-be-processed)Image could not be processed
+
+When an image block in your message has no `source` object, no error reaches your code. Claude receives this text note in place of the image:
+
+```python
+[Image could not be processed: image block has no source object]
+```
+
+Claude answers without the image. Check that each image block has a `source` object, as in [Send a follow-up with an image](agent-sdk-streaming-vs-single-mode.md#send-a-follow-up-with-an-image).
+
+## [](#structured-outputs)Structured outputs
+
+### [](#structured_output-is-none-but-the-result-says-success)structured_output is None but the result says success
+
+A result message can end with `subtype: "success"` while `structured_output` is `None` in Python or `undefined` in TypeScript. The run completes, but no validated output exists. Treat this result as a failure in application code. The [Error handling](agent-sdk-structured-outputs.md#error-handling) section shows this pattern for both SDKs. Then check for these causes:
 
 - **A request that Claude declined**: to detect this case in your code, check the result message’s `stop_reason` for `"refusal"`. For what to try next, see [Usage Policy refusal](../02-Claude-Code-CLI/errors.md#usage-policy-refusal).
 - **A schema no output can satisfy**: for example, a string whose `minLength` is greater than its `maxLength`. If `structured_output` is missing repeatedly with a schema you believe is correct, look for constraints that contradict each other. If you find none, simplify the schema until outputs validate, then reintroduce your constraints one at a time.
 
-
-[​](#report-a-new-issue)
-
-Report a new issue
+## [](#report-a-new-issue)Report a new issue
 
 If your error isn’t covered here, check the open issues or file a new one in the SDK repositories: [claude-agent-sdk-typescript](https://github.com/anthropics/claude-agent-sdk-typescript/issues) or [claude-agent-sdk-python](https://github.com/anthropics/claude-agent-sdk-python/issues). Include the full error text and your SDK version.

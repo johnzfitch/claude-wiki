@@ -2,11 +2,14 @@
 title: "Recommend your plugin from your CLI - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/cli-hints"
 category: "08-Plugins-Skills"
-fetched_at: "2026-09-26T06:38:05Z"
+fetched_at: "2026-11-13T06:34:54Z"
+last_modified: "Fri, 13 Nov 2026 06:21:46 GMT"
 tags: ["claude-code", "cli", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Emit the hint](#emit-the-hint)
 - [Hint format](#hint-format)

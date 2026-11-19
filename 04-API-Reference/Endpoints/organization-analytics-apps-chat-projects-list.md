@@ -2,7 +2,7 @@
 title: "Get Chat Project Usage - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/analytics/apps/chat/projects/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:44Z"
+fetched_at: "2026-11-13T06:34:41Z"
 tags: ["api"]
 ---
 

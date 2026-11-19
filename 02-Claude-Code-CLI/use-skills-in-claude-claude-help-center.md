@@ -2,7 +2,7 @@
 title: "Use skills in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512180"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:41Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["claude-code", "security", "skills"]
 ---
 
@@ -198,6 +198,18 @@ All your skills are listed in **[Customize \> Skills](https://claude.ai/customiz
 ### Enable/disable your skills
 
 Toggle any skill on or off using the switch next to it. Disabled skills won't be available to Claude.
+
+### Download custom skills
+
+To save a copy of a custom skill you've created or uploaded:
+
+1.  Navigate to **[Customize \> Skills](https://claude.ai/customize/skills)**.
+
+2.  Find the skill in your skills list and click on it to view the details.
+
+3.  Click the "..." button next to the toggle, then select "Download."
+
+Custom skills don't move when you migrate a personal account to a Team or Enterprise organization, so download any you want to keep before you migrate. For more information, see **[What moves when you migrate](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**.
 
 ### Delete custom skills
 

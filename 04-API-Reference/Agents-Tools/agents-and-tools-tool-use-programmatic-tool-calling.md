@@ -2,7 +2,7 @@
 title: "Programmatic tool calling - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:13Z"
+fetched_at: "2026-11-13T06:33:03Z"
 tags: ["api"]
 ---
 
@@ -23,14 +23,21 @@ Programmatic tool calling
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableMicrosoft FoundryHosted on AnthropicAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Microsoft FoundryHosted on Anthropic
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Programmatic tool calling allows Claude to write code that calls your tools programmatically within a [code execution](agents-and-tools-tool-use-code-execution-tool.md) container, rather than requiring round trips through the model for each tool call. This reduces latency for multi-tool workflows and decreases token consumption by allowing Claude to filter or process data before it reaches the model’s context window. On agentic search benchmarks such as [BrowseComp](https://arxiv.org/abs/2504.12516) and [DeepSearchQA](https://github.com/google-deepmind/deepsearchqa), which test multistep web research and complex information retrieval, adding programmatic tool calling on top of basic search tools improved performance by an average of 11 percent while using 24 percent fewer input tokens (see [Improved web search with dynamic filtering](https://claude.com/blog/improved-web-search-with-dynamic-filtering)).
 
@@ -201,7 +208,7 @@ Programmatic tool calling uses the same containers as code execution:
 - **Container creation:** A new container is created for each request unless you reuse an existing one.
 - **Container ID:** Returned in responses in the `container` field, along with an `expires_at` timestamp.
 - **Reuse:** Pass the container ID back on the next request to keep state. While a programmatic tool call is waiting for your result, the container ID is required on that request, not optional: the API rejects the request without it.
-- **Expiration:** `expires_at` tells you how long the container has left. Idle containers are currently reclaimed after about 5 minutes, and no container can be reused more than 30 days after it was created.
+- **Expiration:** Containers expire 30 days after creation. After about 5 minutes of inactivity a container is checkpointed, and sending a request with its ID inside the 30-day window restores it. The `expires_at` timestamp is a shorter rolling value and doesn’t report the 30-day limit.
 
 
 
@@ -219,7 +226,7 @@ Send a request with code execution and a tool that allows programmatic calling. 
 
 Provide detailed descriptions of your tool’s output format in the tool description. If you specify that the tool returns JSON, Claude attempts to deserialize and process the result in code. The more detail you provide about the output schema, the better Claude can handle the response programmatically.
 
-The request shape is identical to the [Quick start](#quick-start) example: include `code_execution` in your tools list, add `allowed_callers: ["code_execution_20260120"]` to any tool you want Claude to invoke from code, and send your user message. The remaining steps in this workflow use the user message `"Query customer purchase history from the last quarter and identify our top 5 customers by revenue"`.
+The request shape is identical to the [Quick start](#quick-start) example: include `code_execution` in your tools list, add `allowed_callers: ["code_execution_20260120"]` to any tool you want Claude to call from code, and send your user message. The remaining steps in this workflow use the user message `"Query customer purchase history from the last quarter and identify our top 5 customers by revenue"`.
 
 ### Step 2: API response with tool call
 
@@ -295,6 +302,8 @@ Python
 
 
 ```python
+client = anthropic.Anthropic()
+
 response = client.messages.create(
     model="claude-opus-5-5",
     max_tokens=4096,
@@ -418,7 +427,7 @@ print(f"Top region: {top_region[0]} with ${top_region[1]:,} in revenue")
 
 This pattern:
 
-- Reduces model round-trips from N (one for each region) to 1
+- Reduces model round trips from N (one for each region) to 1
 - Processes large result sets programmatically before returning to Claude
 - Saves tokens by only returning aggregated conclusions instead of raw data
 
@@ -555,7 +564,7 @@ If your tool result doesn’t arrive within about 4 minutes, the pending call ra
 
 To prevent timeouts:
 
-- Monitor the `expires_at` field in responses.
+- Monitor the `expires_at` field on paused responses.
 - Implement timeouts for your tool execution.
 - Consider breaking long operations into smaller chunks.
 
@@ -650,7 +659,7 @@ Programmatic tool calls are subject to the same rate limits as regular tool call
 
 ### Validate tool results before use
 
-When implementing user-defined tools that will be called programmatically:
+When implementing user-defined tools that Claude calls programmatically:
 
 - **Tool results are returned as strings:** They can contain any content, including code snippets or executable commands that might be processed by the execution environment.
 - **Validate external tool results:** If your tool returns data from external sources or accepts user input, be aware of code injection risks if the output is interpreted or run as code.
@@ -659,11 +668,11 @@ When implementing user-defined tools that will be called programmatically:
 
 Programmatic tool calling reduces token consumption in three ways:
 
-- **Tool results from programmatic calls are not added to Claude’s context** - only the final code output is
-- **Intermediate processing occurs in code** - filtering, aggregation, and other transformations don’t consume model tokens
-- **Multiple tool calls in one code execution** - reduces overhead compared to separate model turns
+- **Tool results from programmatic calls are not added to Claude’s context:** Only the final code output is.
+- **Intermediate processing occurs in code:** Filtering, aggregation, and other transformations don’t consume model tokens.
+- **Multiple tool calls in one code execution:** This reduces overhead compared to separate model turns.
 
-For example, calling 10 tools directly uses ~10x the tokens of calling them programmatically and returning a summary.
+For example, calling 10 tools directly uses roughly 10 times the tokens of calling them programmatically and returning a summary.
 
 In Anthropic’s internal evaluations on a production Claude model:
 
@@ -691,7 +700,7 @@ Token counting for programmatic tool calls: Tool results from programmatic calls
 
 ### When to use programmatic calling
 
-Programmatic tool calling trades a small fixed overhead (container startup, script generation) for large savings on tool-result tokens and model round-trips. Whether that trade is worthwhile depends on workload shape.
+Programmatic tool calling trades a small fixed overhead (container startup, script generation) for large savings on tool-result tokens and model round trips. Whether that trade is worthwhile depends on workload shape.
 
 **Strong fit:**
 
@@ -701,7 +710,7 @@ Programmatic tool calling trades a small fixed overhead (container startup, scri
 
 **Weak fit:**
 
-- Strictly sequential workflows where each call depends on Claude reasoning over the previous result, because the script cannot skip the model round-trip in that case
+- Strictly sequential workflows where each call depends on Claude reasoning over the previous result, because the script cannot skip the model round trip in that case
 - A small number of tool calls with small responses, especially on the first turn of a conversation, where container and script overhead can exceed the savings
 - Tools that require immediate user feedback between calls
 
@@ -722,7 +731,7 @@ If you are unsure, measure billed input tokens with and without `allowed_callers
 
 **Container expiration**
 
-- Respond to each programmatic tool call well before the paused response’s `expires_at` timestamp. Claude’s code stops waiting for a result after about 4 minutes, and idle containers are currently reclaimed after about 5 minutes.
+- Respond to each programmatic tool call well before the paused response’s `expires_at` timestamp. Claude’s code stops waiting for a result after about 4 minutes.
 - Consider implementing faster tool execution.
 
 **Tool result not parsed correctly**
@@ -825,28 +834,50 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Programmatic tool calling is available on select models.
+Programmatic tool calling
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5
+- Claude Haiku 5.5
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- All other models
+Claude Platform on AWS
 
-[Managed Agents](../Other/managed-agents-overview.md)
+APIs  
+- Messages API
 
-StatusNot available
+- Managed Agents Not supported
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5
+- Claude Haiku 5.5
 
 ### Data handling
 

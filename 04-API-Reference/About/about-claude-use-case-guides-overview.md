@@ -2,7 +2,7 @@
 title: "Guides to common use cases - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/overview"
 category: "04-API-Reference/About"
-fetched_at: "2026-11-05T06:35:04Z"
+fetched_at: "2026-11-13T06:32:58Z"
 tags: ["api"]
 ---
 

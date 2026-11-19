@@ -2,9 +2,11 @@
 title: "Advancing Claude for Financial Services \\ Anthropic"
 source_url: "https://www.anthropic.com/news/advancing-claude-for-financial-services"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:22Z"
+fetched_at: "2026-11-18T06:28:39Z"
 tags: ["agents", "news-research", "skills"]
 ---
+
+### 01Claude for Excel
 
 # Advancing Claude for Financial Services
 
@@ -14,23 +16,19 @@ tags: ["agents", "news-research", "skills"]
 - [04Claude’s impact in financial services](#claudes-impact-in-financial-services)
 - [05Getting started](#getting-started)
 
-- Published
+Published  
+Oct 27, 2025
 
-  Oct 27, 2025
+[Product](product.md)
 
-- Category
+Topics  
+- [Financial services](https://www.anthropic.com/search?topic=financial-services)
+- [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
+- [Model Context Protocol](https://www.anthropic.com/search?topic=model-context-protocol)
+- [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
 
-  [Product](product.md)
-
-- Topics
-
-  - [Financial services](https://www.anthropic.com/search?topic=financial-services)
-  - [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
-  - [Model Context Protocol](https://www.anthropic.com/search?topic=model-context-protocol)
-  - [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-
-  See more...
+See more...
 
 Related articles
 

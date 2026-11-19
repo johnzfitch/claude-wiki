@@ -2,11 +2,14 @@
 title: "Communications kit - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/communications-kit"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-03T06:31:28Z"
+fetched_at: "2026-11-13T06:34:54Z"
+last_modified: "Fri, 13 Nov 2026 06:20:03 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Launch communications](#launch-communications)
   - [Before you send](#before-you-send)
@@ -55,14 +58,14 @@ Before you send
 
 Work through this checklist before the announcement goes out. Each item closes a gap that otherwise turns into a launch-day support thread.
 
-| Item                                                                                                  | Why it matters                                                                      |
-|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
-| `#claude-code` channel created and linked in the message                                              | Gives questions one place to land                                                   |
-| Install command tested on at least one machine in your environment                                    | Catches proxy or firewall issues before everyone hits them at once                  |
-| Security and data-handling link ready ([Data usage](data-usage.md) or your internal equivalent) | “Where does my code go?” will be the first reply                                    |
-| One concrete first task chosen, a real bug or file in your codebase                                   | Generic examples don’t convert; “fix the flaky test in `auth_test.go`” does         |
-| A named owner for the channel for the first 48 hours                                                  | Unanswered launch-day questions kill momentum                                       |
-| A C-suite sponsor lined up to send or co-sign the announcement                                        | Exec-sent launches consistently see higher first-week adoption than admin-sent ones |
+| Item | Why it matters |
+|----|----|
+| `#claude-code` channel created and linked in the message | Gives questions one place to land |
+| Install command tested on at least one machine in your environment | Catches proxy or firewall issues before everyone hits them at once |
+| Security and data-handling link ready ([Data usage](data-usage.md) or your internal equivalent) | “Where does my code go?” will be the first reply |
+| One concrete first task chosen, a real bug or file in your codebase | Generic examples don’t convert; “fix the flaky test in `auth_test.go`” does |
+| A named owner for the channel for the first 48 hours | Unanswered launch-day questions kill momentum |
+| A C-suite sponsor lined up to send or co-sign the announcement | Exec-sent launches consistently see higher first-week adoption than admin-sent ones |
 
 
 [​](#the-announcement)
@@ -272,12 +275,12 @@ the right default for most tasks.
 📖 Model configuration → https://code.claude.com/docs/en/model-config
 ```
 
-| Model  | Best for                                                                                                                                                                                                                                         |
-|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Fable  | The hardest, longest-running tasks. Opt-in only: select it with `/model fable`. Cybersecurity or biology content triggers [automatic model fallback to Opus](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback)                                     |
-| Opus   | Large-scale refactors, complex debugging, architecture decisions, high-stakes changes. On Opus 5.5 and Opus 5, cybersecurity or biology content triggers [automatic model fallback or a refusal](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback) |
-| Sonnet | Everyday feature work, bug fixes, tests, documentation, code review. Recommended default. On Sonnet 5.5, cybersecurity or biology content triggers [automatic model fallback or a refusal](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback)       |
-| Haiku  | Quick questions, formatting, mechanical edits, rapid iteration                                                                                                                                                                                   |
+| Model | Best for |
+|----|----|
+| Fable | The hardest, longest-running tasks. Opt-in only: select it with `/model fable`. Cybersecurity or biology content triggers [automatic model fallback to Opus](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback) |
+| Opus | Large-scale refactors, complex debugging, architecture decisions, high-stakes changes. On Opus 5.5 and Opus 5, cybersecurity or biology content triggers [automatic model fallback or a refusal](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback) |
+| Sonnet | Everyday feature work, bug fixes, tests, documentation, code review. Recommended default. On Sonnet 5.5, cybersecurity or biology content triggers [automatic model fallback or a refusal](../02-Claude-Code-CLI/model-config.md#automatic-model-fallback) |
+| Haiku | Quick questions, formatting, mechanical edits, rapid iteration |
 
 **Quick wins to try first**
 
@@ -574,14 +577,14 @@ FAQ responses
 
 One-line replies for the questions you will be asked most.
 
-| Question                                 | Response                                                                                                                                                                                                |
-|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ”Does it work in VS Code?”               | Yes. There is a VS Code extension and a JetBrains plugin with the same features, embedded in your editor. [VS Code →](../03-IDE-Integrations/vs-code.md)                                                                 |
-| “Do I have to configure anything first?” | No. Install, then run `claude` in any repo. Run `/init` once and you’re set. [Quickstart →](../01-Getting-Started/quickstart.md)                                                                                        |
-| “Where does my code go?”                 | The CLI runs in your terminal and sends context to Anthropic’s API for inference. On a Team or Enterprise plan, your code and prompts are not used to train models. [Data usage →](data-usage.md) |
-| “Can it see my whole repo?”              | It reads what you give it access to. File reads inside your working directory don’t prompt. [Permissions →](../02-Claude-Code-CLI/permissions.md)                                                                       |
-| “How is this different from Copilot?”    | Copilot autocompletes lines. Claude Code is an agent that reads files, runs commands, and makes multi-file edits. [Overview →](../01-Getting-Started/overview.md)                                                       |
-| “What should I try first?”               | A bug you’ve been putting off because it’s tedious. “The test in \[file\] is flaky, figure out why.” [Quickstart →](../01-Getting-Started/quickstart.md)                                                                |
+| Question | Response |
+|----|----|
+| ”Does it work in VS Code?” | Yes. There is a VS Code extension and a JetBrains plugin with the same features, embedded in your editor. [VS Code →](../03-IDE-Integrations/vs-code.md) |
+| “Do I have to configure anything first?” | No. Install, then run `claude` in any repo. Run `/init` once and you’re set. [Quickstart →](../01-Getting-Started/quickstart.md) |
+| “Where does my code go?” | The CLI runs in your terminal and sends context to Anthropic’s API for inference. On a Team or Enterprise plan, your code and prompts are not used to train models. [Data usage →](data-usage.md) |
+| “Can it see my whole repo?” | It reads what you give it access to. File reads inside your working directory don’t prompt. [Permissions →](../02-Claude-Code-CLI/permissions.md) |
+| “How is this different from Copilot?” | Copilot autocompletes lines. Claude Code is an agent that reads files, runs commands, and makes multi-file edits. [Overview →](../01-Getting-Started/overview.md) |
+| “What should I try first?” | A bug you’ve been putting off because it’s tedious. “The test in \[file\] is flaky, figure out why.” [Quickstart →](../01-Getting-Started/quickstart.md) |
 
 
 [​](#prompt-templates)
@@ -590,15 +593,15 @@ Prompt templates
 
 Share these starter prompts with engineers who have installed but aren’t sure what to ask. Each one is phrased the way it would be typed into a real session; replace the bracketed pieces with files from your own repo.
 
-| Task                 | Prompt                                                                        |
-|----------------------|-------------------------------------------------------------------------------|
-| Fix a bug            | ”the tests in \[file\] are failing, figure out why and fix it”                |
-| Understand code      | ”walk me through how \[module\] works, then tell me where the entry point is” |
-| Safe refactor        | ”refactor \[module\] to \[goal\], use plan mode so I can review first”        |
-| Write tests          | ”write tests for \[file\] that cover the edge cases around \[scenario\]“      |
-| Review before commit | ”look at my working diff and tell me what looks risky”                        |
-| Open a PR            | ”fix \[issue\], write a conventional commit, and open a PR with a summary”    |
-| Make a skill         | ”make me a /ship skill that runs tests and lint before commit”                |
-| Debug a stack trace  | ”here’s the stack trace, find the root cause, don’t just paper over it”       |
+| Task | Prompt |
+|----|----|
+| Fix a bug | ”the tests in \[file\] are failing, figure out why and fix it” |
+| Understand code | ”walk me through how \[module\] works, then tell me where the entry point is” |
+| Safe refactor | ”refactor \[module\] to \[goal\], use plan mode so I can review first” |
+| Write tests | ”write tests for \[file\] that cover the edge cases around \[scenario\]“ |
+| Review before commit | ”look at my working diff and tell me what looks risky” |
+| Open a PR | ”fix \[issue\], write a conventional commit, and open a PR with a summary” |
+| Make a skill | ”make me a /ship skill that runs tests and lint before commit” |
+| Debug a stack trace | ”here’s the stack trace, find the root cause, don’t just paper over it” |
 
 Claude Code ships frequently. Verify version-specific details against the [documentation home page](../01-Getting-Started/overview.md) before distributing internally.

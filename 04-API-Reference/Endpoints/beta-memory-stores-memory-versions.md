@@ -2,7 +2,7 @@
 title: "Memory Versions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memory_versions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:48Z"
+fetched_at: "2026-11-13T06:35:34Z"
 tags: ["api"]
 ---
 
@@ -26,19 +26,19 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Retrieve a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Redact a Memory Version](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memory_versions/redact)
 
 POST/v1/memory_stores/{memory_store_id}/memory_versions/{memory_version_id}/redact
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 

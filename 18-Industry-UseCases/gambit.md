@@ -2,7 +2,7 @@
 title: "Gambit Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/gambit"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:31Z"
+fetched_at: "2026-11-18T06:28:54Z"
 tags: ["api", "case-studies", "claude-code"]
 ---
 
@@ -30,9 +30,11 @@ Successful recipe parses across their pipeline
 
 Written with Claude Code
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [Gambit Robotics](https://www.gambitrobotics.ai/) uses Claude to power an AI kitchen device that guides home cooks through any recipe in real time, combining camera, thermal sensors, and voice to deliver step-by-step coaching while people cook.
 
@@ -98,6 +100,9 @@ Gambit sees hardware as the next big wave for AI. As models get cheaper and more
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -105,6 +110,3 @@ Gambit sees hardware as the next big wave for AI. As models get cheaper and more
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

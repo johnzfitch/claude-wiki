@@ -1,9 +1,9 @@
 ---
 title: "Logging - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2025-06-18/server/utilities/logging"
+source_url: "https://modelcontextprotocol.io/specification/2025-03-26/server/utilities/logging"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:25:24Z"
-last_modified: "Fri, 30 Oct 2026 22:12:07 GMT"
+fetched_at: "2026-11-10T06:31:55Z"
+last_modified: "Tue, 10 Nov 2026 04:28:31 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

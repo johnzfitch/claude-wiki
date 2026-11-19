@@ -2,7 +2,7 @@
 title: "MORE THAN TWO THIRDS OF THE ZEROS OF THE RIEMANN ZETA"
 source_url: "https://www-cdn.anthropic.com/95c246936988e43127bc6b2ceb7077c1dad2d68e.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-15T06:23:03Z"
+fetched_at: "2026-11-18T06:28:51Z"
 tags: ["news-research"]
 ---
 
@@ -240,12 +240,11 @@ on the bulk).
    Here and below, Cχ := ∥(ϕ2 )′′ ∥1 ≪χ 1.
    Place αk := T + 2πk/L for k ∈ Z and d := ⌊LT /(2π)⌋, so α0 , . . . , αd−1 ∈ [T, 2T ) and
 d = N (T, 2T ) + O(L). For a zero ρ set
-                                                              ∈ Cd .
+                                          ϕ(γρ − αk ) 0≤k<d ∈ Cd .
                                                      
-(2.9)                            vρ := ϕ(γb ρ − αk )
-                                                       0≤k<d
+(2.9)                            vρ := b
                                                     √           √
-2.3. The matrix G.  e Let I := [T, 2T ), I ′ := [T − T , 2T + T ), and partition the zeros
+2.3. The matrix e  G. Let I := [T, 2T ), I ′ := [T − T , 2T + T ), and partition the zeros
 with Re γρ ∈ I ′ into on := {ρ : β = 12 }, off := {ρ : β ̸= 21 } (sets). Put a := ∥ϕ∥22 /L =
 R 1/2          −1
  −1/2 ψ + Oχ (L ) and define the real symmetric d × d matrices
@@ -260,28 +259,27 @@ R 1/2          −1
     e := (aL2 )−1
 and E
                     P                  T
-                            / ′ mρ vρ vρ . Rank and inertia are basis-independent, so no orthonor-
-                      Re γρ ∈I
+                           ∈I ′ mρ vρ vρ . Rank and inertia are basis-independent, so no orthonor-
+                      Re γρ /
 malisation is needed. The functional equation pairs off as {ρ, 1 − ρ̄} with v1−ρ̄ = vρ , so G,
                                                                                             e Ee
-    MORE THAN TWO THIRDS OF THE ZETA ZEROS ARE SIMPLE AND ON THE CRITICAL LINE                      5
+    MORE THAN TWO THIRDS OF THE ZETA ZEROS ARE SIMPLE AND ON THE CRITICAL LINE                        5
 
 are real symmetric. By (2.2),
                                            Z
-                                      1        b − αk ) ϕ(τ
-                                                        b − αk′ ) νX (τ ) dτ.
+                                      1
 (2.11)                (G
-                       e + E)
-                           e kk′ =             ϕ(τ
+                       e+ e
+                          E)kk′ =              ϕ(τ − αk ) b
+                                               b          ϕ(τ − αk′ ) νX (τ ) dτ.
                                      aL2   R
 
 Lemma 2.1 (Poisson–Gabor identity). For all z, z ′ ∈ C,
- X                                                                X
-            b ′ − αk ) = L ϕ
-   b − αk ) ϕ(z
-   ϕ(z                     c2 (z − z ′ ), in particular                 b − αk )2 = L∥ϕ∥2 = aL2 .
-                                                                        ϕ(z             2
- k∈Z                                                              k∈Z
+ X                                                                  X
+   ϕ(z      b ′ − αk ) = L ϕ
+   b − αk ) ϕ(z            c2 (z − z ′ ), in particular                   b − αk )2 = L∥ϕ∥2 = aL2 .
+                                                                          ϕ(z             2
+ k∈Z                                                                k∈Z
 
 For z = z ′ real, truncating to 0 ≤ k < d gives ∥vρ ∥22 ≤ aL2 for ρ ∈ on.
 
@@ -289,8 +287,7 @@ Proof. Fix z, z ′ and let Υ(s) := ϕ(z    b ′ − s). With ϕz (u) := ϕ(u)
                                   b − s)ϕ(z
 Cc (R) one has Υ(s) = H(−s);
                            b      hence Υ is smooth with Υ(s) = Oχ (|s|−4 ) by (2.8), and by
-Fourier inversion Υ(ξ)
-                     b    = 2πH(ξ), which is continuous and vanishes for |ξ| ≥ L. Poisson
+Fourier inversion b  Υ(ξ) = 2πH(ξ), which is continuous and vanishes for |ξ| ≥ L. Poisson
                                     −1                   2πimT /h holds; since h = 2π/L the
                 P                      P
 summation        k∈Z Υ(T + kh) = h      m∈Z Υ(−2πm/h)e
@@ -327,7 +324,7 @@ satisfy log nn ≥ 2n
                     , so
                                       X                   X
 (2.12)                   δn−1 ≤ 2n,       δn−1 |xn |2 ≤ 2   n|xn |2 .
-                                               n              n
+                                               n                n
 
 
                                        3. Linear algebra
@@ -388,8 +385,8 @@ Proof. By Lemma 2.1 at z = z ′ = γρ , for each zero with Re γρ ∈ I ′ ,
                                                 X
                           tr(vρ vρT ) = aL2 −        b ρ − αk )2 .
                                                      ϕ(γ
-                                                  k∈[0,d)
-                                                   /
+                                                   ∈[0,d)
+                                                  k/
 
 For k ∈/ [0, d) one has αk ∈ / [T, 2T ), hence | Re γρ − αk | ≥ Dρ := dist(Re γρ , {T, 2T }). By (2.8)
 with | Im γρ | < 2 , |ϕ(γρ − αk )|2 ≤ eL/2 Cχ2 | Re γρ − αk |−4 , and the k-sum is bounded by integral
@@ -401,8 +398,8 @@ comparison (step h = 2π/L):
                                                               s−4 ds ≪ L min L3 , Dρ−3 .
                                                                                          
                    | Re γρ − αk |    ≤ 2 Dρ + h
-           k∈[0,d)
-            /                                          Dρ
+            ∈[0,d)
+           k/                                          Dρ
 
 Dividing by aL2 ≍ L2 and summing over zeros in I ′ (density ≪ L; O(L) zeros have Dρ < 1,
 contributing ≪χ X 1/2 L2 ; the rest satisfy ρ Dρ−3 ≪ L, contributing ≪ X 1/2 · L−1 · L = X 1/2 ),
@@ -414,22 +411,20 @@ contributing ≪χ X 1/2 L2 ; the rest satisfy ρ Dρ−3 ≪ L, contributing �
 
 
 Proposition 4.3 (Tail). ∥E∥   e 1 ≪χ T −1/2 ; in particular ∥E∥,
-                                                              e ∥E∥  e HS ≤ ∥E∥ e 1 = o(1).
+                                                             e ∥E∥ e HS ≤ ∥E∥e 1 = o(1).
 
-                                      e 1 ≤ (aL2 )−1 P
-Proof. Since ∥vρ vρT ∥1 = ∥vρ ∥22 , ∥E∥                                     2
-                                                                / ′ mρ ∥vρ ∥2 .
-                                                          Re γρ ∈I               For such ρ, D :=
-                           √                                           −1   −3
-                                                    2
-dist(Re γρ , I) ≥ D0 = T , and as above ∥vρ ∥2 ≤ e Cχ · h DL/2    2             ≪ X 1/2 L D−3 . By
+                                     E∥1 ≤ (aL2 )−1 Re γρ /∈I ′ mρ ∥vρ ∥22 . For such ρ, D :=
+Proof. Since ∥vρ vρT ∥1 = ∥vρ ∥22 , ∥ e
+                                                        P
+                           √
+dist(Re γρ , I) ≥ D0 = T , and as above ∥vρ ∥22 ≤ eL/2 Cχ2 · h−1 D−3 ≪ X 1/2 L D−3 . By
 N (t, t + 1) ≪ log(|t| + 3) [Tit86, Thm 9.2],
                     X                   Z T               X log |γ|
-                           mρ D−3 ≪ L √ D−3 dD +                    3
-                                                                        ≪ L T −1 .
-                         ′                T                      |γ|
-                   Re γρ ∈I
-                         /                                  |γ|>3T
+                           mρ D−3 ≪ L √ D−3 dD +                  3
+                                                                      ≪ L T −1 .
+                         ′                T                    |γ|
+                        ∈I
+                   Re γρ /                                  |γ|>3T
 
        e 1 ≪ (aL2 )−1 · X 1/2 L · LT −1 ≪ X 1/2 T −1 ≪ T −1/2 .
 Hence ∥E∥                                                                                                 □
@@ -456,9 +451,8 @@ L    ϕ
 (5.1)      Φ := ϕ ,
                  c      g := ϕ ⋆ ϕ ,     Aϕ := ϕ ⋆ ϕ,   (v ⋆ v)(y) := v(u)v(u + y) du.
 
-                                                                                          b2
-                                      b ≤ L, Φ(0) = aL; the pair-correlation kernel R := |ϕ|
-Thus ϕb and Φ are real, even, entire; ϕ(0)
+Thus ϕb and Φ are real, even, entire; b                                                      ϕ|2
+                                      ϕ(0) ≤ L, Φ(0) = aL; the pair-correlation kernel R := | b
 is nonnegative by construction; ϕb 2 = Acϕ and Φ2 = gb on R;      2
                                                               R
                                                                R Φ = 2πg(0) = 2πbL; g and Aϕ
@@ -518,33 +512,32 @@ Kout denoting the sum over k ∈
                              / [0, d); by Lemma 2.1 and (5.3),
                                                         X
 (5.9)         |K|, L|Φ| ≤ aL2 ,      |Kout (τ, τ ′ )| ≤   ϑ(τ − αk )ϑ(τ ′ − αk ).
-                                                           k∈[0,d)
-                                                            /
+                                                            ∈[0,d)
+                                                           k/
 
 Proposition 5.2 (Reduction to the double integral).
                                  ZZ
-                   2         1           c2 (τ − τ ′ )2 νX (τ )νX (τ ′ ) dτ dτ ′ + Oχ N log L .
-                                                                                            
+                             1           c2 (τ − τ ′ )2 νX (τ )νX (τ ′ ) dτ dτ ′ + Oχ N log L .
+                                                                                             
+                   2
           ∥G + E∥HS = 2 2
             e    e                       ϕ
-                         a L         I×I                                                 L2
+                         a L         I×I                                                  L2
 
-Proof. Write (aL2 )2 ∥G      e 2 as               2       ′                                  ′       ′
+Proof. Write (aL2 )2 ∥G      E∥2HS as I×I K∞       2 νν ′ + E + E with ν := ν (τ ), ν ′ := ν (τ ′ ),
                                          RR
-                                           I×I K∞ νν + E1 + ERR
-                       e + E∥                                        2 with ν := νX (τ ), ν := νX (τ ),
-                                HS
-E1 := I×I (K 2 − K∞  2 )νν ′ and E :=                   2   ′                  2    ′   2
-      RR                                  RR
-                                    2        (I×I)c K νν ; note         I×I K∞ νν = L M.
+                       e+ e                                      1     2               X          X
+E1 := I×I (K 2 − K∞  2 )νν ′ and E :=                   2 νν ′ ; note          2 νν ′ = L2 M.
+      RR                                  RR                          RR
+                                    2        (I×I) c K                   I×I K ∞
    Bound for E1 . By (5.9), |K 2 − K∞   2 | = |K                             2                 ′
                                                   out | |K + K∞ | ≤ 2aL |Kout |, and |ν|, |ν | ≤ B on I
 by (5.7). Hence
                                                 X Z                        2
                                           2 2
                               |E1 | ≤ 2L B                  ϑ(τ − αk ) dτ .
-                                             k∈[0,d)
-                                              /        I
+                                              ∈[0,d)
+                                             k/        I
 
 For k = −j (j ≥ 1) we have dist(αRk , I) = jh; for k = d + 1 + j (j ≥ 0) we have αk ≥ 2T + jh
                                    ∞
@@ -553,29 +546,29 @@ get
     X Z                  2                X           C χ 2           6Cχ Θ0
              ϑ(τ − αk ) dτ ≤ 2(2Θ0 )2 + 2       min Θ0 ,        ≤ 10Θ20 +        ≪ L log L,
            I                                             jh                 h
-    k∈[0,d)
-     /                                         j≥1
+     ∈[0,d)
+    k/                                         j≥1
 
 where the term 2(2Θ0 )2 accounts for k = d, d+1 (for which we only use R ϑ = 2Θ0 ), the points
-                                                                              R
+                                                                          R
 αd+1+j , j ≥ 1, being at distance ≥ jh to the right of I; the j-sum was split at j = Cχ /(hΘ0 ),
 and (5.4) was used. Thus |E1 | ≪ L3 B 2 log L. R
-                                                                 2    ′    Using K 2 ≤ aL2 |K| ≤
+  Bound for E2 . By symmetry |E2 | ≤ 2 τ /∈I τ ′ ∈R K 2 |νν ′ |. Using K 2 ≤ aL2 |K| ≤
                                                       R
-  Bound for E2 . By symmetry |E2 | ≤ 2 τ ∈I        /    τ ′ ∈R K |νν |.
+
 L2 k<d ϑ(τ − αk )ϑ(τ ′ − αk ),
   P
 
-                         X Z                           Z                                 
+                         X Z                           Z                             
              |E2 | ≤ 2L2
-                                 ϑ(τ − αk )|νX (τ )| dτ         ϑ(τ ′ − αk )|νX (τ ′ )| dτ ′ .
-                         k<d   τ ∈I
-                                 /                              R
+                                 ϑ(τ − αk )|νX (τ )| dτ     ϑ(τ ′ − αk )|νX (τ ′ )| dτ ′ .
+                         k<d    ∈I
+                               τ/                               R
 
 In the second factor, the range |τ ′ − αk | ≤ 2T has |τ ′ | ≤ 4T and contributes at most 2Θ0 B; on
 |τ ′ − αk | =: r > 2T we have |τ ′ | ≤ 2r, |νX (τ ′ )| ≤ B + log(r/T ) and ϑ(r) ≤ Cχ r−2 , contributing
 ≪ B/TR. So the second factor is ≤ 3Θ0 BPuniformly in k. The sum over k of the first factor
-equals τ ∈I / |νX (τ )|σ(τ ) dτ with σ(τ ) :=      k<d ϑ(τ − αk ). For τ ∈/ I let ∆ := dist(τ, I); the
+equals τ /∈I |νX (τ )|σ(τ ) dτ with σ(τ ) := k<d ϑ(τ − αk ). For τ ∈      / I let ∆ := dist(τ, I); the
      MORE THAN TWO THIRDS OF THE ZETA ZEROS ARE SIMPLE AND ON THE CRITICAL LINE                9
 
 numbers |τ − αk |, 0 ≤ k < d, are ≥ ∆, ≥ ∆ + h, ≥ ∆ + 2h, . . . in increasing order, and ϑ is
@@ -593,10 +586,9 @@ On ∆ ≤ 2T (where |τ | ≤ 4T , |νX | ≤ B) this gives |νX |σ ≤ 2B Θ0
                                                                                          0
                                                                                               ≤
  R ∞ 0 + Cχ L log T ); on ∆ > 2T (where |τ | ≤ 2∆,
-2B(Θ                                                 R |νX (τ )| ≤ B + log(∆/T )) it 2gives ≤
-2 2T dCχ (B + log(∆/T ))∆−2 d∆ ≪ Cχ LB. Hence τ ∈I     / |νX |σ ≪ BLl and |E2 | ≪ L · Θ0 B ·
-          3  2
-BLl ≪ L B l log L.
+2B(Θ                                                 R |νX (τ )| ≤ B + log(∆/T )) it gives ≤
+2 2T dCχ (B + log(∆/T ))∆−2 d∆ ≪ Cχ LB. Hence τ /∈I |νX |σ ≪ BLl and |E2 | ≪ L2 · Θ0 B ·
+BLl ≪ L3 B 2 l log L.
                                                                                               □
 
 5.3. Evaluation of M. For functions u1 , u2 on I write
@@ -621,8 +613,8 @@ Proposition 5.3 (Archimedean term). M[µ, µ] = 2πbL T µ2 + O(l2 log L) =     
 O(l ) + O(l log L).
 Proof. For τ, τ ′ ∈ I, µ(τ ) = µ(τ ′ ) + O(|τ − τ ′ |/T ) by (2.3), and 0 < µ ≤ l on I. Hence
                           Z          Z                        l ZZ                      
-                                 ′ 2                       ′
-            M[µ, µ] = µ(τ )                       2
+                                                           ′
+            M[µ, µ] = µ(τ )      ′ 2              2
                                               Φ(x) dx dτ + O              Φ(x)2 |x| dx dτ ′ .
                            I            I−τ ′                     T I R
 The error is O(l log L). In the main term, I−τ ′ Φ2 = 2πbL − x<T −τ ′ Φ2 − x>2T −τ ′ Φ2 , and
@@ -647,9 +639,9 @@ I ∩ (I − x), which is empty for |x| ≥ T and equals [T + x− , 2T − x+ ]
                1    X         Z T          hZ 2T −x+  n iτ ′      Z 2T −x+
                                                                                    ′
                                                                                         i
-                                                                 ′
  M[PX , PX ] = 2 Re     an am         2 ix
-                                  Φ(x) n                       dτ +          (nm)iτ dτ ′ dx
+                                  Φ(x) n                         ′
+                                                               dτ +          (nm)iτ dτ ′ dx
               2π    n,m        −T            T +x−    m              T +x−
 
                =: D + O1 + O2 ,
@@ -760,52 +752,53 @@ Then R(ψ0 ) = 34 and R(ψMT ) = 12 + √12 cot √12 = c−1
                                     ψ02 = 1,        |u − v| = 2 0 w(1 − w) dw = 31 , so R = 34 . For ψMT : the
                   R             R              RR
 Proof. For ψ0 :       ψ0 = 1,
-                           R 1/2
+                            R 1/2
 function G(u) := ψ(u) + −1/2 |u − v|ψ(v) dv has G′′ = ψ ′′ + 2ψ = 0 on (− 12 , 12 ), hence is affine
-                                                     R 1/2     √
+                                                      R 1/2      √
 there, hence (being even) constant; G(0) = 1 + 2 0 v cos( 2 v) dv = cos √12 + √12 sin √12 and
        √
   ψ = 2 sin √12 , so R(ψMT ) = G(0)/ ψ = 21 + √12 cot √12 after integrating G ≡ G(0) against
-R                                        R
+R                                         R
 
 ψ.                                                                                                □
                    e 2 = R(ψ) + Oχ (L−1 ) N (T, 2T ).
-                                                
+                                                 
 Theorem 5.7. ∥G∥      HS
                                                                                           √ 
-Proof. By Propositions 5.2–5.5, ∥G       e 2 = (a2 L2 )−1 M[µ, µ] + M[PX , PX ] + O(L2 X) +
-                                     e + E∥
-                                             HS
+Proof. By Propositions 5.2–5.5, ∥G        e 2 = (a2 L2 )−1 M[µ, µ] + M[PX , PX ] + O(L2 X) +
+                                      e + E∥
+                                              HS
 O(N log L/L2 ). Rescaling ϕ2 (u) = ψ(u/L) + O(1|u|>L/2−1 ) gives ∥ϕ∥22 = L ψ + Oχ (1),
                                                                                      R
                                                                                        2
 ∥ϕ∥44 = L ψ 2 + Oχ (1), g(y) = L (ψ ∗ ψ)(y/L) + Oχ (1) uniformly; so n≤X Λ(n)
-          R                                                                P
+          R                                                                 P
                                                                                      n g(log n) =
           2
-L n Λ(n)            log n          2                                               2     1     2
-  P                                                                   P
-        n (ψ ∗ ψ)( L R) + Oχ (L ), and by partial summation with         n≤t Λ(n) /n = 2 log t +
-                          1
+L n Λ(n)            log n           2                                              2     1     2
+  P                                                                    P
+        n (ψ ∗ ψ)( L R) + Oχ (L ), and by partial summation with          n≤t Λ(n) /n = 2 log t +
+                           1
 O(log t) this equals L3 0 w (ψ ∗ ψ)(w) dw + Oχ (L2 ). Thus
-                            T L3 R 2      R1         
-                                                                      L3
-                                                                               R 2
-M[µ, µ] + M[PX , PX ] =             ψ + 2 0 w(ψ ∗ ψ) + Oχ (T L2 ) = T2π   R(ψ) ψ + Oχ (T L2 )
-                             2π
+                             T L3 R 2      R1         
+                                                                       L3
+                                                                                R 2
+M[µ, µ] + M[PX , PX ] =              ψ + 2 0 w(ψ ∗ ψ) + Oχ (T L2 ) = T2π   R(ψ) ψ + Oχ (T L2 )
+                              2π
                           R1
-                                             |u − v|ψψ, ψ even). Dividing by a2 L2 = L2 ( ψ)2 +
-                                          RR                                               R
+                                              |u − v|ψψ, ψ even). Dividing by a2 L2 = L2 ( ψ)2 +
+                                           RR                                              R
 by Lemma 5.6 (since 2 0 w(ψ ∗ ψ) =
 Oχ (L):
                 ∥G    e 2 = R(ψ) · T L + Oχ (T ) = R(ψ) N (T, 2T ) + Oχ (N/L).
                  e + E∥
                           HS
-                                       2π
-                                                                  √
-Finally ∥G∥e 2               2
-             HS − ∥G + E∥HS ≤ 2∥G + E∥HS ∥E∥HS + ∥E∥HS ≪
-                    e e               e e         e        e 2      N · T −1/2 by Proposition 4.3.
+                                        2π
+                                                                   √
+Finally ∥ e  2
+          G∥HS − ∥G e+ e      2
+                          E∥HS ≤ 2∥G   e+ eE∥HS ∥ e         E∥2HS ≪ N · T −1/2 by Proposition 4.3.
+                                                   E∥HS + ∥ e
                                                                                                   □
 
                                6. Proofs of Theorems A and B
@@ -830,14 +823,12 @@ and since tr P1 + 2(s2 + p) ≤ s1 + 2s2 + 2p ≤ N (I ′ ) this is ≥ 4 tr G
                                                                       e − 2N (I ′ ) − ∥G∥
                                                                                         e 2 . Now
                                                                                            HS
-             ′
-   e = N (I ) + o(N ) (Proposition 4.2), ∥G∥
-tr G                                             2                                             ′
-                                                 HS = (R(ψ) + o(1))N (Theorem 5.7), N (I ) =
-                                              e
+tr G         ′
+   e = N (I ) + o(N ) (Proposition 4.2), ∥ e  G∥HS = (R(ψ) + o(1))N (Theorem 5.7), N (I ′ ) =
+                                                 2
+
 N (I) + O(D0 L), and N0s (I) = s1 − O(D0 L) ≥ rank P1 − O(D0 L), giving (1.2).
-   For (ii): rearranging the display above, 3s1 + 4(s2 + p) ≥ 4 tr G    e − ∥G∥  e 2 ; subtracting
-                                                                                    HS
+   For (ii): rearranging the display above, 3s1 + 4(s2 + p) ≥ 4 tr G    e − ∥e G∥2HS ; subtracting
 s1 + 2s2 + 2p ≤ N (I ′ ) gives 2(s1 + s2 + p) ≥ (3 − R(ψ) − o(1))N , and Nd (I ′ ) ≥ s1 + s2 + 2p ≥
 s1 + s2 + p. The cumulative form follows by summing over dyadic windows.                          □
 12                                              CLAUDE
@@ -866,8 +857,7 @@ P
             (ρ−ρ′ ) log T
                                                               log T ([Ary22, Cor. 1.4]; [BGSTB24, Theo-
          2
-rem 1]; [GS26, Lemma 2]) is, up to the choice of smoothing, the zero-side reading of our ∥G∥e 2 .
-                                                                                              HS
+rem 1]; [GS26, Lemma 2]) is, up to the choice of smoothing, the zero-side reading of our ∥ eG∥2HS .
 Goldston and Suriajaya [GS25, Theorem 2] (seePalso [GLSS25] under the pair correlation
 conjecture) show that an unconditional bound         ρ,ρ′ ∈Z(T ), γ=γ ′ 1 ≤ (C + o(1))N (T ) with
 C < 2 (zeros repeated according to multiplicity) would give proportions ≥ 2 − C of simple
@@ -921,7 +911,7 @@ flat charge 4. This is the device of [CGG98, (1.2)] made unconditional.
 The dimension bound rank P ≤ d = N (T, 2T ) + O(1) is the trivial ceiling referenced in (f);
 it is decisive in combination with the following observations, which we state informally. (d)
 Lemma 3.2 at c = 1 is the case m = 1 of the one-sided Chebyshev–Markov–Stieltjes bound: if
-the normalised moments d−1 tr G      e k , k ≤ 2m, are known, the sharp lower bound for n+ (G)/d    e
+the normalised moments d−1 tr G      e k , k ≤ 2m, are known, the sharp lower bound for n+ ( e     G)/d
 is 1 − Λm (0), Λm the Christoffel function of the moment sequence at 0. (e) The prime-side
 evaluation of tr G e k by the diagonal method of Section 5 (multiplicative relations among k
 prime powers, Montgomery–Vaughan for the rest) is available exactly in the Rudnick–Sarnak
@@ -972,8 +962,8 @@ where a numerical certification enters; the formalisation of Theorems A and B is
 of it and depends only on the three standard axioms (§1.5).
 7.3. Conditional extensions. Under the Riemann hypothesis the third trace tr G        e 3 is avail-
 able [Hej94, RS96], and the certificate of Theorem A(ii) can be run with the cubic weight
-ω(m) = 21 m + 18 1
-                   (2m2 − m3 ) + 49 1m=1 (tight at m = 1, 2, 3; Schur–Horn applied to the convex
+                 1
+ω(m) = 21 m + 18   (2m2 − m3 ) + 49 1m=1 (tight at m = 1, 2, 3; Schur–Horn applied to the convex
                 1 2    1 3
 minorant of − 9 x + 18  x ): with the window cos( 8s                            s       19
                                                      5 )1|s|≤1/2 and [BHB13]’s N /N ≥ 27 on RH

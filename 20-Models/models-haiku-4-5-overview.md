@@ -2,7 +2,7 @@
 title: "Claude Haiku 4.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/haiku-4-5/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:14Z"
+fetched_at: "2026-11-13T06:36:57Z"
 tags: ["models"]
 ---
 
@@ -57,8 +57,8 @@ claude-haiku-4-5
 [Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)  
 anthropic.claude-haiku-4-5
 
-[Amazon Bedrock (InvokeModel)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)  
-anthropic.claude-haiku-4-5-20251001-v1:0
+[Amazon Bedrock (bedrock-runtime)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)  
+global.anthropic.claude-haiku-4-5-20251001-v1:0
 
 [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)  
 claude-haiku-4-5@20251001
@@ -129,13 +129,13 @@ Retirement
 Not sooner than October 15, 2026
 
 Platforms  
-Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (InvokeModel)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)
+Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Amazon Bedrock (bedrock-runtime)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)
 
 ## Good to know
 
 - `claude-haiku-4-5` is a convenience alias that resolves to the pinned snapshot `claude-haiku-4-5-20251001`. See [Model IDs and versioning](about-claude-models-model-ids-and-versions.md).
 - Claude Haiku 4.5 uses manual extended thinking (`thinking.type: "enabled"`), not adaptive thinking.
-- Query limits and capabilities programmatically with the [Models API](../04-API-Reference/Endpoints/models-list.md).
+- Query limits and capabilities programmatically with the [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 ## Resources
 
@@ -165,7 +165,7 @@ The system prompt Claude Haiku 4.5 uses on claude.ai and the Claude apps.
 
 
 
-[System card](../15-Claude-AI-Features/claude-haiku-4-5-system-card.md)
+[System card](../19-Reference/this-system-card-introduces-claude-haiku-4-5-a-new-hybrid-reasoning-large.md)
 
 Safety evaluations and deployment decisions for Claude Haiku 4.5.
 
@@ -185,6 +185,6 @@ Lifecycle status and retirement commitments for every Claude model.
 
 
 
-[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
+[Amazon Bedrock (bedrock-runtime)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 
-Claude Haiku 4.5 is also available through the InvokeModel Bedrock integration and Bedrock-style model IDs.
+Claude Haiku 4.5 is also on the `bedrock-runtime` endpoint (the InvokeModel and Converse APIs), with Bedrock-style model IDs.

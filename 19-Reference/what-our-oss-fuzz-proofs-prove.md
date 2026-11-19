@@ -2,8 +2,7 @@
 title: "What our OSS-Fuzz proofs prove​"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:37:49Z"
-last_modified: "Thu, 22 Oct 2026 21:07:26 GMT"
+fetched_at: "2026-11-18T06:28:48Z"
 tags: ["news-research"]
 ---
 

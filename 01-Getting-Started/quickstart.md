@@ -2,8 +2,8 @@
 title: "Quickstart - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/quickstart"
 category: "01-Getting-Started"
-fetched_at: "2026-10-31T06:24:22Z"
-last_modified: "Sat, 31 Oct 2026 01:06:48 GMT"
+fetched_at: "2026-11-13T06:32:48Z"
+last_modified: "Fri, 13 Nov 2026 06:15:49 GMT"
 tags: ["claude-code", "getting-started"]
 ---
 
@@ -288,11 +288,11 @@ Session commands
 
 Run these inside Claude Code after it starts.
 
-| Command                 | What it does               | Example  |
-|-------------------------|----------------------------|----------|
-| `/clear`                | Clear conversation history | `/clear` |
-| `/help`                 | Show available commands    | `/help`  |
-| `/exit` or Ctrl+D twice | Exit Claude Code           | `/exit`  |
+| Command | What it does | Example |
+|----|----|----|
+| `/clear` | Start a new conversation. Resume the previous one with `/resume`. | `/clear` |
+| `/help` | Show available commands | `/help` |
+| `/exit` or Ctrl+D twice | Exit Claude Code | `/exit` |
 
 See the [commands reference](../02-Claude-Code-CLI/commands.md) for the complete list of session commands.
 

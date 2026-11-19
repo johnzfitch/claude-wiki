@@ -2,7 +2,7 @@
 title: "Reduce hallucinations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-11-05T06:36:58Z"
+fetched_at: "2026-11-13T06:37:04Z"
 tags: ["api"]
 ---
 
@@ -24,7 +24,7 @@ Even the most advanced language models, such as Claude, can sometimes generate t
 
 - **Allow Claude to say “I don’t know”:** Explicitly give Claude permission to admit uncertainty. This technique can drastically reduce false information.
 
-### Example: Analyzing a merger and acquisition report
+### Example: Analyzing a merger and acquisition report
 
 User
 
@@ -42,7 +42,7 @@ Focus on financial projections, integration risks, and regulatory hurdles. If yo
 
 - **Use direct quotes for factual grounding:** For tasks involving long documents (\>20k tokens), ask Claude to extract word-for-word quotes first before performing its task. This grounds its responses in the actual text, reducing hallucinations.
 
-### Example: Auditing a data privacy policy
+### Example: Auditing a data privacy policy
 
 User
 
@@ -61,7 +61,7 @@ As our Data Protection Officer, review this updated privacy policy for GDPR and 
 
 - **Verify with citations:** Make Claude’s response auditable by having it cite quotes and sources for each of its claims. You can also have Claude verify each claim by finding a supporting quote after it generates a response. If it can’t find a quote, it must retract the claim.
 
-### Example: Drafting a press release on a product launch
+### Example: Drafting a press release on a product launch
 
 User
 

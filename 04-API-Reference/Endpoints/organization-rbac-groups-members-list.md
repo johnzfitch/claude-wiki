@@ -2,7 +2,7 @@
 title: "List RBAC Group Members - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/rbac_groups/members/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:16Z"
+fetched_at: "2026-11-13T06:36:22Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,7 @@
 title: "You.com Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/you-dot-com"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:45Z"
+fetched_at: "2026-11-18T06:29:33Z"
 tags: ["api", "case-studies", "search"]
 ---
 
@@ -80,6 +80,9 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -87,6 +90,3 @@ McCann envisions a future where AI can lower barriers to entry and enable more p
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

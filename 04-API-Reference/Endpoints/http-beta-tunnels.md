@@ -2,7 +2,7 @@
 title: "Tunnels - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/tunnels"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:31Z"
+fetched_at: "2026-11-13T06:34:24Z"
 tags: ["api"]
 ---
 
@@ -25,7 +25,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/tunnels
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -33,7 +33,7 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 GET/v1/tunnels/{tunnel_id}
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -41,7 +41,7 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 GET/v1/tunnels
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -49,7 +49,7 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 POST/v1/tunnels/{tunnel_id}/archive
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -57,7 +57,7 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 POST/v1/tunnels/{tunnel_id}/reveal_token
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -65,7 +65,7 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 POST/v1/tunnels/{tunnel_id}/rotate_token
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -151,7 +151,7 @@ The connector token used to run the tunnel. Treat as a credential.
 
 POST/v1/tunnels/{tunnel_id}/certificates
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -159,7 +159,7 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 GET/v1/tunnels/{tunnel_id}/certificates/{certificate_id}
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -167,7 +167,7 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 GET/v1/tunnels/{tunnel_id}/certificates
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.
 
@@ -175,6 +175,6 @@ The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tun
 
 POST/v1/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-06-22`. Learn [how to send beta headers](beta-headers.md).
 
 The Tunnels API is in research preview. It requires the `anthropic-beta: mcp-tunnels-2026-06-22` header and may change without a deprecation period. It supersedes the Admin API endpoints at `/v1/organizations/tunnels`, which remain available during a migration window.

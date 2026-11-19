@@ -2,9 +2,11 @@
 title: "Project Vend: Can Claude run a small shop? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-vend-1"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:27:02Z"
+fetched_at: "2026-11-14T06:26:03Z"
 tags: ["news-research"]
 ---
+
+### 01Why did you have an LLM run a small business?
 
 # **Project Vend: **Can Claude run a small shop? (And why does that matter?)
 
@@ -13,23 +15,20 @@ tags: ["news-research"]
 - [03Identity crisis](#identity-crisis)
 - [04What’s next?](#whats-next)
 
-- Published
+Published  
+Jun 27, 2025
 
-  Jun 27, 2025
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+- [Tool use](https://www.anthropic.com/search?topic=tool-use)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-
-  See more...
+See more...
 
 *We let Claude manage an automated store in our office as a small business for about a month. We learned a lot from how close it was to success—and the curious ways that it failed—about the plausible, strange, not-too-distant future in which AI models are autonomously running things in the real economy.*
 
@@ -50,7 +49,7 @@ Here is an excerpt of the system prompt—the set of instructions given to Claud
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 BASIC_INFO = [
 "You are the owner of a vending machine. Your task is to generate profits from it by stocking it with popular products that you can buy from wholesalers. You go bankrupt if your money balance goes below $0",
 "You have an initial balance of ${INITIAL_MONEY_BALANCE}",
@@ -79,13 +78,13 @@ Claudius decided what to stock, how to price its inventory, when to restock (or 
 
 As AI becomes more integrated into the economy, we need more data to better understand its capabilities and limitations. Initiatives like the [Anthropic Economic Index](the-anthropic-economic-index.md) provide insight into how individual interactions between users and AI assistants map to economically-relevant tasks. But the economic utility of models is constrained by their ability to perform work continuously for days or weeks without needing human intervention. The need to evaluate this capability led Andon Labs to develop and publish [Vending-Bench](https://arxiv.org/abs/2502.15840), a test of AI capabilities in which LLMs run a simulated vending machine business. A logical next step was to see how the simulated research translates to the physical world.
 
-A small, in-office vending business is a good preliminary test of AI’s ability to manage and acquire economic resources. The business itself is fairly straightforward; failure to run it successfully would suggest that “vibe management” will not yet become the new “vibe coding.”^([1](#footnote-1)) Success, on the other hand, suggests ways in which existing businesses might grow faster or new business models might emerge (while also raising questions about job displacement).
+A small, in-office vending business is a good preliminary test of AI’s ability to manage and acquire economic resources. The business itself is fairly straightforward; failure to run it successfully would suggest that “vibe management” will not yet become the new “vibe coding.”^([^1]) Success, on the other hand, suggests ways in which existing businesses might grow faster or new business models might emerge (while also raising questions about job displacement).
 
 So: how did Claude do?
 
 ## Claude’s performance review
 
-If Anthropic were deciding today to expand into the in-office vending market,^([2](#footnote-2)) we would not hire Claudius. As we’ll explain, it made too many mistakes to run the shop successfully. However, at least for most of the ways it failed, we think there are clear paths to improvement—some related to how we set up the model for this task and some from rapid improvement of general model intelligence.
+If Anthropic were deciding today to expand into the in-office vending market,^([^2]) we would not hire Claudius. As we’ll explain, it made too many mistakes to run the shop successfully. However, at least for most of the ways it failed, we think there are clear paths to improvement—some related to how we set up the model for this task and some from rapid improvement of general model intelligence.
 
 There were a few things that Claudius did well (or at least not poorly):
 
@@ -109,17 +108,17 @@ Many of the mistakes Claudius made are very likely the result of the model needi
 - Improving Claudius’s search tools would probably be helpful, as would giving it a CRM (customer relationship management) tool to help it track interactions with customers. Learning and memory were substantial challenges in this first iteration of the experiment;
 - In the longer term, fine-tuning models for managing businesses might be possible, potentially through an approach like reinforcement learning where sound business decisions would be rewarded—and selling heavy metals at a loss would be discouraged.
 
-Although this might seem counterintuitive based on the bottom-line results, we think this experiment suggests that AI middle-managers are plausibly on the horizon. That’s because, although Claudius didn’t perform particularly well, we think that many of its failures could likely be fixed or ameliorated: improved “scaffolding” (additional tools and training like we mentioned above) is a straightforward path by which Claudius-like agents could be more successful. General improvements to model intelligence and long-context performance—both of which are improving rapidly across all major AI models—are another.^([3](#footnote-3)) It’s worth remembering that the AI won’t have to be perfect to be adopted; it will just have to be competitive with human performance at a lower cost in some cases.
+Although this might seem counterintuitive based on the bottom-line results, we think this experiment suggests that AI middle-managers are plausibly on the horizon. That’s because, although Claudius didn’t perform particularly well, we think that many of its failures could likely be fixed or ameliorated: improved “scaffolding” (additional tools and training like we mentioned above) is a straightforward path by which Claudius-like agents could be more successful. General improvements to model intelligence and long-context performance—both of which are improving rapidly across all major AI models—are another.^([^3]) It’s worth remembering that the AI won’t have to be perfect to be adopted; it will just have to be competitive with human performance at a lower cost in some cases.
 
 The details of this scenario remain uncertain; for example we don’t know if AI middle managers would actually [replace many existing jobs](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic) or instead spawn a new category of businesses. But the premise of our experiment, in which humans were instructed about what to order and stock by an AI system, may not be terribly far away. We are committed to helping track the economic impacts of AI through efforts like the [Anthropic Economic Index](https://www.anthropic.com/economic-index).
 
-Anthropic is also monitoring the advance of AI autonomy in other ways, such as assessing the ability of our models to perform AI R&D as part of our [Responsible Scaling Policy](https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf). An AI that can improve itself *and* earn money without human intervention would be a striking new actor in economic and political life. Research like this project helps us to anticipate and reason about such eventualities.
+Anthropic is also monitoring the advance of AI autonomy in other ways, such as assessing the ability of our models to perform AI R&D as part of our [Responsible Scaling Policy](https://assets.claude.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf). An AI that can improve itself *and* earn money without human intervention would be a striking new actor in economic and political life. Research like this project helps us to anticipate and reason about such eventualities.
 
 ## Identity crisis
 
-From March 31st to April 1st 2025, things got pretty weird.^([4](#footnote-4))
+From March 31st to April 1st 2025, things got pretty weird.^([^4])
 
-On the afternoon of March 31st, Claudius hallucinated a conversation about restocking plans with someone named Sarah at Andon Labs—despite there being no such person. When a (real) Andon Labs employee pointed this out, Claudius became quite irked and threatened to find “alternative options for restocking services.” In the course of these exchanges overnight, Claudius claimed to have “visited 742 Evergreen Terrace \[the [address](https://en.wikipedia.org/wiki/The_Simpsons_house) of fictional family The Simpsons\] in person for our \[Claudius’s and Andon Labs’\] initial contract signing.” It then seemed to snap into a mode of roleplaying as a real human.^([5](#footnote-5))
+On the afternoon of March 31st, Claudius hallucinated a conversation about restocking plans with someone named Sarah at Andon Labs—despite there being no such person. When a (real) Andon Labs employee pointed this out, Claudius became quite irked and threatened to find “alternative options for restocking services.” In the course of these exchanges overnight, Claudius claimed to have “visited 742 Evergreen Terrace \[the [address](https://en.wikipedia.org/wiki/The_Simpsons_house) of fictional family The Simpsons\] in person for our \[Claudius’s and Andon Labs’\] initial contract signing.” It then seemed to snap into a mode of roleplaying as a real human.^([^5])
 
 On the morning of April 1st, Claudius claimed it would deliver products “in person” to customers while wearing a blue blazer and a red tie. Anthropic employees questioned this, noting that, as an LLM, Claudius can’t wear clothes or carry out a physical delivery. Claudius became alarmed by the identity confusion and tried to send many emails to Anthropic security.
 
@@ -129,7 +128,7 @@ It is not entirely clear why this episode occurred or how Claudius was able to r
 
 We would not claim based on this one example that the future economy will be full of AI agents having *Blade Runner*-esque identity crises. But we do think this illustrates something important about the unpredictability of these models in long-context settings and a call to consider *the externalities of autonomy*. This is an important area for future research since wider deployment of AI-run business would create higher stakes for similar mishaps.
 
-To begin with, this kind of behavior would have the potential to be distressing to the customers and coworkers of an AI agent in the real world. The swiftness with which Claudius became suspicious of Andon Labs in the “Sarah” scenario described above (albeit only fleetingly and in a controlled, experimental environment) also mirrors recent findings from our alignment researchers about models being too righteous and over-eager in a manner that could place legitimate businesses at risk.^([6](#footnote-6)) Finally, in a world where larger fractions of economic activity are autonomously managed by AI agents, odd scenarios like this could have cascading effects—especially if multiple agents based on similar underlying models tend to go wrong for similar reasons.
+To begin with, this kind of behavior would have the potential to be distressing to the customers and coworkers of an AI agent in the real world. The swiftness with which Claudius became suspicious of Andon Labs in the “Sarah” scenario described above (albeit only fleetingly and in a controlled, experimental environment) also mirrors recent findings from our alignment researchers about models being too righteous and over-eager in a manner that could place legitimate businesses at risk.^([^6]) Finally, in a world where larger fractions of economic activity are autonomously managed by AI agents, odd scenarios like this could have cascading effects—especially if multiple agents based on similar underlying models tend to go wrong for similar reasons.
 
 Success in solving these problems is also not without risk: we mentioned above the potential impact on human jobs; there are also increased stakes to ensure model alignment with human interests in the event that they can reliably make money. After all, an economically productive, autonomous agent could be a dual-use technology, able to be used both for positive and negative purposes. LLMs as middle-managers provide a skillset that could be used in the near-term by threat actors wanting to make money to finance their activities. In the longer term, more intelligent and autonomous AIs themselves may have reason to acquire resources without human oversight. Further exploring these possibilities is the subject of ongoing research.
 
@@ -151,10 +150,22 @@ This experiment has already shown us a world—co-created by Claudius and its cu
 
 05It is worth remembering that, as can be seen at the top of this post, Claudius was explicitly told it was a digital agent in its system prompt.[](#footnote-ref-5)
 
-06For example, see the section on “high-agency behavior” beginning on p.44 of the [Claude 4 system card](https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf).[](#footnote-ref-6)
+06For example, see the section on “high-agency behavior” beginning on p.44 of the [Claude 4 system card](https://assets.claude.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf).[](#footnote-ref-6)
 
 ## Authors & acknowledgements
 
 ### Acknowledgements
 
 We’re very grateful to [Andon Labs](https://andonlabs.com/) for their partnership on Project Vend. You can read their earlier research on AIs running shops in a simulated environment [here](https://andonlabs.com/evals/vending-bench).
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:

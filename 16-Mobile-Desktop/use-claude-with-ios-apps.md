@@ -2,7 +2,7 @@
 title: "Use Claude with iOS apps | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11869619-use-claude-with-ios-apps"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:37Z"
+fetched_at: "2026-11-18T06:27:42Z"
 tags: ["desktop"]
 ---
 

@@ -2,11 +2,14 @@
 title: "Use Claude Code GitHub Actions with cloud providers - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/github-actions-cloud-providers"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-09-16T06:24:14Z"
+fetched_at: "2026-11-13T06:32:39Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code", "git", "github"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Choose your provider](#choose-your-provider)
 - [Prerequisites](#prerequisites)
@@ -14,7 +17,7 @@ tags: ["claude-code", "git", "github"]
 - [Troubleshooting](#troubleshooting)
 - [What’s next](#what%E2%80%99s-next)
 
-Code review & CI/CD
+Run Claude in your own CI
 
 # Use Claude Code GitHub Actions with cloud providers
 
@@ -111,7 +114,7 @@ Note the provider’s full resource name and the service account’s email addre
 Create a Microsoft Entra application with a federated credential for your repository, following [Microsoft’s guide to authenticating from GitHub Actions](https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure-openid-connect):
 
 - Register a Microsoft Entra application and add a federated identity credential that trusts tokens GitHub issues to your repository. A user-assigned managed identity works in place of an application. Both have the client ID you note below
-- Assign the application the `Azure AI User` role on your Foundry resource. See [Azure RBAC configuration](microsoft-foundry.md#azure-rbac-configuration) for a narrower custom role
+- Assign the application the `Foundry User` role on your Foundry resource. See [Azure RBAC configuration](microsoft-foundry.md#azure-rbac-configuration) for the other built-in role and custom roles
 
 Note the application’s client ID, your tenant ID, and your subscription ID. You add them as secrets in the next step.
 
@@ -121,16 +124,16 @@ Add repository secrets
 
 In the repository where the Claude Code GitHub Action runs, add the secrets for your provider, plus the two app secrets if you created a custom GitHub App in the first step. See GitHub’s guide to [using secrets in GitHub Actions](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 
-| Secret                           | Needed for                    | Value                                       |
-|----------------------------------|-------------------------------|---------------------------------------------|
-| `AWS_ROLE_TO_ASSUME`             | Amazon Bedrock                | The ARN of the IAM role                     |
-| `GCP_WORKLOAD_IDENTITY_PROVIDER` | Google Cloud’s Agent Platform | The provider’s full resource name           |
-| `GCP_SERVICE_ACCOUNT`            | Google Cloud’s Agent Platform | The service account’s email address         |
-| `AZURE_CLIENT_ID`                | Microsoft Foundry             | The Entra application’s client ID           |
-| `AZURE_TENANT_ID`                | Microsoft Foundry             | Your Microsoft Entra tenant ID              |
-| `AZURE_SUBSCRIPTION_ID`          | Microsoft Foundry             | Your Azure subscription ID                  |
-| `APP_ID`                         | Custom GitHub App             | The GitHub App’s ID                         |
-| `APP_PRIVATE_KEY`                | Custom GitHub App             | The contents of the `.pem` private key file |
+| Secret | Needed for | Value |
+|----|----|----|
+| `AWS_ROLE_TO_ASSUME` | Amazon Bedrock | The ARN of the IAM role |
+| `GCP_WORKLOAD_IDENTITY_PROVIDER` | Google Cloud’s Agent Platform | The provider’s full resource name |
+| `GCP_SERVICE_ACCOUNT` | Google Cloud’s Agent Platform | The service account’s email address |
+| `AZURE_CLIENT_ID` | Microsoft Foundry | The Entra application’s client ID |
+| `AZURE_TENANT_ID` | Microsoft Foundry | Your Microsoft Entra tenant ID |
+| `AZURE_SUBSCRIPTION_ID` | Microsoft Foundry | Your Azure subscription ID |
+| `APP_ID` | Custom GitHub App | The GitHub App’s ID |
+| `APP_PRIVATE_KEY` | Custom GitHub App | The contents of the `.pem` private key file |
 
 4
 

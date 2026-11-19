@@ -2,7 +2,7 @@
 title: "CLI scripting and automation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/scripting"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:55Z"
+fetched_at: "2026-11-13T06:34:59Z"
 tags: ["api", "claude-code", "cli"]
 ---
 

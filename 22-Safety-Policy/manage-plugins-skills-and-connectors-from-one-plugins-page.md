@@ -2,7 +2,7 @@
 title: "Manage plugins, skills, and connectors from one Plugins page | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17740565-manage-plugins-skills-and-connectors-from-one-plugins-page"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:12Z"
+fetched_at: "2026-11-18T06:28:35Z"
 tags: ["connectors", "plugins", "safety", "skills"]
 ---
 

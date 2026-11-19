@@ -2,7 +2,7 @@
 title: "List Spend Limit Increase Requests - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/spend_limits/increase_requests/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:36Z"
+fetched_at: "2026-11-13T06:36:19Z"
 tags: ["api"]
 ---
 

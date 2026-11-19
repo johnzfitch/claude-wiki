@@ -2,7 +2,7 @@
 title: "Create Skill Version - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/skills/versions/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:27:13Z"
+fetched_at: "2026-11-14T06:25:02Z"
 tags: ["api"]
 ---
 

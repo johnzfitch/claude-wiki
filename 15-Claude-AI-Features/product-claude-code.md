@@ -1,15 +1,15 @@
 ---
 title: "Claude Code by Anthropic | AI coding agent and assistant"
-source_url: "https://www.anthropic.com/product/claude-code"
+source_url: "https://www.claude.com/product/claude-code"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:52Z"
-last_modified: "Mon, 09 Nov 2026 06:24:53 GMT"
+fetched_at: "2026-11-18T06:29:33Z"
+last_modified: "Wed, 18 Nov 2026 06:23:32 GMT"
 tags: ["agents", "claude-ai", "claude-code", "slack"]
 ---
 
 # Claude Code
 
-Hand Claude a bug fix, test, or multi-day migration. Steer and review from your terminal, IDE, Slack, or web.
+Hand Claude a bug fix, test, or multi-day migration. You set its permissions. Steer and review from your desktop, terminal, IDE, Slack, or the web.
 
 [Download for macOS](https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect)[Read documentation](../01-Getting-Started/overview.md)
 
@@ -250,13 +250,13 @@ Per seat / month if billed annually. For teams of 2 to 150.
 
 ### Enterprise
 
-Everything in Team, plus Claude Security, usage and ROI analytics, role-based access, spend limits, and custom data controls. [Learn more](https://www.anthropic.com/product/claude-code/enterprise)
+Everything in Team, plus Claude Security, usage and ROI analytics, role-based access, spend limits, and custom data controls. [Learn more](product-claude-code-enterprise.md)
 
 [Get Enterprise plan (opens in new tab)](https://claude.ai/create/enterprise)
 
 ### Available on Team and Enterprise
 
-[See all features and pricing](https://www.anthropic.com/pricing#team-&-enterprise)
+[See all features and pricing](../17-Billing-Plans/pricing.md#team-&-enterprise)
 
 - Code Review
 - Claude Code on web and mobile
@@ -296,7 +296,7 @@ Claude Code builds the plan, asks clarifying questions, and handles work that ru
 
 Get Claude Code
 
-- [Desktop](https://www.anthropic.com/download)
+- [Desktop](https://www.claude.com/download)
 - [VS Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
 - [JetBrains](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
 - [On the web](https://claude.ai/code)
@@ -389,7 +389,7 @@ The architecture allows for both using Excalidraw as a component in other applic
 
 - ### Run multi-hour refactors and migrations
 
-  Claude Code follows imports across the repo, runs your tests, and keeps going when something breaks.
+  Claude Code is designed to follow imports across the repo, run your tests, and keep going when something breaks, checking with you when it needs a decision.
 
 ## Meets you where you code
 
@@ -413,11 +413,11 @@ Native extensions for VS Code (+ Cursor, Devin Desktop) and JetBrains IDEs.
 
 Quick access from browser, mobile app, or Claude on desktop. Great for parallel work or on-the-go coding.
 
-[Open in browser (opens in new tab)](https://claude.ai/code)[Download app](https://www.anthropic.com/download)
+[Open in browser (opens in new tab)](https://claude.ai/code)[Download app](https://www.claude.com/download)
 
 ## Kick off coding tasks in Slack
 
-[Add to Slack (opens in new tab)](https://slack.com/oauth/v2/authorize?client_id=1601185624273.8899143856786&scope=app_mentions:read,assistant:write,channels:history,channels:read,chat:write,files:read,files:write,groups:history,groups:read,im:history,im:read,im:write,mpim:history,reactions:write,users:read,users:read.email,commands,search:read.public&user_scope=bookmarks:read,channels:history,channels:read,chat:write,emoji:read,files:read,groups:history,groups:read,groups:write,im:history,im:read,im:write,links:read,mpim:history,mpim:read,mpim:write,mpim:write.topic,pins:read,reactions:read,reactions:write,remote_files:read,team:read,users:read,users:read.email,search:read.public,search:read.private,search:read.im,search:read.mpim,search:read.files,search:read.users,canvases:read,canvases:write)[Learn more](https://www.anthropic.com/claude-for-slack)
+[Add to Slack (opens in new tab)](https://slack.com/oauth/v2/authorize?client_id=1601185624273.8899143856786&scope=app_mentions:read,assistant:write,channels:history,channels:read,chat:write,files:read,files:write,groups:history,groups:read,im:history,im:read,im:write,mpim:history,reactions:write,users:read,users:read.email,commands,search:read.public&user_scope=bookmarks:read,channels:history,channels:read,chat:write,emoji:read,files:read,groups:history,groups:read,groups:write,im:history,im:read,im:write,links:read,mpim:history,mpim:read,mpim:write,mpim:write.topic,pins:read,reactions:read,reactions:write,remote_files:read,team:read,users:read,users:read.email,search:read.public,search:read.private,search:read.im,search:read.mpim,search:read.files,search:read.users,canvases:read,canvases:write)[Learn more](product-tag.md)
 
 ## What developers are saying
 
@@ -427,7 +427,7 @@ Quick access from browser, mobile app, or Claude on desktop. Great for parallel 
 
   Anton Biryukov, Staff Software Engineer
 
-  [Read story](https://www.anthropic.com/customers/ramp)
+  [Read story](../18-Industry-UseCases/ramp.md)
 
 - 
 
@@ -497,7 +497,7 @@ Claude Code runs in your terminal and works alongside your preferred IDE and dev
 
 ### Is Claude Code secure?
 
-Claude Code is designed with security in mind. When used in your terminal, Claude Code runs locally and talks directly to model APIs without requiring a backend server or remote code index. It also asks for permission before making changes to your files or running commands.
+Claude Code is designed to work within limits you set. Permission modes, allow and deny rules, and hooks decide what runs with or without your approval. In auto mode, safeguards check higher-risk actions before they run and block the ones they flag as risky. In independent evaluation, we and external red teams were not able to demonstrate a successful prompt injection attack against Claude Code in auto mode. Auto mode relies on classification systems and does not eliminate risk.
 
 ### What are the system requirements to run Claude Code?
 
@@ -557,7 +557,7 @@ Use Claude Code where you work
 
 Get Claude Code
 
-- [Desktop](https://www.anthropic.com/download)
+- [Desktop](https://www.claude.com/download)
 - [VS Code](https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code)
 - [JetBrains](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-)
 - [On the web](https://claude.ai/code)

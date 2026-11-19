@@ -2,7 +2,7 @@
 title: "Invites - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/invites"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:43Z"
+fetched_at: "2026-11-18T06:27:24Z"
 tags: ["api"]
 ---
 
@@ -50,6 +50,54 @@ Retrieve an invite by ID.
 Delete a pending invite.
 
 ##### Models
+
+
+
+AlreadyMemberErrorDetails object{ error_code }
+
+
+
+The email address already belongs to a user in the organization. The message names the user.
+
+error_code: "already_member"
+
+
+
+
+
+CannotInviteEmailsWithUnverifiedDomainsErrorDetails object{ error_code }
+
+
+
+The email address's domain is not one of the verified domains of the organization's parent organization.
+
+error_code: "cannot_invite_emails_with_unverified_domains"
+
+
+
+
+
+EmailDomainNotAllowedErrorDetails object{ error_code }
+
+
+
+The organization restricts invites to an allowed list of email domains, and the list is empty or does not include the email address's domain.
+
+error_code: "email_domain_not_allowed"
+
+
+
+
+
+InviteAlreadyExistsErrorDetails object{ error_code }
+
+
+
+A pending invite already exists for the email address. The message names the invite.
+
+error_code: "invite_already_exists"
+
+
 
 
 

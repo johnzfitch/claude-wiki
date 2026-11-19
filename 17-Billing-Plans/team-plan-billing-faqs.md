@@ -2,7 +2,7 @@
 title: "Team plan billing FAQs | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12997503-team-plan-billing-faqs"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:19Z"
+fetched_at: "2026-11-18T06:28:00Z"
 tags: ["api", "billing"]
 ---
 
@@ -21,7 +21,7 @@ An organization Owner can update your Team plan’s payment method by navigating
 
 ## How can I change my billing email address?
 
-Your organization's billing address determines where your invoices are sent. You can request to change this email address, or add additional billing email addresses, by **[contacting our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Note that an organization Owner must authorize any changes to your billing address. For additional invoice recipients, the account Owner must be copied on the request. Once approved, all future invoices will be sent to the new email address(es).
+Your organization's billing address determines where your invoices are sent. You can request to change this email address, or add additional billing email addresses, by **[contacting our Support team](../15-Claude-AI-Features/how-to-get-support.md)**. Note that an organization Owner must authorize any changes to your billing address. For additional invoice recipients, the account Owner must be copied on the request. Once approved, all future invoices will be sent to the new email address(es).
 
 ## How can I use a different name on my invoices?
 
@@ -36,7 +36,7 @@ See **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated
 
 ## Where can I see my monthly API credits?
 
-In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ## Where can I find the invoice or receipt for my Team plan payment?
 
@@ -66,7 +66,7 @@ An organization owner can resubscribe for Team plan access by navigating to **[O
 
 ## What happens to my Pro, Max, or Ultra subscription when I upgrade to Team?
 
-When you upgrade from Pro, Max, or Ultra to Team in place, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. Google Play purchases don't have this wait, but the refund can take a few days to appear. Any prepaid usage credits on your individual account are refunded
+When you upgrade from Pro, Max, or Ultra to Team in place, if you bought it directly from us, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. For Google Play purchases, we ask Google Play to cancel your subscription and refund your unused time. Refunds usually take one to two weeks. Check Google Play, and cancel there if your plan is still active. Any unused credits you bought directly from us are refunded.
 
 If you signed up for Pro, Max, or Ultra through the Apple App Store, in-place upgrades work differently. For more information, refer to **[Get started with the Team plan](https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan#h_5d142d3f45)**.
 

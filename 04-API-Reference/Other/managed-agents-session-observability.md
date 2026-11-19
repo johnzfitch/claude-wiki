@@ -2,7 +2,7 @@
 title: "Inspect sessions and track usage - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/session-observability"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-06T06:33:51Z"
+fetched_at: "2026-11-14T06:25:46Z"
 tags: ["api"]
 ---
 
@@ -20,21 +20,24 @@ Inspect a session in the Claude Console, read its token usage and list cost, and
 
 Session viewer
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Use the session viewer in the Claude Console to inspect what an agent did in a session, without writing any code. Use the session’s `usage` totals to see what that work consumed. To see a session’s turns, model requests, and tool uses in your observability platform, set up [OpenTelemetry tracing](manage-claude-opentelemetry.md).
 
@@ -156,31 +159,45 @@ Cap a session’s spend with a hard dollar budget enforced at public list rates.
 
 ## Availability
 
-Session viewer is in beta on every model.
+Session viewer
 
-### API support
+Cloud platform
 
-Usage
+Cloud platform: Claude API
 
-Always on
+Availability requirements for Session viewer are the same across all supported platforms.
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+API  
+- Managed Agents
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+managed-agents-2026-04-01
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- All models
 
-Header
+Claude Platform on AWS
 
-- `managed-agents-2026-04-01`
-  
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -194,8 +211,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

@@ -2,7 +2,7 @@
 title: "Mapping the mind of a large language model \\ Anthropic"
 source_url: "https://www.anthropic.com/research/mapping-mind-language-model"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:49Z"
+fetched_at: "2026-11-14T06:26:29Z"
 tags: ["news-research"]
 ---
 
@@ -10,22 +10,19 @@ tags: ["news-research"]
 
 [Read the paper](https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html)
 
-- Published
+Published  
+May 21, 2024
 
-  May 21, 2024
+Team  
+[Interpretability](team-interpretability.md)
 
-- Team
+Topics  
+- [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Scaling laws](https://www.anthropic.com/search?topic=scaling-laws)
 
-  [Interpretability](team-interpretability.md)
-
-- Topics
-
-  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Scaling laws](https://www.anthropic.com/search?topic=scaling-laws)
-
-  See more...
+See more...
 
 Related articles
 
@@ -83,7 +80,7 @@ We previously [studied sycophancy](https://arxiv.org/abs/2310.13548), the tenden
 
 The presence of this feature doesn't mean that Claude will be sycophantic, but merely that it *could* be. We have not added any capabilities, safe or unsafe, to the model through this work. We have, rather, identified the parts of the model involved in its existing capabilities to recognize and potentially produce different kinds of text. (While you might worry that this method could be used to make models *more* harmful, researchers have demonstrated [much simpler ways](https://arxiv.org/abs/2310.03693) that someone with access to model weights can remove safety safeguards.)
 
-We hope that we and others can use these discoveries to make models safer. For example, it might be possible to use the techniques described here to monitor AI systems for certain dangerous behaviors (such as deceiving the user), to steer them towards desirable outcomes (debiasing), or to remove certain dangerous subject matter entirely. We might also be able to enhance other safety techniques, such as [Constitutional AI](constitutional-ai-harmlessness-from-ai-feedback.md), by understanding how they shift the model towards more harmless and more honest behavior and identifying any gaps in the process. The latent capabilities to produce harmful text that we saw by artificially activating features are exactly the sort of thing jailbreaks try to exploit. We are proud that Claude has a best-in-industry [safety profile](the-claude-3-model-family-opus-sonnet-haiku.md) and resistance to jailbreaks, and we hope that by looking inside the model in this way we can figure out how to improve safety even further. Finally, we note that these techniques can provide a kind of "test set for safety", looking for the problems left behind after standard training and finetuning methods have ironed out all behaviors visible via standard input/output interactions.
+We hope that we and others can use these discoveries to make models safer. For example, it might be possible to use the techniques described here to monitor AI systems for certain dangerous behaviors (such as deceiving the user), to steer them towards desirable outcomes (debiasing), or to remove certain dangerous subject matter entirely. We might also be able to enhance other safety techniques, such as [Constitutional AI](constitutional-ai-harmlessness-from-ai-feedback.md), by understanding how they shift the model towards more harmless and more honest behavior and identifying any gaps in the process. The latent capabilities to produce harmful text that we saw by artificially activating features are exactly the sort of thing jailbreaks try to exploit. We are proud that Claude has a best-in-industry [safety profile](https://assets.claude.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627.pdf) and resistance to jailbreaks, and we hope that by looking inside the model in this way we can figure out how to improve safety even further. Finally, we note that these techniques can provide a kind of "test set for safety", looking for the problems left behind after standard training and finetuning methods have ironed out all behaviors visible via standard input/output interactions.
 
 Anthropic has made a significant investment in interpretability research since the company's founding, because we believe that understanding models deeply will help us make them safer. This new research marks an important milestone in that effort—the application of mechanistic interpretability to publicly-deployed large language models.
 
@@ -96,4 +93,4 @@ For full details, please read our paper, "[Scaling Monosemanticity: Extracting I
 ### Policy Memo
 
 [Mapping the Mind of a Large Language Model  
-](files-4zrzovbb-website-e2ae0c997653dfd8a7cf23d06f5f06fd84ccfd58-pdf-4697af85f5.md)
+](https://assets.claude.com/e2ae0c997653dfd8a7cf23d06f5f06fd84ccfd58.pdf)

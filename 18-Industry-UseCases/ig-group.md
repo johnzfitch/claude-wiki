@@ -2,7 +2,7 @@
 title: "IG Group Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ig-group"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:33Z"
+fetched_at: "2026-11-18T06:28:57Z"
 tags: ["case-studies", "enterprise"]
 ---
 
@@ -95,13 +95,13 @@ As IG Group evolves their AI strategy, they’re focused on empowering teams to 
 ## Related stories
 
 
+### Transforming e-commerce in Latin America
+
+
+### Scaling AI for over 12K employees
+
+
 ### How Qonto delegates financial admin for small businesses with Claude on Amazon Bedrock
 
 
 ### Pictet turns weeks of work into hours with Claude Code
-
-
-### How Satispay’s engineers write 75% of their code with Claude
-
-
-### OffDeal powers every stage of M&A advisory with one Claude-based agent

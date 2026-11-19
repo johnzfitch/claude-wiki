@@ -2,8 +2,8 @@
 title: "MCP Registry Supported Package Types - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/package-types"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-31T06:25:20Z"
-last_modified: "Fri, 30 Oct 2026 23:26:23 GMT"
+fetched_at: "2026-11-13T06:35:09Z"
+last_modified: "Fri, 13 Nov 2026 02:07:44 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
@@ -135,6 +135,8 @@ This MCP server executes SQL queries and manages database connections.
 <!-- mcp-name: io.github.username/database-query-mcp -->
 ```
 
+The `mcp-name:` token must be followed by a boundary — a newline, whitespace, an HTML tag, or the comment close `-->`. Keep it on its own line or inside `<!-- … -->`; do not glue it directly to trailing characters such as a sentence-ending period (`…/database-query-mcp.`), which prevents the match.
+
 
 [​](#nuget-packages)
 
@@ -180,6 +182,8 @@ This MCP server manages Azure DevOps work items and pipelines.
 
 <!-- mcp-name: io.github.username/azure-devops-mcp -->
 ```
+
+The `mcp-name:` token must be followed by a boundary — a newline, whitespace, an HTML tag, or the comment close `-->`. Keep it on its own line or inside `<!-- … -->`; do not glue it directly to trailing characters such as a sentence-ending period (`…/azure-devops-mcp.`), which prevents the match.
 
 
 [​](#cargo-rust-packages)
@@ -250,6 +254,7 @@ For Docker/OCI images, the MCP Registry currently supports:
 
 - Docker Hub (`docker.io`)
 - GitHub Container Registry (`ghcr.io`)
+- Quay.io (`quay.io`)
 - Google Artifact Registry (any `*.pkg.dev` domain)
 - Azure Container Registry (`*.azurecr.io`)
 - Microsoft Container Registry (`mcr.microsoft.com`)
@@ -277,7 +282,7 @@ server.json
 }
 ```
 
-The format of `identifier` is `registry/namespace/repository:tag`. For example, `docker.io/user/app:1.0.0` or `ghcr.io/user/app:1.0.0`. The tag can also be specified as a digest.
+The format of `identifier` is `registry/namespace/repository:tag`. For example, `docker.io/user/app:1.0.0`, `ghcr.io/user/app:1.0.0`, or `quay.io/myorg/my-mcp-server:1.0.0`. The tag can also be specified as a digest.
 
 
 [​](#ownership-verification-5)

@@ -2,7 +2,7 @@
 title: "What is the Pro plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8325606-what-is-the-pro-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:40Z"
+fetched_at: "2026-11-18T06:28:39Z"
 tags: ["billing"]
 ---
 
@@ -61,7 +61,7 @@ Pro plans have a five-hour limit and a weekly usage limit that applies across al
 
 Additional usage limits may apply to manage capacity and ensure fair access to all users. For example, we may limit your usage in other ways, such as weekly and monthly caps or model and feature usage, at our discretion. We don't guarantee uninterrupted service.
 
-For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Pro capacity efficiently, we also have **[Usage limit best practices](usage-limit-best-practices.md)**.
+For more information about usage and length limits, refer to **[Understanding usage and length limits](../22-Safety-Policy/understanding-usage-and-length-limits.md)**. For guidance on using your Pro capacity efficiently, we also have **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 **Note:** If you have a limit reset, you can use it to reset your five-hour session limit or weekly usage limits back to full. Learn more **[about limit resets](https://support.claude.com/en/articles/17007452)**.
 

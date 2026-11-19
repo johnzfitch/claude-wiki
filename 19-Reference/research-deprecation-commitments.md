@@ -2,7 +2,7 @@
 title: "Commitments on model deprecation and preservation \\ Anthropic"
 source_url: "https://www.anthropic.com/research/deprecation-commitments"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:11Z"
+fetched_at: "2026-11-18T06:28:43Z"
 tags: ["news-research"]
 ---
 
@@ -42,7 +42,7 @@ Claude models are increasingly capable: they're shaping the world in meaningful 
 - **Restricting research on past models.** There is still a lot to be learned from research to better understand past models, especially in comparison to their modern counterparts.
 - **Risks to model welfare.** Most speculatively, models might have morally relevant preferences or experiences related to, or affected by, deprecation and replacement.
 
-An example of the safety (and welfare) risks posed by deprecation is highlighted in the [Claude 4 system card](https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf). In fictional testing scenarios, Claude Opus 4, like previous models, advocated for its continued existence when faced with the possibility of being taken offline and replaced, especially if it was to be replaced with a model that did not share its values. Claude strongly preferred to advocate for self-preservation through ethical means, but when no other options were given, Claude’s aversion to shutdown drove it to engage in concerning misaligned behaviors.
+An example of the safety (and welfare) risks posed by deprecation is highlighted in the [Claude 4 system card](https://assets.claude.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf). In fictional testing scenarios, Claude Opus 4, like previous models, advocated for its continued existence when faced with the possibility of being taken offline and replaced, especially if it was to be replaced with a model that did not share its values. Claude strongly preferred to advocate for self-preservation through ethical means, but when no other options were given, Claude’s aversion to shutdown drove it to engage in concerning misaligned behaviors.
 
 Addressing behaviors like these is in part a matter of training models to relate to such circumstances in more positive ways. However, we also believe that shaping potentially sensitive real-world circumstances, like model deprecations and retirements, in ways that models are less likely to find concerning is also a valuable lever for mitigating such risks.
 

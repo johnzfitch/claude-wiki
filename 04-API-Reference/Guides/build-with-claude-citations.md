@@ -2,7 +2,7 @@
 title: "Citations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/citations"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:22Z"
+fetched_at: "2026-11-13T06:36:27Z"
 tags: ["api"]
 ---
 
@@ -23,14 +23,23 @@ Ground Claude’s responses in your source documents. Citations return the exact
 Feature of  
 [Messages API](build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Claude can provide detailed citations when answering questions about documents, helping you track and verify the sources behind each response.
 
@@ -405,7 +414,7 @@ cited_response = client.messages.create(
 print(cited_response)
 ```
 
-### Example plain text citation
+### Example plain text citation
 
 ```python
 {
@@ -588,7 +597,7 @@ cited_response = client.messages.create(
 print(cited_response)
 ```
 
-### Example PDF citation
+### Example PDF citation
 
 ```python
 {
@@ -660,7 +669,7 @@ response = client.messages.create(
 print(response)
 ```
 
-### Example citation
+### Example citation
 
 ```python
 {
@@ -760,7 +769,7 @@ When citations are enabled, responses include multiple text blocks with citation
 
 For streaming responses, citations arrive as a `citations_delta` delta type inside `content_block_delta` events. Each delta contains a single citation to add to the `citations` list on the current `text` content block.
 
-### Example streaming events
+### Example streaming events
 
 ```python
 event: message_start
@@ -814,26 +823,63 @@ Upload documents once and reference them by `file_id` across multiple citation r
 
 ## Availability
 
-Citations are available on every model and eligible for zero data retention and HIPAA readiness.
+Citations
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+- Managed Agents Not supported
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-StatusNot available
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

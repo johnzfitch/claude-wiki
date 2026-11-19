@@ -2,7 +2,7 @@
 title: "Claude Opus 5 System Card E961E54083"
 source_url: "https://www.anthropic.com/claude-opus-5-system-card"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:23Z"
+fetched_at: "2026-11-18T06:28:39Z"
 tags: ["claude-ai"]
 ---
 

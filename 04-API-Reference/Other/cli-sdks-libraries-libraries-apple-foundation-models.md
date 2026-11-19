@@ -2,7 +2,7 @@
 title: "Apple Foundation Models - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/apple-foundation-models"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:13Z"
+fetched_at: "2026-11-13T06:36:32Z"
 tags: ["api", "authentication"]
 ---
 
@@ -23,11 +23,14 @@ Apple Foundation Models
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
 
 [Claude for Foundation Models](https://github.com/anthropics/ClaudeForFoundationModels) is a Swift package that makes Claude available as a server-side language model in Apple’s [Foundation Models](https://developer.apple.com/documentation/foundationmodels) framework. The package conforms Claude to the framework’s `LanguageModel` protocol, so you drive it with the same `LanguageModelSession` API you use for Apple’s on-device model: `respond(to:)`, streaming, guided generation, and tool calling all work the same way.
 
@@ -170,7 +173,7 @@ To set up App Attest, you need your Apple Developer Team ID and the admin, owner
 
 The first time your app uses Claude on a device, the app requests a challenge from Anthropic, attests the device with Apple’s `DCAppAttestService`, and exchanges the verified attestation for an access token. The Claude for Foundation Models package runs this flow automatically and requests new tokens as they expire; there is no attestation code for you to write.
 
-Tokens are scoped to your workspace, expire after 1 hour, and authorize only [Messages API](../Endpoints/messages-create.md) calls. They carry no end-user identity: App Attest identifies your app, not the person using it, so handle any per-user logic in your app.
+Tokens are scoped to your workspace, expire after 1 hour, and authorize only [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. calls. They carry no end-user identity: App Attest identifies your app, not the person using it, so handle any per-user logic in your app.
 
 To stop a compromised or retired app, revoke its integration. In the Claude Console, go to the [App integrations](https://platform.claude.com/settings/workspaces/default/app-integrations) page (`platform.claude.com/settings/workspaces/default/app-integrations`). Each app integration belongs to one workspace. In the workspace picker in the sidebar, select the workspace that holds the integration. Select the integration and click **Revoke**, then confirm. Revoking an integration revokes its outstanding tokens, and its registered devices can no longer request new ones. Revocation is permanent, so create a new app integration to restore access.
 
@@ -188,7 +191,7 @@ ClaudeLanguageModel(
 
 
 
-Your proxy receives standard [Messages API](../Endpoints/messages-create.md) requests, attaches your API key as `Authorization: Bearer <key>`, and forwards them to `https://api.anthropic.com`.
+Your proxy receives standard [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. requests, attaches your API key as `Authorization: Bearer <key>`, and forwards them to `https://api.anthropic.com`.
 
 ### API key (development)
 
@@ -319,12 +322,19 @@ The package is licensed under Apache 2.0. Bug reports are welcome through GitHub
 
 ## Availability
 
-Apple Foundation Models are in beta on every model.
+Apple Foundation Models
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Claude API
 
-- Claude API
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models

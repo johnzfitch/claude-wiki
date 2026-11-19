@@ -2,7 +2,7 @@
 title: "Epic Systems Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/epic-systems"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:02Z"
+fetched_at: "2026-11-18T06:28:53Z"
 tags: ["case-studies", "claude-code"]
 ---
 

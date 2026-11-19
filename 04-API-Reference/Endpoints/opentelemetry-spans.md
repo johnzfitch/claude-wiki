@@ -2,7 +2,7 @@
 title: "OpenTelemetry span reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/opentelemetry/spans"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:33:42Z"
+fetched_at: "2026-11-14T06:25:38Z"
 tags: ["api"]
 ---
 
@@ -12,7 +12,7 @@ tags: ["api"]
 
 
 
-The OpenTelemetry spans and span attributes that the Claude API and the Claude SDK emit.
+The OpenTelemetry spans and span attributes that the Claude API and the Anthropic SDK emit.
 
 Copy page
 
@@ -20,20 +20,23 @@ The OpenTelemetry spans and span attributes that the Claude API and the Claude S
 
 [OpenTelemetry](../Other/manage-claude-opentelemetry.md)
 
-[Status](../Other/manage-claude-opentelemetry.md#availability-feature-support)  
 Beta
 
-[APIs](../Other/manage-claude-opentelemetry.md#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](../Other/manage-claude-opentelemetry.md#feature-availability)  
+- All models
 
-[Cloud platforms](../Other/manage-claude-opentelemetry.md#availability-feature-support)  
-All platforms
+[APIs](../Other/manage-claude-opentelemetry.md#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](../Other/manage-claude-opentelemetry.md#feature-availability)  
+- All platforms
 
 
 
 OpenTelemetry export is in beta. It’s provided under your agreement with Anthropic, including the Beta Services section of the [Service Specific Terms](https://www.anthropic.com/legal/service-specific-terms). Span names and attributes can change during the beta.
 
-To get spans, see [Set up OpenTelemetry with the Claude SDK](../Other/manage-claude-opentelemetry-sdk.md) and [Set up OpenTelemetry with the Claude API](../Other/manage-claude-opentelemetry-api.md).
+To get spans, see [Set up OpenTelemetry with the Anthropic SDK](../Other/manage-claude-opentelemetry-sdk.md) and [Set up OpenTelemetry with the Claude API](../Other/manage-claude-opentelemetry-api.md).
 
 ## Span names and kinds
 
@@ -56,7 +59,13 @@ Attributes use the [OpenTelemetry semantic conventions for generative AI](https:
 
 ### Common attributes
 
-Every span for a request has the following attributes, except where a description says otherwise. Other spans can have only the first three:
+Any span can have the following attributes:
+
+[TABLE]
+
+### Request span attributes
+
+Every span for a request also has the following attributes, except where a description says otherwise:
 
 [TABLE]
 
@@ -264,7 +273,7 @@ The spans also have the attributes of every [SDK span for a request](#anthropic-
 
 The API emits an `anthropic.sessions.<method>` span for each authenticated request to an endpoint of the [Sessions API](../Other/managed-agents-sessions.md). Requests that the platform sends on a user’s behalf, such as a message sent in the Claude Console or a session that a [scheduled deployment](../Other/managed-agents-scheduled-deployments.md) starts, also have one, each in a new trace.
 
-### Span names and endpoints
+### Span names and endpoints
 
 [TABLE]
 

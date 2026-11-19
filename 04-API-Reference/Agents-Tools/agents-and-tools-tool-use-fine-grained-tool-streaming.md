@@ -2,7 +2,7 @@
 title: "Fine-grained tool streaming - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/fine-grained-tool-streaming"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:11Z"
+fetched_at: "2026-11-13T06:33:02Z"
 tags: ["api"]
 ---
 
@@ -23,14 +23,22 @@ Fine-grained tool streaming
 Feature of  
 [Message streaming](../Guides/build-with-claude-streaming.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Fine-grained tool streaming delivers a tool’s input to your client as Claude generates it, without server-side buffering or JSON validation. Skipping the buffering step reduces the time to the first fragment of a large parameter, such as a document or a block of code, and the fragments arrive through the same [Streaming messages](../Guides/build-with-claude-streaming.md) events as standard tool use.
 
@@ -263,22 +271,61 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Fine-grained tool streaming is available on every model and eligible for zero data retention and HIPAA readiness.
+Fine-grained tool streaming
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Availability requirements for Fine-grained tool streaming are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

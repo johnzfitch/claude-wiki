@@ -2,8 +2,8 @@
 title: "Claude Code on mobile - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/mobile"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-07T06:23:00Z"
-last_modified: "Sat, 07 Nov 2026 04:17:09 GMT"
+fetched_at: "2026-11-13T06:34:59Z"
+last_modified: "Fri, 13 Nov 2026 06:21:51 GMT"
 tags: ["claude-code", "desktop", "mobile"]
 ---
 

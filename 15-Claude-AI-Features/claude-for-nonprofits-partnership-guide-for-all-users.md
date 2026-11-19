@@ -2,7 +2,7 @@
 title: "Claude for nonprofits partnership guide for all users · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923901-claude-for-nonprofits-partnership-guide-for-all-users"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-07T06:24:15Z"
+fetched_at: "2026-11-18T06:27:50Z"
 tags: ["claude-ai"]
 ---
 
@@ -69,7 +69,7 @@ Welcome to the Claude for nonprofits community. This guide is a pathway to help 
 1.  Participate in the train the trainer program
 2.  Use Claude for complex projects: grant narratives, program evaluations, strategic planning
 3.  Explore artifacts for editable documents, tables, and visual content
-4.  Enable code execution and file sharing for spreadsheets or slide decks
+4.  Use [file creation(opens in new tab)](create-and-edit-files-with-claude.md) for spreadsheets or slide decks
 
 ### Implementation tips[](#implementation-tips-3)
 

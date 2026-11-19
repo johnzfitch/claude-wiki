@@ -2,7 +2,7 @@
 title: "Create External Key - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/external_keys/create"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:27:00Z"
+fetched_at: "2026-11-18T06:27:17Z"
 tags: ["api"]
 ---
 
@@ -160,7 +160,7 @@ user_profile_id: optional string or null
 
 
 
-ID of a user profile to bind the key to. Omit this field for a key that isn't bound to a user profile. Such a key can be attached to a Workspace whatever its user profile. The binding cannot be changed later. A key bound to a user profile can only be attached to a Workspace that has the same user profile.
+ID of a user profile to bind the key to. A user profile represents one of your customers: bind a customer's key to that customer's user profile. A key bound to a user profile can only be attached to a Workspace that has the same user profile, and the binding cannot be changed later. Omit this field only for your organization's own key, never a customer's. A key created without a user profile ID can't be attached to a Workspace that has a user profile, and you can't add one to the key later.
 
 ##### Returns
 

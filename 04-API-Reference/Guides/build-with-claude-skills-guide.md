@@ -2,7 +2,7 @@
 title: "Using Agent Skills with the API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/skills-guide"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:10Z"
+fetched_at: "2026-11-13T06:36:30Z"
 tags: ["agents", "api", "skills"]
 ---
 
@@ -24,8 +24,8 @@ Agent Skills extend Claude’s capabilities through organized folders of instruc
 
 For complete API reference including request/response schemas and all parameters, see:
 
-- [Skill management API reference](../Endpoints/skills-list.md) - CRUD operations for Skills
-- [Skill versions API reference](../Endpoints/skills-versions-list.md) - Version management
+- [Skill management API reference](../Endpoints/skills-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. - CRUD operations for Skills
+- [Skill versions API reference](../Endpoints/skills-versions-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. - Version management
 
 
 
@@ -62,10 +62,10 @@ You can use Skills from two sources:
 | **Type value** | `anthropic` | `custom` |
 | **Skill IDs** | Short names: `pptx`, `xlsx`, `docx`, `pdf` | Generated: `skill_01AbCdEfGhIjKlMnOpQrStUv` |
 | **Version format** | Date-based: `20251013` or `latest` | Version ID: `skver_01AbCdEfGhIjKlMnOpQrStUv` or `latest` |
-| **Management** | Pre-built and maintained by Anthropic | Upload and manage through the [Skills API](../Endpoints/skills-create.md) |
+| **Management** | Pre-built and maintained by Anthropic | Upload and manage through the [Skills API](../Endpoints/skills-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. |
 | **Availability** | Available to all users | Private to your workspace |
 
-Both skill sources are returned by the [List Skills endpoint](../Endpoints/skills-list.md) (use the `source` parameter to filter). The integration shape and execution environment are identical. The only difference is where the Skills come from and how they’re managed.
+Both skill sources are returned by the [List Skills endpoint](../Endpoints/skills-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. (use the `source` parameter to filter). The integration shape and execution environment are identical. The only difference is where the Skills come from and how they’re managed.
 
 ### Prerequisites
 
@@ -516,7 +516,7 @@ print("financial analysis helper")
   - `name`: Maximum 64 characters, lowercase letters/numbers/hyphens only, no XML tags, no reserved words (`anthropic`, `claude`)
   - `description`: Maximum 1,024 characters, non-empty, no XML tags
 
-For complete request/response schemas, see the [Create Skill](../Endpoints/skills-create.md) API reference.
+For complete request/response schemas, see the [Create Skill](../Endpoints/skills-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. API reference.
 
 ### Listing Skills
 
@@ -555,7 +555,7 @@ for skill in client.skills.list():
 custom_skills = client.skills.list(source="custom")
 ```
 
-See the [List Skills API reference](../Endpoints/skills-list.md) for pagination and filtering options.
+See the [List Skills API reference](../Endpoints/skills-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for pagination and filtering options.
 
 ### Retrieving a Skill
 
@@ -712,7 +712,7 @@ response = client.messages.create(
 )
 ```
 
-See the [Create Skill Version API reference](../Endpoints/skills-versions-create.md) for complete details.
+See the [Create Skill Version API reference](../Endpoints/skills-versions-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for complete details.
 
 ------------------------------------------------------------------------
 
@@ -858,7 +858,7 @@ Combine Skills when tasks involve multiple document types or domains:
 
 The SDK tabs in this section show the `container` value to include in a Messages request. The cURL and CLI tabs show the full request.
 
-**For production:** pin a specific version, so Skill updates never change your deployed behavior. If you omit `version` or set it to `"latest"`, requests use the newest version of the Skill, so a version uploaded by [anyone in the workspace](#workspace-scoped-access) immediately changes what your production agents run. The version ID comes from the create-version response in [Versioning](#versioning) or from the [List Skill Versions API](../Endpoints/skills-versions-list.md). The ID is always a string, so quote it in JSON or YAML even when it looks numeric.
+**For production:** pin a specific version, so Skill updates never change your deployed behavior. If you omit `version` or set it to `"latest"`, requests use the newest version of the Skill, so a version uploaded by [anyone in the workspace](#workspace-scoped-access) immediately changes what your production agents run. The version ID comes from the create-version response in [Versioning](#versioning) or from the [List Skill Versions API](../Endpoints/skills-versions-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. The ID is always a string, so quote it in JSON or YAML even when it looks numeric.
 
 cURL
 

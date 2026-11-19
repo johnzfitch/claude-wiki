@@ -2,7 +2,7 @@
 title: "User Profiles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/user_profiles"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:26:55Z"
+fetched_at: "2026-11-14T06:25:01Z"
 tags: ["api"]
 ---
 
@@ -511,6 +511,18 @@ Sort by when each user profile was created. This is the default.
 
 
 Sort by `name`, ignoring the case of ASCII letters. Profiles without a name come last in either direction.
+
+
+
+UserProfileNotFoundErrorDetails object{ error_code }
+
+
+
+The request depends on a user profile that does not exist in the organization or is no longer active. The request either names this user profile by ID, or names a resource, such as an External Key, that is bound to it.
+
+error_code: "user_profile_not_found"
+
+
 
 
 

@@ -2,7 +2,7 @@
 title: "Claude in Chrome troubleshooting | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12902405-claude-in-chrome-troubleshooting"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:43Z"
+fetched_at: "2026-11-18T06:27:50Z"
 tags: ["claude-ai", "claude-code", "desktop"]
 ---
 
@@ -91,9 +91,9 @@ Your feedback directly shapes how we improve Claude's browser capabilities and s
 
 - **Report suspected prompt injection** if Claude behaves unexpectedly.
 
-  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#bbcec8dec9c8dadddecfc2fbdad5cfd3c9d4cbd2d895d8d4d6)** to report any safety issues or unexpected behaviors.
+  - **Email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#6d181e081f1e0c0b0819142d0c0319051f021d040e430e0200)** to report any safety issues or unexpected behaviors.
 
-- **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** for technical issues or account problems.
+- **[Contact Support](how-to-get-support.md)** for technical issues or account problems.
 
 ### What we're learning
 

@@ -2,7 +2,7 @@
 title: "Join an organization via invite link | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13776697-join-an-organization-via-invite-link"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:23Z"
+fetched_at: "2026-11-18T06:27:54Z"
 tags: ["enterprise"]
 ---
 
@@ -51,7 +51,7 @@ Invite link joins respect your organization's existing security controls:
 
 - **Allowed domains:** Only users with an email address on your organization's **[allowed domains list](../21-Account-Support/account-management-faqs.md#h_b54c41c86c)** can join. Anyone else will see an error.
 
-- **Seat limits:** If your organization has reached its seat limit, link joiners will see an error prompting them to contact their admin.
+- **Seat limits:** If your organization has reached the maximum number of seats its plan allows, link joiners will see an error prompting them to contact their admin. This is the plan's maximum, not the number of seats you've purchased.
 
 **Note:** Members who join via invite link are always added automatically, regardless of your organization's new member approval setting. If you need to review members before they join, share individual email invitations instead of the invite link.
 

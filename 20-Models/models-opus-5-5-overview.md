@@ -2,7 +2,7 @@
 title: "Claude Opus 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-5-5/overview"
 category: "20-Models"
-fetched_at: "2026-11-07T06:23:56Z"
+fetched_at: "2026-11-15T06:24:23Z"
 tags: ["models"]
 ---
 
@@ -174,7 +174,7 @@ The system prompt Claude Opus 5.5 uses on claude.ai and the Claude apps.
 
 
 
-[System card](../15-Claude-AI-Features/claude-opus-5-5-system-card.md)
+[System card](../19-Reference/claude-opus-5-5-system-card.md)
 
 Safety evaluations and deployment decisions for Claude Opus 5.5.
 

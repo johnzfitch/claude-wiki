@@ -2,7 +2,7 @@
 title: "Local - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/local"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-08T06:25:19Z"
+fetched_at: "2026-11-16T06:26:10Z"
 tags: ["api"]
 ---
 

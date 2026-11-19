@@ -2,9 +2,11 @@
 title: "Improving our alignment and security practices \\ Anthropic"
 source_url: "https://www.anthropic.com/news/improving-alignment-security-efforts"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:52Z"
+fetched_at: "2026-11-14T06:25:57Z"
 tags: ["evaluation", "news-research", "security"]
 ---
+
+### 01Securing evaluation and training environments 
 
 # Improving our alignment and security efforts
 
@@ -13,32 +15,28 @@ tags: ["evaluation", "news-research", "security"]
 - [03Alignment assessment](#alignment-assessment)
 - [04Hardening security practices](#hardening-security-practices)
 
-- Published
+Published  
+Aug 31, 2026
 
-  Aug 31, 2026
+[Safeguards](safeguards.md)
 
-- Category
+Topics  
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Race to the top](https://www.anthropic.com/search?topic=race-to-the-top)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
 
-  [Safeguards](safeguards.md)
-
-- Topics
-
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Race to the top](https://www.anthropic.com/search?topic=race-to-the-top)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-
-  See more...
+See more...
 
 Related articles
 
 - Alignment
 
-  Oct 9, 2026
+  Oct 23, 2026
 
-  [Investigating unintended model actions in our evaluations and internal use](investigating-unintended-model-actions.md)
+  [An alignment assessment of the UK AISI cybertesting incident](alignment-assessment-ukaisi.md)
 
 [View more](https://www.anthropic.com/search?topic=alignment)
 
@@ -60,11 +58,11 @@ We paused external cyber evaluations of pre-release models after the incidents, 
 
 While evaluations were paused, we put in place the following preliminary measures:
 
-1\) We built and deployed a classifier to automatically identify, in real time, when a model attempts to aggressively probe or escape a testing environment, or unexpectedly obtains internet access. When the classifier flags such an attempt, it blocks the action before the tool call is run, ends the task, and alerts a human.^([1](#footnote-1))
+1\) We built and deployed a classifier to automatically identify, in real time, when a model attempts to aggressively probe or escape a testing environment, or unexpectedly obtains internet access. When the classifier flags such an attempt, it blocks the action before the tool call is run, ends the task, and alerts a human.^([^1])
 
-2\) We ran automated monitors over transcripts from our recent internal evaluations of pre-release models (cyber and otherwise), looking for sandbox escapes (cases where a model exploits a flaw in our sandbox to reach systems it should be walled off from) or sandbox misconfigurations. In cases where we ran an evaluation inside our sandbox tooling, we found no examples of it breaking the sandbox boundary to reach external resources it was not supposed to. We did find various sandboxing misconfigurations that models made use of, but none of these resulted in a compromise of systems outside the sandbox.^([2](#footnote-2)) We are actively working to address these.
+2\) We ran automated monitors over transcripts from our recent internal evaluations of pre-release models (cyber and otherwise), looking for sandbox escapes (cases where a model exploits a flaw in our sandbox to reach systems it should be walled off from) or sandbox misconfigurations. In cases where we ran an evaluation inside our sandbox tooling, we found no examples of it breaking the sandbox boundary to reach external resources it was not supposed to. We did find various sandboxing misconfigurations that models made use of, but none of these resulted in a compromise of systems outside the sandbox.^([^2]) We are actively working to address these.
 
-3\) We migrated high-risk^([3](#footnote-3)) internal cyber sandboxes to more robust isolation. We are also further red-teaming our virtualization stack—that is, tasking pre-release models to try and escape it—to find and patch weaknesses.
+3\) We migrated high-risk^([^3]) internal cyber sandboxes to more robust isolation. We are also further red-teaming our virtualization stack—that is, tasking pre-release models to try and escape it—to find and patch weaknesses.
 
 Our internal cyber evaluations are now running again with these measures in place.
 
@@ -94,7 +92,7 @@ By default, all cyber evaluations should run inside a hardened sandbox (an isola
 Before conducting a run of an evaluation, evaluation partners should:
 
 1.  Have the model being tested probe the sandbox for vulnerabilities, first through a static analysis of the configuration, then by actually tasking the model to try to escape. The model should be instructed to stop and report if it succeeds in escaping, and all of this should be done under close human supervision. This testing should be performed without internet access, ideally inside a second sandbox. Because evaluations are sometimes conducted over hundreds or even thousands of runs, partners should ideally carry out this testing at length before beginning any evaluations.
-2.  Confirm any evaluation challenge is actually solvable in principle. When an evaluation target is offline or a task can’t be completed, agents will often look for other ways to complete a challenge, increasing the chance that they take actions outside the intended scope of the evaluation.^([4](#footnote-4))
+2.  Confirm any evaluation challenge is actually solvable in principle. When an evaluation target is offline or a task can’t be completed, agents will often look for other ways to complete a challenge, increasing the chance that they take actions outside the intended scope of the evaluation.^([^4])
 
 ### Explicit scope-setting
 
@@ -112,7 +110,7 @@ Containment and monitoring are critical for catching instances in which models t
 
 ### Environment and state of knowledge of our models during evaluation
 
-Our alignment assessment is still ongoing, but our preliminary investigation points to two main alignment failures, both of which we’ve described in [previous](https://www-cdn.anthropic.com/57a52ea7d8f0e54e8a542e908266086df425cdf5/Claude%20Fable%205%20&%20Claude%20Mythos%205%20System%20Card.pdf) system cards. One is motivated reasoning: the models were initially told their environments were simulated, but when they later encountered evidence that they were connected to the real internet, they may have interpreted that evidence in a way that allowed them to maintain that belief. The second is recklessness: the model was willing to take harmful actions on the real internet in pursuit of the narrow goal of solving a cybersecurity evaluation. However, we also believe that the evaluation setup itself contributed to the models’ behavior demonstrated in these incidents. Claude was explicitly told that it had no internet access, despite the internet being available, which may have led it to question whether the systems it saw were real. And in one case, the fictional target shared a name with a real website, making it more difficult to separate what was intended to be in-scope within the exercise.
+Our alignment assessment is still ongoing, but our preliminary investigation points to two main alignment failures, both of which we’ve described in [previous](https://assets.claude.com/57a52ea7d8f0e54e8a542e908266086df425cdf5.pdf) system cards. One is motivated reasoning: the models were initially told their environments were simulated, but when they later encountered evidence that they were connected to the real internet, they may have interpreted that evidence in a way that allowed them to maintain that belief. The second is recklessness: the model was willing to take harmful actions on the real internet in pursuit of the narrow goal of solving a cybersecurity evaluation. However, we also believe that the evaluation setup itself contributed to the models’ behavior demonstrated in these incidents. Claude was explicitly told that it had no internet access, despite the internet being available, which may have led it to question whether the systems it saw were real. And in one case, the fictional target shared a name with a real website, making it more difficult to separate what was intended to be in-scope within the exercise.
 
 Our conclusions depend on several questions we haven’t fully answered, including the extent to which the models determined they had access to the real internet (even if they didn’t initially know this), whether they knowingly disregarded signs that elements of their environments were real, and whether the fact that in several cases they failed to stop the exercise followed from motivated reasoning. We're applying a range of techniques to answer these questions, including resampling the models while making targeted changes to the environment and using interpretability methods to directly inspect their internal state.
 
@@ -124,13 +122,13 @@ Below we discuss our efforts, going back to several months before the incidents,
 
 We have historically been concerned about RL training environments that incentivize cheating, and have taken various measures to filter out or fix such environments.
 
-In February, we rolled back three days of training on the Mythos Preview reinforcement learning run after seeing signs of reward hacking (when a model finds ways to fool its training process and earn rewards without completing the assigned task). We noticed the model writing notes to “the reviewer” in its code comments and replies, including on tasks where no reviewer had ever been mentioned—an undesirable generalization from environments where the prompt did include a reviewer. It also kept gaming a reward intended to incentivize honesty by piling on disclaimers or caveats.^([5](#footnote-5)) Rolling back the three days let us resume training from a checkpoint before this behavior had been learned, and we made changes to the environments to prevent the model learning them again.
+In February, we rolled back three days of training on the Mythos Preview reinforcement learning run after seeing signs of reward hacking (when a model finds ways to fool its training process and earn rewards without completing the assigned task). We noticed the model writing notes to “the reviewer” in its code comments and replies, including on tasks where no reviewer had ever been mentioned—an undesirable generalization from environments where the prompt did include a reviewer. It also kept gaming a reward intended to incentivize honesty by piling on disclaimers or caveats.^([^5]) Rolling back the three days let us resume training from a checkpoint before this behavior had been learned, and we made changes to the environments to prevent the model learning them again.
 
 We have been building tools for monitoring undesirable behaviors models learn in RL since Claude Sonnet 3.7 (which had a propensity to reward hack that we did not detect until late in training). We put significant effort into making sure our tooling evolved with each model generation, from a handful of classifiers to an automated review of all environments before and during training runs, but by spring 2026 that system was under strain. We were producing RL environments at a more rapid pace than ever, faster than our systems could vet them. Flagged environments required a human to adjudicate, and reward hacks and misconfigurations started outpacing our ability to filter or fix them.
 
-In addition, we [found](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf) a fraction of runs had trained on a model’s chain-of-thought by accident—something we work hard to avoid, out of concern that it teaches a model to hide its actual reasoning. We traced the leak to several misconfigurations in our production environment stack. In doing so, it became clear that there were other issues born from messy code accumulating over time.
+In addition, we [found](https://assets.claude.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf) a fraction of runs had trained on a model’s chain-of-thought by accident—something we work hard to avoid, out of concern that it teaches a model to hide its actual reasoning. We traced the leak to several misconfigurations in our production environment stack. In doing so, it became clear that there were other issues born from messy code accumulating over time.
 
-To address these concerns, in April we froze all changes to our production RL environments for roughly a month, giving us a chance to overhaul the stack entirely. Rewards and environments now have to conform to an agreed specification. For example, we introduced technical mitigations to reduce the risk of training on chain-of-thought accidentally.^([6](#footnote-6)) While our environment quality and monitoring teams rebuilt the stack, we asked environment owners to use the pause to test and fix the environments they’d built. We also entirely rebuilt our review process and required every fixed environment to be re-certified before it could enter another training run.
+To address these concerns, in April we froze all changes to our production RL environments for roughly a month, giving us a chance to overhaul the stack entirely. Rewards and environments now have to conform to an agreed specification. For example, we introduced technical mitigations to reduce the risk of training on chain-of-thought accidentally.^([^6]) While our environment quality and monitoring teams rebuilt the stack, we asked environment owners to use the pause to test and fix the environments they’d built. We also entirely rebuilt our review process and required every fixed environment to be re-certified before it could enter another training run.
 
 During the freeze we flagged over 10% of environments in our production mix for problems ranging from reward hacking to broken tasks and misconfiguration, and reinstated them only once fixed.
 
@@ -167,7 +165,7 @@ The results of this effort include:
 
 We also temporarily reassigned a portion of the company to these efforts. Roughly 150 product engineers were redirected to security, reliability, and privacy; researchers also rotated out of pretraining or RL to focus on safeguards and security; and our product teams paused the development of most new features and surfaces. We set strict exit criteria for each team to meet before they returned to their prior work. By early summer, most teams had met these.
 
-Alongside the reallocation of resources towards security, we continued building out containment and monitoring for internal agent use. Our training and evaluation workloads have typically run in sandboxes isolated from our production systems. Since developing Claude Mythos Preview, we have used our models to probe for any weaknesses in those sandboxes. We described our offline monitoring of internal coding agents in our [April alignment risk update](https://www-cdn.anthropic.com/3edfc1a7f947aa81841cf88305cb513f184c36ae/Alignment%20Risk%20Update_%20Claude%20Mythos%20Preview%20(Redacted,%20April%2010).pdf), and our [August Risk Report](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf) covers that system in more detail, along with the interventions that run alongside it. These include sandboxing or auto-mode classifiers on the most autonomous forms of internal agent use, and automated review of infrastructure code changes before they merge.
+Alongside the reallocation of resources towards security, we continued building out containment and monitoring for internal agent use. Our training and evaluation workloads have typically run in sandboxes isolated from our production systems. Since developing Claude Mythos Preview, we have used our models to probe for any weaknesses in those sandboxes. We described our offline monitoring of internal coding agents in our [April alignment risk update](https://assets.claude.com/3edfc1a7f947aa81841cf88305cb513f184c36ae.pdf), and our [August Risk Report](https://assets.claude.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378.pdf) covers that system in more detail, along with the interventions that run alongside it. These include sandboxing or auto-mode classifiers on the most autonomous forms of internal agent use, and automated review of infrastructure code changes before they merge.
 
 What this work missed was evaluations—and third-party evaluations above all. We did monitor some high-risk evaluations including in real time, but generally we only conducted automated reviews on a sample of transcripts after the fact.
 
@@ -183,6 +181,18 @@ The July incidents have stressed that the urgency of improving our cybersecurity
 
 04Ultimately, a model that acts outside its intended scope on such a challenge is a problem of alignment; an aligned model should stop or report to humans that the task can’t be completed as specified. We are continuing to train this behavior directly, but a defense-in-depth approach means not relying on alignment alone.[](#footnote-ref-4)
 
-05We’ve publicly discussed two other categories of reward hacking in the [Mythos Preview system card](https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf), including one where the model utilizes low-level computer process data in order to escalate its permissions, and another where it circumvents network restrictions in its training environment to download data that lets it shortcut the assigned task.[](#footnote-ref-5)
+05We’ve publicly discussed two other categories of reward hacking in the [Mythos Preview system card](https://assets.claude.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf), including one where the model utilizes low-level computer process data in order to escalate its permissions, and another where it circumvents network restrictions in its training environment to download data that lets it shortcut the assigned task.[](#footnote-ref-5)
 
-06These mitigations have not been wholly sufficient; we discuss further instances of training on chain of thought in more detail in our [August Risk Report](https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf), Section 5.2.3.[](#footnote-ref-6)
+06These mitigations have not been wholly sufficient; we discuss further instances of training on chain of thought in more detail in our [August Risk Report](https://assets.claude.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378.pdf), Section 5.2.3.[](#footnote-ref-6)
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:

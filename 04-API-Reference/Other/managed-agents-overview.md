@@ -2,7 +2,7 @@
 title: "Claude Managed Agents overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/overview"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:27Z"
+fetched_at: "2026-11-13T06:36:44Z"
 tags: ["agents", "api"]
 ---
 
@@ -20,18 +20,22 @@ Pre-built, configurable agent harness that runs in managed infrastructure. Best 
 
 Managed Agents
 
-[Status](#availability-feature-support)  
 Beta
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](#feature-availability)  
+- All models
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Anthropic offers two ways to build with Claude, each suited to different use cases:
 
@@ -99,7 +103,7 @@ Claude Managed Agents is built around four concepts:
 
     ### Send events and stream responses
 
-    Send user messages as events. Claude autonomously runs tools and streams back results through server-sent events (SSE). Event history is persisted server-side and can be fetched in full.
+    Send user messages as events. Claude autonomously runs tools and streams back results through server-sent events (SSE). The Managed Agents service keeps the event history, and you can fetch it in full.
 
 5.  5
 
@@ -114,6 +118,7 @@ Claude Managed Agents is best for workloads that need:
 - **Long-running execution:** Tasks that run for minutes or hours with multiple tool calls
 - **Cloud infrastructure:** Secure sandboxes with pre-installed packages and network access
 - **Self-hosted execution:** Sandboxes on infrastructure you control for compliance or data-residency requirements
+- **Self-hosted service:** The whole Managed Agents service on your own infrastructure, with [self-hosted Claude Managed Agents](managed-agents-self-hosted.md)
 - **Minimal infrastructure:** No need to build your own agent loop, sandbox, or tool execution layer
 - **Stateful sessions:** Persistent filesystems and conversation history across multiple interactions
 - **Scheduled execution:** Recurring agent runs on a cron schedule through [scheduled deployments](managed-agents-scheduled-deployments.md)
@@ -133,48 +138,68 @@ See [Tools](managed-agents-tools.md) for the full list and configuration options
 
 
 
-Claude Managed Agents is in beta. All Managed Agents endpoints require the `managed-agents-2026-04-01` beta header. The SDK sets the beta header automatically. Behaviors may be refined between releases to improve outputs.
+Claude Managed Agents is in beta. All Managed Agents endpoints require the `managed-agents-2026-04-01` beta header. The SDK sets the beta header automatically. Anthropic might refine behaviors between releases to improve outputs.
 
 To get started, you need:
 
-1.  A [Claude API key](playground.md) from the Claude Console
-2.  The `managed-agents-2026-04-01` beta header on all requests
-3.  Access to Claude Managed Agents (enabled by default for all API accounts)
+1.  A [Claude API key](playground.md) from the Claude Console.
+2.  The `managed-agents-2026-04-01` beta header on all requests.
+3.  Access to Claude Managed Agents (enabled by default for all API accounts).
 
-Within the beta, [MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) and [dreaming](managed-agents-dreams.md) are in a more limited research preview. [Request access](https://claude.com/form/claude-managed-agents) to enable them.
+Within the beta, [MCP tunnels](../Agents-Tools/agents-and-tools-mcp-tunnels-overview.md) and [dreaming](managed-agents-dreams.md) are in a more limited research preview. To enable them, [request access to the research preview](https://claude.com/form/claude-managed-agents).
 
-Claude Managed Agents is stateful by design: sessions are long-running, resume cleanly after pauses, and store conversation history, sandbox state, and outputs server-side. Because of this, Managed Agents is not currently eligible for [Zero Data Retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) or HIPAA Business Associate Agreement (BAA) coverage. You retain control over this data: you can [delete sessions](managed-agents-session-operations.md#deleting-a-session), and separately delete any [files](../Guides/build-with-claude-files.md#delete-a-file) you uploaded, at any time through the API. For eligibility across all features, see [API and data retention](manage-claude-api-and-data-retention.md#feature-eligibility).
+Claude Managed Agents is stateful by design: sessions are long-running, resume cleanly after pauses, and store conversation history, sandbox state, and outputs server-side. Because of this, Managed Agents is not currently eligible for [Zero Data Retention](manage-claude-api-and-data-retention.md#zero-data-retention-zdr-scope) or HIPAA Business Associate Agreement (BAA) coverage. The exception for Zero Data Retention is self-hosted Claude Managed Agents, where you store that data yourself, as [How long data is kept](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept) describes. You retain control over this data: you can [delete sessions](managed-agents-session-operations.md#deleting-a-session), and separately delete any [files](../Guides/build-with-claude-files.md#delete-a-file) you uploaded, at any time through the API. For eligibility across all features, see [API and data retention](manage-claude-api-and-data-retention.md#feature-eligibility).
 
 See [Rate limits](managed-agents-reference.md#rate-limits) and [Branding guidelines](managed-agents-reference.md#branding-guidelines) in the reference.
 
 ## Availability
 
-Managed Agents are in beta on every model.
+Managed Agents
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Managed Agents are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+Claude API
 
-Models
+Status  
+Beta
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Beta header  
+Requires
 
-### Required beta headers
+managed-agents-2026-04-01
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Models  
+- All models
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Claude Platform on AWS
 
-Header
+Status  
+Beta
 
-- `managed-agents-2026-04-01`
-  
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -188,8 +213,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

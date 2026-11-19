@@ -2,7 +2,7 @@
 title: "Claude Models on Google Cloud (Anthropic managed) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-08T06:25:21Z"
+fetched_at: "2026-11-16T06:25:01Z"
 tags: ["api", "authentication", "billing"]
 ---
 
@@ -211,7 +211,7 @@ To use the `ant` CLI instead, [install or update the CLI](../Other/cli-sdks-libr
 
 Claude Models on Google Cloud (Anthropic managed) serves Claude API endpoints under a base URL that names your project, a location, and your workspace:
 
-``` block
+```
 https://claude.googleapis.com/v1/projects/{project}/locations/global/workspaces/{workspace}/invoke
 ```
 
@@ -219,7 +219,7 @@ https://claude.googleapis.com/v1/projects/{project}/locations/global/workspaces/
 
 The [organization-level routes](#iam-roles), whose paths start with `/v1/organizations/`, and the [user profile](../Other/manage-claude-user-profiles.md) routes under `/v1/user_profiles` use a base URL without the workspace:
 
-``` block
+```
 https://claude.googleapis.com/v1/projects/{project}/locations/global/claudeOrganization/invoke
 ```
 
@@ -399,7 +399,7 @@ The Models API and the following features are available on Claude Models on Goog
 - [Custom tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md)
 - [Data residency](../Other/manage-claude-data-residency.md)
 - [Effort](build-with-claude-effort.md)
-  - [Per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta) Beta
+  - [Per-message effort](build-with-claude-effort-per-message.md) Beta
 - [Fast mode](build-with-claude-fast-mode.md)
 - [Files API](build-with-claude-files.md)
 - [MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md) Beta
@@ -423,6 +423,7 @@ The Models API and the following features are available on Claude Models on Goog
 - [Thinking](build-with-claude-thinking.md)
   - [Adaptive thinking](build-with-claude-thinking-steering-and-cost.md)
   - [Extended thinking](build-with-claude-extended-thinking.md)
+  - [Preserved thinking](build-with-claude-preserved-thinking.md)
 - [Token counting](build-with-claude-token-counting.md)
 - [Tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) Beta
 - [Vision (images)](build-with-claude-vision.md)
@@ -431,7 +432,7 @@ The Models API and the following features are available on Claude Models on Goog
 
 If a beta feature is limited to selected organizations on the Claude API, the Anthropic organization that setup creates needs the same access.
 
-To turn the [Compliance API](../Other/manage-claude-compliance-api.md) on or off for the Anthropic organization that setup creates, [open the Claude Console](#using-the-claude-console), go to **Settings \> Compliance**, and use the **Compliance API** toggle.
+To turn the [Compliance API](../Other/manage-claude-compliance-api.md) on or off for the Anthropic organization that setup creates, first [open the Claude Console](#using-the-claude-console). Then go to [Compliance in the Claude Console](../Other/playground.md) (`platform.claude.com/settings/security`) and use the **Compliance API** toggle.
 
 Customer-managed encryption keys (CMEK) are available with Google Cloud KMS keys. To activate CMEK for the Anthropic organization that setup creates, see [Who can use CMEK](../Other/manage-claude-cmek.md#availability). To set up a key, follow [Set up CMEK with Google Cloud KMS](../Other/manage-claude-cmek-google-cloud-kms.md). Then register, verify, and attach the key in the [Claude Console](#using-the-claude-console), as the setup page’s **Claude Platform** tab describes.
 
@@ -449,7 +450,6 @@ Customer-managed encryption keys (CMEK) are available with Google Cloud KMS keys
   - [Session threads](../Other/managed-agents-session-threads.md) Beta
 - [Outcomes](../Other/managed-agents-define-outcomes.md) Beta
 - [Permission policies](../Other/managed-agents-permission-policies.md) Beta
-- [Preserved thinking](build-with-claude-preserved-thinking.md)
 - [Scheduled deployments](../Other/managed-agents-scheduled-deployments.md) Beta
 - [Self-hosted sandboxes](../Other/managed-agents-self-hosted-sandboxes.md) Beta
 - [Session budgets](../Other/managed-agents-budgets.md) Beta
@@ -616,7 +616,7 @@ To move to Claude Models on Google Cloud (Anthropic managed), complete the follo
 
 ## Support
 
-[Google Cloud Support](https://cloud.google.com/support) handles your Google Cloud account, access, and billing. [Anthropic Support](https://support.claude.com/en/articles/9015913-how-to-get-support) handles Claude itself, including models, API errors, and rate limits. To request higher rate limits, see [Rate limits](#rate-limits).
+[Google Cloud Support](https://cloud.google.com/support) handles your Google Cloud account, access, and billing. [Anthropic Support](../../15-Claude-AI-Features/how-to-get-support.md) handles Claude itself, including models, API errors, and rate limits. To request higher rate limits, see [Rate limits](#rate-limits).
 
 ## Next steps
 

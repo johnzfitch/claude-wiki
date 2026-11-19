@@ -2,7 +2,7 @@
 title: "List Plugin Shares - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugins/shares/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-02T06:26:36Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["api"]
 ---
 
@@ -25,6 +25,8 @@ API version 2026-10-21
 cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/plugins/{plugin_id}/shares
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the shares the owner of a member-owned Plugin has given — to every member of the organization, to an RBAC Group, or to one member — most recently granted first.
 
@@ -64,7 +66,7 @@ organization_id: optional string
 
 
 
-For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404.
+For a `read:org_audit` or `read:compliance_org_data` key created for all of a parent organization's linked organizations: a child organization of that parent to read instead of the organization the key was created in, given as the organization's UUID or its `org_`-prefixed ID. A value that is neither returns a 400; an organization that is not a child of the key's parent, or where the Plugins API is not available, returns a 404. Any other key may pass only its own organization's ID here; another organization returns a 404. A key with no organization of its own must always pass `organization_id`.
 
 
 
@@ -102,7 +104,7 @@ One of the following:
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
+"anthropic-beta": array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -114,14 +116,6 @@ string
 
 
 
-"message-batches-2024-09-24"
-
-
-
-"prompt-caching-2024-07-31"
-
-
-
 "computer-use-2024-10-22"
 
 
@@ -130,23 +124,7 @@ string
 
 
 
-"pdfs-2024-09-25"
-
-
-
-"token-counting-2024-11-01"
-
-
-
-"token-efficient-tools-2025-02-19"
-
-
-
 "output-128k-2025-02-19"
-
-
-
-"files-api-2025-04-14"
 
 
 
@@ -170,10 +148,6 @@ string
 
 
 
-"extended-cache-ttl-2025-04-11"
-
-
-
 "context-1m-2025-08-07"
 
 
@@ -183,10 +157,6 @@ string
 
 
 "model-context-window-exceeded-2025-08-26"
-
-
-
-"skills-2025-10-02"
 
 
 
@@ -215,10 +185,6 @@ string
 
 
 "managed-agents-2026-04-01"
-
-
-
-"cache-diagnosis-2026-04-07"
 
 
 
@@ -278,10 +244,6 @@ string
 
 
 
-"ce-user-management-2026-07-13"
-
-
-
 "mid-conversation-output-config-2026-07-01"
 
 
@@ -322,6 +284,10 @@ string
 
 
 
+"admin-user-sign-out-2026-10-08"
+
+
+
 "message-threads-2026-08-12"
 
 
@@ -333,6 +299,90 @@ string
 "experimental-claude-tag-2026-10-21"
 
 
+
+"user-profiles-billing-2026-10-01"
+
+
+
+
+
+"message-batches-2024-09-24"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"prompt-caching-2024-07-31"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"pdfs-2024-09-25"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-counting-2024-11-01"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-efficient-tools-2025-02-19"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"files-api-2025-04-14"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14
+
+
+
+"extended-cache-ttl-2025-04-11"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"skills-2025-10-02"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/skills-guide#migrate-from-skills-2025-10-02
+
+
+
+"cache-diagnosis-2026-04-07"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"ce-user-management-2026-07-13"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
 
 ##### Returns
 

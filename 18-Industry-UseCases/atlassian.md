@@ -2,7 +2,7 @@
 title: "Atlassian Claude and Google Cloud case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/atlassian"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:55Z"
+fetched_at: "2026-11-18T06:28:46Z"
 tags: ["agents", "case-studies"]
 ---
 
@@ -94,6 +94,9 @@ Where Atlassian takes this next rests on two problems it wants to keep solving f
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -101,6 +104,3 @@ Where Atlassian takes this next rests on two problems it wants to keep solving f
 
 
 ### Rocket Money on building agents that fix their own code
-
-
-### How Rocket Money built its personal finance agent with Claude

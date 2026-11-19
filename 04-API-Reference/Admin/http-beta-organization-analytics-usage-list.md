@@ -2,7 +2,7 @@
 title: "Get Token Usage By Dimension - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/usage/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-07T06:23:07Z"
+fetched_at: "2026-11-15T06:24:14Z"
 tags: ["api"]
 ---
 
@@ -26,7 +26,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/analytics/usage
 
-Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get token usage across a date range, broken out by dimension.
 
@@ -88,7 +88,7 @@ agent_ids: optional array of string
 
 
 
-Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values. Claude Developer Platform organizations only.
+Filter to usage incurred by sessions of specific Claude Managed Agents agents. Use `group_by[]=agent_id` to break out per-agent values. Claude Platform organizations only.
 
 maxItems100
 
@@ -98,7 +98,7 @@ api_key_ids: optional array of string
 
 
 
-Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Developer Platform organizations only.
+Filter to usage authenticated by specific API keys, by tagged API key ID (`apikey_...`), whichever identity the usage is attributed to. Include an empty entry (`api_key_ids[]=`) to also match usage that no API key authenticated. Use `group_by[]=api_key_id` to break out per-key values; usage without a key has a null `api_key_id`. Claude Platform organizations only.
 
 maxItems100
 
@@ -108,7 +108,7 @@ claude_tag_categories: optional array of [BetaAnalyticsClaudeTagCategory](platfo
 
 
 
-Filter to Claude Tag (Claude in Slack) usage in specific spend categories. Usage with no category never matches. `dm` usage is reported under the user's product rather than `claude_tag`, so combining this filter with `products[]=claude_tag` excludes it. Use `group_by[]=claude_tag_category` to break out per-category values.
+Filter to Claude Tag (Claude in Slack) usage in specific spend categories. Usage with no category never matches. Use `group_by[]=claude_tag_category` to break out per-category values.
 
 maxItems100
 
@@ -170,7 +170,7 @@ deployment_ids: optional array of string
 
 
 
-Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values. Claude Developer Platform organizations only.
+Filter to usage incurred by Claude Managed Agents sessions that specific deployments started. Use `group_by[]=deployment_id` to break out per-deployment values. Claude Platform organizations only.
 
 maxItems100
 
@@ -190,7 +190,7 @@ environment_ids: optional array of string
 
 
 
-Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values. Claude Developer Platform organizations only.
+Filter to usage incurred by Claude Managed Agents sessions that ran in specific environments. Use `group_by[]=environment_id` to break out per-environment values. Claude Platform organizations only.
 
 maxItems100
 
@@ -257,6 +257,10 @@ One of the following:
 
 
 "model"
+
+
+
+"organization_id"
 
 
 
@@ -388,6 +392,16 @@ One of the following:
 
 
 
+
+
+organization_ids: optional array of string
+
+
+
+Filter a parent organization's report to specific child organizations, by organization UUID or `org_` ID; an ID that is not one of its child organizations matches nothing. Requires an API key created at the parent organization level. Use `group_by[]=organization_id` to break out per-organization values.
+
+maxItems100
+
 page: optional string
 
 
@@ -470,7 +484,7 @@ service_tiers: optional array of [BetaAnalyticsServiceTier](platform-claude-com-
 
 
 
-Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values. Claude Developer Platform organizations only; matches nothing for a Claude Enterprise organization.
+Filter to specific service tiers. Use `group_by[]=service_tier` to break out per-tier values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
 
 maxItems100
 
@@ -506,7 +520,7 @@ session_ids: optional array of string
 
 
 
-Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values. Claude Developer Platform organizations only.
+Filter to usage incurred by specific Claude Managed Agents sessions, by tagged session ID (`sesn_...`). Use `group_by[]=session_id` to break out per-session values. Claude Platform organizations only.
 
 maxItems100
 
@@ -568,7 +582,7 @@ user_profile_ids: optional array of string
 
 
 
-Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values. Claude Developer Platform organizations only.
+Filter to usage attributed to specific user profiles, by tagged user profile ID (`uprof_...`). Use `group_by[]=user_profile_id` to break out per-profile values. Claude Platform organizations only.
 
 maxItems100
 
@@ -578,7 +592,7 @@ workspace_ids: optional array of string
 
 
 
-Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values. Claude Developer Platform organizations only; matches nothing for a Claude Enterprise organization.
+Filter to usage in specific workspaces, by tagged workspace ID (`wrkspc_...`). Use `group_by[]=workspace_id` to break out per-workspace values. Claude Platform organizations only; matches nothing for a Claude Enterprise organization.
 
 maxItems100
 
@@ -596,7 +610,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
+"anthropic-beta": array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -608,14 +622,6 @@ string
 
 
 
-"message-batches-2024-09-24"
-
-
-
-"prompt-caching-2024-07-31"
-
-
-
 "computer-use-2024-10-22"
 
 
@@ -624,23 +630,7 @@ string
 
 
 
-"pdfs-2024-09-25"
-
-
-
-"token-counting-2024-11-01"
-
-
-
-"token-efficient-tools-2025-02-19"
-
-
-
 "output-128k-2025-02-19"
-
-
-
-"files-api-2025-04-14"
 
 
 
@@ -664,10 +654,6 @@ string
 
 
 
-"extended-cache-ttl-2025-04-11"
-
-
-
 "context-1m-2025-08-07"
 
 
@@ -677,10 +663,6 @@ string
 
 
 "model-context-window-exceeded-2025-08-26"
-
-
-
-"skills-2025-10-02"
 
 
 
@@ -709,10 +691,6 @@ string
 
 
 "managed-agents-2026-04-01"
-
-
-
-"cache-diagnosis-2026-04-07"
 
 
 
@@ -772,10 +750,6 @@ string
 
 
 
-"ce-user-management-2026-07-13"
-
-
-
 "mid-conversation-output-config-2026-07-01"
 
 
@@ -816,6 +790,10 @@ string
 
 
 
+"admin-user-sign-out-2026-10-08"
+
+
+
 "message-threads-2026-08-12"
 
 
@@ -827,6 +805,86 @@ string
 "experimental-claude-tag-2026-10-21"
 
 
+
+
+
+"message-batches-2024-09-24"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"prompt-caching-2024-07-31"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"pdfs-2024-09-25"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-counting-2024-11-01"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-efficient-tools-2025-02-19"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"files-api-2025-04-14"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14
+
+
+
+"extended-cache-ttl-2025-04-11"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"skills-2025-10-02"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/skills-guide#migrate-from-skills-2025-10-02
+
+
+
+"cache-diagnosis-2026-04-07"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"ce-user-management-2026-07-13"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
 
 ##### Returns
 
@@ -850,7 +908,7 @@ formatdate-time
 
 
 
-group: [BetaAnalyticsUsageGroup](platform-claude-com-http-beta-organization-analytics-usage.md#beta_analytics_usage_group) { actor, actor_type, agent_id, 16 more }
+group: [BetaAnalyticsUsageGroup](platform-claude-com-http-beta-organization-analytics-usage.md#beta_analytics_usage_group) { actor, actor_type, agent_id, 17 more }
 
 
 
@@ -936,6 +994,7 @@ Response 200
         "environment_id": "env_017oTjuGedHtjhJauVC5xGJD",
         "inference_geo": "global",
         "model": "claude-opus-5-5",
+        "organization_id": "12345678-1234-5678-1234-567812345678",
         "product": "chat",
         "rbac_group_id": "rbac_group_012rppKaSVsmTo6NqRDXQXNF",
         "service_tier": "standard",
@@ -997,6 +1056,7 @@ Response 200
         "environment_id": "env_017oTjuGedHtjhJauVC5xGJD",
         "inference_geo": "global",
         "model": "claude-opus-5-5",
+        "organization_id": "12345678-1234-5678-1234-567812345678",
         "product": "chat",
         "rbac_group_id": "rbac_group_012rppKaSVsmTo6NqRDXQXNF",
         "service_tier": "standard",

@@ -2,9 +2,11 @@
 title: "Investigating reward tampering in language models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/reward-tampering"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:07Z"
+fetched_at: "2026-11-14T06:26:29Z"
 tags: ["news-research"]
 ---
+
+### 01Specification gaming and reward tampering
 
 # **Sycophancy to subterfuge: **Investigating reward tampering in language models 
 
@@ -15,22 +17,19 @@ tags: ["news-research"]
 - [03Can we train away reward tampering?](#can-we-train-away-reward-tampering)
 - [04Caveats and conclusions](#caveats-and-conclusions)
 
-- Published
+Published  
+Jun 17, 2024
 
-  Jun 17, 2024
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+- [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Training](https://www.anthropic.com/search?topic=training)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-  - [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Training](https://www.anthropic.com/search?topic=training)
-
-  See more...
+See more...
 
 Related articles
 
@@ -99,3 +98,7 @@ As we noted above, AI models are becoming more capable and are being given more 
 For full details, read our new paper: [Sycophancy to Subterfuge: Exploring Reward Tampering in Language Models](https://arxiv.org/abs/2406.10162).
 
 If you’d like to help us address these questions, or questions of AI Alignment Science more generally, you should consider applying for our [Research Engineer/Scientist role](https://boards.greenhouse.io/anthropic/jobs/4009165008).
+
+### Policy memo
+
+[Investigating Reward Tampering in Language Models Policy Memo](https://assets.claude.com/bed8f247538cdfdd0caf8368f557adb73df0cb16.pdf)

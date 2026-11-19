@@ -2,7 +2,7 @@
 title: "Wiz Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/wiz"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:20Z"
+fetched_at: "2026-11-18T06:29:17Z"
 tags: ["case-studies", "claude-code"]
 ---
 
@@ -95,6 +95,9 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -102,6 +105,3 @@ Delegate coding tasks directly from your browser. Kick off multiple sessions in 
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

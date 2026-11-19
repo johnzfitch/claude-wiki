@@ -2,7 +2,7 @@
 title: "A look at Anthropic's key processes, programs,"
 source_url: "https://www-cdn.anthropic.com/4d0c80683bac8a1ae3df9ccbf3a4be85b749a047.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-31T06:28:01Z"
+fetched_at: "2026-11-18T06:28:23Z"
 tags: ["news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Claude is providing incorrect or misleading responses. What’s going on? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:40Z"
+fetched_at: "2026-11-18T06:28:40Z"
 tags: ["claude-ai"]
 ---
 
@@ -19,6 +19,6 @@ Users should not rely on Claude as a singular source of truth and should careful
 
 When working with web search results, users should review Claude's cited sources. Original websites may contain important context or details not included in Claude's synthesis. Additionally, the quality of Claude's responses depends on the underlying sources it references, so checking original content helps you identify any information that might be misinterpreted without the full context.
 
-You can use the thumbs down button to let us know if a particular response was unhelpful, or write to us at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#03656666676162606843626d776b716c736a602d606c6e) with your thoughts or suggestions.
+You can use the thumbs down button to let us know if a particular response was unhelpful, or write to us at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#d3b5b6b6b7b1b2b0b893b2bda7bba1bca3bab0fdb0bcbe) with your thoughts or suggestions.
 
 To learn more about how Anthropic’s technology works and our research on developing safer, steerable, and more reliable models, we recommend visiting: [https://www.anthropic.com/research](../19-Reference/anthropic-com-research.md)

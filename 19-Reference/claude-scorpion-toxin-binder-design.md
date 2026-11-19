@@ -2,39 +2,36 @@
 title: "How Claude designed protein binders against scorpion neurotoxins \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:41Z"
+fetched_at: "2026-11-14T06:26:38Z"
 tags: ["news-research"]
 ---
 
 # How Claude designed protein binders against scorpion neurotoxins
 
-[Read the technical report](de-novo-design-of-protein-binders-against-scorpion-toxins-with-claude.md)
+[Read the technical report](https://assets.claude.com/31ac578806cffd8b3d92d8affe6edc4c04d502e1.pdf)
 
-- Published
+Published  
+Oct 20, 2026
 
-  Oct 20, 2026
+Team  
+[Science](https://www.anthropic.com/science)
 
-- Team
+Topics  
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
+- [Global health](https://www.anthropic.com/search?topic=global-health)
 
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-  - [Global health](https://www.anthropic.com/search?topic=global-health)
-
-  See more...
+See more...
 
 Related articles
 
 - Science
 
-  Sep 23, 2026
+  Nov 6, 2026
 
-  [Claude discovers a novel enzyme system with CRISPR-like repeats](research-claude-discovers-novel-enzyme-system.md)
+  [Teaching AI to build scientific models](teaching-ai-to-build-scientific-models.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 
@@ -44,13 +41,13 @@ In August, we showed [how Claude designed protein minibinders](claude-accelerate
 
 Scorpions sting 1.2 million people or more every year, resulting in more than 3,250 deaths, mostly among children in parts of the world with limited access to medical care. New treatments are expensive to make, and are also unlikely to earn back the cost of developing them. With so little investment, scorpion envenomation has been [described as](https://gh.bmj.com/content/10/11/e020682) a neglected tropical disease.
 
-We started by giving Claude the same prompt we’d used in our earlier protein-binder study, after modifying it with Citrini.^([1](#footnote-1)) Over the next 64 hours, an internal research model, operating within Claude Science, worked mainly autonomously, although we directed its work with four follow-ups. Under our supervision, Claude analyzed the research data, generated the figures, and drafted the final report.
+We started by giving Claude the same prompt we’d used in our earlier protein-binder study, after modifying it with Citrini.^([^1]) Over the next 64 hours, an internal research model, operating within Claude Science, worked mainly autonomously, although we directed its work with four follow-ups. Under our supervision, Claude analyzed the research data, generated the figures, and drafted the final report.
 
 Claude’s design campaign produced 17 protein binders that each bind to one of four scorpion neurotoxins that are known to be dangerous to humans. Throughout the process, Claude generated 318,484 protein designs and selected 180 of them for testing. Our team added 31 more, with Claude’s help. Our partners at Adaptyv Bio and Twist Bioscience, two contract research organizations (CROs), lab-tested all 211 designs to see if they would bind to the toxins they were designed against, and 17 designs met our criteria for a binder. We have not confirmed whether these binders neutralize scorpion venom in a cellular environment, so we do not claim to have produced an antivenom.
 
 We sent Claude’s work to two outside experts, Susana Vázquez Torres and Timothy P. Jenkins, who said they felt this work was a promising first step. If AI can now design credible binders against several hard-to-target toxins in days and they can be confirmed in the lab within weeks, this could, in theory, speed up discovery for envenomation and other neglected diseases. The challenge, as always, is turning those binders into safe, affordable, and widely accessible drugs.
 
-We share more detail in our [technical report](de-novo-design-of-protein-binders-against-scorpion-toxins-with-claude.md), and are making [all 211 designs and their data available](https://huggingface.co/datasets/Anthropic/scorpion-toxin-binder-design).
+We share more detail in our [technical report](https://assets.claude.com/31ac578806cffd8b3d92d8affe6edc4c04d502e1.pdf), and are making [all 211 designs and their data available](https://huggingface.co/datasets/Anthropic/scorpion-toxin-binder-design).
 
 > Designing a binder against almost any target no longer seems unrealistic. We can now obtain very tight binders remarkably quickly, and binding itself is no longer the main bottleneck. For venomous animals such as snakes and scorpions, whose bites and stings kill or seriously injure large numbers of people, particularly in underserved regions, the real impact will come from tackling the parts of the therapeutic pipeline that go beyond binding. The challenge is to use these extraordinary tools to develop molecules that can become real drugs, ones that are safe, affordable, and widely accessible.
 
@@ -80,7 +77,7 @@ To see how far Claude could go, we asked it to design four kinds of binders: bin
 
 Our initial prompt defined the neurotoxin targets, the protein design and folding tools, and the rules for novelty, scoring, and filtering. Beyond choosing the structures and amino acid hotspots, Claude also set the quality thresholds a design had to clear, decided how much to lean on each available design tool, and developed the strategies for designing binders against multiple toxins.
 
-Ultimately, Claude used 12 design tools to generate 318,484 designs, filtering out any that resembled a toxin or a known protein. Claude co-folded and screened 553,052 design-toxin pairs, predicting each pair’s structure as one complex. Sixty-four hours after we gave Claude our initial prompt, it produced its final list of 180 designs. The campaign used on the order of 10,000 GPU hours.^([2](#footnote-2))
+Ultimately, Claude used 12 design tools to generate 318,484 designs, filtering out any that resembled a toxin or a known protein. Claude co-folded and screened 553,052 design-toxin pairs, predicting each pair’s structure as one complex. Sixty-four hours after we gave Claude our initial prompt, it produced its final list of 180 designs. The campaign used on the order of 10,000 GPU hours.^([^2])
 
 Claude worked autonomously for 24 hours following our first prompt. Its results encouraged us to prompt Claude to continue its campaign and look for better designs. Our follow-up prompts were mainly focused on directing Claude to design a multitoxin binder. Claude selected most of the 180 designs—including our strongest binder (Cn2-B1)—only after our third follow-up. At our request, Claude sent the protein sequences to Twist Bioscience (in emails indicating they were written by Claude), which produced the proteins in order to see how well they would bind to the toxins. We later worked with Claude to add another 31 designs, increasing the total to 211 designs: 60 designs against a single toxin (12 per toxin), 30 designs against the two β-family toxins, 30 designs against the three α-family toxins, and 91 designs against all five toxins.
 
@@ -92,7 +89,7 @@ After completing the campaign, we sent the designs to Adaptyv Bio and Twist Bios
 
 Both labs measured binding by *surface plasmon resonance* (SPR), in which a toxin flows over the design while the SPR instrument tracks in real time how quickly a toxin binds to and detaches from it. The resulting trace, called a sensorgram, produces a measurement known as the *dissociation constant* (KD), which is a measurement for binding strength (or *affinity*). The lower the KD, the tighter the binding.
 
-When it came to evaluating the resulting designs, we set out strict criteria for labeling a design a binder against a toxin. The design needed to be a *hit* at both labs^([3](#footnote-3))—that is, it needed to show evidence of binding against that toxin in every replicate, and every KD needed to be 1 µM or tighter. We also required that the design show no signal against CLEC12A, an unrelated human protein used to measure off-target binding or “stickiness.”
+When it came to evaluating the resulting designs, we set out strict criteria for labeling a design a binder against a toxin. The design needed to be a *hit* at both labs^([^3])—that is, it needed to show evidence of binding against that toxin in every replicate, and every KD needed to be 1 µM or tighter. We also required that the design show no signal against CLEC12A, an unrelated human protein used to measure off-target binding or “stickiness.”
 
 #### Claude’s Cn2 binders likely bind the same site as a toxin-neutralizing antibody
 
@@ -116,7 +113,7 @@ We are releasing [all 211 designs and their binding data](https://huggingface.co
 
 The following resources provide further technical depth and more detailed information about the results described above:
 
-- [Technical report](de-novo-design-of-protein-binders-against-scorpion-toxins-with-claude.md);
+- [Technical report](https://assets.claude.com/31ac578806cffd8b3d92d8affe6edc4c04d502e1.pdf);
 - Data release: [all 211 designs, their predicted structures and scores, and experimental data](https://huggingface.co/datasets/Anthropic/scorpion-toxin-binder-design);
 - Our previous posts on [protein design](claude-accelerates-protein-design.md) and [uplifting biomolecular modeling](claude-uplifts-biomolecular-modeling.md).
 
@@ -127,3 +124,9 @@ The following resources provide further technical depth and more detailed inform
 02We realize this is much more than most researchers have access to. Separately, we have [made these models about 4x faster on average](claude-uplifts-biomolecular-modeling.md), and shown that a simplified prompt using a single agent and a single GPU over 24 hours reaches comparable *in silico* scores.[](#footnote-ref-2)
 
 03LqhIII was assessed only by Adaptyv Bio.[](#footnote-ref-3)
+
+[^1]:
+
+[^2]:
+
+[^3]:

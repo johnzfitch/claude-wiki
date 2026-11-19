@@ -2,30 +2,26 @@
 title: "Improving Fable 5's safeguards \\ Anthropic"
 source_url: "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:10Z"
+fetched_at: "2026-11-14T06:26:26Z"
 tags: ["news-research"]
 ---
 
 # Improving Fable 5's biology safeguards
 
-- Published
+Published  
+Aug 7, 2026
 
-  Aug 7, 2026
+[Safeguards](safeguards.md)
 
-- Category
+Topics  
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+- [Healthcare](https://www.anthropic.com/search?topic=healthcare)
+- [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
+- [Access](https://www.anthropic.com/search?topic=access)
 
-  [Safeguards](safeguards.md)
-
-- Topics
-
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-  - [Healthcare](https://www.anthropic.com/search?topic=healthcare)
-  - [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
-  - [Access](https://www.anthropic.com/search?topic=access)
-
-  See more...
+See more...
 
 Related articles
 
@@ -37,7 +33,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=safeguards)
 
-We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces false positives. Fable 5 users will now experience many fewer “fallbacks”—where the system switches to a less capable model after they make a biology-related query. In our testing, this update reduced *biology-related* fallbacks by about 85% across our product surfaces.^([1](#footnote-1))
+We’re making updates to Claude Fable 5’s biology safeguards in a way that substantially reduces false positives. Fable 5 users will now experience many fewer “fallbacks”—where the system switches to a less capable model after they make a biology-related query. In our testing, this update reduced *biology-related* fallbacks by about 85% across our product surfaces.^([^1])
 
 Fable 5 will thus be able to assist with a wider range of biology tasks.
 
@@ -47,13 +43,13 @@ We believe the greatest opportunity for AI to positively affect the world is in 
 
 ### Why we built strong biology safeguards
 
-Our objective is to get Fable 5’s frontier capabilities into the hands of as many of our users as possible, as quickly as possible. However, to do so, we need to manage the increasing risks that come with models this capable. One such risk is in the field of biology: Fable 5 can now outperform experts on some highly complex biological tasks and provide operational support on others. That means that it can provide genuine assistance to a researcher developing a new medical treatment (which is the reason we’re so keen to widen access to the model via both classifier improvements and trusted access programs). But in the wrong hands, those same capabilities could be used by a malicious actor, for example in developing a biological weapon. Our [capability assessments](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) show that Fable 5 could provide significant *uplift* to such an actor—that is, it could provide them with capabilities they could not find anywhere else.
+Our objective is to get Fable 5’s frontier capabilities into the hands of as many of our users as possible, as quickly as possible. However, to do so, we need to manage the increasing risks that come with models this capable. One such risk is in the field of biology: Fable 5 can now outperform experts on some highly complex biological tasks and provide operational support on others. That means that it can provide genuine assistance to a researcher developing a new medical treatment (which is the reason we’re so keen to widen access to the model via both classifier improvements and trusted access programs). But in the wrong hands, those same capabilities could be used by a malicious actor, for example in developing a biological weapon. Our [capability assessments](https://assets.claude.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf) show that Fable 5 could provide significant *uplift* to such an actor—that is, it could provide them with capabilities they could not find anywhere else.
 
 It’s often difficult to tell apart beneficial and harmful uses of AI in biology. For example, in some cases researching a treatment for a disease requires scientists to produce the dangerous compounds that *cause* that disease in the first place. This is most obvious for live vaccines, which require scientists to grow the same pathogen they’re aiming to prevent. It’s also the case for some medicines. To develop the drug captopril, which treats hypertension, scientists isolated toxic components of snake venom that crash blood pressure in humans. As new biological capabilities develop on the frontier of AI, we need to be cautious to ensure that the new risks they pose do not materialize ahead of their potential scientific benefits.
 
 Sophisticated actors who wish to use our models to do harm know how to exploit this ambiguity to obscure their intent, making dangerous tasks look like ordinary research pursuits. The US Intelligence Community’s [2026 Annual Threat Assessment](https://www.dni.gov/files/ODNI/documents/assessments/ATA-2026-Unclassified-Report.pdf) makes clear that such actors exist, and that advances in biotechnology including synthetic biology and genomic editing *“could lead to novel biological threats.”* It notes that several state actors likely maintain active offensive biological and chemical weapons programs—programs that could be accelerated by access to the raw capabilities of frontier AI models.
 
-Because of our concerns about these “dual-use” capabilities (those that could be used for beneficial or harmful purposes, and where the line between them is not always easy to draw), we intentionally launched Fable 5 with almost all biology queries blocked. This enabled us to make the model available for users in other domains. We knew this would be frustrating for legitimate biology users: it would result in a high number of false positives in the near term, where users asking biology-related questions would have their requests blocked and sent to a less capable model. Nevertheless, we chose to make this tradeoff because the cost of Fable being misused in a dual-use domain like biology could potentially be [catastrophic](www-cdn-anthropic-com-for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md).
+Because of our concerns about these “dual-use” capabilities (those that could be used for beneficial or harmful purposes, and where the line between them is not always easy to draw), we intentionally launched Fable 5 with almost all biology queries blocked. This enabled us to make the model available for users in other domains. We knew this would be frustrating for legitimate biology users: it would result in a high number of false positives in the near term, where users asking biology-related questions would have their requests blocked and sent to a less capable model. Nevertheless, we chose to make this tradeoff because the cost of Fable being misused in a dual-use domain like biology could potentially be [catastrophic](https://assets.claude.com/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf).
 
 ### How our biology safeguards work
 
@@ -78,3 +74,5 @@ We hope you’ll continue to share your feedback with us so we can improve our s
 ## Footnotes
 
 01 As a result, we expect the total number of fallbacks—for biology–related or any other reasons—will also be reduced: by roughly 67% on [Claude.ai](http://Claude.ai), 55% on Cowork, 17% on Claude Code, and 7% on the Claude Platform.[](#footnote-ref-1)
+
+[^1]:

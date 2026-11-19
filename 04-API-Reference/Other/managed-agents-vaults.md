@@ -2,7 +2,7 @@
 title: "Authenticate with vaults - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/vaults"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:25Z"
+fetched_at: "2026-11-13T06:36:56Z"
 tags: ["api"]
 ---
 
@@ -20,18 +20,25 @@ Register per-user credentials when creating sessions.
 
 Vaults
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](#feature-availability)  
+- All models
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Vaults and credentials are authentication primitives that let you register credentials for third-party services once and reference them by ID at session creation. This means you don’t need to run your own secret store, transmit tokens on every call, or lose track of which end user an agent acted on behalf of.
 
@@ -477,32 +484,61 @@ The response is a `vault_credential_validation` object. `mcp_probe` includes the
 
 ## Availability
 
-Vaults are available on every model.
+Vaults
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Vaults are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+Claude API
 
-Models
+Status  
+Beta
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+API  
+- Managed Agents
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+managed-agents-2026-04-01
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- All models
 
-Header
+Claude Platform on AWS
 
-- `managed-agents-2026-04-01`
-  
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -516,8 +552,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

@@ -2,7 +2,7 @@
 title: "Connect to a Managed Agents session from your terminal - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-02T06:26:53Z"
+fetched_at: "2026-11-18T06:27:30Z"
 tags: ["agents", "api"]
 ---
 

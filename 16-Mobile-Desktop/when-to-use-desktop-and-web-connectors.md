@@ -2,7 +2,7 @@
 title: "When to use desktop and web connectors | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11725091-when-to-use-desktop-and-web-connectors"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:36Z"
+fetched_at: "2026-11-18T06:27:41Z"
 tags: ["connectors", "desktop", "plugins"]
 ---
 

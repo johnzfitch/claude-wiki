@@ -2,7 +2,7 @@
 title: "API key best practices: keep your keys safe and secure | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9767949-api-key-best-practices-keeping-your-keys-safe-and-secure"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:26:19Z"
+fetched_at: "2026-11-18T06:28:29Z"
 tags: ["api", "git", "github", "security"]
 ---
 

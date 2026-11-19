@@ -2,7 +2,7 @@
 title: "Published as a conference paper at COLM 2025"
 source_url: "https://www-cdn.anthropic.com/c16bed19d9e2653f2086345a88f3844d184e2e82.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-13T06:47:22Z"
+fetched_at: "2026-11-18T06:28:28Z"
 tags: ["news-research"]
 ---
 

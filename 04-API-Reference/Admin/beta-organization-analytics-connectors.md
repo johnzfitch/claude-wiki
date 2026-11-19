@@ -2,7 +2,7 @@
 title: "Connectors - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/connectors"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:53Z"
+fetched_at: "2026-11-13T06:34:12Z"
 tags: ["api", "connectors"]
 ---
 

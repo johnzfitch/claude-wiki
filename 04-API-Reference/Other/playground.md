@@ -1,8 +1,8 @@
 ---
-title: "Playground | Claude Platform"
-source_url: "https://platform.claude.com/playground"
+title: "Credential vaults | Claude Platform"
+source_url: "https://platform.claude.com/vaults"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-08T06:25:30Z"
+fetched_at: "2026-11-16T06:26:31Z"
 tags: ["api"]
 ---
 

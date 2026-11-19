@@ -2,7 +2,7 @@
 title: "How to update Claude for Android | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11825394-how-to-update-claude-for-android"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:37Z"
+fetched_at: "2026-11-18T06:27:42Z"
 tags: ["desktop"]
 ---
 

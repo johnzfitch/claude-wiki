@@ -2,34 +2,10 @@
 title: "Security - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/security"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-31T06:25:12Z"
-last_modified: "Sat, 31 Oct 2026 01:06:35 GMT"
-tags: ["claude-code", "enterprise", "security"]
+fetched_at: "2026-11-14T06:24:41Z"
+last_modified: "Sat, 14 Nov 2026 04:50:28 GMT"
+tags: ["claude-code", "enterprise", "mcp", "prompting", "security"]
 ---
-
-## On this page
-
-Back to top
-
-- [How we approach security](#how-we-approach-security)
-  - [Security foundation](#security-foundation)
-  - [Permission-based architecture](#permission-based-architecture)
-  - [Built-in protections](#built-in-protections)
-  - [User responsibility](#user-responsibility)
-- [Protect against prompt injection](#protect-against-prompt-injection)
-  - [Core protections](#core-protections)
-  - [Privacy safeguards](#privacy-safeguards)
-  - [Additional safeguards](#additional-safeguards)
-- [MCP security](#mcp-security)
-- [IDE security](#ide-security)
-- [Cloud execution security](#cloud-execution-security)
-- [Security best practices](#security-best-practices)
-  - [Working with sensitive code](#working-with-sensitive-code)
-  - [Team security](#team-security)
-  - [Reporting security issues](#reporting-security-issues)
-- [Related resources](#related-resources)
-
-Security and data
 
 # Security
 
@@ -39,22 +15,13 @@ Learn about Claude Code’s security safeguards and best practices for safe usag
 
 Copy pageCopy page
 
+## [](#how-we-approach-security)How we approach security
 
-[​](#how-we-approach-security)
-
-How we approach security
-
-
-[​](#security-foundation)
-
-Security foundation
+### [](#security-foundation)Security foundation
 
 Your code’s security is paramount. Claude Code is built with security at its core, developed according to Anthropic’s comprehensive security program. Learn more and access resources (SOC 2 Type 2 report, ISO 27001 certificate, etc.) at [Anthropic Trust Center](https://trust.anthropic.com).
 
-
-[​](#permission-based-architecture)
-
-Permission-based architecture
+### [](#permission-based-architecture)Permission-based architecture
 
 A session’s permission mode sets which actions Claude can take without asking you first. Auto mode is the built-in starting permission mode for interactive terminal and VS Code sessions. [Which mode a session starts in](../02-Claude-Code-CLI/permission-modes.md#which-mode-a-session-starts-in) covers earlier versions, other surfaces, and the settings that change the starting permission mode.
 
@@ -63,46 +30,31 @@ A session’s permission mode sets which actions Claude can take without asking 
 
 You and your organization configure these permissions directly. For detailed permission configuration, see [Permissions](../02-Claude-Code-CLI/permissions.md).
 
-
-[​](#built-in-protections)
-
-Built-in protections
+### [](#built-in-protections)Built-in protections
 
 To mitigate risks in agentic systems:
 
-- **Sandboxed bash tool**: [Sandbox](../02-Claude-Code-CLI/sandboxing.md) bash commands with filesystem and network isolation, reducing permission prompts while maintaining security. Configure with `/sandbox` to define boundaries where Claude Code can work autonomously
+- **Sandboxed Bash tool**: [Sandbox](../02-Claude-Code-CLI/sandboxing.md) Bash commands with filesystem and network isolation. Configure with `/sandbox`
 - **Working directory boundary**: In Manual mode, Claude Code asks you before its file tools read or write outside the folder where it was started and its subfolders. The boundary is a permission prompt, so a Bash command you approve can still write anywhere your user account can
   - To read a folder without the prompt, add it as an [additional directory](../02-Claude-Code-CLI/permissions.md#working-directories)
   - To restrict Bash commands at the operating system level, turn on [sandboxing](../02-Claude-Code-CLI/sandboxing.md#filesystem-isolation)
 - **Prompt fatigue mitigation**: Support for allowlisting frequently used safe commands per-user, per-codebase, or per-organization
 - **Accept Edits mode**: Auto-approves file edits and a fixed set of filesystem Bash commands like `mkdir`, `touch`, `rm`, `mv`, `cp`, and `sed` for paths in the working directory. Other Bash commands and out-of-scope paths still prompt
 
-
-[​](#user-responsibility)
-
-User responsibility
+### [](#user-responsibility)User responsibility
 
 You’re responsible for reviewing proposed code and commands for safety before approval.
 
-
-[​](#protect-against-prompt-injection)
-
-Protect against prompt injection
+## [](#protect-against-prompt-injection)Protect against prompt injection
 
 Prompt injection is a technique where an attacker attempts to override or manipulate an AI assistant’s instructions by inserting malicious text. Claude Code includes several safeguards against these attacks:
 
-
-[​](#core-protections)
-
-Core protections
+### [](#core-protections)Core protections
 
 - **Permission system**: In Manual mode, sensitive operations require explicit approval
 - **Network command approval**: Commands that fetch content from the web such as `curl` and `wget` are not auto-approved by default. In Manual mode they prompt like any other non-read-only Bash command, so you can still approve once or add an explicit allow rule like `Bash(curl *)`. To stop Claude from running them, add them to [`permissions.deny`](../02-Claude-Code-CLI/permissions.md#tool-specific-permission-rules). A deny rule matches the command [as written](../02-Claude-Code-CLI/permissions.md#bash-rule-limits); for network enforcement that doesn’t depend on the command text, see [sandbox network isolation](../02-Claude-Code-CLI/sandboxing.md#network-isolation)
 
-
-[​](#privacy-safeguards)
-
-Privacy safeguards
+### [](#privacy-safeguards)Privacy safeguards
 
 We have implemented several safeguards to protect your data, including:
 
@@ -112,17 +64,14 @@ We have implemented several safeguards to protect your data, including:
 
 For full details, please review our [Commercial Terms of Service](https://www.anthropic.com/legal/commercial-terms) (for Team, Enterprise, and API users) or [Consumer Terms](https://www.anthropic.com/legal/consumer-terms) (for Free, Pro, Max, and Ultra users) and [Privacy Policy](https://www.anthropic.com/legal/privacy).
 
-
-[​](#additional-safeguards)
-
-Additional safeguards
+### [](#additional-safeguards)Additional safeguards
 
 - **Network request approval**: In Manual mode, most tools that make network requests require user approval by default
 - **Web page summaries**: For most fetches, WebFetch runs a separate model call over the page, and Claude receives that call’s answer instead of the raw page. See [WebFetch tool behavior](../02-Claude-Code-CLI/tools-reference.md#webfetch-tool-behavior)
 - **Trust verification**: In an interactive session, Claude Code shows the workspace trust dialog when you start it in a folder you haven’t trusted. Servers in a project’s `.mcp.json` have their own approval prompt, and [Project scope](../06-MCP-Tools/General/mcp.md#project-scope) lists the sessions that skip it
   - Note: A `-p` session shows neither prompt. [What runs before you trust a folder](../02-Claude-Code-CLI/permissions.md#what-runs-before-you-trust-a-folder) lists what a repository’s files can run there
   - Note: When you start Claude Code directly in your home directory, trust acceptance is held for the current session only and is not written to disk, so the prompt reappears on each launch. There is no setting to persist it. Start Claude Code from a project subdirectory instead, where trust acceptance is saved per directory
-- **Command injection detection**: In Manual mode, Claude Code asks before running a Bash command it can’t fully analyze. An allow rule for part of a command, such as `Bash(git *)`, doesn’t skip that prompt. [Sandboxed commands](../02-Claude-Code-CLI/permissions.md#how-permissions-interact-with-sandboxing) can run without it
+- **Command injection detection**: In Manual mode, Claude Code asks before running a Bash command it can’t fully analyze. An allow rule for part of a command, such as `Bash(git *)`, doesn’t skip that prompt. [Sandboxed commands](../02-Claude-Code-CLI/permissions.md#how-permissions-interact-with-sandboxing) in [auto-allow mode](../02-Claude-Code-CLI/sandboxing.md#auto-allow-mode) can run without it
 - **Fail-closed matching**: In Manual mode, unmatched commands require approval by default
 - **Secure credential storage**: API keys and tokens are stored in the macOS Keychain when available. On Linux they’re stored in a file with mode `0600`, and on Windows in a file that inherits the access controls of your user profile directory. See [Credential Management](../02-Claude-Code-CLI/authentication.md#credential-management)
 
@@ -138,24 +87,15 @@ Additional safeguards
 
 While these protections significantly reduce risk, no system is completely immune to all attacks. Always maintain good security practices when working with any AI tool.
 
-
-[​](#mcp-security)
-
-MCP security
+## [](#mcp-security)MCP security
 
 You can connect Claude Code to Model Context Protocol (MCP) servers. Project-scoped servers are defined in `.mcp.json`, which you can check into source control. Servers at [other scopes](../06-MCP-Tools/General/mcp.md#mcp-installation-scopes) and [claude.ai connectors](../06-MCP-Tools/General/mcp.md#how-connectors-reach-claude-code) are configured outside the repository, and plugins can add servers too, so reviewing `.mcp.json` doesn’t show every server a session can load. To restrict which servers run in your organization, see [Managed MCP configuration](../06-MCP-Tools/General/managed-mcp.md). We encourage either writing your own MCP servers or using MCP servers from providers that you trust. You are able to configure Claude Code permissions for MCP servers. Anthropic reviews connectors against its [listing criteria](https://claude.com/docs/connectors/building/review-criteria) before adding them to the [Anthropic Directory](https://claude.ai/directory), but does not security-audit or manage any MCP server.
 
-
-[​](#ide-security)
-
-IDE security
+## [](#ide-security)IDE security
 
 See [The built-in IDE MCP server](../03-IDE-Integrations/vs-code.md#the-built-in-ide-mcp-server) for more information on running Claude Code in an IDE.
 
-
-[​](#cloud-execution-security)
-
-Cloud execution security
+## [](#cloud-execution-security)Cloud execution security
 
 When you use [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md), additional security controls are in place. Sessions your organization routes to a [self-hosted environment](self-hosted-environments.md) run on your own infrastructure, where isolation, network egress, and git credentials are your deployment’s responsibility. In Anthropic-hosted environments:
 
@@ -169,25 +109,16 @@ When you use [cloud sessions](../02-Claude-Code-CLI/claude-code-on-the-web.md), 
 
 For more details on cloud execution, see [Use Claude Code in the cloud](../02-Claude-Code-CLI/claude-code-on-the-web.md); to configure network access for cloud sessions, see [Configure cloud environments](../02-Claude-Code-CLI/cloud-environments.md#network-access). [Remote Control](../02-Claude-Code-CLI/remote-control.md) sessions work differently: the web interface connects to a Claude Code process running on your local machine. All code execution and file access stays local, and session traffic travels through the Anthropic API over TLS; while connected, the session transcript is stored on Anthropic servers to sync the conversation across devices, as described in [Connection and security](../02-Claude-Code-CLI/remote-control.md#connection-and-security). No cloud VMs or sandboxing are involved. The connection uses multiple short-lived, narrowly scoped credentials, each limited to a specific purpose and expiring independently, to limit the blast radius of any single compromised credential.
 
+## [](#security-best-practices)Security best practices
 
-[​](#security-best-practices)
-
-Security best practices
-
-
-[​](#working-with-sensitive-code)
-
-Working with sensitive code
+### [](#working-with-sensitive-code)Working with sensitive code
 
 - Review all suggested changes before approval
 - Use project-specific permission settings for sensitive repositories
 - For additional isolation, run the whole Claude Code (local mode) process inside the [sandbox runtime](../02-Claude-Code-CLI/sandbox-environments.md#sandbox-runtime) or a [dev container](../02-Claude-Code-CLI/devcontainer.md)
 - Regularly audit your permission settings with `/permissions`
 
-
-[​](#team-security)
-
-Team security
+### [](#team-security)Team security
 
 - Use [managed settings](../02-Claude-Code-CLI/settings.md#where-settings-live) to enforce organizational standards
 - Share approved permission configurations through version control
@@ -195,10 +126,7 @@ Team security
 - Monitor Claude Code usage through [OpenTelemetry metrics](monitoring-usage.md)
 - Audit or block settings changes during sessions with [`ConfigChange` hooks](../07-Hooks/hooks.md#configchange)
 
-
-[​](#reporting-security-issues)
-
-Reporting security issues
+### [](#reporting-security-issues)Reporting security issues
 
 If you discover a security vulnerability in Claude Code:
 
@@ -207,10 +135,7 @@ If you discover a security vulnerability in Claude Code:
 3.  Include detailed reproduction steps
 4.  Allow time for us to address the issue before public disclosure
 
-
-[​](#related-resources)
-
-Related resources
+## [](#related-resources)Related resources
 
 - [Security guidance plugin](../02-Claude-Code-CLI/security-guidance.md): have Claude review and fix vulnerabilities in its own code changes during the session
 - [`/security-review`](../02-Claude-Code-CLI/commands.md#all-commands): run an on-demand security pass over the changes on your current branch

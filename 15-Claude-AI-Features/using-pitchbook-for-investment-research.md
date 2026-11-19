@@ -2,7 +2,7 @@
 title: "Using PitchBook for investment research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12621857-using-pitchbook-for-investment-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-07T06:24:14Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -52,7 +52,7 @@ Claude accesses PitchBook data to help build your analyses. Here are several exa
 
 ## Setting Up PitchBook Integration[](#setting-up-pitchbook-integration)
 
-Technical details of the PitchBook Integration can be found in the [PitchBook Premium Integration MCP Service Documentation(opens in new tab)](https://help.pitchbook.com/s/article/PitchBook-Premium-for-Claude-by-Anthropic). Users must possess Single Sign-On (SSO) credentials and a seat-based, unlimited, or trial PitchBook license.
+For technical details of the PitchBook integration, see the [PitchBook Premium Integration MCP Service Documentation(opens in new tab)](https://help.pitchbook.com/s/article/PitchBook-Premium-for-Claude-by-Anthropic). Users must possess Single Sign-On (SSO) credentials and a seat-based, unlimited, or trial PitchBook license.
 
 If your account does not have access to the MCP service, please contact your account representative.
 
@@ -60,7 +60,7 @@ If your account does not have access to the MCP service, please contact your acc
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector" at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Access the MCP URL via SSO here: [https://premium.mcp.pitchbook.com/mcp(opens in new tab)](https://premium.mcp.pitchbook.com/mcp)
 

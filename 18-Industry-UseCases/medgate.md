@@ -2,7 +2,7 @@
 title: "Medgate Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/medgate"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:09Z"
+fetched_at: "2026-11-18T06:29:20Z"
 tags: ["case-studies", "claude-code"]
 ---
 
@@ -36,9 +36,11 @@ Transform healthcare from insight to action
 
 [Read more](../19-Reference/healthcare-life-sciences.md)
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [Medgate](https://www.medgate.ch), one of Europe’s largest telemedicine providers, connects 2.5 million patients to doctors remotely across Switzerland and Germany—handling approximately 3,000 consultations daily during peak winter periods. The company operates critical healthcare infrastructure that requires both agility and absolute dependability. Working with [OWT](https://www.owt.swiss/en/)—a Swisscom company and Switzerland’s leading technology consultancy—Medgate deployed Claude Code in a three-month pilot with four teams and approximately 15 engineers, and has since decided to roll it out across the organization.
 

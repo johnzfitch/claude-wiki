@@ -2,7 +2,7 @@
 title: "Life sciences AI adoption index | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/life-sciences/ai-adoption-index"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:01Z"
+fetched_at: "2026-11-18T06:29:37Z"
 tags: ["case-studies", "enterprise"]
 ---
 

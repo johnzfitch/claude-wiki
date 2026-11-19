@@ -2,7 +2,7 @@
 title: "Enforce network-level access control with Tenant Restrictions | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13198485-enforce-network-level-access-control-with-tenant-restrictions"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:25:45Z"
+fetched_at: "2026-11-18T06:28:22Z"
 tags: ["enterprise", "security"]
 ---
 
@@ -123,6 +123,8 @@ If your proxy sends the headers incorrectly, requests fail with a 400 status and
 - Cato Networks (Tenant Restriction policy)
 
 - Cloudflare Zero Trust / Gateway (HTTP policy, add custom request headers)
+
+- Island (header injection in Island Enterprise Browser, Island Extension, and Secure Web Gateway)
 
 - Netskope (Header Insertion rules)
 

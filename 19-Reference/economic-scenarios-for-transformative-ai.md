@@ -2,7 +2,7 @@
 title: "Economic Scenarios for Transformative AI∗"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-11T06:28:52Z"
+fetched_at: "2026-11-18T06:28:36Z"
 tags: ["news-research"]
 ---
 
@@ -1041,8 +1041,8 @@ quits and each origin’s inflow equals its outflow,
                                                                      𝑆¯𝑗                      ¯
                                                                                            𝜒 𝑆𝑜
 
-                                                       ¯ the search discount of normal times, 𝑆¯𝑗
-for 𝑜 ∈ {𝐶 , 𝑁 }, where 𝜇¯ 𝑜𝑜 = 1 and 𝜇¯𝐶 𝑁 = 𝜇¯ 𝑁 𝐶 = 𝜇,
+                                                       𝜇, the search discount of normal times, 𝑆¯𝑗
+for 𝑜 ∈ {𝐶 , 𝑁 }, where 𝜇¯ 𝑜𝑜 = 1 and 𝜇¯𝐶 𝑁 = 𝜇¯ 𝑁 𝐶 = ¯
 is Equation (33) at the steady-state stocks with 𝜇¯ in place of 𝜇, and 𝑈¯𝐶 + 𝑈¯𝑁 = 𝑈¯ . The first
 two conditions split the pool between the two origins, and with it the aggregate finding rate
 𝑓¯ = 𝑞¯ (𝐿 − 𝑈¯ )/𝑈¯ that the pool implies. The third inverts the matching function at the steady
@@ -1225,10 +1225,10 @@ D. The labor market in normal times (Section 2.3); common to the scenarios
 𝑞𝑜𝑇 /𝑞¯𝑜        share of quits that                     0.55                elasticity of JOLTS quits to the CPS
                 responds to job                                             finding rate (U.S. Bureau of Labor
                 prospects                                                   Statistics, 2026a) (Section 3.2)
-𝑞¯𝐶 /𝑞;
-     ¯ 𝑞¯𝑁 /𝑞¯ relative separation rates             0.69; 1.52             IPUMS-CPS 2010–19 (Flood et al., 2025)
-               by group
-𝑈¯             normal search pool,                     0.038                CPS 2025 (U.S. Bureau of Labor Statistics,
+𝑞¯𝐶 / ¯
+     𝑞; 𝑞¯𝑁 /𝑞¯ relative separation rates            0.69; 1.52             IPUMS-CPS 2010–19 (Flood et al., 2025)
+                by group
+𝑈¯              normal search pool,                    0.038                CPS 2025 (U.S. Bureau of Labor Statistics,
                 share of 𝐿                                                  2026b)
 𝜇¯              search discount in                      0.17                CPS 2010–19 switching matrix from the
                 normal times                                                replication files of Carrillo-Tudela and
@@ -1307,7 +1307,7 @@ the pool imply a quit rate of 0.219 × 3.84/96.16 = 0.875 percent of employment 
 0.105 a year. We round it to 0.11 a year, or 0.92 percent a month, and at that value the finding
 rate in the model’s steady state is 0.23 a month. Splitting the quit rate into the ratio of the two
 separation rates gives 0.63 percent a month for cognitive workers and 1.40 for all other workers.
-    Second, the search discount 𝜇. ¯ By Equation (35), a cognitive job-finder’s odds of landing in
+    Second, the search discount ¯ 𝜇. By Equation (35), a cognitive job-finder’s odds of landing in
 the all-other group are 𝜇¯ times that group’s hiring rate relative to the cognitive group’s, and the
 odds that a job-finder from the all-other group lands in a cognitive job are 𝜇¯ times the inverse of
 that ratio. Multiplying the two odds cancels the ratio and leaves 𝜇¯ 2 . The occupational switching
@@ -1425,9 +1425,9 @@ example, nominal cuts became common in 2009 and 2020, and during the inflation o
 
                                               Routine business                A working            A small online business,      A Nobel-level
                                             emails and documents           software product            no employees           scientific discovery
+
+
 percent saying AI will be able to
-
-
                                     100
 
                                                                  75
@@ -1993,7 +1993,7 @@ best manage the transition to powerful AI.
 A.      Simulation procedure
 
 The model is simulated on a monthly grid. Rates quoted as fractions per period are converted
-to continuously compounded rates. For example, a quit fraction 𝑞ˆ enters as 𝑞 = − ln(1 − 𝑞).   ˆ
+to continuously compounded rates. For example, a quit fraction 𝑞ˆ enters as 𝑞 = − ln(1 − ˆ    𝑞).
 At 𝑡0 the AI objects are near the start of their paths, so that the GDP gap they imply is at most
 a quarter of a percent, and the flow block starts from the steady state (38), evaluated at the
 normal-times search discount 𝜇¯ in every scenario. The scenario’s own 𝜇 enters Equations (33)
@@ -2202,7 +2202,7 @@ Filling rates, 𝜋¯𝑜 , 𝜒    (38)                                        
 Notes. Rows written with = hold exactly given their right-hand sides; rows written with ≈ hold to first order. The exact rows of panel
 B read the technology instance by instance (Proposition 1); “first order” rows are the alternatives to the row above them, and one
 set or the other is run. ℎ = 1/12; 𝑠𝐾 ,𝑡0 = 1 − 𝑠𝐿,𝑡0 ; 𝑞¯𝑜 = 𝑞𝑜𝑋 + 𝑞𝑜𝑇 ; 𝑆¯𝑗 is the effective-search row at the steady-state pools and the
-normal-times discount 𝜇.     ¯ Rows in 𝑜 or 𝑗 stand for one equation per group; on the scenario paths 𝐺 𝑁 ,𝑡 is zero and 𝐵𝐶 ,𝑡 is negligible,
+normal-times discount ¯     𝜇. Rows in 𝑜 or 𝑗 stand for one equation per group; on the scenario paths 𝐺 𝑁 ,𝑡 is zero and 𝐵𝐶 ,𝑡 is negligible,
 so that layoffs occur only in 𝐶 and shortfall postings only in 𝑁 , as in the text. The targets at 𝑡 + 1 in panel C are the ℓ˜𝑁 ,𝑡 and target
 rows of panel B evaluated at the date-(𝑡 + 1) paths, which are exogenous; they do not involve the rental rate. Predetermined
 at 𝑡 are Δ ln 𝐴𝑡 , ℓ𝑜,𝑡 , 𝑈𝑜,𝑡 , 𝑓𝑜,𝑡 −1 , and 𝑤𝐶 ,𝑡 −1 /𝑤𝑡 −1 , with initial conditions Δ ln 𝐴𝑡0 = 0, ℓ𝑜,𝑡0 = (𝑠𝑜,𝑡0 /𝑠𝐿,𝑡0 ) (𝐿 − 𝑈¯ ), 𝑈𝑜,𝑡0 = 𝑈¯𝑜 ,
@@ -2283,26 +2283,26 @@ E. Scenario paths for goods and services (Section 2.1.2); all of them fall on th
                                                                                                     continued on the next page
 
                                                                  44
-                                 ECONOMIC SCENARIOS FOR TRANSFORMATIVE AI
+                                  ECONOMIC SCENARIOS FOR TRANSFORMATIVE AI
 
 
 Table A.2, continued
 
-Symbol                   Meaning (substantial scenario’s value where the text gives one)
+Symbol                    Meaning (substantial scenario’s value where the text gives one)
 
-𝜓𝑡                       automation share: fraction of AI-performed instances that are automated (0.75; modest
-                         0.50, extreme 0.90; constant in the scenarios)
-𝜌                        reinstatement ratio: new labor-task mass per unit of automated mass, the new tasks
-                         belonging to 𝐶 (0.25; modest 0.50, extreme 0; constant)
-𝑚,          ¯ 𝜅𝑑 , 𝑡 𝑑
-¯ 𝜅𝑚 , 𝑡𝑚 ; 𝑑,           ceilings, slopes, and midpoints of the logistic paths of 𝑚𝑡 and 𝑑𝑡 ; the ceilings are the
-                         natural maxima, 𝑚¯ = 𝑠𝐶 ,𝑡0 /𝑠𝐿,𝑡0 and 𝑑¯ = 1; a scenario sets the values at the start of 2030
-                         (𝑚 2030 = 0.3, 𝑑2030 = 0.4; modest 0.2, 0.2; extreme 0.5, 0.6), and slope and midpoint
-                         follow from them and the mid-2026 anchors by Equation (8′) (𝜅𝑚 = 0.33, 𝜅𝑑 = 0.51;
-                         modest 0.14, 0.23; extreme 0.75, 0.74)
-𝑎0 , 𝑔𝑎                  level of the gain at 𝑡 0 and its linear slope per year (𝑔 𝑎 = 0.028; modest 0, extreme 0.10; the
-                         gain in mid-2026 is 0.35, 0.30, and 0.45)
-𝜓 , 𝜓¯ , 𝜅𝜓 , 𝑡𝜓         floor, ceiling, slope, and midpoint of the logistic path of 𝜓𝑡
+𝜓𝑡                        automation share: fraction of AI-performed instances that are automated (0.75; modest
+                          0.50, extreme 0.90; constant in the scenarios)
+𝜌                         reinstatement ratio: new labor-task mass per unit of automated mass, the new tasks
+                          belonging to 𝐶 (0.25; modest 0.50, extreme 0; constant)
+¯            ¯ 𝜅𝑑 , 𝑡 𝑑
+𝑚, 𝜅𝑚 , 𝑡𝑚 ; 𝑑,           ceilings, slopes, and midpoints of the logistic paths of 𝑚𝑡 and 𝑑𝑡 ; the ceilings are the
+                          natural maxima, 𝑚¯ = 𝑠𝐶 ,𝑡0 /𝑠𝐿,𝑡0 and 𝑑¯ = 1; a scenario sets the values at the start of 2030
+                          (𝑚 2030 = 0.3, 𝑑2030 = 0.4; modest 0.2, 0.2; extreme 0.5, 0.6), and slope and midpoint
+                          follow from them and the mid-2026 anchors by Equation (8′) (𝜅𝑚 = 0.33, 𝜅𝑑 = 0.51;
+                          modest 0.14, 0.23; extreme 0.75, 0.74)
+𝑎0 , 𝑔𝑎                   level of the gain at 𝑡 0 and its linear slope per year (𝑔 𝑎 = 0.028; modest 0, extreme 0.10; the
+                          gain in mid-2026 is 0.35, 0.30, and 0.45)
+𝜓 , 𝜓¯ , 𝜅𝜓 , 𝑡𝜓          floor, ceiling, slope, and midpoint of the logistic path of 𝜓𝑡
 
 
 B.        The survey of US adults
@@ -2337,7 +2337,7 @@ In the following, we describe the questions posed in the survey:
  1. Capability. When do you think AI software will be able to do each of the following as well as
 
 
-                                                         45
+                                                          45
                             ECONOMIC SCENARIOS FOR TRANSFORMATIVE AI
 
 

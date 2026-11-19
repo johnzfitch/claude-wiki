@@ -2,7 +2,7 @@
 title: "Using FactSet for comprehensive financial research · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220212-using-factset-for-comprehensive-financial-research"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:49Z"
+fetched_at: "2026-11-18T06:27:45Z"
 tags: ["claude-ai", "search"]
 ---
 
@@ -48,7 +48,7 @@ Claude applies FactSet's data to support comprehensive analysis:
 ### For Organization Owners[](#for-organization-owners)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
-2.  Scroll down and click “Add custom connector" at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 3.  Enter the FactSet integration URL (provided by your FactSet representative)
 4.  Name the integration (e.g., "FactSet")
 5.  Click "Add"

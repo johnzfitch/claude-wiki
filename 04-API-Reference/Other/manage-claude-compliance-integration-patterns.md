@@ -2,7 +2,7 @@
 title: "Design your compliance integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-integration-patterns"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:14Z"
+fetched_at: "2026-11-13T06:36:43Z"
 tags: ["api"]
 ---
 
@@ -74,7 +74,7 @@ Even with clean tiling, an activity that indexes after its window has closed nev
 
 
 
-A `created_at.lt` bound too close to the present silently and permanently drops late-indexed activities: once `created_at.gte` advances past them, no later window can recover them. Treat the 1-minute queryability figure as the documented indexing lag, not a soft recommendation.
+A `created_at.lt` bound too close to the present silently and permanently drops late-indexed activities: once `created_at.gte` advances past them, no later window can recover them. Treat the 1-minute queryability figure as the documented indexing lag, not a soft recommendation. Security posture activities can take longer than 1 minute to become queryable; see [Send Security posture events to your SIEM](manage-claude-compliance-security-posture-send-events.md#run-it-on-a-schedule).
 
 ### Cursor-driven incremental reads
 
@@ -140,7 +140,7 @@ Six retention horizons govern what you can retrieve later:
 | Activity Feed records | 6 years | Anthropic |
 | Chat, file, and project content | Your organization’s claude.ai retention policy, unless a user deletes it sooner | Your organization |
 | Local session transcripts (sessions on users’ machines) | 6 years by default, or your organization’s custom conversation retention period when a finite one is set; 30 days in organizations with HIPAA readiness enabled | Anthropic by default; your organization when it sets a custom period |
-| Cowork remote session transcripts (sessions in the cloud) | 6 years, unless a user deletes the session sooner | Anthropic |
+| Remote session transcripts (sessions in the cloud), other than Claude Tag | No default period; see [Retention and deletion](manage-claude-compliance-sessions.md#retention-and-deletion) | Your users by default; also your organization’s retention policy for sessions that Claude starts from a chat |
 | Claude Tag session transcripts (sessions in the cloud) | No default period; deleted with their channel or Slack workspace (see [Retention and deletion](manage-claude-compliance-sessions.md#retention-and-deletion)) | Your organization |
 | Content hard-deleted through the Compliance API | Not retained; deletion is immediate and permanent | The caller of the `DELETE` endpoint |
 
@@ -148,9 +148,9 @@ To learn how the rest of the Claude Platform handles retention, see [API and dat
 
 Decide between export-and-archive and on-demand API retrieval as follows:
 
-- If your legal-hold or audit horizon exceeds 6 years for activity metadata or session transcripts, export Activity Feed pages and session transcripts to your own archive as you ingest them.
+- If your legal-hold or audit horizon exceeds 6 years for activity metadata or local session transcripts, export Activity Feed pages and local session transcripts to your own archive as you ingest them.
 - If your content-retention policy is shorter than your eDiscovery horizon, export chat and file content before the retention window expires; the Compliance API cannot return content that retention has already removed. The same applies to local session transcripts, which follow your organization’s custom conversation retention period when a finite one is set, even when that period is shorter than 6 years. The local session endpoints stop returning messages older than your organization’s current period as soon as the setting changes, and lengthening the period later does not restore transcripts that have already expired, so export any transcript you must keep beyond it.
-- If you must retain chat content or remote session transcripts after users delete them in claude.ai (for example, under a legal hold), export chat, file, artifact, and remote session content to your own archive as you ingest it; the Compliance API cannot return content that a user has already deleted.
+- If you must retain chat content or remote session transcripts after they are deleted (for example, under a legal hold), export chat, file, artifact, and remote session content to your own archive as you ingest it; the Compliance API cannot return content that has already been deleted.
 - If you must retain Claude Tag session transcripts, export them to your own archive as you ingest them. Removing a channel, deleting it in Slack, or disconnecting a Slack workspace deletes them, and the Compliance API cannot return them after that.
 - If a workflow might issue a Compliance API hard-delete (for example, DLP enforcement), retrieve and archive the target content first. There is no recovery window after a hard-delete.
 
@@ -181,7 +181,7 @@ The content endpoints (chats, files, projects, project attachments, and local an
 - Local session transcript content in an organization whose [customer-managed encryption key](manage-claude-cmek.md) cannot currently be used. Those requests return [503 Service Unavailable](manage-claude-compliance-errors.md#local-sessions-temporarily-unavailable), and session metadata is still listed.
 - Content removed by your organization’s retention policy.
 - Content of chats that users delete in claude.ai (the chats are still listed, with `deleted_at` populated).
-- Remote sessions that have been deleted (deleted sessions are no longer listed, and the messages endpoint returns 404 for them).
+- Remote sessions that have been deleted (deleted sessions are not listed, and the messages endpoint returns 404 for them).
 - Content hard-deleted through the Compliance API.
 
 See the [Compliance API FAQ](manage-claude-compliance-faq.md#data-coverage-and-retention) for more on what the Compliance API does and does not capture.

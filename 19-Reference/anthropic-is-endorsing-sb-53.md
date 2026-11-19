@@ -2,29 +2,25 @@
 title: "Anthropic is endorsing SB 53 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/anthropic-is-endorsing-sb-53"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:24Z"
+fetched_at: "2026-11-14T06:26:25Z"
 tags: ["news-research"]
 ---
 
 # Anthropic is endorsing SB 53
 
-- Published
+Published  
+Sep 8, 2025
 
-  Sep 8, 2025
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
+- [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+- [Race to the top](https://www.anthropic.com/search?topic=race-to-the-top)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
-  - [Race to the top](https://www.anthropic.com/search?topic=race-to-the-top)
-
-  See more...
+See more...
 
 Related articles
 
@@ -50,7 +46,7 @@ SB 53 would require large companies developing the most powerful AI systems to:
 - Provide clear whistleblower protections that cover violations of these requirements as well as specific and substantial dangers to public health/safety from catastrophic risk.
 - Be publicly accountable for the commitments made in their frameworks or face monetary penalties.
 
-These requirements would formalize practices that Anthropic and many other frontier AI companies already follow. At Anthropic, we publish our [Responsible Scaling Policy](https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf), detailing how we evaluate and mitigate risks as our models become more capable. We release comprehensive [system cards](https://www-cdn.anthropic.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf) that document model capabilities and limitations. Other frontier labs ([Google DeepMind](https://deepmind.google/discover/blog/introducing-the-frontier-safety-framework/), [OpenAI](https://openai.com/index/updating-our-preparedness-framework/), [Microsoft](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Frontier-Governance-Framework.pdf)) have adopted similar approaches while vigorously competing at the frontier. Now all covered models will be legally held to this standard. The bill also appropriately focuses on large companies developing the most powerful AI systems, while providing exemptions for startups and smaller companies that are less likely to develop powerful models and should not bear unnecessary regulatory burdens.
+These requirements would formalize practices that Anthropic and many other frontier AI companies already follow. At Anthropic, we publish our [Responsible Scaling Policy](https://assets.claude.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf), detailing how we evaluate and mitigate risks as our models become more capable. We release comprehensive [system cards](https://assets.claude.com/07b2a3f9902ee19fe39a36ca638e5ae987bc64dd.pdf) that document model capabilities and limitations. Other frontier labs ([Google DeepMind](https://deepmind.google/discover/blog/introducing-the-frontier-safety-framework/), [OpenAI](https://openai.com/index/updating-our-preparedness-framework/), [Microsoft](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/Microsoft-Frontier-Governance-Framework.pdf)) have adopted similar approaches while vigorously competing at the frontier. Now all covered models will be legally held to this standard. The bill also appropriately focuses on large companies developing the most powerful AI systems, while providing exemptions for startups and smaller companies that are less likely to develop powerful models and should not bear unnecessary regulatory burdens.
 
 SB 53’s transparency requirements will have an important impact on frontier AI safety. Without it, labs with increasingly powerful models could face growing incentives to dial back their own safety and disclosure programs in order to compete. But with SB 53, developers can compete while ensuring they remain transparent about AI capabilities that pose risks to public safety, creating a level playing field where disclosure is mandatory, not optional.
 

@@ -2,13 +2,13 @@
 title: "Claude Fable 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/fable-5/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:36:31Z"
+fetched_at: "2026-11-13T06:35:13Z"
 tags: ["models"]
 ---
 
-Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.1.
+Although Claude Fable 5 is still available, you should consider migrating to Claude Fable 5.2.
 
-[See Claude Fable 5.1](models-fable-5-1-overview.md)
+[See Claude Fable 5.2](models-fable-5-2-overview.md)
 
 [Models & pricing](about-claude-models-overview.md)Legacy models
 
@@ -20,7 +20,7 @@ Although Claude Fable 5 is still available, you should consider migrating to Cla
 
 claude-fable-5
 
-[Migrate to Claude Fable 5.1](models-fable-5-1-migration-guide.md#migrating-from-claude-fable-5-to-claude-fable-5-1)
+[Migrate to Claude Fable 5.2](models-fable-5-2-migration-guide.md#migrating-from-claude-fable-5-to-claude-fable-5-2)
 
 Copy page
 
@@ -131,13 +131,13 @@ Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-i
 
 ## Resources
 
-[Migrate to Claude Fable 5.1](models-fable-5-1-migration-guide.md#migrating-from-claude-fable-5-to-claude-fable-5-1)
+[Migrate to Claude Fable 5.2](models-fable-5-2-migration-guide.md#migrating-from-claude-fable-5-to-claude-fable-5-2)
 
-What changes when moving from Claude Fable 5 to Claude Fable 5.1.
+What changes when moving from Claude Fable 5 to Claude Fable 5.2.
 
 
 
-[Claude Fable 5.1](models-fable-5-1-overview.md)
+[Claude Fable 5.2](models-fable-5-2-overview.md)
 
 The current Fable model: overview, specs, and resources.
 

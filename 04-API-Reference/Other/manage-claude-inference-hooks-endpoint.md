@@ -2,7 +2,7 @@
 title: "Develop an Inference hooks integration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/inference-hooks-endpoint"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-08T06:24:41Z"
+fetched_at: "2026-11-16T06:26:17Z"
 tags: ["api", "hooks", "prompting"]
 ---
 

@@ -27,13 +27,13 @@
 - [Rewind file changes with checkpointing - Claude Code Docs](agent-sdk-file-checkpointing.md) — Control and observability
 - [Scale to many tools with tool search - Claude Code Docs](agent-sdk-tool-search.md) — Scale your agent to thousands of tools by discovering and loading only what’s needed, on demand.
 - [Securely deploying AI agents - Claude Code Docs](agent-sdk-secure-deployment.md) — A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls
+- [Send messages to a running agent - Claude Code Docs](agent-sdk-streaming-vs-single-mode.md) — Send follow-up messages and images to one Agent SDK session with streaming input, read each response, and interrupt a response to redirect Claude.
 - [Slash Commands in the SDK - Claude Code Docs](agent-sdk-slash-commands.md) — Learn how to use slash commands to control Claude Code sessions through the SDK
 - [Stream responses in real-time - Claude Code Docs](agent-sdk-streaming-output.md) — Get real-time responses from the Agent SDK as text and tool calls stream in
-- [Streaming Input - Claude Code Docs](agent-sdk-streaming-vs-single-mode.md) — Understanding the two input modes for Claude Agent SDK and when to use each
 - [Subagents in the SDK - Claude Code Docs](agent-sdk-subagents.md) — Define and invoke subagents to isolate context, run tasks in parallel, and apply specialized instructions in your Claude Agent SDK applications.
 - [Track cost and usage - Claude Code Docs](agent-sdk-cost-tracking.md) — Control and observability
 - [Track todos - Claude Code Docs](agent-sdk-todo-tracking.md) — Control and observability
-- [Troubleshoot the Agent SDK - Claude Code Docs](agent-sdk-troubleshooting.md) — Fix Agent SDK errors when the Claude Code CLI fails to start, the CLI process exits, or a successful result arrives without structured output.
+- [Troubleshoot the Agent SDK - Claude Code Docs](agent-sdk-troubleshooting.md) — Fix Agent SDK errors: the Claude Code CLI fails to start or exits, your prompt generator throws, a tool message is too large, or structured output is missing.
 - [TypeScript SDK V2 session API (removed) - Claude Code Docs](agent-sdk-typescript-v2-preview.md) — Reference for the removed V2 TypeScript Agent SDK session API, with session-based send/stream patterns for multi-turn conversations.
 - [Use Claude Code features in the SDK - Claude Code Docs](agent-sdk-claude-code-features.md) — Load project instructions, skills, hooks, and other Claude Code features into your SDK agents.
 - [Work with sessions - Claude Code Docs](agent-sdk-sessions.md) — How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run.

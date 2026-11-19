@@ -2,7 +2,7 @@
 title: "Rate Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rate_limits"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:26:47Z"
+fetched_at: "2026-11-14T06:24:50Z"
 tags: ["api"]
 ---
 

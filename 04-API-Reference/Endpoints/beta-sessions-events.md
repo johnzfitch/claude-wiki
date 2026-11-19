@@ -2,7 +2,7 @@
 title: "Events - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/sessions/events"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:04Z"
+fetched_at: "2026-11-13T06:35:54Z"
 tags: ["api"]
 ---
 
@@ -26,19 +26,19 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/sessions/{session_id}/events
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Send Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/send)
 
 POST/v1/sessions/{session_id}/events
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Stream Events](https://platform.claude.com/docs/en/api/http/beta/sessions/events/stream)
 
 GET/v1/sessions/{session_id}/events/stream
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 
@@ -92,7 +92,7 @@ BetaManagedAgentsAgentAutoEvaluatedPermissionDeny object{ type: "deny", reason_c
 
 
 
-The server judged the invocation high-risk; it does not execute and a synthetic error tool result is appended.
+The server judged the invocation high-risk, or reached no judgement and did not hold it for client approval (for example, because the organization is out of credits or has reached a spend limit); it does not execute and a synthetic error tool result is appended.
 
 type: "deny"
 
@@ -104,7 +104,7 @@ reason_code: string
 
 
 
-The judgement's grounds in registry-bound terms. Open registry; currently "high_risk" (judged high-risk; the call does not run). Clients must tolerate values outside this set.
+The judgement's grounds in registry-bound terms. Open registry; currently "high_risk" (judged high-risk; the call does not run) and "indeterminate" (no judgement was reached; the call does not run). Clients must tolerate values outside this set.
 
 maxLength64
 

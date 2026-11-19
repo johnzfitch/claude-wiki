@@ -2,7 +2,7 @@
 title: "Models, usage, and limits in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552983-models-usage-and-limits-in-claude-code"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:27Z"
+fetched_at: "2026-11-18T06:27:59Z"
 tags: ["claude-code", "safety"]
 ---
 

@@ -2,7 +2,7 @@
 title: "List Models - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/models/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:42Z"
+fetched_at: "2026-11-13T06:34:40Z"
 tags: ["api"]
 ---
 

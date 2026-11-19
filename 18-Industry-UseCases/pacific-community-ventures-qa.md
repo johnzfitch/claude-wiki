@@ -2,7 +2,7 @@
 title: "Pacific Community Ventures Q&A | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pacific-community-ventures-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:46Z"
+fetched_at: "2026-11-18T06:29:03Z"
 tags: ["case-studies", "search"]
 ---
 

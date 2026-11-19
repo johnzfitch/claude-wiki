@@ -2,7 +2,7 @@
 title: "Text editor tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/text-editor-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:32Z"
+fetched_at: "2026-11-13T06:35:19Z"
 tags: ["api"]
 ---
 
@@ -23,11 +23,19 @@ Text editor tool
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Claude can use an Anthropic-schema text editor tool to view and modify text files, helping you debug, fix, and improve your code or other text documents. This allows Claude to directly interact with your files, providing hands-on assistance rather than just suggesting changes.
 
@@ -158,7 +166,7 @@ Parameters:
 - `path`: The path to the file or directory to view
 - `view_range` (optional): An array of two integers specifying the start and end line numbers to view. Line numbers are 1-indexed, and -1 for the end line means read to the end of the file. This parameter only applies when viewing files, not directories.
 
-### Example view commands
+### Example view commands
 
 Example for viewing a file:
 
@@ -203,7 +211,7 @@ Parameters:
 - `old_str`: The text to replace (must match exactly, including whitespace and indentation)
 - `new_str`: The new text to insert in place of the old text
 
-### Example str_replace command
+### Example str_replace command
 
 ```python
 {
@@ -231,7 +239,7 @@ Parameters:
 - `path`: The path where the new file should be created
 - `file_text`: The content to write to the new file
 
-### Example create command
+### Example create command
 
 ```python
 {
@@ -259,7 +267,7 @@ Parameters:
 - `insert_line`: The line number after which to insert the text (0 for beginning of file)
 - `insert_text`: The text to insert
 
-### Example insert command
+### Example insert command
 
 ```python
 {
@@ -652,7 +660,7 @@ When implementing the text editor tool, keep in mind:
 
 When using the text editor tool, various errors might occur. Here is guidance on how to handle them:
 
-### File not found
+### File not found
 
 If Claude attempts to view or modify a file that doesn’t exist, return an appropriate error message in the `tool_result`:
 
@@ -672,7 +680,7 @@ If Claude attempts to view or modify a file that doesn’t exist, return an appr
 
 
 
-### Multiple matches for replacement
+### Multiple matches for replacement
 
 If Claude’s `str_replace` command matches multiple locations in the file, return an appropriate error message:
 
@@ -692,7 +700,7 @@ If Claude’s `str_replace` command matches multiple locations in the file, retu
 
 
 
-### No matches for replacement
+### No matches for replacement
 
 If Claude’s `str_replace` command doesn’t match any text in the file, return an appropriate error message:
 
@@ -712,7 +720,7 @@ If Claude’s `str_replace` command doesn’t match any text in the file, return
 
 
 
-### Permission errors
+### Permission errors
 
 If there are permission issues with creating, reading, or modifying files, return an appropriate error message:
 
@@ -734,7 +742,7 @@ If there are permission issues with creating, reading, or modifying files, retur
 
 ### Follow implementation best practices
 
-### Provide clear context
+### Provide clear context
 
 When asking Claude to fix or modify code, be specific about what files to examine or what issues to address. Clear context helps Claude identify the right files and make appropriate changes.
 
@@ -742,7 +750,7 @@ When asking Claude to fix or modify code, be specific about what files to examin
 
 **Better prompt:** “There’s a syntax error in my primes.py file that prevents it from running. Can you fix it?”
 
-### Be explicit about file paths
+### Be explicit about file paths
 
 Specify file paths clearly when needed, especially if you’re working with multiple files or files in different directories.
 
@@ -750,7 +758,7 @@ Specify file paths clearly when needed, especially if you’re working with mult
 
 **Better prompt:** “Can you check my utils/helpers.py file for any performance issues?”
 
-### Create backups before editing
+### Create backups before editing
 
 Implement a backup system in your application that creates copies of files before allowing Claude to edit them, especially for important or production code.
 
@@ -781,7 +789,7 @@ def backup_file(file_path):
             dst.write(src.read())
 ```
 
-### Handle unique text replacement carefully
+### Handle unique text replacement carefully
 
 The `str_replace` command requires an exact match for the text to be replaced. Your application should ensure that there is exactly one match for the old text or provide appropriate error messages.
 
@@ -821,7 +829,7 @@ def safe_replace(file_path, old_text, new_text):
         return "Successfully replaced text"
 ```
 
-### Verify changes
+### Verify changes
 
 After Claude makes changes to a file, verify the changes by running tests or checking that the code still works as expected.
 
@@ -915,20 +923,61 @@ Run shell commands with Claude.
 
 ## Availability
 
-Text editor tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Text editor tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Text editor tool are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

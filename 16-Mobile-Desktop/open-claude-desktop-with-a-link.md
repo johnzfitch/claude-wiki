@@ -2,7 +2,7 @@
 title: "Open Claude Desktop with a link | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14729294-open-claude-desktop-with-a-link"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:26:04Z"
+fetched_at: "2026-11-18T06:28:29Z"
 tags: ["claude-code", "desktop"]
 ---
 

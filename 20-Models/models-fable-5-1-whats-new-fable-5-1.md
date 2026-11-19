@@ -252,7 +252,7 @@ Claude Fable 5.1 is available on:
 
 Claude Mythos 5.1 is available only to organizations verified through Anthropic’s verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). To request access, apply to the program that covers your use case, or contact your Anthropic, AWS, or Google Cloud account team.
 
-Claude Fable 5.1 and Claude Mythos 5.1 carry 30-day data retention and aren’t available under zero data retention unless expressly authorized by Anthropic. Both are [Covered Models](../15-Claude-AI-Features/covered-models-claude-help-center.md), like Claude Fable 5 and Claude Mythos 5. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+Claude Fable 5.1 and Claude Mythos 5.1 carry 30-day data retention and aren’t available under zero data retention unless expressly authorized by Anthropic. Both are [Covered Models](https://support.claude.com/en/articles/15425695), like Claude Fable 5 and Claude Mythos 5. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
 
 ## Migrate from Claude Fable 5
 

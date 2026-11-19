@@ -2,14 +2,14 @@
 title: "Covered Models under a Business Associate Agreement (BAA) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15455031-covered-models-under-a-business-associate-agreement-baa"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:31Z"
+fetched_at: "2026-11-18T06:28:01Z"
 tags: ["claude-ai", "rag"]
 ---
 
 # Covered Models under a Business Associate Agreement (BAA)
 
 
-This article is for organizations that use Anthropic's HIPAA-ready services under a Business Associate Agreement (BAA). It explains which configurations are Eligible Services under the BAA and whether you can access Covered Models. **Your organization is responsible for ensuring its use of these services complies with applicable legal obligations.** Learn about **[Business Associate Agreements (BAA) for Commercial Customers](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md)** and **[Covered Models](https://support.claude.com/en/articles/15425695-covered-models)**.
+This article is for organizations that use Anthropic's HIPAA-ready services under a Business Associate Agreement (BAA). It explains which configurations are Eligible Services under the BAA and whether you can access Covered Models. **Your organization is responsible for ensuring its use of these services complies with applicable legal obligations.** Learn about **[Business Associate Agreements (BAA) for Commercial Customers](../13-Enterprise-Admin/business-associate-agreements-baa-for-commercial-customers.md)** and **[Covered Models](covered-models.md)**.
 
 **Important:** You can access Covered Models under Anthropic's BAA in these ways:
 
@@ -21,7 +21,7 @@ This article is for organizations that use Anthropic's HIPAA-ready services unde
 
 ## Covered Models and data retention
 
-Covered Models, like Claude Fable 5, require 30-day data retention on every platform where they're offered, as part of our safety work, and they can't be accessed from organizations or workspaces with zero data retention (ZDR) enabled. Learn about **[data retention practices for Mythos-class models](../20-Models/data-retention-practices-for-mythos-class-models.md)**.
+**[Covered Models](covered-models.md#h_008eefd6e6)** require 30-day data retention on every platform where they're offered, as part of our safety work, and they can't be accessed from organizations or workspaces with zero data retention (ZDR) enabled. Learn about **[data retention practices for Covered Models](https://support.claude.com/en/articles/15425996)**.
 
 Access to newly released Covered Models rolls out in stages on subscription and seat-based Enterprise plans, so a model may not appear for your organization right away—no configuration change is needed. Some Covered Models are available only to approved partners under limited access programs.
 
@@ -42,7 +42,7 @@ Requests to a Covered Model from a ZDR-enabled organization or workspace return 
 
 To access Covered Models in configurations that are covered under the BAA:
 
-- **For API workloads: use a HIPAA-ready API organization.** This configuration operates with standard retention, so your applications can access Covered Models, including Claude Fable 5. If your organization doesn't have a HIPAA-ready API organization yet, contact your Anthropic account team to set one up. Note that Claude Code isn't an Eligible Service on a HIPAA-ready API organization. Learn more **[about HIPAA-ready API access](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)**.
+- **For API workloads: use a HIPAA-ready API organization.** This configuration operates with standard retention, so your applications can access Covered Models. If your organization doesn't have a HIPAA-ready API organization yet, contact your Anthropic account team to set one up. Note that Claude Code isn't an Eligible Service on a HIPAA-ready API organization. Learn more **[about HIPAA-ready API access](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#hipaa-readiness)**.
 
 - **For Chat: use a HIPAA-ready Claude Enterprise plan.** Chat operates with standard retention, so it can access Covered Models with no configuration change. If your organization hasn't activated HIPAA readiness on its Enterprise plan, learn how in **[HIPAA-ready Enterprise plans](../17-Billing-Plans/hipaa-ready-enterprise-plans.md)**.
 
@@ -50,13 +50,14 @@ To access Covered Models in configurations that are covered under the BAA:
 
 **Important:** Without the HIPAA configuration applied to Claude Code (local mode) and Cowork (local mode), the BAA covers Claude Code only with ZDR enabled, and Claude Code with ZDR enabled can't use Covered Models unless Anthropic has expressly authorized it for your organization. Without the HIPAA configuration, Cowork isn't an Eligible Service under the BAA. You can use Covered Models in Claude Code or Cowork in those cases, but that use isn't covered under your BAA, so don't submit protected health information (PHI).
 
+
 ## How to access Covered Models outside the BAA
 
 To access Covered Models in configurations that aren't covered under the BAA:
 
 - **On a 1P API organization with zero data retention enabled, you have two options:**
 
-  - Enable standard retention in a dedicated workspace: go to the **Data retention** page (platform.claude.com/settings/privacy) and select the workspace from the dropdown menu at the top of the page. Your other workspaces keep ZDR. See **[Data retention practices for Mythos-class models](../20-Models/data-retention-practices-for-mythos-class-models.md#h_7008995545)** for instructions.
+  - Enable standard retention in a dedicated workspace: go to the **Data retention** page (platform.claude.com/settings/privacy) and select the workspace from the dropdown menu at the top of the page. Your other workspaces keep ZDR. See **[Data retention practices for Mythos-class models](https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models#h_7008995545)** for instructions.
 
   - Contact your Anthropic account team to remove ZDR from the organization entirely.
 

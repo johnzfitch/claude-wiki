@@ -2,7 +2,7 @@
 title: "Organization webhooks - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/organization-webhooks"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-06T06:27:05Z"
+fetched_at: "2026-11-14T06:25:35Z"
 tags: ["api", "hooks"]
 ---
 

@@ -2,7 +2,7 @@
 title: "What is the Team plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9266767-what-is-the-team-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:43Z"
+fetched_at: "2026-11-18T06:28:42Z"
 tags: ["billing"]
 ---
 
@@ -31,7 +31,7 @@ Users with Standard seats on the Team plan can access the following:
 
   - **Role-based permissioning:** Customize access levels and control user privileges across your organization.
 
-- **Spend controls:** Set spending caps at organization and individual user levels.
+- **Spend controls:** Set spending caps for your organization, and for individual users where available.
 
 - **Enterprise search capabilities:** Dedicated search project for unified knowledge access.
 
@@ -45,7 +45,7 @@ Users with Standard seats on the Team plan can access the following:
 
 - **Connectors for your workplace tools:** Connect Claude to Google Drive, Gmail, Google Calendar, GitHub, Microsoft 365, and Slack to search and retrieve context from your existing documents, emails, calendars, and team communications—without manual uploads.
 
-- **Monthly API credits:** Claude Max, Ultra, and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+- **Monthly API credits:** Claude Max, Ultra, and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 - **Everything in Pro, including:**
 
@@ -53,7 +53,7 @@ Users with Standard seats on the Team plan can access the following:
 
   - Access to Claude Code to delegate coding tasks from concept to completion directly from your terminal.
 
-  - Access to **[Cowork](https://support.claude.com/en/articles/13345190-get-started-with-cowork)**.
+  - Access to **[Cowork](../15-Claude-AI-Features/get-started-with-cowork.md)**.
 
   - Access to projects, knowledge bases, and collaboration features.
 
@@ -93,7 +93,7 @@ Prices shown are for US customers and exclude applicable taxes. Pricing, currenc
 
 For more details on billing, see **[How is my Team plan bill calculated?](how-is-my-team-plan-bill-calculated.md)**
 
-Team plans support up to 150 seats. If your organization is on the Team plan and needs more than 150 seats, you can upgrade to the **[Enterprise plan](what-is-the-enterprise-plan.md)**. For more information, see **[Migrate your organization from Team to Enterprise](../13-Enterprise-Admin/migrate-your-organization-from-team-to-enterprise.md)**.
+Team plans support up to 150 seats. If your organization is on the Team plan and needs more than 150 seats, you can upgrade to the **[Enterprise plan](what-is-the-enterprise-plan.md)**. For more information, see **[Migrate your organization from Team to Enterprise](https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise)**.
 
 Price and plans are subject to change at Anthropic's discretion.
 

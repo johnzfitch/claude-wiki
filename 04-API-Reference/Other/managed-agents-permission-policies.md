@@ -2,7 +2,7 @@
 title: "Permission policies - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/permission-policies"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:12Z"
+fetched_at: "2026-11-13T06:35:09Z"
 tags: ["api"]
 ---
 
@@ -23,20 +23,25 @@ Permission policies
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](#feature-availability)  
+- All models
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
-Permission policies control whether server-executed tools (the pre-built agent toolset and MCP toolset) run automatically, wait for your approval, or have each call evaluated by the server. Custom tools are run by your application and controlled by you, so they are not governed by permission policies.
+Permission policies apply to server-executed tools: the prebuilt agent toolset and MCP toolsets. A policy determines whether a tool’s calls run automatically, wait for your approval, or go to the server, which evaluates each call. Custom tools run in your application, under your control, so permission policies don’t apply to custom tools.
 
 ## Permission policy types
 
@@ -214,7 +219,7 @@ tools:
 ---
 ```
 
-Pass this `tools` configuration in the agent create request (the CLI tab shows the complete command). MCP toolsets support the same per-tool overrides, with `name` set to the tool name reported by the MCP server. See [Configure which MCP tools are available](managed-agents-mcp-connector.md#configure-which-mcp-tools-are-available).
+Pass this `tools` configuration when you create the agent. MCP toolsets support the same per-tool overrides, with `name` set to the tool name reported by the MCP server. See [Configure which MCP tools are available](managed-agents-mcp-connector.md#configure-which-mcp-tools-are-available).
 
 ## Let the server evaluate each call with `auto`
 
@@ -395,25 +400,25 @@ Python
 ```python
 # Allow the tool to run
 client.beta.sessions.events.send(
-    session.id,
+    "sesn_011CZkZAtmR3yMPDzynEDxu7",
     events=[
         {
             "type": "user.tool_confirmation",
-            "tool_use_id": agent_tool_use_event.id,
+            "tool_use_id": "sevt_011CZkZbMpR8aS3Wtv5Yq2Ln",
             "result": "allow",
         },
     ],
 )
 
-# Or deny it with an explanation
+# Deny another call with an explanation
 client.beta.sessions.events.send(
-    session.id,
+    "sesn_011CZkZAtmR3yMPDzynEDxu7",
     events=[
         {
             "type": "user.tool_confirmation",
-            "tool_use_id": mcp_tool_use_event.id,
+            "tool_use_id": "sevt_011CZkZcNqT9bT4Xuw6Zr3Mo",
             "result": "deny",
-            "deny_message": "Don't create issues in the production project. Use the staging project.",
+            "deny_message": "Do not create issues in the production project. Use the staging project.",
         },
     ],
 )
@@ -439,30 +444,61 @@ Send events, stream responses, and interrupt or redirect your session while it r
 
 ## Availability
 
-Permission policies are in beta on every model.
+Permission policies
 
-### API support
+Cloud platform
 
-Usage
+Cloud platform: Claude API
 
-Always on
+Availability requirements for Permission policies are the same across all supported platforms.
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- All supported platforms
+API  
+- Managed Agents
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+managed-agents-2026-04-01
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- All models
 
-Header
+Claude Platform on AWS
 
-- `managed-agents-2026-04-01`
-  
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -476,8 +512,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

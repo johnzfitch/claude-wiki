@@ -2,7 +2,7 @@
 title: "Claude Sonnet 4.6 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/sonnet-4-6/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:16Z"
+fetched_at: "2026-11-13T06:34:15Z"
 tags: ["models"]
 ---
 
@@ -51,8 +51,8 @@ Output pricing
 Claude API  
 claude-sonnet-4-6
 
-[Amazon Bedrock (InvokeModel)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)  
-anthropic.claude-sonnet-4-6
+[Amazon Bedrock (bedrock-runtime)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)  
+global.anthropic.claude-sonnet-4-6
 
 [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)  
 claude-sonnet-4-6
@@ -126,7 +126,7 @@ Retirement
 Not sooner than February 17, 2027
 
 Platforms  
-Claude API[Amazon Bedrock (InvokeModel)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)
+Claude API[Amazon Bedrock (bedrock-runtime)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)[Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)[Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md)[Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)
 
 ## Resources
 
@@ -170,6 +170,6 @@ Lifecycle status and retirement commitments for every Claude model.
 
 
 
-[Amazon Bedrock (Opus 4.6 and earlier)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
+[Amazon Bedrock (bedrock-runtime)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 
-Claude Sonnet 4.6 uses the InvokeModel Bedrock integration and Bedrock-style model IDs.
+Claude Sonnet 4.6 is on the `bedrock-runtime` endpoint (the InvokeModel and Converse APIs), with Bedrock-style model IDs.

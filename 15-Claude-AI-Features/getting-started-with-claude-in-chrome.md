@@ -2,7 +2,7 @@
 title: "Get started with Claude in Chrome | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12012173-getting-started-with-claude-in-chrome"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:38Z"
+fetched_at: "2026-11-18T06:27:43Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -37,7 +37,7 @@ This integration is especially useful for design verification (comparing Figma m
 
 When you start a chat, task, or session in Claude Cowork that touches a website, Claude can open the browser directly in Chrome and do the work, clicking, typing, and filling out forms the way a person would. You can let Claude handle work in the browser without switching windows.
 
-**Note:** Claude Cowork also has a browser built into the Claude Desktop app, with nothing to install. It's rolling out gradually this week. If you already use Claude in Chrome, it stays your preferred browser for Cowork; otherwise Cowork uses the built-in browser by default. Choose either one in **Settings \> Cowork \> Preferred browser**. Learn more in **[Use the built-in browser in Claude Cowork](use-the-built-in-browser-in-claude-cowork-claude-help-center.md)**.
+**Note:** Claude Cowork also has a browser built into the Claude Desktop app, with nothing to install. It's rolling out gradually this week. If you already use Claude in Chrome, it stays your preferred browser for Cowork; otherwise Cowork uses the built-in browser by default. Choose either one in **Settings \> Cowork \> Preferred browser**. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
 Follow these steps to connect Claude in Chrome in your desktop app:
 

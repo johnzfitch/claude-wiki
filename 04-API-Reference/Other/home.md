@@ -1,8 +1,8 @@
 ---
 title: "Documentation - Claude Platform Docs"
-source_url: "https://platform.claude.com/docs/en/home"
+source_url: "https://platform.claude.com/docs"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:35Z"
+fetched_at: "2026-11-13T06:35:09Z"
 tags: ["api"]
 ---
 
@@ -162,7 +162,7 @@ Models
 
 Choose the right model for your use case.
 
-### [Fable 5.1](../../20-Models/models-fable-5-1-overview.md)
+### [Fable 5.2](../../20-Models/models-fable-5-2-overview.md)
 
 New
 
@@ -206,13 +206,13 @@ Interactive courses to master Claude.
 
 
 
-[Cookbook](https://platform.claude.com/cookbook)
+[Claude Cookbook](https://platform.claude.com/cookbook)
 
 Code samples and patterns.
 
 
 
-[Quickstarts](https://github.com/anthropics/anthropic-quickstarts)
+[Quickstarts](https://github.com/anthropics/claude-quickstarts)
 
 Deployable starter apps.
 

@@ -2,7 +2,7 @@
 title: "Claude for financial services overview · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12219959-claude-for-financial-services-overview"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-07T06:22:21Z"
+fetched_at: "2026-11-18T06:27:45Z"
 tags: ["claude-ai"]
 ---
 
@@ -102,7 +102,7 @@ When working on complex analyses, consider using Claude's projects feature to or
 - Keep different analysis phases organized in dedicated project spaces
 - Maintain clear naming conventions for easy reference
 
-Projects allow you to build a knowledge base that Claude can reference across multiple conversations, maintaining context throughout your analysis. For more information about projects, see [What are projects?(opens in new tab)](what-are-projects.md)
+Projects allow you to build a knowledge base that Claude can reference across multiple conversations, maintaining context throughout your analysis. For more information about projects, see [What are projects?(opens in new tab)](https://support.claude.com/en/articles/9517075-what-are-projects)
 
 ## Current limitations[](#current-limitations)
 

@@ -2,11 +2,14 @@
 title: "Voice dictation - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/voice-dictation"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-23T06:28:27Z"
+fetched_at: "2026-11-13T06:35:04Z"
+last_modified: "Fri, 13 Nov 2026 06:21:46 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Requirements](#requirements)
 - [Enable voice dictation](#enable-voice-dictation)

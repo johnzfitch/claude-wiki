@@ -2,29 +2,25 @@
 title: "Detecting and countering malicious uses of Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:07Z"
+fetched_at: "2026-11-14T06:26:25Z"
 tags: ["news-research"]
 ---
 
 # **Detecting and countering malicious uses of Claude: **March 2025
 
-- Published
+Published  
+Apr 23, 2025
 
-  Apr 23, 2025
+[Security](security.md)
 
-- Category
+Topics  
+- [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+- [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
 
-  [Security](security.md)
-
-- Topics
-
-  - [Threat Intelligence](https://www.anthropic.com/search?topic=threat-intelligence)
-  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
-  - [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-
-  See more...
+See more...
 
 Related articles
 
@@ -40,7 +36,7 @@ We are committed to preventing misuse of our Claude models by adversarial actors
 
 This report outlines several case studies on how actors have misused our models, as well as the steps we have taken to detect and counter such misuse. By sharing these insights, we hope to protect the safety of our users, prevent abuse or misuse of our services, enforce our Usage Policy and other terms, and share our learnings for the benefit of the wider online ecosystem. The case studies presented in this report, while specific, are representative of broader patterns we're observing across our monitoring systems. These examples were selected because they clearly illustrate emerging trends in how malicious actors are adapting to and leveraging frontier AI models. We hope to contribute to a broader understanding of the evolving threat landscape and help the wider AI ecosystem develop more robust safeguards.
 
-The most novel case of misuse detected was a professional 'influence-as-a-service' operation showcasing a distinct evolution in how certain actors are leveraging LLMs for influence operation campaigns. What is especially novel is that this operation used Claude not just for content generation, but also to decide when social media bot accounts would comment, like, or re-share posts from authentic social media users. As described in the full report, Claude was used as an orchestrator deciding what actions social media bot accounts should take based on politically motivated personas. **Read the full report [here](anthropic-is-a-public-benefit.md)**.
+The most novel case of misuse detected was a professional 'influence-as-a-service' operation showcasing a distinct evolution in how certain actors are leveraging LLMs for influence operation campaigns. What is especially novel is that this operation used Claude not just for content generation, but also to decide when social media bot accounts would comment, like, or re-share posts from authentic social media users. As described in the full report, Claude was used as an orchestrator deciding what actions social media bot accounts should take based on politically motivated personas. **Read the full report [here](https://assets.claude.com/45bc6adf039848841ed9e47051fb1209d6bb2b26.pdf)**.
 
 We have also observed cases of credential stuffing operations, recruitment fraud campaigns, and a novice actor using AI to enhance their technical capabilities for malware generation beyond their skill level, among other activities not mentioned in this blog. The impact of these activities varies:
 
@@ -58,7 +54,7 @@ Our intelligence program is meant to be a safety net by both finding harms not c
 
 The case studies below highlight the types of threats we have detected and provide insights into how threat actors are adapting their operations to leverage generative AI.
 
-### Case Study: Operating Multi-Client Influence Networks Across Platforms \[full report available [here](anthropic-is-a-public-benefit.md)\]
+### Case Study: Operating Multi-Client Influence Networks Across Platforms \[full report available [here](https://assets.claude.com/45bc6adf039848841ed9e47051fb1209d6bb2b26.pdf)\]
 
 We identified and banned an actor using Claude for a financially-motivated "influence-as-a-service" operation. This actor’s infrastructure leveraged Claude to orchestrate over a hundred social media bot accounts for the purpose of pushing their clients political narratives. These political narratives are consistent with what we expect from state affiliated campaigns, however we have not confirmed this attribution. Most significantly, the operation utilized Claude to make tactical engagement decisions such as determining whether social media bot accounts should like, share, comment on, or ignore specific posts created by other accounts based on political objectives aligned with their clients' interests.
 

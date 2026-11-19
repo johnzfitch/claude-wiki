@@ -2,7 +2,7 @@
 title: "Cancel a Message Batch - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages/batches/cancel"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:50Z"
+fetched_at: "2026-11-13T06:33:47Z"
 tags: ["api"]
 ---
 

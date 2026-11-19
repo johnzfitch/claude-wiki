@@ -1,9 +1,9 @@
 ---
 title: "Prompts - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/2026-07-28/server/prompts"
+source_url: "https://modelcontextprotocol.io/specification/draft/server/prompts"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:25:29Z"
-last_modified: "Fri, 30 Oct 2026 20:39:03 GMT"
+fetched_at: "2026-11-10T06:32:03Z"
+last_modified: "Mon, 09 Nov 2026 23:43:11 GMT"
 tags: ["mcp", "mcp-spec", "prompting"]
 ---
 
@@ -40,7 +40,7 @@ Copy pageCopy page
 
 The Model Context Protocol (MCP) provides a standardized way for servers to expose prompt templates to clients. Prompts allow servers to provide structured messages and instructions for interacting with language models. Clients can discover available prompts, retrieve their contents, and provide arguments to customize them.
 
-For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta).
+For brevity, the request examples on this page omit the `_meta` request metadata (`io.modelcontextprotocol/protocolVersion`, `io.modelcontextprotocol/clientInfo`, and `io.modelcontextprotocol/clientCapabilities`). Every request **MUST** include the required `_meta` fields; see [`_meta`](https://modelcontextprotocol.io/specification/draft/basic/index#meta).
 
 
 [​](#user-interaction-model)
@@ -56,7 +56,7 @@ However, implementors are free to expose prompts through any interface pattern t
 
 Capabilities
 
-Servers that support prompts **MUST** declare the `prompts` capability in their [`DiscoverResult`](2026-07-28-schema.md#discoverresult):
+Servers that support prompts **MUST** declare the `prompts` capability in their [`DiscoverResult`](draft-schema.md#discoverresult):
 
 ```python
 {

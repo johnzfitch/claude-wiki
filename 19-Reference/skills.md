@@ -2,7 +2,7 @@
 title: "Introducing Agent Skills | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/skills"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:51Z"
+fetched_at: "2026-11-18T06:28:44Z"
 tags: ["agents", "news-research", "skills"]
 ---
 
@@ -23,13 +23,20 @@ tags: ["agents", "news-research", "skills"]
 - 
 
 
+Contents
+
+1.  [How Skills work](#how-skills-work)
+2.  [Skills work with every Claude product](#skills-work-with-every-claude-product)
+3.  [Getting started](#getting-started)
+4.  [What's next](#what-s-next)
+
 ***Update:** We've added [organization-wide management for skills](https://www.anthropic.com/resources/articles/organization-skills-and-directory), a [directory](../04-API-Reference/Other/partners-mcp.md) featuring partner-built skills, and published [Agent Skills](https://agentskills.io) as an open standard for cross-platform portability. (December 18, 2025)*
 
 Claude can now use *Skills* to improve how it performs specific tasks. Skills are folders that include instructions, scripts, and resources that Claude can load when needed.
 
 Claude will only access a skill when it's relevant to the task at hand. When used, skills make Claude better at [specialized tasks](https://claude.com/resources/articles/improving-frontend-design-through-skills) like working with Excel or following your organization's brand guidelines.
 
-You've already seen Skills at work in Claude apps, where Claude uses them to create files like spreadsheets and presentations. Now, you can build your own skills and use them across Claude apps, Claude Code, and our API.
+You've already seen Skills at work in Claude apps, where Claude uses them to [create files like spreadsheets and presentations](https://claude.com/resources/articles/create-files). Now, you can build your own skills and use them across Claude apps, Claude Code, and our API.
 
 ## How Skills work
 
@@ -131,29 +138,31 @@ Keep in mind, this feature gives Claude access to execute code. While powerful, 
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleNov 5, 2026
+ArticleNov 17, 2026
 
-### Introducing Personal Finance in Claude
-
-Ask Claude about your money and get straight answers from the accounts you connect.
-
-
-ArticleNov 5, 2026
-
-### More visibility and control over Claude Enterprise for security teams
-
-Claude EnterpriseClaude apps
-
-
-ArticleNov 4, 2026
-
-### New agents and products for security, productivity, and creative work on Claude Marketplace
-
-
-ArticleNov 2, 2026
-
-### Make long-running agents faster with message threads
-
-New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
+### Linked billing on the Claude Platform
 
 Claude Platform
+
+
+ArticleNov 12, 2026
+
+### Operate Claude Managed Agents inside your security perimeter
+
+Introducing self-hosted Claude Managed Agents. Now you can run agents in your own environment, whether that’s in your own cloud or on-premise. You host the agents, credentials, and session history, and choose where requests to Claude are sent.
+
+Claude PlatformClaude Managed Agents
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude for Manufacturing
+
+A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude Meetings
+
+Add Claude to your video call and get the work started while you talk

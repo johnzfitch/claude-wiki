@@ -2,7 +2,7 @@
 title: "Skills - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/skills"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:48Z"
+fetched_at: "2026-11-13T06:34:14Z"
 tags: ["agents", "api", "git", "github", "skills"]
 ---
 
@@ -20,18 +20,22 @@ Attach pre-built or custom skills to an agent in Claude Managed Agents to give i
 
 [Managed Agents](managed-agents-overview.md)
 
-[Status](managed-agents-overview.md#availability-feature-support)  
 Beta
 
-[Cloud platforms](managed-agents-overview.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](managed-agents-overview.md#feature-availability)  
+- All models
 
-[Beta header](managed-agents-overview.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](managed-agents-overview.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-overview.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-overview.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Skills are reusable, filesystem-based resources that give your agent domain-specific expertise: workflows, context, and best practices that turn a general-purpose agent into a specialist. Each skill you add incurs a modest cost on the session’s context window, adding instructions and metadata that help the model use the skill. Learn more in the [Agent Skills](../Agents-Tools/agents-and-tools-agent-skills-overview.md) overview.
 
@@ -46,7 +50,7 @@ To learn how to author custom skills, see [Agent Skills](../Agents-Tools/agents-
 
 A custom skill is a directory containing a `SKILL.md` file plus any supporting files, uploaded to your workspace as a zip archive or as individual files. Creating the skill returns the `skill_*` ID you reference when attaching it to an agent. Anthropic pre-built skills are already available in every workspace and don’t require this step. To use only pre-built skills, skip to [Attach skills to an agent](#attach-skills-to-an-agent).
 
-These examples omit the optional `display_name` field, so the skill’s display name is derived from the `name` field in `SKILL.md`. An explicit `display_name` can be up to 255 characters and doesn’t need to be unique within your workspace.
+These examples omit the optional `display_name` field, so the skill’s display name comes from the `name` field in `SKILL.md`. An explicit `display_name` can be up to 255 characters and doesn’t need to be unique within your workspace.
 
 cURL
 
@@ -93,7 +97,7 @@ List what changed, why, and anything a reviewer should look at closely, in three
 
 [`ant apply`](cli-sdks-libraries-cli-apply.md) uploads the `skills/pr-summary` directory, prints the new skill’s ID, and records it in `claude-lock.json`. Commit `claude-lock.json` so the next `ant apply` uploads your edits as a new version instead of creating a second skill.
 
-To list, retrieve, delete, and version custom skills, see [Managing custom skills](../Guides/build-with-claude-skills-guide.md#managing-custom-skills). For the full request and response schemas, see the [Create Skill](../Endpoints/skills-create.md) API reference. Skill bundles upload directly to the Skills API rather than through the [Files API](../Guides/build-with-claude-files.md).
+To list, retrieve, delete, and version custom skills, see [Managing custom skills](../Guides/build-with-claude-skills-guide.md#managing-custom-skills). For the full request and response schemas, see the [Create Skill](../Endpoints/skills-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. API reference. Skill bundles upload directly to the Skills API rather than through the [Files API](../Guides/build-with-claude-files.md).
 
 ## Attach skills to an agent
 
@@ -160,7 +164,7 @@ You are a financial analysis agent.
 
 ## Load skills from a GitHub repository
 
-Skills can also live in your code base. When a session mounts a repository through the [`github_repository` resource](managed-agents-github.md), the repository’s root `.claude/skills` directory is scanned at session start, and each skill found there becomes available to the agent. No upload and no entry in the agent’s `skills` array are required. The agent receives each discovered skill’s name, description, and path in the sandbox, and reads the skill’s `SKILL.md` when a task matches, including any scripts and resources the skill ships. Discovery relies on the agent’s `read` tool from the [agent toolset](managed-agents-tools.md), which is enabled by default; an agent with `read` disabled doesn’t load repository skills.
+Skills can also live in your code base. When a session mounts a repository through the [`github_repository` resource](managed-agents-github.md), a scan of the repository’s root `.claude/skills` directory runs at session start. Each skill found there becomes available to the agent. You don’t need to upload these skills or add them to the agent’s `skills` array. The agent receives each discovered skill’s name, description, and path in the sandbox. When a task matches, the agent reads the skill’s `SKILL.md`, including any scripts and resources the skill ships. Discovery relies on the agent’s `read` tool from the [agent toolset](managed-agents-tools.md), which is enabled by default; an agent with `read` disabled doesn’t load repository skills.
 
 
 
@@ -236,7 +240,7 @@ For private repositories, the resource’s `authorization_token` must have acces
 
 Discovered skills follow the checked-out state of the repository: the `checkout` branch or commit when the resource sets one, otherwise the repository’s default branch. The scan runs once, when the session starts. Commits pushed mid-session are not picked up; to load updated skills, start a new session.
 
-Repository skills work alongside skills attached through the agent’s `skills` array. If a repository skill shares a name with an attached skill, or with a skill from another mounted repository, both are available; each is announced with its own path.
+Repository skills work alongside skills attached through the agent’s `skills` array. If a repository skill shares a name with an attached skill, or with a skill from another mounted repository, both are available. The agent receives each one with its own path.
 
 ## Next steps
 

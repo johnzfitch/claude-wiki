@@ -2,7 +2,7 @@
 title: "How do I change the email address associated with my account? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8452276-how-do-i-change-the-email-address-associated-with-my-account"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:26:01Z"
+fetched_at: "2026-11-18T06:28:12Z"
 tags: ["account"]
 ---
 
@@ -38,4 +38,4 @@ If you want to use the same phone number to verify your new Claude account, you 
 After cancelling your previous subscription and unlinking your phone number, you can delete your account by navigating to **[Settings \> Account](https://claude.ai/settings/account)**, clicking "Delete Account," and following the prompts. **Please note that deleting your account is permanent** and you will no longer have access to saved chats. If you wish to keep your data, we recommend exporting it before deletion by following the steps in **[How can I export my Claude data?](https://support.claude.com/en/articles/9450526-how-can-i-export-my-claude-data)**
 
   
-If you see "Contact support" instead of a "Delete account" button, you'll need to **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** to request assistance with deletion.
+If you see "Contact support" instead of a "Delete account" button, you'll need to **[reach out to our Support team](../15-Claude-AI-Features/how-to-get-support.md)** to request assistance with deletion.

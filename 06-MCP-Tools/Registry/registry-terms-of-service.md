@@ -2,8 +2,8 @@
 title: "Official MCP Registry Terms of Service - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/terms-of-service"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-31T06:25:20Z"
-last_modified: "Fri, 30 Oct 2026 22:45:40 GMT"
+fetched_at: "2026-11-10T06:28:30Z"
+last_modified: "Tue, 10 Nov 2026 04:53:50 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 

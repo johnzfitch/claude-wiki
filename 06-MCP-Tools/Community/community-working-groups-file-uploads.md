@@ -2,7 +2,8 @@
 title: "File Uploads Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/file-uploads"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-10-27T06:26:31Z"
+fetched_at: "2026-11-11T06:25:53Z"
+last_modified: "Wed, 11 Nov 2026 05:13:09 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
@@ -25,7 +26,7 @@ Back to top
   - [Success Criteria](#success-criteria)
 - [Changelog](#changelog)
 
-Working Group Charters
+Working Groups
 
 # File Uploads Charter
 
@@ -62,7 +63,7 @@ In Scope
 - **Specification Work**: SEPs defining declarative file input descriptors on tool input schemas and elicitation request schemas, the wire encoding for file content, and host-side handling requirements.
 - **File Downloads (secondary)**: How a tool returns a file that is too large for a JSON-RPC message or that needs authorization to fetch. Upload work takes priority.
 - **Reference Implementations**: SDK types and helpers for `FileInputDescriptor`, data URI encoding, and a sample host flow demonstrating picker invocation and value substitution.
-- **Cross-Cutting Concerns**: Coordination with the MCP Apps WG where embedded UI surfaces present their own file pickers, and with the Security WG on host-side validation requirements.
+- **Cross-Cutting Concerns**: Coordination with the MCP Apps WG where embedded UI surfaces present their own file pickers, and with the Security IG on host-side validation requirements.
 - **Documentation**: Specification sections covering file input declaration and a migration guide for servers currently using ad-hoc base64 instructions.
 
 
@@ -81,7 +82,7 @@ The WG may evaluate approaches such as streaming, chunked transfer, or presigned
 Related Groups
 
 - **MCP Apps WG** — embedded app UIs may surface their own file pickers; the descriptor format should be reusable in that context.
-- **Security WG** — host-side validation requirements for user-supplied file content (the SEP references [OWASP ASVS V5](https://owasp.org/projects/asvs) for general upload hygiene).
+- **[Security IG](community-interest-groups-security.md)** — host-side validation requirements for user-supplied file content (the SEP references [OWASP ASVS V5](https://owasp.org/projects/asvs) for general upload hygiene).
 - **Tool Annotations IG** — file input descriptors are a form of input-parameter metadata and should remain consistent with the broader annotation taxonomy.
 
 

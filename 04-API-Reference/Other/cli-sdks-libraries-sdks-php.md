@@ -2,7 +2,7 @@
 title: "PHP SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/php"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:34Z"
+fetched_at: "2026-11-13T06:34:02Z"
 tags: ["api", "sdk"]
 ---
 
@@ -197,7 +197,7 @@ foreach ($page->pagingEachItem() as $item) {
 
 ### OpenTelemetry tracing
 
-When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
+When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Anthropic SDK](manage-claude-opentelemetry-sdk.md).
 
 ### Undocumented properties
 
@@ -290,8 +290,8 @@ At runtime:
 
 For detailed platform setup guides with code examples, see:
 
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
+- [Amazon Bedrock (`bedrock-mantle`)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 - [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
@@ -301,12 +301,10 @@ See also [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-wit
 The PHP SDK supports the following platforms:
 
 - **Claude Models on Google Cloud (Google managed):** `Anthropic\Vertex\Client`. Use `::fromEnvironment()`.
-- **Bedrock:** `Anthropic\Bedrock\MantleClient`. Use `new MantleClient(awsRegion: ...)`.
-- **Bedrock (legacy):** `Anthropic\Bedrock\Client`. Use `::fromEnvironment()` or `::withCredentials()`.
+- **Amazon Bedrock (`bedrock-mantle`):** `Anthropic\Bedrock\MantleClient`. Use `new MantleClient(awsRegion: ...)`.
+- **Amazon Bedrock (`bedrock-runtime`):** `Anthropic\Bedrock\Client`, for the `InvokeModel` API. Use `::fromEnvironment()` or `::withCredentials()`.
 - **Claude Platform on AWS:** `Anthropic\Aws\Client` (requires `aws/aws-sdk-php` as a soft dependency). Use `new Anthropic\Aws\Client(workspaceId: ...)` or set `ANTHROPIC_AWS_WORKSPACE_ID`. Available in beta.
 - **Foundry:** `Anthropic\Foundry\Client`. Use `::withCredentials()`.
-
-Use `MantleClient` for new projects; `Anthropic\Bedrock\Client` remains for existing applications using the Bedrock `InvokeModel` API.
 
 The PHP SDK also supports Claude Models on Google Cloud (Anthropic managed) through `Anthropic\GoogleCloud\Client`. This client is in beta. `Anthropic\GoogleCloud\Client` requires `google/auth` as a soft dependency. Use `new Anthropic\GoogleCloud\Client(workspaceId: ...)` or set the `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID` environment variable. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution).
 

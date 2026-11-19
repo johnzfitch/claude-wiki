@@ -2,11 +2,14 @@
 title: "Scale to many tools with tool search - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/tool-search"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-22T06:27:54Z"
+fetched_at: "2026-11-13T06:32:23Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["agents", "claude-code", "sdk", "search"]
 ---
 
 ## On this page
+
+Back to top
 
 - [How tool search works](#how-tool-search-works)
 - [Configure tool search](#configure-tool-search)
@@ -54,13 +57,13 @@ Tool search is on by default behind an `ANTHROPIC_BASE_URL` gateway, with nothin
 
 You control whether and when tool definitions are deferred with the `ENABLE_TOOL_SEARCH` environment variable, which takes these values:
 
-| Value    | Behavior                                                                                                                                                                                                                                                                                                             |
-|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| (unset)  | Tool search is on, with tool definitions deferred and discovered on demand. Falls back to loading upfront on models earlier than Opus 4 and Sonnet 4, on the [earlier Agent Platform models](#configure-tool-search), and on Microsoft Foundry deployments hosted on Azure.                                          |
-| `true`   | Tool search is on, with the same fallbacks as (unset).                                                                                                                                                                                                                                                               |
-| `auto`   | Tool search is off, and tool definitions load upfront, until the definitions it can defer reach 10% of the model’s context window. Tool search then activates, and can [stay on in the same conversation](../06-MCP-Tools/General/mcp.md#tools-that-stay-deferred-below-the-threshold) even if those definitions later drop below 10%. |
-| `auto:N` | Same as `auto` with a custom percentage. `auto:5` activates when those definitions reach 5% of the context window. Lower values activate sooner.                                                                                                                                                                     |
-| `false`  | Tool search is off. All tool definitions are loaded into context on every turn.                                                                                                                                                                                                                                      |
+| Value | Behavior |
+|:---|:---|
+| (unset) | Tool search is on, with tool definitions deferred and discovered on demand. Falls back to loading upfront on models earlier than Opus 4 and Sonnet 4, on the [earlier Agent Platform models](#configure-tool-search), and on Microsoft Foundry deployments hosted on Azure. |
+| `true` | Tool search is on, with the same fallbacks as (unset). |
+| `auto` | Tool search is off, and tool definitions load upfront, until the definitions it can defer reach 10% of the model’s context window. Tool search then activates, and can [stay on in the same conversation](../06-MCP-Tools/General/mcp.md#tools-that-stay-deferred-below-the-threshold) even if those definitions later drop below 10%. |
+| `auto:N` | Same as `auto` with a custom percentage. `auto:5` activates when those definitions reach 5% of the context window. Lower values activate sooner. |
+| `false` | Tool search is off. All tool definitions are loaded into context on every turn. |
 
 Setting [`CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS`](../02-Claude-Code-CLI/env-vars.md) keeps tool search off. You can’t override it by setting `ENABLE_TOOL_SEARCH` yourself. On Claude Code v2.1.227 or later, your organization can keep tool search on under this variable through [managed settings](../13-Enterprise-Admin/managed-settings.md). In a session that [gets the HIPAA configuration](../02-Claude-Code-CLI/hipaa-setup.md#check-how-developers-sign-in-and-connect), tool search is off, and neither `ENABLE_TOOL_SEARCH` nor managed settings turns it back on. [Disable pre-release capabilities](../13-Enterprise-Admin/llm-gateway-protocol.md#disable-pre-release-capabilities) covers where the override applies and what the variable strips. Tool search applies to all registered tools, whether they come from remote MCP servers or [custom SDK MCP servers](agent-sdk-custom-tools.md). When you use `auto`, the SDK counts every definition that tool search can defer toward one combined threshold: each MCP tool that isn’t marked [`alwaysLoad`](../06-MCP-Tools/General/mcp.md#exempt-a-server-from-deferral), from any server, plus the built-in tools that load on demand. The SDK loads core built-in tools such as Bash, Read, and Edit upfront and doesn’t count them toward the threshold. A [mod](../08-Plugins-Skills/plugins-mods-reference.md#tools) in one of your plugins can also defer a tool or load it upfront, which changes that count. Set the value in the `env` option on `query()`. In TypeScript, `env` replaces the subprocess environment, so spread `...process.env` to keep inherited variables. In Python, `env` is merged on top of the inherited environment. This example connects to a remote MCP server that exposes many tools, pre-approves all of them with a wildcard, and uses `auto:5` so tool search activates when the definitions it can defer reach 5% of the context window:
 

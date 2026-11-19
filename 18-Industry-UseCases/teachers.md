@@ -2,7 +2,7 @@
 title: "Claude for K-12 Teachers | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/teachers"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:02Z"
+fetched_at: "2026-11-18T06:29:40Z"
 tags: ["case-studies"]
 ---
 
@@ -226,7 +226,7 @@ Free
 - K-12 terms and student data privacy agreement
 - Models are never trained on your conversations
 
-Sign up by June 30, 2027 for your full year of free access.  
+Claude for Teachers is free for verified US K-12 educators, schools, and districts through July 30, 2028.  
 \*Extra usage limits apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic’s discretion.
 
 ## Education resources

@@ -2,7 +2,7 @@
 title: "Claude Frontier Academy: $100M to train 10,000 engineers \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-frontier-academy"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:22Z"
+fetched_at: "2026-11-17T06:25:28Z"
 tags: ["news-research"]
 ---
 
@@ -10,23 +10,19 @@ tags: ["news-research"]
 
 [Learn more](../15-Claude-AI-Features/programs-frontier-academy.md)
 
-- Published
+Published  
+Oct 2, 2026
 
-  Oct 2, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Education](https://www.anthropic.com/search?topic=education)
+- [Funding](https://www.anthropic.com/search?topic=funding)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
+- [Agents](https://www.anthropic.com/search?topic=agents)
 
-  [Announcements](announcements.md)
-
-- Topics
-
-  - [Education](https://www.anthropic.com/search?topic=education)
-  - [Funding](https://www.anthropic.com/search?topic=funding)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Claude for Enterprise](https://www.anthropic.com/search?topic=claude-for-enterprise)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-
-  See more...
+See more...
 
 *The first-of-its-kind Academy trains Frontier Deployed Engineers using the same standard of skills as Anthropic’s own engineers, starting with cohorts from Accenture, Bain, Capgemini, Commonwealth Bank of Australia, Deloitte, McKinsey, Morgan Stanley, Novo Nordisk and others.*
 

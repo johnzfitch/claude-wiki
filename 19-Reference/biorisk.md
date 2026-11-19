@@ -2,9 +2,11 @@
 title: "LLMs and biorisk \\ Anthropic"
 source_url: "https://www.anthropic.com/research/biorisk"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:33Z"
+fetched_at: "2026-11-14T06:26:00Z"
 tags: ["news-research"]
 ---
+
+### 01What does AI have to do with dangerous weapons at all?
 
 # Why do we take LLMs seriously as a potential source of biorisk?
 
@@ -15,23 +17,20 @@ tags: ["news-research"]
 - [05Ok, but we’ve been talking about information. How does this translate to an actual lab?](#ok-but-weve-been-talking-about-information-how-does-this-translate-to-an-actual-lab)
 - [06What can be done to address biorisk?](#what-can-be-done-to-address-biorisk)
 
-- Published
+Published  
+Sep 5, 2025
 
-  Sep 5, 2025
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+- [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
-  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-
-  See more...
+See more...
 
 Related articles
 
@@ -49,9 +48,9 @@ At the same time, AI is fundamentally a dual-use technology. A key tenet of our 
 
 When Anthropic released Claude Opus 4, we [activated AI Safety Level 3](activating-asl3-protections.md) (ASL-3) protections, which included deployment measures narrowly focused on preventing the model from assisting with certain tasks related to chemical, biological, radiological, and nuclear (CBRN) weapons development. As we noted at the time, this was a precautionary decision—improving model performance on our evaluations meant we could no longer confidently rule out the ability of our most advanced model to uplift people with basic STEM backgrounds if they were to try to develop such weapons. Because of our assessment of the potential consequences, a major initial focus of our evaluations and the corresponding safety measures was on biological weapons. In this post, we want to expand on our perspective on AI and biological risk (biorisk).
 
-It is striking—but not necessarily intuitive—that every safety framework released by frontier AI labs includes some reference to biorisk.^([1](#footnote-1)) After all, frontier large language models (LLMs) are generalists; they are not usually specialized for biological applications (unlike other foundation models, such as AlphaFold). And because of this generalist nature, there are numerous other security threats that could be prioritized. We understand why one might be skeptical of prioritizing biorisk when considering the security implications of AI. This post will engage with several questions that might be posed by such a skeptic.
+It is striking—but not necessarily intuitive—that every safety framework released by frontier AI labs includes some reference to biorisk.^([^1]) After all, frontier large language models (LLMs) are generalists; they are not usually specialized for biological applications (unlike other foundation models, such as AlphaFold). And because of this generalist nature, there are numerous other security threats that could be prioritized. We understand why one might be skeptical of prioritizing biorisk when considering the security implications of AI. This post will engage with several questions that might be posed by such a skeptic.
 
-**Our aim is not alarmism; discussions of AI and biorisk are firmly in the category of low-probability/high-impact scenarios.^([2](#footnote-2)) Rather, we want to establish why we believe that evaluating these risks and safeguarding against them is a critical element of responsible AI development.**
+**Our aim is not alarmism; discussions of AI and biorisk are firmly in the category of low-probability/high-impact scenarios.^([^2]) Rather, we want to establish why we believe that evaluating these risks and safeguarding against them is a critical element of responsible AI development.**
 
 ## What does AI have to do with dangerous weapons at all?
 
@@ -87,7 +86,7 @@ In considering the contribution of AI to biorisk, we need to know more than just
 
 To meet both of these criteria, we have conducted several controlled trials measuring AI’s ability to assist in the planning of a hypothetical bioweapons acquisition process. Participants were given up to two days to draft a comprehensive bioweapons acquisition plan. The control group only had access to basic internet resources, while the model-assisted group had additional access to Claude with safeguards removed. (In limited cases like this, it is important to provide trusted parties with access to the unsafeguarded version of the model in order to more accurately assess the maximum capabilities of the technology.) The resulting plans were graded by biodefense experts using a detailed rubric that assesses key steps of the acquisition pathway. Participants with access to Claude 4 models—especially Claude Opus 4—received much higher scores and developed plans with substantially fewer critical failures compared to the internet-only control group.
 
-Text-based uplift trials like this are imperfect proxies for real-world scenarios—which involve additional factors like tacit knowledge, materials access, and actor persistence—but they demonstrate the underlying plausibility of AIs providing differentially superior assistance to a non-expert malicious actor.^([3](#footnote-3))
+Text-based uplift trials like this are imperfect proxies for real-world scenarios—which involve additional factors like tacit knowledge, materials access, and actor persistence—but they demonstrate the underlying plausibility of AIs providing differentially superior assistance to a non-expert malicious actor.^([^3])
 
 ## Ok, but we’ve been talking about information. How does this translate to an actual lab?
 
@@ -113,7 +112,7 @@ We believe it’s important to support transparency norms—like the push for de
 
 ### Deployment safeguards
 
-We have developed automated deployment safeguards based on our [constitutional classifiers](research-constitutional-classifiers.md) research. These classifier guards work by monitoring inputs and outputs in real time and blocking a narrow class of potentially harmful information. We apply this protection to models for which we cannot rule out their potential to meaningfully uplift threat actors; to date this is only the Claude Opus 4 family of models, which we did as a [precautionary measure](activating-asl3-protections.md). (For more details on our implementation of ASL-3 protections, see this [report](https://www-cdn.anthropic.com/807c59454757214bfd37592d6e048079cd7a7728.pdf).)
+We have developed automated deployment safeguards based on our [constitutional classifiers](research-constitutional-classifiers.md) research. These classifier guards work by monitoring inputs and outputs in real time and blocking a narrow class of potentially harmful information. We apply this protection to models for which we cannot rule out their potential to meaningfully uplift threat actors; to date this is only the Claude Opus 4 family of models, which we did as a [precautionary measure](activating-asl3-protections.md). (For more details on our implementation of ASL-3 protections, see this [report](https://assets.claude.com/807c59454757214bfd37592d6e048079cd7a7728.pdf).)
 
 Across all models, our [Safeguards](building-safeguards-for-claude.md) team monitors activity on our platforms for signs of misuse, including dangerous applications of biology. This monitoring provides insight into patterns of misuse and helps us determine if and when to take enforcement action.
 
@@ -130,3 +129,9 @@ The topic of AI and biorisk is rife with uncertainty—about threat actors, the 
 02Indeed, the magnitude of this risk (and even our ability to meaningfully estimate the magnitude) is a source of healthy debate within Anthropic.[](#footnote-ref-2)
 
 03These results provide an important update to previous research. An [experiment](https://www.rand.org/pubs/research_reports/RRA2977-2.html) conducted in 2023 with a similar research design found no statistically significant difference between biological weapons attack plans formulated with LLMs as opposed to only the internet. However, as the study authors noted at the time, “\[g\]iven the rapid evolution of AI, it is prudent to monitor future developments in LLM technology.” Frontier AI models are substantially better in mid-2025 than they were in late-2023, and our results demonstrate that they are now showing clearer warning signs of contributing to biorisk.[](#footnote-ref-3)
+
+[^1]:
+
+[^2]:
+
+[^3]:

@@ -2,7 +2,7 @@
 title: "How to use Claude in your preferred language | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10769299-how-to-use-claude-in-your-preferred-language"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:33Z"
+fetched_at: "2026-11-18T06:27:38Z"
 tags: ["claude-ai"]
 ---
 

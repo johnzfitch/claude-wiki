@@ -2,7 +2,7 @@
 title: "How to update Claude for iOS | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11825384-how-to-update-claude-for-ios"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:47Z"
+fetched_at: "2026-11-18T06:27:42Z"
 tags: ["desktop"]
 ---
 

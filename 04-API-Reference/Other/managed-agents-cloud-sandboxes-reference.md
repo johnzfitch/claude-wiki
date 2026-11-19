@@ -2,7 +2,7 @@
 title: "Cloud sandbox reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/cloud-sandboxes-reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:46Z"
+fetched_at: "2026-11-13T06:34:10Z"
 tags: ["api"]
 ---
 
@@ -20,18 +20,25 @@ Pre-installed packages, databases, and utilities available in cloud sandboxes.
 
 [Cloud sandboxes](managed-agents-environments.md)
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](managed-agents-environments.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](managed-agents-environments.md#feature-availability)  
+- All models
 
-[Beta header](managed-agents-environments.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](managed-agents-environments.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-environments.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-environments.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Cloud sandboxes run as isolated Linux containers on Anthropic-managed infrastructure. They come pre-installed with a comprehensive set of programming languages, databases, and utilities. The agent can use these immediately without any installation steps.
 

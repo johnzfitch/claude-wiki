@@ -2,7 +2,7 @@
 title: "Subscribe to webhooks - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/webhooks"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:49Z"
+fetched_at: "2026-11-13T06:34:14Z"
 tags: ["api", "hooks"]
 ---
 
@@ -20,21 +20,24 @@ Get notified when major events occur without polling.
 
 Webhooks
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Sessions are long-running interactions. Although most real-time interactions occur through the [SSE event stream](managed-agents-events-and-streaming.md), webhooks notify you of major state changes.
 
@@ -269,27 +272,45 @@ The top-level `event.id` is unique for each event, not for each delivery. If you
 
 ## Availability
 
-Webhooks are in beta on every model.
+Webhooks
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Webhooks are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Claude API
 
-### Required beta headers
+Status  
+Beta
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Managed Agents
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Beta header  
+Requires
 
-Header
+managed-agents-2026-04-01
 
-- `managed-agents-2026-04-01`
-  
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -303,8 +324,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

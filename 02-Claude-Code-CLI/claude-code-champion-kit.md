@@ -2,7 +2,7 @@
 title: "Claude Code champion kit | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14555399-claude-code-champion-kit"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:51Z"
+fetched_at: "2026-11-18T06:28:10Z"
 tags: ["claude-code"]
 ---
 

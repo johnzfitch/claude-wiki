@@ -2,7 +2,7 @@
 title: "This appendix contains additional details and results for “Enabling independent…"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/8a665c85eec3a63b4d86287b9255657016f50e29.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-31T06:28:01Z"
+fetched_at: "2026-11-18T06:28:35Z"
 tags: ["news-research"]
 ---
 

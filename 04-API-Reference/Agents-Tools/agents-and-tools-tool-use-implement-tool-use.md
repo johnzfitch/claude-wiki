@@ -2,7 +2,7 @@
 title: "Define tools - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/implement-tool-use"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:29Z"
+fetched_at: "2026-11-13T06:35:16Z"
 tags: ["api", "cli"]
 ---
 
@@ -20,11 +20,15 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 Custom tools
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 Usage differs by product
 
@@ -58,7 +62,7 @@ Client tools are specified in the `tools` top-level parameter of the API request
 
 For the full set of optional properties available on any single tool definition, including `cache_control`, `strict`, `defer_loading`, and `allowed_callers`, see [Tool definition properties](agents-and-tools-tool-use-tool-reference.md#tool-definition-properties). A client toolset entry accepts `cache_control` and `allowed_callers` on the entry and sets `defer_loading` for each member; see [Client toolsets](agents-and-tools-tool-use-tool-reference.md#client-toolsets).
 
-### Example simple tool definition
+### Example simple tool definition
 
 JSON
 
@@ -119,7 +123,7 @@ To get the best performance out of Claude when using tools, follow these guideli
 - **Design tool responses to return only high-signal information.** Return semantic, stable identifiers (for example, slugs or UUIDs) rather than opaque internal references, and include only the fields Claude needs to reason about its next step. Bloated responses waste context and make it harder for Claude to extract what matters.
 - **Ask for an explanation, not reasoning.** If a parameter asks Claude why it is making the call, ask for a short explanation or the supporting evidence. A parameter that asks for the model’s thinking or step-by-step reasoning might lead to a `reasoning_extraction` refusal. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
-### Example of a good tool description
+### Example of a good tool description
 
 JSON
 
@@ -142,7 +146,7 @@ JSON
 }
 ```
 
-### Example poor tool description
+### Example poor tool description
 
 JSON
 
@@ -259,7 +263,7 @@ Not every model and setting supports forced tool use. Where it isn’t supported
 | Model or setting | Restriction | What to use instead |
 |----|----|----|
 | Manual [extended thinking](../Guides/build-with-claude-extended-thinking.md) (`thinking: {type: "enabled"}`) | `any` and `tool` are not supported and result in an error | `auto` or `none`. [Adaptive thinking](../Guides/build-with-claude-thinking.md) itself doesn’t block forced tool use (models with thinking on by default, such as Claude Opus 5 and Claude Haiku 5.5, accept it, but a forced call skips thinking: the response starts with the tool call and has no `thinking` block); the models in the next row reject forced tool use regardless of thinking settings |
-| Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) | `any` and `tool` return a [400 error](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
+| Claude Fable 5.2, [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md), Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) | `any` and `tool` return a 400 error. See [Forced tool use not supported](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
 
 On models that support it, the highlighted lines are the only difference from a standard tool use request:
 
@@ -389,31 +393,66 @@ Directory of Anthropic-provided tools and optional properties.
 
 ## Availability
 
-Custom tools are available on every model.
+Custom tools
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Define them in the request’s `tools`. Claude’s response contains `tool_use` blocks, and you send the results as `tool_result` blocks in the next request.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Amazon Bedrock
 
-- All supported platforms
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Amazon Bedrock (bedrock-runtime)
 
-Declare them on the agent with `type` `"custom"`. Calls arrive as `agent.custom_tool_use` events, and you reply with `user.custom_tool_result` events.
+API  
+- Messages API
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models

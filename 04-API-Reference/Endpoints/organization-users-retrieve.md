@@ -2,7 +2,7 @@
 title: "Get User - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/users/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:27:08Z"
+fetched_at: "2026-11-18T06:27:27Z"
 tags: ["api"]
 ---
 

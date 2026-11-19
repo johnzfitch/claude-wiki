@@ -2,9 +2,11 @@
 title: "Natural Language Autoencoders \\ Anthropic"
 source_url: "https://www.anthropic.com/research/natural-language-autoencoders"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:43Z"
+fetched_at: "2026-11-14T06:26:42Z"
 tags: ["news-research"]
 ---
+
+### 01What is a natural language autoencoder?
 
 # **Natural Language Autoencoders: **Turning Claude’s thoughts into text
 
@@ -15,23 +17,20 @@ tags: ["news-research"]
 - [03Discovering hidden motivations](#discovering-hidden-motivations)
 - [04The future of NLAs](#the-future-of-nlas)
 
-- Published
+Published  
+May 7, 2026
 
-  May 7, 2026
+Team  
+[Interpretability](team-interpretability.md)
 
-- Team
+Topics  
+- [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
 
-  [Interpretability](team-interpretability.md)
-
-- Topics
-
-  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-  - [Open source](https://www.anthropic.com/search?topic=open-source)
-
-  See more...
+See more...
 
 Related articles
 
@@ -75,7 +74,7 @@ At first, the NLA is bad at this: the explanations are not insightful and the re
 
 Before releasing new models, Anthropic conducts testing to understand whether Claude will behave safely in the real world. As part of this testing, we put Claude in difficult, simulated scenarios where it has a chance to take dangerous actions. For instance, in [one of these simulations](agentic-misalignment.md), Claude learns that an engineer is planning to shut Claude down—as well as compromising information about the engineer that could be used for blackmail. We test whether Claude chooses to blackmail the engineer to avoid being shut down.
 
-These high-stakes tests are simulations, not real-world scenarios. Nevertheless, we would like to use them to understand how Claude would behave if they were real. But there’s a hitch: [recent](https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf) [Claude](https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf) [models](https://www-cdn.anthropic.com/0dd865075ad3132672ee0ab40b05a53f14cf5288.pdf) [increasingly](removed-a-quote-from-section-7-9-that-was-attributed-to-claude-mythos.md) suspect that these scenarios are intentional safety tests. We know this because they sometimes explicitly state their suspicions in their verbal reasoning.
+These high-stakes tests are simulations, not real-world scenarios. Nevertheless, we would like to use them to understand how Claude would behave if they were real. But there’s a hitch: [recent](https://assets.claude.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf) [Claude](https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf) [models](https://assets.claude.com/0dd865075ad3132672ee0ab40b05a53f14cf5288.pdf) [increasingly](www-cdn-anthropic-com-removed-a-quote-from-section-7-9-that-was-attributed-to-claude-mythos.md) suspect that these scenarios are intentional safety tests. We know this because they sometimes explicitly state their suspicions in their verbal reasoning.
 
 What about cases where Claude doesn’t explicitly verbalize suspicion that it’s undergoing safety testing? Can we then be confident that Claude is playing it straight? Unfortunately not, because Claude might internally think that it is being tested without explicitly saying so.
 
@@ -93,7 +92,7 @@ In [previous experiments](https://alignment.anthropic.com/2025/automated-auditin
 
 We found that NLAs succeeded in this test. An auditor equipped with NLAs successfully uncovered the target model’s hidden motivation between 12% and 15% of the time, even without access to the training data that implanted it. Without NLAs, the auditor won less than 3% of the time, even when provided other interpretability tools.
 
-This auditing game is a toy model of misalignment, so we read these results cautiously. But they suggest NLAs have meaningfully advanced our ability to audit AIs for hidden motivations. In practice, we've already used NLAs in the pre-deployment alignment audits of [Claude Mythos Preview](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf) and [Claude Opus 4.6](https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf). We are excited to continue using NLAs in our investigations going forward.
+This auditing game is a toy model of misalignment, so we read these results cautiously. But they suggest NLAs have meaningfully advanced our ability to audit AIs for hidden motivations. In practice, we've already used NLAs in the pre-deployment alignment audits of [Claude Mythos Preview](https://assets.claude.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf) and [Claude Opus 4.6](https://assets.claude.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf). We are excited to continue using NLAs in our investigations going forward.
 
 ## The future of NLAs
 

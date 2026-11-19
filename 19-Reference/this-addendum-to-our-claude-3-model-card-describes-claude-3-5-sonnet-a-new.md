@@ -1,8 +1,8 @@
 ---
 title: "This addendum to our Claude 3 Model Card describes Claude 3.5 Sonnet, a new…"
-source_url: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/ModelCard-ClaudeOpus4.pdf"
+source_url: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-25T06:49:38Z"
+fetched_at: "2026-11-18T06:28:56Z"
 tags: ["news-research"]
 ---
 

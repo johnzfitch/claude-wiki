@@ -2,7 +2,7 @@
 title: "Set Workspace Rate Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/workspaces/rate_limits/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:33:36Z"
+fetched_at: "2026-11-14T06:24:51Z"
 tags: ["api"]
 ---
 

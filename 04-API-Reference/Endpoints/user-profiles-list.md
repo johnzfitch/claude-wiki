@@ -2,7 +2,7 @@
 title: "List User Profiles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/user_profiles/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:33:46Z"
+fetched_at: "2026-11-14T06:25:42Z"
 tags: ["api"]
 ---
 
@@ -386,16 +386,7 @@ Response 200
       "id": "uprof_011CZkZCu8hGbp5mYRQgUmz9",
       "access_type": "application",
       "created_at": "2026-03-15T10:00:00Z",
-      "enforcement_actions": [
-        {
-          "id": "enac_011CZkZCu8hGbp5mYRQgUmz9",
-          "action": "verify",
-          "expires_at": null,
-          "opened_at": "2026-10-02T19:30:00Z",
-          "reason": "fraud_or_abuse",
-          "type": "restriction"
-        }
-      ],
+      "enforcement_actions": [],
       "enforcement_status": "unrestricted",
       "external_user_details": {
         "account_status": "active",
@@ -410,27 +401,11 @@ Response 200
       "name": "Example User",
       "programs": {
         "cyber": {
-          "requirements": {
-            "data_retention": true,
-            "human_review": true
-          },
+          "requirements": null,
           "status": "active",
           "tiers": {}
         },
-        "efs": {
-          "features": {
-            "data_retention_exemption": {
-              "status": "inactive"
-            },
-            "cmek": {
-              "status": "active"
-            },
-            "storage": {
-              "status": "inactive"
-            }
-          },
-          "status": "active"
-        }
+        "efs": null
       },
       "type": "user_profile",
       "updated_at": "2026-03-15T10:00:00Z"
@@ -453,16 +428,7 @@ Response 200
       "id": "uprof_011CZkZCu8hGbp5mYRQgUmz9",
       "access_type": "application",
       "created_at": "2026-03-15T10:00:00Z",
-      "enforcement_actions": [
-        {
-          "id": "enac_011CZkZCu8hGbp5mYRQgUmz9",
-          "action": "verify",
-          "expires_at": null,
-          "opened_at": "2026-10-02T19:30:00Z",
-          "reason": "fraud_or_abuse",
-          "type": "restriction"
-        }
-      ],
+      "enforcement_actions": [],
       "enforcement_status": "unrestricted",
       "external_user_details": {
         "account_status": "active",
@@ -477,27 +443,11 @@ Response 200
       "name": "Example User",
       "programs": {
         "cyber": {
-          "requirements": {
-            "data_retention": true,
-            "human_review": true
-          },
+          "requirements": null,
           "status": "active",
           "tiers": {}
         },
-        "efs": {
-          "features": {
-            "data_retention_exemption": {
-              "status": "inactive"
-            },
-            "cmek": {
-              "status": "active"
-            },
-            "storage": {
-              "status": "inactive"
-            }
-          },
-          "status": "active"
-        }
+        "efs": null
       },
       "type": "user_profile",
       "updated_at": "2026-03-15T10:00:00Z"

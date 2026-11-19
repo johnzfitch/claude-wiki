@@ -2,28 +2,24 @@
 title: "Claude is now available in Brazil \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-brazil"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:46Z"
+fetched_at: "2026-11-14T06:25:55Z"
 tags: ["news-research"]
 ---
 
 # Claude is now available in Brazil
 
-- Published
+Published  
+Aug 1, 2024
 
-  Aug 1, 2024
+[Product](product.md)
 
-- Category
+Topics  
+- [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
+- [Claude apps](https://www.anthropic.com/search?topic=claude-apps)
+- [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
+- [Access](https://www.anthropic.com/search?topic=access)
 
-  [Product](product.md)
-
-- Topics
-
-  - [Global expansion](https://www.anthropic.com/search?topic=global-expansion)
-  - [Claude apps](https://www.anthropic.com/search?topic=claude-apps)
-  - [Claude Developer Platform](https://www.anthropic.com/search?topic=claude-developer-platform)
-  - [Access](https://www.anthropic.com/search?topic=access)
-
-  See more...
+See more...
 
 Related articles
 
@@ -49,4 +45,4 @@ Paid users on the [Team plan](https://www.anthropic.com/team) get even more usag
 
 Anthropic prioritizes safety, privacy, and ethical AI development in Claude's design. Rigorous testing and training aim to reduce misuse, while a strong commitment to user privacy means generative models are not trained on user data without explicit permission.
 
-*Read this post in [Portuguese](https://www-cdn.anthropic.com/files/4zrzovbb/website/ea3d47f547131c9fbed59bfe68ed8b1cbe747179.pdf).*
+*Read this post in [Portuguese](https://assets.claude.com/ea3d47f547131c9fbed59bfe68ed8b1cbe747179.pdf).*

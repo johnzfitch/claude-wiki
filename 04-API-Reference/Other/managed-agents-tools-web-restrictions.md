@@ -2,7 +2,7 @@
 title: "Restrict web search and web fetch domains - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/tools-web-restrictions"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-07T06:23:19Z"
+fetched_at: "2026-11-15T06:23:32Z"
 tags: ["agents", "api", "search"]
 ---
 
@@ -20,16 +20,17 @@ Control which sites an agent’s web search and web fetch tools can reach, cap f
 
 Web domain restrictions
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents[\* Beta](#availability-beta-on-claude-api)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
-
-[Beta header](#feature-beta-headers)  
-Managed Agents
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS[\* Beta](#availability-beta-on-claude-platform-aws)
+- Claude Models on Google Cloud[\* Beta](#availability-beta-on-claude-platform-gcp)Anthropic managed
 
 Usage differs by product
 
@@ -58,7 +59,7 @@ Your organization’s web fetch settings on the same page also apply to `web_fet
 
 ## Set domain lists on an agent
 
-The following example creates an agent that limits `web_search` to two sites and blocks one host for `web_fetch`. It also sets `user_location` and `max_content_tokens`, which [Settings](#settings) describes. The response echoes the `configs` array.
+The following example creates an agent that limits `web_search` to two sites and blocks one host for `web_fetch`. It also sets `user_location` and `max_content_tokens`. [Settings](#settings) describes both.
 
 cURL
 
@@ -113,7 +114,7 @@ tools:
 ---
 ```
 
-[`ant apply`](cli-sdks-libraries-cli-apply.md) creates the agent and prints its ID, not the `configs` array.
+[`ant apply`](cli-sdks-libraries-cli-apply.md) creates the agent and prints its ID.
 
 In a cloud environment with `limited` [networking](managed-agents-environments.md#networking), the environment’s `allowed_hosts` also applies to `web_search` and `web_fetch`. Creating a session fails with a 400 error when an enabled web tool’s `allowed_domains` has an entry that is not within `allowed_hosts`. So does a session update that adds such an entry. To fix it, add the host to `allowed_hosts` or remove the entry from `allowed_domains`. At runtime, a `web_fetch` call for a URL on a host that `allowed_hosts` does not match returns a `url_not_allowed` error result. `web_search` omits results from such hosts. The two lists match differently: a tool’s entry covers its subdomains, but an `allowed_hosts` entry matches one exact host unless it starts with `*.`. For example, the tool entry `docs.example.com` is not within an `allowed_hosts` of `["example.com"]`, but it is within `["docs.example.com"]` or `["*.example.com"]`.
 
@@ -138,7 +139,7 @@ For the types the SDK uses for these entries, see [Config entry types in the SDK
 
 ## Domain list rules
 
-These rules apply to `allowed_domains` and `blocked_domains` alike. A request that breaks one is rejected, as [Validation errors](#validation-errors) describes.
+These rules apply to `allowed_domains` and `blocked_domains` alike. The API rejects a request that breaks any of these rules, as [Validation errors](#validation-errors) describes.
 
 - **At most one list on an entry:** Set either `allowed_domains` or `blocked_domains` on an entry, not both.
 - **List size:** Each list holds 1 to 64 domains, each 1 to 255 characters.
@@ -168,7 +169,7 @@ Each domain is a registrable domain name, or a subdomain of one, written as a pl
 | A single-label name | `intranet` | A full domain such as `example.co.uk` |
 | Non-ASCII characters, as in an internationalized domain name |  | The `xn--` (Punycode) form |
 
-A domain is also rejected if it contains credentials or whitespace, or if one of its labels starts or ends with a hyphen. `localhost` and hosts ending in `.localhost`, `.local`, `.internal`, `.localdomain`, or `.invalid` are rejected too.
+The API also rejects a domain that contains credentials or whitespace, or that has a label starting or ending with a hyphen. It rejects `localhost` and hosts ending in `.localhost`, `.local`, `.internal`, `.localdomain`, or `.invalid` too.
 
 ### Path suffixes on web search domains
 
@@ -180,19 +181,19 @@ Prefer plain hostnames for `web_search` too. The search provider matches path su
 
 The API validates these settings when you [create an agent](managed-agents-agent-setup.md#create-an-agent) or [update an agent](managed-agents-agent-setup.md#update-an-agent). It also validates them when you create or update a session that supplies `tools`.
 
-Format and limit violations are rejected with a 400 `invalid_request_error`:
+The API rejects format and limit violations with a 400 `invalid_request_error`:
 
 | Violation | Error message |
 |----|----|
 | An entry sets both lists. | Includes `Only one of allowed_domains or blocked_domains may be set.` |
 | A list is empty. | Includes `allowed_domains: Empty list of domains is ambiguous. Provide at least one domain or null.` |
-| A domain breaks a format rule. | Names the domain’s list and zero-based position. For example, `allowed_domains.0: IP addresses are not supported; provide a plain hostname like "example.com"` |
+| A domain breaks a format rule. | Names the domain’s list and zero-based position, as in `allowed_domains.0: IP addresses are not supported; provide a plain hostname like "example.com"` |
 
 On the same requests, the API also rejects three settings that depend on the search and fetch providers:
 
 - A domain in `allowed_domains` that Anthropic’s crawler is not allowed to access.
 - A `user_location.country` that the search provider does not support. The message ends in `user_location.country: not a country the search provider supports`.
-- A `user_location.timezone` that is not a valid IANA name.
+- A `user_location.timezone` that is not a valid IANA time zone name.
 
 In a cloud environment with `limited` [networking](managed-agents-environments.md#networking), session create and update also check `allowed_domains` against the environment’s `allowed_hosts`. See the rule in [Set domain lists on an agent](#set-domain-lists-on-an-agent).
 
@@ -274,49 +275,53 @@ Coordinate multiple agents within a single session.
 
 ## Availability
 
-Web domain restrictions are available or in beta, depending on the API.
+Web domain restrictions
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Set `allowed_domains` or `blocked_domains` on the `web_search` or `web_fetch` tool in the request.
+APIs  
+- Messages API
+- 
+  Managed Agents
+  Beta
+  requires
+  managed-agents-2026-04-01
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
+Status  
+Beta
 
-[Managed Agents](managed-agents-overview.md)
+API  
+- Managed Agents
 
-Usage
+Beta header  
+Requires
 
-Set the same fields on the `web_search` and `web_fetch` entries of the agent toolset. Unlike the Messages API, each list holds at most 64 ASCII domains, and `web_fetch` domains cannot include a path.
+managed-agents-2026-04-01
 
-StatusBeta
+Models  
+- All models
 
-Cloud platforms
+Claude Models on Google Cloud (Anthropic managed)
 
-- All supported platforms
+Status  
+Beta
 
-Models
+API  
+- Managed Agents
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Beta header  
+Requires
 
-### Required beta headers
+managed-agents-2026-04-01
 
-[Beta headers overview](../Endpoints/beta-headers.md)
-
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
-
-Header
-
-- `managed-agents-2026-04-01`
-  
-
-APIs
-
-- [Managed Agents](managed-agents-overview.md)
+Models  
+- All models

@@ -2,7 +2,7 @@
 title: "Get started with centralized management | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/18232924-get-started-with-centralized-management"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:14Z"
+fetched_at: "2026-11-18T06:28:08Z"
 tags: ["safety"]
 ---
 
@@ -67,7 +67,7 @@ Two kinds of parent organization can't enroll:
 
 ## Enroll your parent organization
 
-Any owner of a child organization under the parent can start enrollment at **[admin.claude.com](https://admin.claude.com)**. Enrollment is a short approval flow in which every child organization signs off on who the parent organization admins will be. Everyone proposed who’s still eligible when enrollment completes becomes a parent organization owner. Owners can add admins afterward on the **Admin roles** page.
+An eligible admin of any child organization can start enrollment at **admin.claude.com**. Eligible admins are the Primary Owner of a Claude Enterprise or Team organization, and the Admins of a Console organization. Enrollment is a short approval flow in which every child organization signs off on who the parent organization admins will be. Everyone proposed who’s still eligible when enrollment completes becomes a parent organization owner. Owners can add admins afterward on the **Admin roles** page.
 
 **Warning:** Enrollment can't be undone, and it can complete as soon as someone starts setup.
 
@@ -83,13 +83,13 @@ Copy the parent organization ID from **Organization settings \> Organization** i
 
 2.  Propose parent organization admins from those organizations. Search by name, email, or organization to find people. Starting setup counts as approval for the organizations you administer.
 
-3.  If other child organizations remain, wait for their admins to review the proposal. They can nominate admins from their own organizations, and approve. You can remind anyone who hasn't approved yet.
+3.  If other child organizations remain, wait for their eligible admins to review the proposal. They can nominate admins from their own organizations, and approve. You can remind anyone who hasn't approved yet.
 
 4.  When setup finishes, select "Done". The console opens on the **Organizations** page.
 
 If you administer every organization under the parent, your parent organization is enrolled immediately. Otherwise, the last approval enrolls it. SSO, SCIM, verified domains, and security settings move to the parent, and each child organization keeps its own users, roles, and projects.
 
-Changing the proposed admins asks every child organization to approve again. If an organization still hasn't approved seven days after the last change, any owner of a child organization under the parent can approve on its behalf.
+Changing the proposed admins asks every child organization to approve again. If an organization still hasn't approved after seven days, an eligible admin of another organization may be able to approve on its behalf.
 
 ## Manage your parent organization
 
@@ -169,7 +169,7 @@ Select a key's actions menu to disable, re-enable, or delete it. A key you creat
 
 On the **Organizations** page, under **Security**, turn on **Restrict organization creation** to stop anyone on your verified domains from creating a new organization, including a personal account. The **Security** page in the side menu lists each organization's HIPAA status.
 
-Parent owners and admins also start a domain claim here, instead of from a child organization's settings. You choose one child organization for accounts to migrate to, and the claim covers every Free, Pro, Max, and Ultra account on the domains verified at that point. Users can choose to bring their data with them, but they need a seat in that organization to sign in afterward. Learn more about **[responding to an enterprise domain claim](../21-Account-Support/respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
+Parent owners and admins also start a domain claim here, instead of from a child organization's settings. You choose one child organization for accounts to migrate to, and the claim covers every Free, Pro, Max, and Ultra account on the domains verified at that point. Each person chooses **Bring what you can** or **Start fresh**. Their personal account closes either way, and not everything can move (see **[What moves when you migrate](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**). They need a seat in that organization to bring their data. Learn more about **[responding to an enterprise domain claim](../21-Account-Support/respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
 
 Session duration stays with each child organization during the beta, and each child organization keeps its own IP allowlist.
 

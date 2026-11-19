@@ -2,7 +2,7 @@
 title: "Courses · Claude Academy"
 source_url: "https://www.claude.com/resources/courses"
 category: "01-Getting-Started"
-fetched_at: "2026-11-09T06:25:27Z"
+fetched_at: "2026-11-18T06:26:45Z"
 tags: ["api", "getting-started"]
 ---
 

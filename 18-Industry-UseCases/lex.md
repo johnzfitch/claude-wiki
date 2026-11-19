@@ -2,7 +2,7 @@
 title: "Lex Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/lex"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:43Z"
+fetched_at: "2026-11-18T06:29:04Z"
 tags: ["api", "case-studies"]
 ---
 

@@ -2,11 +2,11 @@
 title: "Progress on provable inference for large language models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/provable-inference"
 category: "19-Reference"
-fetched_at: "2026-11-04T06:24:49Z"
+fetched_at: "2026-11-10T06:29:40Z"
 tags: ["news-research"]
 ---
 
-### Chapter 01: Executive summary
+### 01Executive summary
 
 # Progress on provable inference for large language models
 
@@ -20,13 +20,30 @@ tags: ["news-research"]
 - [06Prior work](#prior-work)
 - [07Limitations](#limitations)
 
-- Published
+Published  
+Nov 2, 2026
 
-  Nov 2, 2026
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Global stability](https://www.anthropic.com/search?topic=global-stability)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
+- [Coding](https://www.anthropic.com/search?topic=coding)
 
-  [Frontier Red Team](team-frontier-red-team.md)
+See more...
+
+Related articles
+
+- Frontier Red Team
+
+  Oct 22, 2026
+
+  [LLMs are making formal software verification feasible at a much larger scale](formal-verification.md)
+
+[View more](https://www.anthropic.com/search?topic=transparency)
 
 *Roy Rinberg (Anthropic), Alex Allain (Anthropic); Alessandro Chiesa (EPFL, StarkWare), Miranda Christ (MIT, RESI), Rahul Dalal (Anthropic STEM Fellows Program, Succinct), Giacomo Fenzi (EPFL), Ben Mayer (Anthropic Fellows Program, MIT), Guy Weissenberg (EPFL)*
 

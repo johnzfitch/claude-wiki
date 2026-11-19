@@ -2,7 +2,7 @@
 title: "Zendesk Claude and AWS case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/zendesk"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:21Z"
+fetched_at: "2026-11-18T06:29:18Z"
 tags: ["agents", "case-studies"]
 ---
 
@@ -86,6 +86,9 @@ Across customers running custom agents, automated resolution has gone up by as m
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Supermetrics lets marketers manage ad campaigns from a conversation with Claude
 
 
@@ -93,6 +96,3 @@ Across customers running custom agents, automated resolution has gone up by as m
 
 
 ### Rocket Money on building agents that fix their own code
-
-
-### How Rocket Money built its personal finance agent with Claude

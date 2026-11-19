@@ -2,7 +2,7 @@
 title: "Using Databricks for Data Analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12430928-using-databricks-for-data-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:25:56Z"
+fetched_at: "2026-11-18T06:28:16Z"
 tags: ["safety"]
 ---
 
@@ -64,13 +64,13 @@ The Databricks integration consists of three separate connectors, each requiring
 
 3.  **Genie Server:** Provides natural language to SQL query translation capabilities.
 
-Technical details of the Databricks connectors can be found in Databricks's [MCP Server Documentation(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp). Authentication with Databrick's connectors is handled via [OAuth(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-connectors-using-oauth) (for [Claude.ai(opens in new tab)](http://claude.ai/) and Claude Desktop) or via a [Databricks Personal Access Token(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-desktop-using-pat) (for Claude Desktop only).
+Technical details of the Databricks connectors can be found in Databricks's [MCP Server Documentation(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp). Authentication with the Databricks connectors is handled via [OAuth(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-connectors-using-oauth) (for [Claude.ai(opens in new tab)](http://claude.ai/) and Claude Desktop) or via a [Databricks Personal Access Token(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-desktop-using-pat) (for Claude Desktop only).
 
 ### Adding the Connector as an Organization Owner[](#adding-the-connector-as-an-organization-owner)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector" at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Enter integration URL for [your Databricks workspace(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp)
 
@@ -136,7 +136,7 @@ Claude might then report its results in a summary showing exit-ready companies w
 
 Example input prompt:
 
-We're evaluating TechCorp acquisition (SaaS, \$45M revenue, \$12M EBITDA).What's a fair valuation and how much debt can we support? Include previous due diligence records in your analysis.
+We're evaluating TechCorp acquisition (SaaS, \$45M revenue, \$12M EBITDA). What's a fair valuation and how much debt can we support? Include previous due diligence records in your analysis.
 
 
 

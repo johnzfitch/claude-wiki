@@ -2,7 +2,7 @@
 title: "Claude | The AI assistant for work"
 source_url: "https://www.claude.com/product/overview"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:59Z"
+fetched_at: "2026-11-18T06:29:35Z"
 tags: ["claude-ai"]
 ---
 
@@ -259,7 +259,7 @@ Learn more
 - [Connectors](https://claude.com/marketplace/connectors-plugins) — Connect the apps you already use, including interactive MCP apps.
 - [Files and folders](https://academy.claude.com/use-cases/organize-files-by-whats-in-them) — Work with the files and folders already on your desktop.
 - [Browser use](https://claude.com/claude-in-chrome) — Browse and act on the web through Claude in Chrome and the built-in browser.
-- [Computer use](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork) — See and use your screen (beta).
+- [Computer use](let-claude-use-your-computer-in-cowork.md) — See and use your screen (beta).
 
 ### Make it yours
 
@@ -284,7 +284,7 @@ Learn more
 ### Don’t start over
 
 - [Memory](https://claude.com/import-memory) — Remember context from past conversations.
-- [Projects](what-are-projects.md) — Keep context, instructions, and files organized by project.
+- [Projects](https://support.claude.com/en/articles/9517075-what-are-projects) — Keep context, instructions, and files organized by project.
 - [Instructions for Claude](understanding-claude-s-personalization-features.md) — Set preferences that apply across every conversation.
 
 ## I'm in Marketing and I need to make the Campaign readout.

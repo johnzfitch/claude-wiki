@@ -2,7 +2,7 @@
 title: "Update Workspace - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces/update"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:53Z"
+fetched_at: "2026-11-18T06:28:03Z"
 tags: ["api"]
 ---
 
@@ -146,7 +146,7 @@ user_profile_id: optional string
 
 
 
-ID of a user profile to attach to the Workspace. Every inference request through the Workspace must then name this user profile; the API rejects a request that names none or a different one. Once set, it can't be replaced or removed (sending the same ID again changes nothing); only deleting the user profile clears it. The default Workspace can't have a user profile.
+ID of a user profile to attach to the Workspace. Every inference request through the Workspace must then name this user profile; the API rejects a request that names none or a different one. Once set, it can't be replaced or removed (sending the same ID again changes nothing); only deleting the user profile clears it. It can't be set on a Workspace whose External Key isn't bound to this user profile. The default Workspace can't have a user profile.
 
 ##### Returns
 
@@ -170,6 +170,7 @@ curl https://api.anthropic.com/v1/organizations/workspaces/$WORKSPACE_ID \
     -d '{
           "display_color": "#6C5BB9",
           "external_key_id": "ekey_01SDCCSbTxrXDpWc1phhtcfK",
+          "name": "Workspace Name",
           "tags": {
             "env": "prod",
             "team": "platform"

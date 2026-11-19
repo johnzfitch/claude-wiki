@@ -2,7 +2,7 @@
 title: "API usage primer for Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/claude_api_primer"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:55Z"
+fetched_at: "2026-11-13T06:34:58Z"
 tags: ["api"]
 ---
 
@@ -26,7 +26,7 @@ This guide is designed to give Claude the basics of using the Claude API. It giv
 
 ```python
 Recommended default for most work, including complex agentic coding: Claude Opus 5.5: claude-opus-5-5
-Step up for the hardest long-running agentic and research tasks, at 2.5x Claude Opus 5.5 pricing: Claude Fable 5.1: claude-fable-5-1
+Step up for the hardest long-running agentic and research tasks, at 2x Claude Opus 5.5 pricing: Claude Fable 5.2: claude-fable-5-2
 Previous Opus model: Claude Opus 5: claude-opus-5
 Smart model: Claude Sonnet 5.5: claude-sonnet-5-5
 Previous Sonnet model: Claude Sonnet 5: claude-sonnet-5
@@ -219,6 +219,8 @@ Thinking can sometimes help Claude with very hard tasks. The current mechanism i
 
 Thinking is supported in the following models:
 
+- Claude Fable 5.2 (`claude-fable-5-2`, adaptive thinking only, always on)
+- Claude Mythos 5.2 (`claude-mythos-5-2`, adaptive thinking only, always on)
 - Claude Opus 5.5 (`claude-opus-5-5`, adaptive thinking only, always on)
 - Claude Sonnet 5.5 (`claude-sonnet-5-5`, adaptive thinking only, on by default; `thinking: {"type": "disabled"}` returns a 400 error, so send `thinking: {"type": "between_tools"}` to turn off up-front thinking)
 - Claude Haiku 5.5 (`claude-haiku-5-5`, adaptive thinking only, on by default)
@@ -524,7 +526,7 @@ When working with the `tool_choice` parameter, there are four possible options:
 - `tool` forces Claude to always use a particular tool.
 - `none` prevents Claude from using any tools.
 
-On Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, `any` and `tool` return a 400 error. Leave `tool_choice` at `auto` and set `"strict": true` on the tool definition to guarantee that any call Claude makes matches the tool’s `input_schema`. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
+On Claude Fable 5.2, Claude Mythos 5.2, Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1, `any` and `tool` return a 400 error. Leave `tool_choice` at `auto` and set `"strict": true` on the tool definition to guarantee that any call Claude makes matches the tool’s `input_schema`. See [Strict tool use](../Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md).
 
 ### JSON output
 

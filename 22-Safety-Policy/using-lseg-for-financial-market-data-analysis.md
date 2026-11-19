@@ -2,7 +2,7 @@
 title: "Using LSEG for financial market data analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12662116-using-lseg-for-financial-market-data-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:17Z"
+fetched_at: "2026-11-18T06:27:58Z"
 tags: ["safety"]
 ---
 
@@ -52,13 +52,13 @@ Claude applies LSEG’s market data to support your financial analysis.
 
 ## Setting Up LSEG Integration[](#setting-up-lseg-integration)
 
-Technical details of the LSEG Integration can be found in LSEG’s MCP Server Documentation (available soon on LSEG portal). You will need to contact LSEG to get access to the MCP server.
+Contact LSEG to get access to the MCP server and its technical documentation.
 
 ### For Organization Owners[](#for-organization-owners)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector” at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Enter integration URL: [https://api.analytics.lseg.com/lfa/mcp(opens in new tab)](https://api.analytics.lseg.com/lfa/mcp)
 

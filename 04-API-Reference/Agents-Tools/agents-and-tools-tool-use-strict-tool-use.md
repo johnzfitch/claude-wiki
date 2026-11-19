@@ -2,7 +2,7 @@
 title: "Strict tool use - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/strict-tool-use"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:34Z"
+fetched_at: "2026-11-13T06:33:57Z"
 tags: ["agents", "api"]
 ---
 
@@ -23,14 +23,22 @@ Strict tool use
 Feature of  
 [Structured outputs](../Guides/build-with-claude-structured-outputs.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleQualifiedHIPAA eligible
+ZDRQualifiedZDR eligible (qualified)HIPAAHIPAA eligible
 
 Setting `strict: true` on a tool definition guarantees Claude’s tool inputs match your JSON Schema by constraining the model’s token sampling to schema-valid outputs (a technique called grammar-constrained sampling). This page covers why strict mode matters for agents, how to enable it, and common use cases. For the supported JSON Schema subset, see [JSON Schema limitations](../Guides/build-with-claude-structured-outputs.md#json-schema-limitations). For non-strict schema guidance, see [Define tools](agents-and-tools-tool-use-implement-tool-use.md).
 
@@ -156,7 +164,7 @@ The [computer use](agents-and-tools-tool-use-computer-use-tool.md) and [browser 
 
 ## Common use cases
 
-### Validated tool inputs
+### Validated tool inputs
 
 Ensure tool parameters exactly match your schema:
 
@@ -217,7 +225,7 @@ response = client.messages.create(
 print(response)
 ```
 
-### Agentic workflow with multiple validated tools
+### Agentic workflow with multiple validated tools
 
 Build reliable multistep agents with guaranteed tool parameters:
 
@@ -324,26 +332,61 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Strict tool use is available on every model and eligible for HIPAA readiness.
+Strict tool use
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Availability requirements for Strict tool use are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-Models
+Models  
+- All models
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

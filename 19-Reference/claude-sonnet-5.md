@@ -2,9 +2,11 @@
 title: "Introducing Claude Sonnet 5 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-sonnet-5"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:22Z"
+fetched_at: "2026-11-14T06:25:55Z"
 tags: ["evaluation", "news-research"]
 ---
+
+### 01Working with Claude Sonnet 5
 
 # Introducing Claude Sonnet 5
 
@@ -12,24 +14,20 @@ tags: ["evaluation", "news-research"]
 - [02Safety evaluations](#safety-evaluations)
 - [03Availability and pricing](#availability-and-pricing)
 
-- Published
+Published  
+Jun 30, 2026
 
-  Jun 30, 2026
+[Models](models.md)
 
-- Category
+Topics  
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
 
-  [Models](models.md)
-
-- Topics
-
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-
-  See more...
+See more...
 
 Related articles
 
@@ -151,13 +149,13 @@ Our pre-deployment safety evaluations found that Sonnet 5 was overall an improve
 
 We did not deliberately train Sonnet 5 on cybersecurity tasks. It can perform some routine, non-harmful cyber tasks, but on evaluations testing potentially dangerous cyber skills, such as developing software exploits, it shows substantially poorer performance than models such as Opus 4.8 and Mythos 5. Scores from one evaluation, which tested models’ ability to develop exploits for vulnerabilities in the Firefox browser, are shown in the chart below. Sonnet 5 was never able to develop a full working exploit, but it does show a slightly higher rate of *partial* success than Sonnet 4.6. This latter change is likely due to improvements in general intelligence rather than specific training.
 
-Since Sonnet 5 is somewhat stronger than its predecessor on these tasks, we’ve launched it with cyber safeguards enabled by default. These [safeguards](../21-Account-Support/real-time-cyber-safeguards-on-claude.md)—which detect and block dangerous cyber usage in real time—are the same as those present in Claude Opus 4.7 and 4.8 (because we judged that the overall level of cybersecurity risk from Sonnet 5 was low, the safeguards are less strict than those launched with Fable 5, which block a much wider range of cybersecurity tasks).^([1](#footnote-1))
+Since Sonnet 5 is somewhat stronger than its predecessor on these tasks, we’ve launched it with cyber safeguards enabled by default. These [safeguards](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude)—which detect and block dangerous cyber usage in real time—are the same as those present in Claude Opus 4.7 and 4.8 (because we judged that the overall level of cybersecurity risk from Sonnet 5 was low, the safeguards are less strict than those launched with Fable 5, which block a much wider range of cybersecurity tasks).^([^1])
 
 Our full assessment of Sonnet 5 across many safety and capability evaluations is reported in the [Claude Sonnet 5 System Card](../15-Claude-AI-Features/claude-sonnet-5-system-card.md).
 
 ## Availability and pricing
 
-Claude Sonnet 5 is available everywhere today at \$2 per million input tokens and \$10 per million output tokens^([2](#footnote-2)). We’ve increased rate limits across Chat, Cowork, Claude Code, and the Claude Platform^([3](#footnote-3)) to accommodate the higher token usage of higher effort levels; users can select whichever level makes sense for their particular project.
+Claude Sonnet 5 is available everywhere today at \$2 per million input tokens and \$10 per million output tokens^([^2]). We’ve increased rate limits across Chat, Cowork, Claude Code, and the Claude Platform^([^3]) to accommodate the higher token usage of higher effort levels; users can select whichever level makes sense for their particular project.
 
 #### Changelog
 
@@ -165,11 +163,11 @@ Claude Sonnet 5 is available everywhere today at \$2 per million input tokens an
 
 *Edit June 30, 2026:* In the original version of this post, we included a cost-performance chart for the BrowseComp evaluation that was based on data from a simpler methodology that did not reflect the [standard methodology](https://platform.claude.com/cookbook/evals-agentic-search-reproduce-agentic-search-benchmarks) we use for agentic search evaluations. This had the result of underestimating Sonnet 5's performance on the evaluation.
 
-We have now updated the chart so that it matches the methodology that we used and discussed in the [Sonnet 5 system card](https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf) (which used a 10M token budget with compaction and programmatic tool calling). We have also updated the surrounding text.
+We have now updated the chart so that it matches the methodology that we used and discussed in the [Sonnet 5 system card](https://assets.claude.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e.pdf) (which used a 10M token budget with compaction and programmatic tool calling). We have also updated the surrounding text.
 
 ## Footnotes
 
-01 Sonnet 5 is part of our [Cyber Verification Program](../21-Account-Support/real-time-cyber-safeguards-on-claude.md), which is available today on the native Claude Platform, the Claude Platform on AWS, and Claude in Microsoft Foundry (hosted on Azure and Anthropic), and coming soon on Claude in Google Vertex. Organizations that are already enrolled in the Cyber Verification Program automatically have the same access on Sonnet 5, with no need to reapply. Overall, we recommend Claude Opus 4.8 for cybersecurity work that requires reduced guardrails.[](#footnote-ref-1)
+01 Sonnet 5 is part of our [Cyber Verification Program](https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude), which is available today on the native Claude Platform, the Claude Platform on AWS, and Claude in Microsoft Foundry (hosted on Azure and Anthropic), and coming soon on Claude in Google Vertex. Organizations that are already enrolled in the Cyber Verification Program automatically have the same access on Sonnet 5, with no need to reapply. Overall, we recommend Claude Opus 4.8 for cybersecurity work that requires reduced guardrails.[](#footnote-ref-1)
 
 02 Sonnet 5 is an upgrade to Sonnet 4.6, but it uses an updated tokenizer that changes how the model processes text to improve performance (this is similar to the tokenizer change we introduced with Claude Opus 4.7). The tradeoff is that the same input can map to more tokens: roughly 1.0–1.35× depending on the content type.[](#footnote-ref-2)
 
@@ -177,3 +175,9 @@ We have now updated the chart so that it matches the methodology that we used an
 
 - **Humanity’s Last Exam:** We updated the grader model for Humanity’s Last Exam and have updated the Sonnet 4.6 score to 34.6% (no tools) and 46.8% (with tools). This is the reason the score differs from that reported in the [Sonnet 4.6 launch blog](claude-sonnet-4-6.md).
 - **OSWorld-Verified:** We made changes to how we run the OSWorld-Verified evaluation to more accurately reflect the model’s performance in the real world, and have updated the Sonnet 4.6 score to 78.5%. This is the reason the score differs from that reported in the [Sonnet 4.6 launch blog](claude-sonnet-4-6.md).
+
+[^1]:
+
+[^2]:
+
+[^3]:

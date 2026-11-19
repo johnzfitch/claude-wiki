@@ -2,8 +2,8 @@
 title: "Progress - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/basic/utilities/progress"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:25:21Z"
-last_modified: "Sat, 31 Oct 2026 05:17:56 GMT"
+fetched_at: "2026-11-10T06:28:31Z"
+last_modified: "Tue, 10 Nov 2026 03:57:56 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

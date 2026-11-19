@@ -2,8 +2,8 @@
 title: "Authorization Security Considerations - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization/security-considerations"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:24:54Z"
-last_modified: "Fri, 30 Oct 2026 20:37:09 GMT"
+fetched_at: "2026-11-10T06:27:45Z"
+last_modified: "Mon, 09 Nov 2026 22:46:00 GMT"
 tags: ["authorization", "mcp", "mcp-spec", "security"]
 ---
 

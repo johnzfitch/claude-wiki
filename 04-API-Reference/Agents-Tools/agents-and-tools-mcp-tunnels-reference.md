@@ -2,7 +2,7 @@
 title: "MCP tunnels reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/reference"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:34:37Z"
+fetched_at: "2026-11-13T06:35:12Z"
 tags: ["api", "mcp"]
 ---
 
@@ -50,7 +50,7 @@ Each upstream value must be exactly `scheme://host:port`. The port is mandatory.
 
 ## Tunnels API
 
-The Tunnels REST API lives at `/v1/tunnels` and supports creating, listing, and archiving tunnels, registering CA certificates, and revealing or rotating the tunnel token. See the [Tunnels API reference](../Endpoints/http-beta-tunnels-list.md) for all endpoints, request and response schemas, and examples.
+The Tunnels REST API lives at `/v1/tunnels` and supports creating, listing, and archiving tunnels, registering CA certificates, and revealing or rotating the tunnel token. See the [Tunnels API reference](../Endpoints/http-beta-tunnels-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for all endpoints, request and response schemas, and examples.
 
 
 

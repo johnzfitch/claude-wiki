@@ -2,7 +2,7 @@
 title: "Set up OpenTelemetry with the Claude API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/opentelemetry/api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-07T06:23:46Z"
+fetched_at: "2026-11-15T06:24:22Z"
 tags: ["api"]
 ---
 
@@ -20,20 +20,24 @@ Add a destination in the Claude Console to send OpenTelemetry traces of your Mes
 
 API tracing
 
+Beta
+
 Feature of  
 [OpenTelemetry](manage-claude-opentelemetry.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 With OpenTelemetry, the Claude API can emit a span for each model request and each tool use that it runs. You can view these spans in your observability platform without changing your code.
 
@@ -141,11 +145,11 @@ By default, the API spans for a Messages API request or a Managed Agents session
 
 The API reads each request’s trace context from the W3C [`traceparent` header](https://www.w3.org/TR/trace-context/). If the sampled flag in the header is off, the API doesn’t emit the request’s span or the spans under it.
 
-With the Claude SDK
+With the Anthropic SDK
 
 With other clients
 
-With the Claude SDK
+With the Anthropic SDK
 
 To connect the API spans, [set up SDK tracing](manage-claude-opentelemetry-sdk.md) in your application and call the SDK from inside one of your own spans. Your span then contains the SDK span, which contains the API span. Send all of these spans to the same observability platform, so that it can show them as one trace. See the example traces of [a Messages API request](manage-claude-opentelemetry.md#a-messages-api-request) and [a Managed Agents session](manage-claude-opentelemetry.md#a-managed-agents-session).
 
@@ -327,27 +331,37 @@ When a delivery fails, the **Delivery** column shows **Failing**. Hover over it 
 
 ## Availability
 
-API tracing is in beta on every model and eligible for zero data retention.
+API tracing
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusBeta
+Availability requirements for API tracing are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Status  
+Beta
 
-[Managed Agents](managed-agents-overview.md)
+APIs  
+- Messages API
+- Managed Agents
 
-StatusBeta
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Status  
+Beta
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
 
 ### Data handling
 

@@ -2,9 +2,11 @@
 title: "Making Claude a chemist \\ Anthropic"
 source_url: "https://www.anthropic.com/research/making-claude-a-chemist"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:42Z"
+fetched_at: "2026-11-14T06:26:41Z"
 tags: ["news-research"]
 ---
+
+### 01Claude vs. ChemDraw on NMR prediction and structure elucidation
 
 # Making Claude a chemist
 
@@ -12,38 +14,35 @@ tags: ["news-research"]
 - [02Limitations](#limitations)
 - [03Looking ahead](#looking-ahead)
 
-- Published
+Published  
+Jun 5, 2026
 
-  Jun 5, 2026
+Team  
+[Science](https://www.anthropic.com/science)
 
-- Team
+Topics  
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Reasoning](https://www.anthropic.com/search?topic=reasoning)
 
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Reasoning](https://www.anthropic.com/search?topic=reasoning)
-
-  See more...
+See more...
 
 Related articles
 
-- Frontier Red Team
+- Science
 
-  Oct 16, 2026
+  Nov 9, 2026
 
-  [Claude reveals ECDSA curve origins](ecdsa-curve-origins.md)
+  [Testing Claude on real-world electronics design](claude-electronics-design.md)
 
 [View more](https://www.anthropic.com/search?topic=discovery)
 
 *We’re working with world-class synthetic, computational, and analytical chemists to make Claude better at chemistry. In this post, we share our first work as part of this effort, in which Anthropic chemist, David Kamber, examines how Claude performs on a chemist’s most common analytical input, an NMR spectrum.  
-  
-*When working with molecules, chemists move between hand-drawn structures on a whiteboard, instrument readouts, database query strings, and the technical notations of patents and publications. Each of these representations encodes the same underlying chemistry, but each demands a different kind of fluency. A sketch of caffeine, for example, allows a chemist to spot its resemblance to adenosine, the body’s drowsiness signal, and predict that it keeps us alert by blocking the receptor. However, that same sketch cannot help a chemist tell it apart from other near-identical looking molecules.
+  *
+When working with molecules, chemists move between hand-drawn structures on a whiteboard, instrument readouts, database query strings, and the technical notations of patents and publications. Each of these representations encodes the same underlying chemistry, but each demands a different kind of fluency. A sketch of caffeine, for example, allows a chemist to spot its resemblance to adenosine, the body’s drowsiness signal, and predict that it keeps us alert by blocking the receptor. However, that same sketch cannot help a chemist tell it apart from other near-identical looking molecules.
 
-Understanding what molecule a chemist is working with is critical. Chemistry undergirds everything from the foods and medicine we ingest to our lotions, paints, and plastics. Reroute a handful of bonds among the same atoms, and glucose becomes fructose, molecules sharing a formula but processed through entirely different metabolic pathways. Flip a molecule into its mirror image, and a sedative becomes a teratogen, as happened in the [thalidomide](https://pubmed.ncbi.nlm.nih.gov/21507989/) disaster.^([1](#footnote-1)) Chemists’ everyday work depends on reading these signals correctly across whichever representation befits a given task.
+Understanding what molecule a chemist is working with is critical. Chemistry undergirds everything from the foods and medicine we ingest to our lotions, paints, and plastics. Reroute a handful of bonds among the same atoms, and glucose becomes fructose, molecules sharing a formula but processed through entirely different metabolic pathways. Flip a molecule into its mirror image, and a sedative becomes a teratogen, as happened in the [thalidomide](https://pubmed.ncbi.nlm.nih.gov/21507989/) disaster.^([^1]) Chemists’ everyday work depends on reading these signals correctly across whichever representation befits a given task.
 
 Translating between these representations (chasing down a structure from a figure, reconciling an instrument readout against a proposed product, querying a database in the right notation) is time consuming and impossible to keep up with at scale—CAS, the largest chemistry registry, catalogs over 290 million disclosed substances and grows by roughly 15,000 new ones every day.
 
@@ -55,13 +54,13 @@ Ultimately, our claim is a modest one: Claude is starting to meaningfully assist
 
 ## Claude vs. ChemDraw on NMR prediction and structure elucidation
 
-**Full version can be found [here](https://www-cdn.anthropic.com/07441e654ad3dfeb0cd090e9361511562825d012.pdf)**
+**Full version can be found [here](https://assets.claude.com/07441e654ad3dfeb0cd090e9361511562825d012.pdf)**
 
 Nearly every small molecule—drug, pesticide, dye, fragrance, polymer, DNA or protein subunit, and functional inorganic or solid-state material—exists because a chemist determined its structure. Given that these molecules cannot be seen with microscopes, chemists must rely on spectral analysis, probing a molecule with light, radio waves, or magnetic fields. The way a given molecule absorbs, emits, or deflects this energy gives chemists a pattern, or spectrum, with which they can elucidate its structure.  
   
 NMR spectroscopy—one of the canonical techniques chemists rely on for this—is one of the most time-consuming steps in synthetic chemistry; for every compound, a chemist has to match each peak in the spectrum to an atom in the proposed structure by hand. For this white paper, we tested how Claude fared against the dedicated NMR software chemists rely on today. We measured three Claude models (Opus 4.7, Opus 4.6, Sonnet 4.6) against ChemDraw and MestReNova on 20 compounds drawn from synthetic chemistry preprints published after the models’ training cutoff so as to avoid selection bias. Both ChemDraw and MestReNova do forward prediction, using a drawn structure to simulate what NMR spectrum will be produced. In addition to forward prediction, we also wanted to see whether Claude could go the other direction—starting from an experimental spectrum and proposing the structure behind it. This is the harder task, and the one existing software currently leaves to the chemist.  
   
-To set up our assessment, we pulled 20 compounds from ChemRxiv preprints^([2](#footnote-2)) posted after the models’ training cutoff, taking the first fully characterized novel molecules from each paper. The 20 span four structural families, five compounds each, with each family selected because it involves a different category of NMR challenge. Each tool was given the structure encoded as a SMILES string—the line-of-text notation chemists use to input a molecule to software—and was asked to predict where every hydrogen and carbon peak would fall along a 1D NMR spectrum (a horizontal axis measuring chemical shifts in ppm, parts per million). Given that NMR samples are dissolved in a liquid, and that the choice of solvent (chloroform, DMSO, etc.) moves the peak positions slightly, each tool was told to predict the spectrum in whatever solvent the chemists had used in the published paper.
+To set up our assessment, we pulled 20 compounds from ChemRxiv preprints^([^2]) posted after the models’ training cutoff, taking the first fully characterized novel molecules from each paper. The 20 span four structural families, five compounds each, with each family selected because it involves a different category of NMR challenge. Each tool was given the structure encoded as a SMILES string—the line-of-text notation chemists use to input a molecule to software—and was asked to predict where every hydrogen and carbon peak would fall along a 1D NMR spectrum (a horizontal axis measuring chemical shifts in ppm, parts per million). Given that NMR samples are dissolved in a liquid, and that the choice of solvent (chloroform, DMSO, etc.) moves the peak positions slightly, each tool was told to predict the spectrum in whatever solvent the chemists had used in the published paper.
 
 Because a language model’s output varies between runs, each Claude model was queried three times per compound and averaged; ChemDraw and MestReNova return the same answer every time and were run once. We then paired each predicted peak with its experimental counterpart and measured the gap in ppm. These landed within the window a chemist would call correct—±0.20 ppm for hydrogen or ±1.0 ppm for carbon.  
 
@@ -107,3 +106,7 @@ We are expanding the [AI for Science program](ai-for-science-program.md) to more
 01An incident in which a morning sickness medication was linked to severe birth defects in over 10,000 children worldwide.[](#footnote-ref-1)
 
 02The four preprints from which we pulled the compounds: <https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002274/v1>, <https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-59lfh>, <https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002423/v1>, <https://chemrxiv.org/doi/full/10.26434/chemrxiv.15002316/v1>.[](#footnote-ref-2)
+
+[^1]:
+
+[^2]:

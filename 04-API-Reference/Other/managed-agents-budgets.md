@@ -2,7 +2,7 @@
 title: "Session budgets - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/budgets"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-08T06:25:24Z"
+fetched_at: "2026-11-16T06:25:04Z"
 tags: ["agents", "api"]
 ---
 
@@ -20,24 +20,29 @@ Cap a session’s spend with a hard dollar budget enforced at public list rates.
 
 Session budgets
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
 [APIs](#feature-availability)  
-Messages APINot availableManaged AgentsAvailable
+- Managed Agents
+- Messages API Not supported
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 A session budget is an optional hard spend ceiling you set when you [create a session](managed-agents-sessions.md). The platform continuously prices everything the session consumes at public list rates (the session’s **list cost**) and stops issuing new model requests once that cost reaches the budget. The request in flight when the cap is crossed still completes, so the final list cost can land [a fraction past the budget](#when-a-session-reaches-its-budget). A session at its budget pauses and goes [idle](managed-agents-session-operations.md#session-statuses) rather than terminating; changing or removing the budget resumes the work that the budget paused. Deployments accept the same budget and apply it to each session they start; see [Budgets on deployments](#budgets-on-deployments).
 
@@ -266,36 +271,67 @@ Session budgets are hard caps in US dollars (written in cents) on a single sessi
 
 ## Availability
 
-Session budgets are in beta on every model.
+Session budgets
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Availability requirements for Session budgets are the same across all supported platforms.
 
-Use [Task budgets](../Guides/build-with-claude-task-budgets.md) instead.
+Claude API
 
-StatusNot available
+Status  
+Beta
 
-[Managed Agents](managed-agents-overview.md)
+APIs  
+- Managed Agents
 
-StatusBeta
+- Messages API Not supported
 
-Cloud platforms
+Beta header  
+Requires
 
-- All supported platforms
+managed-agents-2026-04-01
 
-### Required beta headers
+Models  
+- All models
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Claude Platform on AWS
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Status  
+Beta
 
-Header
+APIs  
+- Managed Agents
 
-- `managed-agents-2026-04-01`
-  
+- Messages API Not supported
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+APIs  
+- Managed Agents
+
+- Messages API Not supported
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -309,8 +345,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

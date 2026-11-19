@@ -2,7 +2,7 @@
 title: "Environments - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/environments"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:43Z"
+fetched_at: "2026-11-13T06:34:04Z"
 tags: ["api"]
 ---
 
@@ -87,6 +87,30 @@ Unified Environment resource for both cloud and self-hosted environments.
 
 
 
+BetaEnvironmentArchivedErrorDetails object{ error_code }
+
+
+
+The environment is archived, so it cannot be updated.
+
+error_code: "environment_archived"
+
+
+
+
+
+BetaEnvironmentCreateDisabledErrorDetails object{ error_code }
+
+
+
+Anthropic has turned off creating environments for this organization. Existing environments still work.
+
+error_code: "environment_create_disabled"
+
+
+
+
+
 BetaEnvironmentDeleteResponse object{ type: "environment_deleted", id }
 
 
@@ -108,6 +132,54 @@ id: string
 
 
 Environment identifier
+
+
+
+BetaEnvironmentNotFoundErrorDetails object{ error_code }
+
+
+
+`settings.environment_id` names no Environment within the organization's reach.
+
+error_code: "environment_not_found"
+
+
+
+
+
+BetaEnvironmentUpdateDisabledErrorDetails object{ error_code }
+
+
+
+Anthropic has turned off updating environments for this organization. Existing environments still work as they are.
+
+error_code: "environment_update_disabled"
+
+
+
+
+
+BetaInvalidConfigTypeChangeErrorDetails object{ error_code }
+
+
+
+`config.type` differs from the environment's stored type, which cannot change after creation.
+
+error_code: "invalid_config_type_change"
+
+
+
+
+
+BetaInvalidMetadataErrorDetails object{ error_code }
+
+
+
+`metadata` has too many keys, a key or value that is too long, or a reserved key. The message names each problem.
+
+error_code: "invalid_metadata"
+
+
 
 
 

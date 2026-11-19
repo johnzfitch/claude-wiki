@@ -2,7 +2,7 @@
 title: "Customer support | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/customer-support"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:48Z"
+fetched_at: "2026-11-18T06:29:23Z"
 tags: ["case-studies"]
 ---
 

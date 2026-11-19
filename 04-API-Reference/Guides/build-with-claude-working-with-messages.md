@@ -2,7 +2,7 @@
 title: "Using the Messages API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/working-with-messages"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:11Z"
+fetched_at: "2026-11-13T06:36:31Z"
 tags: ["api"]
 ---
 
@@ -20,11 +20,14 @@ Practical patterns and examples for using the Messages API effectively
 
 Messages API
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Anthropic offers two ways to build with Claude, each suited to different use cases:
 
@@ -33,7 +36,7 @@ Anthropic offers two ways to build with Claude, each suited to different use cas
 | **What it is** | Direct model prompting access | Pre-built, configurable agent harness that runs in managed infrastructure |
 | **Best for** | Custom agent loops and fine-grained control | Long-running tasks and asynchronous work |
 
-This guide covers common patterns for working with the Messages API, including basic requests, multi-turn conversations, prefill techniques, and vision capabilities. For complete API specifications, see the [Messages API reference](../Endpoints/messages-create.md). For the managed agent harness instead, see the [Claude Managed Agents overview](../Other/managed-agents-overview.md).
+This guide covers common patterns for working with the Messages API, including basic requests, multi-turn conversations, prefill techniques, and vision capabilities. For complete API specifications, see the [Messages API reference](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. For the managed agent harness instead, see the [Claude Managed Agents overview](../Other/managed-agents-overview.md).
 
 ## Basic request and response
 
@@ -97,7 +100,7 @@ Output
 }
 ```
 
-Refusal responses (`stop_reason: "refusal"`) also include a `stop_details` object identifying the policy category that triggered the refusal, on every model. See [Handling stop reasons](build-with-claude-refusals-and-fallback.md#refusal-response) for the field reference and example handling code.
+Refusal responses (`stop_reason: "refusal"`) also include a `stop_details` object identifying the policy category that triggered the refusal, on every model. See [What a refusal looks like](build-with-claude-refusals-and-fallback.md#refusal-response) for the field reference and example handling code.
 
 ## Multiple conversational turns
 
@@ -167,19 +170,19 @@ Output
 
 ### System role in messages
 
-On Claude Fable 5.1, [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md), Claude Fable 5, [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md), Claude Opus 5.5, Claude Opus 4.8, Claude Opus 5, Claude Sonnet 5.5, and Claude Haiku 5.5, you can include messages with `"role": "system"` after a user turn (subject to [placement rules](build-with-claude-mid-conversation-system-messages.md#limitations)) to add a new system instruction partway through a conversation. A `system` message that carries content cannot be the first entry in `messages`. Use the top-level `system` field for instructions that apply from the start.
+To add a new system instruction partway through a conversation, include a message with `"role": "system"` right after a user turn. That message can’t be the first entry in `messages`. This works on Claude Fable 5.2, [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md), Claude Fable 5.1, [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md), Claude Fable 5, [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md), Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Haiku 5.5. See the full [placement rules](build-with-claude-mid-conversation-system-messages.md#limitations).
 
 A mid-conversation system message has the same authority as the top-level `system` field, but because it is appended to the end of the message history, it does not invalidate any cached prefix that came before it. Use the top-level `system` field for instructions that should apply from the very first turn, and a mid-conversation system message for instructions that only become relevant later.
 
-See [Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) for the complete guide, including how to combine it with [prompt caching](build-with-claude-prompt-caching.md).
+See [Mid-conversation system messages and tool changes](build-with-claude-mid-conversation-system-messages.md) for the complete guide, including how to combine it with [prompt caching](build-with-claude-prompt-caching.md).
 
 ## Prefilling Claude’s response
 
-You can prefill part of Claude’s response in the last position of the input messages list. Use this technique to shape Claude’s response. The following example uses `"max_tokens": 1` to get a single multiple choice answer from Claude.
+You can prefill part of Claude’s response in the last position of the input messages list. Use this technique to shape Claude’s response. The following example uses `"max_tokens": 1` to get a single multiple-choice answer from Claude.
 
 
 
-Prefilling is not supported on Claude 4.6 and later models and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md). Requests using prefill with these models return a 400 error. Use [structured outputs](build-with-claude-structured-outputs.md) on models that support it, or system prompt instructions, instead. See the [migration guide](../../20-Models/about-claude-models-migration-guide.md) for migration patterns.
+Prefilling is not supported on Claude 4.6 and later models and [Claude Mythos Preview](../../22-Safety-Policy/glasswing.md). Requests using prefill with these models return a 400 error. Use [structured outputs](build-with-claude-structured-outputs.md) on models that support it, or system prompt instructions, instead. See [Migration guides](../../20-Models/about-claude-models-migration-guide.md) for migration patterns.
 
 cURL
 
@@ -386,11 +389,48 @@ Set an advisory token budget across a full agentic loop with `output_config.task
 
 ## Availability
 
-The Messages API is available on every model and eligible for zero data retention and HIPAA readiness.
+Messages API
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
+
+Availability requirements for Messages API are the same across all supported platforms.
+
+Claude API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+Models  
+- All models
+
+Microsoft Foundry
+
+Models  
+- All models
 
 ### Data handling
 

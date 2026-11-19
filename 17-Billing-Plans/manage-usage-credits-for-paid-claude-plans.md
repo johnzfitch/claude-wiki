@@ -2,7 +2,7 @@
 title: "Manage usage credits for paid Claude plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12429409-manage-usage-credits-for-paid-claude-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:41Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["billing"]
 ---
 
@@ -15,7 +15,7 @@ This article explains how usage credits work on your paid Claude plan (Pro, Max,
 
 Usage credits allow individuals subscribed to paid Claude plans (Pro, Max, and Ultra) to continue using Claude after reaching their included usage limits. Most paid plans have a session limit that resets every five hours and a weekly limit. The Ultra plan has a weekly limit, and verified Ultra accounts don't have a five-hour limit (**[learn more](what-is-the-ultra-plan.md#h_ff4fcea367)**). Max and Ultra plans also have a separate weekly limit for Fable. Instead of being blocked when you reach one of your plan's limits, you can switch to consumption-based pricing at standard API rates and continue your work without interruption.
 
-Usage credits are separate from the monthly API credits included with Max and Ultra plans. Monthly API credits don’t apply to usage credits in Claude, Claude Code, or Claude Cowork. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+Usage credits are separate from the monthly API credits included with Max and Ultra plans. Monthly API credits don’t apply to usage credits in Claude, Claude Code, or Claude Cowork. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 **Note:** You can buy usage credits and set a spend limit in the Claude mobile apps where in-app purchases are available. Auto-reload is only available on the web.
 
@@ -87,7 +87,7 @@ Expiration dates may vary in certain countries. For more information, see the **
 
 Your expiration dates are shown on the **Usage** page in Settings, and we'll email you before your purchased credits expire.
 
-**Refunds.** Usage credit purchases are non-refundable, including if you cancel your subscription or delete your account. Credits you've already used are never refunded. Exceptions apply where local law requires them, or in cases of fraud. Learn more about **[requesting a refund for a paid Claude plan](request-a-refund-for-a-paid-claude-plan-claude-help-center.md)**.
+**Refunds.** Usage credit purchases are non-refundable, including if you cancel your subscription or delete your account. Credits you bought directly from us are refunded when you upgrade to Team in place, move your personal account to an organization, close it using the **Start fresh** option, or when it closes at a domain claim deadline. Credits you've already used are never refunded. Exceptions apply where local law requires them, or in cases of fraud. Learn more about **[requesting a refund for a paid Claude plan](request-a-refund-for-a-paid-claude-plan-claude-help-center.md)**.
 
 ## Manage your usage credits
 
@@ -169,7 +169,7 @@ Your credits aren't refunded when you cancel. Your balance stays on your account
 
 ### What happens to my usage credits if I delete my account?
 
-Any remaining usage credits are forfeited when you delete your account, and they aren't refunded. Use your balance before deleting your account.
+Any remaining usage credits are forfeited when you delete your account, and they aren't refunded. Credits you bought directly from us are refunded when you upgrade to Team in place, move your personal account to an organization, close it with the **Start fresh** option, or when it closes at a domain claim deadline. Use your balance before deleting your account.
 
 ### Can I get a refund for usage credits?
 

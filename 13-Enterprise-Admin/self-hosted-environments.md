@@ -2,8 +2,8 @@
 title: "Self-hosted environments - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-10-31T06:24:44Z"
-last_modified: "Sat, 31 Oct 2026 02:03:32 GMT"
+fetched_at: "2026-11-13T06:35:00Z"
+last_modified: "Fri, 13 Nov 2026 06:18:45 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 

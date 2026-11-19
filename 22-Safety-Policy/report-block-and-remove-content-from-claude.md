@@ -2,7 +2,7 @@
 title: "Report, block, and remove content from Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10684638-report-block-and-remove-content-from-claude"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:25:33Z"
+fetched_at: "2026-11-18T06:27:37Z"
 tags: ["safety"]
 ---
 
@@ -17,7 +17,7 @@ Please note, we reserve the right to suspend users who frequently provide manife
 
 ## How to report safety issues
 
-We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#cbbeb8aeb9b8aaadaebfb28baaa5bfa3b9a4bba2a8e5a8a4a6) with enough detail for us to replicate the issue.
+We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#562325332425373033222f163738223e2439263f357835393b) with enough detail for us to replicate the issue.
 
 ## How to block or remove content
 

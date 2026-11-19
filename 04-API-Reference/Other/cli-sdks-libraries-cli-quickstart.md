@@ -2,7 +2,7 @@
 title: "CLI quickstart - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/quickstart"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:12Z"
+fetched_at: "2026-11-13T06:36:32Z"
 tags: ["api", "authentication", "cli"]
 ---
 
@@ -24,7 +24,7 @@ Compared to `curl`, `ant` builds request bodies from typed flags or piped YAML i
 
 
 
-For endpoint-specific parameters and response schemas, see the [API reference](../Endpoints/cli-messages-create.md). This page gets you to a working command. For everything else the CLI does, see [Using the CLI](cli-sdks-libraries-cli-using.md) and [CLI scripting and automation](cli-sdks-libraries-cli-scripting.md).
+For endpoint-specific parameters and response schemas, see the [API reference](../Endpoints/cli-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. This page gets you to a working command. For everything else the CLI does, see [Using the CLI](cli-sdks-libraries-cli-using.md) and [CLI scripting and automation](cli-sdks-libraries-cli-scripting.md).
 
 ## Installation
 
@@ -47,7 +47,7 @@ curl (Linux/WSL)
 For Linux environments, download the release binary directly.
 
 ```python
-VERSION=2.6.0
+VERSION=2.9.0
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 case $(uname -m) in
   x86_64) ARCH=amd64 ;;
@@ -63,7 +63,7 @@ You can find all releases on the [GitHub releases page](https://github.com/anthr
 
 go install
 
-You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
 ```python
 go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -71,7 +71,7 @@ go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
 
 
 
-The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+`go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
 ```python
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -105,7 +105,7 @@ For other ways to authenticate (API key environment variable, headless hosts, mu
 
 ## Send your first request
 
-With the binary installed and authenticated, call the [Messages API](../Endpoints/cli-messages-create.md):
+With the binary installed and authenticated, call the [Messages API](../Endpoints/cli-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.:
 
 ```python
 ant messages create \

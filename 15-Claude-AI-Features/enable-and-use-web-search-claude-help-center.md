@@ -2,16 +2,16 @@
 title: "Enable and use web search | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10684626"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:32Z"
+fetched_at: "2026-11-18T06:27:37Z"
 tags: ["claude-ai", "search"]
 ---
 
 # Enable and use web search
 
-October 7, 2026
-
 
 You can have Claude search the internet to provide you with up-to-date information and insights when using the following models:
+
+- Fable 5.2
 
 - Haiku 5.5
 

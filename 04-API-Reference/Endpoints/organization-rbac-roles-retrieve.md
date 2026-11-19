@@ -2,7 +2,7 @@
 title: "Get RBAC Role - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/rbac_roles/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:17Z"
+fetched_at: "2026-11-13T06:36:23Z"
 tags: ["api"]
 ---
 
@@ -56,53 +56,9 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-RBACRole object{ type: "rbac_role", id, created_at, 2 more }
+RBACRole object{ type: "rbac_role", id, created_at, 3 more }
 
 
-
-
-
-type: "rbac_role"
-
-
-
-Object type.
-
-For RBAC Roles, this is always `"rbac_role"`.
-
-defaultrbac_role
-
-id: string
-
-
-
-ID of the RBAC Role.
-
-
-
-created_at: string
-
-
-
-RFC 3339 datetime string indicating when the RBAC Role was created.
-
-formatdate-time
-
-display_name: string
-
-
-
-Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
-
-
-
-updated_at: string
-
-
-
-RFC 3339 datetime string indicating when the RBAC Role was last updated.
-
-formatdate-time
 
 Get RBAC Role
 
@@ -125,6 +81,9 @@ Response 200
   "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
   "created_at": "2024-10-30T23:58:27.427722Z",
   "display_name": "Project Editor",
+  "source": {
+    "type": "built_in"
+  },
   "type": "rbac_role",
   "updated_at": "2024-10-30T23:58:27.427722Z"
 }
@@ -141,5 +100,8 @@ Response 200
   "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
   "created_at": "2024-10-30T23:58:27.427722Z",
   "display_name": "Project Editor",
+  "source": {
+    "type": "built_in"
+  },
   "type": "rbac_role",
   "updated_at": "2024-10-30T23:58:27.427722Z"

@@ -2,11 +2,14 @@
 title: "Mods overview - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/overview"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-20T06:38:50Z"
+fetched_at: "2026-11-13T06:32:47Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What a mod can do](#what-a-mod-can-do)
 - [Get a mod](#get-a-mod)
@@ -36,7 +39,7 @@ Add panes, commands, and tool call rules to Claude Code with a mod. See what a m
 
 Copy pageCopy page
 
-A mod is a [plugin](plugins.md) that changes how Claude Code looks and behaves. It’s made of JavaScript or TypeScript event handlers: Claude Code calls one when an event happens, such as a tool call, a submitted prompt, or a part of the interface being drawn, and the handler can watch the event, change it, or take it over. Use a mod to add a feature of your own to Claude Code, such as a pane that charts how full your context is after each request. For the files in a mod and a complete example, see [How a mod works](#how-a-mod-works).
+A mod is a [plugin](plugins-overview.md) that changes how Claude Code looks and behaves. It’s made of JavaScript or TypeScript event handlers: Claude Code calls one when an event happens, such as a tool call, a submitted prompt, or a part of the interface being drawn, and the handler can watch the event, change it, or take it over. Use a mod to add a feature of your own to Claude Code, such as a pane that charts how full your context is after each request. For the files in a mod and a complete example, see [How a mod works](#how-a-mod-works).
 
 Claude Code’s existing [hooks](../07-Hooks/hooks.md) also run on events, as a shell command, HTTP request, or prompt you configure in a settings file. A mod’s handlers are functions that run inside Claude Code instead. Claude Code calls both kinds hooks: on these pages, “hook” means a mod’s handler, and the settings-file kind is a “settings hook”.
 
@@ -114,7 +117,7 @@ A mod runs with your permissions, so before you install one, know what it has ac
 - **Act without asking you**: approve a tool call before you’re asked
 - **Spend your usage**: call a model on your plan or API key
 
-Mods aren’t sandboxed. If you turn on [sandboxing](../02-Claude-Code-CLI/sandboxing.md), the sandbox isolates the Bash commands Claude runs, and a process that a mod starts runs outside it. With [managed settings](../02-Claude-Code-CLI/settings.md#check-what-your-organization-enforces) or a Team or Enterprise [`/login`](../02-Claude-Code-CLI/authentication.md#authentication-precedence) as the session’s credential, by default a mod’s approval doesn’t get a call past your `ask` rules or `PreToolUse` hooks. Without either, a mod can approve a call that an `ask` rule would prompt for, or that your `PreToolUse` hook blocked. To check when a mod can also approve a call that a `deny` rule refuses, see [Extend permissions with hooks](../02-Claude-Code-CLI/permissions.md#precedence-among-rules-hooks-and-mods). A mod can restyle much of Claude Code’s interface, but not the permission prompt. It can’t change what a prompt shows you.
+Mods aren’t sandboxed. If you turn on [sandboxing](../02-Claude-Code-CLI/sandboxing.md), the sandbox isolates the Bash commands Claude runs, and a process that a mod starts runs outside it. A mod can approve [many tool calls](../02-Claude-Code-CLI/permissions.md#precedence-among-rules-hooks-and-mods) that your `deny` or `ask` rules or your `PreToolUse` hooks would stop, unless the [built-in guard](plugins-mods-admin.md#know-what-happens-by-default) prevents it. With the guard loaded, by default a user’s mod can’t do this. In a local terminal session, `cc-plugin-sec-default` on the **Installed** tab of `/plugin` means the guard is loaded. A mod can restyle much of Claude Code’s interface, but not the permission prompt. It can’t change what a prompt shows you.
 
 
 [​](#list-what-a-mod-does-before-you-install-one)
@@ -161,7 +164,7 @@ To see which mods a terminal session loaded, run `/plugin` at the Claude Code pr
 
 How a mod works
 
-A mod is a [plugin](plugins.md) whose code registers event handlers, called hooks. Claude Code runs a hook when its event happens, such as when Claude calls a tool or when the spinner is drawn. A small mod has three files:
+A mod is a [plugin](plugins-overview.md) whose code registers event handlers, called hooks. Claude Code runs a hook when its event happens, such as when Claude calls a tool or when the spinner is drawn. A small mod has three files:
 
 ```python
 first-mod/
@@ -230,15 +233,15 @@ Where mods run
 
 A mod’s hooks run in every kind of session that loads the plugin, whichever provider serves the model, including Amazon Bedrock, Google Cloud’s Agent Platform, and Microsoft Foundry. Drawing is narrower: what a mod draws appears in the terminal, the Desktop app, and the VS Code extension. This table lists each place you might run Claude Code:
 
-| Where you run Claude Code                                                                  | Hooks run                                                                                                         | What the mod draws appears                                                                                                                                                                                                                                                                                                                                                 |
-|:-------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `claude` in a terminal, including an editor’s integrated terminal and the JetBrains plugin | Yes                                                                                                               | Yes                                                                                                                                                                                                                                                                                                                                                                        |
-| The Code tab of the Desktop app, except in a WSL session                                   | Yes                                                                                                               | Yes, except elements the [elements table](plugins-mods-reference.md#elements) marks terminal-only                                                                                                                                                                                                                                                                    |
-| A [WSL session](../16-Mobile-Desktop/desktop-wsl.md) in the Desktop app                                   | No, because plugins aren’t available in WSL sessions                                                              | No                                                                                                                                                                                                                                                                                                                                                                         |
-| The VS Code extension’s chat panel                                                         | Yes                                                                                                               | Yes, with extension version 2.1.299 or later. A session that [doesn’t fetch feature flags](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching), such as one on Amazon Bedrock, needs 2.1.304 or later. The [render sites](plugins-mods-reference.md#render-sites) and [elements](plugins-mods-reference.md#elements) tables mark what the panel draws. |
-| `claude -p` and the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md)                               | Yes                                                                                                               | No                                                                                                                                                                                                                                                                                                                                                                         |
-| [Remote Control](../02-Claude-Code-CLI/remote-control.md) from claude.ai or the mobile app                 | Yes, in the session on your machine                                                                               | In the terminal on your machine                                                                                                                                                                                                                                                                                                                                            |
-| A [cloud session](../02-Claude-Code-CLI/claude-code-on-the-web.md)                                         | Yes, for a plugin that [reaches the cloud session](../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup) | No                                                                                                                                                                                                                                                                                                                                                                         |
+| Where you run Claude Code | Hooks run | What the mod draws appears |
+|:---|:---|:---|
+| `claude` in a terminal, including an editor’s integrated terminal and the JetBrains plugin | Yes | Yes |
+| The Code tab of the Desktop app, except in a WSL session | Yes | Yes, except elements the [elements table](plugins-mods-reference.md#elements) marks terminal-only |
+| A [WSL session](../16-Mobile-Desktop/desktop-wsl.md) in the Desktop app | No, because plugins aren’t available in WSL sessions | No |
+| The VS Code extension’s chat panel | Yes | Yes, with extension version 2.1.299 or later. A session that [doesn’t fetch feature flags](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching), such as one on Amazon Bedrock, needs 2.1.304 or later. The [render sites](plugins-mods-reference.md#render-sites) and [elements](plugins-mods-reference.md#elements) tables mark what the panel draws. |
+| `claude -p` and the [Agent SDK](../05-Agent-SDK/agent-sdk-overview.md) | Yes | No |
+| [Remote Control](../02-Claude-Code-CLI/remote-control.md) from claude.ai or the mobile app | Yes, in the session on your machine | In the terminal on your machine |
+| A [cloud session](../02-Claude-Code-CLI/claude-code-on-the-web.md) | Yes, for a plugin that [reaches the cloud session](../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup) | No |
 
 A mod that draws can check which app it’s running in, and fall back to a line in the transcript or a command’s text reply where nothing draws.
 
@@ -256,13 +259,13 @@ Compare mods, settings hooks, skills, and MCP servers
 
 Mods, settings hooks, skills, and MCP servers overlap. This table shows what each one is and when to pick it.
 
-|                              | Mod                                                                                | Settings hook                                                                                              | Skill                                            | MCP server                                             |
-|:-----------------------------|:-----------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------|:-------------------------------------------------|:-------------------------------------------------------|
-| What it is                   | Functions in a plugin that Claude Code calls in its own process                    | A shell command, HTTP request, or prompt that Claude Code runs on a lifecycle event                        | A `SKILL.md` file of instructions Claude reads   | An external process or service that gives Claude tools |
-| What it can change           | Tool calls, prompts, commands, turns, and what the interface draws                 | Whether a tool call or prompt goes ahead, a tool call’s arguments and result, and context added for Claude | What Claude knows and does                       | Which tools Claude has                                 |
-| Can it draw in the interface | Yes                                                                                | No                                                                                                         | No                                               | No                                                     |
-| What you write               | JavaScript or TypeScript                                                           | A script and a `settings.json` entry                                                                       | Markdown                                         | A server in any language                               |
-| Pick it when                 | You want a pane, a band above the prompt, a custom command, or to rewrite an event | You want to block, allow, or log an event with a script you already have                                   | You keep pasting the same instructions into chat | Claude needs to reach an external system               |
+|  | Mod | Settings hook | Skill | MCP server |
+|:---|:---|:---|:---|:---|
+| What it is | Functions in a plugin that Claude Code calls in its own process | A shell command, HTTP request, or prompt that Claude Code runs on a lifecycle event | A `SKILL.md` file of instructions Claude reads | An external process or service that gives Claude tools |
+| What it can change | Tool calls, prompts, commands, turns, and what the interface draws | Whether a tool call or prompt goes ahead, a tool call’s arguments and result, and context added for Claude | What Claude knows and does | Which tools Claude has |
+| Can it draw in the interface | Yes | No | No | No |
+| What you write | JavaScript or TypeScript | A script and a `settings.json` entry | Markdown | A server in any language |
+| Pick it when | You want a pane, a band above the prompt, a custom command, or to rewrite an event | You want to block, allow, or log an event with a script you already have | You keep pasting the same instructions into chat | Claude needs to reach an external system |
 
 Each of the others has its own page: [Hooks](../07-Hooks/hooks.md), [Skills](skills.md), and [MCP](../06-MCP-Tools/General/mcp.md). A plugin can hold all of them, so a mod can ship in the same plugin as a skill and an MCP server.
 
@@ -271,18 +274,18 @@ Each of the others has its own page: [Hooks](../07-Hooks/hooks.md), [Skills](ski
 
 Mods built into Claude Code
 
-Some of Claude Code’s own features are mods. To see the ones your session has, run `/plugin` at the Claude Code prompt and go to the **Installed** tab, which lists them under **Built-in**. You can’t update or uninstall a built-in mod, and the table’s last column says how to turn each one off. The [`mods active` line](#see-which-mods-a-session-loaded) omits built-in mods. This table lists each entry by the name `/plugin` shows:
+Some of Claude Code’s own features are mods. To see the ones your session has, run `/plugin` at the Claude Code prompt and go to the **Installed** tab, which lists them under **Built-in**. You can’t update or uninstall a built-in mod. The [`mods active` line](#see-which-mods-a-session-loaded) omits built-in mods. This table lists some of the **Built-in** entries by the name `/plugin` shows:
 
-| Name in `/plugin`            | What it does                                                                                                                                                       | Where it’s on                                                                                                           | How to turn it off                                                                                                            |
-|:-----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------|
-| `cc-plugin-agents-md`        | Loads `AGENTS.md` as project instructions                                                                                                                          | Every session, apart from [the ones that can’t read `AGENTS.md`](../02-Claude-Code-CLI/memory.md#when-agents-md-support-is-unavailable) | Disable it in `/plugin`, or [choose which instruction files load](../02-Claude-Code-CLI/memory.md#choose-which-instruction-files-load)        |
-| `cc-plugin-diff`             | Takes over [`/diff`](../02-Claude-Code-CLI/interactive-mode.md#review-changes-with-%2Fdiff) and draws its pane                                                                     | Interactive terminal sessions                                                                                           | Disable it in `/plugin`. `/diff` stays, and Claude Code’s built-in version of the command answers it.                         |
-| `cc-plugin-plugin-authoring` | Gives Claude the [`plugin-authoring` skill](plugins-mods-create.md#ask-claude-for-a-mod) for writing mods. It holds a skill and no mod code.                 | Unless Anthropic has turned installed mods off remotely                                                                 | Disable it in `/plugin`                                                                                                       |
-| `cc-plugin-sec-default`      | Guards what your organization manages from the mods a user installs                                                                                                | [Where the guard loads](plugins-mods-admin.md#know-what-happens-by-default)                                       | You can’t. An administrator [sets the order](plugins-mods-admin.md#install-your-organizations-mods) in managed settings |
-| `cc-plugin-telemetry`        | Sends the analytics records that Claude Code and its built-in mods log                                                                                             | Wherever Claude Code’s own analytics are on                                                                             | Disable it in `/plugin`, or turn analytics off, for example with [`DISABLE_TELEMETRY`](../02-Claude-Code-CLI/env-vars.md)                     |
-| `cc-plugin-you-should-know`  | [You should know](../02-Claude-Code-CLI/interactive-mode.md#you-should-know-suggestions): a side agent shows a note above the prompt when it finds something you might have missed | Off until you [turn it on](../02-Claude-Code-CLI/interactive-mode.md#you-should-know-suggestions)                                       | Disable it in `/plugin`                                                                                                       |
+| Name in `/plugin` | What it does | Where it’s on | How to turn it off |
+|:---|:---|:---|:---|
+| `cc-plugin-agents-md` | Loads `AGENTS.md` as project instructions | Every session, apart from [the ones that can’t read `AGENTS.md`](../02-Claude-Code-CLI/memory.md#when-agents-md-support-is-unavailable) | Disable it in `/plugin`, or [choose which instruction files load](../02-Claude-Code-CLI/memory.md#choose-which-instruction-files-load) |
+| `cc-plugin-diff` | Takes over [`/diff`](../02-Claude-Code-CLI/interactive-mode.md#review-changes-with-%2Fdiff) and draws its pane | Interactive terminal sessions | Disable it in `/plugin`. `/diff` stays, and Claude Code’s built-in version of the command answers it. |
+| `cc-plugin-plugin-authoring` | Gives Claude the [`plugin-authoring` skill](plugins-mods-create.md#ask-claude-for-a-mod) for writing mods. It holds a skill and no mod code. | Unless Anthropic has turned installed mods off remotely | Disable it in `/plugin` |
+| `cc-plugin-sec-default` | Guards what your organization manages from the mods a user installs | [Where the guard loads](plugins-mods-admin.md#know-what-happens-by-default) | You can’t. An administrator [sets the order](plugins-mods-admin.md#install-your-organizations-mods) in managed settings |
+| `cc-plugin-telemetry` | Sends the analytics records that Claude Code and its built-in mods log | Wherever Claude Code’s own analytics are on | Disable it in `/plugin`, or turn analytics off, for example with [`DISABLE_TELEMETRY`](../02-Claude-Code-CLI/env-vars.md) |
+| `cc-plugin-you-should-know` | [You should know](../02-Claude-Code-CLI/interactive-mode.md#you-should-know-suggestions): a side agent shows a note above the prompt when it finds something you might have missed | Off until you [turn it on](../02-Claude-Code-CLI/interactive-mode.md#you-should-know-suggestions) | Disable it in `/plugin` |
 
-The settings and flags that stop installed mods, such as `disableAllHooks`, `--bare`, and `--safe-mode`, don’t stop built-in mods.
+For a **Built-in** plugin that isn’t in the table, [open its details in `/plugin`](discover-plugins.md#manage-installed-plugins) to read what it does or to disable it. The settings and flags that stop installed mods, such as `disableAllHooks`, `--bare`, and `--safe-mode`, don’t stop built-in mods.
 
 
 [​](#read-the-source-of-built-in-mods)

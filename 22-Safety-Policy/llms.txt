@@ -138,13 +138,13 @@ The following brokers, financial intermediaries, and selling agents are expected
 
 **Australia:** Bell Potter, CommSec, LGT Wealth, Macquarie, Morgans, Morgan Stanley Wealth Management, Sharesies, Stake.
 
-**Canada:** BMO Capital Markets, CIBC Capital Markets, Morgan Stanley, RBC Capital Markets, Scotiabank, TD Securities, Wealthsimple.
+**Canada:** BMO Capital Markets, CIBC Capital Markets, RBC Capital Markets, Scotiabank, TD Securities, Wealthsimple.
 
-**EEA and/or Switzerland:** BNP Paribas, Crédit Agricole CIB (and affiliates), Deutsche Bank, eToro, flatexDEGIRO, Interactive Brokers, Nordnet Bank AB, Revolut, Saxo Bank, Trade Republic, UBS Investment Bank.
+**EEA and/or Switzerland:** BNP Paribas, Crédit Agricole CIB (and affiliates), Deutsche Bank, eToro, flatexDEGIRO, ING, Interactive Brokers, Nordnet Bank AB, Revolut, Saxo Bank, Scalable Capital, Trade Republic, UBS Investment Bank.
 
 **Japan:** Mitsubishi UFJ Morgan Stanley (and affiliates), Mizuho, Rakuten, SBI.
 
-**UK:** AJ Bell, eToro, Hargreaves Lansdown, Interactive Brokers, Interactive Investor, Revolut. RetailBook is acting as the Public Offer Platform (POP) operator and is coordinating the retail offer for the UK.
+**UK:** AJ Bell, eToro, Hargreaves Lansdown, Interactive Brokers, Interactive Investor, Revolut, Robinhood. RetailBook is acting as the Public Offer Platform (POP) operator and is coordinating the retail offer for the UK.
 
 ### Disclaimers
 
@@ -156,7 +156,7 @@ This information is being provided in connection with the proposed initial publi
 
 An amended and restated preliminary base PREP prospectus containing important information relating to the securities described in this webpage has been filed with the securities regulatory authorities in each of the provinces and territories of Canada and is accessible through SEDAR+ at [www.sedarplus.ca](http://www.sedarplus.ca).
 
-The amended and restated preliminary base PREP prospectus is still subject to completion or amendment. Copies of the amended and restated preliminary base PREP prospectus may be obtained from RBC Dominion Securities Inc., 180 Wellington Street West, 8th Floor, Toronto, ON M5J 0C2, Attn: Distribution Centre, or via email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#03476a7077716a6176776a6c6d2d514140475043716160606e2d606c6e). There will not be any sale or any acceptance of an offer to buy the securities until a receipt for the final base PREP prospectus has been issued.
+The amended and restated preliminary base PREP prospectus is still subject to completion or amendment. Copies of the amended and restated preliminary base PREP prospectus may be obtained from RBC Dominion Securities Inc., 180 Wellington Street West, 8th Floor, Toronto, ON M5J 0C2, Attn: Distribution Centre, or via email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#25614c5651574c4750514c4a4b0b77676661766557474646480b464a48). There will not be any sale or any acceptance of an offer to buy the securities until a receipt for the final base PREP prospectus has been issued.
 
 This webpage does not provide full disclosure of all material facts relating to the securities offered. Investors should read the amended and restated preliminary base PREP prospectus, the final base PREP prospectus, the supplemented PREP prospectus and any amendment for disclosure of those facts, especially risk factors relating to the securities offered, before making an investment decision.
 
@@ -192,7 +192,7 @@ If the Proposed UK Retail Offer proceeds, a disclosure summary relating to the P
 
 **United States**
 
-In the United States, the proposed offering will be made only by means of a prospectus. Copies of the preliminary prospectus, when available, may be obtained from: Goldman Sachs & Co. LLC, Attention: Prospectus Department, 200 West Street, New York, NY 10282, by telephone at (866) 471-2526, or by email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#a7d7d5c8d4d7c2c4d3d2d48ac9dee7c9de89c2cac6cecb89c0d489c4c8ca); or Morgan Stanley & Co. LLC, Attention: Prospectus Department, 180 Varick Street, 2nd Floor, New York, NY 10014.
+In the United States, the proposed offering will be made only by means of a prospectus. Copies of the preliminary prospectus, when available, may be obtained from: Goldman Sachs & Co. LLC, Attention: Prospectus Department, 200 West Street, New York, NY 10282, by telephone at (866) 471-2526, or by email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#97e7e5f8e4e7f2f4e3e2e4baf9eed7f9eeb9f2faf6fefbb9f0e4b9f4f8fa); or Morgan Stanley & Co. LLC, Attention: Prospectus Department, 180 Varick Street, 2nd Floor, New York, NY 10014.
 
 A registration statement relating to these securities has been filed with the Securities and Exchange Commission but has not yet become effective. These securities may not be sold, nor may offers to buy be accepted, prior to the time the registration statement becomes effective. This webpage does not constitute an offer to sell or the solicitation of an offer to buy these securities, nor shall there be any sale of these securities in any state or jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or jurisdiction.
 
@@ -541,7 +541,7 @@ Claude doesn’t generate photos or illustrations the way image-generation tools
 
 Claude can, however, build diagrams, charts, and interactive visuals directly in your conversation to assist with your understanding. These are generated using HTML and SVG—so you can interact with them, ask follow-up questions, and have Claude adjust them as you go. This feature is in beta on Claude web and desktop. For additional details, see **[Custom visuals in chat](https://support.claude.com/en/articles/13979539-custom-visuals-in-chat)**.
 
-Claude can also view and analyze images you upload. For more, see **[Uploading files to Claude](../15-Claude-AI-Features/uploading-files-to-claude.md)**.
+Claude can also view and analyze images you upload. For more, see **[Uploading files to Claude](https://support.claude.com/en/articles/8241126-uploading-files-to-claude)**.
 
 ---
 
@@ -567,7 +567,7 @@ All developers building on Anthropic's API are required to comply with our **[Us
 
 These obligations apply regardless of your platform's size or use case. While you may already prohibit this activity, your end users or customers may upload CSAM, elicit sexualized content involving minors, or use outputs to facilitate grooming or sextortion. You are responsible for implementing appropriate safeguards against these risks on your deployment. We monitor API usage for violations of the Usage Policy and take enforcement action consistent with our policies and legal obligations.
 
-Additionally, if your product allows minors to interact directly with our models, please refer to our **[Guidelines for Organizations Serving Minors](https://support.claude.com/en/articles/9307344)**, which sets out the additional safeguards Anthropic requires for that audience. This guidance covers a range of possible measures, including but not limited to age verification systems, content moderation and filtering, monitoring and reporting mechanisms, and regulatory compliance and disclosure requirements.
+Additionally, if your product allows minors to interact directly with our models, please refer to our **[Guidelines for Organizations Serving Minors](../13-Enterprise-Admin/responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors-claude.md)**, which sets out the additional safeguards Anthropic requires for that audience. This guidance covers a range of possible measures, including but not limited to age verification systems, content moderation and filtering, monitoring and reporting mechanisms, and regulatory compliance and disclosure requirements.
 
 Whether you've received a notification from Anthropic about prohibited content or are proactively building out your safeguards, the resources below can help you get oriented in standing up detection, reporting, and response infrastructure appropriate to your platform.
 
@@ -579,7 +579,7 @@ There is no single correct architecture for a child safety program. The viable a
 
 **Detection & blocking services.** If your deployment allows users to upload or generate images or videos, or interact with other users, you can implement detection on your own infrastructure. Organizations may choose to build custom classifiers tailored to their threat model, though for many, a vendor or partner solution may be the more practical path. There are several providers that offer hash-matching, image, video, or text classifier solutions. For example, one widely deployed option is **[Thorn's Safer](https://safer.io/solutions/)**, which provides hash-matching against known CSAM and classifiers for novel material and grooming signals. The **[Internet Watch Foundation](https://www.iwf.org.uk/our-technology/our-services/)** (IWF) offers its member companies a **[suite of services](https://www.iwf.org.uk/our-technology/our-services/)** for detecting, blocking, and responding to CSAM on their platforms, including hash lists and a URL blocklist. The Tech Coalition's Pathways program (described below) can help companies evaluate and access detection options suited to their platform.
 
-**Program development and operational guidance.** The **[Tech Coalition](https://technologycoalition.org/)** is an industry alliance focused on preventing online child sexual exploitation and abuse. Its free **[Pathways](https://technologycoalition.org/programs/pathways/)** program is designed for startups and small to mid-sized platforms and provides templates for building a child safety program, guidance on CSAM detection and NCMEC reporting, insight into global regulatory requirements, and support on emerging risks such as financial sextortion and AI-generated harms. Anthropic is a Tech Coalition member. You can contact the **[Tech Coalition team](https://support.claude.com/cdn-cgi/l/email-protection#ddb0b99da9b8beb5b3b2b1b2baa4beb2bcb1b4a9b4b2b3f3b2afba)** for an initial consultation.
+**Program development and operational guidance.** The **[Tech Coalition](https://technologycoalition.org/)** is an industry alliance focused on preventing online child sexual exploitation and abuse. Its free **[Pathways](https://technologycoalition.org/programs/pathways/)** program is designed for startups and small to mid-sized platforms and provides templates for building a child safety program, guidance on CSAM detection and NCMEC reporting, insight into global regulatory requirements, and support on emerging risks such as financial sextortion and AI-generated harms. Anthropic is a Tech Coalition member. You can contact the **[Tech Coalition team](https://support.claude.com/cdn-cgi/l/email-protection#e58881a59180868d8b8a898a829c868a84898c918c8a8bcb8a9782)** for an initial consultation.
 
 **Reporting.** US-based platforms with actual knowledge of apparent CSAM are legally required to report to **[NCMEC's CyberTipline](https://report.cybertip.org/)**. Platforms can **[register with NCMEC](https://esp.ncmec.org/registration)** to gain access to the CyberTipline reporting system, and NCMEC publishes additional **[legal resources](https://www.missingkids.org/gethelpnow/support/legalresources)** on reporting obligations. Platforms operating in other jurisdictions should consult local reporting requirements; INHOPE maintains a **[directory of national hotlines](https://www.inhope.org/EN#hotlineReferral)**. As you build your program, consider incorporating logging for the purposes of transparency reporting.
 
@@ -741,12 +741,10 @@ Path: 22-Safety-Policy/claude-for-teachers-your-data-and-our-terms.md
 
 # Claude for Teachers: your data and our terms
 
-October 5, 2026
-
 
 ## Overview
 
-**[Claude for Teachers](../18-Industry-UseCases/teachers.md)** is free for verified US K-12 educators, whether you sign up as an individual teacher or your school or district sets up an organization for everyone. Qualifying teachers or organizations that sign up by June 30, 2027 get a full year of free access. This offering includes free access to Claude Pro features, teaching skills built for lesson planning and differentiation, a connection to curriculum mapped to academic standards in all 50 states, and terms written for K-12.
+**[Claude for Teachers](../18-Industry-UseCases/teachers.md)** is free for verified US K-12 educators through July 30, 2028, whether you sign up as an individual teacher or your school or district sets up an organization for everyone. This offering includes free access to Claude Pro features, teaching skills built for lesson planning and differentiation, a connection to curriculum mapped to academic standards in all 50 states, and terms written for K-12.
 
 This page explains the **[U.S. K-12 Terms of Service](https://www.anthropic.com/legal/k12-terms)**, **[US K-12 Public Sector Addendum](https://anthropic.com/legal/k12-addendum)**, and the **[U.S. K-12 Data Processing Agreement](https://www.anthropic.com/legal/k12-dpa)**.
 
@@ -802,7 +800,7 @@ AES-256 encryption at rest. TLS 1.2 or better in transit. Multi-factor authentic
 
 ### Delete your data
 
-You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](https://support.claude.com/en/articles/9796617-can-you-delete-data-that-i-sent-via-team-and-enterprise-plans)**
+You control your conversations and can delete your chats anytime from your dashboard. More information on data deletion can be found here: **[Can you delete data that I sent via Team and Enterprise plans?](../17-Billing-Plans/can-you-delete-data-that-i-sent-via-team-and-enterprise-plans.md)**
 
 Your district's admins can also delete any member's data through the Compliance API when district policy requires it. If your district leaves Claude, Anthropic returns your district's data on request and deletes its copies within 30 days, except where the law requires retention.
 
@@ -812,7 +810,7 @@ Your district's admins can also delete any member's data through the Compliance 
 
 When you verify, your account moves onto a Claude for Teachers plan—a free Claude for Teams plan for verified educators. It comes with educator-specific terms and a data processing agreement, your chats and files aren't used to train our models, and student-data protections are built in. Your usage limits are higher than a standard free account—enough for everyday classroom work like lesson planning, quizzes, and parent communication.
 
-Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)**, roles and permissions, SSO and domain capture, spend controls, usage credits, or premium seats. For questions, **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+Some Team plan features are turned off for Claude for Teachers. You won't see billing and seat purchasing, **[member invitations and management](https://support.claude.com/en/articles/13133750-manage-members-on-team-and-enterprise-plans)**, roles and permissions, SSO and domain capture, or premium seats. For questions, **[reach out to our Support team](../15-Claude-AI-Features/how-to-get-support.md)**.
 
 ### School and district organizations
 
@@ -834,7 +832,7 @@ What's different from an individual Claude for K-12 Teachers account:
 
 ## Get started
 
-Teachers, schools, and districts can all get started for free at **[Claude for Teachers](../18-Industry-UseCases/teachers.md)**. Sign up by June 30, 2027 for your full year of free access.
+Teachers, schools, and districts can all get started for free at **[Claude for Teachers](../18-Industry-UseCases/teachers.md)**. Claude for Teachers is free through July 30, 2028.
 
 ---
 
@@ -1119,6 +1117,8 @@ Source: https://support.claude.com/en/articles/13163631-configuring-session-secu
 Path: 22-Safety-Policy/configuring-session-security-settings.md
 
 # Configuring session security settings
+
+October 15, 2026
 
 
 This feature is available to Admins and Owners of Enterprise plans and Console Admins.
@@ -1468,7 +1468,7 @@ Anthropic strictly prohibits Child Sexual Abuse Material (CSAM) on our services.
 
 As just one example of how we are combatting CSAM distribution: on our first-party services, we use a hash-matching tool to detect and report known CSAM that is included in a user or organization’s inputs. This tool provides access to NCMEC’s database of known CSAM hash values. When an image is sent in an input to our services, we will calculate a perceptual hash of the image. This hash will be automatically compared against the database. In the case of a match, we will notify and provide NCMEC information about the input and the related Account.
 
-As part of Anthropic’s safety process, we will also send a notice to the user or organization any time we report CSAM to NCMEC. If you receive a notification from us about CSAM detection and believe we’ve made an error, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#8df8fee8fffeecebe8f9f4cdece3f9e5ffe2fde4eea3eee2e0).
+As part of Anthropic’s safety process, we will also send a notice to the user or organization any time we report CSAM to NCMEC. If you receive a notification from us about CSAM detection and believe we’ve made an error, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#7d080e180f0e1c1b1809043d1c1309150f120d141e531e1210).
 
 ---
 
@@ -1506,13 +1506,13 @@ Our evaluation of whether to tailor use restrictions to the mission and legal au
 
 ## Export your Claude data | Claude Help Center
 
-Source: https://support.claude.com/en/articles/9450526
-Path: 22-Safety-Policy/export-your-claude-data-claude-help-center.md
+Source: https://support.claude.com/en/articles/9450526-export-your-claude-data
+Path: 22-Safety-Policy/export-your-claude-data.md
 
 # Export your Claude data
 
 
-Data exports are available to individual Claude users on Free, Pro, Max, and Ultra plans. Data exports include your chats, projects, memory, and account data. They don't include the original files you uploaded. Data exports don’t yet include your saved Personal Finance dashboard.
+Data exports are available to individual Claude users on Free, Pro, Max, and Ultra plans. Data exports include conversation data and the user data for your account, along with any voice recordings you've shared with Anthropic. They don't include the original files you uploaded. Data exports don’t yet include your saved Personal Finance dashboard.
 
 If you’re on a Team or Enterprise plan, you can export your own data once an organization Owner or Primary Owner turns this on. Primary Owners export the whole organization’s data instead.
 
@@ -1536,7 +1536,7 @@ Please note:
 
 - The download link will expire 24 hours after it's created, and it may work only once, so download the file right away.
 
-- If your link expires, you can request a new one by repeating the export process. If the link was emailed to you because your personal account closed, you can't repeat the export. If it has expired or won't open, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** soon: once the account's data is deleted, the export can't be sent again. An owner of your organization may need to reach out for you.
+- If your link expires, you can request a new one by repeating the export process. If the link was emailed to you because your personal account closed, you can't repeat the export. If it has expired or won't open, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md#h_d6fc679aa4)** soon: once the account's data is deleted, the export can't be sent again. An owner of your organization may need to reach out for you.
 
 ------------------------------------------------------------------------
 
@@ -1622,7 +1622,7 @@ Two kinds of parent organization can't enroll:
 
 ## Enroll your parent organization
 
-Any owner of a child organization under the parent can start enrollment at **[admin.claude.com](https://admin.claude.com)**. Enrollment is a short approval flow in which every child organization signs off on who the parent organization admins will be. Everyone proposed who’s still eligible when enrollment completes becomes a parent organization owner. Owners can add admins afterward on the **Admin roles** page.
+An eligible admin of any child organization can start enrollment at **admin.claude.com**. Eligible admins are the Primary Owner of a Claude Enterprise or Team organization, and the Admins of a Console organization. Enrollment is a short approval flow in which every child organization signs off on who the parent organization admins will be. Everyone proposed who’s still eligible when enrollment completes becomes a parent organization owner. Owners can add admins afterward on the **Admin roles** page.
 
 **Warning:** Enrollment can't be undone, and it can complete as soon as someone starts setup.
 
@@ -1638,13 +1638,13 @@ Copy the parent organization ID from **Organization settings \> Organization** i
 
 2.  Propose parent organization admins from those organizations. Search by name, email, or organization to find people. Starting setup counts as approval for the organizations you administer.
 
-3.  If other child organizations remain, wait for their admins to review the proposal. They can nominate admins from their own organizations, and approve. You can remind anyone who hasn't approved yet.
+3.  If other child organizations remain, wait for their eligible admins to review the proposal. They can nominate admins from their own organizations, and approve. You can remind anyone who hasn't approved yet.
 
 4.  When setup finishes, select "Done". The console opens on the **Organizations** page.
 
 If you administer every organization under the parent, your parent organization is enrolled immediately. Otherwise, the last approval enrolls it. SSO, SCIM, verified domains, and security settings move to the parent, and each child organization keeps its own users, roles, and projects.
 
-Changing the proposed admins asks every child organization to approve again. If an organization still hasn't approved seven days after the last change, any owner of a child organization under the parent can approve on its behalf.
+Changing the proposed admins asks every child organization to approve again. If an organization still hasn't approved after seven days, an eligible admin of another organization may be able to approve on its behalf.
 
 ## Manage your parent organization
 
@@ -1724,7 +1724,7 @@ Select a key's actions menu to disable, re-enable, or delete it. A key you creat
 
 On the **Organizations** page, under **Security**, turn on **Restrict organization creation** to stop anyone on your verified domains from creating a new organization, including a personal account. The **Security** page in the side menu lists each organization's HIPAA status.
 
-Parent owners and admins also start a domain claim here, instead of from a child organization's settings. You choose one child organization for accounts to migrate to, and the claim covers every Free, Pro, Max, and Ultra account on the domains verified at that point. Users can choose to bring their data with them, but they need a seat in that organization to sign in afterward. Learn more about **[responding to an enterprise domain claim](../21-Account-Support/respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
+Parent owners and admins also start a domain claim here, instead of from a child organization's settings. You choose one child organization for accounts to migrate to, and the claim covers every Free, Pro, Max, and Ultra account on the domains verified at that point. Each person chooses **Bring what you can** or **Start fresh**. Their personal account closes either way, and not everything can move (see **[What moves when you migrate](../21-Account-Support/can-individuals-with-pro-or-max-plan-accounts-migrate-them-to-team-or-enterprise-plan.md#h_4e63ef6e87)**). They need a seat in that organization to bring their data. Learn more about **[responding to an enterprise domain claim](../21-Account-Support/respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
 
 Session duration stays with each child organization during the beta, and each child organization keeps its own IP allowlist.
 
@@ -1747,6 +1747,142 @@ Groups are collections of users who share the same roles. They live at the paren
 ### Admin roles
 
 This page lists the people who administer the parent organization. Select "Add admin" to give someone a parent role.
+
+---
+
+## Get started with Claude Data | Claude Help Center
+
+Source: https://support.claude.com/en/articles/17454700-get-started-with-claude-data
+Path: 22-Safety-Policy/get-started-with-claude-data.md
+
+# Get started with Claude Data
+
+
+Claude Data turns questions about your company’s data into dashboards, data stories, narrated short videos, and letters. Connect a data warehouse or another app, ask a question in plain language, and Claude writes the queries and builds the result.
+
+This guide covers connecting your data, creating and refining your work, and sharing it. Claude Data was previously called Claude Dashboards, and dashboards you’ve already made keep working.
+
+Claude Data is available on Pro, Max, Ultra, Team, and Enterprise plans. Certified queries and live sharing are in beta. On Team plans, Claude Data and both beta features are on by default. On Enterprise plans, Claude Data turns on by default on November 20, 2026, unless an owner has already saved a setting, and both beta features are off by default.
+
+## How Claude Data works
+
+Claude writes a SQL query for each chart and runs it against your data source. Each chart shows its query, so you can see exactly what it’s counting, along with when its data was last refreshed.
+
+Dashboards are one format you can make. You can also ask for:
+
+- **Scrollyteller:** Scrolling stories built from your numbers
+
+- **Visual short:** Short videos that walk through your numbers
+
+- **Visual analysis:** Written summaries of your numbers
+
+Dashboards are made for quick, exploratory questions, like how this week’s signups compare with last month’s. When a question needs deeper analysis, send the dashboard to another tool and continue there.
+
+Everything you create is saved in the **Artifacts** tab. Learn more about **[artifacts and how to use them](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md)**.
+
+## Connect your data
+
+Before you create anything, connect the data you want to ask about:
+
+- **A data warehouse:** Connect your company’s data platform, such as Amazon Redshift, BigQuery, ClickHouse, Databricks, or Snowflake.
+
+- **Other apps you’ve connected to Claude:** For example, ask for a dashboard of your Salesforce opportunities.
+
+Learn more about **[connecting your apps to Claude](https://support.claude.com/en/articles/11176164)**.
+
+## Create with Claude Data
+
+### From a chat
+
+Ask Claude in any chat. For example:
+
+- "Build a dashboard of this quarter’s revenue by region."
+
+- "Show weekly signups for the last six months, split by plan."
+
+- "Turn this quarter’s revenue numbers into a data story."
+
+### From the Artifacts tab
+
+1.  Go to the "Artifacts" tab.
+
+2.  Select "Data."
+
+3.  Describe what you want to make.
+
+### Tips for better results
+
+Say what you want to know, not just what to chart. "How do this month’s signups by channel compare with last month’s?" gets you further than "a signups chart." If the data lives in a specific table or app, name it.
+
+### Refine your work
+
+- **Ask Claude:** Ask for changes in the chat, like "Add a filter for region" or "Change this to a weekly view."
+
+- **Edit directly:** Click a title, caption, or chart to change it yourself, without asking Claude.
+
+- **Check the query:** Open a chart’s query to see how Claude got the number. If it isn’t counting what you meant, tell Claude what to change.
+
+### Restore an earlier version
+
+Version history shows earlier versions. Edits you make directly appear there too.
+
+1.  Open the dashboard and open its version history.
+
+2.  Select a version to preview it. The preview is read-only and doesn’t change the dashboard.
+
+3.  Click "Restore."
+
+The dashboard returns to that version for everyone who opens it, and the restore appears as its own entry in version history. People with view-only access can’t edit a dashboard or restore a version.
+
+### How data refreshes
+
+Claude refreshes a dashboard's data when someone opens it and the data is due for a refresh. It doesn't refresh on a schedule, but **Refresh data** intelligently re-queries for data based on specified interval and user access patterns.
+
+## Use certified queries (beta)
+
+Certified queries are the official queries your data team has approved. Claude can reuse them when it builds new dashboards. Charts built on certified queries carry a badge. To check a number, click it or open the data sidebar.
+
+Your data team can certify queries in directly Claude, or use the definitions it already has in dbt, Looker, or Cube (via existing MCP connectors). Anyone with write access to a Data artifact can certify.
+
+**To certify a query:**
+
+1.  Open a chart’s query and edit it.
+
+2.  Turn on "Certify query."
+
+3.  Add any instructions for Claude, one per line.
+
+4.  Click "Test."
+
+5.  Click "Publish."
+
+The query shows as certified after a check finishes.
+
+**Note:** Editing a certified query removes its certification. To remove a certification yourself, turn off "Certify query" and click "Publish." Dashboards that use that query lose their certified badge.
+
+If your organization stores certified queries in a Git-backed plugin, manage them in GitHub with pull request review instead.
+
+## Share and send your work
+
+Everything you make in Claude Data starts private to you. To share it, open it and click "Share." They can also be shared outside your organization. Learn more about **[sharing artifacts](https://support.claude.com/en/articles/9547008)**.
+
+## Share live results with your organization (beta)
+
+Without live sharing, a shared dashboard loads its data with each person's own connections. With live sharing, people in your organization can see results from yours, including saved results. It's limited to the exact queries the dashboard needs, and those can't change without an editor's approval.
+
+To turn on live sharing, visit the **Sources** menu on an artifact and select "Your access" next to each MCP connector.
+
+**Important:** Live sharing runs on your access to the data source. Anyone you share the dashboard with sees those results, even if they don’t have access to that source. Check what a dashboard shows before you share it this way.
+
+## Usage
+
+Claude Data counts toward your plan’s usage limits, like the rest of your work with Claude. Learn more about **[how usage and length limits work](https://support.claude.com/en/articles/11647753)**.
+
+## Turn on Claude Data for your organization
+
+This section is for Owners and Primary Owners on Team and Enterprise plans.
+
+Owners manage Claude Data in **[Organization settings \> Artifacts](https://claude.ai/admin-settings/artifacts)**, under **Templates**. Certified queries and live sharing have their own settings under **Data**. On Enterprise plans, owners can limit Claude Data to specific groups with custom roles. Learn more in the **[Artifacts admin guide for Team and Enterprise plans](../17-Billing-Plans/artifacts-admin-guide-for-team-and-enterprise-plans-claude-help-center.md)**.
 
 ---
 
@@ -1904,7 +2040,7 @@ Projects are available to all users, including those with free Claude accounts. 
 
     - **Share with your broader organization:** Everyone in your organization can view and use this project (where enabled by administrators).
 
-5.  If you're on an Enterprise plan and your organization requires project tags (beta), set a value for each required tag. See **[Track spend by cost code with project tags](../15-Claude-AI-Features/track-spend-by-project-with-tags.md)**. Tag names and values are visible to all users in your organization, so keep sensitive information out of them.
+5.  If you're on an Enterprise plan and your organization requires project tags (beta), set a value for each required tag. See **[Track spend by cost code with project tags](https://support.claude.com/en/articles/18251257-track-spend-by-project-with-tags)**. Tag names and values are visible to all users in your organization, so keep sensitive information out of them.
 
 Once your project is set up, you can initiate chats with Claude within the project.
 
@@ -2096,6 +2232,8 @@ Path: 22-Safety-Policy/how-do-i-pay-for-my-claude-api-usage.md
 
 # How do I pay for my Claude API usage?
 
+Updated today
+
 
 This article explains how billing works for the Claude API, the playground, and Claude Code when you use them through a Claude Console account. Most organizations pay with prepaid usage credits. Organizations with an invoicing arrangement are billed monthly instead.
 
@@ -2111,9 +2249,9 @@ If you run out of credits, you can no longer call the API or use the playground 
 
 ## Monthly API credits for Max, Ultra, and Team plans
 
-Claude Max, Ultra, and Team plans include monthly credits for the Claude API. To claim your credits, you link a Claude Console organization to your plan. Your monthly credits are spent before any credits you’ve purchased, and unused credits expire at the end of each billing cycle. Monthly API credits can’t be used in Claude Code or the Claude apps, including for extra usage.
+Claude Max, Ultra, and Team plans include monthly credits for the Claude API. To claim your credits, you link a Claude Console organization to your plan. For usage they cover, your monthly credits are spent before any credits you’ve purchased, and unused credits expire at the end of each billing cycle. Monthly API credits can’t be used in Claude Code or the Claude apps, including for extra usage. They also can’t pay for Claude usage in third-party apps that’s billed through **[linked billing](https://support.claude.com/en/articles/18467110)**.
 
-If your organization is invoiced through Anthropic sales, usage beyond the credits is billed as usual. Learn more about **[monthly API credits for Max, Ultra, and Team plans](../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+If your organization is invoiced through Anthropic sales, usage beyond the credits is billed as usual. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 ## Buy credits
 
@@ -2180,10 +2318,10 @@ Path: 22-Safety-Policy/how-up-to-date-is-claude-s-training-data.md
 
 # How up-to-date is Claude's training data?
 
-October 7, 2026
-
 
 While we're constantly updating Claude's data, each model has a knowledge cutoff:
+
+- Claude Fable 5.2 was trained on data up until June 2026.
 
 - Claude Haiku 5.5 was trained on data up until June 2026.
 
@@ -2253,7 +2391,7 @@ Written claims concerning copyright infringement must contain the following info
 
 - A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner’s behalf.
 
-For questions, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#680c050b092809061c001a0718010b460b0705) or call (415) 326-6303.
+For questions, please email [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#dbbfb6b8ba9bbab5afb3a9b4abb2b8f5b8b4b6) or call (415) 326-6303.
 
 ---
 
@@ -2281,7 +2419,7 @@ Path: 22-Safety-Policy/law-enforcement-requests.md
 March 16, 2026
 
 
-Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information.md). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#7c101d0b5119121a130e1f1911191208510e190d09190f080f3c1d1208140e130c151f521f1311).
+Anthropic PBC discloses account records solely in accordance with our Terms of Service and applicable law. For more information about Anthropic’s policies for handling governmental requests for user information, see [here](what-is-anthropic-s-policy-for-handling-governmental-requests-for-user-information.md). If you are a law enforcement agent who is authorized to gather evidence in connection with an official investigation, you may request records from Anthropic by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#b9d5d8ce94dcd7dfd6cbdadcd4dcd7cd94cbdcc8ccdccacdcaf9d8d7cdd1cbd6c9d0da97dad6d4).
 
 Please include the following information with your request:
 
@@ -2393,10 +2531,12 @@ In “On demand” mode, Claude searches for the right tool before using it. Thi
 
 ## Manage plugins for your organization | Claude Help Center
 
-Source: https://support.claude.com/en/articles/13837433-manage-cowork-plugins-for-your-organization
-Path: 22-Safety-Policy/manage-cowork-plugins-for-your-organization.md
+Source: https://support.claude.com/en/articles/13837433
+Path: 22-Safety-Policy/manage-plugins-for-your-organization-claude-help-center.md
 
 # Manage plugins for your organization
+
+October 16, 2026
 
 
 Plugin marketplaces let Team and Enterprise plan owners distribute curated plugins to everyone in their organization. You create a marketplace, add plugins to it, and control exactly which plugins your team members can see and use. Plugins you distribute appear in chat (on the web and the Chat tab in Claude Desktop), in Claude Cowork, and in Claude Code sessions where members sign in with the same Claude account.
@@ -2409,7 +2549,7 @@ For a reference version of these controls, see **[Manage plugins for your organi
 
 **Note:** Turning off Skills for your organization also stops skills and plugins from syncing to Claude Code, and removes the ones that already synced there. Turning off Cowork doesn't affect the sync to Claude Code. To keep skills and plugins in Claude but stop only the sync, set `syncClaudeAiSkills` and `syncClaudeAiPlugins` to `false` in Claude Code managed settings. Learn more about **[Claude Code admin setup](../01-Getting-Started/setup.md#advanced-setup)**.
 
-**Note:** Marketplaces are how owners distribute plugins to their organization. Users can also share a plugin they built with specific colleagues or groups, or submit it to be published to your organization's library. Sharing and publishing are controlled by the settings in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab, and plugin submissions are reviewed there on the "Requests" tab. Learn more about **[using plugins in Claude](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)** and **[letting users publish skills and plugins to your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)**[.](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)
+**Note:** Marketplaces are how owners distribute plugins to their organization. Users can also share a plugin they built with specific colleagues or groups, or submit it to be published to your organization's library. Sharing and publishing are controlled by the settings in **[Organization settings \> Plugins & skills](https://claude.ai/admin-settings/skills)** in the “Policy” tab, and plugin submissions are reviewed there on the "Requests" tab. Learn more about **[using plugins in Claude](../15-Claude-AI-Features/use-plugins-in-claude.md)** and **[letting users publish skills and plugins to your organization](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)**[.](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_1abc45a27c)
 
 ------------------------------------------------------------------------
 
@@ -2515,7 +2655,7 @@ For details on plugin structure and formatting, see the **[plugin manifest refer
 
 Additional resources:
 
-- **[Create a marketplace](../08-Plugins-Skills/plugin-marketplaces.md)**
+- **[Create a marketplace](../08-Plugins-Skills/plugins-create-marketplace.md)**
 
 - **[Create a plugin](../08-Plugins-Skills/plugins-create.md)**
 
@@ -2525,7 +2665,7 @@ Additional resources:
 
 1.  Make sure both Cowork and Skills are enabled for your organization.
 
-    1.  **[Enable Cowork](https://support.claude.com/en/articles/13455879-use-cowork-on-team-and-enterprise-plans#h_71cdc52dfc)**
+    1.  **[Enable Cowork](../17-Billing-Plans/use-cowork-on-team-and-enterprise-plans.md#h_71cdc52dfc)**
 
     2.  **[Enable Skills](https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization#h_7673241237)**
 
@@ -3173,7 +3313,7 @@ User safety is core to Anthropic’s mission of creating reliable, interpretable
 
 - Enhanced safety filters, which allow us to increase the sensitivity of our detection models. We may temporarily apply enhanced safety filters to users who repeatedly violate our policies, and remove these controls after a period of no or few violations.
 
-These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#572224322524363132232e173639233f2538273e347934383a) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).
+These features are not failsafe, and we may make mistakes through false positives or false negatives. Your feedback on these measures and how we explain them to users will play a key role in helping us improve these safety systems, and we encourage you to reach out to us at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#8df8fee8fffeecebe8f9f4cdece3f9e5ffe2fde4eea3eee2e0) with any feedback you may have. To learn more, [read about our core views on AI safety](https://www.anthropic.com/index/core-views-on-ai-safety).
 
 ---
 
@@ -3184,10 +3324,12 @@ Path: 22-Safety-Policy/point-of-contact-for-authorities-and-regulators.md
 
 # Point of Contact for Authorities and Regulators
 
+October 15, 2026
+
 
 # Designated Point of Contact for Authorities and Regulators
 
-Government authorities and regulators can contact Anthropic directly by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#285a4d4f5d44495c475a054146595d415a414d5b6849465c405a4758414b064b4745). This is reserved for government authorities and regulators seeking a point of contact, for official requests for information or documentation, and for governmental submissions to remove content.
+Government authorities and regulators can contact Anthropic directly by emailing [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#17657270627b766378653a7e7966627e657e7264577679637f6578677e743974787a). This is reserved for government authorities and regulators seeking a point of contact, for official requests for information or documentation, and for governmental submissions to remove content.
 
  For other types of inquiries, please use the mechanisms described below. ￼
 
@@ -3254,12 +3396,12 @@ red.anthropic.com is Anthropic's dedicated cybersecurity research site, publishi
 
 ## Report, block, and remove content from Claude | Claude Help Center
 
-Source: https://support.claude.com/en/articles/10684638-report-block-and-remove-content-from-claude
-Path: 22-Safety-Policy/report-block-and-remove-content-from-claude.md
+Source: https://support.claude.com/en/articles/7996906
+Path: 22-Safety-Policy/report-block-and-remove-content-from-claude-claude-help-center.md
 
 # Report, block, and remove content from Claude
 
-September 3, 2026
+September 4, 2026
 
 
 Anthropic supports a variety of ways to allow people to control their content and personal information. As a site owner, you can control what shows up in Claude outputs that use web search. As a user or member of the public, you can report problematic content that another user shares publicly or that you receive in a Claude output. For each type of concern, follow the reporting instructions below.
@@ -3268,7 +3410,7 @@ Please note, we reserve the right to suspend users who frequently provide manife
 
 ## How to report safety issues
 
-We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#cbbeb8aeb9b8aaadaebfb28baaa5bfa3b9a4bba2a8e5a8a4a6) with enough detail for us to replicate the issue.
+We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#bcc9cfd9cecfdddad9c8c5fcddd2c8d4ced3ccd5df92dfd3d1) with enough detail for us to replicate the issue.
 
 ## How to block or remove content
 
@@ -3288,12 +3430,12 @@ We welcome reports concerning safety issues so that we can enhance the safety an
 
 ## Report, block, and remove content from Claude | Claude Help Center
 
-Source: https://support.claude.com/en/articles/7996906-reporting-blocking-and-removing-content-from-claude
-Path: 22-Safety-Policy/reporting-blocking-and-removing-content-from-claude.md
+Source: https://support.claude.com/en/articles/10684638-report-block-and-remove-content-from-claude
+Path: 22-Safety-Policy/report-block-and-remove-content-from-claude.md
 
 # Report, block, and remove content from Claude
 
-September 4, 2026
+September 3, 2026
 
 
 Anthropic supports a variety of ways to allow people to control their content and personal information. As a site owner, you can control what shows up in Claude outputs that use web search. As a user or member of the public, you can report problematic content that another user shares publicly or that you receive in a Claude output. For each type of concern, follow the reporting instructions below.
@@ -3302,7 +3444,7 @@ Please note, we reserve the right to suspend users who frequently provide manife
 
 ## How to report safety issues
 
-We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#661315031415070003121f260708120e1409160f054805090b) with enough detail for us to replicate the issue.
+We welcome reports concerning safety issues so that we can enhance the safety and harmlessness of our models. We would also like to hear from you if you identify our safety mechanisms causing any user experience issues. Please report such issues to [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#562325332425373033222f163738223e2439263f357835393b) with enough detail for us to replicate the issue.
 
 ## How to block or remove content
 
@@ -3387,11 +3529,11 @@ Path: 22-Safety-Policy/safety.md
 
 # Anthropic’s Responsible Scaling Policy
 
-Anticipating and securing against emerging threats that accompany increasingly powerful models
+A voluntary framework for addressing catastrophic risks from advanced AI systems.
 
 Last updated Aug 14, 2026
 
-[Read Anthropic's Responsible Scaling Policy](../19-Reference/www-cdn-anthropic-com-for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md)
+[Read Anthropic's Responsible Scaling Policy](https://assets.claude.com/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf)
 
 As frontier AI models advance, we believe they will bring about transformative benefits for our society and economy. AI could accelerate scientific discoveries, revolutionize healthcare, enhance our education system, and create entirely new domains for human creativity and innovation. Frontier AI models also, however, present new challenges and risks that warrant careful study and effective safeguards.
 
@@ -3401,19 +3543,21 @@ In September 2023, we released the first version of our Responsible Scaling Poli
 
 ### Read the current version of the RSP
 
-[See the pdf](https://cdn.sanity.io/files/4zrzovbb/website/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf)
+[See the pdf](https://assets.claude.com/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf)
 
 ### RSP Noncompliance Reporting and Anti-Retaliation Policy
 
-- [Version 3.4](../19-Reference/www-cdn-anthropic-com-for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/for-more-information-seew-ww-anthropic-com-responsible-scaling-policy-f8f0b47b.md) (effective July 8, 2026)
-- [Version 3.3](../19-Reference/for-more-information-seew-ww-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/effectivemay-26-2026april-29-2026.md) (effective May 26, 2026)
-- [Version 3.2](../19-Reference/for-more-information-see-www-anthropic-com-responsible-scaling-policy.md) and [redline](../19-Reference/effectiveapril-29-2026april-2-2026.md) (effective April 29, 2026)
-- [Version 3.1](https://www-cdn.anthropic.com/files/4zrzovbb/website/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf) and [redline](../19-Reference/effectiveapril-2-2026february-24-2026.md) (effective April 2, 2026)
+[See the PDF](https://assets.claude.com/b7a5629e40b391b2adfb4cc8c0888ac9d6bfddf6.pdf)
+
+- [Version 3.4](https://assets.claude.com/0bacdc8440ea96e62a8766d99ebe1d4eea6d5f3a.pdf) and [redline](https://assets.claude.com/fbfdce5e4e825a3e089085205a842a9ae8ffac99.pdf) (effective July 8, 2026)
+- [Version 3.3](https://assets.claude.com/c11e84981d0a7281a1b229f3fa6af0da66eaf43f.pdf) and [redline](https://assets.claude.com/dd0ec579bee2cd144069c478ede3e35ea080ad02.pdf) (effective May 26, 2026)
+- [Version 3.2](https://assets.claude.com/28c6241900d90410628a8a2003a5572faae4365a.pdf) and [redline](https://assets.claude.com/7c534a9e7a82d4411dd568d85ffbcd14ac243a62.pdf) (effective April 29, 2026)
+- [Version 3.1](https://assets.claude.com/bf04581e4f329735fd90634f6a1962c13c0bd351.pdf) and [redline](https://assets.claude.com/64cb0ac5eb0f8030187131f490827323e3d53308.pdf) (effective April 2, 2026)
 - [Version 3.0](https://anthropic.com/responsible-scaling-policy/rsp-v3-0) (effective February 24, 2026)
-- [Version 2.2](https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) and [redline](../19-Reference/supplementary-info-available-atw-ww-anthropic-com-rsp-updates.md) (effective May 14, 2025)
-- [Version 2.1](https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf) (effective March 31, 2025)
-- [Version 2.0](https://www-cdn.anthropic.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf) (effective October 15, 2024)
-- [Version 1.0](https://www-cdn.anthropic.com/1adf000c8f675958c2ee23805d91aaade1cd4613/responsible-scaling-policy.pdf) (effective September 19, 2023)
+- [Version 2.2](https://assets.claude.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) and [redline](https://assets.claude.com/ee775bdcf76b2e2af32d658c934f460383d07c46.pdf) (effective May 14, 2025)
+- [Version 2.1](https://assets.claude.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf) (effective March 31, 2025)
+- [Version 2.0](https://assets.claude.com/616dee633636e5bd309cb73aed8622e80fe47839.pdf) (effective October 15, 2024)
+- [Version 1.0](https://assets.claude.com/1adf000c8f675958c2ee23805d91aaade1cd4613.pdf) (effective September 19, 2023)
 
 ### Risk Reports
 
@@ -3549,7 +3693,7 @@ The following sections outline the key security controls we plan to implement as
 
 #### Planned Capability Assessments
 
-We plan to publish additional details on our capability assessment methodology in the near future. For information about our past capability assessments, please see our overviews for [Claude 3.0 Opus](https://www-cdn.anthropic.com/f2986af8d052f26236f6251da62d16172cfabd6e/claude-3-model-card.pdf) and [Claude 3.5 Sonnet](https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf).
+We plan to publish additional details on our capability assessment methodology in the near future. For information about our past capability assessments, please see our overviews for [Claude 3.0 Opus](https://assets.claude.com/f2986af8d052f26236f6251da62d16172cfabd6e.pdf) and [Claude 3.5 Sonnet](https://assets.claude.com/fed9cc193a14b84131812372d8d5857f8f304c52.pdf).
 
 #### Learning from Experience
 
@@ -3606,7 +3750,7 @@ Your plan has a weekly limit and, except on verified Ultra accounts, a five-hour
 
 If you reach a limit and don’t have usage credits enabled, you’ll see an error message letting you know when you can use Claude again: "5-hour limit reached - resets \[time\]" or "You've reached your weekly limit. It resets \[day\] at \[time\]."
 
-Looking for ways to maximize your Claude usage? Refer to **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices.md)**.
+Looking for ways to maximize your Claude usage? Refer to **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ### Usage credits
 
@@ -3676,7 +3820,7 @@ When working with Claude, you may encounter two different types of limits that w
 
 - **[Max plan](../17-Billing-Plans/what-is-the-max-plan.md#h_cfd2904008)**
 
-- **[Ultra plan](../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**
+- **[Ultra plan](https://support.claude.com/en/articles/17154008)**
 
 - **[Team plan](../17-Billing-Plans/what-is-the-team-plan.md#h_b59203dff2)**
 
@@ -3720,7 +3864,7 @@ There are a couple of different ways to increase your usage depending on your pl
 
 - If your organization has a usage-based Enterprise plan, your usage is based on consumption. See this article for additional information: **[How am I billed for my Enterprise plan?](../17-Billing-Plans/how-am-i-billed-for-my-enterprise-plan.md)**
 
-For strategies to maximize your message allotment, see **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices.md)**.
+For strategies to maximize your message allotment, see **[Usage limit best practices](https://support.claude.com/en/articles/9797557-usage-limit-best-practices)**.
 
 ## What are length limits?
 
@@ -3760,7 +3904,7 @@ While you can't increase the fixed context window size for your plan, you can us
 
 The main distinction is that usage limits control *how much* you can use Claude across all your conversations, while length limits control *how long* any single conversation can become. Usage limits are about quantity over time, while length limits are about the depth and complexity of individual conversations.
 
-If you hit your session limit or weekly limit, you can wait for it to reset or upgrade your plan. If you upgrade, your new plan’s limits apply right away. With usage credits enabled, your work continues on usage credits instead of stopping. If you hit a length limit, you can start a new conversation or use **[features like projects](../15-Claude-AI-Features/what-are-projects.md)** to work with larger amounts of information more efficiently.
+If you hit your session limit or weekly limit, you can wait for it to reset or upgrade your plan. If you upgrade, your new plan’s limits apply right away. With usage credits enabled, your work continues on usage credits instead of stopping. If you hit a length limit, you can start a new conversation or use **[features like projects](https://support.claude.com/en/articles/9517075-what-are-projects)** to work with larger amounts of information more efficiently.
 
 ---
 
@@ -3962,7 +4106,7 @@ Queries can take up to two minutes for large organizations. If one repeatedly fa
 
 ### Data looks out of date
 
-Check the date shown on the result. The underlying data typically lags by one to two days. If it’s more than two days behind, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+Check the date shown on the result. The underlying data typically lags by one to two days. If it’s more than two days behind, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md)**.
 
 ### The Analytics Chat tab is missing
 
@@ -3982,7 +4126,7 @@ Path: 22-Safety-Policy/use-claude-security.md
 
 **[Claude Security](../15-Claude-AI-Features/product-claude-security.md)** is a capability built into Claude that continuously watches your codebases for security vulnerabilities, tracks each finding until it is fixed, and suggests targeted patches for human review. It helps teams find and fix issues that traditional methods often miss.
 
-Claude Security is now available in public beta for users on Enterprise plans.
+Claude Security is available in beta for users on Enterprise plans.
 
 Learn how to get started and how leading enterprises use the tool here: **[Getting started with Claude Security](https://academy.claude.com/tutorials/getting-started-with-claude-security)**.
 
@@ -4005,30 +4149,6 @@ Claude Security allows you to:
 8.  **Integrate into your workflow** — Read and resolve findings through the Claude Security API or the Claude Security connector (MCP) in Claude and Claude Code, and get a webhook when a new finding is added.
 
 9.  **Control access** — Share each project with a Full, Triage, or View role. Admins can decide who can create projects and who can view, triage, or manage all projects with RBAC.
-
-------------------------------------------------------------------------
-
-## Finding types
-
-Findings fall into these example categories below.
-
-**Injection (SQL, Command, Code, XSS):** Untrusted input changes query structure or gets executed. E.g., `' OR 1=1--, ; rm -rf /`, `<script>` in a comment.
-
-**Injection (XXE, ReDoS):** Parsers or regex abused by crafted input. E.g., XML `<!ENTITY>` reading `/etc/passwd`.
-
-**Path & Network (Path traversal, SSRF, Open redirect):** Input controls file paths, request destinations, or redirects. E.g., `../../etc/passwd`, fetching `http://169.254.169.254/`.
-
-**Auth & Access (AuthN bypass, PrivEsc, IDOR/BOLA, CSRF, Race):** Access checks missing, skippable, or racy. E.g., `GET /orders/123` returns someone else's order.
-
-**Memory Safety (Buffer/integer overflow, UAF, unsafe misuse):** Input writes past bounds, wraps arithmetic, or hits freed memory. Mostly C/C++/Rust `unsafe`.
-
-**Cryptography (Timing leaks, algorithm confusion, weak primitives):** Secret-dependent branches, JWT `alg=none`, or MD5/SHA-1/DES/ECB in security paths.
-
-**Deserialization (Arbitrary type instantiation):** Untrusted bytes drive object construction — pickle, Java `readObject`, YAML load. Often equals RCE.
-
-**Protocol & Encoding (Cache safety, encoding confusion, length-prefix trust):** Layers disagree or trust declared sizes. E.g., cache poisoning via `Host` header.
-
-------------------------------------------------------------------------
 
 ## Severities
 
@@ -4074,22 +4194,6 @@ Each finding contains the following fields:
 
 ------------------------------------------------------------------------
 
-## Troubleshooting
-
-### The security page keeps redirecting to "Install GitHub App"
-
-The claude.ai/security page runs a per-user check against your own connected GitHub account, so this can fail for you even though the organization-wide installation is working for others. There are a few potential causes:
-
-- **No GitHub account connected in Claude.** Go to [**Customize \> Connectors**](https://claude.ai/customize/connectors) to check this.
-
-- **The connected GitHub account isn’t a member of the GitHub organization** where the app is installed. Connect the account that belongs to that organization.
-
-- **SSO isn't authorized for that organization.** If your GitHub organization requires SSO, you must authorize the Claude app for it separately. Follow the steps in **[Use the GitHub integration](https://support.claude.com/en/articles/10167454-use-the-github-integration#h_e169a34a57)**.
-
-- **Your GitHub organization's IP allow list is blocking the check.** GitHub's "Enable IP allow list configuration for installed GitHub Apps" setting covers traffic from the App itself, such as Code Review, but it doesn't cover this per-user check. To allow it, manually add every current IPv4 range, in full, from Anthropic’s **[Outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses)** list to the organization-level allow list, with one entry for each range.
-
-------------------------------------------------------------------------
-
 ## Frequently asked questions
 
 ### Getting started
@@ -4100,7 +4204,7 @@ An active Claude Enterprise plan, a premium seat for each user, and usage credit
 
 **How do I give Claude Security access to my repositories?**
 
-For GitHub.com and GitHub Enterprise Server, an owner installs the **[Claude GitHub App](https://github.com/apps/claude)** and grants it access to the repositories you want to scan. For other Git providers, such as GitLab and Bitbucket, you need the repository’s address and an auth token.
+For GitHub.com and GitHub Enterprise Server, an owner installs the **[Claude GitHub App](https://github.com/apps/claude)** and grants it access to the repositories you want to scan. For other Git providers, such as GitLab, Azure DevOps, and Bitbucket, enter the repository's https address and an auth token that can read the repository. Write the address in lower case, with no user name, password, query or port, for example: `https://gitlab.com/group/project`.
 
 **Can I scan repositories that aren’t on GitHub?**
 
@@ -4108,7 +4212,7 @@ Yes. Projects can be created with repositories hosted on GitHub.com and GitHub E
 
 **Which IP addresses do I need to allow?**
 
-Use the **[Outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses)** list on Anthropic’s IP addresses page. If you use GitHub Enterprise Server or another Git provider, your instance must allow connections from every current IPv4 range in that list so Claude Security can reach your repositories.
+Use the **[Outbound IP addresses](../04-API-Reference/Endpoints/ip-addresses.md#outbound-ip-addresses)** list for IP address allowlisting. If you use GitHub Enterprise Server or another Git provider, your instance must allow inbound traffic from these IP addresses so Claude Security can reach your repositories.
 
 **Does Claude Security support Zero Data Retention (ZDR)?**
 
@@ -4120,7 +4224,7 @@ Existing projects keep running as they do today and are still available from the
 
 **Can I migrate my existing projects?**
 
-Yes, if you own the project. Open it and click "Migrate project", or click "Migrate your projects" on the Claude Security home page to migrate every project you own. Claude Security creates a new project, copies the findings to it, and archives the original. Members, webhooks, excluded directories, scan history, and scheduled scans aren't copied. GitHub Enterprise projects can't be migrated.
+Yes, if you own the project. Open it and click "Migrate project", or click "Migrate your projects" on the Claude Security home page to migrate every project you own. Claude Security creates a new project, copies the findings to it, and archives the original. Members, excluded directories, scan history, and scheduled scans aren’t copied. Migrate project copies the project’s webhooks where it can and tells you what changes for them. GitHub Enterprise projects can't be migrated.
 
 ### Continuous monitoring
 
@@ -4128,13 +4232,17 @@ Yes, if you own the project. Open it and click "Migrate project", or click "Migr
 
 Depending on the size of the repositories, the baseline scan may take several minutes or hours. You can leave the page while it runs. If you have enabled email notifications for Claude Security, you will receive an email when your project’s scan completes and it has new findings.
 
+**How often does Claude scan after the first scan?**
+
+Claude checks for new commits and scans changes regularly, based on their risk and complexity. There is no fixed schedule.
+
 **How long does a follow-up scan take?**
 
 Scan time varies based on the repository and the agent’s actions.
 
-**How often does Claude scan after the baseline scan?**
+**What does a follow-up scan read?**
 
-Claude checks for new commits and scans changes regularly, based on their risk and complexity. There is no fixed schedule.
+Claude checks for changes, reviews them, and intelligently determines the scan scope based upon risk, complexity and your scan effort. Depending upon your settings, scope, and how long it has been, Claude may choose a full or incremental scan. You can see in the Activity tab whether it has run a full or incremental scan with the specific changes scoped.
 
 **Why can two scans of the same code return different results?**
 
@@ -4150,7 +4258,7 @@ Up to eight. A repository can be in scope, so Claude scans it and reports findin
 
 **How do I tell Claude about my environment?**
 
-Open the project’s Knowledge tab to edit the threat model and add documents such as architecture docs. Claude uses them to decide what to flag and how to rate it.
+Open the project’s Resources tab to edit the threat model and add documents such as architecture docs. Claude uses them to decide what to flag and how to rate it.
 
 **Which models does Claude Security use?**
 
@@ -4168,15 +4276,15 @@ Claude writes the threat model from your code, so it can miss deployment context
 
 **How do I fix a finding?**
 
-Click “Fix” on a finding to open Claude Code and fix that specific vulnerability. Without **[Claude Code in the cloud](../02-Claude-Code-CLI/claude-code-on-the-web.md)**, you copy a prompt into your own Claude Code.
+Click “Fix” on a finding to open Claude Code and fix that specific vulnerability. Without **[Claude Code in the cloud](../02-Claude-Code-CLI/claude-code-on-the-web.md)**, you copy a prompt into your own Claude Code. Claude will detect the code fixes in future scans and automatically resolve the finding. Additionally, you can always manually mark findings as fixed in the UI.
 
 **How does fix tracking work?**
 
-Claude re-checks findings when the code changes on the repository. A finding marked fixed reopens automatically if Claude later finds the issue again.
+Claude re-checks findings when the code changes on the repository. Regardless if the finding was manually or automatically marked as fixed, Claude reopens the finding automatically if it later finds the issue is unresolved.
 
 **What happens when I dismiss a finding?**
 
-Dismissed findings will not reappear in future scans. You can dismiss a finding as a false positive, an accepted risk, a duplicate, or for another reason, and add a triage note.
+You can dismiss a finding as a false positive, an accepted risk, a duplicate, or for another reason, and add a triage note. A dismissed finding stays closed. When a later scan reports the same issue, Claude matches it to the dismissed finding and keeps it closed. You can reopen a dismissed finding yourself at any time.
 
 ### Integrations and notifications
 
@@ -4218,7 +4326,7 @@ You can set a separate spend limit for Claude Security. Open Usage in a project�
 
 **Is there a launch offer for the updated Claude Security?**
 
-Yes, eligible Claude Enterprise organizations receive free usage credits up to \$25,000 a month, for two months, through Dec 31, 2026. Full **[launch offer terms](#h_07eed9f41c)** below.
+Yes, eligible Claude Enterprise organizations receive free usage credits up to \$25,000 a month, for two months, through December 31, 2026. This appears as a credit in **Organization settings \> Usage**. Full **[launch offer terms](#h_07eed9f41c)** below.
 
 **Does the launch offer also apply to the old experience?**
 
@@ -4455,13 +4563,13 @@ The Databricks integration consists of three separate connectors, each requiring
 
 3.  **Genie Server:** Provides natural language to SQL query translation capabilities.
 
-Technical details of the Databricks connectors can be found in Databricks's [MCP Server Documentation(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp). Authentication with Databrick's connectors is handled via [OAuth(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-connectors-using-oauth) (for [Claude.ai(opens in new tab)](http://claude.ai/) and Claude Desktop) or via a [Databricks Personal Access Token(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-desktop-using-pat) (for Claude Desktop only).
+Technical details of the Databricks connectors can be found in Databricks's [MCP Server Documentation(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp). Authentication with the Databricks connectors is handled via [OAuth(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-connectors-using-oauth) (for [Claude.ai(opens in new tab)](http://claude.ai/) and Claude Desktop) or via a [Databricks Personal Access Token(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/connect-external-services#connect-claude-desktop-using-pat) (for Claude Desktop only).
 
 ### Adding the Connector as an Organization Owner[](#adding-the-connector-as-an-organization-owner)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector" at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Enter integration URL for [your Databricks workspace(opens in new tab)](https://docs.databricks.com/aws/en/generative-ai/mcp/managed-mcp)
 
@@ -4527,7 +4635,7 @@ Claude might then report its results in a summary showing exit-ready companies w
 
 Example input prompt:
 
-We're evaluating TechCorp acquisition (SaaS, \$45M revenue, \$12M EBITDA).What's a fair valuation and how much debt can we support? Include previous due diligence records in your analysis.
+We're evaluating TechCorp acquisition (SaaS, \$45M revenue, \$12M EBITDA). What's a fair valuation and how much debt can we support? Include previous due diligence records in your analysis.
 
 
 
@@ -4634,20 +4742,20 @@ Claude applies Egnyte capabilities in several ways to support comprehensive cont
 
 ## Setting up the Egnyte Connector[](#setting-up-the-egnyte-connector)
 
-Technical details of the Egnyte connector can be found in [Egnyte’s MCP Server Documentation(opens in new tab)](https://developers.egnyte.com/api-docs/remote-mcp-server). Authentication is handled via OAuth 2.0, providing secure access to your Egnyte content.
+For technical details of the Egnyte connector, see [Egnyte’s MCP Server Documentation(opens in new tab)](https://developers.egnyte.com/api-docs/remote-mcp-server). You authenticate through OAuth 2.0, which provides secure access to your Egnyte content.
 
 ### Prerequisites[](#prerequisites)
 
 Before setting up the Egnyte connector, ensure you have:
 
 - An active Egnyte account on Essential, Elite, or Ultimate plans (Gen 4), OR Platform Enterprise or Platform Enterprise Light with the Co-Pilot add-on (Gen 3)
-- An MCP-compatible AI client ([Claude.ai(opens in new tab)](http://claude.ai/), Claude Desktop, ChatGPT, etc.)
+- An MCP-compatible AI client ([Claude.ai(opens in new tab)](http://claude.ai/) or Claude Desktop)
 - Your Egnyte domain name and credentials for authentication
 
 ### Adding the Connector as an Organization Owner[](#adding-the-connector-as-an-organization-owner)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors)
-2.  Click “Add custom connector”
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 3.  Enter the integration URL: [https://mcp-server.egnyte.com/mcp(opens in new tab)](https://mcp-server.egnyte.com/mcp)
 4.  Name the integration (e.g., “Egnyte”)
 5.  Click “Add”
@@ -4811,13 +4919,13 @@ Claude applies LSEG’s market data to support your financial analysis.
 
 ## Setting Up LSEG Integration[](#setting-up-lseg-integration)
 
-Technical details of the LSEG Integration can be found in LSEG’s MCP Server Documentation (available soon on LSEG portal). You will need to contact LSEG to get access to the MCP server.
+Contact LSEG to get access to the MCP server and its technical documentation.
 
 ### For Organization Owners[](#for-organization-owners)
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector” at the bottom of the list.
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Enter integration URL: [https://api.analytics.lseg.com/lfa/mcp(opens in new tab)](https://api.analytics.lseg.com/lfa/mcp)
 
@@ -4937,12 +5045,12 @@ I’m looking at pricing a currency swap. Get me the current EUR/USD spot rate a
 
 ---
 
-## Using S&P global data for financial analysis · Claude Academy
+## Using S&P Global data for financial analysis · Claude Academy
 
 Source: https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis
 Path: 22-Safety-Policy/using-s-p-global-data-for-financial-analysis.md
 
-# Using S&P global data for financial analysis
+# Using S&P Global data for financial analysis
 
 Use Claude's Kensho integration to access S&P Global's financial data for comprehensive market and fundamental analysis of public companies.
 
@@ -4990,23 +5098,17 @@ Claude applies Kensho's capabilities to support comprehensive financial analysis
 
 ## Setting Up the Kensho Integration[](#setting-up-the-kensho-integration)
 
-Technical details of the Kensho Integration can be found in the [Kensho Integration MCP Server Documentation(opens in new tab)](https://docs.kensho.com/llmreadyapi/mcp). You will need to contact S&P Global to get access to the MCP server.
+For technical details of the Kensho integration, see the [Kensho Integration MCP Server Documentation(opens in new tab)](https://docs.kensho.com/llmreadyapi/mcp). Contact S&P Global to get access to the MCP server.
 
 ### For Organization Owners[](#for-organization-owners)
 
-1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
+1.  Navigate to [Organization settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector" at the bottom of the list.
-
-3.  Enter the Kensho integration URL: [https://kfinance.kensho.com/integrations/mcp(opens in new tab)](https://kfinance.kensho.com/integrations/mcp)
-
-4.  Name the integration (e.g., "Kensho S&P")
-
-5.  Click "Add"
+2.  Use the Add button to browse all available connectors, then find **S&P - Deterministic Retrieval** (the Kensho integration) and add it for your team.
 
 ### For Individual Users[](#for-individual-users)
 
-Learn about [finding and connecting tools(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
+Open [S&P - Deterministic Retrieval in the connectors directory(opens in new tab)](https://claude.ai/directory/s-p-global) (the Kensho integration), connect it to Claude, and sign in when asked. Learn about [finding and connecting tools(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
 
 ## Common Use Cases[](#common-use-cases)
 
@@ -5121,8 +5223,8 @@ Business relationship mapping through Kensho provides insights into operational 
 
 ## What are customer-managed encryption keys (CMEK)? | Claude Help Center
 
-Source: https://support.claude.com/en/articles/15505325-what-are-customer-managed-encryption-keys-cmek
-Path: 22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek.md
+Source: https://support.claude.com/en/articles/15505325
+Path: 22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek-claude-help-center.md
 
 # What are customer-managed encryption keys (CMEK)?
 

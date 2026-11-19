@@ -2,11 +2,14 @@
 title: "Troubleshoot Code Review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-troubleshooting"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-25T06:26:22Z"
+fetched_at: "2026-11-13T06:32:34Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Check how far the review got](#check-how-far-the-review-got)
 - [A review didn’t start](#a-review-didn%E2%80%99t-start)
@@ -39,16 +42,16 @@ Check how far the review got
 
 Find the **Claude Code Review** check run on your pull request, then match its title to one of these common ones:
 
-| Check run title                                            | What it means                                                                                                     | What to do                                                                                                                                                                                              |
-|:-----------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Code review queued…** or **Code review in progress…**    | The review hasn’t finished                                                                                        | Wait for the title to change                                                                                                                                                                            |
-| **Code review found no issues**                            | The review finished and posted no findings                                                                        | If this isn’t the pull request’s first review, look in the review body for a count of [findings the review left out](code-review-pull-requests.md#what-a-later-review-covers). Otherwise, nothing |
-| A title that says issues were found                        | The review finished with findings                                                                                 | If you don’t see them on the diff, see [Find issues that aren’t showing as inline comments](#find-issues-that-aren%E2%80%99t-showing-as-inline-comments)                                                |
-| **Code review skipped — no new changes**                   | An automatic review didn’t run on your latest push                                                                | To get a review anyway, comment `@claude review`                                                                                                                                                        |
-| **Code review not repeated — earlier findings still open** | An automatic review didn’t run on your latest push, and Important findings from the earlier review are still open | Push a fix, or to get a review anyway, comment `@claude review`. See [When a push keeps the earlier result](code-review-pull-requests.md#when-a-push-keeps-the-earlier-result)                    |
-| **Code review failed** or **Code review timed out**        | The review didn’t finish                                                                                          | To run it again, see [Retrigger a failed or timed-out review](#retrigger-a-failed-or-timed-out-review)                                                                                                  |
-| **Code review declined**                                   | The review didn’t run                                                                                             | Read the check run’s summary. If it names a budget or a spend limit, see [Review didn’t run and the PR shows a budget message](#review-didn%E2%80%99t-run-and-the-pr-shows-a-budget-message)            |
-| No check run                                               | No review started                                                                                                 | Comment `@claude review`. If no check run appears after that, see [A comment command didn’t start a review](#a-comment-command-didn%E2%80%99t-start-a-review)                                           |
+| Check run title | What it means | What to do |
+|:---|:---|:---|
+| **Code review queued…** or **Code review in progress…** | The review hasn’t finished | Wait for the title to change |
+| **Code review found no issues** | The review finished and posted no findings | If this isn’t the pull request’s first review, look in the review body for a count of [findings the review left out](code-review-pull-requests.md#what-a-later-review-covers). Otherwise, nothing |
+| A title that says issues were found | The review finished with findings | If you don’t see them on the diff, see [Find issues that aren’t showing as inline comments](#find-issues-that-aren%E2%80%99t-showing-as-inline-comments) |
+| **Code review skipped — no new changes** | An automatic review didn’t run on your latest push | To get a review anyway, comment `@claude review` |
+| **Code review not repeated — earlier findings still open** | An automatic review didn’t run on your latest push, and Important findings from the earlier review are still open | Push a fix, or to get a review anyway, comment `@claude review`. See [When a push keeps the earlier result](code-review-pull-requests.md#when-a-push-keeps-the-earlier-result) |
+| **Code review failed** or **Code review timed out** | The review didn’t finish | To run it again, see [Retrigger a failed or timed-out review](#retrigger-a-failed-or-timed-out-review) |
+| **Code review declined** | The review didn’t run | Read the check run’s summary. If it names a budget or a spend limit, see [Review didn’t run and the PR shows a budget message](#review-didn%E2%80%99t-run-and-the-pr-shows-a-budget-message) |
+| No check run | No review started | Comment `@claude review`. If no check run appears after that, see [A comment command didn’t start a review](#a-comment-command-didn%E2%80%99t-start-a-review) |
 
 
 [​](#a-review-didn’t-start)

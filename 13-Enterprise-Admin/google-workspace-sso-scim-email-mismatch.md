@@ -2,13 +2,11 @@
 title: "Google Workspace SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917817-google-workspace-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:04Z"
+fetched_at: "2026-11-18T06:28:06Z"
 tags: ["enterprise"]
 ---
 
 # Google Workspace SSO/SCIM email mismatch
-
-March 24, 2026
 
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Google Workspace, SCIM auto-provisioning and SAML SSO can send different email values—especially when people have email aliases—causing a mismatch that blocks access.
@@ -25,7 +23,7 @@ People may experience one or more of the following when attempting to access you
 
 - **Landing on a free personal account** — If organization creation is not restricted, the person bypasses your organization entirely and creates or lands on a free personal account instead of their provisioned seat.
 
-- **"Please confirm your email" mismatch** — The SSO callback shows a different email than the one the person entered at login.
+- **"Check which account you're signed in to" mismatch** — The SSO callback shows a different email than the one the person entered at login.
 
 - **Claude Code authentication failure** — The Claude Code CLI shows an email mismatch error during the authentication flow, preventing the person from connecting to your organization.
 
@@ -101,7 +99,7 @@ Google Workspace's primaryEmail is the most reliable source for both SCIM and SA
 
 After correcting the attribute mapping and completing the full sync:
 
-- **Rogue free accounts:** If organization creation was not restricted before the fix, some people may have inadvertently created free personal Claude accounts. Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** to have these removed.
+- **Rogue free accounts:** If organization creation was not restricted before the fix, some people may have inadvertently created free personal Claude accounts. Contact **[our Support team](https://support.claude.com/en/articles/9015913)** to have these removed.
 
 - **Ghost accounts (wrong-email seats):** The originally provisioned accounts with the incorrect email may still exist in your organization, occupying seats. Contact our Support team to deprovision these.
 
@@ -133,7 +131,7 @@ After correcting the attribute mapping and completing the full sync:
 
 ## When to contact Support
 
-Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your organization's domain, the affected person's email, and screenshots of your attribute mappings when:
+Contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your organization's domain, the affected person's email, and screenshots of your attribute mappings when:
 
 - SCIM and SSO attributes appear identical but people still cannot access their seats.
 

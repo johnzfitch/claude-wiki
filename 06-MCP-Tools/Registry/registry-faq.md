@@ -2,8 +2,8 @@
 title: "Frequently Asked Questions - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/faq"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-31T06:24:35Z"
-last_modified: "Fri, 30 Oct 2026 21:26:43 GMT"
+fetched_at: "2026-11-13T06:32:55Z"
+last_modified: "Fri, 13 Nov 2026 02:23:09 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
@@ -48,7 +48,19 @@ What is the difference between “Official MCP Registry”, “MCP Registry”, 
 
 Can I delete/unpublish my server?
 
-Currently, no. At the time of writing, there is [open discussion](https://github.com/modelcontextprotocol/registry/issues/104).
+Yes, you can change your server’s status to `deleted` using the `mcp-publisher status` command:
+
+```python
+# Delete a specific version
+mcp-publisher status --status deleted --message "No longer maintained" \
+  io.github.my-username/my-server 1.0.0
+
+# Delete all versions
+mcp-publisher status --status deleted --all-versions --message "Project archived" \
+  io.github.my-username/my-server
+```
+
+Deleted servers are hidden from default API listings but can still be retrieved with `include_deleted=true`. You can restore a deleted server by setting its status back to `active`. **Note**: Server metadata is never permanently removed from the registry. The `deleted` status hides the server from discovery but preserves the historical record.
 
 
 [​](#how-do-i-update-my-server-metadata)

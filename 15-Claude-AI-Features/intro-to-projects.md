@@ -2,7 +2,7 @@
 title: "Intro to Projects · Claude Academy"
 source_url: "https://support.claude.com/en/articles/9945648-intro-to-projects"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-07T06:24:26Z"
+fetched_at: "2026-11-18T06:28:30Z"
 tags: ["claude-ai"]
 ---
 

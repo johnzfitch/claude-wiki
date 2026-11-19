@@ -2,7 +2,7 @@
 title: "Claude Opus 4.7 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-4-7/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:16Z"
+fetched_at: "2026-11-13T06:34:15Z"
 tags: ["models"]
 ---
 
@@ -150,7 +150,7 @@ The system prompt Claude Opus 4.7 uses on claude.ai and the Claude apps.
 
 
 
-[System card](../15-Claude-AI-Features/claude-opus-4-7-system-card.md)
+[System card](../19-Reference/claude-opus-4-7-system-card.md)
 
 Safety evaluations and deployment decisions for Claude Opus 4.7.
 

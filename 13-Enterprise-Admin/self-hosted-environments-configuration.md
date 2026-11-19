@@ -2,8 +2,8 @@
 title: "Customize sessions in self-hosted environments - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments-configuration"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-07T06:23:42Z"
-last_modified: "Sat, 07 Nov 2026 06:21:34 GMT"
+fetched_at: "2026-11-13T06:33:43Z"
+last_modified: "Fri, 13 Nov 2026 06:21:52 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -20,6 +20,7 @@ Back to top
   - [Provision credentials scoped to the session creator](#provision-credentials-scoped-to-the-session-creator)
 - [Lifecycle hooks](#lifecycle-hooks)
   - [checkout](#checkout)
+  - [Checkout folder names](#checkout-folder-names)
   - [Get git credentials in the hook](#get-git-credentials-in-the-hook)
   - [When the hook fails](#when-the-hook-fails)
   - [post-session](#post-session)
@@ -216,7 +217,7 @@ Runs for each repository each time the runner starts a session, including when t
 |:---|:---|
 | `CLAUDE_RUNNER_REPO_URL` | Repository URL to clone, after any `--git-host-rewrite` and `--git-ssh-rewrite` have been applied |
 | `CLAUDE_RUNNER_REPO_REF` | Revision to check out, as the session requested it: a branch, tag, commit SHA, or full reference name such as `refs/heads/<branch>` or `refs/pull/<number>/head`. Empty means the repository’s default branch. |
-| `CLAUDE_RUNNER_CHECKOUT_PATH` | Absolute path where the working tree must be left |
+| `CLAUDE_RUNNER_CHECKOUT_PATH` | Absolute path where the working tree must be left. See [Checkout folder names](#checkout-folder-names). |
 | `CLAUDE_RUNNER_SESSION_ID` | Session ID in the tagged `session_...` form, for logging and correlation |
 | `CLAUDE_RUNNER_SESSION_UUID` | The same session ID in canonical UUID form |
 | `CLAUDE_RUNNER_API_BASE_URL` | Anthropic API base URL for session-scoped calls |
@@ -225,6 +226,13 @@ Runs for each repository each time the runner starts a session, including when t
 | `GIT_CONFIG_COUNT`, `GIT_CONFIG_KEY_n`, `GIT_CONFIG_VALUE_n` | Git settings the runner fixes for the git your hook runs. [Git configuration inside lifecycle hooks](#git-configuration-inside-lifecycle-hooks) describes them. Requires Claude Code v2.1.280 or later. |
 
 The script must leave a working tree at `CLAUDE_RUNNER_CHECKOUT_PATH` checked out at the requested revision. A detached HEAD works, because the runner creates the session’s working branch on top. After your hook returns, the runner verifies that `CLAUDE_RUNNER_CHECKOUT_PATH` contains a `.git`. If your hook materializes a non-git source such as Perforce or an unpacked tarball, set `CLAUDE_RUNNER_SKIP_GIT_VERIFY=1` in the runner’s environment to skip that check. Git-based flows such as working-branch creation and pushing results require a git checkout, so export outcomes from non-git trees with a [`post-session` hook](#post-session).
+
+
+[​](#checkout-folder-names)
+
+Checkout folder names
+
+`CLAUDE_RUNNER_CHECKOUT_PATH` ends in a folder named `<repo-owner>-<repo>`, such as `acme-api`. Two repositories in a session can’t share a folder, even when their names differ only in case. For example, if a session lists `acme/api` and then `Acme/API`, the first gets `acme-api` and the second gets `Acme-API-2`.
 
 
 [​](#get-git-credentials-in-the-hook)
@@ -243,8 +251,8 @@ When the hook fails
 
 The hook fails when it exits non-zero, or exits 0 without leaving a usable checkout behind:
 
-- **A repository the session pushes results to**: the runner fails the session, and on a non-zero exit surfaces the tail of the script’s stderr to the user. Write the reason to stderr as one short line, write it last, and then exit non-zero. Don’t print secrets to stderr, and remove `set -x` before you deploy the hook. If git’s `couldn't find remote ref` appears in roughly the last 4 KB of the hook’s stderr, the runner reports a deleted branch instead. The session’s error message then says the branch no longer exists on the remote and asks the user to restore it. If that branch exists, see [A session fails with `no longer exists on the remote` or `couldn't find remote ref`](self-hosted-environments-deploy.md#no-longer-exists-on-the-remote).
-- **A repository the session only reads from**, such as a repository added to a running session: the runner skips it and continues with the remaining repositories. The runner posts a `Skipped` step to the session and removes whatever the hook left at the checkout path. When the `Skipped` step mentions the checkout hook, find the failure detail on the `[runner:warn] checkout hook failed` line in the runner’s log. When the step says a source ref `no longer exists on remote`, see [A session fails with `no longer exists on the remote` or `couldn't find remote ref`](self-hosted-environments-deploy.md#no-longer-exists-on-the-remote). If skipping leaves the session with no repository at all, the runner fails the session anyway.
+- **A repository the session pushes results to**: the runner fails the session, and on a non-zero exit surfaces the tail of the script’s stderr to the user. Write the reason to stderr as one short line, write it last, and then exit non-zero. Don’t print secrets to stderr, and remove `set -x` before you deploy the hook. If git’s `couldn't find remote ref` appears in roughly the last 4 KB of the hook’s stderr, the runner reports a missing branch instead. If that branch exists, see [A session fails with `couldn't be found in the remote repository` or `couldn't find remote ref`](self-hosted-environments-deploy.md#no-longer-exists-on-the-remote).
+- **A repository the session only reads from**, such as a repository added to a running session: the runner skips it and continues with the remaining repositories. The runner posts a `Skipped` step to the session and removes whatever the hook left at the checkout path. When the `Skipped` step mentions the checkout hook, find the failure detail on the `[runner:warn] checkout hook failed` line in the runner’s log. When the step says a source ref `no longer exists on remote`, see [A session fails with `couldn't be found in the remote repository` or `couldn't find remote ref`](self-hosted-environments-deploy.md#no-longer-exists-on-the-remote). If skipping leaves the session with no repository at all, the runner fails the session anyway.
 
 When the hook succeeds, the runner removes the checkout path after the session ends.
 
@@ -292,6 +300,7 @@ If you compare hook receipts with the [session lifecycle counters](self-hosted-e
 set -u
 export GIT_ALLOW_PROTOCOL=${GIT_ALLOW_PROTOCOL:-https:http:ssh}
 IFS=':'
+rc=0  # becomes 1 when a step fails; a non-zero exit makes the runner log it
 # -c overrides beat repo-local settings, blocking session-written fsmonitor,
 # hook-path, and gpg-program config from executing code with the hook's
 # privileges. -c commit.gpgsign=false also leaves these rescue commits
@@ -302,12 +311,13 @@ IFS=':'
 g() { git -c core.fsmonitor=false -c core.hooksPath=/dev/null \
         -c commit.gpgsign=false "$@"; }
 for ws in $CLAUDE_RUNNER_WORKSPACE_PATHS; do
-  cd "$ws" 2>/dev/null || continue
-  [ -z "$(g status --porcelain 2>/dev/null)" ] && continue
-  g add -A
-  g commit -q -m "runner snapshot: $CLAUDE_RUNNER_SESSION_ID ($CLAUDE_RUNNER_EXIT_REASON)" || continue
-  g push -q origin "HEAD:refs/heads/rescue/$CLAUDE_RUNNER_SESSION_ID" || true
+  cd "$ws" || { rc=1; continue; }
+  g add -A || rc=1
+  g diff-index --cached --quiet HEAD && continue  # nothing to save
+  g commit -q -m "runner snapshot: $CLAUDE_RUNNER_SESSION_ID ($CLAUDE_RUNNER_EXIT_REASON)" || { rc=1; continue; }
+  g push -q origin "HEAD:refs/heads/rescue/$CLAUDE_RUNNER_SESSION_ID" || rc=1
 done
+exit "$rc"
 ```
 
 The `GIT_ALLOW_PROTOCOL` line in the script limits git to HTTPS, HTTP, and SSH remotes. If the runner’s environment already sets a non-empty `GIT_ALLOW_PROTOCOL` list of its own, the script keeps that list. The hook pushes with whatever git credentials are available in its own environment on the runner host. Under the [no-credentials-in-the-image posture](self-hosted-environments-deploy.md#configure-git), including when the built-in clone goes through the Anthropic git proxy, there are none, so mint a short-lived push credential inside the hook before pushing: exchange the session token the hook receives in `CLAUDE_CODE_SESSION_ACCESS_TOKEN` with your own token service, verifying it as [Verify session identity](self-hosted-environments-identity.md) describes. Treat any credential your hook gives git as one a session can obtain, and mint it so that it can do no more than this push. Git in your hook reads configuration files that a session can write, and a credential helper or filter driver named in one of them runs with your hook’s privileges. Settings in those files can also change where a push goes, whatever remote you name. For the git settings the runner fixes in your hook and the ones it leaves to those files, see [Git configuration inside lifecycle hooks](#git-configuration-inside-lifecycle-hooks).
@@ -696,7 +706,7 @@ The runner snapshots the host’s config once at startup. The snapshot captures 
 
 - The enterprise-scope [managed MCP file](../06-MCP-Tools/General/managed-mcp.md) at its standard system path: `/etc/claude-code/managed-mcp.json` on Linux runner hosts, `/Library/Application Support/ClaudeCode/managed-mcp.json` on macOS hosts. Use it for locked-down fleets where only administrator-listed servers may load. See [exclusive control with managed-mcp.json](../06-MCP-Tools/General/managed-mcp.md#exclusive-control-with-managed-mcp-json) for the precedence rules. When this file is on the runner host, Claude Code skips the MCP servers Anthropic’s control plane delivers to a session, including claude.ai connectors, and names them in a warning on the session child’s stderr, which the runner records at the `debug` log level. Before v2.1.229, those sessions exited at startup with `You cannot dynamically configure MCP servers when an enterprise MCP config is present`.
 - The [`managedMcpServers`](../02-Claude-Code-CLI/settings-reference.md#managedmcpservers) key in [managed settings](managed-settings.md) on the runner host: provides HTTP and SSE servers without taking exclusive control, so servers from the other sources still load. Requires Claude Code v2.1.259 or later.
-- `<repo>/.mcp.json`: project scope. Outside a [project](../02-Claude-Code-CLI/claude-projects.md#what-threads-pick-up-from-your-repositories) thread, commit the file to the repository, and its servers are auto-approved in cloud sessions. In a session with several repositories, [at most one repository’s file loads](#repository-settings-in-sessions-with-several-repositories).
+- `<repo>/.mcp.json`: project scope. Outside a [project](../02-Claude-Code-CLI/claude-projects.md#what-threads-pick-up-from-your-repositories) thread, commit the file to the repository, and its servers are auto-approved in cloud sessions. In a session with several repositories, [at most one repository’s file loads](#repository-settings-in-sessions-with-several-repositories). With [`--trust-workspace false`](self-hosted-environments-reference.md#runner-cli-flags), sessions skip the file’s servers unless settings the repository doesn’t commit approve them, such as [`enabledMcpjsonServers`](../02-Claude-Code-CLI/settings-reference.md#enabledmcpjsonservers) in the host’s `~/.claude/settings.json`. Requires Claude Code v2.1.319 or later.
 - A [`--mcp-config`](../02-Claude-Code-CLI/cli-reference.md#cli-flags) file from your wrapper script: append the flag after `"$@"`, as in `exec "$CLAUDE_RUNNER_CLAUDE_BIN" "$@" --mcp-config /etc/claude/mcp.json`. To keep that file’s servers running when the session’s delivered servers are updated mid-session, have your wrapper pass the [full environment](#wrapper-scripts) to the child, as `exec` does. Before v2.1.299, the stdio, HTTP, and SSE servers in that file shut down at the first such update that didn’t name them.
 
 When connector delivery is enabled for your organization, Anthropic’s control plane delivers the connectors you’ve configured on claude.ai to interactively-created sessions through server-provided MCP configuration, routed through `api.anthropic.com`. Sessions created programmatically, such as [CLI dispatches](self-hosted-environments-testing.md#run-the-test-loop), don’t receive connector delivery; give them MCP servers through any of the other sources this section lists instead. The child’s OAuth token doesn’t carry a scope for fetching connectors directly, so the child doesn’t attempt that fetch itself; delivery is server-driven.
@@ -960,7 +970,7 @@ Repository settings in sessions with several repositories
 
 In a thread in a [project](../02-Claude-Code-CLI/claude-projects.md#what-threads-pick-up-from-your-repositories), no repository’s `.claude/settings.json` takes effect as project settings and no repository’s `.mcp.json` or skills load, wherever the thread starts. To give those threads a skill, add it to your runner image. In any other session with several repositories, Claude Code reads project settings from the directory the session starts in, so at most one repository’s `.claude/settings.json` takes effect as project settings. A hook defined in another repository’s file doesn’t run, a deny rule in it doesn’t apply, and its `env` isn’t set.
 
-- **`--capacity 1`, the default, with the built-in checkout**: the session starts in the first repository in its list of repositories. That repository’s `.claude/settings.json` takes effect as project settings and its `.mcp.json` loads, and the other repositories’ don’t.
+- **`--capacity 1`, the default, with the built-in checkout**: the session starts in the first repository in its list of repositories. That repository’s `.claude/settings.json` takes effect as project settings and its [`.mcp.json`](#mcp-servers) loads, and the other repositories’ don’t.
 - **A `--capacity` above one, or a [`checkout` hook](#checkout)**: the session starts in a per-session directory that contains the checkouts. No repository’s `.claude/settings.json` takes effect as project settings, no repository’s `.mcp.json` loads, and [`$CLAUDE_PROJECT_DIR`](../07-Hooks/hooks.md#reference-scripts-by-path) in a hook command is that directory, not a checkout.
 
 Each repository’s `CLAUDE.md` loads wherever the session starts. Outside a project thread, its skills load too. The runner passes every repository to Claude Code as an [additional directory](../02-Claude-Code-CLI/permissions.md#additional-directories-grant-file-access-not-configuration), so Claude Code also reads the `enabledPlugins` and `extraKnownMarketplaces` keys from each repository’s `.claude/settings.json`. To run a hook or apply a permission rule in every session, put it in `~/.claude/settings.json` on the runner host. The runner [seeds the host file into every session](#how-each-session%E2%80%99s-config-is-assembled), wherever the session starts. Write a path in a `Read` or `Edit` rule as a `//` absolute or `~/` home-relative [pattern](../02-Claude-Code-CLI/permissions.md#read-and-edit), because other patterns anchor at the settings source or the current directory.

@@ -2,7 +2,7 @@
 title: "Handle tool calls - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/handle-tool-calls"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:34:43Z"
+fetched_at: "2026-11-13T06:35:17Z"
 tags: ["api", "cli"]
 ---
 
@@ -36,7 +36,7 @@ The response has a `stop_reason` of `tool_use` and one or more `tool_use` conten
 
 A `tool_use` block for a member of the [computer use](agents-and-tools-tool-use-computer-use-tool.md) or [browser use](agents-and-tools-tool-use-browser-use-tool.md) toolset also carries a `toolset_name` field (`"computer"` or `"browser"`). Its `name` is the member tool Claude is calling, such as `screenshot` or `navigate`, so dispatch those blocks on both fields.
 
-### Example API response with a \`tool_use\` content block
+### Example API response with a \`tool_use\` content block
 
 JSON
 
@@ -107,7 +107,7 @@ If you receive an error such as “tool_use ids were found without tool_result b
 
 Tool results often carry content from sources outside your control: webpages, inbound email, user uploads, third-party APIs. Treat that content as untrusted: an attacker who can influence it might embed instructions that try to redirect Claude (indirect prompt injection). Keep untrusted content inside `tool_result` blocks rather than `system` prompts or plain user `text` blocks, and see [Mitigate jailbreaks and prompt injections](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md#indirect-prompt-injection) for further hardening.
 
-### Example of tool result with images
+### Example of tool result with images
 
 JSON
 
@@ -136,7 +136,7 @@ JSON
 }
 ```
 
-### Example of empty tool result
+### Example of empty tool result
 
 JSON
 
@@ -154,7 +154,7 @@ JSON
 }
 ```
 
-### Example of tool result with documents
+### Example of tool result with documents
 
 JSON
 
@@ -183,7 +183,7 @@ JSON
 }
 ```
 
-### Example of text before and after a tool result
+### Example of text before and after a tool result
 
 For example, this causes a 400 error:
 
@@ -235,7 +235,7 @@ Messages contain arrays of `text`, `image`, `tool_use`, and `tool_result` blocks
 
 There are a few different types of errors that can occur when using tools with Claude:
 
-### Tool execution error
+### Tool execution error
 
 If the tool itself throws an error during execution (for example, a network error when fetching weather data), you can return the error message in the `content` along with `"is_error": true`:
 
@@ -263,7 +263,7 @@ Claude will then incorporate this error into its response to the user. For examp
 
 Write instructive error messages. Instead of generic errors such as `"failed"`, include what went wrong and what Claude should try next (for example, `"Rate limit exceeded. Retry after 60 seconds."`). This gives Claude the context it needs to recover or adapt without guessing.
 
-### Invalid tool name
+### Invalid tool name
 
 If Claude’s attempted use of a tool is invalid (for example, missing required parameters), it usually means that there wasn’t enough information for Claude to use the tool correctly. The best approach during development is to try the request again with more-detailed `description` values in your tool definitions.
 
@@ -293,7 +293,7 @@ If a tool request is invalid or missing parameters, Claude will retry 2–3 time
 
 To eliminate invalid tool calls entirely, use [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) with `strict: true` on your tool definitions. This guarantees that tool inputs always match your schema exactly, preventing missing parameters and type mismatches.
 
-### Server tool errors
+### Server tool errors
 
 When server tools encounter errors (for example, network issues with web search), Claude will transparently handle these errors and attempt to provide an alternative response or explanation to the user. Unlike client tools, you do not need to handle `is_error` results for server tools.
 

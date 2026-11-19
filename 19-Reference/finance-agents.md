@@ -89,7 +89,7 @@ Claude can work directly in Microsoft [Excel](../14-Connectors/claude-for-excel.
 
 In Outlook, it can act as a chief of staff that triages your inbox, arranges meetings, and drafts responses in your voice. In Excel, it builds financial models from filings and data feeds, audits formulas across linked workbooks, and runs sensitivity analyses. In PowerPoint, it drafts decks that update automatically when the underlying numbers change. In Word, it edits credit memos against a firm’s own templates. Claude carries its knowledge and context across all four platforms: an analyst who’s started a model in Excel doesn’t need to re-explain it when that work moves to PowerPoint.
 
-In Claude Cowork, users can also assign Claude work tasks from anywhere—by text or by voice—using [Dispatch](https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork). Claude can keep working on analysts’ local files while they’re away from their desk, with finished work ready for review by the time they’re back.
+In Claude Cowork, users can also assign Claude work tasks from anywhere—by text or by voice—using [Dispatch](../21-Account-Support/assign-tasks-from-anywhere-in-claude-cowork.md). Claude can keep working on analysts’ local files while they’re away from their desk, with finished work ready for review by the time they’re back.
 
 ## The broadest ecosystem for financial services
 

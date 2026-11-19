@@ -2,8 +2,8 @@
 title: "Connect to MCP servers - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/mcp-quickstart"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-29T06:25:34Z"
-last_modified: "Thu, 29 Oct 2026 03:40:34 GMT"
+fetched_at: "2026-11-15T06:23:33Z"
+last_modified: "Sat, 14 Nov 2026 19:07:18 GMT"
 tags: ["claude-code", "mcp"]
 ---
 
@@ -42,20 +42,14 @@ You can also add MCP servers from other surfaces, including the desktop app, VS 
 
 For every way to connect and configure MCP servers in Claude Code, see the [MCP reference](mcp.md).
 
-
-[​](#before-you-begin)
-
-Before you begin
+## [](#before-you-begin)Before you begin
 
 Make sure you have:
 
 - [Claude Code installed](../../01-Getting-Started/quickstart.md) and authenticated
 - A terminal open in a project directory. Any directory works, including an empty one.
 
-
-[​](#add-and-verify-a-server)
-
-Add and verify a server
+## [](#add-and-verify-a-server)Add and verify a server
 
 The example below connects to the [Claude Code documentation MCP server](https://code.claude.com/docs/mcp), a hosted server with full-text search over the Claude Code docs. It doesn’t require authentication or any special configuration, so it works well as a first server to test the setup flow with. The steps are the same for any server: add it, check the connection status, then use it in a session, with an optional cleanup step at the end. Some servers add a step, like a browser sign-in, shown in [Additional MCP server examples](#additional-mcp-server-examples). For more servers to connect, browse the [Anthropic Directory](mcp.md#find-and-build-mcp-servers).
 
@@ -135,10 +129,7 @@ The command confirms with `Removed MCP server "claude-code-docs" from local conf
 
 Each connected server takes some space in [Claude’s context window](../../02-Claude-Code-CLI/how-claude-code-works.md#the-context-window) because its tool names and server instructions load into every session. Removing servers you no longer use keeps that space free.
 
-
-[​](#where-servers-are-saved)
-
-Where servers are saved
+## [](#where-servers-are-saved)Where servers are saved
 
 The `claude mcp add` command writes the server’s details to a configuration file. By default it registers the server at `local` scope: private to you, active only in the current project. Pass `--scope user` to register it once for all your projects, or `--scope project` to share it with teammates. [Change server scope](#change-server-scope) walks through both.
 
@@ -150,10 +141,7 @@ There are other ways to add a server, each with its own section:
 - [Edit `.mcp.json` directly](#edit-mcp-json-directly): write the JSON entry yourself instead of using the command.
 - [Connect a server that requires sign-in](#connect-a-server-that-requires-sign-in): add a hosted server that needs a browser sign-in before its tools work.
 
-
-[​](#find-your-configuration-on-disk)
-
-Find your configuration on disk
+### [](#find-your-configuration-on-disk)Find your configuration on disk
 
 The `claude mcp add` command writes the server to one of three scopes, stored across two files, depending on the `--scope` flag. You don’t need to edit these files directly, but knowing where they are helps with debugging and version control.
 
@@ -165,10 +153,7 @@ The `claude mcp add` command writes the server to one of three scopes, stored ac
 
 On Windows, `~/.claude.json` resolves to `%USERPROFILE%\.claude.json`, typically `C:\Users\YourName\.claude.json`. If you’ve set [`CLAUDE_CONFIG_DIR`](../../02-Claude-Code-CLI/env-vars.md), Claude Code reads `.claude.json` from inside that directory instead. Run `claude mcp get claude-code-docs` to see which scope holds a server’s definition. For how the scopes interact when the same server is defined in more than one, see [MCP installation scopes](mcp.md#mcp-installation-scopes).
 
-
-[​](#change-server-scope)
-
-Change server scope
+## [](#change-server-scope)Change server scope
 
 A server’s scope is fixed when you add it, so changing scope means removing the entry and re-adding it at the new one. Both cases below start by removing the local entry from the first walkthrough, so the server has only one definition. If you already removed it at the end of that walkthrough, skip this command:
 
@@ -176,10 +161,7 @@ A server’s scope is fixed when you add it, so changing scope means removing th
 claude mcp remove claude-code-docs --scope local
 ```
 
-
-[​](#use-a-server-in-all-your-projects)
-
-Use a server in all your projects
+### [](#use-a-server-in-all-your-projects)Use a server in all your projects
 
 Re-add the server at `user` scope to make it active in every project you open, still private to you:
 
@@ -187,10 +169,7 @@ Re-add the server at `user` scope to make it active in every project you open, s
 claude mcp add --scope user --transport http claude-code-docs https://code.claude.com/docs/mcp
 ```
 
-
-[​](#share-a-server-with-your-team)
-
-Share a server with your team
+### [](#share-a-server-with-your-team)Share a server with your team
 
 Re-add the server at `project` scope, which writes to `.mcp.json` in the project root:
 
@@ -200,17 +179,11 @@ claude mcp add --scope project --transport http claude-code-docs https://code.cl
 
 Commit `.mcp.json` to version control. Teammates who clone the repository and start Claude Code see a prompt to approve the server, then it connects for them too.
 
-
-[​](#additional-mcp-server-examples)
-
-Additional MCP server examples
+## [](#additional-mcp-server-examples)Additional MCP server examples
 
 The first walkthrough used a hosted server that connects without any sign-in. The examples below cover the other two common shapes, with the same add, check, use flow.
 
-
-[​](#add-a-local-server)
-
-Add a local server
+### [](#add-a-local-server)Add a local server
 
 A local stdio server is a program Claude Code starts as a subprocess on your machine, rather than a service it reaches over a URL. Use one for tools that need access to local resources like a browser, your filesystem, or a database socket. The [Playwright MCP server](https://github.com/microsoft/playwright-mcp) is a good one to try: it gives Claude a browser it can navigate, click, and read, and it needs no account. It runs through `npx`, so it requires [Node.js](https://nodejs.org/en/download) 18 or later.
 
@@ -256,10 +229,7 @@ Use playwright to open https://example.com and tell me the page title
 
 A browser window opens so you can watch it work, and the tool calls in Claude’s output are labeled with the `playwright` server name and the action, like `browser_navigate`.Try pointing it at your local dev server to check that a page still renders after a change, or have it walk through a bug report step by step.
 
-
-[​](#connect-a-server-that-requires-sign-in)
-
-Connect a server that requires sign-in
+### [](#connect-a-server-that-requires-sign-in)Connect a server that requires sign-in
 
 Hosted services like Sentry, Linear, and Notion run their MCP servers behind OAuth: you add the server’s URL, then sign in through your browser. The steps below use Sentry as the example. To connect a different service, substitute its URL, which you can find in the [Anthropic Directory](mcp.md#find-and-build-mcp-servers) or the service’s documentation.
 
@@ -295,10 +265,7 @@ Ask Claude something that needs the service, like `What Sentry projects do I hav
 
 Servers that authenticate with a static token instead of OAuth take the token at add time with `--header "Authorization: Bearer <token>"`. See the [GitHub example](mcp.md#example-connect-to-github-for-code-reviews) for a worked version.
 
-
-[​](#edit-mcp-json-directly)
-
-Edit .mcp.json directly
+## [](#edit-mcp-json-directly)Edit .mcp.json directly
 
 Every file in the [scope table](#find-your-configuration-on-disk) uses the same JSON format for server entries. This section edits `.mcp.json`, the project-scope file. It’s the one most worth writing by hand because it’s checked into the repository, where it doubles as configuration-as-code for your team. Create `.mcp.json` in your project root. The example below defines both servers from this guide, the hosted docs server reached over HTTP and the Playwright server as a local `stdio` process:
 
@@ -323,12 +290,9 @@ The fields differ by server type:
 - For HTTP servers, `url` is the endpoint Claude Code connects to.
 - For stdio servers, `command` and `args` are the program it runs.
 
-After saving the file, start a new Claude Code session in the project. Claude Code reads `.mcp.json` at startup. The first time Claude Code sees a project-scoped server, it asks you to approve it. The prompt exists so a repository you clone can’t launch processes on your machine without your consent. Approve the prompt, or run `/mcp` to approve later if you missed it. Once you’ve approved, run `/mcp` and check that the servers show as connected. If one shows an error instead, see [Troubleshooting](#troubleshooting).
+After saving the file, start a new Claude Code session in the project. Claude Code reads `.mcp.json` at startup. The first time Claude Code sees a project-scoped server, it asks you to approve it. The prompt exists so a repository you clone can’t launch processes on your machine without your consent. Approve the prompt. If you dismissed it, run `claude mcp reset-project-choices` and restart Claude Code to see it again. Once you’ve approved, run `/mcp` and check that the servers show as connected. If one shows an error instead, see [Troubleshooting](#troubleshooting).
 
-
-[​](#connect-from-other-surfaces)
-
-Connect from other surfaces
+## [](#connect-from-other-surfaces)Connect from other surfaces
 
 This guide uses the `claude mcp` CLI commands, but every Claude Code surface can connect to MCP servers:
 
@@ -338,10 +302,7 @@ This guide uses the `claude mcp` CLI commands, but every Claude Code surface can
 - **Cloud sessions**: outside a [project](../../02-Claude-Code-CLI/claude-projects.md#what-threads-pick-up-from-your-repositories)’s threads, commit a `.mcp.json` to your repository; a session with one repository loads it. Cloud threads in a project use your claude.ai connectors instead. See [Edit .mcp.json directly](#edit-mcp-json-directly) and [What carries over from your setup](../../02-Claude-Code-CLI/cloud-environments.md#what-carries-over-from-your-setup).
 - **Claude.ai**: connectors you add at [claude.ai/customize/connectors](https://claude.ai/customize/connectors) load automatically in the CLI when you sign in with that account. See [Use MCP servers from Claude.ai](mcp.md#use-mcp-servers-from-claude-ai).
 
-
-[​](#troubleshooting)
-
-Troubleshooting
+## [](#troubleshooting)Troubleshooting
 
 If a server doesn’t connect, check its status with `/mcp` inside a session or `claude mcp list` from your shell, then match the symptom below. The `/mcp` panel also lets you reconnect or authenticate without leaving the session.
 
@@ -425,10 +386,7 @@ OAuth sign-in fails or browser doesn't open
 
 Run `/mcp`, select the server, and choose `Authenticate` again. If the browser doesn’t open automatically, copy the URL shown in the terminal and open it manually. See [Authenticate with remote MCP servers](mcp.md#authenticate-with-remote-mcp-servers) for fixed callback ports and pre-configured credentials.
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 With one server connected, explore the rest of what MCP enables:
 

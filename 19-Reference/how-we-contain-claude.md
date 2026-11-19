@@ -2,7 +2,7 @@
 title: "How we contain Claude across products \\ Anthropic"
 source_url: "https://www.anthropic.com/research/how-we-contain-claude"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:05Z"
+fetched_at: "2026-11-14T06:26:41Z"
 tags: ["agents", "news-research"]
 ---
 
@@ -14,24 +14,21 @@ tags: ["agents", "news-research"]
 - [04Looking ahead](#looking-ahead)
 - [05Summary](#summary)
 
-- Published
+Published  
+May 25, 2026
 
-  May 25, 2026
+Team  
+[Engineering](https://www.anthropic.com/engineering)
 
-- Team
+Topics  
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
 
-  [Engineering](https://www.anthropic.com/engineering)
-
-- Topics
-
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-
-  See more...
+See more...
 
 Related articles
 
@@ -47,7 +44,7 @@ Twelve months ago, we'd have rejected out of hand the idea of granting Claude ac
 
 There are broadly two ways to do this.
 
-The first is to supervise the agent’s behavior via a human-in-the-loop. Claude Code previously protected against agents taking unintended actions by asking users for permission at each turn. Theoretically that works, but we’ve found the approach to be fallible. Our telemetry showed users approved roughly 93% of permission prompts. The more approvals a user sees, the less attention they pay to each, becoming over time much less diligent in their supervision. We recently built Claude Code auto mode, which [automates safer approvals](https://www.anthropic.com/engineering/claude-code-auto-mode) in order to reduce this approval fatigue. Still, vulnerabilities remain—any probabilistic defense has a non-zero miss rate.^([1](#footnote-1))
+The first is to supervise the agent’s behavior via a human-in-the-loop. Claude Code previously protected against agents taking unintended actions by asking users for permission at each turn. Theoretically that works, but we’ve found the approach to be fallible. Our telemetry showed users approved roughly 93% of permission prompts. The more approvals a user sees, the less attention they pay to each, becoming over time much less diligent in their supervision. We recently built Claude Code auto mode, which [automates safer approvals](https://www.anthropic.com/engineering/claude-code-auto-mode) in order to reduce this approval fatigue. Still, vulnerabilities remain—any probabilistic defense has a non-zero miss rate.^([^1])
 
 The second approach to capping the blast radius—and the focus of much of this post—is containment. Rather than supervising what the agent does, we supervise what it’s *able* to do by enforcing access boundaries through, for example, sandboxes, virtual machines, and egress controls. This is where Anthropic engineering has devoted the most effort, and also where many of the most surprising security failures have occurred.
 
@@ -74,7 +71,7 @@ A tight perimeter also means you can relax oversight. Claude Code’s [reference
 
 **The model the agent consults.** The mechanisms here include system prompts, classifiers, probes, and training modifications. Because models are probabilistic, these shape only what the agent *tends* to do, not what it is theoretically capable of doing.
 
-These defenses are strong. On Gray Swan's Agent Red Teaming benchmark, which tests susceptibility to prompt injection, [Claude Opus 4.7](../15-Claude-AI-Features/claude-opus-4-7-system-card.md) holds attack success to roughly 0.1% on single attempts, and around 5–6% after 100 adaptive attempts. Claude Code auto mode catches roughly 83% of overeager behaviors [before they execute](https://www.anthropic.com/engineering/claude-code-auto-mode). Yet even with best-in-class defenses, protection in the model layer will never be 100% effective, which is why it can't stand alone.
+These defenses are strong. On Gray Swan's Agent Red Teaming benchmark, which tests susceptibility to prompt injection, [Claude Opus 4.7](https://assets.claude.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf) holds attack success to roughly 0.1% on single attempts, and around 5–6% after 100 adaptive attempts. Claude Code auto mode catches roughly 83% of overeager behaviors [before they execute](https://www.anthropic.com/engineering/claude-code-auto-mode). Yet even with best-in-class defenses, protection in the model layer will never be 100% effective, which is why it can't stand alone.
 
 **The external content the agent can reach.** MCP servers, third-party plugins, and web search tools all feed content into the agent’s context from sources you don’t control. An audited connector isn’t the same as audited data—a GitHub connector, for instance, can load a poisoned README straight into the model’s context despite passing malware checks. Granularly limiting tool permissions can help limit the blast radius. An agent with read-only DB access, for instance, can be deployed far more broadly than one that writes to prod.
 
@@ -220,7 +217,7 @@ Ultimately, while agents may be a new category of software, their system-level i
 
 01Claude Code auto mode delegates command approvals to a model-based classifier; it minimizes friction (roughly 0.4% of benign commands blocked) at the cost of missing a fraction of risky ones (~17% of overeager actions get through), so it's one layer of defense-in-depth inside a sandbox, not a substitute for one.[](#footnote-ref-1)
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 
@@ -229,3 +226,5 @@ Written by Max McGuinness, Mikaela Grace, Jiri De Jonghe, Jake Eaton, and Abel R
 We're also grateful to Hanah Ho, Hasnain Lakhani, Pedram Navid, Molly Villagra, Maya Nielan, Akila Srinivasan, Travis Szucs, Sam Attard, Alfred Xing, Mohamad El Hajj, Gabby Curtis, David Dworken, Adam Jones, Amie Rotherham, Christian Ryan, Lucas Smedley, Brett Andrews, and others for their contributions.
 
 Special thanks to our security and product engineering teams, and to the individuals and organizations that have reported vulnerabilities in Claude products.
+
+[^1]:

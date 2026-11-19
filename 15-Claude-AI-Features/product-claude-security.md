@@ -2,7 +2,7 @@
 title: "Claude Security | Fix vulnerabilities with AI cybersecurity"
 source_url: "https://www.claude.com/product/claude-security"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:39Z"
+fetched_at: "2026-11-18T06:29:34Z"
 tags: ["claude-ai", "security"]
 ---
 

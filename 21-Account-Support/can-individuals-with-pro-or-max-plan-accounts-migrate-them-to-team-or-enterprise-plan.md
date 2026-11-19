@@ -2,7 +2,7 @@
 title: "Move your personal Claude account to a Team or Enterprise organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9267400-move-your-personal-claude-account-to-a-team-or-enterprise-organization"
 category: "21-Account-Support"
-fetched_at: "2026-11-09T06:26:17Z"
+fetched_at: "2026-11-18T06:28:27Z"
 tags: ["account", "enterprise"]
 ---
 
@@ -15,7 +15,7 @@ Your personal account is the Claude account you signed up for yourself. Your org
 
 Unless your admin has claimed your account, you don't have to decide now. You can keep both accounts and nothing changes. You can move your account later from **[Settings \> Account](https://claude.ai/settings/account)**.
 
-**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you can't bring your data, whether you start the move or your admin does. You can **[export your data](https://support.claude.com/en/articles/9450526-export-your-claude-data)** first if you want a copy. The export doesn't include the original files you uploaded. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](https://support.claude.com/en/articles/15505325)**.
+**Note:** Enterprise organizations that have turned on HIPAA readiness or customer-managed encryption keys (CMEK) can't receive data from a personal account. If your organization uses either, you can't bring your data, whether you start the move or your admin does. You can **[export your data](../22-Safety-Policy/export-your-claude-data.md)** first if you want a copy. The export doesn't include the original files you uploaded. Learn more about **[HIPAA-ready Enterprise plans](https://support.claude.com/en/articles/13296973)** and **[customer-managed encryption keys](../22-Safety-Policy/what-are-customer-managed-encryption-keys-cmek-claude-help-center.md)**.
 
 ------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ Both paths move the same content for each person. Before you confirm, the last s
 
 - Artifacts in your **Artifacts** tab, if artifacts are available to you in your organization. You get private copies under new links, so old links, and previews in moved chats, may say you no longer have access.
 
-- Projects, project instructions, and files, including projects created through or used with Cowork. Projects on the **[new version of projects (beta)](../15-Claude-AI-Features/what-are-projects.md#h_e9fb2a161e)** don't move.
+- Projects, project instructions, and files, including projects created through or used with Cowork. Projects on the **[new version of projects (beta)](https://support.claude.com/en/articles/9517075-what-are-projects#h_e9fb2a161e)** don't move.
 
 - Uploaded files and attachments
 
@@ -51,9 +51,9 @@ Both paths move the same content for each person. Before you confirm, the last s
 
 - Custom skills. There's no migration path for skills. Download any you want to keep before you migrate.
 
-- Claude Docs. Export any docs you want to keep before you migrate.
+- Claude Docs and Claude Sheets. Export any docs or sheets you want to keep before you migrate.
 
-- Claude Dashboards, other artifacts that **[store data](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_97446f855f)**, and a few other kinds of artifacts
+- Claude Data artifacts, other artifacts that [**store data**](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them#h_97446f855f), and a few other kinds of artifacts.
 
 - Projects on the new version of projects (beta), and the chats in them. If we've switched a project of yours to the new version, only its earlier version moves: an archived project with the chats from before the switch.
 
@@ -85,17 +85,17 @@ Both paths move the same content for each person. Before you confirm, the last s
 
 Before you migrate, do the following in **[your personal account](#h_c20f7490d4)**:
 
-1.  To keep a copy of your chats, **[export your data](https://support.claude.com/en/articles/9450526-export-your-claude-data)**. Download the file before you start the move: that export's link stops working once the account closes. The export doesn't include the original files you uploaded.
+1.  To keep a copy of your chats, **[export your data](../22-Safety-Policy/export-your-claude-data.md)**. Download the file before you start the move: that export's link stops working once the account closes. The export doesn't include the original files you uploaded.
 
-2.  Export any Claude Docs you want to keep. You can **[export a doc](../15-Claude-AI-Features/get-started-with-claude-docs.md#h_9920271284)** as Word, PDF, Markdown, or Google Docs.
+2.  Export any Claude Docs or Claude Sheets you want to keep. You can **[export a doc](../15-Claude-AI-Features/get-started-with-claude-docs.md#h_9920271284)** as Word, PDF, Markdown, or Google Docs.
 
-3.  Download any custom skills you want to keep: go to **[Customize \> Skills](https://claude.ai/customize/skills)**, open the skill's menu, and click "Download."
+3.  Download any custom skills you want to keep: go to **[Customize \> Skills](https://claude.ai/customize/skills)**, click the skill to open it, then click "..." and select "Download."
 
 4.  Download any files you want from **[Cowork tasks in the cloud](../16-Mobile-Desktop/use-claude-cowork-on-web-desktop-and-mobile.md#h_fd499216c4)**.
 
 5.  If your organization has code execution and file creation turned off, files Claude created in your chats move but can't be opened. Download them first.
 
-6.  **[Save a copy](../15-Claude-AI-Features/what-are-artifacts-and-how-do-i-use-them-claude-help-center.md#h_1403132eb8)** of anything you've published as an artifact, since published artifacts won't be available afterward.
+6.  **[Save a copy](https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them#h_1403132eb8)** of anything you've published as an artifact, since published artifacts won't be available afterward.
 
 7.  Share any content you've sent out as a public link another way, because most of those links will stop working.
 
@@ -107,7 +107,7 @@ Before you migrate, do the following in **[your personal account](#h_c20f7490d4)
 
 ### Will my organization be able to see my old conversations?
 
-Yes. Your organization can access what moves, the same way it can access the rest of its data. For example, its Primary Owner can export it. Any data retention policy your organization has set applies to it too. For more information, see **[Who owns and manages the data of my team?](../13-Enterprise-Admin/who-owns-and-manages-the-data-of-my-team.md)**
+Yes. Your organization can access what moves, the same way it can access the rest of its data. For example, its Primary Owner can export it. Any data retention policy your organization has set applies to it too. For more information, see **[Who owns and manages the data of my team?](https://support.claude.com/en/articles/9265372-who-owns-and-manages-the-data-of-my-team)**
 
 ------------------------------------------------------------------------
 
@@ -143,7 +143,7 @@ If you’ve claimed monthly API credits on your Max or Ultra plan:
 
 - **Moving to an Enterprise organization:** New credits stop. Credits you already have stay usable until they expire. Enterprise plans aren’t eligible for monthly API credits.
 
-Credits you bought directly from us are refunded too, but credits bought in the mobile apps aren't. For cancellation instructions, see **[Cancel your Pro, Max, or Ultra subscription](../17-Billing-Plans/cancel-your-pro-max-or-ultra-subscription-claude-help-center.md)**.
+Credits you bought directly from us are refunded too, but credits bought in the mobile apps aren't. For cancellation instructions, see **[Cancel your Pro, Max, or Ultra subscription](https://support.claude.com/en/articles/8325617)**.
 
 ### How to start a migration
 
@@ -169,7 +169,7 @@ If you don't see it:
 
 If you still don't see it, your organization's settings may be the reason. Ask your admin.
 
-If a move fails, try again. If it fails again, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)**, and don't choose "Start fresh" in the meantime: what hasn't moved yet wouldn't move at all.
+If a move fails, try again. If it fails again, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md#h_d6fc679aa4)**, and don't choose "Start fresh" in the meantime: what hasn't moved yet wouldn't move at all.
 
 ### If you own both accounts
 
@@ -195,9 +195,9 @@ If you subscribed to the Pro, Max, or Ultra plan through the Apple App Store, yo
 
 - **How to move:** If you're invited to a Team, choose "Bring my work to \[your organization\]" when you join. Otherwise, on the web or in Claude Desktop, go to **[Settings \> Account](https://claude.ai/settings/account)** and select "Move to \[your organization\]."
 
-- **Cancel your subscription yourself:** We can't cancel or refund it. **[Cancel your iOS subscription](https://support.claude.com/en/articles/8325617-cancel-your-pro-max-or-ultra-subscription#h_54384c9962)** in your Apple ID settings. Until you do, Apple keeps charging you, even after your personal account closes. To ask Apple for a refund, see **[Request a refund for a paid Claude plan](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan#h_0d726f5bbf)**.
+- **Cancel your subscription yourself:** We can't cancel or refund it. **[Cancel your iOS subscription](../17-Billing-Plans/cancel-your-pro-max-or-ultra-subscription.md#h_54384c9962)** in your Apple ID settings. Until you do, Apple keeps charging you, even after your personal account closes. To ask Apple for a refund, see **[Request a refund for a paid Claude plan](https://support.claude.com/en/articles/12386328-request-a-refund-for-a-paid-claude-plan#h_0d726f5bbf)**.
 
-- **When your personal account closes:** A few weeks after you move. It's then deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. Chats you start in your personal account before it closes move to your organization too, and your organization can access them. Credits you buy after you move aren't refunded.
+- **When your personal account closes:** A few weeks after you move. It's then deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. Chats you start in your personal account before it closes usually move to your organization too, and your organization can access them. Credits you buy after you move aren't refunded.
 
 **Start fresh** isn't offered until your App Store plan has ended.
 
@@ -207,7 +207,7 @@ If you subscribed to the Pro, Max, or Ultra plan through the Apple App Store, yo
 
 Domain claiming is supported on Claude Enterprise plans only.
 
-Enterprise admins can claim all existing personal accounts on their organization's verified domain. If your admin initiates a domain claim, you'll receive an email and in-product notification with a deadline (at least 30 days out) to choose between bringing what you can into the Enterprise workspace or starting fresh. If your organization has turned on HIPAA readiness or CMEK, you'll still get the notification and deadline, but bringing your data isn't offered. **[Export](https://support.claude.com/en/articles/9450526-export-your-claude-data)** anything you want to keep before the deadline, then start fresh. The export doesn't include the original files you uploaded.
+Enterprise admins can claim all existing personal accounts on their organization's verified domain. If your admin initiates a domain claim, you'll receive an email and in-product notification with a deadline (at least 30 days out) to choose between bringing what you can into the Enterprise workspace or starting fresh. If your organization has turned on HIPAA readiness or CMEK, you'll still get the notification and deadline, but bringing your data isn't offered. **[Export](../22-Safety-Policy/export-your-claude-data.md)** anything you want to keep before the deadline, then start fresh. The export doesn't include the original files you uploaded.
 
 For the full walkthrough of your options, deadlines, and what happens to your subscription, see **[Respond to an Enterprise domain claim on your Claude account](respond-to-an-enterprise-domain-claim-on-your-claude-account.md)**.
 
@@ -228,10 +228,10 @@ If you're in a Team or Enterprise organization and want to close your personal a
 
 1.  From your organization account, go to **[Settings \> Account \> Close your personal account](https://claude.ai/settings/account)** and choose "Start fresh." If you bought a paid plan directly from us, it's canceled for you. If you bought it through Google Play, we ask Google Play to cancel it. Check Google Play, and cancel there if your plan is still active (see **[How do refunds work for migrated accounts?](#h_c0aa7afb70)**).
 
-2.  On the next step, choose "Download your data" to get a copy of your chats, projects, and memory, or "Delete your data" if you don't want one. Either way, your personal account closes and its data will be deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. We'll email you the download link after that. The download doesn't include the original files you uploaded. Download the file right away: the link expires after 24 hours and may work only once. If it has expired or won't open, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support#h_d6fc679aa4)** (an Owner of your organization may need to reach out for you). If you don't see "Download your data," a download isn't available for your account.
+2.  On the next step, choose "Download your data" to get a copy of your chats, projects, and memory, or "Delete your data" if you don't want one. Either way, your personal account closes and its data will be deleted, per our **[data retention practices](https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data)**. We'll email you the download link after that. The download doesn't include the original files you uploaded. Download the file right away: the link expires after 24 hours and may work only once. If it has expired or won't open, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md#h_d6fc679aa4)** (an Owner of your organization may need to reach out for you). If you don't see "Download your data," a download isn't available for your account.
 
 3.  Confirm and click "Delete account." This can't be undone. Your organization account isn't affected.
 
 If you don't see **Close your personal account**, see **[How to start a migration](#h_13d479a758)**.
 
-If you're not in an organization, or your personal account is on a different email address from your organization, log in to your personal account and see **[Delete your Claude account](delete-your-claude-account.md)**.
+If you're not in an organization, or your personal account is on a different email address from your organization, log in to your personal account and see **[Delete your Claude account](https://support.claude.com/en/articles/9028421-delete-your-claude-account)**.

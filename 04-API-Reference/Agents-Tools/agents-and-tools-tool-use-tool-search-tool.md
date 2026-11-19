@@ -2,7 +2,7 @@
 title: "Tool search tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:33Z"
+fetched_at: "2026-11-13T06:35:20Z"
 tags: ["api", "mcp", "prompting", "search"]
 ---
 
@@ -23,14 +23,23 @@ Scale to hundreds or thousands of tools by letting Claude search your tool catal
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 The tool search tool lets Claude work with hundreds or thousands of tools by discovering and loading them on demand. Instead of loading all tool definitions into the context window up front, Claude searches your tool catalog (including tool names, descriptions, argument names, and argument descriptions) and loads only the tools it needs.
 
@@ -233,7 +242,7 @@ The computer use and browser use toolsets (`computer_toolset_20260801` and `brow
 
 Both tool search variants (`regex` and `bm25`) search tool names, descriptions, argument names, and argument descriptions.
 
-Internally, the API excludes deferred tools from the system-prompt prefix. When Claude discovers a deferred tool through tool search, the API appends a `tool_reference` block inline in the conversation, then expands it into the full tool definition before passing it to Claude. The prefix is untouched, so prompt caching is preserved. The grammar for [strict mode](agents-and-tools-tool-use-strict-tool-use.md) (the rules that constrain tool-call output to match your schemas) builds from the full toolset, so `defer_loading` and strict mode compose without grammar recompilation.
+Internally, the API excludes deferred tools from the system-prompt prefix. When Claude discovers a deferred tool through tool search, the API appends a `tool_reference` block inline in the conversation, then expands it into the full tool definition before passing it to Claude. The grammar for [strict mode](agents-and-tools-tool-use-strict-tool-use.md) (the rules that constrain tool-call output to match your schemas) builds from the full list of tools, so using `defer_loading` with strict mode doesn’t make the API recompile the grammar.
 
 ## Response format
 
@@ -391,7 +400,7 @@ The API defines these `error_code` values:
 
 ### Common mistakes
 
-### 400 error: all tools are deferred
+### 400 error: all tools are deferred
 
 **Cause:** You set `defer_loading: true` on every tool, including the tool search tool.
 
@@ -406,7 +415,7 @@ The API defines these `error_code` values:
 
 
 
-### 400 error: missing tool definition
+### 400 error: missing tool definition
 
 **Cause:** A `tool_reference` points to a tool not in your `tools` array.
 
@@ -425,7 +434,7 @@ The API defines these `error_code` values:
 
 
 
-### Claude doesn’t find expected tools
+### Claude doesn’t find expected tools
 
 **Cause:** The regex pattern doesn’t match the tool’s name, description, argument names, or argument descriptions.
 
@@ -446,7 +455,7 @@ A tool with `defer_loading: true` can’t also carry `cache_control`: the API re
 
 ## Streaming
 
-With streaming enabled, you’ll receive tool search events as part of the stream:
+With streaming enabled, you receive tool search events as part of the stream:
 
 ```python
 event: content_block_start
@@ -469,7 +478,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "too
 
 ## Batch requests
 
-You can include the tool search tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md).
+You can include the tool search tool in the [Message Batches API](../Guides/build-with-claude-batch-processing.md).
 
 ## Limits and best practices
 
@@ -486,7 +495,7 @@ Use tool search when any of the following apply:
 
 - You have 10 or more tools available.
 - Your tool definitions consume more than 10k tokens.
-- Tool selection accuracy drops as your toolset grows.
+- Tool selection accuracy drops as you add more tools.
 - You aggregate multiple MCP servers (200+ tools).
 - Your tool library grows over time.
 
@@ -539,41 +548,66 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Tool search tool is available on every model and eligible for zero data retention.
+Tool search tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+- Managed Agents Not supported
 
-Models
+Models  
+- All models
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Amazon Bedrock
 
-StatusAvailable
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- All models
 
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+Amazon Bedrock (bedrock-runtime)
 
-Models
+API  
+- Messages API
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Models  
+- All models
 
+Note  
 On Amazon Bedrock it is not available through the Converse API.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Claude Platform on AWS
 
-StatusNot available
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

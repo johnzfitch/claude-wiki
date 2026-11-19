@@ -2,7 +2,7 @@
 title: "Legal summarization - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/legal-summarization"
 category: "04-API-Reference/About"
-fetched_at: "2026-11-05T06:35:24Z"
+fetched_at: "2026-11-13T06:35:12Z"
 tags: ["api"]
 ---
 
@@ -26,23 +26,23 @@ This guide walks through how to use Claude’s advanced natural language process
 
 Here are some key indicators that you should employ an LLM such as Claude to summarize legal documents:
 
-### You want to review a high volume of documents efficiently and affordably
+### You want to review a high volume of documents efficiently and affordably
 
 Large-scale document review can be time-consuming and expensive when done manually. Claude can process and summarize vast amounts of legal documents rapidly, significantly reducing the time and cost associated with document review. This capability is particularly valuable for tasks such as due diligence, contract analysis, or litigation discovery, where efficiency is crucial.
 
-### You need automated extraction of key metadata
+### You need automated extraction of key metadata
 
 Claude can efficiently extract and categorize important metadata from legal documents, such as parties involved, dates, contract terms, or specific clauses. This automated extraction can help organize information, making it easier to search, analyze, and manage large document sets. It’s especially useful for contract management, compliance checks, or creating searchable databases of legal information.
 
-### You want to generate clear, concise, and standardized summaries
+### You want to generate clear, concise, and standardized summaries
 
 Claude can generate structured summaries that follow predetermined formats, making it easier for legal professionals to quickly grasp the key points of various documents. These standardized summaries can improve readability, facilitate comparison between documents, and enhance overall comprehension, especially when dealing with complex legal language or technical jargon.
 
-### You need precise citations for your summaries
+### You need precise citations for your summaries
 
 When creating legal summaries, proper attribution and citation are crucial to ensure credibility and compliance with legal standards. Claude can be prompted to include accurate citations for all referenced legal points, making it easier for legal professionals to review and verify the summarized information.
 
-### You want to streamline and expedite your legal research process
+### You want to streamline and expedite your legal research process
 
 Claude can help with legal research by quickly analyzing large volumes of case law, statutes, and legal commentary. It can identify relevant precedents, extract key legal principles, and summarize complex legal arguments. This capability can significantly speed up the research process, allowing legal professionals to focus on higher-level analysis and strategy development.
 
@@ -85,27 +85,27 @@ details_to_extract = [
 
 Evaluating the quality of summaries is a notoriously challenging task. Unlike many other natural language processing tasks, evaluation of summaries often lacks clear-cut, objective metrics. The process can be highly subjective, with different readers valuing different aspects of a summary. Here are criteria you might want to consider when assessing how well Claude performs legal summarization.
 
-### Factual correctness
+### Factual correctness
 
 The summary should accurately represent the facts, legal concepts, and key points in the document.
 
-### Legal precision
+### Legal precision
 
 Terminology and references to statutes, case law, or regulations must be correct and aligned with legal standards.
 
-### Conciseness
+### Conciseness
 
 The summary should condense the legal document to its essential points without losing important details.
 
-### Consistency
+### Consistency
 
 If summarizing multiple documents, the LLM should maintain a consistent structure and approach to each summary.
 
-### Readability
+### Readability
 
 The text should be clear and easy to understand. If the audience is not legal experts, the summarization should not include legal jargon that could confuse the audience.
 
-### Bias and fairness
+### Bias and fairness
 
 The summary should present an unbiased and fair depiction of the legal arguments and positions.
 
@@ -299,23 +299,23 @@ Because the code outputs each section of the summary within tags, each section c
 
 Prompting often requires testing and optimization for it to be production ready. To determine the readiness of your solution, evaluate the quality of your summaries using a systematic process combining quantitative and qualitative methods. Creating a [strong empirical evaluation](../Test-Evaluate/test-and-evaluate-develop-tests.md#build-evaluations) based on your defined success criteria allows you to optimize your prompts. Here are some metrics you might want to include within your empirical evaluation:
 
-### ROUGE scores
+### ROUGE scores
 
 This measures the overlap between the generated summary and an expert-created reference summary. This metric primarily focuses on recall and is useful for evaluating content coverage.
 
-### BLEU scores
+### BLEU scores
 
 Although originally developed for machine translation, this metric can be adapted for summarization tasks. BLEU scores measure the precision of n-gram matches between the generated summary and reference summaries. A higher score indicates that the generated summary contains similar phrases and terminology to the reference summary.
 
-### Contextual embedding similarity
+### Contextual embedding similarity
 
 This metric involves creating vector representations (embeddings) of both the generated and reference summaries. The similarity between these embeddings is then calculated, often using cosine similarity. Higher similarity scores indicate that the generated summary captures the semantic meaning and context of the reference summary, even if the exact wording differs.
 
-### LLM-based grading
+### LLM-based grading
 
 This method involves using an LLM such as Claude to evaluate the quality of generated summaries against a scoring rubric. The rubric can be tailored to your specific needs, assessing key factors such as accuracy, completeness, and coherence. For implementation guidance, see [Tips for LLM-based grading](../Test-Evaluate/test-and-evaluate-develop-tests.md#tips-for-llm-based-grading).
 
-### Human evaluation
+### Human evaluation
 
 In addition to creating the reference summaries, legal experts can also evaluate the quality of the generated summaries. Although this is expensive and time-consuming at scale, this is often done on a few summaries as a validation check before deploying to production.
 

@@ -2,7 +2,7 @@
 title: "Bash tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/bash-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:34:40Z"
+fetched_at: "2026-11-13T06:35:15Z"
 tags: ["api", "security"]
 ---
 
@@ -23,11 +23,19 @@ Bash tool
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 The bash tool is a [client tool](agents-and-tools-tool-use-how-tool-use-works.md): Claude doesn’t run commands itself. When you include the tool in a request, Claude replies with a `tool_use` block that names the command to run. Your application runs that command in a bash session it owns and returns the output in a `tool_result` block.
 
@@ -138,7 +146,7 @@ A bash tool definition has two required fields, `type` and `name`, and the `name
 
 To handle `restart: true`, kill the shell process, start a new one, and return a `tool_result` that confirms the restart. A restarted session starts clean: the working directory, environment variables, and any running processes are gone.
 
-### Example usage
+### Example usage
 
 Run a command:
 
@@ -402,7 +410,7 @@ Claude determines which command to run. Your application owns everything else: t
 
 When a command fails or the session breaks, tell Claude what occurred. Return the message as the `tool_result` content and set `is_error` to `true`, which marks the tool call as failed. See [Handling errors with is_error](agents-and-tools-tool-use-handle-tool-calls.md#handling-errors-with-is-error).
 
-### Command execution timeout
+### Command execution timeout
 
 If a command takes too long to run:
 
@@ -422,7 +430,7 @@ If a command takes too long to run:
 
 
 
-### Command not found
+### Command not found
 
 If a command doesn’t exist:
 
@@ -442,7 +450,7 @@ If a command doesn’t exist:
 
 
 
-### Permission denied
+### Permission denied
 
 If there are permission issues:
 
@@ -464,7 +472,7 @@ If there are permission issues:
 
 ### Follow implementation best practices
 
-### Use command timeouts
+### Use command timeouts
 
 A command that never completes, such as one that waits for input, blocks the session forever because its sentinel line never arrives. Give every command a deadline. When the deadline passes, stop the shell and everything the command started, then restart the session:
 
@@ -507,7 +515,7 @@ def execute_with_timeout(session, command, timeout=30):
 
 The kill stops the hung command and everything it started. Return the message as an error `tool_result` (see [Handle errors](#handle-errors)), which marks the tool call as failed.
 
-### Maintain session state
+### Maintain session state
 
 Keep the bash session persistent to maintain environment variables and working directory:
 
@@ -538,7 +546,7 @@ commands = [
 ]
 ```
 
-### Handle large outputs
+### Handle large outputs
 
 Truncate large outputs to prevent token limit issues:
 
@@ -569,7 +577,7 @@ def truncate_output(output, max_lines=100):
     return output
 ```
 
-### Log all commands
+### Log all commands
 
 Keep an audit trail. Route every command through one wrapper that records the command before it runs and the output after it completes. A command that hangs or breaks the session still leaves a record:
 
@@ -691,20 +699,61 @@ Connect Claude to external tools and APIs. See where tools run, when Claude call
 
 ## Availability
 
-Bash tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Bash tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Bash tool are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

@@ -2,7 +2,8 @@
 title: "Configure your agent - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/configuration"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-28T06:35:08Z"
+fetched_at: "2026-11-17T06:24:22Z"
+last_modified: "Tue, 17 Nov 2026 03:13:43 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
@@ -32,10 +33,7 @@ Copy pageCopy page
 
 An Agent SDK session reads configuration from settings files, environment variables, and the `options` object you pass when you start it. This page shows how to compose the `options` object and what settings files and environment variables control. For every option’s type and default, see the [`Options`](agent-sdk-typescript.md#options) (TypeScript) and [`ClaudeAgentOptions`](agent-sdk-python.md#claudeagentoptions) (Python) references.
 
-
-[​](#pass-options-to-a-session)
-
-Pass options to a session
+## [](#pass-options-to-a-session)Pass options to a session
 
 Every `query()` call accepts an options object: `Options` in TypeScript, `ClaudeAgentOptions` in Python. Each field is optional, and a session started with no options runs with the SDK’s defaults. The example below configures a read-only session that summarizes a project’s open TODOs. Pairs read as TypeScript / Python where the spellings differ:
 
@@ -91,10 +89,7 @@ asyncio.run(main())
 
 Point `cwd` at one of your own projects and run the example. The summary of that project’s open TODOs prints when the result message arrives. `allowedTools` (TypeScript) or `allowed_tools` (Python) pre-approves the listed tools, so calls to them run without stopping for approval. Tools outside the list stay available. When Claude calls an unlisted tool, the permission mode decides whether the call runs. For more information, see [Allow and deny rules](agent-sdk-permissions.md#allow-and-deny-rules).
 
-
-[​](#load-settings-files)
-
-Load settings files
+## [](#load-settings-files)Load settings files
 
 Settings files supply configuration beyond the options object. Two options control how they load:
 
@@ -103,10 +98,7 @@ Settings files supply configuration beyond the options object. Two options contr
 
 Pass `[]` to disable user, project, and local settings. For more information, see [Use Claude Code features in the SDK](agent-sdk-claude-code-features.md).
 
-
-[​](#choose-a-model)
-
-Choose a model
+## [](#choose-a-model)Choose a model
 
 Unless the `model` option, your settings, or your environment selects a model, a new session starts on [Claude Code’s default model](../02-Claude-Code-CLI/model-config.md#default-model-setting). For the order of those sources, see [Setting your model](../02-Claude-Code-CLI/model-config.md#setting-your-model). Set `model` to pin a specific model, or to pick a smaller one for faster, cheaper agents. The value takes a model alias or a full model name; aliases and the versions they resolve to are listed under [Model aliases](../02-Claude-Code-CLI/model-config.md#model-aliases). Set `fallbackModel` (TypeScript) or `fallback_model` (Python) to name a backup model. When the primary is overloaded or unavailable, the session switches to the backup. The primary is retried at the start of each user turn, so the session returns to it once the outage passes. In either language, the option accepts a single model or a comma-separated list of backups. For the order and the chain cap, see [Fallback model chains](../02-Claude-Code-CLI/model-config.md#fallback-model-chains). In TypeScript, a fallback equal to `model` throws an error at startup. The examples below show a fallback list in TypeScript and a single fallback in Python:
 
@@ -130,10 +122,7 @@ options = ClaudeAgentOptions(
 
 The [Messages API](../04-API-Reference/Endpoints/messages.md) request parameters `temperature`, `top_p`, and `max_tokens` have no fields on the options object in either language. Set the [effort level](agent-sdk-agent-loop.md#effort-level) or a [spend cap](#limit-turns-and-spend) instead, or call the Messages API when you need those parameters directly.
 
-
-[​](#set-environment-variables)
-
-Set environment variables
+## [](#set-environment-variables)Set environment variables
 
 The `env` option sets environment variables for the Claude Code process that runs your session. Whether your values replace the inherited environment or merge over it differs by language:
 
@@ -160,10 +149,7 @@ options = ClaudeAgentOptions(
 
 The variables you pass can also configure Claude Code itself. For the variables the Claude Code process reads, see [Environment variables](../02-Claude-Code-CLI/env-vars.md). To tune API timeouts and stall detection this way, follow the Handle slow or stalled API responses section in the [TypeScript reference](agent-sdk-typescript.md#handle-slow-or-stalled-api-responses) or the [Python reference](agent-sdk-python.md#handle-slow-or-stalled-api-responses).
 
-
-[​](#set-the-working-directory)
-
-Set the working directory
+## [](#set-the-working-directory)Set the working directory
 
 Set `cwd` to run the session in a specific directory. When you leave `cwd` unset, the session runs in your process’s working directory. Neither SDK has a setter for `cwd`. To run in a different directory, start another session with that `cwd`. Claude Code reads the working directory to determine:
 
@@ -173,15 +159,13 @@ Set `cwd` to run the session in a specific directory. When you leave `cwd` unset
 
 To let tools reach files outside the working directory, add paths with `additionalDirectories` (TypeScript) or `add_dirs` (Python). For the scope of that grant, see [Additional directories grant file access, not configuration](../02-Claude-Code-CLI/permissions.md#additional-directories-grant-file-access-not-configuration).
 
+## [](#limit-turns-and-spend)Limit turns and spend
 
-[​](#limit-turns-and-spend)
-
-Limit turns and spend
-
-Cap turns and spend with `maxTurns` / `max_turns` and `maxBudgetUsd` / `max_budget_usd`. Both caps are off when unset. When a session hits a cap, the run ends with a result message whose subtype names the cap, `error_max_turns` or `error_max_budget_usd`. What happens next differs by input mode:
+Cap turns and spend with `maxTurns` / `max_turns` and `maxBudgetUsd` / `max_budget_usd`. Both caps are off when unset. When a session hits a cap, the run ends with a result message. The result’s subtype is `error_max_turns` for the turn cap and `error_max_budget_usd` for the spend cap. Single-shot and streaming input handle a cap result differently:
 
 - **Single-shot `query()`**: the SDK yields the cap result and then raises, so wrap the loop in a try block to continue past the error
-- **Streaming input**: the session stays alive past a cap result, and the max-turns count starts over for each queued message. The budget total accumulates across messages, and once spend reaches the cap, later messages in the same conversation end with the same budget result. A [`/clear`](agent-sdk-cost-tracking.md) starts the budget over
+- **Streaming input**: the session stays alive past a cap result, and the max-turns count starts over for each queued message. The budget total accumulates across messages, and once spend reaches the cap, later messages in the same conversation end with the same budget result. A [`/clear`](agent-sdk-cost-tracking.md) starts the budget over.
+- **Streaming input in TypeScript**: the loop throws when the last response ends in an error result, such as `error_max_turns`. Wrap the loop in a try block to continue past it.
 
 The two caps treat `0` differently:
 
@@ -190,10 +174,7 @@ The two caps treat `0` differently:
 
 For more information about both caps, including subagent spend, see [Turns and budget](agent-sdk-agent-loop.md#turns-and-budget).
 
-
-[​](#change-configuration-mid-session)
-
-Change configuration mid-session
+## [](#change-configuration-mid-session)Change configuration mid-session
 
 When you start a session with [streaming input](agent-sdk-streaming-vs-single-mode.md), you can switch its model and permission mode while it runs. Where you call the setters differs by language:
 
@@ -299,10 +280,7 @@ On the Claude API, the program prints `First turn model: claude-sonnet-5`, then 
 
 Each model has its own prompt cache, so after a mid-session switch the next request recomputes the full conversation uncached at the new model’s rates. For more information, see [Switching models](../02-Claude-Code-CLI/prompt-caching.md#switching-models).
 
-
-[​](#configure-specific-features)
-
-Configure specific features
+## [](#configure-specific-features)Configure specific features
 
 The table below maps each option to the feature it configures. For options this page doesn’t cover, see the [TypeScript](agent-sdk-typescript.md#options) and [Python](agent-sdk-python.md#claudeagentoptions) references. If you know your goal but not which option serves it, start from [Choose the right feature](agent-sdk-claude-code-features.md#choose-the-right-feature).
 
@@ -326,10 +304,7 @@ The table below maps each option to the feature it configures. For options this 
 | `effort` | `effort` | How much work Claude puts into responses | [Effort level](agent-sdk-agent-loop.md#effort-level) |
 | `sandbox` | `sandbox` | Sandbox behavior for tool execution | [TypeScript](agent-sdk-typescript.md#sandbox-configuration) and [Python](agent-sdk-python.md#sandbox-configuration) references, with deployment context in [Secure deployment](agent-sdk-secure-deployment.md) |
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 To see configuration composed into working agents:
 

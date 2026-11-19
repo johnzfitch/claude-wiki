@@ -2,7 +2,7 @@
 title: "Newfront Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/newfront"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:27Z"
+fetched_at: "2026-11-18T06:29:20Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -73,6 +73,12 @@ Newfront sees AI as key to making insurance work better for everyone. Wintrob sa
 Newfront envisions a future where technology eliminates the administrative burden from insurance, allowing professionals to focus entirely on strategic guidance and complex problem-solving. Their AI-powered platform is already showing how this future might look: one where employees understand their benefits, businesses manage risk effectively, and insurance professionals focus on meaningful work. By combining Claude’s capabilities with human expertise, Newfront is making insurance more accessible, efficient, and transparent for everyone involved.
 
 ## Related stories
+
+
+### Deepening risk expertise through AI
+
+
+### Reinventing commercial underwriting
 
 
 ### DXC brings Claude to the insurance backbone running billions of policies

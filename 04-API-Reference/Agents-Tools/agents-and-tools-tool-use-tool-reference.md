@@ -2,7 +2,7 @@
 title: "Tool reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-reference"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:34:45Z"
+fetched_at: "2026-11-13T06:35:19Z"
 tags: ["api"]
 ---
 
@@ -88,13 +88,13 @@ Set `defer_loading` for each member, never on the entry, and give every enabled 
 
 ## Tool definition properties
 
-Every tool in the `tools` array, including user-defined tools, accepts optional properties that control how the tool is loaded, who can call it, and how its inputs are validated. These properties compose: you can set `defer_loading` and `cache_control` and `strict` on the same tool.
+Every tool in the `tools` array, including user-defined tools, accepts optional properties that control how the tool is loaded, who can call it, and how its inputs are validated. You can combine these properties, with two exceptions: a tool with `defer_loading: true` can’t also carry `cache_control`, and a user-defined tool with `strict: true` can’t list a code execution caller in `allowed_callers`.
 
 | Property | Purpose | Available on | Detailed guide |
 |----|----|----|----|
 | `cache_control` | Set a prompt-cache breakpoint at this tool definition | All tools (on `computer_toolset_20260801` and `browser_toolset_20260801`, set it on the toolset entry itself, not inside member `configs`) | [Prompt caching](../Guides/build-with-claude-prompt-caching.md) |
 | `strict` | Guarantee schema validation on tool names and inputs | All tools except `mcp_toolset`, `computer_toolset_20260801`, and `browser_toolset_20260801` | [Strict tool use](agents-and-tools-tool-use-strict-tool-use.md) |
-| `defer_loading` | Exclude the tool from the initial system prompt; load it on demand when tool search returns a `tool_reference` for it | All tools (for `mcp_toolset`, see [tool configuration](agents-and-tools-mcp-connector.md#mcp-toolset-configuration)). On the computer use and browser use toolsets, set it per member inside `configs`; see [Client toolsets](#client-toolsets). | [Tool search tool](agents-and-tools-tool-use-tool-search-tool.md) |
+| `defer_loading` | Exclude the tool from the initial system prompt; load it on demand when tool search returns a `tool_reference` for it | All tools (for `mcp_toolset`, see [MCP toolset configuration](agents-and-tools-mcp-connector.md#mcp-toolset-configuration)). On the computer use and browser use toolsets, set it per member inside `configs`; see [Client toolsets](#client-toolsets). | [Tool search tool](agents-and-tools-tool-use-tool-search-tool.md) |
 | `allowed_callers` | Restrict which callers can call the tool | All tools except `mcp_toolset` (on `computer_toolset_20260801` and `browser_toolset_20260801`, only `["direct"]` is accepted; see [Client toolsets](#client-toolsets)) | [Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md#the-allowed-callers-field) |
 | `input_examples` | Provide example input objects to show Claude how to call the tool | User-defined and Anthropic-schema client tools, except `computer_toolset_20260801` and `browser_toolset_20260801`. Not available on server tools. | [Define tools](agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) |
 | `eager_input_streaming` | Enable fine-grained input streaming (`true`) or keep standard buffered streaming (`false`) for this tool | User-defined tools only | [Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md) |
@@ -114,8 +114,4 @@ Omitting `"direct"` from the array (for example, `"allowed_callers": ["code_exec
 
 ### `defer_loading` and prompt caching
 
-Tools with `defer_loading: true` are stripped from the rendered tools section before the cache key is computed. They don’t appear in the system-prompt prefix at all. When tool search discovers a deferred tool and returns a `tool_reference` for it, the tool’s full definition is expanded inline at that point in the conversation body, not in the prefix.
-
-This means `defer_loading: true` preserves your prompt cache. You can add deferred tools to a request without invalidating an existing cache entry, and the cache remains valid across the turn where the tool is discovered and the turn where it’s called.
-
-To learn how to combine `defer_loading` with `cache_control` breakpoints, see the [Tool search tool prompt caching guidance](agents-and-tools-tool-use-tool-search-tool.md#prompt-caching).
+`defer_loading: true` preserves your prompt cache: tool search can load a deferred tool during a conversation without invalidating an existing cache entry. Put `cache_control` breakpoints on non-deferred tools. To learn how deferred tools keep the cache valid, see [`defer_loading` and cache preservation](agents-and-tools-tool-use-tool-use-with-prompt-caching.md#defer-loading-and-cache-preservation).

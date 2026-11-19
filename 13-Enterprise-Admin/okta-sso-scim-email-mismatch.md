@@ -2,13 +2,11 @@
 title: "Okta SSO/SCIM email mismatch | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13917840-okta-sso-scim-email-mismatch"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:00Z"
+fetched_at: "2026-11-18T06:28:25Z"
 tags: ["enterprise"]
 ---
 
 # Okta SSO/SCIM email mismatch
-
-March 24, 2026
 
 
 Claude uses email as the primary identifier to match SSO logins to provisioned seats. In Okta, SCIM provisioning and SSO are configured separately and can pull email from different user profile fields. This guide explains how to identify and resolve the mismatch.
@@ -25,7 +23,7 @@ People may experience one or more of the following when attempting to access you
 
 - **Landing on a free personal account** — If organization creation is not restricted, the person bypasses your organization entirely and creates or lands on a free personal account instead of their provisioned seat.
 
-- **"Please confirm your email" mismatch** — The SSO callback shows a different email than the one the person entered at login.
+- **"Check which account you're signed in to" mismatch** — The SSO callback shows a different email than the one the person entered at login.
 
 - **Claude Code authentication failure** — The Claude Code CLI shows an email mismatch error during the authentication flow.
 
@@ -101,7 +99,7 @@ The safest fix is to use `user.email` for both SCIM and SSO, as this field conta
 
 After correcting the attribute mapping and completing the full sync:
 
-- **Rogue free accounts:** If organization creation wasn't restricted before the fix, some people may have created free personal Claude accounts. Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** for removal.
+- **Rogue free accounts:** If organization creation wasn't restricted before the fix, some people may have created free personal Claude accounts. Contact **[our Support team](https://support.claude.com/en/articles/9015913)** for removal.
 
 - **Ghost accounts (wrong-email seats):** The originally provisioned accounts with the incorrect email may still exist in your organization, occupying seats that can never be used. Contact our Support team for deprovisioning.
 
@@ -135,7 +133,7 @@ After completing the fix and any cleanup:
 
 ## When to contact Support
 
-Contact **[our Support team](../15-Claude-AI-Features/how-to-get-support-claude-help-center.md)** with your organization's domain, the affected person's email, and attribute mapping screenshots when:
+Contact **[our Support team](https://support.claude.com/en/articles/9015913)** with your organization's domain, the affected person's email, and attribute mapping screenshots when:
 
 - SCIM and SSO attributes appear identical but people still cannot access their seats.
 

@@ -2,13 +2,13 @@
 title: "Introducing the Message Batches API | Claude by Anthropic"
 source_url: "https://www.anthropic.com/news/message-batches-api"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:27Z"
+fetched_at: "2026-11-18T06:28:43Z"
 tags: ["api", "news-research"]
 ---
 
 # Introducing the Message Batches API
 
-Claude now offers a Message Batches API that processes up to large volumes of queries asynchronously at lower cost.
+Claude now offers a Message Batches API that processes large volumes of queries asynchronously at lower cost.
 
 - 
 
@@ -24,6 +24,13 @@ Claude now offers a Message Batches API that processes up to large volumes of qu
   Reading time4 min
 - 
 
+
+Contents
+
+1.  [High throughput at half the cost](#high-throughput-at-half-the-cost)
+2.  [Pricing](#pricing)
+3.  [Customer Spotlight: Quora](#customer-spotlight-quora)
+4.  [Get started](#get-started)
 
 ***Update:** The Message Batches API is Generally Available on the Anthropic API. Customers using Claude in Amazon Bedrock can use batch inference. Batch predictions is also available in preview on Google Cloud’s Vertex AI. (December 17, 2024)*  
   
@@ -66,29 +73,31 @@ To start using the Batches API in public beta on the Anthropic API, explore our 
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleNov 5, 2026
+ArticleNov 17, 2026
 
-### Introducing Personal Finance in Claude
-
-Ask Claude about your money and get straight answers from the accounts you connect.
-
-
-ArticleNov 5, 2026
-
-### More visibility and control over Claude Enterprise for security teams
-
-Claude EnterpriseClaude apps
-
-
-ArticleNov 4, 2026
-
-### New agents and products for security, productivity, and creative work on Claude Marketplace
-
-
-ArticleNov 2, 2026
-
-### Make long-running agents faster with message threads
-
-New in the Messages API, send your conversation once, and the API receives only what’s new with every turn.
+### Linked billing on the Claude Platform
 
 Claude Platform
+
+
+ArticleNov 12, 2026
+
+### Operate Claude Managed Agents inside your security perimeter
+
+Introducing self-hosted Claude Managed Agents. Now you can run agents in your own environment, whether that’s in your own cloud or on-premise. You host the agents, credentials, and session history, and choose where requests to Claude are sent.
+
+Claude PlatformClaude Managed Agents
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude for Manufacturing
+
+A new plugin with 17 skills and four connectors helps manufacturers draft quotes, quality reports, and supplier requests from the systems they already run.
+
+
+ArticleNov 12, 2026
+
+### Introducing Claude Meetings
+
+Add Claude to your video call and get the work started while you talk

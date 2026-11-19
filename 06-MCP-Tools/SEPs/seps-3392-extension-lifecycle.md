@@ -2,8 +2,8 @@
 title: "SEP-3392: Extension Lifecycle - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/3392-extension-lifecycle"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-10-30T06:26:41Z"
-last_modified: "Thu, 29 Oct 2026 18:14:31 GMT"
+fetched_at: "2026-11-13T06:35:05Z"
+last_modified: "Fri, 13 Nov 2026 01:51:05 GMT"
 tags: ["mcp", "mcp-seps"]
 ---
 
@@ -94,7 +94,7 @@ Locations are paths inside an `ext-<area>` repository. See [Repositories and dir
 
 Roles
 
-An **Extension Maintainer** is a maintainer of the extension’s repository who is listed in that repository’s `MAINTAINERS.md`, as `ext-tasks` already does. As SEP-2133 provides for repository maintainers, the Core Maintainers appoint Extension Maintainers, who are normally the leads of the associated Working Group, or the facilitators of the associated Interest Group. Every extension MUST have at least one Extension Maintainer. “Extension Maintainer approval” means a pull request approved by at least one Extension Maintainer who is not its author. Extension Maintainers SHOULD coordinate changes through the associated Working Group or Interest Group, following its [decision-making process](../Community/community-working-interest-groups.md#decision-making-process). The Core Maintainers keep the authority SEP-2133 gives them over every extension, including the ability to modify, deprecate, archive or remove it. Lead Maintainers retain veto authority over each Core Maintainer decision in this SEP, per the [governance roles](../Community/community-governance.md#roles).
+An **Extension Maintainer** is a maintainer of the extension’s repository who is listed in that repository’s `MAINTAINERS.md`, as `ext-tasks` already does. As SEP-2133 provides for repository maintainers, the Core Maintainers appoint Extension Maintainers, who are normally the leads of the associated Working Group, or the facilitators of the associated Interest Group. Every extension MUST have at least one Extension Maintainer. “Extension Maintainer approval” means a pull request approved by at least one Extension Maintainer who is not its author. Extension Maintainers SHOULD coordinate changes through the associated Working Group or Interest Group, following its [decision-making process](../Community/community-working-interest-groups.md#making-decisions). The Core Maintainers keep the authority SEP-2133 gives them over every extension, including the ability to modify, deprecate, archive or remove it. Lead Maintainers retain veto authority over each Core Maintainer decision in this SEP, per the [governance roles](../Community/community-governance.md#roles).
 
 
 [​](#repositories-and-directories)

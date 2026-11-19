@@ -2,7 +2,7 @@
 title: "Box Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/box"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:57Z"
+fetched_at: "2026-11-18T06:28:48Z"
 tags: ["api", "case-studies", "skills"]
 ---
 
@@ -97,6 +97,9 @@ New research from 500+ technical leaders reveals how enterprises are deploying A
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -104,6 +107,3 @@ New research from 500+ technical leaders reveals how enterprises are deploying A
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

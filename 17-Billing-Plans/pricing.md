@@ -2,8 +2,8 @@
 title: "Plans & pricing | Claude by Anthropic"
 source_url: "https://www.claude.com/pricing"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:27:24Z"
-last_modified: "Mon, 09 Nov 2026 06:22:50 GMT"
+fetched_at: "2026-11-18T06:29:20Z"
+last_modified: "Wed, 18 Nov 2026 06:23:11 GMT"
 tags: ["billing"]
 ---
 
@@ -34,8 +34,6 @@ Free for everyone
 
 ### Pro
 
-Claude Code included
-
 For everyday work
 
 \$17
@@ -49,15 +47,14 @@ Everything in Free, plus:
 - **More usage than Free**, every 5 hours and every week\*
 - Fable, paid with usage credits New
 - Hand off and schedule tasks
-- Claude Dashboards (beta)
+- Claude Data, plus Sheets and Whiteboards (beta)
+- Claude Code
 - Claude Science
 - Projects
 - More Claude models
 - Claude in Chrome and Microsoft 365
 
 ### Max
-
-Claude Code included
 
 For all-day work
 
@@ -76,8 +73,6 @@ Everything in Pro, plus:
 - Priority access at high traffic times
 
 ### Ultra
-
-Claude Code included
 
 For your longest tasks
 
@@ -161,7 +156,7 @@ Per seat / month if billed annually. \$125 if billed monthly.
 
 - Claude Code and Claude Cowork
 - Claude Design, Slides, and Docs
-- Claude Motion and Dashboards (beta)
+- Claude Data, plus Motion, Sheets, and Whiteboards (beta)
 - Claude Science
 - Microsoft 365, Claude Tag, and more
 - Enterprise search across your organization
@@ -177,7 +172,7 @@ Per seat / month if billed annually. \$125 if billed monthly.
 
 For large businesses operating at scale
 
-[Get Enterprise plan](https://claude.ai/create/enterprise)[Chat with buying specialist](https://claude.ai/buying-specialist)
+[Get Enterprise plan](https://claude.ai/create/enterprise)[Chat about your plan](https://claude.ai/account-advisor)
 
 Seat price + usage at API rates
 
@@ -266,7 +261,7 @@ Save 50% with batch processing. [Learn more](../04-API-Reference/Guides/build-wi
 
 Batch processing
 
-### Fable 5.1
+### Fable 5.2
 
 Next generation intelligence for long-running agents
 
@@ -274,19 +269,19 @@ Prompt caching
 
 Read
 
-\$0.25 / MTok
+\$0.20 / MTok
 
 Write
 
-\$12.50 / MTok
+\$10 / MTok
 
 Input
 
-\$10 / MTok
+\$8 / MTok
 
 Output
 
-\$50 / MTok
+\$40 / MTok
 
 ### Opus 5.5
 
@@ -380,7 +375,7 @@ Prompts \> 100K tokens
 
 For workloads that need to run in the US, US-only inference is available at 1.1x pricing for input and output tokens. [Learn more](../04-API-Reference/Other/manage-claude-data-residency.md).
 
-Get up to 2.5x faster speeds with fast mode for Opus 5.5 at 2x standard pricing. [Learn more](about-claude-pricing.md#fast-mode-pricing).
+Get up to 2.5x faster speeds with fast mode for Opus 5.5 and Fable 5.2 at 2x standard pricing. [Learn more](about-claude-pricing.md#fast-mode-pricing).
 
 Prompt caching pricing reflects 5-minute TTL. Learn about [extended prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md#1-hour-cache-duration).
 
@@ -434,6 +429,26 @@ Balance availability, performance, and predictable costs based on your needs.
 
 [Learn more (opens in new tab)](../20-Models/about-claude-models-overview.md)[Explore detailed pricing (opens in new tab)](about-claude-pricing.md)
 
+### Fable 5.1
+
+Prompt caching
+
+Read
+
+\$0.25 / MTok
+
+Write
+
+\$12.50 / MTok
+
+Input
+
+\$10 / MTok
+
+Output
+
+\$50 / MTok
+
 ### Haiku 4.5
 
 Prompt caching
@@ -454,6 +469,10 @@ Output
 
 \$5 / MTok
 
+Save 50% with batch processing. [Learn more](../04-API-Reference/Guides/build-with-claude-batch-processing.md)
+
+Batch processing
+
 ### Sonnet 5
 
 Prompt caching
@@ -473,10 +492,6 @@ Input
 Output
 
 \$10 / MTok
-
-Save 50% with batch processing. [Learn more](../04-API-Reference/Guides/build-with-claude-batch-processing.md)
-
-Batch processing
 
 ### Opus 5
 
@@ -686,7 +701,7 @@ Customers outside of Europe can follow this process to [request a refund](https:
 
 - Log in, open Get help from the menu, start a message, and choose Claude Refund Request to check your eligibility.
 - If you subscribed through the App Store, [Apple](https://support.apple.com/billing) handles the refund, so you'll request it from Apple.
-- If you subscribed through Google Play, [contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support) to check eligibility for an active subscription.
+- If you subscribed through Google Play, [contact our Support team](../15-Claude-AI-Features/how-to-get-support.md) to check eligibility for an active subscription.
 
 If you're in the European Economic Area and the United Kingdom, and within your 14-day withdrawal period, you can request a refund directly in the app.
 

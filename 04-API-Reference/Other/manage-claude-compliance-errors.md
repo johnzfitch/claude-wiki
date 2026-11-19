@@ -2,7 +2,7 @@
 title: "Handle Compliance API errors - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-errors"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:19Z"
+fetched_at: "2026-11-13T06:36:38Z"
 tags: ["api"]
 ---
 
@@ -48,11 +48,11 @@ The following table tells you whether to retry. Each section that follows shows 
 | [400 Bad Request](#400-bad-request) | No | Fix the request, or enable the Compliance API if the message says it is not enabled, then resend. If `error.details.error_code` is `transcript_page_read_limit_exceeded` (the message says a page of a session’s transcript is too large to read), do not resend the same request; [Transcript page too large](#transcript-page-too-large) says what to do instead. |
 | [401 Unauthorized](#401-unauthorized) | No | The key is not recognized, has been deactivated, or has expired; re-enable or replace it, then resend. |
 | [403 Forbidden](#403-forbidden) | No | Add the missing scope or use the right key type, then resend. |
-| [404 Not Found](#404-not-found) | Usually no | A message that names a resource means it was deleted or never existed; remove it from your queue. The bare message `Not found` means the request did not authenticate (or the path does not exist), not that a resource is gone; see [Request not authenticated](#request-not-authenticated). The session endpoints add two more cases: on the local session endpoints, the message `Local sessions are not available.` (returned on every call, including the list) means the endpoints are currently unavailable to your parent organization, not that a session is gone; keep your queued IDs and see [Local session not found](#local-session-not-found). A remote session still in `pending` status 404s on its messages endpoint until it starts; see [Remote session not found](#remote-session-not-found). |
+| [404 Not Found](#404-not-found) | Usually no | A message that names a resource means it was deleted or never existed; remove it from your queue. The bare message `Not found` means the request did not authenticate (or the path does not exist), not that a resource is gone; see [Request not authenticated](#request-not-authenticated). On the Security posture endpoint, a bare `Not found` does not mean that the request did not authenticate; the [Security posture results reference](manage-claude-compliance-security-posture-results-reference.md#handle-errors) lists its causes. The session endpoints add two more cases: on the local session endpoints, the message `Local sessions are not available.` (returned on every call, including the list) means the endpoints are currently unavailable to your parent organization, not that a session is gone; keep your queued IDs and see [Local session not found](#local-session-not-found). A remote session still in `pending` status 404s on its messages endpoint until it starts; see [Remote session not found](#remote-session-not-found). |
 | [409 Conflict](#409-conflict) | No | The request conflicts with the resource’s current state; resolve the conflict (such as detaching child resources), then retry. |
 | [429 Too Many Requests](#429-too-many-requests) | Yes, after `retry-after` | Wait the seconds in `retry-after`, then retry; do not advance your cursor. |
 | [500 Internal Server Error](#500-internal-server-error) | Depends on `x-should-retry` | Check the `x-should-retry` response header before retrying. |
-| [502, 503, 504, 529](#500-internal-server-error) | Yes, with backoff | Transient; retry with exponential backoff. Exception: some local session 503s are not transient. See [Local sessions temporarily unavailable](#local-sessions-temporarily-unavailable). |
+| [502, 503, 504, 529](#500-internal-server-error) | Yes, with backoff | Transient; retry with exponential backoff. Exception: some local session 503s are not transient. See [Local sessions temporarily unavailable](#local-sessions-temporarily-unavailable). A Security posture 503 can also keep recurring for one organization. See [Errors in the Security posture results reference](manage-claude-compliance-security-posture-results-reference.md#handle-errors). |
 
 ## 400 Bad Request
 
@@ -110,7 +110,7 @@ activity_types[].0: Input is not one of the permitted values.
 
 **Cause:** A query parameter’s value failed validation. The message starts with the parameter name (followed by the element’s position for an array parameter), then states the constraint that failed. Three common cases are shown: a `limit` above the endpoint’s maximum (the number in the message is that endpoint’s maximum), a `created_at.*` or `updated_at.*` value that cannot be parsed as a date or timestamp, and an `activity_types[]` value that is not a supported activity type.
 
-**Fix:** Correct the parameter named in the message. Each list endpoint has its own `limit` range; see the parameter constraints on the corresponding [Compliance API reference](../Admin/compliance.md) page. Send timestamps in RFC 3339 format with an explicit UTC offset, for example, `2024-03-01T00:00:00Z` or `2024-03-01T00:00:00+00:00`; the local session list rejects a timestamp without an offset (`created_at.gte: Input should have timezone info`). For the supported `activity_types[]` values, see [Query compliance activities](../Admin/compliance-activities-list.md).
+**Fix:** Correct the parameter named in the message. Each list endpoint has its own `limit` range; see the parameter constraints on the corresponding [Compliance API reference](../Admin/compliance.md) page. Send timestamps in RFC 3339 format with an explicit UTC offset, for example, `2024-03-01T00:00:00Z` or `2024-03-01T00:00:00+00:00`; the local session list rejects a timestamp without an offset (`created_at.gte: Input should have timezone info`). For the supported `activity_types[]` values, see [Query compliance activities](../Admin/compliance-activities-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 The local session list (`GET /v1/compliance/apps/sessions/local`) also returns a 400 `invalid_request_error` when you supply a lower bound (`created_at.gte` or `created_at.gt`) and an upper bound (`created_at.lt` or `created_at.lte`) and the upper bound is not after the lower bound. Equal bounds are allowed only for `created_at.gte` with `created_at.lte`. The message names the two parameters, for example:
 
@@ -214,7 +214,7 @@ If an oldest-first request returns this error, do not retry it either. Keep the 
 
 ## 401 Unauthorized
 
-The request carried a Compliance Access Key (`sk-ant-api01-...`) or Admin API key (`sk-ant-admin01-...`) that does not authenticate. A request that carries no key, or a key of another type, returns [404 Not Found](#request-not-authenticated) instead on every endpoint except organization settings, and a valid key with the wrong scopes returns [403 Forbidden](#403-forbidden).
+The request carried a Compliance Access Key (`sk-ant-api01-...`) or Admin API key (`sk-ant-admin01-...`) that does not authenticate. A request that carries no key, or a key of another type, returns [404 Not Found](#request-not-authenticated) instead on every endpoint except organization settings and Security posture, and a valid key with the wrong scopes returns [403 Forbidden](#403-forbidden).
 
 ### Invalid, deactivated, or expired API key
 
@@ -273,7 +273,7 @@ Missing required scopes. Got: ['read:compliance_user_data'] Needed one of: ['rea
 
 
 
-**Cause:** A key without `read:compliance_org_data` was used to call an organizations, roles, groups, or effective-settings endpoint. There are two common paths to this error:
+**Cause:** A key without `read:compliance_org_data` was used to call an organizations, roles, groups, or effective-settings endpoint, or the Security posture endpoint. There are two common paths to this error:
 
 - A Compliance Access Key (`sk-ant-api01-...`) was created without the `read:compliance_org_data` scope.
 - A Claude Console Admin API key (`sk-ant-admin01-...`) was used. Admin API keys carry only `read:compliance_activities` and cannot read organization metadata.
@@ -327,7 +327,7 @@ Missing required scopes. Got: ['read:compliance_user_data'] Needed: ['delete:com
 
 ## 404 Not Found
 
-A 404 whose message names a resource or a resource type means the ID in the path does not exist or has already been deleted. Compliance API deletes are immediate and permanent, so a 404 on a previously known ID usually means the content is gone: hard-deleted through a Compliance API delete call, removed by a retention policy, or, for files and artifacts, deleted along with their chat by a user in claude.ai. A 404 with the bare message `Not found` is different: the request did not authenticate (or the path does not exist), and any endpoint can return it, list endpoints included; see [Request not authenticated](#request-not-authenticated). The session endpoints add two cases. On the local session endpoints, a separate 404 message, `Local sessions are not available.`, is returned on every call (including the list) while the endpoints are unavailable to your parent organization; it does not depend on the session ID and can be temporary. See [Local session not found](#local-session-not-found). On the remote session endpoints, a session that is still being provisioned (`status` of `pending`) has no transcript yet, so its messages endpoint 404s until the session starts. See [Remote session not found](#remote-session-not-found). The activity-type strings cited in each Fix (for example, `claude_chat_created`) are values you can pass to the Activity Feed `activity_types[]` filter; see [Query compliance activities](../Admin/compliance-activities-list.md) for every supported value.
+A 404 whose message names a resource or a resource type means the ID in the path does not exist or has already been deleted. Compliance API deletes are immediate and permanent, so a 404 on a previously known ID usually means the content is gone: hard-deleted through a Compliance API delete call, removed by a retention policy, or, for files and artifacts, deleted along with their chat by a user in claude.ai. A 404 with the bare message `Not found` is different: the request did not authenticate (or the path does not exist), and any endpoint can return it, list endpoints included; see [Request not authenticated](#request-not-authenticated). On the Security posture endpoint, a bare `Not found` does not mean that the request did not authenticate; the [Security posture results reference](manage-claude-compliance-security-posture-results-reference.md#handle-errors) lists its causes. The session endpoints add two cases. On the local session endpoints, a separate 404 message, `Local sessions are not available.`, is returned on every call (including the list) while the endpoints are unavailable to your parent organization; it does not depend on the session ID and can be temporary. See [Local session not found](#local-session-not-found). On the remote session endpoints, a session that is still being provisioned (`status` of `pending`) has no transcript yet, so its messages endpoint 404s until the session starts. See [Remote session not found](#remote-session-not-found). The activity-type strings cited in each Fix (for example, `claude_chat_created`) are values you can pass to the Activity Feed `activity_types[]` filter; see [Query compliance activities](../Admin/compliance-activities-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for every supported value.
 
 ### Request not authenticated
 
@@ -339,9 +339,9 @@ Not found
 
 
 
-**Cause:** The request did not carry a credential the Compliance API accepts: no API key was sent, or the key is not a Compliance Access Key (`sk-ant-api01-...`) or Admin API key (`sk-ant-admin01-...`), for example, a Claude API key (`sk-ant-api03-...`). The status, type, and message are the same as for a path that does not exist and do not depend on the endpoint or any resource ID, so list endpoints such as `GET /v1/compliance/activities` return this body too. The one exception is `GET /v1/compliance/organizations/{organization_id}/settings`, which answers these requests with 401 `authentication_error`. On every endpoint, a Compliance Access Key or Admin API key that does not authenticate returns [401 Unauthorized](#401-unauthorized) instead.
+**Cause:** The request did not carry a credential the Compliance API accepts: no API key was sent, or the key is not a Compliance Access Key (`sk-ant-api01-...`) or Admin API key (`sk-ant-admin01-...`), for example, a Claude API key (`sk-ant-api03-...`). The status, type, and message are the same as for a path that does not exist and do not depend on the endpoint or any resource ID, so list endpoints such as `GET /v1/compliance/activities` return this body too. The one exception apart from Security posture is `GET /v1/compliance/organizations/{organization_id}/settings`, which answers these requests with 401 `authentication_error`. The Security posture endpoint, `GET /v1/compliance/organizations/{organization_id}/security_posture`, answers them the same way. On every endpoint, a Compliance Access Key or Admin API key that does not authenticate returns [401 Unauthorized](#401-unauthorized) instead.
 
-**Fix:** Send the key in the `x-api-key` header and check its prefix: the Compliance API accepts only `sk-ant-api01-...` and `sk-ant-admin01-...` keys; see [Which key do you need?](manage-claude-compliance-api-access.md#which-key-do-you-need). If the header and key are right and one path still returns `Not found` while others succeed, check that path against the [Compliance API reference](../Admin/compliance.md).
+**Fix:** Send the key in the `x-api-key` header and check its prefix: the Compliance API accepts only `sk-ant-api01-...` and `sk-ant-admin01-...` keys; see [Which key do you need?](manage-claude-compliance-api-access.md#which-key-do-you-need). If the header and key are right and one path still returns `Not found` while others succeed, check that path against the [Compliance API reference](../Admin/compliance.md). For Security posture, see [Errors in the Security posture results reference](manage-claude-compliance-security-posture-results-reference.md#handle-errors) instead.
 
 ### Chat not found
 
@@ -395,7 +395,7 @@ Artifact version not found: 'claude_artifact_version_01KmNpQrSt3UvWxYz5AbCdEfG'
 
 **Cause:** The ID in the path does not match a tool-generated file or artifact version readable through the Compliance API. The generated-file metadata endpoint returns the first body, the content endpoint returns the second, and both artifact endpoints return the third. Generated files and artifacts are deleted with the chat they were created in, including when a user deletes the chat in claude.ai.
 
-**Fix:** Use [Get chat messages](../Admin/compliance-apps-chats-messages-list.md) to look up the chat the ID came from. If the chat’s `deleted_at` is populated, or a `claude_chat_deleted` activity names the chat, the content is gone; remove the ID from your queue. Otherwise, confirm the ID against the `generated_files` and `artifacts` arrays on the chat’s messages. When your organization’s retention policy deletes a chat, the Activity Feed records no `claude_chat_deleted` activity.
+**Fix:** Use [Get chat messages](../Admin/compliance-apps-chats-messages-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. to look up the chat the ID came from. If the chat’s `deleted_at` is populated, or a `claude_chat_deleted` activity names the chat, the content is gone; remove the ID from your queue. Otherwise, confirm the ID against the `generated_files` and `artifacts` arrays on the chat’s messages. When your organization’s retention policy deletes a chat, the Activity Feed records no `claude_chat_deleted` activity.
 
 ### Project not found
 
@@ -514,7 +514,7 @@ organization `91012d09-e48b-438e-a489-1bebfd8fa6f9` not found in this organizati
 
 The endpoint intentionally returns the same body in all three cases, so a 404 does not reveal whether an organization exists.
 
-**Fix:** Verify the ID against [List organizations](../Admin/compliance-organizations-list.md). If a known-good organization ID still returns 404, the settings endpoint is not yet enabled for your parent organization; contact your Anthropic representative.
+**Fix:** Verify the ID against [List organizations](../Admin/compliance-organizations-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. If a known-good organization ID still returns 404, the settings endpoint is not yet enabled for your parent organization; contact your Anthropic representative.
 
 ## 409 Conflict
 
@@ -536,11 +536,11 @@ The "claude_proj_01KGp4eZNug9ri4kE35RSppq" project cannot be deleted as it has c
 
 ## 429 Too Many Requests
 
-Requests to the Compliance API are limited to **600 requests per minute per [parent organization](manage-claude-compliance-api.md#how-the-compliance-api-works)**. The limit is one budget shared across every key under the parent (Compliance Access Keys and the Admin API keys of all linked organizations) and across every `/v1/compliance/*` endpoint; the remote session endpoints carry a second request budget on top. For a standalone Claude Console organization, which has no parent organization, the same budget applies to the organization itself and is shared across its Admin API keys. Contact your Anthropic representative if your integration needs a higher limit.
+Requests to the Compliance API are limited to **600 requests per minute per [parent organization](manage-claude-compliance-api.md#how-the-compliance-api-works)**. The limit is one budget shared across every key under the parent (Compliance Access Keys and the Admin API keys of all linked organizations) and across every `/v1/compliance/*` endpoint; the remote session endpoints carry a second request budget on top, and the Security posture endpoint has a lower limit of its own, counted for each parent organization. For a standalone Claude Console organization, which has no parent organization, the same budget applies to the organization itself and is shared across its Admin API keys. Contact your Anthropic representative if your integration needs a higher limit.
 
 One 429 is different: on a very large session, the local session messages endpoint might return [Server busy reading large transcripts](#server-busy-reading-large-transcripts), which is not a rate limit and not a limit on your organization. Its entry, at the end of this section, says how to identify it and what to do.
 
-Once your API key authenticates, Compliance API responses report the shared budget through the standard [rate-limit response headers](../Endpoints/rate-limits.md#response-headers) so your client can throttle proactively instead of waiting for a 429:
+Once your API key authenticates, Compliance API responses report the shared budget (Security posture responses can report that endpoint’s own limit instead, as described later in this section) through the standard [rate-limit response headers](../Endpoints/rate-limits.md#response-headers) so your client can throttle proactively instead of waiting for a 429:
 
 - `anthropic-ratelimit-requests-limit` is the per-minute request budget.
 - `anthropic-ratelimit-requests-remaining` is the budget left in the current window.
@@ -570,11 +570,11 @@ anthropic-ratelimit-requests-reset: 2026-04-21T14:38:25Z
 
 
 
-**Cause:** Your parent organization (or standalone Claude Console organization) sent more than 600 requests to `/v1/compliance/*` in a 1-minute window, across all of the keys that share its budget, or it exhausted the remote session endpoints’ second request budget (described later in this section).
+**Cause:** Your parent organization (or standalone Claude Console organization) sent more than 600 requests to `/v1/compliance/*` in a 1-minute window, across all of the keys that share its budget, or it exhausted the remote session endpoints’ second request budget (described later in this section), or the Security posture endpoint’s own limit (also described later in this section).
 
 **Fix:** Wait the number of seconds in the `retry-after` header, then retry. If the header is absent (for example, stripped by an intermediary), fall back to exponential backoff (start at 1 second, double up to 60 seconds). Do not advance your pagination cursor on a 429: the failed request returned no data, so the cursor from the last successful page is still correct.
 
-Requests that fail authentication (a missing or unrecognized key, or a Claude API key rather than a Compliance Access Key or Admin API key) are rejected before the rate limiter and do not consume quota. A valid key that lacks the endpoint’s required scope consumes one quota unit before the 403 is returned.
+Requests that fail authentication (a missing or unrecognized key, or a Claude API key rather than a Compliance Access Key or Admin API key) are rejected before the rate limiter and do not consume quota. A valid key that lacks the endpoint’s required scope consumes one quota unit before the 403 is returned. On Security posture, the scope is checked before the rate limit, so that 403 uses no quota. That endpoint also has a lower limit of its own, keyed to your parent organization like the shared limit. A request there that the shared limit lets through also counts against the endpoint’s own limit, so a request that the endpoint’s own limit refuses has still used one request of the shared limit. The endpoint’s `anthropic-ratelimit-requests-*` headers describe the limit that refused the request, or else the one with fewer requests left. A 404 counts against both limits when Security posture isn’t available to the requested organization, when the Security posture page has been turned off for that organization, or when the endpoint doesn’t serve that organization.
 
 The [local session endpoints](manage-claude-compliance-sessions.md#retrieve-local-sessions) count only against the shared limit. The [remote session endpoints](manage-claude-compliance-sessions.md#retrieve-remote-sessions) also carry a second request budget, keyed to your parent organization like the shared limit, on top of it. A 429 from that budget carries a `retry-after` header that is always `1` (a minimum wait, not the actual reset time); any `anthropic-ratelimit-*` headers on that response describe the shared limit rather than this budget, so back off exponentially if the 429 repeats. One 429 comes from no request budget: [Server busy reading large transcripts](#server-busy-reading-large-transcripts), which only the local session messages endpoint returns.
 
@@ -598,7 +598,7 @@ Too many large session transcripts are being read at once. This is not a limit o
 
 ## 500 Internal Server Error
 
-A 500 from the Compliance API carries an `x-should-retry: false` response header when the failure is deterministic. The Claude SDK honors this header automatically. If you use a generic HTTP retry library that retries on every 5xx, suppress retries when `x-should-retry` is `false`; retrying this error fails identically on every attempt.
+A 500 from the Compliance API carries an `x-should-retry: false` response header when the failure is deterministic. The Anthropic SDK honors this header automatically. If you use a generic HTTP retry library that retries on every 5xx, suppress retries when `x-should-retry` is `false`; retrying this error fails identically on every attempt.
 
 A 500 without the `x-should-retry: false` header is transient: retry with exponential backoff (start at 1 second, double up to 60 seconds). The same applies to 502, 503, 504, and 529 responses. The exception is a small set of local session 503s, described next, that depend on an organization’s settings or encryption key rather than on load. See [Claude API errors](../Endpoints/errors.md) for the platform-wide retry semantics.
 

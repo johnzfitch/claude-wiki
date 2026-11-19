@@ -2,7 +2,7 @@
 title: "Switching to a different Identity Provider (IdP) | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13443687-switching-to-a-different-identity-provider-idp"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:57Z"
+fetched_at: "2026-11-18T06:27:54Z"
 tags: ["claude-ai"]
 ---
 
@@ -13,7 +13,7 @@ April 10, 2026
 
 This guide walks you through the process of migrating your Claude or Console organization from one identity provider to another while preserving user access and avoiding disruption.
 
-**Note:** This process applies to organizations that already have SSO configured. If you're setting up SSO for the first time, see **[Setting up single sign-on (SSO)](../21-Account-Support/setting-up-single-sign-on-sso.md)**.
+**Note:** This process applies to organizations that already have SSO configured. If you're setting up SSO for the first time, see **[Setting up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)**.
 
 ## Before you begin
 
@@ -33,7 +33,7 @@ This guide walks you through the process of migrating your Claude or Console org
 
 1.  **Disable SCIM pushes from your current IdP** (if applicable): Stop Create/Update events on your current IdP's side to prevent any sync signals from being sent during the migration.
 
-    1.  For more information about SCIM, see **[Setting up JIT or SCIM provisioning](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)**.
+    1.  For more information about SCIM, see **[Setting up JIT or SCIM provisioning](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning.md)**.
 
 2.  **Switch provisioning mode to "Invite only"** (if applicable): Wait approximately one hour after disabling SCIM pushes, then navigate to the "Identity and access" page on **all** connected Claude (claude.ai/admin-settings/organization) or Console (platform.claude.com/settings/identity) organizations. Under **Global SSO Configuration**, set the provisioning mode to "Invite only."
 
@@ -47,6 +47,6 @@ This guide walks you through the process of migrating your Claude or Console org
 
 5.  **Verify the reset**: Refresh the "Identity and access" page and confirm that the button state has changed from "Manage SSO" to "Setup SSO."
 
-6.  **Set up your new IdP for SSO and provisioning**: Follow the **[SSO setup steps](../21-Account-Support/setting-up-single-sign-on-sso.md)** and **[configure JIT or SCIM](https://support.claude.com/en/articles/13133195-setting-up-jit-or-scim-provisioning)** with group mappings enabled (if needed) to ensure all users are assigned in the new IdP with the correct groups for all your connected Claude and/or Console organizations. If applicable, after setup you can click "Manage SCIM" to verify which users have synced to the directory and confirm they're associated with the correct groups.
+6.  **Set up your new IdP for SSO and provisioning**: Follow the **[SSO setup steps](https://support.claude.com/en/articles/13132885-setting-up-single-sign-on-sso)** and **[configure JIT or SCIM](../13-Enterprise-Admin/setting-up-jit-or-scim-provisioning.md)** with group mappings enabled (if needed) to ensure all users are assigned in the new IdP with the correct groups for all your connected Claude and/or Console organizations. If applicable, after setup you can click "Manage SCIM" to verify which users have synced to the directory and confirm they're associated with the correct groups.
 
 7.  **Re-enable provisioning** (if applicable): Select "Approve automatically (JIT)" or "Sync with SCIM" to switch the provisioning mode and click "Save Changes" to apply.

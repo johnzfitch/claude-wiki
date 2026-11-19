@@ -2,7 +2,7 @@
 title: "Get Chat Project Usage - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/apps/chat/projects/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-03T06:23:06Z"
+fetched_at: "2026-11-18T06:27:08Z"
 tags: ["api"]
 ---
 
@@ -66,7 +66,7 @@ maxItems100
 
 
 
-group_by: optional array of "rbac_group_id" or "user_id"
+group_by: optional array of [BetaAnalyticsProjectGroupBy](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_project_group_by)
 
 
 
@@ -98,7 +98,7 @@ maximum1000
 
 
 
-order: optional "asc" or "desc"
+order: optional [BetaAnalyticsOrder](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_order)
 
 
 
@@ -152,37 +152,13 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: array of [BetaAnalyticsProjectActivity](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_project_activity) { distinct_user_count, message_count, project_id, 8 more }
+data: array of [BetaAnalyticsProjectActivity](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_project_activity) { created_at, created_by, distinct_conversation_count, 7 more }
 
 
-
-distinct_user_count: number
-
-
-
-Number of distinct users who used the project on the requested day, or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
-
-message_count: number
-
-
-
-Number of messages sent in the project on the requested day
-
-project_id: string
-
-
-
-Tagged project identifier (e.g. `claude_proj_...`)
-
-project_name: string
-
-
-
-Name of the project
 
 
 
-created_at: optional string or null
+created_at: string or null
 
 
 
@@ -192,7 +168,7 @@ formatdate-time
 
 
 
-created_by: optional [BetaAnalyticsUser](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_user) { type: "user", id, email_address } or null
+created_by: [BetaAnalyticsUser](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_user) { type: "user", id, email_address } or null
 
 
 
@@ -220,17 +196,35 @@ email_address: string
 
 Email address of the user
 
-distinct_conversation_count: optional number or null
+distinct_conversation_count: number or null
 
 
 
 Number of distinct conversations in the project. Null on aggregated rows where a distinct count cannot be computed.
 
-product: optional string or null
+distinct_user_count: number
 
 
 
-Product that produced this row's activity: one of `chat`, `claude_code`, `cowork`, `office_agent`, or `chat_cowork_unified` (Chat and Cowork unified). These are the canonical Cost & Usage product names; an `office_agent` row's per-surface breakdown is in its `office_metrics`. On `/plugins` only `cowork`, `claude_code` and `chat_cowork_unified` occur (the only surfaces with plugin attribution); on `/artifacts` only `chat`, `claude_code`, `cowork` and `chat_cowork_unified` occur (the surfaces that create artifacts); `/apps/chat/projects` does not support the product dimension (a `product` entry in `group_by[]` or `filter[]` there is rejected). Present only when the request grouped by `product`.
+Number of distinct users who used the project on the requested day, or, in date-range mode, over the requested window — recomputed as an exact distinct count over the window's per-member daily rows, never a sum of per-day values.
+
+message_count: number
+
+
+
+Number of messages sent in the project on the requested day
+
+project_id: string
+
+
+
+Tagged project identifier (e.g. `claude_proj_...`)
+
+project_name: string
+
+
+
+Name of the project
 
 rbac_group_id: optional string or null
 
@@ -276,10 +270,6 @@ Response 200
 {
   "data": [
     {
-      "distinct_user_count": 0,
-      "message_count": 0,
-      "project_id": "project_id",
-      "project_name": "project_name",
       "created_at": "2019-12-27T18:11:19.117Z",
       "created_by": {
         "id": "id",
@@ -287,7 +277,10 @@ Response 200
         "type": "user"
       },
       "distinct_conversation_count": 0,
-      "product": "product",
+      "distinct_user_count": 0,
+      "message_count": 0,
+      "project_id": "project_id",
+      "project_name": "project_name",
       "rbac_group_id": "rbac_group_id",
       "rbac_group_name": "rbac_group_name",
       "user_id": "user_id"
@@ -307,10 +300,6 @@ Response 200
 {
   "data": [
     {
-      "distinct_user_count": 0,
-      "message_count": 0,
-      "project_id": "project_id",
-      "project_name": "project_name",
       "created_at": "2019-12-27T18:11:19.117Z",
       "created_by": {
         "id": "id",
@@ -318,6 +307,9 @@ Response 200
         "type": "user"
       },
       "distinct_conversation_count": 0,
-      "product": "product",
+      "distinct_user_count": 0,
+      "message_count": 0,
+      "project_id": "project_id",
+      "project_name": "project_name",
       "rbac_group_id": "rbac_group_id",
       "rbac_group_name": "rbac_group_name",

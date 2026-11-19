@@ -2,7 +2,7 @@
 title: "Epilepsy Foundation Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/epilepsy-foundation"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:38Z"
+fetched_at: "2026-11-18T06:29:12Z"
 tags: ["api", "case-studies"]
 ---
 

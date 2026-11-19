@@ -2,7 +2,7 @@
 title: "Prosper Global’s Claude for Nonprofits case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/prosper-global"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:48Z"
+fetched_at: "2026-11-18T06:29:23Z"
 tags: ["case-studies"]
 ---
 

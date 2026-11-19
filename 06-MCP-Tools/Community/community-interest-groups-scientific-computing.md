@@ -2,11 +2,14 @@
 title: "Scientific Computing Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/scientific-computing"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-10-21T06:28:34Z"
+fetched_at: "2026-11-11T06:25:22Z"
+last_modified: "Wed, 11 Nov 2026 01:58:02 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Group Type](#group-type)
 - [Mission Statement](#mission-statement)
@@ -19,7 +22,7 @@ tags: ["mcp", "mcp-community"]
 - [Discussion Topics](#discussion-topics)
 - [Changelog](#changelog)
 
-Interest Group Charters
+Interest Groups
 
 # Scientific Computing Charter
 
@@ -77,7 +80,7 @@ Related Groups
 - **[Tasks and Events WG](community-working-groups-tasks-events.md)**: Tasks are the foundation for the long-running simulation and job-submission workflows for high-performance computing
 - **[Interceptors WG](community-working-groups-interceptors.md)**: interceptors are a potential implementation path for validating correctness and normalizing units between clients and servers
 - **[File Uploads WG](community-working-groups-file-uploads.md)**: input datasets, mesh and geometry files, and other large files must be considered
-- **[Primitive Grouping IG](community-interest-groups-primitive-grouping.md)**: scientific servers often expose large, hierarchical tool surfaces that motivate organization beyond flat lists
+- **[Progressive Disclosure WG](community-working-groups-progressive-disclosure.md)**: scientific servers often expose large, hierarchical tool surfaces that motivate organization beyond flat lists
 - **[Registry WG](community-working-groups-registry.md)**: publishing and discovering servers for shared scientific software and datasets intersects with registry metadata
 
 
@@ -85,9 +88,9 @@ Related Groups
 
 Leadership
 
-| Role        | Name        | Organization | GitHub                                       | Term    |
-|-------------|-------------|--------------|----------------------------------------------|---------|
-| Facilitator | Cory Kinney | —            | [@corykinney](https://github.com/corykinney) | Initial |
+| Role | Name | Organization | GitHub | Term |
+|----|----|----|----|----|
+| Facilitator | Cory Kinney | — | [@corykinney](https://github.com/corykinney) | Initial |
 
 
 [​](#operations)
@@ -107,11 +110,11 @@ Discussion Topics
 
 The following themes form the IG’s initial agenda. This list is not exhaustive and will evolve as the group identifies new areas of interest.
 
-| Item | Name                                                                                     | Status | Champion |
-|------|------------------------------------------------------------------------------------------|--------|----------|
-| —    | Quantities extension: units, dimensions, and semantics in tool schemas                   | Open   | —        |
-| —    | Reproducibility: provenance and versioning metadata for computed results                 | Open   | —        |
-| —    | Standards interoperability: relating MCP to existing scientific formats and vocabularies | Open   | —        |
+| Item | Name | Status | Champion |
+|----|----|----|----|
+| — | Quantities extension: units, dimensions, and semantics in tool schemas | Open | — |
+| — | Reproducibility: provenance and versioning metadata for computed results | Open | — |
+| — | Standards interoperability: relating MCP to existing scientific formats and vocabularies | Open | — |
 
 
 [​](#changelog)

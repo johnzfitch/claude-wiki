@@ -2,7 +2,7 @@
 title: "Update Workspace - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/workspaces/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:33:38Z"
+fetched_at: "2026-11-14T06:24:52Z"
 tags: ["api"]
 ---
 

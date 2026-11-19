@@ -2,7 +2,7 @@
 title: "Get Activity Summaries - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics/summaries/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-03T06:23:13Z"
+fetched_at: "2026-11-18T06:27:40Z"
 tags: ["api"]
 ---
 
@@ -96,7 +96,7 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 
 
-data: array of [BetaAnalyticsSingleDayActivitySummary](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
+data: array of [BetaAnalyticsSingleDayActivitySummary](platform-claude-com-http-beta-organization-analytics.md#beta_analytics_single_day_activity_summary) { assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 32 more }
 
 
 
@@ -192,19 +192,19 @@ chat_cowork_unified_daily_active_user_count: optional number or null
 
 
 
-Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Number of users with activity in Chat and Cowork unified on the requested day. Omitted from the response where Chat and Cowork unified is not available.
 
 chat_cowork_unified_monthly_active_user_count: optional number or null
 
 
 
-Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Number of users with activity in Chat and Cowork unified in the 28-day rolling window (30 days when the request filters by `rbac_group_id`). Omitted from the response where Chat and Cowork unified is not available.
 
 chat_cowork_unified_weekly_active_user_count: optional number or null
 
 
 
-Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Number of users with activity in Chat and Cowork unified in the 7-day rolling window. Omitted from the response where Chat and Cowork unified is not available.
 
 chat_daily_active_user_count: optional number or null
 
@@ -259,6 +259,24 @@ claude_design_weekly_active_user_count: optional number or null
 
 
 Number of users with Claude Design activity in the 7-day rolling window. Omitted from the response while the per-product breakdown is not enabled for this organization.
+
+claude_tag_daily_active_user_count: optional number or null
+
+
+
+Number of Slack users active in Claude Tag on the requested day. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+
+claude_tag_monthly_active_user_count: optional number or null
+
+
+
+Number of Slack users active in Claude Tag in the 28-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
+
+claude_tag_weekly_active_user_count: optional number or null
+
+
+
+Number of Slack users active in Claude Tag in the 7-day rolling window. Counts distinct Slack users, including users who have not linked a Claude account, so it can exceed `daily_active_user_count` and `assigned_seat_count`. Null on a day with no measured value, when Claude Tag data cannot be read for the request, and when the response is scoped to an RBAC group, because an unlinked user belongs to no group. Omitted from the response on deployments that do not offer Claude Tag reporting.
 
 office_agent_daily_active_user_count: optional number or null
 
@@ -353,6 +371,9 @@ Response 200
       "claude_design_daily_active_user_count": 0,
       "claude_design_monthly_active_user_count": 0,
       "claude_design_weekly_active_user_count": 0,
+      "claude_tag_daily_active_user_count": 0,
+      "claude_tag_monthly_active_user_count": 0,
+      "claude_tag_weekly_active_user_count": 0,
       "office_agent_daily_active_user_count": 0,
       "office_agent_monthly_active_user_count": 0,
       "office_agent_weekly_active_user_count": 0,
@@ -401,6 +422,9 @@ Response 200
       "claude_design_daily_active_user_count": 0,
       "claude_design_monthly_active_user_count": 0,
       "claude_design_weekly_active_user_count": 0,
+      "claude_tag_daily_active_user_count": 0,
+      "claude_tag_monthly_active_user_count": 0,
+      "claude_tag_weekly_active_user_count": 0,
       "office_agent_daily_active_user_count": 0,
       "office_agent_monthly_active_user_count": 0,
       "office_agent_weekly_active_user_count": 0,

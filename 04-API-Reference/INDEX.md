@@ -1,6 +1,6 @@
 # API Reference
 
-2107 pages. The full text of every page is in [llms.txt](llms.txt).
+2139 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## About
 
@@ -145,6 +145,7 @@
 - [Get Activity Summaries - Claude API Reference](Admin/http-admin-analytics-retrieve-summaries.md) — Count tokens in a Message
 - [Get Activity Summaries - Claude API Reference](Admin/http-beta-organization-analytics-retrieve-summaries.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Get Activity Summaries - Claude API Reference](Admin/http-beta-organization-analytics-summaries-list.md) — Include beta APIsThe API you’re viewing is only available in beta
+- [Get an organization's security posture - Claude API Reference](Admin/compliance-organizations-security-posture-retrieve.md) — To enable the Compliance API, see the setup guide.
 - [Get Artifact Activity - Claude API Reference](Admin/http-admin-analytics-artifacts-list.md) — Count tokens in a Message
 - [Get Artifact Activity - Claude API Reference](Admin/http-beta-organization-analytics-artifacts-list.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Get Artifact Activity - Claude API Reference](Admin/platform-claude-com-http-beta-organization-analytics-artifacts-list.md) — Include beta APIsThe API you’re viewing is only available in beta
@@ -380,6 +381,7 @@
 - [Rotate Tunnel Token - Claude API Reference](Admin/admin-mcp-tunnels-rotate-token.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Rotate Tunnel Token - Claude API Reference](Admin/beta-organization-mcp-tunnels-rotate-token.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Rules - Claude API Reference](Admin/beta-organization-federation-rules.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Security Posture - Claude API Reference](Admin/compliance-organizations-security-posture.md) — To enable the Compliance API, see the setup guide.
 - [Service Accounts - Claude API Reference](Admin/admin-service-accounts.md) — Count tokens in a Message
 - [Service Accounts - Claude API Reference](Admin/admin-workspaces-service-accounts.md) — Count tokens in a Message
 - [Service Accounts - Claude API Reference](Admin/beta-organization-service-accounts.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
@@ -393,6 +395,7 @@
 - [Set Workspace Rate Limits - Claude API Reference](Admin/beta-organization-workspaces-rate-limits-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Settings - Claude API Reference](Admin/compliance-organizations-settings.md) — To enable the Compliance API, see the setup guide.
 - [Shares - Claude API Reference](Admin/beta-organization-plugins-shares.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Sign Out User - Claude API Reference](Admin/beta-organization-users-sign-out.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Skills - Claude API Reference](Admin/beta-organization-analytics-skills.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Skills - Claude API Reference](Admin/http-admin-analytics-skills.md) — Count tokens in a Message
 - [Skills - Claude API Reference](Admin/http-beta-organization-analytics-skills.md) — Include beta APIsThe API you’re viewing is only available in beta
@@ -410,6 +413,7 @@
 - [Update a Telemetry Destination - Claude API Reference](Admin/beta-organization-telemetry-destinations-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update API Key - Claude API Reference](Admin/admin-api-keys-update.md) — Count tokens in a Message
 - [Update API Key - Claude API Reference](Admin/beta-organization-api-keys-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
+- [Update Bundle - Claude API Reference](Admin/beta-organization-claude-tag-bundles-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update Compliance Settings - Claude API Reference](Admin/beta-organization-compliance-settings-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Update External Key - Claude API Reference](Admin/admin-external-keys-update.md) — Count tokens in a Message
 - [Update External Key - Claude API Reference](Admin/beta-organization-external-keys-update.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
@@ -1373,6 +1377,7 @@
 - [Api Typescript Messages Create D3193B53Fa](Endpoints/typescript-messages-create.md) — client.messages.create(MessageCreateParamsbody, RequestOptionsoptions?): Message | Stream<RawMessageStreamEvent>
 - [Api Typescript Models List E65Ad3192F](Endpoints/typescript-models-list.md) — client.models.list(ModelListParamsparams?, RequestOptionsoptions?): Page<ModelInfo>
 - [Api Typescript Models Retrieve A0206D3Dca](Endpoints/typescript-models-retrieve.md) — client.models.retrieve(stringmodelID, ModelRetrieveParamsparams?, RequestOptionsoptions?): ModelInfo
+- [API versions - Claude Platform Docs](Endpoints/versioning.md) — When making API requests, you must send an anthropic-version request header. For example, anthropic-version: 2026-10-21. If you are using the client SDK(opens…
 - [Approve Spend Limit Increase Request - Claude API Reference](Endpoints/organization-spend-limits-increase-requests-approve.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Apps - Claude API Reference](Endpoints/organization-analytics-apps.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Archive a Credential - Claude API Reference](Endpoints/beta-vaults-credentials-archive.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
@@ -1733,7 +1738,7 @@
 - [Models - Claude API Reference](Endpoints/models.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Models - Claude API Reference](Endpoints/platform-claude-com-http-beta-models.md) — Count tokens in a Message
 - [OpenAI SDK compatibility](Endpoints/openai-sdk.md) — Anthropic provides a compatibility layer that enables you to use the OpenAI SDK to test the Claude API. With a few code changes, you can quickly evaluate…
-- [OpenTelemetry span reference - Claude Platform Docs](Endpoints/opentelemetry-spans.md) — The OpenTelemetry spans and span attributes that the Claude API and the Claude SDK emit.
+- [OpenTelemetry span reference - Claude Platform Docs](Endpoints/opentelemetry-spans.md) — The OpenTelemetry spans and span attributes that the Claude API and the Anthropic SDK emit.
 - [Organization - Claude API Reference](Endpoints/organization.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Parse Unverified - Claude API Reference](Endpoints/http-beta-webhooks-parse-unverified.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Pause Deployment - Claude API Reference](Endpoints/beta-deployments-pause.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
@@ -1875,7 +1880,6 @@
 - [Versions - Claude API Reference](Endpoints/beta-agents-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Versions - Claude API Reference](Endpoints/beta-skills-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Versions - Claude API Reference](Endpoints/skills-versions.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
-- [Versions - Claude Platform Docs](Endpoints/versioning.md) — When making API requests, you must send an anthropic-version request header. For example, anthropic-version: 2026-10-21. If you are using the client SDKs, this…
 - [Webhooks - Claude API Reference](Endpoints/beta-webhooks.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 - [Webhooks - Claude API Reference](Endpoints/http-beta-webhooks.md) — Include beta APIsThe API you’re viewing is only available in beta
 - [Work - Claude API Reference](Endpoints/beta-environments-work.md) — cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
@@ -1890,18 +1894,19 @@
 - [Batch processing - Claude Platform Docs](Guides/build-with-claude-batch-processing.md) — Process large volumes of Messages requests asynchronously with the Message Batches API, cutting costs by 50 percent and increasing throughput.
 - [Build an orchestration mode - Claude Platform Docs](Guides/build-with-claude-mid-conversation-effort-example.md) — Build a session-level mode that grants standing consent for multiagent fan-out, switched on and off with mid-conversation system messages.
 - [Cache diagnostics - Claude Platform Docs](Guides/build-with-claude-cache-diagnostics.md) — Diagnose unexpected prompt cache misses by comparing consecutive requests and identifying exactly where the prompt prefix diverged.
+- [Change tools or instructions without failing the prefix check - Claude Platform Docs](Guides/build-with-claude-preserved-thinking-change-tools-or-instructions.md) — Send an instruction, tool, reminder, or summary, resume a saved conversation, or pass on other people’s requests, so that Claude keeps its earlier thinking.
 - [Citations - Claude Platform Docs](Guides/build-with-claude-citations.md) — Ground Claude’s responses in your source documents. Citations return the exact passages that support each claim, so you can verify answers and surface sources…
 - [Claude Code Analytics API - Claude Platform Docs](Guides/build-with-claude-claude-code-analytics-api.md) — Programmatically access your organization's Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
-- [Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs](Guides/build-with-claude-claude-in-amazon-bedrock.md) — Access Claude models through Amazon Bedrock with AWS-native authentication, billing, and security boundaries.
+- [Claude in Amazon Bedrock (bedrock-mantle) - Claude Platform Docs](Guides/build-with-claude-claude-in-amazon-bedrock.md) — Call Claude through the Messages API on Amazon Bedrock’s bedrock-mantle endpoint, with AWS-native authentication, billing, and security boundaries.
 - [Claude in Microsoft Foundry - Claude Platform Docs](Guides/build-with-claude-claude-in-microsoft-foundry.md) — Access Claude models through Microsoft Foundry with Azure-native endpoints and authentication.
 - [Claude Models on Google Cloud (Anthropic managed) - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md) — Claude Models on Google Cloud (Anthropic managed) is the Claude API, run by Anthropic and reached through your Google Cloud project.
 - [Claude Models on Google Cloud (Google managed) - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md) — Google operates Claude Models on Google Cloud (Google managed) as part of Google Cloud’s Agent Platform. You can call Claude with Anthropic’s client SDKs.
 - [Claude Models on Google Cloud - Claude Platform Docs](Guides/build-with-claude-claude-models-on-google-cloud-overview.md) — Compare Claude Models on Google Cloud (Anthropic managed) and Claude Models on Google Cloud (Google managed), and find out which one you use.
-- [Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs](Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) — The legacy Amazon Bedrock integration for Claude models, using InvokeModel and Converse APIs with ARN-versioned model identifiers.
+- [Claude on Amazon Bedrock (bedrock-runtime) - Claude Platform Docs](Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) — Use Claude models on Amazon Bedrock’s bedrock-runtime endpoint, through the InvokeModel and Converse APIs.
 - [Claude on Amazon Bedrock - Claude API Docs](Guides/build-with-claude-claude-on-amazon-bedrock.md) — Anthropic's Claude models are now generally available through Amazon Bedrock.
 - [Claude on Google Cloud - Claude Platform Docs](Guides/build-with-claude-claude-on-vertex-ai.md) — Claude on cloud platforms
 - [Claude Platform on AWS - Claude Platform Docs](Guides/build-with-claude-claude-platform-on-aws.md) — Access Claude’s full platform capabilities through AWS with Anthropic-managed infrastructure.
-- [Compaction and preserved thinking - Claude Platform Docs](Guides/build-with-claude-compaction-thinking-blocks.md) — When thinking blocks in turns kept after on-demand compaction stay valid on models with preserved thinking, and how to check.
+- [Compaction and preserved thinking - Claude Platform Docs](Guides/build-with-claude-compaction-thinking-blocks.md) — When thinking in turns kept after compaction, or after your own summary or cut, stays valid on models with preserved thinking, and how to check.
 - [Compaction at a token threshold - Claude Platform Docs](Guides/build-with-claude-compaction-threshold.md) — Have the API summarize older context automatically, inside an ordinary request, when the conversation reaches a token threshold you set.
 - [Compaction in the background - Claude Platform Docs](Guides/build-with-claude-compaction-background.md) — Request an on-demand compaction summary while the conversation continues on its full history, then swap the block in when it arrives.
 - [Compaction on demand - Claude Platform Docs](Guides/build-with-claude-compaction-on-demand.md) — Ask Claude to summarize a conversation when your application chooses, then continue from the summary.
@@ -1917,11 +1922,14 @@
 - [Fast mode - Claude Platform Docs](Guides/build-with-claude-fast-mode.md) — Get up to 2.5x higher output tokens per second from supported Claude models.
 - [Features overview - Claude Platform Docs](Guides/build-with-claude-overview.md) — Explore Claude’s advanced features and capabilities.
 - [Files API - Claude Platform Docs](Guides/build-with-claude-files.md) — Upload files once, reference them by fileid in Messages requests, and download outputs created by skills or the code execution tool.
+- [Fix a thinking block bound to a different conversation - Claude Platform Docs](Guides/build-with-claude-preserved-thinking-fix-bound-to-a-different-conversation.md) — Get a conversation going again after the 400 error that says a thinking block is bound to a different conversation, find what your code changed, and test that…
 - [Message threads - Claude Platform Docs](Guides/build-with-claude-message-threads.md) — Give long-running agents a faster time to first token, especially in long conversations, by sending only the new messages on each request.
 - [Mid-conversation system messages and tool changes - Claude Platform Docs](Guides/build-with-claude-mid-conversation-system-messages.md) — Change system instructions or tool availability partway through a conversation without invalidating the cached prefix that came before them.
 - [Multilingual support - Claude Platform Docs](Guides/build-with-claude-multilingual-support.md) — Claude excels at tasks across multiple languages, maintaining strong cross-lingual performance relative to English.
 - [PDF support - Claude Platform Docs](Guides/build-with-claude-pdf-support.md) — Process PDFs with Claude: extract text, analyze charts, and understand visual content from your documents.
-- [Preserved thinking - Claude Platform Docs](Guides/build-with-claude-preserved-thinking.md) — Preserved thinking lets a model use a thinking block from an earlier turn only if that model or one of a fixed set of other models produced it and nothing…
+- [Per-message effort - Claude Platform Docs](Guides/build-with-claude-effort-per-message.md) — Use a system message to change the effort level partway through a conversation and keep the prompt cache.
+- [Prefix checks on thinking blocks - Claude Platform Docs](Guides/build-with-claude-preserved-thinking-prefix-checks.md) — What the prefix check compares, which models run it, what happens when a request fails it, and how to handle the 400 error and the case with no error.
+- [Preserved thinking - Claude Platform Docs](Guides/build-with-claude-preserved-thinking.md) — On Claude models that run the prefix check, preserved thinking determines whether the model can use a thinking block you send back from an earlier turn.
 - [Prompt caching - Claude Platform Docs](Guides/build-with-claude-prompt-caching.md) — Cache prompt prefixes with cachecontrol to cut costs and latency, using automatic caching or explicit breakpoints with 5-minute or 1-hour TTLs.
 - [Rate Limits API](Guides/build-with-claude-rate-limits-api.md) — Programmatically query your organization's API rate limits with the Rate Limits API.
 - [Refusals and fallback - Claude Platform Docs](Guides/build-with-claude-refusals-and-fallback.md) — How Claude Fable models, Claude Opus models, Claude Sonnet 5.5, and Claude Haiku 5.5 return classifier refusals and how to retry refused requests on a fallback…
@@ -1935,7 +1943,7 @@
 - [Thinking - Claude Platform Docs](Guides/build-with-claude-thinking.md) — Understand how Claude’s thinking works: turn it on, read thinking output, steer thinking depth with effort, and use thinking with tools, caching, and streaming.
 - [Thinking in tool and multi-turn workflows - Claude Platform Docs](Guides/build-with-claude-thinking-tool-workflows.md) — Walk through a complete two-turn tool-use round trip that preserves thinking blocks correctly, and see how interleaved thinking changes the flow.
 - [Token counting - Claude Platform Docs](Guides/build-with-claude-token-counting.md) — Count the tokens in a message before you send it to Claude. Use token counts to manage rate limits and costs, make model routing decisions, and fit prompts to…
-- [Troubleshooting thinking - Claude Platform Docs](Guides/build-with-claude-thinking-troubleshooting.md) — Diagnose and fix the most common thinking failures: configuration 400 errors, empty or missing thinking blocks, maxtokens stops, and cache misses.
+- [Troubleshooting thinking - Claude Platform Docs](Guides/build-with-claude-thinking-troubleshooting.md) — Diagnose and fix thinking failures: configuration 400 errors, empty or missing thinking blocks, maxtokens stops, and cache misses.
 - [Usage and Cost API - Claude Platform Docs](Guides/build-with-claude-usage-cost-api.md) — Programmatically access your organization's API usage and cost data with the Usage & Cost Admin API.
 - [Using Agent Skills with the API - Claude Platform Docs](Guides/build-with-claude-skills-guide.md) — Learn how to use Agent Skills to extend Claude’s capabilities through the API.
 - [Using the Messages API - Claude Platform Docs](Guides/build-with-claude-working-with-messages.md) — Practical patterns and examples for using the Messages API effectively
@@ -1949,25 +1957,31 @@
 - [Add and attach an encryption key with the Admin API - Claude Platform Docs](Other/manage-claude-cmek-admin-api.md) — Create, validate, and attach a customer-managed encryption key with three Admin API calls.
 - [Adding files - Claude Platform Docs](Other/managed-agents-files.md) — Upload files and mount them in your sandbox for reading and processing.
 - [Admin API - Claude Platform Docs](Other/manage-claude-admin-api.md) — Manage organization members, workspaces, invites, and API keys programmatically with the Admin API, using an Admin API key, an org:admin OAuth token, or a…
+- [Agent identity and credentials - Claude Platform Docs](Other/managed-agents-self-hosted-agent-identity.md) — Have your self-hosted Claude Managed Agents server sign a short-lived token that names each agent, keep vault credentials in your secret manager, and keep…
 - [Analytics APIs - Claude Platform Docs](Other/manage-claude-analytics-api.md) — Understand which analytics API and API key your organization needs, then provision access to Claude Code productivity metrics or Claude Enterprise engagement…
 - [API and data retention - Claude Platform Docs](Other/manage-claude-api-and-data-retention.md) — Learn about how Anthropic’s APIs and associated features retain data, including information about zero data retention (ZDR) and HIPAA-ready API access.
 - [API key best practices: keep your keys safe and secure | Claude Help Center](Other/api-key-best-practices-keeping-your-keys-safe-and-secure.md) — API keys enable access to the Claude API, but they can pose significant security risks if not handled properly. Your API key is a digital key to your account…
 - [API Safeguards Tools | Claude Help Center](Other/api-safeguards-tools.md) — Whether you are just starting the process of setting up safeguards for your API deployment of Claude, or your deployment is already running, here are some…
 - [API usage primer for Claude - Claude Platform Docs](Other/claude-api-primer.md) — This guide is designed to give Claude the basics of using the Claude API. It gives explanation and examples of model IDs/the basic messages API, tool use…
 - [App Attest for iOS and macOS apps - Claude Platform Docs](Other/manage-claude-app-attest.md) — Let genuine installations of your iOS or macOS app call the Claude API without shipping an API key or running a proxy, using Apple’s App Attest service.
+- [App testing and review - Claude Platform Docs](Other/manage-claude-oauth-apps-app-review.md) — How a new Linked billing app moves out of testing and opens to your customers, and what happens when you change a live app.
 - [Apple Foundation Models - Claude Platform Docs](Other/cli-sdks-libraries-libraries-apple-foundation-models.md) — Use Claude on Apple platforms through the Foundation Models framework with the Claude for Foundation Models Swift package.
 - [Authenticate with vaults - Claude Platform Docs](Other/managed-agents-vaults.md) — Register per-user credentials when creating sessions.
 - [Authentication - Claude Platform Docs](Other/manage-claude-authentication.md) — Authenticate to the Claude API with API keys, Workload Identity Federation, or App Attest.
 - [Batch Processing with Message Batches API](Other/claude-cookbooks-misc-batch-processing.md) — Message Batches allow you to process large volumes of Messages requests
+- [Branding samples - Claude Platform Docs](Other/manage-claude-oauth-apps-branding-samples.md) — A Link your Claude organization button for Linked billing: its HTML and CSS, colors, and the Claude logo.
 - [Build in Console - Claude Platform Docs](Other/managed-agents-onboarding.md) — Create, test, and iterate on agents visually in the Claude Console, then run them from your code with the API.
 - [C# SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-csharp.md) — Install and configure the Anthropic C# SDK for .NET applications with IChatClient integration
+- [Call the API on a self-hosted server - Claude Platform Docs](Other/managed-agents-self-hosted-call-the-api.md) — Point the official SDK, cURL, or the ant CLI at your self-hosted Claude Managed Agents server, start a session, and read the agent’s reply. Then connect…
 - [Can I use the Claude API for individual use? | Claude Help Center](Other/can-i-use-the-claude-api-for-individual-use.md) — Yes, individuals and hobbyists are welcome to use the Claude API. However, please note that use of the API is subject to our Commercial Terms of Service…
+- [Check stored Security posture events against current results - Claude Platform Docs](Other/manage-claude-compliance-security-posture-check-events-against-results.md) — Once a day, compare the attestation activities your SIEM has stored with the endpoint’s current results and decide which mismatches need a person.
 - [Choosing an agent environment - Claude Platform Docs](Other/managed-agents-choosing-an-environment.md) — Decide whether Claude Managed Agents tools and code run in an Anthropic-managed cloud environment or a self-hosted sandbox, and see what changes if you switch.
 - [Claude Code Analytics API - Claude Platform Docs](Other/manage-claude-claude-code-analytics-api.md) — Programmatically access your organization’s Claude Code usage analytics and productivity metrics with the Claude Code Analytics Admin API.
 - [Claude in Microsoft Foundry | Claude by Anthropic](Other/partners-microsoft-foundry.md) — Deploy frontier AI solutions safely and simply, using your existing Azure ecosystem.
 - [Claude Managed Agents overview - Claude Platform Docs](Other/managed-agents-overview.md) — Pre-built, configurable agent harness that runs in managed infrastructure. Best for long-running tasks and asynchronous work.
 - [Claude on AWS | Claude by Anthropic](Other/partners-claude-on-aws.md) — Give your team a thinking partner, build agents, and ship AI products to customers in your AWS environment.
 - [Claude Partner Network Directory](Other/partners-services.md) — Find a Claude certified consulting partner or system integrator to help you build your AI strategy and successfully implement Claude.
+- [Claude Platform OAuth - Claude Platform Docs](Other/manage-claude-oauth-apps-overview.md) — Let your customers pay for the Claude usage in your product from their own Claude organization.
 - [Claude Tag API - Claude Platform Docs](Other/manage-claude-claude-tag-api.md) — Manage Claude Tag in Slack for your Claude Enterprise organization from your own systems: read and change settings on Slack channels and workspaces, see which…
 - [CLI authentication options - Claude Platform Docs](Other/cli-sdks-libraries-cli-authentication.md) — Authenticate the ant CLI with interactive login, API keys, named profiles, and Workload Identity Federation.
 - [CLI quickstart - Claude Platform Docs](Other/cli-sdks-libraries-cli-quickstart.md) — Install the ant command-line tool, authenticate, and send your first request to the Claude API.
@@ -1977,23 +1991,30 @@
 - [CMEK, data retention, and ZDR - Claude Platform Docs](Other/manage-claude-cmek-data-retention.md) — Why a workspace with a key retains data, what that means for ZDR, and what Anthropic can preserve outside your key.
 - [Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api.md) — Programmatic access to your organization’s Claude activity, chats, files, projects, sessions in Claude apps, and users for compliance, audit, and governance.
 - [Compliance API FAQ - Claude Platform Docs](Other/manage-claude-compliance-faq.md) — Answers to common questions about Compliance API access, scopes, retention, and integration.
+- [Configuration reference - Claude Platform Docs](Other/managed-agents-self-hosted-configuration-reference.md) — See where the settings of a self-hosted Claude Managed Agents server go, and look up each setting’s key, environment variable, default, and purpose.
 - [Configure Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks-configuration.md) — Allow Inference hooks for your Claude Enterprise organization, connect your AI security server, and control enforcement, failure handling, and rollout.
 - [Connect to a Managed Agents session from your terminal - Claude Platform Docs](Other/cli-sdks-libraries-cli-sessions-connect.md) — Attach the ant CLI to a Claude Managed Agents session to follow its transcript live, send messages, allow or deny tool calls, or open the session viewer in…
 - [Connectors and plugins | Claude Marketplace | Claude by Anthropic](Other/partners-mcp.md) — Bring the tools you already use into every Claude conversation.
 - [Container reference](Other/managed-agents-cloud-containers.md) — Pre-installed packages, databases, and utilities available in cloud containers.
 - [Create an Admin API key - Claude Platform Docs](Other/manage-claude-admin-api-keys.md) — Create an Admin API key for your Claude Console or Claude Enterprise organization.
+- [Credential vaults | Claude Platform](Other/playground.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [Custom tools in self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-custom-tools.md) — Serve custom tools from a self-hosted sandbox worker, and wrap an MCP server inside your network as custom tools without running a tunnel.
 - [Customer-managed encryption keys - Claude Platform Docs](Other/manage-claude-cmek.md) — Use a key you hold in your own cloud to encrypt data that Claude stores.
+- [Data and access in self-hosted Claude Managed Agents - Claude Platform Docs](Other/managed-agents-self-hosted-data-and-access.md) — What self-hosted Claude Managed Agents sends outside your network, where its log, traces, and metrics go, how long data is kept, who can reach the server, and…
 - [Data residency - Claude Platform Docs](Other/manage-claude-data-residency.md) — Manage where model inference runs and where data is stored with geographic controls.
 - [Define outcomes](Other/managed-agents-output-patterns.md) — Tell the agent what 'done' looks like, and let it iterate until it gets there.
 - [Define outcomes - Claude Platform Docs](Other/managed-agents-define-outcomes.md) — Tell the agent what ‘done’ looks like, and let it iterate until it gets there.
 - [Define your agent - Claude Platform Docs](Other/managed-agents-agent-setup.md) — Create a reusable, versioned agent configuration.
+- [Deploy on Kubernetes - Claude Platform Docs](Other/managed-agents-self-hosted-kubernetes.md) — Install the self-hosted Claude Managed Agents server and its sandboxes on a Kubernetes cluster with the two Helm charts in the release archive, then run a…
 - [Deploy self-hosted workers - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-workers.md) — Choose how self-hosted sandbox workers claim work and where sessions run: always-on or webhook-triggered, in one process or one sandbox per session.
 - [Design your compliance integration - Claude Platform Docs](Other/manage-claude-compliance-integration-patterns.md) — Choose between polling and cursor-driven Activity Feed consumption, correlate Compliance API events with your SIEM, and plan retention.
+- [Detect changes in Security posture - Claude Platform Docs](Other/manage-claude-compliance-security-posture-detect-changes.md) — Start from sample detection rules for Security posture activities in your SIEM: accepted risks, controls attested as Failed, unexpected editors, bursts of…
 - [Develop an Inference hooks integration - Claude Platform Docs](Other/manage-claude-inference-hooks-endpoint.md) — Build the AI security server that receives signed Inference hooks requests, verifies them, and returns allow or deny verdicts.
+- [Differences from the hosted service - Claude Platform Docs](Other/managed-agents-self-hosted-differences.md) — See which features only self-hosted Claude Managed Agents has, which hosted features it doesn’t have, which behave differently, and which need a server setting…
 - [Documentation - Claude Platform Docs](Other/home.md) — Everything you need to integrate Claude into your applications. From first API call to production.
 - [Dreams - Claude Platform Docs](Other/managed-agents-dreams.md) — Let Claude review past sessions to curate an agent’s memory and surface new insights.
 - [Get started with Claude Managed Agents - Claude Platform Docs](Other/managed-agents-quickstart.md) — Create your first autonomous agent.
+- [Get started with self-hosted Claude Managed Agents - Claude Platform Docs](Other/managed-agents-self-hosted-quickstart.md) — Start self-hosted Claude Managed Agents on one machine with Docker Compose and run a first session in a sandbox container.
 - [Get your Claude API key - Claude Platform Docs](Other/get-api-key.md) — Find, create, and manage your API keys for the Claude API in the Claude Console.
 - [Go SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-go.md) — Install and configure the Anthropic Go SDK with context-based cancellation and functional options
 - [Google Cloud | Claude by Anthropic](Other/partners-google-cloud.md) — Build advanced AI agents with Claude on Google Cloud.
@@ -2008,16 +2029,19 @@
 - [I use Claude in Amazon Bedrock. Who do I contact for customer support inquiries? | Claude Help Center](Other/i-use-claude-in-amazon-bedrock-who-do-i-contact-for-customer-support-inquiries.md) — If you're using Claude through AWS Bedrock, your usage is non-refundable. If you are a customer with a private offer and direct contract with Anthropic for…
 - [I'm getting an API connection error. How can I fix it? | Claude Help Center](Other/i-m-getting-an-api-connection-error-how-can-i-fix-it.md) — This error usually indicates an issue on your end, potentially related to your firewall, network, or VPN. Try these steps:
 - [Inference hooks - Claude Platform Docs](Other/manage-claude-inference-hooks.md) — Send each governed prompt to your organization’s AI security server for an allow or deny verdict before inference proceeds.
+- [Inference provider - Claude Platform Docs](Other/managed-agents-self-hosted-inference-provider.md) — Send model calls from your self-hosted Claude Managed Agents server to Amazon Bedrock, Claude Models on Google Cloud (Google managed), Microsoft Foundry, or a…
 - [Inspect sessions and track usage - Claude Platform Docs](Other/managed-agents-session-observability.md) — Inspect a session in the Claude Console, read its token usage and list cost, and debug unexpected agent behavior.
 - [Intro to Claude - Claude Platform Docs](Other/welcome.md) — Claude on cloud platforms
-- [Invite members to the Claude Console | Claude Help Center](Other/invite-members-to-the-claude-console.md) — The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: Create…
+- [Invite members to the Claude Console | Claude Help Center](Other/inviting-members-to-the-claude-console.md) — The instructions in this article apply to your overall Console organization. If you are working within a specific Console Workspace, see this article: Create…
 - [IP allowlisting - Claude Platform Docs](Other/manage-claude-ip-allowlist.md) — Secure your organization by limiting access to specific IP addresses that you trust.
 - [Java SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-java.md) — Install and configure the Anthropic Java SDK with builder patterns and async support
 - [Legal summarization](Other/build-use-case-legal-summarization.md) — This guide walks through how to leverage Claude's advanced natural language processing capabilities to efficiently summarize legal documents, extracting key…
 - [Limit an AWS KMS key to specific workspaces - Claude Platform Docs](Other/manage-claude-cmek-aws-kms-workspaces.md) — Add a key policy condition that names the workspaces allowed to use your AWS KMS key.
+- [Linked billing - Claude Platform Docs](Other/manage-claude-oauth-apps-organization-billing-connections.md) — Let your customers link their Claude Platform organization to your app with OAuth, and bill Claude usage to the customer’s organization.
 - [List organizations, users, roles, groups, and settings - Claude Platform Docs](Other/manage-claude-compliance-org-data.md) — Enumerate organizations under your parent organization (their users, roles, and groups) and read each organization’s effective settings through the Compliance…
 - [Manage resources as code with ant apply - Claude Platform Docs](Other/cli-sdks-libraries-cli-apply.md) — Declare agents, environments, skills, memory stores, deployments, and vaults as files in your repository and keep the API’s resources in sync with them using…
 - [Manage WIF with the Admin API - Claude Platform Docs](Other/manage-claude-wif-admin-api.md) — Create and manage Workload Identity Federation service accounts, issuers, and rules programmatically for infrastructure-as-code and CI workflows.
+- [Map Security posture events to OCSF - Claude Platform Docs](Other/manage-claude-compliance-security-posture-ocsf-mapping.md) — Map each Security posture activity in the Compliance API to its Open Cybersecurity Schema Framework (OCSF) class and attributes before you store it.
 - [MCP connector](Other/agents-mcp-connector.md) — Claude's Model Context Protocol (MCP) connector feature enables you to connect to remote MCP servers directly from the Messages API without a separate MCP…
 - [MCP connector](Other/managed-agents-custom-mcp-servers.md) — Connect MCP servers to your agents for access to external tools and data sources.
 - [MCP connector - Claude Platform Docs](Other/managed-agents-mcp-connector.md) — Connect MCP servers to your agents for access to external tools and data sources.
@@ -2030,13 +2054,13 @@
 - [Multiagent sessions](Other/managed-agents-multi-agent.md) — Coordinate multiple agents within a single session.
 - [Not Found - Claude Platform Docs](Other/features-adaptive-thinking.md) — The requested page could not be found. These pages are close:
 - [Not Found - Claude Platform Docs](Other/features-api-fast-mode.md) — The requested page could not be found. These pages are close:
+- [OAuth reference - Claude Platform Docs](Other/manage-claude-oauth-apps-oauth-reference.md) — Endpoints, client authentication, request parameters, scopes, token responses, revocation, lifetimes, redirect URI rules, and errors.
 - [OpenAI SDK compatibility - Claude Platform Docs](Other/cli-sdks-libraries-libraries-openai-sdk.md) — Anthropic provides a compatibility layer that lets you use the OpenAI SDK to test the Claude API. With a few code changes, you can evaluate Anthropic model…
-- [OpenTelemetry tracing for the Claude API - Claude Platform Docs](Other/manage-claude-opentelemetry.md) — Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Claude SDK and the Claude API.
+- [OpenTelemetry tracing for the Claude API - Claude Platform Docs](Other/manage-claude-opentelemetry.md) — Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Anthropic SDK and the Claude API.
 - [Organization webhooks - Claude Platform Docs](Other/manage-claude-organization-webhooks.md) — Register webhook endpoints for events about enforcement actions on your organization’s user profiles.
 - [Partners | Claude by Anthropic](Other/partners.md) — Build the enterprise AI practice your customers are asking for — with the training, technical support, and co-investment to back it up.
 - [Permission policies - Claude Platform Docs](Other/managed-agents-permission-policies.md) — Control when agent and MCP tools run.
 - [PHP SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-php.md) — Install and configure the Anthropic PHP SDK with value objects and builder patterns
-- [Playground | Claude Platform](Other/playground.md) — Create agents and applications with frontier Claude models and managed agent infrastructure.
 - [Plugins API - Claude Platform Docs](Other/manage-claude-plugins-api.md) — Inventory and manage the plugins in your Claude Enterprise organization: upload plugins and versions, choose the version members are served, control who can…
 - [Powered by Claude | Claude by Anthropic](Other/partners-powered-by-claude.md) — A curated list of businesses that use Claude to build better, faster, and safer.
 - [Preserved thinking: changing how the Messages API handles thinking blocks to protect against distillation | Claude Help Center](Other/preserved-thinking-changing-how-the-messages-api-handles-thinking-blocks-to-protect.md) — We're changing how the Messages API handles thinking blocks to protect against distillation. A thinking block is a record of the reasoning Claude may produce…
@@ -2058,10 +2082,15 @@
 - [SDKs, CLI, and libraries - Claude Platform Docs](Other/cli-sdks-libraries-overview.md) — Official tools for building with the Claude API: client SDKs in seven languages, the ant CLI, and framework-specific libraries.
 - [Secure your Managed Agents deployment - Claude Platform Docs](Other/managed-agents-secure-deployment.md) — The settings that limit what your agents can reach and do, most important first.
 - [Security model - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-security.md) — Shared responsibility model for self-hosted sandbox environments.
+- [Security posture events reference - Claude Platform Docs](Other/manage-claude-compliance-security-posture-events-reference.md) — Look up the Activity Feed activities that record changes on the Security posture page: their fields and values, an example of each, and what the feed does not…
+- [Security posture in the Compliance API - Claude Platform Docs](Other/manage-claude-compliance-security-posture-overview.md) — Understand what the Compliance API exposes about the Security posture page (Security Center) in claude.ai and where to start.
+- [Security posture results reference - Claude Platform Docs](Other/manage-claude-compliance-security-posture-results-reference.md) — Look up the Compliance API endpoint that returns an organization’s current Security posture results: the request, the response fields, what each status means…
 - [Security risks and sandbox boundaries - Claude Platform Docs](Other/managed-agents-secure-deployment-risks.md) — Why an agent’s settings matter for security, and what the Managed Agents sandbox can and cannot do.
+- [Self-hosted Claude Managed Agents - Claude Platform Docs](Other/managed-agents-self-hosted.md) — Host the Claude Managed Agents service and its sandboxes on your own infrastructure. Learn who hosts each part, when to choose this option, and where to start.
 - [Self-hosted sandboxes - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes.md) — Run Claude Managed Agents sessions in self-hosted sandboxes, keeping tool execution, files, and network egress in your own infrastructure.
 - [Self-hosted worker reference - Claude Platform Docs](Other/managed-agents-self-hosted-sandboxes-reference.md) — Reference for self-hosted sandbox workers: ant CLI flags, environment variables, host requirements, filesystem paths, and SDK helper options.
 - [Send an end customer a link to the Verification Portal - Claude Platform Docs](Other/manage-claude-user-profiles-verification-portal.md) — Create an enrollment link for a user profile, see what your end customer does in the Verification Portal, and check which programs apply to the profile…
+- [Send Security posture events to your SIEM - Claude Platform Docs](Other/manage-claude-compliance-security-posture-send-events.md) — Request the Security posture activities from the Compliance API Activity Feed, read one of them field by field, and keep your SIEM current with a scheduled…
 - [Session budgets - Claude Platform Docs](Other/managed-agents-budgets.md) — Cap a session’s spend with a hard dollar budget enforced at public list rates.
 - [Session event stream](Other/managed-agents-how-managed-agents-work.md) — Send events, stream responses, and interrupt or redirect your session mid-execution.
 - [Session event stream - Claude Platform Docs](Other/managed-agents-events-and-streaming.md) — Send events, stream responses, and interrupt or redirect your session while it runs.
@@ -2072,9 +2101,10 @@
 - [Set up CMEK with AWS KMS - Claude Platform Docs](Other/manage-claude-cmek-aws-kms.md) — Create an AWS KMS key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.
 - [Set up CMEK with Azure Key Vault - Claude Platform Docs](Other/manage-claude-cmek-azure-key-vault.md) — Create an Azure Key Vault key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.
 - [Set up CMEK with Google Cloud KMS - Claude Platform Docs](Other/manage-claude-cmek-google-cloud-kms.md) — Create a Google Cloud KMS key, give Anthropic access to it, and put it to use in Claude Platform or Claude Enterprise.
+- [Set up OpenTelemetry with the Anthropic SDK - Claude Platform Docs](Other/manage-claude-opentelemetry-sdk.md) — Trace the Anthropic SDK’s requests and tool uses in Python, TypeScript, C#, Go, Java, PHP, or Ruby, and send the spans to your observability platform.
 - [Set up OpenTelemetry with the Claude API - Claude Platform Docs](Other/manage-claude-opentelemetry-api.md) — Add a destination in the Claude Console to send OpenTelemetry traces of your Messages API requests and Managed Agents sessions to your observability platform.
-- [Set up OpenTelemetry with the Claude SDK - Claude Platform Docs](Other/manage-claude-opentelemetry-sdk.md) — Trace the Claude SDK’s requests and tool uses in Python, TypeScript, C#, Go, Java, PHP, or Ruby, and send the spans to your observability platform.
 - [Set up the Compliance API - Claude Platform Docs](Other/manage-claude-compliance-api-access.md) — Enable the Compliance API for your organization, then create a Compliance Access Key (with scoped permissions) or an Admin API key, and learn which to use.
+- [Single sign-on - Claude Platform Docs](Other/managed-agents-self-hosted-configure.md) — Let people and services call your self-hosted Claude Managed Agents server with tokens from your identity provider.
 - [Skills - Claude Platform Docs](Other/managed-agents-skills.md) — Attach pre-built or custom skills to an agent in Claude Managed Agents to give it reusable, filesystem-based expertise for domain-specific workflows.
 - [Spend Limits API - Claude Platform Docs](Other/manage-claude-spend-limits-api.md) — Set a spend limit on each Claude Enterprise member, see where each member’s spend limit is inherited from, and review or act on members’ requests for a higher…
 - [Start a session - Claude Platform Docs](Other/managed-agents-sessions.md) — Create a session to run your agent and start running tasks.
@@ -2084,10 +2114,12 @@
 - [Troubleshoot CMEK - Claude Platform Docs](Other/manage-claude-cmek-troubleshooting.md) — Find the cause and fix for a CMEK error message, a failed verification, or an unexpected log entry.
 - [TypeScript SDK - Claude Platform Docs](Other/cli-sdks-libraries-sdks-typescript.md) — Install and configure the Anthropic TypeScript SDK for Node.js, Deno, Bun, and browser environments
 - [Understanding your Claude API invoices | Claude Help Center](Other/understanding-your-claude-api-invoices.md) — This article explains the invoices and receipts you'll receive for Claude API and Console usage, where to find them, and how to read the line items on them.
+- [Upgrade self-hosted Claude Managed Agents - Claude Platform Docs](Other/managed-agents-self-hosted-upgrade.md) — Upgrade a self-hosted Claude Managed Agents deployment on Kubernetes or Docker Compose, and roll back if the new release doesn’t work.
 - [Uploading" PDFs to Claude Via the API](Other/claude-cookbooks-misc-pdf-upload-summarization.md) — ::: {.cell .markdown id="pOwrbbrDBmn"}
 - [Usage & Cost Admin API Cookbook](Other/claude-cookbooks-observability-usage-cost-api.md) — ::: {#9610be80 .cell .markdown id="9610be80"}
 - [Usage and Cost Analytics API - Claude Platform Docs](Other/manage-claude-usage-cost-analytics-api.md) — Query token usage and cost for your Claude Console or Claude Enterprise organization by model, workspace, API key, actor, and more.
 - [Usage and Cost API - Claude Platform Docs](Other/manage-claude-usage-cost-api.md) — The legacy Admin API usage and cost report endpoints for Claude Console organizations. For new integrations, use the Usage and Cost Analytics API.
+- [Use the console on your server - Claude Platform Docs](Other/managed-agents-self-hosted-console.md) — Set up sign-in for the console on your self-hosted Claude Managed Agents server, then create agents and run sessions in a browser.
 - [Use WIF with AWS - Claude Platform Docs](Other/manage-claude-wif-providers-aws.md) — Authenticate AWS workloads on Lambda, EC2, ECS, or EKS to the Claude API with Workload Identity Federation and STS-issued identity tokens.
 - [Use WIF with GitHub Actions - Claude Platform Docs](Other/manage-claude-wif-providers-github-actions.md) — Authenticate GitHub Actions workflows to the Claude API with short-lived identity tokens instead of long-lived API keys.
 - [Use WIF with Google Cloud - Claude Platform Docs](Other/manage-claude-wif-providers-gcp.md) — Federate Google Cloud workloads (Cloud Run, Cloud Functions, App Engine, GCE, GKE) to the Claude API using Google-signed identity tokens instead of static API…

@@ -2,7 +2,7 @@
 title: "Ramp Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ramp"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:31Z"
+fetched_at: "2026-11-18T06:29:26Z"
 tags: ["case-studies", "claude-code"]
 ---
 
@@ -81,13 +81,13 @@ Ramp is excited about what the future of building will hold, and how the softwar
 ## Related stories
 
 
+### Transforming e-commerce in Latin America
+
+
+### Scaling AI for over 12K employees
+
+
 ### How Qonto delegates financial admin for small businesses with Claude on Amazon Bedrock
 
 
 ### Pictet turns weeks of work into hours with Claude Code
-
-
-### How Satispay’s engineers write 75% of their code with Claude
-
-
-### OffDeal powers every stage of M&A advisory with one Claude-based agent

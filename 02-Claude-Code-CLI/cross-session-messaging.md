@@ -2,7 +2,8 @@
 title: "Message your other Claude Code sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/cross-session-messaging"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-28T06:36:41Z"
+fetched_at: "2026-11-13T06:32:35Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code"]
 ---
 
@@ -93,7 +94,7 @@ You can also type the mention without the picker. When more than one live sessio
 
 Message delivery
 
-The receiving Claude reads the message between tool calls during an active turn, so a running tool is never interrupted. When the receiving session is idle, Claude Code starts a new turn with the message. A message from another session arrives as plain text. If it mentions a file or an [MCP resource](../06-MCP-Tools/General/mcp.md#use-mcp-resources) with `@`, Claude sees the mention as written and Claude Code attaches nothing, whether the message starts a new turn or arrives during one. Claude can still open a mentioned path on the receiving machine with its own tools, subject to that session’s permissions. Claude Code refuses a message in the following cases:
+The receiving Claude reads the message between tool calls during an active turn. When the receiving session is idle, Claude Code starts a new turn with the message. A message from another session arrives as plain text. If it mentions a file or an [MCP resource](../06-MCP-Tools/General/mcp.md#use-mcp-resources) with `@`, Claude sees the mention as written and Claude Code attaches nothing, whether the message starts a new turn or arrives during one. Claude can still open a mentioned path on the receiving machine with its own tools, subject to that session’s permissions. Claude Code refuses a message in the following cases:
 
 - The message is [over the size cap](#limitations). Claude Code refuses it in the sending session, before it leaves.
 - A rapid burst to a session on this machine has reached [what that session’s inbox accepts](#limitations). Claude Code refuses further messages to that session.

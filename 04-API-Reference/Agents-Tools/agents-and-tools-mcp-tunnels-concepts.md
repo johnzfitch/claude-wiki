@@ -2,7 +2,7 @@
 title: "Architecture and components - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/concepts"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:26Z"
+fetched_at: "2026-11-13T06:35:13Z"
 tags: ["api"]
 ---
 

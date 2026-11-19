@@ -2,7 +2,7 @@
 title: "Let team members run smart reports for specific groups | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16948886-let-team-members-run-smart-reports-for-specific-groups"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:26:34Z"
+fetched_at: "2026-11-18T06:28:07Z"
 tags: ["enterprise"]
 ---
 

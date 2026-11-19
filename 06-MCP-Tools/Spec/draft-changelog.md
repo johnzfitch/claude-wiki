@@ -2,8 +2,8 @@
 title: "Changelog - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/changelog"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-11-09T06:25:28Z"
-last_modified: "Mon, 09 Nov 2026 03:02:46 GMT"
+fetched_at: "2026-11-10T06:32:02Z"
+last_modified: "Tue, 10 Nov 2026 00:48:45 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

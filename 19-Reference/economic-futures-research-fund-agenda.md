@@ -2,9 +2,11 @@
 title: "Economic Futures Research Fund agenda \\ Anthropic"
 source_url: "https://www.anthropic.com/news/economic-futures-research-fund-agenda"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:50Z"
+fetched_at: "2026-11-14T06:26:26Z"
 tags: ["news-research", "search"]
 ---
+
+### 01What is the fund?
 
 # A research agenda for the Economic Futures Research Fund
 
@@ -12,23 +14,19 @@ tags: ["news-research", "search"]
 - [02The kinds of research we’re funding](#the-kinds-of-research-were-funding)
 - [03Our five research priorities](#our-five-research-priorities)
 
-- Published
+Published  
+Jul 22, 2026
 
-  Jul 22, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+- [Funding](https://www.anthropic.com/search?topic=funding)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
+- [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
 
-  [Announcements](announcements.md)
-
-- Topics
-
-  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
-  - [Funding](https://www.anthropic.com/search?topic=funding)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
-
-  See more...
+See more...
 
 Related articles
 
@@ -54,7 +52,7 @@ In the fund, we’ll prioritize five research areas:
 
 ## What is the fund?
 
-AI capabilities continue to improve. But we don’t yet know how quickly AI will diffuse throughout the economy while also becoming more capable, and what the economic effects will be. In our [Economic Policy Framework](https://www-cdn.anthropic.com/files/4zrzovbb/website/9ea607a5dd67c168093829b701f3a0a6d21156d5.pdf) (EPF), published in June, we proposed programs and policies for a range of scenarios. But we need more empirical evidence on which interventions might actually work in an AI-transformed economy—which ones make the economy more flexible and resilient, and spread the gains broadly. In the face of this uncertainty, our aim is to build this evidence base so that workers, firms, and governments have room to adapt. This \$200 million fund will support external research on interventions proposed in the EPF and on other open questions. We may be entering a moment without historical precedent, where the most promising solutions are ones nobody has tried yet. We’re willing to fund creative and ambitious pilots that can provide guidance on questions where randomized control trials alone might only provide incremental evidence.
+AI capabilities continue to improve. But we don’t yet know how quickly AI will diffuse throughout the economy while also becoming more capable, and what the economic effects will be. In our [Economic Policy Framework](https://assets.claude.com/9ea607a5dd67c168093829b701f3a0a6d21156d5.pdf) (EPF), published in June, we proposed programs and policies for a range of scenarios. But we need more empirical evidence on which interventions might actually work in an AI-transformed economy—which ones make the economy more flexible and resilient, and spread the gains broadly. In the face of this uncertainty, our aim is to build this evidence base so that workers, firms, and governments have room to adapt. This \$200 million fund will support external research on interventions proposed in the EPF and on other open questions. We may be entering a moment without historical precedent, where the most promising solutions are ones nobody has tried yet. We’re willing to fund creative and ambitious pilots that can provide guidance on questions where randomized control trials alone might only provide incremental evidence.
 
 This is a significant evolution of our Economic Futures program, launched a year ago. We’re updating our focus to ambitious projects and large grants, because we think it’s where we can have the highest impact. We’ve always thought that it’s important to fund big external research bets; this shift will let us do so. We also learned through the Economic Futures program that it’s hard for us to scale capacity to manage many small grants at once. In addition to large-scale RCTs and pilots, we’re also interested in working with partners that could scale up a program of effective small-scale pilots.
 
@@ -129,3 +127,5 @@ Fundable directions include:
 - Pilots broadening access to AI-enabled public services (legal aid, medical guidance, financial advice) for underserved populations, testing whether such investments can narrow the divide in access.
 - Guaranteed-jobs pilots for displaced or long-term unemployed workers, in which participants are offered employment in public good roles in the spirit of the Civilian Conservation Corps but spanning a broader range of roles.
 - Place-based interventions in communities most exposed to AI-driven displacement or hosting major AI infrastructure build-outs, including bundled investments in workforce, public services, infrastructure, and amenities, and pilots of regional development authorities that coordinate these investments under unified governance.
+
+[Learn more about the RFP and apply here.](https://docs.google.com/forms/d/e/1FAIpQLSfQySlKGRi_xqRRz2ZGy-1aC5eUf-fK-j0iJun2m6Fu5pqSOg/viewform?usp=dialog)

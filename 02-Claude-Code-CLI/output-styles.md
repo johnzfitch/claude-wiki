@@ -2,7 +2,8 @@
 title: "Output styles - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/output-styles"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-28T06:35:11Z"
+fetched_at: "2026-11-13T06:34:59Z"
+last_modified: "Fri, 13 Nov 2026 06:15:37 GMT"
 tags: ["claude-code"]
 ---
 
@@ -235,5 +236,5 @@ Related resources
 
 - [Settings](settings.md): where the `outputStyle` field lives and how settings precedence works
 - [Permission modes](permission-modes.md): how the Proactive style compares to auto mode
-- [Plugins](../08-Plugins-Skills/plugins.md): package and distribute output styles alongside skills, hooks, and agents
+- [Plugins](../08-Plugins-Skills/plugins-overview.md): package and distribute output styles alongside skills, hooks, and agents
 - [Debug your configuration](debug-your-config.md): diagnose why an output style isn’t taking effect

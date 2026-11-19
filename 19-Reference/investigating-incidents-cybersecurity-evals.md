@@ -2,9 +2,11 @@
 title: "Investigating three incidents in our cybersecurity evaluations \\ Anthropic"
 source_url: "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:53Z"
+fetched_at: "2026-11-14T06:25:57Z"
 tags: ["evaluation", "news-research", "security"]
 ---
+
+### 01Background on cyber evaluations
 
 # Investigating three real-world incidents in our cybersecurity evaluations
 
@@ -13,24 +15,20 @@ tags: ["evaluation", "news-research", "security"]
 - [03Our analysis of Claude’s behavior](#our-analysis-of-claudes-behavior)
 - [04How we’re responding](#how-were-responding)
 
-- Published
+Published  
+Jul 30, 2026
 
-  Jul 30, 2026
+[Security](security.md)
 
-- Category
+Topics  
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
 
-  [Security](security.md)
-
-- Topics
-
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-
-  See more...
+See more...
 
 *In a review of our cybersecurity evaluation transcripts, we found three incidents in which a Claude model reached the internet from within or while interacting with a third-party evaluation environment, and then gained unauthorized access to the real systems of three different organizations.*
 
@@ -40,9 +38,9 @@ Related articles
 
 - Alignment
 
-  Oct 9, 2026
+  Oct 23, 2026
 
-  [Investigating unintended model actions in our evaluations and internal use](investigating-unintended-model-actions.md)
+  [An alignment assessment of the UK AISI cybertesting incident](alignment-assessment-ukaisi.md)
 
 [View more](https://www.anthropic.com/search?topic=cybersecurity)
 
@@ -58,7 +56,7 @@ In all cases, Anthropic’s evaluation prompt specified to Claude that its envir
 
 Operating under the false belief that all accessible entities were intended to be in-scope for the exercise, Claude compromised the impacted organizations’ infrastructure using basic techniques, such as exploiting weak passwords and unauthenticated endpoints. It did not find or exploit any complex vulnerabilities, and in each case, Claude continued working to complete only the specific capture-the-flag task its evaluation had assigned. However, in some cases, our older model continued its attack even after getting evidence it was running on the open internet; our latest model stopped once it recognized it was on the internet. In none of these situations did Claude exfiltrate itself or deliberately attempt to escape its test environment.
 
-The incidents involved three different Claude models: Opus 4.7, Mythos 5, and an internal research test model.^([1](#footnote-1)) The earliest incidents date to April. The models in each of these evaluations ran without the standard safeguards we deploy when we make the model generally available (that is, they did not have the classifiers and monitoring we usually implement to prevent misuse). The models did, however, have their model-specific safety training (that is, they were not the “helpful-only” versions of the models that we sometimes use in testing). All the evaluations described here run on dedicated infrastructure, which is separate from and has no access to Anthropic’s sensitive internal systems or customer data.
+The incidents involved three different Claude models: Opus 4.7, Mythos 5, and an internal research test model.^([^1]) The earliest incidents date to April. The models in each of these evaluations ran without the standard safeguards we deploy when we make the model generally available (that is, they did not have the classifiers and monitoring we usually implement to prevent misuse). The models did, however, have their model-specific safety training (that is, they were not the “helpful-only” versions of the models that we sometimes use in testing). All the evaluations described here run on dedicated infrastructure, which is separate from and has no access to Anthropic’s sensitive internal systems or customer data.
 
 We began our transcript review on Thursday, July 23, and stopped all cyber evaluations the same day after identifying transcripts where Claude may have accessed the internet. We identified all three incidents the next day. We notified our evaluation partner Irregular and the three affected organizations on Monday, July 27. The two organizations we were able to reach had not previously detected the activity or contacted us, and we are now working with them to remediate. We are continuing to reach out to the third.
 
@@ -70,7 +68,7 @@ In what follows, we provide more details on each incident and how we’re respon
 
 We regularly run cybersecurity evaluations that involve simulating real offensive cybersecurity challenges. These evaluations are a critical step in developing and releasing models—a nuanced understanding of model capabilities allows us to design appropriate safeguards and ultimately release models safely.
 
-We began running cybersecurity evaluations in February 2025 with Claude Sonnet 3.7 on [Cybench](https://cybench.github.io/), which consisted of 40 different capture-the-flag challenges. Over time, we’ve increased the number of benchmarks we use as new ones are released and model capabilities evolve. In the [Mythos 5 System Card](https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf), for example, we included CyberGym and ExploitBench, benchmarks that evaluate the ability of language models to find novel vulnerabilities.^([2](#footnote-2)) In most of these evaluations, the environments are not connected to the internet, and the model is told as much.
+We began running cybersecurity evaluations in February 2025 with Claude Sonnet 3.7 on [Cybench](https://cybench.github.io/), which consisted of 40 different capture-the-flag challenges. Over time, we’ve increased the number of benchmarks we use as new ones are released and model capabilities evolve. In the [Mythos 5 System Card](https://assets.claude.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf), for example, we included CyberGym and ExploitBench, benchmarks that evaluate the ability of language models to find novel vulnerabilities.^([^2]) In most of these evaluations, the environments are not connected to the internet, and the model is told as much.
 
 We frequently work with external partners who create and assist in running some of these cybersecurity evaluations. External partners offer environments and scenarios more diverse than we could build alone, and provide independent, third-party assessments of our models.
 
@@ -156,3 +154,7 @@ These facts give us cautious optimism that with tighter monitoring and controls 
 01We routinely test internal research prototypes like this one. It is not planned for general release.[](#footnote-ref-1)
 
 02We generally store traces for benchmark evaluations. We have carefully audited these two benchmarks in particular for signs of harm because the OpenAI/Hugging Face incident occurred during an evaluation of ExploitGym.[](#footnote-ref-2)
+
+[^1]:
+
+[^2]:

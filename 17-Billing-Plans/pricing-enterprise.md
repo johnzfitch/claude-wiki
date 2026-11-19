@@ -2,7 +2,8 @@
 title: "Claude Enterprise plan | Claude by Anthropic"
 source_url: "https://www.claude.com/pricing/enterprise"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:58Z"
+fetched_at: "2026-11-18T06:29:16Z"
+last_modified: "Wed, 18 Nov 2026 06:23:56 GMT"
 tags: ["billing", "enterprise"]
 ---
 
@@ -12,18 +13,7 @@ The frontier, on every desk
 
 Put Claude to work across your organization. Help everyone think deeper, do more, and build securely.
 
-### Enterprise
-
-\$20
-
-Per seat / month, billed annually.  
-Usage is billed as you go at API rates, based on what your team uses. Annual commitment required. Minimum 20 seats.
-
-[Get the Enterprise plan](https://claude.ai/create/enterprise)[Chat with buying specialist](https://claude.ai/buying-specialist)
-
-[Usage limits (opens in new tab)](usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
-
-[Usage limits (opens in new tab)](usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Get Enterprise plan](https://claude.ai/create/enterprise)[Build on Claude Platform](https://www.claude.com/platform/api)
 
 ## Trusted by the world’s leading organizations
 
@@ -425,6 +415,25 @@ Audit our use of the deprecated legacy-auth library across the monorepo. Generat
 - Correlate signals across logs and tools
 - Draft incident reports and post-mortems
 - Build detection rules and tune existing ones
+
+## Get the Enterprise plan
+
+[Explore features](pricing.md#team-enterprise-features)
+
+### Enterprise
+
+Get started today. Includes Enterprise security and compliance, chat, Claude Code, Cowork, connectors, SSO, SCIM, audit logs, and more.
+
+\$20
+
+Per seat / month, billed annually.  
+Usage is billed as you go at API rates, based on what your team uses. Annual commitment required. Minimum 20 seats.
+
+[Get the Enterprise plan](https://claude.ai/create/enterprise)[Chat about your plan](https://claude.ai/account-advisor)
+
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## Build on the Claude Platform
 

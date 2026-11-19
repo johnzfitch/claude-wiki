@@ -2,7 +2,7 @@
 title: "Claude Mythos 5.1 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/mythos-5-1/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:15Z"
+fetched_at: "2026-11-13T06:36:58Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ claude-mythos-5-1
 
 
 
-[Announcement(opens in new tab)](../15-Claude-AI-Features/claude-fable-and-mythos-5-1.md)[What’s new](models-fable-5-1-whats-new-fable-5-1.md)[Migration guide](models-fable-5-1-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-1)
+[Announcement(opens in new tab)](../15-Claude-AI-Features/claude-fable-and-mythos-5-1.md)[Migration guide](models-fable-5-2-migration-guide.md#migrating-from-claude-mythos-5-1-to-claude-mythos-5-2)
 
 Context window  
 1Mtokens
@@ -98,9 +98,6 @@ Adaptive (always on)
 [Default effort](../04-API-Reference/Guides/build-with-claude-effort.md)  
 `high`
 
-Comparative latency  
-Slower
-
 Input → output  
 Text and images → text
 
@@ -124,13 +121,19 @@ Not sooner than September 1, 2027
 Platforms  
 Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md)[Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)[Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md)
 
-## Reference
+## Resources
+
+[Migrate to Claude Mythos 5.2](models-fable-5-2-migration-guide.md#migrating-from-claude-mythos-5-1-to-claude-mythos-5-2)
+
+What changes when moving from Claude Mythos 5.1 to Claude Mythos 5.2.
 
 
 
-[Migrating from Claude Mythos 5](models-fable-5-1-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-1)
+[Claude Mythos 5.2](models-mythos-5-2-overview.md)
 
-What changes when you move from Claude Mythos 5.
+The current Mythos model: overview, specs, and resources.
+
+## Reference
 
 
 

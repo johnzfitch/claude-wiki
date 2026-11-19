@@ -2,7 +2,7 @@
 title: "API overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/api/overview"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:37Z"
+fetched_at: "2026-11-13T06:36:20Z"
 tags: ["api", "authentication", "cli", "sdk"]
 ---
 
@@ -37,12 +37,12 @@ For step-by-step setup instructions, see [Get started](../../01-Getting-Started/
 
 The Claude API includes the following APIs:
 
-- **[Messages API](messages-create.md):** Send messages to Claude for conversational interactions (`POST /v1/messages`)
-- **[Message Batches API](messages-batches-create.md):** Process large volumes of Messages requests asynchronously with a 50 percent cost reduction (`POST /v1/messages/batches`)
-- **[Token Counting API](platform-claude-com-messages-count-tokens.md):** Count tokens in a message before sending to manage costs and rate limits (`POST /v1/messages/count_tokens`)
-- **[Models API](models-list.md):** List available Claude models and their details (`GET /v1/models`)
-- **[Files API](files-upload.md):** Upload and manage files for use across multiple API calls (`POST /v1/files`, `GET /v1/files`)
-- **[Skills API](skills-create.md):** Create and manage custom agent skills (`POST /v1/skills`, `GET /v1/skills`)
+- **[Messages API](messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.:** Send messages to Claude for conversational interactions (`POST /v1/messages`)
+- **[Message Batches API](messages-batches-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.:** Process large volumes of Messages requests asynchronously with a 50 percent cost reduction (`POST /v1/messages/batches`)
+- **[Token Counting API](platform-claude-com-messages-count-tokens.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.:** Count tokens in a message before sending to manage costs and rate limits (`POST /v1/messages/count_tokens`)
+- **[Models API](models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.:** List available Claude models and their details (`GET /v1/models`)
+- **[Files API](files-upload.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.:** Upload and manage files for use across multiple API calls (`POST /v1/files`, `GET /v1/files`)
+- **[Skills API](skills-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.:** Create and manage custom agent skills (`POST /v1/skills`, `GET /v1/skills`)
 
 The following APIs are in beta:
 
@@ -107,7 +107,7 @@ Access Claude through AWS, Google Cloud, or Microsoft Azure:
 | Platform | Provider | Documentation |
 |----|----|----|
 | Claude Models on Google Cloud (Google managed) | Google Cloud | [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md) |
-| Amazon Bedrock | AWS | [Claude in Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md) |
+| Amazon Bedrock | AWS | [Claude in Amazon Bedrock (`bedrock-mantle`)](../Guides/build-with-claude-claude-in-amazon-bedrock.md) and [Claude on Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md) |
 | Claude Platform on AWS | AWS (Anthropic-operated) | [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md) |
 | Claude Models on Google Cloud (Anthropic managed) | Google Cloud (Anthropic-operated) | [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md) |
 | Microsoft Foundry | Microsoft Azure (Anthropic-operated) | [Claude in Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md) |
@@ -169,7 +169,7 @@ The SDK provides an auto-paginating iterator that follows `next_page` for you. F
 
 
 
-Some list endpoints use a different cursor scheme. The Message Batches API (see [Batch processing](../Guides/build-with-claude-batch-processing.md)), the [Models API](models-list.md), and several [Admin API](../Other/manage-claude-admin-api.md) endpoints take `after_id` and `before_id` query parameters instead of `page`. Their responses return `has_more`, `first_id`, and `last_id` instead of `next_page`. See the reference page for each endpoint for its exact pagination fields.
+Some list endpoints use a different cursor scheme. The Message Batches API (see [Batch processing](../Guides/build-with-claude-batch-processing.md)), the [Models API](models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., and several [Admin API](../Other/manage-claude-admin-api.md) endpoints take `after_id` and `before_id` query parameters instead of `page`. Their responses return `has_more`, `first_id`, and `last_id` instead of `next_page`. See the reference page for each endpoint for its exact pagination fields.
 
 ## Rate limits and availability
 
@@ -180,7 +180,7 @@ The API enforces rate limits and spend limits to prevent misuse and manage capac
 - **Spend limits:** Maximum monthly cost for API usage
 - **Rate limits:** Maximum number of requests per minute (RPM) and tokens per minute (TPM)
 
-You can view your rate limits under [Rate limits in the Claude Console](../Other/playground.md) and your spend limits on the Console’s [Billing](../Other/playground.md) page. For higher rate limits or a higher monthly spend cap, use **Request tier increase** on the **Rate limits** page.
+You can view your rate limits under [Rate limits in the Claude Console](../Other/playground.md). Your spend limits are under [Spend limits in the Claude Console](https://platform.claude.com/settings/spend-limits) (`platform.claude.com/settings/spend-limits`). For higher rate limits or a higher monthly spend cap, use **Request tier increase** on the **Rate limits** page.
 
 For detailed information about limits, tiers, and the token bucket algorithm used for rate limiting, see [Rate limits](rate-limits.md).
 

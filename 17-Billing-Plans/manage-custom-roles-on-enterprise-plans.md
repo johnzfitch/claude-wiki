@@ -2,7 +2,7 @@
 title: "Manage custom roles on Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/13930452-manage-custom-roles-on-enterprise-plans"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:49Z"
+fetched_at: "2026-11-18T06:28:07Z"
 tags: ["billing", "enterprise"]
 ---
 
@@ -293,7 +293,7 @@ Custom roles also control which Claude models a role can use and the maximum eff
 
 The organization-level model setting is the ceiling. A role can't grant a model that's disabled at the organization level. Across a member's roles, model access is additive and effort limits take the highest cap any role allows. Haiku models are always available and can't be disabled.
 
-For setup steps and what members see, see **[Manage model access for your organization](../13-Enterprise-Admin/manage-model-access-for-your-organization-claude-help-center.md)**. For default model behavior, see **[Set a default model for your organization](../13-Enterprise-Admin/set-a-default-model-for-your-organization-claude-help-center.md)**.
+For setup steps and what members see, see **[Manage model access for your organization](https://support.claude.com/en/articles/15694740)**. For default model behavior, see **[Set a default model for your organization](https://support.claude.com/en/articles/15330088)**.
 
 ------------------------------------------------------------------------
 

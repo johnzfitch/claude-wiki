@@ -2,7 +2,7 @@
 title: "Structured outputs - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/structured-outputs"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:37:05Z"
+fetched_at: "2026-11-13T06:36:36Z"
 tags: ["api", "sdk"]
 ---
 
@@ -23,14 +23,18 @@ Get validated JSON results from agent workflows
 Feature of  
 [Messages API](build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleQualifiedHIPAA eligible
+ZDRQualifiedZDR eligible (qualified)HIPAAHIPAA eligible
 
 Structured outputs constrain Claude’s responses to follow a specific schema, ensuring valid, parseable output for downstream processing. Structured outputs provide two complementary features:
 
@@ -50,7 +54,7 @@ Without structured outputs, Claude can generate malformed JSON responses or inva
 
 Structured outputs guarantee schema-compliant responses through constrained decoding:
 
-- **Always valid:** No more `JSON.parse()` errors
+- **Always valid:** No JSON parsing errors
 - **Type safe:** Guaranteed field types and required fields
 - **Reliable:** No retries needed for schema violations
 
@@ -142,6 +146,8 @@ Output
 ``` block
 name='John Smith' email='john@example.com' plan_interest='Enterprise' demo_requested=True
 ```
+
+If you know a field’s keys, use a nested Pydantic model, not a `dict`. The SDK sends a `dict` field as an object with empty `properties`, so Claude can only return `{}` for it. If you don’t know the keys in advance, see [Objects with arbitrary keys](#objects-with-arbitrary-keys).
 
 ## How SDK transformation works
 
@@ -235,7 +241,7 @@ To move [constraints not supported by the API](#json-schema-limitations) into fi
 
 ## Common use cases
 
-### Data extraction
+### Data extraction
 
 Extract structured data from unstructured text:
 
@@ -265,16 +271,29 @@ Python
 from pydantic import BaseModel
 
 
+class LineItem(BaseModel):
+    description: str
+    quantity: float
+    unit_price: float
+
+
 class Invoice(BaseModel):
     invoice_number: str
     date: str
     total_amount: float
-    line_items: list[dict]
+    line_items: list[LineItem]
     customer_name: str
 
 
 client = anthropic.Anthropic()
-invoice_text = "Invoice #12345, Date: 2024-01-15, Total: $500.00"
+invoice_text = """
+Invoice #12345
+Date: 2024-01-15
+Customer: Acme Corp
+2 widgets at $150.00 each
+1 setup fee at $200.00
+Total: $500.00
+"""
 
 response = client.messages.parse(
     model="claude-opus-5-5",
@@ -288,7 +307,7 @@ response = client.messages.parse(
 print(response.parsed_output)
 ```
 
-### Classification
+### Classification
 
 Classify content with structured categories:
 
@@ -338,7 +357,7 @@ response = client.messages.parse(
 print(response.parsed_output)
 ```
 
-### API response formatting
+### API response formatting
 
 Generate API-ready responses:
 
@@ -370,18 +389,36 @@ from pydantic import BaseModel
 client = Anthropic()
 
 
+class Payload(BaseModel):
+    message: str
+
+
+class APIError(BaseModel):
+    code: str
+    detail: str
+
+
+class Metadata(BaseModel):
+    request_id: str
+
+
 class APIResponse(BaseModel):
     status: str
-    data: dict
-    errors: list[dict] | None
-    metadata: dict
+    data: Payload
+    errors: list[APIError] | None = None
+    metadata: Metadata
 
 
 response = client.messages.parse(
     model="claude-opus-5-5",
     max_tokens=1024,
     output_format=APIResponse,
-    messages=[{"role": "user", "content": "Process this request: ..."}],
+    messages=[
+        {
+            "role": "user",
+            "content": "Write an API response: request req_2abc3def has an invalid email.",
+        }
+    ],
 )
 
 print(response.parsed_output)
@@ -486,13 +523,13 @@ When using structured outputs, Claude automatically receives an additional syste
 
 - Your input token count is slightly higher.
 - The injected prompt costs you tokens like any other system prompt.
-- Changing the `output_config.format` parameter will invalidate any [prompt cache](build-with-claude-prompt-caching.md) for that conversation thread.
+- Changing the `output_config.format` parameter invalidates any [prompt cache](build-with-claude-prompt-caching.md) for that conversation thread.
 
 ### JSON Schema limitations
 
 Structured outputs support standard JSON Schema with some limitations. Both JSON outputs and strict tool use share these limitations.
 
-### Supported features
+### Supported features
 
 - All basic types: object, array, string, integer, number, boolean, null
 - `enum` (strings, numbers, booleans, or nulls only, no complex types). For a capitalization caveat, see [Invalid outputs](#invalid-outputs).
@@ -504,7 +541,7 @@ Structured outputs support standard JSON Schema with some limitations. Both JSON
 - String formats: `date-time`, `time`, `date`, `duration`, `email`, `hostname`, `uri`, `ipv4`, `ipv6`, `uuid`
 - Array `minItems` (only values 0 and 1 supported)
 
-### Not supported
+### Not supported
 
 - Recursive schemas
 - Complex types within enums
@@ -512,11 +549,11 @@ Structured outputs support standard JSON Schema with some limitations. Both JSON
 - Numerical constraints (such as `minimum`, `maximum`, `multipleOf`)
 - String constraints (`minLength`, `maxLength`)
 - Array constraints beyond `minItems` of 0 or 1
-- `additionalProperties` set to anything other than `false`
+- `additionalProperties` set to anything other than `false` (see [Objects with arbitrary keys](#objects-with-arbitrary-keys))
 
 If you use an unsupported feature, you’ll receive a 400 error with details.
 
-### Pattern support (regex)
+### Pattern support (regex)
 
 **Supported regex features:**
 
@@ -537,6 +574,31 @@ Simple regex patterns work well. Complex patterns might result in 400 errors.
 
 
 SDK helpers can transform schemas with [constraints not supported by the API](#json-schema-limitations). See [How SDK transformation works](#how-sdk-transformation-works).
+
+#### Objects with arbitrary keys
+
+List every key of an object, either in `properties` or as a field of the class or schema you pass to the SDK. Because `additionalProperties` must be `false`, Claude can only return the keys you list.
+
+The API accepts an object with empty or missing `properties`, but Claude can only return `{}` for it. A map, dictionary, or record type lists no keys, so the Python and TypeScript SDKs send it as an object with empty `properties`. The Java and Ruby SDKs raise an error instead.
+
+If you don’t know the keys in advance, use an array instead. Give each item a `key` and a `value`, as in this schema:
+
+```python
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "key": { "type": "string" },
+      "value": { "type": "string" }
+    },
+    "required": ["key", "value"],
+    "additionalProperties": false
+  }
+}
+```
+
+
 
 ### Property ordering
 
@@ -560,7 +622,7 @@ For example, given this schema:
 
 
 
-The output will order properties as:
+The output orders properties as:
 
 1.  `name` (required, in schema order)
 2.  `email` (required, in schema order)
@@ -636,7 +698,7 @@ The following limits apply to all requests with `output_config.format` or `stric
 
 
 
-These limits apply to the combined total across all strict schemas in a single request. For example, if you have 4 strict tools with 6 optional parameters each, you’ll reach the 24-parameter limit even though no single tool seems complex.
+These limits apply to the combined total across all strict schemas in a single request. For example, if you have four strict tools with six optional parameters each, you’ll reach the 24-parameter limit even though no single tool seems complex.
 
 #### Additional internal limits
 
@@ -656,13 +718,13 @@ If you’re hitting complexity limits, try these strategies in order:
 
 4.  **Split into multiple requests.** If you have many strict tools, consider splitting them across separate requests or subagents.
 
-For persistent issues with valid schemas, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support) with your schema definition.
+For persistent issues with valid schemas, [contact support](../../15-Claude-AI-Features/how-to-get-support.md) with your schema definition.
 
 ## Migrating from the beta
 
 The `output_format` parameter has moved to `output_config.format`, and beta headers are no longer required. The `output_format` parameter is deprecated. To use it anyway, add the `structured-outputs-2025-11-13` beta header. Without it, the API returns a 400 error.
 
-The Python SDK (v1.0 and later) does not accept `output_format={...}` on `client.beta.messages.create()` or `count_tokens()` and raises a `TypeError`. Use `output_config` instead. See [Using a raw JSON schema](#using-a-raw-json-schema) for the updated API shape.
+In the Python SDK (v1.0 and later), a schema dictionary passed as `output_format={...}` raises a `TypeError`. Use `output_config` instead. A Pydantic model passed as `output_format=Model` to `parse()` or `stream()` works with no change and no beta header, because the SDK sends it as `output_config`. See [Using a raw JSON schema](#using-a-raw-json-schema) for the updated API shape.
 
 ## Feature compatibility
 
@@ -684,25 +746,73 @@ The Python SDK (v1.0 and later) does not accept `output_format={...}` on `client
 
 ## Availability
 
-Structured outputs are available on every model and eligible for HIPAA readiness.
+Structured outputs
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- All supported platforms
+- Managed Agents Not supported
 
-Models
+Models  
+- All models
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Amazon Bedrock
 
-[Managed Agents](../Other/managed-agents-overview.md)
+API  
+- Messages API
 
-StatusNot available
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

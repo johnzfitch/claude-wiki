@@ -2,8 +2,8 @@
 title: "Keep Claude working toward a goal - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/goal"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-30T06:25:55Z"
-last_modified: "Fri, 30 Oct 2026 01:22:40 GMT"
+fetched_at: "2026-11-13T06:32:39Z"
+last_modified: "Fri, 13 Nov 2026 06:21:27 GMT"
 tags: ["claude-code"]
 ---
 
@@ -174,9 +174,10 @@ When a turn fails, Claude Code clears the goal if the error is one you have to f
 
 Errors you have to fix clear the goal
 
-If a turn fails on an error that won’t clear until you fix it, Claude Code clears the goal and prints a warning naming the cause. The warning starts with `Goal cleared after an unrecoverable error` and ends with `Run /goal again to continue`. Fix the cause, then [set the goal again](#set-a-goal) with `/goal <condition>`. Four kinds of failure clear the goal:
+If a turn fails on an error that won’t clear until you fix it, Claude Code clears the goal and prints a warning naming the cause. The warning starts with `Goal cleared after an unrecoverable error` and ends with `Run /goal again to continue`. Fix the cause, then [set the goal again](#set-a-goal) with `/goal <condition>`. Failures that clear the goal include:
 
 - An authentication failure, when Claude Code manages its own credentials. When a host manages them for you, such as the desktop app or a [cloud session](claude-code-on-the-web.md), Claude Code leaves the goal active because the host restores access on its own.
+- A disk too full for Claude Code to renew your claude.ai login, when Claude Code manages its own credentials. The warning shows `(disk full)`. [Free space on the disk holding the Claude Code config directory](errors.md#could-not-refresh-your-login-disk-full).
 - An exhausted credit balance
 - A context overflow that [auto-compaction](model-config.md#set-the-auto-compact-window) couldn’t clear
 - A model that isn’t available
@@ -223,7 +224,7 @@ Evaluation tokens are billed on the small fast model configured for your provide
 
 Requirements
 
-Claude Code makes `/goal` available under the same [workspace trust rule as hooks in settings files](permissions.md#what-runs-before-you-trust-a-folder), because the evaluator is part of the hooks system. `/goal` is also unavailable when [`disableAllHooks`](../07-Hooks/hooks.md#disable-or-remove-hooks) is `true` after settings precedence applies, or when [`allowManagedHooksOnly`](settings-reference.md#allowmanagedhooksonly) is set in managed settings. In each case, the command tells you why instead of silently doing nothing.
+Claude Code makes `/goal` available under the same [workspace trust rule as hooks in settings files](permissions.md#what-runs-before-you-trust-a-folder), because the evaluator is part of the hooks system. `/goal` is also unavailable when [`disableAllHooks`](../07-Hooks/hooks.md#disable-or-remove-hooks) is `true` after settings precedence applies, or when [`allowManagedHooksOnly`](settings-reference.md#allowmanagedhooksonly) is set in managed settings.
 
 
 [​](#see-also)

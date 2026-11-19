@@ -2,7 +2,7 @@
 title: "Text watermark - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-04T06:23:57Z"
+fetched_at: "2026-11-11T06:25:54Z"
 tags: ["api"]
 ---
 

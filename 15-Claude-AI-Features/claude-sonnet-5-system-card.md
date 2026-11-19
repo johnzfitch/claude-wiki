@@ -2,7 +2,7 @@
 title: "Claude Sonnet 5 System Card 9E7091939D"
 source_url: "https://www.anthropic.com/claude-sonnet-5-system-card"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:08Z"
+fetched_at: "2026-11-18T06:28:38Z"
 tags: ["claude-ai"]
 ---
 

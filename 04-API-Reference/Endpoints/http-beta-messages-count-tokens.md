@@ -2,7 +2,7 @@
 title: "Count tokens in a Message - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages/count_tokens"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:12Z"
+fetched_at: "2026-11-13T06:35:40Z"
 tags: ["api"]
 ---
 
@@ -56,14 +56,6 @@ string
 
 
 
-"message-batches-2024-09-24"
-
-
-
-"prompt-caching-2024-07-31"
-
-
-
 "computer-use-2024-10-22"
 
 
@@ -72,23 +64,7 @@ string
 
 
 
-"pdfs-2024-09-25"
-
-
-
-"token-counting-2024-11-01"
-
-
-
-"token-efficient-tools-2025-02-19"
-
-
-
 "output-128k-2025-02-19"
-
-
-
-"files-api-2025-04-14"
 
 
 
@@ -112,10 +88,6 @@ string
 
 
 
-"extended-cache-ttl-2025-04-11"
-
-
-
 "context-1m-2025-08-07"
 
 
@@ -125,10 +97,6 @@ string
 
 
 "model-context-window-exceeded-2025-08-26"
-
-
-
-"skills-2025-10-02"
 
 
 
@@ -157,10 +125,6 @@ string
 
 
 "managed-agents-2026-04-01"
-
-
-
-"cache-diagnosis-2026-04-07"
 
 
 
@@ -220,10 +184,6 @@ string
 
 
 
-"ce-user-management-2026-07-13"
-
-
-
 "mid-conversation-output-config-2026-07-01"
 
 
@@ -264,6 +224,10 @@ string
 
 
 
+"admin-user-sign-out-2026-10-08"
+
+
+
 "message-threads-2026-08-12"
 
 
@@ -275,6 +239,86 @@ string
 "experimental-claude-tag-2026-10-21"
 
 
+
+
+
+"message-batches-2024-09-24"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"prompt-caching-2024-07-31"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"pdfs-2024-09-25"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-counting-2024-11-01"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-efficient-tools-2025-02-19"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"files-api-2025-04-14"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14
+
+
+
+"extended-cache-ttl-2025-04-11"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"skills-2025-10-02"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/skills-guide#migrate-from-skills-2025-10-02
+
+
+
+"cache-diagnosis-2026-04-07"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"ce-user-management-2026-07-13"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
 
 "anthropic-user-profile-id": optional string
 
@@ -414,138 +458,6 @@ The model that will complete your prompt.
 See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
 
 One of the following:
-
-"claude-haiku-5-5"
-
-
-
-Fastest model for high-volume, real-time tasks
-
-"claude-sonnet-5-5"
-
-
-
-Efficient model for coding and agents
-
-"claude-fable-5-1"
-
-
-
-Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
-
-"claude-opus-5-5"
-
-
-
-Powerful intelligence for coding, knowledge work, and long-running agents
-
-"claude-mythos-5-1"
-
-
-
-Our most capable model for cybersecurity and biology research, available through trusted access programs
-
-"claude-sonnet-5"
-
-
-
-Efficient model for coding and agents
-
-"claude-fable-5"
-
-
-
-Next generation of intelligence for the hardest knowledge work and coding problems
-
-"claude-mythos-5"
-
-
-
-Most capable model for cybersecurity and biology research
-
-"claude-opus-5"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-8"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-7"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-6"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-sonnet-4-6"
-
-
-
-Best combination of speed and intelligence
-
-"claude-haiku-4-5"
-
-
-
-"claude-haiku-4-5-20251001"
-
-
-
-"claude-opus-4-5"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-5-20251101"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-
-
-"claude-mythos-preview"⁠Deprecated
-
-
-
-New class of intelligence, strongest in coding and cybersecurity
-
-Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
-
-
-
-"claude-sonnet-4-5"⁠Deprecated
-
-
-
-High-performance model for agents and coding
-
-Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
-
-
-
-"claude-sonnet-4-5-20250929"⁠Deprecated
-
-
-
-High-performance model for agents and coding
-
-Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
-
-string
-
-
 
 
 

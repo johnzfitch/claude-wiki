@@ -2,7 +2,7 @@
 title: "Set up CMEK on Claude Platform on AWS - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-claude-platform-on-aws"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-02T06:27:13Z"
+fetched_at: "2026-11-18T06:27:40Z"
 tags: ["api"]
 ---
 
@@ -38,9 +38,9 @@ If your Claude Console sidebar doesn’t show **Account managed by AWS**, follow
 
   To scope them, see [IAM actions](../Endpoints/claude-platform-on-aws-iam-actions.md#encryption-keys).
 
-- You have a workspace with no key attached, ideally a new one, because [existing data stays under Anthropic’s key](manage-claude-cmek-how-it-works.md#when-your-key-takes-effect). The key policy lists its compartment ID.
+- You have a workspace with no key attached, ideally a new one, because [existing data stays under Anthropic’s key](manage-claude-cmek-how-it-works.md#when-your-key-takes-effect). You need its compartment ID for the sample key policy.
 
-In the Claude Console, open the [Data retention](playground.md) page and select the workspace from the dropdown menu at the top. Copy the **Compartment ID** under **Encryption key**. The [Get Workspace](../Endpoints/organization-workspaces-retrieve.md) endpoint returns it as `compartment_id`.
+In the Claude Console, open the [Data retention](playground.md) page and select the workspace from the dropdown menu at the top. Copy the **Compartment ID** under **Encryption key**. The [Get Workspace](../Endpoints/organization-workspaces-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint returns it as `compartment_id`.
 
 ## In AWS: create the key
 
@@ -76,6 +76,9 @@ key-policy.json
       "Condition": {
         "StringEquals": {
           "kms:EncryptionContext:anthropic:compartment_uuid": ["<COMPARTMENT_UUID>"]
+        },
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:aws-external-anthropic:*:<AWS_ACCOUNT_ID>:workspace/*"
         }
       }
     },
@@ -86,31 +89,40 @@ key-policy.json
         "Service": "aws-external-anthropic.amazonaws.com"
       },
       "Action": "kms:DescribeKey",
-      "Resource": "*"
+      "Resource": "*",
+      "Condition": {
+        "ArnLike": {
+          "aws:SourceArn": "arn:aws:aws-external-anthropic:*:<AWS_ACCOUNT_ID>:workspace/*"
+        }
+      }
     }
   ]
 }
 ```
 
-Replace `<AWS_ACCOUNT_ID>` with your [AWS account ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/console-account-id.html) and `<COMPARTMENT_UUID>` with the [compartment ID](#prerequisites).
+Keep `aws:SourceArn` on both service principal statements. Every organization on Claude Platform on AWS shares this service principal, and the condition limits its access to workspaces in your organization’s AWS account. Don’t add `aws:SourceAccount`, because Anthropic’s calls to your key send only the source ARN.
 
-The optional `EncryptionContext` condition limits the key to the workspaces you list. Before you attach the key to another workspace, add that workspace’s compartment ID and [replace the policy on the key](manage-claude-cmek-aws-kms-workspaces.md#replace-the-key-policy). To do without the condition, delete the `Condition` block from the `AllowClaudePlatformOnAWSCrypto` statement. If you add the condition later, list every workspace the key is already attached to.
+The conditions determine which workspaces can use the key. The sample follows the second row:
 
-To narrow access further, use the key policy, not IP-based restrictions. Add an `aws:SourceArn` condition to both service principal statements. This one allows every workspace in your AWS account:
+| Workspaces that can use the key | What to do |
+|----|----|
+| Every workspace in the account | Delete the `StringEquals` entry and keep the `ArnLike` entry. |
+| Only the workspaces you list, for encryption and decryption | List each workspace’s compartment ID in the `StringEquals` entry. |
+| Only the workspaces you list, for every call, `kms:DescribeKey` included | In both statements, replace the `aws:SourceArn` value with a JSON array of full [workspace ARNs](../Endpoints/claude-platform-on-aws-iam-actions.md#service-details). The `StringEquals` entry is then optional. |
 
-``` block
-"ArnLike": {"aws:SourceArn": "arn:aws:aws-external-anthropic:*:<AWS_ACCOUNT_ID>:workspace/*"}
+A full workspace ARN has this form:
+
 ```
-
-
-
-For specific workspaces, list their full [workspace ARNs](../Endpoints/claude-platform-on-aws-iam-actions.md#service-details) instead, in this form:
-
-``` block
 arn:aws:aws-external-anthropic:<REGION>:<AWS_ACCOUNT_ID>:workspace/<WORKSPACE_ID>
 ```
 
 
+
+`<WORKSPACE_ID>` is the [workspace ID](../Guides/build-with-claude-claude-platform-on-aws.md#obtain-your-workspace-id), which starts with `wrkspc_`, not the compartment ID.
+
+Replace each `<AWS_ACCOUNT_ID>` with the [ID of the AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/console-account-id.html) that hosts your organization, and `<COMPARTMENT_UUID>` with the [compartment ID](#prerequisites).
+
+In each list, include every workspace the key is already attached to. Don’t use IP-based restrictions.
 
 ### Create the key
 
@@ -229,3 +241,11 @@ Sign in to the Claude Console through AWS. To script this part instead, use the 
     You see **Workspace settings updated.** Once the key [takes effect](manage-claude-cmek-how-it-works.md#when-your-key-takes-effect), CloudTrail records the calls to your key.
 
     Attaching checks the key with one encrypt call and one decrypt call, so a key policy problem shows up here. If you get a KMS access error, see the [causes and fixes](manage-claude-cmek-troubleshooting.md#claude-platform-on-aws).
+
+## Add another workspace later
+
+If your key policy lists workspaces:
+
+1.  If the workspace doesn’t exist yet, create it without the key. A workspace gets its compartment ID and ARN at creation.
+2.  [Edit the key policy](manage-claude-cmek-aws-kms-workspaces.md#replace-the-key-policy). Add the workspace to each list your key policy has: its compartment ID in the `StringEquals` entry and its ARN in each `aws:SourceArn` array.
+3.  Attach the key in the last step of [In Claude: add and attach the key](#register-the-key-with-anthropic).

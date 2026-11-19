@@ -2,11 +2,14 @@
 title: "Work with sessions - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/sessions"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-11T06:34:31Z"
+fetched_at: "2026-11-13T06:34:36Z"
+last_modified: "Fri, 13 Nov 2026 06:15:17 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Choose an approach](#choose-an-approach)
   - [Continue, resume, and fork](#continue-resume-and-fork)
@@ -43,14 +46,14 @@ Choose an approach
 
 How much session handling you need depends on your application’s shape. Session management comes into play when you send multiple prompts that should share context. Within a single `query()` call, the agent already takes as many turns as it needs, and permission prompts and `AskUserQuestion` are [handled in-loop](agent-sdk-user-input.md) (they don’t end the call).
 
-| What you’re building                                    | What to use                                                                                                                                                                                                                                                                              |
-|:--------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| One-shot task: single prompt, no follow-up              | Nothing extra. One `query()` call handles it.                                                                                                                                                                                                                                            |
-| Multi-turn chat in one process                          | [`ClaudeSDKClient` (Python) or `continue: true` (TypeScript)](#automatic-session-management). The SDK tracks the session for you with no ID handling.                                                                                                                                    |
-| Pick up where you left off after a process restart      | `continue_conversation=True` (Python) / `continue: true` (TypeScript). Resumes the most recent session in the directory, no ID needed.                                                                                                                                                   |
-| Resume a specific past session (not the most recent)    | Capture the session ID and pass it to `resume`.                                                                                                                                                                                                                                          |
-| Try an alternative approach without losing the original | Fork the session.                                                                                                                                                                                                                                                                        |
-| Stateless task, don’t want anything written to disk     | Set [`persistSession: false`](agent-sdk-typescript.md#options) (TypeScript only). The session exists only in memory for the duration of the call. In Python, set [`CLAUDE_CODE_SKIP_PROMPT_HISTORY`](../02-Claude-Code-CLI/env-vars.md) in the `env` option to suppress transcript writes instead. |
+| What you’re building | What to use |
+|:---|:---|
+| One-shot task: single prompt, no follow-up | Nothing extra. One `query()` call handles it. |
+| Multi-turn chat in one process | [`ClaudeSDKClient` (Python) or `continue: true` (TypeScript)](#automatic-session-management). The SDK tracks the session for you with no ID handling. |
+| Pick up where you left off after a process restart | `continue_conversation=True` (Python) / `continue: true` (TypeScript). Resumes the most recent session in the directory, no ID needed. |
+| Resume a specific past session (not the most recent) | Capture the session ID and pass it to `resume`. |
+| Try an alternative approach without losing the original | Fork the session. |
+| Stateless task, don’t want anything written to disk | Set [`persistSession: false`](agent-sdk-typescript.md#options) (TypeScript only). The session exists only in memory for the duration of the call. In Python, set [`CLAUDE_CODE_SKIP_PROMPT_HISTORY`](../02-Claude-Code-CLI/env-vars.md) in the `env` option to suppress transcript writes instead. |
 
 
 [​](#continue-resume-and-fork)
@@ -310,7 +313,7 @@ for await (const message of query({
 
 You should see a response that builds on the earlier analysis instead of starting fresh. That confirms the agent resumed the session with its prior context intact.
 
-Claude Code stores sessions under `~/.claude/projects/<encoded-cwd>/*.jsonl`. If you set the `CLAUDE_CONFIG_DIR` environment variable, look under `$CLAUDE_CONFIG_DIR/projects/` instead.To find your session’s directory, replace every non-alphanumeric character in the absolute working directory with `-`: `/Users/me/proj` becomes `-Users-me-proj`. For a working directory whose converted name exceeds 200 characters, Claude Code [truncates the name and appends a hash](../02-Claude-Code-CLI/sessions.md#where-transcripts-are-stored), so match the first 200 characters of the converted name when you list `projects/`.If you set [`CLAUDE_CODE_PROJECT_DIR_NAME`](../02-Claude-Code-CLI/sessions.md#name-the-project-directory-yourself) beside `CLAUDE_CONFIG_DIR`, look under that name in `projects/` instead. Requires TypeScript Agent SDK v0.3.234 or later, or Python Agent SDK v0.2.140 or later.You can resume from any working directory:
+Claude Code stores sessions under `~/.claude/projects/<encoded-cwd>/*.jsonl`. If you set the `CLAUDE_CONFIG_DIR` environment variable, look under `$CLAUDE_CONFIG_DIR/projects/` instead.To find your session’s directory, replace every non-alphanumeric character in the absolute working directory with `-`: `/Users/me/proj` becomes `-Users-me-proj`. For a working directory whose converted name exceeds 200 characters, Claude Code [truncates the name and appends a hash](../02-Claude-Code-CLI/sessions.md#where-transcripts-are-stored), so match the first 200 characters of the converted name when you list `projects/`. If you set [`CLAUDE_CODE_PROJECT_DIR_NAME`](../02-Claude-Code-CLI/sessions.md#name-the-project-directory-yourself) beside `CLAUDE_CONFIG_DIR`, look under that name in `projects/` instead. Requires TypeScript Agent SDK v0.3.234 or later, or Python Agent SDK v0.2.140 or later.You can resume from any working directory:
 
 - **Cross-directory lookup**: Claude Code searches beyond the current project directory to find the ID; see [Resume a session](../02-Claude-Code-CLI/sessions.md#where-the-session-picker-looks) for the exact lookup order and how duplicate copies are handled.
 - **Same machine only**: the session file still needs to exist on the current machine.

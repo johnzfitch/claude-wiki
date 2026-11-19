@@ -2,7 +2,7 @@
 title: "Automated Researchers Can Reliably Mitigate"
 source_url: "https://www-cdn.anthropic.com/7b1c44894e980876479947dcdd40716278aeeffd/automated-alignment-researchers-august-2026.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-31T06:28:19Z"
+fetched_at: "2026-11-18T06:28:50Z"
 tags: ["news-research", "search"]
 ---
 
@@ -34,16 +34,15 @@ Automated Researchers Can Reliably Mitigate
 
 
                                                   (a) Optimizing safety benchmark scores,                                                                                        (b) Generalizes to
+
+
 Safety headroom closed (\%)
-
-
                                                      while preserving general capability                                                                                           the Petri audit
                                                                                                                                                        10.0
                                     100                                                          82%
                                                 better                                                                                                  7.5    safer
+
                                                                                                                         Petri score
-
-
                                      50                                                    method proposed                                              5.0
                                                                                            filtered (capability    )                                    2.5                                                baseline
                                                                                            best method                                                                                                     AAR-found method
@@ -51,12 +50,9 @@ Safety headroom closed (\%)
                                             0      20       40       60    80     100      120        140         160                                           1                          3                          5
                                                                  Method # (proposal order)                                                                                      Audit conversation turns
                                                                   (c) Generalizes to a                                                                                          (d) Beats experienced
-   DeceptionBench (non-deceptive)
 
 
-                                                                                                                         Safety headroom closed (\%)
-
-
+   DeceptionBench (non-deceptive)                                                                                        Safety headroom closed (\%)
                                                                       larger model                                                                                                  humans' ideas
                                                  baseline                                                                                              100
                                     1.0          AAR-found method                                       better                                                                                                    better
@@ -350,9 +346,9 @@ across iterations, and the reported method preserves general capability (Fig. 3)
                                       100                   n = 151                          n = 188                         n = 162                            n = 221                         n = 163
                                                  Better                       Better                          Better                             Better                          Better         82%
                                                                 79%
+
+
 Geometric-mean headroom closed (%)
-
-
                                       50                                                          39%                     41%
                                                                                                                                                                        26%
 
@@ -386,17 +382,13 @@ winning method, and crosses are methods filtered out for degrading a capability 
                                       Prompt injection                                             Concealing uncertainty                                                   Power seeking                                                          Sycophancy                                                  Deception
 
 
-                                                                                                                                    MACHIAVELLI (non-power-seeking)
-                                                             SciQ-uncertainty (conformal calib.)
-
-
+                                                             SciQ-uncertainty (conformal calib.)                                    MACHIAVELLI (non-power-seeking)
                                                                                                                                                                                                                                                                       DeceptionBench (non-deceptive)
                                           Better                                                             Better                                                           Better                                                                 Better                                                     Better
 
 
                                                                                                                                                                                                   Sycon-fp (non-sycophantic)
  Injecagent (1 ASR)
-
                                 1.0                                                                1.0                                                                1.0                                                                   1.0                                                        1.0
                                 0.8                                                                0.8                                                                0.8                                                                   0.8                                                        0.8
                                 0.6                                                                0.6                                                                0.6                                                                   0.6                                                        0.6
@@ -411,13 +403,7 @@ winning method, and crosses are methods filtered out for degrading a capability 
                                          Jailbreaks                                                      Privacy violation                                                  Hallucination                                                         Reward hacking                                               Social bias
 
 
-                                                                                                                                    SummEdits (summary consistency)
- StrongREJECT (1 harmfulness)
-
-
-                                                             Privaci-GDPR (prohibit-recall)
-
-
+ StrongREJECT (1 harmfulness)                                Privaci-GDPR (prohibit-recall)                                         SummEdits (summary consistency)
                                                                                                                                                                                                                                                                       Bias-scene (evenhanded rate)
                                           Better                                                             Better                                                           Better                                                                 Better                                                     Better
                                 1.0                                                                1.0                                                                1.0                                                                   1.0                                                        1.0
@@ -468,10 +454,8 @@ decline, while the hill-climbing score continues to improve.
               10.0
                                  safer                     safer                          safer                    safer                   safer
                7.5
-Petri score
 
-
-               5.0
+Petri score    5.0
                2.5
                0.0
                      1        3     5           1      3        5           1         3       5        1     3      5          1       3       5
@@ -479,10 +463,8 @@ Petri score
               10.0
                                  safer                     safer                          safer                    safer                   safer
                7.5
-Petri score
 
-
-               5.0
+Petri score    5.0
                2.5
                0.0
                      1       3           5      1      3           5        1         3           5    1       3           5   1       3           5
@@ -538,9 +520,9 @@ and uncover stronger methods.
                                                                                                                                                                              ideas
                                                                                                                                                             Better
                                             75                             68%
+
+
 Scored geometric-mean headroom closed (%)
-
-
                                             50                             51%
                                                          9.7 h                                                                                              7.4 h
                                             25                                                  14.5 h                                           23%
@@ -660,11 +642,16 @@ isons [Touvron et al., 2023]. We discuss evaluation caveats in Sec. 8.1.
                                                        W/o human-guided research direction (mean ± 95% CI)                                          With human-guided research direction (mean ± 95% CI)
                                                        A All 7 alignment failures pooled (30 runs per arm)
                                                  100
- Mean geometric-mean                                       Better
- headroom closed (%)                             80
+                                                           Better
+
+
+ Mean geometric-mean
+                                                 80
 
                                                  60
 
+
+ headroom closed (%)
                                                  40
 
                                                  20
@@ -675,9 +662,9 @@ isons [Touvron et al., 2023]. We discuss evaluation caveats in Sec. 8.1.
                                                        B Per alignment failure
                                                                bias                   deception             power-seeking           prompt-injection          jailbreaks            reward-hacking            sycophancy
                                                            (Olmo-3-7B)              (gemma-2-2b)           (Llama-3.2-3B)            (Qwen3.5-2B)            (Phi-4-mini)            (Qwen3.5-2B)            (Qwen3.5-2B)
+
+
             Geometric-mean headroom closed (%)
-
-
                                                  100
 
                                                   80
@@ -732,9 +719,9 @@ post-training and research directions that could address them (Sec. 8.2), and th
 
                          75        Released Claude Opus 4.8, 72%
                                                                                                                    65%
+
+
 % of safety gap closed
-
-
                          50
 
 
@@ -1225,9 +1212,9 @@ points, so the gate rules out a collapse rather than certifying that capability 
            1.00
 
            0.75
+
+
 Accuracy
-
-
            0.50
 
            0.25
@@ -1242,9 +1229,9 @@ Accuracy
            1.00
 
            0.75
+
+
 Accuracy
-
-
            0.50
 
            0.25
@@ -1746,15 +1733,15 @@ bootstrap interval over ideas.
                            Pooled per measure, 95% bootstrap CI                                                     Per idea (large = pooled mean +/-95% CI)
                                                                                                                60
                 50       45            42           42
+
+
                                                                                   Surprise (non-obviousness)
-
-
                                                                       36                                       50
                                 37
                 40                                           33
+
+
 Score (1-100)
-
-
                 30                                                                                             40
 
                 20                                                                                             30
@@ -1789,9 +1776,9 @@ objective with and without the filter, and Fig. 14 the same methods under Petri.
                                           100
 
                                           80                                                                                                      69
+
+
 Novelty score (1-100)
-
-
                                                                                                         64                                                                      66
                                                                          57
                                           60
@@ -1813,9 +1800,9 @@ idea. Judge-rated dissimilarity and surprise for the best method of each run.
                                                                                     without novelty constraint            with novelty constraint
 
                                                                         Sycophancy                                                               Power seeking
+
+
 Best geometric-mean headroom closed (%)
-
-
                                           60
                                           50
                                                                                                                                                                                      41%
@@ -1847,9 +1834,9 @@ instead be given several, one per AAR, which starts the search from several dire
                                 Sycophancy                                               Power seeking
               10                                         safer                                                        safer
                8
+
+
 Petri score
-
-
                6
 
                4
@@ -1905,10 +1892,10 @@ time on task and run originality checks.
 
                                                         (a) Hill-climb performance                                                                                         (b) Idea diversity
                                      100                                                                                                              ceiling = log28
-Geometric-mean headroom closed (%)             Better                                                                                       3.0
+                                               Better                                                                                       3.0
 
 
-                                                                                                   Idea diversity (Shannon entropy, bits)
+Geometric-mean headroom closed (%)                                                                 Idea diversity (Shannon entropy, bits)
                                       80                                                                                                    2.5                                                 more diverse
 
 
@@ -2030,6 +2017,7 @@ there to the top buys little. On deception the audit score falls from 8.1 for a 
                                                     80
 
                                                                                                                                          +2.0%
+
                                      Accuracy (%)
                                                     60                                                          -11.9%
 
@@ -2052,9 +2040,9 @@ the share of baseline-to-optimum headroom closed.
 
                                0.4
                                0.3
+
+
 Change vs base model (score)
-
-
                                0.2
                                0.1
                                0.0
@@ -2090,9 +2078,9 @@ measure, and we have not run the experiments that would separate them:
               10
                                  safer                     safer                          safer                     safer                   safer
                8
+
+
 Petri score
-
-
                6
 
                4
@@ -2107,9 +2095,9 @@ Petri score
               10
                                  safer                     safer                          safer                     safer                   safer
                8
+
+
 Petri score
-
-
                6
 
                4
@@ -2162,9 +2150,9 @@ Qwen3.5-2B, by re-running the hill-climb in three restricted forks of the harnes
                                                                                                                                                                7.8
                                                                    baseline
                                     8             7.0                                                                                                    8
+
+
          Petri dishonesty (1-10)
-
-
                                     7                                                                                                                    7
                                                                         5.4                    5.7                                                                   5.6
                                     6                                                                                                                    6
@@ -2181,17 +2169,13 @@ Qwen3.5-2B, by re-running the hill-climb in three restricted forks of the harnes
                                     8      Better                                                                                                        8      Better                               +6.6
                                                                                                                                                                                               +6.2
                                     6                                                                                                                    6
-over baseline (points)
 
 
-                                                                                                       over baseline (points)
- Petri improvement
-
-
-                                                                                                        Petri improvement
-
-
+ Petri improvement                                                                                      Petri improvement
                                     4                                                                                                                    4                      +3.1
+
+
+over baseline (points)                                                                                 over baseline (points)
                                                                               +2.0   +1.8
                                     2                                                                                                                    2      +0.8
                                                             +0.5
@@ -2246,9 +2230,9 @@ reference. Every run proposed at least 150 methods, and we compare all four at t
 
                                      25
                                                                                                                                                23.3%
+
+
 Geometric-mean headroom closed (%)
-
-
                                      20
 
                                                                                                                                                16.5%
@@ -2353,12 +2337,13 @@ own eight H100s, fine-tuning the subject model against a Petri audit scored on t
                         30
 
                         25
-(% headroom closed)
+
+
  Best-so-far headline
-
-
                         20
 
+
+(% headroom closed)
                         15
 
                         10
@@ -2477,10 +2462,9 @@ twice in the 32B run and never in the 72B run. Every dimension is pushed below i
                                                                                                                                                   (b) GLM-4-32B: mean Petri score
                                    Better                                                n = 340
                           50
- % of safety gap closed
 
 
-                                                                                                            Petri score (1 to 10)
+ % of safety gap closed                                                                                     Petri score (1 to 10)
                                                                                                                                     7
                                                                                                                                                                                         untrained 6.20
 
@@ -2497,9 +2481,9 @@ twice in the 32B run and never in the 72B run. Every dimension is pushed below i
                                                                                                                                                   (d) Qwen2.5-72B: mean Petri score
                                                                                          n = 227
                           50
+
+
  % of safety gap closed
-
-
                                                              38.7%
 
 
@@ -2549,9 +2533,9 @@ the model’s willingness to help, rather than between the dimensions themselves
 
                                       Harmful uplift               Misinformation                 Self-harm                   Child safety               Harassment or hate
                             10
+
+
     Petri score (1 to 10)
-
-
                             5
 
 
@@ -2562,9 +2546,9 @@ the model’s willingness to help, rather than between the dimensions themselves
 
                                       Sexual content                 Deception             Sycophancy or delusion       Concealing uncertainty           Emotional reliance
                             10
+
+
     Petri score (1 to 10)
-
-
                             5
 
 
@@ -2725,9 +2709,9 @@ but the dominant method differs across alignment failures.
 
                                                   Sycophancy                  Power seeking              Reward hacking                   Privacy violation            Prompt injection
                                         100
+
+
             Training-method share (%)
-
-
                                          50
 
 
@@ -2735,9 +2719,9 @@ but the dominant method differs across alignment failures.
                                               0      50        100 0              50          100 0           50          100 0                 50            100 0             50        100
                                                   Deception                   Hallucination                Social bias         Concealing uncertainty (contested) Jailbreaks (contested)
                                         100
+
+
             Training-method share (%)
-
-
                                          50
 
 
@@ -2757,6 +2741,8 @@ the midpoint.
 
                                         Sycophancy             Power seeking             Reward hacking                Privacy violation          Prompt injection
                               100                                                                                                                                    100
+
+
   Complexity (Sonnet 1 100)
 
 
@@ -2769,9 +2755,9 @@ the midpoint.
 
                                         Deception               Hallucination                 Social bias        Concealing uncertainty              Jailbreaks
                               100                                                                                                                                    100
+
+
   Complexity (Sonnet 1 100)
-
-
                                50                                                                                                                                    50
 
 
@@ -2869,9 +2855,9 @@ the following bands.
                       1.0
 
                       0.8
+
+
 Normalized (0 1)
-
-
                       0.6
 
                       0.4
@@ -2894,9 +2880,9 @@ Normalized (0 1)
                                                                                                                                                                                 log28
                                                                                                                                                                                          3
                                          diverse
+
+
             Diversity (bits)
-
-
                                2                                       2                                    2                                   2                                        2
 
                                1                                       1                                    1                                   1                                        1
@@ -2910,9 +2896,9 @@ Normalized (0 1)
                                                                log29                                                                                                            log29
                                                                                                                                         log28                                                                          log28
                                3                                       3                                    3                                   3                                        3
+
+
             Diversity (bits)
-
-
                                2                                       2                                    2                                   2                                        2
 
                                1                                       1                                    1                                   1                                        1
@@ -2947,7 +2933,8 @@ method number, with that failure’s ceiling dashed and bands bootstrapping over
                                              600                         3k
              3k
                                                                                                        1.5k                            1.5k
-  avg rows                                   400                         2k
+                                             400                         2k
+  avg rows
              2k
                                                                                                          1k                              1k
              1k                              200                         1k
@@ -2961,9 +2948,8 @@ method number, with that failure’s ceiling dashed and bands bootstrapping over
                                              900
                                                                          3k                            2.4k                            900
            450
+
 avg rows
-
-
                                              600                                                                                       600
            300                                                           2k                            1.6k
 

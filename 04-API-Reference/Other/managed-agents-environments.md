@@ -2,7 +2,7 @@
 title: "Cloud environment setup - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/environments"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:20Z"
+fetched_at: "2026-11-13T06:36:49Z"
 tags: ["api"]
 ---
 
@@ -20,18 +20,25 @@ Customize cloud sandboxes for your sessions.
 
 Cloud sandboxes
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](#feature-availability)  
+- All models
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Environments define the sandbox configuration where your agent runs. You create an environment once, then reference its ID each time you start a session. Multiple sessions can share the same environment, but each session gets its own isolated sandbox (a fresh Linux container).
 
@@ -87,7 +94,7 @@ Use a unique, descriptive `name` so you can tell environments apart. This exampl
 
 ## Use the environment in a session
 
-Pass the environment ID as a string when [creating a session](managed-agents-sessions.md).
+Pass the environment ID as a string when you create a session (see [Start a session](managed-agents-sessions.md)).
 
 cURL
 
@@ -122,7 +129,7 @@ session = client.beta.sessions.create(
 
 ### Packages
 
-The `packages` field pre-installs packages into the sandbox before the agent starts. Packages are installed by their respective package managers and cached across sessions that share the same environment. When multiple package managers are specified, they run in alphabetical order (apt, cargo, gem, go, npm, pip). You can optionally pin specific versions. Unpinned packages install the latest version. If the environment uses `limited` [networking](#networking), also set `allow_package_managers` in `networking` to `true`; otherwise the request is rejected with a 400 error.
+The `packages` field installs packages into the sandbox before the agent uses it. Package managers run in alphabetical order (apt, cargo, gem, go, npm, pip). You can pin specific versions. If the environment uses `limited` [networking](#networking), also set `allow_package_managers` in `networking` to `true`; otherwise, the API rejects the request with a 400 error.
 
 cURL
 
@@ -248,15 +255,15 @@ config:
 
 
 
-Use `limited` networking with an explicit `allowed_hosts` list. Follow the principle of least privilege by granting only the minimum network access your agent requires, and regularly audit your allowed domains.
+Use `limited` networking with an explicit `allowed_hosts` list. Follow the principle of least privilege by granting only the minimum network access your agent requires, and regularly audit your allowed hosts.
 
 With `limited` networking and no other fields set, no hosts are allowed. Files, memory stores, and GitHub repositories that you attach to the session stay available. When a request from the sandbox on port 80 or 443 is refused because its host is not allowed, the response is a 403 that names the blocked host.
 
 When using `limited` networking:
 
-- `allowed_hosts` specifies domains the sandbox can reach. Specify bare hostnames or wildcard patterns (such as `*.example.com`). Do not include a URL scheme, port, or path. A bare hostname matches that exact host: `example.com` does not match `www.example.com`. `*.example.com` matches every subdomain of `example.com`, but not `example.com` itself.
+- `allowed_hosts` specifies hosts the sandbox can reach. Specify bare hostnames or wildcard patterns (such as `*.example.com`). Do not include a URL scheme, port, or path. A bare hostname matches that exact host: `example.com` does not match `www.example.com`. `*.example.com` matches every subdomain of `example.com`, but not `example.com` itself.
 - `allow_mcp_servers` allows outbound access to MCP server endpoints configured on the agent, beyond those listed in the `allowed_hosts` array. Defaults to `false`. While it is `false`, session creation fails with a 400 error if the agent declares an MCP server whose host is not in `allowed_hosts`. The same applies to [an agent it can delegate to](managed-agents-multiagent-orchestration.md). To fix it, add the host to `allowed_hosts` or set `allow_mcp_servers` to `true`.
-- `allow_package_managers` allows outbound access to a set of public package registries and code hosts beyond those listed in the `allowed_hosts` array. See [Package manager hosts](#package-manager-hosts) for the list. Defaults to `false`. Set it to `true` whenever the environment specifies `packages`; otherwise the request is rejected with a 400 error, even if the registry hosts are listed in `allowed_hosts`.
+- `allow_package_managers` allows outbound access to a set of public package registries and code hosts beyond those listed in the `allowed_hosts` array. See [Package manager hosts](#package-manager-hosts) for the list. Defaults to `false`. Set it to `true` whenever the environment specifies `packages`. Otherwise, the API rejects the request with a 400 error, even if `allowed_hosts` lists the registry hosts.
 
 #### Package manager hosts
 
@@ -309,7 +316,7 @@ Use `unrestricted` only when the agent must reach sites you cannot list in advan
 
 ## Environment lifecycle
 
-- Environments persist until explicitly archived or deleted.
+- Environments persist until you archive or delete them.
 - Each session gets its own sandbox instance, even when multiple sessions reference the same environment. Sessions do not share filesystem state.
 - Environments are not versioned. If you update an environment frequently, keep your own record of the changes so you can tell which configuration each session used.
 
@@ -344,16 +351,16 @@ environments = client.beta.environments.list()
 # Retrieve a specific environment
 env = client.beta.environments.retrieve(environment.id)
 
-# Archive an environment (read-only, existing sessions continue)
+# Archive an environment (read-only, no new sessions)
 client.beta.environments.archive(environment.id)
 
-# Delete an environment (only if no sessions reference it)
+# Delete an environment
 client.beta.environments.delete(environment.id)
 ```
 
-## Pre-installed runtimes
+## Preinstalled runtimes
 
-Cloud sandboxes include common language runtimes, databases, and command-line tools out of the box. See [Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md) for the full list.
+Cloud sandboxes include common language runtimes, databases, and command-line tools. See [Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md) for the full list.
 
 ## Next steps
 
@@ -361,7 +368,7 @@ Cloud sandboxes include common language runtimes, databases, and command-line to
 
 [Cloud sandbox reference](managed-agents-cloud-sandboxes-reference.md)
 
-Pre-installed packages, databases, and utilities available in cloud sandboxes.
+Preinstalled packages, databases, and utilities available in cloud sandboxes.
 
 
 
@@ -371,32 +378,61 @@ Create a session to run your agent and start running tasks.
 
 ## Availability
 
-Cloud sandboxes are available on every model.
+Cloud sandboxes
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Cloud sandboxes are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+Claude API
 
-Models
+Status  
+Beta
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+API  
+- Managed Agents
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+managed-agents-2026-04-01
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- All models
 
-Header
+Claude Platform on AWS
 
-- `managed-agents-2026-04-01`
-  
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -410,8 +446,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

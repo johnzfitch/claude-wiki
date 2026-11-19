@@ -2,8 +2,8 @@
 title: "Set up Claude Code (local mode) for a HIPAA-ready organization - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/hipaa-setup"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-30T06:25:14Z"
-last_modified: "Fri, 30 Oct 2026 01:24:56 GMT"
+fetched_at: "2026-11-13T06:34:57Z"
+last_modified: "Fri, 13 Nov 2026 06:15:19 GMT"
 tags: ["claude-code"]
 ---
 

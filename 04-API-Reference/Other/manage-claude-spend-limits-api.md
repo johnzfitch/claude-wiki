@@ -2,7 +2,7 @@
 title: "Spend Limits API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/spend-limits-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:41Z"
+fetched_at: "2026-11-13T06:34:07Z"
 tags: ["api"]
 ---
 
@@ -157,7 +157,7 @@ Error responses follow the standard shape documented in [Claude API errors](../E
 
 `GET /v1/organizations/spend_limits/effective` returns one row per current member, reflecting each member’s effective spend limit, its `source` in the scope hierarchy, and their `period_to_date_spend`. Requires the `read:spend_limits` scope.
 
-For complete parameter details and response schemas, see [List effective spend limits](../Admin/beta-organization-spend-limits-effective-list.md) in the API reference.
+For complete parameter details and response schemas, see [List effective spend limits](../Admin/beta-organization-spend-limits-effective-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 
@@ -223,7 +223,7 @@ for effective_limit in effective_limits:
 
 `GET /v1/organizations/spend_limits/{spend_limit_id}` returns one configured spend limit by ID. Use it to inspect the row that a `spend_limit_id` field referenced. Requires the `read:spend_limits` scope.
 
-For complete parameter details and response schemas, see [Retrieve a spend limit](../Admin/beta-organization-spend-limits-retrieve.md) in the API reference.
+For complete parameter details and response schemas, see [Retrieve a spend limit](../Admin/beta-organization-spend-limits-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 
@@ -263,7 +263,7 @@ print(f"amount: {amount}")
 
 `POST /v1/organizations/spend_limits` sets a per-user spend limit override. This is an upsert keyed on `(scope, period)`: setting a limit for a user and period that already has one overwrites it in place. This endpoint accepts only `scope.type: "user"`; seat-tier, group, and organization-level defaults are configured in claude.ai settings. Requires the `write:spend_limits` scope.
 
-For complete parameter details and response schemas, see [Create a spend limit](../Admin/beta-organization-spend-limits-set.md) in the API reference.
+For complete parameter details and response schemas, see [Create a spend limit](../Admin/beta-organization-spend-limits-set.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 
@@ -317,7 +317,7 @@ print(f"amount: {spend_limit.amount}")
 
 `DELETE /v1/organizations/spend_limits/{spend_limit_id}` removes a per-user override, after which the member falls back to any inherited seat-tier, group, or organization default. Seat-tier, group, and organization-level rows cannot be deleted through this endpoint. Requires the `write:spend_limits` scope.
 
-For complete parameter details and response schemas, see [Delete a spend limit](../Admin/beta-organization-spend-limits-delete.md) in the API reference.
+For complete parameter details and response schemas, see [Delete a spend limit](../Admin/beta-organization-spend-limits-delete.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 
@@ -357,7 +357,7 @@ print(f"id: {deleted_spend_limit.id}")
 
 `GET /v1/organizations/spend_limit_increase_requests` lists requests, most recent first. Filter by `status[]` (`pending`, `approved`, `denied`) and `actor_ids[]`. The list excludes requests whose requester is no longer a member of the organization. Requires the `read:spend_limits` scope.
 
-For complete parameter details and response schemas, see [List spend limit increase requests](../Admin/beta-organization-spend-limits-increase-requests-list.md) in the API reference.
+For complete parameter details and response schemas, see [List spend limit increase requests](../Admin/beta-organization-spend-limits-increase-requests-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 
@@ -398,7 +398,7 @@ Each pending request carries a live `spend_summary` showing the requester’s cu
 
 `GET /v1/organizations/spend_limit_increase_requests/{id}` returns one request by ID. Requires the `read:spend_limits` scope.
 
-For complete parameter details and response schemas, see [Retrieve a spend limit increase request](../Admin/beta-organization-spend-limits-increase-requests-retrieve.md) in the API reference.
+For complete parameter details and response schemas, see [Retrieve a spend limit increase request](../Admin/beta-organization-spend-limits-increase-requests-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 
@@ -437,7 +437,7 @@ print(f"status: {increase_request.status}")
 
 `POST /v1/organizations/spend_limit_increase_requests/{id}/approve` approves a pending request: it writes a per-user spend limit at the admin-supplied `amount` for the requester and transitions the request to `approved`. The request does not carry a requested amount; you supply the new spend limit on approval. Requires the `write:spend_limits` scope.
 
-For complete parameter details and response schemas, see [Approve a spend limit increase request](../Admin/beta-organization-spend-limits-increase-requests-approve.md) in the API reference.
+For complete parameter details and response schemas, see [Approve a spend limit increase request](../Admin/beta-organization-spend-limits-increase-requests-approve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 
@@ -476,7 +476,7 @@ print(f"status: {increase_request.status}")
 
 `POST /v1/organizations/spend_limit_increase_requests/{id}/deny` denies a pending request. Idempotent on `denied`: denying an already-denied request returns 200 with the existing resource. The endpoint rejects an attempt to deny an already-approved request so automation can distinguish a retry from a conflicting decision. Requires the `write:spend_limits` scope.
 
-For complete parameter details and response schemas, see [Deny a spend limit increase request](../Admin/beta-organization-spend-limits-increase-requests-deny.md) in the API reference.
+For complete parameter details and response schemas, see [Deny a spend limit increase request](../Admin/beta-organization-spend-limits-increase-requests-deny.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the API reference.
 
 cURL
 

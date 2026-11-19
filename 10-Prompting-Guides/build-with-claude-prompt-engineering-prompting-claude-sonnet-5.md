@@ -2,7 +2,7 @@
 title: "Prompting Claude Sonnet 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-sonnet-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-11-05T06:36:07Z"
+fetched_at: "2026-11-13T06:36:28Z"
 tags: ["prompting"]
 ---
 

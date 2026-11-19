@@ -2,7 +2,7 @@
 title: "Extended thinking - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/extended-thinking"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:57Z"
+fetched_at: "2026-11-13T06:36:29Z"
 tags: ["api", "prompting"]
 ---
 
@@ -23,14 +23,18 @@ Extended thinking
 Feature of  
 [Thinking](build-with-claude-thinking.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Legacy
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- Limited model support; see details
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 Extended thinking is a legacy feature
 
@@ -44,7 +48,7 @@ Migration guide[Migrating to adaptive thinking](build-with-claude-extended-think
 
 Extended thinking in manual mode gives you direct control over how much Claude thinks. You set a thinking token budget on each request with `thinking: {type: "enabled", budget_tokens: N}`, and Claude thinks against that budget before it starts its final answer. Manual mode remains useful when your workload requires predictable latency or precise control over thinking costs. This page covers how to set and tune the budget, how manual mode interacts with interleaved thinking and prompt caching, and how to migrate to adaptive thinking.
 
-To learn how thinking itself works, including thinking blocks and the response shape, the `display` parameter, streaming, thinking with tool use, and encryption, see the [thinking overview](build-with-claude-thinking.md).
+To learn how thinking itself works, including thinking blocks and the response shape, the `display` parameter, streaming, thinking with tool use, and encryption, see [Thinking](build-with-claude-thinking.md).
 
 ## Supported models
 
@@ -145,7 +149,7 @@ Two more considerations for interleaved thinking in manual mode:
 
 How platforms treat the beta header differs. The Claude API, [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md), and [Claude Models on Google Cloud (Anthropic managed)](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md) accept `interleaved-thinking-2025-05-14` on any model and ignore it where unsupported. Acceptance is not the same as effect: on models that reject `type: "enabled"` (4.7 and later) or lack manual-mode interleaving (Claude Opus 4.6), the header has no manual-mode effect; adaptive thinking interleaves automatically there.
 
-Partner-operated platforms, [Claude Models on Google Cloud (Google managed)](build-with-claude-claude-models-on-google-cloud-google-managed.md) and [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), likewise accept the header on any model without returning an error, and ignore it on models that don’t support interleaved thinking.
+Partner-operated platforms, [Claude Models on Google Cloud (Google managed)](build-with-claude-claude-models-on-google-cloud-google-managed.md) and [Amazon Bedrock (`bedrock-mantle`)](build-with-claude-claude-in-amazon-bedrock.md), accept the header on any model without returning an error, and ignore it on models that don’t support interleaved thinking.
 
 ## Turn structure in manual mode
 
@@ -178,7 +182,7 @@ The third request re-creates the cache (`cache_creation_input_tokens=1370`, `cac
 
 ## Shared mechanics
 
-Most thinking behavior is mode neutral and documented once on the [Thinking](build-with-claude-thinking.md) page. Everything there applies in manual mode too:
+Most thinking behavior is mode neutral and documented once on the [Thinking](build-with-claude-thinking.md) page. These sections apply in manual mode too:
 
 - [Controlling thinking display](build-with-claude-thinking.md#controlling-thinking-display)
 - [Streaming thinking](build-with-claude-thinking.md#streaming-thinking)
@@ -190,12 +194,12 @@ Most thinking behavior is mode neutral and documented once on the [Thinking](bui
 
 ## Migrating to adaptive thinking
 
-If your model supports only extended thinking (Claude Sonnet 4.5 (deprecated), Claude Opus 4.5, Claude Haiku 4.5, and earlier Claude 4 models), no action is needed now: adaptive thinking is not available there, and `type: "adaptive"` [returns a 400 error](build-with-claude-thinking-troubleshooting.md#error-thinking-type-adaptive). Keep `budget_tokens` until you move to a model that supports adaptive thinking, then apply the mapping that follows.
+If your model supports only extended thinking, no action is needed. These models are Claude Sonnet 4.5 (deprecated), Claude Opus 4.5, Claude Haiku 4.5, and earlier Claude 4 models. Adaptive thinking is not available on them, and `type: "adaptive"` [returns a 400 error](build-with-claude-thinking-troubleshooting.md#error-thinking-type-adaptive). Keep `budget_tokens` until you move to a model that supports adaptive thinking, then apply the mapping that follows.
 
 You need to migrate off `type: "enabled"` if:
 
 - You use Claude Opus 4.6 or Claude Sonnet 4.6, where `budget_tokens` is deprecated.
-- You use Claude 4.7 or a later model, such as Claude Opus 5.5, Claude Sonnet 5, Claude Sonnet 5.5, Claude Fable 5.1, or Claude Haiku 5.5, where `type: "enabled"` returns a 400 error.
+- You use a model numbered 4.7 or higher, where `type: "enabled"` returns a 400 error. Examples include Claude Opus 5.5, Claude Sonnet 5, Claude Sonnet 5.5, Claude Fable 5.2, Claude Fable 5.1, and Claude Haiku 5.5.
 
 The mapping is small: remove `budget_tokens`, set `thinking: {type: "adaptive"}`, and control reasoning depth with `output_config: {effort: ...}` instead of a token budget.
 
@@ -231,11 +235,11 @@ becomes:
 
 `effort: "high"` is the default on Claude Sonnet 4.6, so omitting it here produces identical behavior; it appears only to show where the depth control lives in adaptive mode. Claude Opus 5.5 and Claude Haiku 5.5 default to `"medium"`, and other models that support effort default to `"high"` (see [Effort levels](build-with-claude-effort.md#effort-levels)).
 
-Expect a behavioral difference, not just a syntax change. With a fixed budget, Claude thinks on every request. With adaptive thinking, Claude determines whether and how much to think on each request, and at lower [effort](build-with-claude-effort.md) settings it might skip thinking entirely on easy inputs. You can also remove the `interleaved-thinking-2025-05-14` beta header after migrating: adaptive thinking interleaves automatically, and the Claude API ignores the header on these models. Thinking block preservation changes too: Claude Opus 4.5 and models numbered 4.6 and higher keep prior turns’ thinking blocks in context and bill them as input, where Claude Sonnet 4.5 (deprecated), Claude Haiku 4.5, and earlier models strip them; see [thinking block preservation by model](build-with-claude-thinking.md#thinking-block-preservation-by-model).
+Expect a behavioral difference, not only a syntax change. With a fixed budget, Claude thinks on every request. With adaptive thinking, Claude determines whether and how much to think on each request, and at lower [effort](build-with-claude-effort.md) settings it might skip thinking entirely on easy inputs. You can also remove the `interleaved-thinking-2025-05-14` beta header after migrating: adaptive thinking interleaves automatically, and the Claude API ignores the header on these models. Thinking block preservation changes too. Claude Opus 4.5 and models numbered 4.6 and higher keep prior turns’ thinking blocks in context and bill them as input. Claude Sonnet 4.5 (deprecated), Claude Haiku 4.5, and earlier models strip them. See [thinking block preservation by model](build-with-claude-thinking.md#thinking-block-preservation-by-model).
 
 Switching modes is a thinking-configuration change, so the first request after the switch invalidates cache breakpoints, as described in [Prompt caching in manual mode](#extended-thinking-with-prompt-caching).
 
-For full guidance, see [adaptive thinking](build-with-claude-thinking.md), [effort](build-with-claude-effort.md), and the [model migration guide](../../20-Models/about-claude-models-migration-guide.md).
+For full guidance, see [Thinking](build-with-claude-thinking.md), [Effort](build-with-claude-effort.md), and [Migration guides](../../20-Models/about-claude-models-migration-guide.md).
 
 ## Next steps
 
@@ -257,34 +261,127 @@ Preserve thinking blocks and manage thinking across tool calls and turns.
 
 ## Availability
 
-Extended thinking is available or deprecated on select models.
+Extended thinking
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Models
+Status  
+Legacy
 
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
 - Claude Mythos Preview
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)
+- Claude Opus 4.6 Deprecated
+- Claude Opus 4.5
+- Claude Sonnet 4.6 Deprecated
+- Claude Sonnet 4.5
+- Claude Haiku 4.5
 
-StatusDeprecated
+Amazon Bedrock
 
-Models
+Status  
+Legacy
 
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Model  
+- Claude Haiku 4.5
 
-Usage
+Amazon Bedrock (bedrock-runtime)
 
-On Claude 4.5 models, Managed Agents turns on manual thinking itself with a fixed budget you can’t change. On newer models it uses adaptive thinking.
+Status  
+Legacy
 
-Use [Effort](build-with-claude-effort.md) instead.
+API  
+- Messages API
 
-StatusNot available
+Models  
+- Claude Opus 4.6 Deprecated
+- Claude Opus 4.5
+- Claude Sonnet 4.6 Deprecated
+- Claude Sonnet 4.5
+- Claude Haiku 4.5
+
+Claude Platform on AWS
+
+Status  
+Legacy
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- Claude Opus 4.6 Deprecated
+- Claude Opus 4.5
+- Claude Sonnet 4.6 Deprecated
+- Claude Sonnet 4.5
+- Claude Haiku 4.5
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Legacy
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- Claude Opus 4.6 Deprecated
+- Claude Opus 4.5
+- Claude Sonnet 4.6 Deprecated
+- Claude Sonnet 4.5
+- Claude Haiku 4.5
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Legacy
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 4.6 Deprecated
+- Claude Opus 4.5
+- Claude Sonnet 4.6 Deprecated
+- Claude Sonnet 4.5
+- Claude Haiku 4.5
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Legacy
+
+API  
+- Messages API
+
+Model  
+- Claude Haiku 4.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Legacy
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 4.6 Deprecated
+- Claude Opus 4.5
+- Claude Sonnet 4.6 Deprecated
+- Claude Sonnet 4.5
+- Claude Haiku 4.5

@@ -2,7 +2,7 @@
 title: "Permissions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_roles/permissions"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:21Z"
+fetched_at: "2026-11-13T06:35:47Z"
 tags: ["api"]
 ---
 

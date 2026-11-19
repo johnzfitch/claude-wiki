@@ -2,9 +2,11 @@
 title: "LLMs are making formal software verification feasible at a much larger scale \\ Anthropic"
 source_url: "https://www.anthropic.com/research/formal-verification"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:35Z"
+fetched_at: "2026-11-18T06:28:46Z"
 tags: ["news-research"]
 ---
+
+### 01Introduction
 
 # LLMs are making formal software verification feasible at a much larger scale
 
@@ -15,34 +17,31 @@ tags: ["news-research"]
 - [05Limitations](#limitations)
 - [06Conclusion](#conclusion)
 
-- Published
+Published  
+Oct 22, 2026
 
-  Oct 22, 2026
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Coding](https://www.anthropic.com/search?topic=coding)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-  - [Open source](https://www.anthropic.com/search?topic=open-source)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-
-  See more...
+See more...
 
 Related articles
 
 - Frontier Red Team
 
-  Oct 20, 2026
+  Nov 2, 2026
 
-  [Using Claude to reduce the attack surface of code](attack-surface-reduction.md)
+  [Progress on provable inference for large language models](provable-inference.md)
 
 [View more](https://www.anthropic.com/search?topic=cybersecurity)
 
-*Keane Lucas, Aengus Lynch, Luna Tong, Luke Champine, Zygi Straznickas, Dino Distefano, Harshikaa Agrawal  
+*Keane Lucas, Aengus Lynch, Luna Tong, Luke Champine, Zygi Straznickas, Dino Distefano, Harshikaa Agrawal, Cheru Berhanu  
 Evyatar Ben Asher, Ava Howell, Sami Jawhar, Chris Rohlf, Nickolai Zeldovich  
 Nicholas Carlini, Rajashree Agrawal, Jason Gross*
 
@@ -56,7 +55,7 @@ Ideally, such techniques could find and patch *all bugs,* and then provide some 
 
 However, formal verification isn’t easy. Proofs can be many times larger than the original code, and writing them requires significant effort and a niche, highly specialized skill set. For instance, it took two person-years to implement the seL4 operating system kernel, but *20* person-years [to formally verify it](https://sel4.systems/Research/pdfs/comprehensive-formal-verification-os-microkernel.pdf). Accordingly, formal verification has been practical only in truly mission-critical applications, such as [Airbus’s avionics code](https://www.astree.ens.fr/papers/astree_airbus_sas2007.pdf).
 
-But LLMs are making it far easier. Frontier models can now produce correctness proofs for real-world software fully autonomously. To demonstrate this, we asked Claude to prove useful security properties across 123 open-source libraries, including showing that some of their executable artifacts can *never* crash under certain conditions. Specifically, Claude proved that these programs will always exit normally without triggering memory-safety errors or failing assertions, for every input less than 64 MB and every modeled Linux operating system (OS) response and memory layout, under certain assumptions (namely that the program runs as a single-threaded static binary with a fixed memory budget on a RISC-V^([1](#footnote-1)) CPU using Linux OS). This is still far away from fixing *all* possible bugs, but it does get us much closer than before and provides a roadmap toward that end.
+But LLMs are making it far easier. Frontier models can now produce correctness proofs for real-world software fully autonomously. To demonstrate this, we asked Claude to prove useful security properties across 123 open-source libraries, including showing that some of their executable artifacts can *never* crash under certain conditions. Specifically, Claude proved that these programs will always exit normally without triggering memory-safety errors or failing assertions, for every input less than 64 MB and every modeled Linux operating system (OS) response and memory layout, under certain assumptions (namely that the program runs as a single-threaded static binary with a fixed memory budget on a RISC-V^([^1]) CPU using Linux OS). This is still far away from fixing *all* possible bugs, but it does get us much closer than before and provides a roadmap toward that end.
 
 We’re publishing a [subset of these proofs](https://github.com/theorem-labs/oss-verify-proofs) so that anyone can verify and reuse them, along with the [RISC-V and OS semantics](https://github.com/theorem-labs/rocq-linux-process-semantics). [Theorem](https://theorem.dev/), our collaborator on this project, is also offering to run the same pipeline for [other open-source projects](https://theorem.dev/oss-verify/), and is publishing a [Claude skill](https://github.com/theorem-labs/oss-verify/blob/main/.claude/skills/add-project/SKILL.md) to help developers get started with verifying their own code.
 
@@ -72,19 +71,19 @@ To prove that a piece of software is correct, we must first state what “correc
 
 To address this for the code in the open-source libraries that we sought to prove, we take the approach of automatically converting their preexisting compilable test suites into a spec by encoding the rule “this test suite always passes,” using a general model of what it means to execute any RISC-V-compiled binary on Linux. Historically, proving such specs was intractable, given the inherent complexity of writing a proof that can encompass and make an argument over all possible behaviors and interactions of tens of thousands of assembly instructions over any input (and the fact that proofs tend to be extremely large as a result). This is where today’s LLMs come in: churning through millions of lines of code in pursuit of a well-defined goal is a task that LLMs are extremely well suited for.
 
-For this project, we started with *fuzz tests*. In these tests, developers write an *entry point*^([2](#footnote-2)) into their code that takes inputs, such that any input that causes a crash is a bug the authors care about. Then the *fuzzer,* a testing engine, generates enormous numbers of semirandom and mutated inputs at the entry point to try to find a bug (visualized in Figure 1). The longer a fuzzer runs, the more bugs it can find. But this is inherently a brute-force process, with no guarantee of exercising every possible code path, regardless of how many inputs you try.
+For this project, we started with *fuzz tests*. In these tests, developers write an *entry point*^([^2]) into their code that takes inputs, such that any input that causes a crash is a bug the authors care about. Then the *fuzzer,* a testing engine, generates enormous numbers of semirandom and mutated inputs at the entry point to try to find a bug (visualized in Figure 1). The longer a fuzzer runs, the more bugs it can find. But this is inherently a brute-force process, with no guarantee of exercising every possible code path, regardless of how many inputs you try.
 
-To find all the bugs that would’ve been surfaced by a fuzz test, we turned the fuzz test into a spec defined over the compiled RISC-V instructions. The spec says that the fuzz test won’t crash for *any* input less than 64 MB.^([3](#footnote-3)) If Claude can prove this spec, the fuzz test on RISC-V becomes superfluous: fuzzing that entry point will never find any bugs.
+To find all the bugs that would’ve been surfaced by a fuzz test, we turned the fuzz test into a spec defined over the compiled RISC-V instructions. The spec says that the fuzz test won’t crash for *any* input less than 64 MB.^([^3]) If Claude can prove this spec, the fuzz test on RISC-V becomes superfluous: fuzzing that entry point will never find any bugs.
 
-We did this for hundreds of projects in Google’s [OSS-Fuzz](https://github.com/google/oss-fuzz) initiative, which provides continuous fuzz testing for qualifying open-source projects. OSS-Fuzz contains thousands of developer-authored entry points that look for broken code properties by crashing (for example, on a failed assertion). OSS-Fuzz automatically instruments C and C++ programs with AddressSanitizer^([4](#footnote-4)) (ASan), causing them to crash whenever memory is accessed improperly (which is a [leading cause of software vulnerabilities](https://www.cisa.gov/news-events/news/cisa-nsa-fbi-and-international-cybersecurity-authorities-publish-guide-case-memory-safe-roadmaps)). Broad-spectrum specifications like memory safety apply to almost all software.
+We did this for hundreds of projects in Google’s [OSS-Fuzz](https://github.com/google/oss-fuzz) initiative, which provides continuous fuzz testing for qualifying open-source projects. OSS-Fuzz contains thousands of developer-authored entry points that look for broken code properties by crashing (for example, on a failed assertion). OSS-Fuzz automatically instruments C and C++ programs with AddressSanitizer^([^4]) (ASan), causing them to crash whenever memory is accessed improperly (which is a [leading cause of software vulnerabilities](https://www.cisa.gov/news-events/news/cisa-nsa-fbi-and-international-cybersecurity-authorities-publish-guide-case-memory-safe-roadmaps)). Broad-spectrum specifications like memory safety apply to almost all software.
 
-Over the span of a few weeks, **Claude successfully patched the bugs it found and then proved that there are no crashes on any input (up to 64 MB) for 239 entry points across 123 different OSS-Fuzz libraries.** These proofs operate on the compiled RISC-V instructions (i.e., executable binaries), and they comprise about 180 million lines of Rocq, with a typical proof running to about 600,000 lines to provide security guarantees on binaries with a median length of 18,000 RISC-V instructions. These proofs are built by translating the RISC-V assembly code to a mathematical model using Theorem’s RISC-V instruction and Linux process semantics. This means these proofs currently assume that the program runs as a single-threaded static binary with a fixed memory budget on a RISC-V CPU using Linux OS. Expanding the scope of these proofs is well within reach, as it would involve standardizing semantics for more assembly architectures and other operating system processes. See [an expert’s take](what-our-oss-fuzz-proofs-prove.md) on the proofs Claude wrote.
+Over the span of a few weeks, **Claude successfully patched the bugs it found and then proved that there are no crashes on any input (up to 64 MB) for 239 entry points across 123 different OSS-Fuzz libraries.** These proofs operate on the compiled RISC-V instructions (i.e., executable binaries), and they comprise about 180 million lines of Rocq, with a typical proof running to about 600,000 lines to provide security guarantees on binaries with a median length of 18,000 RISC-V instructions. These proofs are built by translating the RISC-V assembly code to a mathematical model using Theorem’s RISC-V instruction and Linux process semantics. This means these proofs currently assume that the program runs as a single-threaded static binary with a fixed memory budget on a RISC-V CPU using Linux OS. Expanding the scope of these proofs is well within reach, as it would involve standardizing semantics for more assembly architectures and other operating system processes. See [an expert’s take](https://assets.claude.com/6867eadf760258fa8b42a504600cd3c036d16358.pdf) on the proofs Claude wrote.
 
 While this is an enormous volume of proof code, virtually none of it needs to be manually reviewed. The Rocq proof checker ensures that the spec is correctly satisfied by the proof. As a result, the only artifacts that a developer needs to trust are:
 
 - The formal models of RISC-V and of Linux processes;
 - The exact theorem statements that were proved;
-- The Rocq proof checker itself.^([5](#footnote-5))
+- The Rocq proof checker itself.^([^5])
 
 **This doesn’t mean these libraries contain no bugs.** Instead, it means that any **remaining bugs either are to be found within the artifacts listed above or are outside the scope of Claude’s proof**. Hardening those still-possibly-buggy trusted components (Rocq, RISC-V, and Linux semantics) is not insignificant, but it’s a far more tractable task than debugging every line of code the scaled-out proofs cover—especially as this approach can secure an arbitrary number of projects without increasing the size of the trusted components.
 
@@ -94,7 +93,7 @@ We welcome independent verification of our proofs and encourage refinement of ou
 
 Above, we showed that you can turn many open-source libraries’ developer-written tests (fuzz tests) into specs that Claude can prove will always pass, sometimes after patching the remaining bugs it found. For this reason, the process of attempting to prove these specs discovered hundreds of bugs.
 
-Lots of bugs showed up during Claude’s attempts to prove hundreds of entry points. To ensure that Claude didn’t have to stop for a human every time this happened, we let Claude fix the bugs it found: it patched the code, which caused the spec to be regenerated with that patched code, and then Claude proceeded to prove that new spec.^([6](#footnote-6))
+Lots of bugs showed up during Claude’s attempts to prove hundreds of entry points. To ensure that Claude didn’t have to stop for a human every time this happened, we let Claude fix the bugs it found: it patched the code, which caused the spec to be regenerated with that patched code, and then Claude proceeded to prove that new spec.^([^6])
 
 Many of the bugs we found are ones that a fuzzer would be unlikely to ever find. Fuzzers mutate small inputs, [typically capped at 1 MB](https://github.com/AFLplusplus/AFLplusplus/blob/stable/include/config.h#L314), and typically rely on code coverage to guide them toward bugs. While proving an entry point in one library, Claude found a counter underflow in its copy of a decompressor that led to an out-of-bounds write, but only on inputs of around 20 MB that had one rare, specific layout. Other bugs include an out-of-bounds read in an image decoder that needed a 64 MB input and over 2 GB of memory, an out-of-bounds read in another library that needed a particular sequence of calls across two handles to the same file, and a rediscovery of CVE-2026-56132 in libexpat, which needed deeply nested input. Claude also found logic bugs that never crash at all. While proving that one library was memory-safe, for example, it noticed that a feature for restricting which files an application can load isn’t always enforced.
 
@@ -110,13 +109,13 @@ This can also occur even when the properties are not directly specified by the d
 
 Formal verification is an expansive domain. The fuzz-test-to-proof example above is one instance of LLMs making formal verification more widely usable by directly applying proofs to machine code.
 
-We’ve also seen success using LLMs with formal verification in other ways. For example, we asked Claude to write a formal spec of [RFC 1950](https://www.rfc-editor.org/info/rfc1950/), the technical document that defines the zlib compression file format. Then, we had Claude prove that the zlib implementation in the Linux kernel correctly implements that spec. As with the examples above, Claude proved this property at the binary level, except instead of RISC-V, Claude directly proved the x86-compiled binary using Claude-generated (and heavily tested) formal semantics of the x86 ISA.^([7](#footnote-7)) We then repeated this process for half a dozen other widely used libraries. Along the way, we found some minor (unexploitable) bugs in corner cases, which are in the process of being filed upstream. We draw two conclusions from this exercise: (1) these extremely well-tested codebases are already almost fully correct, and (2) it is possible to prove end-to-end correctness properties about real existing codebases.
+We’ve also seen success using LLMs with formal verification in other ways. For example, we asked Claude to write a formal spec of [RFC 1950](https://www.rfc-editor.org/info/rfc1950/), the technical document that defines the zlib compression file format. Then, we had Claude prove that the zlib implementation in the Linux kernel correctly implements that spec. As with the examples above, Claude proved this property at the binary level, except instead of RISC-V, Claude directly proved the x86-compiled binary using Claude-generated (and heavily tested) formal semantics of the x86 ISA.^([^7]) We then repeated this process for half a dozen other widely used libraries. Along the way, we found some minor (unexploitable) bugs in corner cases, which are in the process of being filed upstream. We draw two conclusions from this exercise: (1) these extremely well-tested codebases are already almost fully correct, and (2) it is possible to prove end-to-end correctness properties about real existing codebases.
 
 In another experiment, we asked Claude to develop an interpreter for a large subset of Python in Rust, and to prove (using Verus, a verification tool for Rust) that it adheres to the CPython semantics outlined in an academic paper. We then measured the adherence to CPython’s behavior empirically, running over 1.7 million randomly generated Python programs, finding identical behavior with CPython in 99.95% of tests, with remaining test differences as unsurprising known corner cases.
 
 We also found issues in several widely used and critical applications via formal verification attempts of simple security properties. In one of them, we discovered a previously unknown logic bug that had been latent for more than a decade. During an effort to verify a widely used PDF reader, we found as many security bugs in one week as are typically reported in a year.
 
-See [the Appendix](what-our-oss-fuzz-proofs-prove.md) for more details on some of these efforts.
+See [the Appendix](https://assets.claude.com/6867eadf760258fa8b42a504600cd3c036d16358.pdf) for more details on some of these efforts.
 
 ## This is just the beginning
 
@@ -124,7 +123,7 @@ One of the key limitations of LLM-assisted formal verification is that the proof
 
 ### Newer models need fewer tokens
 
-We built 36 small verification tasks [from real OSS-Fuzz code](what-our-oss-fuzz-proofs-prove.md). Opus 5.5 proves half of them with about 40% fewer tokens than Opus 5. We expect this trend to continue as models are trained on long verification tasks.
+We built 36 small verification tasks [from real OSS-Fuzz code](https://assets.claude.com/6867eadf760258fa8b42a504600cd3c036d16358.pdf). Opus 5.5 proves half of them with about 40% fewer tokens than Opus 5. We expect this trend to continue as models are trained on long verification tasks.
 
 ### Proofs can be reused
 
@@ -156,7 +155,7 @@ The trajectory is clear: formal verification, which was historically practical o
 
 In today’s world—where LLMs automatically scan for and find increasingly more code vulnerabilities—we must use processes that can *guarantee* code security properties. LLM-scaled formal verification is a promising approach toward securing these guarantees at a scope and scale that were previously unattainable. We encourage others to experiment so we can collectively build a world in which robust software has proliferated very widely and software bugs are a well-understood and quickly addressable rarity.
 
-[Read the full appendix.](what-our-oss-fuzz-proofs-prove.md)
+[Read the full appendix.](https://assets.claude.com/6867eadf760258fa8b42a504600cd3c036d16358.pdf)
 
 ## Footnotes
 
@@ -173,3 +172,17 @@ In today’s world—where LLMs automatically scan for and find increasingly mor
 06Note this leaves open the door to reward hacking. Reward hacking is when an AI model finds a shortcut that technically meets the goal it was given without doing what was actually intended, like a student who passes an exam by memorizing the answer key instead of learning the material. In this context, Claude could make any theorem provable by rewriting the program into one that trivially never crashes. To discourage this, we penalized any patch and offered extra credit for proving which inputs it changes and how few they are. We also logged and audited the patches for these failure modes.[](#footnote-ref-6)
 
 07We think that the ability of Claude to—entirely autonomously—generate the formal semantics of an ISA is a separate interesting lesson. While we can not be sure our semantics themselves are perfect, empirically we have found that single-stepping through our semantics can boot an Ubuntu userspace on top of a Linux kernel. Generating these semantics also identified hundreds of mistakes in the official reference documentation, along with a smaller number of bugs in the hardware itself.[](#footnote-ref-7)
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:
+
+[^7]:

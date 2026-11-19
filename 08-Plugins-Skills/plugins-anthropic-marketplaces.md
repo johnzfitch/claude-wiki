@@ -2,8 +2,8 @@
 title: "Anthropic's marketplaces - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/anthropic-marketplaces"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-29T06:25:35Z"
-last_modified: "Thu, 29 Oct 2026 05:30:05 GMT"
+fetched_at: "2026-11-13T06:32:45Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -114,4 +114,4 @@ Next steps
 - [Install and manage plugins](discover-plugins.md): install a plugin from one of these marketplaces and choose a scope
 - [Plugin security and trust](plugins-security.md): what a plugin can do on your machine and how to review one before you install it
 - [Code intelligence plugins](plugins-code-intelligence.md): install one of the official marketplace’s language-server plugins
-- [Create a marketplace](plugin-marketplaces.md): run your own marketplace alongside Anthropic’s
+- [Create a marketplace](plugins-create-marketplace.md): run your own marketplace alongside Anthropic’s

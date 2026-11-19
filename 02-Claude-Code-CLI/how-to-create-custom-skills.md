@@ -2,7 +2,7 @@
 title: "How to create custom skills | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512198-how-to-create-custom-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:51Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["claude-code", "security", "skills"]
 ---
 

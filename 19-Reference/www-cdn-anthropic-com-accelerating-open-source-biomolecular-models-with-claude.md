@@ -2,7 +2,7 @@
 title: "Accelerating open-source biomolecular models with Claude"
 source_url: "https://www-cdn.anthropic.com/e96b5807039a88168733d9687afe41dfbbd5de13.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-26T06:40:43Z"
+fetched_at: "2026-11-18T06:28:32Z"
 tags: ["news-research"]
 ---
 
@@ -105,16 +105,13 @@ them as CUDA graphs without Python overhead, fusing chains of small operations i
                        4.5                                                                              2.0
                        4.0
                                                                                                         1.8
-Speed-up relative to
 
-
-                                                                                 Speed-up relative to
+Speed-up relative to                                                             Speed-up relative to
                        3.5
- field standard (×)
-
-
-                                                                                  field standard (×)
                        3.0                                                                              1.6
+
+
+ field standard (×)                                                               field standard (×)
                        2.5                                                                              1.4
                        2.0
                                                                                                         1.2
@@ -125,18 +122,14 @@ Speed-up relative to
                C                   Triangle Attention (pair width 256)                          D                   Triangle Multiplication (pair width 256)
                        4.5                                                                              4.0
                        4.0                                                                              3.5
-Speed-up relative to
 
 
-                                                                                 Speed-up relative to
-                       3.5
- field standard (×)
-
-
-                                                                                  field standard (×)
-                                                                                                        3.0
+Speed-up relative to                                                             Speed-up relative to
+                       3.5                                                                              3.0
                        3.0
                                                                                                         2.5
+
+ field standard (×)                                                               field standard (×)
                        2.5
                                                                                                         2.0
                        2.0
@@ -238,9 +231,9 @@ RoseTTAFold3 Exact and Big). For example, RoseTTAFold3 Big changed by −3.5 poi
                                                                                                                                                                              B
                                           7                                                                                                                                                        7
                                                                                            6.4 6.3
+
+
               Forward-pass speed-up (×)
-
-
                                           6                             5.6                                                                                                                        6
 
 
@@ -309,6 +302,8 @@ drial complex I, the chaperonin TRiC, a proteasome, and a bacterial ribosome, ea
 
 
                             4
+
+
              Speed-up (×)
                                                        3.0               3.1                             3.0 3.1
                             3                                                                                              2.7
@@ -352,9 +347,9 @@ the SI.
 
 
                             4
+
+
              Speed-up (×)
-
-
                                                                                                                                                                              3.5
 
                             3
@@ -464,13 +459,13 @@ assembly beneath it.
 
 
                                   0.8                                         0.8                                             0.8
+
+
               Median in silico
-               binding score
-
-
                                   0.7                                         0.7                                             0.7
 
 
+               binding score
                                   0.6                                         0.6                                             0.6
 
 
@@ -482,13 +477,13 @@ assembly beneath it.
 
 
                                  0.85                                        0.85                                            0.85
-           binding score
+
+
            Max in silico
-
-
                                  0.80                                        0.80                                            0.80
 
 
+           binding score
                                  0.75                                        0.75                                            0.75
 
 
@@ -1051,8 +1046,6 @@ most 0.004 for ipTM, at most 0.003 for pTM, and at most 0.11 points for mean pLD
 
                                                                                    Largest protein length completed (residues)
   Speedup over default (×)
-
-
                              4
                                                                                                                                                                 5,000
                                                                                                                                  5000
@@ -1123,9 +1116,9 @@ for each mode as a ratio to default, versus input size; the dashed line marks de
                                                                                                                              ESMFold2
              A
                                          100
+
+
                      Top-1 success (%)
-
-
                                           80
 
 
@@ -1140,13 +1133,11 @@ for each mode as a ratio to default, versus input size; the dashed line marks de
 
                                            0
                                           20
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −20
                                                  Protein–                                     Antibody–        Protein–        Protein–          Protein–              All               Protein–
                                                   protein                                      antigen         peptide           DNA                RNA            interfaces             ligand
@@ -1156,15 +1147,14 @@ for each mode as a ratio to default, versus input size; the dashed line marks de
 
              B
                                          1.0                                                                                             Default        Exact        Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                                              95% CI, bootstrap over targets
-                  lDDT
-
-
                                          0.6                                                                                                 Same measure over all scored samples
+
+                  lDDT
                                                                                                                                              Paired change from Default (strip)
                                          0.4
 
@@ -1187,16 +1177,11 @@ mode, and their targets (p. 16).
                                            one point per interface, ligand, or chain                                                                         one point per target
                                  Exact                       Fast                          Big                                              Exact                     Fast                    Big
                      1                                                                                                         1
-   n = 216
 
 
-                                                                                                                  n = 179
-    DockQ
-
-
-                                                                                                                    ipTM
+    DockQ                                                                                                           ipTM
                     0.5                                                                                                       0.5
-
+   n = 216                                                                                                        n = 179
 
                      0                                                                                                         0
                           0          0.5        1    0          0.5        1   0           0.5        1                             0        0.5         1   0        0.5         1   0        0.5        1
@@ -1204,16 +1189,12 @@ mode, and their targets (p. 16).
 
 
                     100                                                                                                        1
-  Ligand RMSD (Å)
 
-
-                                                                                                                  n = 179
-                    10
-       n = 31
-
-
+  Ligand RMSD (Å)   10
                                                                                                                     pTM
                                                                                                                               0.5
+                                                                                                                  n = 179
+       n = 31
                      1
 
                     0.1                                                                                                        0
@@ -1224,15 +1205,10 @@ mode, and their targets (p. 16).
                      1                                                                                                        100
 
 
-                                                                                                                 Mean pLDDT
-                                                                                                                   n = 178
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                         Mean pLDDT
                     0.5                                                                                                       60
-
-
+   n = 33
+                                                                                                                   n = 178
                      0                                                                                                        20
                           0          0.5        1    0          0.5        1   0           0.5        1                             20       60     100 20            60     100 20            60     100
                            Δ +0.009 r 0.97            Δ −0.006 r 0.96           Δ +0.001 r 0.95                                         Δ +0.11 r 1.00           Δ +0.06 r 1.00           Δ 0.00 r 1.00
@@ -1313,8 +1289,6 @@ at most 0.003 for ipTM, at most 0.002 for pTM, and at most 0.04 points for mean 
 
                                                                                                                             Largest protein length completed (residues)
   Speedup over default (×)
-
-
                              5
                                                                                                                                                                                                                            6,000
                                                                                                                                                                           6000
@@ -1346,9 +1320,9 @@ per mode (Exact, Fast, Big); the dashed line marks default (1×).               
 
 
                                                                                                                   ESMFold2-Fast
+
+
                                                   Peak GPU memory (mode / default)
-
-
                                                                                      1.2
 
 
@@ -1401,13 +1375,11 @@ runs) for each mode as a ratio to default, versus input size; the dashed line ma
 
                                            0
                                           50
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −50
                                                  Protein–        Antibody–        Protein–        Protein–          Protein–             All               Protein–
                                                   protein         antigen         peptide           DNA                RNA           interfaces             ligand
@@ -1417,15 +1389,14 @@ runs) for each mode as a ratio to default, versus input size; the dashed line ma
 
              B
                                          1.0                                                                Default        Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                 95% CI, bootstrap over targets
-                  lDDT
-
-
                                                                                                                 Same measure over all scored samples
+
+                  lDDT
                                          0.6
                                                                                                                 Paired change from Default (strip)
                                          0.4
@@ -1448,16 +1419,11 @@ every mode, and their targets (p. 16).
                                             one point per interface, ligand, or chain                                                                         one point per target
                                   Exact                       Fast                          Big                                              Exact                    Fast                     Big
                      1                                                                                                          1
-   n = 218
 
 
-                                                                                                                   n = 180
-    DockQ
-
-
-                                                                                                                     ipTM
+    DockQ                                                                                                            ipTM
                     0.5                                                                                                        0.5
-
+   n = 218                                                                                                         n = 180
 
                      0                                                                                                          0
                           0           0.5        1    0          0.5        1   0           0.5        1                             0        0.5         1   0        0.5        1   0        0.5         1
@@ -1465,16 +1431,12 @@ every mode, and their targets (p. 16).
 
 
                     100                                                                                                         1
-  Ligand RMSD (Å)
 
-
-                                                                                                                   n = 180
-                    10
-       n = 32
-
-
+  Ligand RMSD (Å)   10
                                                                                                                      pTM
                                                                                                                                0.5
+                                                                                                                   n = 180
+       n = 32
                      1
 
                     0.1                                                                                                         0
@@ -1485,15 +1447,10 @@ every mode, and their targets (p. 16).
                      1                                                                                                         100
 
 
-                                                                                                                  Mean pLDDT
-                                                                                                                    n = 179
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                          Mean pLDDT
                     0.5                                                                                                        60
-
-
+   n = 33
+                                                                                                                    n = 179
                      0                                                                                                         20
                           0           0.5        1    0          0.5        1   0           0.5        1                             20       60     100 20            60     100 20           60     100
                               Δ 0.000 r 0.98           Δ −0.003 r 0.99           Δ −0.005 r 0.98                                         Δ +0.04 r 1.00           Δ 0.00 r 1.00           Δ +0.03 r 1.00
@@ -1589,9 +1546,9 @@ differences are at most 0.004 for ipTM, at most 0.002 for pTM, and at most 0.06 
 
                                                                                                                                                    Peak GPU memory (mode / default)
                                                                                                                                                                                       2.5
+
+
  Speedup over default (×)
-
-
                              8
 
 
@@ -1627,9 +1584,9 @@ coincide, so the Fast line is largely hidden under Big.                         
 
                                                                                                                                             OpenFold3-p2
                                                                                                         20000
+
+
                                                           Largest protein length completed (residues)
-
-
                                                                                                         17500                                                                                     17,000
 
 
@@ -1679,13 +1636,11 @@ one GPU, Big on one GPU, and Big on two GPUs.
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–        Antibody–        Protein–        Protein–          Protein–             All               Protein–
                                                   protein         antigen         peptide           DNA                RNA           interfaces             ligand
@@ -1695,15 +1650,14 @@ one GPU, Big on one GPU, and Big on two GPUs.
 
              B
                                          1.0                                                                Default        Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                 95% CI, bootstrap over targets
-                  lDDT
-
-
                                                                                                                 Same measure over all scored samples
+
+                  lDDT
                                          0.6
                                                                                                                 Paired change from Default (strip)
                                          0.4
@@ -1726,16 +1680,11 @@ every mode, and their targets (p. 16).
                                            one point per interface, ligand, or chain                                                                          one point per target
                                  Exact                        Fast                          Big                                              Exact                     Fast                     Big
                      1                                                                                                          1
-   n = 251
 
 
-                                                                                                                   n = 185
-    DockQ
-
-
-                                                                                                                     ipTM
+    DockQ                                                                                                            ipTM
                     0.5                                                                                                        0.5
-
+   n = 251                                                                                                         n = 185
 
                      0                                                                                                          0
                           0          0.5        1    0           0.5        1   0           0.5        1                             0         0.5        1   0        0.5         1   0        0.5         1
@@ -1743,16 +1692,12 @@ every mode, and their targets (p. 16).
 
 
                     100                                                                                                         1
-  Ligand RMSD (Å)
 
-
-                                                                                                                   n = 185
-                    10
-       n = 34
-
-
+  Ligand RMSD (Å)   10
                                                                                                                      pTM
                                                                                                                                0.5
+                                                                                                                   n = 185
+       n = 34
                      1
 
                     0.1                                                                                                         0
@@ -1763,15 +1708,10 @@ every mode, and their targets (p. 16).
                      1                                                                                                         100
 
 
-                                                                                                                  Mean pLDDT
-                                                                                                                    n = 185
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                          Mean pLDDT
                     0.5                                                                                                        60
-
-
+   n = 33
+                                                                                                                    n = 185
                      0                                                                                                         20
                           0          0.5        1    0           0.5        1   0           0.5        1                             20        60     100 20           60     100 20            60     100
                            Δ +0.001 r 1.00            Δ +0.006 r 0.99            Δ +0.006 r 0.99                                          Δ 0.00 r 1.00           Δ −0.03 r 1.00           Δ −0.06 r 1.00
@@ -1874,9 +1814,9 @@ and pTM and at most 0.02 points for mean pLDDT.
 
                                                                                                                                                   Peak GPU memory (mode / default)
                                                                                                                                                                                      1.5
+
+
   Speedup over default (×)
-
-
                              6
 
 
@@ -1907,9 +1847,9 @@ the labels at 800 and 1,000 tokens are Fast’s (Big: 4.71× and 5.00×).       
 
                                                                                                                                             OpenBind-0
                                                                                                         20000
+
+
                                                           Largest protein length completed (residues)
-
-
                                                                                                         17500                                                                                    17,000
 
 
@@ -1959,13 +1899,11 @@ Figure S18. OpenBind-0: largest completed input size on H100. Largest input comp
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–        Antibody–        Protein–        Protein–          Protein–             All               Protein–
                                                   protein         antigen         peptide           DNA                RNA           interfaces             ligand
@@ -1975,15 +1913,14 @@ Figure S18. OpenBind-0: largest completed input size on H100. Largest input comp
 
              B
                                          1.0                                                                Default        Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.9
                                                                                                                 95% CI, bootstrap over targets
-                  lDDT
-
-
                                          0.8                                                                    Same measure over all scored samples
+
+                  lDDT
                                                                                                                 Paired change from Default (strip)
                                          0.7
 
@@ -2006,16 +1943,11 @@ mode, and their targets (p. 16).
                                             one point per interface, ligand, or chain                                                                         one point per target
                                   Exact                       Fast                          Big                                              Exact                     Fast                     Big
                      1                                                                                                          1
-   n = 251
 
 
-                                                                                                                   n = 186
-    DockQ
-
-
-                                                                                                                     ipTM
+    DockQ                                                                                                            ipTM
                     0.5                                                                                                        0.5
-
+   n = 251                                                                                                         n = 186
 
                      0                                                                                                          0
                           0           0.5        1    0          0.5        1   0           0.5        1                             0         0.5        1   0        0.5         1   0        0.5         1
@@ -2023,16 +1955,12 @@ mode, and their targets (p. 16).
 
 
                     100                                                                                                         1
-  Ligand RMSD (Å)
 
-
-                                                                                                                   n = 186
-                    10
-       n = 34
-
-
+  Ligand RMSD (Å)   10
                                                                                                                      pTM
                                                                                                                                0.5
+                                                                                                                   n = 186
+       n = 34
                      1
 
                     0.1                                                                                                         0
@@ -2043,15 +1971,10 @@ mode, and their targets (p. 16).
                      1                                                                                                         100
 
 
-                                                                                                                  Mean pLDDT
-                                                                                                                    n = 186
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                          Mean pLDDT
                     0.5                                                                                                        60
-
-
+   n = 33
+                                                                                                                    n = 186
                      0                                                                                                         20
                           0           0.5        1    0          0.5        1   0           0.5        1                             20        60     100 20           60      100 20           60      100
                               Δ 0.000 r 1.00           Δ −0.003 r 1.00           Δ −0.003 r 1.00                                          Δ 0.00 r 1.00           Δ +0.01 r 1.00           Δ +0.01 r 1.00
@@ -2153,12 +2076,14 @@ mean paired differences are at most 0.001 for ipTM, below 0.0005 for pTM, and at
                                                  AlphaFold3 (JAX)                                                                                     AlphaFold3 (JAX)
                                                                                                                                 1.2
                            3.0
+
+
                                                                                              Peak GPU memory (mode / default)
                                                                                                                                 1.0
                            2.5
+
+
 Speedup over default (×)
-
-
                                                                                                                                 0.8
                            2.0
 
@@ -2226,9 +2151,9 @@ running out of memory for default on one GPU, Big on one GPU, and Big on two GPU
                                                                                                                                          AlphaFold3 (JAX)
              A
                                          100
+
+
                      Top-1 success (%)
-
-
                                           80
 
 
@@ -2243,13 +2168,11 @@ running out of memory for default on one GPU, Big on one GPU, and Big on two GPU
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–                                                    Antibody–         Protein–          Protein–          Protein–             All               Protein–
                                                   protein                                                     antigen          peptide             DNA                RNA           interfaces             ligand
@@ -2259,15 +2182,14 @@ running out of memory for default on one GPU, Big on one GPU, and Big on two GPU
 
              B
                                          1.0                                                                                                                 Default      Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                                                                95% CI, bootstrap over targets
-                  lDDT
-
-
                                                                                                                                                                Same measure over all scored samples
+
+                  lDDT
                                          0.6
                                                                                                                                                                Paired change from Default (strip)
                                          0.4
@@ -2290,16 +2212,11 @@ every mode, and their targets (p. 16).
                                             one point per interface, ligand, or chain                                                                         one point per target
                                   Exact                       Fast                          Big                                              Exact                     Fast                     Big
                      1                                                                                                          1
-   n = 252
 
 
-                                                                                                                   n = 187
-    DockQ
-
-
-                                                                                                                     ipTM
+    DockQ                                                                                                            ipTM
                     0.5                                                                                                        0.5
-
+   n = 252                                                                                                         n = 187
 
                      0                                                                                                          0
                           0           0.5        1    0          0.5        1   0           0.5        1                             0        0.5         1   0        0.5         1   0        0.5         1
@@ -2307,16 +2224,12 @@ every mode, and their targets (p. 16).
 
 
                     100                                                                                                         1
-  Ligand RMSD (Å)
 
-
-                                                                                                                   n = 187
-                    10
-       n = 37
-
-
+  Ligand RMSD (Å)   10
                                                                                                                      pTM
                                                                                                                                0.5
+                                                                                                                   n = 187
+       n = 37
                      1
 
                     0.1                                                                                                         0
@@ -2327,15 +2240,10 @@ every mode, and their targets (p. 16).
                      1                                                                                                         100
 
 
-                                                                                                                  Mean pLDDT
-                                                                                                                    n = 187
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                          Mean pLDDT
                     0.5                                                                                                        60
-
-
+   n = 33
+                                                                                                                    n = 187
                      0                                                                                                         20
                           0           0.5        1    0          0.5        1   0           0.5        1                             20       60      100 20           60      100 20           60      100
                               Δ 0.000 r 1.00           Δ +0.007 r 0.99           Δ +0.003 r 0.98                                         Δ −0.02 r 1.00           Δ −0.07 r 1.00           Δ −0.07 r 1.00
@@ -2437,9 +2345,9 @@ are at most 0.005 for ipTM, at most 0.002 for pTM, and at most 0.09 points for m
 
                                                                                                                                                   Peak GPU memory (mode / default)
                             20
+
+
  Speedup over default (×)
-
-
                             15                                                                                                                                                       1.0
 
 
@@ -2468,9 +2376,9 @@ the dashed line marks default (1×).
 
                                                                                                                                        AlphaFold3 (PyTorch)
                                                                                                        12000
+
+
                                                          Largest protein length completed (residues)
-
-
                                                                                                                                                                                                  10,000
                                                                                                        10000
 
@@ -2518,13 +2426,11 @@ GPU, and Big on two GPUs; each bar stops at the largest size that ran without ex
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–        Antibody–        Protein–        Protein–          Protein–             All               Protein–
                                                   protein         antigen         peptide           DNA                RNA           interfaces             ligand
@@ -2534,15 +2440,14 @@ GPU, and Big on two GPUs; each bar stops at the largest size that ran without ex
 
              B
                                          1.0                                                                Default        Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                 95% CI, bootstrap over targets
-                  lDDT
-
-
                                                                                                                 Same measure over all scored samples
+
+                  lDDT
                                          0.6
                                                                                                                 Paired change from Default (strip)
                                          0.4
@@ -2565,16 +2470,11 @@ every mode, and their targets (p. 16).
                                             one point per interface, ligand, or chain                                                                          one point per target
                                   Exact                        Fast                          Big                                              Exact                     Fast                     Big
                      1                                                                                                           1
-   n = 243
 
 
-                                                                                                                    n = 185
-    DockQ
-
-
-                                                                                                                      ipTM
+    DockQ                                                                                                             ipTM
                     0.5                                                                                                         0.5
-
+   n = 243                                                                                                          n = 185
 
                      0                                                                                                           0
                           0           0.5        1    0           0.5        1   0           0.5        1                             0         0.5        1   0        0.5         1   0        0.5         1
@@ -2582,16 +2482,12 @@ every mode, and their targets (p. 16).
 
 
                     100                                                                                                          1
-  Ligand RMSD (Å)
 
-
-                                                                                                                    n = 185
-                    10
-       n = 34
-
-
+  Ligand RMSD (Å)   10
                                                                                                                       pTM
                                                                                                                                 0.5
+                                                                                                                    n = 185
+       n = 34
                      1
 
                     0.1                                                                                                          0
@@ -2602,15 +2498,10 @@ every mode, and their targets (p. 16).
                      1                                                                                                          100
 
 
-                                                                                                                   Mean pLDDT
-                                                                                                                     n = 185
-   n = 31
-    lDDT
-
-
+    lDDT                                                                                                           Mean pLDDT
                     0.5                                                                                                         60
-
-
+   n = 31
+                                                                                                                     n = 185
                      0                                                                                                          20
                           0           0.5        1    0           0.5        1   0           0.5        1                             20        60     100 20           60     100 20            60     100
                               Δ 0.000 r 1.00              Δ 0.000 r 0.98          Δ −0.003 r 0.99                                          Δ 0.00 r 1.00           Δ −0.08 r 1.00           Δ −0.05 r 1.00
@@ -2714,9 +2605,9 @@ ipTM, pTM, and mean pLDDT under each mode correlate with default at 𝑟 ≥ 0.9
 
                                                                                               Peak GPU memory (mode / default)
                              6
+
+
   Speedup over default (×)
-
-
                                                                                                                                  1.0
 
 
@@ -2775,9 +2666,9 @@ of memory.
                                                                                                                                              Protenix v2
              A
                                          100
+
+
                      Top-1 success (%)
-
-
                                           80
 
 
@@ -2792,13 +2683,11 @@ of memory.
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–                                                    Antibody–         Protein–        Protein–          Protein–             All               Protein–
                                                   protein                                                     antigen          peptide           DNA                RNA           interfaces             ligand
@@ -2808,15 +2697,14 @@ of memory.
 
              B
                                          1.0                                                                                                               Default      Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                                                              95% CI, bootstrap over targets
-                  lDDT
-
-
                                                                                                                                                              Same measure over all scored samples
+
+                  lDDT
                                          0.6
                                                                                                                                                              Paired change from Default (strip)
                                          0.4
@@ -2839,16 +2727,11 @@ mode, and their targets (p. 16).
                                            one point per interface, ligand, or chain                                                                         one point per target
                                  Exact                       Fast                          Big                                              Exact                     Fast                     Big
                      1                                                                                                         1
-   n = 251
 
 
-                                                                                                                  n = 186
-    DockQ
-
-
-                                                                                                                    ipTM
+    DockQ                                                                                                           ipTM
                     0.5                                                                                                       0.5
-
+   n = 251                                                                                                        n = 186
 
                      0                                                                                                         0
                           0          0.5        1    0          0.5        1   0           0.5        1                             0        0.5         1   0        0.5         1   0        0.5         1
@@ -2856,16 +2739,12 @@ mode, and their targets (p. 16).
 
 
                     100                                                                                                        1
-  Ligand RMSD (Å)
 
-
-                                                                                                                  n = 186
-                    10
-       n = 35
-
-
+  Ligand RMSD (Å)   10
                                                                                                                     pTM
                                                                                                                               0.5
+                                                                                                                  n = 186
+       n = 35
                      1
 
                     0.1                                                                                                        0
@@ -2876,15 +2755,10 @@ mode, and their targets (p. 16).
                      1                                                                                                        100
 
 
-                                                                                                                 Mean pLDDT
-                                                                                                                   n = 186
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                         Mean pLDDT
                     0.5                                                                                                       70
-
-
+   n = 33
+                                                                                                                   n = 186
                      0                                                                                                        40
                           0          0.5        1    0          0.5        1   0           0.5        1                             40       70     100 40            70     100 40            70      100
                            Δ +0.001 r 0.99            Δ −0.003 r 0.99           Δ −0.004 r 0.99                                         Δ −0.04 r 1.00           Δ −0.02 r 1.00           Δ +0.02 r 1.00
@@ -2984,9 +2858,9 @@ paired differences are at most 0.001 for ipTM, below 0.0005 for pTM, and at most
 
                                                                                                                                                   Peak GPU memory (mode / default)
                                                                                                                                                                                      2.0
+
+
   Speedup over default (×)
-
-
                              3
                                                                                                                                                                                      1.5
 
@@ -3013,9 +2887,9 @@ item inside the model’s prediction call. The dashed line marks default        
 
 
                                                                                                                                             Protenix v1
+
+
                                                           Largest protein length completed (residues)
-
-
                                                                                                         12000
                                                                                                                                                                                                  11,000
 
@@ -3067,13 +2941,11 @@ timeout.
 
                                            0
                                           20
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −20
                                                  Protein–        Antibody–        Protein–        Protein–          Protein–             All               Protein–
                                                   protein         antigen         peptide           DNA                RNA           interfaces             ligand
@@ -3083,14 +2955,12 @@ timeout.
 
              B
                                          1.0                                                                Default        Exact       Fast         Big
-                Mean top-1
 
 
-                                         0.8                                                                    95% CI, bootstrap over targets
-                  lDDT
-
-
+                Mean top-1               0.8                                                                    95% CI, bootstrap over targets
                                                                                                                 Same measure over all scored samples
+
+                  lDDT
                                          0.6                                                                    Paired change from Default (strip)
 
 
@@ -3113,16 +2983,11 @@ mode, and their targets (p. 16).
                                            one point per interface, ligand, or chain                                                                         one point per target
                                  Exact                       Fast                          Big                                              Exact                     Fast                     Big
                      1                                                                                                         1
-   n = 251
 
 
-                                                                                                                  n = 186
-    DockQ
-
-
-                                                                                                                    ipTM
+    DockQ                                                                                                           ipTM
                     0.5                                                                                                       0.5
-
+   n = 251                                                                                                        n = 186
 
                      0                                                                                                         0
                           0          0.5        1    0          0.5        1   0           0.5        1                             0        0.5         1   0        0.5         1   0        0.5         1
@@ -3130,16 +2995,12 @@ mode, and their targets (p. 16).
 
 
                     100                                                                                                        1
-  Ligand RMSD (Å)
 
-
-                                                                                                                  n = 186
-                    10
-       n = 34
-
-
+  Ligand RMSD (Å)   10
                                                                                                                     pTM
                                                                                                                               0.5
+                                                                                                                  n = 186
+       n = 34
                      1
 
                     0.1                                                                                                        0
@@ -3150,15 +3011,10 @@ mode, and their targets (p. 16).
                      1                                                                                                        100
 
 
-                                                                                                                 Mean pLDDT
-                                                                                                                   n = 186
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                         Mean pLDDT
                     0.5                                                                                                       60
-
-
+   n = 33
+                                                                                                                   n = 186
                      0                                                                                                        20
                           0          0.5        1    0          0.5        1   0           0.5        1                             20       60      100 20           60      100 20           60      100
                            Δ +0.003 r 0.98            Δ −0.002 r 0.98           Δ −0.009 r 0.97                                         Δ −0.03 r 1.00           Δ −0.02 r 1.00           Δ −0.02 r 1.00
@@ -3253,9 +3109,9 @@ most 0.05 points for mean pLDDT.
 
                                                                                                                                                  Peak GPU memory (mode / default)
                              3
+
+
   Speedup over default (×)
-
-
                                                                                                                                                                                     1.0
 
                              2
@@ -3282,9 +3138,9 @@ kens; the dashed line marks default (1×).                                      
 
                                                                                                                                            OpenDDE
                                                                                                         6000
+
+
                                                           Largest protein length completed (residues)
-
-
                                                                                                                                                                                                 5,000
                                                                                                         5000
 
@@ -3333,13 +3189,11 @@ tokens and ran out of memory at 2,000, and it also completes the 1,200- and 1,40
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–        Antibody–        Protein–        Protein–          Protein–             All               Protein–
                                                   protein         antigen         peptide           DNA                RNA           interfaces             ligand
@@ -3349,15 +3203,14 @@ tokens and ran out of memory at 2,000, and it also completes the 1,200- and 1,40
 
              B
                                          1.0                                                                Default        Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                 95% CI, bootstrap over targets
-                  lDDT
-
-
                                                                                                                 Same measure over all scored samples
+
+                  lDDT
                                          0.6
                                                                                                                 Paired change from Default (strip)
                                          0.4
@@ -3380,16 +3233,11 @@ mode, and their targets (p. 16).
                                            one point per interface, ligand, or chain                                                                          one point per target
                                  Exact                       Fast                           Big                                              Exact                     Fast                     Big
                      1                                                                                                          1
-   n = 222
 
 
-                                                                                                                   n = 186
-    DockQ
-
-
-                                                                                                                     ipTM
+    DockQ                                                                                                            ipTM
                     0.5                                                                                                        0.5
-
+   n = 222                                                                                                         n = 186
 
                      0                                                                                                          0
                           0          0.5        1    0           0.5        1   0           0.5        1                             0        0.5         1   0        0.5         1   0        0.5         1
@@ -3397,16 +3245,12 @@ mode, and their targets (p. 16).
 
 
                     100                                                                                                         1
-  Ligand RMSD (Å)
 
-
-                                                                                                                   n = 186
-                    10
-       n = 35
-
-
+  Ligand RMSD (Å)   10
                                                                                                                      pTM
                                                                                                                                0.5
+                                                                                                                   n = 186
+       n = 35
                      1
 
                     0.1                                                                                                         0
@@ -3417,15 +3261,10 @@ mode, and their targets (p. 16).
                      1                                                                                                         100
 
 
-                                                                                                                  Mean pLDDT
-                                                                                                                    n = 186
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                          Mean pLDDT
                     0.5                                                                                                        70
-
-
+   n = 33
+                                                                                                                    n = 186
                      0                                                                                                         40
                           0          0.5        1    0           0.5        1   0           0.5        1                             40       70      100 40           70      100 40           70      100
                            Δ +0.008 r 0.99            Δ −0.005 r 0.99            Δ −0.002 r 1.00                                         Δ +0.01 r 1.00           Δ +0.04 r 1.00           Δ +0.02 r 1.00
@@ -3520,9 +3359,9 @@ ipTM, pTM, and mean pLDDT under each mode correlate with default at 𝑟 ≥ 0.9
                                                                                                                                                  Peak GPU memory (mode / default)
                              6
                                                                                                                                                                                     2.0
+
+
   Speedup over default (×)
-
-
                                                                                                                                                                                     1.5
                              4
 
@@ -3552,9 +3391,9 @@ forward/prediction call; the dashed line marks default (1×).                   
 
 
                                                                                                                                             Boltz-2
+
+
                                                          Largest protein length completed (residues)
-
-
                                                                                                        10000
                                                                                                                                                                                                 9,000
 
@@ -3601,13 +3440,11 @@ default on one GPU, Big on one GPU, and Big on two GPUs.
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–        Antibody–        Protein–        Protein–          Protein–             All               Protein–
                                                   protein         antigen         peptide           DNA                RNA           interfaces             ligand
@@ -3617,14 +3454,12 @@ default on one GPU, Big on one GPU, and Big on two GPUs.
 
              B
                                          1.0                                                                Default        Exact       Fast         Big
-                Mean top-1
 
 
-                                         0.8                                                                    95% CI, bootstrap over targets
-                  lDDT
-
-
+                Mean top-1               0.8                                                                    95% CI, bootstrap over targets
                                                                                                                 Same measure over all scored samples
+
+                  lDDT
                                          0.6                                                                    Paired change from Default (strip)
 
 
@@ -3647,16 +3482,11 @@ mode, and their targets (p. 16).
                                             one point per interface, ligand, or chain                                                                         one point per target
                                   Exact                       Fast                          Big                                              Exact                     Fast                     Big
                      1                                                                                                          1
-   n = 251
 
 
-                                                                                                                   n = 186
-    DockQ
-
-
-                                                                                                                     ipTM
+    DockQ                                                                                                            ipTM
                     0.5                                                                                                        0.5
-
+   n = 251                                                                                                         n = 186
 
                      0                                                                                                          0
                           0           0.5        1    0          0.5        1   0           0.5         1                            0         0.5        1   0        0.5         1   0        0.5         1
@@ -3664,16 +3494,12 @@ mode, and their targets (p. 16).
 
 
                     100                                                                                                         1
-  Ligand RMSD (Å)
 
-
-                                                                                                                   n = 186
-                    10
-       n = 34
-
-
+  Ligand RMSD (Å)   10
                                                                                                                      pTM
                                                                                                                                0.5
+                                                                                                                   n = 186
+       n = 34
                      1
 
                     0.1                                                                                                         0
@@ -3684,15 +3510,10 @@ mode, and their targets (p. 16).
                      1                                                                                                         100
 
 
-                                                                                                                  Mean pLDDT
-                                                                                                                    n = 186
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                          Mean pLDDT
                     0.5                                                                                                        60
-
-
+   n = 33
+                                                                                                                    n = 186
                      0                                                                                                         20
                           0           0.5        1    0          0.5        1   0           0.5         1                            20        60     100 20           60     100 20            60     100
                               Δ 0.000 r 1.00           Δ +0.004 r 0.99           Δ +0.001 r 0.99                                          Δ 0.00 r 1.00           Δ −0.03 r 1.00           Δ −0.05 r 1.00
@@ -3803,10 +3624,10 @@ mean paired differences are at most 0.002 for ipTM and pTM and at most 0.04 poin
 
                                                                                                                                 2.0
                              8
+
+
                                                                                              Peak GPU memory (mode / default)
   Speedup over default (×)
-
-
                                                                                                                                 1.5
                              6
 
@@ -3864,9 +3685,9 @@ inputs above the model’s 2,048-token cap are refused by the model itself rathe
                                                                                                                                                Chai-1
              A
                                          100
+
+
                      Top-1 success (%)
-
-
                                           80
 
 
@@ -3881,13 +3702,11 @@ inputs above the model’s 2,048-token cap are refused by the model itself rathe
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–                                                    Antibody–        Protein–        Protein–          Protein–              All               Protein–
                                                   protein                                                     antigen         peptide           DNA                RNA            interfaces             ligand
@@ -3897,15 +3716,14 @@ inputs above the model’s 2,048-token cap are refused by the model itself rathe
 
              B
                                          1.0                                                                                                            Default         Exact       Fast         Big
+
+
                 Mean top-1
-
-
                                          0.8
                                                                                                                                                             95% CI, bootstrap over targets
-                  lDDT
-
-
                                          0.6                                                                                                                Same measure over all scored samples
+
+                  lDDT
                                                                                                                                                             Paired change from Default (strip)
                                          0.4
 
@@ -3928,16 +3746,11 @@ mode, and their targets (p. 16).
                                             one point per interface, ligand, or chain                                                                          one point per target
                                   Exact                        Fast                          Big                                              Exact                    Fast                    Big
                      1                                                                                                           1
-   n = 234
 
 
-                                                                                                                    n = 185
-    DockQ
-
-
-                                                                                                                      ipTM
+    DockQ                                                                                                             ipTM
                     0.5                                                                                                         0.5
-
+   n = 234                                                                                                          n = 185
 
                      0                                                                                                           0
                           0           0.5        1    0           0.5        1   0           0.5        1                             0        0.5         1    0      0.5       1    0        0.5         1
@@ -3945,16 +3758,12 @@ mode, and their targets (p. 16).
 
 
                     100                                                                                                          1
-  Ligand RMSD (Å)
 
-
-                                                                                                                    n = 185
-                    10
-       n = 34
-
-
+  Ligand RMSD (Å)   10
                                                                                                                       pTM
                                                                                                                                 0.5
+                                                                                                                    n = 185
+       n = 34
                      1
 
                     0.1                                                                                                          0
@@ -3965,15 +3774,10 @@ mode, and their targets (p. 16).
                      1                                                                                                          100
 
 
-                                                                                                                   Mean pLDDT
-                                                                                                                     n = 185
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                           Mean pLDDT
                     0.5                                                                                                         70
-
-
+   n = 33
+                                                                                                                     n = 185
                      0                                                                                                          40
                           0           0.5        1    0           0.5        1   0           0.5        1                             40       70     100 40            70     100 40          70     100
                               Δ 0.000 r 0.96           Δ +0.009 r 0.98            Δ +0.003 r 0.98                                         Δ +0.03 r 1.00       Δ −0.04 r 1.00 n 184       Δ +0.01 r 1.00
@@ -4074,9 +3878,9 @@ mean pLDDT under each mode correlate with default at 𝑟 = 1.00 (to two decimal
 
                                                                                              Peak GPU memory (mode / default)
                              4
+
+
   Speedup over default (×)
-
-
                                                                                                                                 1.0
                              3
 
@@ -4142,9 +3946,9 @@ steps (p. 16).
                                                                                                                                          RoseTTAFold3
              A
                                          100
+
+
                      Top-1 success (%)
-
-
                                           80
 
 
@@ -4159,13 +3963,11 @@ steps (p. 16).
 
                                            0
                                           40
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −40
                                                  Protein–                                                    Antibody–         Protein–        Protein–          Protein–             All               Protein–
                                                   protein                                                     antigen          peptide           DNA                RNA           interfaces             ligand
@@ -4175,15 +3977,13 @@ steps (p. 16).
 
              B
                                          1.0                                                                                                               Default      Exact       Fast         Big
-                Mean top-1
 
 
+                Mean top-1               0.8
                                                                                                                                                              95% CI, bootstrap over targets
-                                         0.8
-                  lDDT
-
-
                                                                                                                                                              Same measure over all scored samples
+
+                  lDDT
                                                                                                                                                              Paired change from Default (strip)
                                          0.6
 
@@ -4205,16 +4005,11 @@ every mode, and their targets (p. 16).
                                            one point per interface, ligand, or chain                                                                          one point per target
                                  Exact                       Fast                           Big                                              Exact                    Fast                      Big
                      1                                                                                                          1
-   n = 226
 
 
-                                                                                                                   n = 166
-    DockQ
-
-
-                                                                                                                     ipTM
+    DockQ                                                                                                            ipTM
                     0.5                                                                                                        0.5
-
+   n = 226                                                                                                         n = 166
 
                      0                                                                                                          0
                           0          0.5        1    0           0.5        1   0           0.5        1                             0         0.5        1   0        0.5         1   0        0.5         1
@@ -4222,16 +4017,12 @@ every mode, and their targets (p. 16).
 
 
                     100                                                                                                         1
-  Ligand RMSD (Å)
 
-
-                                                                                                                   n = 166
-                    10
-       n = 27
-
-
+  Ligand RMSD (Å)   10
                                                                                                                      pTM
                                                                                                                                0.5
+                                                                                                                   n = 166
+       n = 27
                      1
 
                     0.1                                                                                                         0
@@ -4242,15 +4033,10 @@ every mode, and their targets (p. 16).
                      1                                                                                                         100
 
 
-                                                                                                                  Mean pLDDT
-                                                                                                                    n = 166
-   n = 33
-    lDDT
-
-
+    lDDT                                                                                                          Mean pLDDT
                     0.5                                                                                                        80
-
-
+   n = 33
+                                                                                                                    n = 166
                      0                                                                                                         60
                           0          0.5        1    0           0.5        1   0           0.5        1                             60        80     100 60           80      100 60           80      100
                            Δ +0.003 r 1.00               Δ 0.000 r 0.99             Δ 0.000 r 0.99                                        Δ 0.00 r 1.00           Δ 0.00 r 1.00            Δ 0.00 r 1.00
@@ -4341,9 +4127,9 @@ at most 0.003 for ipTM, at most 0.002 for pTM, and at most 0.05 points for mean 
 
                                                                                                                                            Peak GPU memory (mode / default)
                              3                                                                                                                                                1.5
+
+
   Speedup over default (×)
-
-
                              2                                                                                                                                                1.0
 
 
@@ -4369,9 +4155,9 @@ and 1,400 tokens Big (2.94×) lies under Fast’s labels.                       
 
 
                                                                                                                                      AtlasFold
+
+
                                                           Largest protein length completed (residues)
-
-
                                                                                                                                                                                     4,000
                                                                                                         4000
 
@@ -4415,13 +4201,11 @@ Figure S63. AtlasFold: largest input completed. Largest input size that complete
 
                                            0
                                           20
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −20
                                                  Protein–               Antibody–              Protein–                     All
                                                   protein                antigen               peptide                  interfaces
@@ -4431,14 +4215,12 @@ Figure S63. AtlasFold: largest input completed. Largest input size that complete
 
              B
                                          1.0                                            Default     Exact    Fast    Big
-                Mean top-1
 
 
-                                         0.9                                            95% CI, bootstrap over targets
-                  lDDT
-
-
+                Mean top-1               0.9                                            95% CI, bootstrap over targets
                                                                                         Same measure over all scored samples
+
+                  lDDT
                                          0.8                                            Paired change from Default (strip)
 
 
@@ -4461,16 +4243,11 @@ was run on protein-only inputs.
                                   one point per interface or chain                                                                            one point per target
                           Exact                    Fast                       Big                                            Exact                     Fast                     Big
              1                                                                                                  1
-  n = 197
 
 
-                                                                                                   n = 124
-   DockQ
-
-
-                                                                                                     ipTM
+   DockQ                                                                                             ipTM
             0.5                                                                                                0.5
-
+  n = 197                                                                                          n = 124
 
              0                                                                                                  0
                   0        0.5         1   0        0.5         1   0         0.5      1                             0         0.5        1   0        0.5         1   0        0.5         1
@@ -4480,14 +4257,9 @@ was run on protein-only inputs.
              1                                                                                                  1
 
 
-                                                                                                   n = 124
-  n = 13
-   lDDT
-
-
-                                                                                                     pTM
+   lDDT                                                                                              pTM
             0.5                                                                                                0.5
-
+  n = 13                                                                                           n = 124
 
              0                                                                                                  0
                   0        0.5         1   0        0.5         1   0         0.5      1                             0         0.5        1   0        0.5         1   0        0.5         1
@@ -4498,10 +4270,9 @@ was run on protein-only inputs.
 
 
                                                                                                   Mean pLDDT
-                                                                                                    n = 124
                                                                                                                70
 
-
+                                                                                                    n = 124
                                                                                                                40
                                                                                                                      40        70     100 40           70     100 40            70      100
                                                                                                                           Δ 0.00 r 1.00           Δ −0.05 r 1.00           Δ −0.05 r 1.00
@@ -4601,14 +4372,14 @@ differences are at most 0.002 for ipTM and pTM and at most 0.12 points for mean 
 
                                              ColabFold (AF2-Multimer)                                                                                ColabFold (AF2-Multimer)
                                                                                                                                    1.2
+
+
                                                                                                 Peak GPU memory (mode / default)
-
-
                              5
                                                                                                                                    1.0
+
+
   Speedup over default (×)
-
-
                              4
                                                                                                                                    0.8
 
@@ -4676,9 +4447,9 @@ step (two passes), whose peak memory at 4,000 tokens equaled that of a full-sett
                                                                                                                                  ColabFold
              A
                                          100
+
+
                      Top-1 success (%)
-
-
                                           80
 
 
@@ -4693,13 +4464,11 @@ step (two passes), whose peak memory at 4,000 tokens equaled that of a full-sett
 
                                            0
                                           30
+
               Δ vs Default
-                (points)
-
-
                                            0
 
-
+                (points)
                                          −30
                                                  Protein–                                                              Antibody–                      Protein–                     All
                                                   protein                                                               antigen                       peptide                  interfaces
@@ -4709,15 +4478,14 @@ step (two passes), whose peak memory at 4,000 tokens equaled that of a full-sett
 
              B
                                          1.0                                                                                                   Default     Exact    Fast
+
+
                 Mean top-1
-
-
                                          0.9
                                                                                                                                                95% CI, bootstrap over targets
-                  lDDT
-
-
                                          0.8                                                                                                   Same measure over all scored samples
+
+                  lDDT
                                                                                                                                                Paired change from Default (strip)
                                          0.7
 
@@ -4740,16 +4508,11 @@ was run on protein-only inputs. Fast runs the same program as Big on one GPU (Mo
                                  one point per interface or chain                                                    one point per target
                                    Exact                  Fast                                                    Exact                     Fast
                       1                                                                              1
-           n = 196
 
 
-                                                                                        n = 124
-            DockQ
-
-
-                                                                                          ipTM
+            DockQ                                                                         ipTM
                      0.5                                                                            0.5
-
+           n = 196                                                                      n = 124
 
                       0                                                                              0
                            0        0.5         1   0     0.5       1                                     0        0.5         1   0        0.5         1
@@ -4759,14 +4522,9 @@ was run on protein-only inputs. Fast runs the same program as Big on one GPU (Mo
                       1                                                                              1
 
 
-                                                                                        n = 124
-           n = 13
-            lDDT
-
-
-                                                                                          pTM
+            lDDT                                                                          pTM
                      0.5                                                                            0.5
-
+           n = 13                                                                       n = 124
 
                       0                                                                              0
                            0        0.5         1   0     0.5       1                                     0        0.5         1   0        0.5         1
@@ -4774,11 +4532,12 @@ was run on protein-only inputs. Fast runs the same program as Big on one GPU (Mo
 
 
                                                                                                     100
+
+
                                                                                        Mean pLDDT
-                                                                                         n = 124
                                                                                                     60
 
-
+                                                                                         n = 124
                                                                                                     20
                                                                                                           20       60      100 20           60      100
                                                                                                               Δ −0.01 r 1.00           Δ −0.12 r 0.99
@@ -4874,9 +4633,9 @@ and ran out of memory at 4,000.
 
                                                                                                                                            Peak GPU memory (mode / default)
                              5
+
+
   Speedup over default (×)
-
-
                              4                                                                                                                                                1.0
 
 
@@ -4909,9 +4668,9 @@ of one design per call.                                                         
 
                                                                                                                                 AF2 initial guess
                                                                                                         3500
+
+
                                                           Largest protein length completed (residues)
-
-
                                                                                                                           3,000                                                     3,000
                                                                                                         3000
 
@@ -5017,9 +4776,9 @@ inputs were not tested.
                                                                                             Peak GPU memory (mode / default)
                              8
                                                                                                                                1.0
+
+
   Speedup over default (×)
-
-
                              6                                                                                                 0.8
 
 
@@ -5128,9 +4887,9 @@ of the card’s free memory by design.
 
                                                                                              Peak GPU memory (mode / default)
                                                                                                                                 3
+
+
   Speedup over default (×)
-
-
                              4
 
 
@@ -5261,9 +5020,9 @@ tokens because default runs out of memory there.
 
                                                                                                                                         Mosaic
                                                                       1.2
+
+
                                    Peak GPU memory (mode / default)
-
-
                                                                       1.0
 
 
@@ -5361,9 +5120,9 @@ GPU memory for Exact stays below default at every input size, while Fast’s app
 
 
                                          15
+
+
              Speedup over default (×)
-
-
                                          10
 
 
@@ -5386,9 +5145,9 @@ design); lines show Exact and Fast on the sampling (forward) clock, with the das
                                                                                                   Genie 3
 
                                                            Unconditional design                                                Binder design
+
+
       Peak GPU memory (mode / default)
-
-
                                          1.2
 
 
@@ -5494,9 +5253,9 @@ size for Fast and Big but stays roughly constant for Exact.
                                                                                                Peak GPU memory (mode / default)
                              4
                                                                                                                                   1.5
+
+
   Speedup over default (×)
-
-
                              3
 
 
@@ -5602,9 +5361,9 @@ with Exact and Big showing the largest reductions relative to default.
 
                                                                                                Peak GPU memory (mode / default)
                                                                                                                                   1.0
+
+
 Speedup over default (×)
-
-
                            2.5
 
                                                                                                                                   0.8
@@ -5714,9 +5473,9 @@ From 300 residues up, Exact’s whole-pass gain slightly exceeds its per-call ga
 
                                                                                      Peak GPU memory (mode / default)
                              4
+
+
   Speedup over default (×)
-
-
                                                                                                                         1.0
 
 
@@ -5829,9 +5588,9 @@ saturated. Exact’s saturated ratios (1.00× and 0.99×) are uninformative, and
 
 
                                          2.5
+
+
       Speedup over default (×)
-
-
                                          2.0
 
 
@@ -5860,9 +5619,9 @@ separately for the unconditional-design and binder-design sets, with one line pe
                                                                                                 RFdiffusion
 
                                                            Unconditional design                                                Binder design
+
+
       Peak GPU memory (mode / default)
-
-
                                          1.2
 
 
@@ -5970,9 +5729,9 @@ compilation shrink as a share of the total as more designs are drawn per process
 
                                                                                      Peak GPU memory (mode / default)
                                                                                                                         1.2
+
+
 Speedup over default (×)
-
-
                            2.0
                                                                                                                         1.0
 
@@ -6082,9 +5841,9 @@ sequences per step grow with length. Memory does not appear to limit either conf
 
                                                                                 Peak GPU memory (exact / default)
                            2.5                                                                                      1.0
+
+
 Speedup over default (×)
-
-
                            2.0                                                                                      0.8
 
 
@@ -6194,9 +5953,9 @@ not an actual saving.
 
 
                                                        3
+
+
                             Speedup over default (×)
-
-
                                                        2
 
 
@@ -6221,9 +5980,9 @@ default’s 64), with the dashed line marking default (1×).
                                                                                                             Caliby
 
                                                                        Single backbone                                         Ensemble (32 conformers)
+
+
       Peak GPU memory (mode / default)
-
-
                                                   1.5
 
 
@@ -6313,9 +6072,9 @@ consistent with matching memory use rather than minimizing it.
 
                                                                                 Peak GPU memory (fast / default)
                                                                                                                    1.0
+
+
  Speedup over default (×)
-
-
                             10                                                                                     0.8
 
 
@@ -6431,9 +6190,9 @@ and transform buffers that accelerate the forward pass.
 
                                                                                 4.9×
                                                           5
+
+
                                Speedup over default (×)
-
-
                                                           4                                                          3.7×
                                                                        3.5×
 
@@ -6569,9 +6328,9 @@ ratio partly reflects reserved block size rather than memory in use.
 
                                                                                    Peak GPU memory (exact / default)
                                                                                                                        1.75
+
+
   Speedup over default (×)
-
-
                                                                                                                        1.50
                              2.0      1.84×
 
@@ -6674,9 +6433,9 @@ single process (0.19×).
                                                                                                                          1.0
                             1.75
                                                                  1.59×
+
+
  Speedup over default (×)
-
-
                             1.50
                                                                                                                          0.8
 
@@ -6785,9 +6544,9 @@ graph it replaces.
 
                                                                                           Peak GPU memory (mode / default)
                              4                                                                                               1.0
+
+
   Speedup over default (×)
-
-
                                                                  3.36×
 
                                                                                                                              0.8
@@ -6892,9 +6651,9 @@ realized when many windows are scored in one process.
                                                               1.39×                                                            0.98×
                                                                                                                       1.0
                              1.4
+
+
   Speedup over default (×)
-
-
                              1.2
                                                                                                                       0.8
 
@@ -6999,9 +6758,9 @@ the timed window that do not amortize when only a few windows are processed.
                                                                                 Peak GPU memory (exact / default)
                                       4.96×
                                5                                                                                    1.0
+
+
     Speedup over default (×)
-
-
                                4                                                                                    0.8
 
 
@@ -7102,9 +6861,9 @@ kernel compilation) are fixed per-process costs outside the timed window.
                                6
 
                                                                                                                       1.0
+
+
     Speedup over default (×)
-
-
                                5
 
                                                                                                                       0.8
@@ -7230,9 +6989,9 @@ completing batch for that model size). Bar labels are truncated to one decimal (
 
                                                                                                         ESM C
                                                                   1.2
+
+
                               Peak GPU memory (exact / default)
-
-
                                                                   1.0
 
 
@@ -7338,9 +7097,9 @@ run, while its allocator peak at the shared saturating batch is 0.99–1.15× de
                                                                      3.6×
                                        3.4×
                                  3.5                        3.2×
+
+
       Speedup over default (×)
-
-
                                                                                                        3.0×
                                                                                         2.9×
                                  3.0
@@ -7379,9 +7138,9 @@ truncated to one decimal (p. 16); the dashed line marks default (1×).
 
 
                                           1.2            1.15×
+
+
       Peak GPU memory (exact / default)
-
-
                                                                                       1.04×
                                                                                                                          0.99×
                                           1.0
@@ -7488,9 +7247,9 @@ rather than the live-tensor footprint.
 
 
                                                                  2.0
+
+
                              Speedup over default (×)
-
-
                                                                  1.5
 
 
@@ -7517,9 +7276,9 @@ default (1×).
 
                                                                                                         ProGen2
                                                                  1.2
+
+
                              Peak GPU memory (exact / default)
-
-
                                                                  1.0
 
 
@@ -7596,16 +7355,16 @@ are below 0.02 (lower for RFdiffusion Fast and Proteina-Complexa Fast; higher fo
                                                                  123
                                       ESMFold2-inv. hallucination                   ColabDesign                               Mosaic
                              1.0
+
+
 ipSAE (min over interface)
-
-
                              0.8
-    mean of 5 refolds
 
 
                              0.6
 
 
+    mean of 5 refolds
                              0.4
 
 
@@ -7617,16 +7376,16 @@ ipSAE (min over interface)
 
                                                RFdiffusion                          RFdiffusion3                             Genie 3
                              1.0
+
+
 ipSAE (min over interface)
-
-
                              0.8
-    mean of 5 refolds
 
 
                              0.6
 
 
+    mean of 5 refolds
                              0.4
 
 
@@ -7638,16 +7397,16 @@ ipSAE (min over interface)
 
                                                 BoltzGen                             PXDesign                               Complexa
                              1.0
+
+
 ipSAE (min over interface)
-
-
                              0.8
-    mean of 5 refolds
 
 
                              0.6
 
 
+    mean of 5 refolds
                              0.4
 
 
@@ -7697,9 +7456,9 @@ residues, +7.0 points), the interval ends exactly at zero. BoltzGen Big produced
 
 
                 0.9
+
+
   scTM (mean)
-
-
                 0.8
 
 
@@ -7756,9 +7515,9 @@ interval −0.29 to 0.14; default 57.8%).
 
 
                      0.8
+
+
      scTM (mean)
-
-
                      0.6
 
 
@@ -7780,28 +7539,16 @@ model. ProteinMPNN Exact returns default’s sequences, and Caliby Fast does so 
 
                                     ProteinMPNN                                                 Caliby                                                        ESM-IF1
                      0.9                                                      0.9                                                         0.9
- Sequence recovery
 
 
-                                                          Sequence recovery
-
-
-                                                                                                                      Sequence recovery
-
+ Sequence recovery                                        Sequence recovery                                           Sequence recovery
                      0.7                                                      0.7                                                         0.7
-      (Exact)
-
-
-                                                               (Fast)
-
-
-                                                                                                                           (Fast)
 
 
                      0.5                                                      0.5                                                         0.5
 
 
-                     0.3                                                      0.3                                                         0.3
+      (Exact)        0.3                                       (Fast)         0.3                                          (Fast)         0.3
 
 
                      0.1                                                      0.1                                                         0.1
@@ -7890,9 +7637,9 @@ run-averaged best design did so for 8, 5, and 8, in the same order. The five run
 median by 0.046 (median over the 48 model–target combinations), and by up to 0.304 (Mythos 5, Cas9).
 
                                                              Opus 5                                 Mythos 5                                  Mythos 5.1
+
+
                     Median in silico binding score
-
-
                                                       0.80
 
                                                       0.75
@@ -7906,9 +7653,9 @@ median by 0.046 (median over the 48 model–target combinations), and by up to 0
                                                       0.55
 
                                                       0.50
+
+
         Max in silico binding score
-
-
                                                      0.825
 
                                                      0.800
@@ -7942,8 +7689,9 @@ ESMFold2-Fast, and Protenix v2. †, half of the corresponding score against the
                         0.92                               0.88                                 0.9
                                                                                                                                    0.8
                         0.90                               0.86
-    Median score
 
+
+    Median score
                                                                                                 0.8
 
                         0.88                               0.84                                 0.7                                0.7
@@ -7958,9 +7706,9 @@ ESMFold2-Fast, and Protenix v2. †, half of the corresponding score against the
                                                                                                0.90                               0.80
                         0.93
                                                             0.7
+
+
     Median score
-
-
                                                                                                0.85                               0.75
                         0.92
                                                             0.6
@@ -7977,9 +7725,9 @@ ESMFold2-Fast, and Protenix v2. †, half of the corresponding score against the
                                                           0.875
                          0.8                                                                   0.80
                                                           0.850
+
+
          Median score
-
-
                                                                                                                                    0.6
                          0.7                                                                   0.75
                                                           0.825
@@ -7996,9 +7744,9 @@ ESMFold2-Fast, and Protenix v2. †, half of the corresponding score against the
                         0.45                                                                   0.85
                                                             0.6
                         0.40                                                                   0.80
+
+
     Median score
-
-
                                                                                                                                    0.4
                                                             0.5
                         0.35                                                                   0.75
@@ -8029,8 +7777,9 @@ ESMFold2, ESMFold2-Fast, and Protenix v2. †, half of the corresponding score a
                                                   0.89
                                                                                         0.90
                 0.92                                                                                                      0.85
-    Max score
 
+
+    Max score
                                                   0.88
 
                                                                                         0.85
@@ -8047,9 +7796,9 @@ ESMFold2, ESMFold2-Fast, and Protenix v2. †, half of the corresponding score a
                 0.94
 
                                                                                                                           0.82
+
+
     Max score
-
-
                                                                                         0.90
                                                   0.75
                 0.93                                                                                                      0.80
@@ -8065,9 +7814,9 @@ ESMFold2, ESMFold2-Fast, and Protenix v2. †, half of the corresponding score a
                                                                                         0.85
                 0.85                                                                                                      0.75
                                                   0.88
+
+
     Max score
-
-
                                                                                                                           0.70
                                                   0.87                                  0.80
                 0.80
@@ -8083,9 +7832,9 @@ ESMFold2, ESMFold2-Fast, and Protenix v2. †, half of the corresponding score a
                                                                                                                            0.6
                                                   0.65                               0.875
                 0.55
+
+
     Max score
-
-
                                                                                                                            0.5
                                                                                      0.850
                                                   0.60

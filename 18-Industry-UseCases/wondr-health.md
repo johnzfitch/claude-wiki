@@ -2,7 +2,7 @@
 title: "Wondr Health Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/wondr-health"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:55Z"
+fetched_at: "2026-11-18T06:29:12Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -106,6 +106,9 @@ Phase 1 was scoped to prove the experience works before putting it in front of r
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -113,6 +116,3 @@ Phase 1 was scoped to prove the experience works before putting it in front of r
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

@@ -2,8 +2,8 @@
 title: "Elicitation - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/client/elicitation"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:25:31Z"
-last_modified: "Fri, 30 Oct 2026 20:46:28 GMT"
+fetched_at: "2026-11-10T06:28:38Z"
+last_modified: "Mon, 09 Nov 2026 23:00:55 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

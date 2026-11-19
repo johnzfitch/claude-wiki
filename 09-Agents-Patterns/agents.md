@@ -2,8 +2,8 @@
 title: "Run agents in parallel - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agents"
 category: "09-Agents-Patterns"
-fetched_at: "2026-10-31T06:25:06Z"
-last_modified: "Sat, 31 Oct 2026 01:11:35 GMT"
+fetched_at: "2026-11-13T06:34:50Z"
+last_modified: "Fri, 13 Nov 2026 06:15:34 GMT"
 tags: ["agents", "claude-code"]
 ---
 

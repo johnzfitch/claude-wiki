@@ -2,11 +2,14 @@
 title: "Set up Code Review - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-setup"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-20T06:38:29Z"
+fetched_at: "2026-11-13T06:34:53Z"
+last_modified: "Fri, 13 Nov 2026 06:21:50 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [What you need to turn on Code Review](#what-you-need-to-turn-on-code-review)
 - [Turn on Code Review](#turn-on-code-review)
@@ -40,11 +43,11 @@ What you need to turn on Code Review
 
 First check that your organization [qualifies for Code Review](code-review.md#availability). Then make sure you have this access, or someone who does:
 
-| Access                                                                                    | Needed for                                                                                                                                                                                                |
-|:------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Owner role](../13-Enterprise-Admin/server-managed-settings.md#access-control) in your Claude organization | Every step on the admin page                                                                                                                                                                              |
-| Owner of the GitHub organization                                                          | Installing the Claude GitHub App and [linking it to your Claude organization](../13-Enterprise-Admin/admin-setup.md#connected-github-accounts). If you aren’t an owner, have one install and link the app before you start |
-| Write access to each repository you add, from the GitHub account you connect to Claude    | Adding the repository                                                                                                                                                                                     |
+| Access | Needed for |
+|:---|:---|
+| [Owner role](../13-Enterprise-Admin/server-managed-settings.md#access-control) in your Claude organization | Every step on the admin page |
+| Owner of the GitHub organization | Installing the Claude GitHub App and [linking it to your Claude organization](../13-Enterprise-Admin/admin-setup.md#connected-github-accounts). If you aren’t an owner, have one install and link the app before you start |
+| Write access to each repository you add, from the GitHub account you connect to Claude | Adding the repository |
 
 
 [​](#turn-on-code-review)

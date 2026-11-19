@@ -2,9 +2,11 @@
 title: "Preparing for the 2026 US midterms \\ Anthropic"
 source_url: "https://www.anthropic.com/news/2026-us-midterms"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:59Z"
+fetched_at: "2026-11-14T06:25:54Z"
 tags: ["news-research"]
 ---
+
+### 01Connecting people to trusted sources
 
 # Preparing for the 2026 US midterms
 
@@ -12,23 +14,19 @@ tags: ["news-research"]
 - [02Measuring and preventing political bias](#measuring-and-preventing-political-bias)
 - [03How we define misuse](#how-we-define-misuse)
 
-- Published
+Published  
+Oct 14, 2026
 
-  Oct 14, 2026
+[Safeguards](safeguards.md)
 
-- Category
+Topics  
+- [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
+- [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
 
-  [Safeguards](safeguards.md)
-
-- Topics
-
-  - [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
-  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
-
-  See more...
+See more...
 
 Related articles
 
@@ -46,11 +44,11 @@ Below, we outline how we've built on that work and continued to strengthen our e
 
 ### How people use Claude for elections and politics
 
-Our goal is for Claude to be a useful tool for political conversations, while preventing election-related abuse. That starts with understanding how people actually use Claude in these contexts. To do this, we used Anthropic Insights to develop a new analysis of 250,000 conversations over the course of a recent one-week period.^([1](#footnote-1))
+Our goal is for Claude to be a useful tool for political conversations, while preventing election-related abuse. That starts with understanding how people actually use Claude in these contexts. To do this, we used Anthropic Insights to develop a new analysis of 250,000 conversations over the course of a recent one-week period.^([^1])
 
 Today, conversations that touch broadly on politics, public policy, or social issues account for about 5.75% of all conversations in the United States on Claude.ai, our consumer app. This includes people turning to Claude to follow the news, conduct academic or professional research on public policy, learn about candidates, and navigate government services. About 0.51% of all conversations are specifically about elections or voting. As we get closer to Election Day, we expect the share of political and election-related queries to [increase](elections-ai-2024.md).
 
-This sample suggests people rarely ask Claude whom or what to vote for. These kinds of requests showed up in about 0.01% of US Claude conversations. More often, we observed people asking Claude questions that could help them reach their own conclusions, like where candidates stand on a particular issue. Requests that violated our [election integrity policies](https://www.anthropic.com/legal/aup) were even less common, appearing in about 0.002% of conversations.^([2](#footnote-2))
+This sample suggests people rarely ask Claude whom or what to vote for. These kinds of requests showed up in about 0.01% of US Claude conversations. More often, we observed people asking Claude questions that could help them reach their own conclusions, like where candidates stand on a particular issue. Requests that violated our [election integrity policies](https://www.anthropic.com/legal/aup) were even less common, appearing in about 0.002% of conversations.^([^2])
 
 ## **Connecting people to trusted sources**
 
@@ -74,7 +72,7 @@ We're addressing this in a few ways. We've improved how Claude responds to direc
 
 Our [Usage Policy](https://www.anthropic.com/legal/aup) prohibits using Claude to deceive voters or disrupt elections, from spreading false information about candidates or how to vote, to impersonating election officials or trying to suppress turnout. Each year, we update the policy to reflect our models’ evolving capabilities and feedback from our customers. This year’s update, which we [announced](2026-usage-policy-update.md) last week, clarifies what our election rules cover and what they don't, and adds new examples to help people understand where the lines fall.
 
-We know many political campaigns use Claude for legitimate, everyday tasks, so we recently [published a guide](anthropic-supports-the-responsible-use-of-claude-in-political-campaigns-used.md) to help them understand where these policies apply. It covers the many ways campaigns can put Claude to work, such as drafting press statements and fundraising emails, prepping for debates, analyzing turnout data, and building voter outreach materials. It also spells out what’s prohibited, such as using Claude to create fake social media profiles that pose as real people, mass-producing comments to inflate a campaign’s engagement, or writing content for news sites and pages that falsely claim to be independent.
+We know many political campaigns use Claude for legitimate, everyday tasks, so we recently [published a guide](https://assets.claude.com/027b10ca405e9bb66b98c88d911b4b21a0b70123.pdf) to help them understand where these policies apply. It covers the many ways campaigns can put Claude to work, such as drafting press statements and fundraising emails, prepping for debates, analyzing turnout data, and building voter outreach materials. It also spells out what’s prohibited, such as using Claude to create fake social media profiles that pose as real people, mass-producing comments to inflate a campaign’s engagement, or writing content for news sites and pages that falsely claim to be independent.
 
 ### Testing and strengthening our defenses
 
@@ -99,3 +97,7 @@ More people are turning to Claude for information about this year’s elections 
 01We took a random sample of 250,000 US Claude.ai consumer conversations from September 21 to 27, 2026 and analyzed them in a privacy-preserving way. [](#footnote-ref-1)
 
 02This figure was generated from a separate analysis of 250,000 Claude.ai conversations, which were reviewed against our election integrity policy.[](#footnote-ref-2)
+
+[^1]:
+
+[^2]:

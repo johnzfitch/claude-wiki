@@ -2,9 +2,11 @@
 title: "Trustworthy agents in practice \\ Anthropic"
 source_url: "https://www.anthropic.com/research/trustworthy-agents"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:42Z"
+fetched_at: "2026-11-14T06:26:43Z"
 tags: ["agents", "news-research"]
 ---
+
+### 01How agents work
 
 # Trustworthy agents in practice
 
@@ -12,23 +14,20 @@ tags: ["agents", "news-research"]
 - [02Our principles in practice](#our-principles-in-practice)
 - [03What the broader ecosystem can do](#what-the-broader-ecosystem-can-do)
 
-- Published
+Published  
+Apr 9, 2026
 
-  Apr 9, 2026
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [Tool use](https://www.anthropic.com/search?topic=tool-use)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-  - [Tool use](https://www.anthropic.com/search?topic=tool-use)
-
-  See more...
+See more...
 
 Related articles
 
@@ -99,6 +98,6 @@ The measures described above represent what we can do within our own products. B
 
 **Open standards.** We created the [Model Context Protocol](model-context-protocol.md) as an open standard for how models communicate with external data sources and tools (and we’ve since [donated it](donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation.md) to the Linux Foundation's Agentic AI Foundation so that it belongs to the broader community). We did this because open protocols allow security properties to be designed into the infrastructure once, rather than patched together one deployment at a time. Open protocols also keep competition focused on the quality and safety of the agent, rather than on who controls the integrations.
 
-None of these measures replace the work that model developers have to do to build safe and secure agents, but this is the kind of infrastructure no single company can build alone. We go into greater technical detail on this topic in [our submission](https://www-cdn.anthropic.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf) to NIST's Center for AI Standards and Innovation (CAISI) on agentic security.
+None of these measures replace the work that model developers have to do to build safe and secure agents, but this is the kind of infrastructure no single company can build alone. We go into greater technical detail on this topic in [our submission](https://assets.claude.com/43ec7e770925deabc3f0bc1dbf0133769fd03812.pdf) to NIST's Center for AI Standards and Innovation (CAISI) on agentic security.
 
 Agents will reshape how people work, and whether that happens on a foundation that is secure and open depends on how industry, civil society, and government build it together.

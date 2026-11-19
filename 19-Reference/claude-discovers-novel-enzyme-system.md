@@ -2,7 +2,7 @@
 title: "Claude discovers a novel enzyme system \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:09Z"
+fetched_at: "2026-11-18T06:28:39Z"
 tags: ["news-research"]
 ---
 

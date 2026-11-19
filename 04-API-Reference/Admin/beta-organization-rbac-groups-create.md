@@ -2,7 +2,7 @@
 title: "Create RBAC Group - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/rbac_groups/create"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:58Z"
+fetched_at: "2026-11-13T06:34:16Z"
 tags: ["api"]
 ---
 

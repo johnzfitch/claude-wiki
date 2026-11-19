@@ -2,9 +2,9 @@
 title: "Work with Claude Tag - Claude.ai Documentation"
 source_url: "https://support.claude.com/en/articles/12461605-using-claude-in-slack"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:25:56Z"
-last_modified: "Mon, 09 Nov 2026 01:18:01 GMT"
-tags: ["connectors"]
+fetched_at: "2026-11-18T06:28:16Z"
+last_modified: "Wed, 18 Nov 2026 02:56:16 GMT"
+tags: ["billing", "connectors"]
 ---
 
 # Work with Claude Tag
@@ -43,17 +43,11 @@ On it. I’ll compare latency before and after the deploy, track down the cause,
 
 Done: Pulled p99 latency from DatadogDone: Diffed deploy 4f2c1 against mainDone: Reproduced the slow query locallyIn progress: Opening a pull request with the fix…
 
-
-[​](#plans-that-include-claude-tag)
-
-Plans that include Claude Tag
+## [](#plans-that-include-claude-tag)Plans that include Claude Tag
 
 Claude Tag is available on Team and Enterprise plans, on Anthropic’s first-party service. It isn’t available on individual plans (Free, Pro, Max, or Ultra), or for third-party deployments. To use it, your organization pairs its Slack workspace with its Claude organization; see [the setup overview](https://support.claude.com/docs/claude-tag/admins/setup-overview) for the full prerequisites. If you’re choosing between Claude products for Slack-shaped work, [how Claude Tag differs from Cowork and Claude Code](https://support.claude.com/docs/claude-tag/concepts/how-it-works#how-claude-tag-differs-from-cowork-and-claude-code) compares them directly: team work in shared channels is Claude Tag; personal work on your own files is Cowork or Claude Code.
 
-
-[​](#who-needs-a-claude-seat)
-
-Who needs a Claude seat
+### [](#who-needs-a-claude-seat)Who needs a Claude seat
 
 Slack users don’t each need a Claude seat to work with Claude in channels.
 
@@ -61,10 +55,7 @@ Slack users don’t each need a Claude seat to work with Claude in channels.
 - **In group DMs**: the same restriction on who can use Claude applies, and the work bills to your organization’s usage balance. See [Group DMs](https://support.claude.com/docs/claude-tag/admins/restrict-access#group-dms).
 - **In one-to-one DMs**: a DM from a member who has connected a Claude account runs on that account and bills to that person’s seat. For the DM to work, that person needs either a seat that includes Claude Code or, on the Enterprise plan, Cowork access on a **Standard** seat or a usage-based **Chat** seat. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can bill to your organization for a limited time.
 
-
-[​](#where-claude-tag-runs)
-
-Where Claude Tag runs
+## [](#where-claude-tag-runs)Where Claude Tag runs
 
 Claude Tag works in Slack. You interact with it by writing in a Slack channel, thread, or direct message, and it replies there. Mention `@Claude` in a channel to guarantee it picks the message up. When Claude works on a task, it runs in an ephemeral sandbox, not on your computer. The sandbox is created when a conversation starts, holds any code or files Claude is working with, and is discarded when the conversation goes idle. See [how Claude Tag works](https://support.claude.com/docs/claude-tag/concepts/how-it-works) for the full lifecycle. You extend what Claude can reach, like your repositories, ticketing systems, data warehouses, and custom tools, through [Claude Tag connectors](https://support.claude.com/docs/claude-tag/admins/add-connections), [plugins, and skills](https://support.claude.com/docs/claude-tag/admins/customize). An Owner or a [Claude Tag admin](https://support.claude.com/docs/claude-tag/admins/restrict-access#delegate-claude-tag-administration) configures these for all of Slack, for one workspace, or for one channel. Members’ own claude.ai connectors are separate from that configuration; Claude can use them in a channel for the member’s own requests, as [personal connectors in channels](https://support.claude.com/docs/claude-tag/concepts/personal-connectors) describes.
 
@@ -76,26 +67,17 @@ Claude Tag works in Slack. You interact with it by writing in a Slack channel, t
 
 [How do I hand Claude Tag a task?Mention Claude in any channel it’s in, with nothing to install](https://support.claude.com/docs/claude-tag/users/getting-started)[What is Claude Tag good at?Use cases for coding, data, incidents, and go-to-market](https://support.claude.com/docs/claude-tag/users/use-cases)[How do I get good results?Good habits for scoping and reviewing work](https://support.claude.com/docs/claude-tag/users/good-habits)[What does Claude Tag remember?Channel memory, what’s shared across the workspace, and who can see what](https://support.claude.com/docs/claude-tag/users/memory)[Can Claude Tag run tasks on a schedule?Scheduled jobs, channel watching, and triggers](https://support.claude.com/docs/claude-tag/users/proactivity)
 
-
-[​](#billing-and-spend-limits)
-
-Billing and spend limits
+## [](#billing-and-spend-limits)Billing and spend limits
 
 Adding Claude to Slack doesn’t add a per-seat charge. Channel, thread, and group DM work is billed by usage instead: it draws from a **usage balance**, an amount in your organization’s billing currency that an Owner funds. A [spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) caps how much of that balance Claude Tag can use each billing period. One-to-one direct messages from members who have connected a Claude account don’t draw from this balance. Such a DM runs on the sender’s own claude.ai account and follows that seat’s usual usage limits, so the organization spend limit doesn’t apply to it. A [DM from a member who hasn’t connected a Claude account](https://support.claude.com/docs/claude-tag/admins/restrict-access#direct-messages-from-members-without-a-claude-account) can draw from this balance. To learn what your team’s usage costs, run a pilot with a spend limit set and watch the per-channel breakdown on the [usage page in your admin settings](https://claude.ai/admin-settings/usage/claude-tag). [Set a spend limit](https://support.claude.com/docs/claude-tag/admins/set-spend-limit) covers how to fund the balance on each plan, set the limit, and what happens when usage reaches it.
 
 For end users
 
-
-[​](#put-claude-tag-to-work)
-
-Put Claude Tag to work
+## [](#put-claude-tag-to-work)Put Claude Tag to work
 
 If Claude Tag is in your channel, you can use it now. (If it isn’t there yet, an Owner in your Claude organization runs setup: see [Set up Claude Tag](https://support.claude.com/docs/claude-tag/admins/setup-overview).) Anyone in the channel can hand it work, and channel work bills to the organization, not to you. What it can reach starts with the channel you’re in. The fastest way to find out is to ask it: `@Claude what can you access from this channel?` Or, if you’re signed in to your Claude organization, click **Configure** in the footer of a Claude reply in the channel to see its [connections](https://support.claude.com/docs/claude-tag/concepts/glossary#connection), the external services an admin has connected for that channel. Replies in org-shared channels have no Configure link. For your own requests, Claude can also [use the connectors on your claude.ai account](https://support.claude.com/docs/claude-tag/concepts/personal-connectors), after you allow it. In a one-to-one DM, Claude runs on your own claude.ai account instead of a channel’s setup. An Owner can turn off DMs for the whole organization; see [Allow or disable direct messages](https://support.claude.com/docs/claude-tag/admins/restrict-access#allow-or-disable-direct-messages).
 
-
-[​](#common-uses)
-
-Common uses
+### [](#common-uses)Common uses
 
 Each link opens a guide with the prompts to paste and the connections the task needs.
 
@@ -112,10 +94,7 @@ Each link opens a guide with the prompts to paste and the connections the task n
 
 For administrators
 
-
-[​](#set-claude-tag-up-once-for-everyone)
-
-Set Claude Tag up once for everyone
+## [](#set-claude-tag-up-once-for-everyone)Set Claude Tag up once for everyone
 
 You set up Claude Tag once, at [`claude.ai/admin-settings/claude-tag`](https://claude.ai/admin-settings/claude-tag), and you must be an Owner in your Claude organization to do it. The setup page at that URL walks you through it:
 
@@ -130,10 +109,7 @@ Security review
 
 The security model, what admins can and can’t restrict, audit trails, and network requirements.
 
-
-[​](#where-to-start-with-claude-tag)
-
-Where to start with Claude Tag
+## [](#where-to-start-with-claude-tag)Where to start with Claude Tag
 
 ## Set up Claude Tag
 

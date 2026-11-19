@@ -2,7 +2,7 @@
 title: "Claude Platform release notes - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/release-notes/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:29Z"
+fetched_at: "2026-11-13T06:36:51Z"
 tags: ["models"]
 ---
 
@@ -29,6 +29,29 @@ The Claude Platform release notes list changes to the Claude API, the client SDK
 For release notes on Claude Apps, see the [Release notes for Claude Apps in the Claude Help Center](../19-Reference/release-notes.md).
 
 For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) in the `claude-code` repository.
+
+### November 12, 2026
+
+- We’ve launched [self-hosted Claude Managed Agents](../04-API-Reference/Other/managed-agents-self-hosted.md). You run the whole Managed Agents service, not only [self-hosted sandboxes](../04-API-Reference/Other/managed-agents-self-hosted-sandboxes.md), on your own infrastructure, and you store agents, sessions, and session history there. The server sends model requests to the provider that you choose, which is Anthropic by default. To request access, contact your Anthropic account team.
+
+### November 9, 2026
+
+- We’ve launched **Claude Fable 5.2** (`claude-fable-5-2`), built for demanding reasoning and long-horizon agentic work. **Claude Mythos 5.2** (`claude-mythos-5-2`) offers the same capabilities only to organizations verified through Anthropic’s verification programs, such as the [Cyber Verification Program](https://support.claude.com/en/articles/14604842). Both models have a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md), 128k max output tokens, and always-on [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md). They cost \$8 USD per MTok of input and \$40 USD per MTok of output (Claude Fable 5.1 and Claude Mythos 5.1 cost \$10 USD per MTok of input and \$50 USD per MTok of output). Claude Fable 5.2 is available on the Claude API, [Amazon Bedrock (`bedrock-runtime`)](../04-API-Reference/Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Anthropic managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md), [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md), and [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md). See [What’s new in Claude Fable 5.2](models-fable-5-2-whats-new-fable-5-2.md) for API changes and migration guidance. For model-specific prompting patterns, see [Prompting Claude Fable 5.2](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-fable-5-2.md).
+- Claude Fable 5.2 and Claude Mythos 5.2 enforce the [prefix check](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#prefix-check) for every account, whatever its age. Claude Fable 5.1 returns the error by default on accounts created on or after August 31, 2026 (see [When `prefix_mismatch_behavior` is unset](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#enforcement)). If your code edits the `system` prompt, `tools`, or an earlier message and then sends back a Claude Fable 5.2 or Claude Mythos 5.2 thinking block from a later turn, the request returns a 400 error. Before you switch, [check whether your code edits the prefix](models-fable-5-2-migration-guide.md#fable-5-2-preserved-thinking).
+- Claude Fable 5.2 and Claude Mythos 5.2 read other models’ thinking blocks on the Claude API and Claude Models on Google Cloud (Google managed). So on those platforms, a conversation that moves onto either model keeps its reasoning. The other models include Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5.
+- No other model reads thinking blocks from Claude Fable 5.2 or Claude Mythos 5.2. When a conversation moves from either one to a model outside this pair, the API drops those blocks. That includes a move to Claude Opus 5.5 or Claude Fable 5.1. The request still succeeds. See [Switching models mid-conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#switching-models).
+- Claude Fable 5.2 and Claude Mythos 5.2 support computer use through the `computer_toolset_20260801` toolset. A request that declares the earlier `computer_20251124` tool returns a 400 error on every platform except Amazon Bedrock, where the earlier tool still works. See [Migrate from `computer_20251124`](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md#migrate-from-computer-20251124).
+- With the [advisor tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md), which is in beta, a Claude Fable 5.2 or Claude Mythos 5.2 executor accepts only Claude Fable 5.2 or Claude Mythos 5.2 as its advisor. Any other advisor returns a 400 error, so set the advisor’s `model` to one of these two models when you move an executor to them. Every executor model accepts Claude Fable 5.2 as its advisor. See [Model compatibility](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility).
+- Both models require 30-day data retention, like Claude Fable 5.1 and Claude Mythos 5.1. They aren’t available under zero data retention unless expressly authorized by Anthropic. See [Model-specific data retention requirements](../04-API-Reference/Other/manage-claude-api-and-data-retention.md#model-specific-data-retention-requirements).
+- Thinking blocks that Claude Fable 5.2 and Claude Mythos 5.2 produce work only in the account that produced them, or in an account linked to it. See [Preserved thinking](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#account-bound-thinking).
+- [Dreams](../04-API-Reference/Other/managed-agents-dreams.md) (research preview) now supports Claude Fable 5.2. See [Supported models](../04-API-Reference/Other/managed-agents-dreams.md#feature-availability).
+- We’ve launched [fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Fable 5.2 in Messages API requests on the Claude API. Fast mode delivers up to 2.5x higher output tokens per second, at \$16 USD per MTok of input and \$80 USD per MTok of output. Set `speed: "fast"` on your request, with no beta header.
+
+### November 5, 2026
+
+- The [Compliance API](../04-API-Reference/Other/manage-claude-compliance-api.md) now includes Security posture data, in beta for Claude Enterprise organizations. The [Activity Feed](../04-API-Reference/Other/manage-claude-compliance-activity-feed.md) records changes to attestations on the **Security posture** page in claude.ai **Organization settings**. The `GET /v1/compliance/organizations/{organization_id}/security_posture` endpoint returns an organization’s current Security posture results. See [Security posture in the Compliance API](../04-API-Reference/Other/manage-claude-compliance-security-posture-overview.md).
+- You can now set up an IP allowlist for your organization in the Claude Console, in beta. Requests to covered services from addresses not on your list are refused, which limits where a leaked API key can be used. Add IPv4 and IPv6 addresses or CIDR ranges, up to 1,000 per organization. See [IP allowlisting](../04-API-Reference/Other/manage-claude-ip-allowlist.md) for what’s covered and how to set it up.
+- You can now sign a member of your Claude Enterprise (claude.ai) organization out of Claude everywhere with the Admin API. This capability is in beta. See the [Admin API reference](../04-API-Reference/Admin/http-beta-organization.md). The member stays in the organization and can sign in again. See [Sign a member out everywhere](../04-API-Reference/Other/manage-claude-user-management.md#sign-a-member-out-everywhere) for the beta header and what the request doesn’t end.
 
 ### November 3, 2026
 
@@ -65,7 +88,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 - We’ve released API version `2026-10-21`. [Migrating to API version 2026-10-21](../04-API-Reference/Endpoints/migration-2026-10-21.md) shows how to upgrade.
 - We’ve released new versions of the [client SDKs](../04-API-Reference/Other/cli-sdks-libraries-overview.md) and the [`ant` CLI](../04-API-Reference/Other/cli-sdks-libraries-cli-quickstart.md) that send API version `2026-10-21` by default: Python SDK 2.0.0, TypeScript SDK 1.0.0, C# SDK 13.0.0, Go SDK 2.0.0, Java SDK 3.0.0, PHP SDK 1.0.0, Ruby SDK 2.0.0, and `ant` CLI 2.0.0. See [Switch to 2026-10-21](../04-API-Reference/Endpoints/migration-2026-10-21.md#upgrade).
 - The new SDK and CLI versions also have breaking changes that don’t depend on the API version, and they are licensed under Apache 2.0 instead of the MIT License. See [SDK and CLI changes](../04-API-Reference/Endpoints/migration-2026-10-21.md#sdk-changes).
-- We’ve added the `enforcement_status` and `enforcement_actions` fields to [user profiles](../04-API-Reference/Other/manage-claude-user-profiles.md), so you can see whether Anthropic has restricted or banned one of your end customers. To find the profiles that have an open restriction or ban, [list your profiles](../04-API-Reference/Endpoints/user-profiles-list.md) with the new `enforcement_status[]` filter. See [Check whether Anthropic has restricted or banned a profile](../04-API-Reference/Other/manage-claude-user-profiles.md#check-whether-anthropic-has-restricted-or-banned-a-profile).
+- We’ve added the `enforcement_status` and `enforcement_actions` fields to [user profiles](../04-API-Reference/Other/manage-claude-user-profiles.md), so you can see whether Anthropic has restricted or banned one of your end customers. To find the profiles that have an open restriction or ban, [list your profiles](../04-API-Reference/Endpoints/user-profiles-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. with the new `enforcement_status[]` filter. See [Check whether Anthropic has restricted or banned a profile](../04-API-Reference/Other/manage-claude-user-profiles.md#check-whether-anthropic-has-restricted-or-banned-a-profile).
 
 ### October 20, 2026
 
@@ -78,7 +101,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### October 15, 2026
 
-- We’ve added `capabilities.thinking.types.between_tools` to the [Models API](../04-API-Reference/Endpoints/models-list.md). `GET /v1/models` and `GET /v1/models/{model_id}` now report whether each model accepts `thinking: {type: "between_tools"}`, which turns off up-front thinking. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
+- We’ve added `capabilities.thinking.types.between_tools` to the [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. `GET /v1/models` and `GET /v1/models/{model_id}` now report whether each model accepts `thinking: {type: "between_tools"}`, which turns off up-front thinking. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
 - The [Compliance API](../04-API-Reference/Other/manage-claude-compliance-api.md) now returns the text each organization member saved as **Instructions for Claude** in claude.ai and as **Global instructions** in Cowork, in beta for Claude Enterprise organizations. Call `GET /v1/compliance/organizations/{org_uuid}/user_preferences` with your existing Compliance Access Key and the `read:compliance_user_data` scope. See [List user preferences](../04-API-Reference/Other/manage-claude-compliance-org-data.md#list-user-preferences).
 - [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) is out of research preview for Claude Opus 5.5, and you no longer need to request access. Requests to Claude Opus 5.5 no longer require the `fast-mode-2026-02-01` beta header, and requests that still send it keep working. Claude Opus 5.5 now has a default fast mode rate limit in the Start, Build, and Scale usage tiers. Fast mode for Claude Opus 5 and Claude Opus 4.8 remains in research preview. Keep sending the beta header with fast mode requests to those models.
 - [Fast mode](../04-API-Reference/Guides/build-with-claude-fast-mode.md) for Claude Opus 5.5 is now available on [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md) for deployments hosted on Azure.
@@ -110,15 +133,15 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### October 6, 2026
 
-- We’ve added `capabilities.server_tools` to the [Models API](../04-API-Reference/Endpoints/models-list.md). `GET /v1/models` and `GET /v1/models/{model_id}` now report whether each model accepts the web search and code execution tools. To check whether a model accepts the code execution tool, read `capabilities.server_tools.code_execution`. The top-level `capabilities.code_execution` reports whether code can call your request’s other tools. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
+- We’ve added `capabilities.server_tools` to the [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. `GET /v1/models` and `GET /v1/models/{model_id}` now report whether each model accepts the web search and code execution tools. To check whether a model accepts the code execution tool, read `capabilities.server_tools.code_execution`. The top-level `capabilities.code_execution` reports whether code can call your request’s other tools. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
 
 ### October 5, 2026
 
-- We’ve added `capabilities.thinking.types.disabled` to the [Models API](../04-API-Reference/Endpoints/models-list.md). `GET /v1/models` and `GET /v1/models/{model_id}` now report whether each model accepts `thinking: {type: "disabled"}`, which turns thinking off. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
+- We’ve added `capabilities.thinking.types.disabled` to the [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. `GET /v1/models` and `GET /v1/models/{model_id}` now report whether each model accepts `thinking: {type: "disabled"}`, which turns thinking off. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
 
 ### October 1, 2026
 
-- We’ve added a `line` field to the [Models API](../04-API-Reference/Endpoints/models-list.md). `GET /v1/models` and `GET /v1/models/{model_id}` now return the model line each model belongs to. Claude Opus 4.5 and Claude Opus 4.6 both report `opus`, for example. Use `line` to group models without parsing their IDs. `line` is `null` for a model that belongs to no line. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
+- We’ve added a `line` field to the [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. `GET /v1/models` and `GET /v1/models/{model_id}` now return the model line each model belongs to. Claude Opus 4.5 and Claude Opus 4.6 both report `opus`, for example. Use `line` to group models without parsing their IDs. `line` is `null` for a model that belongs to no line. See [Using the Models API](about-claude-models-overview.md#using-the-models-api).
 - [Dreams](../04-API-Reference/Other/managed-agents-dreams.md) (research preview) now supports Claude Opus 5.5, Claude Fable 5.1, and Claude Sonnet 5.5. See [Supported models](../04-API-Reference/Other/managed-agents-dreams.md#feature-availability).
 
 ### September 30, 2026
@@ -175,7 +198,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### September 1, 2026
 
-- We’ve launched **Claude Fable 5.1** (`claude-fable-5-1`), the successor to Claude Fable 5 for long-running agentic coding, knowledge work, and research, alongside **Claude Mythos 5.1** (`claude-mythos-5-1`) for Project Glasswing participants. Both models support a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) by default, 128k max output tokens, and always-on [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md), at \$10 / \$50 USD per MTok, the same as Claude Fable 5, with cache reads cut to \$0.25 USD per MTok. Claude Fable 5.1 is available on the Claude API, [Claude in Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md), and [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md). See [What’s new in Claude Fable 5.1](models-fable-5-1-whats-new-fable-5-1.md) for capabilities, API changes, and migration guidance.
+- We’ve launched **Claude Fable 5.1** (`claude-fable-5-1`), the successor to Claude Fable 5 for long-running agentic coding, knowledge work, and research. For Project Glasswing participants, we’ve also launched **Claude Mythos 5.1** (`claude-mythos-5-1`). Both models support a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) by default, 128k max output tokens, and always-on [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md). They cost \$10 / \$50 USD per MTok, the same as Claude Fable 5, with cache reads cut to \$0.25 USD per MTok. Claude Fable 5.1 is available on the Claude API, [Claude in Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), and [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md). It’s also on [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md) and [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md). See [Claude Fable 5.1](models-fable-5-1-overview.md) for specifications.
 - Prompt cache reads on Claude Fable 5.1 and Claude Mythos 5.1 cost \$0.25 USD per million tokens: 0.025x the base input price, compared with 0.1x on other models. Cache writes are unchanged. See [Prompt caching pricing](../17-Billing-Plans/about-claude-pricing.md#prompt-caching).
 - On Claude Fable 5.1 and Claude Mythos 5.1, `tool_choice` types `any` and `tool` aren’t supported and return a 400 error. `auto` and `none` are unchanged. To guarantee schema-conformant tool inputs, use [strict tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-strict-tool-use.md) or [structured outputs](../04-API-Reference/Guides/build-with-claude-structured-outputs.md).
 - Thinking blocks produced by Claude Fable 5.1 and Claude Mythos 5.1 are preserved only for the model that produced them or a newer one: earlier models can’t read them, and the API drops one replayed to an earlier model. Claude Fable 5.1 accepts thinking blocks from Claude Opus 5, Claude Fable 5, Claude Mythos 5, and earlier Claude models. On Claude Fable 5.1, the API also [checks that nothing before a block has changed](../04-API-Reference/Guides/build-with-claude-thinking.md#preserved-in-conversation): for new accounts created on or after August 31, 2026, replaying one after the `system` prompt, `tools`, or an earlier message changed returns a 400 error. With the `thinking-binding-controls-2026-08-01` beta header, dropped blocks are reported in an `input_transformations` response field, and `thinking.block_binding.prefix_mismatch_behavior` chooses between rejecting and dropping blocks whose history changed. See [Preserved thinking](../04-API-Reference/Guides/build-with-claude-thinking.md#preserved-thinking).
@@ -249,8 +272,8 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### July 24, 2026
 
-- We’ve launched **Claude Opus 5** (`claude-opus-5`), a step-change improvement over Claude Opus 4.8. Claude Opus 5 supports a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) (both the default and the maximum), 128k max output tokens, and [thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) on by default, at \$5 / \$25 USD per MTok, the same pricing as Claude Opus 4.8. It’s available on the Claude API, [Claude in Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md), and [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md). See [What’s new in Claude Opus 5](models-opus-5-overview.md) for new features, behavior changes, and migration guidance, and the [models overview](about-claude-models-overview.md) for complete specs.
-- On Claude Opus 5, disabling thinking is allowed only at effort `high` or below: `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error, a breaking change from Claude Opus 4.8. See [What’s new in Claude Opus 5](models-opus-5-overview.md).
+- We’ve launched **Claude Opus 5** (`claude-opus-5`), a step-change improvement over Claude Opus 4.8. Claude Opus 5 supports a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md) (both the default and the maximum), 128k max output tokens, and [thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) on by default, at \$5 / \$25 USD per MTok, the same pricing as Claude Opus 4.8. It’s available on the Claude API, [Claude in Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-in-amazon-bedrock.md), [Claude Platform on AWS](../04-API-Reference/Guides/build-with-claude-claude-platform-on-aws.md), [Claude Models on Google Cloud (Google managed)](../04-API-Reference/Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md), and [Claude in Microsoft Foundry](../04-API-Reference/Guides/build-with-claude-claude-in-microsoft-foundry.md). See [Claude Opus 5](models-opus-5-overview.md) and the [models overview](about-claude-models-overview.md) for complete specs.
+- On Claude Opus 5, disabling thinking is allowed only at effort `high` or below: `thinking: {"type": "disabled"}` with effort `xhigh` or `max` returns a 400 error, a breaking change from Claude Opus 4.8. See [Effort with thinking](../04-API-Reference/Guides/build-with-claude-effort.md#effort-with-thinking).
 - [Effort](../04-API-Reference/Guides/build-with-claude-effort.md) is the primary control for steering Claude Opus 5: the model supports the full ladder (`low`, `medium`, `high`, `xhigh`, `max`), with `max` for capability-critical work.
 - Mid-conversation tool changes are now in beta on Claude Fable 5, Claude Mythos 5, Claude Opus 4.8, and Claude Opus 5: add or remove tools between turns of a conversation while preserving the prompt cache. Include the `mid-conversation-tool-changes-2026-07-01` beta header in your requests.
 - The `fallbacks` parameter now supports a `"default"` mode, which applies Anthropic’s recommended fallback models by refusal category. Server-side fallback is in beta, and the `"default"` mode requires the `server-side-fallback-2026-07-01` beta header. See [Refusals and fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md).
@@ -284,7 +307,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### July 8, 2026
 
-- You can now set an expiration when you create an API key or an Admin API key in the [Claude Console](../04-API-Reference/Other/playground.md). Choose a preset, a custom duration, or **Never**. For keys with a lifetime of at least 7 days, Anthropic emails the creator before expiration. Existing keys are unaffected. The Admin API reports each key’s expiration in the [`expires_at`](../04-API-Reference/Admin/beta-organization-api-keys-list.md) field. See [Key expiration in Authentication](../04-API-Reference/Other/manage-claude-authentication.md#key-expiration).
+- You can now set an expiration when you create an API key or an Admin API key in the [Claude Console](../04-API-Reference/Other/playground.md). Choose a preset, a custom duration, or **Never**. For keys with a lifetime of at least 7 days, Anthropic emails the creator before expiration. Existing keys are unaffected. The Admin API reports each key’s expiration in the [`expires_at`](../04-API-Reference/Admin/beta-organization-api-keys-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. field. See [Key expiration in Authentication](../04-API-Reference/Other/manage-claude-authentication.md#key-expiration).
 
 ### July 2, 2026
 
@@ -297,7 +320,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### June 30, 2026
 
-- We’ve launched **Claude Sonnet 5** (`claude-sonnet-5`), the next generation of our Sonnet model family, at introductory pricing of \$2 / \$10 USD per MTok (made the standard price on August 10, 2026). Claude Sonnet 5 supports a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md), 128k max output tokens, and the same set of tools and platform features as Claude Sonnet 4.6, except [Priority Tier](../04-API-Reference/Endpoints/service-tiers.md#supported-models), which is not available on Claude Sonnet 5. Three behavior changes apply when migrating: [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) is now on by default; manual extended thinking (`thinking: {type: "enabled", budget_tokens: N}`) is removed and returns a 400 error (it was deprecated on Sonnet 4.6); and setting sampling parameters (`temperature`, `top_p`, `top_k`) to non-default values returns a 400 error. Claude Sonnet 5 also uses a new tokenizer that produces approximately 30% more tokens for the same text. The exact increase depends on the content and workload shape. See [What’s new in Claude Sonnet 5](models-sonnet-5-overview.md) for details and migration guidance. For behavioral differences and model-specific prompting patterns, see [Prompting Claude Sonnet 5](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md).
+- We’ve launched **Claude Sonnet 5** (`claude-sonnet-5`), the next generation of our Sonnet model family, at introductory pricing of \$2 / \$10 USD per MTok (made the standard price on August 10, 2026). Claude Sonnet 5 supports a [1M token context window](../04-API-Reference/Guides/build-with-claude-context-windows.md), 128k max output tokens, and the same set of tools and platform features as Claude Sonnet 4.6, except [Priority Tier](../04-API-Reference/Endpoints/service-tiers.md#supported-models), which is not available on Claude Sonnet 5. Three behavior changes apply when migrating: [adaptive thinking](../04-API-Reference/Guides/build-with-claude-thinking.md) is now on by default; manual extended thinking (`thinking: {type: "enabled", budget_tokens: N}`) is removed and returns a 400 error (it was deprecated on Sonnet 4.6); and setting sampling parameters (`temperature`, `top_p`, `top_k`) to non-default values returns a 400 error. Claude Sonnet 5 also uses a new tokenizer that produces approximately 30% more tokens for the same text. The exact increase depends on the content and workload shape. See [Claude Sonnet 5](models-sonnet-5-overview.md) for details. For behavioral differences and model-specific prompting patterns, see [Prompting Claude Sonnet 5](../10-Prompting-Guides/build-with-claude-prompt-engineering-prompting-claude-sonnet-5.md).
 - Claude Managed Agents session event streams now support [event deltas](../04-API-Reference/Other/managed-agents-event-deltas.md). Opt in with the `event_deltas[]` query parameter on `GET /v1/sessions/{session_id}/events/stream`. The `event_start` and `event_delta` events preview an agent message’s text as it’s generated, before the complete `agent.message` event arrives.
 - [Listing sessions](../04-API-Reference/Other/managed-agents-session-operations.md#listing-sessions) for Claude Managed Agents now supports backward pagination. `GET /v1/sessions` returns a `prev_page` cursor alongside `next_page`; pass it as the `page` parameter to return to the previous page. See [Pagination](../04-API-Reference/Endpoints/overview.md#pagination).
 - When creating a Claude Managed Agents session, you can now [override the agent’s configuration for that session](../04-API-Reference/Other/managed-agents-sessions.md#override-agent-configuration-for-a-session). Pass `agent` with `type: "agent_with_overrides"` to replace the model, system prompt, tools, MCP servers, or skills for a single session. The agent itself is unchanged.
@@ -479,7 +502,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### March 18, 2026
 
-- We’ve added model capability fields to the [Models API](../04-API-Reference/Endpoints/models-list.md). `GET /v1/models` and `GET /v1/models/{model_id}` now return `max_input_tokens`, `max_tokens`, and a `capabilities` object. Query the API to discover what each model supports.
+- We’ve added model capability fields to the [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. `GET /v1/models` and `GET /v1/models/{model_id}` now return `max_input_tokens`, `max_tokens`, and a `capabilities` object. Query the API to discover what each model supports.
 
 ### March 16, 2026
 
@@ -573,7 +596,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
   - **Anthropic-managed Skills:** Pre-built Skills for working with PowerPoint (.pptx), Excel (.xlsx), Word (.docx), and PDF files
   - **Custom Skills:** Upload your own Skills through the Skills API (`/v1/skills` endpoints) to package domain expertise and organizational workflows
   - Skills require the [code execution tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) to be enabled
-  - Learn more in [Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md) and [API reference](../04-API-Reference/Endpoints/skills-create.md)
+  - Learn more in [Agent Skills](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md) and [API reference](../04-API-Reference/Endpoints/skills-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.
 
 ### October 15, 2025
 
@@ -636,7 +659,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 ### August 18, 2025
 
 - We’ve released the [Usage & Cost API](../04-API-Reference/Other/manage-claude-usage-cost-api.md), allowing administrators to programmatically monitor their organization’s usage and cost data.
-- We’ve added a new endpoint to the Admin API for retrieving organization information. For details, see the [Organization Info Admin API reference](../04-API-Reference/Admin/beta-organization-retrieve.md).
+- We’ve added a new endpoint to the Admin API for retrieving organization information. For details, see the [Organization Info Admin API reference](../04-API-Reference/Admin/beta-organization-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 ### August 13, 2025
 
@@ -657,9 +680,7 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 ### August 5, 2025
 
-- We’ve launched [Claude Opus 4.1](../19-Reference/claude-opus-4-1.md), an incremental update to Claude Opus 4 with enhanced capabilities and performance improvements.^(\*) Learn more in [Models overview](about-claude-models-overview.md).
-
-*^(\*Opus 4.1 does not allow both `temperature` and `top_p` parameters to be specified. Use only one.)*
+- We’ve launched [Claude Opus 4.1](../19-Reference/claude-opus-4-1.md), an incremental update to Claude Opus 4 with enhanced capabilities and performance improvements. Opus 4.1 does not allow both `temperature` and `top_p` parameters to be specified. Use only one. Learn more in [Models overview](about-claude-models-overview.md).
 
 ### July 28, 2025
 
@@ -717,22 +738,22 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
 
 - Cache control must now be specified directly in the parent `content` block of `tool_result` and `document.source`. For backwards compatibility, if cache control is detected on the last block in `tool_result.content` or `document.source.content`, it will be automatically applied to the parent block instead. Cache control on any other blocks within `tool_result.content` and `document.source.content` will result in a validation error.
 
-### April 9th, 2025
+### April 9, 2025
 
 - We launched a beta version of the [Ruby SDK](https://github.com/anthropics/anthropic-sdk-ruby).
 
-### March 31st, 2025
+### March 31, 2025
 
 - Our [Java SDK](https://github.com/anthropics/anthropic-sdk-java) has moved from beta to its first stable release.
 - We’ve moved our [Go SDK](https://github.com/anthropics/anthropic-sdk-go) from alpha to beta.
 
-### February 27th, 2025
+### February 27, 2025
 
 - We’ve added URL source blocks for images and PDFs in the Messages API. You can now reference images and PDFs directly through a URL instead of having to base64-encode them. Learn more in [Vision](../04-API-Reference/Guides/build-with-claude-vision.md) and [PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md).
 - We’ve added support for a `none` option to the `tool_choice` parameter in the Messages API that prevents Claude from calling any tools. Additionally, you’re no longer required to provide any `tools` when including `tool_use` and `tool_result` blocks.
 - We’ve launched an OpenAI-compatible API endpoint, allowing you to test Claude models by changing just your API key, base URL, and model name in existing OpenAI integrations. This compatibility layer supports core chat completions functionality. Learn more in [OpenAI SDK compatibility](../04-API-Reference/Other/cli-sdks-libraries-libraries-openai-sdk.md).
 
-### February 24th, 2025
+### February 24, 2025
 
 - We’ve launched [Claude Sonnet 3.7](../19-Reference/claude-3-7-sonnet.md), our most intelligent model yet. Claude Sonnet 3.7 can produce near-instant responses or show its extended thinking step-by-step. One model, two ways to think. Learn more about all Claude models in [Models overview](about-claude-models-overview.md).
 - We’ve added vision support to Claude Haiku 3.5, enabling the model to analyze and understand images.
@@ -743,139 +764,136 @@ For updates to Claude Code, see the [complete CHANGELOG.md](https://github.com/a
   - `text_editor_20250124`: Same functionality as previous version but is independent from computer use. Does not require a beta header.
   - `computer_20250124`: Updated computer use tool with new command options including `hold_key`, `left_mouse_down`, `left_mouse_up`, `scroll`, `triple_click`, and `wait`. This tool requires the `computer-use-2025-01-24` anthropic-beta header. Learn more in [Tool use with Claude](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md).
 
-### February 10th, 2025
+### February 10, 2025
 
 - We’ve added the `anthropic-organization-id` response header to all API responses. This header provides the organization ID associated with the API key used in the request.
 
-### January 31st, 2025
+### January 31, 2025
 
 - We’ve moved our [Java SDK](https://github.com/anthropics/anthropic-sdk-java) from alpha to beta.
 
-### January 23rd, 2025
+### January 23, 2025
 
 - We’ve launched citations capability in the API, allowing Claude to provide source attribution for information. Learn more in [Citations](../04-API-Reference/Guides/build-with-claude-citations.md).
 - We’ve added support for plain text documents and custom content documents in the Messages API.
 
-### January 21st, 2025
+### January 21, 2025
 
 - We announced the deprecation of the Claude 2, Claude 2.1, and Claude Sonnet 3 models. Read more in [Model deprecations](about-claude-model-deprecations.md).
 
-### January 15th, 2025
+### January 15, 2025
 
 - We’ve updated [prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) to be easier to use. Now, when you set a cache breakpoint, we’ll automatically read from your longest previously cached prefix.
 - You can now prefill Claude’s response when using tools.
 
-### January 10th, 2025
+### January 10, 2025
 
 - We’ve optimized support for [prompt caching in the Message Batches API](../04-API-Reference/Guides/build-with-claude-batch-processing.md#using-prompt-caching-with-message-batches) to improve cache hit rate.
 
-### December 19th, 2024
+### December 19, 2024
 
-- We’ve added support for a [delete endpoint](../04-API-Reference/Endpoints/messages-batches-delete.md) in the Message Batches API.
+- We’ve added support for a [delete endpoint](../04-API-Reference/Endpoints/messages-batches-delete.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. in the Message Batches API.
 
-### December 17th, 2024
+### December 17, 2024
 
-The following features are now available in the Claude API without a beta header:
+- The following features are now available in the Claude API without a beta header:
+  - [Models API](../04-API-Reference/Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.: Query available models, validate model IDs, and resolve [model aliases](about-claude-models-overview.md) to their canonical model IDs.
+  - [Message Batches API](../04-API-Reference/Guides/build-with-claude-batch-processing.md): Process large batches of messages asynchronously at 50% of the standard API cost.
+  - [Token counting API](../04-API-Reference/Guides/build-with-claude-token-counting.md): Calculate token counts for Messages before sending them to Claude.
+  - [Prompt Caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md): Reduce costs by up to 90% and latency by up to 80% by caching and reusing prompt content.
+  - [PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md): Process PDFs to analyze both text and visual content within documents.
+- We also released new official SDKs:
+  - [Java SDK](https://github.com/anthropics/anthropic-sdk-java) (alpha)
+  - [Go SDK](https://github.com/anthropics/anthropic-sdk-go) (alpha)
 
-- [Models API](../04-API-Reference/Endpoints/models-list.md): Query available models, validate model IDs, and resolve [model aliases](about-claude-models-overview.md) to their canonical model IDs.
-- [Message Batches API](../04-API-Reference/Guides/build-with-claude-batch-processing.md): Process large batches of messages asynchronously at 50% of the standard API cost.
-- [Token counting API](../04-API-Reference/Guides/build-with-claude-token-counting.md): Calculate token counts for Messages before sending them to Claude.
-- [Prompt Caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md): Reduce costs by up to 90% and latency by up to 80% by caching and reusing prompt content.
-- [PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md): Process PDFs to analyze both text and visual content within documents.
-
-We also released new official SDKs:
-
-- [Java SDK](https://github.com/anthropics/anthropic-sdk-java) (alpha)
-- [Go SDK](https://github.com/anthropics/anthropic-sdk-go) (alpha)
-
-### December 4th, 2024
+### December 4, 2024
 
 - We’ve added the ability to group by API key on the [Usage](https://console.anthropic.com/settings/usage) and [Cost](https://console.anthropic.com/settings/cost) pages of the [Developer Console](https://console.anthropic.com).
 - We’ve added two new **Last used at** and **Cost** columns and the ability to sort by any column on the [API keys](https://console.anthropic.com/settings/keys) page of the [Developer Console](https://console.anthropic.com).
 
-### November 21st, 2024
+### November 21, 2024
 
 - We’ve released the [Admin API](../04-API-Reference/Other/manage-claude-admin-api.md), allowing users to programmatically manage their organization’s resources.
 
-### November 20th, 2024
+### November 20, 2024
 
 - We’ve updated our rate limits for the Messages API. We’ve replaced the tokens per minute rate limit with new input and output tokens per minute rate limits. Read more in [Rate limits](../04-API-Reference/Endpoints/rate-limits.md).
 - We’ve added support for [tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md) in the [Console Workbench](https://console.anthropic.com/workbench).
 
-### November 13th, 2024
+### November 13, 2024
 
 - We’ve added PDF support for all Claude Sonnet 3.5 models. Read more in [PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md).
 
-### November 6th, 2024
+### November 6, 2024
 
 - We’ve retired the Claude 1 and Instant models. Read more in [Model deprecations](about-claude-model-deprecations.md).
 
-### November 4th, 2024
+### November 4, 2024
 
 - [Claude Haiku 3.5](../15-Claude-AI-Features/claude-haiku.md) is now available on the Claude API as a text-only model.
 
-### November 1st, 2024
+### November 1, 2024
 
 - We’ve added PDF support for use with the new Claude Sonnet 3.5. Read more in [PDF support](../04-API-Reference/Guides/build-with-claude-pdf-support.md).
 - We’ve also added token counting, which allows you to determine the total number of tokens in a Message prior to sending it to Claude. Read more in [Token counting](../04-API-Reference/Guides/build-with-claude-token-counting.md).
 
-### October 22nd, 2024
+### October 22, 2024
 
 - We’ve added Anthropic-defined computer use tools to our API for use with the new Claude Sonnet 3.5. Read more in [Computer use tool](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md).
 - Claude Sonnet 3.5, our most intelligent model yet, just got an upgrade and is now available on the Claude API. Read more in the [Claude Sonnet documentation](../15-Claude-AI-Features/claude-sonnet.md).
 
-### October 8th, 2024
+### October 8, 2024
 
 - The Message Batches API is now available in beta. Process large batches of queries asynchronously in the Claude API for 50% less cost. Read more in [Batch processing](../04-API-Reference/Guides/build-with-claude-batch-processing.md).
 - We’ve loosened restrictions on the ordering of `user`/`assistant` turns in our Messages API. Consecutive `user`/`assistant` messages will be combined into a single message instead of erroring, and we no longer require the first input message to be a `user` message.
 - We’ve deprecated the Build and Scale plans in favor of a standard feature suite (formerly referred to as Build), along with additional features that are available through sales. Read more in our [API pricing information](https://claude.com/platform/api).
 
-### October 3rd, 2024
+### October 3, 2024
 
 - We’ve added the ability to disable parallel tool use in the API. Set `disable_parallel_tool_use: true` in the `tool_choice` field to ensure that Claude uses at most one tool. Read more in [Parallel tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md).
 
-### September 10th, 2024
+### September 10, 2024
 
 - We’ve added Workspaces to the [Developer Console](https://console.anthropic.com). Workspaces allow you to set custom spend or rate limits, group API keys, track usage by project, and control access with user roles. Read more in our [Workspaces blog post](https://www.anthropic.com/news/workspaces).
 
-### September 4th, 2024
+### September 4, 2024
 
 - We announced the deprecation of the Claude 1 models. Read more in [Model deprecations](about-claude-model-deprecations.md).
 
-### August 22nd, 2024
+### August 22, 2024
 
 - We’ve added support for usage of the SDK in browsers by returning CORS headers in the API responses. Set `dangerouslyAllowBrowser: true` in the SDK instantiation to enable this feature.
 
-### August 19th, 2024
+### August 19, 2024
 
 - 8,192-token outputs on Claude Sonnet 3.5 are out of beta and no longer require the `max-tokens-3-5-sonnet-2024-07-15` header.
 
-### August 14th, 2024
+### August 14, 2024
 
 - [Prompt caching](../04-API-Reference/Guides/build-with-claude-prompt-caching.md) is now available as a beta feature in the Claude API. Cache and re-use prompts to reduce latency by up to 80% and costs by up to 90%.
 
-### July 15th, 2024
+### July 15, 2024
 
 - Generate outputs up to 8,192 tokens in length from Claude Sonnet 3.5 with the new `anthropic-beta: max-tokens-3-5-sonnet-2024-07-15` header.
 
-### July 9th, 2024
+### July 9, 2024
 
 - Automatically generate test cases for your prompts using Claude in the [Developer Console](https://console.anthropic.com).
 - Compare the outputs from different prompts side by side in the new output comparison mode in the [Developer Console](https://console.anthropic.com).
 
-### June 27th, 2024
+### June 27, 2024
 
 - View API usage and billing broken down by dollar amount, token count, and API keys in the new [Usage](https://console.anthropic.com/settings/usage) and [Cost](https://console.anthropic.com/settings/cost) tabs in the [Developer Console](https://console.anthropic.com).
 - View your current API rate limits in the new [Rate Limits tab](https://console.anthropic.com/settings/limits) in the [Developer Console](https://console.anthropic.com).
 
-### June 20th, 2024
+### June 20, 2024
 
 - [Claude Sonnet 3.5](../19-Reference/claude-3-5-sonnet.md), our most intelligent model yet, is now available across the Claude API, Amazon Bedrock, and Vertex AI.
 
-### May 30th, 2024
+### May 30, 2024
 
 - [Tool use](../04-API-Reference/Agents-Tools/agents-and-tools-tool-use-overview.md) is out of beta across the Claude API, Amazon Bedrock, and Vertex AI, with no beta header required.
 
-### May 10th, 2024
+### May 10, 2024
 
 - Our prompt generator tool is now available in the [Developer Console](https://console.anthropic.com). The prompt generator helps you guide Claude to generate high-quality prompts tailored to your specific tasks. Read more in our [prompt generator blog post](https://www.anthropic.com/news/prompt-generator).

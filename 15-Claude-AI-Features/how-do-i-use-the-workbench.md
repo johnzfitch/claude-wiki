@@ -2,7 +2,7 @@
 title: "How do I use the playground? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8606378-how-do-i-use-the-workbench"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:01Z"
+fetched_at: "2026-11-18T06:28:13Z"
 tags: ["claude-ai"]
 ---
 

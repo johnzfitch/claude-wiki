@@ -2,7 +2,7 @@
 title: "Powered by Claude | Claude by Anthropic"
 source_url: "https://www.claude.com/partners/powered-by-claude"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:26:38Z"
+fetched_at: "2026-11-18T06:29:32Z"
 tags: ["api"]
 ---
 

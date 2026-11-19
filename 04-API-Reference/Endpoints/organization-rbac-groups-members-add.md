@@ -2,7 +2,7 @@
 title: "Add RBAC Group Member - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/rbac_groups/members/add"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:48Z"
+fetched_at: "2026-11-13T06:34:44Z"
 tags: ["api"]
 ---
 

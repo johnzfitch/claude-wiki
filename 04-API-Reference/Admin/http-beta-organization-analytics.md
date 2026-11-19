@@ -2,7 +2,7 @@
 title: "Analytics - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/analytics"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:53Z"
+fetched_at: "2026-11-13T06:35:39Z"
 tags: ["api"]
 ---
 
@@ -189,6 +189,26 @@ One of the following:
 "scheduled"
 
 
+
+
+
+BetaAnalyticsClaudeTagMetrics object{ active_day_count, active_message_count }
+
+
+
+Claude Tag activity metrics for a single linked user on a given day.
+
+active_day_count: number or null
+
+
+
+1 on a day the user was active in Claude Tag in Slack, otherwise 0. Summed over the window in date-range mode, so it is the number of active days; on grouped rows, the total of each member's active days. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
+
+active_message_count: number or null
+
+
+
+Number of the user's Slack messages that made them active: @-mentions, direct messages, group direct message asks, and thread posts Claude answered. Other messages are not counted. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
 
 
 
@@ -812,7 +832,7 @@ BetaAnalyticsProductFilter = "chat" or "chat_cowork_unified" or "claude-tag" or 
 
 
 
-Publicly documented product surfaces. `claude-tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
+Publicly documented product surfaces. `claude-tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only where Chat and Cowork unified is available.
 
 One of the following:
 
@@ -1010,7 +1030,7 @@ One of the following:
 
 
 
-BetaAnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 29 more }
+BetaAnalyticsSingleDayActivitySummary object{ assigned_seat_count, cowork_daily_active_user_count, cowork_monthly_active_user_count, 32 more }
 
 
 
@@ -1294,7 +1314,7 @@ BetaAnalyticsUsageCostProductFilter = "chat" or "chat_cowork_unified" or "claude
 
 
 
-Publicly documented product surfaces. `claude_tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only on deployments that offer Chat and Cowork unified.
+Publicly documented product surfaces. `claude_tag` is Claude Tag, the Claude product in Slack. `chat_cowork_unified` is Chat and Cowork unified, Cowork's features inside claude.ai chat: chat and Cowork usage by a member who has it turned on is reported under this value instead of `chat` or `cowork`. It is accepted as a filter only where Chat and Cowork unified is available.
 
 One of the following:
 
@@ -1406,7 +1426,7 @@ Email address of the user
 
 
 
-BetaAnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 10 more }
+BetaAnalyticsUserActivity object{ chat_metrics, claude_code_metrics, cowork_metrics, 11 more }
 
 
 
@@ -1440,7 +1460,7 @@ name: string or null
 
 
 
-The user's full name. Null when the user has not set a name. Returns `"Deleted User"` when the account itself has been deleted, or when the user is no longer a member of the organization or its associated organizations and the organization has chosen to hide the names of removed users. Otherwise, the name stays populated for removed users. Rows for system-minted service accounts render the service name (for example, `"Claude Security"` for usage by Anthropic's security-patching service) or null.
+The user's full name. Null when the user has not set a name. Returns `"Deleted User"` when the account itself has been deleted, or when the user is no longer a member of the organization or its associated organizations and the organization has chosen to hide the names of removed users. Otherwise, the name stays populated for removed users. Rows for system-minted service accounts render the service name (for example, `"Claude Security"`) or null.
 
 user_id: string
 
@@ -1516,7 +1536,7 @@ Get artifact-creation activity for a given day, broken out by MIME type.
 
 GET/v1/organizations/analytics/usage
 
-Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get token usage across a date range, broken out by dimension.
 
@@ -1526,7 +1546,7 @@ Get token usage across a date range, broken out by dimension.
 
 GET/v1/organizations/analytics/cost
 
-Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``analytics-usage-cost-2026-08-24`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Get cost in USD across a date range, broken out by dimension.
 

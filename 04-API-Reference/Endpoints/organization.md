@@ -2,7 +2,7 @@
 title: "Organization - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:38Z"
+fetched_at: "2026-11-18T06:27:26Z"
 tags: ["api"]
 ---
 
@@ -31,6 +31,30 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 Retrieve information about the organization associated with the authenticated API key.
 
 ##### Models
+
+
+
+ConcurrentMembershipChangeErrorDetails object{ error_code }
+
+
+
+Another change to the organization's members is in progress. Retry the request once it completes.
+
+error_code: "concurrent_membership_change"
+
+
+
+
+
+OrgMemberLimitExceededErrorDetails object{ error_code }
+
+
+
+The organization has reached the member limit that Anthropic set for it. Pending invites count toward the limit.
+
+error_code: "org_member_limit_exceeded"
+
+
 
 
 
@@ -107,6 +131,18 @@ One of the following:
 
 
 "user"
+
+
+
+
+
+RBACRoleNotFoundErrorDetails object{ error_code }
+
+
+
+No RBAC Role with this ID was found.
+
+error_code: "rbac_role_not_found"
 
 
 
@@ -463,3 +499,167 @@ Retrieve your organization's Compliance Settings.
 POST/v1/organizations/compliance_settings
 
 Update your organization's Compliance Settings.
+
+#### OrganizationAnalytics[Summaries](https://platform.claude.com/docs/en/api/http/organization/analytics/summaries)
+
+##### [Get Activity Summaries](https://platform.claude.com/docs/en/api/http/organization/analytics/summaries/list)
+
+GET/v1/organizations/analytics/summaries
+
+Get organization-wide activity summaries for a date range.
+
+#### OrganizationAnalytics[Users](https://platform.claude.com/docs/en/api/http/organization/analytics/users)
+
+##### [List User Activity](https://platform.claude.com/docs/en/api/http/organization/analytics/users/list)
+
+GET/v1/organizations/analytics/users
+
+Get per-user activity for a given day, with cursor-based pagination.
+
+#### OrganizationAnalyticsAppsChat[Projects](https://platform.claude.com/docs/en/api/http/organization/analytics/apps/chat/projects)
+
+##### [Get Chat Project Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/apps/chat/projects/list)
+
+GET/v1/organizations/analytics/apps/chat/projects
+
+Get per-project activity for a given day, with cursor-based pagination.
+
+#### OrganizationAnalytics[Connectors](https://platform.claude.com/docs/en/api/http/organization/analytics/connectors)
+
+##### [Get Connector Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/connectors/list)
+
+GET/v1/organizations/analytics/connectors
+
+Get per-connector usage for a given day, with cursor-based pagination.
+
+#### OrganizationAnalytics[Plugins](https://platform.claude.com/docs/en/api/http/organization/analytics/plugins)
+
+##### [Get Plugin Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/plugins/list)
+
+GET/v1/organizations/analytics/plugins
+
+Get per-plugin install + invocation usage for a given day, with pagination.
+
+#### OrganizationAnalytics[Skills](https://platform.claude.com/docs/en/api/http/organization/analytics/skills)
+
+##### [Get Skill Usage](https://platform.claude.com/docs/en/api/http/organization/analytics/skills/list)
+
+GET/v1/organizations/analytics/skills
+
+Get per-skill usage for a given day, with cursor-based pagination.
+
+#### OrganizationAnalytics[Artifacts](https://platform.claude.com/docs/en/api/http/organization/analytics/artifacts)
+
+##### [Get Artifact Activity](https://platform.claude.com/docs/en/api/http/organization/analytics/artifacts/list)
+
+GET/v1/organizations/analytics/artifacts
+
+Get artifact-creation activity for a given day, broken out by MIME type.
+
+#### OrganizationSpend Limits[Effective](https://platform.claude.com/docs/en/api/http/organization/spend_limits/effective)
+
+##### [List Effective Spend Limits](https://platform.claude.com/docs/en/api/http/organization/spend_limits/effective/list)
+
+GET/v1/organizations/spend_limits/effective
+
+List each member's effective spend limit and period-to-date spend.
+
+#### OrganizationSpend Limits[Increase Requests](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests)
+
+##### [List Spend Limit Increase Requests](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/list)
+
+GET/v1/organizations/spend_limit_increase_requests
+
+List spend limit increase requests, most recent first.
+
+##### [Get Spend Limit Increase Request](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/retrieve)
+
+GET/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}
+
+Retrieve a spend limit increase request.
+
+##### [Approve Spend Limit Increase Request](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/approve)
+
+POST/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}/approve
+
+Approve a pending spend limit increase request.
+
+##### [Deny Spend Limit Increase Request](https://platform.claude.com/docs/en/api/http/organization/spend_limits/increase_requests/deny)
+
+POST/v1/organizations/spend_limit_increase_requests/{spend_limit_increase_request_id}/deny
+
+Deny a pending spend limit increase request.
+
+#### Organization[RBAC Groups](https://platform.claude.com/docs/en/api/http/organization/rbac_groups)
+
+##### [Create RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/create)
+
+POST/v1/organizations/rbac_groups
+
+Create an RBAC Group in the Claude Enterprise tenant. Groups created via the API have source type `"direct"`.
+
+##### [List RBAC Groups](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/list)
+
+GET/v1/organizations/rbac_groups
+
+List RBAC Groups in the Claude Enterprise tenant.
+
+##### [Get RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/retrieve)
+
+GET/v1/organizations/rbac_groups/{rbac_group_id}
+
+Retrieve an RBAC Group by ID.
+
+##### [Update RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/update)
+
+POST/v1/organizations/rbac_groups/{rbac_group_id}
+
+Update an RBAC Group's name. Groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+##### [Delete RBAC Group](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/delete)
+
+DELETE/v1/organizations/rbac_groups/{rbac_group_id}
+
+Delete an RBAC Group. Groups provisioned by an identity provider (source type `"scim"`) cannot be deleted via the API while an organization in the tenant uses SCIM provisioning.
+
+#### OrganizationRBAC Groups[Members](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members)
+
+##### [List RBAC Group Members](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members/list)
+
+GET/v1/organizations/rbac_groups/{rbac_group_id}/members
+
+List members of an RBAC Group.
+
+##### [Add RBAC Group Member](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members/add)
+
+POST/v1/organizations/rbac_groups/{rbac_group_id}/members
+
+Add a User to an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+##### [Remove RBAC Group Member](https://platform.claude.com/docs/en/api/http/organization/rbac_groups/members/remove)
+
+DELETE/v1/organizations/rbac_groups/{rbac_group_id}/members/{user_id}
+
+Remove a User from an RBAC Group. Membership of groups provisioned by an identity provider (source type `"scim"`) cannot be modified via the API while an organization in the tenant uses SCIM provisioning.
+
+#### Organization[RBAC Roles](https://platform.claude.com/docs/en/api/http/organization/rbac_roles)
+
+##### [List RBAC Roles](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/list)
+
+GET/v1/organizations/rbac_roles
+
+List RBAC Roles in the organization.
+
+##### [Get RBAC Role](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/retrieve)
+
+GET/v1/organizations/rbac_roles/{rbac_role_id}
+
+Retrieve an RBAC Role by ID.
+
+#### OrganizationRBAC Roles[Permissions](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/permissions)
+
+##### [List RBAC Role Permissions](https://platform.claude.com/docs/en/api/http/organization/rbac_roles/permissions/list)
+
+GET/v1/organizations/rbac_roles/{rbac_role_id}/permissions
+
+List the permissions an RBAC Role grants.

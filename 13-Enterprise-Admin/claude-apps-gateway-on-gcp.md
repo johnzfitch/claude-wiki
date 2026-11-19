@@ -2,8 +2,8 @@
 title: "Deploy Claude apps gateway on Google Cloud - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway-on-gcp"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-06T06:33:08Z"
-last_modified: "Fri, 06 Nov 2026 05:16:30 GMT"
+fetched_at: "2026-11-13T06:34:40Z"
+last_modified: "Fri, 13 Nov 2026 06:21:45 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Statement on the comments from Secretary of War Pete Hegseth \\ Anthropic"
 source_url: "https://www.anthropic.com/news/statement-comments-secretary-war"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:57Z"
+fetched_at: "2026-11-14T06:25:59Z"
 tags: ["news-research"]
 ---
 
@@ -10,23 +10,19 @@ tags: ["news-research"]
 
 Listen to this article
 
-- Published
+Published  
+Feb 27, 2026
 
-  Feb 27, 2026
+[Policy](policy.md)
 
-- Category
+Topics  
+- [National security](https://www.anthropic.com/search?topic=national-security)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+- [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
+- [Privacy](https://www.anthropic.com/search?topic=privacy)
+- [Access](https://www.anthropic.com/search?topic=access)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [National security](https://www.anthropic.com/search?topic=national-security)
-  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
-  - [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
-  - [Privacy](https://www.anthropic.com/search?topic=privacy)
-  - [Access](https://www.anthropic.com/search?topic=access)
-
-  See more...
+See more...
 
 Related articles
 

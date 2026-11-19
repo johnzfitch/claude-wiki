@@ -2,7 +2,7 @@
 title: "List External Keys - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/external_keys/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:43Z"
+fetched_at: "2026-11-18T06:27:28Z"
 tags: ["api"]
 ---
 
@@ -144,7 +144,7 @@ geo: string
 
 
 
-Data residency geo. Selects the region that handles this key's encrypt/decrypt roundtrips.
+Data residency geo. Selects the region this key is used in.
 
 
 
@@ -250,7 +250,7 @@ user_profile_id: string or null
 
 
 
-ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can be attached to a Workspace whatever its user profile.
+ID of the user profile the key is bound to, or null if the key is not bound to one. A key bound to a user profile can only be attached to a Workspace that has the same user profile. A key that isn't bound can only be attached to a Workspace that has no user profile.
 
 next_page: string or null
 

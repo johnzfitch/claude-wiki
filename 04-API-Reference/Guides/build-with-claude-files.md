@@ -2,7 +2,7 @@
 title: "Files API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/files"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:44Z"
+fetched_at: "2026-11-13T06:34:51Z"
 tags: ["api", "billing", "rag"]
 ---
 
@@ -20,14 +20,21 @@ Upload files once, reference them by file_id in Messages requests, and download 
 
 Files API
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryHosted on AnthropicAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft FoundryHosted on Anthropic
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -39,7 +46,7 @@ Refer to an uploaded file by its `file_id` in a `document`, `image` or `containe
 
 Mount files in the session’s sandbox, or refer to a `file_id` in a `user.message` event.
 
-The Files API lets you upload and manage files to use with the Claude API without re-uploading content with each request. This is particularly useful when using the [code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) to provide inputs (for example, datasets and documents) and then download outputs (for example, charts). You can [explore the API reference directly](../Endpoints/files-upload.md), in addition to this guide.
+The Files API lets you upload and manage files to use with the Claude API without re-uploading content with each request. This is particularly useful when using the [code execution tool](../Agents-Tools/agents-and-tools-tool-use-code-execution-tool.md) to provide inputs (for example, datasets and documents) and then download outputs (for example, charts). You can [explore the API reference directly](../Endpoints/files-upload.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., in addition to this guide.
 
 ## File type support
 
@@ -51,7 +58,7 @@ The Files API provides a create-once, use-many-times approach for working with f
 
 - **Upload files** to Anthropic’s secure storage and receive a unique `file_id`
 - **Download files** that are created by skills or the code execution tool
-- **Reference files** in [Messages](../Endpoints/messages-create.md) requests using the `file_id` instead of re-uploading content
+- **Reference files** in [Messages](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. requests using the `file_id` instead of re-uploading content
 - **Manage your files** with list, retrieve, and delete operations
 
 Uploaded files are accessible to your entire workspace
@@ -123,13 +130,9 @@ The API reference describes every field of the file object.
 
 FileMetadata object{ type: "file", id, created_at, 5 more }
 
-
-
 
 
 type: "file"
-
-
 
 Object type.
 
@@ -139,8 +142,6 @@ For files, this is always `"file"`.
 
 id: string
 
-
-
 Unique object identifier.
 
 The format and length of IDs may change over time.
@@ -149,8 +150,6 @@ The format and length of IDs may change over time.
 
 created_at: string
 
-
-
 RFC 3339 datetime string representing when the file was created.
 
 formatdate-time
@@ -158,8 +157,6 @@ formatdate-time
 
 
 filename: string
-
-
 
 Original filename of the uploaded file.
 
@@ -171,8 +168,6 @@ maxLength500
 
 mime_type: string
 
-
-
 MIME type of the file.
 
 minLength1
@@ -183,8 +178,6 @@ maxLength255
 
 size_bytes: number
 
-
-
 Size of the file in bytes.
 
 minimum0
@@ -193,8 +186,6 @@ minimum0
 
 downloadable: optional boolean
 
-
-
 Whether the file can be downloaded.
 
 defaultfalse
@@ -202,8 +193,6 @@ defaultfalse
 
 
 expires_at: optional string or null
-
-
 
 RFC 3339 datetime string representing when the file will expire and become unavailable for download. Null if the file does not expire. For files uploaded with `expires_in_seconds`, this is the upload time plus that value.
 
@@ -381,7 +370,7 @@ For .docx files containing images, convert them to PDF format first, then use [P
 
 #### List files
 
-Retrieve a list of your uploaded files. The endpoint is paginated: each request returns up to [`limit`](../Endpoints/files-list.md#list.limit)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. files (20 by default, and at most 1,000), and the response’s [`next_page`](../Endpoints/files-list.md#list.response.next_page)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. cursor fetches the next page when passed back as the [`page`](../Endpoints/files-list.md#list.page)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. parameter. Files are ordered newest first. See the [List Files API reference](../Endpoints/files-list.md). The SDK returns the first page and provides [auto-pagination](../Endpoints/overview.md#pagination) helpers.
+Retrieve a list of your uploaded files. The endpoint is paginated: each request returns up to [`limit`](../Endpoints/files-list.md#list.limit)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. files (20 by default, and at most 1,000), and the response’s [`next_page`](../Endpoints/files-list.md#list.response.next_page)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. cursor fetches the next page when passed back as the [`page`](../Endpoints/files-list.md#list.page)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. parameter. Files are ordered newest first. See the [List Files API reference](../Endpoints/files-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. The SDK returns the first page and provides [auto-pagination](../Endpoints/overview.md#pagination) helpers.
 
 cURL
 
@@ -637,36 +626,46 @@ Process and analyze visual input and generate text and code from images.
 
 ## Availability
 
-The Files API is available on every model.
+Files API
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Refer to an uploaded file by its `file_id` in a `document`, `image` or `container_upload` block.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+APIs  
+- Messages API
+- Managed Agents
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Claude Models on Google Cloud (Anthropic managed)
 
-Mount uploaded files in the session’s sandbox as session resources (read-only, under `/mnt/session/uploads`), or refer to a `file_id` in an `image` or `document` block of a `user.message` event. Files the agent writes to `/mnt/session/outputs/` can be downloaded with the Files API.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Microsoft Foundry (hosted on Anthropic)
 
-- All supported platforms
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

@@ -2,7 +2,7 @@
 title: "Bubble Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/bubble"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:15Z"
+fetched_at: "2026-11-18T06:29:09Z"
 tags: ["api", "case-studies", "prompting"]
 ---
 
@@ -93,6 +93,9 @@ Looking ahead, Bubble is integrating its app debugging tools with Claude so user
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -100,6 +103,3 @@ Looking ahead, Bubble is integrating its app debugging tools with Claude so user
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

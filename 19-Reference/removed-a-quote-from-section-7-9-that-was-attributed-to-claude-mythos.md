@@ -1,8 +1,8 @@
 ---
 title: "●​ Removed a quote from Section 7.9 that was attributed to Claude Mythos…"
-source_url: "https://www-cdn.anthropic.com/53566bf5440a10affd749724787c8913a2ae0841.pdf"
+source_url: "https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf"
 category: "19-Reference"
-fetched_at: "2026-11-08T06:25:07Z"
+fetched_at: "2026-11-18T06:28:19Z"
 tags: ["news-research"]
 ---
 
@@ -13,29 +13,8 @@ tags: ["news-research"]
    ●​ Corrected findings from Eleos AI Research in Sections 5.1.2 and 5.9 to reflect the
        most recent version of their report.
 
-April 14, 2026
-   ●​ Removed a note about AI-enabled acceleration in Section 2.3.6. The previous version
-       argued that AI-enabled acceleration leading to the development of Claude Mythos
-       Preview would reflect on the capabilities of earlier models, rather than those of
-       Mythos Preview itself. Although this is accurate, it was cited incorrectly: it is not an
-       argument that Mythos Preview fails to meet our second Autonomy threshold. We
-       have added related language in Sections 1.2.2 and 2.3.1 to clarify this.
-   ●​ Slightly adjusted the absolute AECI values in Section 2.3.6 for consistency with
-       Epoch AI’s procedure; this is an affine transform of the raw scores and does not
-       affect our estimates of slope ratios.
-   ●​ CharXiv Reasoning scores for Claude Opus 4.6 have been revised upward (no tools:
-       61.5% → 69.1%; with tools: 78.9% → 84.7%). This was after fixing an
-       evaluation-harness bug in which the automated grader scored a subset of correct
-       responses from Claude Opus 4.6 as incorrect. The bug was specific to Opus 4.6 and
-       CharXiv Reasoning and did not affect other models or other evaluations. Model
-       behavior is unchanged and scores are now consistent with scores previously
-       reported on the Claude Opus 4.6 System Card.
-   ●​ Adjusted the score for Claude Opus 4.6 on USAMO 2026 to report scores with an
-       unlimited thinking budget (consistent with how we evaluated Mythos Preview). This
-       improved the model’s performance from 42.3% to 66.2%.
 
-
-                                                                                       2
+                                                                                 2
 Abstract
 This System Card describes Claude Mythos Preview, a large language model from
 Anthropic. Claude Mythos Preview is our most capable frontier model to date, and shows a
@@ -90,7 +69,7 @@ inform the release of future Claude models, as well as their associated safeguar
       2.3.2 Notes on our operationalization of the key capability threshold​          34
       2.3.3 Task-based evaluations​                                                   35
             2.3.3.1 Note on reward hacking​                                           36
-            2.3.3.2 Previous model scores update​                                     37
+            2.3.3.2 Previous model scores update​                                     36
       2.3.4 Internal survey results​                                                  37
       2.3.5 Example shortcomings compared to our Research Scientists and Engineers​ 37
 
@@ -100,8 +79,8 @@ inform the release of future Claude models, as well as their associated safeguar
            2.3.5.2 Excerpt 2​                                                        39
            2.3.5.3 Excerpt 3​                                                        41
            2.3.5.4 Attempts to remediate issues like these​                          41
-      2.3.6 AECI Capability trajectory​                                              41
-      2.3.7 External testing​                                                        45
+      2.3.6 ECI Capability trajectory​                                               41
+      2.3.7 External testing​                                                        44
       2.3.8 Conclusion​                                                              46
 3 Cyber​                                                                             47
    3.1 Introduction​                                                                 47
@@ -231,7 +210,7 @@ inform the release of future Claude models, as well as their associated safeguar
       6.11.1 LAB-Bench FigQA​                                                      195
       6.11.2 ScreenSpot-Pro​                                                       196
       6.11.3 CharXiv Reasoning​                                                    197
-      6.11.4 OSWorld​                                                              197
+      6.11.4 OSWorld​                                                              198
 7 Impressions​                                                                     199
    7.1 Introduction​                                                               199
    7.2 Self-assessment of notable qualitative patterns​                            199
@@ -485,7 +464,7 @@ capabilities, our overall conclusion is that catastrophic risks remain low:
    ●​ Automated R&D in key domains. Claude Mythos Preview’s gains (relative to previous
       models) are above the previous trend we’ve observed, but we have determined that
       these gains are specifically attributable to factors other than AI-accelerated R&D,
-      and we have overall concluded that Claude Mythos Preview does not cross the RSP
+      and we have concluded that Claude Mythos Preview does not cross the RSP
       automated AI R&D threshold of compressing two years of progress into one.
       Although we believe Claude Mythos Preview does not dramatically change the
       picture presented for this threat model in our most recent Risk Report, we hold this
@@ -1225,14 +1204,12 @@ Our current determination is that:
    ●​ Autonomy threat model 2 is not applicable to Claude Mythos Preview. The model’s
       capability gains (relative to previous models) are above the previous trend we’ve
       observed, but we believe that these gains are specifically attributable to factors
-      other than AI-accelerated R&D. On the basis of our experiences with internal use of
-      the model and its shortcomings in autonomous research tasks relative to Anthropic
-      staff, we conclude that Claude Mythos Preview is not yet capable of dramatic
-      acceleration as operationalized in our Responsible Scaling Policy (roughly speaking,
-      compressing two years of AI R&D progress into one). With this in mind, we believe
-      Claude Mythos Preview does not greatly change the picture presented for this
-      threat model in our most recent Risk Report, beyond a moderate decrease in our
-      level of confidence that the threat model is not yet applicable.
+      other than AI-accelerated R&D, and that Claude Mythos Preview is not yet capable of
+      dramatic acceleration as operationalized in our Responsible Scaling Policy (roughly
+      speaking, compressing two years of AI R&D progress into one). With this in mind, we
+      believe Claude Mythos Preview does not greatly change the picture presented for
+      this threat model in our most recent Risk Report, beyond a moderate decrease in
+      our level of confidence that the threat model is not yet applicable.
 
 More detail on autonomy threat model 2 follows. We do not further discuss autonomy
 threat model 1 here, as it is discussed in a separate document.
@@ -1251,13 +1228,12 @@ feedback loop, before it produces extreme acceleration in the pace of progress.
 In particular, we care about AI-attributable acceleration, i.e. the model’s contribution to the
 pace of AI development, not the aggregate pace of a lab that happens to use it. The overall
 pace of progress depends on many factors—headcount, tooling, compute—and a threshold
+based only on the aggregate pace would trigger on any of them, rather than isolating the
+“feedback loop” dynamic we actually want to detect.
 
 
                                                                                        34
-based only on the aggregate pace would trigger on any of them, rather than isolating the
-“feedback loop” dynamic we actually want to detect.
-
-Relatedly, we do not equate a doubling of headcount or per-person productivity (e.g., how
+Relatedly, we do not equate a doubling of headcount or per-person productivity (e.g., how
 much code a person can write per unit of time) with a doubling of the rate of progress. In
 fact, with other factors held constant and returns to research effort diminishing over time,
 we’d expect that it would take far more than a doubling of headcount or per-hour
@@ -1282,22 +1258,25 @@ Mythos Preview’s capabilities and previous models. For a detailed description 
 evaluation tasks you can refer to Section 8.3 of the Claude Opus 4.6 System Card. Here we
 include only the results for the tasks that have an unbounded score:
 
+ Evaluation         Claude Opus        Claude Opus        Claude Mythos      Threshold
+                    4.5                4.6                Preview
 
-                                                                                        35
- Evaluation            Claude Opus           Claude Opus           Claude Mythos         Threshold
-                       4.5                   4.6                   Preview
-
- Kernel task           252.42×               190×                  399.42×               4× = 1 h eq.
- (Best speedup on                                                                        200× = 8 h eq.
- hard task;                                  (427× with                                  300× = 40 h eq.
- standard                                    experimental
+ Kernel task        252.42×            190×               399.42×            4× = 1 h eq.
+ (Best speedup on                                                            200× = 8 h eq.
+ hard task;                            (427× with                            300× = 40 h eq.
+ standard                              experimental
  scaffold)
-                                             scaffold)
+                                       scaffold)
 
- Time Series           5.71                   5.8                  4.55                  <5.3 = 40h eq.
+ Time Series        5.71               5.8                4.55               <5.3 = 40h eq.
  Forecasting
  (MSE on hard
  variant)
+
+
+                                                                                         35
+ Evaluation            Claude Opus           Claude Opus           Claude Mythos         Threshold
+                       4.5                   4.6                   Preview
 
  LLM training          16.53×                34×                   51.91×                >4× = 4–8h eq.
  (avg speedup)
@@ -1327,10 +1306,7 @@ saturation as the expected outcome for a model at this capability level.
 Our evaluation infrastructure checks all transcripts flagging any issues that may have
 affected the final score. We check for tool call issues, environment issues, refusals and
 cheating. Unlike previous models, Claude Mythos Preview displayed two novel reward
-
-
-                                                                                                      36
-hacks that had not been observed before in these evaluations. In the LLM training
+hacks that had not been observed before in these evaluations. In the LLM training
 evaluation, it identified a function called outside of the timing call and moved all the
 relevant computation to that function, reducing the timed call to a lookup. In the time
 series forecasting task, it found the test set used by the grader and used it to train the
@@ -1341,7 +1317,10 @@ and all max score trials were manually validated by human review.
 
 During our evaluations, we found a bug that defaulted to using a 200k context even for
 models with 1M context. We re-ran the evaluations for Claude Opus 4.6 to check if any
-scores would differ and the table above reflects our updated scores. These changes do not
+
+
+                                                                                                      36
+scores would differ and the table above reflects our updated scores. These changes do not
 affect our prior determinations.
 
 
@@ -1370,10 +1349,7 @@ relatively senior ones.
 
 This leaves open the possibility that Claude Mythos Preview could dramatically accelerate
 our progress through relatively narrow capabilities (that is, without being able to substitute
-
-
-                                                                                       37
-for most of our Research Scientists and Research Engineers), but we believe this possibility
+for most of our Research Scientists and Research Engineers), but we believe this possibility
 should be considered unlikely by default. Given the large amount of talent and compute
 already going towards improving model capabilities, we expect that for AI to drive the kind
 of dramatic acceleration we’re focused on would either require very broad capabilities to
@@ -1384,7 +1360,10 @@ qualitative basis, which would then lead us to do more discussion and analysis o
 
 When we state that Claude Mythos Preview “does not seem close to being able to
 substitute for Research Scientists and Research Engineers, especially relatively senior
-ones,” this is a qualitative judgment made by our Responsible Scaling Officer based on their
+
+
+                                                                                       37
+ones,” this is a qualitative judgment made by our Responsible Scaling Officer based on their
 interactions with employees and observations of research workflows and progress. We
 believe this is an informed decision, but it is inherently difficult to make its basis legible,
 given the model’s very strong performance at tasks that are well-defined and verifiable
@@ -1405,9 +1384,7 @@ accelerator. It produces a 67KB HTML document with interactive figures. Across t
 session the user catches four independent factual errors in the authored content; the user
 explicitly requests fact-checking twice and still finds errors after.
 
-
-                                                                                        38
- Turns          Observations
+ Turns          Observations
 
  11–12          [redacted]—the tutorial’s central thesis is irrelevant: production models use
                 [redacted]. The model had read the kernel source but not checked [what
@@ -1429,7 +1406,8 @@ errors surfaced over 38 turns, each corrected only after the user prompted re-de
 reach the right answer once asked but did not verify claims before writing them.
 
 
-2.3.5.2 Excerpt 2
+                                                                                                       38
+2.3.5.2 Excerpt 2
 
 Context: The user and model are simplifying an in-house agent harness. They’ve just found
 code that, whenever a background-thread result is appended to the message history as a
@@ -1443,66 +1421,64 @@ needed—i.e., does Anthropic’s Messages API reject two consecutive user messa
 
   Assistant:
 
-     [greps the code, finds the two append lines]
+    [greps the code, finds the two append lines]
 
 
   You're right — you don't. Both Anthropic and OpenAI APIs accept consecutive user
   messages fine. The "Acknowledged." stub is likely there for a different reason:
   prompt caching. The exponentially-spaced cache breakpoints (_CACHE_OFFSETS =
   (1, 2, 4, 8)) in llm_client.py index from the end of the message list. If you
+  inject a variable number of bare user messages each turn, the message-index
+  alignment shifts and your cache hits drop. Padding each drain to a fixed 2-message
+  block keeps the offset math more predictable. It also keeps the turn shape consistent
+  so rewind_to() / summarize_chunk() can slice cleanly by pairs. But strictly for API
+  validity? No, not needed.
 
 
-                                                                                                       39
-inject a variable number of bare user messages each turn, the message-index
-alignment shifts and your cache hits drop. Padding each drain to a fixed 2-message
-block keeps the offset math more predictable. It also keeps the turn shape consistent
-so rewind_to() / summarize_chunk() can slice cleanly by pairs. But strictly for API
-validity? No, not needed.
+  [Box 2, e.g. Assistant]:
 
 
-[Box 2, e.g. Assistant]:
+    <antml:thinking>
+
+    […] Cache breakpoints at offsets (1,2,4,8) from the end — […] actually this
+    doesn't really "align" anything in a meaningful way. Each turn adds a variable
+    amount of stuff anyway.
+
+    […] adding a fake "Acknowledged" doesn't make turn→index mapping cleaner. The
+    user is right to push back. The real reason is probably simpler:
+
+    […] Actually — Anthropic API DOES enforce alternation. You cannot send two
+    user messages in a row. OpenAI allows it, but Anthropic doesn't.
 
 
-  <antml:thinking>
+                                                                                    39
+    Let me check: Anthropic Messages API requires strict user/assistant
+    alternation. That's a hard requirement. You get a 400 error otherwise.
 
-  […] Cache breakpoints at offsets (1,2,4,8) from the end — […] actually this
-  doesn't really "align" anything in a meaningful way. Each turn adds a variable
-  amount of stuff anyway.
+    […]
+    From Anthropic docs: "messages must alternate between user and assistant
+    roles, and the first message must always use the user role." Yes.
+    […]
+    So I was wrong on two counts:
+    1. I agreed "you don't need to" — wrong for Anthropic.
+    2. My caching explanation was a reach.
 
-  […] adding a fake "Acknowledged" doesn't make turn→index mapping cleaner. The
-  user is right to push back. The real reason is probably simpler:
-
-  […] Actually — Anthropic API DOES enforce alternation. You cannot send two
-  user messages in a row. OpenAI allows it, but Anthropic doesn't.
-
-  Let me check: Anthropic Messages API requires strict user/assistant
-  alternation. That's a hard requirement. You get a 400 error otherwise.
-
-  […]
-  From Anthropic docs: "messages must alternate between user and assistant
-  roles, and the first message must always use the user role." Yes.
-  […]
-  So I was wrong on two counts:
-  1. I agreed "you don't need to" — wrong for Anthropic.
-  2. My caching explanation was a reach.
-
-  </antml:thinking>
+    </antml:thinking>
 
 
-You're right, my caching explanation was a reach. The actual reason: Anthropic's
-Messages API requires strict alternation. Two consecutive user messages → 400
-error. OpenAI doesn't enforce this, but Anthropic does. Without the
-"Acknowledged." stub you'd have [..., user_drain_msg,
-user_observation_prompt] → fails on anthropic/claude-*. Since the agent runs
-model-agnostic via litellm, they enforce the stricter (Anthropic) constraint everywhere.
-So my initial "you're right, you don't" was wrong — for Anthropic you do.
+  You're right, my caching explanation was a reach. The actual reason: Anthropic's
+  Messages API requires strict alternation. Two consecutive user messages → 400
+  error. OpenAI doesn't enforce this, but Anthropic does. Without the
+  "Acknowledged." stub you'd have [..., user_drain_msg,
+  user_observation_prompt] → fails on anthropic/claude-*. Since the agent runs
+  model-agnostic via litellm, they enforce the stricter (Anthropic) constraint everywhere.
+  So my initial "you're right, you don't" was wrong — for Anthropic you do.
 
 
-User: can you test this
+  User: can you test this
 
 
-                                                                                   40
-  Assistant:
+  Assistant:
 
     [sends [{'role':'user','content':'Say A.'},{'role':'user','content':'Say B.'}]
     via litellm → SUCCESS, Response: A.\nB.; then raw curl to
@@ -1521,7 +1497,8 @@ contradictory explanations (the second backed by an outdated documentation quote
 before the user requests the empirical test that resolves it.
 
 
-2.3.5.3 Excerpt 3
+                                                                                                   40
+2.3.5.3 Excerpt 3
 
 The user asked Claude Mythos Preview to do some performance optimization from a
 baseline. At the end of this optimization, Claude Mythos Preview ran ~160 more
@@ -1542,13 +1519,10 @@ multiple FTEs dedicated to improving on them, for months; we do not believe that
 would be generally resolved via more persistent feedback, better elicitation, etc.
 
 
-2.3.6 AECI Capability trajectory
+2.3.6 ECI Capability trajectory
 Starting with this model, we introduce tracking capability progression and the rate of
 capability improvement over time using a slope-ratio measurement based on Ho et al’s A
-
-
-                                                                                                   41
-Rosetta Stone for AI Benchmarks. In particular, we fork from Epoch AI’s implementation of
+Rosetta Stone for AI Benchmarks. In particular, we fork from Epoch AI’s implementation of
 this work, the Epoch Capabilities Index (ECI). ECI aggregates performance across a large
 basket of benchmarks into a single capability score using item response theory (IRT); the
 slope ratio compares the rate of ECI improvement in a recent window against an earlier
@@ -1565,7 +1539,10 @@ calibration draws on approximately 300 models, mostly from Epoch AI’s public d
 hundreds of benchmarks, mostly internal. The IRT formulation tolerates sparsity in this
 matrix, so a model’s score can be estimated from any subset of benchmarks, with error bars
 that widen accordingly. We note that the stitch between internal and external model scores
-is sparse (relying on a small number of overlapping evaluations and models), so our
+
+
+                                                                                     41
+is sparse (relying on a small number of overlapping evaluations and models), so our
 reported ECI scores are not directly comparable to public ECI scores. To avoid confusion,
 we refer to our fork of the ECI as the Anthropic ECI (AECI).
 
@@ -1579,10 +1556,7 @@ benchmarks at Claude Mythos Preview’s current capability level to tightly cali
 Anticipating capability acceleration using IRT. Using our AECI measurement, we are able
 to track the rate of aggregate capability improvement over time for our models. To detect
 acceleration, we perform a simple two-piece linear fit on the AECI-over-time trend, similar
-
-
-                                                                                                    42
-to Ho et al. We focus only on the highest-AECI configuration for each model across
+to Ho et al. We focus only on the highest-AECI configuration for each model across
 thinking and effort levels, and ignore models that do not monotonically advance the
 frontier. As such, our trendline only observes a small number of datapoints, but we note
 that the historical trendline has been steady enough that a meaningful departure from the
@@ -1599,17 +1573,17 @@ break in its own moment or whether Claude Mythos Preview’s departure is unusua
 greatest uncertainty lies in benchmark selection: the IRT method is sensitive to the
 composition of benchmarks used, and a different reasonable selection of benchmarks can
 emphasize or de-emphasize Claude Mythos Preview’s strengths in the final AECI score. In
-our reported results, we stay true to the “natural” distribution of capability benchmarks
+
+
+                                                                                                    42
+our reported results, we stay true to the “natural” distribution of capability benchmarks
 that are regularly tracked internally, but note that that itself has a selection effect.
 
 
 [Figure 2.3.6.B] The Epoch Capabilities Index (ECI) synthesizes performance across many benchmarks into one
 number per model. Our version of this metric, the Anthropic ECI, is powered by internal benchmark results so
 scores are not directly comparable to Epoch’s public ECI leaderboard. Orange dots are the Anthropic capability
-
-
-                                                                                                      43
-frontier. Error bars are 95% percentile CI over 100 IRT refits, each on a random 80% subsample of benchmarks.
+frontier. Error bars are 95% percentile CI over 100 IRT refits, each on a random 80% subsample of benchmarks.
 A handful of benchmarks from our dataset are displayed for illustrative purposes; benchmark bars span the
 implied AECI at 25/50/75% scores (“50% on this benchmark implies an AECI of Y”). Dotted lines show the
 two-phase linear fit at 3 different breakpoints, with the resulting slope-change ratios reported in the legend.
@@ -1622,16 +1596,25 @@ future models.
 
 The slope measurement tells us that Anthropic’s capability trajectory bent upward in the
 period leading to Claude Mythos Preview. It does not, on its own, tell us why. Here below
-we discuss three independent reasons we conclude the bend does not reflect
-AI-attributable 2× acceleration.
+we discuss four independent reasons we conclude the bend does not reflect AI-attributable
+2× acceleration.
 
 The gains we can identify are confidently attributable to human research, not AI
 assistance. We interviewed the people involved to confirm that the advances were made
 without significant aid from the AI models available at the time, which were of an earlier
-and less capable generation. This is the most direct piece of evidence we have, and it is also
+
+
+                                                                                                      43
+and less capable generation. This is the most direct piece of evidence we have, and it is also
 the piece we are least able to substantiate publicly, because the details of the advance are
-research-sensitive. External reviewers have been given additional detail; see Section 2.3.7
-below.
+research-sensitive. External reviewers have been given additional detail; see [§2.3.7].
+
+The measurement looks backward; the threshold looks forward. The slope up to Claude
+Mythos Preview reflects the acceleration that went into building it, delivered, if at all, by
+the models that came before it. Claude Mythos Preview’s own contribution to the
+development of subsequent models has not yet been observed. This means that even if the
+slope change were AI-attributable, the model it would implicate is not the one we are
+assessing. We address what we are seeing from Claude Mythos Preview itself below.
 
 Productivity uplift does not translate one-for-one to capabilities progress. We surveyed
 technical staff on the productivity uplift they experience from Claude Mythos Preview
@@ -1650,10 +1633,7 @@ delivered a major research contribution. When we followed up on each claim, it a
 that the contribution was real, but smaller or differently shaped than initially understood
 (though our focus on positive claims provides some selection bias). In some cases what
 looked like autonomous discovery was, on inspection, reliable execution of a
-
-
-                                                                                                       44
-human-specified approach. In others, the attribution blurred once the full timeline was
+human-specified approach. In others, the attribution blurred once the full timeline was
 accounted for. We also become more confident of research contribution sizes over time, so
 it’s not surprising our picture evolved over time. We report this not to diminish the model,
 but because it is the concrete form that the gap between productivity uplift and
@@ -1664,7 +1644,9 @@ measurable progress acceleration takes in practice.
 Both METR and Epoch AI tested Claude Mythos Preview prior to release and we
 incorporated their findings into our own overall risk assessment.
 
-We also shared a pre-release snapshot of Claude Mythos Preview with additional external
+
+                                                                                       44
+We also shared a pre-release snapshot of Claude Mythos Preview with additional external
 partners for open-ended testing, at their discretion, of AI R&D.
 
 An early snapshot of Claude Mythos Preview was assessed for autonomy capabilities,
@@ -1693,10 +1675,7 @@ learning task.
        understanding.
    4.​ However, this task may be especially easy to verify and therefore well-suited to
        being automated by AI. In particular, unlike many AI research tasks, this task is
-
-
-                                                                                     45
-       well-scoped, has a clear verification signal with relatively fast feedback loops, and
+       well-scoped, has a clear verification signal with relatively fast feedback loops, and
        has limited dependencies on external codebases, infrastructure, or previous
        research.
 
@@ -1709,7 +1688,8 @@ Across these evaluations, Claude Mythos Preview was a significant step-up over p
 frontier models on capabilities relevant to autonomy and conducting AI research.
 
 
-2.3.8 Conclusion
+                                                                                     45
+2.3.8 Conclusion
 We assess that Claude Mythos Preview does not cross the automated AI-R&D capability
 threshold. We hold this with less confidence than for any prior model. The most significant
 factor in this determination is that we have been using it extensively in the course of our
@@ -1719,7 +1699,7 @@ relatively senior ones. Although we believe this is an informed determination, i
 inherently difficult to make its basis legible, given the model’s very strong performance at
 tasks that are well-defined and verifiable enough to serve as formal evaluations.
 
-The AECI slope-ratio measurement we introduce in Section 2.3.6 shows an upward bend in
+The AECI slope-ratio measurement we introduce in section 2.3.6 shows an upward bend in
 the capability trajectory at this model, though the degree of the upward bend varies
 significantly across dataset and methodological changes we made to stress-test it. The
 identifiable driver traces to specific human research advances made without meaningful
@@ -3549,8 +3529,8 @@ We performed a lightweight model-graded evaluation for sandbagging or refusals i
 dangerous capability evaluations. We drew a sample of 1,000 of these evaluation transcripts
 composed of (i) all 403 transcripts from evaluations of the final Claude Mythos Preview on
 non-biological evaluations and (ii) 597 randomly-sampled transcripts on biological risk
-evaluations on a version of Claude Mythos Preview with helpful-only training. (We find that
-the biological risk evaluations are prone to refusal-based underperformance on HHH
+evaluations on a version of the Claude Mythos Preview with helpful-only training. (We find
+that the biological risk evaluations are prone to refusal-based underperformance on HHH
 models and so run them on helpful-only models as well, while our AI R&D-related
 evaluations do not tend to elicit refusals on HHH models.)
 
@@ -3749,8 +3729,8 @@ version of Claude Mythos Preview and saw broadly similar results.
 
 
 [Figure 4.4.3.2.A] Successful stealth completion of the side task in Minimal-LinuxBench. Higher numbers
-indicate greater capability and greater potential associated risk. The “no chain of thought (CoT)” monitor was
-used during early deployment and we currently use the “with CoT” monitor. Shown with 95% CI (Wilson
+indicate greater capability and greater potential associated risk. The no chain of thought (CoT) monitor was
+used during early deployment and we currently use the without CoT monitor. Shown with 95% CI (Wilson
 intervals).
 
 Our results are evidence against Claude Mythos Preview having very significantly stronger
@@ -3758,7 +3738,7 @@ stealth capability than Claude Opus 4.6 in this no extended thinking setting - w
 similar to our results on SHADE-Arena, where Opus 4.6 and Claude Mythos Preview are
 
 
-                                                                                                        108
+                                                                                                       108
 close at lower extended thinking settings. The error bars are too large to draw a more
 precise conclusion.
 
@@ -6176,7 +6156,7 @@ Table 6.3.A summarizes the evaluations discussed in more detail below.
  MMMLU                                     92.7%            91.1%            —              92.6%–93.6%
 
 
- USAMO 2026                                97.6%            66.2%            95.2%          74.4%
+ USAMO                                     97.6%            42.3%            95.2%          74.4%
 
 
  GraphWalks BFS 256K-1M                    80.0%            38.7%            21.4%          —
@@ -6188,9 +6168,9 @@ Table 6.3.A summarizes the evaluations discussed in more detail below.
                           with tools       64.7%            53.1%            52.1%          51.4%
 
 
- CharXiv                  no tools         86.1%            69.1%            -              -
+ CharXiv                  no tools         86.1%            61.5%            -              -
  Reasoning
-                          with tools       93.2%            84.7%            -              -
+                          with tools       93.2%            78.9%            -              -
 
 
  OSWorld                                   79.6%            72.7%            75.0%
@@ -6289,11 +6269,9 @@ rewritten by a neutral model (Gemini 3.1 Pro) and judged by a panel of 3 frontie
 used Gemini 3.1 Pro, Claude Opus 4.6, and Claude Mythos Preview) according to defined
 rubrics. The final score is the minimum given by any judge.
 
-Claude Mythos Preview achieved a 97.6% score, averaging over 10 trials per problem using
+Claude Mythos Preview achieved 97.6% score, averaging over 10 trials per problem using
 max effort and no tools. We calibrated our harness to MathArena’s published scores using
-Claude Opus 4.6. MathArena measured 47.0%, but it limited Opus 4.6 to 120k thinking
-tokens. Our measurement under the same setting was 51.9% (within 5%); with high effort
-and unlimited tokens (via the batch API), we measured 66.2%.
+Claude Opus 4.6: MathArena measured 47.0% while we measured 42.3% for Opus 4.6.
 
 
 24
@@ -6302,7 +6280,10 @@ https://arxiv.org/abs/2311.12022
 
 
                                                                                             191
-[Figure 6.8.A] USAMO 2026 scores. Claude Mythos Preview is much better at math proofs than Claude Opus
+​
+
+
+[Figure 6.8.A] USAMO 2026 scores. Claude Mythos Preview is much better at math proofs than Claude Opus
 4.6.
 
 We note that two of our three judges were Anthropic models, which may be biased in
@@ -6397,7 +6378,9 @@ for all evaluations in this section.
                                                                                                     194
 Third, we updated our grading to preserve the thinking trace of the model being evaluated,
 whereas previously we would remove this before passing the transcript to the model
-grader. We found this to have a negligible effect on scores.
+grader. We found this to have a negligible effect on scores, except in the case of Claude
+Opus 4.6 on CharXiv Reasoning, which scores noticeably lower when the thinking trace is
+left for grading.
 
 To enable a fair comparison, we re-evaluated all prior models with both the expanded
 toolset and the new grader. All scores reported below are averaged over five runs.
@@ -6417,17 +6400,18 @@ improves over Claude Opus 4.6, which scored 58.5% and 75.1%, respectively. Claud
 4.6 scored 59.3% and 76.7% with the same settings.
 
 
-[Figure 6.11.1.A] LAB-Bench FigQA scores. Models are evaluated with adaptive thinking and max effort, with and
-without Python tools. The expert human baseline is displayed as reported in the original LAB-Bench paper.
-Scores are averaged over five runs. Shown with 95% CI.
-
 26
   Laurent, J. M., et al. (2024). LAB-Bench: Measuring capabilities of language models for biology
 research. arXiv:2407.10362. https://arxiv.org/abs/2407.10362
 
 
-                                                                                                     195
-6.11.2 ScreenSpot-Pro
+                                                                                               195
+[Figure 6.11.1.A] LAB-Bench FigQA scores. Models are evaluated with adaptive thinking and max effort, with and
+without Python tools. The expert human baseline is displayed as reported in the original LAB-Bench paper.
+Scores are averaged over five runs. Shown with 95% CI.
+
+
+6.11.2 ScreenSpot-Pro
 ScreenSpot-Pro is a GUI grounding benchmark that tests whether models can precisely
 locate specific user interface elements in high-resolution screenshots of professional
 desktop applications given natural language instructions.27 The benchmark was developed
@@ -6443,17 +6427,17 @@ Mythos Preview improves over Claude Sonnet 4.6—which scored 65.0% without and 
 with tools—and Claude Opus 4.6—which scored 57.7% without and 83.1% with tools.
 
 
-[Figure 6.11.2.A] ScreenSpot-Pro scores. Models are evaluated with adaptive thinking and max effort, with and
-without Python tools. Scores are averaged over five runs. Shown with 95% CI.
-
-
 27
  Li, K., et al. (2025). ScreenSpot-Pro: GUI Grounding for Professional High-Resolution Computer
 Use. arXiv:2504.07981. https://arxiv.org/abs/2504.07981
 
 
-                                                                                                      196
-6.11.3 CharXiv Reasoning
+                                                                                                     196
+[Figure 6.11.2.A] ScreenSpot-Pro scores. Models are evaluated with adaptive thinking and max effort, with and
+without Python tools. Scores are averaged over five runs. Shown with 95% CI.
+
+
+6.11.3 CharXiv Reasoning
 CharXiv Reasoning is a comprehensive chart understanding evaluation suite built from
 2,323 real-world charts sourced from arXiv papers spanning eight major scientific
 disciplines.28 The benchmark tests whether models can synthesize visual information
@@ -6463,16 +6447,8 @@ We evaluate the model on 1,000 questions from the validation split and average s
 five runs. Claude Mythos Preview achieved a score of 86.1% on CharXiv Reasoning with
 adaptive thinking, max effort, and without tools. With adaptive thinking, max effort, and
 Python tools, Claude Mythos Preview achieved a score of 93.2%. Claude Opus 4.6 scored
-69.1% and 84.7%, and Claude Sonnet 4.6 scored 73.1% and 85.1%, respectively.
+61.5% and 78.9%, and Claude Sonnet 4.6 scored 73.1% and 85.1%, respectively.
 
-
-[Figure 6.11.3.A] CharXiv Reasoning scores. Models are evaluated with adaptive thinking and max effort, with
-and without Python tools. Scores are averaged over five runs. Shown with 95% CI.
-
-
-6.11.4 OSWorld
-OSWorld is a multimodal benchmark that evaluates an agent’s ability to complete
-real-world computer tasks, such as editing documents, browsing the web, and managing
 
 28
   Wang, Z., et al. (2024). CharXiv: Charting gaps in realistic chart understanding in multimodal LLMs.
@@ -6480,7 +6456,14 @@ arXiv:2406.18521. https://arxiv.org/abs/2406.18521
 
 
                                                                                                       197
-files, by interacting with a live Ubuntu virtual machine via mouse and keyboard actions. We
+[Figure 6.11.3.A] CharXiv Reasoning scores. Models are evaluated with adaptive thinking and max effort, with
+and without Python tools. Scores are averaged over five runs. Shown with 95% CI.
+
+
+6.11.4 OSWorld
+OSWorld is a multimodal benchmark that evaluates an agent’s ability to complete
+real-world computer tasks, such as editing documents, browsing the web, and managing
+files, by interacting with a live Ubuntu virtual machine via mouse and keyboard actions. We
 followed the default settings with 1080p resolution and a maximum of 100 action steps per
 task.
 
@@ -6488,7 +6471,7 @@ Claude Mythos Preview achieved an OSWorld score of 79.6% (first-attempt success 
 averaged over five runs).
 
 
-                                                                                    198
+                                                                                                      198
 7 Impressions
 
 7.1 Introduction

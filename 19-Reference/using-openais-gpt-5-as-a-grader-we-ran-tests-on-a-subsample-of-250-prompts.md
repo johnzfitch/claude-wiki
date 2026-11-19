@@ -2,8 +2,7 @@
 title: "Using OpenAI’s GPT-5 as a grader, we ran tests on a subsample of 250 prompts…"
 source_url: "https://www-cdn.anthropic.com/bb224ffec0bd87a4f885bd30b187606064a86ea5.pdf"
 category: "19-Reference"
-fetched_at: "2026-11-08T06:26:06Z"
-last_modified: "Mon, 26 Jan 2026 17:52:36 GMT"
+fetched_at: "2026-11-18T06:28:30Z"
 tags: ["news-research", "prompting"]
 ---
 

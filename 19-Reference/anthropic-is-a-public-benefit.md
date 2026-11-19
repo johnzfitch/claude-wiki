@@ -2,8 +2,7 @@
 title: "Anthropic is a public benefit"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/45bc6adf039848841ed9e47051fb1209d6bb2b26.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-30T06:26:14Z"
-last_modified: "Wed, 23 Apr 2025 03:37:51 GMT"
+fetched_at: "2026-11-18T06:28:47Z"
 tags: ["news-research"]
 ---
 

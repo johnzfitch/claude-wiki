@@ -2,7 +2,7 @@
 title: "Code modernization | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/code-modernization"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:25Z"
+fetched_at: "2026-11-18T06:29:17Z"
 tags: ["agents", "case-studies", "claude-code", "enterprise"]
 ---
 

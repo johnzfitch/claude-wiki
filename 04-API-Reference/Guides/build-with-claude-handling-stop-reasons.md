@@ -2,7 +2,7 @@
 title: "Stop reasons and fallback - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/handling-stop-reasons"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:59Z"
+fetched_at: "2026-11-13T06:36:31Z"
 tags: ["api"]
 ---
 
@@ -20,7 +20,7 @@ Learn what each stop_reason value means and how to handle truncation, tool use, 
 
 Every Messages API response includes a [`stop_reason`](../Endpoints/messages-create.md#message.stop_reason)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. field that tells you why Claude stopped generating. Check this field to decide whether to use the response as-is, continue the conversation, retry, or fall back to another model.
 
-For the full response schema, see the [Messages API reference](../Endpoints/messages-create.md).
+For the full response schema, see the [Messages API reference](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 ## Quick reference
 
@@ -106,7 +106,7 @@ if response.stop_reason == "end_turn":
             print(block.text)
 ```
 
-### Empty responses with end_turn
+### Empty responses with end_turn
 
 Sometimes Claude returns an empty response (exactly 2–3 tokens with no content) with `stop_reason: "end_turn"`. This typically occurs when Claude determines that the assistant turn is complete, particularly after tool results.
 
@@ -273,7 +273,7 @@ if response.stop_reason == "max_tokens":
     # Consider making another request to continue
 ```
 
-### Incomplete tool use blocks
+### Incomplete tool use blocks
 
 If Claude’s response is cut off because it hit the `max_tokens` limit, and the truncated response contains an incomplete tool use block, you’ll need to retry the request with a higher `max_tokens` value to get the full tool use.
 
@@ -577,7 +577,7 @@ If you encounter `refusal` stop reasons frequently while using Claude Sonnet 4.5
 
 On a refusal, the [`stop_details`](../Endpoints/messages-create.md#message.stop_details)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. object identifies the policy category that triggered it. The categories and the full refusal response shape are covered in [What a refusal looks like](build-with-claude-refusals-and-fallback.md#refusal-response). `stop_details` is `null` for all stop reasons other than `refusal`.
 
-A refused request on Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, or Claude Haiku 5.5 can usually be served by retrying on another Claude model. [Refusals and fallback](build-with-claude-refusals-and-fallback.md) shows how to set up that retry, server-side or in your client. Claude Haiku 5.5 has no server-side fallback, so set up its retry [in your client](build-with-claude-refusals-and-fallback.md#client-side-fallback). If you build the retry yourself from Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5, [fallback credit](build-with-claude-fallback-credit.md) covers how to avoid paying the prompt-cache cost twice.
+You can usually get a response to a refused request by retrying it on another Claude model. This works for Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Haiku 5.5. [Refusals and fallback](build-with-claude-refusals-and-fallback.md) shows how to set up that retry, server-side or in your client. Claude Haiku 5.5 has no server-side fallback, so set up its retry with [client-side fallback](build-with-claude-refusals-and-fallback.md#client-side-fallback). If you build the retry yourself from any of these models except Claude Haiku 5.5, [Fallback credit](build-with-claude-fallback-credit.md) covers how to avoid paying the prompt-cache cost twice.
 
 ### model_context_window_exceeded
 

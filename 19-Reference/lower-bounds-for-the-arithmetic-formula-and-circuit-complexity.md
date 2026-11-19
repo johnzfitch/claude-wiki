@@ -2,7 +2,7 @@
 title: "Lower bounds for the arithmetic formula and circuit complexity"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/6d76536cc87bf228aad29d55fd71b029e2e956b9.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-09T06:49:14Z"
+fetched_at: "2026-11-18T06:28:35Z"
 tags: ["news-research"]
 ---
 
@@ -368,8 +368,8 @@ every integer k with 2 log2 n + 4 ≤ k ≤ n/2,
                                                  7
 I.4.1    The evaluation point
 Fix n and k as in the statement and put m := n − k (≥ n/2). Let
-
-  a := ⌊log2 (m + 1)⌋     (so 2a ≤ m + 1 < 2a+1 ),          M := 2a − 1   (odd, m+1   a
+                                                                                      a
+  a := ⌊log2 (m + 1)⌋     (so 2a ≤ m + 1 < 2a+1 ),          M := 2a − 1   (odd, m+1
                                                                                  2 ≤ 2 , M ≤ m),
 
 and let ω ∈ C be a primitive M -th root of unity. For n ≥ n0 (any n0 ≥ 210 works) we have
@@ -1156,8 +1156,9 @@ root
          Q
 minant is 1 at s = 0).
    At s = 0 the window is bare: ĝ = h(κY ) + t(κZ) exactly, R = I, and
-                                                                       
+                                                       
                                                               (c′ )
+                                                                        
      det S(κ) s=0 = det DF (κY, κZ),      F : (y, z) 7→ Fk χ ; ĝ(y, z) ′                    ,
                                                                                     c =1,...,β−1, k=1,...,β
 
@@ -2319,8 +2320,12 @@ where Θ = uc′ W[0,ρ)\{c′ −1} − [ c ̸= c′ − 1 ∧ c ≤ ρ − 1 ]
             
 
 cell block of Lemma D5.3, and
-                       ρ                 ρ−1                                                                 ρ             ρ−1
-                      Y                   Y                        Wρ                                       Y               Y          
+                       ρ
+                      Y                 ρ−1
+                                           Y                        Wρ
+                                                                                                               ρ
+                                                                                                              Y             ρ−1
+                                                                                                                               Y          
 det Θ = (−1)ρ−1                   uc′              vc Qρ                      Qρ−1       = (−1)ρ−1 w0 W ρ−2           uc′            vc
                                                             c′ =1 wc −1         c=1 wc
                                                                      ′

@@ -2,7 +2,7 @@
 title: "Session event stream - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/events-and-streaming"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:24Z"
+fetched_at: "2026-11-13T06:36:42Z"
 tags: ["agents", "api"]
 ---
 
@@ -20,18 +20,22 @@ Send events, stream responses, and interrupt or redirect your session while it r
 
 [Managed Agents](managed-agents-overview.md)
 
-[Status](managed-agents-overview.md#availability-feature-support)  
 Beta
 
-[Cloud platforms](managed-agents-overview.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](managed-agents-overview.md#feature-availability)  
+- All models
 
-[Beta header](managed-agents-overview.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](managed-agents-overview.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-overview.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-overview.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Communication with Claude Managed Agents is event-based. You open a stream to follow a session, send events to direct it, and answer it when it pauses for input.
 
@@ -222,15 +226,15 @@ A session pauses when the agent calls a [custom tool](managed-agents-tools.md#cu
 3.  For each blocking event ID, send a [`user.custom_tool_result`](#return-a-custom-tool-result) or a [`user.tool_confirmation`](#confirm-a-tool-call) event. A custom tool result doesn’t have to wait for step 2.
 4.  Once all blocking events are resolved, the session transitions back to `running`.
 
-In a multiagent session, a subagent’s blocking events are cross-posted to the primary thread. See [Tool permissions and custom tools](managed-agents-session-threads.md#tool-permissions-and-custom-tools).
+In a multiagent session, the server cross-posts a subagent’s blocking events to the primary thread. See [Tool permissions and custom tools](managed-agents-session-threads.md#tool-permissions-and-custom-tools).
 
 ### Return a custom tool result
 
 The `agent.custom_tool_use` event contains the tool name and input. Run the tool in your system. Then send a `user.custom_tool_result` event, passing the event ID in the `custom_tool_use_id` parameter along with the result content.
 
-You can send the result as soon as the `agent.custom_tool_use` event arrives, without waiting for `session.status_idle`. The session still emits `session.status_idle` with a `requires_action` stop reason for the call, and your client can ignore it. A second result for the same call is accepted and has no effect.
+You can send the result as soon as the `agent.custom_tool_use` event arrives, without waiting for `session.status_idle`. The session still emits `session.status_idle` with a `requires_action` stop reason for the call, and your client can ignore it. The server accepts a second result for the same call, but that result has no effect.
 
-When you [reconnect](#reconnect-without-missing-events) to a paused session, `stop_reason.event_ids` on the latest `session.status_idle` event lists the calls to answer.
+When you [reconnect to a paused session](#reconnect-without-missing-events), `stop_reason.event_ids` on the latest `session.status_idle` event lists the calls to answer.
 
 The following example answers each call as it arrives:
 
@@ -376,7 +380,7 @@ client.beta.sessions.events.send(
 )
 ```
 
-Conversation history is preserved unless the session is explicitly deleted. When a session goes idle, its sandbox is checkpointed. The checkpoint preserves the full sandbox state, including the filesystem, installed packages, and any files the agent created.
+A session keeps its conversation history until you delete the session. When a session goes idle, Claude Managed Agents checkpoints its sandbox. The checkpoint preserves the full sandbox state, including the filesystem, installed packages, and any files the agent created.
 
 
 
@@ -505,7 +509,7 @@ for event in events.data:
 
 On a [supported model](#supported-models), send a `system.message` event to give the agent privileged system-level context. The context applies to the accompanying turn and all subsequent turns. Use it when the agent needs updated system-level guidance mid-session, for example a different persona, revised constraints, or context fetched at runtime.
 
-The event’s `content` accepts 1–1,000 text items. The content is appended to the session’s system context as a `role: "system"` turn. It doesn’t replace the top-level system prompt, which the `system` field on the agent definition sets.
+The event’s `content` accepts 1–1,000 text items. The server appends the content to the session’s system context as a `role: "system"` turn. It doesn’t replace the top-level system prompt, which the `system` field on the agent definition sets.
 
 cURL
 
@@ -548,8 +552,10 @@ client.beta.sessions.events.send(
 
 ### Supported models
 
-`system.message` is supported by these models:
+These models support `system.message`:
 
+- Claude Fable 5.2
+- Claude Mythos 5.2
 - Claude Fable 5.1
 - Claude Mythos 5.1
 - Claude Fable 5
@@ -560,7 +566,7 @@ client.beta.sessions.events.send(
 - Claude Sonnet 5.5
 - Claude Haiku 5.5
 
-If the agent’s primary model does not support mid-conversation system injection, the event is rejected with a `model_does_not_support_mid_conversation_system` validation error. Subagent models are not checked, because `system.message` lands on the primary thread only.
+If the agent’s primary model does not support mid-conversation system injection, the API rejects the event with a `model_does_not_support_mid_conversation_system` validation error. The API does not check subagent models, because `system.message` lands on the primary thread only.
 
 ### System messages while a tool call is pending
 

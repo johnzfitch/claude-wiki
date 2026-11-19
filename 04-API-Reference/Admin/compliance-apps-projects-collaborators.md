@@ -2,7 +2,7 @@
 title: "Collaborators - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/projects/collaborators"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:44Z"
+fetched_at: "2026-11-13T06:34:34Z"
 tags: ["api"]
 ---
 

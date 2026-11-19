@@ -2,7 +2,7 @@
 title: "Invites - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/invites"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:26:42Z"
+fetched_at: "2026-11-14T06:25:25Z"
 tags: ["api"]
 ---
 

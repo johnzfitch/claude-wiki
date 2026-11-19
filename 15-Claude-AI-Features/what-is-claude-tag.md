@@ -2,7 +2,7 @@
 title: "What is Claude Tag? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15594475-what-is-claude-tag"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:06Z"
+fetched_at: "2026-11-18T06:28:04Z"
 tags: ["claude-ai"]
 ---
 

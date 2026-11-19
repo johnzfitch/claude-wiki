@@ -2,8 +2,8 @@
 title: "Claude Enterprise plan | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/enterprise"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:41Z"
-last_modified: "Mon, 09 Nov 2026 06:25:03 GMT"
+fetched_at: "2026-11-18T06:29:38Z"
+last_modified: "Wed, 18 Nov 2026 06:22:56 GMT"
 tags: ["case-studies", "enterprise"]
 ---
 
@@ -51,22 +51,6 @@ Claude Code
 Location:  
 Europe
 
-> “Slack’s close collaboration with Anthropic has helped our Engineering and Product teams accelerate prototyping and model testing.”
-
-97minutes per week saved by the average user through summarization and recap features
-
-Industry:  
-Software
-
-Company size:  
-Large
-
-Product:  
-Claude Platform
-
-Location:  
-North America
-
 > “With this partnership, Allianz is taking a decisive step to address critical AI challenges in insurance. Anthropic's focus on safety and transparency complements our strong dedication to customer excellence and stakeholder trust.”
 
 90%week-over-week growth company-wide deployment, with rapid global adoption
@@ -82,6 +66,22 @@ Claude Platform
 
 Location:  
 EMEA
+
+> “Slack’s close collaboration with Anthropic has helped our Engineering and Product teams accelerate prototyping and model testing.”
+
+97minutes per week saved by the average user through summarization and recap features
+
+Industry:  
+Software
+
+Company size:  
+Large
+
+Product:  
+Claude Platform
+
+Location:  
+North America
 
 > “Through using Claude, we’ve saved millions, which we have reinvested in upskilling our customer support agents. We’ve empowered our agents to focus on those more complex issues that really require human care.”
 
@@ -151,22 +151,6 @@ Claude Code
 Location:  
 Europe
 
-> “Slack’s close collaboration with Anthropic has helped our Engineering and Product teams accelerate prototyping and model testing.”
-
-97minutes per week saved by the average user through summarization and recap features
-
-Industry:  
-Software
-
-Company size:  
-Large
-
-Product:  
-Claude Platform
-
-Location:  
-North America
-
 > “With this partnership, Allianz is taking a decisive step to address critical AI challenges in insurance. Anthropic's focus on safety and transparency complements our strong dedication to customer excellence and stakeholder trust.”
 
 90%week-over-week growth company-wide deployment, with rapid global adoption
@@ -182,6 +166,22 @@ Claude Platform
 
 Location:  
 EMEA
+
+> “Slack’s close collaboration with Anthropic has helped our Engineering and Product teams accelerate prototyping and model testing.”
+
+97minutes per week saved by the average user through summarization and recap features
+
+Industry:  
+Software
+
+Company size:  
+Large
+
+Product:  
+Claude Platform
+
+Location:  
+North America
 
 1 of 6
 
@@ -429,11 +429,11 @@ Get started today. Includes Enterprise security and compliance, chat, Claude Cod
 Per seat / month, billed annually.  
 Usage is billed as you go at API rates, based on what your team uses. Annual commitment required. Minimum 20 seats.
 
-[Get the Enterprise plan](https://claude.ai/create/enterprise)[Chat with buying specialist](https://claude.ai/buying-specialist)
+[Get the Enterprise plan](https://claude.ai/create/enterprise)[Chat about your plan](https://claude.ai/account-advisor)
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Prices shown don’t include applicable tax. Price and plans are subject to change at Anthropic's discretion.
 
-[Usage limits (opens in new tab)](../17-Billing-Plans/usage-limit-best-practices.md) apply. Price and plans are subject to change at Anthropic's discretion.
+[Usage limits (opens in new tab)](https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices) apply. Price and plans are subject to change at Anthropic's discretion.
 
 ## Build on the Claude Platform
 

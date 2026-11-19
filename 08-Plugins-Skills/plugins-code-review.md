@@ -2,7 +2,7 @@
 title: "Code Review | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/code-review"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:53Z"
+fetched_at: "2026-11-18T06:26:56Z"
 tags: ["plugins"]
 ---
 
@@ -18,7 +18,7 @@ Automated code review for pull requests using multiple specialized agents with c
   Claude Code
 - 
 
-  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/0412be76f50ab4f4f8abff3753efa9269fbbca5b/plugins/code-review)
+  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/fd30cee3ecd5a8ee772733c5d20c0f2bae2da2f0/plugins/code-review)
 - 
 
   Installs438,525

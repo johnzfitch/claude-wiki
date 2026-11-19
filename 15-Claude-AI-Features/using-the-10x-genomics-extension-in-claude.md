@@ -2,7 +2,7 @@
 title: "Using the 10x Genomics Extension in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614803-using-the-10x-genomics-extension-in-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-08T06:25:16Z"
+fetched_at: "2026-11-18T06:27:57Z"
 tags: ["claude-ai"]
 ---
 
@@ -46,26 +46,24 @@ The 10x Genomics integration is available as a desktop extension in the Claude D
 
 *If your organization uses the Desktop Extension Allowlist (i.e., restricts which Desktop Extensions users can access)…*
 
-1.  Navigate to Admin settings \> Connectors
-2.  Click “Desktop” tab at the top
-3.  Confirm that “Allowlist” it toggled **on**
-4.  Click the “Browse” button
-5.  In the search field, type “**10x Genomics**”
-6.  Click on 10x Genomics
-7.  Click “Add to your team”
-8.  Instruct your team to download the [Claude Desktop App(opens in new tab)](https://claude.ai/download) to access the integration by following the instructions below for Individual Claude Users
+1.  Go to [Organization settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors)
+2.  Confirm that “Limit the desktop extensions that your team can install on their desktop” is toggled **on**
+3.  Click “Add desktop extensions”
+4.  In the search field, type “**10x Genomics**”
+5.  Click on 10x Genomics
+6.  Click “Add to your team”
+7.  Instruct your team to download the [Claude Desktop App(opens in new tab)](https://claude.ai/download) to access the integration by following the instructions below for Individual Claude Users
 
 *If your organization does not use the Desktop Extension Allowlist (i.e., does not restrict which Desktop Extensions users can access)…*
 
-1.  Navigate to Admin settings \> Connectors
-2.  Click “Desktop” tab at the top
-3.  Confirm that “Allowlist” it toggled **off**
-4.  If the Allowlist is toggled off, all users in your organization will already be able to access the Desktop Extension directory using the instructions below for Individual Claude Users
+1.  Go to [Organization settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors)
+2.  Confirm that “Limit the desktop extensions that your team can install on their desktop” is toggled **off**
+3.  If it is toggled off, all users in your organization will already be able to access the Desktop Extension directory using the instructions below for Individual Claude Users
 
 **For Individual Claude Users**
 
 1.  Download the [Claude Desktop App(opens in new tab)](https://claude.ai/download)
-2.  In the Claude Desktop App, navigate to Settings \> Extensions
+2.  In the Claude Desktop App, navigate to Settings \> Desktop app and select “Manage” next to Extensions (or Settings \> Extensions in the older Settings layout)
 3.  Click “Browse extensions”
 4.  Click “**10x Genomics**”
 5.  Click “Install”

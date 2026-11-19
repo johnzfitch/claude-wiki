@@ -2,9 +2,11 @@
 title: "Responsible Scaling Policy Version 3.0 \\ Anthropic"
 source_url: "https://www.anthropic.com/news/responsible-scaling-policy-v3"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:31Z"
+fetched_at: "2026-11-14T06:25:58Z"
 tags: ["news-research"]
 ---
+
+### 01The original RSP and our theory of change
 
 # **Anthropic’s Responsible Scaling Policy: **Version 3.0
 
@@ -15,24 +17,20 @@ tags: ["news-research"]
 - [03Updating our Responsible Scaling Policy](#updating-our-responsible-scaling-policy)
 - [04Conclusion](#conclusion)
 
-- Published
+Published  
+Feb 24, 2026
 
-  Feb 24, 2026
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+- [Race to the top](https://www.anthropic.com/search?topic=race-to-the-top)
+- [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
-  - [Race to the top](https://www.anthropic.com/search?topic=race-to-the-top)
-  - [Legal guardrails](https://www.anthropic.com/search?topic=legal-guardrails)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
-
-  See more...
+See more...
 
 Related articles
 
@@ -115,9 +113,9 @@ Read the [Frontier Safety Roadmap](https://anthropic.com/responsible-scaling-pol
 
 ### 3. Risk Reports and external review
 
-Risk Reports are another way in which we’re improving upon what worked well about our previous RSP. We found that producing a proto-Risk Report, our [Safeguards Report](https://www-cdn.anthropic.com/dc4cb293c77da3ca5e3398bdeef75ee17b42b73f.pdf) from May 2025, was useful for our internal understanding and the public communication of the risks. Risk Reports extend this to a more systematic, comprehensive practice.
+Risk Reports are another way in which we’re improving upon what worked well about our previous RSP. We found that producing a proto-Risk Report, our [Safeguards Report](https://assets.claude.com/dc4cb293c77da3ca5e3398bdeef75ee17b42b73f.pdf) from May 2025, was useful for our internal understanding and the public communication of the risks. Risk Reports extend this to a more systematic, comprehensive practice.
 
-Risk Reports will provide detailed information on the safety profile of our models at the time of publication. They will go beyond describing model capabilities to explain how capabilities, threat models (the specific ways that models might pose threats), and active risk mitigations fit together, and provide an assessment of the overall level of risk. Risk Reports will be published online (with some redactions^([1](#footnote-1))) every 3-6 months.
+Risk Reports will provide detailed information on the safety profile of our models at the time of publication. They will go beyond describing model capabilities to explain how capabilities, threat models (the specific ways that models might pose threats), and active risk mitigations fit together, and provide an assessment of the overall level of risk. Risk Reports will be published online (with some redactions^([^1])) every 3-6 months.
 
 The new RSP also requires external review of Risk Reports in certain circumstances. We will appoint expert third-party reviewers who are deeply familiar with AI safety research, are incentivized to be open and honest about Anthropic’s safety position, and are free of major conflicts of interest. They will have unredacted or minimally-redacted access to the Risk Report and will subject our reasoning, analysis, and decision-making to a comprehensive public review. Although our current models do not yet require external review, we are already running pilots and working toward this goal.
 
@@ -134,3 +132,5 @@ In that same spirit of pragmatism we will continue to revise and refine our RSP,
 ## Footnotes
 
 01As we discuss in the RSP, we will aim to minimize redactions to the public version of the Risk Report. Reasons we may nonetheless have to redact some of the text include legal compliance, intellectual property protection, public safety, and privacy.[](#footnote-ref-1)
+
+[^1]:

@@ -2,7 +2,7 @@
 title: "Claude Code user FAQ | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14554922-claude-code-user-faq"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:26:03Z"
+fetched_at: "2026-11-18T06:28:28Z"
 tags: ["claude-code"]
 ---
 

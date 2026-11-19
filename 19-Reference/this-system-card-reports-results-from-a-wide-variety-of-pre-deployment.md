@@ -2,8 +2,7 @@
 title: "This system card reports results from a wide variety of pre-deployment…"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:37:56Z"
-last_modified: "Thu, 28 May 2026 16:28:20 GMT"
+fetched_at: "2026-11-18T06:28:36Z"
 tags: ["news-research"]
 ---
 

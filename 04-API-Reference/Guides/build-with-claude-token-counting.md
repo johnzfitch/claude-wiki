@@ -2,7 +2,7 @@
 title: "Token counting - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/token-counting"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:54Z"
+fetched_at: "2026-11-13T06:34:57Z"
 tags: ["api"]
 ---
 
@@ -23,14 +23,18 @@ Count the tokens in a message before you send it to Claude. Use token counts to 
 Feature of  
 [Messages API](build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Token counting lets you determine the number of tokens in a message before you send it to Claude. This helps you make informed decisions about your prompts and usage. With token counting, you can:
 
@@ -50,13 +54,11 @@ The [token counting](../Endpoints/platform-claude-com-messages-count-tokens.md)P
 
 Count the number of tokens in a Message.
 
-##### Headers `anthropic-version` `anthropic-user-profile-id` `anthropic-workspace-id`
+##### Headers `anthropic-version` `anthropic-user-profile-id` `anthropic-workspace-id`
 
 
 
 "anthropic-version": optional string
-
-
 
 The version of the Claude API you want to use.
 
@@ -64,27 +66,21 @@ Read more about versioning and our version history [here](../Endpoints/versionin
 
 "anthropic-user-profile-id": optional string
 
-
-
 The user profile ID to attribute this request to. Use when acting on behalf of a party other than your organization.
 
 
 
 "anthropic-workspace-id": optional string
 
-
-
 Optional header to select the Workspace for this request. The value is a Workspace ID (for example, `wrkspc_011CZkZaBF1tNoB5wlCeusgy`).
 
 Only needed for credentials that can act on more than one Workspace. A credential that belongs to a specific Workspace may omit it; if sent, it must match that Workspace.
 
-##### Body `messages` `model` `cache_control` `output_config` `speed` `system` +3 more
+##### Body `messages` `model` `cache_control` `output_config` `speed` `system` +3 more
 
 
 
 messages: array of [MessageParam](https://platform.claude.com/docs/en/api/http/messages#message_param)
-
-
 
 Input messages.
 
@@ -151,49 +147,33 @@ One of the following:
 
 UserMessageParam object{ content, role }
 
-
-
 
 
 content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
-
-
 
 One of the following:
 
 role: "user"
 
-
-
 
 
 AssistantMessageParam object{ content, role }
-
-
 
 
 
 content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/messages#message_content_param)
 
-
-
 One of the following:
 
 role: "assistant"
-
-
 
 
 
 SystemMessageParam object{ content, role }
 
-
-
 
 
 model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
-
-
 
 The model that will complete your prompt.
 
@@ -201,155 +181,17 @@ See [models](https://docs.anthropic.com/en/docs/models-overview) for additional 
 
 One of the following:
 
-"claude-haiku-5-5"
-
-
-
-Fastest model for high-volume, real-time tasks
-
-"claude-sonnet-5-5"
-
-
-
-Efficient model for coding and agents
-
-"claude-fable-5-1"
-
-
-
-Frontier intelligence for ambitious tasks across coding, scientific discovery, and enterprise workflows
-
-"claude-opus-5-5"
-
-
-
-Powerful intelligence for coding, knowledge work, and long-running agents
-
-"claude-mythos-5-1"
-
-
-
-Our most capable model for cybersecurity and biology research, available through trusted access programs
-
-"claude-sonnet-5"
-
-
-
-Efficient model for coding and agents
-
-"claude-fable-5"
-
-
-
-Next generation of intelligence for the hardest knowledge work and coding problems
-
-"claude-mythos-5"
-
-
-
-Most capable model for cybersecurity and biology research
-
-"claude-opus-5"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-8"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-7"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-6"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-sonnet-4-6"
-
-
-
-Best combination of speed and intelligence
-
-"claude-haiku-4-5"
-
-
-
-"claude-haiku-4-5-20251001"
-
-
-
-"claude-opus-4-5"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-"claude-opus-4-5-20251101"
-
-
-
-Powerful intelligence for long-running agents and coding
-
-
-
-"claude-mythos-preview"⁠Deprecated
-
-
-
-New class of intelligence, strongest in coding and cybersecurity
-
-Will reach end-of-life on June 30, 2026. Please migrate to claude-mythos-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
-
-
-
-"claude-sonnet-4-5"⁠Deprecated
-
-
-
-High-performance model for agents and coding
-
-Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
-
-
-
-"claude-sonnet-4-5-20250929"⁠Deprecated
-
-
-
-High-performance model for agents and coding
-
-Will reach end-of-life on November 30, 2026. Please migrate to claude-sonnet-5-5. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
-
-string
-
-
-
 
 
 cache_control: optional [CacheControlEphemeral](https://platform.claude.com/docs/en/api/http/messages#cache_control_ephemeral) { type: "ephemeral", ttl } or null
-
-
 
 Top-level cache control automatically applies a cache_control marker to the last cacheable block in the request.
 
 type: "ephemeral"
 
-
-
 
 
 ttl: optional "5m" or "1h"
-
-
 
 The time-to-live for the cache control breakpoint.
 
@@ -364,25 +206,17 @@ One of the following:
 
 "5m"
 
-
-
 "1h"
-
-
 
 
 
 output_config: optional [OutputConfig](https://platform.claude.com/docs/en/api/http/messages#output_config) { effort, format }
-
-
 
 Configuration options for the model's output, such as the output format.
 
 
 
 effort: optional "low" or "medium" or "high" or 2 more or null
-
-
 
 How much effort the model should put into its response. Higher effort levels may result in more thorough analysis but take longer.
 
@@ -392,47 +226,29 @@ One of the following:
 
 "low"
 
-
-
 "medium"
-
-
 
 "high"
 
-
-
 "xhigh"
 
-
-
 "max"
-
-
 
 
 
 format: optional [JSONOutputFormat](https://platform.claude.com/docs/en/api/http/messages#json_output_format) { type: "json_schema", schema } or null
 
-
-
 A schema to specify Claude's output format in responses. See [structured outputs](build-with-claude-structured-outputs.md)
 
 type: "json_schema"
 
-
-
 schema: map\[unknown\]
-
-
 
 The JSON schema of the format
 
 
 
 speed: optional "standard" or "fast" or null
-
-
 
 The inference speed mode for this request. `"fast"` enables high output-tokens-per-second inference.
 
@@ -442,17 +258,11 @@ One of the following:
 
 "standard"
 
-
-
 "fast"
-
-
 
 
 
 system: optional string or array of [TextBlockParam](https://platform.claude.com/docs/en/api/http/messages#text_block_param)
-
-
 
 System prompt.
 
@@ -462,23 +272,15 @@ One of the following:
 
 string
 
-
-
 
 
 array of [TextBlockParam](https://platform.claude.com/docs/en/api/http/messages#text_block_param) { type: "text", text, cache_control, citations }
 
-
-
 type: "text"
-
-
 
 
 
 text: string
-
-
 
 minLength1
 
@@ -486,19 +288,13 @@ minLength1
 
 cache_control: optional [CacheControlEphemeral](https://platform.claude.com/docs/en/api/http/messages#cache_control_ephemeral) { type: "ephemeral", ttl } or null
 
-
-
 Create a cache control breakpoint at this content block.
 
 type: "ephemeral"
 
-
-
 
 
 ttl: optional "5m" or "1h"
-
-
 
 The time-to-live for the cache control breakpoint.
 
@@ -513,17 +309,11 @@ One of the following:
 
 "5m"
 
-
-
 "1h"
-
-
 
 
 
 citations: optional array of [TextCitationParam](https://platform.claude.com/docs/en/api/http/messages#text_citation_param) or null
-
-
 
 One of the following:
 
@@ -531,29 +321,19 @@ One of the following:
 
 CitationCharLocationParam object{ type: "char_location", cited_text, document_index, 3 more }
 
-
-
 type: "char_location"
 
-
-
 cited_text: string
-
-
 
 
 
 document_index: number
-
-
 
 minimum0
 
 
 
 document_title: string or null
-
-
 
 minLength1
 
@@ -561,13 +341,9 @@ maxLength500
 
 end_char_index: number
 
-
-
 
 
 start_char_index: number
-
-
 
 minimum0
 
@@ -575,21 +351,13 @@ minimum0
 
 CitationPageLocationParam object{ type: "page_location", cited_text, document_index, 3 more }
 
-
-
 type: "page_location"
 
-
-
 cited_text: string
-
-
 
 
 
 document_index: number
-
-
 
 minimum0
 
@@ -597,21 +365,15 @@ minimum0
 
 document_title: string or null
 
-
-
 minLength1
 
 maxLength500
 
 end_page_number: number
 
-
-
 
 
 start_page_number: number
-
-
 
 minimum1
 
@@ -619,17 +381,11 @@ minimum1
 
 CitationContentBlockLocationParam object{ type: "content_block_location", cited_text, document_index, 3 more }
 
-
-
 type: "content_block_location"
-
-
 
 
 
 cited_text: string
-
-
 
 The full text of the cited block range, concatenated.
 
@@ -639,15 +395,11 @@ Always equals the contents of `content[start_block_index:end_block_index]` joine
 
 document_index: number
 
-
-
 minimum0
 
 
 
 document_title: string or null
-
-
 
 minLength1
 
@@ -657,8 +409,6 @@ maxLength500
 
 end_block_index: number
 
-
-
 Exclusive 0-based end index of the cited block range in the source's `content` array.
 
 Always greater than `start_block_index`; a single-block citation has `end_block_index = start_block_index + 1`.
@@ -666,8 +416,6 @@ Always greater than `start_block_index`; a single-block citation has `end_block_
 
 
 start_block_index: number
-
-
 
 0-based index of the first cited block in the source's `content` array.
 
@@ -677,25 +425,15 @@ minimum0
 
 CitationWebSearchResultLocationParam object{ type: "web_search_result_location", cited_text, encrypted_index, 2 more }
 
-
-
 type: "web_search_result_location"
-
-
 
 cited_text: string
 
-
-
 encrypted_index: string
-
-
 
 
 
 title: string or null
-
-
 
 minLength1
 
@@ -705,25 +443,17 @@ maxLength512
 
 url: string
 
-
-
 minLength1
 
 
 
 CitationSearchResultLocationParam object{ type: "search_result_location", cited_text, end_block_index, 4 more }
 
-
-
 type: "search_result_location"
-
-
 
 
 
 cited_text: string
-
-
 
 The full text of the cited block range, concatenated.
 
@@ -733,8 +463,6 @@ Always equals the contents of `content[start_block_index:end_block_index]` joine
 
 end_block_index: number
 
-
-
 Exclusive 0-based end index of the cited block range in the source's `content` array.
 
 Always greater than `start_block_index`; a single-block citation has `end_block_index = start_block_index + 1`.
@@ -742,8 +470,6 @@ Always greater than `start_block_index`; a single-block citation has `end_block_
 
 
 search_result_index: number
-
-
 
 0-based index of the cited search result among all `search_result` content blocks in the request, in the order they appear across messages and tool results.
 
@@ -753,13 +479,9 @@ minimum0
 
 source: string
 
-
-
 
 
 start_block_index: number
-
-
 
 0-based index of the first cited block in the source's `content` array.
 
@@ -767,13 +489,9 @@ minimum0
 
 title: string or null
 
-
-
 
 
 thinking: optional [ThinkingConfigParam](https://platform.claude.com/docs/en/api/http/messages#thinking_config_param)
-
-
 
 Configuration for Claude's thinking.
 
@@ -787,8 +505,6 @@ One of the following:
 
 tool_choice: optional [ToolChoice](https://platform.claude.com/docs/en/api/http/messages#tool_choice)
 
-
-
 How the model should use the provided tools. The model can use a specific tool, any available tool, decide by itself, or not use tools at all.
 
 One of the following:
@@ -796,8 +512,6 @@ One of the following:
 
 
 tools: optional array of [MessageCountTokensTool](https://platform.claude.com/docs/en/api/http/messages#message_count_tokens_tool)
-
-
 
 Definitions of tools that the model may use.
 
@@ -873,31 +587,21 @@ One of the following:
 
 Tool object{ type, input_schema, name, 7 more }
 
-
-
 
 
 ToolBash20250124 object{ type: "bash_20250124", name, allowed_callers, 4 more }
-
-
 
 
 
 CodeExecutionTool20250522 object{ type: "code_execution_20250522", name, allowed_callers, 3 more }
 
-
-
 
 
 CodeExecutionTool20250825 object{ type: "code_execution_20250825", name, allowed_callers, 3 more }
 
-
-
 
 
 CodeExecutionTool20260120 object{ type: "code_execution_20260120", name, allowed_callers, 3 more }
-
-
 
 A `tools` entry for the code execution tool, version `code_execution_20260120`. It adds REPL state persistence to version `code_execution_20250825`.
 
@@ -909,15 +613,11 @@ See the [code execution tool guide](../Agents-Tools/agents-and-tools-tool-use-co
 
 CodeExecutionTool20260521 object{ type: "code_execution_20260521", name, allowed_callers, 3 more }
 
-
-
 Code execution tool with REPL state persistence.
 
 
 
 BrowserToolset20260801 object{ type: "browser_toolset_20260801", cache_control, configs }
-
-
 
 The browser toolset: a single `tools[]` entry (carrying no `name`) that declares the browser tool family. The model is served the family's tool with any members disabled via `configs` removed from its schema.
 
@@ -925,13 +625,9 @@ The browser toolset: a single `tools[]` entry (carrying no `name`) that declares
 
 MemoryTool20250818 object{ type: "memory_20250818", name, allowed_callers, 4 more }
 
-
-
 
 
 ComputerToolset20260801 object{ type: "computer_toolset_20260801", cache_control, configs }
-
-
 
 The computer toolset: a single `tools[]` entry (carrying no `name`) that declares the computer tool family. The model is served the family's tool with any members disabled via `configs` removed from its schema. Every member is enabled by default, zoom included. The single-tool options `display_number` and `enable_zoom` are not fields of a toolset entry — it carries only `type`, `configs`, and `cache_control`; zoom is controlled via `configs.zoom.enabled`.
 
@@ -939,49 +635,33 @@ The computer toolset: a single `tools[]` entry (carrying no `name`) that declare
 
 ToolTextEditor20250124 object{ type: "text_editor_20250124", name, allowed_callers, 4 more }
 
-
-
 
 
 ToolTextEditor20250429 object{ type: "text_editor_20250429", name, allowed_callers, 4 more }
-
-
 
 
 
 ToolTextEditor20250728 object{ type: "text_editor_20250728", name, allowed_callers, 5 more }
 
-
-
 
 
 WebSearchTool20250305 object{ type: "web_search_20250305", name, allowed_callers, 7 more }
-
-
 
 
 
 WebFetchTool20250910 object{ type: "web_fetch_20250910", name, allowed_callers, 9 more }
 
-
-
 
 
 WebSearchTool20260209 object{ type: "web_search_20260209", name, allowed_callers, 7 more }
-
-
 
 
 
 WebFetchTool20260209 object{ type: "web_fetch_20260209", name, allowed_callers, 9 more }
 
-
-
 
 
 WebFetchTool20260309 object{ type: "web_fetch_20260309", name, allowed_callers, 10 more }
-
-
 
 Web fetch tool with use_cache parameter for bypassing cached content.
 
@@ -989,37 +669,25 @@ Web fetch tool with use_cache parameter for bypassing cached content.
 
 WebSearchTool20260318 object{ type: "web_search_20260318", name, allowed_callers, 8 more }
 
-
-
 
 
 WebFetchTool20260318 object{ type: "web_fetch_20260318", name, allowed_callers, 11 more }
-
-
 
 
 
 ToolSearchToolBm25_20251119 object{ type, name, allowed_callers, 3 more }
 
-
-
 
 
 ToolSearchToolRegex20251119 object{ type, name, allowed_callers, 3 more }
 
-
-
-##### Returns `input_tokens`
+##### Returns `input_tokens`
 
 
 
 MessageTokensCount object{ input_tokens }
 
-
-
 input_tokens: number
-
-
 
 The total number of tokens across the provided list of messages, system prompt, and tools.
 
@@ -1361,11 +1029,11 @@ Output
 
 ## Token counts on Claude Fable and Claude Mythos models
 
-Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 share the tokenizer introduced with Claude Opus 4.7. A prompt counts the same on all four, and roughly 30 percent higher than on models before Claude Opus 4.7 (the exact increase depends on the content). The token counting endpoint counts under the tokenizer of the `model` you pass. To measure the difference for your workload, count the same request twice, once with your current model and once with the model you plan to move to, and compare the two `input_tokens` values.
+Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, and Claude Mythos 5 share the tokenizer introduced with Claude Opus 4.7. A prompt counts the same on all six, and roughly 30 percent higher than on models before Claude Opus 4.7 (the exact increase depends on the content). The token counting endpoint counts under the tokenizer of the `model` you pass. To measure the difference for your workload, count the same request once with your current model and once with the model you plan to move to. Then compare the two `input_tokens` values.
 
 
 
-**Billing and migration:** Usage and billing on these models reflect this tokenizer’s counts. When migrating from a model before Claude Opus 4.7, don’t reuse token counts measured on the older model to estimate costs or context window fit. Count your prompts with the `model` ID you plan to use (for example, `"claude-fable-5-1"`).
+**Billing and migration:** Usage and billing on these models reflect this tokenizer’s counts. When migrating from a model before Claude Opus 4.7, don’t reuse token counts measured on the older model to estimate costs or context window fit. Count your prompts with the `model` ID you plan to use (for example, `"claude-fable-5-2"`).
 
 ------------------------------------------------------------------------
 
@@ -1387,7 +1055,7 @@ Token counting and message creation have separate and independent rate limits. U
 
 ## FAQ
 
-### Does token counting use prompt caching?
+### Does token counting use prompt caching?
 
 No, token counting provides an estimate without using caching logic. Although you may provide `cache_control` blocks in your token counting request, prompt caching only occurs during actual message creation.
 
@@ -1421,21 +1089,73 @@ Reduce cost and latency on repeated prompts by caching prompt prefixes.
 
 ## Availability
 
-Token counting is available on every model and eligible for zero data retention and HIPAA readiness.
+Token counting
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Models
+APIs  
+- Messages API
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+- Managed Agents Not supported
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-StatusNot available
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

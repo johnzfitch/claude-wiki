@@ -2,11 +2,13 @@
 title: "Deploy Claude Desktop for Windows | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:52Z"
+fetched_at: "2026-11-18T06:27:47Z"
 tags: ["desktop"]
 ---
 
 # Deploy Claude Desktop for Windows
+
+Updated today
 
 
 Administrators on Team or Enterprise plans can deploy Claude Desktop automatically across their organization to manage installations and updates centrally. We offer MSIX packages for Windows deployments via Microsoft Intune, SCCM, Group Policy, or PowerShell.
@@ -25,7 +27,7 @@ Claude Desktop for Windows requires the **[Virtual Machine Platform](https://sup
 
 The feature takes effect after the machine restarts. The `-NoRestart` flag suppresses the automatic restart for silent deployment, so schedule one through your management tool.
 
-**Note:** You can run your endpoint detection and response (EDR) sensor in Cowork in beta. Learn more about **[running your EDR sensor in Claude Cowork](../15-Claude-AI-Features/run-your-endpoint-detection-and-response-edr-sensor-in-claude-cowork.md)**.
+**Note:** You can run your endpoint detection and response (EDR) sensor in Cowork in beta. Learn more about **[running your EDR sensor in Claude Cowork](https://support.claude.com/en/articles/17828685-run-your-endpoint-detection-and-response-edr-sensor-in-claude-cowork)**.
 
 ## Download
 
@@ -71,7 +73,7 @@ By default, Claude Desktop checks for updates approximately every four hours and
 
 **Option 1: Your MDM manages versions.** Set the `disableAutoUpdates` policy to `1` and push new MSIX builds through your MDM on your own schedule. See **[Enterprise configuration for Claude Desktop](../13-Enterprise-Admin/enterprise-configuration-for-claude-desktop.md)** for the policy location.
 
-**Option 2: Claude Desktop manages versions.** Leave `disableAutoUpdates` unset. Deploy the MSIX once via a Win32-wrapped `Add-AppxProvisionedPackage` install, then use a custom detection script that checks `Get-AppxPackage -Name Claude` for a version greater than or equal to the one you provisioned. This keeps your MDM reporting **Installed** after the app self-updates.
+**Option 2: Claude Desktop manages versions.** Leave `disableAutoUpdates` unset. Deploy the MSIX once via a Win32-wrapped `Add-AppxProvisionedPackage` install, then use a custom detection script that checks `Get-AppxPackage -Name Claude` for a version greater than or equal to the one you provisioned. This keeps your MDM reporting **Installed** after the app self-updates. If no Claude policy is set on the computer, users can also switch to the Latest release channel. Learn more about **[choosing a release channel](https://support.claude.com/en/articles/10065433-install-claude-desktop#h_ac219b3bde)**.
 
 ## Configuration
 
@@ -113,7 +115,7 @@ To resolve it:
 
 2.  Run the current installer elevated.
 
-3.  If the install fails again with the same error, **[contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** and include the `ClaudeSetup.log` file from the user’s Temp folder. IT needs to recover the device in system context, and Support will provide the steps.
+3.  If the install fails again with the same error, **[contact Support](../15-Claude-AI-Features/how-to-get-support.md)** and include the `ClaudeSetup.log` file from the user’s Temp folder. IT needs to recover the device in system context, and Support will provide the steps.
 
 ### Cowork reports missing HCS services or virtualization errors
 

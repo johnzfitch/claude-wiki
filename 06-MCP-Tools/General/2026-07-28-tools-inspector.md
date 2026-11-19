@@ -1,12 +1,15 @@
 ---
 title: "MCP Inspector - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/draft/tools/inspector"
+source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-09T06:27:29Z"
+fetched_at: "2026-11-16T06:24:36Z"
+last_modified: "Mon, 16 Nov 2026 04:17:05 GMT"
 tags: ["authorization", "cli", "mcp", "security"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Quickstart](#quickstart)
   - [Inspecting published servers](#inspecting-published-servers)
@@ -25,20 +28,17 @@ Copy pageCopy page
 
 The [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is the reference developer tool for testing and debugging [MCP servers](2026-07-28-learn-server-concepts.md). It ships as a single package, `@modelcontextprotocol/inspector`, providing **three clients behind one binary**:
 
-| Client  | Invocation                                  | What it’s for                                                                     |
-|---------|---------------------------------------------|-----------------------------------------------------------------------------------|
-| **Web** | `npx @modelcontextprotocol/inspector`       | A full graphical inspector in the browser. The default, and the richest surface.  |
+| Client | Invocation | What it’s for |
+|----|----|----|
+| **Web** | `npx @modelcontextprotocol/inspector` | A full graphical inspector in the browser. The default, and the richest surface. |
 | **CLI** | `npx @modelcontextprotocol/inspector --cli` | A scriptable, machine-readable client for CI, shell pipelines, and coding agents. |
-| **TUI** | `npx @modelcontextprotocol/inspector --tui` | An interactive terminal UI, for when a browser isn’t available or wanted.         |
+| **TUI** | `npx @modelcontextprotocol/inspector --tui` | An interactive terminal UI, for when a browser isn’t available or wanted. |
 
 All three are built on the same shared core, so a connection behaves identically across them: the same transports, the same configuration files, the same OAuth state on disk, and the same [protocol-era](2026-07-28-tools-inspector-protocol-eras.md) negotiation (legacy vs. modern 2026-07-28). The package also installs **`mcpdo`**, an experimental [connection client](draft-tools-inspector-mcpdo.md) that connects to a server once and keeps it open across many commands, on the same core.
 
+## [](#quickstart)Quickstart
 
-[​](#quickstart)
-
-Quickstart
-
-The Inspector requires **Node 22.19.0 or newer** and runs directly through `npx`. No installation is required:
+The Inspector requires **Node.js 22.23.4+, 24.22.1+, or 26.12.1+** and runs directly through `npx`. No installation is required:
 
 - Web
 
@@ -73,10 +73,7 @@ npx @modelcontextprotocol/inspector --tui node path/to/server/index.js
 
 See [TUI client](draft-tools-inspector-tui.md).
 
-
-[​](#inspecting-published-servers)
-
-Inspecting published servers
+### [](#inspecting-published-servers)Inspecting published servers
 
 Pass the command that launches the server as the Inspector’s arguments, or point it at a remote server with `--server-url`:
 
@@ -102,10 +99,7 @@ Always read a server’s own README first, since every server requires different
 
 **The Inspector stores secrets (OAuth tokens, OAuth client secrets, and stdio `env:` values) in the OS keychain when one is available.** On a machine with no keychain (Linux without libsecret or a Secret Service, headless and SSH sessions, Termux, and containers with a mounted volume) they are saved to `~/.mcp-inspector/secrets.json` instead, **unencrypted unless you supply a key**. See [Where secrets are stored](draft-tools-inspector-configuration.md#where-secrets-are-stored) for how to get a keychain back, encrypt the file, or keep secrets in memory only.
 
-
-[​](#launcher-flags-vs-client-flags)
-
-Launcher flags vs. client flags
+## [](#launcher-flags-vs-client-flags)Launcher flags vs. client flags
 
 `mcp-inspector`, the binary that `npx @modelcontextprotocol/inspector` runs, is a thin launcher. It owns only two things:
 
@@ -122,10 +116,7 @@ mcp-inspector --cli node server.js --cli   # mode is CLI; the trailing --cli goe
 
 `--help` behaves differently with and without a mode flag. Without one, `-h`/`--help` anywhere on the command line (even after a server command) prints the launcher’s help and exits. With a mode flag it is forwarded, so `mcp-inspector --cli --help` prints the CLI’s full flag reference instead.
 
-
-[​](#where-to-go-next)
-
-Where to go next
+## [](#where-to-go-next)Where to go next
 
 ## Web client
 

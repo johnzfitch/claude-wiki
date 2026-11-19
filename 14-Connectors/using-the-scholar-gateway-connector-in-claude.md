@@ -2,7 +2,7 @@
 title: "Using the Scholar Gateway Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614815-using-the-scholar-gateway-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-11-07T06:24:14Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["connectors"]
 ---
 

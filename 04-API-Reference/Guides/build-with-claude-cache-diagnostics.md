@@ -2,7 +2,7 @@
 title: "Cache diagnostics - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/cache-diagnostics"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:53Z"
+fetched_at: "2026-11-13T06:34:48Z"
 tags: ["api"]
 ---
 
@@ -23,18 +23,22 @@ Cache diagnostics
 Feature of  
 [Prompt caching](build-with-claude-prompt-caching.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleQualifiedNot HIPAA eligible
+ZDRQualifiedZDR eligible (qualified)HIPAANot HIPAA eligible
 
 [Prompt caching](build-with-claude-prompt-caching.md) cuts latency and cost significantly, but only when the beginning of your prompt is byte-for-byte identical to a recent request. A reordered tool, a timestamp interpolated into your system prompt, or an edit to an earlier message can silently invalidate the cache. Without cache diagnostics, the only signal is `usage.cache_read_input_tokens` dropping to zero, with no indication of what changed.
 
-Cache diagnostics closes that gap. Pass the `id` of your previous response, and the API compares the two requests and tells you where they diverged (the model, the system prompt, the tools, or the message history) so you can fix the root cause instead of guessing.
+Cache diagnostics closes that gap. Pass the `id` of your previous response, and the API compares the two requests. It tells you where they diverged (the model, the system prompt, the tools, or the message history), so you can fix the root cause instead of guessing.
 
 ## How cache diagnostics works
 
@@ -46,7 +50,7 @@ Fingerprints contain only hashes and token-count estimates (never raw prompt con
 
 ## Basic usage
 
-Include the `diagnostics` object on every turn. The object is the opt-in: the API stores a fingerprint only for requests that include it. On the first turn, pass `"previous_message_id": null` to opt in without a prior message to compare against. On subsequent turns, pass the `id` from the previous response. The `cache-diagnosis-2026-04-07` beta header is no longer required, and requests that send it work as before.
+Include the `diagnostics` object on every turn. The object is the opt-in: the API stores a fingerprint only for requests that include it. On the first turn, pass `"previous_message_id": null` to opt in without a prior message to compare against. On subsequent turns, pass the `id` from the previous response.
 
 cURL
 
@@ -188,6 +192,8 @@ Ruby
 
 Python
 
+
+
 ```python
 client = anthropic.Anthropic()
 
@@ -196,12 +202,12 @@ SYSTEM = "You are an AI assistant analyzing a large document. <document>...</doc
 messages = []
 prev_id = None
 
-for i, user_message in enumerate(
+for turn, user_message in enumerate(
     ["Summarize section 1.", "Now section 2.", "Now section 3."]
 ):
     messages.append({"role": "user", "content": user_message})
 
-    r = client.beta.messages.create(
+    response = client.beta.messages.create(
         model="claude-opus-5-5",
         max_tokens=1024,
         cache_control={"type": "ephemeral"},
@@ -210,14 +216,17 @@ for i, user_message in enumerate(
         diagnostics={"previous_message_id": prev_id},
     )
 
-    if r.diagnostics is not None and r.diagnostics.cache_miss_reason is not None:
-        print(f"Turn {i + 1} cache_miss_reason: {r.diagnostics.cache_miss_reason.type}")
+    if (
+        response.diagnostics is not None
+        and response.diagnostics.cache_miss_reason is not None
+    ):
+        print(
+            f"Turn {turn + 1} cache_miss_reason: {response.diagnostics.cache_miss_reason.type}"
+        )
 
-    messages.append({"role": "assistant", "content": r.content})
-    prev_id = r.id
+    messages.append({"role": "assistant", "content": response.content})
+    prev_id = response.id
 ```
-
-
 
 ## Response format
 
@@ -225,7 +234,7 @@ The `diagnostics` field on the response `Message` has three possible values:
 
 | Value | Meaning |
 |----|----|
-| `null` | The request did not include the `diagnostics` object, `previous_message_id` was `null` (first turn, nothing to compare), or a comparison ran and found no divergence. |
+| `null` | The request did not include the `diagnostics` object, `previous_message_id` was `null` (first turn, nothing to compare), or nothing diverged before the last breakpoint. |
 | `{"cache_miss_reason": null}` | The comparison was still running when the response was serialized. This can occur when the response starts very quickly. Treat it as inconclusive and check the next turn. |
 | `{"cache_miss_reason": {...}}` | A `cache_miss_reason` is attached. For `*_changed` types this identifies the first divergence point; `previous_message_not_found` and `unavailable` are cases where no comparison was produced. |
 
@@ -261,7 +270,7 @@ When `cache_miss_reason` is non-null, it looks like this:
 | Type | What it means | What to change |
 |----|----|----|
 | `model_changed` | The `model` differs from the previous request (for example, a router, A/B test, or fallback selected a different model). The cache is per-model. | Hold the model constant within a cached conversation. |
-| `system_changed` | The `system` parameter differs. Typically a timestamp, request ID, or other per-request value was interpolated into the system prompt. | Make the system prompt a byte-stable constant and move dynamic data into the first `user` message after your cache breakpoint. |
+| `system_changed` | The `system` parameter differs. Typically a timestamp, request ID, or other per-request value was interpolated into the system prompt. | Make the system prompt a byte-stable constant and put the changing value in the `user` message you’re about to send. |
 | `tools_changed` | The `tools` array differs: tools were added, removed, or reordered between turns, or tool `input_schema` JSON was serialized non-deterministically. | Send the same tool list on every turn in a fixed order with deterministically serialized schemas (for example, sort keys). |
 | `messages_changed` | The model, system, and tools all match, but an earlier entry in `messages` was altered, reordered, or removed rather than appended to. Typically conversation history was truncated or edited, or assistant turns and `tool_result` blocks were re-serialized differently on resend. | Treat the history as append-only; echo assistant `content` and tool results back verbatim. |
 | `previous_message_not_found` | No stored fingerprint exists for the supplied `previous_message_id`. This is not evidence that your request changed. Typically the previous request did not include the `diagnostics` object, it came from a different workspace, or too much time has passed since it was sent. | Include the `diagnostics` object on every turn and keep consecutive turns close together in time. |
@@ -273,20 +282,20 @@ The four `*_changed` types also carry a `cache_missed_input_tokens` integer: an 
 
 ## Reading diagnostics alongside usage
 
-`diagnostics` answers “did my request change?” whereas `usage.cache_read_input_tokens` answers “did the cache hit?” Combining them tells you where to look.
+`diagnostics` tells you whether your request changed, and `usage.cache_read_input_tokens` tells you whether the cache hit. Combining them tells you where to look.
 
 This matrix applies to turns where you passed a real `previous_message_id`. On the first turn (`previous_message_id: null`), `diagnostics` is always `null` and `cache_read_input_tokens` is normally zero because the cache is being written, not read; no troubleshooting is needed. The matrix also does not apply when `cache_miss_reason` is `null` (the comparison is still pending; check the next turn) or when its `type` is `previous_message_not_found` or `unavailable` (no comparison was produced).
 
 | Diagnostics result | Cache read tokens | Interpretation |
 |----|----|----|
-| `null` | high | Working as expected. Your prefix is stable and the cache hit. |
-| `null` | low or zero | Your requests match but the cache entry was no longer available. Consider shortening gaps between turns or using the [1-hour cache TTL](build-with-claude-prompt-caching.md#1-hour-cache-duration). |
+| `null` | high | The cache hit. |
+| `null` | low or zero | Your requests match, but there was no cache entry to read: it had expired, or the prompt is shorter than the [minimum cacheable length](build-with-claude-prompt-caching.md#cache-limitations). |
 | `cache_miss_reason` is a `*_changed` type | low or zero | The request changed; fix the cause indicated by `type`. |
 | `cache_miss_reason` is a `*_changed` type | high | Rare. A change occurred late in the prompt but an earlier `cache_control` breakpoint still hit. Worth fixing, but low impact. |
 
 ## Limitations
 
-- **Claude API only:** Not available on Claude Models on Google Cloud (Google managed) or Amazon Bedrock.
+- **Claude API only:** Cache diagnostics is available on the Claude API.
 - **Limited retention:** Fingerprints for `previous_message_id` lookup expire after a short period. Run diagnostic comparisons between closely spaced requests.
 - **Same workspace:** The previous request must have run in the same organization and workspace. To check, compare the `anthropic-workspace-id` [response header](../Endpoints/overview.md#response-headers) on the two responses.
 - **Comparison horizon:** For very long conversations where the only change is deep in the message list, the response might be `unavailable` rather than a precise location.
@@ -305,21 +314,21 @@ The API stores a fingerprint only for requests that include the `diagnostics` ob
 
 ## Availability
 
-Cache diagnostics are available on every model.
+Cache diagnostics
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
+- Managed Agents Not supported
 
-[Managed Agents](../Other/managed-agents-overview.md)
-
-StatusNot available
+Models  
+- All models
 
 ### Data handling
 

@@ -2,7 +2,7 @@
 title: "Claude Models on Google Cloud - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/overview"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-08T06:24:38Z"
+fetched_at: "2026-11-16T06:26:13Z"
 tags: ["api"]
 ---
 

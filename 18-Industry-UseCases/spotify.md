@@ -2,7 +2,7 @@
 title: "Spotify Claude Agent SDK case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/spotify"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:51Z"
+fetched_at: "2026-11-18T06:29:26Z"
 tags: ["agents", "case-studies", "sdk"]
 ---
 
@@ -36,9 +36,11 @@ The Claude Agent SDK is a collection of tools that helps developers build powerf
 
 [Read more](https://claude.com/resources/articles/building-agents-with-the-claude-agent-sdk)
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [**Spotify**](https://www.spotify.com), the world’s most popular audio streaming subscription service, serves more than 713 million users across 180+ markets with access to over 100 million tracks, 7 million podcast titles, and 350,000 audiobooks.
 
@@ -90,6 +92,9 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -97,6 +102,3 @@ Looking ahead, deeper integration of Claude Code into Spotify’s Continuous Int
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

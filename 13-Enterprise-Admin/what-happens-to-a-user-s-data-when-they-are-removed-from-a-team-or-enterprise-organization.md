@@ -2,7 +2,7 @@
 title: "What happens to a user's data when they are removed from a Team or Enterprise organization? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12053672-what-happens-to-a-user-s-data-when-they-are-removed-from-a-team-or-enterprise-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:25:54Z"
+fetched_at: "2026-11-18T06:28:14Z"
 tags: ["enterprise", "skills"]
 ---
 
@@ -21,13 +21,13 @@ Removing a user from your organization doesn’t delete their account or data. I
 
 2.  If your organization provisions users through SCIM, remove the user in your identity provider (IdP). Otherwise, they may be provisioned again.
 
-3.  **[Contact Support](https://support.claude.com/en/articles/9015913-how-to-get-support)** from your own email address. Include the user’s email address, and confirm in writing that their account and data should be deleted.
+3.  **[Contact Support](../15-Claude-AI-Features/how-to-get-support.md)** from your own email address. Include the user’s email address, and confirm in writing that their account and data should be deleted.
 
 **Important:** Deletion is permanent and can’t be undone.
 
 ## Delete organization-level accounts
 
-For help with deleting your organization’s Team or Enterprise plan, please **[reach out to our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Note that organization level account deletion requests must be made by your account's Primary Owner.
+For help with deleting your organization’s Team or Enterprise plan, please **[reach out to our Support team](../15-Claude-AI-Features/how-to-get-support.md)**. Note that organization level account deletion requests must be made by your account's Primary Owner.
 
 ## Will a user’s projects still be accessible after removing them?
 

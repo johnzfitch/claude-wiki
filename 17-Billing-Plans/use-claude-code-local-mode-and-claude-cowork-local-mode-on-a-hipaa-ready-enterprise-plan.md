@@ -2,7 +2,7 @@
 title: "Use Claude Code (local mode) and Claude Cowork (local mode) on a HIPAA-ready Enterprise plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17318731-use-claude-code-local-mode-and-claude-cowork-local-mode-on-a-hipaa-ready-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:11Z"
+fetched_at: "2026-11-18T06:28:08Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
@@ -179,4 +179,4 @@ These tools show what happens in Claude Code (local mode) and Cowork (local mode
 
 ## Get help
 
-For questions about the BAA, the Implementation Guide for HIPAA Entities, or the configuration, contact your Anthropic account team. If your organization doesn’t have an account team, contact **[our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)**. Do not include PHI in a support request.
+For questions about the BAA, the Implementation Guide for HIPAA Entities, or the configuration, contact your Anthropic account team. If your organization doesn’t have an account team, contact **[our Support team](../15-Claude-AI-Features/how-to-get-support.md)**. Do not include PHI in a support request.

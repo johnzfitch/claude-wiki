@@ -2,7 +2,7 @@
 title: "Using the Blackbaud connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923221-using-the-blackbaud-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-11-07T06:24:15Z"
+fetched_at: "2026-11-18T06:27:50Z"
 tags: ["connectors"]
 ---
 
@@ -37,20 +37,18 @@ The Blackbaud integration relies on Claude's ability to [use remote connectors(o
 
 ### For organization owners[](#for-organization-owners)
 
-1.  Go to [Claude.ai Settings(opens in new tab)](https://claude.ai/settings)
-2.  Select Connectors or Integrations
-3.  Choose `Add server` or `Browse connectors`
-4.  Search for and select Blackbaud
-5.  Select `Add to your team`
-6.  Confirm authorization
+1.  Open the [connectors directory(opens in new tab)](https://claude.ai/directory)
+2.  Search for Blackbaud and open its page
+3.  Select `Connect for your team` or `Add for your team`
+4.  Follow any prompts to finish
 
 ### For individual users[](#for-individual-users)
 
 1.  Log in to Claude with your enterprise account
-2.  Access [Settings(opens in new tab)](https://claude.ai/settings) \> Connectors
-3.  Select the Blackbaud connector and authorize
+2.  Open the [connectors directory(opens in new tab)](https://claude.ai/directory)
+3.  Search for Blackbaud, open its page, and connect it to Claude
 4.  Sign in with your Blackbaud ID and grant permissions
-5.  Your account displays as "Linked" when complete
+5.  The connector shows as "Connected" when complete
 
 ## Common use cases[](#common-use-cases)
 

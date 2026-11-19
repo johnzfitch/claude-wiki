@@ -2,7 +2,7 @@
 title: "Roles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/organizations/roles"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:36:38Z"
+fetched_at: "2026-11-13T06:33:43Z"
 tags: ["api"]
 ---
 

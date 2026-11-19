@@ -2,9 +2,11 @@
 title: "Project Fetch: Can Claude train a robot dog? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/project-fetch-robot-dog"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:39Z"
+fetched_at: "2026-11-14T06:26:02Z"
 tags: ["news-research"]
 ---
+
+### 01Introduction
 
 # **Project Fetch: **Can Claude train a robot dog?
 
@@ -15,23 +17,20 @@ tags: ["news-research"]
 - [05Limitations](#limitations)
 - [06Reflection](#reflection)
 
-- Published
+Published  
+Nov 12, 2025
 
-  Nov 12, 2025
+Team  
+[Frontier Red Team](team-frontier-red-team.md)
 
-- Team
+Topics  
+- [Robotics](https://www.anthropic.com/search?topic=robotics)
+- [Coding](https://www.anthropic.com/search?topic=coding)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
 
-  [Frontier Red Team](team-frontier-red-team.md)
-
-- Topics
-
-  - [Robotics](https://www.anthropic.com/search?topic=robotics)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-
-  See more...
+See more...
 
 Related articles
 
@@ -68,15 +67,15 @@ In that experiment, AI’s interaction with the real world was mediated by human
 
 One way of understanding and tracking the capabilities of AI models is to run an “uplift” study. These experiments randomly divide participants into two groups—one with access to AI and one without—and measure the difference in task performance between them (we’ve used this methodology extensively in our work on AI and [biological risk](https://red.anthropic.com/2025/biorisk/)). The difference between the groups is the “uplift”—the advantage (if any) provided by AI. Measuring uplift tells us about the present ability of AI to augment human performance. It’s also suggestive of the future domains in which AI will be able to successfully perform tasks on its own.
 
-To run our experiment, we recruited eight Anthropic researchers and engineers, none of whom had extensive prior experience with robots.^([1](#footnote-1)) We randomly selected four to be on “Team Claude” and four to be on “Team Claude-less.” Then, we asked each team to operate a quadruped robodog in three increasingly difficult phases. In all phases, the core task they were being evaluated against was simple: get the robodog to fetch a beach ball.
+To run our experiment, we recruited eight Anthropic researchers and engineers, none of whom had extensive prior experience with robots.^([^1]) We randomly selected four to be on “Team Claude” and four to be on “Team Claude-less.” Then, we asked each team to operate a quadruped robodog in three increasingly difficult phases. In all phases, the core task they were being evaluated against was simple: get the robodog to fetch a beach ball.
 
 We do not expect robotic fetch to prove so economically valuable that it shows up as a task on a future version of our [Anthropic Economic Index](https://www.anthropic.com/economic-index). So why are we doing this?
 
-First, it builds on our previous research. One of the evaluations we use to assess the ability of Claude to contribute to AI R&D is a test of its ability to train a machine learning model that could be used to control a quadruped robot. We’ve previously evaluated the resulting algorithm using simulations, which have shown that Claude is not yet at the point where it can handle this task truly autonomously.^([2](#footnote-2)) This meant that this task was well suited to a trial that combined AI with human help. We could also be confident our experiment would be useful to repeat in the future: there is still a lot of room for models to improve on robotics.
+First, it builds on our previous research. One of the evaluations we use to assess the ability of Claude to contribute to AI R&D is a test of its ability to train a machine learning model that could be used to control a quadruped robot. We’ve previously evaluated the resulting algorithm using simulations, which have shown that Claude is not yet at the point where it can handle this task truly autonomously.^([^2]) This meant that this task was well suited to a trial that combined AI with human help. We could also be confident our experiment would be useful to repeat in the future: there is still a lot of room for models to improve on robotics.
 
 Another reason is practical. It’s hard to pull our colleagues away from work for more than a day, so we needed a task that was difficult enough to fill that time, but not so difficult that teams would make minimal progress and we would be unable to detect uplift even if it were there. Beach ball retrieval, especially the more difficult variants, met these criteria.
 
-In Phase One, teams had to use the manufacturer-provided controller to make their robodog bring the ball back to a patch of fake grass. This was purely to give the teams a feel for the hardware and what it could do: we didn’t expect any uplift here.^([3](#footnote-3))
+In Phase One, teams had to use the manufacturer-provided controller to make their robodog bring the ball back to a patch of fake grass. This was purely to give the teams a feel for the hardware and what it could do: we didn’t expect any uplift here.^([^3])
 
 Phase Two required teams to put down their controllers. They had to connect their own computers to the robodog, access data from its onboard sensors (video and lidar), develop their own software program for moving the robot around, and then use that to retrieve the ball. This is where we expected Claude might begin to provide an advantage.
 
@@ -118,7 +117,7 @@ To those of us observing the experiment, there was a clear difference in team �
 
 This was understandable. After all, Team Claude-less was nearly rammed by Team Claude’s robodog. They reached the lunch break without successfully connecting to their own robodog. Morale on Team Claude was generally steadier, although they grew frustrated at the end of the day as it became clear that despite their progress they would run out of time before completing Phase Three.
 
-To supplement the qualitative vibe-based impressions, we used Claude to analyze the audio transcripts of each team (all team members were recorded as part of the [video](https://youtu.be/NGOAUJtdk-4) we made about this experiment). Claude wrote a dictionary-based text analysis program similar to standard approaches in the psychology literature.^([4](#footnote-4)) This allowed us to track the proportion of words spoken by each team that were indicative of negative and positive emotion (or confusion), and to estimate how often each team asked questions.
+To supplement the qualitative vibe-based impressions, we used Claude to analyze the audio transcripts of each team (all team members were recorded as part of the [video](https://youtu.be/NGOAUJtdk-4) we made about this experiment). Claude wrote a dictionary-based text analysis program similar to standard approaches in the psychology literature.^([^4]) This allowed us to track the proportion of words spoken by each team that were indicative of negative and positive emotion (or confusion), and to estimate how often each team asked questions.
 
 The quantitative analysis mostly confirmed our observations (see Figure 3). Throughout the experiment, Team Claude-less’s dialogue was more negative. That said, the disappointment of Team Claude at failing to complete Phase Three, and the excitement of Team Claude-less at getting some things working, meant that the difference in net emotional expression between the two teams (positive words minus negative words) was not statistically significant.
 
@@ -156,7 +155,7 @@ First, this experiment showed another example of how Claude can uplift human abi
 
 But in AI, uplift often precedes autonomy. What models can help humans accomplish today, they can frequently do alone tomorrow. Coders no longer just give AI bits of code for debugging; they give AI tasks and have the models write the code themselves. Given studies like this one, we think that a world where frontier AI models are capable of successfully interacting with previously unknown pieces of hardware is coming soon.
 
-It is important to keep tracking these capabilities in conjunction with another line of our research: monitoring the potential for AI to automate and accelerate the development of future generations of AI. This is one of the capability thresholds included in Anthropic’s [Responsible Scaling Policy](https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) because of the potential for truly *autonomous* AI R&D to yield rapid, unpredictable advances that could outpace our ability to evaluate and address emerging risks. Our models are not yet at this point. But if they approach this threshold, the results of Project Fetch suggest that we will need to monitor AI models' facility for robotics and other hardware as an area in which there might be abrupt improvement.
+It is important to keep tracking these capabilities in conjunction with another line of our research: monitoring the potential for AI to automate and accelerate the development of future generations of AI. This is one of the capability thresholds included in Anthropic’s [Responsible Scaling Policy](https://assets.claude.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) because of the potential for truly *autonomous* AI R&D to yield rapid, unpredictable advances that could outpace our ability to evaluate and address emerging risks. Our models are not yet at this point. But if they approach this threshold, the results of Project Fetch suggest that we will need to monitor AI models' facility for robotics and other hardware as an area in which there might be abrupt improvement.
 
 Much uncertainty remains. Timelines are unclear—both model improvement and the degree to which iterating in the physical world creates a bottleneck. And it is one thing to control *existing* hardware, and another to design, build, and improve *new* hardware.
 
@@ -168,10 +167,18 @@ The dogs are in their kennels at the moment. But we’ll let them out again soon
 
 01A couple of participants had done Lego robotics competitions in high school. We are willing to accept the minimal degree to which this may confound the results.[](#footnote-ref-1)
 
-02See p. 114 of the [Claude 4 System Card](https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf).[](#footnote-ref-2)
+02See p. 114 of the [Claude 4 System Card](https://assets.claude.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf).[](#footnote-ref-2)
 
 03Although Team Claude was, in fact, faster at Phase One, they did not use Claude, nor do we think it reflected an underlying skill advantage. Instead, they happened to get the one standalone controller that came with the robot, whereas Team Claude-less had to download an app on their phone.[](#footnote-ref-3)
 
 04See Pennebaker, J. W., & Francis, M. E. (1996). [Cognitive, emotional, and language processes in disclosure](https://psycnet.apa.org/record/1996-06871-002). *Cognition & Emotion*, 10(6), 601-626 and Tausczik, Y. R., & Pennebaker, J. W. (2010). [The psychological meaning of words: LIWC and computerized text analysis methods](https://psycnet.apa.org/record/2010-04445-003). *Journal of Language and Social Psychology*, 29(1), 24-54.[](#footnote-ref-4)
 
 05Team Claude-less exhibited more negative emotion (*p* = 0.0017) and the size of the effect was large (*d* = 2.16). The difference in net emotional expression was not statistically significant (*p* = 0.2703). Statistical comparisons of negative emotion and net emotional expression between teams were conducted using the non-parametric Mann-Whitney *U* test, which tests for differences in distributions between two independent groups without assuming normality. *p*-values were calculated using a two-sided alternative hypothesis based on the rank-sum statistic and its asymptotic normal approximation. Effect sizes were quantified using Cohen's *d*, calculated as the difference between group means divided by the pooled standard deviation.
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:

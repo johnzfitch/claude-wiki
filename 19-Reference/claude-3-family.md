@@ -2,7 +2,7 @@
 title: "Introducing the next generation of Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-3-family"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:26Z"
+fetched_at: "2026-11-14T06:26:33Z"
 tags: ["news-research"]
 ---
 
@@ -12,24 +12,20 @@ tags: ["news-research"]
 
 Listen to this article
 
-- Published
+Published  
+Mar 4, 2024
 
-  Mar 4, 2024
+[Models](models.md)
 
-- Category
+Topics  
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+- [Claude Haiku](https://www.anthropic.com/search?topic=claude-haiku)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Hallucination](https://www.anthropic.com/search?topic=hallucination)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
 
-  [Models](models.md)
-
-- Topics
-
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-  - [Claude Haiku](https://www.anthropic.com/search?topic=claude-haiku)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Hallucination](https://www.anthropic.com/search?topic=hallucination)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-
-  See more...
+See more...
 
 Related articles
 
@@ -100,8 +96,8 @@ The Claude 3 models are better at following complex, multi-step instructions. Th
 **Claude 3 Opus** is our most intelligent model, with best-in-market performance on highly complex tasks. It can navigate open-ended prompts and sight-unseen scenarios with remarkable fluency and human-like understanding. Opus shows us the outer limits of what’s possible with generative AI.
 
 **Cost  
-  
-** *\[Input \$/million tokens \| Output \$/million tokens\]*
+  **
+*\[Input \$/million tokens \| Output \$/million tokens\]*
 
 \$15 \| \$75
 
@@ -124,8 +120,8 @@ Higher intelligence than any other model available.
 **Claude 3 Sonnet** strikes the ideal balance between intelligence and speed—particularly for enterprise workloads. It delivers strong performance at a lower cost compared to its peers, and is engineered for high endurance in large-scale AI deployments.
 
 **Cost  
-  
-** *\[Input \$/million tokens \| Output \$/million tokens\]*
+  **
+*\[Input \$/million tokens \| Output \$/million tokens\]*
 
 \$3 \| \$15
 
@@ -148,8 +144,8 @@ data
 **Claude 3 Haiku** is our fastest, most compact model for near-instant responsiveness. It answers simple queries and requests with unmatched speed. Users will be able to build seamless AI experiences that mimic human interactions.
 
 **Cost  
-  
-** *\[Input \$/million tokens \| Output \$/million tokens\]*
+  **
+*\[Input \$/million tokens \| Output \$/million tokens\]*
 
 \$0.25 \| \$1.25
 

@@ -2,7 +2,7 @@
 title: "Sentry Claude Managed Agents case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/sentry"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:16Z"
+fetched_at: "2026-11-18T06:29:07Z"
 tags: ["agents", "case-studies"]
 ---
 
@@ -99,6 +99,9 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -106,6 +109,3 @@ Claude helps security teams investigate threats, validate findings, and resolve 
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

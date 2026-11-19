@@ -2,7 +2,7 @@
 title: "Brainlabs Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/brainlabs"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:33Z"
+fetched_at: "2026-11-18T06:29:07Z"
 tags: ["agents", "case-studies", "skills"]
 ---
 

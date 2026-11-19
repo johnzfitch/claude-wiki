@@ -2,7 +2,7 @@
 title: "Understanding your Team plan invoices | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16607668-understanding-your-team-plan-invoices"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:08Z"
+fetched_at: "2026-11-18T06:28:05Z"
 tags: ["billing"]
 ---
 
@@ -85,4 +85,4 @@ No. Issued invoices can't be changed. An owner can update your billing details i
 
 ### Where can I see our team’s monthly API credits?
 
-In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+In the Claude Console. All credits appear under **[Settings \> Billing](../04-API-Reference/Other/playground.md)** in your linked Console organization, with their amount and expiry date. Usage is never charged to your Claude plan. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.

@@ -2,11 +2,14 @@
 title: "Enterprise Interest Group Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/interest-groups/enterprise"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-31T06:26:54Z"
+fetched_at: "2026-11-11T06:25:27Z"
+last_modified: "Wed, 11 Nov 2026 02:02:09 GMT"
 tags: ["enterprise", "mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Group Type](#group-type)
 - [Mission Statement](#mission-statement)
@@ -23,7 +26,7 @@ tags: ["enterprise", "mcp", "mcp-community"]
 - [Deliverables (Optional)](#deliverables-optional)
 - [Changelog](#changelog)
 
-Interest Group Charters
+Interest Groups
 
 # Enterprise Interest Group Charter
 
@@ -58,7 +61,7 @@ Scope
 In Scope
 
 - **Enterprise Requirements Gaps (overarching focus)**: The group’s primary mandate is identifying enterprise deployment requirements that are not addressed at the MCP protocol level today and turning them into problem statements and recommendations for the relevant Working Groups. Each requirement is captured with the enterprise opportunity it represents, not only the pain point, since closing these gaps is what unlocks broader enterprise adoption and value. The specific domains below are explored through that lens; governance and best-practice patterns are documented only where they surface a protocol-level gap:
-- **Enterprise Authentication and Identity**: Discussion of enterprise-managed auth patterns including IdP integration (SSO, SAML, OIDC), token lifecycle management, On-Behalf-Of (OBO) token exchange flows, and fine-grained authorization (Rich Authorization Requests). Gathering requirements to inform the Auth WG and related SEPs.
+- **Enterprise Authentication and Identity**: Discussion of enterprise-managed auth patterns including IdP integration (SSO, SAML, OIDC), token lifecycle management, On-Behalf-Of (OBO) token exchange flows, and fine-grained authorization (Rich Authorization Requests). Gathering requirements to inform the Authorization IG and related SEPs.
 - **Identity Propagation and Session Context**: Defines how verified identity is surfaced and conveyed across MCP clients, servers, and downstream services for policy enforcement and audit. This includes spawned-agent and delegated-agent use cases: identity lineage, least-privilege for child agents, descendant revocation, and auditability across multi-agent chains, which is adjacent to authentication but distinct in focus.
 - **Audit, Observability, and Compliance**: Exploration of standardized audit trail formats for MCP tool invocations, integration with enterprise SIEM and observability platforms, and evidence generation for compliance frameworks (SOC 2, HIPAA, GDPR, EU AI Act). Includes sector-specific compliance patterns such as PHI handling and BAA-scoped data flows in healthcare environments.
 - **Gateway and Proxy Behavior**: Documentation of enterprise deployment patterns where MCP traffic routes through API gateways, load balancers, reverse proxies, and security proxies. With the move to a stateless protocol core in the 2026-07-28 release, the focus shifts from session affinity to gaps that persist in a stateless model: header and context propagation, authorization handoff across proxies, and policy enforcement at the gateway.
@@ -67,7 +70,7 @@ In Scope
 - **Configuration Portability and Deployment**: Discussion of challenges in deploying MCP servers across heterogeneous client environments, multi-tenant configuration patterns, and enterprise-scale rollout practices.
 - **Interceptors and Middleware**: Exploration of use cases for request/response interception in MCP pipelines, including PII redaction, compliance validation, content filtering, and hallucination detection. Gathering requirements that may inform future specification work on middleware patterns.
 - **Problem Statements and Use Cases**: Documentation of enterprise pain points and production failure scenarios (anonymized) to build an evidence base for prioritizing specification work.
-- **Recommendations to Working Groups**: Providing structured input from enterprise practitioners to the Auth WG, Security IG, Gateways IG, and other groups on enterprise-specific requirements.
+- **Recommendations to Working Groups**: Providing structured input from enterprise practitioners to the Authorization IG, Security IG, Gateways IG, and other groups on enterprise-specific requirements.
 
 
 [​](#out-of-scope)
@@ -77,7 +80,7 @@ Out of Scope
 - Writing or owning SEPs. The Enterprise IG produces problem statements, use cases, and recommendations. Concrete specification changes are driven through the appropriate Working Groups.
 - Discussion of product-specific or vendor-specific solutions. Discussions must remain vendor-neutral and focused on protocol-level patterns.
 - General MCP support or onboarding. The group focuses on enterprise deployment challenges, not introductory MCP topics.
-- Overlapping directly with the Auth WG’s specification work. The Enterprise IG gathers enterprise auth requirements and feeds them to the Auth WG rather than proposing auth protocol changes.
+- Overlapping directly with the Authorization IG’s specification work. The Enterprise IG gathers enterprise auth requirements and feeds them to the Authorization IG rather than proposing auth protocol changes.
 
 
 [​](#related-groups)
@@ -89,8 +92,7 @@ Related Groups
 
 Working Groups
 
-- **Auth WG** — Enterprise auth requirements (IdP integration, OBO flows, RAR) are gathered and provided as input to the Auth WG’s specification work.
-- **Transport WG** — Transport-level needs for enterprise support (non-functional requirements such as latency and horizontal scaling) are bundled and provided as input to the Transport WG.
+- **[Transports WG](community-working-groups-transports.md)** — Transport-level needs for enterprise support (non-functional requirements such as latency and horizontal scaling) are bundled and provided as input to the Transports WG.
 - **Extensions WG** — Requirements for extensions other than authorization are bundled and provided as input to the Extensions WG.
 
 
@@ -98,6 +100,7 @@ Working Groups
 
 Interest Groups
 
+- **[Authorization IG](community-interest-groups-auth.md)** — Enterprise auth requirements (IdP integration, OBO flows, RAR) are gathered and provided as input to the Authorization IG’s specification work.
 - **Security IG** — Overlapping interest in runtime security, tool poisoning, and credential management. The Enterprise IG focuses on the organizational and governance dimensions; the Security IG focuses on threat models and protocol-level mitigations.
 - **Gateways IG** — Direct overlap on gateway/proxy behavior patterns. The Enterprise IG provides enterprise deployment context; the Gateways IG focuses on technical gateway specifications.
 - **Financial Services IG** — Several enterprise concerns (compliance, audit, regulated environments) overlap with the FS-IG. Cross-posting and joint sessions will be coordinated where appropriate.
@@ -107,40 +110,40 @@ Interest Groups
 
 Leadership
 
-| Role        | Name          | Organization     | GitHub                                                     | Term     |
-|-------------|---------------|------------------|------------------------------------------------------------|----------|
-| Facilitator | Raghu Chandra | Independent      | [@raghu-chandra-mcp](https://github.com/raghu-chandra-mcp) | 6 months |
-| Facilitator | Yannj_Fr      | MCPApps Builders | [@yannj-fr](https://github.com/yannj-fr)                   | 6 months |
+| Role | Name | Organization | GitHub | Term |
+|----|----|----|----|----|
+| Facilitator | Raghu Chandra | Independent | [@raghu-chandra-mcp](https://github.com/raghu-chandra-mcp) | 6 months |
+| Facilitator | Yannj_Fr | MCPApps Builders | [@yannj-fr](https://github.com/yannj-fr) | 6 months |
 
 
 [​](#membership)
 
 Membership
 
-| Name           | Organization                                      | GitHub                                                     | Discord       | Level       |
-|----------------|---------------------------------------------------|------------------------------------------------------------|---------------|-------------|
-| Raghu Chandra  | Independent                                       | [@raghu-chandra-mcp](https://github.com/raghu-chandra-mcp) | raghu.chandra | Facilitator |
-| Yannj_Fr       | MCPApps Builders                                  | [@yannj-fr](https://github.com/yannj-fr)                   | yannj_fr      | Facilitator |
-| Peder H P      | Saxo Bank                                         | [@pederhp](https://github.com/pederhp)                     |               | Participant |
-| Derek Lewis    | Silex Data Solutions                              | [@derekelewis](https://github.com/derekelewis)             | dlewis.io     | Participant |
-| Aman s         | Independent Researcher; Blue Shield of California | [@aman210122](https://github.com/aman210122)               |               | Participant |
-| Ola            | Nordstrom / MCP Maintainer                        | [@olaservo](https://github.com/olaservo)                   |               | Participant |
-| Varun          | TraceForce                                        | [@vawadhwa88](https://github.com/vawadhwa88)               |               | Participant |
-| Markus Mueller | Boomi                                             | [@mquadrat](https://github.com/mquadrat)                   |               | Participant |
-| Aaron Parecki  | Okta                                              | [@aaronpk](https://github.com/aaronpk)                     |               | Participant |
-| cayerbe        | GNS-Foundation                                    | [@GNS-Foundation](https://github.com/GNS-Foundation)       | cayerbe       | Participant |
-| Anishma        | EmpowerID                                         | [@anishma](https://github.com/anishma)                     |               | Participant |
-| Lin Sun        | Solo.io                                           | [@linsun](https://github.com/linsun)                       |               | Participant |
-| Joey Orlando   | Archestra                                         | [@joeyorlando](https://github.com/joeyorlando)             |               | Participant |
+| Name | Organization | GitHub | Discord | Level |
+|----|----|----|----|----|
+| Raghu Chandra | Independent | [@raghu-chandra-mcp](https://github.com/raghu-chandra-mcp) | raghu.chandra | Facilitator |
+| Yannj_Fr | MCPApps Builders | [@yannj-fr](https://github.com/yannj-fr) | yannj_fr | Facilitator |
+| Peder H P | Saxo Bank | [@pederhp](https://github.com/pederhp) |  | Participant |
+| Derek Lewis | Silex Data Solutions | [@derekelewis](https://github.com/derekelewis) | dlewis.io | Participant |
+| Aman s | Independent Researcher; Blue Shield of California | [@aman210122](https://github.com/aman210122) |  | Participant |
+| Ola | Nordstrom / MCP Maintainer | [@olaservo](https://github.com/olaservo) |  | Participant |
+| Varun | TraceForce | [@vawadhwa88](https://github.com/vawadhwa88) |  | Participant |
+| Markus Mueller | Boomi | [@mquadrat](https://github.com/mquadrat) |  | Participant |
+| Aaron Parecki | Okta | [@aaronpk](https://github.com/aaronpk) |  | Participant |
+| cayerbe | GNS-Foundation | [@GNS-Foundation](https://github.com/GNS-Foundation) | cayerbe | Participant |
+| Anishma | EmpowerID | [@anishma](https://github.com/anishma) |  | Participant |
+| Lin Sun | Solo.io | [@linsun](https://github.com/linsun) |  | Participant |
+| Joey Orlando | Archestra | [@joeyorlando](https://github.com/joeyorlando) |  | Participant |
 
 
 [​](#operations)
 
 Operations
 
-| Meeting         | Frequency | Duration | Purpose                                                              |
-|-----------------|-----------|----------|----------------------------------------------------------------------|
-| Working Session | Monthly   | 60 min   | Use case discussion, pain point cataloging, cross-group coordination |
+| Meeting | Frequency | Duration | Purpose |
+|----|----|----|----|
+| Working Session | Monthly | 60 min | Use case discussion, pain point cataloging, cross-group coordination |
 
 Discord: \#enterprise-ig
 
@@ -162,12 +165,12 @@ Deliverables (Optional)
 
 As an Interest Group, the Enterprise IG does not produce binding deliverables. The following are planned discussion outputs:
 
-| Item                                            | Status  | Target Date | Champion      |
-|-------------------------------------------------|---------|-------------|---------------|
-| Enterprise Pain Points Catalog                  | Planned | Q2 2026     | Raghu Chandra |
-| Healthcare & Compliance Use Cases (PHI, BAA)    | Planned | Q3 2026     | Aman s        |
-| Enterprise Auth Requirements (input to Auth WG) | Planned | Q3 2026     | TBD           |
-| Gateway Deployment Patterns Document            | Planned | Q3 2026     | TBD           |
+| Item | Status | Target Date | Champion |
+|----|----|----|----|
+| Enterprise Pain Points Catalog | Planned | Q2 2026 | Raghu Chandra |
+| Healthcare & Compliance Use Cases (PHI, BAA) | Planned | Q3 2026 | Aman s |
+| Enterprise Auth Requirements (input to Authorization IG) | Planned | Q3 2026 | TBD |
+| Gateway Deployment Patterns Document | Planned | Q3 2026 | TBD |
 
 
 [​](#changelog)

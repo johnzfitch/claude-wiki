@@ -2,7 +2,7 @@
 title: "Novo Nordisk Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/novo-nordisk"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:28Z"
+fetched_at: "2026-11-18T06:29:20Z"
 tags: ["case-studies", "claude-code"]
 ---
 

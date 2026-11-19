@@ -2,7 +2,7 @@
 title: "Introduction to prompt design | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/7996853-introduction-to-prompt-design"
 category: "21-Account-Support"
-fetched_at: "2026-11-07T06:24:30Z"
+fetched_at: "2026-11-18T06:28:12Z"
 tags: ["account", "prompting"]
 ---
 

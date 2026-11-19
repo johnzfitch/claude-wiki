@@ -2,7 +2,7 @@
 title: "CMEK, data retention, and ZDR - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-data-retention"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:26:03Z"
+fetched_at: "2026-11-17T06:24:47Z"
 tags: ["api"]
 ---
 

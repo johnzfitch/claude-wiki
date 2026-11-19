@@ -2,30 +2,27 @@
 title: "How well do job retraining programs work? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:27:02Z"
+fetched_at: "2026-11-14T06:26:03Z"
 tags: ["news-research"]
 ---
 
 # Reviewing the evidence on worker retraining programs
 
-[Download the report](august-12-2026.md)
+[Download the report](https://assets.claude.com/169e4adceebbab066b91e0b45127d73cb2bda24b.pdf)
 
-- Published
+Published  
+Aug 12, 2026
 
-  Aug 12, 2026
+Team  
+[Economics](team-economics.md)
 
-- Team
+Topics  
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+- [Education](https://www.anthropic.com/search?topic=education)
+- [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
 
-  [Economics](team-economics.md)
-
-- Topics
-
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
-  - [Education](https://www.anthropic.com/search?topic=education)
-  - [Informed lawmakers](https://www.anthropic.com/search?topic=informed-lawmakers)
-
-  See more...
+See more...
 
 Related articles
 
@@ -49,7 +46,7 @@ A small set of “sector programs”—programs that partner with employers in a
 
 Their central recommendation is to invest now in demonstrating, evaluating, and scaling the most promising programs, including through an effort to rapidly expand a leading program for a specific group of workers and rigorously measure the results. Our [Economic Futures Research Fund](economic-futures-research-fund-agenda.md) is designed to fund investigations into questions like these.
 
-[Read the report here](august-12-2026.md).
+[Read the report here](https://assets.claude.com/169e4adceebbab066b91e0b45127d73cb2bda24b.pdf).
 
 ## Authors & acknowledgements
 
@@ -57,7 +54,7 @@ Their central recommendation is to invest now in demonstrating, evaluating, and 
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @techreport{roodman2026training,
   author      = {Roodman, David and Massenkoff, Maxim},
   title       = {An Evidence Review of Subsidized Job Training},
@@ -66,3 +63,5 @@ Copy
   number      = {2026-01},
   year        = {2026},
   url         = {https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs}
+}
+```

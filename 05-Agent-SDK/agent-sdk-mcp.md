@@ -2,11 +2,14 @@
 title: "Connect to external tools with MCP - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/mcp"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-23T06:28:20Z"
+fetched_at: "2026-11-13T06:33:24Z"
+last_modified: "Fri, 13 Nov 2026 06:21:51 GMT"
 tags: ["agents", "claude-code", "mcp", "sdk"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Quickstart](#quickstart)
 - [Add an MCP server](#add-an-mcp-server)
@@ -208,11 +211,11 @@ Connection timing
 
 Claude Code starts connecting your MCP servers when the session starts, and sends the [init message](#error-handling) once the first-turn wait, if any, ends. How long the first turn waits for a server depends on where you configured it. If you set `permissionPromptToolName`, the first turn always waits for that tool’s server, up to `MCP_TIMEOUT`, wherever you configured it. For a server in `options.mcpServers`, find its type in the first column to see how long the first turn waits for it.
 
-| Server type                                                                            | Delays the first turn?                                 | First-turn wait timeout                                                                                               |
-|:---------------------------------------------------------------------------------------|:-------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
-| stdio server, or HTTP/SSE server without a cached tool list                            | Yes, until it connects                                 | [`MCP_TIMEOUT`](../02-Claude-Code-CLI/env-vars.md), 30 seconds by default; the connection fails at that deadline                      |
-| Remote server with a cached tool list, saved by Claude Code from a previous connection | No; the cached tools are available from the first turn | None; connects on its first tool call, and that deferred connect has its own timeout                                  |
-| In-process [SDK server](#sdk-mcp-servers)                                              | Yes, until it connects and lists its tools             | [`MCP_TIMEOUT`](../02-Claude-Code-CLI/env-vars.md), 30 seconds by default, per connect attempt; the connection fails at that deadline |
+| Server type | Delays the first turn? | First-turn wait timeout |
+|:---|:---|:---|
+| stdio server, or HTTP/SSE server without a cached tool list | Yes, until it connects | [`MCP_TIMEOUT`](../02-Claude-Code-CLI/env-vars.md), 30 seconds by default; the connection fails at that deadline |
+| Remote server with a cached tool list, saved by Claude Code from a previous connection | No; the cached tools are available from the first turn | None; connects on its first tool call, and that deferred connect has its own timeout |
+| In-process [SDK server](#sdk-mcp-servers) | Yes, until it connects and lists its tools | [`MCP_TIMEOUT`](../02-Claude-Code-CLI/env-vars.md), 30 seconds by default, per connect attempt; the connection fails at that deadline |
 
 A server has a cached tool list only when the [MCP discovery cache](../06-MCP-Tools/General/mcp.md#server-status-detail) is on. Servers from [settings files](#from-a-config-file) such as `.mcp.json`, or from plugins, often still show `pending` in the init message. How long the first turn waits for them depends on `options.mcpServers` and tool search:
 
@@ -279,7 +282,7 @@ Use the full tool names in `allowedTools` and in [MCP permission rules](../02-Cl
 
 Auto-approve with allowedTools
 
-Use `allowedTools` to auto-approve specific MCP tools so Claude can use them without a permission prompt:
+Use `allowedTools` to auto-approve specific MCP tools:
 
 TypeScript
 

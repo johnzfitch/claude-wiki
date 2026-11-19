@@ -2,7 +2,7 @@
 title: "Claude in Chrome | Claude by Anthropic"
 source_url: "https://www.claude.com/claude-for-chrome"
 category: "03-IDE-Integrations"
-fetched_at: "2026-11-09T06:25:36Z"
+fetched_at: "2026-11-18T06:26:56Z"
 tags: ["claude-code", "ide"]
 ---
 

@@ -2,8 +2,8 @@
 title: "Streamable HTTP - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:24:55Z"
-last_modified: "Fri, 30 Oct 2026 20:56:04 GMT"
+fetched_at: "2026-11-10T06:27:45Z"
+last_modified: "Mon, 09 Nov 2026 22:48:33 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

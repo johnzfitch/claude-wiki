@@ -2,7 +2,7 @@
 title: "Using Moody's for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12651668-using-moody-s-for-financial-analysis"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:42Z"
+fetched_at: "2026-11-18T06:27:49Z"
 tags: ["claude-ai"]
 ---
 
@@ -56,7 +56,7 @@ The Moody’s MCP server uses remote access via a simple URL endpoint and is com
 
 1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors)
 
-2.  Click “Add custom connector”
+2.  Click “Add” (or “Add connector”) and choose the custom option. If you then see “Web” and “Desktop,” select “Web.”
 
 3.  Enter the Moody’s MCP server URL: [https://api.moodys.com/genai-ready-data/m1/mcp(opens in new tab)](https://api.moodys.com/genai-ready-data/m1/mcp)
 

@@ -2,7 +2,7 @@
 title: "API credits for Max, Ultra, and Team plans - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/api-credits-for-subscribers"
 category: "04-API-Reference/About"
-fetched_at: "2026-11-08T06:25:14Z"
+fetched_at: "2026-11-16T06:24:36Z"
 tags: ["api"]
 ---
 
@@ -87,9 +87,9 @@ If you don’t have a Claude Console organization, create one in the Console at 
 
 
 
-Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can’t change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Each plan links to one Console organization, and each Console organization can receive credits from one plan. You can’t change the linked organization yourself, so link the organization you plan to build in. To change it later, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
 
-Subscribers who aren’t eligible don’t see API credits in their settings page. If you think you should be eligible but don’t see the API credits, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Subscribers who aren’t eligible don’t see API credits in their settings page. If you think you should be eligible but don’t see the API credits, [contact support](../../15-Claude-AI-Features/how-to-get-support.md).
 
 ## What the credits cover
 
@@ -130,7 +130,7 @@ Credits don’t change how [rate limits and spend limits](../Endpoints/rate-limi
 
 When the balance is exhausted, requests return:
 
-``` block
+```
 Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.
 ```
 
@@ -138,7 +138,7 @@ Your credit balance is too low to access the Anthropic API. Please go to Plans &
 
 If an organization holds only these credits and sends a request they don’t cover, such as a Claude Code session, Claude Code displays:
 
-``` block
+```
 Credit balance too low · Add funds: https://platform.claude.com/settings/billing
 ```
 
@@ -167,4 +167,4 @@ Your monthly cost depends mainly on the model you choose and how often your appl
 - [Rate limits and spend limits](../Endpoints/rate-limits.md)
 - [Workspaces](../Other/manage-claude-workspaces.md)
 - [Pricing](../../17-Billing-Plans/about-claude-pricing.md)
-- [Help Center: API credits for Max, Ultra, and Team plans](../../17-Billing-Plans/monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)
+- [Help Center: API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)

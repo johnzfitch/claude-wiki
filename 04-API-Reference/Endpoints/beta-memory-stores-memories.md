@@ -2,7 +2,7 @@
 title: "Memories - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/memory_stores/memories"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:34:59Z"
+fetched_at: "2026-11-13T06:35:31Z"
 tags: ["api"]
 ---
 
@@ -26,31 +26,31 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/memory_stores/{memory_store_id}/memories
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [List Memories](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/list)
 
 GET/v1/memory_stores/{memory_store_id}/memories
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Retrieve a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/retrieve)
 
 GET/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Update a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/update)
 
 POST/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### [Delete a Memory](https://platform.claude.com/docs/en/api/http/beta/memory_stores/memories/delete)
 
 DELETE/v1/memory_stores/{memory_store_id}/memories/{memory_id}
 
-Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``agent-memory-2026-07-22` or `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).
 
 ##### Models
 
@@ -186,6 +186,8 @@ The error returned with HTTP status 409 when you create or rename a memory and t
 
 Two paths overlap when one is an ancestor of the other, such as `/notes` and `/notes/todo.md`. To free the path, rename or delete the memory that `conflicting_memory_id` references, then retry. To change that memory instead of creating a new one, update it.
 
+To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead of `message`.
+
 type: "memory_path_conflict_error"
 
 
@@ -210,8 +212,6 @@ message: optional string
 
 
 
-A human-readable explanation of the conflict. To handle the error in code, use `conflicting_path` and `conflicting_memory_id` instead.
-
 
 
 BetaManagedAgentsMemoryPreconditionFailedError object{ type: "memory_precondition_failed_error", message }
@@ -231,8 +231,6 @@ type: "memory_precondition_failed_error"
 message: optional string
 
 
-
-A human-readable explanation of why the precondition failed.
 
 
 

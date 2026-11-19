@@ -2,8 +2,8 @@
 title: "Platforms and integrations - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/platforms"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-31T06:25:11Z"
-last_modified: "Sat, 31 Oct 2026 01:09:31 GMT"
+fetched_at: "2026-11-13T06:34:59Z"
+last_modified: "Fri, 13 Nov 2026 06:15:45 GMT"
 tags: ["claude-code"]
 ---
 

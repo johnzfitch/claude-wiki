@@ -2,7 +2,7 @@
 title: "Canva Claude Enterprise case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/canva"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:34Z"
+fetched_at: "2026-11-18T06:29:08Z"
 tags: ["case-studies", "enterprise"]
 ---
 
@@ -82,6 +82,9 @@ In this evolving landscape, Canva employees value Claude’s enterprise capabili
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -89,6 +92,3 @@ In this evolving landscape, Canva employees value Claude’s enterprise capabili
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

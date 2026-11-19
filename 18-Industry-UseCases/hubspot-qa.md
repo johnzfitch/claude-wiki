@@ -2,7 +2,7 @@
 title: "HubSpot Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/hubspot-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:33Z"
+fetched_at: "2026-11-18T06:28:56Z"
 tags: ["case-studies"]
 ---
 
@@ -104,6 +104,9 @@ Where do Skills fit in the Claude stack alongside prompts, Projects, MCP, and su
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -111,6 +114,3 @@ Where do Skills fit in the Claude stack alongside prompts, Projects, MCP, and su
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

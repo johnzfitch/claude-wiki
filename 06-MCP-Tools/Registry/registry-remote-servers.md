@@ -2,8 +2,8 @@
 title: "Publishing Remote Servers - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/registry/remote-servers"
 category: "06-MCP-Tools/Registry"
-fetched_at: "2026-10-31T06:24:48Z"
-last_modified: "Fri, 30 Oct 2026 20:34:13 GMT"
+fetched_at: "2026-11-13T06:33:48Z"
+last_modified: "Fri, 13 Nov 2026 02:24:23 GMT"
 tags: ["mcp", "mcp-registry"]
 ---
 
@@ -11,6 +11,7 @@ tags: ["mcp", "mcp-registry"]
 
 Back to top
 
+- [Ownership Verification](#ownership-verification)
 - [Transport Type](#transport-type)
 - [URL Template Variables](#url-template-variables)
 - [HTTP Headers](#http-headers)
@@ -46,7 +47,19 @@ server.json
 }
 ```
 
-A remote server **MUST** be publicly accessible at its specified URL.
+A remote server **MUST** be publicly accessible at its specified URL. A server with only `remotes` does not need a `packages` entry, so the package ownership verification described in [Package Types](registry-package-types.md) does not apply.
+
+
+[​](#ownership-verification)
+
+Ownership Verification
+
+When you publish, the Registry verifies that you control the namespace in the server `name` using your [authentication method](registry-authentication.md). It does **not** verify that you control the remote URL, regardless of authentication method:
+
+- With [GitHub authentication](registry-authentication.md#github-authentication), a server named `io.github.my-username/weather` proves control of the `my-username` GitHub account, not of the domain serving the remote URL.
+- With [DNS authentication](registry-authentication.md#dns-authentication) or [HTTP authentication](registry-authentication.md#http-authentication), a server named `com.example/weather` proves control of `example.com`, but the Registry does not check that the remote URL is on `example.com`.
+
+If your remote URL is on a domain you control, consider using DNS or HTTP authentication so the server name reflects that domain. This lets users see that the server name and remote URL belong to the same publisher. Multiple server names can reference the same remote URL. An existing listing does not reserve that URL or prevent another publisher from listing it under a namespace they control. Sharing a URL does not grant permission to publish, edit, or change the status of another publisher’s listing. Consumers should identify registry records by server name and version, not by remote URL. A URL lookup may match multiple server names, each with its own metadata, headers, and template variables. Do not merge configurations or infer publisher ownership or endorsement from a shared URL.
 
 
 [​](#transport-type)

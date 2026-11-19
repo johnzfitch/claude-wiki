@@ -2,13 +2,15 @@
 title: "Estimating AI productivity gains \\ Anthropic"
 source_url: "https://www.anthropic.com/research/estimating-productivity-gains"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:17Z"
+fetched_at: "2026-11-14T06:26:02Z"
 tags: ["news-research"]
 ---
 
+### 01Overview
+
 # Estimating AI productivity gains from Claude conversations
 
-[Read as a PDF](https://www-cdn.anthropic.com/e5645986a7ce8fbcc48fa6d2fc67753c87642c30.pdf)
+[Read as a PDF](https://assets.claude.com/e5645986a7ce8fbcc48fa6d2fc67753c87642c30.pdf)
 
 - [01Overview](#overview)
 - [02Introduction](#introduction)
@@ -18,23 +20,20 @@ tags: ["news-research"]
 - [06Conclusion](#conclusion)
 - [07Appendix](#appendix)
 
-- Published
+Published  
+Nov 25, 2025
 
-  Nov 25, 2025
+Team  
+[Economics](team-economics.md)
 
-- Team
+Topics  
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+- [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
 
-  [Economics](team-economics.md)
-
-- Topics
-
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
-  - [Economic growth](https://www.anthropic.com/search?topic=economic-growth)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-
-  See more...
+See more...
 
 Related articles
 
@@ -120,7 +119,7 @@ People also use AI to save 87% of the time it would take to write invoices, memo
 
 #### Task length varies dramatically across occupations
 
-Human time estimates show that Claude handles tasks of very different lengths depending on the occupation. In the below plots, we show averages for each occupation category among the subset of tasks that Claude is used for^([1](#footnote-1)). The average management task where Claude is used (e.g. selecting investments) is estimated to take humans 2.0 hours to complete, followed by legal (1.8 hours), education (1.7), and arts/media tasks (1.6). At the other end of the spectrum, food preparation tasks (e.g. planning or pricing menu items), installation/maintenance, and transportation tasks all take 0.3-0.5hrs on average, suggesting more circumscribed tasks, or tasks with less waiting time. Given that Claude’s time estimates tend to underestimate long tasks and overestimate short tasks, it is possible that these differences might be even greater in practice.
+Human time estimates show that Claude handles tasks of very different lengths depending on the occupation. In the below plots, we show averages for each occupation category among the subset of tasks that Claude is used for^([^1]). The average management task where Claude is used (e.g. selecting investments) is estimated to take humans 2.0 hours to complete, followed by legal (1.8 hours), education (1.7), and arts/media tasks (1.6). At the other end of the spectrum, food preparation tasks (e.g. planning or pricing menu items), installation/maintenance, and transportation tasks all take 0.3-0.5hrs on average, suggesting more circumscribed tasks, or tasks with less waiting time. Given that Claude’s time estimates tend to underestimate long tasks and overestimate short tasks, it is possible that these differences might be even greater in practice.
 
 Cost estimates amplify this variation in the impact of AI: the tasks with the longest time estimates also tend to be the tasks with the highest labor costs. We compute these cost estimates by multiplying the median time for each task by the associated occupation’s average wage in the OEWS May 2024 data. The average management task would cost \$133 for a professional compared to \$119 for legal tasks and \$8 for tasks relating to food preparation and serving. Business and financial tasks average \$69 while computer and mathematical tasks average \$82.
 
@@ -142,7 +141,7 @@ The above estimates capture AI-driven productivity gains at the task level. To u
 
 #### Methodology
 
-To estimate economy-wide productivity effects, we use Hulten’s theorem, a standard method that allows us to aggregate efficiency gains at the task-level to the broader US economy^([2](#footnote-2)). As in [Acemoglu (2024)](https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf)’s “baseline” approach, we model the implied increase in labor productivity as a weighted average over task-level productivity gains—a modeling choice that implicitly assumes that capital investment will increase as a result of an increase in total factor productivity (TFP) associated with AI adoption. In this framework, the implied increase TFP is the gain in labor productivity multiplied by the labor share of income^([3](#footnote-3)).
+To estimate economy-wide productivity effects, we use Hulten’s theorem, a standard method that allows us to aggregate efficiency gains at the task-level to the broader US economy^([^2]). As in [Acemoglu (2024)](https://economics.mit.edu/sites/default/files/2024-04/The%20Simple%20Macroeconomics%20of%20AI.pdf)’s “baseline” approach, we model the implied increase in labor productivity as a weighted average over task-level productivity gains—a modeling choice that implicitly assumes that capital investment will increase as a result of an increase in total factor productivity (TFP) associated with AI adoption. In this framework, the implied increase TFP is the gain in labor productivity multiplied by the labor share of income^([^3]).
 
 **Task composition**: For each occupation, we obtain a list of work tasks from O\*NET. We then use Claude to estimate what fraction of workers' time is spent on each of those tasks. For example, Claude estimates that programmers spend 23% of their time writing and maintaining code, 15% analyzing and rewriting programs, and smaller fractions on testing, documentation, and meetings.
 
@@ -152,7 +151,7 @@ To estimate economy-wide productivity effects, we use Hulten’s theorem, a stan
 
 ### Findings
 
-Assuming 10 years for AI to reach universal adoption across the US economy—and using current models—we calculate that Claude’s estimates imply an annual increase in US labor productivity of 1.8%. This would nearly double the current long-term growth rate, which has averaged 2.1% per year since 1947 and 1.8% since 2019. Assuming that labor’s share of total factor productivity is 0.6^([4](#footnote-4)), this implies an overall total factor productivity increase of 1.1% per year. Given that TFP growth has tended to be less than 1% since the early 2000s, these estimates suggest that, even broad deployment of current AI systems could cause growth to double: achieving the rates of the late 1990s, and of the 1960s and 1970s^([5](#footnote-5)).
+Assuming 10 years for AI to reach universal adoption across the US economy—and using current models—we calculate that Claude’s estimates imply an annual increase in US labor productivity of 1.8%. This would nearly double the current long-term growth rate, which has averaged 2.1% per year since 1947 and 1.8% since 2019. Assuming that labor’s share of total factor productivity is 0.6^([^4]), this implies an overall total factor productivity increase of 1.1% per year. Given that TFP growth has tended to be less than 1% since the early 2000s, these estimates suggest that, even broad deployment of current AI systems could cause growth to double: achieving the rates of the late 1990s, and of the 1960s and 1970s^([^5]).
 
 This estimated increase in aggregate labor productivity implied by task-level efficiency gains is within the range of recent estimates of AI’s potential impact on productivity, though it lies towards the upper end (Filippucci, Gal, and Schief, 2024).
 
@@ -205,7 +204,7 @@ Our framework could be used to help estimate the effects of such restructuring, 
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 Human: Consider the following conversation:
 
 <conversation>
@@ -233,7 +232,7 @@ Assistant: <thinking>
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 Human: Consider the following conversation:
 
 <conversation>
@@ -264,7 +263,7 @@ Assistant: <thinking>
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 Human: You are estimating software development tasks for open-source projects. Provide ONLY a number in hours (e.g., 0.3, 1.6, 15). Do not explain.
 Task: {task}
 Description: {description}:
@@ -276,7 +275,7 @@ Assistant:
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 You are estimating how much time workers in the occupation "{occupation_title}" spend on each of their job tasks.
 
 Below is the complete list of tasks for this occupation. For each task, estimate how many hours per week a typical worker spends on it.
@@ -312,10 +311,22 @@ Return ONLY a JSON object mapping each task_id to your estimated hours per week,
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{tamkinmccrory2025productivity,
 author = {Alex Tamkin and Peter McCrory},
 title = {Estimating AI productivity gains from Claude conversations},
 date = {2025-11-05},
 year = {2025},
 url = {https://www.anthropic.com/research/estimating-productivity-gains},
+}
+```
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:

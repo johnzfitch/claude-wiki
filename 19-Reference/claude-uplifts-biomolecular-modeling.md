@@ -2,9 +2,11 @@
 title: "How Claude is uplifting biomolecular modeling \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:22Z"
+fetched_at: "2026-11-14T06:26:27Z"
 tags: ["news-research"]
 ---
+
+### 01Accelerating protein structure prediction and design models
 
 # How Claude is uplifting biomolecular modeling
 
@@ -13,34 +15,31 @@ tags: ["news-research"]
 - [03Claude efficiently designs de novo protein binders](#claude-efficiently-designs-de-novo-protein-binders)
 - [04Co-sponsoring a protein design competition with Adaptyv Bio](#co-sponsoring-a-protein-design-competition-with-adaptyv-bio)
 
-- Published
+Published  
+Sep 17, 2026
 
-  Sep 17, 2026
+Team  
+[Science](https://www.anthropic.com/science)
 
-- Team
+Topics  
+- [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
+- [Coding](https://www.anthropic.com/search?topic=coding)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
 
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Life sciences](https://www.anthropic.com/search?topic=life-sciences)
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Open source](https://www.anthropic.com/search?topic=open-source)
-  - [Coding](https://www.anthropic.com/search?topic=coding)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Compute & energy](https://www.anthropic.com/search?topic=compute-energy)
-
-  See more...
+See more...
 
 *In this post, we share how Claude made the open-source models that scientists use to predict and design biomolecules faster and more memory-efficient. Claude, working within [Claude Science,](../15-Claude-AI-Features/product-claude-science.md) optimized more than 30 of these models in just under four weeks, speeding them up roughly 4x on average. It also created a low-memory mode that enables the accurate prediction of biomolecular systems larger than 10,000 tokens (amino acids, nucleotides, and atoms from small molecules and ions) on a single NVIDIA GPU node. We are open-sourcing all of the optimized code and announcing a protein design competition co-sponsored with Adaptyv Bio, backed by up to \$1 million in Claude credits and wet lab validation for over 5,000 designs.*
 
 Related articles
 
-- Science
+- Announcements
 
-  Oct 1, 2026
+  Oct 28, 2026
 
-  [Claude-shaped science](claude-shaped-science.md)
+  [AI for Science expands to foundations and research institutions](ai-for-science-expands-foundations-research-institutions.md)
 
 [View more](https://www.anthropic.com/search?topic=life-sciences)
 
@@ -52,7 +51,7 @@ To make such research more accessible, we began to explore inference optimizatio
 
 Here, we present new results showing how an internal, general-purpose research model was able to optimize more than 30 deep learning models trained for a variety of biological tasks, such as structure prediction and protein design, as well as for genomics and protein language models. On average, Claude was able to speed up such tasks roughly 4x while sacrificing a minimal amount of precision, and nearly 2x with identical outputs. Claude also improved the memory utilization of these models, making it possible to predict biomolecular systems of unprecedented sizes. By combining these results with simplifications to our previous agentic protein design approach, we show that Claude can achieve comparable *in silico* performance to the results we previously reported using two orders of magnitude fewer GPU hours.
 
-Beyond protein design, these specialized biological models are widely used by molecular biologists, including for drug discovery and development. We are open-sourcing the optimized code for all of these models today ([here](https://github.com/anthropics/uplifting-biomolecular-modeling)) so that the broader community can make use of them. You can find more detail in our technical report ([here](www-cdn-anthropic-com-accelerating-open-source-biomolecular-models-with-claude.md)).
+Beyond protein design, these specialized biological models are widely used by molecular biologists, including for drug discovery and development. We are open-sourcing the optimized code for all of these models today ([here](https://github.com/anthropics/uplifting-biomolecular-modeling)) so that the broader community can make use of them. You can find more detail in our technical report ([here](https://assets.claude.com/e96b5807039a88168733d9687afe41dfbbd5de13.pdf)).
 
 To further support the community, we are also co-sponsoring a protein design competition with Adaptyv Bio, which has pioneered [open protein design competitions](https://proteinbase.com/competitions). We’ve jointly selected five challenging problems at the frontier of today’s capabilities. Together with Adaptyv, and thanks to generous contributions from Modal and Twist Bioscience, we’re committing up to \$1 million in Claude credits and \$250,000 in Modal compute credits, as well as wet lab validation for over 5,000 designs. Find more information ([here](https://proteinbase.com/competitions/anthropic-adaptyv-2026)) and ([apply here](https://docs.google.com/forms/d/e/1FAIpQLSc0Hz1ZWYTt_wkn76ViVxDghmEhG_OeVEcj9YGHxLWqxF1kWw/viewform?usp=dialog)).
 
@@ -95,3 +94,7 @@ We have also begun to provide frontier AI capabilities to life scientists for bi
 ### Further reading
 
 The following resources provide further technical depth and more detailed information about the results described above:
+
+- [Protein design competition page](https://proteinbase.com/competitions/anthropic-adaptyv-2026) and [application form](https://docs.google.com/forms/d/e/1FAIpQLSc0Hz1ZWYTt_wkn76ViVxDghmEhG_OeVEcj9YGHxLWqxF1kWw/viewform);
+- [Code for specialized molecular models](https://github.com/anthropics/uplifting-biomolecular-modeling);
+- [Technical report](https://assets.claude.com/e96b5807039a88168733d9687afe41dfbbd5de13.pdf).

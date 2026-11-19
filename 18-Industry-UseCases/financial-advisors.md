@@ -2,7 +2,7 @@
 title: "Claude for Financial Advisors | Claude by Anthropic | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/financial-advisors"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:49Z"
+fetched_at: "2026-11-18T06:29:23Z"
 tags: ["case-studies", "cli"]
 ---
 
@@ -200,7 +200,7 @@ Use plugins in Claude
 
 Plugins customize how Claude works for your role, team, and company. Each plugin bundles skills, connectors, and sub-agents into a single package, so you get a ready-to-go setup.
 
-[Learn more](https://support.claude.com/en/articles/13837440-use-plugins-in-claude)
+[Learn more](../15-Claude-AI-Features/use-plugins-in-claude.md)
 
 
 ## Connect Claude to your tools

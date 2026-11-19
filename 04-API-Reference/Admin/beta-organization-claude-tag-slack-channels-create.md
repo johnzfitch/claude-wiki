@@ -2,7 +2,7 @@
 title: "Set Up Slack Channel - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/claude_tag/slack_channels/create"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-08T06:24:16Z"
+fetched_at: "2026-11-16T06:24:57Z"
 tags: ["api", "slack"]
 ---
 
@@ -26,7 +26,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/organizations/claude_tag/slack_channels
 
-Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``experimental-claude-tag-2026-10-21`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Set a Slack channel up for Claude Tag and return it with its identifier. If the channel is already set up, whether in claude.ai, by Claude's first use in it or by an earlier request, the existing channel is returned, so the request can be repeated. `settings`, when sent, is applied as an update applies it. Before a channel is set up, Claude's Slack app confirms with Slack that the channel is in the workspace, is not archived and is visible to the app; a channel that fails the confirmation returns 404. Setting the channel up and applying `settings` are two steps: when the second is refused, the response is the refusal, the channel stays set up with every setting unset, and the error's `details.slack_channel_id` holds the channel's identifier.
 
@@ -56,14 +56,6 @@ string
 
 
 
-"message-batches-2024-09-24"
-
-
-
-"prompt-caching-2024-07-31"
-
-
-
 "computer-use-2024-10-22"
 
 
@@ -72,23 +64,7 @@ string
 
 
 
-"pdfs-2024-09-25"
-
-
-
-"token-counting-2024-11-01"
-
-
-
-"token-efficient-tools-2025-02-19"
-
-
-
 "output-128k-2025-02-19"
-
-
-
-"files-api-2025-04-14"
 
 
 
@@ -112,10 +88,6 @@ string
 
 
 
-"extended-cache-ttl-2025-04-11"
-
-
-
 "context-1m-2025-08-07"
 
 
@@ -125,10 +97,6 @@ string
 
 
 "model-context-window-exceeded-2025-08-26"
-
-
-
-"skills-2025-10-02"
 
 
 
@@ -157,10 +125,6 @@ string
 
 
 "managed-agents-2026-04-01"
-
-
-
-"cache-diagnosis-2026-04-07"
 
 
 
@@ -220,10 +184,6 @@ string
 
 
 
-"ce-user-management-2026-07-13"
-
-
-
 "mid-conversation-output-config-2026-07-01"
 
 
@@ -264,6 +224,10 @@ string
 
 
 
+"admin-user-sign-out-2026-10-08"
+
+
+
 "message-threads-2026-08-12"
 
 
@@ -275,6 +239,86 @@ string
 "experimental-claude-tag-2026-10-21"
 
 
+
+
+
+"message-batches-2024-09-24"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"prompt-caching-2024-07-31"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"pdfs-2024-09-25"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-counting-2024-11-01"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-efficient-tools-2025-02-19"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"files-api-2025-04-14"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14
+
+
+
+"extended-cache-ttl-2025-04-11"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"skills-2025-10-02"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/skills-guide#migrate-from-skills-2025-10-02
+
+
+
+"cache-diagnosis-2026-04-07"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"ce-user-management-2026-07-13"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
 
 ##### Body
 
@@ -312,7 +356,7 @@ maxLength32
 
 
 
-settings: optional [BetaClaudeTagSettingsCreate](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_settings_create) { enabled, environment_id, guest_policy, 2 more }
+settings: optional [BetaClaudeTagSettingsCreate](https://platform.claude.com/docs/en/api/http/beta/organization/claude_tag#beta_claude_tag_settings_create) { enabled, environment_id, guest_policy, 3 more }
 
 
 
@@ -363,7 +407,10 @@ Response 200
       "type": "allow"
     },
     "instructions": "instructions",
-    "model": "model"
+    "model": "model",
+    "reply_mode": {
+      "type": "automatic"
+    }
   },
   "slack": {
     "channel_id": "xx",
@@ -389,6 +436,10 @@ Response 200
       }
     ],
     "model": {
+      "slack_channel_id": "slack_channel_id",
+      "type": "slack_channel"
+    },
+    "reply_mode": {
       "slack_channel_id": "slack_channel_id",
       "type": "slack_channel"
     }
@@ -415,7 +466,10 @@ Response 200
       "type": "allow"
     },
     "instructions": "instructions",
-    "model": "model"
+    "model": "model",
+    "reply_mode": {
+      "type": "automatic"
+    }
   },
   "slack": {
     "channel_id": "xx",
@@ -441,6 +495,10 @@ Response 200
       }
     ],
     "model": {
+      "slack_channel_id": "slack_channel_id",
+      "type": "slack_channel"
+    },
+    "reply_mode": {
       "slack_channel_id": "slack_channel_id",
       "type": "slack_channel"
     }

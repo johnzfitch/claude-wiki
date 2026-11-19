@@ -2,7 +2,7 @@
 title: "Refusals and fallback - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:37:04Z"
+fetched_at: "2026-11-13T06:36:35Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -20,13 +20,18 @@ How Claude Fable models, Claude Opus models, Claude Sonnet 5.5, and Claude Haiku
 
 Classifier refusals
 
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
+
 [APIs](#feature-availability)  
-Messages APIAlways onManaged AgentsAlways on
+- Messages API
+- Managed Agents[\* Beta](#availability-beta-on-claude-api)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- All platforms
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Haiku 5.5 include safety classifiers that can decline a request. When that happens, you receive a normal response, not an error, with `stop_reason: "refusal"`. Its `stop_details.category` names the policy area (see [What a refusal looks like](#refusal-response)). You can usually still get an answer by sending the same request to another Claude model. This page shows you how to recognize a refusal and how to set up that retry.
+Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, and Claude Haiku 5.5 include safety classifiers that can decline a request. When that happens, you receive a normal response, not an error, with `stop_reason: "refusal"`. Its `stop_details.category` names the policy area (see [What a refusal looks like](#refusal-response)). You can usually still get an answer by sending the same request to another Claude model. This page shows you how to recognize a refusal and how to set up that retry.
 
 Read this page when you build on any of these models and want declined requests to fall through to another model automatically. It also applies when you have seen `"refusal"` in a response and want to know what to do next.
 
@@ -131,7 +136,7 @@ A `reasoning_extraction` refusal usually comes from a prompt that asks the model
 
 The wording can sit in a system prompt, a skill, or a tool description, so check those too.
 
-You can still ask Claude to explain its answer. Ask for a short explanation, the evidence behind a result, or a summary of the actions it took. To see how the model reasoned, set `display: "summarized"` and read the [`thinking` blocks](build-with-claude-thinking.md#summarized-thinking). This category has no recommended fallback model, so change the prompt rather than retry the request. If a reworded request is still declined, [contact support](https://support.claude.com/en/articles/9015913-how-to-get-support) and include the [request ID](../Endpoints/errors.md#request-id).
+You can still ask Claude to explain its answer. Ask for a short explanation, the evidence behind a result, or a summary of the actions it took. To see how the model reasoned, set `display: "summarized"` and read the [`thinking` blocks](build-with-claude-thinking.md#summarized-thinking). This category has no recommended fallback model, so change the prompt rather than retry the request. If a reworded request is still declined, [contact support](../../15-Claude-AI-Features/how-to-get-support.md) and include the [request ID](../Endpoints/errors.md#request-id).
 
 ## How refusals are billed
 
@@ -225,7 +230,7 @@ print(
 
 Anthropic sets safeguards for each model individually and for each policy category, in line with the model’s capability: depending on the category, a flagged request might fall back to a less capable model or be declined. The `"default"` mode encodes these per-model, per-category recommendations for you, so a refused request is retried on the model Anthropic recommends for that category. Fallbacks are visible either way: the response names the model that served it, and the `fallback` content block marks the handoff.
 
-The routing is applied server-side and is not published for each model on the [Models API](../Endpoints/models-list.md). To see which model served a refused request, check the response’s top-level `model` field and look for a `fallback_message` entry in `usage.iterations`, as this page’s samples do.
+The routing is applied server-side and is not published for each model on the [Models API](../Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. To see which model served a refused request, check the response’s top-level `model` field and look for a `fallback_message` entry in `usage.iterations`, as this page’s samples do.
 
 Only a safety classifier decline triggers the fallback. A rate limit, overload, or server error on the requested model is returned to you as-is.
 
@@ -279,7 +284,7 @@ print(response.model)
 A few rules apply to the `fallbacks` list:
 
 - Entries are tried in order. Each must be distinct from the other entries and from the requested model.
-- Each entry must be one of the requested model’s permitted targets. With the beta header set, that list is published as `allowed_fallback_models` on the [model’s entry in the Models API](../Endpoints/http-beta-models-list.md).
+- Each entry must be one of the requested model’s permitted targets. With the beta header set, that list is published as `allowed_fallback_models` on the [model’s entry in the Models API](../Endpoints/http-beta-models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 - Each entry names a `model` and can override `max_tokens`, `thinking`, `output_config`, and `speed` for that attempt only.
 - The request must be valid as a direct request to every model named. If a fallback model does not support a feature the request uses, the API rejects the request up front. Under the `2026-07-01` header, `thinking: {"type": "between_tools"}` is the exception: when a Claude Sonnet 5.5 request falls back to Claude Sonnet 5, the fallback attempt runs with `thinking: {"type": "disabled"}` and `display: "omitted"`. Under `2026-06-01`, set `thinking` on the Claude Sonnet 5 entry, or the request is rejected up front.
 - As with the default mode, only a safety classifier decline triggers the fallback. A rate limit, overload, or server error on the requested model is returned to you as-is.
@@ -477,7 +482,7 @@ print(f"served by: {message.model}")
 
 - Retries walk your fallback list in order. A fallback model that itself refuses passes the request to the next entry.
 - When every model in the list has declined, the middleware returns the final refusal (the last model’s refusal response) rather than raising an error.
-- Thinking blocks from Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5, or Claude Fable 5 pass through unchanged. Each retry re-sends your original request body, and the only blocks the middleware removes from conversation history on later requests are the `fallback` boundary blocks it added itself. The fallback model can’t read Claude Fable 5.1 blocks, which only [Claude Fable 5.1 and Claude Mythos 5.1 read](build-with-claude-thinking.md#preserved-for-model), so the API drops them. The API also drops Claude Opus 5.5 blocks for every fallback model except Claude Fable 5.1 and Claude Mythos 5.1 (see [Switching models mid-conversation](build-with-claude-preserved-thinking.md#switching-models)). It drops Claude Sonnet 5.5 blocks too, for every fallback model except Claude Opus 5.5 on the Claude API and Claude Models on Google Cloud (Google managed). Claude Opus 5.5 and Claude Sonnet 5.5 read Claude Haiku 5.5 blocks on the Claude API and Claude Models on Google Cloud (Google managed), and the API drops them for a fallback model that can’t read them.
+- Thinking blocks from Claude Fable 5.2, Claude Fable 5.1, Claude Opus 5.5, Claude Sonnet 5.5, Claude Haiku 5.5, or Claude Fable 5 pass through unchanged. Each retry re-sends your original request body, and the only blocks the middleware removes from conversation history on later requests are the `fallback` boundary blocks it added itself. Apart from Claude Mythos 5.2, no other model reads Claude Fable 5.2 blocks. Claude Fable 5.1 and Claude Mythos 5.1 [read Claude Fable 5.1 blocks](build-with-claude-preserved-thinking.md#switching-models), and so do Claude Fable 5.2 and Claude Mythos 5.2 on the Claude API and Claude Models on Google Cloud (Google managed). No other model reads them. The API drops any Claude Fable 5.2 or Claude Fable 5.1 block that the fallback model can’t read. The API also drops any Claude Opus 5.5 or Claude Sonnet 5.5 block that the fallback model can’t read (see [Switching models mid-conversation](build-with-claude-preserved-thinking.md#switching-models)). On the Claude API and Claude Models on Google Cloud (Google managed), Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.2, and Claude Mythos 5.2 read Claude Haiku 5.5 blocks. The API drops them for a fallback model that can’t read them.
 - Responses served through the middleware include a `fallback` content block at each model boundary, the same as server-side fallback responses. The middleware manages those blocks for you on later requests.
 - The model that accepted is recorded in `BetaFallbackState`, so follow-up requests that share the state stay pinned to it rather than re-asking a model that refused.
 
@@ -499,9 +504,9 @@ Over raw HTTP or with custom retry logic, implement the pattern the middleware w
 
     ### Re-send on a fallback model
 
-    Send the same request with `model` set to a fallback model, such as Claude Opus 4.8. If the refused request sent `thinking: {"type": "between_tools"}`, change `thinking` first: only Claude Sonnet 5.5 accepts that value, so omit `thinking` or set a value the fallback model accepts. [Server-side fallback](#server-side-fallback) under the `2026-07-01` header makes this change for you when it falls back to Claude Sonnet 5. Another model can normally serve a request that Claude Fable 5.1 or Claude Fable 5 declines. How you handle the conversation history depends on whether you redeem a [fallback credit](build-with-claude-fallback-credit.md):
+    Send the same request with `model` set to a fallback model, such as Claude Opus 4.8. If the refused request sent `thinking: {"type": "between_tools"}`, change `thinking` first: only Claude Sonnet 5.5 accepts that value, so omit `thinking` or set a value the fallback model accepts. [Server-side fallback](#server-side-fallback) under the `2026-07-01` header makes this change for you when it falls back to Claude Sonnet 5. Another model can normally serve a request that Claude Fable 5.2, Claude Fable 5.1, or Claude Fable 5 declines. How you handle the conversation history depends on whether you redeem a [fallback credit](build-with-claude-fallback-credit.md):
 
-    - **Not redeeming a credit:** you can leave the earlier `thinking` and `redacted_thinking` blocks in place or strip them to save input tokens. The fallback model normally can’t use them either way: only Claude Fable 5.1 and Claude Mythos 5.1 [read Claude Fable 5.1 blocks](build-with-claude-thinking.md#preserved-for-model), and only those two models, Claude Fable 5, and Claude Mythos 5 read Claude Fable 5 blocks, so for any other fallback model the API drops them. The API also drops Claude Opus 5.5 blocks for every fallback model except Claude Fable 5.1 and Claude Mythos 5.1 (see [Switching models mid-conversation](build-with-claude-preserved-thinking.md#switching-models)). It drops Claude Sonnet 5.5 blocks too, for every fallback model except Claude Opus 5.5 on the Claude API and Claude Models on Google Cloud (Google managed). A retry after a Claude Haiku 5.5 refusal is always in this case. Claude Opus 5.5 and Claude Sonnet 5.5 read Claude Haiku 5.5 blocks on the Claude API and Claude Models on Google Cloud (Google managed), so leave those blocks in place when you fall back to either model there. For a fallback model that can’t read them, the API drops them without billing them.
+    - **Not redeeming a credit:** you can leave the earlier `thinking` and `redacted_thinking` blocks in place or strip them to save input tokens. The fallback model normally can’t use them either way. Apart from Claude Mythos 5.2, no other model reads Claude Fable 5.2 blocks. Claude Fable 5.1 and Claude Mythos 5.1 [read Claude Fable 5.1 blocks](build-with-claude-preserved-thinking.md#switching-models), and so do Claude Fable 5.2 and Claude Mythos 5.2 on the Claude API and Claude Models on Google Cloud (Google managed). No other model reads them. Only those four models, Claude Fable 5, and Claude Mythos 5 read Claude Fable 5 blocks. The API drops any of these blocks that the fallback model can’t read. It also drops any Claude Opus 5.5 or Claude Sonnet 5.5 block that the fallback model can’t read (see [Switching models mid-conversation](build-with-claude-preserved-thinking.md#switching-models)). A retry after a Claude Haiku 5.5 refusal is always in this case. On the Claude API and Claude Models on Google Cloud (Google managed), Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.2, and Claude Mythos 5.2 read Claude Haiku 5.5 blocks, so leave those blocks in place when you fall back to one of those models there. For a fallback model that can’t read them, the API drops them without billing them.
     - **Redeeming a credit:** send the body unchanged, because redemption requires an exact match. The server handles the earlier model’s thinking blocks on a redemption, so do not strip them (see [Fields that must match the refused request](build-with-claude-fallback-credit.md#reference)).
 
 3.  3
@@ -555,52 +560,106 @@ How SDK middleware works, including the refusal-fallback helper.
 
 
 
-[Migration guide](../../20-Models/models-fable-5-1-migration-guide.md)
+[Claude Fable 5.2 and Claude Mythos 5.2 migration guide](../../20-Models/models-fable-5-2-migration-guide.md)
 
-Move an existing application to Claude Fable 5.1.
+Move an existing application to Claude Fable 5.2.
 
 ## Availability
 
-Classifier refusals are available or in beta on select models, depending on the API.
+Classifier refusals
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Always on
+APIs  
+- Messages API
+- Managed Agents BetaOnly with Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Haiku 5.5
 
-StatusAvailable
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-Models
+Amazon Bedrock
 
-- [Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md)
-- [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md)
-- [Claude Fable 5](../../20-Models/models-fable-5-overview.md)
-- [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
-- [Claude Opus 5](../../20-Models/models-opus-5-overview.md)
-- [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
-- [Claude Haiku 5.5](../../20-Models/models-haiku-5-5-overview.md)
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-Usage
+Amazon Bedrock (bedrock-runtime)
 
-Always on
+API  
+- Messages API
 
-StatusBeta
+Models  
+- Claude Fable 5.2
+- Claude Mythos 5.2
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+APIs  
+- Messages API
+- Managed Agents Beta
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
 
-- [Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md)
-- [Claude Fable 5](../../20-Models/models-fable-5-overview.md)
-- [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)
-- [Claude Opus 5](../../20-Models/models-opus-5-overview.md)
-- [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-overview.md)
-- [Claude Haiku 5.5](../../20-Models/models-haiku-5-5-overview.md)
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1
+- Claude Opus 5.5, Opus 5
+- Claude Sonnet 5.5
+- Claude Haiku 5.5

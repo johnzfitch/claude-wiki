@@ -2,7 +2,7 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/messages"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:08Z"
+fetched_at: "2026-11-13T06:35:38Z"
 tags: ["api"]
 ---
 
@@ -5354,7 +5354,11 @@ A `fallback` block echoed back from a prior response.
 
 Accepted in `messages[].content` and not rendered into the prompt; not validated against the request's `fallbacks` chain or top-level `model`.
 
-Echo the assistant turn back verbatim, including this block in its original position. The block marks the boundary between content produced before and after a fallback hop, and the server relies on that boundary to validate the turn: when thinking runs flank the boundary, omitting the block merges them into one span the server cannot validate (the request is rejected), and moving it into the middle of a single run is likewise rejected; between non-thinking blocks the block's placement has no validation effect.
+When you send the assistant turn back, keep this block in its original position. The block marks the boundary between content produced before and after a fallback hop, and the server relies on that boundary to validate the turn: when thinking runs flank the boundary, omitting the block merges them into one span the server cannot validate (the request is rejected), and moving it into the middle of a single run is likewise rejected; between non-thinking blocks the block's placement has no effect on thinking validation.
+
+Some blocks from before the turn's final `fallback` block must be left out when you send the turn back, and no `tool_result` is sent for a `tool_use` block you left out.
+
+See the [refusals and fallback guide](../Guides/build-with-claude-refusals-and-fallback.md#continuing-the-conversation) to learn which blocks to keep.
 
 type: "fallback"
 
@@ -5370,11 +5374,35 @@ Identifies one hop of a fallback transition.
 
 
 
+model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
+
+
+
+The model that will complete your prompt.
+
+See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+One of the following:
+
+
+
 to: [BetaFallbackInfoParam](platform-claude-com-http-beta-messages.md#beta_fallback_info_param) { model }
 
 
 
 Identifies one hop of a fallback transition.
+
+
+
+model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
+
+
+
+The model that will complete your prompt.
+
+See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+One of the following:
 
 trigger: optional unknown
 
@@ -5500,11 +5528,35 @@ Identifies one hop of a fallback transition.
 
 
 
+model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
+
+
+
+The model that will complete your prompt.
+
+See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+One of the following:
+
+
+
 BetaFallbackInfoParam object{ model }
 
 
 
 Identifies one hop of a fallback transition.
+
+
+
+model: [Model](https://platform.claude.com/docs/en/api/http/messages#model)
+
+
+
+The model that will complete your prompt.
+
+See [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
+
+One of the following:
 
 
 
@@ -6367,7 +6419,7 @@ thinking_tokens: number
 
 Number of output tokens the model generated as internal reasoning, including the thinking-block delimiter tokens.
 
-Reflects the raw reasoning the model produced, not the (possibly shorter) summarized thinking text returned in the response body. Computed by re-tokenizing the raw reasoning text, so it may differ from the model's exact generation count by a small number of tokens. Always ≤ `output_tokens`; `output_tokens - thinking_tokens` approximates the non-reasoning output.
+Reflects the raw reasoning the model produced, not the (possibly shorter) summarized thinking text returned in the response body. It may differ from the model's exact generation count by a small number of tokens. Always ≤ `output_tokens`; `output_tokens - thinking_tokens` approximates the non-reasoning output.
 
 default0
 

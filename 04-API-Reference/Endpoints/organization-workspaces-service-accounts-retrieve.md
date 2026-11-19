@@ -2,7 +2,7 @@
 title: "Get Service Account Workspace Member - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/workspaces/service_accounts/retrieve"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:27:12Z"
+fetched_at: "2026-11-18T06:27:31Z"
 tags: ["api"]
 ---
 

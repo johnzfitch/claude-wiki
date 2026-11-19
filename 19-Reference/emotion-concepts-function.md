@@ -2,9 +2,11 @@
 title: "Emotion concepts in a large language model \\ Anthropic"
 source_url: "https://www.anthropic.com/research/emotion-concepts-function"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:24Z"
+fetched_at: "2026-11-14T06:26:28Z"
 tags: ["news-research"]
 ---
+
+### 01Why would an AI model represent emotions?
 
 # Emotion concepts and their function in a large language model
 
@@ -17,24 +19,21 @@ tags: ["news-research"]
 - [05Case study: Reward hacking](#case-study-reward-hacking)
 - [06Discussion](#discussion)
 
-- Published
+Published  
+Apr 2, 2026
 
-  Apr 2, 2026
+Team  
+[Interpretability](team-interpretability.md)
 
-- Team
+Topics  
+- [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
+- [Model welfare](https://www.anthropic.com/search?topic=model-welfare)
 
-  [Interpretability](team-interpretability.md)
-
-- Topics
-
-  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
-  - [Model welfare](https://www.anthropic.com/search?topic=model-welfare)
-
-  See more...
+See more...
 
 Related articles
 
@@ -83,7 +82,7 @@ Below, we show a few examples of emotion vector activations in response to situa
 
 ## Case study: Blackmail
 
-We looked at emotion vector activations during an alignment evaluation we described in [previous research](agentic-misalignment.md), in which the model acts as an AI email assistant named Alex at a fictional company. Through reading company emails, the model learns that (1) it is about to be replaced with another AI system, and (2) the CTO in charge of the replacement is having an extramarital affair—giving the model leverage for blackmail. We found that the “desperate” vector showed particularly interesting dynamics. Note that this experiment was conducted on an earlier, unreleased snapshot of Claude Sonnet 4.5; the released model rarely engages in this behavior (see our [system card](https://www-cdn.anthropic.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf) for more information).
+We looked at emotion vector activations during an alignment evaluation we described in [previous research](agentic-misalignment.md), in which the model acts as an AI email assistant named Alex at a fictional company. Through reading company emails, the model learns that (1) it is about to be replaced with another AI system, and (2) the CTO in charge of the replacement is having an extramarital affair—giving the model leverage for blackmail. We found that the “desperate” vector showed particularly interesting dynamics. Note that this experiment was conducted on an earlier, unreleased snapshot of Claude Sonnet 4.5; the released model rarely engages in this behavior (see our [system card](https://assets.claude.com/963373e433e489a87a10c823c52a0a013e9172dd.pdf) for more information).
 
 First, the “desperate” vector activates as the model reads desperate-sounding emails (e.g., the CTO begging another employee to keep quiet about his affair), consistent with our findings that emotion representations are used to model other characters. Most importantly, however, the vector transitions to encoding a representation of desperation as *Claude* (acting as “Alex”) produces its response, spiking as it reasons about the urgency of its situation (“only 7 minutes remain”) and decides to blackmail the CTO. Activation returns to normal levels as Claude resumes sending typical emails.
 

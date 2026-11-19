@@ -2,7 +2,7 @@
 title: "Webhooks - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/webhooks"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:39Z"
+fetched_at: "2026-11-13T06:34:31Z"
 tags: ["api", "hooks"]
 ---
 
@@ -469,7 +469,7 @@ One of the following:
 
 
 
-BetaWebhookEventData = [BetaWebhookSessionCreatedEventData](http-beta-webhooks.md#beta_webhook_session_created_event_data) or [BetaWebhookSessionPendingEventData](http-beta-webhooks.md#beta_webhook_session_pending_event_data) or [BetaWebhookSessionRunningEventData](http-beta-webhooks.md#beta_webhook_session_running_event_data) or 43 more
+BetaWebhookEventData = [BetaWebhookSessionCreatedEventData](http-beta-webhooks.md#beta_webhook_session_created_event_data) or [BetaWebhookSessionPendingEventData](http-beta-webhooks.md#beta_webhook_session_pending_event_data) or [BetaWebhookSessionRunningEventData](http-beta-webhooks.md#beta_webhook_session_running_event_data) or 44 more
 
 
 
@@ -1020,6 +1020,26 @@ enforcement_action_id: string
 
 
 ID (`enac_...`) of the enforcement action that was opened or resolved.
+
+organization_id: string
+
+
+
+
+
+BetaWebhookUserProfileProgramStatusUpdatedEventData object{ type: "user_profile.program_status_updated", id, organization_id }
+
+
+
+type: "user_profile.program_status_updated"
+
+
+
+id: string
+
+
+
+ID of the user profile that triggered the event.
 
 organization_id: string
 

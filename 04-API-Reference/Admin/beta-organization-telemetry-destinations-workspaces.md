@@ -2,7 +2,7 @@
 title: "Workspaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/telemetry_destinations/workspaces"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-07T06:23:50Z"
+fetched_at: "2026-11-15T06:23:29Z"
 tags: ["api"]
 ---
 
@@ -27,7 +27,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/telemetry_destinations/{destination_id}/workspaces
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the workspaces on a destination's workspace list, newest entry first.
 
@@ -35,7 +35,7 @@ List the workspaces on a destination's workspace list, newest entry first.
 
 POST/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Add one workspace to a destination's workspace list.
 
@@ -43,7 +43,7 @@ Add one workspace to a destination's workspace list.
 
 DELETE/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Remove one workspace from a destination's workspace list.
 

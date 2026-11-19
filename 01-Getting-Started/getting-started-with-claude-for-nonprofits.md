@@ -2,7 +2,7 @@
 title: "Getting started with Claude for nonprofits · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12893767-getting-started-with-claude-for-nonprofits"
 category: "01-Getting-Started"
-fetched_at: "2026-11-07T06:22:25Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["connectors", "getting-started"]
 ---
 
@@ -68,7 +68,7 @@ The nonprofit discount remains active as long as your organization maintains its
 
 #### What if I already have a full-priced account?
 
-Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
+Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-settings/billing) to update your plan, or [reach out to our support team(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
 
 #### Is my data used for training?
 
@@ -76,7 +76,7 @@ Go to [Admin settings \> Billing(opens in new tab)](https://claude.ai/admin-sett
 
 #### Can I get a tax exemption?
 
-Submit your tax exemption certificate through [support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support) to receive a refund and apply the exemption to future invoices.
+Submit your tax exemption certificate through [support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md) to receive a refund and apply the exemption to future invoices.
 
 #### What about organizations with fewer than five employees?
 
@@ -88,7 +88,7 @@ Visit the [use case library(opens in new tab)](https://support.claude.com/all?ki
 
 ## Troubleshooting[](#troubleshooting)
 
-- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](https://support.claude.com/en/articles/9015913-how-to-get-support).
+- **Discount link not working:** Clear your browser cache and try again in an incognito window. If the issue persists, [contact support(opens in new tab)](../15-Claude-AI-Features/how-to-get-support.md).
 - **Team plan option greyed out:** Make sure you're signed in to the correct account and have admin permissions
 - **Email domain questions:** All team members don't need the same domain. Learn about [allowed email domains(opens in new tab)](../21-Account-Support/account-management-faqs.md#h_b54c41c86c).
 - **Connecting tools:** Learn how to [browse and connect tools from the directory(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).

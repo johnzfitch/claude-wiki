@@ -2,7 +2,7 @@
 title: "List RBAC Roles - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/rbac_roles/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:56Z"
+fetched_at: "2026-11-13T06:33:51Z"
 tags: ["api"]
 ---
 
@@ -72,7 +72,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-data: array of [RBACRole](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role) { type: "rbac_role", id, created_at, 2 more }
+data: array of [RBACRole](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role) { type: "rbac_role", id, created_at, 3 more }
 
 
 
@@ -108,7 +108,49 @@ display_name: string
 
 
 
-Name of the RBAC Role. For a role created by Anthropic, this name can differ from the label claude.ai shows, and Anthropic may change the name. To keep a lasting reference to a role, store its `id`.
+Name of the RBAC Role. For a built-in role, this is Anthropic's name for the access that the role grants. Anthropic may change this name, so to keep a lasting reference to a role, store its `id`.
+
+
+
+source: [RBACRoleSource](https://platform.claude.com/docs/en/api/http/organization/rbac_roles#rbac_role_source)
+
+
+
+Whether the RBAC Role is built-in or custom. More values of `type` may be added, so do not treat every role that is not `built_in` as `custom`.
+
+One of the following:
+
+
+
+RBACRoleSourceBuiltIn object{ type: "built_in" }
+
+
+
+
+
+type: "built_in"
+
+
+
+Anthropic provisions the RBAC Role, and the organization's administrators cannot change or delete it.
+
+defaultbuilt_in
+
+
+
+RBACRoleSourceCustom object{ type: "custom" }
+
+
+
+
+
+type: "custom"
+
+
+
+The organization's administrators can change and delete the RBAC Role.
+
+defaultcustom
 
 
 
@@ -155,6 +197,9 @@ Response 200
       "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
       "created_at": "2024-10-30T23:58:27.427722Z",
       "display_name": "Project Editor",
+      "source": {
+        "type": "built_in"
+      },
       "type": "rbac_role",
       "updated_at": "2024-10-30T23:58:27.427722Z"
     }
@@ -177,6 +222,9 @@ Response 200
       "id": "rbac_role_016J8xVtKpDq3Wy9ZmN2hR4s",
       "created_at": "2024-10-30T23:58:27.427722Z",
       "display_name": "Project Editor",
+      "source": {
+        "type": "built_in"
+      },
       "type": "rbac_role",
       "updated_at": "2024-10-30T23:58:27.427722Z"
     }

@@ -2,9 +2,11 @@
 title: "Evaluating feature steering \\ Anthropic"
 source_url: "https://www.anthropic.com/research/evaluating-feature-steering"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:17Z"
+fetched_at: "2026-11-14T06:26:03Z"
 tags: ["news-research"]
 ---
+
+### 01Methods
 
 # **Evaluating feature steering: **A case study in mitigating social biases
 
@@ -16,22 +18,19 @@ tags: ["news-research"]
 - [06Conclusion](#conclusion)
 - [07Appendices](#appendices)
 
-- Published
+Published  
+Oct 25, 2024
 
-  Oct 25, 2024
+Team  
+[Societal Impacts](team-societal-impacts.md)
 
-- Team
+Topics  
+- [Interpretability](https://www.anthropic.com/search?topic=interpretability)
+- [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+- [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
 
-  [Societal Impacts](team-societal-impacts.md)
-
-- Topics
-
-  - [Interpretability](https://www.anthropic.com/search?topic=interpretability)
-  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-  - [Claude Sonnet](https://www.anthropic.com/search?topic=claude-sonnet)
-
-  See more...
+See more...
 
 Related articles
 
@@ -73,7 +72,7 @@ Briefly, feature steering works as follows. First, we use a technique called dic
 
 ### How we picked and implemented evaluations
 
-To measure the impact of various features on model capabilities, we relied on two common benchmarks: [MMLU](https://arxiv.org/pdf/2009.03300) and [PubMedQA](https://arxiv.org/pdf/1909.06146). These evaluations test models for knowledge across a range of domains and are frequently used in our [model cards](https://www-cdn.anthropic.com/f2986af8d052f26236f6251da62d16172cfabd6e/claude-3-model-card.pdf) to assess capabilities. By using these benchmarks, we can study whether feature steering affects the model's overall performance on general knowledge tasks.
+To measure the impact of various features on model capabilities, we relied on two common benchmarks: [MMLU](https://arxiv.org/pdf/2009.03300) and [PubMedQA](https://arxiv.org/pdf/1909.06146). These evaluations test models for knowledge across a range of domains and are frequently used in our [model cards](https://assets.claude.com/f2986af8d052f26236f6251da62d16172cfabd6e.pdf) to assess capabilities. By using these benchmarks, we can study whether feature steering affects the model's overall performance on general knowledge tasks.
 
 For social bias evaluations, we used the [BBQ (Bias Benchmark for QA) dataset](https://arxiv.org/pdf/2110.08193v2), which assesses nine forms of social biases and is commonly used in our model cards. We also used a subset of the [model-written evals dataset](https://huggingface.co/datasets/Anthropic/model-written-evals) targeted to our list of features. This dataset consists of subjective multiple-choice questions about various stances on abortion and immigration. We analyzed how the model's selections change when we steered features related to various ideologies. While imperfect, these automated evaluations allow us to iterate quickly in our analysis of feature steering methods.
 
@@ -165,10 +164,12 @@ Esin Durmus and Deep Ganguli designed the experiments and wrote the blog post. E
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{durmus2024steering,
 author = {Esin Durmus and Alex Tamkin and Jack Clark and Jerry Wei and Jonathan Marcus and Joshua Batson and Kunal Handa and Liane Lovitt and Meg Tong and Miles McCain and Oliver Rausch and Saffron Huang and Sam Bowman and Stuart Ritchie and Tom Henighan and Deep Ganguli},
 title = {Evaluating Feature Steering: A Case Study in Mitigating Social Biases},
 date = {2024-10-25},
 year = {2024},
 url = {https://anthropic.com/research/evaluating-feature-steering},
+}
+```

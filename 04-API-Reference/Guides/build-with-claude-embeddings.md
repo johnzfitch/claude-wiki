@@ -2,7 +2,7 @@
 title: "Embeddings - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/embeddings"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:43Z"
+fetched_at: "2026-11-13T06:34:50Z"
 tags: ["api"]
 ---
 
@@ -273,7 +273,7 @@ If you are looking for a detailed set of recipes on how to do RAG with embedding
 
 ## FAQ
 
-### Why do Voyage AI embeddings have superior quality?
+### Why do Voyage AI embeddings have superior quality?
 
 Embedding models rely on powerful neural networks to capture and compress semantic context, similar to generative models. Voyage AI’s team of experienced AI researchers optimizes every component of the embedding process, including:
 
@@ -284,7 +284,7 @@ Embedding models rely on powerful neural networks to capture and compress semant
 
 Learn more about Voyage AI’s technical approach on the [Voyage AI blog](https://blog.voyageai.com/).
 
-### What embedding models are available and which should I use?
+### What embedding models are available and which should I use?
 
 For general-purpose embedding, the recommended models are:
 
@@ -304,7 +304,7 @@ For chunk-level and document-level retrieval: `voyage-context-4`
 
 For text, images, and video: `voyage-multimodal-3.5`
 
-### Which similarity function should I use?
+### Which similarity function should I use?
 
 You can use Voyage AI embeddings with dot-product similarity, cosine similarity, or Euclidean distance. For an explanation of embedding similarity, see this [vector similarity guide](https://www.pinecone.io/learn/vector-similarity/).
 
@@ -313,11 +313,11 @@ Voyage AI embeddings are normalized to length 1, which means that:
 - Cosine similarity is equivalent to dot-product similarity, although the latter can be computed more quickly.
 - Cosine similarity and Euclidean distance result in identical rankings.
 
-### What is the relationship between characters, words, and tokens?
+### What is the relationship between characters, words, and tokens?
 
 See [Tokenization](https://www.mongodb.com/docs/voyageai/tutorials/tokenization/) in the MongoDB documentation.
 
-### When and how should I use the input_type parameter?
+### When and how should I use the input_type parameter?
 
 For all retrieval tasks and use cases (for example, RAG), use the `input_type` parameter to specify whether the input text is a query or document. Do not omit `input_type` or set `input_type=None`. Specifying whether input text is a query or document can create better dense vector representations for retrieval, which can lead to better retrieval quality.
 
@@ -331,7 +331,7 @@ When using the `input_type` parameter, special prompts are prepended to the inpu
 >   - When `input_type="query"`, a query such as “When is Apple’s conference call scheduled?” will become “**Represent the query for retrieving supporting documents:** When is Apple’s conference call scheduled?”
 >   - When `input_type="document"`, a document such as “Apple’s conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET.” will become “**Represent the document for retrieval:** Apple’s conference call to discuss fourth fiscal quarter results and business updates is scheduled for Thursday, November 2, 2023 at 2:00 p.m. PT / 5:00 p.m. ET.”
 
-### What quantization options are available?
+### What quantization options are available?
 
 Quantization in embeddings converts high-precision values, such as 32-bit single-precision floating-point numbers, to lower-precision formats such as 8-bit integers or 1-bit binary values, reducing storage, memory, and costs by 4x and 32x, respectively. Supported Voyage AI models enable quantization by specifying the output data type with the `output_dtype` parameter:
 
@@ -348,7 +348,7 @@ Quantization in embeddings converts high-precision values, such as 32-bit single
 
 For the models that support each data type, see [Create text embeddings](https://www.mongodb.com/docs/api/doc/atlas-embedding-and-reranking-api/operation/operation-createembedding) in the Atlas Embedding and Reranking API documentation.
 
-### How can I truncate Matryoshka embeddings?
+### How can I truncate Matryoshka embeddings?
 
 Matryoshka learning creates embeddings with coarse-to-fine representations within a single vector. Voyage AI models that support multiple output dimensions, such as `voyage-code-4`, generate such Matryoshka embeddings. To get shorter vectors from the API, pass `output_dimension` (for example, `output_dimension=256`). To shorten vectors you already stored, truncate them by keeping the leading subset of dimensions, then normalize them again. For example, the following Python code demonstrates how to truncate 1024-dimensional vectors to 256 dimensions:
 

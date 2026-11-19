@@ -2,7 +2,7 @@
 title: "Installation Settings - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugins/installation_settings"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-02T06:26:54Z"
+fetched_at: "2026-11-18T06:27:20Z"
 tags: ["api"]
 ---
 
@@ -27,17 +27,23 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/organizations/plugins/{plugin_id}/installation_settings
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
+
 List an organization-owned Plugin's installation settings, which say which members it is for, most recently created first.
 
 ##### [Set Plugin Installation Setting](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings/set)
 
 POST/v1/organizations/plugins/{plugin_id}/installation_settings/{target}
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
+
 Set or change an organization-owned Plugin's installation setting for the whole organization or for one RBAC Group.
 
 ##### [Remove Plugin Installation Setting](https://platform.claude.com/docs/en/api/http/beta/organization/plugins/installation_settings/remove)
 
 DELETE/v1/organizations/plugins/{plugin_id}/installation_settings/{target}
+
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Remove an organization-owned Plugin's own installation setting for the whole organization or for one RBAC Group.
 

@@ -2,11 +2,14 @@
 title: "Extend agents with skills - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/skills"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-23T06:28:21Z"
+fetched_at: "2026-11-17T06:24:23Z"
+last_modified: "Tue, 17 Nov 2026 04:10:35 GMT"
 tags: ["agents", "claude-code", "sdk", "skills"]
 ---
 
 ## On this page
+
+Back to top
 
 - [How skills work with the Agent SDK](#how-skills-work-with-the-agent-sdk)
 - [Use skills with the Agent SDK](#use-skills-with-the-agent-sdk)
@@ -42,10 +45,7 @@ Copy pageCopy page
 
 Agent Skills extend Claude with specialized capabilities that Claude invokes when relevant. Skills are packaged as `SKILL.md` files containing instructions, descriptions, and optional supporting resources. This page also covers [commands in Agent SDK sessions](#commands-in-agent-sdk-sessions). For more information about skills, including benefits, architecture, and authoring guidelines, see the [Agent Skills overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md).
 
-
-[​](#how-skills-work-with-the-agent-sdk)
-
-How skills work with the Agent SDK
+## [](#how-skills-work-with-the-agent-sdk)How skills work with the Agent SDK
 
 When using the Claude Agent SDK, skills are:
 
@@ -60,10 +60,7 @@ Unlike subagents, which you can define in the [`agents` option](agent-sdk-subage
 
 Skills are discovered through the filesystem setting sources. With default `query()` options, the SDK loads user and project sources, so skills in `~/.claude/skills/`, `<cwd>/.claude/skills/`, and `.claude/skills/` in any parent directory of `<cwd>` up to the repository root are available. The project source also covers `<dir>/.claude/skills/` in each directory you pass through `additionalDirectories` (TypeScript) or `add_dirs` (Python), because the SDK passes those directories to Claude Code as [`--add-dir`](../08-Plugins-Skills/skills.md#skills-from-additional-directories). If you set `settingSources` explicitly, include `'project'` to keep project and added-directory skills and `'user'` to keep your personal skills, or use the [`plugins` option](agent-sdk-plugins.md) to load skills from a specific path.
 
-
-[​](#use-skills-with-the-agent-sdk)
-
-Use skills with the Agent SDK
+## [](#use-skills-with-the-agent-sdk)Use skills with the Agent SDK
 
 Set the `skills` option on `query()` to control which skills Claude can invoke in the session. When omitted, discovered skills are enabled and the Skill tool is available, matching CLI behavior. Pass `"all"` to let Claude invoke every discovered skill, a list of skill names to allow only those, or `[]` to let Claude invoke none. For example, to let Claude invoke only two named skills:
 
@@ -79,10 +76,7 @@ options = ClaudeAgentOptions(skills=["pdf", "docx"])
 const options = { skills: ["pdf", "docx"] };
 ```
 
-
-[​](#set-up-skills-in-a-session)
-
-Set up skills in a session
+### [](#set-up-skills-in-a-session)Set up skills in a session
 
 When you set `skills`, the SDK adds the Skill tool to `allowedTools` automatically. If you also pass an explicit `tools` list, include `"Skill"` in that list so Claude can invoke skills. Once configured, Claude automatically discovers skills from the filesystem and invokes them when relevant to the user’s request. The following example enables every discovered skill in a session and pre-approves the tools that skills commonly need. The example sets `cwd` to the process’s current working directory, so run it from inside a project that has a `.claude/skills/` directory in the current directory or any parent up to the repository root:
 
@@ -130,17 +124,11 @@ for await (const message of query({
 }
 ```
 
-
-[​](#confirm-skills-loaded)
-
-Confirm skills loaded
+### [](#confirm-skills-loaded)Confirm skills loaded
 
 Near the start of the stream, the SDK yields a system message with subtype `init`. Check its `skills` array to confirm your skills loaded before Claude starts working. The array includes the user-invocable skills that you have defined with a `description` or `when_to_use` frontmatter field, along with [bundled skills included with Claude Code](../08-Plugins-Skills/skills.md#bundled-skills). The array lists user-invocable skills only. A skill with [`user-invocable: false`](../08-Plugins-Skills/skills.md#control-who-invokes-a-skill) in its frontmatter loads and remains available to Claude, but doesn’t appear in the array. The array lists the same skills whether or not they’re in your `skills` list.
 
-
-[​](#allow-only-specific-skills)
-
-Allow only specific skills
+### [](#allow-only-specific-skills)Allow only specific skills
 
 To let Claude invoke only specific skills, pass their names in the `skills` list:
 
@@ -150,10 +138,7 @@ To let Claude invoke only specific skills, pass their names in the `skills` list
 
 The list takes exact skill names only. If an entry can’t work as an exact name, `query()` rejects the list before the session starts. See [Invalid skill name error](#invalid-skill-name-error) for the name rules and the error each SDK raises. The model doesn’t see unlisted skills and the Skill tool rejects them, while their files remain on disk and stay reachable through Read and Bash. Restricting the list doesn’t restrict [dispatch by name](#dispatch-commands-by-name). To let Claude invoke every discovered skill, pass `skills: "all"` rather than a wildcard.
 
-
-[​](#commands-in-agent-sdk-sessions)
-
-Commands in Agent SDK sessions
+## [](#commands-in-agent-sdk-sessions)Commands in Agent SDK sessions
 
 This section is the SDK’s command documentation. A command is anything you run by sending `/<name>` in a prompt. Entries on the command surface differ in what backs them:
 
@@ -164,10 +149,7 @@ This section is the SDK’s command documentation. A command is anything you run
 
 By default, both you and Claude can invoke any skill. You can restrict either path through the skill’s [frontmatter](../08-Plugins-Skills/skills.md#control-who-invokes-a-skill). For definitions of command and skill, see the glossary’s [Command](../02-Claude-Code-CLI/glossary.md#command) and [Skill](../02-Claude-Code-CLI/glossary.md#skill) entries. See [Commands in Claude Code](../02-Claude-Code-CLI/commands.md) for every built-in and [Extend Claude with skills](../08-Plugins-Skills/skills.md) for the complete guide to both artifact forms.
 
-
-[​](#discover-available-commands)
-
-Discover available commands
+### [](#discover-available-commands)Discover available commands
 
 You can dispatch commands that work without an interactive terminal through the SDK. The `system/init` message lists the ones available in your session in its `slash_commands` field. Commands that need an interactive terminal, such as `/theme` and `/terminal-setup`, don’t appear in the list. Access the field when your session starts:
 
@@ -210,19 +192,16 @@ Available commands: ["clear", "compact", "context", "usage", "code-review", "ver
 
 A skill with [`user-invocable: false`](../08-Plugins-Skills/skills.md#control-who-invokes-a-skill) in its frontmatter doesn’t appear in this list or in the `skills` array from [Confirm skills loaded](#confirm-skills-loaded). Sessions that configure [MCP servers](agent-sdk-mcp.md) can also expose [MCP prompts as commands](../06-MCP-Tools/General/mcp.md#use-mcp-prompts-as-commands).
 
-
-[​](#dispatch-commands-by-name)
-
-Dispatch commands by name
+### [](#dispatch-commands-by-name)Dispatch commands by name
 
 Send a command by including it in your prompt string, the same way you send regular text. Dispatch doesn’t depend on the `skills` option. Sending `/<name>` runs a user-invocable skill even when your `skills` list omits it. Commands that act on conversation history, such as `/compact`, need prior messages to work with. A `/<name>` that matches neither a command in the session nor a built-in Claude Code command doesn’t fail the query. Claude Code sends the prompt to Claude as an ordinary message, with a note that the command didn’t run, so the query spends a model turn and returns Claude’s reply. Before v2.1.274, a `/<name>` that matched nothing returned `Unknown command: /<name>` as the result without a model turn. A `/<name>` that matches a built-in Claude Code command that isn’t available in the session, such as `/theme`, returns `/theme isn't available in this environment.` as the result without a model turn.
 
-A command can hit the `maxTurns` / `max_turns` limit like any other prompt, ending the query with an error result instead of `success`. For the error-result contract, see [Handle the result](agent-sdk-agent-loop.md#handle-the-result). If your command might hit the limit, wrap the loop in a `try`/`catch` in TypeScript or `try`/`except` in Python, as shown in [Single Message Input](agent-sdk-streaming-vs-single-mode.md#single-message-input), or set `maxTurns` high enough for the work to complete.
+When a command reaches the `maxTurns` / `max_turns` limit, the query ends with an error result instead of `success`. For the error-result contract, see [Handle the result](agent-sdk-agent-loop.md#handle-the-result). If your command might hit the limit, do one of these:
 
+- Set `maxTurns` high enough for the work to complete.
+- Wrap the `query()` loop in `try`/`catch` in TypeScript or `try`/`except` in Python.
 
-[​](#compact-history-with-/compact)
-
-Compact history with `/compact`
+### [](#compact-history-with-/compact)Compact history with `/compact`
 
 The `/compact` command reduces the size of your conversation history by summarizing older messages while preserving important context. Compaction needs an existing conversation with enough prior messages to summarize. This example has a conversation first, then compacts it and reads the `compact_boundary` system message that reports the result:
 
@@ -305,17 +284,11 @@ asyncio.run(main())
 
 A `compact_boundary` message only arrives when compaction ran. When a continued session has messages but nothing `/compact` can summarize, the run still ends with a `success` result rather than an error, and no `compact_boundary` message arrives. The result text then carries the reason, for example `Not enough messages to compact.` when the session holds a prompt but no reply from Claude yet. A fresh one-shot `query()` call starts with empty context, so use this pattern in a session with prior turns, for example in [streaming input mode](agent-sdk-streaming-vs-single-mode.md) or when resuming a session.
 
-
-[​](#reset-context-with-/clear)
-
-Reset context with `/clear`
+### [](#reset-context-with-/clear)Reset context with `/clear`
 
 The `/clear` command resets the conversation to an empty context, so subsequent prompts start with no prior conversation history. The previous conversation remains on disk. You can return to that conversation by passing its session ID to the [`resume` option](agent-sdk-sessions.md#resume-by-id). `/clear` is useful in [streaming input mode](agent-sdk-streaming-vs-single-mode.md), where you send multiple prompts over a single connection. For one-shot `query()` calls, each call already starts with empty context, so sending `/clear` has no practical effect. Start a new `query()` instead.
 
-
-[​](#create-skills)
-
-Create skills
+## [](#create-skills)Create skills
 
 Create each skill as a directory containing a `SKILL.md` file with YAML frontmatter and Markdown content. The `description` field determines when Claude invokes your skill. **Example directory structure**:
 
@@ -324,10 +297,7 @@ Create each skill as a directory containing a `SKILL.md` file with YAML frontmat
 └── SKILL.md
 ```
 
-
-[​](#choose-a-discovery-level)
-
-Choose a discovery level
+### [](#choose-a-discovery-level)Choose a discovery level
 
 Save skills at either of the two most common [discovery levels](../08-Plugins-Skills/skills.md#where-skills-live):
 
@@ -336,10 +306,7 @@ Save skills at either of the two most common [discovery levels](../08-Plugins-Sk
 
 If you have existing custom command files in `.claude/commands/`, they keep working. A command file at `.claude/commands/deploy.md` creates `/deploy` and works the same way as a skill at `.claude/skills/deploy/SKILL.md` would. If a command file and a skill share a name, see [Resolve skills that share a name](../08-Plugins-Skills/skills.md#resolve-skills-that-share-a-name) for which one runs. The SDK loads `.claude/commands/` and `~/.claude/commands/` files from the same two scopes as skills. See [Extend Claude with skills](../08-Plugins-Skills/skills.md) for the complete guide to both artifact forms.
 
-
-[​](#create-and-dispatch-your-first-skill)
-
-Create and dispatch your first skill
+### [](#create-and-dispatch-your-first-skill)Create and dispatch your first skill
 
 To see the full flow, create `.claude/skills/security-check/SKILL.md`:
 
@@ -404,10 +371,7 @@ The skill’s name also appears in the init message’s `slash_commands` array.
 
 Claude Code includes bundled `code-review` and `verify` skills. If you name a `.claude/commands/` file after one of them, for example `.claude/commands/code-review.md`, the file’s command shadows the bundled skill and `slash_commands` lists the name once.
 
-
-[​](#pre-approve-tools-for-skills)
-
-Pre-approve tools for skills
+## [](#pre-approve-tools-for-skills)Pre-approve tools for skills
 
 In SDK sessions, you can pre-approve tools for a project or personal skill with the skill’s [`allowed-tools`](../08-Plugins-Skills/skills.md#pre-approve-tools-for-a-skill) frontmatter or with the `allowedTools` option (`allowed_tools` in Python) in your query configuration. If your organization sets [`allowManagedPermissionRulesOnly`](../02-Claude-Code-CLI/settings-reference.md#allowmanagedpermissionrulesonly) in managed settings, Claude Code ignores both. Skills [synced from claude.ai](../08-Plugins-Skills/skills.md#how-claude-code-handles-the-frontmatter-of-a-synced-skill) follow their own frontmatter rules.
 
@@ -454,15 +418,9 @@ for await (const message of query({
 
 In the stream, the skill invocation appears as a Skill tool use, followed by Read calls on the project files. The run ends with a `success` result whose text carries the findings. The list pre-approves the named tools rather than restricting the others. For the full permission flow, including permission modes and the `canUseTool` callback, see [Permissions](agent-sdk-permissions.md).
 
+## [](#troubleshooting)Troubleshooting
 
-[​](#troubleshooting)
-
-Troubleshooting
-
-
-[​](#skills-not-found)
-
-Skills not found
+### [](#skills-not-found)Skills not found
 
 **Check settingSources configuration**: the SDK discovers skills through the `user` and `project` setting sources. If you set `settingSources`/`setting_sources` explicitly and omit those sources, the SDK doesn’t load skills:
 
@@ -529,17 +487,11 @@ ls .claude/skills/*/SKILL.md
 ls ~/.claude/skills/*/SKILL.md
 ```
 
-
-[​](#skill-not-being-used)
-
-Skill not being used
+### [](#skill-not-being-used)Skill not being used
 
 **Check the `skills` option**: if you passed a `skills` list, confirm the skill’s name is included. When Claude tries to invoke an unlisted skill, the Skill tool returns `Skill <name> is not in this session's skills allowlist`. Add the name to your list, or dispatch the skill directly by sending `/<name>` in a prompt, which works without listing. **Check the description**: ensure it’s specific and includes relevant keywords. See [Agent Skills best practices](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md#writing-effective-descriptions) for guidance on writing effective descriptions.
 
-
-[​](#invalid-skill-name-error)
-
-Invalid skill name error
+### [](#invalid-skill-name-error)Invalid skill name error
 
 When a name in your `skills` list can’t work as an exact skill name, `query()` rejects the list before starting the Claude Code process. Names that trigger the rejection include:
 
@@ -570,17 +522,11 @@ ValueError: Invalid skill name 'docs:*': wildcard-suffix names are not allowed; 
 
 An empty name reports `Skill names must be non-empty strings`.Before Python Agent SDK 0.2.129, the SDK didn’t run this check.
 
-
-[​](#additional-troubleshooting)
-
-Additional troubleshooting
+### [](#additional-troubleshooting)Additional troubleshooting
 
 For general skills troubleshooting, such as YAML syntax errors and debugging, see the [Claude Code skills troubleshooting section](../08-Plugins-Skills/skills.md#troubleshooting).
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 The [Claude Code skills guide](../08-Plugins-Skills/skills.md) covers authoring in depth. Its guidance applies to SDK sessions. Start with these sections:
 
@@ -589,10 +535,7 @@ The [Claude Code skills guide](../08-Plugins-Skills/skills.md) covers authoring 
 - [Inject dynamic context](../08-Plugins-Skills/skills.md#inject-dynamic-context): `` !`command` `` lines that run before Claude sees the skill content
 - [Choose where skills load](../08-Plugins-Skills/skills.md#where-skills-live): every skill location, plugin namespacing, and which skill runs when two share a name
 
-
-[​](#related-resources)
-
-Related resources
+## [](#related-resources)Related resources
 
 - [Commands in Claude Code](../02-Claude-Code-CLI/commands.md): the full command surface, including every built-in
 - [Agent Skills overview](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-overview.md): conceptual overview, benefits, and architecture

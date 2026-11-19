@@ -2,30 +2,26 @@
 title: "Activating AI Safety Level 3 protections \\ Anthropic"
 source_url: "https://www.anthropic.com/news/activating-asl3-protections"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:43Z"
+fetched_at: "2026-11-14T06:26:32Z"
 tags: ["news-research"]
 ---
 
 # Activating AI Safety Level 3 protections
 
-- Published
+Published  
+May 22, 2025
 
-  May 22, 2025
+[Safeguards](safeguards.md)
 
-- Category
+Topics  
+- [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+- [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+- [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
 
-  [Safeguards](safeguards.md)
-
-- Topics
-
-  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
-  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
-  - [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-
-  See more...
+See more...
 
 *We have activated the AI Safety Level 3 (ASL-3) Deployment and Security Standards described in Anthropic’s Responsible Scaling Policy (RSP) in conjunction with launching Claude Opus 4. The ASL-3 Security Standard involves increased internal security measures that make it harder to steal model weights, while the corresponding Deployment Standard covers a narrowly targeted set of deployment measures designed to limit the risk of Claude being misused specifically for the development or acquisition of chemical, biological, radiological, and nuclear (CBRN) weapons. These measures should not lead Claude to refuse queries except on a very narrow set of topics.*
 
@@ -47,7 +43,7 @@ Related articles
 
 ### Background
 
-Increasingly capable AI models warrant increasingly strong deployment and security protections. This principle is core to Anthropic’s [Responsible Scaling Policy](https://www-cdn.anthropic.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) (RSP).^([1](#footnote-1))
+Increasingly capable AI models warrant increasingly strong deployment and security protections. This principle is core to Anthropic’s [Responsible Scaling Policy](https://assets.claude.com/872c653b2d0501d6ab44cf87f43e1dc4853e4d37.pdf) (RSP).^([^1])
 
 - **Deployment measures** target specific categories of misuse; in particular, our RSP focuses on reducing the risk that models could be misused for attacks with the most dangerous categories of weapons–CBRN.
 - **Security** **controls** aim to prevent the theft of model weights–the essence of the AI’s intelligence and capability.
@@ -56,13 +52,13 @@ Anthropic’s RSP includes *Capability Thresholds* for models: if models reach t
 
 ### Rationale
 
-We have not yet determined whether Claude Opus 4 capabilities actually require the protections of the ASL-3 Standard. So why did we implement those protections now? We anticipated that we might do this when we launched our last model, Claude Sonnet 3.7. In that case, we determined that the model did not require the protections of the ASL-3 Standard. But we [acknowledged](visible-extended-thinking.md) the very real possibility that given the pace of progress, near future models might warrant these enhanced measures.^([2](#footnote-2)) And indeed, in the lead up to releasing Claude Opus 4, we proactively decided to launch it under the ASL-3 Standard. This approach allowed us to focus on developing, testing, and refining these protections before we needed them.
+We have not yet determined whether Claude Opus 4 capabilities actually require the protections of the ASL-3 Standard. So why did we implement those protections now? We anticipated that we might do this when we launched our last model, Claude Sonnet 3.7. In that case, we determined that the model did not require the protections of the ASL-3 Standard. But we [acknowledged](visible-extended-thinking.md) the very real possibility that given the pace of progress, near future models might warrant these enhanced measures.^([^2]) And indeed, in the lead up to releasing Claude Opus 4, we proactively decided to launch it under the ASL-3 Standard. This approach allowed us to focus on developing, testing, and refining these protections before we needed them.
 
 This approach is also consistent with the RSP, which allows us to err on the side of caution and deploy a model under a higher standard than we are sure is needed. In this case, that meant proactively carrying out the ASL-3 Security and Deployment Standards (and ruling out the need for even more advanced protections). We will continue to evaluate Claude Opus 4’s CBRN capabilities. If we conclude that Claude Opus 4 has not surpassed the relevant Capability Threshold, then we may remove or adjust the ASL-3 protections.
 
 ### Deployment Measures
 
-The new ASL-3 deployment measures are narrowly focused on preventing the model from assisting with CBRN-weapons related tasks of concern,^([3](#footnote-3)) and specifically from assisting with extended, *end-to-end* CBRN workflows in a way that is additive to what is already possible without large language models. This includes limiting *universal jailbreaks*—systematic attacks that allow attackers to circumvent our guardrails and consistently extract long chains of workflow-enhancing CBRN-related information. Consistent with our underlying threat models, ASL-3 deployment measures do not aim to address issues unrelated to CBRN, to defend against non-universal jailbreaks, or to prevent the extraction of commonly available single pieces of information, such as the answer to, “What is the chemical formula for sarin?” (although they may incidentally prevent this). Given the evolving threat landscape, we expect that new jailbreaks will be discovered and that we will need to rapidly iterate and improve our systems over time.
+The new ASL-3 deployment measures are narrowly focused on preventing the model from assisting with CBRN-weapons related tasks of concern,^([^3]) and specifically from assisting with extended, *end-to-end* CBRN workflows in a way that is additive to what is already possible without large language models. This includes limiting *universal jailbreaks*—systematic attacks that allow attackers to circumvent our guardrails and consistently extract long chains of workflow-enhancing CBRN-related information. Consistent with our underlying threat models, ASL-3 deployment measures do not aim to address issues unrelated to CBRN, to defend against non-universal jailbreaks, or to prevent the extraction of commonly available single pieces of information, such as the answer to, “What is the chemical formula for sarin?” (although they may incidentally prevent this). Given the evolving threat landscape, we expect that new jailbreaks will be discovered and that we will need to rapidly iterate and improve our systems over time.
 
 We have developed a three-part approach: making the system more difficult to jailbreak, detecting jailbreaks when they do occur, and iteratively improving our defenses.
 
@@ -70,11 +66,11 @@ We have developed a three-part approach: making the system more difficult to jai
 - **Detecting jailbreaks when they occur.** We have also instituted a wider monitoring system including a [bug bounty program](testing-our-safety-defenses-with-a-new-bug-bounty-program.md) focused on stress-testing our Constitutional Classifiers, offline classification systems, and threat intelligence partnerships to quickly identify and respond to potential universal jailbreaks that would enable CBRN misuse.
 - **Iteratively improving our defenses.** We believe we can rapidly remediate jailbreaks using methods including [generating synthetic jailbreaks](https://arxiv.org/abs/2411.07494) that resemble those we discovered and using those data to train a new classifier.
 
-All these measures will require ongoing refinement, both to improve their effectiveness and because they may still occasionally affect legitimate queries (that is, they may produce false positives).^([4](#footnote-4)) Nevertheless, they represent a substantial advance in defending against catastrophic misuse of AI capabilities.^([5](#footnote-5))
+All these measures will require ongoing refinement, both to improve their effectiveness and because they may still occasionally affect legitimate queries (that is, they may produce false positives).^([^4]) Nevertheless, they represent a substantial advance in defending against catastrophic misuse of AI capabilities.^([^5])
 
 ### Security
 
-Our targeted security controls are focused on protecting model weights—the critical numerical parameters that, if compromised, could allow users to access our models without deployment protections. Our approach involves more than 100 different security controls that combine preventive controls with detection mechanisms, primarily targeting threats from sophisticated non-state actors^([6](#footnote-6)) from initial entry points through lateral movement to final extraction. Many of these controls, such as two-party authorization for model weight access, enhanced change management protocols, and endpoint software controls through binary allowlisting, are examples of following the best practices established by other security-conscious organizations.
+Our targeted security controls are focused on protecting model weights—the critical numerical parameters that, if compromised, could allow users to access our models without deployment protections. Our approach involves more than 100 different security controls that combine preventive controls with detection mechanisms, primarily targeting threats from sophisticated non-state actors^([^6]) from initial entry points through lateral movement to final extraction. Many of these controls, such as two-party authorization for model weight access, enhanced change management protocols, and endpoint software controls through binary allowlisting, are examples of following the best practices established by other security-conscious organizations.
 
 One control in particular, however, is more unique to the goal of protecting model weights: we have implemented preliminary egress bandwidth controls. Egress bandwidth controls restrict the flow of data out of secure computing environments where AI model weights reside. The combined weights of a model are substantial in size. By limiting the rate of outbound network traffic, these controls can leverage model weight size to create a security advantage. When potential exfiltration of model weights is detected through unusual bandwidth usage, security systems can block the suspicious traffic. Over time, we expect to get to the point where rate limits are low enough that exfiltrating model weights before being detected is very difficult—even if an attacker has otherwise significantly compromised our systems. Implementing egress bandwidth controls has been a forcing function to understand and govern the way in which data is flowing outside of our internal systems, which has yielded benefits for our detection and response capabilities.
 
@@ -101,3 +97,15 @@ Read the full [report](https://www.anthropic.com/activating-asl3-report).
 05For more information on our assessment of the effectiveness and sufficiency of these measures, see the [ASL-3 Deployment Safeguards Report](http://anthropic.com/asl3-deployment-safeguards).[](#footnote-ref-5)
 
 06Nation-state threats (other than those using non-novel attack chains) and sophisticated insider risk are out of the scope of the ASL-3 Standard.[](#footnote-ref-6)
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:

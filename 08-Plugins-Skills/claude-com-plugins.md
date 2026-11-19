@@ -2,7 +2,7 @@
 title: "Plugins | Claude Marketplace | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:41Z"
+fetched_at: "2026-11-18T06:27:26Z"
 tags: ["plugins"]
 ---
 
@@ -20,7 +20,7 @@ Claude
 
 Claude Code
 
-529 plugins
+532 plugins
 
 ### [Frontend Design](https://www.claude.com/marketplace/plugins/frontend-design)
 

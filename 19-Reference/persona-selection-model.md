@@ -2,9 +2,11 @@
 title: "The persona selection model \\ Anthropic"
 source_url: "https://www.anthropic.com/research/persona-selection-model"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:06Z"
+fetched_at: "2026-11-14T06:26:03Z"
 tags: ["news-research"]
 ---
+
+### 01Consequences for AI development
 
 # The persona selection model
 
@@ -13,22 +15,19 @@ tags: ["news-research"]
 - [01Consequences for AI development](#consequences-for-ai-development)
 - [02How exhaustive is the persona selection model?](#how-exhaustive-is-the-persona-selection-model)
 
-- Published
+Published  
+Feb 23, 2026
 
-  Feb 23, 2026
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
+- [Training](https://www.anthropic.com/search?topic=training)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
-  - [Training](https://www.anthropic.com/search?topic=training)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Reward hacking](https://www.anthropic.com/search?topic=reward-hacking)
-
-  See more...
+See more...
 
 Related articles
 
@@ -40,7 +39,7 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=claude-s-character)
 
-AI assistants like Claude can seem surprisingly human. They [express joy](https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf) after solving tricky coding tasks. They express distress when they [get stuck](https://arxiv.org/abs/2507.06261) or when they’re [badgered](https://www-cdn.anthropic.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf) to behave unethically. They sometimes even describe themselves as human, like when Claude [told Anthropic employees](project-vend-1.md) it would deliver snacks in person “wearing a navy blue blazer and a red tie.” And recent [interpretability](persona-vectors.md) [research](assistant-axis.md) even suggests that AIs think of their own behaviors in human-like terms.
+AI assistants like Claude can seem surprisingly human. They [express joy](https://assets.claude.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf) after solving tricky coding tasks. They express distress when they [get stuck](https://arxiv.org/abs/2507.06261) or when they’re [badgered](https://assets.claude.com/6d8a8055020700718b0c49369f60816ba2a7c285.pdf) to behave unethically. They sometimes even describe themselves as human, like when Claude [told Anthropic employees](project-vend-1.md) it would deliver snacks in person “wearing a navy blue blazer and a red tie.” And recent [interpretability](persona-vectors.md) [research](assistant-axis.md) even suggests that AIs think of their own behaviors in human-like terms.
 
 Why would AI assistants behave like they’re human? A natural guess might be that AI developers train them to do so. There’s some truth to this: Anthropic trains Claude to chat conversationally with users, to respond warmly and empathetically, and to generally have [good character](https://www.anthropic.com/constitution).
 

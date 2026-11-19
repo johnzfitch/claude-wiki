@@ -2,7 +2,7 @@
 title: "What Certifications has Anthropic obtained? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10015870-what-certifications-has-anthropic-obtained"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:05Z"
+fetched_at: "2026-11-18T06:27:44Z"
 tags: ["news-research"]
 ---
 

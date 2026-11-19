@@ -2,7 +2,7 @@
 title: "Using the Synapse.org Connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12614798-using-the-synapse-org-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:25:42Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["connectors"]
 ---
 

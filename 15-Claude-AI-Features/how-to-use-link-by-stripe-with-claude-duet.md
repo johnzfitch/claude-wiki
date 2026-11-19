@@ -2,7 +2,7 @@
 title: "How to use Link by Stripe with Claude Duet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17666484-how-to-use-link-by-stripe-with-claude-duet"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:36Z"
+fetched_at: "2026-11-18T06:28:09Z"
 tags: ["claude-ai"]
 ---
 
@@ -83,7 +83,7 @@ No. The Stripe connector lets Claude work in your Stripe account, for example to
 
 - Contact **[Link Support](https://support.link.com/topics/link-agent-wallet)** for Link account problems, approval problems, payment-method issues, duplicate or incorrect payment amounts, an unrecognized Link payment, or a payment authorization that remains pending after a failed purchase.
 
-- Contact **[our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** if Claude Duet selected a different product, store, quantity, or option than you requested, or if Claude Duet itself did not work correctly. You can tell Claude Duet what happened directly in the chat and it will pass your report to our team.
+- Contact **[our Support team](how-to-get-support.md)** if Claude Duet selected a different product, store, quantity, or option than you requested, or if Claude Duet itself did not work correctly. You can tell Claude Duet what happened directly in the chat and it will pass your report to our team.
 
 - If you do not recognize a purchase, deny any pending approval requests, disconnect Link from Claude Duet, and contact Link Support promptly.
 

@@ -2,7 +2,7 @@
 title: "Ralph Loop | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/ralph-loop"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:42Z"
+fetched_at: "2026-11-18T06:27:27Z"
 tags: ["plugins"]
 ---
 
@@ -18,7 +18,7 @@ Continuous self-referential AI loops for interactive iterative development, impl
   Claude Code
 - 
 
-  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/0412be76f50ab4f4f8abff3753efa9269fbbca5b/plugins/ralph-loop)
+  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/e0ab6e51219eef74e417a0e1d89e5d53e5e763d4/plugins/ralph-loop)
 - 
 
   Installs196,527

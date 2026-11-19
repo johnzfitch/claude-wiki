@@ -2,7 +2,7 @@
 title: "Frontend Design | Claude by Anthropic"
 source_url: "https://www.claude.com/plugins/frontend-design"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:53Z"
+fetched_at: "2026-11-18T06:26:56Z"
 tags: ["plugins"]
 ---
 
@@ -18,7 +18,7 @@ Frontend design skill for UI/UX implementation
   Claude Code
 - 
 
-  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/0412be76f50ab4f4f8abff3753efa9269fbbca5b/plugins/frontend-design)
+  Plugin source[View source](https://github.com/anthropics/claude-plugins-official/tree/e6143c9807a001832badb63e89d58ffe25d542ec/plugins/frontend-design)
 - 
 
   Installs1,134,112

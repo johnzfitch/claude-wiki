@@ -2,7 +2,7 @@
 title: "MCP connector - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-connector"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:28Z"
+fetched_at: "2026-11-13T06:33:53Z"
 tags: ["api", "authentication", "cli", "mcp"]
 ---
 
@@ -20,20 +20,26 @@ Connect to remote MCP servers directly from the Messages API without an MCP clie
 
 MCP connector
 
-[Status](#availability-feature-support)  
 Beta
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft Foundry
 
-[Beta header](#feature-beta-headers)  
-Varies; see details
+[Beta header](#feature-availability)  
+- Varies; see details
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -961,72 +967,74 @@ The previous version of the MCP connector included tool configuration directly i
 
 ## Availability
 
-MCP connector is in beta on every model.
+MCP connector
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Pass `mcp_servers` and a matching `mcp_toolset` in `tools` on each request. For OAuth servers you get and refresh the access token yourself and pass it as `authorization_token`.
+Status  
+Beta
 
-StatusBeta
+APIs  
+- 
+  Messages API
+  requires either
+  mcp-client-2026-09-15
+  or
+  mcp-client-2025-11-20
+- Managed Agents
 
-Cloud platforms
+Models  
+- All models
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Claude Platform on AWS
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Status  
+Beta
 
-Usage
+APIs  
+- 
+  Messages API
+  requires
+  mcp-client-2025-11-20
+- Managed Agents
 
-Declare MCP servers on the agent. Each session supplies credentials by referencing a vault, so secrets stay out of the agent definition.
+Models  
+- All models
 
-StatusBeta
+Claude Models on Google Cloud (Anthropic managed)
 
-Cloud platforms
+Status  
+Beta
 
-- All supported platforms
+APIs  
+- 
+  Messages API
+  requires
+  mcp-client-2025-11-20
+- Managed Agents
 
-### Required beta headers
+Models  
+- All models
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Microsoft Foundry
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Status  
+Beta
 
-Header
+API  
+- Messages API
 
-- `mcp-client-2026-09-15`
-  
-- or`mcp-client-2025-11-20`
-  
+Beta header  
+Requires
 
-APIs
+mcp-client-2025-11-20
 
-- [Messages API](../Guides/build-with-claude-working-with-messages.md)
-
-Cloud platforms
-
-- Claude API
-
-Header
-
-- `mcp-client-2025-11-20`
-  
-
-APIs
-
-- [Messages API](../Guides/build-with-claude-working-with-messages.md)
-
-Cloud platforms
-
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Models  
+- All models
 
 ### Data handling
 

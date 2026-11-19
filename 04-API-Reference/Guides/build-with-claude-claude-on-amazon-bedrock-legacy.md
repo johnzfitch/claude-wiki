@@ -1,18 +1,18 @@
 ---
-title: "Claude on Amazon Bedrock (Opus 4.6 and earlier) - Claude Platform Docs"
+title: "Claude on Amazon Bedrock (bedrock-runtime) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-on-amazon-bedrock-legacy"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:41Z"
+fetched_at: "2026-11-13T06:36:22Z"
 tags: ["api", "bedrock", "cli", "sdk"]
 ---
 
-# Claude on Amazon Bedrock (Opus 4.6 and earlier)
+# Claude on Amazon Bedrock (bedrock-runtime)
 
 Copy page
 
 
 
-The legacy Amazon Bedrock integration for Claude models, using InvokeModel and Converse APIs with ARN-versioned model identifiers.
+Use Claude models on Amazon Bedrock’s bedrock-runtime endpoint, through the InvokeModel and Converse APIs.
 
 Copy page
 
@@ -20,11 +20,11 @@ The legacy Amazon Bedrock integration for Claude models, using InvokeModel and C
 
 
 
-This page covers the legacy Amazon Bedrock integration: the `InvokeModel` and `Converse` APIs with ARN-versioned model identifiers and AWS event-stream encoding. For models available on the Messages-API Bedrock endpoint, see [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), which uses the Messages API at `/anthropic/v1/messages` with SSE streaming. For an Anthropic-operated alternative with AWS Marketplace billing and typically same-day feature access, see [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md). Existing Bedrock users can follow the [migration guide](build-with-claude-claude-platform-on-aws.md#migrating-from-amazon-bedrock).
+This page covers Amazon Bedrock’s `bedrock-runtime` endpoint: the `InvokeModel` and `Converse` APIs, with AWS event-stream encoding. For models available on the `bedrock-mantle` endpoint, see [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md), which uses the Messages API at `/anthropic/v1/messages` with SSE streaming. For an Anthropic-operated alternative with AWS Marketplace billing and typically same-day feature access, see [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md). Existing Bedrock users can follow the [migration guide](build-with-claude-claude-platform-on-aws.md#migrating-from-amazon-bedrock).
 
 
 
-The latest version of the SDK sends API version `2026-10-21` by default, including through Amazon Bedrock. The ARN-versioned models in the model table on this page don’t support `2026-10-21` on Bedrock, and requests to them that send it can return a 400 error. If you call them through the SDK, keep the SDK on the version you use today, and pin that version where you install it so a later install doesn’t upgrade it. The Boto3 example sets `anthropic_version` in its request body and isn’t affected.
+The latest version of the SDK sends API version `2026-10-21` by default, including through Amazon Bedrock. The models numbered 4.6 or lower in the model table on this page don’t support `2026-10-21` on Bedrock, and requests to them that send it can return a 400 error. If you call them through the SDK, keep the SDK on the version you use today, and pin that version where you install it so a later install doesn’t upgrade it. If you call `InvokeModel` through an AWS SDK such as Boto3, you set `anthropic_version` in the request body yourself. The Anthropic SDK’s new default doesn’t apply to those requests.
 
 To install an SDK for these models, use the commands in [Install an SDK for accessing Bedrock](#install-an-sdk-for-accessing-bedrock), which install the last major version before API version `2026-10-21`.
 
@@ -84,7 +84,7 @@ Go to the [AWS Console \> Bedrock \> Model Access](https://console.aws.amazon.co
 
 
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Haiku 5.5, Claude Opus 4.8, and Claude Opus 4.7 are reachable through `InvokeModel` on `bedrock-runtime`. These requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. For the native Messages API request shape and full feature parity, use that page. These models are omitted from the model table on this page because they do not have ARN-versioned model IDs.
+Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Haiku 5.5, Claude Opus 4.8, and Claude Opus 4.7 are reachable through `InvokeModel` on `bedrock-runtime`. These requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. For the native Messages API request shape and full feature parity, use that page. These models are omitted from the model table on this page. The table does list Claude Fable 5.2 and Claude Mythos 5.2, because `bedrock-runtime` is the only Amazon Bedrock endpoint that serves them.
 
 Lifecycle terms (Deprecated, Retired) are defined in [Model deprecations](../../20-Models/about-claude-model-deprecations.md). Lifecycle dates on partner-operated platforms are set by the partner and can differ from the Claude API schedule. For the current retirement date of any model on Amazon Bedrock, see [Amazon Bedrock’s model lifecycle page](https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle.html).
 
@@ -100,6 +100,8 @@ To call these models, pass an inference profile instead of the base model ID. Th
 
 | Model | Base Bedrock model ID | `global` | `us` | `eu` | `jp` | `apac` |
 |----|----|:---|:---|:---|:---|:---|
+| Claude Fable 5.2 | anthropic.claude-fable-5-2 | Yes | Yes | No | No | No |
+| Claude Mythos 5.2 ([limited availability(opens in new tab)](https://support.claude.com/en/articles/14604842)) | anthropic.claude-mythos-5-2 | Yes | Yes | No | No | No |
 | Claude Opus 4.6 | anthropic.claude-opus-4-6-v1 | Yes | Yes | Yes | Yes | Yes |
 | Claude Opus 4.5 | anthropic.claude-opus-4-5-20251101-v1:0 | Yes | Yes | Yes | No | No |
 | Claude Opus 4.1 ([deprecated](../../20-Models/about-claude-model-deprecations.md)) | anthropic.claude-opus-4-1-20250805-v1:0 | No | Yes | No | No | No |
@@ -259,7 +261,7 @@ For the full feature list with Amazon Bedrock availability, see [Features overvi
 
 ### Supported feature highlights
 
-- [Messages API](../Endpoints/messages-create.md)
+- [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.
 - [Prompt caching](build-with-claude-prompt-caching.md)
 - [Thinking](build-with-claude-thinking.md)
 - [Tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md), including the [Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md), [Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md), [Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md), and [Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)
@@ -280,6 +282,8 @@ For the full feature list with Amazon Bedrock availability, see [Features overvi
 
 The [computer use](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) and [browser use](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) toolsets are available through the InvokeModel API for these models:
 
+- Claude Fable 5.2
+- Claude Mythos 5.2
 - Claude Fable 5.1
 - Claude Fable 5
 - Claude Opus 5.5
@@ -297,15 +301,15 @@ To use one, add an entry of type `computer_toolset_20260801` or `browser_toolset
 
 ### Mid-conversation system messages on Bedrock
 
-[Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) are available through the InvokeModel API for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Haiku 5.5. As described in the note under [API model IDs](#api-model-ids), these requests are served by the same infrastructure as the [Claude in Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md) endpoint. No beta header is required for mid-conversation system messages. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. It is not available for the ARN-versioned models in the model table on this page.
+[Mid-conversation system messages](build-with-claude-mid-conversation-system-messages.md) are available through the InvokeModel API for Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Sonnet 5.5, and Claude Haiku 5.5. This feature is not available on Claude Sonnet 5. Use the top-level `system` field instead. It is not available for the other models in the model table on this page.
 
-A `role: "system"` message can also set `output_config.effort` to [change effort mid-conversation](build-with-claude-effort.md#change-effort-mid-conversation-beta) on Claude Fable 5.1 and Claude Opus 5.5. This is in beta: add `mid-conversation-output-config-2026-07-01` to the `anthropic_beta` array in the request body. Without that value, or on Claude Fable 5, Claude Opus 5, or Claude Opus 4.8, the request returns a 400 error: `messages.N.output_config: Extra inputs are not permitted`. In the error, `N` is the index of the `system` message in `messages`.
+A `role: "system"` message can also set `output_config.effort` to [change effort mid-conversation](build-with-claude-effort-per-message.md) on Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, and Claude Opus 5.5. This is in beta: add `mid-conversation-output-config-2026-07-01` to the `anthropic_beta` array in the request body. Without that value, or on Claude Fable 5, Claude Opus 5, or Claude Opus 4.8, the request returns a 400 error: `messages.N.output_config: Extra inputs are not permitted`. In the error, `N` is the index of the `system` message in `messages`.
 
 **For Converse API users:** the Converse API accepts system instructions through its top-level [`system` parameter](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html). To add system instructions mid-conversation, use the InvokeModel API.
 
 ### Context window
 
-Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, and Claude Haiku 5.5 have a [1M-token context window](build-with-claude-context-windows.md) on Amazon Bedrock. Other Claude models, including Sonnet 4.5 (deprecated) and Sonnet 4 (deprecated), have a 200k-token context window.
+Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, and Claude Haiku 5.5 have a [1M-token context window](build-with-claude-context-windows.md) on Amazon Bedrock. Other Claude models, including Sonnet 4.5 (deprecated) and Sonnet 4 (deprecated), have a 200k-token context window.
 
 Bedrock limits request payloads to 20 MB. When sending large documents or many images, you might reach this limit before the token limit.
 

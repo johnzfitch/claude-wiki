@@ -2,7 +2,7 @@
 title: "Compliance API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/compliance-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:03Z"
+fetched_at: "2026-11-13T06:35:04Z"
 tags: ["api"]
 ---
 
@@ -103,7 +103,7 @@ Anthropic provides two analytics APIs: the Claude Enterprise Analytics API and t
 
 ### OpenTelemetry logging
 
-[Cowork’s OpenTelemetry logging](../../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) stream per-event telemetry, including token, cost, and host metadata, to a collector you run as activity occurs, whereas the Compliance API returns retained per-session transcripts from Anthropic on request and works with your existing Compliance Access Key. OpenTelemetry logging can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OpenTelemetry logging, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
+[Cowork’s OpenTelemetry logging](https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry) and [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md) stream per-event telemetry, including token, cost, and host metadata, to a collector you run as activity occurs, whereas the Compliance API returns retained per-session transcripts from Anthropic on request and works with your existing Compliance Access Key. OpenTelemetry logging can also capture prompts and responses, but Anthropic recommends the Compliance API for retrieving the content of Cowork and Claude Code sessions. For a table comparing local sessions, remote sessions, and OpenTelemetry logging, see the introduction to [Retrieve session transcripts](manage-claude-compliance-sessions.md).
 
 ### Inference hooks
 
@@ -136,6 +136,10 @@ Enumerate linked organizations, members, roles, and directory groups, and read e
 [Design your compliance integration](manage-claude-compliance-integration-patterns.md)
 
 Choose a feed-consumption pattern, plan SIEM correlation, and decide your retention approach.
+
+[Security posture in the Compliance API](manage-claude-compliance-security-posture-overview.md)
+
+Get changes on the Security posture page into your SIEM and other security tools.
 
 [Handle Compliance API errors](manage-claude-compliance-errors.md)
 

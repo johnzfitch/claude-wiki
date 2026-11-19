@@ -2,7 +2,7 @@
 title: "Secure your Managed Agents deployment - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/secure-deployment"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-07T06:23:18Z"
+fetched_at: "2026-11-15T06:23:31Z"
 tags: ["agents", "api", "search", "security"]
 ---
 
@@ -20,18 +20,22 @@ The settings that limit what your agents can reach and do, most important first.
 
 [Managed Agents](managed-agents-overview.md)
 
-[Status](managed-agents-overview.md#availability-feature-support)  
 Beta
 
-[Cloud platforms](managed-agents-overview.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](managed-agents-overview.md#feature-availability)  
+- All models
 
-[Beta header](managed-agents-overview.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](managed-agents-overview.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-overview.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-overview.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 This guide lists the settings that limit what an agent on Claude Managed Agents can reach and do, most important first. Each section links to the page that covers the setting in full.
 
@@ -185,7 +189,7 @@ Leave `allow_mcp_servers` off, which is the default, and list the host of each M
 
 
 
-Network access is granted by host, not by operation. The sandbox can send any request to an allowed host, including uploads such as `git push` and package publishing. It can also use any credential the command supplies, even one that someone hid in text the agent reads.
+The environment grants network access by host, not by operation. The sandbox can send any request to an allowed host, including uploads such as `git push` and package publishing. It can also use any credential the command supplies, even one that someone hid in text the agent reads.
 
 When you choose hosts for `allowed_hosts`, follow these two rules:
 
@@ -272,7 +276,7 @@ A domain list on `web_fetch` does not limit the `bash` tool. [Limit the network]
 
 ## Approve risky actions
 
-Set `auto` on `bash`, `write`, `edit`, and `web_fetch`, and on MCP tools that only read data. Use `always_ask` instead on a tool if you cannot undo its changes outside the sandbox. Also use it on a tool that should not run just because end-user text you relay asks for it. A [permission policy](managed-agents-permission-policies.md) determines whether a tool call runs, waits for your approval, or is evaluated by the server.
+Set `auto` on `bash`, `write`, `edit`, `web_fetch`, and MCP tools that only read data. Use `always_ask` instead on a tool if you cannot undo its changes outside the sandbox. Also use it on a tool if end-user text that you relay should not be enough to make the tool run. A [permission policy](managed-agents-permission-policies.md) determines whether the server allows a tool call, holds it for your approval, or evaluates it.
 
 | Tool | Recommended policy | Why |
 |----|----|----|
@@ -293,6 +297,8 @@ The [`auto` policy](managed-agents-permission-policies.md#let-the-server-evaluat
 A paused session waits indefinitely, so an unattended session needs a client that answers paused calls or interrupts the session.
 
 Review each paused call before you allow it. A client that allows every call without showing it to a person is the same as `always_allow`. See [Respond to confirmation requests](managed-agents-permission-policies.md#respond-to-confirmation-requests) and [See how each call was evaluated](managed-agents-permission-policies.md#see-how-each-call-was-evaluated).
+
+Have a person approve each call to a tool that can move money, such as a tool for payments, withdrawals, transfers, or payouts. If the tool takes a permission policy, set it to `always_ask`, not `always_allow` or `auto`. If it’s a custom tool, don’t run a call until a person has approved it. For text to add to the agent’s system prompt, see [Payments, account numbers, and financial records](../../10-Prompting-Guides/build-with-claude-prompt-engineering-claude-prompting-best-practices.md#payments-account-numbers-and-financial-records).
 
 ## Give the agent the smallest tool set
 
@@ -415,7 +421,7 @@ When an agent must read untrusted input and also act, this guide recommends one 
 
 - **Split reading from acting.** In one multiagent session, a [lead agent](managed-agents-multiagent-orchestration.md#list-the-subagents) gives tasks to a fetcher, which reads the web, and a writer, which changes files or records.
 - **Give the agent one narrow custom tool.** Your application runs the tool, checks its input, and holds the credential. The support agent uses this design, not the split. See [Answer tool calls that pause the session](managed-agents-events-and-streaming.md#answer-tool-calls-that-pause-the-session).
-- **Keep a person in the loop.** Use `always_ask` on the powerful tool so a person approves each call.
+- **Require a person’s approval.** Use `always_ask` on the powerful tool so a person approves each call.
 
 The split uses three agents:
 
@@ -425,7 +431,7 @@ The split uses three agents:
 | Fetcher | Webpages and search results | `web_fetch` and `web_search` only, each with `allowed_domains` | Short results, in a format you ask for in its system prompt |
 | Writer | The task from the lead | The tools that write files, run commands, or change records, on `auto` or `always_ask`. No web tools | Its result |
 
-The fetcher’s results are built from untrusted pages, and the lead can pass their text on to the writer. Keep `auto` or `always_ask` on the writer’s tools. The fetcher can still send some of what it reads to the sites on its `web_fetch` list, and to the search provider in its queries.
+The fetcher builds its results from untrusted pages, and the lead can pass their text on to the writer. Keep `auto` or `always_ask` on the writer’s tools. The fetcher can still send some of what it reads to the sites on its `web_fetch` list, and to the search provider in its queries.
 
 Agents in one multiagent session [share the sandbox](managed-agents-multiagent-orchestration.md#how-it-works), its files, and the vault credentials, so this split separates only their tools and conversations. For a stronger split, use two sessions with separate environments and vaults. Have your application pass only fixed fields, such as an order ID, between the two sessions.
 

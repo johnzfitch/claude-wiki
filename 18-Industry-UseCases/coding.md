@@ -2,7 +2,7 @@
 title: "Coding | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/coding"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:00Z"
+fetched_at: "2026-11-18T06:29:35Z"
 tags: ["case-studies"]
 ---
 
@@ -68,7 +68,7 @@ Write, test, and debug complex software with [Claude](https://claude.ai), analyz
 
 ### Explore agentic coding with Claude Code
 
-Claude Code brings Fable 5.1 to your terminal, with deep codebase awareness and the ability to edit files and run commands directly in your environment.
+Claude Code brings the latest Claude models to your terminal, with deep codebase awareness and the ability to edit files and run commands directly in your environment.
 
 [Learn more](../15-Claude-AI-Features/product-claude-code.md)
 
@@ -138,7 +138,7 @@ Please include a rationale for the classification.
 
 You are an AI assistant specialized in classifying customer support tickets. Your task is to analyze the content of a given ticket and assign it to the most appropriate category from a predefined list. You will also provide reasoning for your classification decision.
 
-First, let's review the available categories:
+First, let’s review the available categories:
 
 \<category_list\>  
 {{CATEGORY_LIST}}  
@@ -181,9 +181,41 @@ Remember to be thorough in your analysis and clear in your explanation. Your goa
 
 ## See why companies choose Claude
 
-> “As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”
+> “We test models on real engineering and trading-desk work. On our agentic coding tasks, Claude Opus 5.5 matched Opus 5’s quality in about half the turns, time and output tokens, cutting the cost of that workload by 40 to 50%. It posted the highest score we’ve recorded on one desk’s trading-support suite, passing tasks earlier Claude models had failed, and topped all eight models on our analysis task.”
 
-Josh Boyer, Distinguished Engineer
+Noyan Tokgozoglu, Global Head of AI Engineering
+
+> “The model is in my head. It understands the intent behind every prompt I’ve given it. I haven’t had to say ‘No, I meant…’ a single time. Projects we’ve been pushing along with other models for weeks got finished and approved by our teammates in a few days with Claude Fable 5.2, and the humans reviewing its code had less to say.”
+
+Joe Haddad, Member of Technical Staff
+
+> “Claude Fable 5.2 says it doesn’t know things instead of hallucinating. At one point it told me its last estimate was wrong and that it wouldn’t give a number until it had measured the change. Very impressive!”
+
+Adhyyan Sekhsaria, Member of Technical Staff
+
+> “You can just throw Claude Fable 5.2 at new, ambiguous systems it has never seen before, and it will figure out how to actually work within them. It’s almost like an incident commander that can send out faster models to get quick signals and coordinate, which removes that burden from me as an operator.”
+
+Matt Lee, Senior Staff Engineer
+
+> “Claude Fable 5.2 is incredible at playing every major role within a research system: defining questions, interpreting, coordinating, and of course finding and implementing the key ideas. Definitely one of the strongest on taste and judgment that we’ve seen. In an internal research automation benchmark, it achieved a full 10% lower error than the next best model.”
+
+Lucas Baker, Head of LLM R&D
+
+> “Claude Fable 5.2 is great for taking a loose idea and refining it. Its answers are really well considered, and within a few turns I can almost always say ‘ok, go do that,’ and trust that it’ll complete it with little intervention. It feels like working with another staff-level engineer.”
+
+Tom Pritchard, Staff Engineer
+
+> “In a single session, Claude Fable 5.2 built a hypervisor, the software that walls off virtual computers sharing one machine. Its core is mathematically proven to keep them apart. More than 3,500 machine-checked proofs cover every case, not just the ones you test. It’s the first model I’ve seen break a problem this large into pieces it can prove, fit them together, and keep taking on more ambitious work. A very clear upgrade from Fable 5.1.”
+
+Sean Ward, Co-Founder and CEO
+
+> “Claude Fable 5.2 is the strongest model we have measured on data-eng-bench, our open-source benchmark of 103 data engineering tasks. It solved tasks consistently across repeated runs and passed every interactive coding task we gave it.”
+
+Bala Kasiviswanathan, VP of AI and Developer Experience
+
+> “I had Claude Fable 5.2 run a 10–12 hour security audit. It sent out about 170 reviewer agents and came back with a write-up, fix pull requests and a policy proposal. It works until the job is actually complete instead of stopping at a plausible checkpoint. Its self-correction and honesty about gaps impressed me. At high effort, I’d use this over what I run today for long unattended audits and doc-heavy work.”
+
+Andrew Mager, Staff Engineer, Agentic Systems
 
 > “Even at its lowest effort setting, Claude Opus 5.5 caught 72% of known bugs in our code reviews to Opus 5’s 56% at high effort, with fewer false alarms and a fraction of the output. On US consulting analysis, low thinking effort matched its higher thinking settings on half the output and passed our quality checks. When more lower thinking efforts are deployed in production, that’s client-ready work delivered efficiently.”
 
@@ -209,41 +241,9 @@ Aleksandar Mitic, Senior Engineer
 
 Noyan Tokgozoglu, Global Head of AI Engineering
 
-> “We're moving our Opus 5 traffic in Devin to Claude Fable 5.1 on launch day. It matched or edged out Fable 5 in our testing at a lower cost per task, and with the new cache read pricing a Fable-class model is finally economical for the workloads we'd kept on Opus, starting with code review.”
+> “The model is in my head. It understands the intent behind every prompt I’ve given it. I haven’t had to say ‘No, I meant…’ a single time. Projects we’ve been pushing along with other models for weeks got finished and approved by our teammates in a few days with Claude Fable 5.2, and the humans reviewing its code had less to say.”
 
-Walden Yan, Co-founder and CPO
-
-> “Claude Fable 5.1 is more comfortable with long, unattended work than Fable 5. I've had workflows run for a long stretch without losing the plot: it keeps its own records, reprioritizes as things change, and picks up where it left off.”
-
-Ben Lafferty, Senior Staff Engineer
-
-> “On the hardest problems we work on, Claude Fable 5.1 separates strongly from any other model we've tried. On a grand challenge-tier problem we've used as a testbed for 18 months, it actually produced material progress. Rather than being trapped in stamp collecting, it made clear white-space connections I have yet to see elsewhere. It also optimized a compute kernel that Fable 5 had tapped out on by about 35%.”
-
-Sean Ward, Co-founder and CEO
-
-> “We had a change that touched more than eight services across three codebases. Claude Fable 5.1 mapped the whole workflow end to end, in extremely fine detail, from the incoming service call down to the individual function and the database tables and rows, and it was accurate all the way down. We appreciated the opportunity to test the model and provide feedback, helping us prepare for a new frontier where we can increasingly rely on these tools to take on bolder initiatives.”
-
-Aditya Gupta, Staff Software Engineer
-
-> “Claude Fable 5.1 is the most capable model we've run on CursorBench 3.2, scoring 73.4% at max effort. We found it especially skilled at verifying its own work, allowing it to take on difficult coding tasks from start to finish.”
-
-Sualeh Asif, Director of ML
-
-> “The standout in Claude Fable 5.1 is the writing: more understandable, more meaningful, and it follows our writing guidance better. In blind tests against Fable 5, I preferred its writing and output. And in Canva Code it built a rhythm game with real music and on-beat gameplay matched to the level it generated, something no other model we tested delivered.”
-
-Danny Wu, Head of AI
-
-> “We asked Claude Fable 5.1 to review a clinical research project for Rakuten Medical that three other frontier models had signed off on. It found a gap none of them had seen and insisted on testing it further. It then proposed a completely new hypothesis, turning a dataset we had written off into a new research direction in one afternoon. It's the first time a frontier model like Claude has empowered us to explore new research in this way.”
-
-Felix Giovanni Virgo, Principal AI Engineer
-
-> “As part of our ongoing evaluation of AI models, Claude Fable 5.1 delivered impressive results in our tests. Using Claude Code, it correctly identified the root cause of every broken build we tested, across all the effort levels. It also communicates more effectively than earlier Anthropic models, with updates that are more concise and easier to follow.”
-
-Josh Boyer, Distinguished Engineer
-
-> “Even at its lowest effort setting, Claude Opus 5.5 caught 72% of known bugs in our code reviews to Opus 5’s 56% at high effort, with fewer false alarms and a fraction of the output. On US consulting analysis, low thinking effort matched its higher thinking settings on half the output and passed our quality checks. When more lower thinking efforts are deployed in production, that’s client-ready work delivered efficiently.”
-
-Carl Bennett, CIO
+Joe Haddad, Member of Technical Staff
 
 1/14
 

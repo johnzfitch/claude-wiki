@@ -2,7 +2,7 @@
 title: "Compaction overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:23Z"
+fetched_at: "2026-11-13T06:36:28Z"
 tags: ["api"]
 ---
 
@@ -26,14 +26,14 @@ If you want to skip this overview, start with [Compaction on demand](build-with-
 
 Use on-demand compaction wherever it is available.
 
-|  | [Compaction on demand](build-with-claude-compaction-on-demand.md) | [Compaction at a token threshold](build-with-claude-compaction-threshold.md) | Your own summarizer ([Compact on the client](build-with-claude-preserved-thinking.md#custom-compaction-on-the-client)) |
+|  | [Compaction on demand](build-with-claude-compaction-on-demand.md) | [Compaction at a token threshold](build-with-claude-compaction-threshold.md) | [Your own summarizer](build-with-claude-compaction-thinking-blocks.md#own-summary) |
 |:---|:---|:---|:---|
 | **Who decides when** | You, by sending a request | The API, when input tokens reach the trigger you set | You |
 | **Code you write** | A [compaction loop](build-with-claude-compaction-on-demand.md#compact-in-a-loop) that requests the summary and swaps it in | One parameter on your ordinary requests | The summarization call, its prompt, and the history rewrite |
 | **What you send back afterward** | The returned block first in `messages`, in place of the messages it summarizes | The response, appended as usual. The API drops what came before the block | Your summary, as a message of your own |
 | **Recent turns stay word for word** | Yes: [Compaction that keeps recent turns](build-with-claude-compaction-keep-recent-turns.md) | Yes, by [pausing after compaction](build-with-claude-compaction-threshold.md#pausing-after-compaction) and reinserting them | Yes |
 | **Runs in the background** | Yes: [Compaction in the background](build-with-claude-compaction-background.md) | No: it runs inside the request that reaches the threshold | Yes, in your own code |
-| **Kept turns keep their thinking**, on models with [preserved thinking](build-with-claude-preserved-thinking.md) | Yes, under the conditions in [Compaction and preserved thinking](build-with-claude-compaction-thinking-blocks.md) | No: strip the thinking from the turns you reinsert, or let the API drop it with `prefix_mismatch_behavior: "drop_block"` (see the [threshold compaction examples](build-with-claude-compaction-threshold.md#examples)) | No: that thinking [fails the prefix check](build-with-claude-preserved-thinking.md#keep-tail-compaction) |
+| **Kept turns keep their thinking**, on models with [preserved thinking](build-with-claude-preserved-thinking.md) | Yes, under the conditions in [Compaction and preserved thinking](build-with-claude-compaction-thinking-blocks.md) | No: strip the thinking from the turns you reinsert, or let the API drop it with `prefix_mismatch_behavior: "drop_block"` (see the [threshold compaction examples](build-with-claude-compaction-threshold.md#examples)) | No: that thinking [fails the prefix check](build-with-claude-compaction-thinking-blocks.md#own-summary) |
 | **Beta header, parameter, and platforms** | `compact-2026-09-04` and the top-level `compaction` parameter. Platforms: see the [on-demand API support section](build-with-claude-compaction-on-demand.md#availability-feature-support) | See the [threshold API support section](build-with-claude-compaction-threshold.md#availability-feature-support) and [Basic usage](build-with-claude-compaction-threshold.md#basic-usage) | None. It runs in your code |
 | **Choose it when** | Your application needs to control when compaction occurs, can’t pause while a summary is written, or must keep recent turns and their thinking | You want the API to manage context inside ordinary requests | You already run your own summarizer and it replaces the whole history with the summary |
 

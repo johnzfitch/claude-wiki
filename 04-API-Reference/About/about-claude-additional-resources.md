@@ -2,7 +2,7 @@
 title: "Additional resources - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/additional-resources"
 category: "04-API-Reference/About"
-fetched_at: "2026-11-06T06:26:45Z"
+fetched_at: "2026-11-14T06:24:34Z"
 tags: ["api"]
 ---
 

@@ -2,38 +2,34 @@
 title: "Funding better evaluations of AI’s impact on wellbeing \\ Anthropic"
 source_url: "https://www.anthropic.com/news/wellbeing-research-grants"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:29:58Z"
+fetched_at: "2026-11-17T06:25:31Z"
 tags: ["evaluation", "news-research"]
 ---
 
 # Funding better evaluations of AI’s impact on wellbeing
 
-- Published
+Published  
+Aug 25, 2026
 
-  Aug 25, 2026
+[Announcements](announcements.md)
 
-- Category
+Topics  
+- [Wellbeing](https://www.anthropic.com/search?topic=wellbeing)
+- [Funding](https://www.anthropic.com/search?topic=funding)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
 
-  [Announcements](announcements.md)
-
-- Topics
-
-  - [Wellbeing](https://www.anthropic.com/search?topic=wellbeing)
-  - [Funding](https://www.anthropic.com/search?topic=funding)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Open source](https://www.anthropic.com/search?topic=open-source)
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-
-  See more...
+See more...
 
 Related articles
 
-- Engineering
+- Frontier Red Team
 
-  Feb 5, 2026
+  Nov 16, 2026
 
-  [Quantifying infrastructure noise in agentic coding evals](infrastructure-noise.md)
+  [Updating our coordinated vulnerability disclosure policy timelines](coordinated-vulnerability-disclosure-timelines.md)
 
 [View more](https://www.anthropic.com/search?topic=wellbeing)
 
@@ -49,7 +45,7 @@ By funding the creation of independent evaluations and benchmarks of user wellbe
 
 ### Towards more effective wellbeing evaluations and benchmarks
 
-As part of this program, we’re [sharing guidance](what-we-look-for-in-a-wellbeing-evaluation.md) from our Safeguards team on what we believe makes a wellbeing evaluation rigorous enough to build on, along with the common challenges that can limit an evaluation’s usefulness.
+As part of this program, we’re [sharing guidance](https://assets.claude.com/5ecb637cb206057cb93cf4a9e72e843fda5e9892.pdf) from our Safeguards team on what we believe makes a wellbeing evaluation rigorous enough to build on, along with the common challenges that can limit an evaluation’s usefulness.
 
 In brief, we’re seeking evaluations that:
 
@@ -59,4 +55,4 @@ In brief, we’re seeking evaluations that:
 - Reflect how users actually use AI (often, this means constructing scenarios that represent multi-turn conversations, where risk escalates and context shifts over the course of a long conversation);
 - Validate their graders against real subject-matter experts.
 
-To learn more about the grant program and apply, [see our application form](https://docs.google.com/forms/d/e/1FAIpQLSfmUDtpfg-ztmQPkCbwx-VAe_urX48sthbqs8GmZUT9irRSDQ/viewform?usp=dialog). For more on building strong wellbeing evaluations and benchmarks, [read our guidance](what-we-look-for-in-a-wellbeing-evaluation.md). Applications are due by September 21; applicants who are selected to submit full proposals will be notified by October 5.
+To learn more about the grant program and apply, [see our application form](https://docs.google.com/forms/d/e/1FAIpQLSfmUDtpfg-ztmQPkCbwx-VAe_urX48sthbqs8GmZUT9irRSDQ/viewform?usp=dialog). For more on building strong wellbeing evaluations and benchmarks, [read our guidance](https://assets.claude.com/5ecb637cb206057cb93cf4a9e72e843fda5e9892.pdf). Applications are due by September 21; applicants who are selected to submit full proposals will be notified by October 5.

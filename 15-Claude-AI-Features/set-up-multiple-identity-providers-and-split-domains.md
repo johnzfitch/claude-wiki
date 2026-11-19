@@ -2,7 +2,7 @@
 title: "Set up multiple identity providers and split domains | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/18246779-set-up-multiple-identity-providers-and-split-domains"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:14Z"
+fetched_at: "2026-11-18T06:28:09Z"
 tags: ["claude-ai"]
 ---
 

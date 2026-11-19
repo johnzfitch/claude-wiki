@@ -2,7 +2,7 @@
 title: "Matillion Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/matillion"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:35Z"
+fetched_at: "2026-11-18T06:29:18Z"
 tags: ["case-studies", "claude-code"]
 ---
 
@@ -30,9 +30,11 @@ Europe
 
 Sophisticated data transformations that took a customer 40 hours now take 1 hour with Maia
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [Matillion](https://www.matillion.com) is a data integration platform that helps data teams build and manage pipelines for AI and analytics. Thousands of enterprises including Cisco, London Stock Exchange Group, and Slack use Matillion for insights, operational analytics, and machine learning applications.
 
@@ -84,6 +86,9 @@ Looking ahead, Matillion plans to expand Maia’s capabilities to capture semant
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -91,6 +96,3 @@ Looking ahead, Matillion plans to expand Maia’s capabilities to capture semant
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

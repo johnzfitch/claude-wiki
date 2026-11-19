@@ -2,7 +2,7 @@
 title: "Why is Claude API usage billed separately from my paid Claude plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9876003-why-is-claude-api-usage-billed-separately-from-my-paid-claude-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:20Z"
+fetched_at: "2026-11-18T06:28:29Z"
 tags: ["api", "billing"]
 ---
 
@@ -15,7 +15,7 @@ Claude paid plans and the Claude Console are separate products designed for diff
 
 - The Claude Console is our developer platform providing API keys and access to Claude models for building applications and integrations.
 
-A paid Claude subscription enhances your chat experience, and the Claude API is billed separately. Claude Max, Ultra, and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](monthly-api-credits-for-max-ultra-and-team-plans-claude-help-center.md)**.
+A paid Claude subscription enhances your chat experience, and the Claude API is billed separately. Claude Max, Ultra, and Team plans include monthly credits for the Claude API. Learn more about **[monthly API credits for Max, Ultra, and Team plans](https://support.claude.com/en/articles/17154008)**.
 
 If you're interested in both enhanced chat features and API access, you'll need to sign up for a paid Claude plan and separately **[set up Console access](https://support.claude.com/en/articles/8114521-how-can-i-access-the-anthropic-api)** for API usage. This allows you to benefit from both offerings based on your specific needs.
 

@@ -2,7 +2,7 @@
 title: "Intro to Claude - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/intro"
 category: "01-Getting-Started"
-fetched_at: "2026-11-05T06:36:16Z"
+fetched_at: "2026-11-13T06:36:35Z"
 tags: ["getting-started"]
 ---
 
@@ -33,9 +33,9 @@ To learn more about each, see [Using the Messages API](../04-API-Reference/Guide
 
 ## Explore the latest generation of Claude models
 
-If you’re unsure which model to use, start with [Claude Opus 5.5](../20-Models/models-opus-5-5-overview.md) for most workloads. Use [Claude Fable 5.1](../20-Models/models-fable-5-1-overview.md) for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use. Each model’s page lists the platforms it’s available on.
+If you’re unsure which model to use, start with [Claude Opus 5.5](../20-Models/models-opus-5-5-overview.md) for most workloads. Use [Claude Fable 5.2](../20-Models/models-fable-5-2-overview.md) for demanding reasoning and long-horizon agentic work, or when your evals on Claude Opus 5.5 at higher effort still fall short. All current models support text and image input, text output, multilingual capabilities, vision, and tool use.
 
-### [Fable 5.1](../20-Models/models-fable-5-1-overview.md)
+### [Fable 5.2](../20-Models/models-fable-5-2-overview.md)
 
 New
 

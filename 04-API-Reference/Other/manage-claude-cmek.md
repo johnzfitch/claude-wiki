@@ -2,7 +2,7 @@
 title: "Customer-managed encryption keys - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:37Z"
+fetched_at: "2026-11-13T06:34:04Z"
 tags: ["api"]
 ---
 

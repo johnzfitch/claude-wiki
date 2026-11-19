@@ -2,16 +2,18 @@
 title: "Claude Cowork and chat are one Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16761823-claude-cowork-and-chat-are-one-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:08Z"
+fetched_at: "2026-11-18T06:28:06Z"
 tags: ["claude-ai"]
 ---
 
 # Claude Cowork and chat are one Claude
 
+Updated today
+
 
 We’re introducing a new way to use both Claude Cowork and chat that removes the distinction between the two products: in the new experience, these are merged into a single conversation, so you don’t need to decide which option better suits your task before getting started. Ask Claude for what you need, and it can decide which tool to use. Claude can answer a quick question, and it can also take on more complex work, like research, reports, spreadsheets, and presentations, and hand it back as finished files you can edit. With the new Claude experience, you ask for all of it in the same conversation, with no mode to choose. What you could previously only do in Claude Cowork is available from any conversation.
 
-The new Claude experience is rolling out gradually, starting with Pro, Max, and Ultra plans on web, desktop, and mobile. On Team plans (in beta) and Enterprise plans, it's available where **Chat and Cowork unified** is turned on.
+The new Claude experience is rolling out gradually to Pro, Max, and Ultra plans on web, desktop, and mobile. On Team and Enterprise plans, it's available where **Chat and Cowork unified** is turned on.
 
 ## Why you might not have it yet
 
@@ -39,7 +41,7 @@ Claude can create documents, spreadsheets with working formulas, and presentatio
 
 ### Create designs, decks, and docs
 
-Claude can build charts, diagrams, and interactive visuals right in the conversation. Learn more in **[Custom visuals in chat and Cowork](custom-visuals-in-chat-and-cowork-claude-help-center.md)**. On paid plans, you can also ask for a design, deck, or doc for work you'll put in front of others. Claude Design makes on-brand visuals and mockups, Claude Slides makes presentations, and Claude Docs makes living documents you write with Claude and your team (Claude Design, Claude Slides, and Claude Docs are in beta.) Edit the result yourself or tell Claude what to change, then share it by link or export it. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
+Claude can build charts, diagrams, and interactive visuals right in the conversation. Learn more in **[Custom visuals in chat and Cowork](https://support.claude.com/en/articles/13979539)**. On paid plans, you can also ask for a design, deck, or doc for work you'll put in front of others. Claude Design makes on-brand visuals and mockups, Claude Slides makes presentations, and Claude Docs makes living documents you write with Claude and your team. Edit the result yourself or tell Claude what to change, then share it by link or export it. Learn more in **[What are artifacts and how do I use them?](https://support.claude.com/en/articles/9487310)**
 
 *Try: "Make a one-page visual summary of this launch plan."*
 
@@ -53,9 +55,9 @@ Apps you've connected to Claude (like Google Drive, Gmail, Microsoft 365, or Sla
 
 - **Files and folders:** In Claude Desktop, give Claude access to a folder on your computer so it can read, organize, and create files there.
 
-- **Browsing:** Claude can open sites, read pages, click, and fill in forms, using the browser built into Claude Desktop or your own Chrome browser through Claude in Chrome. Learn more in **[Use the built-in browser in Claude Cowork](use-the-built-in-browser-in-claude-cowork-claude-help-center.md)**.
+- **Browsing:** Claude can open sites, read pages, click, and fill in forms, using the browser built into Claude Desktop or your own Chrome browser through Claude in Chrome. Learn more in **[Use the built-in browser in Claude Cowork](https://support.claude.com/en/articles/16607400)**.
 
-- **Computer use:** In beta on Pro, Max, and Ultra plans, Claude can use apps on your computer directly by clicking, typing, and navigating your screen. Learn more in **Let Claude use your computer in Cowork**.
+- **Computer use:** In beta on Pro, Max, and Ultra plans, Claude can use apps on your computer directly by clicking, typing, and navigating your screen. Learn more in **[Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542)**.
 
 Claude reaches your local files, the built-in browser, and computer use only while Claude Desktop is open, and by default it asks before permanently deleting any files.
 
@@ -81,11 +83,13 @@ A task you start at your desk shows up in Claude Mobile too, so you can see how 
 
 A permission setting in the message box controls how independently Claude works:
 
-- **Auto (default on Pro, Max, Ultra, and Team plans):** Claude keeps working without stopping to ask about each step, and automated safety checks run before it takes an action.
+- **Auto (rolling out as the default on Pro, Max, Ultra, and Team plans):** Claude keeps working without stopping to ask about each step, and automated safety checks run before it takes an action.
 
-- **Manual (default on Enterprise plans):** Claude asks before it takes actions, and you choose whether to allow each one.
+- **Manual (default on Enterprise plans, except in the Cowork side panel in Chrome):** Claude asks before it takes actions, and you choose whether to allow each one.
 
 You can change the setting at any time, and you can stop or redirect Claude while it works. The setting applies to the whole conversation. For work with real consequences, like sending messages or changing important files, stay close and review what Claude does. Learn more in **[Use Claude Cowork safely](https://support.claude.com/en/articles/13364135)**.
+
+You can also set a connector tool to "Always ask." Claude is built to ask before each use of that tool. Learn more in **[Have Claude always ask before using a connector tool](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork#h_b24dec5b5a)**.
 
 ## Pick up where you left off
 
@@ -115,21 +119,9 @@ In the new experience, everything Claude Cowork does is available from any conve
 
 - **Memory from local tasks:** Memory from Cowork tasks that ran only on your computer stays with those tasks.
 
-## Current limitations
-
-- **Add from GitHub** isn't supported.
-
-- **Branching a conversation** from an earlier point isn't available.
-
-- **Incognito chats** still work, but they open in the previous experience, so Claude can't create files or run code in them.
-
-- **Search** doesn't include older Cowork tasks. It covers your chats and new conversations, and you can still find older tasks by name in **[Recents](https://claude.ai/chats)**.
-
-- **Dispatch** isn't available to new users. If you already use Dispatch, you can keep using it for now. Learn more in **[Assign tasks from anywhere in Claude Cowork](https://support.claude.com/en/articles/13947068)**.
-
 ## How usage works
 
-Everything you do with Claude counts toward your plan's usage limits. Longer agentic tasks that search the web, run code, or create files generally use more than a quick question. While the new experience rolls out, usage may be measured slightly differently for accounts that have it and accounts that don’t. Check your current usage in **[Settings \> Usage](https://claude.ai/settings/usage)**, and learn more in **[Usage limit best practices](https://support.claude.com/en/articles/9797557)**.
+Everything you do with Claude counts toward your plan's usage limits. Longer agentic tasks that search the web, run code, or create files generally use more than a quick question. While the new experience rolls out, usage may be measured slightly differently for accounts that have it and accounts that don’t. Check your current usage in **[Settings \> Usage](https://claude.ai/settings/usage)**, and learn more in **[Usage limit best practices](../17-Billing-Plans/usage-limit-best-practices-claude-help-center.md)**.
 
 ## Get started
 
@@ -142,3 +134,15 @@ Open Claude and describe what you need, the way you'd brief a colleague. You'll 
 - **Inputs Claude will need:** the files, links, or apps Claude should work from.
 
 Not sure where to start? Ask Claude what it can help with.
+
+## Current limitations
+
+- **Add from GitHub** isn't supported.
+
+- **Branching a conversation** from an earlier point isn't available.
+
+- **Incognito chats** still work, but they open in the previous experience, so Claude can't create files or run code in them.
+
+- **Search** doesn't include older Cowork tasks. It covers your chats and new conversations, and you can still find older tasks by name in **[Recents](https://claude.ai/chats)**.
+
+- **Dispatch** isn't available to new users. If you already use Dispatch, you can keep using it for now. Learn more in **[Assign tasks from anywhere in Claude Cowork](https://support.claude.com/en/articles/13947068)**.

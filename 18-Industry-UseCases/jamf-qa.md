@@ -2,7 +2,7 @@
 title: "Jamf Claude Cowork case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/jamf-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:06Z"
+fetched_at: "2026-11-18T06:29:16Z"
 tags: ["case-studies", "cli"]
 ---
 
@@ -91,6 +91,9 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -98,6 +101,3 @@ Any organization can now purchase Claude Enterprise directly—no sales conversa
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

@@ -2,9 +2,9 @@
 title: "Extension Support Matrix - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/extensions/client-matrix"
 category: "06-MCP-Tools/Extensions"
-fetched_at: "2026-11-03T06:23:27Z"
-last_modified: "Tue, 03 Nov 2026 00:42:46 GMT"
-tags: ["mcp", "mcp-extensions"]
+fetched_at: "2026-11-16T06:24:51Z"
+last_modified: "Mon, 16 Nov 2026 04:15:36 GMT"
+tags: ["cli", "mcp", "mcp-extensions"]
 ---
 
 ## On this page
@@ -27,10 +27,7 @@ This matrix shows which MCP clients support each [official extension](extensions
 
 This list is maintained by the community. If you notice any inaccuracies or would like to add or update information, please [submit a pull request](https://github.com/modelcontextprotocol/modelcontextprotocol/pulls).
 
-
-[​](#extension-overview)
-
-Extension overview
+## [](#extension-overview)Extension overview
 
 | Extension | Identifier | Description |
 |----|----|----|
@@ -39,10 +36,7 @@ Extension overview
 | [Enterprise-Managed Authorization](extensions-auth-enterprise-managed-authorization.md) | `io.modelcontextprotocol/enterprise-managed-authorization` | Centralized access control via enterprise IdP |
 | [Skills over MCP](extensions-skills-overview.md) | `io.modelcontextprotocol/skills` | Discover skills and read their instructions and supporting files |
 
-
-[​](#support-matrix)
-
-Support matrix
+## [](#support-matrix)Support matrix
 
 | Client | [MCP Apps](extensions-apps-overview.md) | [OAuth Client Credentials](extensions-auth-oauth-client-credentials.md) | [Enterprise Auth](extensions-auth-enterprise-managed-authorization.md) | [Skills](extensions-skills-overview.md) | [Tasks](extensions-tasks-overview.md) |
 |----|:--:|:--:|:--:|:--:|:--:|
@@ -60,16 +54,13 @@ Support matrix
 | [PostHog Code](https://posthog.com/code/) |  |  |  |  |  |
 | [Kiro Crew](https://kiro.dev/crew/) |  |  |  |  |  |
 | [fast-agent](https://github.com/evalstate/fast-agent) |  |  |  | [Partial](https://github.com/evalstate/fast-agent/blob/main/docs/docs/mcp/skills-over-mcp.md) |  |
-| [MCP Inspector](https://github.com/modelcontextprotocol/inspector) |  |  |  | [Partial](https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md#skill-verification---verify) |  |
+| [MCP Inspector](https://github.com/modelcontextprotocol/inspector) | [Partial](https://github.com/modelcontextprotocol/inspector/blob/main/docs/mcp-app-review.md) |  |  | [Partial](https://github.com/modelcontextprotocol/inspector/blob/main/clients/cli/README.md#skill-verification---verify) |  |
 | [mcpc MCP CLI](https://github.com/apify/mcpc) |  |  |  |  |  |
 | [Glean](https://www.glean.com/) |  |  |  |  |  |
 
-Auth extension support (OAuth Client Credentials and Enterprise-Managed Authorization) is tracked separately from the core MCP authorization features (DCR, CIMD). Check each extension’s specification and the [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth) for the latest implementation status.
+Auth extension support (OAuth Client Credentials and Enterprise-Managed Authorization) is tracked separately from the core MCP authorization features. Check each extension’s specification and the [ext-auth repository](https://github.com/modelcontextprotocol/ext-auth) for the latest implementation status.
 
-
-[​](#adding-extension-support-to-your-client)
-
-Adding extension support to your client
+## [](#adding-extension-support-to-your-client)Adding extension support to your client
 
 If you’re building an MCP client and want to implement extension support:
 

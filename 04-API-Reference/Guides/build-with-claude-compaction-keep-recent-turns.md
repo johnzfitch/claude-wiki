@@ -2,7 +2,7 @@
 title: "Compaction that keeps recent turns - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-keep-recent-turns"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-08T06:24:19Z"
+fetched_at: "2026-11-16T06:24:44Z"
 tags: ["api"]
 ---
 
@@ -23,18 +23,26 @@ Keep-tail compaction
 Feature of  
 [On-demand compaction](build-with-claude-compaction-on-demand.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
+
 [APIs](#feature-availability)  
-Messages APIAvailable
+- Messages API
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
-[Beta header](#feature-beta-headers)  
-- `compact-2026-09-04`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`compact-2026-09-04`
 
 Keep-tail compaction keeps the last few turns of a conversation word for word after the summary. It changes two things in the [compaction loop](build-with-claude-compaction-on-demand.md#compact-in-a-loop): which messages go into the compaction request, and what you send after the block. Everything in [Continue from the summary](build-with-claude-compaction-on-demand.md#continue-from-the-summary) applies unchanged.
 
@@ -164,46 +172,125 @@ The program’s cut, between a reply and the next `user` message, meets that con
 
 ## Availability
 
-Keep-tail compaction is in beta on select models.
+Keep-tail compaction
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-Models
+Beta header  
+Requires
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+compact-2026-09-04
 
-StatusBeta
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
 
-Cloud platforms
+Amazon Bedrock
 
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
+Status  
+Beta
 
-Models
+API  
+- Messages API
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- All other models
+Beta header  
+Requires
 
-### Required beta headers
+compact-2026-09-04
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Claude Platform on AWS
 
-Header
+Status  
+Beta
 
-- `compact-2026-09-04`
-  
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5

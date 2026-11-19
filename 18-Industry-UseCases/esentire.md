@@ -2,7 +2,7 @@
 title: "eSentire Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/esentire"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:30Z"
+fetched_at: "2026-11-18T06:28:57Z"
 tags: ["agents", "api", "case-studies", "security"]
 ---
 

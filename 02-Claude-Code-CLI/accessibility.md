@@ -2,7 +2,8 @@
 title: "Use Claude Code with a screen reader - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/accessibility"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-28T06:35:51Z"
+fetched_at: "2026-11-13T06:33:23Z"
+last_modified: "Fri, 13 Nov 2026 06:21:51 GMT"
 tags: ["claude-code"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Automated security reviews in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:37Z"
+fetched_at: "2026-11-18T06:27:42Z"
 tags: ["claude-code", "git", "github", "security"]
 ---
 

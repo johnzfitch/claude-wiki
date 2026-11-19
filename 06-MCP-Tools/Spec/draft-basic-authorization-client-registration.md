@@ -2,8 +2,8 @@
 title: "Client Registration - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/authorization/client-registration"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-11-09T06:25:44Z"
-last_modified: "Mon, 09 Nov 2026 03:10:18 GMT"
+fetched_at: "2026-11-10T06:28:37Z"
+last_modified: "Tue, 10 Nov 2026 04:11:57 GMT"
 tags: ["cli", "mcp", "mcp-spec"]
 ---
 

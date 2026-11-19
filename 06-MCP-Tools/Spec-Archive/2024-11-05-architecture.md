@@ -2,8 +2,8 @@
 title: "Architecture - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2024-11-05/architecture"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:24:36Z"
-last_modified: "Sat, 31 Oct 2026 06:22:51 GMT"
+fetched_at: "2026-11-10T06:27:49Z"
+last_modified: "Tue, 10 Nov 2026 04:28:42 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -131,7 +131,7 @@ The Model Context Protocol uses a capability-based negotiation system where clie
 
 Each capability unlocks specific protocol features for use during the session. For example:
 
-- Implemented [server features](../Spec/draft-server.md) must be advertised in the server’s capabilities
+- Implemented [server features](2025-06-18-server.md) must be advertised in the server’s capabilities
 - Emitting resource subscription notifications requires the server to declare subscription support
 - Tool invocation requires the server to declare tool capabilities
 - [Sampling](2024-11-05-client-sampling.md) requires the client to declare support in its capabilities

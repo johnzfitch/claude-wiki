@@ -2,8 +2,8 @@
 title: "Let Claude use your computer from the CLI - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/computer-use"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-31T06:24:15Z"
-last_modified: "Sat, 31 Oct 2026 01:07:51 GMT"
+fetched_at: "2026-11-13T06:32:35Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["claude-code", "cli"]
 ---
 

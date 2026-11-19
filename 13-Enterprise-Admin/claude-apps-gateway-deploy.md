@@ -2,9 +2,9 @@
 title: "Claude apps gateway deployment and operations - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-apps-gateway-deploy"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-06T06:26:36Z"
-last_modified: "Fri, 06 Nov 2026 05:16:28 GMT"
-tags: ["claude-code", "enterprise"]
+fetched_at: "2026-11-17T06:24:26Z"
+last_modified: "Tue, 17 Nov 2026 03:28:14 GMT"
+tags: ["claude-code", "enterprise", "security"]
 ---
 
 ## On this page
@@ -21,6 +21,7 @@ Back to top
   - [Large rollouts](#large-rollouts)
 - [Operations](#operations)
   - [Logs](#logs)
+  - [Write operational logs as JSON](#write-operational-logs-as-json)
   - [Health](#health)
   - [Concurrent upstream requests](#concurrent-upstream-requests)
   - [Keep API_TIMEOUT_MS above the gateway’s time to first byte](#keep-api_timeout_ms-above-the-gateways-time-to-first-byte)
@@ -67,10 +68,7 @@ This page covers the operational side of running [Claude apps gateway](claude-ap
 
 If a sign-in or boot fails along the way, go straight to [Troubleshooting](#troubleshooting), which is keyed on the error you see.
 
-
-[​](#identity-provider-setup)
-
-Identity provider setup
+## [](#identity-provider-setup)Identity provider setup
 
 Register a confidential OAuth/OpenID Connect (OIDC) web application with a single redirect URI, `https://<gateway>/oauth/callback`, and assign it to the users or groups who should have gateway access. The gateway authenticates to the IdP with the registration’s client secret, or with a certificate you upload to the registration if your IdP uses [certificate credentials](claude-apps-gateway-config.md#certificate-client-authentication) instead. Any OIDC-compliant IdP works: Okta, Microsoft Entra ID, Google Workspace, Keycloak, Dex, PingFederate, and others. The IdP must meet three requirements:
 
@@ -86,10 +84,7 @@ For private PKI, set `oidc.ca_cert_pem`. A few providers handle email and group 
 
 Refresh tokens let the gateway renew a developer’s session silently, without sending the developer back to the browser. They also drive deprovisioning, because when the IdP disables a user, the next refresh fails and the session ends within `ttl_hours`. The gateway requests `offline_access` by default to get a refresh token. If your IdP requires explicit consent for offline access, configure the OAuth client to allow it.If your IdP can’t issue refresh tokens at all, the gateway still works, but there is no silent renewal, so developers re-run the browser login when their session expires. To keep that from happening every hour, raise [`session.ttl_hours`](claude-apps-gateway-config.md#session) to `8` or `12`. The tradeoff is deprovisioning latency, because without refresh tokens a disabled user keeps access until the longer TTL elapses.
 
-
-[​](#deployment)
-
-Deployment
+## [](#deployment)Deployment
 
 The gateway is a single stateless Linux binary that coordinates through Postgres, so deploy it the way you deploy any other stateless service in your environment. Keep it inside your network, where your developers can reach it over HTTPS and it can reach your IdP, and treat it like any service holding a production credential. A few decisions shape the deployment beyond where it runs:
 
@@ -98,17 +93,14 @@ The gateway is a single stateless Linux binary that coordinates through Postgres
 - **Multiple gateways**: each is a separate deployment with its own config, and the CLI stores trust and credentials per gateway hostname, so teams can use different gateways without conflict. To serve multiple OIDC issuers, run separate instances.
 - **Serverless**: Cloud Run works if you set `min-instances: 1` to avoid cold OIDC discovery. Lambda and Cloud Functions don’t work, because the gateway is a long-running HTTP server.
 
-Every production topology here puts an L7 proxy, such as an Ingress, Cloud Run’s front end, or an ALB, in front of plain-HTTP replicas. Set [`listen.trusted_proxies`](claude-apps-gateway-config.md#listen) to the proxy’s source ranges so the gateway reads client IPs from `X-Forwarded-For`. The gateway honors the header only when the TCP peer is trusted. The [Google Cloud](claude-apps-gateway-on-gcp.md) and [AWS](claude-apps-gateway-on-aws.md) worked examples have concrete values per topology. Without trusted proxies, every request appears to come from the proxy’s IP, which collapses per-IP rate limits into one shared bucket and records the proxy’s IP in audit events. Don’t redirect requests to the gateway’s device-authorization and token endpoints, for example with an HTTP-to-HTTPS or host-canonicalization rewrite at the ingress. Claude Code doesn’t follow redirects on those requests, so an ingress rule that redirects them breaks sign-in and token refresh. Give the proxy any idle timeout longer than the gateway’s keepalive interval, which depends on the upstream:
+Every production topology here puts an L7 proxy, such as an Ingress, Cloud Run’s front end, or an ALB, in front of plain-HTTP replicas. Set [`listen.trusted_proxies`](claude-apps-gateway-config.md#listen) to the proxy’s source ranges so the gateway reads client IPs from `X-Forwarded-For`. The gateway honors the header only when the TCP peer is trusted. The [Google Cloud](claude-apps-gateway-on-gcp.md) and [AWS](claude-apps-gateway-on-aws.md) worked examples have concrete values per topology. Without trusted proxies, every request appears to come from the proxy’s IP, which collapses per-IP rate limits into one shared bucket and records the proxy’s IP in audit events. Don’t redirect requests bound for the gateway’s device-authorization and token endpoints, for example with an HTTP-to-HTTPS or host-canonicalization rewrite at the ingress. Claude Code doesn’t follow redirects on those requests, so an ingress rule that redirects them breaks sign-in and token refresh. Give the proxy any idle timeout longer than the gateway’s keepalive interval, which depends on the upstream:
 
 - On every upstream except `provider: anthropic`, the gateway writes an SSE `ping` once a stream has been silent for about 15 seconds.
 - On `provider: anthropic`, the gateway passes the response through unchanged, including the Anthropic API’s own pings.
 
 A default such as the ALB’s 60 seconds is enough to keep a quiet stream open. The [AWS worked example](claude-apps-gateway-on-aws.md#troubleshooting) raises it to an hour anyway, and its troubleshooting row covers gateways older than v2.1.229, which sent nothing during quiet periods on the upstreams that now get pings.
 
-
-[​](#choose-an-address-for-the-gateway)
-
-Choose an address for the gateway
+### [](#choose-an-address-for-the-gateway)Choose an address for the gateway
 
 Claude Code accepts a gateway’s address in one of two ways:
 
@@ -117,10 +109,7 @@ Claude Code accepts a gateway’s address in one of two ways:
 
 If no single block contains both, give the gateway a private address instead.
 
-
-[​](#container-image)
-
-Container image
+### [](#container-image)Container image
 
 Build your own image around the native `claude` binary from the standard Claude Code release:
 
@@ -130,14 +119,11 @@ Build your own image around the native `claude` binary from the standard Claude 
 
 Mirror the release into your internal registry if your builds can’t reach the release host, and pin the version your fleet runs. Beyond the binary, the image needs:
 
-- **A glibc-based image**: the glibc build’s only dynamic dependencies are glibc libraries. Musl-based images need the `linux-x64-musl` or `linux-arm64-musl` build plus additional packages; see [Alpine Linux setup](../01-Getting-Started/setup.md#alpine-linux-and-musl-based-distributions).
+- **A glibc-based image**: the glibc build’s only dynamic dependencies are glibc libraries. Musl-based images need the `linux-x64-musl` or `linux-arm64-musl` build, whose only dynamic dependency is musl.
 - **A writable state directory**: the gateway runs as any user, but minimal images have no writable home. Set `CLAUDE_CONFIG_DIR` to a writable path such as `/tmp/.claude`.
 - **The container command**: `claude gateway --config /etc/claude/gateway.yaml`, with the config file mounted read-only and secrets supplied as environment variables; the gateway listens on `listen.port`, default `8080`.
 
-
-[​](#kubernetes)
-
-Kubernetes
+### [](#kubernetes)Kubernetes
 
 Run the gateway as a Deployment, like any stateless service:
 
@@ -147,10 +133,7 @@ Run the gateway as a Deployment, like any stateless service:
 
 For a complete worked example on AWS, covering ECS Fargate or EKS, Amazon RDS, and AWS Secrets Manager, see [Deploy on AWS](claude-apps-gateway-on-aws.md). Prefer the platform’s workload identity over static keys; the [`upstreams` reference](claude-apps-gateway-config.md#upstreams) has per-platform setup details. For a cross-cloud pairing, such as an Amazon Bedrock upstream on GKE, set explicit credentials in the upstream’s `auth` block instead.
 
-
-[​](#cloud-run)
-
-Cloud Run
+### [](#cloud-run)Cloud Run
 
 Configure the service as follows:
 
@@ -161,21 +144,15 @@ Configure the service as follows:
 
 For a complete worked example on Google Cloud, covering Cloud Run or GKE, Cloud SQL, and Secret Manager, see [Deploy on Google Cloud](claude-apps-gateway-on-gcp.md).
 
-
-[​](#push-the-gateway-url-to-developer-machines)
-
-Push the gateway URL to developer machines
+### [](#push-the-gateway-url-to-developer-machines)Push the gateway URL to developer machines
 
 Once the gateway is serving, push `forceLoginMethod`, `forceLoginGatewayUrl`, and `parentSettingsBehavior: "merge"` to each developer’s machine through managed settings, via MDM or by writing the per-OS `managed-settings.json` directly. Once you deploy the keys, Claude Code stops using a leftover API key or claude.ai login on the machine, so plan the push together with your sign-in instructions. [Administrator policy requires a Cloud gateway sign-in](../02-Claude-Code-CLI/errors.md#administrator-policy-requires-a-cloud-gateway-sign-in) describes the messages developers see. See [where each mechanism stores the policy](managed-settings.md#where-each-mechanism-stores-the-policy) for the file paths, and [Client-side managed settings](claude-apps-gateway-config.md#client-side-managed-settings) for the Claude Desktop `bootstrapUrl` equivalent.
 
-
-[​](#large-rollouts)
-
-Large rollouts
+### [](#large-rollouts)Large rollouts
 
 Sign-in is rate limited per client IP address, and the defaults suit a small team. Each address gets 30 sign-in starts and 10 code submissions every 10 minutes. A rollout to thousands of developers can reach those limits on the first morning, for one of two reasons:
 
-- **The gateway can’t see past your load balancer.** Without [`listen.trusted_proxies`](claude-apps-gateway-config.md#listen), every developer appears to come from the load balancer’s address and shares one limit. Set it before anything else. The gateway logs a warning the first time it ignores an `X-Forwarded-For` header.
+- **The gateway can’t see past your load balancer.** Without [`listen.trusted_proxies`](claude-apps-gateway-config.md#listen), every developer appears to come from the load balancer’s address and shares one limit. The gateway logs a warning the first time it ignores an `X-Forwarded-For` header. If the load balancer [belongs in `listen.trusted_proxies`](claude-apps-gateway-config.md#listen), list it before you change anything else. If developers still share one address, raise [`rate_limits`](claude-apps-gateway-config.md#http-tuning).
 - **Many developers share a few NAT or VPN egress addresses.** They share those addresses’ limits even when `trusted_proxies` is right. Raise [`rate_limits`](claude-apps-gateway-config.md#http-tuning) to fit.
 
 To size `max`, divide the developers by the egress addresses they share. Estimate how many of those sign in within one `window_seconds` period, which is 10 minutes by default. Then double it to cover retries and developers who sign in to both Claude Code and Claude Desktop. For example, 10,000 developers behind 4 egress addresses sign in evenly over an hour. That is 2,500 developers per address and about 420 of them in each 10 minutes, which you double and round up to 1,000. The example below sets both limits to 1,000:
@@ -188,17 +165,11 @@ rate_limits:
 
 `device_verify` is what stops someone from guessing another developer’s sign-in code, so raise it only as far as your estimate needs. Even at these limits, a code is 8 characters from a 20-character alphabet and expires after 10 minutes, so guessing stays impractical; see [User-code brute-force resistance](#user-code-brute-force-resistance). When your IdP issues refresh tokens, Claude Code renews sessions silently, so you can put the limit back after the rollout. Without refresh tokens, developers sign in again every [`session.ttl_hours`](claude-apps-gateway-config.md#session). Size both limits for that steady rate too and leave them raised. When a limit is reached, Claude Code v2.1.274 or later shows `The gateway is limiting sign-in attempts right now`. A gateway on v2.1.274 or later shows `Too many attempts came from your network address` on the verification page, with the settings to check. It also writes a `sign-in refused` log line that names the setting to change.
 
-
-[​](#operations)
-
-Operations
+## [](#operations)Operations
 
 Once the gateway is serving traffic, day-to-day operation is reading its logs, probing its health, and rotating its secrets on your schedule. The subsections cover each, plus what Postgres holds and how upgrades and rollbacks behave.
 
-
-[​](#logs)
-
-Logs
+### [](#logs)Logs
 
 The gateway writes two streams to stderr, both JSON-friendly:
 
@@ -214,17 +185,21 @@ The gateway writes two streams to stderr, both JSON-friendly:
   - `admin.denied` records a rejected admin-API auth attempt with the client IP, method, path, and a reason, without the presented key material: `invalid_key` when an `x-api-key` was presented but matched no configured key, `bearer_rejected` when only an `Authorization` header was presented and it didn’t verify as a gateway session in `admin.admin_groups`, or `no_credentials` when neither header was presented
 - **Operational logs**: human-readable `[gateway]`-prefixed lines for boot, warnings, and upstream errors. The `CLAUDE_GATEWAY_LOG_LEVEL` environment variable controls verbosity and accepts `debug`, `info`, `warn`, or `error`, with `info` as the default. At `debug`, each sign-in and refresh also logs the names, not the values, of the claims in the id_token, plus the names of the userinfo claims when `userinfo_fallback` supplied any, so you can diagnose `email_claim` and `groups_claim` settings without logging PII. It doesn’t affect audit events, which are always emitted.
 
+#### [](#write-operational-logs-as-json)Write operational logs as JSON
 
-[​](#health)
+If your log collector reads each line’s level from a JSON field, set `CLAUDE_GATEWAY_LOG_FORMAT=json` in the gateway’s environment. Requires Claude Code v2.1.319 or later on the gateway server. Each operational log line is then one object with `severity`, `time`, and `message`:
 
-Health
+```python
+{"severity":"INFO","time":"2026-11-04T17:03:21.512Z","message":"claude gateway listening on http://0.0.0.0:8080"}
+```
+
+`severity` is the log level in capitals, with `warn` written as `WARNING`. A failed start is an `ERROR` line. Audit events, which also go to stderr, don’t change. They carry `ts` and `evt`, and no `severity`.
+
+### [](#health)Health
 
 The gateway serves `GET /healthz` as a liveness probe and `GET /readyz` as a readiness probe. `/readyz` verifies the store is reachable. If you set [`store.readiness_grace_seconds`](claude-apps-gateway-config.md#store), `/readyz` keeps reporting ready for up to that many seconds after the store stops answering. Both endpoints are exempt from `access_control.allow_cidrs`, so probes keep working on a locked-down listener. The OAuth discovery document at `/.well-known/oauth-authorization-server` also returns `200` only after config load, OIDC discovery, upstream client construction, and Postgres migration all succeed, so it doubles as an end-to-end boot check.
 
-
-[​](#concurrent-upstream-requests)
-
-Concurrent upstream requests
+### [](#concurrent-upstream-requests)Concurrent upstream requests
 
 By default, each gateway replica sends at most 256 requests upstream at the same time. A streaming response counts against the limit until the stream ends. A request that arrives while a replica is at the limit waits inside the gateway for a free slot. The developer sees a response that is slow to start or appears to hang. On a `provider: anthropic` upstream, a request that waits longer than [`timeouts.upstream_ttfb_ms`](claude-apps-gateway-config.md#http-tuning) gives up on that upstream, and fails with a 502 when no later upstream serves it. The startup log line that contains `upstream requests:` shows the limit in effect. While a replica has more requests open than the limit, it also logs a warning that contains `client requests are open`, at most once a minute. To serve more requests at once, you have two options:
 
@@ -237,10 +212,7 @@ Every open request holds memory in the gateway process while it streams and whil
 
 In a load test with [`load_test_mode`](claude-apps-gateway-config.md#load_test_mode), requests don’t wait at this limit, but a replica still logs the `client requests are open` warning.
 
-
-[​](#keep-api_timeout_ms-above-the-gateways-time-to-first-byte)
-
-Keep `API_TIMEOUT_MS` above the gateway’s time to first byte
+### [](#keep-api_timeout_ms-above-the-gateways-time-to-first-byte)Keep `API_TIMEOUT_MS` above the gateway’s time to first byte
 
 If you lower [`API_TIMEOUT_MS`](network-config.md#streaming-idle-watchdogs) to retry an unanswered request sooner, keep it above the time the gateway takes to send the first bytes of a streaming response. A request that waits longer times out, and so does each retry that waits as long, until the turn ends with `Request timed out` unless the [first-byte deadline](#retry-an-unanswered-request-sooner-with-the-first-byte-deadline) ends it.
 
@@ -249,10 +221,7 @@ If you lower [`API_TIMEOUT_MS`](network-config.md#streaming-idle-watchdogs) to r
 
 On top of that time, allow for any [wait for a free slot](#concurrent-upstream-requests) and for the wait on a down upstream before [failover](claude-apps-gateway-config.md#multiple-upstreams). Keep the value above the longest [non-streaming request](network-config.md#streaming-idle-watchdogs) too.
 
-
-[​](#retry-an-unanswered-request-sooner-with-the-first-byte-deadline)
-
-Retry an unanswered request sooner with the first-byte deadline
+### [](#retry-an-unanswered-request-sooner-with-the-first-byte-deadline)Retry an unanswered request sooner with the first-byte deadline
 
 To make Claude Code retry an unanswered streaming request sooner, give it a first-byte deadline by setting [`CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS`](../02-Claude-Code-CLI/env-vars.md) on your developers’ machines. The deadline limits how long the first attempt waits for response headers. Without it, that attempt can wait 5 to 6 minutes. Requires Claude Code v2.1.307 or later on the developer’s machine. Set the variable to a positive whole number of milliseconds, in a [gateway policy’s `env` block](#deliver-the-value-in-a-policy) or a developer’s shell. Keep the value above your gateway’s longest [time to first byte](#keep-api_timeout_ms-above-the-gateways-time-to-first-byte), or Claude Code can abort and re-send healthy requests whose headers take longer. This example sets 60 seconds in a developer’s shell:
 
@@ -262,10 +231,7 @@ export CLAUDE_STREAM_FIRST_BYTE_TIMEOUT_MS=60000
 
 An unanswered re-send can wait 5 to 6 minutes, until the [body idle timeout](network-config.md#streaming-idle-watchdogs) ends it and Claude Code retries it within the [retry budget](../02-Claude-Code-CLI/errors.md#tune-retry-behavior). If you lowered `API_TIMEOUT_MS` only to retry sooner, remove that value, or one unanswered re-send can end the turn with [No response from API](../02-Claude-Code-CLI/errors.md#no-response-from-api). To confirm the deadline fired, have a developer start Claude Code with [debug logging](network-config.md#verify-your-configuration), then search the log for `[first-byte] no response headers`.
 
-
-[​](#outage-behavior)
-
-Outage behavior
+### [](#outage-behavior)Outage behavior
 
 If Postgres goes down, the gateway itself keeps serving signed-in developers and new sign-ins fail. Whether developers actually keep working depends on how your orchestrator handles readiness:
 
@@ -276,17 +242,11 @@ If Postgres goes down, the gateway itself keeps serving signed-in developers and
 
 If your IdP goes down, existing sessions work until `ttl_hours` and new logins fail. A session refresh gets a try-again answer and succeeds once the IdP is back. Set a longer `ttl_hours` if your IdP has frequent maintenance windows.
 
-
-[​](#readiness-grace-period)
-
-Readiness grace period
+#### [](#readiness-grace-period)Readiness grace period
 
 To keep signed-in developers working through a short Postgres outage such as a database failover, set [`store.readiness_grace_seconds`](claude-apps-gateway-config.md#store) to longer than the failover takes, for example `300`. With spend limits on and the default fail-open behavior, requests through a replica that stays ready are unmetered until Postgres recovers, so keep the value as low as covers your failover. If you set [`enforcement.fail_closed_on_error: true`](claude-apps-gateway-config.md#enforcement), the gateway refuses signed-in developers’ inference with the `429` `spend limit unavailable` message until Postgres recovers, even while replicas still pass their readiness check. The setting requires Claude Code v2.1.282 or later on the gateway server. An earlier gateway refuses to start when it finds the key, so upgrade every replica before you add it. [Upgrades](#upgrades) covers rolling back. If you point the readiness probe at `/healthz` instead, replicas also keep passing it through an outage, but `/healthz` never reports not-ready, so a replica whose Postgres connection doesn’t recover keeps passing too.
 
-
-[​](#jwt-secret-rotation)
-
-JWT secret rotation
+### [](#jwt-secret-rotation)JWT secret rotation
 
 Rotate the signing secret in stages so existing sessions stay valid:
 
@@ -296,10 +256,7 @@ Rotate the signing secret in stages so existing sessions stay valid:
 
 Rotation is also the only way to force sessions out before they expire: bearer tokens validate locally against the JWT secret, so there is no per-session revocation. Replacing the secret outright, without keeping the old one in the array, invalidates every outstanding session at once. For individual offboarding, deprovision the user in your IdP; their session ends within `ttl_hours`.
 
-
-[​](#postgres)
-
-Postgres
+### [](#postgres)Postgres
 
 The gateway stores its state in a PostgreSQL database:
 
@@ -318,10 +275,7 @@ The gateway holds five data tables plus a `_migrations` table, all created by it
 
 A 30-second loop expires `kv` rows past their TTL, and an hourly sweep enforces the retention windows on the spend tables, so nothing grows without bound. Without [spend limits](claude-apps-gateway-spend-limits.md) configured, only `kv` is written. The gateway applies its own schema migrations at boot and on every upgrade, so its database role needs rights to create and alter tables. Point it at a database or schema dedicated to the gateway to keep that grant narrow. With spend limits in use, a lost database means lost spend tracking and caps, not only developer re-logins, so run regular backups. To erase one departed developer immediately rather than waiting on retention, run `DELETE FROM principal_emails WHERE principal = '<sub>'` directly; that removes the only table holding their email, name, and groups. `spend` and `admin_audit` rows reference the pseudonymous OIDC `sub` only.
 
-
-[​](#size-the-connection-pool)
-
-Size the connection pool
+#### [](#size-the-connection-pool)Size the connection pool
 
 Each replica opens up to [`store.max_connections`](claude-apps-gateway-config.md#store) Postgres connections, five by default. Keep replicas × `store.max_connections` at or below the connections the database has left for the gateway:
 
@@ -334,10 +288,7 @@ For example, take an autoscaling maximum of six, rolling updates that start at m
 - **The replicas**: run fewer, or have your orchestrator start fewer extra replicas in a rolling update
 - **The pool**: lower `store.max_connections`, but with [spend limits](claude-apps-gateway-spend-limits.md) on, keep it large enough for each replica’s load. Otherwise spend checks can [time out](claude-apps-gateway-spend-limits.md#postgres-availability) waiting for a connection, and the gateway logs `spend check failed: spend precheck timed out`.
 
-
-[​](#upgrades)
-
-Upgrades
+### [](#upgrades)Upgrades
 
 Replicas are stateless, so a rolling restart loses no gateway state. The gateway runs schema migrations at boot, which means deploying the new binary self-migrates the database. Concurrent replicas serialize on a Postgres advisory lock, so only one applies each migration. When your orchestrator stops a replica with `SIGTERM`, as in a rolling restart or a scale-in, the gateway stops accepting new connections and lets requests and streams already in flight finish before it exits. It waits up to 25 seconds, called the drain window, then closes whatever is still open. A `SIGINT`, such as Ctrl+C in a terminal, starts the same drain, and a second signal during the drain closes the open requests and exits right away. Draining requires gateway v2.1.274 or later. Long generations can stream for minutes. On Kubernetes and Amazon ECS, raise both of these together to give those streams more time:
 
@@ -355,17 +306,11 @@ Removing only the `groups` key from an upstream leaves it open to every develope
 
 Because you pin the gateway’s version in your own image, fixes in new Claude Code releases, including security fixes, reach your deployment only when you update the pin and redeploy. Include the gateway in the same patching cadence you use for other services that hold production credentials.
 
-
-[​](#security)
-
-Security
+## [](#security)Security
 
 This section answers the questions a security review asks: what data flows through the gateway and where it goes, which attacks the design defends against, and which answers belong in a compliance questionnaire.
 
-
-[​](#data-flow)
-
-Data flow
+### [](#data-flow)Data flow
 
 | Data | Path | Sent to Anthropic by the gateway |
 |----|----|----|
@@ -375,10 +320,7 @@ Data flow
 | Managed settings | Your gateway YAML → CLI | Never |
 | Audit log | Gateway stderr → your aggregator | Never |
 
-
-[​](#threat-model-summary)
-
-Threat model summary
+### [](#threat-model-summary)Threat model summary
 
 The gateway sits inside your network perimeter, but individual developer laptops aren’t treated as trusted. The design accounts for this in three ways:
 
@@ -391,17 +333,11 @@ If you add your own egress controls, the gateway must reach the metadata server 
 - **A compromised gateway host**: the host both holds the upstream credential and distributes [managed settings](claude-apps-gateway-config.md#managed) to every connected developer, so control over the gateway’s configuration is comparable to control over your MDM. The CLI’s [approval dialog](server-managed-settings.md#approval-memory) for shell-capable settings limits silent changes but doesn’t replace host security.
 - **A malicious OIDC provider**: the provider signs the id_tokens the gateway trusts, so it can assert any identity. Vetting and securing your IdP is your responsibility.
 
-
-[​](#user-code-brute-force-resistance)
-
-User-code brute-force resistance
+### [](#user-code-brute-force-resistance)User-code brute-force resistance
 
 The `user_code` a developer types into the `/device` verification page is 8 characters drawn from a 20-character alphabet, which yields 20⁸ or about 2.56×10¹⁰ combinations, and it expires after 10 minutes. The gateway applies per-IP rate limits on the device-grant endpoints, configurable via [`rate_limits`](claude-apps-gateway-config.md#http-tuning). Raise the limits if many developers sign in from a single shared corporate NAT address. [Large rollouts](#large-rollouts) shows how to size them. The limits apply only to the sign-in flow, not to inference.
 
-
-[​](#compliance-posture)
-
-Compliance posture
+### [](#compliance-posture)Compliance posture
 
 - **Data residency**: the gateway’s own data plane sends nothing to Anthropic unless the Anthropic API is a configured upstream; when it is, your existing data-handling agreement applies to the inference path. Telemetry, audit, identity, and settings go only to the destinations you configure.
 - **Host-process traffic**: the host process is the Claude Code CLI. `claude gateway` runs under the same third-party rules as Amazon Bedrock and Google Cloud’s Agent Platform deployments and sends nothing to Anthropic. Before v2.1.227, the host process sent startup telemetry such as product version and platform, which setting `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1` in the container environment turned off. Those releases also sent one `HEAD` request at boot, with no body or credentials, to `/api/hello` on `https://api.anthropic.com`, or on `ANTHROPIC_BASE_URL` when the environment set it, unless the environment also set a proxy variable such as `HTTPS_PROXY` or an mTLS client certificate. They ignored the response, so blocking that request at the egress firewall didn’t affect the gateway.
@@ -414,10 +350,7 @@ Compliance posture
 - **TLS**: serve `public_url` over HTTPS in production, either from the gateway’s own listener via `listen.tls` or from a TLS-terminating ingress in front of plain-HTTP replicas, with `listen.public_url` set in both cases. The gateway doesn’t refuse plain HTTP. The IdP must serve HTTPS in production, and Postgres supports `?sslmode=require`. Set `Strict-Transport-Security` at your ingress.
 - **Vulnerability disclosure**: follow [Reporting security issues](security.md#reporting-security-issues)
 
-
-[​](#plugin-marketplace-requests)
-
-Plugin marketplace requests
+### [](#plugin-marketplace-requests)Plugin marketplace requests
 
 Claude Code fetches plugin marketplaces directly from each developer’s machine, not through the gateway. [Network access requirements](network-config.md#network-access-requirements) lists the hosts. The first time a developer starts an interactive terminal session, Claude Code registers the official marketplace, `claude-plugins-official`. It downloads the catalog from `downloads.claude.ai` and, if that fails, clones it from `github.com`. [Which marketplaces and plugins auto-update](../08-Plugins-Skills/plugins-loading.md#which-marketplaces-and-plugins-auto-update) covers later refreshes. `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1` doesn’t stop the first registration. Either of these managed settings does:
 
@@ -426,10 +359,7 @@ Claude Code fetches plugin marketplaces directly from each developer’s machine
 
 The first registration can run before the developer signs in to the gateway, when no gateway policy has arrived. To cover that first start, deliver your choice in [client-side managed settings](claude-apps-gateway-config.md#client-side-managed-settings) as well as in the gateway policy’s [`cli` or `code` block](claude-apps-gateway-config.md#what-goes-in-cli).
 
-
-[​](#troubleshooting)
-
-Troubleshooting
+## [](#troubleshooting)Troubleshooting
 
 For questions and feedback, use [Claude Code support](https://support.claude.com/en/collections/14445694-claude-code), or open an issue on the [Claude Code GitHub repository](https://github.com/anthropics/claude-code/issues). You can also contact your Anthropic account team. When reporting a problem, include:
 
@@ -448,7 +378,7 @@ The gateway’s stderr includes the audit event stream, the audit log records de
 | Startup shows `Gateway login is configured in managed settings, but this Claude Code build does not include Cloud gateway support.` | The installed Claude Code build predates gateway support | Have the developer update Claude Code to a release that includes Cloud gateway support |
 | Startup exits with `Administrator policy requires a Cloud gateway sign-in on this machine` | The developer’s environment sets `ANTHROPIC_API_KEY` or `ANTHROPIC_AUTH_TOKEN`, their settings configure an [`apiKeyHelper`](../02-Claude-Code-CLI/settings-reference.md#apikeyhelper), or an API key from an earlier Claude Console login is still saved | Have the developer clear each that applies: unset the variable, remove the `apiKeyHelper` entry, or run `claude auth logout` to remove the saved key. A session that selects a cloud provider with `CLAUDE_CODE_USE_*` then starts with no sign-in; for every other session, have them start `claude` and sign in with `/login`. See also [Administrator policy requires a Cloud gateway sign-in](../02-Claude-Code-CLI/errors.md#administrator-policy-requires-a-cloud-gateway-sign-in). |
 | Startup or `/login` reports `Claude Code may not be enabled for your organization` after a 403 on the managed settings load | The gateway, or something in front of it, answered the `/managed/settings` request with 403. The gateway’s own settings route never answers 403. The status comes from the [`access_control`](claude-apps-gateway-config.md#http-tuning) IP checks or from a proxy or WAF in front of the gateway. The audit log records an IP-check denial as `access.denied` with the reason. The developer stays signed in. | Check the audit log for `access.denied` at the time of the failure and fix the `access_control` lists or the front end, then have the developer start `claude` again |
-| CLI `/login`: `The gateway is limiting sign-in attempts right now`, or `Request failed with status code 429` on older versions. The `/device` page may show `Too many attempts` to developers who haven’t tried before | The per-IP sign-in rate limit was reached. Either `listen.trusted_proxies` doesn’t cover the load balancer, so every developer shares its address, or many developers share a NAT or VPN egress address. Audit events with `result: rate_limited` show the same one or few `client_ip` values. | Set `listen.trusted_proxies` to the load balancer’s source ranges first, then raise `rate_limits` if developers still share addresses. See [Large rollouts](#large-rollouts). |
+| CLI `/login`: `The gateway is limiting sign-in attempts right now`, or `Request failed with status code 429` on older versions. The `/device` page may show `Too many attempts` to developers who haven’t tried before | The per-IP sign-in rate limit was reached. Either `listen.trusted_proxies` doesn’t cover the load balancer, so every developer shares its address, or many developers share a NAT or VPN egress address. Audit events with `result: rate_limited` show the same one or few `client_ip` values. | If the load balancer [belongs in `listen.trusted_proxies`](claude-apps-gateway-config.md#listen), list it first. Then raise `rate_limits` if developers still share addresses. See [Large rollouts](#large-rollouts). |
 | CLI `/login`: `Gateway hosts must be on your organization's private network; <host> resolves to the public (or unrecognized) address <ip>` | The gateway hostname resolves to at least one public IP address. Claude Code checks each resolved address and requires every one to be private. A common cause is a dual-stack name where one family resolves to a public address, including AWS internal dual-stack load balancers, which return public-range AAAA addresses. | Have the gateway name resolve only to private addresses on developer machines. For a dual-stack name, drop the public-range record or serve a separate internal-only DNS name. See the [private-network prerequisite](claude-apps-gateway.md#prerequisites). If the address is public space your organization owns and uses internally, [declare that block](claude-apps-gateway.md#allow-a-gateway-on-public-address-space-you-own) instead. |
 | CLI `/login`: `Gateway login would go through proxy <proxy>, which is not on a private network` | An `HTTPS_PROXY` or `HTTP_PROXY` applies to the gateway host and the proxy’s hostname resolves to a public address. A proxy whose host resolves only to private addresses is allowed and doesn’t trigger this error | Add the gateway host to `NO_PROXY` on the developer’s machine so the connection is direct, or use a proxy whose hostname resolves to private addresses. The message names the exact `NO_PROXY` entry to add |
 | CLI `/login`: `Claude Code only signs in to <host> from inside its declared network <block> (managed settings), and this machine is connecting from <ip>, outside it` | The gateway is on a block declared in [`gatewayInternalNetworks`](claude-apps-gateway.md#allow-a-gateway-on-public-address-space-you-own), and the developer’s machine reached it from an address outside that block: a VPN address pool, a container or WSL2 NAT segment, or a network that isn’t yours | Have the developer run `/login` from the host OS on your network. If the address shown is also your organization’s own public space, replace the gateway’s entry with a block that covers both, up to `/8`; a second, overlapping entry is refused. If no block covers both, see [Choose an address for the gateway](#choose-an-address-for-the-gateway) |
@@ -488,10 +418,7 @@ The gateway’s stderr includes the audit event stream, the audit log records de
 
 The `Cloud gateway sign-in was not completed` message names the gateway hostname. When Claude Code has both the pinned fingerprint and the presented one, the message also shows the first 16 characters of each. If Claude Code reports `couldn't load your organization's managed settings` after a gateway sign-in, Claude Code names the reason, restarts in place, and resumes the conversation. If Claude Code can’t restart, for example in a background session, Claude Code ends the session and keeps the sign-in.
 
-
-[​](#request-headers-too-large-after-sign-in)
-
-Request headers too large after sign-in
+### [](#request-headers-too-large-after-sign-in)Request headers too large after sign-in
 
 A developer’s requests can fail with a `431` error after sign-in when the developer belongs to many IdP groups. The gateway answers `431` when a request’s headers total more than 256 KiB, or more than [`limits.max_request_header_bytes`](claude-apps-gateway-config.md#http-tuning) if you set it. It writes no log line or audit event for these requests. Gateway versions before v2.1.284 answer `431` above 16 KiB. Start with the first of these that applies to your gateway:
 
@@ -507,10 +434,7 @@ When you trim the groups claim, keep the groups you named in these settings, whi
 - **`groups` on an [upstream](claude-apps-gateway-config.md#send-each-team-to-its-own-upstream)**: decides which upstreams serve a developer
 - **`rbac_group` [spend caps](claude-apps-gateway-spend-limits.md)**: decide which group caps apply to a developer
 
-
-[​](#long-thinking-ends-in-proxy-timeouts)
-
-Long thinking ends in proxy timeouts
+### [](#long-thinking-ends-in-proxy-timeouts)Long thinking ends in proxy timeouts
 
 If your upstream is `provider: anthropic`, use [Long thinking on an Anthropic API upstream](#long-thinking-on-an-anthropic-api-upstream) instead: you raise `CLAUDE_STREAM_IDLE_TIMEOUT_MS` there too, but the times and errors differ. If turns fail after long thinking and your proxy logs one request open for about 12.5 minutes, then a run of `504` errors, raise [`CLAUDE_STREAM_IDLE_TIMEOUT_MS`](../02-Claude-Code-CLI/env-vars.md) in a gateway policy. For example, with a 240-second idle timeout on the proxy, the run is 10 requests, each cut at 240 seconds.
 
@@ -519,10 +443,7 @@ If your upstream is `provider: anthropic`, use [Long thinking on an Anthropic AP
 
 You don’t need a longer proxy timeout for this fix. If you raise only the proxy’s timeout, requests without streaming still fail once a reply takes longer than Claude Code’s own wait, 300 seconds by default.
 
-
-[​](#confirm-the-cause)
-
-Confirm the cause
+#### [](#confirm-the-cause)Confirm the cause
 
 Have a developer reproduce the failure with `claude --debug-file ./claude-debug.txt`, then search that file for this line:
 
@@ -532,10 +453,7 @@ Error streaming, falling back to non-streaming mode: Stream idle timeout - no ch
 
 If your developers already set [`CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK`](../02-Claude-Code-CLI/env-vars.md) to `1`, you see no requests without streaming, and the turn ends with `API Error: Stream idle timeout - no chunks received`. The same fix applies.
 
-
-[​](#pick-a-value)
-
-Pick a value
+#### [](#pick-a-value)Pick a value
 
 Pick a `CLAUDE_STREAM_IDLE_TIMEOUT_MS` value whose second column covers your longest thinking pause, or start with `1800000` if you don’t know it. A stream can stay on pings alone for about 7.5 minutes longer than the value:
 
@@ -547,10 +465,7 @@ Pick a `CLAUDE_STREAM_IDLE_TIMEOUT_MS` value whose second column covers your lon
 
 If an upstream hangs while the gateway keeps sending pings, your developers also wait that long before Claude Code gives up on the stream. A connection that goes fully silent still ends after 5 to 6 minutes, because the [body idle timeout](network-config.md#streaming-idle-watchdogs) doesn’t follow this variable.
 
-
-[​](#deliver-the-value-in-a-policy)
-
-Deliver the value in a policy
+#### [](#deliver-the-value-in-a-policy)Deliver the value in a policy
 
 Add the `env` entry to each policy in `gateway.yaml` that already delivers Claude Code settings to the developers you want to cover. Put it under the `code`, `cli`, or `settings` key that policy already has. To try the value first, start with a policy that matches one group. See [`managed`](claude-apps-gateway-config.md#managed) for how policies match and inherit. This example adds the entry to a `match: {}` policy keyed `cli`:
 
@@ -565,10 +480,7 @@ managed:
 
 With the `cli` key, you cover terminal, IDE extension, and Agent SDK sessions. For Claude Desktop’s Code tab, see [Choose `cli` or `code`](claude-apps-gateway-config.md#choose-cli-or-code). Restart the gateway so that it reads the edited file. Then have developers restart Claude Code to get `CLAUDE_STREAM_IDLE_TIMEOUT_MS`.
 
-
-[​](#long-thinking-on-an-anthropic-api-upstream)
-
-Long thinking on an Anthropic API upstream
+### [](#long-thinking-on-an-anthropic-api-upstream)Long thinking on an Anthropic API upstream
 
 If `provider: anthropic` is the model’s only upstream and your proxy logs one request open for about 20 minutes, then `502` or `504` errors, raise [`CLAUDE_STREAM_IDLE_TIMEOUT_MS`](../02-Claude-Code-CLI/env-vars.md) in a gateway policy.
 
@@ -577,10 +489,7 @@ If `provider: anthropic` is the model’s only upstream and your proxy logs one 
 
 To confirm the cause, see [Confirm the cause](#confirm-the-cause). Pick the value whose time covers your longest thinking pause: about 20 minutes at the default, 30 at `900000`, and 45 at `1800000`. Then follow [Deliver the value in a policy](#deliver-the-value-in-a-policy).
 
-
-[​](#related)
-
-Related
+## [](#related)Related
 
 - [Claude apps gateway overview](claude-apps-gateway.md): quickstart and developer connection
 - [Configuration reference](claude-apps-gateway-config.md): every `gateway.yaml` option

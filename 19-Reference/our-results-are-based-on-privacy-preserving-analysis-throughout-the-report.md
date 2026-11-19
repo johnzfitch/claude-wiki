@@ -2,8 +2,7 @@
 title: "Our results are based on privacy-preserving analysis. Throughout the report"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/a3cdcd9e67c3c4c51440429dd016cacba514b35b.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:37:55Z"
-last_modified: "Tue, 24 Mar 2026 22:03:04 GMT"
+fetched_at: "2026-11-18T06:28:57Z"
 tags: ["news-research"]
 ---
 

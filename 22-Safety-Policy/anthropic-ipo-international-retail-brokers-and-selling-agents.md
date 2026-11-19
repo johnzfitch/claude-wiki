@@ -2,7 +2,7 @@
 title: "Anthropic IPO: International Retail Brokers and Selling Agents | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17889756-anthropic-ipo-international-retail-brokers-and-selling-agents"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:37Z"
+fetched_at: "2026-11-18T06:28:10Z"
 tags: ["agents", "safety"]
 ---
 
@@ -15,13 +15,13 @@ The following brokers, financial intermediaries, and selling agents are expected
 
 **Australia:** Bell Potter, CommSec, LGT Wealth, Macquarie, Morgans, Morgan Stanley Wealth Management, Sharesies, Stake.
 
-**Canada:** BMO Capital Markets, CIBC Capital Markets, Morgan Stanley, RBC Capital Markets, Scotiabank, TD Securities, Wealthsimple.
+**Canada:** BMO Capital Markets, CIBC Capital Markets, RBC Capital Markets, Scotiabank, TD Securities, Wealthsimple.
 
-**EEA and/or Switzerland:** BNP Paribas, Crédit Agricole CIB (and affiliates), Deutsche Bank, eToro, flatexDEGIRO, Interactive Brokers, Nordnet Bank AB, Revolut, Saxo Bank, Trade Republic, UBS Investment Bank.
+**EEA and/or Switzerland:** BNP Paribas, Crédit Agricole CIB (and affiliates), Deutsche Bank, eToro, flatexDEGIRO, ING, Interactive Brokers, Nordnet Bank AB, Revolut, Saxo Bank, Scalable Capital, Trade Republic, UBS Investment Bank.
 
 **Japan:** Mitsubishi UFJ Morgan Stanley (and affiliates), Mizuho, Rakuten, SBI.
 
-**UK:** AJ Bell, eToro, Hargreaves Lansdown, Interactive Brokers, Interactive Investor, Revolut. RetailBook is acting as the Public Offer Platform (POP) operator and is coordinating the retail offer for the UK.
+**UK:** AJ Bell, eToro, Hargreaves Lansdown, Interactive Brokers, Interactive Investor, Revolut, Robinhood. RetailBook is acting as the Public Offer Platform (POP) operator and is coordinating the retail offer for the UK.
 
 ### Disclaimers
 
@@ -33,7 +33,7 @@ This information is being provided in connection with the proposed initial publi
 
 An amended and restated preliminary base PREP prospectus containing important information relating to the securities described in this webpage has been filed with the securities regulatory authorities in each of the provinces and territories of Canada and is accessible through SEDAR+ at [www.sedarplus.ca](http://www.sedarplus.ca).
 
-The amended and restated preliminary base PREP prospectus is still subject to completion or amendment. Copies of the amended and restated preliminary base PREP prospectus may be obtained from RBC Dominion Securities Inc., 180 Wellington Street West, 8th Floor, Toronto, ON M5J 0C2, Attn: Distribution Centre, or via email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#03476a7077716a6176776a6c6d2d514140475043716160606e2d606c6e). There will not be any sale or any acceptance of an offer to buy the securities until a receipt for the final base PREP prospectus has been issued.
+The amended and restated preliminary base PREP prospectus is still subject to completion or amendment. Copies of the amended and restated preliminary base PREP prospectus may be obtained from RBC Dominion Securities Inc., 180 Wellington Street West, 8th Floor, Toronto, ON M5J 0C2, Attn: Distribution Centre, or via email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#25614c5651574c4750514c4a4b0b77676661766557474646480b464a48). There will not be any sale or any acceptance of an offer to buy the securities until a receipt for the final base PREP prospectus has been issued.
 
 This webpage does not provide full disclosure of all material facts relating to the securities offered. Investors should read the amended and restated preliminary base PREP prospectus, the final base PREP prospectus, the supplemented PREP prospectus and any amendment for disclosure of those facts, especially risk factors relating to the securities offered, before making an investment decision.
 
@@ -69,6 +69,6 @@ If the Proposed UK Retail Offer proceeds, a disclosure summary relating to the P
 
 **United States**
 
-In the United States, the proposed offering will be made only by means of a prospectus. Copies of the preliminary prospectus, when available, may be obtained from: Goldman Sachs & Co. LLC, Attention: Prospectus Department, 200 West Street, New York, NY 10282, by telephone at (866) 471-2526, or by email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#a7d7d5c8d4d7c2c4d3d2d48ac9dee7c9de89c2cac6cecb89c0d489c4c8ca); or Morgan Stanley & Co. LLC, Attention: Prospectus Department, 180 Varick Street, 2nd Floor, New York, NY 10014.
+In the United States, the proposed offering will be made only by means of a prospectus. Copies of the preliminary prospectus, when available, may be obtained from: Goldman Sachs & Co. LLC, Attention: Prospectus Department, 200 West Street, New York, NY 10282, by telephone at (866) 471-2526, or by email at [\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#97e7e5f8e4e7f2f4e3e2e4baf9eed7f9eeb9f2faf6fefbb9f0e4b9f4f8fa); or Morgan Stanley & Co. LLC, Attention: Prospectus Department, 180 Varick Street, 2nd Floor, New York, NY 10014.
 
 A registration statement relating to these securities has been filed with the Securities and Exchange Commission but has not yet become effective. These securities may not be sold, nor may offers to buy be accepted, prior to the time the registration statement becomes effective. This webpage does not constitute an offer to sell or the solicitation of an offer to buy these securities, nor shall there be any sale of these securities in any state or jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or jurisdiction.

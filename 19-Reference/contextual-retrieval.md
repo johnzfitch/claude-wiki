@@ -2,7 +2,7 @@
 title: "Contextual retrieval in AI systems \\ Anthropic"
 source_url: "https://www.anthropic.com/news/contextual-retrieval"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:22Z"
+fetched_at: "2026-11-18T06:29:03Z"
 tags: ["news-research", "rag"]
 ---
 

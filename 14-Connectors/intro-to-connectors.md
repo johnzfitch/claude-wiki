@@ -2,7 +2,7 @@
 title: "Getting started with connectors · Claude Academy"
 source_url: "https://support.claude.com/en/articles/13123742-intro-to-connectors"
 category: "14-Connectors"
-fetched_at: "2026-11-07T06:23:43Z"
+fetched_at: "2026-11-18T06:28:21Z"
 tags: ["connectors"]
 ---
 

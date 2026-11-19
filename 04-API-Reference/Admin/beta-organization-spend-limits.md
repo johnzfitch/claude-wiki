@@ -2,7 +2,7 @@
 title: "Spend Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:36:04Z"
+fetched_at: "2026-11-13T06:35:49Z"
 tags: ["api"]
 ---
 
@@ -44,7 +44,7 @@ Delete a spend limit.
 
 GET/v1/organizations/spend_limits
 
-Requires `anthropic-beta: ``spend-limit-reads-2026-09-26`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``spend-limit-reads-2026-09-26`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the organization's spend limits.
 
@@ -277,6 +277,18 @@ workspace_id: string
 
 
 Tagged ID of the workspace the spend limit applies to.
+
+
+
+BetaSpendLimitsAdminAPIWritesNotEnabledErrorDetails object{ error_code }
+
+
+
+The organization cannot retrieve, set or delete spend limits with an Admin API credential.
+
+error_code: "spend_limits_admin_api_writes_not_enabled"
+
+
 
 
 

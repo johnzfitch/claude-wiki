@@ -2,7 +2,7 @@
 title: "Configure custom data retention controls for Enterprise plans | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:25:31Z"
+fetched_at: "2026-11-18T06:27:37Z"
 tags: ["enterprise"]
 ---
 
@@ -95,4 +95,4 @@ If a conversation’s last message is at 3PM UTC on March 1, nobody opens it aft
 
 ## Monitor retention-related activities
 
-All retention-related actions and changes are automatically tracked in **[audit logs](https://support.claude.com/en/articles/9970975-how-to-access-audit-logs)**. You can access these logs to monitor changes to retention settings and data deletion events.
+All retention-related actions and changes are automatically tracked in **[audit logs](how-to-access-audit-logs.md)**. You can access these logs to monitor changes to retention settings and data deletion events.

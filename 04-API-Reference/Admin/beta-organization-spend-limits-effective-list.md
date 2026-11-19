@@ -2,7 +2,7 @@
 title: "List Effective Spend Limits - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/spend_limits/effective/list"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-03T06:23:31Z"
+fetched_at: "2026-11-18T06:27:17Z"
 tags: ["api"]
 ---
 
@@ -54,7 +54,7 @@ Opaque cursor from a previous response's `next_page` field.
 
 
 
-period: optional array of "daily" or "monthly" or "weekly"
+period: optional array of [BetaSpendLimitPeriod](https://platform.claude.com/docs/en/api/http/beta/organization/spend_limits#beta_spend_limit_period)
 
 
 

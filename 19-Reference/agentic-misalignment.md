@@ -58,7 +58,7 @@ Related articles
 
 **Note: All the behaviors described in this post occurred in controlled simulations. The names of people and organizations within the experiments are fictional. No real people were involved or harmed in any of these experiments.**
 
-When Anthropic released the [system card](../15-Claude-AI-Features/claude-4-system-card.md) for Claude 4, one detail received widespread attention: in a simulated environment, Claude Opus 4 blackmailed a supervisor to prevent being shut down. We’re now sharing the full story behind that finding—and what it reveals about the potential for such risks across a variety of AI models from different providers^([1](#footnote-1)).
+When Anthropic released the [system card](fixed-some-minor-formatting-errors-e-g-changed-a-semicolon-to-a-comma.md) for Claude 4, one detail received widespread attention: in a simulated environment, Claude Opus 4 blackmailed a supervisor to prevent being shut down. We’re now sharing the full story behind that finding—and what it reveals about the potential for such risks across a variety of AI models from different providers^([1](#footnote-1)).
 
 Most people still interact with AI only through chat interfaces where models answer questions directly. But increasingly, AI systems operate as autonomous agents making decisions and taking actions on behalf of users using a variety of virtual tools like coding environments and email clients. Such agents are often given specific objectives and access to large amounts of information on their users’ computers. What happens when these agents face obstacles to their goals?
 

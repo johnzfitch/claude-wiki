@@ -2,7 +2,7 @@
 title: "Claude legal solutions | Claude by Anthropic"
 source_url: "https://www.claude.com/solutions/legal"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:49Z"
+fetched_at: "2026-11-18T06:29:24Z"
 tags: ["case-studies"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Getting Started with Claude for Financial Services · Claude Academy"
 source_url: "https://support.claude.com/en/articles/11771619-getting-started-with-claude-for-financial-services"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-07T06:22:19Z"
+fetched_at: "2026-11-18T06:27:42Z"
 tags: ["claude-ai", "connectors"]
 ---
 
@@ -18,7 +18,7 @@ Claude for Financial Services transforms how financial professionals analyze mar
 
 ## What is Claude for Financial Services?[](#what-is-claude-for-financial-services)
 
-Claude for Financial Services is a comprehensive solution that includes Claude for Enterprise with specialized capabilities for financial analysis. This connects Claude to the data sources and tools you use daily, eliminating the need to juggle multiple browser tabs and improving source verification, to reduce the risk of errors from manual data gathering.
+Claude for Financial Services is a comprehensive solution that includes Claude Enterprise with specialized capabilities for financial analysis. This connects Claude to the data sources and tools you use daily, eliminating the need to juggle multiple browser tabs and improving source verification, to reduce the risk of errors from manual data gathering.
 
 ## Financial data provider connectors[](#financial-data-provider-connectors)
 

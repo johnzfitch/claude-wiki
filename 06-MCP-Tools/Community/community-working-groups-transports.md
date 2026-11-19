@@ -2,11 +2,14 @@
 title: "Transports Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/transports"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-10-21T06:29:01Z"
+fetched_at: "2026-11-12T06:24:47Z"
+last_modified: "Wed, 11 Nov 2026 19:29:16 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Group Type](#group-type)
 - [Mission Statement](#mission-statement)
@@ -24,7 +27,7 @@ tags: ["mcp", "mcp-community"]
   - [Success Criteria](#success-criteria)
 - [Changelog](#changelog)
 
-Working Group Charters
+Working Groups
 
 # Transports Charter
 
@@ -46,7 +49,7 @@ Group Type
 
 Mission Statement
 
-The Transports Working Group evolves MCP transport bindings and transport-adjacent protocol architecture so implementations remain interoperable, scalable, reliable, and easy to operate across local and remote deployments. The WG produces transport proposals, SEPs, implementation evidence, and guidance. The [working group repository](https://github.com/modelcontextprotocol/transports-wg) and its [upstream charter](https://github.com/modelcontextprotocol/transports-wg/blob/main/CHARTER.md) maintain the WG’s current technical focus, proposal strategy, and supporting detail within these boundaries.
+The Transports Working Group evolves MCP transport bindings and transport-adjacent protocol architecture so implementations remain interoperable, scalable, reliable, and easy to operate across local and remote deployments. The WG produces transport proposals, SEPs, implementation evidence, and guidance. The [working group repository](https://github.com/modelcontextprotocol/transports-wg) maintains the WG’s current technical focus, proposal strategy, and supporting detail within these boundaries.
 
 
 [​](#scope)
@@ -62,10 +65,10 @@ In Scope
 - **Scalability and Reliability**: Transport-level connection management, resource efficiency, multiplexing, load distribution, error handling, reconnection, resumption, and the delivery and ordering guarantees offered by a binding.
 - **Transport-Adjacent Protocol Architecture**: Protocol-wide message-flow concerns required for scalable, interoperable bindings, including request association, per-request metadata, stateless operation, and migration from legacy initialization and transport-session models.
 - **Transport Security**: Binding and envelope security requirements such as Origin validation, TLS, mTLS, and certificate handling, coordinated with the Security IG. Credential carriage is coordinated with the Auth IG.
-- **Validation and Guidance**: Reference implementations, experiments, implementation evidence, and documentation needed to evaluate proposals and help implementers adopt agreed transport behavior. Supporting material is maintained in the upstream [documentation](https://github.com/modelcontextprotocol/transports-wg/tree/main/docs). The WG contributes transport scenarios and requirements to the Conformance Testing project, whose maintainers own the conformance suite.
+- **Validation and Guidance**: Reference implementations, experiments, implementation evidence, and documentation needed to evaluate proposals and help implementers adopt agreed transport behavior. Supporting material is maintained in the upstream [proposals directory](https://github.com/modelcontextprotocol/transports-wg/tree/main/proposals). The WG contributes transport scenarios and requirements to the Conformance Testing project, whose maintainers own the conformance suite.
 - **Cross-Cutting Coordination**: Transport implications of work owned by other MCP groups, without taking ownership of their application-layer features.
 
-The upstream [scope statement](https://github.com/modelcontextprotocol/transports-wg/blob/main/CHARTER.md#scope) provides supporting context but cannot expand the boundaries in this charter.
+The upstream [mission statement](https://github.com/modelcontextprotocol/transports-wg#mission) provides supporting context but cannot expand the boundaries in this charter.
 
 
 [​](#out-of-scope)
@@ -99,16 +102,16 @@ The current WG Lead is [Kurtis Van Gent](https://github.com/kurtisvg).
 
 Authority & Decision Rights
 
-| Decision Type                       | Authority Level                                        |
-|-------------------------------------|--------------------------------------------------------|
-| Meeting logistics & scheduling      | WG Leads (autonomous)                                  |
-| Proposal prioritization within WG   | WG Leads (autonomous)                                  |
-| SEP triage & closure (in scope)     | WG Leads (autonomous, with documented rationale)       |
-| Technical design within scope       | WG consensus                                           |
-| Spec changes (additive)             | WG consensus → Core Maintainer approval                |
+| Decision Type | Authority Level |
+|----|----|
+| Meeting logistics & scheduling | WG Leads (autonomous) |
+| Proposal prioritization within WG | WG Leads (autonomous) |
+| SEP triage & closure (in scope) | WG Leads (autonomous, with documented rationale) |
+| Technical design within scope | WG consensus |
+| Spec changes (additive) | WG consensus → Core Maintainer approval |
 | Spec changes (breaking/fundamental) | WG consensus → Core Maintainer approval + wider review |
-| Scope expansion                     | Core Maintainer approval required                      |
-| WG Member approval                  | WG Member sponsors                                     |
+| Scope expansion | Core Maintainer approval required |
+| WG Member approval | WG Member sponsors |
 
 
 [​](#membership)
@@ -135,8 +138,7 @@ The WG holds a regular weekly meeting, with the current time and joining details
 Resources
 
 - [modelcontextprotocol/transports-wg](https://github.com/modelcontextprotocol/transports-wg)
-  - [Proposals](https://github.com/modelcontextprotocol/transports-wg/tree/main/proposals)
-  - [Supporting documentation and decision records](https://github.com/modelcontextprotocol/transports-wg/tree/main/docs)
+  - [Proposals and decision records](https://github.com/modelcontextprotocol/transports-wg/tree/main/proposals)
   - [Meeting notes](https://github.com/modelcontextprotocol/transports-wg/tree/main/meetings)
 
 

@@ -2,7 +2,7 @@
 title: "Set up CMEK with AWS KMS - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-aws-kms"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:02Z"
+fetched_at: "2026-11-13T06:35:03Z"
 tags: ["api"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Doctolib Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/doctolib"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:01Z"
+fetched_at: "2026-11-18T06:28:52Z"
 tags: ["case-studies", "claude-code"]
 ---
 

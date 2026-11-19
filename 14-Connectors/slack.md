@@ -2,8 +2,8 @@
 title: "Claude Code in Slack - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/slack"
 category: "14-Connectors"
-fetched_at: "2026-11-06T06:26:38Z"
-last_modified: "Fri, 06 Nov 2026 05:16:31 GMT"
+fetched_at: "2026-11-13T06:35:07Z"
+last_modified: "Fri, 13 Nov 2026 06:15:20 GMT"
 tags: ["claude-code", "connectors", "slack"]
 ---
 

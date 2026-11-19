@@ -2,7 +2,7 @@
 title: "How scientists use Claude to accelerate research \\ Anthropic"
 source_url: "https://www.anthropic.com/news/accelerating-scientific-research"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:48Z"
+fetched_at: "2026-11-18T06:29:02Z"
 tags: ["agents", "news-research", "search", "testing"]
 ---
 

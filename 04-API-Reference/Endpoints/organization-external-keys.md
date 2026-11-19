@@ -2,7 +2,7 @@
 title: "External Keys - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/external_keys"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:39Z"
+fetched_at: "2026-11-18T06:27:20Z"
 tags: ["api"]
 ---
 
@@ -191,6 +191,30 @@ defaultattached
 
 
 
+ExternalKeyChangedErrorDetails object{ error_code }
+
+
+
+The external key changed while the request was validating it. Send the request again.
+
+error_code: "external_key_changed"
+
+
+
+
+
+ExternalKeyInWorkspacePolicyErrorDetails object{ error_code }
+
+
+
+The External Key can't be deleted or reconfigured while the organization's Workspace Policy lists it as an allowed key.
+
+error_code: "external_key_in_workspace_policy"
+
+
+
+
+
 ExternalKeyUnattachedAttachment object{ type: "unattached" }
 
 
@@ -202,6 +226,30 @@ type: "unattached"
 
 
 defaultunattached
+
+
+
+ExternalKeyValidationFailedErrorDetails object{ error_code }
+
+
+
+The External Key failed Anthropic's validation, so the request was refused. The message gives the reason, if there is one.
+
+error_code: "external_key_validation_failed"
+
+
+
+
+
+ExternalKeyValidationTimedOutErrorDetails object{ error_code }
+
+
+
+Anthropic's validation of the External Key did not finish in time, so the request was refused. Wait a moment, then send the request again.
+
+error_code: "external_key_validation_timed_out"
+
+
 
 
 

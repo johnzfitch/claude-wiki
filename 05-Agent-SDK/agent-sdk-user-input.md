@@ -2,8 +2,8 @@
 title: "Handle approvals and user input - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/user-input"
 category: "05-Agent-SDK"
-fetched_at: "2026-11-05T06:34:48Z"
-last_modified: "Thu, 05 Nov 2026 03:49:43 GMT"
+fetched_at: "2026-11-13T06:32:24Z"
+last_modified: "Fri, 13 Nov 2026 06:21:44 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 

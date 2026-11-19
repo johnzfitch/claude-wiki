@@ -2,7 +2,7 @@
 title: "App Attest for iOS and macOS apps - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/app-attest"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-07T06:23:44Z"
+fetched_at: "2026-11-15T06:23:55Z"
 tags: ["api"]
 ---
 

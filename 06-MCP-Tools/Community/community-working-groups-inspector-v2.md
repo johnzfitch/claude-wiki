@@ -2,11 +2,14 @@
 title: "Inspector V2 Working Group Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/inspector-v2"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-08-02T05:38:07Z"
+fetched_at: "2026-11-11T06:25:53Z"
+last_modified: "Wed, 11 Nov 2026 05:05:50 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Group Type](#group-type)
 - [Mission Statement](#mission-statement)
@@ -23,7 +26,7 @@ tags: ["mcp", "mcp-community"]
   - [Success Criteria](#success-criteria)
 - [Changelog](#changelog)
 
-Working Group Charters
+Working Groups
 
 # Inspector V2 Working Group Charter
 
@@ -82,7 +85,7 @@ Related Groups
 
 - **SDK WG** — Inspector Core consumes the TypeScript SDK; coordination required for SDK V2 adoption.
 - **MCP Apps WG** — shared surface area around client/app ergonomics and inspection workflows.
-- **Auth WG** — authentication flows exercised by Inspector when connecting to protected servers.
+- **[Authorization IG](community-interest-groups-auth.md)** — authentication flows exercised by Inspector when connecting to protected servers.
 - **Registry WG** — discovery and metadata surfaces that Inspector presents to users.
 
 
@@ -90,47 +93,47 @@ Related Groups
 
 Leadership
 
-| Role    | Name           | Organization | GitHub                                           | Term    |
-|---------|----------------|--------------|--------------------------------------------------|---------|
-| WG Lead | Cliff Hall     | Futurescale  | [@cliffhall](https://github.com/cliffhall)       | Ongoing |
-| WG Lead | Ola Hungerford | Nordstrom    | [@olaservo](https://github.com/olaservo)         | Ongoing |
-| WG Lead | Bob Dickinson  | TeamSpark.ai | [@BobDickinson](https://github.com/BobDickinson) | Ongoing |
+| Role | Name | Organization | GitHub | Term |
+|----|----|----|----|----|
+| WG Lead | Cliff Hall | Futurescale | [@cliffhall](https://github.com/cliffhall) | Ongoing |
+| WG Lead | Ola Hungerford | Nordstrom | [@olaservo](https://github.com/olaservo) | Ongoing |
+| WG Lead | Bob Dickinson | TeamSpark.ai | [@BobDickinson](https://github.com/BobDickinson) | Ongoing |
 
 
 [​](#authority-&-decision-rights)
 
 Authority & Decision Rights
 
-| Decision Type                       | Authority Level                                        |
-|-------------------------------------|--------------------------------------------------------|
-| Meeting logistics & scheduling      | WG Leads (autonomous)                                  |
-| Proposal prioritization within WG   | WG Leads (autonomous)                                  |
-| SEP triage & closure (in scope)     | WG Leads (autonomous, with documented rationale)       |
-| Technical design within scope       | WG consensus                                           |
-| Spec changes (additive)             | WG consensus → Core Maintainer approval                |
+| Decision Type | Authority Level |
+|----|----|
+| Meeting logistics & scheduling | WG Leads (autonomous) |
+| Proposal prioritization within WG | WG Leads (autonomous) |
+| SEP triage & closure (in scope) | WG Leads (autonomous, with documented rationale) |
+| Technical design within scope | WG consensus |
+| Spec changes (additive) | WG consensus → Core Maintainer approval |
 | Spec changes (breaking/fundamental) | WG consensus → Core Maintainer approval + wider review |
-| Scope expansion                     | Core Maintainer approval required                      |
-| WG Member approval                  | WG Member sponsors                                     |
+| Scope expansion | Core Maintainer approval required |
+| WG Member approval | WG Member sponsors |
 
 
 [​](#membership)
 
 Membership
 
-| Name           | Organization | GitHub                                           | Discord     | Level      |
-|----------------|--------------|--------------------------------------------------|-------------|------------|
-| Cliff Hall     | Futurescale  | [@cliffhall](https://github.com/cliffhall)       | seaofarrows | Maintainer |
-| Ola Hungerford | Nordstrom    | [@olaservo](https://github.com/olaservo)         | olaservo    | Maintainer |
-| Bob Dickinson  | TeamSpark.ai | [@BobDickinson](https://github.com/BobDickinson) | rddthree    | Maintainer |
-| Tobin South    | Anthropic    | [@tobinsouth](https://github.com/tobinsouth)     | tobinsouth  | Member     |
+| Name | Organization | GitHub | Discord | Level |
+|----|----|----|----|----|
+| Cliff Hall | Futurescale | [@cliffhall](https://github.com/cliffhall) | seaofarrows | Maintainer |
+| Ola Hungerford | Nordstrom | [@olaservo](https://github.com/olaservo) | olaservo | Maintainer |
+| Bob Dickinson | TeamSpark.ai | [@BobDickinson](https://github.com/BobDickinson) | rddthree | Maintainer |
+| Tobin South | Anthropic | [@tobinsouth](https://github.com/tobinsouth) | tobinsouth | Member |
 
 
 [​](#operations)
 
 Operations
 
-| Meeting         | Frequency                                 | Duration   | Purpose                               |
-|-----------------|-------------------------------------------|------------|---------------------------------------|
+| Meeting | Frequency | Duration | Purpose |
+|----|----|----|----|
 | Working Session | Weekly, Wednesdays 11:00 America/New_York | 60 minutes | Technical discussion, proposal review |
 
 Meetings are held at [meet.modelcontextprotocol.io/tag/inspector-v2-wg](https://meet.modelcontextprotocol.io/tag/inspector-v2-wg). Agendas are posted at least 7 days in advance per current MCP meeting policy. Meeting notes are published to the [Meeting Notes — Inspector V2 WG](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/categories/meeting-notes-inspector-v2-wg) discussion category in the `modelcontextprotocol/modelcontextprotocol` repository. **Communication channels**
@@ -149,14 +152,14 @@ Deliverables & Success Metrics
 
 Active Work Items
 
-| Work Item                                                                               | Status                       | Owner(s)                   |
-|-----------------------------------------------------------------------------------------|------------------------------|----------------------------|
-| Web Inspector UI (Mantine / TypeScript) — dumb components with real MCP/Core interfaces | In Progress                  | Cliff Hall, Ola Hungerford |
-| Inspector Core shared-code architecture                                                 | In Progress                  | Bob Dickinson              |
-| CLI Inspector and TUI Inspector                                                         | In Progress                  | Bob Dickinson              |
-| Migration of existing Inspector on `main` to `v1.x` maintenance branch                  | Planning                     | WG Leads                   |
-| Testing apparatus across Core, Web, CLI, and TUI                                        | Planning                     | WG Leads                   |
-| Inspector Core adoption of MCP TypeScript SDK V2                                        | Blocked (gated by TS SDK WG) | Bob Dickinson              |
+| Work Item | Status | Owner(s) |
+|----|----|----|
+| Web Inspector UI (Mantine / TypeScript) — dumb components with real MCP/Core interfaces | In Progress | Cliff Hall, Ola Hungerford |
+| Inspector Core shared-code architecture | In Progress | Bob Dickinson |
+| CLI Inspector and TUI Inspector | In Progress | Bob Dickinson |
+| Migration of existing Inspector on `main` to `v1.x` maintenance branch | Planning | WG Leads |
+| Testing apparatus across Core, Web, CLI, and TUI | Planning | WG Leads |
+| Inspector Core adoption of MCP TypeScript SDK V2 | Blocked (gated by TS SDK WG) | Bob Dickinson |
 
 
 [​](#success-criteria)
@@ -176,6 +179,6 @@ Success Criteria
 
 Changelog
 
-| Date       | Change                                           | Author               |
-|------------|--------------------------------------------------|----------------------|
+| Date | Change | Author |
+|----|----|----|
 | 2026-04-11 | Initial charter adopted for SEP-2149 compliance. | Cliff Hall (Co-Lead) |

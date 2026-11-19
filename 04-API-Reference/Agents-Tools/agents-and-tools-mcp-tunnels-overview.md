@@ -2,7 +2,7 @@
 title: "MCP tunnels - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/mcp-tunnels/overview"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:26Z"
+fetched_at: "2026-11-13T06:35:14Z"
 tags: ["api", "mcp", "security"]
 ---
 
@@ -20,24 +20,24 @@ Securely connect Claude to MCP servers running in your private network without o
 
 MCP tunnels
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Research preview
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
 
-[Beta header](#feature-beta-headers)  
-Either (Messages API)
-- `mcp-client-2026-09-15`
-  
-- `mcp-client-2025-11-20`
-  
+[Beta header](#feature-availability)  
+- Varies; see details
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 MCP tunnels are in research preview
 
@@ -243,42 +243,28 @@ Use tunneled servers from the Messages API.
 
 ## Availability
 
-MCP tunnels are in research preview on every model.
+MCP tunnels
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusResearch preview
+Claude API
 
-Cloud platforms
+Status  
+Research preview
 
-- Claude API
+APIs  
+- 
+  Messages API
+  requires either
+  mcp-client-2026-09-15
+  or
+  mcp-client-2025-11-20
+- Managed Agents
 
-[Managed Agents](../Other/managed-agents-overview.md)
-
-StatusResearch preview
-
-Cloud platforms
-
-- Claude API
-
-### Required beta headers
-
-[Beta headers overview](../Endpoints/beta-headers.md)
-
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
-
-Header
-
-- `mcp-client-2026-09-15`
-  
-- or`mcp-client-2025-11-20`
-  
-
-APIs
-
-- [Messages API](../Guides/build-with-claude-working-with-messages.md)
+Models  
+- All models
 
 ### Data handling
 

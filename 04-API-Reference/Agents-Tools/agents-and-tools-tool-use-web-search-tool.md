@@ -2,7 +2,7 @@
 title: "Web search tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:34Z"
+fetched_at: "2026-11-13T06:35:21Z"
 tags: ["api", "prompting", "search"]
 ---
 
@@ -20,14 +20,22 @@ Give Claude access to current web content with cited sources, optional dynamic f
 
 Web search tool
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Usage differs by product
 
@@ -85,7 +93,7 @@ Claude answers directly without searching when the request draws on stable knowl
 - Analysis of content already provided in the conversation
 - Conversational turns and greetings
 
-Triggering is steerable through your system prompt: you can encourage Claude to search more readily or to prefer answering directly. For a hard constraint, use `max_uses` to cap the number of searches for each request.
+Triggering is steerable through your system prompt: you can encourage Claude to search more readily or to prefer answering directly. To enforce a limit, use [`max_uses`](#max-uses) to cap the number of searches in a turn.
 
 ### Dynamic filtering
 
@@ -177,7 +185,7 @@ client = anthropic.Anthropic()
 
 response = client.messages.create(
     model="claude-opus-5-5",
-    max_tokens=1024,
+    max_tokens=4096,
     messages=[{"role": "user", "content": "What's the weather in NYC?"}],
     tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 5}],
 )
@@ -197,7 +205,7 @@ JSON
   "type": "web_search_20250305",
   "name": "web_search",
 
-  // Optional: Limit the number of searches for each request
+  // Optional: Limit the number of searches
   "max_uses": 5,
 
   // Optional: Only include results from these domains.
@@ -222,9 +230,11 @@ All web search tool versions accept `allowed_callers`, which controls whether Cl
 
 ### Max uses
 
-The `max_uses` parameter limits the number of searches performed. If Claude attempts more searches than allowed, the `web_search_tool_result` is an error with the `max_uses_exceeded` error code.
+The `max_uses` parameter limits the number of searches in a single turn. Single-fact queries typically use 1–3 searches; comparative or multientity research can use 10 or more.
 
-Simple factual queries typically use 1–3 searches; comparative or multientity research can use 10 or more. For guidance on choosing a value, see [Server tools](agents-and-tools-tool-use-server-tools.md).
+Failed searches count against the limit. If Claude calls web search directly more times than allowed, the `web_search_tool_result` is an error with the `max_uses_exceeded` error code. If Claude calls web search from code execution more times than allowed, the code execution run ends with an error.
+
+A turn can span several requests. A request continues a turn when it resumes after [`pause_turn`](agents-and-tools-tool-use-server-tools.md#the-server-side-loop-and-pause-turn) or when its last message contains only `tool_result` blocks. Searches from earlier requests in that turn count against the limit, unless Claude ran them from code execution through [dynamic filtering](#dynamic-filtering).
 
 ### Domain filtering
 
@@ -252,7 +262,7 @@ On Claude Managed Agents, the `web_search` entry of the agent toolset also accep
 
 Requires `web_search_20260318` or later.
 
-The `response_inclusion` parameter controls how search result blocks appear in the API response when the result was consumed by a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same turn. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, reducing output token costs for agentic workflows that don’t need to echo raw search content back to the client. The default is `"full"`. Results from direct calls, or from code execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
+The `response_inclusion` parameter controls how search result blocks appear in the API response when a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same response consumed the result. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, for agentic workflows that don’t need the raw search content. Token usage is unaffected, because Claude reads the code’s output rather than these blocks. The default is `"full"`. The API always returns results from direct calls, or from code execution calls that paused before completing, in full so that you can send them back in the next request.
 
 JSON
 
@@ -352,7 +362,7 @@ Search results include:
 - `page_age`: When the site was last updated
 - `encrypted_content`: Encrypted content that you must pass back in multi-turn conversations
 
-To continue a conversation that contains search results, send the assistant’s content blocks back exactly as you received them, including each result’s `encrypted_content`. The API decrypts that content on later turns to restore the search results in Claude’s context. If `encrypted_content` is missing or modified, the request fails with a 400 validation error.
+To continue a conversation that contains search results, send the assistant’s content blocks back exactly as you received them, including each result’s `encrypted_content`. The API decrypts that content in later requests to restore the search results in Claude’s context. If `encrypted_content` is missing or modified, the request fails with a 400 validation error.
 
 ### Citations
 
@@ -413,7 +423,7 @@ To cache tool definitions across turns, see [Tool use with prompt caching](agent
 
 ## Streaming
 
-With streaming enabled, you’ll receive search events as part of the stream. There is a pause while the search runs:
+With streaming enabled, you receive search events as part of the stream. There is a pause while the search runs:
 
 Output
 
@@ -446,7 +456,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "web
 
 ## Batch requests
 
-You can include the web search tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md). Web search tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
+You can include the web search tool in the [Message Batches API](../Guides/build-with-claude-batch-processing.md). Web search tool calls through the Message Batches API are priced the same as those in regular Messages API requests.
 
 To protect shared capacity, the Batches API throttles web search requests for each organization, so large batches with many searches might take longer to complete. You can see your organization’s web search rate limit on the [Rate limits](../Other/playground.md) page in the Claude Console. To request a higher limit, contact sales from that page.
 
@@ -472,7 +482,7 @@ Web search usage is charged in addition to token usage:
 
 Web search is available on the Claude API for **\$10 USD per 1,000 searches**, plus standard token costs for search-generated content. Web search results retrieved throughout a conversation are counted as input tokens, in search iterations run during a single turn and in subsequent conversation turns.
 
-Each web search counts as one use, regardless of the number of results returned. If an error occurs during web search, the web search will not be billed.
+Each web search counts as one use, regardless of the number of results returned. A web search that fails with an error is not billed.
 
 ## Next steps
 
@@ -496,46 +506,67 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Web search tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Web search tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Add a `web_search` tool to the request’s `tools`. Settings such as `max_uses`, domain lists and `user_location` go on that tool.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Models on Google Cloud (Anthropic managed)
 
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Azure
+API  
+- Messages API
 
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
 Only the basic web search tool (`web_search_20250305`), without dynamic filtering.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Microsoft Foundry (hosted on Azure)
 
-Usage
+API  
+- Messages API
 
-Part of the agent toolset, and on by default once the toolset is added. Domain lists and `user_location` go on the toolset’s `web_search` entry; `max_uses`, `citations` and `cache_control` are not available.
+Models  
+- All models
 
-StatusAvailable
+Note  
+Only the basic web search tool (`web_search_20250305`), without dynamic filtering.
 
-Cloud platforms
+Microsoft Foundry (hosted on Anthropic)
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

@@ -2,7 +2,7 @@
 title: "Code execution tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/en/docs/agents-and-tools/tool-use/code-execution-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:37:00Z"
+fetched_at: "2026-11-13T06:37:05Z"
 tags: ["api", "containers"]
 ---
 
@@ -23,11 +23,17 @@ Run Python and Bash code in a sandboxed container to analyze data, generate file
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryHosted on AnthropicAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft FoundryHosted on Anthropic
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Claude can analyze data, create visualizations, perform complex calculations, run system commands, create and edit files, and process uploaded files directly within the API conversation. The code execution tool allows Claude to run Bash commands and manipulate files, including writing code, in a secure, sandboxed environment.
 
@@ -736,18 +742,45 @@ Learn how to use Agent Skills to extend Claude’s capabilities through the API.
 
 ## Availability
 
-Code execution tool is available on every model.
+Code execution tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Code execution tool are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

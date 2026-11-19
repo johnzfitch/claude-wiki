@@ -2,7 +2,7 @@
 title: "Claude Haiku 3 system prompts - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/release-notes/system-prompts/claude-haiku-3"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:18Z"
+fetched_at: "2026-11-13T06:36:51Z"
 tags: ["models", "prompting"]
 ---
 
@@ -12,7 +12,7 @@ tags: ["models", "prompting"]
 
 
 
-See updates to the core system prompt for Claude Haiku 3 on [claude.ai](https://claude.ai), the [Claude iOS app](https://anthropic.com/ios), and the [Claude Android app](https://anthropic.com/android).
+See updates to the core system prompt for Claude Haiku 3 on [claude.ai(opens in new tab)](https://claude.ai), the [Claude iOS app(opens in new tab)](https://anthropic.com/ios), and the [Claude Android app(opens in new tab)](https://anthropic.com/android).
 
 Copy page
 

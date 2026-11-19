@@ -2,8 +2,7 @@
 title: "Anthropic supports the responsible use of Claude in political campaigns. Used…"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/027b10ca405e9bb66b98c88d911b4b21a0b70123.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:38:56Z"
-last_modified: "Wed, 14 Oct 2026 17:20:20 GMT"
+fetched_at: "2026-11-18T06:28:47Z"
 tags: ["news-research"]
 ---
 

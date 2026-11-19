@@ -2,7 +2,7 @@
 title: "A “floor” is one run of the decentralized market for one office’s pool of…"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/7dcd7d8de6e132048f391f5201439c5e11b9fb2c.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-29T06:31:19Z"
+fetched_at: "2026-11-18T06:28:58Z"
 tags: ["news-research"]
 ---
 

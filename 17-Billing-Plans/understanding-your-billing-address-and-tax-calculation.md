@@ -2,7 +2,7 @@
 title: "Understanding your billing address and tax calculation | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12997130-understanding-your-billing-address-and-tax-calculation"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:43Z"
+fetched_at: "2026-11-18T06:27:50Z"
 tags: ["billing"]
 ---
 

@@ -2,7 +2,7 @@
 title: "PDF support - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/pdf-support"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:05Z"
+fetched_at: "2026-11-13T06:36:26Z"
 tags: ["api"]
 ---
 
@@ -20,14 +20,18 @@ Process PDFs with Claude: extract text, analyze charts, and understand visual co
 
 PDF support
 
-[APIs](#feature-availability)  
-Messages APIAlways onManaged AgentsAlways on
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 You can ask Claude about any text, pictures, charts, and tables in PDFs you provide. Some sample use cases:
 
@@ -518,60 +522,82 @@ See complete API documentation for PDF support.
 
 ## Availability
 
-PDF support is available on every model and eligible for zero data retention and HIPAA readiness.
+PDF support
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Always on
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Amazon Bedrock
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+API  
+- Messages API
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Note  
+Base64 sources only.
 
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+Amazon Bedrock (bedrock-runtime)
 
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
+Base64 sources only.
+
+Claude Platform on AWS
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
+Base64 sources only.
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
 `file_id` sources need a Hosted on Anthropic deployment.
-
-StatusAvailable
-
-Cloud platforms
-
-- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-
-Base64 sources only.
-
-StatusAvailable
-
-Cloud platforms
-
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-
-Base64 sources only.
-
-[Managed Agents](../Other/managed-agents-overview.md)
-
-Usage
-
-Always on
-
-StatusAvailable
-
-Cloud platforms
-
-- All supported platforms
 
 ### Data handling
 

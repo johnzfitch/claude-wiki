@@ -1,9 +1,9 @@
 ---
 title: "Understanding MCP servers - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/draft/learn/server-concepts"
+source_url: "https://modelcontextprotocol.io/docs/2026-07-28/learn/server-concepts"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-31T06:25:18Z"
-last_modified: "Sat, 31 Oct 2026 01:20:42 GMT"
+fetched_at: "2026-11-16T06:24:36Z"
+last_modified: "Mon, 16 Nov 2026 04:17:00 GMT"
 tags: ["mcp"]
 ---
 
@@ -39,28 +39,19 @@ Copy pageCopy page
 
 MCP servers are programs that expose specific capabilities to AI applications through standardized protocol interfaces. Common examples include file system servers for document access, database servers for data queries, GitHub servers for code management, Slack servers for team communication, and calendar servers for scheduling.
 
-
-[​](#core-server-features)
-
-Core Server Features
+## [](#core-server-features)Core Server Features
 
 Servers provide functionality through three building blocks:
 
 [TABLE]
 
-We will use a hypothetical scenario to demonstrate the role of each of these features, and show how they can work together.
+We will use a hypothetical scenario to demonstrate the role of each of these features, and show how they can work together. Examples with a `jsonrpc` field are complete messages, and the rest are excerpts. Every request carries the [protocol version and client capabilities](2026-07-28-learn-architecture.md#statelessness-and-discovery) in `_meta`, and every result has a [`resultType`](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#responses).
 
-
-[​](#tools)
-
-Tools
+### [](#tools)Tools
 
 Tools enable AI models to perform actions. Each tool defines a specific operation with typed inputs and outputs. The model requests tool execution based on context.
 
-
-[​](#how-tools-work)
-
-How Tools Work
+#### [](#how-tools-work)How Tools Work
 
 Tools are schema-defined interfaces that LLMs can invoke. MCP uses JSON Schema for validation. Each tool performs a single operation with clearly defined inputs and outputs. Tools may require user consent prior to execution, helping to ensure users maintain control over actions taken by a model. **Protocol operations:**
 
@@ -69,53 +60,128 @@ Tools are schema-defined interfaces that LLMs can invoke. MCP uses JSON Schema f
 | `tools/list` | Discover available tools | Array of tool definitions with schemas |
 | `tools/call` | Execute a specific tool | Tool execution result |
 
-**Example tool definition:**
+**Example tool definition, as returned by `tools/list`:**
 
 ```python
 {
-  name: "searchFlights",
-  description: "Search for available flights",
-  inputSchema: {
-    type: "object",
-    properties: {
-      origin: { type: "string", description: "Departure city" },
-      destination: { type: "string", description: "Arrival city" },
-      date: { type: "string", format: "date", description: "Travel date" }
+  "name": "searchFlights",
+  "title": "Search Flights",
+  "description": "Search for available flights",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "origin": { "type": "string", "description": "Departure city" },
+      "destination": { "type": "string", "description": "Arrival city" },
+      "date": {
+        "type": "string",
+        "format": "date",
+        "description": "Travel date"
+      }
     },
-    required: ["origin", "destination", "date"]
+    "required": ["origin", "destination", "date"]
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "flights": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "flightNumber": { "type": "string" },
+            "priceUsd": { "type": "number" }
+          },
+          "required": ["flightNumber", "priceUsd"]
+        }
+      }
+    },
+    "required": ["flights"]
   }
 }
 ```
 
+#### [](#example-travel-booking)Example: Travel Booking
 
-[​](#example-travel-booking)
-
-Example: Travel Booking
-
-Tools enable AI applications to perform actions on behalf of users. In a travel planning scenario, the AI application might use several tools to help book a vacation: **Flight Search**
+Tools enable AI applications to perform actions on behalf of users. In a travel planning scenario, the AI application might use several tools to help book a vacation: **Flight Search** Queries multiple airlines and returns structured flight options. The arguments in the `tools/call` request conform to the tool’s `inputSchema`:
 
 ```python
-searchFlights(origin: "NYC", destination: "Barcelona", date: "2024-06-15")
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "tools/call",
+  "params": {
+    "name": "searchFlights",
+    "arguments": {
+      "origin": "New York",
+      "destination": "Barcelona",
+      "date": "2027-06-15"
+    },
+    "_meta": {
+      "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+      "io.modelcontextprotocol/clientInfo": {
+        "name": "example-client",
+        "version": "1.0.0"
+      },
+      "io.modelcontextprotocol/clientCapabilities": { "elicitation": {} }
+    }
+  }
+}
 ```
 
-Queries multiple airlines and returns structured flight options. **Calendar Blocking**
+The result’s `structuredContent` conforms to the tool’s `outputSchema`. For backwards compatibility, the result also includes the serialized JSON as text:
 
 ```python
-createCalendarEvent(title: "Barcelona Trip", startDate: "2024-06-15", endDate: "2024-06-22")
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "result": {
+    "resultType": "complete",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"flights\":[{\"flightNumber\":\"EX101\",\"priceUsd\":640}]}"
+      }
+    ],
+    "structuredContent": {
+      "flights": [{ "flightNumber": "EX101", "priceUsd": 640 }]
+    },
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "travel-server",
+        "version": "1.0.0"
+      }
+    }
+  }
+}
 ```
 
-Marks the travel dates in the user’s calendar. **Email notification**
+The other tools are called the same way, with their own `name` and `arguments`. **Calendar Blocking** Marks the travel dates in the user’s calendar.
 
 ```python
-sendEmail(to: "team@work.com", subject: "Out of Office", body: "...")
+{
+  "name": "createCalendarEvent",
+  "arguments": {
+    "title": "Barcelona Trip",
+    "startDate": "2027-06-15",
+    "endDate": "2027-06-22"
+  }
+}
 ```
 
-Sends an automated out-of-office message to colleagues.
+**Email notification** Sends an automated out-of-office message to colleagues.
 
+```python
+{
+  "name": "sendEmail",
+  "arguments": {
+    "to": "team@example.com",
+    "subject": "Out of Office",
+    "body": "I am out of the office from June 15 to June 22."
+  }
+}
+```
 
-[​](#user-interaction-model)
-
-User Interaction Model
+#### [](#user-interaction-model)User Interaction Model
 
 Tools are model-controlled, meaning AI models can discover and invoke them automatically. However, MCP emphasizes human oversight through several mechanisms. For trust and safety, applications can implement user control through various mechanisms, such as:
 
@@ -124,48 +190,90 @@ Tools are model-controlled, meaning AI models can discover and invoke them autom
 - Permission settings for pre-approving certain safe operations
 - Activity logs that show all tool executions with their results
 
-
-[​](#resources)
-
-Resources
+### [](#resources)Resources
 
 Resources provide structured access to information that the AI application can retrieve and provide to models as context.
 
+#### [](#how-resources-work)How Resources Work
 
-[​](#how-resources-work)
+Resources expose data from files, APIs, databases, or any other source that an AI needs to understand context. Applications can access this information directly and decide how to use it - whether that’s selecting relevant portions, searching with embeddings, or passing it all to the model. Each resource has a unique URI (e.g., `file:///path/to/document.md`) and can declare its MIME type for appropriate content handling. Resources support two discovery patterns:
 
-How Resources Work
+- **Direct Resources** - fixed URIs that point to specific data. Example: `calendar://events/2027-06` - returns calendar availability for June 2027
+- **Resource Templates** - parameterized URIs for flexible queries. Example: `travel://activities/{city}/{category}` - returns activities by city and category. For example, `travel://activities/Barcelona/museums` returns all museums in Barcelona
 
-Resources expose data from files, APIs, databases, or any other source that an AI needs to understand context. Applications can access this information directly and decide how to use it - whether that’s selecting relevant portions, searching with embeddings, or passing it all to the model. Each resource has a unique URI (e.g., `file:///path/to/document.md`) and declares its MIME type for appropriate content handling. Resources support two discovery patterns:
-
-- **Direct Resources** - fixed URIs that point to specific data. Example: `calendar://events/2024` - returns calendar availability for 2024
-- **Resource Templates** - dynamic URIs with parameters for flexible queries. Example:
-  - `travel://activities/{city}/{category}` - returns activities by city and category
-  - `travel://activities/barcelona/museums` - returns all museums in Barcelona
-
-Resource Templates include metadata such as title, description, and expected MIME type, making them discoverable and self-documenting. **Protocol operations:**
+Resource Templates can include metadata such as title, description, and expected MIME type, making them discoverable and self-documenting. **Protocol operations:**
 
 | Method | Purpose | Returns |
 |----|----|----|
 | `resources/list` | List available direct resources | Array of resource descriptors |
 | `resources/templates/list` | Discover resource templates | Array of resource template definitions |
 | `resources/read` | Retrieve resource contents | Resource data with metadata |
+| `completion/complete` | Suggest parameter values | Array of suggested values |
 | `subscriptions/listen` | Monitor resource changes | Stream of update notifications |
 
-To watch specific resources for changes, a client sends a [`subscriptions/listen`](../Spec/2026-07-28-basic-patterns-subscriptions.md) request with the resource URIs listed in the `resourceSubscriptions` filter. The server delivers `notifications/resources/updated` on the resulting stream whenever a watched resource changes.
+To watch specific resources for changes, a client sends a [`subscriptions/listen`](../Spec/2026-07-28-basic-patterns-subscriptions.md) request with the resource URIs listed in the `resourceSubscriptions` filter. Servers that support update notifications for individual resources declare `"subscribe": true` in their `resources` capability. The server delivers `notifications/resources/updated` on the resulting stream whenever a watched resource changes.
 
-
-[​](#example-getting-travel-planning-context)
-
-Example: Getting Travel Planning Context
+#### [](#example-getting-travel-planning-context)Example: Getting Travel Planning Context
 
 Continuing with the travel planning example, resources provide the AI application with access to relevant information:
 
-- **Calendar data** (`calendar://events/2024`) - Checks user availability
+- **Calendar data** (`calendar://events/2027-06`) - Checks user availability
 - **Travel documents** (`file:///Documents/Travel/passport.pdf`) - Accesses important documents
-- **Previous itineraries** (`trips://history/barcelona-2023`) - References past trips and preferences
+- **Travel preferences** (`travel://preferences/europe`) - Looks up preferred airlines and hotel types
+- **Previous itineraries** (`travel://past-trips/spain-2023`) - References past trips
+- **Weather forecast** (`weather://forecast/Barcelona/2027-06-15`) - Looks up the weather for a travel date
 
-The AI application retrieves these resources and decides how to process them, whether selecting a subset of data using embeddings or keyword search, or passing raw data directly to the model. In this case, it provides calendar data, weather information, and travel preferences to the model, enabling it to check availability, look up weather patterns, and reference past travel preferences. **Resource Template Examples:**
+The AI application retrieves these resources and decides how to process them, whether selecting a subset of data using embeddings or keyword search, or passing raw data directly to the model. In this case, it provides calendar data, weather information, travel preferences, and past trips to the model, enabling it to check availability, look up weather patterns, and follow the user’s preferences. The AI application reads each resource with a `resources/read` request:
+
+```python
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "method": "resources/read",
+  "params": {
+    "uri": "calendar://events/2027-06",
+    "_meta": {
+      "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+      "io.modelcontextprotocol/clientInfo": {
+        "name": "example-client",
+        "version": "1.0.0"
+      },
+      "io.modelcontextprotocol/clientCapabilities": {
+        "elicitation": {}
+      }
+    }
+  }
+}
+```
+
+The result contains the resource contents and two [caching hints](../Spec/2026-07-28-server-utilities-caching.md). `ttlMs` is how long the client may consider the result fresh, in milliseconds, and a `cacheScope` of `"private"` means that caches must not share it across authorization contexts:
+
+```python
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "resultType": "complete",
+    "contents": [
+      {
+        "uri": "calendar://events/2027-06",
+        "mimeType": "application/json",
+        "text": "{\"busy\":[{\"startDate\":\"2027-06-03\",\"endDate\":\"2027-06-04\"}]}"
+      }
+    ],
+    "ttlMs": 60000,
+    "cacheScope": "private",
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "calendar-email-server",
+        "version": "1.0.0"
+      }
+    }
+  }
+}
+```
+
+**Resource template examples:** From a weather server:
 
 ```python
 {
@@ -175,34 +283,88 @@ The AI application retrieves these resources and decides how to process them, wh
   "description": "Get weather forecast for any city and date",
   "mimeType": "application/json"
 }
+```
 
+From a travel server:
+
+```python
 {
   "uriTemplate": "travel://flights/{origin}/{destination}",
   "name": "flight-search",
   "title": "Flight Search",
-  "description": "Search available flights between cities",
+  "description": "Search available flights between two airports",
   "mimeType": "application/json"
 }
 ```
 
-These templates enable flexible queries. For weather data, users can access forecasts for any city/date combination. For flights, they can search routes between any two airports. When a user has input “NYC” as the `origin` airport and begins to input “Bar” as the `destination` airport, the system can suggest “Barcelona (BCN)” or “Barbados (BGI)”.
+These templates enable flexible queries. For weather data, users can access forecasts for any city/date combination. For flights, they can search routes between any two airports.
 
+#### [](#parameter-completion)Parameter Completion
 
-[​](#parameter-completion)
+Servers that declare the `completions` capability can suggest values for template parameters. For example:
 
-Parameter Completion
+- Typing “Par” for `city` in `weather://forecast/{city}/{date}` might suggest “Paris” or “Park City”
+- Typing “JF” for `origin` in `travel://flights/{origin}/{destination}` might suggest “JFK”
 
-Dynamic resources support parameter completion. For example:
+When a template has multiple parameters, clients should include the values that are already resolved in `context.arguments`, so the server can narrow its suggestions. Here, the user has chosen `JFK` as the `origin` and typed “Bar” for the `destination`:
 
-- Typing “Par” as input for `weather://forecast/{city}` might suggest “Paris” or “Park City”
-- Typing “JFK” for `flights://search/{airport}` might suggest “JFK - John F. Kennedy International”
+```python
+{
+  "jsonrpc": "2.0",
+  "id": 3,
+  "method": "completion/complete",
+  "params": {
+    "ref": {
+      "type": "ref/resource",
+      "uri": "travel://flights/{origin}/{destination}"
+    },
+    "argument": {
+      "name": "destination",
+      "value": "Bar"
+    },
+    "context": {
+      "arguments": {
+        "origin": "JFK"
+      }
+    },
+    "_meta": {
+      "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+      "io.modelcontextprotocol/clientInfo": {
+        "name": "example-client",
+        "version": "1.0.0"
+      },
+      "io.modelcontextprotocol/clientCapabilities": { "elicitation": {} }
+    }
+  }
+}
+```
+
+The server suggests the airport codes for Barcelona and Barbados, which both have flights from JFK:
+
+```python
+{
+  "jsonrpc": "2.0",
+  "id": 3,
+  "result": {
+    "resultType": "complete",
+    "completion": {
+      "values": ["BCN", "BGI"],
+      "total": 2,
+      "hasMore": false
+    },
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "travel-server",
+        "version": "1.0.0"
+      }
+    }
+  }
+}
+```
 
 The system helps discover valid values without requiring exact format knowledge.
 
-
-[​](#user-interaction-model-2)
-
-User Interaction Model
+#### [](#user-interaction-model-2)User Interaction Model
 
 Resources are application-driven, giving them flexibility in how they retrieve, process, and present available context. Common interaction patterns include:
 
@@ -213,31 +375,23 @@ Resources are application-driven, giving them flexibility in how they retrieve, 
 
 Applications are free to implement resource discovery through any interface pattern that suits their needs. The protocol doesn’t mandate specific UI patterns, allowing for resource pickers with preview capabilities, smart suggestions based on current conversation context, bulk selection for including multiple resources, or integration with existing file browsers and data explorers.
 
-
-[​](#prompts)
-
-Prompts
+### [](#prompts)Prompts
 
 Prompts provide reusable templates. They allow MCP server authors to provide parameterized prompts for a domain, or showcase how to best use the MCP server.
 
-
-[​](#how-prompts-work)
-
-How Prompts Work
+#### [](#how-prompts-work)How Prompts Work
 
 Prompts are structured templates that define expected inputs and interaction patterns. They are user-controlled, requiring explicit invocation rather than automatic triggering. Prompts can be context-aware, referencing available resources and tools to create comprehensive workflows. Similar to resources, prompts support parameter completion to help users discover valid argument values. **Protocol operations:**
 
 | Method | Purpose | Returns |
 |----|----|----|
-| `prompts/list` | Discover available prompts | Array of prompt descriptors |
-| `prompts/get` | Retrieve prompt details | Full prompt definition with arguments |
+| `prompts/list` | Discover available prompts | Array of prompt definitions, including the arguments each one accepts |
+| `prompts/get` | Retrieve a prompt | Array of prompt messages |
+| `completion/complete` | Suggest argument values | Array of suggested values |
 
+#### [](#example-streamlined-workflows)Example: Streamlined Workflows
 
-[​](#example-streamlined-workflows)
-
-Example: Streamlined Workflows
-
-Prompts provide structured templates for common tasks. In the travel planning context: **“Plan a vacation” prompt:**
+Prompts provide structured templates for common tasks. In the travel planning context: **“Plan a vacation” prompt, as returned by `prompts/list`:**
 
 ```python
 {
@@ -245,24 +399,51 @@ Prompts provide structured templates for common tasks. In the travel planning co
   "title": "Plan a vacation",
   "description": "Guide through vacation planning process",
   "arguments": [
-    { "name": "destination", "type": "string", "required": true },
-    { "name": "duration", "type": "number", "description": "days" },
-    { "name": "budget", "type": "number", "required": false },
-    { "name": "interests", "type": "array", "items": { "type": "string" } }
+    {
+      "name": "origin",
+      "description": "City to depart from",
+      "required": true
+    },
+    {
+      "name": "destination",
+      "description": "City to visit",
+      "required": true
+    },
+    {
+      "name": "departureDate",
+      "description": "First day of the trip, as YYYY-MM-DD",
+      "required": true
+    },
+    {
+      "name": "returnDate",
+      "description": "Last day of the trip, as YYYY-MM-DD",
+      "required": true
+    },
+    {
+      "name": "budget",
+      "description": "Total budget in USD",
+      "required": false
+    },
+    {
+      "name": "travelers",
+      "description": "Number of travelers",
+      "required": false
+    },
+    {
+      "name": "interests",
+      "description": "Comma-separated list of interests"
+    }
   ]
 }
 ```
 
-Rather than unstructured natural language input, the prompt system enables:
+Prompt arguments don’t have types. Every value is sent as a string, so use `description` to specify the expected format. Arguments are optional unless `required` is `true`. Rather than unstructured natural language input, the prompt system enables:
 
 1.  Selection of the “Plan a vacation” template
-2.  Structured input: Barcelona, 7 days, \$3000, \[“beaches”, “architecture”, “food”\]
+2.  Structured input: New York to Barcelona, June 15-22, \$3000, 2 travelers, interested in beaches, architecture, and food
 3.  Consistent workflow execution based on the template
 
-
-[​](#user-interaction-model-3)
-
-User Interaction Model
+#### [](#user-interaction-model-3)User Interaction Model
 
 Prompts are user-controlled, requiring explicit invocation. The protocol gives implementers freedom to design interfaces that feel natural within their application. Key principles include:
 
@@ -278,17 +459,11 @@ Applications typically expose prompts through various UI patterns such as:
 - Dedicated UI buttons for frequently used prompts
 - Context menus that suggest relevant prompts
 
-
-[​](#bringing-servers-together)
-
-Bringing Servers Together
+## [](#bringing-servers-together)Bringing Servers Together
 
 The real power of MCP emerges when multiple servers work together, combining their specialized capabilities through a unified interface.
 
-
-[​](#example-multi-server-travel-planning)
-
-Example: Multi-Server Travel Planning
+### [](#example-multi-server-travel-planning)Example: Multi-Server Travel Planning
 
 Consider a personalized AI travel planner application, with three connected servers:
 
@@ -296,36 +471,77 @@ Consider a personalized AI travel planner application, with three connected serv
 - **Weather Server** - Provides climate data and forecasts
 - **Calendar/Email Server** - Manages schedules and communications
 
+#### [](#the-complete-flow)The Complete Flow
 
-[​](#the-complete-flow)
-
-The Complete Flow
-
-1.  **User invokes a prompt with parameters:**
+1.  **User invokes a prompt with parameters:** The user picks “Plan a vacation” and fills in its arguments. The client sends a `prompts/get` request to the Travel Server:
 
     ``` shiki
     {
-      "prompt": "plan-vacation",
-      "arguments": {
-        "destination": "Barcelona",
-        "departure_date": "2024-06-15",
-        "return_date": "2024-06-22",
-        "budget": 3000,
-        "travelers": 2
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "prompts/get",
+      "params": {
+        "name": "plan-vacation",
+        "arguments": {
+          "origin": "New York",
+          "destination": "Barcelona",
+          "departureDate": "2027-06-15",
+          "returnDate": "2027-06-22",
+          "budget": "3000",
+          "travelers": "2",
+          "interests": "beaches, architecture, food"
+        },
+        "_meta": {
+          "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+          "io.modelcontextprotocol/clientInfo": {
+            "name": "example-client",
+            "version": "1.0.0"
+          },
+          "io.modelcontextprotocol/clientCapabilities": { "elicitation": {} }
+        }
+      }
+    }
+    ```
+
+    The server returns messages that the AI application adds to the conversation:
+
+    ``` shiki
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": {
+        "resultType": "complete",
+        "description": "Guide through vacation planning process",
+        "messages": [
+          {
+            "role": "user",
+            "content": {
+              "type": "text",
+              "text": "Plan a vacation from New York to Barcelona for 2 travelers, from 2027-06-15 to 2027-06-22, with a total budget of $3000. Interests: beaches, architecture, food.\n\nUse the calendar, travel preferences, and past trips provided as context. Search for flights and hotels within the budget, and check the weather for the travel dates. Propose one package. After the user agrees, book it, add the trip to the calendar, and email a confirmation."
+            }
+          }
+        ],
+        "_meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "travel-server",
+            "version": "1.0.0"
+          }
+        }
       }
     }
     ```
 2.  **User selects resources to include:**
-    - `calendar://my-calendar/June-2024` (from Calendar Server)
+    - `calendar://events/2027-06` (from Calendar/Email Server)
     - `travel://preferences/europe` (from Travel Server)
-    - `travel://past-trips/Spain-2023` (from Travel Server)
-3.  **AI processes the request using tools:** The AI first reads all selected resources to gather context - identifying available dates from the calendar, learning preferred airlines and hotel types from travel preferences, and discovering previously enjoyed locations from past trips. Using this context, the AI then executes the prompt provided by the AI application. In our example, the AI application exposes the weather tools from the connected MCP weather server to the model. Because weather can affect travel plans, the AI chooses to call `checkWeather()` when interpreting the prompt. As a result the AI executes a series of tools:
-    - `searchFlights()` - Queries airlines for NYC to Barcelona flights
-    - `checkWeather()` - Retrieves climate forecasts for travel dates
+    - `travel://past-trips/spain-2023` (from Travel Server)
+3.  **AI processes the request using tools:** The AI application first reads all selected resources to gather context for the model - identifying available dates from the calendar, learning preferred airlines and hotel types from travel preferences, and discovering previously enjoyed locations from past trips. Using this context, the model then follows the prompt provided by the Travel Server. The AI application exposes the tools from all three servers to the model, so a prompt from the Travel Server can lead the model to call `checkWeather` on the Weather Server. As a result, the model calls a series of tools:
+    - `searchFlights` (from Travel Server) - Queries airlines for New York to Barcelona flights
+    - `searchHotels` (from Travel Server) - Finds hotels within the specified budget
+    - `checkWeather` (from Weather Server) - Retrieves climate forecasts for travel dates
 
-    The AI then uses this information to create the booking and following steps, requesting approval from the user where necessary:
-    - `bookHotel()` - Finds hotels within the specified budget
-    - `createCalendarEvent()` - Adds the trip to the user’s calendar
-    - `sendEmail()` - Sends confirmation with trip details
+    The model then uses this information to create the booking and following steps, with the AI application requesting approval from the user where necessary:
+    - `bookVacation` (from Travel Server) - Books the flights and hotel. The server asks the user to confirm the booking through [elicitation](draft-learn-client-concepts.md#elicitation)
+    - `createCalendarEvent` (from Calendar/Email Server) - Adds the trip to the user’s calendar
+    - `sendEmail` (from Calendar/Email Server) - Sends confirmation with trip details
 
-**The result:** Through multiple MCP servers, the user researched and booked a Barcelona trip tailored to their schedule. The “Plan a Vacation” prompt guided the AI to combine Resources (calendar availability and travel history) with Tools (searching flights, booking hotels, updating calendars) across different servers—gathering context and executing the booking. A task that could have taken hours was completed in minutes using MCP.
+**The result:** Through multiple MCP servers, the user researched and booked a Barcelona trip tailored to their schedule. The “Plan a vacation” prompt guided the AI to combine Resources (calendar availability and travel history) with Tools (searching flights and hotels, booking them, updating the calendar) across different servers—gathering context and executing the booking. A task that could have taken hours was completed in minutes using MCP.

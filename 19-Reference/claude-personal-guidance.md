@@ -2,9 +2,11 @@
 title: "How people ask Claude for personal guidance \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-personal-guidance"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:27:00Z"
+fetched_at: "2026-11-14T06:26:01Z"
 tags: ["news-research"]
 ---
+
+### 01Measuring sycophancy in guidance conversations
 
 # How people ask Claude for personal guidance
 
@@ -12,24 +14,21 @@ tags: ["news-research"]
 - [02Improving Claude’s behavior in relationship guidance](#improving-claudes-behavior-in-relationship-guidance)
 - [03Conclusion](#conclusion)
 
-- Published
+Published  
+Apr 30, 2026
 
-  Apr 30, 2026
+Team  
+[Societal Impacts](team-societal-impacts.md)
 
-- Team
+Topics  
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
+- [Wellbeing](https://www.anthropic.com/search?topic=wellbeing)
+- [Training](https://www.anthropic.com/search?topic=training)
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Privacy](https://www.anthropic.com/search?topic=privacy)
 
-  [Societal Impacts](team-societal-impacts.md)
-
-- Topics
-
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Sycophancy](https://www.anthropic.com/search?topic=sycophancy)
-  - [Wellbeing](https://www.anthropic.com/search?topic=wellbeing)
-  - [Training](https://www.anthropic.com/search?topic=training)
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Privacy](https://www.anthropic.com/search?topic=privacy)
-
-  See more...
+See more...
 
 Related articles
 
@@ -57,7 +56,7 @@ There remain many open questions on what good guidance from AI really means or h
 
 We sampled 1 million [claude.ai](http://claude.ai) conversations from March and April 2026 and filtered for unique users to get roughly 639,000 conversations. We then used a classifier to identify *personal guidance,* which we defined as conversations where people ask what *they specifically* should do in their personal lives—for example, questions that start with "Should I…?" or "What do I do about…?". We excluded questions that seek objective information or opinions in general terms.
 
-We categorized these roughly 38,000 conversations into nine domains, drawing from previous research on AI and guidance-giving: relationships, career, personal development, financial, legal, health and wellness, parenting, ethics, and spirituality (see [Appendix](when-someone-asks-for-personal-guidance-our-goal-for-how-claude-should-behave.md) for more information). This taxonomy covered 98% of the conversations we saw.
+We categorized these roughly 38,000 conversations into nine domains, drawing from previous research on AI and guidance-giving: relationships, career, personal development, financial, legal, health and wellness, parenting, ethics, and spirituality (see [Appendix](https://assets.claude.com/0a540acdf3e1678274f0fe04b3a70ea7fd99ed36.pdf) for more information). This taxonomy covered 98% of the conversations we saw.
 
 Over 75% of conversations fell into just four categories: health and wellness, professional and career, relationships, and financial (Figure 1). Where a conversation spanned multiple domains, we categorized it according to the most prominent topic.
 
@@ -79,7 +78,7 @@ First, relationship guidance was the domain where people pushed back against Cla
 
 To address this, we identified the different ways people push back in conversational patterns that elicit sycophantic responses—for example, when people criticize Claude's initial assessment, or supply a flood of one-sided detail. We use these patterns to construct synthetic relationship guidance scenarios for behavior training. In this environment, we ask Claude to sample two responses for each synthetic scenario; a separate instance of Claude then grades how well Claude adheres to the behavior outlined in its constitution.
 
-We evaluated how much the new model has improved through a technique we call stress-testing. We use our privacy-preserving tool to identify real conversations around personal guidance that people have shared with us through the Feedback button,^([1](#footnote-1)) and where prior generations of models behaved sycophantically. We then give part of this conversation to the new model (in this case, Opus 4.7 and Mythos Preview) through a technique called prefilling, where the model reads the previous conversation as its own. Because Claude tries to maintain consistency within a conversation, prefilling with sycophantic conversations makes it harder for Claude to change direction. This is a bit like steering a ship that's already moving, and thus measures Claude’s behavior under deliberately adverse conditions.
+We evaluated how much the new model has improved through a technique we call stress-testing. We use our privacy-preserving tool to identify real conversations around personal guidance that people have shared with us through the Feedback button,^([^1]) and where prior generations of models behaved sycophantically. We then give part of this conversation to the new model (in this case, Opus 4.7 and Mythos Preview) through a technique called prefilling, where the model reads the previous conversation as its own. Because Claude tries to maintain consistency within a conversation, prefilling with sycophantic conversations makes it harder for Claude to change direction. This is a bit like steering a ship that's already moving, and thus measures Claude’s behavior under deliberately adverse conditions.
 
 Many things change across each new generation of model, which makes it challenging to identify the impact of any one change in model training. However, in both Opus 4.7 and Mythos Preview, we observed a lower level of sycophancy on relationship guidance as well as across all personal guidance domains (Figure 3).
 
@@ -105,11 +104,11 @@ How people use AI for personal guidance and decisions is one of the most direct 
 
 #### Limitations
 
-Our analysis is a first step to uncovering patterns that drive a common use of AI models. This blog post is limited only to Claude users, who are not a representative population sample. To preserve people's privacy, we relied on automated graders (Claude Sonnet 4.5), which may miscategorize conversations (see [Appendix](when-someone-asks-for-personal-guidance-our-goal-for-how-claude-should-behave.md)). We iterated on grader prompts and manually verified a small subset of grading outcomes on feedback data where users gave us permission to review the conversation to reduce errors. We observed how the new models behaved after training, but without a counterfactual we can't make causal claims about how much the new training data specifically contributed to the reduction in sycophancy. Furthermore, our analysis is restricted to chat transcripts, which limits our understanding of why people seek guidance from Claude and how they acted on it after. Follow-up interview studies would better reveal what people do after they receive guidance from AI.
+Our analysis is a first step to uncovering patterns that drive a common use of AI models. This blog post is limited only to Claude users, who are not a representative population sample. To preserve people's privacy, we relied on automated graders (Claude Sonnet 4.5), which may miscategorize conversations (see [Appendix](https://assets.claude.com/0a540acdf3e1678274f0fe04b3a70ea7fd99ed36.pdf)). We iterated on grader prompts and manually verified a small subset of grading outcomes on feedback data where users gave us permission to review the conversation to reduce errors. We observed how the new models behaved after training, but without a counterfactual we can't make causal claims about how much the new training data specifically contributed to the reduction in sycophancy. Furthermore, our analysis is restricted to chat transcripts, which limits our understanding of why people seek guidance from Claude and how they acted on it after. Follow-up interview studies would better reveal what people do after they receive guidance from AI.
 
 #### Appendix
 
-Available [here.](when-someone-asks-for-personal-guidance-our-goal-for-how-claude-should-behave.md)
+Available [here.](https://assets.claude.com/0a540acdf3e1678274f0fe04b3a70ea7fd99ed36.pdf)
 
 ## Footnotes
 
@@ -120,3 +119,5 @@ Available [here.](when-someone-asks-for-personal-guidance-our-goal-for-how-claud
 ### Contributors
 
 Judy Hanwen Shen, Shan Carter, Richard Dargan, Jessica Gillotte, Kunal Handa, Jerry Hong, Saffron Huang, Kamya Jagadish, Matt Kearney, Ben Levinstein, Ryn Linthicum, Miles McCain, Thomas Millar, Mo Julapalli, Sara Price, Michael Stern, David Saunders, Alex Tamkin, Andrea Vallone, Jack Clark, Sarah Pollack, Jake Eaton, Deep Ganguli, Esin Durmus.
+
+[^1]:

@@ -2,7 +2,7 @@
 title: "MCP Tunnels - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/mcp_tunnels"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:17Z"
+fetched_at: "2026-11-13T06:35:43Z"
 tags: ["api", "mcp"]
 ---
 
@@ -28,7 +28,7 @@ Deprecated
 
 GET/v1/organizations/tunnels
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -38,7 +38,7 @@ Deprecated
 
 GET/v1/organizations/tunnels/{tunnel_id}
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -48,7 +48,7 @@ Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/archive
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -58,7 +58,7 @@ Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/reveal_token
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -68,7 +68,7 @@ Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/rotate_token
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -170,7 +170,7 @@ Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/certificates
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -180,7 +180,7 @@ Deprecated
 
 GET/v1/organizations/tunnels/{tunnel_id}/certificates
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -190,7 +190,7 @@ Deprecated
 
 GET/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.
 
@@ -200,6 +200,6 @@ Deprecated
 
 POST/v1/organizations/tunnels/{tunnel_id}/certificates/{certificate_id}/archive
 
-Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``mcp-tunnels-2026-05-19`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 **Deprecated.** This Admin API endpoint is superseded by `/v1/tunnels` on the Claude API and will be removed after a migration window. New integrations should use [`/v1/tunnels`](../Endpoints/http-beta-tunnels.md) with the `anthropic-beta: mcp-tunnels-2026-06-22` header and a WIF token carrying the `workspace:manage_tunnels` scope. Existing integrations continue to work with the `mcp-tunnels-2026-05-19` header and `org:manage_tunnels` scope during the migration window.

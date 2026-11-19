@@ -2,7 +2,7 @@
 title: "Building AI agents for financial services | Claude by Anthropic"
 source_url: "https://www.claude.com/blog/building-ai-agents-in-financial-services"
 category: "09-Agents-Patterns"
-fetched_at: "2026-11-09T06:25:38Z"
+fetched_at: "2026-11-18T06:27:23Z"
 tags: ["agents"]
 ---
 
@@ -32,6 +32,14 @@ Learn how teams at NBIM, Brex, and more build reliable AI agents with Claude on 
 
 [Read more](https://resources.anthropic.com/financial-services-guide-aws-anthropic)
 
+Contents
+
+1.  [Moving beyond analysis: how agents change the game](#moving-beyond-analysis-how-agents-change-the-game)
+2.  [Real-world results from AI agents in finance](#real-world-results-from-ai-agents-in-finance)
+3.  [Unique challenges in financial services](#unique-challenges-in-financial-services)
+4.  [Practical deployment strategies](#practical-deployment-strategies)
+5.  [Taking action](#taking-action)
+
 In financial services, AI agents are moving beyond pilot programs to deliver concrete business value.
 
 In banking, wealth management, and insurance, autonomous AI agents are transforming how customers understand spending patterns and find savings opportunities. Among other use cases, these tools spot potential overdraft fees, suggest better savings strategies, and guide financial decisions.
@@ -50,7 +58,7 @@ What does this look like in practice? Instead of an analyst manually pulling dat
 
 This shift from traditional AI to AI agents is particularly significant for financial services because it tackles the process completion problem. Financial workflows don't just need information, they need actions taken across multiple systems to actually complete transactions and maintain compliance. Agents can bridge those gaps.
 
-## **Real-world results AI agents in finance**
+## **Real-world results from AI agents in finance**
 
 AI-powered financial agents are already delivering real-world results in areas such as customer service, fraud detection, and workforce empowerment.
 
@@ -69,7 +77,7 @@ In fraud detection and cybercrime prevention, AI agents excel at spotting patter
 
 AI agents monitor millions of transactions in real-time, working around the clock without the fatigue or cognitive limitations that affect human teams. McKinsey found that [a single team member](https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/how-agentic-ai-can-change-the-way-banks-fight-financial-crime) can effectively supervise more than 20 AI agents in financial crime-detection workflows.
 
-For [Brex](../18-Industry-UseCases/brex.md), a modern financial platform, Claude powers their AI anomaly detection, reviewing 100% percent of transactions and providing critical aircover for financial professionals by proactively grouping related expenses, flagging policy concerns, and providing explanations with recommended actions.
+For [Brex](../18-Industry-UseCases/brex.md), a modern financial platform, Claude powers their AI anomaly detection, reviewing 100% of transactions and providing critical aircover for financial professionals by proactively grouping related expenses, flagging policy concerns, and providing explanations with recommended actions.
 
 ### **Amplifying team capabilities**
 
@@ -202,38 +210,37 @@ Learn more about how organizations like Visa, Citi, and NBIM are transforming t
 Explore more product news and best practices for teams building with Claude.
 
 
-ArticleOct 27, 2026
+ArticleNov 13, 2026
 
-### Manage costs and demonstrate ROI for Claude Code on Google Cloud
+### Building always-on agents
 
-Best practices for managing costs and measuring return on investment for Claude Code on Google Cloud.
-
-Claude Code
-
-
-ArticleOct 22, 2026
-
-### Building agents: When to fold subagents into your main agent loop
-
-When building agents in Claude Platform, using fewer subagents in favor of progressively disclosed context and tools can improve quality while reducing cost and latency. Here’s when and how to migrate.
+Always-on agents run indefinitely, deciding how and when to act across many sessions. This guide walks through their core primitives and how they fit together.
 
 Claude Platform
 
 
-ArticleOct 19, 2026
+ArticleNov 13, 2026
 
-### Redesigning source control at Anthropic
+### The Claude Tag guide for startups
 
-As merges to Anthropic's monorepo grew from about 2,500 to more than 30,000 a day, source control became the biggest development bottleneck. Here is how the team built Scion, an in-house version control system designed for always-online agents, and migrated off git in five months.
+How leading startups use Claude Tag to ship faster and scale operations
 
-Claude Code
+Claude Tag
 
-(opens in new tab)[](https://www.claude.com/resources/articles/how-an-anthropic-japan-business-development-representative-runs-his-day)
 
-ArticleOct 16, 2026
+ArticleNov 10, 2026
 
-### How an Anthropic BDR in Japan runs his day with Claude Managed Agents
+### How Curative is building a national provider network with agents on Claude
 
-How one business development representative clears his inbound queue and drafts bilingual customer emails with Claude Managed Agents and Claude Tag.
+Curative’s deal-making agent negotiates 2,000+ provider contracts a week.
 
-Claude Managed Agents
+Claude PlatformClaude Code
+
+
+ArticleNov 9, 2026
+
+### Safely scaling multi-agent teams with Claude Fable 5.2
+
+How a team of 1,000 agents running an early version of Claude Fable 5.2 reproduced a formal proof of Fermat's Last Theorem with general tools, a shared database, and layered safety controls.
+
+(opens in new tab)

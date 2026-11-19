@@ -2,7 +2,7 @@
 title: "Compaction on demand - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/compaction-on-demand"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-08T06:25:22Z"
+fetched_at: "2026-11-16T06:25:02Z"
 tags: ["api", "prompting"]
 ---
 
@@ -23,15 +23,23 @@ On-demand compaction
 Feature of  
 [Messages API](build-with-claude-working-with-messages.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Beta header](#feature-beta-headers)  
-- `compact-2026-09-04`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
+
+[Beta header](#feature-availability)  
+- 
+  Copy`compact-2026-09-04`
 
 With on-demand compaction, your application determines when a conversation is summarized: you send one request with the `compaction` parameter, and Claude returns a summary in place of a reply.
 
@@ -159,23 +167,29 @@ In your history, replace the messages you sent with the returned assistant messa
 
 
 
-This example continues the request sample, which ended on a `user` turn; the diagram shows the simpler case, where no turn is taken while the summary is written. Here the second `assistant` message is the reply to the last summarized `user` turn. It arrived while the summary was being written, so it was not among the messages summarized. Two `assistant` messages in a row are fine here, because the block still comes first.
+This example continues the request sample, which ended on a `user` turn. The diagram shows the simpler case, where nobody takes a turn while the API writes the summary. Here the second `assistant` message is the reply to the last summarized `user` turn. It arrived while the API was writing the summary, so the summary doesn’t cover it. Two `assistant` messages in a row are fine here, because the block still comes first.
 
 The API puts the summary where the block stands and passes every later message to Claude unchanged. Follow these rules:
 
 - Put the block first in `messages`, either as an `assistant` message of its own or as the first content block of the first message, whether that is a `user` or `assistant` message.
-- Remove the summarized messages. If any remain in front of the block, the request returns a 400 error (`compaction_block_misplaced`).
-- Send exactly one `compaction` block in each request, on every later request.
+- Remove exactly the summarized messages. If any remain in front of the block, the request returns a 400 error (`compaction_block_misplaced`).
+- Send exactly one `compaction` block on every later request.
 
 
 
-Two mistakes in the swap raise no error. If summarized messages remain after the block, the API sends them to Claude again. If a later request leaves the block out, Claude gets no summary.
+Two mistakes in the swap can pass without an error:
+
+- **The block is left out of a later request:** Claude gets no summary.
+- **Summarized messages stay after the block:** the API sends them to Claude again.
+
+On [models with preserved thinking](build-with-claude-preserved-thinking-prefix-checks.md#outcomes), each also [invalidates thinking](build-with-claude-preserved-thinking-prefix-checks.md#mismatch-behavior):
+
+- **Block left out:** thinking since the swap, and earlier thinking unless you resend the full history.
+- **Summarized messages left in:** thinking already in them and after them.
 
 Threshold compaction works the other way around: its block follows the messages it summarizes, and the API drops them for you. See [Passing compaction blocks back](build-with-claude-compaction-threshold.md#passing-compaction-blocks-back).
 
-In Python, use `client.beta.messages`, as the samples on this page do. If you call `client.messages` and serialize blocks yourself, use `to_dict()` or `model_dump(exclude_none=True)`: a plain `model_dump()` adds `citations: null` and `text: null` to the block, and the API rejects it.
-
-If you keep turns after the block and send their thinking blocks back, the conditions that keep that thinking valid are on [Compaction and preserved thinking](build-with-claude-compaction-thinking-blocks.md).
+For kept turns, see [Conditions for kept thinking to stay valid](build-with-claude-compaction-thinking-blocks.md#conditions-for-kept-thinking-to-stay-valid).
 
 ### Compact again
 
@@ -184,6 +198,10 @@ To compact a conversation that already starts with a block, send `compaction` ag
 ## Compact in a loop
 
 After each turn, the loop adds the last response’s input and output tokens, because the next request sends the reply too. When that total passes a limit and another turn is still to come, it sends a compaction request with the same model and `system` prompt, checks `stop_reason`, replaces its history with the returned message, and prints the turn it compacted before. The sample’s limit of 2,500 tokens is deliberately low, so that a short conversation compacts. Set yours near your real input budget.
+
+cURL
+
+CLI
 
 Python
 
@@ -247,15 +265,18 @@ for turn, question in enumerate(QUESTIONS, start=1):
             compaction={"type": "summarize"},
         )
         if summary.stop_reason == "compaction":
+            # Use client.beta.messages. If you call client.messages and serialize blocks yourself,
+            # use to_dict() or model_dump(exclude_none=True): a plain model_dump() adds
+            # citations: null and text: null to the block, and the API rejects it.
             history = [{"role": "assistant", "content": summary.content}]
             print(f"Compacted before turn {turn + 1}")
 ```
 
 The check on `stop_reason` comes before the code looks for the block; [Handle a missing summary or an error](#when-no-summary-comes-back) says why. The history is replaced, not appended to: the returned message replaces every message the request carried, under the rules in [Continue from the summary](#continue-from-the-summary). When no summary comes back, the loop keeps its history and asks again after the next turn.
 
-The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) in Python, TypeScript, C#, Go, Java, PHP, and Ruby can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner. Once the current turn and its tool calls complete, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn’t add it.
+The SDK [tool runner](../Agents-Tools/agents-and-tools-tool-use-tool-runner.md) can send the compaction request for you. When you decide to compact, call `compact_before_next_turn()` on the runner. Once the current turn and its tool calls complete, the runner sends the compaction request and replaces its history with the returned message. Create the runner with the `compact-2026-09-04` beta, because the runner doesn’t add it.
 
-The runner builds the compaction request from its own parameters and leaves `context_management` out. It also leaves out `stop_sequences`, a `tool_choice` of type `any` or `tool`, and a structured-output `output_config.format`, which the API rejects on a compaction request. [Request a summary](#request-a-summary) explains why. The runner sends them again on its later requests. SDK versions before Python 1.8.0, TypeScript 0.128.0, C# 12.50.0, Go 1.75.0, and Java 2.65.0 send them on the compaction request too. On those versions, a runner that sets any of these parameters gets a 400 error. The runner sends a [task budget](build-with-claude-task-budgets.md) unchanged. If `output_config.task_budget` sets `remaining`, the compaction request returns a 400 error, so leave `remaining` unset, as [Limits and interactions with other features](#how-it-fits-with-the-rest-of-the-api) says. The runner refuses to compact while its `context_management` has a compaction edit, so use one kind of compaction on a runner.
+The runner builds the compaction request from its own parameters and leaves `context_management` out. It also leaves out `stop_sequences`, a `tool_choice` of type `any` or `tool`, and a structured-output `output_config.format`, which the API rejects on a compaction request. [Request a summary](#request-a-summary) explains why. The runner sends them again on its later requests. SDK versions before Python 1.8.0, TypeScript 0.128.0, C# 12.50.0, Go 1.75.0, and Java 2.65.0 send them on the compaction request too. On those versions, a runner that sets any of these parameters gets a 400 error. The runner sends a [task budget](build-with-claude-task-budgets.md) unchanged. If `output_config.task_budget` sets `remaining`, the compaction request returns a 400 error, so leave `remaining` unset (see [Limits and interactions with other features](#how-it-fits-with-the-rest-of-the-api)). The runner can’t compact while its `context_management` has a compaction edit, so use one kind of compaction on a runner.
 
 ### When to compact
 
@@ -308,6 +329,7 @@ A compaction request, or a request that carries a block, can also fail outright.
 | 400 | The request carries more than one `compaction` block. | Send exactly one, the newest. |
 | 400 | The last `assistant` turn ends in a tool call with no result yet. | Send that turn’s tool results, then compact. |
 | 400 `compaction_nothing_to_summarize` | `messages` has no `user` or `assistant` content, for example an empty list. | Send at least one `user` or `assistant` message. |
+| 400 with a message that a thinking block is `bound to a different conversation` | On a [model with preserved thinking](build-with-claude-preserved-thinking-prefix-checks.md#outcomes), a thinking block in the compaction request failed the [prefix check](build-with-claude-preserved-thinking-prefix-checks.md#prefix-check). | [Handle the error in code](build-with-claude-preserved-thinking-fix-bound-to-a-different-conversation.md#handle-the-error-in-code), then compact. |
 | 400 on the compaction request, with a message that says the `compaction` parameter `requires anthropic-beta: compact-2026-09-04` | The compaction request left out the beta header. | Add the beta header; see [Request a summary](#request-a-summary). |
 | 400 on a later request that carries the block: a validation error that says `compaction` is not one of the expected content block types. The message doesn’t mention the header. | That request left out the beta header. | Add the beta header to every request that carries the block; see [Request a summary](#request-a-summary). |
 | 400 validation error, such as `messages.0.content.0.compaction.citations: Extra inputs are not permitted` | A block was sent back with fields the API didn’t return, such as `citations: null`. | Send the block exactly as returned; see [Continue from the summary](#continue-from-the-summary). |
@@ -322,51 +344,132 @@ You have a working loop that compacts a conversation and handles a missing summa
 
 - **Threshold compaction and context editing.** You can’t send `compaction` and `context_management` on the same request. Threshold compaction (`compact_20260112`) can’t run on a request that carries a signed block.
 - **Prompt caching.** `cache_control` on the block places a breakpoint after the summary.
-- **Mid-conversation system messages and tool changes.** `role: "system"` messages inside the summarized range are summarized too, so their text instructions stop applying once the block replaces them. A [per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta) level they set isn’t carried over either: until a later message sets a level, turns run at the request’s top-level `output_config.effort`, or the model’s default if you don’t set one. If an instruction or effort level still matters, state it again in a `role: "system"` message. Send that message right after your next new `user` turn, and leave it in your history from then on. For [tool changes](build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes), and for where that message goes when you keep turns after the block, see [Change the system prompt or tools](build-with-claude-compaction-thinking-blocks.md#change-the-system-prompt-or-tools).
+- **Mid-conversation system messages and tool changes.** `role: "system"` messages inside the summarized range are summarized too, so their text instructions stop applying once the block replaces them. A [per-message effort](build-with-claude-effort-per-message.md) level they set isn’t carried over either: until a later message sets a level, turns run at the request’s top-level `output_config.effort`, or the model’s default if you don’t set one. If an instruction or effort level still matters, state it again in a `role: "system"` message. Send that message right after your next new `user` turn, and leave it in your history from then on. For [tool changes](build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes), and for where that message goes when you keep turns after the block, see [Change the system prompt or tools](build-with-claude-compaction-thinking-blocks.md#change-the-system-prompt-or-tools).
 - **Task budgets.** Don’t send the `remaining` value of a [task budget](build-with-claude-task-budgets.md) (`output_config.task_budget.remaining`) with `compaction` or on requests that carry the block. Doing so returns a 400 error.
 - **Token counting.** The [token counting](build-with-claude-token-counting.md) endpoint ignores the `compaction` parameter.
 - **Content the summary can’t carry.** Images, documents, `container_upload` blocks, and fetched URLs inside the summarized messages are gone once the block replaces them. Restate or re-upload anything a later turn still needs.
 
 ## Availability
 
-On-demand compaction is in beta on select models.
+On-demand compaction
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+Status  
+Beta
 
-Models
+API  
+- Messages API
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Beta header  
+Requires
 
-StatusBeta
+compact-2026-09-04
 
-Cloud platforms
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
 
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
+Amazon Bedrock
 
-Models
+Status  
+Beta
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- All other models
+API  
+- Messages API
 
-### Required beta headers
+Beta header  
+Requires
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+compact-2026-09-04
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-Header
+Claude Platform on AWS
 
-- `compact-2026-09-04`
-  
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+compact-2026-09-04
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5

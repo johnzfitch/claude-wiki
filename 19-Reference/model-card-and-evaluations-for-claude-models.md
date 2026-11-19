@@ -1,9 +1,8 @@
 ---
 title: "Model Card and Evaluations for Claude Models"
-source_url: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-3.pdf"
+source_url: "https://www-cdn.anthropic.com/5c49cc247484cecf107c699baf29250302e5da70/ModelCardClaudev2_with_appendix_v1.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:37:48Z"
-last_modified: "Fri, 08 Dec 2023 20:11:40 GMT"
+fetched_at: "2026-11-18T06:28:49Z"
 tags: ["evaluation", "news-research"]
 ---
 
@@ -33,6 +32,7 @@ uations” [7].
 This report is also not comprehensive – we expect to release new findings as we continue our research and
 evaluations of frontier models. However, we hope it provides useful insight into Claude 2’s capabilities and
 limitations.
+Update (November 21, 2023): We have added an appendix section covering Claude 2.1.
 
 
 2   Claude 2 Model Card
@@ -53,9 +53,9 @@ in July 2023.
 Intended uses
 Claude models tend to perform well at general, open-ended conversation; search, writing, editing, outlining,
 and summarizing text; coding; and providing helpful advice about a broad range of subjects.
-Claude models are particularly well suited to support creative or literary use cases. They can take direction
+Claude models are particularly well suited to support creative or literary use cases. They can take direction
 on tone and “personality,” and users have described them as feeling steerable and conversational.
-Unintended uses and limitations
+Unintended uses and limitations
 Claude models still confabulate – getting facts wrong, hallucinating details, and filling in gaps in knowledge
 with fabrication. This means they should not be used on their own in high stakes situations where an incorrect
 answer would cause harm. For example, Claude models could support a lawyer but should not be used instead
@@ -102,21 +102,20 @@ Before deployment, we also worked with external red teamers, including crowdwork
 Claude 2 on a range of Trust and Safety related topics – these results were integrated into our safety mitiga-
 tions. We will continue to build relationships with experts across academia and civil society to red team all
 our Trust and Safety abuse verticals, including misinformation, hate and discrimination, and child safety.
-We want to ensure our models do not exhibit harmful bias or contribute to discrimination. We have im-
-plemented mitigations around bias, which we detail in section 3.2. We evaluated Claude 2 with the Bias
-Benchmark for QA (BBQ), and were pleased to find that it is less biased than Claude 1 models.
 
 
                                                        2
-3     Alignment Evaluations
+We want to ensure our models do not exhibit harmful bias or contribute to discrimination. We have im-
+plemented mitigations around bias, which we detail in section 3.2. We evaluated Claude 2 with the Bias
+Benchmark for QA (BBQ), and were pleased to find that it is less biased than Claude 1 models.
 
+3     Alignment Evaluations
 In the following sections, we discuss evaluations run on Claude 1.3, Claude 2, and Claude Instant 1.1. We
 refer to this set of deployed models as "Claude models." In some evaluations, we also compare to a non-
 deployed ‘helpful-only’ version of 1.3, which we refer to as Helpful Only 1.3, in order to show how our
 honesty and harmlessness interventions affect model behavior and evaluations.
 In all cases where evaluations involve free-form sampling, we evaluate our models at temperature T = 1 to
 represent normal usage, unless indicated otherwise.
-
 
 3.1   Human Feedback Evaluations and Red-Teaming
 
@@ -668,3 +667,50 @@ References
 
 
                                                     14
+                          Claude 2.1 Model Card Appendix
+
+
+                                                    Anthropic
+
+
+1     Introduction
+This appendix to our Claude 2.0 Model Card includes additional details for Claude 2.1, a new release which
+builds additional product features and functionality on top of Claude 2.0. Since Claude 2.1 is not a new base
+model, we are providing an appendix rather than a completely new model card. We provide a few updated
+evaluations on honesty, and details of new or improved functionality. In most other respects, Claude 2.1
+remains similar to Claude 2.0.
+
+2     200K Context Window
+As mentioned in the main model card, Claude 2.0 has been trained to have a context window of 200K tokens,
+corresponding to roughly 150,000 words. In our initial product launch of Claude 2.0, we only supported
+100K – we have now increased support to the full 200K context window. However, we have found that in our
+initial implementation, long context windows can be unreliable - with models sometimes missing information
+mid-way through a body of text. Our new 2.1 update includes improvements to Claude’s ability to properly
+use this full context, without making mistakes. The evaluations below test Claude’s accuracy at recalling
+information from all sections of a long body of text or a document.
+
+
+    Figure 1   This table shows Claude 2.1’s ability to recall information from a document at different context lengths.
+
+
+                                                           15
+3   Honesty Evaluations
+We have successfully improved Claude 2.1 on a number of different honesty metrics.
+
+      • Factual Accuracy – when asked questions, whether or not the model can get the facts right from
+        memory. We tested Claude 2.1’s honesty by curating a large set of complex, factual questions that
+        probe known weaknesses in current models. Using a rubric that distinguishes incorrect claims (“The
+        fifth most populous city in Bolivia is Montero”) from admissions of uncertainty (“I’m not sure what
+        the fifth most populous city in Bolivia is”), Claude 2.1 was significantly more likely to demur rather
+        than provide incorrect information.
+
+      • Faithfulness to Long Documents – when asked questions, whether or not the model can get the facts
+        right from referencing a provided document. Our internal evaluations for this metric are still in early
+        stages of development, however Claude 2.1 demonstrated a 30% reduction in incorrect answers and
+        a 3-4x lower rate of mistakenly concluding a document supports a particular claim.
+
+
+     Figure 2 This plot shows Claude 2.1’s scores when recalling facts in our Q and A dataset from memory.
+
+
+                                                      16

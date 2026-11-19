@@ -2,7 +2,7 @@
 title: "Review your organization's security posture with the security center | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/18246629-review-your-organization-s-security-posture-with-the-security-center"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:25:59Z"
+fetched_at: "2026-11-18T06:28:20Z"
 tags: ["safety", "security"]
 ---
 

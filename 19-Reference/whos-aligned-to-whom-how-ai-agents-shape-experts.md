@@ -2,8 +2,7 @@
 title: "Who’s Aligned to Whom? How AI Agents Shape Experts’"
 source_url: "https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf"
 category: "19-Reference"
-fetched_at: "2026-11-01T06:24:43Z"
-last_modified: "Tue, 27 Oct 2026 14:08:56 GMT"
+fetched_at: "2026-11-18T06:28:25Z"
 tags: ["agents", "news-research"]
 ---
 

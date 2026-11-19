@@ -2,8 +2,7 @@
 title: "Foreword by Daniela Amodei .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .…"
 source_url: "https://www-cdn.anthropic.com/a9ceec76a54d28d27affffcdab6faf7c142cd587.pdf"
 category: "19-Reference"
-fetched_at: "2026-10-28T06:37:48Z"
-last_modified: "Wed, 21 Oct 2026 17:14:30 GMT"
+fetched_at: "2026-11-18T06:28:27Z"
 tags: ["news-research"]
 ---
 

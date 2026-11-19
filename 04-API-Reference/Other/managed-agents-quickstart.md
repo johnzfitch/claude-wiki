@@ -2,7 +2,7 @@
 title: "Get started with Claude Managed Agents - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/quickstart"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:23Z"
+fetched_at: "2026-11-13T06:36:52Z"
 tags: ["agents", "api", "sdk"]
 ---
 
@@ -20,18 +20,22 @@ Create your first autonomous agent.
 
 [Managed Agents](managed-agents-overview.md)
 
-[Status](managed-agents-overview.md#availability-feature-support)  
 Beta
 
-[Cloud platforms](managed-agents-overview.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](managed-agents-overview.md#feature-availability)  
+- All models
 
-[Beta header](managed-agents-overview.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](managed-agents-overview.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-overview.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-overview.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 This guide walks you through creating an agent, setting up an environment, starting a session, and streaming agent responses.
 
@@ -91,7 +95,7 @@ Run in
     For Linux environments, download the release binary directly.
 
     ``` shiki
-    VERSION=2.6.0
+    VERSION=2.9.0
     OS=$(uname -s | tr '[:upper:]' '[:lower:]')
     case $(uname -m) in
       x86_64) ARCH=amd64 ;;
@@ -107,7 +111,7 @@ Run in
 
     go install
 
-    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+    You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
     ``` shiki
     go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -115,7 +119,7 @@ Run in
 
     
 
-    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+    `go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
     ``` shiki
     export PATH="$PATH:$(go env GOPATH)/bin"
@@ -174,7 +178,7 @@ curl (Linux/WSL)
 For Linux environments, download the release binary directly.
 
 ```python
-VERSION=2.6.0
+VERSION=2.9.0
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 case $(uname -m) in
   x86_64) ARCH=amd64 ;;
@@ -190,7 +194,7 @@ You can find all releases on the [GitHub releases page](https://github.com/anthr
 
 go install
 
-You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
 ```python
 go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -198,7 +202,7 @@ go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
 
 
 
-The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+`go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
 ```python
 export PATH="$PATH:$(go env GOPATH)/bin"

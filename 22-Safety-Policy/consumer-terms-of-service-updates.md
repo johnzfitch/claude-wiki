@@ -2,7 +2,7 @@
 title: "Consumer Terms of Service Updates | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9264813-consumer-terms-of-service-updates"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:03Z"
+fetched_at: "2026-11-18T06:28:14Z"
 tags: ["safety"]
 ---
 

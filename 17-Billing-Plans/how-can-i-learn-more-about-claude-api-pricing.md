@@ -2,7 +2,7 @@
 title: "How can I learn more about Claude API pricing? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8114523-how-can-i-learn-more-about-claude-api-pricing"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:00Z"
+fetched_at: "2026-11-18T06:28:11Z"
 tags: ["api", "billing"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Using the Candid connector in Claude · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12923235-using-the-candid-connector-in-claude"
 category: "14-Connectors"
-fetched_at: "2026-11-07T06:24:04Z"
+fetched_at: "2026-11-18T06:28:00Z"
 tags: ["connectors"]
 ---
 

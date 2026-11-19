@@ -1,10 +1,10 @@
 ---
 title: "Debugging - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/docs/draft/tools/debugging"
+source_url: "https://modelcontextprotocol.io/docs/2026-07-28/tools/debugging"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-11-01T06:24:48Z"
-last_modified: "Sat, 31 Oct 2026 18:10:32 GMT"
-tags: ["mcp"]
+fetched_at: "2026-11-16T06:25:49Z"
+last_modified: "Mon, 16 Nov 2026 04:24:38 GMT"
+tags: ["desktop", "mcp"]
 ---
 
 ## On this page
@@ -44,36 +44,23 @@ Copy pageCopy page
 
 Effective debugging is essential when developing MCP servers or integrating them with applications. This guide covers the debugging tools and approaches available in the MCP ecosystem.
 
-
-[​](#debugging-tools-overview)
-
-Debugging tools overview
+## [](#debugging-tools-overview)Debugging tools overview
 
 MCP provides several tools for debugging at different levels:
 
 1.  **[MCP Inspector](2026-07-28-tools-inspector.md)**: interactive, transport-agnostic testing UI. Connect to stdio or Streamable HTTP servers, invoke [tools](https://modelcontextprotocol.io/specification/latest/server/tools), [prompts](https://modelcontextprotocol.io/specification/latest/server/prompts), and [resources](https://modelcontextprotocol.io/specification/latest/server/resources), and watch the notification stream. This should be your first stop.
-2.  **Server logging**: structured logs to stderr (stdio transport) or via [OpenTelemetry](https://opentelemetry.io/) (all transports). [Logging](../Spec/2026-07-28-server-utilities-logging.md) over the protocol (`notifications/message`) is deprecated as of protocol version `2026-07-28`.
+2.  **Server logging**: structured logs to stderr (stdio transport) or via [OpenTelemetry](https://opentelemetry.io/) (all transports). Logging over the protocol (`notifications/message`) is [deprecated](../Spec/2026-07-28-deprecated.md) as of protocol version `2026-07-28`.
 3.  **Client developer tools**: most MCP clients expose logs and connection state. See [Debugging in Claude Desktop](#debugging-in-claude-desktop) below for one example, or consult your client’s documentation.
 
+## [](#implementing-logging)Implementing logging
 
-[​](#implementing-logging)
-
-Implementing logging
-
-
-[​](#server-side-logging)
-
-Server-side logging
+### [](#server-side-logging)Server-side logging
 
 When building a server that uses the local [stdio transport](../Spec/2026-07-28-basic-transports-stdio.md), all messages logged to stderr (standard error) will be captured by the host application automatically.
 
 Local MCP servers should not log messages to stdout (standard out), as this will interfere with protocol operation.
 
-For servers using the [Streamable HTTP transport](../Spec/draft-basic-transports-streamable-http.md), stderr is not captured by the client. Use your own server-side log aggregation or [OpenTelemetry](https://opentelemetry.io/) for logs, and standard HTTP tooling (curl, browser DevTools Network panel) to inspect requests and SSE streams.
-
-The `notifications/message` mechanism below is deprecated as of protocol version `2026-07-28`. It remains available during the deprecation window.
-
-For all [transports](https://modelcontextprotocol.io/specification/latest/basic/transports), record what the server is doing as it runs:
+For servers using the [Streamable HTTP transport](../Spec/2026-07-28-basic-transports-streamable-http.md), stderr is not captured by the client. Use your own server-side log aggregation or [OpenTelemetry](https://opentelemetry.io/) for logs, and standard HTTP tooling (curl, browser DevTools Network panel) to inspect requests and SSE streams. For all [transports](https://modelcontextprotocol.io/specification/latest/basic/transports), record what the server is doing as it runs. For example, to write to stderr:
 
 Python
 
@@ -97,13 +84,27 @@ async def fetch_report(report_id: str) -> str:
 ```
 
 ```python
-await server.sendLoggingMessage({
-  level: "info",
-  data: "Server started successfully",
-});
+import { McpServer } from "@modelcontextprotocol/server";
+import { z } from "zod";
+
+const server = new McpServer({ name: "reports", version: "1.0.0" });
+
+server.registerTool(
+  "fetch_report",
+  {
+    description: "Fetch a report by id.",
+    inputSchema: z.object({ reportId: z.string() }),
+  },
+  async ({ reportId }) => {
+    console.error(`Fetching report ${reportId}`);
+    return {
+      content: [{ type: "text", text: `Report ${reportId} is ready.` }],
+    };
+  },
+);
 ```
 
-MCP defines eight [RFC 5424 severity levels](https://modelcontextprotocol.io/specification/latest/server/utilities/logging#log-levels) (`debug` through `emergency`). Clients opt in to log messages per request by setting the [`io.modelcontextprotocol/logLevel`](../Spec/2026-07-28-server-utilities-logging.md#per-request-log-level) field in the request’s `_meta`. Servers must not send `notifications/message` for requests that omit this field. Important events to log:
+Important events to log:
 
 - Startup steps
 - Resource access
@@ -111,17 +112,11 @@ MCP defines eight [RFC 5424 severity levels](https://modelcontextprotocol.io/spe
 - Error conditions
 - Performance metrics
 
-
-[​](#common-issues)
-
-Common issues
+## [](#common-issues)Common issues
 
 The examples below use Claude Desktop’s [`claude_desktop_config.json`](draft-develop-connect-local-servers.md); the same principles apply to any stdio-based MCP client.
 
-
-[​](#working-directory)
-
-Working directory
+### [](#working-directory)Working directory
 
 When an MCP client launches a stdio server:
 
@@ -148,10 +143,7 @@ For example in `claude_desktop_config.json`, use:
 
 Instead of relative paths like `./data`
 
-
-[​](#environment-variables)
-
-Environment variables
+### [](#environment-variables)Environment variables
 
 MCP servers launched over stdio inherit only a limited subset of environment variables automatically (the exact set is platform-dependent). To override the default variables or provide your own, you can specify an `env` key in `claude_desktop_config.json`:
 
@@ -168,10 +160,7 @@ MCP servers launched over stdio inherit only a limited subset of environment var
 }
 ```
 
-
-[​](#server-startup)
-
-Server startup
+### [](#server-startup)Server startup
 
 Common startup problems:
 
@@ -189,10 +178,7 @@ Common startup problems:
     - Incorrect variable values
     - Permission restrictions
 
-
-[​](#connection-problems)
-
-Connection problems
+### [](#connection-problems)Connection problems
 
 When servers fail to connect:
 
@@ -200,26 +186,17 @@ When servers fail to connect:
 2.  Verify server process is running
 3.  Test standalone with [Inspector](2026-07-28-tools-inspector.md)
 4.  Verify [protocol compatibility](draft-learn-versioning.md#negotiation): call [`server/discover`](../Spec/2026-07-28-server-discover.md) to see which protocol versions the server supports. An `UnsupportedProtocolVersionError` (`-32022`) lists the server’s supported versions in its `data` field
-5.  Check the [per-request `_meta` fields](https://modelcontextprotocol.io/specification/draft/basic/index#meta): every request must carry `io.modelcontextprotocol/protocolVersion` and `io.modelcontextprotocol/clientCapabilities`, and clients should also include `io.modelcontextprotocol/clientInfo`. A request missing either required field is rejected with error `-32602` (Invalid params), the same code returned for many other malformed inputs. If the server needs a capability the request’s `clientCapabilities` did not declare, such as [elicitation](../Spec/2026-07-28-client-elicitation.md), it returns a `MissingRequiredClientCapabilityError` (`-32021`) naming the missing capabilities. Inspect the request’s `_meta` and the [`server/discover`](../Spec/2026-07-28-server-discover.md) response to verify both sides declared what you expect
+5.  Check the [per-request `_meta` fields](https://modelcontextprotocol.io/specification/2026-07-28/basic/index#meta): every request must carry `io.modelcontextprotocol/protocolVersion` and `io.modelcontextprotocol/clientCapabilities`, and clients should also include `io.modelcontextprotocol/clientInfo`. A request missing either required field is rejected with error `-32602` (Invalid params), the same code returned for many other malformed inputs. If the server needs a capability the request’s `clientCapabilities` did not declare, such as [elicitation](../Spec/2026-07-28-client-elicitation.md), it returns a `MissingRequiredClientCapabilityError` (`-32021`) naming the missing capabilities. Inspect the request’s `_meta` and the [`server/discover`](../Spec/2026-07-28-server-discover.md) response to verify both sides declared what you expect
 
-
-[​](#debugging-in-claude-desktop)
-
-Debugging in Claude Desktop
+## [](#debugging-in-claude-desktop)Debugging in Claude Desktop
 
 Claude Desktop is one of many MCP clients. It is available on macOS, Windows, and Linux.
 
-
-[​](#checking-server-status)
-
-Checking server status
+### [](#checking-server-status)Checking server status
 
 Click the “Add files, connectors, and more” plus icon in the chat input, then hover over the **Connectors** menu to see connected servers and available tools.
 
-
-[​](#viewing-logs)
-
-Viewing logs
+### [](#viewing-logs)Viewing logs
 
 Log files are written to:
 
@@ -252,10 +229,7 @@ The logs capture:
 - Runtime errors
 - Message exchanges
 
-
-[​](#using-chrome-devtools)
-
-Using Chrome DevTools
+### [](#using-chrome-devtools)Using Chrome DevTools
 
 Access Chrome’s developer tools inside Claude Desktop to investigate client-side errors:
 
@@ -285,15 +259,9 @@ Use the Console panel to inspect client-side errors. Use the Network panel to in
 - Message payloads
 - Connection timing
 
+## [](#debugging-workflow)Debugging workflow
 
-[​](#debugging-workflow)
-
-Debugging workflow
-
-
-[​](#development-cycle)
-
-Development cycle
+### [](#development-cycle)Development cycle
 
 1.  Initial Development
     - Use [Inspector](2026-07-28-tools-inspector.md) for basic testing
@@ -304,10 +272,7 @@ Development cycle
     - Monitor logs
     - Check error handling
 
-
-[​](#testing-changes)
-
-Testing changes
+### [](#testing-changes)Testing changes
 
 To test changes efficiently:
 
@@ -315,15 +280,9 @@ To test changes efficiently:
 - **Server code changes**: Restart the client (for Claude Desktop, fully quit and reopen; closing the window is not enough)
 - **Quick iteration**: Use [Inspector](2026-07-28-tools-inspector.md) during development
 
+## [](#best-practices)Best practices
 
-[​](#best-practices)
-
-Best practices
-
-
-[​](#logging-strategy)
-
-Logging strategy
+### [](#logging-strategy)Logging strategy
 
 1.  **Structured Logging**
     - Use consistent formats
@@ -341,10 +300,7 @@ Logging strategy
     - Track message sizes
     - Measure latency
 
-
-[​](#security-considerations)
-
-Security considerations
+### [](#security-considerations)Security considerations
 
 When debugging:
 
@@ -357,12 +313,9 @@ When debugging:
     - Check authentication
     - Monitor access patterns
 
-For a full treatment of MCP attack vectors and mitigations, see [Security Best Practices](modelcontextprotocol-io-draft-tutorials-security-security-best-practices.md).
+For a full treatment of MCP attack vectors and mitigations, see [Security Best Practices](draft-tutorials-security-security-best-practices.md).
 
-
-[​](#getting-help)
-
-Getting help
+## [](#getting-help)Getting help
 
 When encountering issues:
 
@@ -380,10 +333,7 @@ When encountering issues:
     - Steps to reproduce
     - Environment details
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 ## MCP Inspector
 

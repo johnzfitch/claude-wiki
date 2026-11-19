@@ -2,7 +2,7 @@
 title: "Constitutional Classifiers \\ Anthropic"
 source_url: "https://www.anthropic.com/news/constitutional-classifiers"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:26Z"
+fetched_at: "2026-11-18T06:28:42Z"
 tags: ["evaluation", "news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Claude Code FAQ | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12386420-claude-code-faq"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:50Z"
+fetched_at: "2026-11-18T06:27:46Z"
 tags: ["agents", "api", "bedrock", "claude-code", "enterprise", "git", "github", "mcp"]
 ---
 
@@ -13,7 +13,7 @@ This article is a compilation of commonly-asked questions about Claude Code rela
 
 ## How do I set up single sign-on (SSO) for Claude Code?
 
-We have detailed instructions for setting up single sign-on on a Team, Enterprise, or Console organization here: **[Set up single sign-on (SSO)](https://support.claude.com/en/articles/13132885-set-up-single-sign-on-sso)**.
+We have detailed instructions for setting up single sign-on on a Team, Enterprise, or Console organization here: **[Set up single sign-on (SSO)](../21-Account-Support/set-up-single-sign-on-sso.md)**.
 
 ## Is there a way to disable Opus model access across our entire organization in Claude Code?
 

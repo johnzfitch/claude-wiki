@@ -2,8 +2,8 @@
 title: "Draw in the interface with a mod - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/mods/interface"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-03T06:23:01Z"
-last_modified: "Tue, 03 Nov 2026 06:18:14 GMT"
+fetched_at: "2026-11-14T06:24:41Z"
+last_modified: "Sat, 14 Nov 2026 04:50:32 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -18,6 +18,13 @@ Back to top
   - [Hold toasts behind a dialog](#hold-toasts-behind-a-dialog)
   - [When a pane waits for a wider terminal](#when-a-pane-waits-for-a-wider-terminal)
   - [Draw in the VS Code extension](#draw-in-the-vs-code-extension)
+  - [Place a row in the transcript](#place-a-row-in-the-transcript)
+  - [Put a backdrop behind the conversation](#put-a-backdrop-behind-the-conversation)
+  - [Change the colors of the Desktop app](#change-the-colors-of-the-desktop-app)
+  - [Ask Claude for a colors mod](#ask-claude-for-a-colors-mod)
+  - [Write a colors mod yourself](#write-a-colors-mod-yourself)
+  - [Fix missing mod colors in the Desktop app](#fix-missing-mod-colors-in-the-desktop-app)
+  - [Remove mod colors from the Desktop app](#remove-mod-colors-from-the-desktop-app)
 - [Build a tree from elements](#build-a-tree-from-elements)
   - [Link in the Desktop app and VS Code](#link-in-the-desktop-app)
   - [When a Client fails](#when-a-client-fails)
@@ -61,10 +68,7 @@ In a narrower terminal, the pane sits above the prompt instead of beside the tra
 
 To look up one prop or limit, see the [reference](plugins-mods-reference.md#render-sites).
 
-
-[​](#build-a-pane-with-tabs)
-
-Build a pane with tabs
+## [](#build-a-pane-with-tabs)Build a pane with tabs
 
 In this section you build a mod that adds a `/hello-tabs` command, and the command opens a pane. A pane is a sidebar beside the transcript in a wide fullscreen terminal, or a framed region above the prompt otherwise. This pane shows two tabs, and the second tab has a button that adds one to a counter. The count is still there after you restart Claude Code. The finished mod looks like this. The recording opens the pane, switches to the second tab, presses the button a few times, and returns to the first tab:
 
@@ -223,12 +227,9 @@ Check that the count was saved
 
 Press Esc to close the pane, then exit the session. In your shell, start Claude Code again with the same `claude --plugin-dir ./hello-tabs` command, and at the Claude Code prompt run `/hello-tabs`. The count is where you left it.To clear the count, have the mod call `$.store.delete('count')`. [Keep state](#keep-state) covers how long each kind of value lasts.
 
+## [](#pick-where-to-draw)Pick where to draw
 
-[​](#pick-where-to-draw)
-
-Pick where to draw
-
-A `ui.render` hook runs for every render site unless you narrow it to the one you want to draw in. To choose the render site, pass a filter, called a [matcher](plugins-mods-events.md#filter-which-events-a-hook-handles), as the second argument to `on`. `{ component: 'Pane' }` runs the hook only for panes. In the hook, `e.component` names the site, `e.surface` says which app is drawing, and `e.props` holds the site’s own data. For a pane, `e.requestId` is the `id` you opened it with. The pane and the band are empty until a mod fills them. Select a tab to see what each one is and how to draw in it:
+To choose the render site a `ui.render` hook draws in, pass a filter, called a [matcher](plugins-mods-events.md#filter-which-events-a-hook-handles), as the second argument to `on`. `{ component: 'Pane' }` runs the hook only for panes. In the hook, `e.component` names the site, `e.surface` says which app is drawing, and `e.props` holds the site’s own data. For a pane, `e.requestId` is the `id` you opened it with. The pane and the band are empty until a mod fills them. Select a tab to see what each one is and how to draw in it:
 
 - Pane
 
@@ -236,12 +237,11 @@ A `ui.render` hook runs for every render site unless you narrow it to the one yo
 
 A pane is a sidebar beside the transcript in a wide fullscreen terminal, or a framed region above the prompt otherwise. With several panes open, each gets a tab that shows its title.A pane appears when your mod calls `$.ui.open` with an `id` you choose, as in `$.ui.open({ id: 'hello-tabs' })`. [Open a pane at the right time](#open-a-pane-at-the-right-time) covers the other fields and when a pane waits for a wider terminal.To draw in your pane, filter on `{ component: 'Pane' }` and check that `e.requestId` is your `id`.
 
-The band is a strip directly above the prompt input. It’s always there, and every mod shares it.Your hook returns a tree to show something in the band, or `next(e)` to show nothing. A tree replaces what the mods [after yours](plugins-mods-events.md#the-order-mods-run-in) draw there. To keep theirs, put the result of `await next(e)` among the children of a [`Box`](#build-a-tree-from-elements) in your tree.To draw in the band, filter on `{ component: 'AbovePrompt' }`.
+The band is a strip directly above the prompt input. Each mod that draws there gets its own row, and the rows stack from the top in the [order mods run in](plugins-mods-events.md#the-order-mods-run-in).To draw your mod’s row, filter on `{ component: 'AbovePrompt' }` and return a [tree](#build-a-tree-from-elements). To draw nothing, return `next(e)`.Before v2.1.323, all mods shared one drawing in the band, and your tree replaced what the mods after yours drew. To support those releases too, put the result of `await next(e)` among the children of a [`Box` that stays valid](plugins-mods-troubleshoot.md#another-mods-band-shows-and-yours-doesnt). On v2.1.323 or later, that child doesn’t draw other mods’ rows.
 
+A mod can also [place a row of its own in the transcript](#place-a-row-in-the-transcript).
 
-[​](#change-what-claude-code-already-draws)
-
-Change what Claude Code already draws
+### [](#change-what-claude-code-already-draws)Change what Claude Code already draws
 
 Claude Code draws most of its interface itself: messages, tool call rows, the spinner, and more. Each of those parts is a render site too, so a mod can restyle or replace it. To change one, filter your `ui.render` hook on its name from this table:
 
@@ -319,14 +319,11 @@ on('ui.render', { component: 'Spinner' }, async ($, e, next) => {
 })
 ```
 
-While Claude works, the spinner animates as before, and `under the spinner` appears below it. The permission prompt isn’t a render site, so a mod can’t change what it shows. The question dialog, `AskUserQuestion`, is one, so a mod can change that. A tree for the dialog has to hold the reference exactly once, with your elements above it. Otherwise, Claude Code draws its own dialog.
+While Claude works, the spinner animates as before, and `under the spinner` appears below it. The permission prompt isn’t a render site, so a mod can’t change what it shows. The question dialog, `AskUserQuestion`, is one, so a mod can change that dialog when Claude asks a question. A tree for the dialog has to hold the reference exactly once, with your elements above it. Otherwise, Claude Code draws its own dialog.
 
+### [](#open-a-pane-at-the-right-time)Open a pane at the right time
 
-[​](#open-a-pane-at-the-right-time)
-
-Open a pane at the right time
-
-A pane appears only when your mod opens it. How and when you open it decides whether it takes keyboard focus, how much room it asks for, and whether it shows at all in a narrow terminal. To open a pane, call [`$.ui.open`](plugins-mods-reference.md#mods-api-methods) with an `id` you choose. The `id` is the pane’s name: your `ui.render` hook checks for it, and you pass it again to close the pane.
+A pane appears only when your mod opens it. How and when you open it decides whether it takes keyboard focus, how much room it asks for, and whether it shows at all in a narrow terminal. To open a pane, call [`$.ui.open`](plugins-mods-reference.md#mods-api-methods) with an `id` you choose. The `id` is the pane’s name: your `ui.render` hook checks for it, and you pass it again to close the pane. If another mod has a pane open with that `id`, the call rejects.
 
 ```python
 await $.ui.open({ id: 'hello-tabs', title: 'Hello tabs', focus: true })
@@ -358,17 +355,11 @@ await $.ui.open(items.length > 0 ? { ...pane, focus: true } : pane)
 
 To let a command open the pane while Claude is working, add `immediate: true` when you [register the command](plugins-mods-api.md#add-a-command). Without it, a command typed during a turn waits for the turn to end.
 
-
-[​](#hold-toasts-behind-a-dialog)
-
-Hold toasts behind a dialog
+#### [](#hold-toasts-behind-a-dialog)Hold toasts behind a dialog
 
 Pass `holdToasts: true` to `$.ui.open` when the pane is a dialog the user answers and leaves, so toasts don’t appear while they decide. In the terminal, the hold lasts while that pane is the one showing, and a toast raised in that time waits until the hold ends. Claude Code holds other mods’ toasts and its own short-lived notifications as well as the ones your mod raises with [`$.ui.toast`](plugins-mods-api.md#show-something-without-starting-a-turn). Leave the field off a pane that stays open, so the user keeps seeing them.
 
-
-[​](#when-a-pane-waits-for-a-wider-terminal)
-
-When a pane waits for a wider terminal
+#### [](#when-a-pane-waits-for-a-wider-terminal)When a pane waits for a wider terminal
 
 A pane your mod opens without being asked doesn’t appear in a narrow terminal, so it can’t take over a small screen. Whether it appears depends on what opened it:
 
@@ -377,10 +368,7 @@ A pane your mod opens without being asked doesn’t appear in a narrow terminal,
 
 When the pane appears, `$.ui.open` resolves to `{ isPlaced: true }`. When the pane is waiting, `isPlaced` is `false` and `reason` is a string that says why. A waiting pane appears when the user opens it or widens the terminal. To say something is available without opening a pane, call `$.ui.toast('Your message')`, which shows a toast notification.
 
-
-[​](#draw-in-the-vs-code-extension)
-
-Draw in the VS Code extension
+### [](#draw-in-the-vs-code-extension)Draw in the VS Code extension
 
 In the VS Code extension, what a mod draws appears in the chat panel with extension version 2.1.299 or later. A session that [doesn’t fetch feature flags](../02-Claude-Code-CLI/env-vars.md#features-that-need-feature-flag-fetching), such as one on Amazon Bedrock, needs 2.1.304 or later. In a `ui.render` hook for the panel, `e.surface` is `vscode`. To check which sites and elements the panel draws, and which props it ignores, see the [render sites](plugins-mods-reference.md#render-sites) and [elements](plugins-mods-reference.md#elements) tables. To make a mod work in the panel as well as the terminal, account for these differences:
 
@@ -393,10 +381,199 @@ In the VS Code extension, what a mod draws appears in the chat panel with extens
 - **Prompt suggestions**: `$.prompt.suggest` resolves with `isShown: false` and shows nothing, because the panel keeps the prompt box’s dim suggestion text for Claude’s own suggestions.
 - **Text limits**: the panel cuts a status line at 200 characters or two rows, and a toast at 500 characters.
 
+### [](#place-a-row-in-the-transcript)Place a row in the transcript
 
-[​](#build-a-tree-from-elements)
+A row is a line your mod adds to the transcript in the terminal, after the latest message. It stays at that spot as the conversation goes on, and Claude doesn’t see it. `$.ui.place` requires Claude Code v2.1.314 or later.
 
-Build a tree from elements
+1
+
+Place the row
+
+Call [`$.ui.place`](plugins-mods-reference.md#mods-api-methods) with an `id`. The `id` is a name you make up for the row, such as `build-status`. It can be 1 to 64 letters, digits, `_`, or `-`, and each row your mod has in the transcript needs its own.
+
+2
+
+Draw the row
+
+Draw the row at the [`Placed`](plugins-mods-reference.md#render-sites) render site.
+
+This example adds a `/build-status` command. When the user runs the command, the mod adds a row that shows `Build: passing`. The text is fixed to keep the example short, so a real mod would draw its own result:
+
+```python
+export function register(on) {
+  on('session.start', async ($, e, next) => {
+    await $.command.register({ name: 'build-status', description: 'Show the build status' })
+    return next(e)
+  })
+
+  on('command.run', { command: 'build-status' }, async ($) => {
+    const placed = await $.ui.place({ id: 'build-status' })
+    // Where nothing draws the row, reply with text instead
+    return placed.isPlaced ? {} : { text: 'Build: passing' }
+  })
+
+  on('ui.render', { component: 'Placed' }, async ($, e, next) => {
+    // This hook runs for every mod's rows, and another mod can use the same id
+    if (e.props.plugin !== $.plugin.name || e.props.id !== 'build-status') return next(e)
+    const { Text } = $.ui.resolve(e)
+    return Text({ children: ['Build: passing'] })
+  })
+}
+```
+
+To try the example, put this code in a [mod](plugins-mods-create.md). In a terminal session, run `/build-status` at the Claude Code prompt. `Build: passing` appears as a row at the end of the transcript. The call doesn’t always show a row, and a row can go away later, so handle these cases in your mod:
+
+- **The result**: `{ isPlaced: true, requestId }` when the terminal draws the row. Otherwise `isPlaced` is `false` and `reason` says why, as in `no attached surface draws placed rows yet`. One reason is the [limit on rows](plugins-mods-reference.md#limits) a mod can have at one time.
+- **A second call with the same `id`**: while the first row is still in the transcript, the call adds no row and resolves with that row’s `requestId`. To change what the row shows, [redraw the row](#redraw-when-something-changes).
+- **When the row goes away**: when the conversation ends, when the user rewinds past the row, or, outside [fullscreen rendering](../02-Claude-Code-CLI/fullscreen.md), when the conversation is compacted. `--resume` doesn’t bring the row back. To show the row again, call `$.ui.place` again.
+
+### [](#put-a-backdrop-behind-the-conversation)Put a backdrop behind the conversation
+
+`$.theme.set` and `$.theme.clear` replace `$.ui.backdrop`, which Claude Code v2.1.319 removed. Change `$.ui.backdrop({ id: 'your-backdrop' })` to a `$.theme.set` call like the one in this section’s example, and `$.ui.backdrop(undefined)` to `$.theme.clear()`, which removes any mod’s backdrop.
+
+To put a backdrop behind the conversation in the Desktop app or the mobile app, call [`$.theme.set`](plugins-mods-reference.md#mods-api-methods) with a `backdrop`, then draw the backdrop at the [`Backdrop`](plugins-mods-reference.md#render-sites) render site. To take the backdrop off, call `$.theme.clear()`. The terminal draws no backdrop. `$.theme.set` and `$.theme.clear` require Claude Code v2.1.319 or later. This example requires Claude Code v2.1.323 or later, so [check your version](plugins-mods-overview.md#turn-mods-on-or-off) first. The mod sets a backdrop when the session starts, draws the backdrop, and adds a `/plain` command that takes the backdrop off:
+
+```python
+export function register(on) {
+  // Neither a reload of this mod nor --resume keeps the backdrop, so set it here
+  on('session.start', async ($, e, next) => {
+    await $.theme.set({ backdrop: { scene: 'night-sky' }, overrideColorScheme: 'dark' })
+    await $.command.register({ name: 'plain', description: 'Take the backdrop off' })
+    return next(e)
+  })
+
+  on('ui.render', { component: 'Backdrop' }, async ($, e, next) => {
+    // This hook runs for every mod's backdrop, and another mod can use the same scene
+    if (e.props.plugin !== $.plugin.name || e.props.scene !== 'night-sky') return next(e)
+    const { Box, Text } = $.ui.resolve(e)
+    return Box({ backgroundColor: 'blue', children: [Text({ children: ['Night sky'] })] })
+  })
+
+  on('command.run', { command: 'plain' }, async ($) => {
+    const cleared = await $.theme.clear()
+    return { text: cleared.reason }
+  })
+}
+```
+
+Before v2.1.323, write `id` in place of `scene` in the `$.theme.set` call and in `e.props`, and move `overrideColorScheme` into `backdrop` as `colorScheme`.
+
+To try the example, put this code in a [mod](plugins-mods-create.md) and start a session in the Desktop app or the mobile app. To take the backdrop off, run `/plain` at the Claude Code prompt. The transcript shows `the theme is cleared` after the mod’s name, as in `night-sky: the theme is cleared` for a mod named `night-sky`. Check what `backdrop` takes, what the call’s result tells you, and what other mods can change:
+
+- **The `backdrop` fields**: `scene` is a [name](plugins-mods-reference.md#limits) you choose for a backdrop your hook draws. For the other fields and `overrideColorScheme`, see [the types for your build](plugins-mods-create.md#get-the-types-for-your-build).
+- **Whether the backdrop is drawn**: `$.theme.set` resolves with `isDrawn: true` when a Desktop or mobile app connected to the session says it draws backdrops. Otherwise `isDrawn` is `false` and `reason` says why.
+- **One theme for each session**: a mod that calls `$.theme.set` replaces the session’s backdrop and [colors](#change-the-colors-of-the-desktop-app), and a mod that calls `$.theme.clear()` removes them, whichever mod set them. Call `$.theme.clear()` only when the user asks for it.
+
+### [](#change-the-colors-of-the-desktop-app)Change the colors of the Desktop app
+
+To change the colors of the Desktop app’s Code tab with a mod, [ask Claude for one](#ask-claude-for-a-colors-mod) or [write one yourself](#write-a-colors-mod-yourself). Both ways require Claude Code v2.1.324 or later in the Code tab, so [check the version there](../16-Mobile-Desktop/desktop.md#claude-code-version-in-the-code-tab) first. Claude Code in the terminal keeps its own colors.
+
+#### [](#ask-claude-for-a-colors-mod)Ask Claude for a colors mod
+
+1
+
+Describe the colors
+
+Start a local session in the Code tab and tell Claude which colors you want. For example, enter `make a mod that makes the app cream in light mode and dark brown in dark mode`. Claude writes the mod’s files.
+
+2
+
+Approve the mod
+
+Answer the questions Claude Code asks about the mod’s files and hot reloading. For what each answer does, see [Ask Claude for a mod](plugins-mods-create.md#ask-claude-for-a-mod).
+
+3
+
+Check the colors
+
+The Code tab changes color when the mod loads. To adjust a color, tell Claude what to change. If nothing changes, see [Fix missing mod colors](#fix-missing-mod-colors-in-the-desktop-app).
+
+#### [](#write-a-colors-mod-yourself)Write a colors mod yourself
+
+`makeColors` is a function that builds a theme from a few hex colors. These steps create a mod named `paper` that uses it.
+
+1
+
+Have Claude copy makeColors
+
+Start a local session in the Code tab, and enter `copy make-colors.js and make-colors.d.ts from your plugin-authoring skill into ~/.claude/skills/paper/hooks/`. Check that both files are in that directory.
+
+2
+
+Save the manifest and hooks.json
+
+From [Write a mod yourself](plugins-mods-create.md#write-a-mod-yourself), save `.claude-plugin/plugin.json` and `hooks/hooks.json` in `~/.claude/skills/paper/`, and change `first-mod` to `paper` in both files. A mod [under `~/.claude/skills/`](plugins-create.md#scaffold-a-plugin-that-loads-every-session) loads when you start a session.
+
+3
+
+Write the code
+
+Save this file as `~/.claude/skills/paper/hooks/register.js`. When a session starts, the code calls `$.theme.set` with the colors for light mode and dark mode:
+
+```python
+import { makeColors } from './make-colors.js'
+
+const { theme } = makeColors({
+  label: 'Paper',
+  // surface-0 is the background, text-primary is the main text, and text-muted is the faint text
+  light: {
+    gray: { anchors: { 'surface-0': '#efe6d3', 'text-primary': '#2a241d', 'text-muted': '#6a5f50' } },
+  },
+  dark: {
+    gray: { anchors: { 'surface-0': '#1f1a15', 'text-primary': '#f0e7d7', 'text-muted': '#aca08d' } },
+  },
+})
+
+export function register(on) {
+  on('session.start', async ($, e, next) => {
+    await $.theme.set({ colors: theme })
+    return next(e)
+  })
+}
+```
+
+To use your own colors, replace the hex values with other six-digit hex colors.
+
+4
+
+Check the colors
+
+Start a new local session in the Code tab. With the example’s values, the background is cream in light mode and dark brown in dark mode. If nothing changes, see [Fix missing mod colors](#fix-missing-mod-colors-in-the-desktop-app).
+
+### [](#fix-missing-mod-colors-in-the-desktop-app)Fix missing mod colors in the Desktop app
+
+If you use a [third-party provider](../02-Claude-Code-CLI/third-party-integrations.md) instead of a Claude account in [Claude Desktop v5.11492.5 or earlier](../16-Mobile-Desktop/desktop.md#check-your-version), the Code tab keeps its own colors, so skip these checks. Otherwise, if a mod’s colors don’t appear in the Code tab, or if they disappear, check for these causes:
+
+- **Old version**: [update the Desktop app](../16-Mobile-Desktop/desktop.md#claude-code-version-in-the-code-tab), restart it, and start a new local session in the Code tab. If Claude wrote the mod, ask for it again there.
+- **Mod not loaded**: if Claude wrote the mod, see when it loads in [Ask Claude for a mod](plugins-mods-create.md#ask-claude-for-a-mod). If you wrote it, compare your files and their paths with [Write a colors mod yourself](#write-a-colors-mod-yourself).
+- **Refused theme**: ask Claude to run the mod’s [`makeColors`](#write-a-colors-mod-yourself) call. If the call throws an error, or its `problems` list has an entry that starts `Desktop won't paint this theme`, have Claude fix the theme. If you installed the mod, send what Claude finds to its author.
+- **Another `$.theme` call**: when any mod in the session calls `$.theme.set` or `$.theme.clear()`, the colors and [backdrop](#put-a-backdrop-behind-the-conversation) from an earlier call disappear. In your own mod, pass `colors` and `backdrop` in the same `$.theme.set` call. Use one mod at a time that sets a theme.
+
+### [](#remove-mod-colors-from-the-desktop-app)Remove mod colors from the Desktop app
+
+To take a mod’s colors off the Code tab, turn off the mod first. A mod that’s still on can set its colors again.
+
+1
+
+Turn off the mod
+
+- **Claude wrote the mod**: move its directory out of the [mods folder](plugins-mods-create.md#ask-claude-for-a-mod) of the session where Claude wrote it.
+- **You put the mod under `~/.claude/skills/`**: move its directory, such as `~/.claude/skills/paper/`, to a place outside `~/.claude/skills/`.
+- **You installed the mod**: in the Desktop app, [disable or uninstall its plugin](../16-Mobile-Desktop/desktop.md#install-plugins) from **Manage plugins**. If you don’t see **Manage plugins** and you have [the CLI](../01-Getting-Started/quickstart.md), you can [disable or uninstall a marketplace plugin from your shell](discover-plugins.md#manage-plugins-from-your-shell).
+
+2
+
+Start a new session
+
+Start a new local session in the Code tab.
+
+3
+
+Remove colors that stay
+
+If the colors are still there, open **Settings** from the Code tab, and search there for `code appearance`. Open the result, and select **Remove colors**.
+
+## [](#build-a-tree-from-elements)Build a tree from elements
 
 What a `ui.render` hook returns is an element tree: a description of what to draw, made of boxes, text, and controls nested inside each other. You describe the drawing, and Claude Code renders it in whichever app the user has open: the terminal, the Desktop app, or the VS Code extension. To get the elements, call `$.ui.resolve(e)` in your hook, as in `const { Box, Text, Button } = $.ui.resolve(e)`. Each element is a function. You pass it props, and you put the elements and strings that go inside it in `children`. Select a tab to see each of the most common elements and how the terminal draws it:
 
@@ -466,7 +643,7 @@ Note: Type a note and press Enter
 
 Set `rows` to 2 or more for [a field that holds several lines](plugins-mods-gallery.md#input).
 
-The [interface gallery](plugins-mods-gallery.md) has samples and screenshots of most elements. This table lists every element:
+The [interface gallery](plugins-mods-gallery.md) has samples and screenshots of most elements. This table lists the main elements:
 
 | Element | What it draws | Where |
 |:---|:---|:---|
@@ -485,10 +662,7 @@ If your module is a `.tsx` or `.jsx` file, you can write the tree as JSX. Destru
 my-mod: ui.render hook skipped: returned the wrong shape (a tree Pane refuses: Text prop "bogusProp" is not allowed)
 ```
 
-
-[​](#link-in-the-desktop-app)
-
-`Link` in the Desktop app and VS Code
+### [](#link-in-the-desktop-app)`Link` in the Desktop app and VS Code
 
 In the Desktop app and the VS Code extension, a `Link` draws as plain text unless its `href` meets these requirements:
 
@@ -498,17 +672,11 @@ In the Desktop app and the VS Code extension, a `Link` draws as plain text unles
 
 In the terminal, these requirements don’t apply.
 
-
-[​](#when-a-client-fails)
-
-When a `Client` fails
+### [](#when-a-client-fails)When a `Client` fails
 
 In the terminal, when the file a `Client` runs fails, a dimmed line such as `my-mod: Client client/spinner.js: boom` takes the `Client`’s place, and the rest of your drawing still shows. If your mod handles [`ui.fault`](plugins-mods-reference.md#interface), Claude Code then [draws the site again](#when-claude-code-redraws-without-being-asked).
 
-
-[​](#draw-a-grid-of-colored-cells)
-
-Draw a grid of colored cells
+### [](#draw-a-grid-of-colored-cells)Draw a grid of colored cells
 
 For a heat map, a sparkline, or a game board in the terminal, draw one `Raster` and not a `Box` for each cell. A `Raster` takes a `key`, its size in `columns` and `rows`, and `cells`, a base64 string that packs every cell. Each cell is three numbers: the character’s code point, its color, and its background color. A color is a 24-bit RGB value in hexadecimal, such as `0xc62828` for a red. The value `0x01000000`, one above that range, means the terminal’s default. Apps other than the terminal have no `Raster`, so check `e.surface` and draw text there. This pane body draws a three by two heat map:
 
@@ -546,10 +714,7 @@ In the terminal, the pane shows the grid:
 
 The `rows` array is the part you’d change, and `cellsOf` turns it into the packed string. The hook draws only in a pane whose `id` is `heat`, so open one with `$.ui.open({ id: 'heat' })` from a command, as the [`hello-tabs` example](#build-a-pane-with-tabs) opens its pane. Each character has to be one cell wide. To animate a `Raster` that’s already on screen, call `$.ui.blit` with the pane’s `id` as `requestId`, the `Raster`’s `key`, the same size, and new cells. For this example, that’s `$.ui.blit({ requestId: 'heat', key: 'grid', columns: 3, rows: 2, cells: cellsOf(newRows) })`. It repaints that one element without running your `ui.render` hook again.
 
-
-[​](#respond-to-presses-and-typing)
-
-Respond to presses and typing
+## [](#respond-to-presses-and-typing)Respond to presses and typing
 
 When the user presses a button, types into a field, or picks from a list your mod drew, Claude Code calls that control’s callback, which runs in your module. Each control takes its own callbacks:
 
@@ -557,29 +722,20 @@ When the user presses a button, types into a field, or picks from a list your mo
 - **`Input`**: takes `onSubmit(value)` and `onInput(value)`
 - **`Select`**: takes `onSelect(value)` with its choices in `options`, a list of at least one choice with unique values, such as `[{ value: 'sm', label: 'Small' }, { value: 'lg', label: 'Large' }]`
 
-
-[​](#which-controls-need-a-key)
-
-Which controls need a `key`
+### [](#which-controls-need-a-key)Which controls need a `key`
 
 Give every `Input` and `Select` a `key` prop, such as `key: 'size'`. A `Button` can go without a `key` when it has a `label` prop or a single string child. Its key is then the `label` value or that string. Tests and other mods identify a control by its key:
 
 - **Tests**: a [test](plugins-mods-test.md#test-a-drawing) presses or types into a control by its key.
-- **Other mods**: Claude Code fires [`ui.press`, `ui.input`, or `ui.select`](plugins-mods-reference.md#interface) with the control’s key in `e.element` before it runs the control’s callback. Another mod’s hook for that event sees what the user typed into your `Input` and can change that text or keep your callback from running. The mods API gives that mod no method to press your buttons.
+- **Other mods**: Claude Code fires [`ui.press`, `ui.input`, or `ui.select`](plugins-mods-reference.md#interface) with the control’s key in `e.element` before it runs the control’s callback. Another mod’s hook can also [run for that event](plugins-mods-events.md#hook-other-mods-drawings-and-controls). That hook sees what the user typed into your `Input` and can change that text or keep your callback from running. The mods API gives that mod no method to press your buttons.
 
 If a message says `needs a key` or `is drawn twice`, [find the cause by that message](plugins-mods-troubleshoot.md#needs-a-key).
 
-
-[​](#know-which-keys-your-mod-can-receive)
-
-Keyboard focus and hotkeys
+### [](#know-which-keys-your-mod-can-receive)Keyboard focus and hotkeys
 
 Your mod never reads the keyboard itself. The user presses a key, Claude Code decides which of your controls it’s for, and that control’s callback runs. Apart from a [digit hotkey on the band or an `action` binding](plugins-mods-reference.md#elements), that happens only while your pane or band has keyboard focus. The rest of the time, keys go to the prompt. In the [VS Code extension](#draw-in-the-vs-code-extension), buttons have no hotkeys: the user clicks a button or presses Enter on it, and types into fields.
 
-
-[​](#how-a-pane-gets-keyboard-focus)
-
-How a pane gets keyboard focus
+#### [](#how-a-pane-gets-keyboard-focus)How a pane gets keyboard focus
 
 A pane gets keyboard focus when:
 
@@ -589,10 +745,7 @@ A pane gets keyboard focus when:
 
 Claude Code grants `focus: true` only while the prompt is empty and nothing else has keyboard focus. A pane that opens while the user is typing doesn’t take their keystrokes.
 
-
-[​](#what-each-key-does)
-
-What each key does
+#### [](#what-each-key-does)What each key does
 
 This table lists what a key does while your pane or band has keyboard focus:
 
@@ -610,10 +763,7 @@ This table lists what a key does while your pane or band has keyboard focus:
 
 A mod can’t bind Tab or the arrow keys to anything else, so a game steers with `w`, `a`, `s`, and `d`.
 
-
-[​](#set-a-hotkey-and-the-first-focus)
-
-Set a hotkey and the first focus
+#### [](#set-a-hotkey-and-the-first-focus)Set a hotkey and the first focus
 
 - **`hotkey`**: to let the user press a `Button` with one key, give it a `hotkey` of one digit or one lowercase letter, as in `hotkey: 'a'`
 - **`autoFocus`**: to choose which control has the focus when the pane opens, add `autoFocus: true` to it. In the [VS Code extension](#draw-in-the-vs-code-extension), `autoFocus` does nothing: the control draws as if you had left it out, and you don’t need to change anything. The prop accepts only `true`, so omit it on the other controls.
@@ -627,10 +777,7 @@ How a hotkey shows depends on the button and the app:
 
 In the terminal, name the key in a bracketed button’s label, or use `plain: true`, so the user can see what to press. The [elements reference](plugins-mods-reference.md#elements) has the other `Button` rules: `action`, digit hotkeys on the band, and two buttons on one hotkey.
 
-
-[​](#when-the-user-collapses-the-band)
-
-When the user collapses the band
+#### [](#when-the-user-collapses-the-band)When the user collapses the band
 
 In the terminal, while a mod draws in the band, the user can collapse the band to one row to get it out of the way:
 
@@ -643,12 +790,9 @@ A collapsed band hides everything the mods draw there and shows one dim row inst
 ▸ plugin panel hidden · ctrl+x ctrl+a or click to show
 ```
 
-The same keys, or in fullscreen rendering a click on the row, expand the band again. Until then, nothing presses a button in it: no hotkey, no digit typed into an empty prompt, and no keybinding for a button’s [`action`](plugins-mods-reference.md#elements). If the band has keyboard focus when the user collapses it, the focus returns to the prompt, and Ctrl+X then Tab skips the band while it’s collapsed. The band stays collapsed until the user expands it, even after `/clear`, and is expanded again the next time Claude Code starts. Your mod can’t expand it or tell that it’s collapsed: the `ui.render` hook keeps running, and nothing in `e.props` says so. Don’t make the band the only place your mod shows something the user has to answer.
+The same keys, or in fullscreen rendering a click on the row, expand the band again. Until then, nothing presses a button in it: no hotkey, no digit typed into an empty prompt, and no keybinding for a button’s [`action`](plugins-mods-reference.md#elements). If the band has keyboard focus when the user collapses it, the focus returns to the prompt, and Ctrl+X then Tab skips the band while it’s collapsed. The band stays collapsed until the user expands it, even after `/clear`, and is expanded again the next time Claude Code starts. Your mod can’t expand it. Don’t make the band the only place your mod shows something the user has to answer. To show that elsewhere only while the band is collapsed, read `e.props.isCollapsed` in your `ui.render` hook, which keeps running. `isCollapsed` requires Claude Code v2.1.321 or later.
 
-
-[​](#take-typed-input-and-draw-a-row-for-each-item)
-
-Take typed input and draw a row for each item
+### [](#take-typed-input-and-draw-a-row-for-each-item)Take typed input and draw a row for each item
 
 Many panes are a text field with a list under it. The example in this section is a notes pane: you type a note and press Enter to add it, and each note has an `x` button that deletes it. With two notes added, the terminal draws the pane this way:
 
@@ -739,24 +883,15 @@ Each change follows the same render cycle as `hello-tabs`: the callback changes 
 
 Submitting an `Input` doesn’t start a turn unless your callback calls [`$.prompt.submit`](plugins-mods-api.md#start-a-turn-from-a-background-job).
 
-
-[​](#redraw-when-something-changes)
-
-Redraw a site
+## [](#redraw-when-something-changes)Redraw a site
 
 A drawing is a snapshot: it shows what your `ui.render` hook returned the last time the hook ran. To show something new, the hook has to run again. Claude Code runs it again for some changes, and your mod asks for the rest.
 
-
-[​](#when-claude-code-redraws-without-being-asked)
-
-When Claude Code redraws without being asked
+### [](#when-claude-code-redraws-without-being-asked)When Claude Code redraws without being asked
 
 Claude Code runs your `ui.render` hook again when the site’s props change or the terminal’s width changes. When a `Client` in the site fails and your mod handles [`ui.fault`](plugins-mods-reference.md#interface), Claude Code runs the hook once more after your `ui.fault` hooks return, so your `ui.render` hook can leave the `Client` out. It doesn’t run the hook on a timer, and it can’t tell when a variable in your module changes.
 
-
-[​](#redraw-when-your-data-changes)
-
-Redraw when your data changes
+### [](#redraw-when-your-data-changes)Redraw when your data changes
 
 To have your sites drawn again after your own data changes, call `$.ui.invalidate('ui.render')`. This pane counts presses. The button’s callback changes `count`, then asks for a redraw:
 
@@ -787,10 +922,7 @@ on('ui.render', { component: 'Pane' }, async ($, e, next) => {
 
 Each press raises the number in the pane. The [`hello-tabs` example](#build-a-pane-with-tabs) wraps the same call in its `redraw` function. A value you keep in [`$.state`](#keep-a-value-in-$-state) doesn’t need the call, because writing the value redraws the sites that read it.
 
-
-[​](#redraw-on-a-timer)
-
-Redraw on a timer
+### [](#redraw-on-a-timer)Redraw on a timer
 
 To keep a clock, a countdown, or a value from outside the session current, redraw on a schedule. Start a timer in the module’s `session.start` hook. If the module already has one, as `hello-tabs` does, add the [`$.clock.every`](plugins-mods-api.md#run-work-in-the-background) line to it:
 
@@ -804,17 +936,11 @@ on('session.start', async ($, e, next) => {
 
 Claude Code now runs your `ui.render` hook once a second. The timer stops after the module reloads, and the new instance of the module starts its own.
 
-
-[​](#how-often-a-site-can-redraw)
-
-How often a site can redraw
+### [](#how-often-a-site-can-redraw)How often a site can redraw
 
 Claude Code throttles redraws of a site, so your mod can call `$.ui.invalidate` as often as its data changes. For how often each site can redraw, see the [limits table](plugins-mods-reference.md#limits). Calls that come faster than the limit are coalesced into one redraw. That redraw runs your hook once, and the hook reads your data as it is at that moment, so the latest value shows and the values in between don’t. An animation can’t run faster than the limit.
 
-
-[​](#keep-state)
-
-Keep state
+## [](#keep-state)Keep state
 
 Where a mod keeps a value decides how long the value lasts: until the module reloads, until the session ends, or from one session to the next. Choose by how long the value has to last:
 
@@ -826,17 +952,11 @@ Where a mod keeps a value decides how long the value lasts: until the module rel
 
 `$.store.get(key)` resolves to the value or `undefined`, and `$.store.set(key, value)` takes any JSON value.
 
-
-[​](#keep-a-value-in-$-state)
-
-Keep a value in `$.state`
+### [](#keep-a-value-in-$-state)Keep a value in `$.state`
 
 `$.state` holds values for the length of a session, and it redraws for you. It’s reactive state: a `ui.render` hook that reads a value subscribes to it, so Claude Code redraws that site each time you write the value, and you don’t call `$.ui.invalidate`. A value in `$.state` also survives a reload of the module, which a variable doesn’t. To set it up, declare your values, point your manifest at the declaration, then define and use each value. The examples move the `count` from `hello-tabs` into `$.state`.
 
-
-[​](#declare-the-values)
-
-Declare the values
+#### [](#declare-the-values)Declare the values
 
 Declare the values in a type declaration file. The outer key is your plugin’s name, and each entry under it is a value and its type. Save this as `hello-tabs/types/index.d.ts`:
 
@@ -853,10 +973,7 @@ declare module 'claude-code' {
 }
 ```
 
-
-[​](#point-the-manifest-at-the-declaration)
-
-Point the manifest at the declaration
+#### [](#point-the-manifest-at-the-declaration)Point the manifest at the declaration
 
 To let `claude plugin validate` check your code against that file, add a `types` field to the manifest with its path:
 
@@ -872,10 +989,7 @@ hello-tabs/.claude-plugin/plugin.json
 }
 ```
 
-
-[​](#define-read-and-write-a-value)
-
-Define, read, and write a value
+#### [](#define-read-and-write-a-value)Define, read, and write a value
 
 In your module, define each value with a default, read it while drawing, and write it from a callback. `atom` names a value and its default, `read` returns it, and `update` writes it. The three helpers call `$.state.get` and `$.state.set` for you:
 
@@ -899,10 +1013,7 @@ Because the `ui.render` hook read `count`, Claude Code runs the hook again each 
 - **Declare every value in the type declaration file**: otherwise validation fails with `hello-tabs.count is not declared`
 - **Write from a callback or another event’s hook**: a `ui.render` hook can read state and can’t write it, so write from `onPress`, `onSubmit`, or a hook for another event
 
-
-[​](#change-hello-tabs-to-use-$-state)
-
-Change `hello-tabs` to use `$.state`
+#### [](#change-hello-tabs-to-use-$-state)Change `hello-tabs` to use `$.state`
 
 To move `count` in `hello-tabs` into `$.state`, change every line that uses it:
 
@@ -913,10 +1024,7 @@ To move `count` in `hello-tabs` into `$.state`, change every line that uses it:
 
 Keep `redraw` for the tab buttons, because `tab` is still a variable.
 
-
-[​](#load-a-saved-value-again-after-clear)
-
-Load a saved value again after `/clear`
+### [](#load-a-saved-value-again-after-clear)Load a saved value again after `/clear`
 
 If your mod copies a saved value from `$.store` into `$.state` at `session.start`, it has to copy it again after `/clear`, `/resume`, or `/branch`. Those commands reset every `$.state` value to its default, and `session.start` doesn’t fire again. [`classic.SessionStart`](plugins-mods-events.md#hook-the-settings-hook-events) does fire after each of them, with `e.source` set to `clear`, `resume`, or `fork`, so copy the value again in a hook on it. Otherwise your drawing shows the default, and a callback that saves the `$.state` value writes the default over what you stored. This code loads `count` from both hooks. It builds on the `$.state` version of `hello-tabs`, where `count` is an atom and `update` is imported. Put `loadCount` above `register`, and add the `loadCount` call to the `session.start` hook you already have. `classic.SessionStart` also fires at startup and after compaction, which doesn’t reset `$.state`, so the filter on `source` keeps the hook to the three resets:
 
@@ -942,10 +1050,7 @@ on('classic.SessionStart', { source: ['clear', 'resume', 'fork'] }, async ($, e,
 
 With both hooks in place, the pane shows the saved count after `/clear` and not `0`, and the next press of **Add one** adds to the saved count. `loadCount` writes the stored value over the one in `$.state`, and `session.start` fires again each time the module reloads. To keep the store from falling behind, save on every change, as the **Add one** button does. To check the reload without a session, [test the drawing after `/clear`](plugins-mods-test.md#test-a-drawing-after-clear).
 
-
-[​](#save-from-more-than-one-session)
-
-Save from more than one session
+### [](#save-from-more-than-one-session)Save from more than one session
 
 Every session on your machine that runs your mod shares one `$.store`. A `get` followed by a `set` isn’t atomic. When two sessions each read a value, change it, and write it back, they race, and the second write replaces the first. To make that less likely:
 
@@ -966,10 +1071,7 @@ onPress: async () => {
 
 If a second session has pressed its own button three times since this session started, this press shows and saves a count that includes those three.
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 - [React to events](plugins-mods-events.md): feed your drawing from tool calls and turns
 - [Use the mods API](plugins-mods-api.md): feed your drawing from timers and model calls

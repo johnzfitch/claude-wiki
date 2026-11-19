@@ -2,7 +2,7 @@
 title: "The Claude 3 Model Family: Opus, Sonnet, Haiku"
 source_url: "https://www-cdn.anthropic.com/de8ba9b01c9ab7cbabf5c33b80b7bbc618857627/Model_Card_Claude_3.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-02T05:42:00Z"
+fetched_at: "2026-11-18T06:28:46Z"
 tags: ["news-research"]
 ---
 

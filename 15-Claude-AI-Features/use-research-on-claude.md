@@ -2,7 +2,7 @@
 title: "Use research on Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11088861-use-research-on-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:34Z"
+fetched_at: "2026-11-18T06:27:38Z"
 tags: ["claude-ai", "search"]
 ---
 

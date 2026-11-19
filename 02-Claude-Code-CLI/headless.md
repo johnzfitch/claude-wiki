@@ -2,8 +2,8 @@
 title: "Run Claude Code programmatically - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/headless"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-05T06:35:16Z"
-last_modified: "Thu, 05 Nov 2026 04:11:10 GMT"
+fetched_at: "2026-11-18T06:27:11Z"
+last_modified: "Wed, 18 Nov 2026 02:19:37 GMT"
 tags: ["claude-code"]
 ---
 
@@ -14,6 +14,7 @@ Back to top
 - [Basic usage](#basic-usage)
   - [Start faster with bare mode](#start-faster-with-bare-mode)
   - [Background tasks at exit](#background-tasks-at-exit)
+  - [Give a long subagent command more time](#give-a-long-subagent-command-more-time)
   - [MCP work when a non-interactive run ends](#mcp-work-when-a-non-interactive-run-ends)
   - [Stop a run with SIGTERM](#stop-a-run-with-sigterm)
   - [If the working directory is deleted](#if-the-working-directory-is-deleted)
@@ -52,10 +53,7 @@ claude -p "Find and fix the bug in auth.py" --allowedTools "Read,Edit,Bash"
 
 This page covers using the Agent SDK via the CLI (`claude -p`). For the Python and TypeScript SDK packages with structured outputs, tool approval callbacks, and native message objects, see the [full Agent SDK documentation](../05-Agent-SDK/agent-sdk-overview.md).
 
-
-[​](#basic-usage)
-
-Basic usage
+## [](#basic-usage)Basic usage
 
 Add the `-p` (or `--print`) flag to any `claude` command to run it non-interactively. Not every [CLI option](cli-reference.md) combines with `-p`. Claude Code rejects `--bg`, and rejects `--cloud` with a task description, with an error naming the conflict; `--cloud` with a session ID and `-p` instead [queues a message into that cloud session](claude-code-on-the-web.md#send-follow-ups-from-the-cli) and exits. Options you’ll combine with `-p` often include:
 
@@ -71,10 +69,7 @@ claude -p "What does the auth module do?"
 
 Claude Code exits with code 0 on success and a non-zero code when the run fails, so your scripts can branch on the exit status. If you pass an invalid flag, Claude Code reports the error to stderr before the run starts. When a failure happens inside the run, such as missing authentication, Claude Code prints the failure as the result on stdout.
 
-
-[​](#start-faster-with-bare-mode)
-
-Start faster with bare mode
+### [](#start-faster-with-bare-mode)Start faster with bare mode
 
 Add `--bare` to reduce startup time by skipping auto-discovery of hooks, skills, custom commands, [subagents](../09-Agents-Patterns/sub-agents.md), installed plugins, MCP servers, auto memory, and CLAUDE.md. Without it, `claude -p` discovers and loads them as an interactive session would, including anything configured in the working directory or `~/.claude`. Bare mode is useful for CI and scripts where you need the same result on every machine. A hook in a teammate’s `~/.claude` or an MCP server in the project’s `.mcp.json` won’t run, because bare mode never reads them. A directory you name with `--add-dir` is a partial exception: bare mode loads skills from its `.claude/skills/` folder, but still skips its `.claude/commands/` and `.claude/agents/` folders. [Skills from additional directories](../08-Plugins-Skills/skills.md#skills-from-additional-directories) covers what does and doesn’t load. Without `--bare`, a `-p` session runs the hooks in a project’s `.claude/settings.json` and connects the servers in its `.mcp.json`, even in a folder you’ve never trusted. A `-p` session shows no workspace trust dialog and no per-server approval prompt. [What runs before you trust a folder](permissions.md#what-runs-before-you-trust-a-folder) covers each kind of repository content under `-p` and how to keep it out. This example runs a one-off summarize task in bare mode and pre-approves the Read tool so the call completes without a permission prompt. Set `ANTHROPIC_API_KEY` before running it, because bare mode doesn’t use your subscription login:
 
@@ -95,41 +90,36 @@ In bare mode, Claude Code never reads OAuth credentials or the system keychain. 
 Hooks still don’t run in bare mode when you pass them with `--settings`, or in the [`hooks/hooks.json`](../08-Plugins-Skills/plugins-components.md#hooks) or [`hooks` manifest key](../08-Plugins-Skills/plugins-reference.md#hooks) of a plugin you load with a flag. Don’t use bare mode for a run that needs them. Bare mode also limits what happens while the session runs:
 
 - **MCP servers**: only servers supplied on the command line connect, for example with `--mcp-config`. In an interactive session, Claude Code also skips the automatic IDE connection unless you pass `--ide`.
-- **System reminders**: Claude gets your prompts and the tool results without the [system reminders](glossary.md#system-reminder) Claude Code would add alongside them. For example, Claude isn’t told when a file it read earlier changes on disk, and it doesn’t get the list of available skills, including skills from an `--add-dir` folder.
+- **System reminders**: Claude receives your prompts and the tool results without the [system reminders](glossary.md#system-reminder) Claude Code would add alongside them. For example, Claude isn’t told when a file it edited earlier changes on disk, and it doesn’t get the list of available skills, including skills from an `--add-dir` folder.
 - **Background tasks**: Claude can’t run background commands or background subagents, and the other features that [`CLAUDE_CODE_DISABLE_BACKGROUND_TASKS`](env-vars.md) turns off are off too. A command that reaches its [timeout](tools-reference.md#timeout-and-output-limits) stops instead of [moving to the background](tools-reference.md#background-commands).
 
 Before v2.1.286, these limits held only partly: an interactive `--bare` session connected the MCP servers that a normal session would, every `--bare` session sent system reminders, and background tasks stayed available.
 
 `--bare` is the recommended mode for scripted and SDK calls, and will become the default for `-p` in a future release.
 
-
-[​](#background-tasks-at-exit)
-
-Background tasks at exit
+### [](#background-tasks-at-exit)Background tasks at exit
 
 After Claude finishes its turn and stdin has closed, a `claude -p` run can stay open to wait for background work that Claude started. Unless a background command that the main conversation started is still running, Claude Code stops whatever is still running after 10 minutes of continuous idle waiting by default and drops its partial result. To change the 10-minute cap, set [`CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS`](env-vars.md), or set it to `0` to wait without one. The run waits for background work such as background commands, subagents and workflows, Monitor watches, and pending `/loop` wakeups:
 
 - **[Background commands](tools-reference.md#background-commands)**: for a command that the main conversation started, for example a dev server or a watch build, the run waits until the command exits or reaches its [time limit](tools-reference.md#time-limit-for-background-commands). Claude then takes one more turn with the outcome. While the command runs, the 10-minute cap doesn’t end the wait.
-- **Background [subagents](../09-Agents-Patterns/sub-agents.md) and workflows**: the run stays open until that work completes, because its result is part of the final output.
+- **Background [subagents](../09-Agents-Patterns/sub-agents.md) and workflows**: the run stays open until each one finishes or the 10-minute cap ends the wait.
 - **[Monitor](tools-reference.md#monitor-tool) watches**: the run waits until the watch times out or the 10-minute cap ends the wait, whichever comes first. While it waits, Claude keeps responding to what the watch reports. By default, a watch times out five minutes after Claude starts it.
 - **Pending wakeups**: in a run whose prompt you passed as text rather than with `--input-format stream-json`, when Claude has scheduled a [self-paced `/loop` wakeup](scheduled-tasks.md#let-claude-choose-the-interval), the run waits for each wakeup to fire and runs its iteration until the [loop ends](scheduled-tasks.md#stop-a-loop), even past the 10-minute cap.
 
 When stderr is a terminal and the run has waited five seconds, Claude Code prints a line to stderr that starts with `Waiting for background work to finish` and names the work. With [`json` or `stream-json` output](#get-structured-output), the line prints only when stdout isn’t a terminal, so the JSON your script reads never carries it. If the run reaches its [`--max-budget-usd`](cli-reference.md#cli-flags) cap, Claude Code stops the remaining background work instead of waiting. When background work starts another turn, the run prints each turn’s result with the default `text` output and the last turn’s result with `json` output. Before v2.1.295, the run printed only the last turn’s result with `text` output too.
 
+#### [](#give-a-long-subagent-command-more-time)Give a long subagent command more time
 
-[​](#mcp-work-when-a-non-interactive-run-ends)
+When a subagent’s long command [moves to the background](tools-reference.md#foreground-commands-that-move-to-the-background) at its timeout, a `claude -p` run can exit with code 0 before the command finishes. To raise the default timeout above the command’s run time, set [`BASH_DEFAULT_TIMEOUT_MS`](env-vars.md), for example `BASH_DEFAULT_TIMEOUT_MS=300000 claude -p "<prompt>"` for five minutes. For a background subagent’s command over 10 minutes, also raise the [10-minute cap](#background-tasks-at-exit).
 
-MCP work when a non-interactive run ends
+#### [](#mcp-work-when-a-non-interactive-run-ends)MCP work when a non-interactive run ends
 
 A `claude -p` run doesn’t wait for MCP work in the background:
 
 - **[MCP tasks](../06-MCP-Tools/General/mcp.md#mcp-tasks-that-run-on-the-server)**: on a remote server the job goes on. To follow it again, [resume that session](../06-MCP-Tools/General/mcp.md#exit-clear-or-resume-while-an-mcp-task-runs), not as a one-shot `claude -p "<prompt>"` run.
 - **MCP calls that [automatic backgrounding](../06-MCP-Tools/General/mcp.md#automatic-backgrounding-of-long-tool-calls) moved**: the call’s result is lost.
 
-
-[​](#stop-a-run-with-sigterm)
-
-Stop a run with SIGTERM
+### [](#stop-a-run-with-sigterm)Stop a run with SIGTERM
 
 If you stop a `claude -p` run with SIGTERM, for example with `kill` or from a process supervisor, Claude Code exits with code 143. Claude Code leaves the turn that was in progress unfinished and records no result for it. To end the turn instead, send SIGINT, or call the Agent SDK’s `interrupt()`, before you stop the process. On SIGTERM, Claude Code terminates the process tree of any Bash command that is still running. Claude Code then runs [`SessionEnd` hooks](../07-Hooks/hooks.md#sessionend) and exits. While exiting, Claude Code starts no new tool call, sends no new model request, and runs no hook other than `SessionEnd`. If the run was in the middle of a command or waiting on a permission prompt when the signal arrived, Claude Code handles that step as follows:
 
@@ -138,26 +128,17 @@ If you stop a `claude -p` run with SIGTERM, for example with `kill` or from a pr
 
 When you [resume the session](#continue-conversations), Claude Code leaves the interrupted turn as it is, and your next prompt drives the conversation. To have Claude Code continue the interrupted turn on resume instead, set [`CLAUDE_CODE_RESUME_INTERRUPTED_TURN=1`](env-vars.md).
 
-
-[​](#if-the-working-directory-is-deleted)
-
-If the working directory is deleted
+### [](#if-the-working-directory-is-deleted)If the working directory is deleted
 
 If the working directory of a `claude -p` or Agent SDK session is deleted mid-session, the session keeps running. When a turn starts while the directory is missing, Claude Code emits a [warning message](../05-Agent-SDK/agent-sdk-typescript.md#sdkinformationalmessage) in `stream-json` output, and shell commands fail until the directory exists again.
 
-
-[​](#examples)
-
-Examples
+## [](#examples)Examples
 
 These examples highlight common CLI patterns. Where a command names a file such as `auth.py` or `build-error.txt`, substitute a file from your own project. In CI or other scripted environments, add [`--bare`](#start-faster-with-bare-mode) so Claude Code starts without loading the host’s hooks, plugins, auto memory, or `CLAUDE.md`.
 
+### [](#pipe-data-through-claude)Pipe data through Claude
 
-[​](#pipe-data-through-claude)
-
-Pipe data through Claude
-
-Non-interactive mode reads stdin, so you can pipe data in and redirect the response out like any other command-line tool. This example pipes a build log into Claude and writes the explanation to a file:
+Non-interactive mode reads stdin, so you can pipe data in and redirect the response out. This example pipes a build log into Claude and writes the explanation to a file:
 
 ```python
 cat build-error.txt | claude -p 'concisely explain the root cause of this build error' > output.txt
@@ -169,10 +150,7 @@ Piped stdin is capped at 10MB. If you exceed the cap, Claude Code exits with a c
 
 If Claude Code can’t read stdin, for example because the process that started it disconnected its end, Claude Code prints a warning to stderr and continues with the prompt from the command line.
 
-
-[​](#add-claude-to-a-build-script)
-
-Add Claude to a build script
+### [](#add-claude-to-a-build-script)Add Claude to a build script
 
 You can wrap a non-interactive call in a script to use Claude as a project-specific linter or reviewer. This `package.json` script pipes the diff against `main` into Claude and asks it to report typos. Piping the diff means Claude doesn’t need Bash permission to read it, and the escaped double quotes keep the script portable to Windows:
 
@@ -186,10 +164,7 @@ You can wrap a non-interactive call in a script to use Claude as a project-speci
 
 Run it with `npm run lint:claude`.
 
-
-[​](#get-structured-output)
-
-Get structured output
+### [](#get-structured-output)Get structured output
 
 Use `--output-format` to control how responses are returned:
 
@@ -226,10 +201,7 @@ claude -p "Extract function names from auth.py" \
   | jq '.structured_output'
 ```
 
-
-[​](#stream-responses)
-
-Stream responses
+### [](#stream-responses)Stream responses
 
 Use `--output-format stream-json` with `--verbose` and `--include-partial-messages` to receive tokens as they’re generated. Each line is a JSON object representing an event:
 
@@ -246,10 +218,7 @@ claude -p "Write a poem" --output-format stream-json --verbose --include-partial
 
 For programmatic streaming with callbacks and message objects, see [Stream responses in real-time](../05-Agent-SDK/agent-sdk-streaming-output.md) in the Agent SDK documentation.
 
-
-[​](#follow-subagent-messages)
-
-Follow subagent messages
+#### [](#follow-subagent-messages)Follow subagent messages
 
 Messages from [subagents](../09-Agents-Patterns/sub-agents.md) and from skills that [run in a subagent](../08-Plugins-Skills/skills.md#run-skills-in-a-subagent) appear in the stream as `assistant` and `user` messages. Their `parent_tool_use_id` field says which run each one belongs to. Messages from the main conversation carry `null` in that field. The first message from a forked skill, or from a subagent running in the [foreground](../09-Agents-Patterns/sub-agents.md#run-subagents-in-foreground-or-background), is a `user` message carrying the prompt or skill content that drives it. After that first message, Claude Code emits:
 
@@ -270,10 +239,7 @@ For a forked skill started from the prompt, match `parent_tool_use_id` on the `f
 - **Messages of subagents that a forked skill spawns, and of forked skills started inside a subagent or another forked skill**: v2.1.275 or later
 - **Messages of a forked skill you start by passing `/<skill-name>` as the prompt**: v2.1.287 or later
 
-
-[​](#handle-api-retries)
-
-Handle API retries
+#### [](#handle-api-retries)Handle API retries
 
 When an API request fails with a retryable error, Claude Code emits a `system/api_retry` event before retrying. On v2.1.246 or later, when a `401` or `403` rejects an [`apiKeyHelper`](settings-reference.md#apikeyhelper) credential, Claude Code makes the first two retries quietly with no event, then emits the event as usual from the third consecutive retry onward. The quiet retries still count toward `attempt`. You can use the event to show retry progress in your own interface.
 
@@ -290,10 +256,7 @@ When an API request fails with a retryable error, Claude Code emits a `system/ap
 | `uuid` | string | unique event identifier |
 | `session_id` | string | session the event belongs to |
 
-
-[​](#read-session-metadata)
-
-Read session metadata
+#### [](#read-session-metadata)Read session metadata
 
 The `system/init` event reports session metadata including the model, tools, MCP servers, and loaded plugins. It is the first event in the stream unless startup events precede it:
 
@@ -302,10 +265,7 @@ The `system/init` event reports session metadata including the model, tools, MCP
 
 The event also carries an optional `capabilities` array of strings naming the protocol behaviors this Claude Code version implements, such as `interrupt_receipt_v1` or `interrupt_cancel_queued_v1`. Check it to feature-detect instead of comparing version strings, and ignore values you don’t recognize. See [`SDKSystemMessage`](../05-Agent-SDK/agent-sdk-typescript.md#sdksystemmessage) for the capability list.
 
-
-[​](#fail-ci-when-a-plugin-or-mcp-server-doesn’t-load)
-
-Fail CI when a plugin or MCP server doesn’t load
+#### [](#fail-ci-when-a-plugin-or-mcp-server-doesn’t-load)Fail CI when a plugin or MCP server doesn’t load
 
 Use the plugin fields in the `system/init` event to catch a plugin that didn’t load:
 
@@ -323,10 +283,7 @@ When a `--plugin-dir` directory or archive itself fails to load, its `plugin_err
 
 When you run the command yourself in a terminal, Claude Code also prints a startup warning to stderr, such as `Warning: 1 MCP server skipped due to invalid config:`, followed by the reason for each skipped entry. When you redirect stderr, or when a program such as a CI runner or an SDK host captures it, Claude Code prints no warning. It reports the skipped entries only in the `mcp_server_errors` field.
 
-
-[​](#track-plugin-installs)
-
-Track plugin installs
+#### [](#track-plugin-installs)Track plugin installs
 
 When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](env-vars.md) is set, Claude Code emits `system/plugin_install` events while marketplace plugins install before the first turn. Use these to surface install progress in your own UI.
 
@@ -340,10 +297,7 @@ When [`CLAUDE_CODE_SYNC_PLUGIN_INSTALL`](env-vars.md) is set, Claude Code emits 
 | `uuid` | string | unique event identifier |
 | `session_id` | string | session the event belongs to |
 
-
-[​](#auto-approve-tools)
-
-Auto-approve tools
+### [](#auto-approve-tools)Auto-approve tools
 
 Use `--allowedTools` to let Claude use certain tools without prompting. Listing `Read` and `Edit` lets Claude read and edit files without asking for permission, apart from reads from [network paths](permissions.md#network-paths). Listing `Bash` does the same for shell commands, except in a run that starts in [auto mode](permission-modes.md#how-auto-mode-evaluates-actions), where Claude Code drops a bare `Bash` entry as a broad allow rule and auto mode evaluates each command instead. This example runs a test suite and fixes failures with those three tools listed:
 
@@ -364,12 +318,13 @@ This example applies lint fixes with `acceptEdits` as the baseline:
 claude -p "Apply the lint fixes" --permission-mode acceptEdits
 ```
 
+### [](#turn-off-permission-prompts-in-unattended-runs)Turn off permission prompts in unattended runs
 
-[​](#turn-off-permission-prompts-in-unattended-runs)
+Pass `--permission-prompts none` when nobody is available to answer permission prompts, for example in a scheduled job. The flag matters most when your run has a permission host: an Agent SDK app with a [`canUseTool` callback](../05-Agent-SDK/agent-sdk-user-input.md), or an MCP tool you pass with [`--permission-prompt-tool`](cli-reference.md#cli-flags). Without the flag or the [`permissions.denyInsteadOfPrompting`](settings-reference.md#permissions-denyinsteadofprompting) setting, your run waits for that host to answer each permission request. With the flag, your run doesn’t consult the host or wait on it. Anything that would prompt is denied unless a `PermissionRequest` hook allows it, Claude is told that nobody can approve the request and not to retry it, and the run continues. In a `-p` run with no host, these requests are denied either way, and the flag also tells Claude not to retry them. Permission rules, [`PermissionRequest` hooks](../07-Hooks/hooks.md#permissionrequest), and the permission mode you set still decide every call first; Claude Code denies only the requests that nothing else resolves.
 
-Turn off permission prompts in unattended runs
+The `--permission-prompts none` flag lasts for one run. To deny calls that would wait on a permission prompt in later runs too, set [`permissions.denyInsteadOfPrompting`](settings-reference.md#permissions-denyinsteadofprompting) to `true` in your user or managed settings.
 
-Pass `--permission-prompts none` when nobody is available to answer permission prompts, for example in a scheduled job. The flag matters most when your run has a permission host: an Agent SDK app with a [`canUseTool` callback](../05-Agent-SDK/agent-sdk-user-input.md), or an MCP tool you pass with [`--permission-prompt-tool`](cli-reference.md#cli-flags). Without the flag, your run waits for that host to answer each permission request. With the flag, your run doesn’t consult the host or wait on it. Anything that would prompt is denied unless a `PermissionRequest` hook allows it, Claude is told that nobody can approve the request and not to retry it, and the run continues. In a `-p` run with no host, these requests are denied either way, and the flag also tells Claude not to retry them. Permission rules, [`PermissionRequest` hooks](../07-Hooks/hooks.md#permissionrequest), and the permission mode you set still decide every call first; Claude Code denies only the requests that nothing else resolves. This example runs an unattended task in [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode). The classifier reviews each action as usual, and Claude Code denies anything that would have fallen back to a prompt:
+This example runs an unattended task in [auto mode](permission-modes.md#eliminate-prompts-with-auto-mode). The classifier reviews each action as usual, and Claude Code denies anything that would have fallen back to a prompt:
 
 ```python
 claude -p "Update the dependency pins and run the tests" --permission-mode auto --permission-prompts none
@@ -379,10 +334,7 @@ With `--permission-prompts none`, Claude Code removes the tools that need an ans
 
 The `--permission-prompts` flag requires Claude Code v2.1.259 or later. Earlier versions reject it with an unknown-option error.
 
-
-[​](#create-a-commit)
-
-Create a commit
+### [](#create-a-commit)Create a commit
 
 This example reviews staged changes and creates a commit with an appropriate message:
 
@@ -391,20 +343,17 @@ claude -p "Look at my staged changes and create an appropriate commit" \
   --allowedTools "Bash(git diff *),Bash(git log *),Bash(git status *),Bash(git commit *)"
 ```
 
-The `--allowedTools` flag uses [permission rule syntax](settings-reference.md#permission-rule-syntax). The trailing ` *` enables prefix matching, so `Bash(git diff *)` allows any command starting with `git diff`. The space before `*` is important: without it, `Bash(git diff*)` would also match `git diff-index`.
+The `--allowedTools` flag uses [permission rule syntax](settings-reference.md#permission-rule-syntax). With the trailing ` *`, `Bash(git diff *)` matches `git diff` with or without arguments. The space before `*` is important: without it, `Bash(git diff*)` would also match `git diff-index`.
 
 Command support differs in `-p` mode:
 
 - User-invoked [skills](../08-Plugins-Skills/skills.md) and custom commands work. Include `/skill-name` in the prompt string and Claude Code expands it before running.
 - Built-in commands that only run in the terminal interface, such as `/login`, aren’t available.
 - `/model`, `/effort`, `/fast`, `/color`, and `/rename` accept the value as an argument, for example `/model sonnet`, and `/mcp` with no argument prints a text summary of server status. These forms follow each command’s [availability notes](commands.md#all-commands).
-- To change a setting, pass `key=value` to `/config`, for example `/config thinking=false`.
+- To change a setting, pass `key=value` to `/config`, for example `/config verbose=true`.
 - `/output-style <style>` switches [output styles](output-styles.md) and `/output-style` alone lists them. Requires Claude Code v2.1.269 or later.
 
-
-[​](#customize-the-system-prompt)
-
-Customize the system prompt
+### [](#customize-the-system-prompt)Customize the system prompt
 
 Use `--append-system-prompt` to add instructions while keeping Claude Code’s default behavior. This example pipes a PR diff to Claude and instructs it to review for security vulnerabilities. Save it as a shell script, for example `review.sh`:
 
@@ -416,10 +365,7 @@ gh pr diff "$1" | claude -p \
 
 In the script, `"$1"` stands for the first argument you pass on the command line. Run `bash review.sh 123` and the shell replaces `"$1"` with `123`, so the script fetches the diff for PR 123. Claude Code prints the review as JSON, with the text in the `result` field. See [system prompt flags](cli-reference.md#system-prompt-flags) for more options including `--system-prompt` to fully replace the default prompt. If you replace it, the run also starts without the [git status snapshot](settings-reference.md#includegitinstructions).
 
-
-[​](#continue-conversations)
-
-Continue conversations
+### [](#continue-conversations)Continue conversations
 
 Use `--continue` to continue the most recent conversation, or `--resume` with a session ID to continue a specific conversation. On Claude Code v2.1.257 or later, when you pass `--continue`, Claude Code opens a [background session](sessions.md#where-the-session-picker-looks) that has finished, but not one that is still running. This example runs a review, then sends follow-up prompts:
 
@@ -441,10 +387,7 @@ claude -p "Continue that review" --resume "$session_id"
 
 You can run the two commands from different directories: Claude Code [finds the session by its ID](sessions.md#where-the-session-picker-looks) in any project on this machine. In place of the session ID, you can pass `--resume` the absolute path to a session’s `.jsonl` [transcript file](sessions.md#where-transcripts-are-stored), and Claude Code continues the conversation stored in that file.
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 - [Agent SDK quickstart](../05-Agent-SDK/agent-sdk-quickstart.md): build your first agent with Python or TypeScript
 - [CLI reference](cli-reference.md): all CLI flags and options

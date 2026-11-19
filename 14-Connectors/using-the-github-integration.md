@@ -2,7 +2,7 @@
 title: "Use the GitHub integration | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10167454-using-the-github-integration"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:26:05Z"
+fetched_at: "2026-11-18T06:27:45Z"
 tags: ["connectors", "git", "github"]
 ---
 

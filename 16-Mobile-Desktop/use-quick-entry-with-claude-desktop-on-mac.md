@@ -2,7 +2,7 @@
 title: "Use quick entry with Claude Desktop on Mac | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12626668-use-quick-entry-with-claude-desktop-on-mac"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:25:42Z"
+fetched_at: "2026-11-18T06:27:48Z"
 tags: ["desktop"]
 ---
 

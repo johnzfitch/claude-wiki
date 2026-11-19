@@ -2,7 +2,7 @@
 title: "Update Plugin - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/plugins/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-02T06:26:56Z"
+fetched_at: "2026-11-18T06:27:22Z"
 tags: ["api"]
 ---
 
@@ -25,11 +25,13 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/organizations/plugins/{plugin_id}
 
+Requires `anthropic-beta: ``ce-plugins-2026-09-01`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
+
 Change which stored version of an organization-owned Plugin is served to members, for example to roll back to an earlier one. This pins the served version: later uploads are stored but no longer change what is served, and pinning cannot currently be undone, here or in claude.ai.
 
 Pass the version as `served_version_id`: an earlier one to roll back, a later one to start serving a version that was stored without being served, or the one already served to pin it without changing what is served. No new version is created.
 
-When the organization has content scanning enabled, a version whose `content_scan.status` is `processing` is refused with a 409 (`error_code` `scan_pending`; retry once the scan finishes). A version whose `content_scan.status` is `errored`, or whose `content_scan.assessment` is `fail` or `unknown`, is refused with a 400 (`error_code` `scan_failed`); a `warn` is accepted. If the scan outcome cannot be read at that moment, the request fails with a retryable 503 instead. When the Plugin is in the organization's library marketplace, a version other than the one served is also refused with a 409 when one of its skills has a name that an organization skill (one an administrator uploaded for the whole organization in claude.ai) has since taken: `error_code` `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin cannot be updated here (403).
+When the organization has content scanning enabled, a version whose `content_scan.status` is `processing` is refused with a 409 (`error_code` `scan_pending`; retry once the scan finishes). A version whose `content_scan.status` is `errored`, or whose `content_scan.assessment` is `fail` or `unknown`, is refused with a 400 (`error_code` `scan_failed`); a `warn` is accepted. If the scan outcome cannot be read at that moment, the request fails with a retryable 503 instead. When the Plugin is in the organization's library marketplace, a version other than the one served is also refused with a 409 when an organization skill that this API does not list has since taken the name of one of its skills: `error_code` `skill_name_taken`, with that name in `details.skill_name`. A member-owned Plugin cannot be updated here (403).
 
 This endpoint does not write installation settings; they are written at `/v1/organizations/plugins/{plugin_id}/installation_settings/{target}`.
 
@@ -49,7 +51,7 @@ ID of the Plugin (prefixed `plugin_`).
 
 
 
-"anthropic-beta": optional array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
+"anthropic-beta": array of [AnthropicBeta](../Endpoints/platform-claude-com-http-beta.md#anthropic_beta)
 
 
 
@@ -61,14 +63,6 @@ string
 
 
 
-"message-batches-2024-09-24"
-
-
-
-"prompt-caching-2024-07-31"
-
-
-
 "computer-use-2024-10-22"
 
 
@@ -77,23 +71,7 @@ string
 
 
 
-"pdfs-2024-09-25"
-
-
-
-"token-counting-2024-11-01"
-
-
-
-"token-efficient-tools-2025-02-19"
-
-
-
 "output-128k-2025-02-19"
-
-
-
-"files-api-2025-04-14"
 
 
 
@@ -117,10 +95,6 @@ string
 
 
 
-"extended-cache-ttl-2025-04-11"
-
-
-
 "context-1m-2025-08-07"
 
 
@@ -130,10 +104,6 @@ string
 
 
 "model-context-window-exceeded-2025-08-26"
-
-
-
-"skills-2025-10-02"
 
 
 
@@ -162,10 +132,6 @@ string
 
 
 "managed-agents-2026-04-01"
-
-
-
-"cache-diagnosis-2026-04-07"
 
 
 
@@ -225,10 +191,6 @@ string
 
 
 
-"ce-user-management-2026-07-13"
-
-
-
 "mid-conversation-output-config-2026-07-01"
 
 
@@ -269,6 +231,10 @@ string
 
 
 
+"admin-user-sign-out-2026-10-08"
+
+
+
 "message-threads-2026-08-12"
 
 
@@ -280,6 +246,90 @@ string
 "experimental-claude-tag-2026-10-21"
 
 
+
+"user-profiles-billing-2026-10-01"
+
+
+
+
+
+"message-batches-2024-09-24"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"prompt-caching-2024-07-31"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"pdfs-2024-09-25"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-counting-2024-11-01"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"token-efficient-tools-2025-02-19"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"files-api-2025-04-14"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/files#migrate-from-files-api-2025-04-14
+
+
+
+"extended-cache-ttl-2025-04-11"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"skills-2025-10-02"⁠Deprecated
+
+
+
+Sending this value selects the beta response shapes. Removing it moves you to the current shapes, so follow the migration steps: https://platform.claude.com/docs/en/build-with-claude/skills-guide#migrate-from-skills-2025-10-02
+
+
+
+"cache-diagnosis-2026-04-07"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
+
+
+
+"ce-user-management-2026-07-13"⁠Deprecated
+
+
+
+This value is no longer needed. Remove it from your requests.
 
 ##### Body
 

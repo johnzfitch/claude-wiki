@@ -2,7 +2,7 @@
 title: "Versions - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/agents/versions"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:35:40Z"
+fetched_at: "2026-11-13T06:34:01Z"
 tags: ["api"]
 ---
 
@@ -26,4 +26,4 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 GET/v1/agents/{agent_id}/versions
 
-Requires `anthropic-beta: ``managed-agents-2026-04-01`. [How to send beta headers](beta-headers.md)
+Requires `anthropic-beta: ``managed-agents-2026-04-01`. Learn [how to send beta headers](beta-headers.md).

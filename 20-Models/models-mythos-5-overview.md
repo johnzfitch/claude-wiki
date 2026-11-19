@@ -2,7 +2,7 @@
 title: "Claude Mythos 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/mythos-5/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:26Z"
+fetched_at: "2026-11-13T06:36:48Z"
 tags: ["models"]
 ---
 
@@ -22,7 +22,7 @@ claude-mythos-5
 
 
 
-[Announcement(opens in new tab)](../19-Reference/claude-fable-5-mythos-5.md)[Migration guide](models-fable-5-1-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-1)
+[Announcement(opens in new tab)](../19-Reference/claude-fable-5-mythos-5.md)[Migration guide](models-fable-5-2-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-2)
 
 Context window  
 1Mtokens
@@ -123,13 +123,13 @@ Claude API[Amazon Bedrock](../04-API-Reference/Guides/build-with-claude-claude-i
 
 ## Resources
 
-[Migrate to Claude Mythos 5.1](models-fable-5-1-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-1)
+[Migrate to Claude Mythos 5.2](models-fable-5-2-migration-guide.md#migrating-from-claude-mythos-5-to-claude-mythos-5-2)
 
-What changes when moving from Claude Mythos 5 to Claude Mythos 5.1.
+What changes when moving from Claude Mythos 5 to Claude Mythos 5.2.
 
 
 
-[Claude Mythos 5.1](models-mythos-5-1-overview.md)
+[Claude Mythos 5.2](models-mythos-5-2-overview.md)
 
 The current Mythos model: overview, specs, and resources.
 

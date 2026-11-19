@@ -2,7 +2,7 @@
 title: "Self-hosted worker reference - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/self-hosted-sandboxes-reference"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-03T06:23:34Z"
+fetched_at: "2026-11-18T06:28:06Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -23,17 +23,25 @@ Reference for self-hosted sandbox workers: ant CLI flags, environment variables,
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Cloud platforms](managed-agents-self-hosted-sandboxes.md#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Status](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+Beta
 
-[Beta header](managed-agents-self-hosted-sandboxes.md#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Models](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- All models
+
+[Cloud platforms](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](managed-agents-self-hosted-sandboxes.md#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](managed-agents-self-hosted-sandboxes.md#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
-This page documents the pre-built workers that serve a `self_hosted` environment. For task-oriented guides, start with [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md) and [Deploy self-hosted workers](managed-agents-self-hosted-sandboxes-workers.md).
+This page documents the prebuilt workers that serve a `self_hosted` environment. For task-oriented guides, start with [Self-hosted sandboxes](managed-agents-self-hosted-sandboxes.md) and [Deploy self-hosted workers](managed-agents-self-hosted-sandboxes-workers.md).
 
 ## CLI commands and flags
 
@@ -46,8 +54,8 @@ This page documents the pre-built workers that serve a `self_hosted` environment
 |----|----|
 | `--environment-id` | The environment to poll for work. Also reads from `ANTHROPIC_ENVIRONMENT_ID`. |
 | `--environment-key` | Authenticates the worker with this environment. Also reads from `ANTHROPIC_ENVIRONMENT_KEY`. |
-| `--workdir` | Directory where skills are downloaded and tools read and write files. Defaults to `.` (the current directory). |
-| `--on-work` | Script to call for each claimed work item instead of running tools in-process. Receives session details as environment variables and the work item as JSON on standard input. |
+| `--workdir` | Directory where the worker downloads skills, and where tools read and write files. Defaults to `.` (the current directory). |
+| `--on-work` | Script to call for each claimed work item instead of running tools in process. Receives session details as environment variables and the work item as JSON on standard input. |
 | `--max-idle` | How long the worker waits while a session is idle before `ant beta:worker run` exits or `ant beta:worker poll` moves on to the next work item. Idle time with a [`requires_action` stop reason](managed-agents-events-and-streaming.md#respond-when-the-session-goes-idle) does not count. Defaults to `60s`. Set it to `0` to turn off the timeout. With an `--on-work` script, `ant beta:worker poll` ignores this flag. Pass it instead to the `ant beta:worker run` command that your script starts. |
 | `--log-format` | Log output format. Use `json` for structured log ingestion. Defaults to `text`. |
 
@@ -59,7 +67,7 @@ This page documents the pre-built workers that serve a `self_hosted` environment
 | `ANTHROPIC_ENVIRONMENT_KEY` | Authenticates the worker to its queue. | You, on the worker host. The poller passes it to the `--on-work` script. |
 | `ANTHROPIC_SESSION_ID` | The session that a claimed work item represents. | The poller, for the `--on-work` script. |
 | `ANTHROPIC_WORK_ID` | The claimed work item. | The poller, for the `--on-work` script. |
-| `ANTHROPIC_WORK_SECRET` | The work item’s per-session secret. | You. The poller does not set it. See [Forward the work item’s secret](managed-agents-self-hosted-sandboxes-workers.md#forward-the-work-items-secret). |
+| `ANTHROPIC_WORK_SECRET` | The work item’s secret for its session. | You. The poller does not set it. See [Forward the work item’s secret](managed-agents-self-hosted-sandboxes-workers.md#forward-the-work-items-secret). |
 | `ANTHROPIC_BASE_URL` | Overrides the default API endpoint. Optional. | You, on the worker host. |
 | `ANTHROPIC_WEBHOOK_SIGNING_KEY` | Verifies incoming webhook payloads. | You, on a webhook handler host. |
 
@@ -67,7 +75,7 @@ This page documents the pre-built workers that serve a `self_hosted` environment
 
 | Worker | Requirement |
 |----|----|
-| All workers | A Linux or macOS host with `/bin/bash` at that exact path. The worker’s bash tool invokes it directly, without consulting `PATH`. On macOS, that is the system Bash 3.2. |
+| All workers | A Linux or macOS host with `/bin/bash` at that exact path. The worker’s `bash` tool runs it directly, without consulting `PATH`. On macOS, that is the system Bash 3.2. |
 | TypeScript SDK | `unzip` and `tar` on the `PATH`, and Node.js 22 or later. |
 | Python and Go SDKs | No additional binaries. These SDKs use their standard libraries for archive extraction. |
 
@@ -79,7 +87,7 @@ On macOS, the root volume is read-only, so `mkdir` can’t create `/workspace`. 
 
 | Path | Contents |
 |----|----|
-| `/workspace` | The system default working directory for tool execution and skill download. If you use a different working directory, update your agent’s system prompt so Claude can locate the skill files. |
+| `/workspace` | The system default working directory for running tools and downloading skills. If you use a different working directory, update your agent’s system prompt so Claude can locate the skill files. |
 | `<workdir>/skills/<name>/` | The agent’s downloaded skills. |
 | `/mnt/memory/<store>/` | One directory per attached memory store, at the store’s `mount_path` (for example, `/mnt/memory/user-preferences/`). The worker creates these directories when it claims the session and removes them when the session ends. |
 
@@ -93,9 +101,9 @@ The Python, TypeScript, and Go SDKs provide three helpers at different levels of
 
 | Helper | What it does | Use it when |
 |----|----|----|
-| [`EnvironmentWorker`](#environment-worker) | Handles polling, setup, and execution end to end. | Most cases. |
-| [`work.poller()`](#work-poller) | Polls the work queue and gives you each claimed session. | You determine what happens for each session, for example launching a sandbox rather than running tools in-process. |
-| [`client.beta.sessions.events.tool_runner()`](#session-tool-runner) | Runs tool calls for a single session, given the session ID and a tool list. | You’ve already claimed the work and only need the execution layer. |
+| [`EnvironmentWorker`](#environment-worker) | Handles polling, setup, and tool runs end to end. | Most cases. |
+| [`work.poller()`](#work-poller) | Polls the work queue and gives you each claimed session. | You determine how to handle each session, for example by launching a sandbox rather than running tools in process. |
+| [`client.beta.sessions.events.tool_runner()`](#session-tool-runner) | Runs tool calls for a single session, given the session ID and a tool list. | You’ve already claimed the work and only need to run the tools. |
 
 ### EnvironmentWorker
 
@@ -139,8 +147,8 @@ EnvironmentWorker(client, ..., tools=lambda env: [beta_bash_tool(env), my_custom
 | Option | Description |
 |----|----|
 | `drain` | Whether to stop polling once the queue is empty rather than waiting for new work. |
-| `block_ms` | How long each poll waits for work to arrive before returning, in milliseconds. Must be between 1 and 999; the helper re-polls automatically. Pass `None` for a non-blocking check. Defaults to a 999ms long-poll. |
-| `reclaim_older_than_ms` | Re-claims work items that were claimed but never acknowledged within this many milliseconds. |
+| `block_ms` | How long each poll waits for work to arrive before returning, in milliseconds. Must be between 1 and 999. The helper polls again automatically. Pass `None` for a non-blocking check. Defaults to a 999ms long-poll. |
+| `reclaim_older_than_ms` | Reclaims work items that were claimed but never acknowledged within this many milliseconds. |
 | `auto_stop` | Whether to post a stop signal for each work item once your loop body finishes with it. Set it to `False` when whatever runs the work item posts the stop itself. `handle_item()` does, and so does a sandbox you launch that owns the stop call. |
 
 For a complete example, see [Launch sandboxes from the SDK poller](managed-agents-self-hosted-sandboxes-workers.md#launch-sandboxes-from-the-sdk-poller).

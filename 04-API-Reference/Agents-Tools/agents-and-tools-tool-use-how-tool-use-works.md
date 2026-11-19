@@ -2,7 +2,7 @@
 title: "How tool use works - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/how-tool-use-works"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:35:32Z"
+fetched_at: "2026-11-13T06:33:56Z"
 tags: ["agents", "api", "cli"]
 ---
 

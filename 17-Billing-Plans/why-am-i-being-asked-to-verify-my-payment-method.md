@@ -2,7 +2,7 @@
 title: "Why am I being asked to verify my payment method? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11818288-why-am-i-being-asked-to-verify-my-payment-method"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:53Z"
+fetched_at: "2026-11-18T06:28:13Z"
 tags: ["billing", "cli"]
 ---
 

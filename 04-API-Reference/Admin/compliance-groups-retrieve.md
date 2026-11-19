@@ -2,7 +2,7 @@
 title: "Get Compliance Group - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/groups/retrieve"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:36:06Z"
+fetched_at: "2026-11-13T06:36:08Z"
 tags: ["api"]
 ---
 
@@ -44,13 +44,13 @@ The group ID (tagged ID, e.g., rbac_group_abc123)
 
 
 
-"anthropic-version": optional string
+"anthropic-version": string
 
 
 
-The version of the Claude API you want to use.
+The version of the Claude API to use. Send an available version on every request. A request that sends any other value, including an empty one, returns a 400 error. This endpoint treats a request that omits this header as version `2023-06-01`; some other Compliance API endpoints return a 400 error instead.
 
-Read more about versioning and our version history [here](../Endpoints/versioning.md).
+See [API versions](../Endpoints/versioning.md) for the available versions.
 
 "x-api-key": optional string
 
@@ -116,7 +116,7 @@ cURL
 
 ```python
 curl https://api.anthropic.com/v1/compliance/groups/$GROUP_ID \
-    -H 'anthropic-version: 2023-06-01' \
+    -H 'anthropic-version: 2026-10-21' \
     -H "Authorization: Bearer $ANTHROPIC_COMPLIANCE_API_KEY"
 ```
 

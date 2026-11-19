@@ -2,7 +2,7 @@
 title: "Deepgram Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/deepgram"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:00Z"
+fetched_at: "2026-11-18T06:28:52Z"
 tags: ["agents", "case-studies", "enterprise"]
 ---
 
@@ -104,6 +104,9 @@ Cheap code generation moved the constraint to validation, so Deepgram writes mor
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -111,6 +114,3 @@ Cheap code generation moved the constraint to validation, so Deepgram writes mor
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

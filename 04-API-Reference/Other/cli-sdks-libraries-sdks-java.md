@@ -2,7 +2,7 @@
 title: "Java SDK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/java"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:10Z"
+fetched_at: "2026-11-13T06:36:40Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -33,7 +33,7 @@ Maven
 Gradle
 
 ```python
-implementation("com.anthropic:anthropic-java:3.5.0")
+implementation("com.anthropic:anthropic-java:3.8.0")
 ```
 
 
@@ -44,7 +44,7 @@ Maven
 <dependency>
     <groupId>com.anthropic</groupId>
     <artifactId>anthropic-java</artifactId>
-    <version>3.5.0</version>
+    <version>3.8.0</version>
 </dependency>
 ```
 
@@ -61,8 +61,8 @@ Maven
 Gradle
 
 ```python
-implementation("com.anthropic:anthropic-java:3.5.0")
-implementation("com.anthropic:anthropic-java-mcp:3.5.0")
+implementation("com.anthropic:anthropic-java:3.8.0")
+implementation("com.anthropic:anthropic-java-mcp:3.8.0")
 ```
 
 
@@ -73,12 +73,12 @@ Maven
 <dependency>
     <groupId>com.anthropic</groupId>
     <artifactId>anthropic-java</artifactId>
-    <version>3.5.0</version>
+    <version>3.8.0</version>
 </dependency>
 <dependency>
     <groupId>com.anthropic</groupId>
     <artifactId>anthropic-java-mcp</artifactId>
-    <version>3.5.0</version>
+    <version>3.8.0</version>
 </dependency>
 ```
 
@@ -1230,8 +1230,8 @@ To use a completely custom HTTP client:
 
 For detailed platform setup guides with code examples, see:
 
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock (Opus 4.6 and earlier)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
+- [Amazon Bedrock (`bedrock-mantle`)](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
+- [Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)
 - [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
 - [Claude Models on Google Cloud (Google managed)](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)
 - [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
@@ -1241,11 +1241,9 @@ See also [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-wit
 The Java SDK supports the following platforms through separate dependencies that provide platform-specific `Backend` implementations:
 
 - **Claude Models on Google Cloud (Google managed):** `com.anthropic:anthropic-java-vertex`: Use `VertexBackend.builder()` or `VertexBackend.fromEnv()`. `fromEnv()` reads `CLOUD_ML_REGION` and `ANTHROPIC_VERTEX_PROJECT_ID` and uses Application Default Credentials.
-- **Bedrock:** `com.anthropic:anthropic-java-bedrock`: Use `BedrockMantleBackend.fromEnv()` or `BedrockMantleBackend.builder()` for the Messages-API Bedrock endpoint, or `BedrockBackend.fromEnv()` / `BedrockBackend.builder()` (`bedrock-runtime` path).
+- **Bedrock:** `com.anthropic:anthropic-java-bedrock`: Use `BedrockMantleBackend.fromEnv()` or `BedrockMantleBackend.builder()` for the `bedrock-mantle` endpoint, or `BedrockBackend.fromEnv()` or `BedrockBackend.builder()` for the `InvokeModel` API on the `bedrock-runtime` endpoint.
 - **Claude Platform on AWS:** `com.anthropic:anthropic-java-aws`: Use `AwsBackend.fromEnv()` (reads `ANTHROPIC_AWS_WORKSPACE_ID` and the AWS default region/credential chain) or `AwsBackend.builder()`. Available in beta.
 - **Foundry:** `com.anthropic:anthropic-java-foundry`: Use `FoundryBackend.fromEnv()` or `FoundryBackend.builder()`.
-
-Use `BedrockMantleBackend` for new projects; `BedrockBackend` remains for existing applications using the Bedrock `InvokeModel` API.
 
 The Java SDK also supports Claude Models on Google Cloud (Anthropic managed) through `GoogleCloudBackend`, from the `com.anthropic:anthropic-java-google-cloud` dependency. This backend is in beta. Create it with `GoogleCloudBackend.builder()` or `GoogleCloudBackend.fromEnv()`. `fromEnv()` reads `ANTHROPIC_GOOGLE_CLOUD_WORKSPACE_ID`, `ANTHROPIC_GOOGLE_CLOUD_PROJECT`, and Google Application Default Credentials. See [Project, location, and workspace resolution](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md#project-location-and-workspace-resolution).
 
@@ -1313,7 +1311,7 @@ export ANTHROPIC_LOG=debug
 
 
 
-### Jackson compatibility
+### Jackson compatibility
 
 The SDK depends on Jackson for JSON serialization/deserialization. It is compatible with version 2.13.4 or higher, but depends on version 2.19.4 by default.
 
@@ -1327,7 +1325,7 @@ There is no guarantee that the SDK works correctly when the Jackson version chec
 
 There are also bugs in older Jackson versions that can affect the SDK. The SDK doesn’t work around all Jackson bugs and expects users to upgrade Jackson for those instead.
 
-### ProGuard/R8 configuration
+### ProGuard/R8 configuration
 
 Although the SDK uses reflection, it is still usable with ProGuard and R8 because `anthropic-java-core` is published with a configuration file containing keep rules.
 
@@ -1335,7 +1333,7 @@ ProGuard and R8 should automatically detect and use the published rules, but you
 
 ### OpenTelemetry tracing
 
-When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Claude SDK](manage-claude-opentelemetry-sdk.md).
+When your application registers an OpenTelemetry tracer provider, the SDK emits a span for each request that it sends. To send the spans to your observability platform, see [Set up OpenTelemetry with the Anthropic SDK](manage-claude-opentelemetry-sdk.md).
 
 ### Undocumented API functionality
 
@@ -1409,13 +1407,13 @@ void main() {
 
 ## Frequently asked questions
 
-### Why doesn’t the SDK use plain enum classes?
+### Why doesn’t the SDK use plain enum classes?
 
 Java `enum` classes are not trivially forward compatible. Using them in the SDK could cause runtime exceptions if the API is updated to respond with a new enum value.
 
 Because these classes are open, you can also construct them with any string value through their `of(String)` factory method. See [New or unreleased enum values](#new-or-unreleased-enum-values) if you need to use a value that isn’t in your SDK version yet.
 
-### Why are fields represented using JsonField\<T\> instead of just plain T?
+### Why are fields represented using JsonField\<T\> instead of just plain T?
 
 Using `JsonField<T>` enables a few features:
 
@@ -1423,11 +1421,11 @@ Using `JsonField<T>` enables a few features:
 - Lazily validating the API response against the expected shape
 - Representing absent versus explicitly null values
 
-### Why doesn’t the SDK use data classes?
+### Why doesn’t the SDK use data classes?
 
 It is not backwards compatible to add new fields to a data class, and the SDK avoids introducing a breaking change every time a field is added to a class.
 
-### Why doesn’t the SDK use checked exceptions?
+### Why doesn’t the SDK use checked exceptions?
 
 Checked exceptions are widely considered a mistake in the Java programming language. In fact, they were omitted from Kotlin for this reason.
 

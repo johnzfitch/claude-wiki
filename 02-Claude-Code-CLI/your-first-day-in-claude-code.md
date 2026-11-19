@@ -2,7 +2,7 @@
 title: "Your first day in Claude Code | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14552382-your-first-day-in-claude-code"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:51Z"
+fetched_at: "2026-11-18T06:28:09Z"
 tags: ["claude-code"]
 ---
 

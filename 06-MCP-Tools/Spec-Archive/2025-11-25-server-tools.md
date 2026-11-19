@@ -2,8 +2,8 @@
 title: "Tools - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/server/tools"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:25:27Z"
-last_modified: "Fri, 30 Oct 2026 20:41:39 GMT"
+fetched_at: "2026-11-10T06:28:35Z"
+last_modified: "Mon, 09 Nov 2026 22:48:16 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

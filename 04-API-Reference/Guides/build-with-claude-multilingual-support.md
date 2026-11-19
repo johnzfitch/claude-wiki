@@ -2,7 +2,7 @@
 title: "Multilingual support - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/multilingual-support"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:59Z"
+fetched_at: "2026-11-13T06:36:31Z"
 tags: ["api"]
 ---
 
@@ -20,11 +20,20 @@ Claude excels at tasks across multiple languages, maintaining strong cross-lingu
 
 Multilingual support
 
-[APIs](#feature-availability)  
-Messages APIAlways onManaged AgentsAlways on
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 ## Overview
 
@@ -36,23 +45,23 @@ Claude is capable in many languages beyond those benchmarked in the following ta
 
 The following table shows zero-shot scores for Claude models on [Global-MMLU](https://arxiv.org/abs/2412.03304), which extends the [MMLU (Massive Multitask Language Understanding)](https://en.wikipedia.org/wiki/MMLU) test set to 42 languages. Each score is a percentage of the same model’s English score:
 
-| Language | Claude Fable 5.1 | Claude Opus 5.5 | Claude Sonnet 5.5 | Claude Haiku 5.5 |
+| Language | Claude Fable 5.2 | Claude Opus 5.5 | Claude Sonnet 5.5 | Claude Haiku 5.5 |
 |----|----|----|----|----|
 | English | 100% | 100% | 100% | 100% |
-| Spanish | 99.4% | 99.3% | 99.0% | 98.1% |
-| Portuguese (Brazil) | 99.0% | 99.2% | 98.7% | 98.1% |
-| Italian | 99.0% | 99.2% | 98.4% | 97.7% |
-| French | 99.0% | 99.3% | 98.7% | 97.7% |
-| Indonesian | 98.9% | 99.1% | 98.6% | 97.1% |
-| German | 99.1% | 99.1% | 98.5% | 97.4% |
-| Arabic | 98.7% | 99.3% | 98.3% | 96.6% |
-| Chinese (Simplified) | 98.8% | 99.3% | 98.5% | 97.7% |
-| Korean | 98.8% | 99.1% | 98.3% | 97.0% |
-| Japanese | 98.7% | 99.2% | 98.4% | 97.4% |
-| Hindi | 98.9% | 99.2% | 98.5% | 96.6% |
-| Bengali | 98.3% | 98.6% | 97.2% | 95.4% |
-| Swahili | 97.7% | 98.3% | 96.9% | 94.0% |
-| Yoruba | 95.1% | 96.3% | 93.6% | 87.0% |
+| Spanish | 99.8% | 99.3% | 99.0% | 98.1% |
+| Portuguese (Brazil) | 99.4% | 99.2% | 98.7% | 98.1% |
+| Italian | 99.5% | 99.2% | 98.4% | 97.7% |
+| French | 99.6% | 99.3% | 98.7% | 97.7% |
+| Indonesian | 99.4% | 99.1% | 98.6% | 97.1% |
+| German | 99.5% | 99.1% | 98.5% | 97.4% |
+| Arabic | 99.6% | 99.3% | 98.3% | 96.6% |
+| Chinese (Simplified) | 99.6% | 99.3% | 98.5% | 97.7% |
+| Korean | 99.6% | 99.1% | 98.3% | 97.0% |
+| Japanese | 99.5% | 99.2% | 98.4% | 97.4% |
+| Hindi | 99.4% | 99.2% | 98.5% | 96.6% |
+| Bengali | 99.2% | 98.6% | 97.2% | 95.4% |
+| Swahili | 99.2% | 98.3% | 96.9% | 94.0% |
+| Yoruba | 98.5% | 96.3% | 93.6% | 87.0% |
 
 All scores use [adaptive thinking](build-with-claude-thinking.md) at the `max` [effort level](build-with-claude-effort.md). Scores exclude questions that safety classifiers blocked or that went unanswered. For each score in the table, at most 1.7 percent of the questions are excluded.
 
@@ -149,36 +158,58 @@ Apply general evaluation methods to measure output quality in each language you 
 
 ## Availability
 
-Multilingual support is available on every model.
+Multilingual support
 
-### API support
+Cloud platform
 
-[Messages API](build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Always on
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Amazon Bedrock
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Amazon Bedrock (bedrock-runtime)
 
-Always on
+API  
+- Messages API
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models

@@ -2,7 +2,7 @@
 title: "Validate External Key - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/external_keys/validate"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:26:49Z"
+fetched_at: "2026-11-14T06:24:39Z"
 tags: ["api"]
 ---
 

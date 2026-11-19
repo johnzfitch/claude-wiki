@@ -2,11 +2,14 @@
 title: "SEP-2575: Make MCP Stateless - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/seps/2575-stateless-mcp"
 category: "06-MCP-Tools/SEPs"
-fetched_at: "2026-08-03T07:16:59Z"
+fetched_at: "2026-11-13T06:32:56Z"
+last_modified: "Fri, 13 Nov 2026 05:33:07 GMT"
 tags: ["mcp", "mcp-seps"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Abstract](#abstract)
 - [Motivation](#motivation)
@@ -72,16 +75,16 @@ FinalStandards Track
 
 This SEP has reached Final status and is preserved as a historical record of the design as accepted. Changes made to the protocol after finalization are not reflected here. Refer to the [current specification](https://modelcontextprotocol.io/specification/latest) and its changelog for authoritative requirements.
 
-| Field         | Value                                                                                                                                                                                                                                                                                                  |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **SEP**       | 2575                                                                                                                                                                                                                                                                                                   |
-| **Title**     | Make MCP Stateless                                                                                                                                                                                                                                                                                     |
-| **Status**    | Final                                                                                                                                                                                                                                                                                                  |
-| **Type**      | Standards Track                                                                                                                                                                                                                                                                                        |
-| **Created**   | 2025-06-18                                                                                                                                                                                                                                                                                             |
+| Field | Value |
+|----|----|
+| **SEP** | 2575 |
+| **Title** | Make MCP Stateless |
+| **Status** | Final |
+| **Type** | Standards Track |
+| **Created** | 2025-06-18 |
 | **Author(s)** | Jonathan Hefner ([@jonathanhefner](https://github.com/jonathanhefner)), Mark Roth ([@markdroth](https://github.com/markdroth)), Shaun Smith ([@evalstate](https://github.com/evalstate)), Harvey Tuch ([@htuch](https://github.com/htuch)), Kurtis Van Gent ([@kurtisvg](https://github.com/kurtisvg)) |
-| **Sponsor**   | Kurtis Van Gent ([@kurtisvg](https://github.com/kurtisvg))                                                                                                                                                                                                                                             |
-| **PR**        | [\#2575](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575)                                                                                                                                                                                                                       |
+| **Sponsor** | Kurtis Van Gent ([@kurtisvg](https://github.com/kurtisvg)) |
+| **PR** | [\#2575](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2575) |
 
 ------------------------------------------------------------------------
 
@@ -549,7 +552,7 @@ Supporting two parallel interaction models would have dramatically increased the
 
 Explicit Session Management
 
-This proposal originally included dedicated `sessions/create` and `sessions/delete` RPCs to manage the lifecycle of a logical session. Session management is now addressed separately by [SEP-2567](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2567), which proposes removing sessions entirely and replacing them with explicit state handles. This aligns with the [sessions-vs-sessionless decision](https://github.com/modelcontextprotocol/transports-wg/blob/main/docs/sessions-vs-sessionless-decision.md) made by the Core Maintainers.
+This proposal originally included dedicated `sessions/create` and `sessions/delete` RPCs to manage the lifecycle of a logical session. Session management is now addressed separately by [SEP-2567](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2567), which proposes removing sessions entirely and replacing them with explicit state handles. This aligns with the [sessions-vs-sessionless decision](https://github.com/modelcontextprotocol/transports-wg/blob/main/proposals/stateless/session-removal-decision.md) made by the Core Maintainers.
 
 
 [​](#separation-of-concerns)

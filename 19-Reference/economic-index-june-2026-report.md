@@ -2,13 +2,15 @@
 title: "Anthropic Economic Index report: Cadences \\ Anthropic"
 source_url: "https://www.anthropic.com/research/economic-index-june-2026-report"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:37Z"
+fetched_at: "2026-11-14T06:26:28Z"
 tags: ["news-research"]
 ---
 
+### 01Introduction
+
 # **Anthropic Economic Index report: **Cadences
 
-[Read in PDF](https://cdn.sanity.io/files/4zrzovbb/website/9e0eadc8097864886c5d5060ebb1f89b02ea29d6.pdf)
+[Read in PDF](https://assets.claude.com/9e0eadc8097864886c5d5060ebb1f89b02ea29d6.pdf)
 
 - [01Introduction](#introduction)
 - [02Cadences](#cadences)
@@ -17,23 +19,20 @@ tags: ["news-research"]
 - [05Discussion](#discussion)
 - [06Appendix](#appendix)
 
-- Published
+Published  
+Jun 26, 2026
 
-  Jun 26, 2026
+Team  
+[Economics](team-economics.md)
 
-- Team
+Topics  
+- [Economic Index](https://www.anthropic.com/search?topic=economic-index)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [Privacy](https://www.anthropic.com/search?topic=privacy)
+- [Agents](https://www.anthropic.com/search?topic=agents)
 
-  [Economics](team-economics.md)
-
-- Topics
-
-  - [Economic Index](https://www.anthropic.com/search?topic=economic-index)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [Privacy](https://www.anthropic.com/search?topic=privacy)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-
-  See more...
+See more...
 
 Related articles
 
@@ -51,9 +50,9 @@ To keep pace, we made several changes to our data pipeline for the Economic Inde
 
 - Sample data at a higher rate, allowing us to view usage patterns down to the hourly level.
 - Introduce a new classifier that labels the output of each conversation.
-- Share more granular data, breaking out results for chat and Cowork conversations (together, “Claude conversations”) and the 1P API, aggregated at a monthly level.^([1](#footnote-1))
+- Share more granular data, breaking out results for chat and Cowork conversations (together, “Claude conversations”) and the 1P API, aggregated at a monthly level.^([^1])
 
-We describe additional methodological changes in the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf). Together, these changes provide a clearer picture of how AI mirrors and diffuses into economic life.
+We describe additional methodological changes in the [Appendix](https://assets.claude.com/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf). Together, these changes provide a clearer picture of how AI mirrors and diffuses into economic life.
 
 In addition, we’ve previously lacked visibility into Claude’s impact *outside* of user sessions. How do people perceive AI to be changing their work, or the opportunities available to them? Does their usage of AI shape their expectations? In an ideal world, what would they want from AI? We report initial findings from the [Anthropic Economic Index Survey](economic-index-survey-announcement.md), launched in April 2026.
 
@@ -65,23 +64,23 @@ We preview our main findings below.
 
 ## Cadences
 
-Our new privacy-preserving telemetry, which continuously samples a slice of conversations every day, allows us to study daily and hourly patterns in usage, in contrast to the seven-day samples each previous Economic Index report drew on. These analyses capture ebbs and flows in work patterns around the world.^([2](#footnote-2))
+Our new privacy-preserving telemetry, which continuously samples a slice of conversations every day, allows us to study daily and hourly patterns in usage, in contrast to the seven-day samples each previous Economic Index report drew on. These analyses capture ebbs and flows in work patterns around the world.^([^2])
 
 We find that Claude usage mirrors the workweek, with personal prompts spiking on the weekend. The hourly data captures within-day patterns—people most often ask for sleep advice around 5 a.m. and for recipes around 6 p.m. We also see usage reflecting key dates. For instance, tax-related requests surged just before the US filing deadline on April 15.
 
 ### The workweek
 
-The share of chat and Cowork^([3](#footnote-3)) conversations categorized as personal use spikes from around 35% on weekdays to just under 50% on weekends during the sample period (Figure 1.1). Outside the workweek, users’ conversations shift from business correspondence, marketing copy, and slide decks to emotional support, medical questions, and investment advice. This shift is biggest for high-income countries.
+The share of chat and Cowork^([^3]) conversations categorized as personal use spikes from around 35% on weekdays to just under 50% on weekends during the sample period (Figure 1.1). Outside the workweek, users’ conversations shift from business correspondence, marketing copy, and slide decks to emotional support, medical questions, and investment advice. This shift is biggest for high-income countries.
 
-A similar pattern is present in Claude Code and the 1P API traffic (i.e., API traffic routed directly through Anthropic), though both have lower baseline rates of personal use.^([4](#footnote-4))
+A similar pattern is present in Claude Code and the 1P API traffic (i.e., API traffic routed directly through Anthropic), though both have lower baseline rates of personal use.^([^4])
 
-Request clusters^([5](#footnote-5)) allow us to go one level deeper and see which specific Claude Code tasks swing most between weekdays and weekends. On weekends, the Claude Code usage clusters that fall the most include backend architecture, API debugging, and data storage. Those that increase the most include AI agent design, quant trading, and gaming.
+Request clusters^([^5]) allow us to go one level deeper and see which specific Claude Code tasks swing most between weekdays and weekends. On weekends, the Claude Code usage clusters that fall the most include backend architecture, API debugging, and data storage. Those that increase the most include AI agent design, quant trading, and gaming.
 
-Weekends may also create space for people to pursue new ventures. Across countries, conversations related to starting a business are highest on Saturday and Sunday. However, job application activities drop on the weekend along with other work-related tasks.^([6](#footnote-6))
+Weekends may also create space for people to pursue new ventures. Across countries, conversations related to starting a business are highest on Saturday and Sunday. However, job application activities drop on the weekend along with other work-related tasks.^([^6])
 
 ### Daily rhythms
 
-Hour by hour, Claude usage reflects the rhythms of daily life. Figure 1.2 shows the hourly frequency of different request clusters relative to their overall average in global traffic.^([7](#footnote-7))
+Hour by hour, Claude usage reflects the rhythms of daily life. Figure 1.2 shows the hourly frequency of different request clusters relative to their overall average in global traffic.^([^7])
 
 People ask for news at 7 a.m. local time. Business correspondence (e.g., email drafting) traces the arc of the workday, with a slight peak at 10–11 a.m. One of the biggest spikes is recipe requests, which are 2.3 times more frequent at 6 p.m. compared to the average. Media recommendations are most concentrated in the evening, while people seek sleep advice in the few hours just before dawn.
 
@@ -93,9 +92,9 @@ The sample period for this report covers tax filing deadlines for people in the 
 
 ## Artifacts
 
-In this chapter, we classify each conversation on chat and Cowork (hereafter “Claude conversations”)^([8](#footnote-8)) by its artifact, which we sort into more than 30 categories. We refer to the primary output Claude produces in a conversation—a document, an explanation, a piece of code, an academic paper, and so on, whether presented in a chat window or as a separate document—as an artifact. The full list of artifacts is in the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf).
+In this chapter, we classify each conversation on chat and Cowork (hereafter “Claude conversations”)^([^8]) by its artifact, which we sort into more than 30 categories. We refer to the primary output Claude produces in a conversation—a document, an explanation, a piece of code, an academic paper, and so on, whether presented in a chat window or as a separate document—as an artifact. The full list of artifacts is in the [Appendix](https://assets.claude.com/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf).
 
-Our classifier identified 93% of Claude conversations as producing an artifact (Figure 2.1).^([9](#footnote-9)) The most common artifacts are explanations (17% of conversations), documents and reports (15%), and guidance (11%). Conversational outputs (like explanations or guidance) and written deliverables (like documents or presentations) each account for about a third of conversations; code and technical work (like apps or scripts) for about a sixth.
+Our classifier identified 93% of Claude conversations as producing an artifact (Figure 2.1).^([^9]) The most common artifacts are explanations (17% of conversations), documents and reports (15%), and guidance (11%). Conversational outputs (like explanations or guidance) and written deliverables (like documents or presentations) each account for about a third of conversations; code and technical work (like apps or scripts) for about a sixth.
 
 What an output is doesn't tell you what it's for: the same artifact could be a work deliverable or a personal project. We look at that split next.
 
@@ -115,7 +114,7 @@ We can also flip the question. Instead of asking what each output is used for, w
 
 Producing these outputs requires compute, and we find that compute tends to scale with the value of the work. We measure each conversation's computational costs in tokens—the amount of text processed and generated, including Claude's internal reasoning—and compare across occupations by mapping each conversation's classified task to the occupation that typically performs it. Throughout this section, we restrict our analysis to work-related conversations.
 
-The left panel of Figure 2.3 shows a positive relationship between the median conversation-level number of tokens and the median wage in mapped occupation.^([10](#footnote-10)) For example, marketing managers earn roughly twice as much as editors (\$80 vs. \$37 per hour) and conversations mapping to their tasks consume approximately 2.5 times as many tokens. Admittedly, the relationship is noisy, and there are notable outliers. Pharmacists, for example, earn nearly three times what statistical assistants do (\$68 vs. \$24 per hour), yet conversations mapped to pharmacist tasks use only about one twentieth as many tokens.
+The left panel of Figure 2.3 shows a positive relationship between the median conversation-level number of tokens and the median wage in mapped occupation.^([^10]) For example, marketing managers earn roughly twice as much as editors (\$80 vs. \$37 per hour) and conversations mapping to their tasks consume approximately 2.5 times as many tokens. Admittedly, the relationship is noisy, and there are notable outliers. Pharmacists, for example, earn nearly three times what statistical assistants do (\$68 vs. \$24 per hour), yet conversations mapped to pharmacist tasks use only about one twentieth as many tokens.
 
 The tokens consumed to generate different types of artifacts tell a similar story. More complicated and valuable outputs tend to consume significantly more tokens than simpler outputs. For example, conversations about building apps use more than three times the tokens of the median conversation. On the other end of the spectrum, a typical explanation uses about a fifth of the tokens of the median conversation. About 44% of the wage gradient in token consumption is explained by output mix—higher wage occupations are more likely to produce compute-intensive artifacts.
 
@@ -125,23 +124,23 @@ Why does this matter economically? In conversations mapped to higher-wage occupa
 
 We measure this on a 1-5 scale, from "none" to "extreme.” Tasks that are easy to describe or specify involve little autonomy: the lowest-autonomy outputs are math or calculations, translations, and Q&As. High-autonomy tasks are those that require selection among many possible choices, e.g., creating apps and websites, games, or presentations. Such work, which requires sustained judgment, has historically been difficult to automate. By comparing the level of autonomy in Claude chat and Cowork to Claude Code, we show that this is starting to change.
 
-Across almost all types of outputs (26 of 31 outputs shown) the level of AI autonomy is higher on Claude Code than chat or Cowork.^([11](#footnote-11)) For example, conversations producing scripts and code snippets involve 0.53 points more autonomy (on average, on the 1-5 scale) when created with Claude Code than conversations producing the same output on chat or Cowork. Across all conversations, the average difference in autonomy is 0.37 points, and it has two main sources.^([12](#footnote-12))
+Across almost all types of outputs (26 of 31 outputs shown) the level of AI autonomy is higher on Claude Code than chat or Cowork.^([^11]) For example, conversations producing scripts and code snippets involve 0.53 points more autonomy (on average, on the 1-5 scale) when created with Claude Code than conversations producing the same output on chat or Cowork. Across all conversations, the average difference in autonomy is 0.37 points, and it has two main sources.^([^12])
 
 Approximately two thirds of the difference is explained by the same tasks being executed with more delegation on Claude Code. Blog posts and articles illustrate this: the requests and tasks behind them are similar on the two surfaces, but the way people work with Claude differs sharply. The median chat and Cowork conversation producing a blog post or an article involves 13 rounds of back-and-forth, while the median blog-producing Claude Code session contains a single human prompt. The remaining third reflects the different mix of output types across the two surfaces.
 
 One might suspect this difference simply reflects model choice. Claude Code sessions run on the most capable models far more often (54% are served by Opus, against 10% of chat and Cowork conversations). However, the gap persists when we compare conversations served by the same model. For example, among conversations using Sonnet, Claude Code sessions still show 0.26 points more autonomy, suggesting that the product used is likely more important than the underlying model.
 
-Stepping back from the surface comparison, the output types where users delegate the most are the same ones that consume the most compute: across artifacts, mean autonomy and median token use rise together (r = 0.68 on chat and Cowork; [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf) Figure A.2).
+Stepping back from the surface comparison, the output types where users delegate the most are the same ones that consume the most compute: across artifacts, mean autonomy and median token use rise together (r = 0.68 on chat and Cowork; [Appendix](https://assets.claude.com/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf) Figure A.2).
 
 ### Claude answers above the level it was asked
 
-For each conversation, a classifier estimates two reading levels—one for the user’s prompt, one for Claude’s response—expressed as the years of education needed to understand the text.^([13](#footnote-13)) We find that reading level varies widely depending on artifact type. An average query resulting in an academic paper would require more than 16 years of education, roughly equivalent to bachelor’s level, and 15% of these conversations are at PhD level or above (20 or more years of education). On the other end of the spectrum are conversations resulting in recipes or guidance, where fewer than 10 years of education are required to understand the prompt.
+For each conversation, a classifier estimates two reading levels—one for the user’s prompt, one for Claude’s response—expressed as the years of education needed to understand the text.^([^13]) We find that reading level varies widely depending on artifact type. An average query resulting in an academic paper would require more than 16 years of education, roughly equivalent to bachelor’s level, and 15% of these conversations are at PhD level or above (20 or more years of education). On the other end of the spectrum are conversations resulting in recipes or guidance, where fewer than 10 years of education are required to understand the prompt.
 
 In general, artifact types with higher-reading-level outputs also have higher-reading-level prompts (a correlation of 0.87 across conversations). However, we also observe that in almost every category, Claude’s output is at a higher comprehension level than the prompt, by roughly one year of education on average. The gap is widest where users describe something to be built, such as image and graphics (+2.6 years), games (+1.9), and apps and websites (+1.7). Some of the gap may simply be register; prompts are often terse and informal, while Claude tends to reply in polished prose. However, the gap is near zero for audience-facing writing (blogs −0.1, academic papers +0.0, email +0.3), possibly because prompts typically draft language or source material written in the same register as the intended output.
 
 ## Perceptions
 
-The first two chapters show how people use Claude, but don’t give much insight into the ways people experience AI at work—how they expect their jobs and workplaces to change, how they feel about AI’s current and potential impact, and what they hope for from the technology. Our [interviews with 81,000 Claude users](https://www.anthropic.com/features/81k-interviews), conducted in December 2025 with [Anthropic Interviewer](research-anthropic-interviewer.md), [gave a picture](81k-economics.md): respondents reported large productivity gains, but also expressed worry about displacement. Those worries were concentrated among early-career workers and occupations where we observe Claude doing the most work.^([14](#footnote-14))
+The first two chapters show how people use Claude, but don’t give much insight into the ways people experience AI at work—how they expect their jobs and workplaces to change, how they feel about AI’s current and potential impact, and what they hope for from the technology. Our [interviews with 81,000 Claude users](https://www.anthropic.com/features/81k-interviews), conducted in December 2025 with [Anthropic Interviewer](research-anthropic-interviewer.md), [gave a picture](81k-economics.md): respondents reported large productivity gains, but also expressed worry about displacement. Those worries were concentrated among early-career workers and occupations where we observe Claude doing the most work.^([^14])
 
 In April 2026, we launched the [Anthropic Economic Index Survey](economic-index-survey-announcement.md) to build on this work. The survey allows us to ask people directly about their experience with AI and work, and to explore how responses vary with Claude usage. We link survey responses to usage data from mid-May to early June using [privacy-preserving methods](clio.md). To characterize each respondent's usage patterns, we randomly sample up to 20 sessions per person within this time window (across Claude.ai, Cowork, and Claude Code, so that the mix of sessions reflects each person's typical usage across surfaces). We exclude respondents with fewer than five sessions to reduce sampling noise. Our final linked sample consists of about 9,700 survey respondents.
 
@@ -151,7 +150,7 @@ Views on what that progress means for their own careers are less uniform. Early-
 
 ### Who responded to the Economic Index Survey
 
-The Economic Index Survey is not representative of the general population. We reach a random sample of Claude users, there may be selection in who completes the survey, and we filter out infrequent users from our analysis. Figure 3.1 shows the occupational mix of survey respondents (orange) alongside US employment (grey). Computer and Mathematical occupations are the most heavily over-represented, making up roughly 30% of survey respondents—comparable to their share of Claude usage, but far above their 4% share of US employment. Management, at 23% of respondents,^([15](#footnote-15)) is also heavily over-represented relative to its 7% employment share, even though it accounts for only 4% of sessions. This gap is consistent with managers using Claude for tasks other than management itself: in the survey, judgment and management are named by many respondents (especially those with more experience) as capabilities AI lacks. Physical occupation categories like Transportation & Material Moving, Food Preparation & Serving Related, and Construction & Extraction are all under-represented in the survey, as they are in Claude sessions as well.
+The Economic Index Survey is not representative of the general population. We reach a random sample of Claude users, there may be selection in who completes the survey, and we filter out infrequent users from our analysis. Figure 3.1 shows the occupational mix of survey respondents (orange) alongside US employment (grey). Computer and Mathematical occupations are the most heavily over-represented, making up roughly 30% of survey respondents—comparable to their share of Claude usage, but far above their 4% share of US employment. Management, at 23% of respondents,^([^15]) is also heavily over-represented relative to its 7% employment share, even though it accounts for only 4% of sessions. This gap is consistent with managers using Claude for tasks other than management itself: in the survey, judgment and management are named by many respondents (especially those with more experience) as capabilities AI lacks. Physical occupation categories like Transportation & Material Moving, Food Preparation & Serving Related, and Construction & Extraction are all under-represented in the survey, as they are in Claude sessions as well.
 
 ### AI and work tasks
 
@@ -159,27 +158,27 @@ Research on AI impacts often focuses on occupational exposure, or what share of 
 
 Another way to understand occupational exposure is to simply ask people how much of their job AI is capable of doing. We asked respondents what share of their work tasks AI could do entirely on its own today (hereafter *reported exposure*), and what share they expect it to handle in 12 months (*anticipated exposure*), with the option to select from five bands ranging between “almost none” and “nearly all.” Close to 6 in 10 respondents chose a higher band for next year than for today. Over a third expect AI to be able to do most or nearly all of their work tasks next year (Figure 3.2).
 
-Figure 3.3 compares reported and anticipated exposure to observed and theoretical exposure. We ask whether what people report and anticipate AI can do lines up with the observed and theoretical exposure measures across occupations, and whether respondents whose occupations score higher on observed or theoretical exposure expect faster progress over the next year. On the first question, the answer is yes: reported exposure (grey dots) is positively correlated with both observed and theoretical exposure. On the second, the answer is no: the best-fit lines for reported and anticipated exposure 12 months from now (orange dots) are essentially parallel, meaning that people in roles with high observed or theoretical exposure expect roughly the same *increase* in the share of their work tasks AI can do over the next year as those in roles with less observed and theoretical exposure.^([17](#footnote-17)) In other words, a software engineer and a construction manager anticipate roughly the same increment of progress within their profession.
+Figure 3.3 compares reported and anticipated exposure to observed and theoretical exposure. We ask whether what people report and anticipate AI can do lines up with the observed and theoretical exposure measures across occupations, and whether respondents whose occupations score higher on observed or theoretical exposure expect faster progress over the next year. On the first question, the answer is yes: reported exposure (grey dots) is positively correlated with both observed and theoretical exposure. On the second, the answer is no: the best-fit lines for reported and anticipated exposure 12 months from now (orange dots) are essentially parallel, meaning that people in roles with high observed or theoretical exposure expect roughly the same *increase* in the share of their work tasks AI can do over the next year as those in roles with less observed and theoretical exposure.^([^16]) In other words, a software engineer and a construction manager anticipate roughly the same increment of progress within their profession.
 
-It is also worth noting that reported exposure systematically exceeds observed exposure. One explanation for this is that not everybody does every task in an occupation, and our survey disproportionately reaches those who use AI more.^([18](#footnote-18)) Analogously, since theoretical exposure is an upper bound on what is possible instead of a measure of current use, theoretical exposure systematically overstates reported exposure.
+It is also worth noting that reported exposure systematically exceeds observed exposure. One explanation for this is that not everybody does every task in an occupation, and our survey disproportionately reaches those who use AI more.^([^17]) Analogously, since theoretical exposure is an upper bound on what is possible instead of a measure of current use, theoretical exposure systematically overstates reported exposure.
 
-We also examine how perceptions of AI’s current and future capabilities relate to the characteristics and usage patterns of respondents. The left panel of Figure 3.4 shows that perceptions of AI’s capabilities are negatively correlated with country GDP:^([19](#footnote-19)) the average share of tasks people report AI can do for them now is about 10 percentage points lower among high-income countries. This pattern is consistent with the possibility that AI substitutes for a larger share of the tasks that workers in lower-income countries do day-to-day, even if occupation-level exposure metrics—which tend to be higher in advanced economies—suggest otherwise. Indeed, [the IMF has noted](https://www.imf.org/-/media/files/publications/sdn/2024/english/sdnea2024001.pdf) that while advanced economies face broader AI exposure overall, workers in lower-income countries may have less access to the complementary skills and infrastructure that allow AI to augment rather than replace their work. In [earlier work](https://www-cdn.anthropic.com/7b76335c444876a93fa22a63aabb4aeb820aff25.pdf) we documented that lower-income economies tend to use Claude in more automated ways even when adjusting for differences in task mix.
+We also examine how perceptions of AI’s current and future capabilities relate to the characteristics and usage patterns of respondents. The left panel of Figure 3.4 shows that perceptions of AI’s capabilities are negatively correlated with country GDP:^([^18]) the average share of tasks people report AI can do for them now is about 10 percentage points lower among high-income countries. This pattern is consistent with the possibility that AI substitutes for a larger share of the tasks that workers in lower-income countries do day-to-day, even if occupation-level exposure metrics—which tend to be higher in advanced economies—suggest otherwise. Indeed, [the IMF has noted](https://www.imf.org/-/media/files/publications/sdn/2024/english/sdnea2024001.pdf) that while advanced economies face broader AI exposure overall, workers in lower-income countries may have less access to the complementary skills and infrastructure that allow AI to augment rather than replace their work. In [earlier work](https://assets.claude.com/7b76335c444876a93fa22a63aabb4aeb820aff25.pdf) we documented that lower-income economies tend to use Claude in more automated ways even when adjusting for differences in task mix.
 
-The middle panel shows that reported and anticipated exposure are also negatively correlated with years of work experience.^([20](#footnote-20)) People with at least 15 years of experience put that share of tasks AI can do roughly 10 percentage points lower than those in their first year of work. We find evidence that this may be because experienced workers have accumulated tacit or context-specific expertise that is difficult for an AI to mimic. In follow-up questions, we asked people what tasks they thought AI would never be able to do and why; the most common responses emphasized that AI lacks the judgment, contextual awareness, and situational reasoning that their work requires. Respondents, and disproportionately those with at least 15 years of experience, also pointed to the relational and interpersonal dimensions of their jobs—building trust and managing people—as things AI cannot replicate.
+The middle panel shows that reported and anticipated exposure are also negatively correlated with years of work experience.^([^19]) People with at least 15 years of experience put that share of tasks AI can do roughly 10 percentage points lower than those in their first year of work. We find evidence that this may be because experienced workers have accumulated tacit or context-specific expertise that is difficult for an AI to mimic. In follow-up questions, we asked people what tasks they thought AI would never be able to do and why; the most common responses emphasized that AI lacks the judgment, contextual awareness, and situational reasoning that their work requires. Respondents, and disproportionately those with at least 15 years of experience, also pointed to the relational and interpersonal dimensions of their jobs—building trust and managing people—as things AI cannot replicate.
 
 As with occupational exposure to AI, we find that perceptions about future improvements in AI capabilities are essentially uncorrelated with GDP per capita and years of experience. The expected share of tasks that AI will be able to do in 12 months is uniformly higher than perceptions about AI’s capabilities today.
 
-We next examine the relationship between how people interact with Claude and their current perceptions of Claude’s capabilities. As with past reports, we distinguish between “automation” and “augmentation” modes of collaborating with Claude. We identify conversations as automated when Claude is asked to complete a task with little to no input from the user. Concretely, automation share is the share of conversations whose pattern is either directive (“translate this document”) or a feedback loop (“edit this email…make it more casual”).^([21](#footnote-21))
+We next examine the relationship between how people interact with Claude and their current perceptions of Claude’s capabilities. As with past reports, we distinguish between “automation” and “augmentation” modes of collaborating with Claude. We identify conversations as automated when Claude is asked to complete a task with little to no input from the user. Concretely, automation share is the share of conversations whose pattern is either directive (“translate this document”) or a feedback loop (“edit this email…make it more casual”).^([^20])
 
-The right panel of Figure 3.4 shows that reported and anticipated exposure rise with automation share. This could be because delegation is informative about capabilities—people who hand over entire tasks observe directly what AI can complete on its own—or because people who already believe AI can do their work are the most willing to hand it over. The same patterns hold when we replace automation share with the share of sessions devoted to work tasks, or the share conducted in Claude Code.^([22](#footnote-22))
+The right panel of Figure 3.4 shows that reported and anticipated exposure rise with automation share. This could be because delegation is informative about capabilities—people who hand over entire tasks observe directly what AI can complete on its own—or because people who already believe AI can do their work are the most willing to hand it over. The same patterns hold when we replace automation share with the share of sessions devoted to work tasks, or the share conducted in Claude Code.^([^21])
 
 ### AI and jobs
 
-We also ask how people think their jobs will change in the next 12 months. More than a third of respondents said it was likely or very likely that responsibilities would significantly change (for themselves, a peer, a junior colleague, and a senior colleague). 10% rated losing their own jobs as likely or very likely. This is slightly below the annualized hazard rate of losing a job in the US;^([23](#footnote-23)) however, since our respondents skew toward knowledge workers in stable employment (a group that plausibly faces below-average separation risk at baseline), this may still indicate elevated perceived risk. When asked an open-ended question about what was driving their forecasts, 38% of the respondents who rated their job loss as likely or very likely attributed their forecasts to AI.^([24](#footnote-24)) Notably, respondents were on average more worried about job loss for others than for themselves.^([25](#footnote-25)) Respondents were especially worried about job loss for their junior colleagues, with over one third stating that the probability of a junior colleague losing their job in the next year was over 60%. Respondents were also more concerned about job loss (for everyone) in lower-income countries.
+We also ask how people think their jobs will change in the next 12 months. More than a third of respondents said it was likely or very likely that responsibilities would significantly change (for themselves, a peer, a junior colleague, and a senior colleague). 10% rated losing their own jobs as likely or very likely. This is slightly below the annualized hazard rate of losing a job in the US;^([^22]) however, since our respondents skew toward knowledge workers in stable employment (a group that plausibly faces below-average separation risk at baseline), this may still indicate elevated perceived risk. When asked an open-ended question about what was driving their forecasts, 38% of the respondents who rated their job loss as likely or very likely attributed their forecasts to AI.^([^23]) Notably, respondents were on average more worried about job loss for others than for themselves.^([^24]) Respondents were especially worried about job loss for their junior colleagues, with over one third stating that the probability of a junior colleague losing their job in the next year was over 60%. Respondents were also more concerned about job loss (for everyone) in lower-income countries.
 
 Are people who use Claude in more automated ways also more worried about losing work? We examine what people said about AI’s expected impact over the next year on six dimensions of work: pay, job security, ability to find a new job (economic dimensions) and meaning, autonomy, and human interaction (intrinsic dimensions); and look at how these expectations differ by the automation share of Claude usage.
 
-Across all six dimensions, people with a higher share of automated sessions feel *more optimistic* about the effect of AI on their job outcomes next year compared to those who use Claude more augmentatively. We saw the largest effects on expectations about positive impacts on future pay and ability to find a job.^([26](#footnote-26))
+Across all six dimensions, people with a higher share of automated sessions feel *more optimistic* about the effect of AI on their job outcomes next year compared to those who use Claude more augmentatively. We saw the largest effects on expectations about positive impacts on future pay and ability to find a job.^([^25])
 
 A natural question is why automated usage and sentiment move together. It’s possible that this relationship is explained by selection, that the people most enthusiastic about AI are also the most willing to hand over entire tasks to it. We can’t rule this out entirely, but these estimates don’t meaningfully change when we control for user tenure on [Claude.ai](http://claude.ai)—which we can think of as a proxy for enthusiasm, because it captures early versus later adopters.
 
@@ -191,11 +190,11 @@ A commonly voiced concern about delegation is that handing entire tasks to AI me
 
 ### How usage differs between genders
 
-So far we have explored how usage patterns relate to expectations and behavior. Next, we study *who* uses Claude in various ways. The most striking differences are by gender. Women, who make up only 12% of our linked respondent sample, use Claude differently from men. Even after accounting for occupational differences, they are marginally less likely to use Claude for work, their share of sessions in Claude Code is 0.24 standard deviations lower (6.3 percentage points), and their automation share is 0.33 standard deviations lower (7.3 percentage points). Instead, women tend to use Claude more iteratively, and they log more active time on chat than men, a signal of more collaborative engagement.^([27](#footnote-27))
+So far we have explored how usage patterns relate to expectations and behavior. Next, we study *who* uses Claude in various ways. The most striking differences are by gender. Women, who make up only 12% of our linked respondent sample, use Claude differently from men. Even after accounting for occupational differences, they are marginally less likely to use Claude for work, their share of sessions in Claude Code is 0.24 standard deviations lower (6.3 percentage points), and their automation share is 0.33 standard deviations lower (7.3 percentage points). Instead, women tend to use Claude more iteratively, and they log more active time on chat than men, a signal of more collaborative engagement.^([^26])
 
 ### What do people hope for from an AI-transformed economy?
 
-The Anthropic Economic Index Survey surfaces a mix of positive and negative experiences and sentiments with respect to AI, but we end the survey on a hopeful note. The final open-ended question asks respondents to “dream big: what do you hope an economy shaped by AI looks like in ten years?” We ran each survey response through a classifier which tagged responses with relevant themes. We show the top five most commonly cited themes below. Additional descriptions of each can be found in the [Appendix.](https://www-cdn.anthropic.com/files/4zrzovbb/website/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf)
+The Anthropic Economic Index Survey surfaces a mix of positive and negative experiences and sentiments with respect to AI, but we end the survey on a hopeful note. The final open-ended question asks respondents to “dream big: what do you hope an economy shaped by AI looks like in ten years?” We ran each survey response through a classifier which tagged responses with relevant themes. We show the top five most commonly cited themes below. Additional descriptions of each can be found in the [Appendix.](https://assets.claude.com/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf)
 
 The most common theme expressed was one of AI *augmentation* of work. Over half of survey respondents expressed some version of wanting to collaborate with AI on work that feels meaningful, of wanting their career to still matter, and/or hoping that new industries arise and create new job opportunities. Simultaneously, just over half of respondents hoped for AI *automation*—specifically of the tedious parts of their jobs—so they could have more free time and more space for meaning outside of work. The third most common theme, expressed by about one third of survey respondents, was one of shared prosperity: the hope that the economic gains from AI will be widely shared.
 
@@ -211,7 +210,7 @@ Accurately classifying the work that Claude does will remain a moving target. Fo
 
 ## Appendix
 
-Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf)
+Available [here.](https://assets.claude.com/03ed1410f74a65ae4cc2a27120d0875e1e569535.pdf)
 
 ## Footnotes
 
@@ -223,7 +222,7 @@ Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/03ed1410f
 
 04"First-party API" or 1P API refers to developer traffic routed directly through Anthropic's own programming interface, which is distinct from both Anthropic's consumer-facing Claude.ai application and third-party platforms such as Amazon Bedrock or Google Cloud Vertex. It does not include Claude Code.[](#footnote-ref-4)
 
-05See our [Sonnet 3.7 report](anthropic-economic-index-insights-from-claude-sonnet-3-7.md) and the [Appendix.](https://cdn.sanity.io/files/4zrzovbb/website/8eb31e1d187ff18146d248bbef8b2754971f0f5a.pdf)[](#footnote-ref-5)
+05See our [Sonnet 3.7 report](anthropic-economic-index-insights-from-claude-sonnet-3-7.md) and the [Appendix.](https://assets.claude.com/8eb31e1d187ff18146d248bbef8b2754971f0f5a.pdf)[](#footnote-ref-5)
 
 06We defined entrepreneurial activity as the share of conversations whose detailed request cluster is Entrepreneurship, Side income ideation, Capital raising, Creator monetization, E-commerce, Business models, Healthcare business, Social enterprise, or Event business. Resume activity are conversations where the artifact classifier classified the output as a resume or job application.[](#footnote-ref-6)
 
@@ -283,10 +282,64 @@ Scott Booth, Keir Bradwell, Meredith Callan, Dexter Callender III, Boris Cherny,
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{anthropic2026aeiv6,
         author = {Maxim Massenkoff and Eva Lyubich and Szymon Sacher and Zoe Hitzig and Shaoyi Zhang and Ryan Heller and Peter McCrory},
         title = {Anthropic Economic Index report: Cadences},
         date = {2026-06-26},
         year = {2026},
         url = {https://www.anthropic.com/research/economic-index-june-2026-report},
+}
+```
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:
+
+[^7]:
+
+[^8]:
+
+[^9]:
+
+[^10]:
+
+[^11]:
+
+[^12]:
+
+[^13]:
+
+[^14]:
+
+[^15]:
+
+[^16]:
+
+[^17]:
+
+[^18]:
+
+[^19]:
+
+[^20]:
+
+[^21]:
+
+[^22]:
+
+[^23]:
+
+[^24]:
+
+[^25]:
+
+[^26]:

@@ -2,7 +2,7 @@
 title: "Notion Q&A | Claude Managed Agents | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/notion-qa"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:45Z"
+fetched_at: "2026-11-18T06:29:02Z"
 tags: ["agents", "case-studies", "skills"]
 ---
 
@@ -109,6 +109,9 @@ The question becomes: how can humans become the reviewers of agentic work rather
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -116,6 +119,3 @@ The question becomes: how can humans become the reviewers of agentic work rather
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

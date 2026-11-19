@@ -2,7 +2,7 @@
 title: "System prompts - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/release-notes/system-prompts/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:20Z"
+fetched_at: "2026-11-13T06:36:54Z"
 tags: ["models", "prompting"]
 ---
 
@@ -12,13 +12,17 @@ tags: ["models", "prompting"]
 
 
 
-See updates to the core system prompts on [claude.ai](https://claude.ai), the [Claude iOS app](https://anthropic.com/ios), and the [Claude Android app](https://anthropic.com/android).
+See updates to the core system prompts on [claude.ai(opens in new tab)](https://claude.ai), the [Claude iOS app(opens in new tab)](https://anthropic.com/ios), and the [Claude Android app(opens in new tab)](https://anthropic.com/android).
 
 Copy page
 
 
 
 Claude’s web interface ([claude.ai](https://claude.ai)) and mobile apps use a system prompt to provide up-to-date information, such as the current date, to Claude at the start of every conversation. The system prompt also encourages certain behaviors, such as always providing code snippets in Markdown. This prompt is periodically updated to improve Claude’s responses. These system prompt updates do not apply to the Claude API. Some models have multiple dated entries on their pages.
+
+
+
+[Claude Fable 5.2](release-notes-system-prompts-claude-fable-5-2.md)
 
 
 

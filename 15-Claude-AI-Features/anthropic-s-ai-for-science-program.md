@@ -2,7 +2,7 @@
 title: "Anthropic's AI for Science Program | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/11199177-anthropic-s-ai-for-science-program"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:46Z"
+fetched_at: "2026-11-18T06:27:41Z"
 tags: ["claude-ai"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Browser and computer use with the SDK toolsets - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-08T06:24:10Z"
+fetched_at: "2026-11-16T06:24:52Z"
 tags: ["api", "sdk"]
 ---
 
@@ -20,14 +20,23 @@ Run the browser use tool or the computer use tool from the Python or TypeScript 
 
 Browser and computer use SDK toolsets
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 With the browser and computer toolsets in the Python and TypeScript SDKs, you can build an agent that works in a web browser or on a desktop. It can use applications with no programmatic interface. Through the [browser use tool](agents-and-tools-tool-use-browser-use-tool.md), Claude navigates, reads, and interacts with webpages. Through the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md), Claude receives screenshots of a desktop and uses the mouse and keyboard.
 
@@ -986,47 +995,99 @@ Guardrails for any application that reads untrusted content.
 
 ## Availability
 
-Browser and computer use SDK toolsets are in beta on select models.
+Browser and computer use SDK toolsets
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- Claude API
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+APIs  
+- Messages API
 
-Models
+- Managed Agents Not supported
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-StatusBeta
+Amazon Bedrock
 
-Cloud platforms
+Status  
+Beta
 
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-Models
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Claude Platform on AWS
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Status  
+Beta
 
-StatusNot available
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5

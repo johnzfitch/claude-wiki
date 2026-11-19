@@ -2,7 +2,7 @@
 title: "Artifacts - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/artifacts"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-05T06:35:41Z"
+fetched_at: "2026-11-13T06:34:32Z"
 tags: ["api"]
 ---
 

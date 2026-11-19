@@ -2,7 +2,7 @@
 title: "Using agent memory - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/memory"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:26Z"
+fetched_at: "2026-11-13T06:36:43Z"
 tags: ["agents", "api"]
 ---
 
@@ -20,21 +20,25 @@ Give your agents persistent memory that survives across sessions using memory st
 
 Memory stores
 
+Beta
+
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
 
-[Beta header](#feature-beta-headers)  
-- `agent-memory-2026-07-22`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`agent-memory-2026-07-22`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Each Managed Agents session starts with a fresh context by default. When a session ends, any state the agent built up is gone. Memory stores let the agent carry information across sessions: user preferences, project conventions, prior mistakes, and domain context.
 
@@ -245,7 +249,7 @@ for item in page.data:
     print(item.type, item.path)
 ```
 
-See the [List memories](../Endpoints/beta-memory-stores-memories-list.md) reference for full parameters and response schema.
+See the [List memories](../Endpoints/beta-memory-stores-memories-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ### Read a memory
 
@@ -281,7 +285,7 @@ retrieved = client.beta.memory_stores.memories.retrieve(
 print(retrieved.content)
 ```
 
-See the [Retrieve a memory](../Endpoints/beta-memory-stores-memories-retrieve.md) reference for full parameters and response schema.
+See the [Retrieve a memory](../Endpoints/beta-memory-stores-memories-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ### Create a memory
 
@@ -317,7 +321,7 @@ mem = client.beta.memory_stores.memories.create(
 )
 ```
 
-See the [Create a memory](../Endpoints/beta-memory-stores-memories-create.md) reference for full parameters and response schema.
+See the [Create a memory](../Endpoints/beta-memory-stores-memories-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ### Update a memory
 
@@ -353,7 +357,7 @@ client.beta.memory_stores.memories.update(
 )
 ```
 
-See the [Update a memory](../Endpoints/beta-memory-stores-memories-update.md) reference for full parameters and response schema.
+See the [Update a memory](../Endpoints/beta-memory-stores-memories-update.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 #### Safe content edits (optimistic concurrency)
 
@@ -421,7 +425,7 @@ client.beta.memory_stores.memories.delete(
 )
 ```
 
-See the [Delete a memory](../Endpoints/beta-memory-stores-memories-delete.md) reference for full parameters and response schema.
+See the [Delete a memory](../Endpoints/beta-memory-stores-memories-delete.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ## Audit memory changes
 
@@ -470,7 +474,7 @@ for version in versions:
 version_id = versions.data[1].id
 ```
 
-See the [List memory versions](../Endpoints/beta-memory-stores-memory-versions-list.md) reference for full parameters and response schema.
+See the [List memory versions](../Endpoints/beta-memory-stores-memory-versions-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ### Retrieve a version
 
@@ -506,7 +510,7 @@ version = client.beta.memory_stores.memory_versions.retrieve(
 print(version.content)
 ```
 
-See the [Retrieve a memory version](../Endpoints/beta-memory-stores-memory-versions-retrieve.md) reference for full parameters and response schema.
+See the [Retrieve a memory version](../Endpoints/beta-memory-stores-memory-versions-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ### Redact a version
 
@@ -543,11 +547,11 @@ client.beta.memory_stores.memory_versions.redact(
 )
 ```
 
-See the [Redact a memory version](../Endpoints/beta-memory-stores-memory-versions-redact.md) reference for full parameters and response schema.
+See the [Redact a memory version](../Endpoints/beta-memory-stores-memory-versions-redact.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ## Manage memory stores
 
-In addition to [`create`](../Endpoints/beta-memory-stores-create.md), memory stores support [`retrieve`](../Endpoints/beta-memory-stores-retrieve.md), [`update`](../Endpoints/beta-memory-stores-update.md), [`list`](../Endpoints/beta-memory-stores-list.md), [`archive`](../Endpoints/beta-memory-stores-archive.md), and [`delete`](../Endpoints/beta-memory-stores-delete.md).
+In addition to [`create`](../Endpoints/beta-memory-stores-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., memory stores support [`retrieve`](../Endpoints/beta-memory-stores-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., [`update`](../Endpoints/beta-memory-stores-update.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., [`list`](../Endpoints/beta-memory-stores-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., [`archive`](../Endpoints/beta-memory-stores-archive.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return., and [`delete`](../Endpoints/beta-memory-stores-delete.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 ### List stores
 
@@ -580,7 +584,7 @@ for memory_store in client.beta.memory_stores.list(include_archived=True):
     print(memory_store.id, memory_store.name, memory_store.archived_at)
 ```
 
-See the [List memory stores](../Endpoints/beta-memory-stores-list.md) reference for full parameters and response schema.
+See the [List memory stores](../Endpoints/beta-memory-stores-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
 ### Archive a store
 
@@ -612,9 +616,9 @@ Python
 client.beta.memory_stores.archive(store.id)
 ```
 
-See the [Archive a memory store](../Endpoints/beta-memory-stores-archive.md) reference for full parameters and response schema.
+See the [Archive a memory store](../Endpoints/beta-memory-stores-archive.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. reference for full parameters and response schema.
 
-To [permanently delete a store](../Endpoints/beta-memory-stores-delete.md) along with all of its memories and versions, call `client.beta.memory_stores.delete()`.
+To [permanently delete a store](../Endpoints/beta-memory-stores-delete.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. along with all of its memories and versions, call `client.beta.memory_stores.delete()`.
 
 ## Best practices for memory management
 
@@ -630,44 +634,68 @@ When a store reaches its 10,000-memory limit, writes to new memories fail: both 
 
 ## Availability
 
-Memory stores are in beta on every model.
+Memory stores
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Claude API
 
-- Claude API
+Status  
+Beta
 
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+agent-memory-2026-07-22
+
+Models  
+- All models
+
+Note  
 Sending `managed-agents-2026-04-01` together with `agent-memory-2026-07-22` on a memory store call returns a 400 error.
 
-StatusBeta
+Claude Platform on AWS
 
-Cloud platforms
+Status  
+Beta
 
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+API  
+- Managed Agents
 
+Beta header  
+Requires
+
+agent-memory-2026-07-22
+
+Models  
+- All models
+
+Note  
 On Claude Platform on AWS, sessions on self-hosted environments can’t attach memory stores. Sending `managed-agents-2026-04-01` together with `agent-memory-2026-07-22` on a memory store call returns a 400 error.
 
-StatusBeta
+Claude Models on Google Cloud (Anthropic managed)
 
-Cloud platforms
+Status  
+Beta
 
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+API  
+- Managed Agents
 
+Beta header  
+Requires
+
+agent-memory-2026-07-22
+
+Models  
+- All models
+
+Note  
 On Claude Models on Google Cloud (Anthropic managed), memory stores aren’t supported for sessions on self-hosted environments. Sending `managed-agents-2026-04-01` together with `agent-memory-2026-07-22` on a memory store call returns a 400 error.
-
-### Required beta headers
-
-[Beta headers overview](../Endpoints/beta-headers.md)
-
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
-
-Header
-
-- `agent-memory-2026-07-22`
-  
 
 ### Data handling
 
@@ -681,8 +709,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

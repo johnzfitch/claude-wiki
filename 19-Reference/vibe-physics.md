@@ -2,11 +2,11 @@
 title: "Vibe physics: The AI grad student \\ Anthropic"
 source_url: "https://www.anthropic.com/research/vibe-physics"
 category: "19-Reference"
-fetched_at: "2026-11-03T06:24:30Z"
+fetched_at: "2026-11-14T06:26:03Z"
 tags: ["news-research"]
 ---
 
-### Chapter 01: Who am I?
+### 01Who am I?
 
 # **Vibe physics: **The AI grad student
 
@@ -23,33 +23,30 @@ tags: ["news-research"]
 - [11Conclusions](#conclusions)
 - [12Epilogue](#epilogue)
 
-- Published
+Published  
+Mar 23, 2026
 
-  Mar 23, 2026
+Team  
+[Science](https://www.anthropic.com/science)
 
-- Team
+Topics  
+- [Discovery](https://www.anthropic.com/search?topic=discovery)
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
+- [Hallucination](https://www.anthropic.com/search?topic=hallucination)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
 
-  [Science](https://www.anthropic.com/science)
-
-- Topics
-
-  - [Discovery](https://www.anthropic.com/search?topic=discovery)
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-  - [Hallucination](https://www.anthropic.com/search?topic=hallucination)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-
-  See more...
+See more...
 
 *Can AI do theoretical physics? In this guest post, professor of physics [Matthew Schwartz](https://www.physics.harvard.edu/people/facpages/schwartz) decided to find out by supervising Claude through a real research calculation, start to finish, without ever touching a file himself. His account of what happened is below.*
 
 Related articles
 
-- Science
+- Economics
 
-  Oct 8, 2026
+  Nov 5, 2026
 
-  [The missing map of the sky](the-missing-map-of-the-sky.md)
+  [AI for scientific discovery: How researchers use Claude](how-researchers-use-claude.md)
 
 [View more](https://www.anthropic.com/search?topic=discovery)
 
@@ -102,11 +99,11 @@ My question was: is there a set of prompts, like instructions to a talented G2, 
 
 ## Initial steps
 
-I knew from experience that LLMs struggle with context and organization over long projects. So I started by asking Claude to come up with a plan of attack: what tasks needed to be done in what order. I also asked GPT 5.2 and Gemini 3.0. Then, I had all three LLMs merge the best ideas from each, using web interfaces and copying one to another. Next, I gave those merges to Claude, asking it to break the outline into detailed subsections. The result is [here](https://www-cdn.anthropic.com/2595299ccf7f8b9a9c74823c24faaa5d9b216804.pdf). There were 102 separate tasks across seven stages.
+I knew from experience that LLMs struggle with context and organization over long projects. So I started by asking Claude to come up with a plan of attack: what tasks needed to be done in what order. I also asked GPT 5.2 and Gemini 3.0. Then, I had all three LLMs merge the best ideas from each, using web interfaces and copying one to another. Next, I gave those merges to Claude, asking it to break the outline into detailed subsections. The result is [here](https://assets.claude.com/2595299ccf7f8b9a9c74823c24faaa5d9b216804.pdf). There were 102 separate tasks across seven stages.
 
 From there, I turned to [Claude Code](https://claude.ai/code), using the extension in VS Code.
 
-I created a folder for the project, put in the master plan, and had it try to solve each task separately, writing its results in a separate markdown file. Some examples are [Task 1.1: Review BSZ Paper](https://www-cdn.anthropic.com/c993ead637f1a102fe1f5346e89f59e82c579b37.pdf) and [Task 1.2: Review Catani—Webber](https://www-cdn.anthropic.com/94b3c41e52e19ba450fe5e804400ebcf0a88f3d0.pdf).
+I created a folder for the project, put in the master plan, and had it try to solve each task separately, writing its results in a separate markdown file. Some examples are [Task 1.1: Review BSZ Paper](https://assets.claude.com/c993ead637f1a102fe1f5346e89f59e82c579b37.pdf) and [Task 1.2: Review Catani—Webber](https://assets.claude.com/94b3c41e52e19ba450fe5e804400ebcf0a88f3d0.pdf).
 
 This organization step was enormously helpful. Instead of one long conversation or document, Claude maintained a tree of markdown files—one summary per stage, one detailed file per task. Given that LLMs work much better with things they can retrieve rather than things they have to hold in context, this allowed Claude to look things up rather than remember them. When I asked Claude to proceed to the next task, it would read its own previous summary, do the work, and write a new summary. I also had it edit the plan as it went, modifying earlier and later sections as it learned.
 
@@ -122,7 +119,7 @@ This is where Claude excels: doing regressions, fits and statistical analysis, a
 
 The next step was the paper writing. To begin, I told Claude to synthesize its task markdown files into a LaTeX draft. I said, “Start writing the paper. Do the title, abstract, intro, and section 1 first, and I will take a look.” Claude’s first output was horrible, reading more like notes than a paper. After a lot of “more prose” prompting, it improved. But it also kept forgetting to include results. So before each new section I had to tell it, “Check that you incorporated all the results from your various task markdown files up to this point. Go one by one through the task files and check.” This review was important: it often found formulas in the paper that didn’t match its own notes.
 
-By the end of day three, Claude had completed 65 tasks, produced a literature review, derived phase-space constraints, computed matrix elements in soft and collinear limits, set up SCET operators, and written a first draft: 20 pages of LaTeX with equations, plots, and references. By December 22, [the draft](https://www-cdn.anthropic.com/f6381ceefdfb6ead62ae185c4bd4b555c8a584fc.pdf) looked professional. The equations seemed right. And the plots matched expectations.
+By the end of day three, Claude had completed 65 tasks, produced a literature review, derived phase-space constraints, computed matrix elements in soft and collinear limits, set up SCET operators, and written a first draft: 20 pages of LaTeX with equations, plots, and references. By December 22, [the draft](https://assets.claude.com/f6381ceefdfb6ead62ae185c4bd4b555c8a584fc.pdf) looked professional. The equations seemed right. And the plots matched expectations.
 
 Then, I actually read it.
 

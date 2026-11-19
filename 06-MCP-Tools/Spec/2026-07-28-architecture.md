@@ -2,8 +2,8 @@
 title: "Architecture - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/architecture"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:25:29Z"
-last_modified: "Fri, 30 Oct 2026 21:03:15 GMT"
+fetched_at: "2026-11-17T06:24:56Z"
+last_modified: "Tue, 17 Nov 2026 02:36:08 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 
@@ -24,17 +24,11 @@ Copy pageCopy page
 
 Copy pageCopy page
 
-The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. MCP is a stateless protocol: every request is self-contained and carries its own protocol version and capabilities. This architecture enables users to integrate AI capabilities across applications while maintaining clear security boundaries and isolating concerns. Built on JSON-RPC, MCP provides a protocol focused on context exchange and sampling coordination between clients and servers.
+The Model Context Protocol (MCP) follows a client-host-server architecture where each host can run multiple client instances. MCP is a stateless protocol: every request is self-contained and carries its own protocol version and capabilities. This architecture enables users to integrate AI capabilities across applications while maintaining clear security boundaries and isolating concerns. Built on JSON-RPC, MCP provides a protocol focused on context exchange between clients and servers.
 
+## [](#core-components)Core Components
 
-[​](#core-components)
-
-Core Components
-
-
-[​](#host)
-
-Host
+### [](#host)Host
 
 The host process acts as the container and coordinator:
 
@@ -42,13 +36,10 @@ The host process acts as the container and coordinator:
 - Controls client connection permissions and lifecycle
 - Enforces security policies and consent requirements
 - Handles user authorization decisions
-- Coordinates AI/LLM integration and sampling
+- Coordinates AI/LLM integration
 - Manages context aggregation across clients
 
-
-[​](#clients)
-
-Clients
+### [](#clients)Clients
 
 Each client is created by the host and communicates with exactly one server:
 
@@ -60,23 +51,17 @@ Each client is created by the host and communicates with exactly one server:
 
 A host application creates and manages multiple clients, with each client having a 1:1 relationship with a particular server.
 
-
-[​](#servers)
-
-Servers
+### [](#servers)Servers
 
 Servers provide specialized context and capabilities:
 
 - Expose resources, tools and prompts via MCP primitives
 - Operate independently with focused responsibilities
-- Request client input (sampling, elicitation, roots) via `InputRequiredResult` within a reply
+- Request client input (e.g. elicitation^([1](#user-content-fn-deprecated-input))) via `InputRequiredResult` within a reply
 - Must respect security constraints
 - Can be local processes or remote services
 
-
-[​](#design-principles)
-
-Design Principles
+## [](#design-principles)Design Principles
 
 MCP is built on several key design principles that inform its architecture and implementation:
 
@@ -103,22 +88,23 @@ MCP is built on several key design principles that inform its architecture and i
     - Protocol designed for future extensibility
     - Backwards compatibility is maintained
 
-
-[​](#capability-negotiation)
-
-Capability Negotiation
+## [](#capability-negotiation)Capability Negotiation
 
 The Model Context Protocol uses a capability-based negotiation system where clients and servers declare their supported features on each request. Clients include their capabilities in `_meta.io.modelcontextprotocol/clientCapabilities` on every request. Servers advertise their capabilities in response to [`server/discover`](2026-07-28-server-discover.md), which clients may call before any other request for up-front capability discovery.
 
 - Servers declare capabilities like tool support, resource subscriptions, and prompt templates
-- Clients declare capabilities like sampling support and elicitation handling
+- Clients declare capabilities like elicitation handling
 - Both parties must respect declared capabilities throughout the interaction
 - Additional capabilities can be negotiated through extensions to the protocol
 
 Each capability unlocks specific protocol features on a per-request basis. For example:
 
-- Implemented [server features](draft-server.md) must be advertised in the server’s capabilities
+- Implemented [server features](../Spec-Archive/2025-06-18-server.md) must be advertised in the server’s capabilities
 - Receiving resource update notifications requires opening a [`subscriptions/listen`](2026-07-28-basic-patterns-subscriptions.md) stream with the desired resource URIs
 - [Tool](draft-server-tools.md) invocation requires the server to declare tool capabilities
 
 This capability negotiation ensures clients and servers have a clear understanding of supported functionality while maintaining protocol extensibility.
+
+## Footnotes
+
+1.  Sampling and roots requests are also delivered via `InputRequiredResult`, but both are deprecated as of protocol version `2026-07-28` and should not be used in new implementations. See [Deprecated Features](2026-07-28-deprecated.md). [↩](#user-content-fnref-deprecated-input)

@@ -2,7 +2,7 @@
 title: "Claude Tag | Add @Claude in any Slack thread"
 source_url: "https://www.claude.com/product/tag"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:40Z"
+fetched_at: "2026-11-18T06:29:36Z"
 tags: ["claude-ai", "slack"]
 ---
 

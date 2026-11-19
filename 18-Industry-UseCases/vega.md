@@ -2,7 +2,7 @@
 title: "Vega Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/vega"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:35Z"
+fetched_at: "2026-11-18T06:29:29Z"
 tags: ["agents", "api", "bedrock", "case-studies", "security", "skills"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Assembled Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/assembled"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:13Z"
+fetched_at: "2026-11-18T06:29:06Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -83,6 +83,9 @@ Wang concludes, “We’re not just playing a deflection game, because support i
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -90,6 +93,3 @@ Wang concludes, “We’re not just playing a deflection game, because support i
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

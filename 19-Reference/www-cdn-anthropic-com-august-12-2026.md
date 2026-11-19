@@ -2,7 +2,7 @@
 title: "August 12, 2026"
 source_url: "https://www-cdn.anthropic.com/4ef47f859bc67be739a14f5d40b43927eecacdb6/WorkerRetraining.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-15T06:23:03Z"
+fetched_at: "2026-11-18T06:28:49Z"
 tags: ["news-research"]
 ---
 

@@ -2,7 +2,7 @@
 title: "MCP Reference Servers"
 source_url: "https://raw.githubusercontent.com/modelcontextprotocol/servers/main/README.md"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-29T06:26:06Z"
+fetched_at: "2026-11-12T06:24:47Z"
 tags: ["mcp", "security"]
 ---
 
@@ -184,7 +184,7 @@ This project is licensed under the Apache License, Version 2.0 for new contribut
 
 ## 💬 Community
 
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+- [GitHub Discussions](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions)
 
 ## ⭐ Support
 

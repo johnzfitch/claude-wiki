@@ -2,8 +2,8 @@
 title: "Use Claude Code features in the SDK - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/agent-sdk/claude-code-features"
 category: "05-Agent-SDK"
-fetched_at: "2026-10-30T06:25:23Z"
-last_modified: "Fri, 30 Oct 2026 01:17:20 GMT"
+fetched_at: "2026-11-13T06:33:23Z"
+last_modified: "Fri, 13 Nov 2026 06:21:51 GMT"
 tags: ["agents", "claude-code", "sdk"]
 ---
 

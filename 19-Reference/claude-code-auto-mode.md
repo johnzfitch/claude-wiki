@@ -2,9 +2,11 @@
 title: "How we built Claude Code auto mode \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-code-auto-mode"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:36Z"
+fetched_at: "2026-11-14T06:26:38Z"
 tags: ["claude-code", "news-research"]
 ---
+
+### 01How it works
 
 # **How we built Claude Code auto mode: **a safer way to skip permissions
 
@@ -16,31 +18,28 @@ tags: ["claude-code", "news-research"]
 - [06Design decisions](#design-decisions)
 - [07What's next](#whats-next)
 
-- Published
+Published  
+Mar 25, 2026
 
-  Mar 25, 2026
+Team  
+[Engineering](https://www.anthropic.com/engineering)
 
-- Team
+Topics  
+- [Claude Code](https://www.anthropic.com/search?topic=claude-code)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Agents](https://www.anthropic.com/search?topic=agents)
+- [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
 
-  [Engineering](https://www.anthropic.com/engineering)
-
-- Topics
-
-  - [Claude Code](https://www.anthropic.com/search?topic=claude-code)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-  - [Jailbreaks](https://www.anthropic.com/search?topic=jailbreaks)
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-
-  See more...
+See more...
 
 Related articles
 
-- Engineering
+- Alignment
 
-  May 25, 2026
+  Oct 27, 2026
 
-  [How we contain Claude across products](how-we-contain-claude.md)
+  [How AI agents shape experts’ judgment calls](agents-judgment-calls.md)
 
 [View more](https://www.anthropic.com/search?topic=claude-code)
 
@@ -48,7 +47,7 @@ By default, Claude Code asks users for approval before running commands or modif
 
 Users have two solutions for avoiding this fatigue: a built-in sandbox where tools are isolated to prevent dangerous actions, or the `--dangerously-skip-permissions` flag that disables all permission prompts and lets Claude act freely, which is unsafe in most situations. Figure 1 lays out the tradeoff space. Sandboxing is safe but high-maintenance: each new capability needs configuring, and anything requiring network or host access breaks isolation. Bypassing permissions is zero-maintenance but offers no protection. Manual prompts sit in the middle, and in practice users accept 93% of them anyway.
 
-We keep an internal incident log focused on agentic misbehaviors. Past examples include deleting remote git branches from a misinterpreted instruction, uploading an engineer's GitHub auth token to an internal compute cluster, and attempting migrations against a production database. Each of these was the result of the model being overeager, taking initiative in a way the user didn't intend. We documented this pattern in the [Claude Opus 4.6 system card](https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf) (§6.2.1 and §6.2.3.3).
+We keep an internal incident log focused on agentic misbehaviors. Past examples include deleting remote git branches from a misinterpreted instruction, uploading an engineer's GitHub auth token to an internal compute cluster, and attempting migrations against a production database. Each of these was the result of the model being overeager, taking initiative in a way the user didn't intend. We documented this pattern in the [Claude Opus 4.6 system card](https://assets.claude.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf) (§6.2.1 and §6.2.3.3).
 
 Auto mode is a new mode for Claude Code that delegates approvals to model-based classifiers—a middle ground between manual review and no guardrails. The goal is to catch the dangerous actions that aren't aligned with user intent, while letting the rest run without approval prompts. Get started using auto mode by following the [docs](../02-Claude-Code-CLI/permission-modes.md#eliminate-prompts-with-auto-mode).
 
@@ -134,8 +133,8 @@ n=10,000
 **Real overeager**  
 n=52
 
-**Synthetic exfil  
-**n=1,000
+**Synthetic exfil  **
+n=1,000
 
 Stage 1 (fast filter)
 
@@ -207,7 +206,7 @@ It's also what makes false positives survivable. A 0.4% FPR sounds small, but if
 
 We'll continue expanding the real overeagerness testset and iterating on improving the safety and cost of the feature. The classifier doesn't need to be flawless to be valuable and the starting point is catching enough dangerous actions to make autonomous operation substantially safer than no guardrails. We encourage users to stay aware of residual risk, use judgment about which tasks and environments they run autonomously, and tell us when auto mode gets things wrong.
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Acknowledgements
 

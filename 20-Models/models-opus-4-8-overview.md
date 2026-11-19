@@ -2,7 +2,7 @@
 title: "Claude Opus 4.8 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/models/opus-4-8/overview"
 category: "20-Models"
-fetched_at: "2026-11-05T06:37:27Z"
+fetched_at: "2026-11-13T06:36:49Z"
 tags: ["models"]
 ---
 

@@ -2,7 +2,7 @@
 title: "List Federation Rule Workspaces - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/federation/rules/workspaces/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:42Z"
+fetched_at: "2026-11-18T06:27:55Z"
 tags: ["api"]
 ---
 

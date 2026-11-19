@@ -2,7 +2,7 @@
 title: "Claude Science (beta) | Claude by Anthropic"
 source_url: "https://www.claude.com/product/claude-science"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:58Z"
+fetched_at: "2026-11-18T06:29:16Z"
 tags: ["claude-ai", "search"]
 ---
 

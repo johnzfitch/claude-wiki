@@ -2,7 +2,7 @@
 title: "DXC Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/dxc"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:38Z"
+fetched_at: "2026-11-18T06:29:12Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -92,6 +92,12 @@ The hours matter because of who’s waiting on them. “These are injured people
 Regulatory change is getting the same treatment. Across the industry, embedding a new rule has historically taken 12 to 18 months. Claude ingests complex legislation in seconds to minutes, and “stuff that took months now is days,” Pieroni said. Speed like that is capacity, and in an industry facing a talent crisis, Pieroni argues carriers “should be clamoring to increase capacity and competency of their workers.” His yardstick for where this goes is autonomy. “Right now in the insurance industry, about 1% of decisions are autonomous,” he said. “I’m talking no one touches, no one thinks about it. My vision is that it goes to 50%.” That would be a fifty-fold jump in a business that makes millions of judgment calls per carrier. And in Pieroni’s vision, the friction goes away at the source: regulation itself becomes “living code” that updates itself as the rules change.
 
 ## Related stories
+
+
+### Deepening risk expertise through AI
+
+
+### Reinventing commercial underwriting
 
 
 ### Newfront modernizes insurance experiences with Claude

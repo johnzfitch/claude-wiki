@@ -2,8 +2,8 @@
 title: "Explore the .claude directory - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/claude-directory"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-05T06:34:50Z"
-last_modified: "Thu, 05 Nov 2026 03:50:18 GMT"
+fetched_at: "2026-11-18T06:27:10Z"
+last_modified: "Wed, 18 Nov 2026 02:19:25 GMT"
 tags: ["claude-code"]
 ---
 
@@ -17,17 +17,11 @@ Copy pageCopy page
 
 Claude Code reads instructions, settings, skills, subagents, and memory from your project directory and from `~/.claude` in your home directory. Commit project files to git to share them with your team; files in `~/.claude` are personal configuration that applies across all your projects. On Windows, `~/.claude` resolves to `%USERPROFILE%\.claude`. If you set [`CLAUDE_CONFIG_DIR`](env-vars.md), every `~/.claude` path on this page lives under that directory instead. The same applies to `.claude.json`, which otherwise sits at `~/.claude.json`. Most users only edit `CLAUDE.md` and `settings.json`. If your repository already has an `AGENTS.md` for other coding agents, Claude Code [can read that](memory.md#agents-md) in place of a `CLAUDE.md`. The rest of the directory is optional: add skills, rules, or subagents as you need them.
 
-
-[​](#explore-the-directory)
-
-Explore the directory
+## [](#explore-the-directory)Explore the directory
 
 Click files in the tree to see what each one does, when it loads, and an example.
 
-
-[​](#what’s-not-shown)
-
-What’s not shown
+## [](#what’s-not-shown)What’s not shown
 
 The explorer covers files you author and edit. A few related files live elsewhere:
 
@@ -40,10 +34,7 @@ The explorer covers files you author and edit. A few related files live elsewher
 
 `~/.claude` also holds data Claude Code writes as you work: transcripts, prompt history, file snapshots, caches, and logs. See [application data](#application-data) below.
 
-
-[​](#choose-the-right-file)
-
-Choose the right file
+## [](#choose-the-right-file)Choose the right file
 
 Different kinds of customization live in different files. Use this table to find where a change belongs.
 
@@ -60,10 +51,7 @@ Different kinds of customization live in different files. Use this table to find
 | Connect external tools over MCP | `.mcp.json` | project only | [MCP](../06-MCP-Tools/General/mcp.md) |
 | Change how Claude formats responses | `output-styles/*.md` | project or global | [Output styles](output-styles.md) |
 
-
-[​](#file-reference)
-
-File reference
+## [](#file-reference)File reference
 
 This table lists every file the explorer covers. Project-scope files live in your repo under `.claude/` (or at the root for `CLAUDE.md`, `.mcp.json`, and `.worktreeinclude`). Global-scope files live in `~/.claude/` and apply across all projects.
 
@@ -89,17 +77,14 @@ Click a filename to open that node in the explorer above.
 | [`commands/*.md`](#ce-commands) | Project and global | ✓ | Single-file prompts; same mechanism as skills | [Skills](../08-Plugins-Skills/skills.md) |
 | [`output-styles/*.md`](#ce-output-styles) | Project and global | ✓ | Custom instruction sets that adjust how Claude works | [Output styles](output-styles.md) |
 | [`agents/*.md`](#ce-agents) | Project and global | ✓ | Subagent definitions with their own prompt and tools | [Subagents](../09-Agents-Patterns/sub-agents.md) |
-| [`workflows/*.js`](#ce-workflows) | Project and global | ✓ | Dynamic workflow scripts written by Claude and saved from `/workflows`; each file becomes a `/<name>` command | [Dynamic workflows](workflows.md) |
+| [`workflows/*.js`](#ce-workflows) | Project and global | ✓ | Dynamic workflow scripts written by Claude and saved from `/workflows`; each saved workflow runs as a `/<name>` command | [Dynamic workflows](workflows.md) |
 | [`agent-memory/<name>/`](#ce-agent-memory) | Project and global | ✓ | Persistent memory for subagents | [Persistent memory](../09-Agents-Patterns/sub-agents.md#enable-persistent-memory) |
 | [`~/.claude.json`](#ce-claude-json) | Global only |  | App state, account details, UI toggles, personal MCP servers. If it’s missing, Claude Code creates it when you start a session or run a subcommand such as `claude auth status`, but not for `--version` or `--help`. | [Global config](settings-reference.md#global-config-settings) |
 | [`projects/<project>/memory/`](#ce-global-projects) | Global only |  | Auto memory: Claude’s notes to itself across sessions | [Auto memory](memory.md#auto-memory) |
 | [`keybindings.json`](#ce-keybindings) | Global only |  | Custom keyboard shortcuts | [Keybindings](keybindings.md) |
 | [`themes/*.json`](#ce-themes) | Global only |  | Custom color themes | [Custom themes](terminal-config.md#create-a-custom-theme) |
 
-
-[​](#frontmatter-fields-by-file)
-
-Frontmatter fields by file
+## [](#frontmatter-fields-by-file)Frontmatter fields by file
 
 Skills, command files, subagents, output styles, and rules read their configuration from YAML [frontmatter](glossary.md#frontmatter) at the top of the file, and each accepts its own set of fields. This table lists the field names for each file and links to the reference that describes them.
 
@@ -113,17 +98,11 @@ Skills, command files, subagents, output styles, and rules read their configurat
 
 Agents shipped in a [plugin](../08-Plugins-Skills/plugins-components.md#agents) honor a subset of the subagent fields.
 
-
-[​](#troubleshoot-configuration)
-
-Troubleshoot configuration
+## [](#troubleshoot-configuration)Troubleshoot configuration
 
 If a setting, hook, or file isn’t taking effect, see [Debug your configuration](debug-your-config.md) for the inspection commands and a symptom-first lookup table.
 
-
-[​](#application-data)
-
-Application data
+## [](#application-data)Application data
 
 Beyond the config you author, `~/.claude` holds data Claude Code writes during sessions. These files are plaintext. Anything that passes through a tool is written to a transcript on disk: file contents, command output, pasted text. The transcript can also hold what Claude Code sends the model with your messages:
 
@@ -132,10 +111,7 @@ Beyond the config you author, `~/.claude` holds data Claude Code writes during s
 - Request parameters
 - The instruction files it loaded, such as CLAUDE.md
 
-
-[​](#cleaned-up-automatically)
-
-Cleaned up automatically
+### [](#cleaned-up-automatically)Cleaned up automatically
 
 Claude Code deletes the files in the paths below once they’re older than [`cleanupPeriodDays`](settings-reference.md#cleanupperioddays), as long as it can safely determine the retention period. The default is 30 days and the minimum is 1; setting `0` fails with a validation error. The same age cutoff applies to automatic removal of [orphaned worktrees](worktrees.md#clean-up-subagent-and-background-session-worktrees).
 
@@ -162,27 +138,26 @@ Claude Code deletes the files in the paths below once they’re older than [`cle
 | `usage-data/` | `report.html` and timestamped report copies written by [`/insights`](../17-Billing-Plans/costs.md#analyze-your-usage-patterns), plus cached per-session analysis data used to build them |
 | `skills/.trash/`, `plugins/.trash/` | [Skills](../08-Plugins-Skills/skills.md#how-synced-skills-behave) and [plugins](../08-Plugins-Skills/plugins-loading.md#synced-plugins) that the claude.ai sync removed, such as after you turn one off on claude.ai or stop syncing. The files stay here so you can recover them until the sweep deletes them |
 | `plugins/installed_plugins.set-aside.<date>.<hash>.json`, `plugins/installed_plugins.unreadable.<date>.<hash>.kept` | Dated copies Claude Code makes before rewriting [`installed_plugins.json`](../08-Plugins-Skills/plugins-loading.md#find-plugins-on-disk): install records it dropped, and the contents of a file it couldn’t read. |
+| `plugins/mcpb/` | The files Claude Code extracted from the [MCP bundles](../08-Plugins-Skills/plugins-components.md#include-a-packaged-mcpb-server) that plugins declare. A bundle’s age counts from the last session that used it. |
 | `todos/`, `statsig/`, `logs/` | Legacy directories from older versions. No longer written. The sweep removes their contents and then the empty directory. |
 
 Session files in `sessions/`, auto memory, and Claude Desktop and Cowork transcripts each follow their own retention rule:
 
 - **`sessions/`**: holds one small file per running session, used to detect concurrent sessions and crashes. It isn’t part of the age-based sweep: Claude Code removes each file when its session exits and clears crash leftovers on the next launch.
+- **`seed-admin/`**: scratch git directories Claude Code makes while packaging your repository for an [ultrareview](ultrareview.md) or a [cloud session upload](claude-code-on-the-web.md#send-local-repositories-without-github). When an upload ends, or in a later session if it was interrupted, Claude Code removes that upload’s directory and leaves `seed-admin/` in place.
 - **Auto memory**: the sweep doesn’t delete the memory files in a project’s [auto memory](memory.md#auto-memory) directory, `projects/<project>/memory/`. Claude Code removes that directory only if it has been empty for the whole retention period. Before v2.1.228, the sweep treated folders inside the memory directory as session data and could delete old files beneath it.
-- **Claude Desktop and Cowork transcripts**: Claude Code keeps the transcript of a session you started or most recently continued in Claude Desktop or Cowork at any age. To give these transcripts an age limit, set [`desktopSessionCleanupPeriodDays`](settings-reference.md#desktopsessioncleanupperioddays). Requires Claude Code v2.1.248 or later; earlier versions delete them after `cleanupPeriodDays`. Claude Code deletes these transcripts after `cleanupPeriodDays` instead in either of these cases:
+- **Claude Desktop and Cowork transcripts**: Claude Code keeps the transcript of a session you started or most recently continued in Claude Desktop or Cowork at any age. To give these transcripts an age limit, set [`desktopSessionCleanupPeriodDays`](settings-reference.md#desktopsessioncleanupperioddays). Requires Claude Code v2.1.248 or later; earlier versions delete them after `cleanupPeriodDays`. Claude Code deletes these transcripts after `cleanupPeriodDays` instead in cases such as these:
   - [Managed settings](../13-Enterprise-Admin/managed-settings.md) set `cleanupPeriodDays`
   - The [HIPAA configuration applies to your sessions](hipaa-setup.md#check-how-developers-sign-in-and-connect)
 
 Claude Code skips the age-based sweep in these cases:
 
 - **Bare mode**: when you run `claude -p` with [`--bare`](headless.md#start-faster-with-bare-mode), Claude Code doesn’t run the sweep in that session.
-- **Paused sweep**: if Claude Code can’t safely determine the retention period, it pauses the retention cleanup sweep; the [`retention_sweep` event](../13-Enterprise-Admin/monitoring-usage.md#retention-sweep-event) lists each configuration that pauses it. When the cause is a settings file that can’t be read or parsed, or settings errors with `cleanupPeriodDays` or `desktopSessionCleanupPeriodDays` explicitly set, Claude Code also shows a warning in `/status` until you fix the settings errors. When [managed settings](../13-Enterprise-Admin/server-managed-settings.md) provide `cleanupPeriodDays`, Claude Code runs the sweep at the managed value in either case.
+- **Paused sweep**: if Claude Code can’t safely determine the retention period, it pauses the sweep; the [`retention_sweep` event](../13-Enterprise-Admin/monitoring-usage.md#retention-sweep-event) lists each configuration that pauses it. When the cause is a settings file that can’t be read or parsed, or settings errors with `cleanupPeriodDays` or `desktopSessionCleanupPeriodDays` set, `/status` shows a warning until you fix the cause.
 
-To check that the machines in your organization run the sweep with the retention period you set, see [Check the retention sweep](../13-Enterprise-Admin/monitoring-usage.md#check-the-retention-sweep).
+When [managed settings](../13-Enterprise-Admin/managed-settings.md) provide `cleanupPeriodDays`, Claude Code runs the sweep at the managed value even when a lower-priority settings file has errors. To check that the machines in your organization run the sweep with the retention period you set, see [Check the retention sweep](../13-Enterprise-Admin/monitoring-usage.md#check-the-retention-sweep).
 
-
-[​](#session-scratchpad-directory)
-
-Session scratchpad directory
+### [](#session-scratchpad-directory)Session scratchpad directory
 
 The scratchpad is a per-session directory that Claude Code gives Claude for temporary files: intermediate results, helper scripts, and drafts that don’t belong in your project. When Claude says it saved something “to the scratchpad”, the file is there. Claude uses it instead of `/tmp`, and can create, edit, and read files in it without a permission prompt. The scratchpad lives under Claude Code’s temp directory rather than `~/.claude`. Find the current session’s path for your platform:
 
@@ -190,16 +165,13 @@ The scratchpad is a per-session directory that Claude Code gives Claude for temp
 - **Linux**: `/tmp/claude-<uid>/<project>/<session-id>/scratchpad/`, or the same shape under `$TMPDIR` when your system sets one
 - **Windows**: `%TEMP%\claude\<project>\<session-id>\scratchpad\`
 
-`<project>` is your working directory path with every character other than letters and digits replaced by `-`, such as `-Users-you-my-project`. If you set [`CLAUDE_CODE_TMPDIR`](env-vars.md), the tree moves under that directory instead. Hooks receive the current session’s path as [`scratchpad_dir`](../07-Hooks/hooks.md#common-input-fields). Scratchpad files last as long as the session’s transcript: the [retention sweep](#cleaned-up-automatically) deletes the directory when it deletes the transcript, and [`claude purge`](#clear-local-data) doesn’t touch the temp directory. Because the directory sits under the system temp location, your operating system can also clear it, such as on restart. To keep something Claude wrote there, ask Claude to move it into your project. A session has a scratchpad only when all of these hold:
+`<project>` is your working directory path with every character other than letters and digits replaced by `-`, such as `-Users-you-my-project`. On Windows, `<project>` is a 16-character hash of that string, such as `73295dabccd14c56`. In a Desktop app session, it can be the string itself. To get the exact path, ask Claude. If you set [`CLAUDE_CODE_TMPDIR`](env-vars.md), the tree moves under that directory instead. Hooks receive the current session’s path as [`scratchpad_dir`](../07-Hooks/hooks.md#common-input-fields). Scratchpad files last as long as the session’s transcript: the [retention sweep](#cleaned-up-automatically) deletes the directory when it deletes the transcript, and [`claude purge`](#clear-local-data) doesn’t touch the temp directory. Because the directory sits under the system temp location, your operating system can also clear it, such as on restart. To keep something Claude wrote there, ask Claude to move it into your project. A session has a scratchpad only when all of these hold:
 
 - You’re signed in with a claude.ai account rather than an API key
 - The session uses the Anthropic API, not Amazon Bedrock, Google Cloud’s Agent Platform, or Microsoft Foundry
 - [`enableArtifact`](settings-reference.md#enableartifact) isn’t set to `false`
 
-
-[​](#kept-until-you-delete-them)
-
-Kept until you delete them
+### [](#kept-until-you-delete-them)Kept until you delete them
 
 Apart from the rows that say otherwise, the retention cleanup sweep doesn’t remove the paths below, and Claude Code keeps them until you delete them.
 
@@ -211,10 +183,7 @@ Apart from the rows that say otherwise, the retention cleanup sweep doesn’t re
 | `cache/changelog.md` | Cached copy of the Claude Code changelog, shown by `/release-notes`. Refreshed in the background. |
 | `policy-limits.json` | Cached feature policy settings for your organization. Only present for some account types. Refreshed automatically. A `policy-limits.json.stamp.json` sidecar records which account or API key the cache belongs to. Claude Code deletes both files when you log out. |
 
-
-[​](#state-files-to-keep)
-
-State files to keep
+#### [](#state-files-to-keep)State files to keep
 
 Depending on which features you use, `~/.claude/` also holds files that the tables under [Application data](#application-data) don’t list. Of those, caches and lock files are safe to delete. Keep these state files:
 
@@ -222,10 +191,7 @@ Depending on which features you use, `~/.claude/` also holds files that the tabl
 - `agent-memory/`: [subagent memory](../09-Agents-Patterns/sub-agents.md#enable-persistent-memory)
 - `jobs/` and `daemon/`: [background session](../09-Agents-Patterns/agent-view.md#where-state-is-stored) state
 
-
-[​](#plaintext-storage)
-
-Plaintext storage
+### [](#plaintext-storage)Plaintext storage
 
 Transcripts and history are not encrypted at rest. OS file permissions are the only protection. If a tool reads a `.env` file or a command prints a credential, that value is written to `projects/<project>/<session>.jsonl`. To reduce exposure:
 
@@ -234,10 +200,7 @@ Transcripts and history are not encrypted at rest. OS file permissions are the o
 - Set the [`CLAUDE_CODE_SKIP_PROMPT_HISTORY`](env-vars.md) environment variable to skip writing transcripts and prompt history in any mode. In non-interactive mode, you can instead pass `--no-session-persistence` alongside `-p`, or set `persistSession: false` in the TypeScript Agent SDK; the Python SDK has no equivalent option.
 - Use [permission rules](permissions.md) to deny reads of credential files
 
-
-[​](#clear-local-data)
-
-Clear local data
+### [](#clear-local-data)Clear local data
 
 Run `claude purge` to delete the state Claude Code holds for one project. It deletes:
 
@@ -311,10 +274,7 @@ The command leaves `shell-snapshots/` and `backups/` alone because those are not
 
 Don’t delete `~/.claude.json`, `~/.claude/settings.json`, or `~/.claude/plugins/`: those hold your account details, preferences, and installed plugins.
 
-
-[​](#related-resources)
-
-Related resources
+## [](#related-resources)Related resources
 
 - [Manage Claude’s memory](memory.md): write and organize CLAUDE.md, rules, and auto memory
 - [Configure settings](settings.md): set permissions, hooks, environment variables, and model defaults

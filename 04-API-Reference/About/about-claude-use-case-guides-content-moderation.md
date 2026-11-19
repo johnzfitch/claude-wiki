@@ -2,7 +2,7 @@
 title: "Content moderation - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/about-claude/use-case-guides/content-moderation"
 category: "04-API-Reference/About"
-fetched_at: "2026-11-05T06:34:34Z"
+fetched_at: "2026-11-13T06:35:10Z"
 tags: ["api"]
 ---
 
@@ -30,31 +30,31 @@ This guide is focused on moderating user-generated content within your applicati
 
 Here are some key indicators that you should use an LLM such as Claude instead of a traditional ML or rules-based approach for content moderation:
 
-### You want a cost-effective and rapid implementation
+### You want a cost-effective and rapid implementation
 
 Traditional ML methods require significant engineering resources, ML expertise, and infrastructure costs. Human moderation systems incur even higher costs. With Claude, you can have a sophisticated moderation system operational in significantly less time and at a much lower cost.
 
-### You want both semantic understanding and quick decisions
+### You want both semantic understanding and quick decisions
 
 Traditional ML approaches, such as bag-of-words models or simple pattern matching, often have difficulty capturing the tone, intent, and context of the content. Although human moderation systems excel at understanding semantic meaning, they require time for content to be reviewed. Claude addresses both needs by combining semantic understanding with the ability to deliver moderation decisions quickly.
 
-### You need consistent policy decisions
+### You need consistent policy decisions
 
 With its advanced reasoning capabilities, Claude can interpret and apply complex moderation guidelines uniformly. This consistency helps ensure fair treatment of all content, reducing the risk of inconsistent or biased moderation decisions that can undermine user trust.
 
-### Your moderation policies are likely to change or evolve over time
+### Your moderation policies are likely to change or evolve over time
 
 Once a traditional ML approach has been established, changing it is a laborious and data-intensive undertaking. On the other hand, as your product or customer needs evolve, Claude can easily adapt to changes or additions to moderation policies without extensive relabeling of training data.
 
-### You need interpretable reasoning for your moderation decisions
+### You need interpretable reasoning for your moderation decisions
 
 If you want to provide users or regulators with clear explanations behind moderation decisions, Claude can generate detailed and coherent justifications. This transparency is important for building trust and ensuring accountability in content moderation practices.
 
-### You need multilingual support without maintaining separate models
+### You need multilingual support without maintaining separate models
 
 Traditional ML approaches typically require separate models or extensive translation processes for each supported language. Human moderation requires hiring a workforce fluent in each supported language. Claude’s multilingual capabilities allow it to classify content in various languages without the need for separate models or extensive translation processes, streamlining moderation for global customer bases.
 
-### You need multimodal support
+### You need multimodal support
 
 Claude’s multimodal capabilities allow it to analyze and interpret content across both text and images. This makes it a versatile tool for comprehensive content moderation in environments where different media types need to be evaluated together.
 
@@ -562,7 +562,7 @@ Explanation: {violation["explanation"]}
 """)
 ```
 
-In this example, the `batch_moderate_messages` function handles the moderation of an entire batch of messages with a single Claude API call. Inside the function, a prompt is created that includes the list of messages to evaluate and the unsafe content categories. The prompt directs Claude to return a JSON object listing all messages that contain violations. Each message in the response is identified by its `id`, which corresponds to the message’s position in the batch. Keep in mind that finding the optimal batch size for your specific needs might require some experimentation. Although larger batch sizes can lower costs, they might also lead to a slight decrease in quality. Additionally, you might need to increase the `max_tokens` parameter in the Claude API call to accommodate longer responses. For details on the maximum number of tokens your chosen model can output, refer to the [model comparison table](../../20-Models/about-claude-models-overview.md#latest-models-comparison).
+In this example, the `batch_moderate_messages` function handles the moderation of an entire batch of messages with a single Claude API call. Inside the function, a prompt is created that includes the list of messages to evaluate and the unsafe content categories. The prompt directs Claude to return a JSON object listing all messages that contain violations. Each message in the response is identified by its `id`, which corresponds to the message’s position in the batch. Keep in mind that finding the optimal batch size for your specific needs might require some experimentation. Although larger batch sizes can lower costs, they might also lead to a slight decrease in quality. Additionally, you might need to increase the `max_tokens` parameter in the Claude API call to accommodate longer responses. For details on the maximum number of tokens your chosen model can output, refer to the [All models](../../20-Models/about-claude-models-overview.md#all-models) table.
 
 
 

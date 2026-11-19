@@ -2,8 +2,8 @@
 title: "Self-hosted environments reference - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/self-hosted-environments-reference"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-04T06:23:45Z"
-last_modified: "Wed, 04 Nov 2026 05:18:42 GMT"
+fetched_at: "2026-11-13T06:33:44Z"
+last_modified: "Fri, 13 Nov 2026 06:21:52 GMT"
 tags: ["claude-code", "enterprise"]
 ---
 
@@ -89,7 +89,7 @@ Most flags have a corresponding environment variable. When both are set, the fla
 | `--session-stop-grace-sec <n>` | `SELF_HOSTED_RUNNER_SESSION_STOP_GRACE_MS` | `5` | How long to wait for the Claude process to exit cleanly after a session ends, before force-killing it. Raise the value if the child’s own `SessionEnd` hooks need more time. |
 | `--startup-timeout-min <n>` | `SELF_HOSTED_RUNNER_STARTUP_TIMEOUT_MS` | `15` | How long to wait on a child process that hasn’t initialized before releasing the session’s slot. See [Session startup timeout](#session-startup-timeout) for where the count starts and which sessions it leaves running. `0` disables the timeout. |
 | `--trust-workspace [bool]` | `SELF_HOSTED_RUNNER_TRUST_WORKSPACE` | on | Seed persisted trust for each session’s repository paths so repo-committed `permissions.allow` and `additionalDirectories` are honored. Set `false` to drop repo-committed permission grants and configure allow rules in the host config’s `settings.json` instead; repository-committed `sandbox.*` settings still apply either way, which is why the [repo-settings guard](self-hosted-environments-deploy.md#harden-your-deployment) scans them regardless of this flag. |
-| `--use-anthropic-git-proxy` | `CLAUDE_RUNNER_USE_GIT_PROXY=1` | off | Clone repositories on github.com via the [Anthropic git proxy](self-hosted-environments-deploy.md#use-the-anthropic-git-proxy) instead of customer-managed git auth. Requires `--capacity 1` and git 2.32 or later; the runner refuses to start otherwise. Supersedes the rewrite flags. |
+| `--use-anthropic-git-proxy` | `CLAUDE_RUNNER_USE_GIT_PROXY=1` | off | Clone repositories on github.com via the [Anthropic git proxy](self-hosted-environments-deploy.md#use-the-anthropic-git-proxy) instead of customer-managed git auth. Requires `--capacity 1` and git 2.32 or later; the runner refuses to start otherwise. Also requires Claude Code v2.1.267 or later. Supersedes the rewrite flags. |
 
 Most duration flags have a maximum, chosen to keep each timeout inside the runtime’s 32-bit timer ceiling of roughly 24.85 days. The `--*-min` flags cap at 10080 minutes, 7 days; `--drain-grace-sec` at 604800 seconds, also 7 days; and `--drain-wait-sec` at 86400 seconds, 24 hours. `--session-stop-grace-sec` and `--post-session-hook-timeout-sec` are uncapped. Overrunning a cap behaves differently per surface:
 
@@ -169,6 +169,7 @@ These runner settings are read from the environment only and cover behavior most
 | `SELF_HOSTED_RUNNER_MAX_LIFETIME_GRACE_MS` | `900000` | How long the runner waits after a session reaches its `--kill-session-after-min` limit, for a running turn to finish or the release to complete, before it terminates the session |
 | `SELF_HOSTED_RUNNER_POST_TURN_SETTLE_MS` | `7000` | Cap on how long the runner counts a session as busy for the `--drain-wait-sec` drain after a turn finishes, while the session’s process reports the turn’s end to Anthropic. `0` or an unusable value falls back to the default, so the hold can’t be turned off. Requires Claude Code v2.1.275 or later. |
 | `SELF_HOSTED_RUNNER_SIGKILL_GRACE_MS` | `30000` | How long the runner waits for the OS to deliver `SIGKILL` to a child stuck in uninterruptible I/O before exiting itself. Floored at `--post-session-hook-timeout-sec` plus 15 seconds, and 30 more when `--push-outcome-on-release` is set, so the effective minimum is 75 seconds at defaults. |
+| `CLAUDE_RUNNER_DISABLE_RENEWAL_WARNING` | unset | When `1`, the runner doesn’t post `The server has refused to renew this session's access to the model` in a session. After each refusal, it waits until the next scheduled renewal to ask again. Requires Claude Code v2.1.319 or later. |
 | `CLAUDE_RUNNER_FETCH_DEPTH` | `50` | Git fetch depth for fresh clones. Set a positive integer, or `full` or `0` for a complete fetch. For a clone that’s already in the workspace, see [Reuse a pre-warmed checkout](self-hosted-environments-deploy.md#reuse-a-pre-warmed-checkout). |
 | `CLAUDE_RUNNER_FETCH_SERVER_PROGRESS_CAP_MS` | `600000` | How long in milliseconds, per attempt, a git fetch may wait for its first data while the git server’s own progress numbers keep rising, as when the server prepares the pack for a large repository. `0` or `off` turns the wait off: such a fetch is then cut off after two minutes without data. Any other whole number is clamped to between `120000` and `1800000`, 2 to 30 minutes. Requires Claude Code v2.1.295 or later. |
 | `CLAUDE_RUNNER_SKIP_GIT_VERIFY` | unset | When `1`, skip the `.git` presence check after a `checkout` hook runs. Set this when your hook materializes a non-git source. |
@@ -180,14 +181,14 @@ These runner settings are read from the environment only and cover behavior most
 
 Telemetry
 
-Session children send operational telemetry to Anthropic unless you turn it off. No code or repository content is sent. Set telemetry variables on the runner process; the runner re-asserts them after applying server-provided environment variables, so the operator’s setting always takes precedence. One control is specific to self-hosted environments: `CLAUDE_CODE_BYOC_ENABLE_DATADOG=1` opts in to Datadog operational metrics, which are off by default in self-hosted environments. The general Claude Code telemetry controls, `DISABLE_TELEMETRY`, `DO_NOT_TRACK`, `DISABLE_ERROR_REPORTING`, and `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`, apply to session children as documented in the [environment variable reference](../02-Claude-Code-CLI/env-vars.md). `DISABLE_GROWTHBOOK` is related but different: setting `DISABLE_GROWTHBOOK=1` disables feature-flag fetching, and telemetry stays on unless `DISABLE_TELEMETRY` is also set. `CLAUDE_CODE_ENABLE_TELEMETRY` is unrelated: it enables OpenTelemetry export to your own collector, as described in [Monitoring](monitoring-usage.md), and doesn’t control Anthropic’s analytics.
+Session children send operational telemetry to Anthropic unless you turn it off. No code or repository content is sent. Set telemetry variables on the runner process; the runner re-asserts them after applying server-provided environment variables, so the operator’s setting always takes precedence. One control is specific to self-hosted environments: `CLAUDE_CODE_BYOC_ENABLE_DATADOG=1` opts in to Datadog operational metrics, which are off by default in self-hosted environments. The general Claude Code telemetry controls, `DISABLE_TELEMETRY`, `DO_NOT_TRACK`, `DISABLE_ERROR_REPORTING`, and `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC`, apply to session children as documented in the [environment variable reference](../02-Claude-Code-CLI/env-vars.md). [`CLAUDE_CODE_DISABLE_FEATURE_FLAGS`](../02-Claude-Code-CLI/env-vars.md#variables) is related but different: setting `CLAUDE_CODE_DISABLE_FEATURE_FLAGS=1` disables feature-flag fetching, and telemetry stays on unless `DISABLE_TELEMETRY` is also set. `CLAUDE_CODE_DISABLE_FEATURE_FLAGS` requires Claude Code v2.1.319 or later. `CLAUDE_CODE_ENABLE_TELEMETRY` is unrelated: it enables OpenTelemetry export to your own collector, as described in [Monitoring](monitoring-usage.md), and doesn’t control Anthropic’s analytics.
 
 
 [​](#health-endpoint)
 
 Health endpoint
 
-The runner serves `GET /healthz` on the configured health port. The response is `200 OK` whenever the process is alive, whatever state the poll loop is in, so an HTTP probe on this endpoint detects a dead process only. The JSON body describes current state:
+The runner serves `GET /healthz` on the configured health port once it has registered and finished its startup checks. From then on, the response is `200 OK` whenever the process is alive, whatever state the poll loop is in, so an HTTP probe on this endpoint detects a dead process only. The JSON body describes current state:
 
 ```python
 {

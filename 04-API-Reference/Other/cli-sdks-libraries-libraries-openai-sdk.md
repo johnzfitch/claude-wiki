@@ -2,7 +2,7 @@
 title: "OpenAI SDK compatibility - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/libraries/openai-sdk"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:36:56Z"
+fetched_at: "2026-11-13T06:34:59Z"
 tags: ["api", "sdk"]
 ---
 
@@ -23,8 +23,11 @@ OpenAI SDK compatibility
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
 
 
 
@@ -101,6 +104,7 @@ Here are the most substantial differences from using OpenAI:
 - `response_format` accepts only `json_schema` with `strict: true`. A request that sets `json_object` or `text` returns a 400 error.
 - Audio and file inputs are not supported. A request that includes an `input_audio` or `file` content part returns a 400 error.
 - Prompt caching is not supported, but it is supported in the [Anthropic SDKs](cli-sdks-libraries-overview.md).
+- The API doesn’t emit [OpenTelemetry spans](manage-claude-opentelemetry.md) for requests through the compatibility layer. To get these spans, use the native Claude API.
 - System/developer messages are hoisted and concatenated into the top-level `system` field, wherever they appear in the conversation. To add system instructions partway through a conversation, use [mid-conversation system messages](../Guides/build-with-claude-mid-conversation-system-messages.md) in the native Claude API.
 - Depending on the model, text generated for a request that sets `temperature` or `top_p` to a value other than the Claude API’s default might not carry the [text watermark](../Guides/build-with-claude-text-watermark.md#sampling-settings). If you rely on the watermark, omit both parameters.
 
@@ -171,7 +175,7 @@ Rate limits follow Anthropic’s [standard limits](../Endpoints/rate-limits.md) 
 | `stream_options` | Fully supported |
 | `top_p` | Passed through to the model. Claude 4.7 and later models and Claude Mythos Preview return a 400 error for any value other than `0.99`, the default, so omit it. A request that sets both `temperature` and `top_p` also returns a 400 error. See [Using the Messages API](../Guides/build-with-claude-working-with-messages.md). |
 | `parallel_tool_calls` | Fully supported |
-| `tool_choice` | Supported with limits. `"required"` and a named function force a tool call. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 don’t support forced tool use and return a 400 error, so use `"auto"` on those models. See [Forcing tool use](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). |
+| `tool_choice` | Supported with limits. `"required"` and a named function force a tool call. Some models return a 400 error for forced tool use: Claude Fable 5.2, Claude Mythos 5.2, Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1. Use `"auto"` on those models. See [Forcing tool use](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). |
 | `stop` | All non-whitespace stop sequences work |
 | `temperature` | Between 0 and 1 (inclusive). Values greater than 1 are capped at 1. On Claude 4.7 and later models and Claude Mythos Preview, any value below 1 returns a 400 error, so omit it. See [Using the Messages API](../Guides/build-with-claude-working-with-messages.md). |
 | `n` | Must be exactly 1. Any other value returns a 400 error. |
@@ -193,7 +197,7 @@ Rate limits follow Anthropic’s [standard limits](../Endpoints/rate-limits.md) 
 
 #### `tools` / `functions` fields
 
-### Show fields
+### Show fields
 
 Tools
 
@@ -227,7 +231,7 @@ OpenAI has deprecated the `functions` field and recommends using `tools` instead
 
 #### `messages` array fields
 
-### Show fields
+### Show fields
 
 Developer role
 
@@ -364,12 +368,16 @@ If your code reads or sets headers directly, the following table shows how the C
 
 ## Availability
 
-OpenAI SDK compatibility is available on every model.
+OpenAI SDK compatibility
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Claude API
 
-- Claude API
+API  
+- Messages API
+
+Models  
+- All models

@@ -2,7 +2,7 @@
 title: "Usage and Cost Analytics API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-07T06:23:55Z"
+fetched_at: "2026-11-15T06:23:21Z"
 tags: ["api", "enterprise"]
 ---
 
@@ -20,7 +20,7 @@ Query token usage and cost for your Claude Console or Claude Enterprise organiza
 
 
 
-**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
+**The Admin API isn’t available to organizations on the claude.ai Team plan or to individual Claude Console accounts.** If your company also has a Claude Console organization, you can use the API with that organization; see [Create an Admin API key](manage-claude-admin-api-keys.md). An individual Console account must first set up an organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
 
 The Usage and Cost Analytics API reports historical token usage and cost for your organization, broken down by the dimensions you choose, such as model, workspace, API key, or the user or service account behind each request. For Claude Console organizations, this data is similar to what the [Usage](playground.md) and [Cost](playground.md) pages of the Claude Console show.
 
@@ -158,7 +158,7 @@ The response has one row for each model and day that has usage, largest `total_t
 
 If you’re building an integration, set your User-Agent header to help Anthropic understand usage patterns:
 
-``` block
+```
 User-Agent: YourApp/1.0.0 (https://yourapp.com)
 ```
 

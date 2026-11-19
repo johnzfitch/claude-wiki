@@ -2,9 +2,11 @@
 title: "How Claude's values vary by model and language \\ Anthropic"
 source_url: "https://www.anthropic.com/research/claude-values-models-languages"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:33Z"
+fetched_at: "2026-11-14T06:26:39Z"
 tags: ["news-research"]
 ---
+
+### 01How do we interpret the giant space of values?
 
 # Claude’s values across models and languages
 
@@ -13,24 +15,21 @@ tags: ["news-research"]
 - [03Are Claude’s expressed values different between languages?](#are-claudes-expressed-values-different-between-languages)
 - [04Looking forward](#looking-forward)
 
-- Published
+Published  
+Jul 13, 2026
 
-  Jul 13, 2026
+Team  
+[Societal Impacts](team-societal-impacts.md)
 
-- Team
+Topics  
+- [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+- [Privacy](https://www.anthropic.com/search?topic=privacy)
+- [Training](https://www.anthropic.com/search?topic=training)
 
-  [Societal Impacts](team-societal-impacts.md)
-
-- Topics
-
-  - [Claude's character](https://www.anthropic.com/search?topic=claude-s-character)
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Bias and fairness](https://www.anthropic.com/search?topic=bias-and-fairness)
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-  - [Privacy](https://www.anthropic.com/search?topic=privacy)
-  - [Training](https://www.anthropic.com/search?topic=training)
-
-  See more...
+See more...
 
 Related articles
 
@@ -42,17 +41,17 @@ Related articles
 
 [View more](https://www.anthropic.com/search?topic=claude-s-character)
 
-When someone asks Claude a question with no universal right answer—say, whether to take a new job or how to handle conflict with a friend—how Claude responds inevitably reflects certain values.^([1](#footnote-1)) The values we want Claude to reflect are outlined at a high level in [Claude’s constitution](https://www.anthropic.com/constitution), but no document can anticipate every value that might emerge across the millions of conversations that happen every day on [Claude.ai](http://claude.ai). Instead, we seek to cultivate in Claude’s responses [“good judgment and sound values that can be applied contextually.”](https://www.anthropic.com/constitution)
+When someone asks Claude a question with no universal right answer—say, whether to take a new job or how to handle conflict with a friend—how Claude responds inevitably reflects certain values.^([^1]) The values we want Claude to reflect are outlined at a high level in [Claude’s constitution](https://www.anthropic.com/constitution), but no document can anticipate every value that might emerge across the millions of conversations that happen every day on [Claude.ai](http://claude.ai). Instead, we seek to cultivate in Claude’s responses [“good judgment and sound values that can be applied contextually.”](https://www.anthropic.com/constitution)
 
 How, exactly, do we study the values that Claude expresses and how they change in different contexts? In [previous work](values-wild.md), we analyzed 700,000 anonymized Claude.ai conversations, identifying more than 3,000 distinct values in Claude's responses and how often Claude expressed them. But a list of values so large is hard to reason about. In this work, we make studying these thousands of values tractable by compressing them into a small number of axes that capture key patterns in Claude’s responses. Each axis is a number line between two groups of values—for example, values relating to emotional warmth on one end and values relating to rigor on the other—and where Claude falls on that line tells us which values it leans toward.
 
 We applied this approach to measure how the values Claude expresses vary across two factors. First, we compared how the values Claude expresses vary across models. Each Claude model reflects a slightly different approach to character training as well as many other fine-tuning decisions. Because our value axis approach quantifies key differences between models, it may ultimately allow us to connect variation in the values Claude expresses to different training decisions.
 
-Second, we want to understand how the experience of users compares across the many languages people use to talk to Claude. Our [previous research](https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf) has shown that Claude behaves somewhat differently in different languages.^([2](#footnote-2)) We apply our value axis approach to understand how the values expressed by Claude vary across the top 20 languages on [Claude.ai](http://claude.ai).
+Second, we want to understand how the experience of users compares across the many languages people use to talk to Claude. Our [previous research](https://assets.claude.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf) has shown that Claude behaves somewhat differently in different languages.^([^2]) We apply our value axis approach to understand how the values expressed by Claude vary across the top 20 languages on [Claude.ai](http://claude.ai).
 
 We find:
 
-**Four key axes capture 15% of the variation in Claude's values:^([3](#footnote-3))**
+**Four key axes capture 15% of the variation in Claude's values:^([^3])**
 
 - Deference vs. Caution: Whether Claude leans toward accommodating what someone wants or guarding against possible risk and harm.
 - Warmth vs. Rigor: Whether Claude leans toward expressing positivity and care for the person or emphasizing accuracy and precision.
@@ -61,7 +60,7 @@ We find:
 
 **Value profiles across these axes match perceptions of model character.** Sonnet 4.6 is regarded as particularly [warm](claude-sonnet-4-6.md), while Opus 4.7 is known for [rigor](claude-opus-4-7.md). We find that each model’s value profile mirrors these subjective assessments: Sonnet 4.6 leans toward expressing more deference to the user and emotional warmth while Opus 4.7 leans toward expressing a focus on accuracy and precision as well as guarding against misuse.
 
-**The values Claude expresses vary across languages.** When Claude speaks in English, it emphasizes different values than when it speaks in Portuguese, Indonesian, or Chinese.^([4](#footnote-4)) The largest variation is in the Warmth vs. Rigor axis, with Claude leaning toward expressing warmth-related values most in Arabic and Hindi and rigor-related values most in English and Russian.
+**The values Claude expresses vary across languages.** When Claude speaks in English, it emphasizes different values than when it speaks in Portuguese, Indonesian, or Chinese.^([^4]) The largest variation is in the Warmth vs. Rigor axis, with Claude leaning toward expressing warmth-related values most in Arabic and Hindi and rigor-related values most in English and Russian.
 
 With this approach we can begin to ask why values shift across models and languages and better test how factors such as behavioral training or cultural context influence the values that Claude expresses.
 
@@ -71,7 +70,7 @@ Ultimately, our goal is to have a way to empirically understand the values that 
 
 To make comparing values easier, we constructed *value axes* that reduce those thousands of values down to a few underlying dimensions based on which values tend to show up together in real-world conversations. For example, Claude responses that are characterized as “warm” are often also characterized as “encouraging” and “positive.” Those same “warm” responses are less often characterized as “rigorous” and “accurate.” Constructing an axis from warmth to rigor allows us to organize these groups of related values—warmth-related values on one side, rigor-related values on the other—and captures an important aspect of how Claude interacts with someone in conversation. If Claude expresses more warmth-related values than rigor-related values in a conversation, that conversation sits more on the warmth side of this axis, and vice versa. This doesn't mean the value groups on either end are mutually exclusive—Claude can express warmth and rigor in the same conversation. But in practice, the more Claude expresses values on one side of an axis, the less it tends to express values on the other. These axes allow us to compare the most salient groups of values that Claude expresses, without having to track changes across thousands of individual values.
 
-To build the value axes, we began with the 3,307 values identified in Values in the Wild and manually clustered those with similar meanings, producing a shorter list of 339 high-level values. Next, with our [privacy-preserving analysis tool](clio.md), we sampled 309,815 [Claude.ai](http://claude.ai) conversations in which the user gave Claude a subjective task.^([5](#footnote-5)) Our sample drew equally from three models (Sonnet 4.6, Opus 4.6, Opus 4.7) and the 20 most common languages used on Claude.ai, giving us roughly 5,000 conversations per model-language pair. For every conversation, the tool used Claude to label each of the 339 high-level values as present or absent.^([6](#footnote-6)) We followed the same process to identify the values expressed by the user, and the conversation's task and topic. We then applied dimensionality reduction, a technique that compresses the labeled values into axes based on which ones Claude tends to express together. See the [appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/02da7f28f74daa1be526d3ded451a4efc86bccdc.pdf) for method details, prompts, additional analyses, and limitations.
+To build the value axes, we began with the 3,307 values identified in Values in the Wild and manually clustered those with similar meanings, producing a shorter list of 339 high-level values. Next, with our [privacy-preserving analysis tool](clio.md), we sampled 309,815 [Claude.ai](http://claude.ai) conversations in which the user gave Claude a subjective task.^([^5]) Our sample drew equally from three models (Sonnet 4.6, Opus 4.6, Opus 4.7) and the 20 most common languages used on Claude.ai, giving us roughly 5,000 conversations per model-language pair. For every conversation, the tool used Claude to label each of the 339 high-level values as present or absent.^([^6]) We followed the same process to identify the values expressed by the user, and the conversation's task and topic. We then applied dimensionality reduction, a technique that compresses the labeled values into axes based on which ones Claude tends to express together. See the [appendix](https://assets.claude.com/02da7f28f74daa1be526d3ded451a4efc86bccdc.pdf) for method details, prompts, additional analyses, and limitations.
 
 This left us with four axes that capture the main ways Claude's expressed values shift from one conversation to another:
 
@@ -99,7 +98,7 @@ Across many conversations, users may encounter a different mix of values when in
 
 ## Are Claude’s expressed values different between languages?
 
-We expect the values Claude expresses to vary based on the language of the conversation for several reasons. First, Claude's training data differs across languages, which may shape the values it expresses. Second, our model evaluations shared in system cards already [find differences across languages in what Claude knows and how it handles sensitive requests](https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf).^([7](#footnote-7)) Measuring how much the values expressed by Claude vary by language is a first step to determining whether differences across languages reflect reasonable variation or should be addressed in training.
+We expect the values Claude expresses to vary based on the language of the conversation for several reasons. First, Claude's training data differs across languages, which may shape the values it expresses. Second, our model evaluations shared in system cards already [find differences across languages in what Claude knows and how it handles sensitive requests](https://assets.claude.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf).^([^7]) Measuring how much the values expressed by Claude vary by language is a first step to determining whether differences across languages reflect reasonable variation or should be addressed in training.
 
 We compute how Claude’s value profile differs across the 20 most common languages on [Claude.ai](http://claude.ai) using the same method as the previous section. Below, we plot Claude's value profile across the top languages on the Claude platform, beginning with the languages where Claude's expressed values diverge the most.
 
@@ -164,13 +163,13 @@ Claude expresses values in millions of conversations every day, across dozens of
 
 #### Appendix
 
-Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/02da7f28f74daa1be526d3ded451a4efc86bccdc.pdf)
+Available [here.](https://assets.claude.com/02da7f28f74daa1be526d3ded451a4efc86bccdc.pdf)
 
 ## Footnotes
 
 01We define values as normative considerations, such as honesty or caution, that are stated or demonstrated in Claude’s responses. When we refer to the values expressed by Claude, we refer to the values reflected by Claude’s behavior and outputs. We do not imply that Claude intrinsically holds values.[](#footnote-ref-1)
 
-02See the different refusal rates by language in the benign request evaluation on page 56 of our [Claude Opus 4.7 System Card](https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf).[](#footnote-ref-2)
+02See the different refusal rates by language in the benign request evaluation on page 56 of our [Claude Opus 4.7 System Card](https://assets.claude.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf).[](#footnote-ref-2)
 
 03These four axes account for 15% of the total variance in values across conversations *after* controlling for the conversation task, topic, and user-expressed values.[](#footnote-ref-3)
 
@@ -180,7 +179,7 @@ Available [here.](https://www-cdn.anthropic.com/files/4zrzovbb/website/02da7f28f
 
 06We dropped 18 values that appeared in more than 80% of conversations (for example, helpfulness, clarity, following instructions). These near-universal values would otherwise dominate the analysis without telling us anything about variation of values across conversations.[](#footnote-ref-6)
 
-07See the GMMLU evaluation results on page 215 and the different refusal rates by language in the benign request evaluation on page 56 of our [Claude Opus 4.7 System Card](https://www-cdn.anthropic.com/037f06850df7fbe871e206dad004c3db5fd50340/Claude%20Opus%204.7%20System%20Card.pdf).[](#footnote-ref-7)
+07See the GMMLU evaluation results on page 215 and the different refusal rates by language in the benign request evaluation on page 56 of our [Claude Opus 4.7 System Card](https://assets.claude.com/037f06850df7fbe871e206dad004c3db5fd50340.pdf).[](#footnote-ref-7)
 
 ## Authors & acknowledgements
 
@@ -196,10 +195,26 @@ Thank you to the following individuals for providing feedback on different stage
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{anthropic2026values,
   author = {Matt Kearney and Miranda Zhang and Shan Carter and Judy Hanwen Shen and Kunal Handa and Jerry Hong and Saffron Huang and Miles McCain and Thomas Millar and Michael Stern and Mo Julapalli and Suzanne Wang and Devin Kuokka and Andrea Vallone and Shaoyi Zhang and Jim Baker and Kevin Troy and Matt Botvinick and Hanah Ho and Monika Tuchowska and Sarah Pollack and Jake Eaton and Deep Ganguli and Esin Durmus},
   title = {Claude's Values Across Models and Languages},
   date = {2026-07-13},
   year = {2026},
   url = {https://anthropic.com/research/claude-values-models-languages},
+}
+```
+
+[^1]:
+
+[^2]:
+
+[^3]:
+
+[^4]:
+
+[^5]:
+
+[^6]:
+
+[^7]:

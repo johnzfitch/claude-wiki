@@ -2,7 +2,7 @@
 title: "Teach Claude your way of working using skills · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-08T06:25:15Z"
+fetched_at: "2026-11-18T06:27:56Z"
 tags: ["claude-ai", "skills"]
 ---
 
@@ -34,9 +34,9 @@ You have tasks where you've figured out what works—a way of structuring report
 
 What you get out of Claude is mostly decided by what you put in. Your format, your standards, and your examples are the most valuable context you can give it, so they're worth writing down once, properly, instead of reconstructing from memory in every chat.
 
-**Before skills:** You ask Claude to create a quarterly business review. Claude can already build presentations, but making them match your standards means explaining your preferences each time. You could document guidelines in a Project, but they don't automatically apply when you need them.
+**Before skills:** You ask Claude to create a quarterly business review. Claude can already build presentations, but making them match your standards means explaining your preferences each time. You could document guidelines in a Project, but they apply only inside that Project.
 
-**With skills:** After creating a QBR skill, you ask for the same presentation. Just by mentioning a task related to an existing skill’s name or purpose, Claude can recognize it. In this case, Claude will load your QBR skill. In Claude’s thinking you’ll see “Reading QBR skill”. It automatically applies your brand guidelines and preferred structure, generating a deck that matches your standards from the start.
+**With skills:** After creating a QBR skill, you ask for the same presentation. Just by mentioning a task related to an existing skill’s name or purpose, Claude can recognize it. In this case, Claude will load your QBR skill. If you open the steps Claude took, you’ll see one that loads the skill. Claude automatically applies your brand guidelines and preferred structure, generating a deck that matches your standards from the start.
 
 ## Where Skills fit into how you work with Claude[](#where-skills-fit-into-how-you-work-with-claude)
 
@@ -93,9 +93,9 @@ Even occasional work might require gathering multiple files or tools, explaining
 
 ## Ready to create a skill?[](#ready-to-create-a-skill)
 
-Skills are available on Free, Pro, Max, Ultra, Team, and Enterprise plans. They also need **Code execution and file creation** turned on, since Skills run in Claude’s secure sandboxed computing environment. On Free, Pro, Max, and Ultra plans, check that this setting is enabled in `Settings` \> `Capabilities`. On Team and Enterprise plans, an organization Owner controls both this setting and Skills in `Organization settings` \> `Plugins & skills`, on the `Policy` tab.
+Skills are available on Free, Pro, Max, Ultra, Team, and Enterprise plans. They also need **Create and edit files** (also called **Code execution and file creation**) turned on, since Skills run in Claude’s secure sandboxed computing environment. On Free, Pro, Max, and Ultra plans, check that this setting is enabled in [Settings(opens in new tab)](https://claude.ai/settings/capabilities). On Team and Enterprise plans, an organization Owner controls both this setting and Skills. To find the two switches, an Owner can open Organization settings, search for “Skills” and click the first result.
 
-To get started, open [Customize \> Skills(opens in new tab)](https://claude.ai/customize/skills) and add a pre-built skill from `Discover`. From there, when you describe a task to Claude that references a skill’s name or description, Claude recognizes it and loads the skill automatically.
+To get started, [add a pre-built skill(opens in new tab)](https://claude.ai/customize/skills). From there, when you describe a task to Claude that references a skill’s name or description, Claude recognizes it and loads the skill automatically.
 
 Learn how to write your own [custom skills(opens in new tab)](https://support.claude.com/en/articles/12512198-creating-custom-skills), incorporating guidance from our [skills best practices(opens in new tab)](../04-API-Reference/Agents-Tools/agents-and-tools-agent-skills-best-practices.md) to understand the principles that make skills most effective.
 
@@ -121,7 +121,7 @@ Create a skill for my weekly team update. The format: three sections, wins, bloc
 
 A skill starts saving you time once you've tested it. Open a new conversation and ask for the task the way you normally would, such as "draft this week's team update from these notes". Two checks tell you whether it worked:
 
-1.  In Claude's thinking, look for "Reading \[your skill's name\]". If it isn't there, the task you described didn't match your skill's name or description, so adjust one of them, or mention the skill by name, and try again.
+1.  Open the steps Claude took and look for one that loads your skill. If it isn't there, the task you described may not have matched your skill's name or description, so adjust one of them, or mention the skill by name, and try again.
 2.  Put the result next to the example you pasted into the skill. Same structure? Same register? Anything you'd still fix by hand is a line worth sharpening in the skill itself.
 
 The habit worth keeping goes beyond skills themselves: whenever you hand Claude work that matters, name the format, the tone, and an example of what good looks like. When you catch yourself naming the same three things for the same task twice, that's your cue to package them into a skill.

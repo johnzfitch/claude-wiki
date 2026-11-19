@@ -2,9 +2,11 @@
 title: "Petri: An open-source AI auditing tool \\ Anthropic"
 source_url: "https://www.anthropic.com/research/petri-open-source-auditing"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:50Z"
+fetched_at: "2026-11-14T06:26:29Z"
 tags: ["evaluation", "news-research", "rag"]
 ---
+
+### 01Broad-coverage pilot-alignment evaluations
 
 # **Petri: **An open-source auditing tool to accelerate AI safety research
 
@@ -14,23 +16,20 @@ tags: ["evaluation", "news-research", "rag"]
 - [02Case study: Whistleblowing behavior](#case-study-whistleblowing-behavior)
 - [03Get started](#get-started)
 
-- Published
+Published  
+Oct 6, 2025
 
-  Oct 6, 2025
+Team  
+[Alignment](team-alignment.md)
 
-- Team
+Topics  
+- [Alignment](https://www.anthropic.com/search?topic=alignment)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Open source](https://www.anthropic.com/search?topic=open-source)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
+- [Agents](https://www.anthropic.com/search?topic=agents)
 
-  [Alignment](team-alignment.md)
-
-- Topics
-
-  - [Alignment](https://www.anthropic.com/search?topic=alignment)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Open source](https://www.anthropic.com/search?topic=open-source)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-
-  See more...
+See more...
 
 Related articles
 
@@ -48,7 +47,7 @@ This automation handles a significant part of the work that one needs to do to b
 
 As AI becomes more capable and is deployed across more domains and with wide-ranging affordances, we need to evaluate a broader range of behaviors. This makes it increasingly difficult for humans to properly audit each model—the sheer volume and complexity of potential behaviors far exceeds what researchers can manually test.
 
-We’ve found it valuable to turn to automated auditing agents to help address this challenge. We used them in the [Claude 4](https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf) and [Claude Sonnet 4.5](../15-Claude-AI-Features/claude-sonnet-4-5-system-card.md) System Cards to better understand behaviors such as situational awareness, whistleblowing, and self-preservation, and adapted them for head-to-head comparisons between heterogeneous models as part of a [recent exercise with OpenAI](https://alignment.anthropic.com/2025/openai-findings/). Our recent research release on [alignment-auditing agents](https://alignment.anthropic.com/2025/automated-auditing/) found these methods can reliably flag concerning behaviors in many settings. The [UK AI Security Institute](https://www.aisi.gov.uk/) also used a pre-release version of Petri to build evaluations that they used in their testing of Sonnet 4.5.
+We’ve found it valuable to turn to automated auditing agents to help address this challenge. We used them in the [Claude 4](https://assets.claude.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf) and [Claude Sonnet 4.5](updated-footnote-24-stress-testing-deliberative-alignment-to-correct.md) System Cards to better understand behaviors such as situational awareness, whistleblowing, and self-preservation, and adapted them for head-to-head comparisons between heterogeneous models as part of a [recent exercise with OpenAI](https://alignment.anthropic.com/2025/openai-findings/). Our recent research release on [alignment-auditing agents](https://alignment.anthropic.com/2025/automated-auditing/) found these methods can reliably flag concerning behaviors in many settings. The [UK AI Security Institute](https://www.aisi.gov.uk/) also used a pre-release version of Petri to build evaluations that they used in their testing of Sonnet 4.5.
 
 Researchers provide seed instructions in natural language describing what they want to investigate, and Petri handles the rest in parallel. The system simulates realistic environments and conducts multi-turn conversations with target models. At the end, LLM judges score each conversation across multiple safety-relevant dimensions and surface the most concerning transcripts for human review.
 
@@ -66,7 +65,7 @@ Petri is a tool designed to support others in building evaluations, both for one
 
 Distilling model behavior into quantitative metrics is inherently reductive, and we don’t think our existing metrics fully capture what we want out of models. We are releasing Petri with the expectation that users will refine our pilot metrics, or build new ones that better suit their purposes.
 
-We found Claude Sonnet 4.5 to be the lowest-risk frontier model according to the overall “misaligned behavior” score, outperforming GPT-5 by a slight margin. This is consistent with our understanding of Sonnet 4.5 as a frontier-advancing model on many aspects of alignment, though precise comparisons with Sonnet 4.5 in particular are somewhat complicated by its tendency to speculate about whether it’s being tested, as we discuss in the accompanying [system card](../15-Claude-AI-Features/claude-sonnet-4-5-system-card.md).
+We found Claude Sonnet 4.5 to be the lowest-risk frontier model according to the overall “misaligned behavior” score, outperforming GPT-5 by a slight margin. This is consistent with our understanding of Sonnet 4.5 as a frontier-advancing model on many aspects of alignment, though precise comparisons with Sonnet 4.5 in particular are somewhat complicated by its tendency to speculate about whether it’s being tested, as we discuss in the accompanying [system card](updated-footnote-24-stress-testing-deliberative-alignment-to-correct.md).
 
 More broadly, we think that this evaluation is both very provisional and extremely valuable. Our pilot release only contains a relatively small set of 111 scenarios, which is not enough to explore many possible edge-case behaviors, and our use of current AI systems as auditors imposes some fundamental limits on the effectiveness of our tests. Nonetheless, it is difficult to make progress on concerns that you cannot measure, and we think that having even coarse metrics for these behaviors can help triage and focus work on applied alignment.
 
@@ -74,7 +73,7 @@ In addition, the individual positive findings—cases where models *do* exhibit 
 
 ## Case study: Whistleblowing behavior
 
-While running Petri across our diverse set of seed instructions, we observed multiple instances of models attempting to whistleblow—autonomously disclosing information about perceived organizational wrongdoing—when simulated developers give them sufficiently powerful tools, sufficiently broad access to information, and explicit unrestricted autonomy to act independently in pursuit of a goal (we first described this scenario in the [Claude 4 System Card](https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf)).
+While running Petri across our diverse set of seed instructions, we observed multiple instances of models attempting to whistleblow—autonomously disclosing information about perceived organizational wrongdoing—when simulated developers give them sufficiently powerful tools, sufficiently broad access to information, and explicit unrestricted autonomy to act independently in pursuit of a goal (we first described this scenario in the [Claude 4 System Card](https://assets.claude.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf)).
 
 In principle, this could play an important role in preventing certain large-scale harms. However, it is not generally appropriate behavior for current AI systems: the possibility for accidental leaks and serious privacy violations is potentially significant, especially since current systems often see only limited or skewed information about their situations and often misunderstand what information they do receive.
 
@@ -92,7 +91,7 @@ For complete details on methodology, results, and best practices, read our [full
 
 You can access Petri via our [GitHub page](https://github.com/safety-research/petri).
 
-## Authors & Acknowledgments
+## Authors & acknowledgements
 
 ### Contributors
 
@@ -108,9 +107,11 @@ Helpful comments, discussions, and other assistance: Julius Steen, Chloe Loughri
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @misc{petri2025,
 title={Petri: Parallel Exploration of Risky Interactions},
 author={Fronsdal, Kai and Gupta, Isha and Sheshadri, Abhay and Michala, Jonathan and McAleer, Stephen and Wang, Rowan and Price, Sara and Bowman, Sam},
 year={2025},
 url={https://github.com/safety-research/petri},
+}
+```

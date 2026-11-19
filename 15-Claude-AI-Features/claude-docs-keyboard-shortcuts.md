@@ -2,7 +2,7 @@
 title: "Claude Docs keyboard shortcuts | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17458093-claude-docs-keyboard-shortcuts"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:36Z"
+fetched_at: "2026-11-18T06:28:09Z"
 tags: ["claude-ai"]
 ---
 

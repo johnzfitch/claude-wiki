@@ -2,7 +2,7 @@
 title: "Webhooks - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/webhooks"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:26:57Z"
+fetched_at: "2026-11-14T06:24:53Z"
 tags: ["api", "hooks"]
 ---
 
@@ -26,7 +26,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/organizations/webhooks
 
-Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``webhooks-2026-10-07`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Create an organization webhook endpoint.
 
@@ -34,7 +34,7 @@ Create an organization webhook endpoint.
 
 GET/v1/organizations/webhooks
 
-Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``webhooks-2026-10-07`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the organization's webhook endpoints.
 
@@ -42,7 +42,7 @@ List the organization's webhook endpoints.
 
 GET/v1/organizations/webhooks/{webhook_endpoint_id}
 
-Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``webhooks-2026-10-07`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Retrieve an organization webhook endpoint by ID.
 
@@ -50,7 +50,7 @@ Retrieve an organization webhook endpoint by ID.
 
 POST/v1/organizations/webhooks/{webhook_endpoint_id}
 
-Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``webhooks-2026-10-07`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Update an organization webhook endpoint. Only the fields you send are changed.
 
@@ -58,7 +58,7 @@ Update an organization webhook endpoint. Only the fields you send are changed.
 
 DELETE/v1/organizations/webhooks/{webhook_endpoint_id}
 
-Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``webhooks-2026-10-07`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Delete an organization webhook endpoint.
 
@@ -66,7 +66,7 @@ Delete an organization webhook endpoint.
 
 POST/v1/organizations/webhooks/{webhook_endpoint_id}/regenerate_signing_secret
 
-Requires `anthropic-beta: ``webhooks-2026-10-07`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``webhooks-2026-10-07`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Replace an organization webhook endpoint's signing secret. The old secret stops working immediately. The new secret is returned only in this response.
 

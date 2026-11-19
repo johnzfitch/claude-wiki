@@ -2,7 +2,7 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/messages"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-06T06:27:11Z"
+fetched_at: "2026-11-14T06:25:00Z"
 tags: ["api"]
 ---
 
@@ -53,6 +53,18 @@ content: [MessageContentParam](https://platform.claude.com/docs/en/api/http/mess
 One of the following:
 
 role: "assistant"
+
+
+
+
+
+AvailableToolsLimitExceededErrorDetails object{ error_code }
+
+
+
+The tools available after a message exceed a limit on their number or their size.
+
+error_code: "available_tools_limit_exceeded"
 
 
 
@@ -3436,6 +3448,114 @@ One of the following:
 
 
 
+CompactionBlockAmbiguousErrorDetails object{ error_code }
+
+
+
+`messages` holds more than one `compaction` block with content. Send only the block the conversation returned last.
+
+error_code: "compaction_block_ambiguous"
+
+
+
+
+
+CompactionBlockMisplacedErrorDetails object{ error_code }
+
+
+
+The `compaction` block is not the first block of the conversation, or is in a `system` message.
+
+error_code: "compaction_block_misplaced"
+
+
+
+
+
+CompactionContentMismatchErrorDetails object{ error_code }
+
+
+
+The `compaction` block's `content` differs from the text its `signature` recorded.
+
+error_code: "compaction_content_mismatch"
+
+
+
+
+
+CompactionIncompleteTurnErrorDetails object{ error_code }
+
+
+
+The compaction request ends on an `assistant` turn that is not finished.
+
+error_code: "compaction_incomplete_turn"
+
+
+
+
+
+CompactionNothingToSummarizeErrorDetails object{ error_code }
+
+
+
+`messages` holds no `user` or `assistant` content to summarize or adopt.
+
+error_code: "compaction_nothing_to_summarize"
+
+
+
+
+
+CompactionSignatureInvalidErrorDetails object{ error_code }
+
+
+
+The `compaction` block's `signature` does not verify.
+
+error_code: "compaction_signature_invalid"
+
+
+
+
+
+CompactionTooManyToolReferencesErrorDetails object{ error_code }
+
+
+
+The conversation references more distinct tools than a `compaction` block can record.
+
+error_code: "compaction_too_many_tool_references"
+
+
+
+
+
+CompactionToolChangesMismatchErrorDetails object{ error_code }
+
+
+
+The `compaction` block's `tool_changes` differs from what was returned with the block.
+
+error_code: "compaction_tool_changes_mismatch"
+
+
+
+
+
+CompactionUnavailableErrorDetails object{ error_code }
+
+
+
+The compaction could not be completed for a transient server reason. Retry the request.
+
+error_code: "compaction_unavailable"
+
+
+
+
+
 ComputerCursorPositionConfig object{ defer_loading, enabled }
 
 
@@ -5073,7 +5193,7 @@ maxLength512
 
 
 
-Model = "claude-haiku-5-5" or "claude-sonnet-5-5" or "claude-fable-5-1" or 17 more or string
+Model = "claude-fable-5-2" or "claude-mythos-5-2" or "claude-haiku-5-5" or 19 more or string
 
 
 
@@ -6141,6 +6261,132 @@ The incremental `thinking` text for this content block. Concatenate the `thinkin
 
 
 
+ThreadAlreadyContinuedErrorDetails object{ error_code }
+
+
+
+The response that `previous_message_id` names has already been continued, and each response can be continued only once. Continue from the Thread's most recent response `id`.
+
+error_code: "thread_already_continued"
+
+
+
+
+
+ThreadContinueInFlightErrorDetails object{ error_code }
+
+
+
+Another request is still continuing from the same `previous_message_id`. Wait for it to complete and continue from its response `id`, or replay the full conversation with `thread: {"type": "create"}`.
+
+error_code: "thread_continue_in_flight"
+
+
+
+
+
+ThreadFingerprintMismatchErrorDetails object{ error_code }
+
+
+
+A field that must stay the same across a Thread's turns differs from the value stored with the Thread; the message names each such field. Send the stored values, or replay the full conversation with `thread: {"type": "create"}` to change them.
+
+error_code: "thread_fingerprint_mismatch"
+
+
+
+
+
+ThreadNotFoundErrorDetails object{ error_code }
+
+
+
+No usable Thread state was found for `previous_message_id`. Replay the full conversation with `thread: {"type": "create"}` to start a new Thread.
+
+error_code: "thread_not_found"
+
+
+
+
+
+ThreadUnsupportedFeatureName = "cache_control" or "context_management" or "fallbacks" or 3 more
+
+
+
+One of the following:
+
+"cache_control"
+
+
+
+"context_management"
+
+
+
+"fallbacks"
+
+
+
+"hipaa"
+
+
+
+"inference_hooks"
+
+
+
+"thinking"
+
+
+
+
+
+ThreadUnsupportedRequestErrorDetails object{ error_code, unsupported }
+
+
+
+The request combines `thread` with a request field or an organization setting that Threads do not support; `unsupported`, when present, names it. Send the full conversation without `thread`, or change that field.
+
+error_code: "thread_unsupported_request"
+
+
+
+
+
+unsupported: optional array of [ThreadUnsupportedFeatureName](https://platform.claude.com/docs/en/api/http/messages#thread_unsupported_feature_name) or null
+
+
+
+Each entry names a request field or an organization setting that Threads do not support. On a value you do not recognize, send the full conversation without `thread`.
+
+One of the following:
+
+"cache_control"
+
+
+
+"context_management"
+
+
+
+"fallbacks"
+
+
+
+"hipaa"
+
+
+
+"inference_hooks"
+
+
+
+"thinking"
+
+
+
+
+
 Tool object{ type, input_schema, name, 7 more }
 
 
@@ -6247,6 +6493,18 @@ Defaults to `false`. If set to `true`, the model will output exactly one tool us
 
 
 
+ToolNameConflictErrorDetails object{ error_code }
+
+
+
+A tool made available in `messages` takes a name that an available tool of another kind, or of another MCP server, already holds.
+
+error_code: "tool_name_conflict"
+
+
+
+
+
 ToolReferenceBlock object{ type: "tool_reference", tool_name }
 
 
@@ -6329,6 +6587,18 @@ One of the following:
 
 
 "1h"
+
+
+
+
+
+ToolReferenceUnresolvedErrorDetails object{ error_code }
+
+
+
+A tool change or MCP tool listing references a tool or MCP server that is not defined at that position in the conversation.
+
+error_code: "tool_reference_unresolved"
 
 
 

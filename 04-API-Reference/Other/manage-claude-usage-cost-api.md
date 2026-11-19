@@ -2,7 +2,7 @@
 title: "Usage and Cost API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/usage-cost-api"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:05Z"
+fetched_at: "2026-11-13T06:35:05Z"
 tags: ["api"]
 ---
 
@@ -20,7 +20,7 @@ The legacy Admin API usage and cost report endpoints for Claude Console organiza
 
 
 
-**The Admin API is unavailable for individual accounts.** To collaborate with teammates and add members, set up your organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
+**The Admin API isn’t available to organizations on the claude.ai Team plan or to individual Claude Console accounts.** If your company also has a Claude Console organization, you can use the API with that organization; see [Create an Admin API key](manage-claude-admin-api-keys.md). An individual Console account must first set up an organization on the [Organization](playground.md) page (`platform.claude.com/settings/organization`) in the Claude Console.
 
 
 
@@ -145,7 +145,7 @@ Track token consumption across your organization with detailed breakdowns by mod
 - **Filtering & grouping:** Filter by API key, workspace, model, service tier, context window, [data residency](manage-claude-data-residency.md), or speed, and group results by these dimensions.
 - **Server tool usage:** Track usage of server-side tools such as web search.
 
-For complete parameter details and response schemas, see the [Usage API reference](../Admin/beta-organization-usage-report-retrieve-messages.md).
+For complete parameter details and response schemas, see the [Usage API reference](../Admin/beta-organization-usage-report-retrieve-messages.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 ### Basic examples
 
@@ -204,9 +204,9 @@ bucket_width=1d" \
 
 
 
-To retrieve your organization’s API key IDs, use the [List API Keys](../Endpoints/organization-api-keys-list.md) endpoint.
+To retrieve your organization’s API key IDs, use the [List API Keys](../Endpoints/organization-api-keys-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint.
 
-To retrieve your organization’s workspace IDs, use the [List Workspaces](../Endpoints/organization-workspaces-list.md) endpoint, or find your organization’s workspace IDs in the Claude Console.
+To retrieve your organization’s workspace IDs, use the [List Workspaces](../Endpoints/organization-workspaces-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. endpoint, or find your organization’s workspace IDs in the Claude Console.
 
 #### Data residency
 
@@ -303,7 +303,7 @@ Retrieve service-level cost breakdowns in USD with the `/v1/organizations/cost_r
 - **Grouping:** Group costs by workspace or description for detailed breakdowns. When grouping by `description`, responses include parsed fields such as `model` and `inference_geo`.
 - **Time buckets:** Only daily granularity (`1d`) is available.
 
-For complete parameter details and response schemas, see the [Cost API reference](../Admin/beta-organization-cost-report-retrieve.md).
+For complete parameter details and response schemas, see the [Cost API reference](../Admin/beta-organization-cost-report-retrieve.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 
 

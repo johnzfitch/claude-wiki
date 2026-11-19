@@ -2,8 +2,8 @@
 title: "Test iOS apps in the simulator - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/desktop-ios-simulator"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-07T06:21:58Z"
-last_modified: "Sat, 07 Nov 2026 04:12:36 GMT"
+fetched_at: "2026-11-17T06:24:28Z"
+last_modified: "Tue, 17 Nov 2026 03:29:16 GMT"
 tags: ["claude-code", "desktop"]
 ---
 
@@ -21,6 +21,9 @@ Back to top
   - [Allow a device the first time](#allow-a-device-the-first-time)
   - [Actions that follow your permission mode](#actions-that-follow-your-permission-mode)
   - [Turn off simulator access](#turn-off-simulator-access)
+- [Test your app on an iPhone Duo](#test-your-app-on-an-iphone-duo)
+  - [Fold an iPhone Duo](#fold-an-iphone-duo)
+  - [Expect a prompt to export Xcode agent skills](#expect-a-prompt-to-export-xcode-agent-skills)
 - [Limitations](#limitations)
 - [Troubleshooting](#troubleshooting)
   - [The simulator pane doesn’t open when Claude runs the app](#the-simulator-pane-doesn%E2%80%99t-open-when-claude-runs-the-app)
@@ -37,14 +40,11 @@ Claude Code Desktop opens your app in the iOS Simulator pane when Claude builds,
 
 Copy pageCopy page
 
-The iOS Simulator pane is in public beta in Claude Code Desktop on macOS. It’s available on Pro, Max, Ultra, Team, and Enterprise plans, except in Enterprise organizations that have a HIPAA configuration enabled.
+The iOS Simulator pane is in public beta in Claude Code Desktop on macOS. It’s available on Pro, Max, Ultra, Team, and Enterprise plans, except in Enterprise organizations that have a HIPAA configuration enabled. It isn’t available if you use a [third-party provider](../02-Claude-Code-CLI/third-party-integrations.md).
 
 The iOS Simulator pane shows your app running in Apple’s iOS Simulator next to your conversation in Claude Code Desktop. When Claude builds, installs, launches, or checks your app in a simulator, the pane opens automatically and streams the device screen live. Use it to watch Claude run and test your app, or to tap through the app yourself while Claude keeps working. The simulator pane drives the simulator directly, so it doesn’t need [computer use](desktop.md#let-claude-use-your-computer) and never takes over your screen or hides your other windows. From the CLI, Claude reaches the iOS Simulator through [computer use](../02-Claude-Code-CLI/computer-use.md#test-a-simulator-flow) instead, which controls the simulator on your screen the same way you would with a mouse.
 
-
-[​](#requirements)
-
-Requirements
+## [](#requirements)Requirements
 
 The simulator pane uses Apple’s simulator tooling, which the desktop app doesn’t include. Before starting a session, make sure you have:
 
@@ -52,15 +52,13 @@ The simulator pane uses Apple’s simulator tooling, which the desktop app doesn
 - A Mac, since Apple’s iOS Simulator runs only on macOS
 - [Xcode](https://developer.apple.com/xcode/) with the iOS platform installed, which provides the simulator devices. If Xcode lists no simulators yet, see [The simulator pane says no simulators were found](#the-simulator-pane-says-no-simulators-were-found)
   - Xcode 26.x or Xcode 27 is recommended, and the pane works with either. If you have more than one Xcode installed, see [Choose which Xcode the simulator pane uses](#choose-which-xcode-the-simulator-pane-uses)
+  - To test on an iPhone Duo, you need Xcode 27.1 or later. See [Test your app on an iPhone Duo](#test-your-app-on-an-iphone-duo) for what else you need.
 
 On this page, “device” refers to a simulated iPhone or iPad, one of the same simulator devices you manage in Xcode under **Window → Devices and Simulators**, not physical hardware.
 
 The simulator pane is available in local sessions only. In [cloud](desktop.md#run-long-running-tasks-in-the-cloud) and [SSH](desktop.md#ssh-sessions) sessions, Claude runs on a machine that can’t reach the simulators on your Mac.
 
-
-[​](#choose-which-xcode-the-simulator-pane-uses)
-
-Choose which Xcode the simulator pane uses
+### [](#choose-which-xcode-the-simulator-pane-uses)Choose which Xcode the simulator pane uses
 
 If you have more than one Xcode installed, such as Xcode 26.x alongside Xcode 27, the pane uses whichever one `xcode-select` points at. To use a different install, select it by its path. For example, if the Xcode you want is installed as `/Applications/Xcode-26.4.app`, run this in Terminal:
 
@@ -70,10 +68,7 @@ sudo xcode-select -s /Applications/Xcode-26.4.app
 
 Then quit and reopen Claude Desktop so the pane uses the newly selected Xcode. To check which install is selected, run `xcode-select -p`. It prints the selected install’s Developer folder, such as `/Applications/Xcode-26.4.app/Contents/Developer`.
 
-
-[​](#run-your-app-in-the-simulator)
-
-Run your app in the simulator
+## [](#run-your-app-in-the-simulator)Run your app in the simulator
 
 You don’t need a command or setting to open the simulator pane. Claude opens it when it runs your app in a simulator.
 
@@ -101,10 +96,7 @@ When the app launches in a simulator, the iOS Simulator pane opens next to the c
 
 When your request is about seeing the app, for example “does the new screen look right?”, Claude starts a simulator before it begins the work. After Claude fixes a bug or changes a screen, ask it to verify the change. The simulator pane shows whichever device the app actually launched in. To test on a specific device, name it in your request, for example “run it on the iPhone SE simulator”, and Claude targets that device when it builds and launches. A device Claude boots also appears in Apple’s Simulator app, or in Device Hub on Xcode 27. Claude can install the app on a device you already have booted. You can also open the simulator pane yourself. Once the session has a simulator attached or Claude Code detects iOS app work, an **iOS Simulator** button appears in the session’s title bar. If the pane isn’t showing a device yet, click **Attach simulator**, or pick a specific device from the device menu next to it; picking a shut-down device boots it. If Xcode or its simulators are missing, the pane shows the setup steps instead and checks them off as you complete them.
 
-
-[​](#control-the-simulator-yourself)
-
-Control the simulator yourself
+## [](#control-the-simulator-yourself)Control the simulator yourself
 
 The simulator pane is interactive, not only a viewer. While Claude works, or between tasks, you can:
 
@@ -117,34 +109,22 @@ The simulator pane is interactive, not only a viewer. While Claude works, or bet
 
 If the pane shows a **Display** menu, use it to tune the video stream from the simulator. Lower **Frame rate** or **Resolution** if the pane strains your Mac. Both settings change how the pane displays the device, not how the app runs. You and Claude drive the same device, so your taps change the app state Claude sees. To have Claude check a specific screen, tap through to it, then ask. While Claude is driving the device, the pane shows a **Claude is using this device** badge above the screen; hold off tapping until the badge clears, so the result reflects the app rather than your input.
 
-
-[​](#minimize-or-close-the-simulator-pane)
-
-Minimize or close the simulator pane
+### [](#minimize-or-close-the-simulator-pane)Minimize or close the simulator pane
 
 You can minimize or close the simulator pane, and Claude can still use the device either way.
 
 - If you minimize the pane, the device stays in view at a small size. To minimize the pane or expand it again, see [Minimize a pane](desktop.md#minimize-a-pane).
 - If you close the full-size or minimized pane, the device stays attached and running. To show the device again, click **iOS Simulator** in the session’s title bar.
 
-
-[​](#how-sessions-manage-devices)
-
-How sessions manage devices
+## [](#how-sessions-manage-devices)How sessions manage devices
 
 If your prompt doesn’t name a simulator, Claude uses one that’s already running, even if another [parallel session](desktop.md#work-in-parallel-with-sessions) opened it. To give each session its own simulator, name a different one in each session’s prompt. Claude Code Desktop shuts down the simulators it booted once they’re no longer in use: when you quit the app, when you archive the session, or 10 minutes after you detach a device from its pane. Devices you boot outside Claude Code Desktop, such as in Apple’s Simulator app or in Device Hub, are never shut down automatically. To shut down the attached device right away, use the shutdown button in the pane.
 
-
-[​](#grant-claude-access-to-a-device)
-
-Grant Claude access to a device
+## [](#grant-claude-access-to-a-device)Grant Claude access to a device
 
 Claude asks for your consent before it controls a device, while building or launching the app or opening a URL on it follows your session’s permission mode. You or your organization can also turn Claude’s access off entirely.
 
-
-[​](#allow-a-device-the-first-time)
-
-Allow a device the first time
+### [](#allow-a-device-the-first-time)Allow a device the first time
 
 The first time Claude uses a simulator, the desktop app asks you to allow it. The consent covers controlling that device and taking screenshots of it, and you give it once per device rather than once per session. Claude’s screenshots of the device are sent to Anthropic and kept under your normal conversation retention settings, so don’t sign in to real accounts on a device Claude uses. After you allow a device, Claude’s actions on it, such as tapping, typing, and taking screenshots, run without prompts, but you approve launching the app as your [permission mode](#actions-that-follow-your-permission-mode) requires. They carry the same trust as you clicking in the pane, and they only touch the simulated device, so the pane doesn’t need the macOS Accessibility and Screen Recording permissions that computer use requires. If you decline Claude’s request, the device doesn’t attach and Desktop doesn’t boot it. To use the device yourself:
 
@@ -154,10 +134,7 @@ The first time Claude uses a simulator, the desktop app asks you to allow it. Th
 
 The device attaches and works for your own taps, and Claude’s access stays off. After that, to give Claude access, click **Let Claude use it** in the pane.
 
-
-[​](#actions-that-follow-your-permission-mode)
-
-Actions that follow your permission mode
+### [](#actions-that-follow-your-permission-mode)Actions that follow your permission mode
 
 Three actions follow your session’s [permission mode](../02-Claude-Code-CLI/permissions.md#permission-modes) even after you allow a device:
 
@@ -165,10 +142,7 @@ Three actions follow your session’s [permission mode](../02-Claude-Code-CLI/pe
 - Building the app, because `xcodebuild` runs your project’s build scripts on your Mac. Checking on a build already in progress doesn’t prompt.
 - Installing and launching the app, because Claude can run any app it names, not only the one you’re building.
 
-
-[​](#turn-off-simulator-access)
-
-Turn off simulator access
+### [](#turn-off-simulator-access)Turn off simulator access
 
 You can turn Claude’s simulator access off in the desktop app’s settings. Organizations have two ways to turn it off for everyone:
 
@@ -177,42 +151,49 @@ You can turn Claude’s simulator access off in the desktop app’s settings. Or
 
 Claude tells you when either applies.
 
+## [](#test-your-app-on-an-iphone-duo)Test your app on an iPhone Duo
 
-[​](#limitations)
+You can test your app on an iPhone Duo simulator in the simulator pane and fold the device into each of its poses: closed, half open, and open. To test on one, you need:
 
-Limitations
+- Claude Desktop v4.29.0 or later, which is newer than the v1.24012.0 that the simulator pane itself requires. To update, open **Claude \> Check for Updates…**, then restart the app.
+- Xcode 27.1 or later with its iOS simulator runtime, which includes the iPhone Duo simulator. For Xcode 27.1, that runtime is iOS 27.1. If it’s missing, [download it from Xcode’s Components settings](https://developer.apple.com/documentation/xcode/downloading-and-installing-additional-xcode-components). If you have more than one Xcode installed, [select Xcode 27.1 or later](#choose-which-xcode-the-simulator-pane-uses).
+
+To open an iPhone Duo in the pane, name it in your request or [switch the pane to it yourself](#control-the-simulator-yourself). If the device menu doesn’t list an iPhone Duo yet, select **Add simulator…** at the end of the list of devices and choose an iPhone Duo device type. For example, to have Claude check one screen of your app in each pose:
+
+```python
+Run the app on the iPhone Duo simulator and check the settings screen closed, half open, and open.
+```
+
+### [](#fold-an-iphone-duo)Fold an iPhone Duo
+
+- **Fold it yourself**: click one of the three pose buttons next to the rotate button. Hold the pointer over one to see its name: **Closed**, **Half open**, or **Open**. For an angle between those poses, move the pointer over the pose buttons, then drag the slider that appears above them.
+- **Ask Claude to fold it**: ask for one of the three poses, or for a half-open hinge angle from 1 to 179 degrees.
+
+### [](#expect-a-prompt-to-export-xcode-agent-skills)Expect a prompt to export Xcode agent skills
+
+Before a layout check on an iPhone Duo, Claude may ask whether to export Xcode’s agent skills to your [personal skills folder](../08-Plugins-Skills/skills.md#where-skills-live). These skills come with Xcode to guide coding agents, and once they’re in that folder, Claude Code loads them in your other projects too. They include a skill for getting your app’s layout ready for the iPhone Duo.
+
+## [](#limitations)Limitations
 
 Claude drives simulated devices only and can’t control a physical iPhone or iPad. To test on one, run the app on it from Xcode yourself, then describe what you see or attach a screenshot to the conversation for Claude to work from.
 
+## [](#troubleshooting)Troubleshooting
 
-[​](#troubleshooting)
-
-Troubleshooting
-
-
-[​](#the-simulator-pane-doesn’t-open-when-claude-runs-the-app)
-
-The simulator pane doesn’t open when Claude runs the app
+### [](#the-simulator-pane-doesn’t-open-when-claude-runs-the-app)The simulator pane doesn’t open when Claude runs the app
 
 Claude may not have recognized that you wanted to run or test the app, or the simulator tooling may be missing. Check the following:
 
 - State the goal explicitly, for example “run the app in the iOS Simulator and tap through the signup flow”.
 - Confirm Xcode and the iOS simulators are installed and that you’re using a [recommended Xcode version](#requirements).
 - If your organization manages Claude Code, the [simulator tools may be disabled by policy](#turn-off-simulator-access).
-- If you’re in an Enterprise organization that has a HIPAA configuration enabled, the simulator pane isn’t available to you.
+- If you’re in an Enterprise organization that has a HIPAA configuration enabled, or you use a [third-party provider](../02-Claude-Code-CLI/third-party-integrations.md), the simulator pane isn’t available to you.
 - The simulator pane requires Claude Desktop v1.24012.0 or later. Open **Claude \> Check for Updates…**, then restart the app.
 
-
-[​](#the-simulator-pane-says-no-simulators-were-found)
-
-The simulator pane says no simulators were found
+### [](#the-simulator-pane-says-no-simulators-were-found)The simulator pane says no simulators were found
 
 Xcode is installed but has no iOS simulators to list. The simulator pane shows the setup steps to follow and checks them off as each one completes. To install the missing piece manually, download the iOS simulator runtime from Xcode’s settings, or run `xcodebuild -downloadPlatform iOS`.
 
-
-[​](#see-also)
-
-See also
+## [](#see-also)See also
 
 - [Computer use in Desktop](desktop.md#let-claude-use-your-computer): screen control for apps without a dedicated pane
 - [Computer use from the CLI](../02-Claude-Code-CLI/computer-use.md): how the CLI reaches the iOS Simulator

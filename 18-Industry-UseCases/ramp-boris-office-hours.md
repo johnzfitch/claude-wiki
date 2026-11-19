@@ -2,7 +2,7 @@
 title: "Ramp | Office Hours with Boris Cherny | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/ramp-boris-office-hours"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:39Z"
+fetched_at: "2026-11-18T06:29:11Z"
 tags: ["case-studies"]
 ---
 
@@ -143,6 +143,9 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -150,6 +153,3 @@ Put Claude to work across your organization. Help everyone think deeper, do more
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

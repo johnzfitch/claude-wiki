@@ -2,9 +2,11 @@
 title: "Introducing Claude for Teachers \\ Anthropic"
 source_url: "https://www.anthropic.com/news/claude-for-teachers"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:27Z"
+fetched_at: "2026-11-14T06:26:34Z"
 tags: ["news-research"]
 ---
+
+### 01Why we’re building for teachers
 
 # Introducing Claude for Teachers
 
@@ -16,32 +18,28 @@ tags: ["news-research"]
 - [06Sharing what we build](#sharing-what-we-build)
 - [07Getting started](#getting-started)
 
-- Published
+Published  
+Jul 14, 2026
 
-  Jul 14, 2026
+[Product](product.md)
 
-- Category
+Topics  
+- [Education](https://www.anthropic.com/search?topic=education)
+- [Privacy](https://www.anthropic.com/search?topic=privacy)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
+- [Access](https://www.anthropic.com/search?topic=access)
+- [Agents](https://www.anthropic.com/search?topic=agents)
 
-  [Product](product.md)
-
-- Topics
-
-  - [Education](https://www.anthropic.com/search?topic=education)
-  - [Privacy](https://www.anthropic.com/search?topic=privacy)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Agent Skills](https://www.anthropic.com/search?topic=agent-skills)
-  - [Access](https://www.anthropic.com/search?topic=access)
-  - [Agents](https://www.anthropic.com/search?topic=agents)
-
-  See more...
+See more...
 
 Related articles
 
 - Product
 
-  May 13, 2026
+  Oct 22, 2026
 
-  [Introducing Claude for Small Business](claude-for-small-business.md)
+  [Donating Agent Skills to the Agentic AI Foundation](donating-agent-skills-to-the-agentic-ai-foundation.md)
 
 [View more](https://www.anthropic.com/search?topic=education)
 
@@ -108,11 +106,14 @@ This includes the launch of new connectors in Anthropic’s directory, an [open-
 
 ## Getting started
 
-Once verified, educators can access [Claude for Teachers](../18-Industry-UseCases/teachers.md) entirely free. Sign up by June 30, 2027, for a full year of access.
+Once verified, educators can access [Claude for Teachers](../18-Industry-UseCases/teachers.md) entirely free through July 30, 2028.
 
 Claude for Teachers is for individual educators. On August 28, 2026 we launched a dedicated offering for schools and districts. Read more about the school and district offering [here](../18-Industry-UseCases/teachers.md).
 
 ***Updates:**  
+November 13, 2026: Updated to reflect that we've extended the free Claude for Teachers program through July 30, 2028.*
+
+*  
 August 28, 2026: An earlier version of this post included examples of analyzing student data. Claude for Teachers is FERPA-configured to process student records, and using identifiable student information requires authorization from the school or district. To make this more clear, we've updated the examples to use de-identified classroom data. Schools and districts that want to authorize Claude for Teachers to handle student records on their behalf can set that up through our school and district offering.*
 
   

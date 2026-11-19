@@ -2,7 +2,7 @@
 title: "Update External Key - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/external_keys/update"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:33:26Z"
+fetched_at: "2026-11-14T06:25:17Z"
 tags: ["api"]
 ---
 

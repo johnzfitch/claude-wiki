@@ -2,7 +2,7 @@
 title: "Use Salesforce in Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16952186-use-salesforce-in-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:11Z"
+fetched_at: "2026-11-18T06:28:05Z"
 tags: ["claude-ai"]
 ---
 

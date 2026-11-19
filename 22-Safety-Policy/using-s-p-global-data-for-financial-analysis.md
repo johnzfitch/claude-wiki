@@ -1,12 +1,12 @@
 ---
-title: "Using S&P global data for financial analysis · Claude Academy"
+title: "Using S&P Global data for financial analysis · Claude Academy"
 source_url: "https://support.claude.com/en/articles/12220135-using-s-p-global-data-for-financial-analysis"
 category: "22-Safety-Policy"
-fetched_at: "2026-11-09T06:26:14Z"
+fetched_at: "2026-11-18T06:27:54Z"
 tags: ["safety"]
 ---
 
-# Using S&P global data for financial analysis
+# Using S&P Global data for financial analysis
 
 Use Claude's Kensho integration to access S&P Global's financial data for comprehensive market and fundamental analysis of public companies.
 
@@ -54,23 +54,17 @@ Claude applies Kensho's capabilities to support comprehensive financial analysis
 
 ## Setting Up the Kensho Integration[](#setting-up-the-kensho-integration)
 
-Technical details of the Kensho Integration can be found in the [Kensho Integration MCP Server Documentation(opens in new tab)](https://docs.kensho.com/llmreadyapi/mcp). You will need to contact S&P Global to get access to the MCP server.
+For technical details of the Kensho integration, see the [Kensho Integration MCP Server Documentation(opens in new tab)](https://docs.kensho.com/llmreadyapi/mcp). Contact S&P Global to get access to the MCP server.
 
 ### For Organization Owners[](#for-organization-owners)
 
-1.  Navigate to [Admin settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
+1.  Navigate to [Organization settings \> Connectors(opens in new tab)](https://claude.ai/admin-settings/connectors).
 
-2.  Scroll down and click “Add custom connector" at the bottom of the list.
-
-3.  Enter the Kensho integration URL: [https://kfinance.kensho.com/integrations/mcp(opens in new tab)](https://kfinance.kensho.com/integrations/mcp)
-
-4.  Name the integration (e.g., "Kensho S&P")
-
-5.  Click "Add"
+2.  Use the Add button to browse all available connectors, then find **S&P - Deterministic Retrieval** (the Kensho integration) and add it for your team.
 
 ### For Individual Users[](#for-individual-users)
 
-Learn about [finding and connecting tools(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
+Open [S&P - Deterministic Retrieval in the connectors directory(opens in new tab)](https://claude.ai/directory/s-p-global) (the Kensho integration), connect it to Claude, and sign in when asked. Learn about [finding and connecting tools(opens in new tab)](../14-Connectors/browse-skills-connectors-and-plugins-in-one-directory.md).
 
 ## Common Use Cases[](#common-use-cases)
 

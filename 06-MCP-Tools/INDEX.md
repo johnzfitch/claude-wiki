@@ -1,6 +1,6 @@
 # Model Context Protocol (MCP)
 
-322 pages. The full text of every page is in [llms.txt](llms.txt).
+325 pages. The full text of every page is in [llms.txt](llms.txt).
 
 ## Community
 
@@ -8,38 +8,41 @@
 - [Agents Charter - Model Context Protocol](Community/community-working-groups-agents.md) — Charter for the MCP Agents Working Group.
 - [Antitrust Policy - Model Context Protocol](Community/community-antitrust.md) — MCP Project Antitrust Policy for participants and contributors
 - [Authorization Charter - Model Context Protocol](Community/community-interest-groups-auth.md) — Charter for the MCP Authorization Interest Group.
-- [Contributing to MCP - Model Context Protocol](Community/community-contributing.md) — How to contribute to the Model Context Protocol project
-- [Contributor Communication - Model Context Protocol](Community/community-communication.md) — Communication strategy and framework for the Model Context Protocol community
-- [Contributor Ladder - Model Context Protocol](Community/community-contributor-ladder.md) — Roles, responsibilities, and advancement criteria for MCP contributors, from first contribution to Core Maintainer
+- [Communication - Model Context Protocol](Community/community-communication.md) — The MCP project’s communication channels, when a channel may be private, and where decisions are recorded.
+- [Contributing to MCP - Model Context Protocol](Community/community-contributing.md) — How to contribute to the Model Context Protocol specification, docs and SDKs.
+- [Contributor Ladder - Model Context Protocol](Community/community-contributor-ladder.md) — The contributor roles in the MCP project, what each requires and grants, and how people move between them.
 - [Design Principles - Model Context Protocol](Community/community-design-principles.md) — The core design principles that guide the development of the Model Context Protocol.
 - [Enterprise Interest Group Charter - Model Context Protocol](Community/community-interest-groups-enterprise.md) — Charter for the MCP Enterprise Interest Group.
 - [Enterprise-Managed Authorization Charter - Model Context Protocol](Community/community-interest-groups-enterprise-managed-authorization.md) — Charter for the MCP Enterprise-Managed Authorization Interest Group.
-- [Feature Lifecycle and Deprecation Policy - Model Context Protocol](Community/community-feature-lifecycle.md) — How individual MCP specification features move through Active, Deprecated, and Removed states, and the timeline implementers can plan against.
+- [Feature Lifecycle and Deprecation - Model Context Protocol](Community/community-feature-lifecycle.md) — How individual MCP specification features move through Active, Deprecated, and Removed states, and the timeline implementers can plan against.
 - [File Uploads Charter - Model Context Protocol](Community/community-working-groups-file-uploads.md) — Charter for the MCP File Uploads Working Group.
 - [Filesystems Charter - Model Context Protocol](Community/community-working-groups-filesystems.md) — Charter for the MCP Filesystems Working Group.
 - [Financial Services Charter - Model Context Protocol](Community/community-interest-groups-financial-services.md) — Charter for the MCP Financial Services Interest Group.
 - [Governance and Stewardship - Model Context Protocol](Community/community-governance.md) — Learn about the Model Context Protocol’s governance structure and how to participate in the community
 - [Governance Working Group Charter - Model Context Protocol](Community/community-working-groups-governance.md) — Charter for the MCP Governance Working Group.
-- [Group Charter Template - Model Context Protocol](Community/community-charter-template.md) — Template for MCP Working Group and Interest Group charters.
+- [Group Charter Template - Model Context Protocol](Community/community-charter-template.md) — The charter template for MCP working groups and interest groups, and how to submit a charter.
 - [Infrastructure Charter - Model Context Protocol](Community/community-working-groups-infrastructure.md) — Charter for the MCP Infrastructure Working Group.
 - [Inspector V2 Working Group Charter - Model Context Protocol](Community/community-working-groups-inspector-v2.md) — Charter for the Inspector V2 Working Group, a Working Group of the Model Context Protocol community.
 - [Interceptors Charter - Model Context Protocol](Community/community-working-groups-interceptors.md) — Charter for the MCP Interceptors Working Group.
+- [MCP Apps Working Group Charter - Model Context Protocol](Community/community-working-groups-apps.md) — Charter for the MCP Apps Working Group.
 - [Primitive Grouping Charter - Model Context Protocol](Community/community-interest-groups-primitive-grouping.md) — Charter for the MCP Primitive Grouping Interest Group.
 - [Progressive Disclosure Charter - Model Context Protocol](Community/community-working-groups-progressive-disclosure.md) — Charter for the MCP Progressive Disclosure Working Group.
+- [Project Policies - Model Context Protocol](Community/community-policies.md) — The standing policies that apply to everyone who takes part in the MCP project, and where each one is defined.
 - [Registry Charter - Model Context Protocol](Community/community-working-groups-registry.md) — Charter for the MCP Registry Working Group.
 - [Scientific Computing Charter - Model Context Protocol](Community/community-interest-groups-scientific-computing.md) — Charter for the MCP Scientific Computing Interest Group.
-- [SDK Tiering System - Model Context Protocol](Community/community-sdk-tiers.md) — Feature completeness, protocol support, and maintenance commitment levels for Model Context Protocol SDKs
+- [SDK Tiers - Model Context Protocol](Community/community-sdk-tiers.md) — What each SDK tier requires, how conformance is measured, how an SDK moves between tiers, and the issue labels SDK repositories must use.
 - [SDK Working Group Charter - Model Context Protocol](Community/community-working-groups-sdk.md) — Charter for the MCP SDK Working Group.
 - [Security Charter - Model Context Protocol](Community/community-interest-groups-security.md) — Charter for the MCP Security Interest Group.
 - [Security Policy - Model Context Protocol](Community/community-security.md) — How to report security vulnerabilities in the Model Context Protocol specification and SDKs, what is in and out of scope, and how SDK maintainers coordinate…
-- [SEP Guidelines - Model Context Protocol](Community/community-sep-guidelines.md) — Specification Enhancement Proposal (SEP) guidelines for proposing changes to the Model Context Protocol
+- [SEP Guidelines - Model Context Protocol](Community/community-sep-guidelines.md) — When a Specification Enhancement Proposal is required and the procedure a proposal follows from pull request to Final.
 - [Server Card Charter - Model Context Protocol](Community/community-working-groups-server-card.md) — Charter for the MCP Server Card Working Group.
 - [Skills Over MCP Charter - Model Context Protocol](Community/community-working-groups-skills-over-mcp.md) — Charter for the MCP Skills Over MCP Working Group.
 - [Tasks and Events Charter - Model Context Protocol](Community/community-working-groups-tasks-events.md) — Charter for the MCP Tasks and Events Working Group.
 - [Tool Annotations Charter - Model Context Protocol](Community/community-interest-groups-tool-annotations.md) — Charter for the MCP Tool Annotations Interest Group.
 - [Transports Charter - Model Context Protocol](Community/community-working-groups-transports.md) — Charter for the MCP Transports Working Group.
 - [Triggers and Events Charter - Model Context Protocol](Community/community-working-groups-triggers-events.md) — Charter for the MCP Triggers and Events Working Group.
-- [Working and Interest Groups - Model Context Protocol](Community/community-working-interest-groups.md) — Governance rules for the two forms of collaborative groups within the Model Context Protocol community — Working Groups and Interest Groups.
+- [Working Groups and Interest Groups - Model Context Protocol](Community/community-working-interest-groups.md) — The MCP project’s working groups and interest groups, how to join or start one, and the operating rules every group follows.
+- [Working Groups Overview - Model Context Protocol](Community/community-working-groups-overview.md) — Current MCP working groups, their leads, channels, and focus.
 
 ## Extensions
 
@@ -248,7 +251,6 @@
 - [Overview - Model Context Protocol](Spec/2026-07-28-basic.md) — The Model Context Protocol consists of several key components that work together:
 - [Overview - Model Context Protocol](Spec/draft-basic-transports.md) — This page defines what a transport must provide to carry MCP messages, the standard transport bindings, and the requirements for defining new ones. Protocol…
 - [Overview - Model Context Protocol](Spec/draft-basic.md) — The Model Context Protocol consists of several key components that work together:
-- [Overview - Model Context Protocol](Spec/draft-server.md) — Servers provide the fundamental building blocks for adding context to language models via MCP. These primitives enable rich interactions between clients…
 - [Pagination - Model Context Protocol](Spec/draft-server-utilities-pagination.md) — The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller…
 - [Ping - Model Context Protocol](Spec/draft-basic-utilities-ping.md) — The Model Context Protocol includes an optional ping mechanism that allows either party to verify that their counterpart is still responsive and the connection…
 - [Progress - Model Context Protocol](Spec/draft-basic-patterns-progress.md) — The Model Context Protocol (MCP) supports optional progress tracking for long-running operations through notification messages. The server MAY send progress…
@@ -299,6 +301,7 @@
 - [Overview - Model Context Protocol](Spec-Archive/2024-11-05-basic.md) — All messages between MCP clients and servers MUST follow the JSON-RPC 2.0 specification. The protocol defines three fundamental types of messages:
 - [Overview - Model Context Protocol](Spec-Archive/2025-03-26-basic.md) — The Model Context Protocol consists of several key components that work together:
 - [Overview - Model Context Protocol](Spec-Archive/2025-06-18-basic.md) — The Model Context Protocol consists of several key components that work together:
+- [Overview - Model Context Protocol](Spec-Archive/2025-06-18-server.md) — Servers provide the fundamental building blocks for adding context to language models via MCP. These primitives enable rich interactions between clients…
 - [Overview - Model Context Protocol](Spec-Archive/2025-11-25-basic.md) — The Model Context Protocol consists of several key components that work together:
 - [Pagination - Model Context Protocol](Spec-Archive/2024-11-05-server-utilities-pagination.md) — The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller…
 - [Pagination - Model Context Protocol](Spec-Archive/2025-06-18-server-utilities-pagination.md) — The Model Context Protocol (MCP) supports paginating list operations that may return large result sets. Pagination allows servers to yield results in smaller…

@@ -2,7 +2,7 @@
 title: "Work - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/environments/work"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:34:55Z"
+fetched_at: "2026-11-13T06:35:27Z"
 tags: ["api"]
 ---
 
@@ -71,6 +71,74 @@ Note: these endpoints are called automatically by the pre-built environment work
 Get statistics about the work queue for an environment.
 
 ##### Models
+
+
+
+BetaHeartbeatPreconditionFailedErrorDetails object{ current_state, error_code }
+
+
+
+`expected_last_heartbeat` does not match the stored heartbeat, so another worker may hold the lease.
+
+
+
+current_state: [BetaWorkLeaseState](https://platform.claude.com/docs/en/api/http/beta/environments/work#beta_work_lease_state) { last_heartbeat, lease_extended, state, ttl_seconds }
+
+
+
+The lease as the server holds it.
+
+last_heartbeat: string or null
+
+
+
+RFC 3339 timestamp of the stored heartbeat, or null if there has been none
+
+lease_extended: boolean
+
+
+
+Always false: a refused heartbeat does not extend the lease
+
+
+
+state: "queued" or "starting" or "active" or 2 more
+
+
+
+Current state of the work item
+
+One of the following:
+
+"queued"
+
+
+
+"starting"
+
+
+
+"active"
+
+
+
+"stopping"
+
+
+
+"stopped"
+
+
+
+ttl_seconds: number
+
+
+
+TTL of the lease
+
+error_code: "heartbeat_precondition_failed"
+
+
 
 
 
@@ -255,3 +323,31 @@ id: string
 
 
 Session identifier (e.g., 'session\_...')
+
+
+
+BetaWorkLeaseState object{ last_heartbeat, lease_extended, state, ttl_seconds }
+
+
+
+A work item's lease as the server holds it.
+
+last_heartbeat: string or null
+
+
+
+RFC 3339 timestamp of the stored heartbeat, or null if there has been none
+
+lease_extended: boolean
+
+
+
+Always false: a refused heartbeat does not extend the lease
+
+
+
+state: "queued" or "starting" or "active" or 2 more
+
+
+
+Current state of the work item

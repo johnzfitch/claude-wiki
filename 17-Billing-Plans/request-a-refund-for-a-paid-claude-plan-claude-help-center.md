@@ -2,7 +2,7 @@
 title: "Request a refund for a paid Claude plan | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12386328"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:25:40Z"
+fetched_at: "2026-11-18T06:27:46Z"
 tags: ["billing"]
 ---
 
@@ -39,7 +39,7 @@ In the European Economic Area and the United Kingdom, you may receive a refund w
 
 ## Refunds for usage credits
 
-Usage credit purchases are non-refundable, including when you cancel your subscription or delete your account. Credits you've already used are never refunded.
+Usage credit purchases are non-refundable, including when you cancel your subscription or delete your account. Credits you bought directly from us are refunded when you upgrade to a Team plan in place, move your personal account to an organization, close your personal account using the **Start fresh** option, or when your personal account closes at a domain claim deadline. Credits you've already used are never refunded.
 
 The exceptions are where local law gives you a refund right for unused credits, and cases of fraud.
 
@@ -47,7 +47,7 @@ If you're eligible, follow the refund request steps at the top of this article. 
 
 ## What should I do if I can't access the account I'm requesting a refund for?
 
-If you're unable to log in to the account associated with your payment (for example, if you can't access the email account you used to sign up), you'll need to **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** using another email and 'cc' the email address tied to the account you can't access. Write back to cancel your paid plan and request a refund so our team can assist.  
+If you're unable to log in to the account associated with your payment (for example, if you can't access the email account you used to sign up), you'll need to **[contact our Support team](../15-Claude-AI-Features/how-to-get-support.md)** using another email and 'cc' the email address tied to the account you can't access. Write back to cancel your paid plan and request a refund so our team can assist.  
 ​﻿
 
 ## I paid for my plan on Claude for iOS—what's the process for requesting a refund?
@@ -66,7 +66,7 @@ To request a refund from Apple:
 
 Apple will review your request and notify you of their decision. You can check the status of your request any time by returning to reportaproblem.apple.com. Refunds for App Store purchases are granted at Apple's discretion.
 
-**Note:** Requesting a refund doesn't cancel your subscription. To avoid future charges, you'll also need to cancel. For instructions, see **[Cancel your Pro, Max, or Ultra subscription](cancel-your-pro-max-or-ultra-subscription-claude-help-center.md)**.
+**Note:** Requesting a refund doesn't cancel your subscription. To avoid future charges, you'll also need to cancel. For instructions, see **[Cancel your Pro, Max, or Ultra subscription](https://support.claude.com/en/articles/8325617)**.
 
 For more details, see Apple's guide: **[Request a refund for apps or content that you bought from Apple](https://support.apple.com/en-us/118223)**.
 
@@ -74,11 +74,11 @@ For more details, see Apple's guide: **[Request a refund for apps or content tha
 
 If you have an active subscription purchased on **[Claude for Android](https://support.claude.com/en/collections/9879004-claude-for-android)**, our Support team will need to check your eligibility before assisting with a refund. When contacting us, provide any relevant details upfront so our team can help with your request.
 
-If you're requesting a refund for an inactive subscription, you'll need to **[contact our Support team](https://support.claude.com/en/articles/9015913-how-to-get-support)** with the email address associated with your Google Play account or your GPA order number (found on your Google Play receipt, formatted GPA.xxxx-xxxx-xxxx-xxxxx) to further review the charge and refund eligibility.
+If you're requesting a refund for an inactive subscription, you'll need to **[contact our Support team](../15-Claude-AI-Features/how-to-get-support.md)** with the email address associated with your Google Play account or your GPA order number (found on your Google Play receipt, formatted GPA.xxxx-xxxx-xxxx-xxxxx) to further review the charge and refund eligibility.
 
 ### I upgraded from Pro, Max, or Ultra to Team—when do I get my refund?
 
-When you upgrade to a Team plan from a Pro, Max, or Ultra plan, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. You don't need to request it manually. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. Google Play purchases don't have this wait, but the refund can take a few days to appear. Any prepaid usage credits on your individual account are refunded.
+When you upgrade to a Team plan from a Pro, Max, or Ultra plan in place, if you bought it directly from us, your individual subscription is cancelled automatically and you receive a prorated refund for the unused portion of your billing period. You don't need to request it manually. The refund is issued about 24 hours after your Team payment goes through, and depending on your bank, it can take several more business days to appear on your statement. For Google Play purchases, we ask Google Play to cancel your subscription and refund your unused time. Refunds usually take one to two weeks. Check Google Play, and cancel there if your plan is still active. Any unused credits you bought directly from us are refunded.
 
 If you claimed monthly API credits on your Max or Ultra plan, your Max/Ultra link ends. A Team Owner or Primary Owner can claim the team’s credits once the Team plan has been active for seven days.
 

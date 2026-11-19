@@ -109,7 +109,7 @@ Distinguished Product Manager
 
 We ran a detailed series of safety and alignment evaluations on Claude Haiku 4.5. The model showed low rates of concerning behaviors, and was substantially more aligned than its predecessor, Claude Haiku 3.5. In our automated alignment assessment, Claude Haiku 4.5 also showed a statistically significantly lower overall rate of misaligned behaviors than both Claude Sonnet 4.5 and Claude Opus 4.1—making Claude Haiku 4.5, by this metric, our safest model yet.
 
-Our safety testing also showed that Claude Haiku 4.5 poses only limited risks in terms of the production of chemical, biological, radiological, and nuclear (CBRN) weapons. For that reason, we’ve released it under the AI Safety Level 2 (ASL-2) standard—compared to the more restrictive ASL-3 for Sonnet 4.5 and Opus 4.1. You can read the full reasoning behind the model’s ASL-2 classification, as well as details on all our other safety tests, in the [Claude Haiku 4.5 system card](../15-Claude-AI-Features/claude-haiku-4-5-system-card.md).
+Our safety testing also showed that Claude Haiku 4.5 poses only limited risks in terms of the production of chemical, biological, radiological, and nuclear (CBRN) weapons. For that reason, we’ve released it under the AI Safety Level 2 (ASL-2) standard—compared to the more restrictive ASL-3 for Sonnet 4.5 and Opus 4.1. You can read the full reasoning behind the model’s ASL-2 classification, as well as details on all our other safety tests, in the [Claude Haiku 4.5 system card](this-system-card-introduces-claude-haiku-4-5-a-new-hybrid-reasoning-large.md).
 
 ### Further information
 
@@ -117,7 +117,7 @@ Claude Haiku 4.5 is available now on Claude Code and our apps. Its efficiency me
 
 Developers can use Claude Haiku 4.5 on our API, Amazon Bedrock, and Google Cloud’s Vertex AI, where it serves as a drop-in replacement for both Haiku 3.5 and Sonnet 4 at our most economical price point.
 
-For complete technical details and evaluation results, see our [system card](../15-Claude-AI-Features/claude-haiku-4-5-system-card.md), [model page](../15-Claude-AI-Features/claude-haiku.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview).
+For complete technical details and evaluation results, see our [system card](this-system-card-introduces-claude-haiku-4-5-a-new-hybrid-reasoning-large.md), [model page](../15-Claude-AI-Features/claude-haiku.md), and [documentation](https://docs.claude.com/en/docs/about-claude/models/overview).
 
 ## Footnotes
 

@@ -2,7 +2,7 @@
 title: "Add Workspace To Service Account - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/service_accounts/workspaces/add"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-02T06:26:49Z"
+fetched_at: "2026-11-18T06:27:59Z"
 tags: ["api"]
 ---
 

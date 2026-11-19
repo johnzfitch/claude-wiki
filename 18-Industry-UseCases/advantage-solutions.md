@@ -2,7 +2,7 @@
 title: "Advantage Solutions Claude case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/advantage-solutions"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:12Z"
+fetched_at: "2026-11-18T06:29:04Z"
 tags: ["case-studies", "enterprise"]
 ---
 
@@ -114,6 +114,9 @@ Anthropic's agentic coding tool. Claude Code understands your codebase, edits fi
 [Read more](../15-Claude-AI-Features/product-claude-code.md)
 
 ## Related stories
+
+
+### How a family shop builds portable sinks by hand and its business with Claude
 
 
 ### How a family business uses Claude to compete in a global seafood market

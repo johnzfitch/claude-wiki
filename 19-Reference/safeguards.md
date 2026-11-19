@@ -2,7 +2,7 @@
 title: "Safeguards \\ Anthropic"
 source_url: "https://www.anthropic.com/news/safeguards"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:28Z"
+fetched_at: "2026-11-18T06:28:41Z"
 tags: ["news-research"]
 ---
 
@@ -298,7 +298,7 @@ Description
 
 ### Support
 
-[How to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)
+[How to get support](../15-Claude-AI-Features/how-to-get-support.md)
 
 ### Media assets
 

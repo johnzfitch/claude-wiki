@@ -2,7 +2,7 @@
 title: "Dreams - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/dreams"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:09Z"
+fetched_at: "2026-11-13T06:35:07Z"
 tags: ["api", "billing"]
 ---
 
@@ -23,25 +23,34 @@ Dreams
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Research preview
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailable
+[Models](#feature-availability)  
+- Claude Fable 5.2
+- Claude Opus 5.5
+- Claude Sonnet 5.5
+- Limited support for other models; see details
 
-[Beta header](#feature-beta-headers)  
-Both
-- `managed-agents-2026-04-01`
-  
-- `dreaming-2026-04-21`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+
+[Beta headers](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
+- 
+  Copy`dreaming-2026-04-21`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Dreams are in research preview
 
 [Request access(opens in new tab)](https://claude.com/form/claude-managed-agents)
+
+
+
+Want more control over dreaming? The [Dreaming with a dynamic workflow](https://platform.claude.com/cookbook/managed-agents-cma-dreaming-with-a-dynamic-workflow) recipe in the Claude Cookbook shows how to build your own dream with prompts and models you choose. You decide when it runs, which transcripts it reads, and what it does with them.
 
 Agents write to their [memory stores](managed-agents-memory.md) as they work, but these writes are local and incremental: over many sessions a memory store accumulates duplicates, contradictions, and stale entries.
 
@@ -188,7 +197,7 @@ Once a dream is `running`, its `session_id` field points at the underlying [sess
 When `status` reaches `completed`, the `memory_store` entry in `outputs` references a fully populated store. It’s an ordinary memory store in your workspace. Review it with the [Memory Stores API](managed-agents-memory.md#view-and-edit-memories) or in the Claude Console, then either:
 
 - **Use it:** attach it to future sessions as a `memory_store` resource in place of (or alongside) the input memory store, or
-- **Discard it:** [delete the memory store](../Endpoints/beta-memory-stores-delete.md) or [archive the memory store](../Endpoints/beta-memory-stores-archive.md).
+- **Discard it:** [delete the memory store](../Endpoints/beta-memory-stores-delete.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. or [archive the memory store](../Endpoints/beta-memory-stores-archive.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 cURL
 
@@ -353,43 +362,33 @@ Default rate limits apply to dream creation while this feature is in research pr
 
 ## Availability
 
-Dreams are in research preview on select models.
+Dreams
 
-### API support
+Cloud platform
 
-StatusResearch preview
+Cloud platform: Claude API
 
-Cloud platforms
+Claude API
 
-- Claude API
+Status  
+Research preview
 
-Models
+API  
+- Managed Agents
 
-- [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md)Not supported
-- [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md)Not supported
-- Claude Mythos PreviewNot supported
-- [Claude Haiku 5.5](../../20-Models/models-haiku-5-5-overview.md)Not supported
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Beta headers  
+Requires
 
-### Required beta headers
+managed-agents-2026-04-01
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+and
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+dreaming-2026-04-21
 
-Header
-
-- `managed-agents-2026-04-01`
-  
-
-Header
-
-- `dreaming-2026-04-21`
-  
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
 
 Dream endpoints require the `dreaming-2026-04-21` beta header. The `managed-agents-2026-04-01` header on its own doesn’t grant access to dreams. Session calls use `managed-agents-2026-04-01`, and memory store calls use `agent-memory-2026-07-22`. The SDK sets the right header on each call.
 
@@ -405,8 +404,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

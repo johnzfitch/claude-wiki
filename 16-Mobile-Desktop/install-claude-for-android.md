@@ -2,7 +2,7 @@
 title: "Install Claude for Android | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9612887-install-claude-for-android"
 category: "16-Mobile-Desktop"
-fetched_at: "2026-11-09T06:26:05Z"
+fetched_at: "2026-11-18T06:28:16Z"
 tags: ["desktop"]
 ---
 

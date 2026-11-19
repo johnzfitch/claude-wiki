@@ -2,7 +2,7 @@
 title: "OpenTelemetry tracing for the Claude API - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/opentelemetry"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-08T06:25:23Z"
+fetched_at: "2026-11-16T06:25:03Z"
 tags: ["api"]
 ---
 
@@ -12,7 +12,7 @@ tags: ["api"]
 
 
 
-Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Claude SDK and the Claude API.
+Trace your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Anthropic SDK and the Claude API.
 
 Copy page
 
@@ -20,14 +20,17 @@ Trace your Messages API requests, tool uses, and Managed Agents sessions with Op
 
 OpenTelemetry
 
-[Status](#availability-feature-support)  
 Beta
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 
 
@@ -57,7 +60,7 @@ Let Claude Code set up this feature for you
 
 Run in
 
-`❯``Set up OpenTelemetry tracing with the Claude API and Claude SDK`
+`❯``Set up OpenTelemetry tracing with the Claude API and Anthropic SDK`
 
 
 
@@ -81,7 +84,7 @@ Look up spans and their attributes.
 
 [TABLE]
 
-For Claude Code, the Agent SDK, or Cowork, see [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md), [Agent SDK observability](../../05-Agent-SDK/agent-sdk-observability.md), or [Cowork activity monitoring](../../15-Claude-AI-Features/monitor-claude-cowork-activity-with-opentelemetry.md).
+For Claude Code, the Agent SDK, or Cowork, see [Claude Code monitoring](../../13-Enterprise-Admin/monitoring-usage.md), [Agent SDK observability](../../05-Agent-SDK/agent-sdk-observability.md), or [Cowork activity monitoring](https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry).
 
 ## Send traces to a partner platform
 
@@ -252,30 +255,88 @@ Exported spans aren’t guaranteed to be a complete record of your API usage. Th
 
 ## Availability
 
-OpenTelemetry is in beta on every model.
+OpenTelemetry
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- All supported platforms
+APIs  
+- Messages API
+- Managed Agents
 
-Models
+Models  
+- All models
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Amazon Bedrock
 
-[Managed Agents](managed-agents-overview.md)
+Status  
+Beta
 
-StatusBeta
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- All models
 
-- All supported platforms
+Amazon Bedrock (bedrock-runtime)
 
-Models
+Status  
+Beta
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models

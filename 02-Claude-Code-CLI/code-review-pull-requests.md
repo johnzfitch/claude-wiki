@@ -2,11 +2,14 @@
 title: "Read and request reviews on a pull request - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/code-review-pull-requests"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-10-25T06:26:40Z"
+fetched_at: "2026-11-13T06:33:33Z"
+last_modified: "Fri, 13 Nov 2026 06:21:51 GMT"
 tags: ["claude-code"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Severity levels](#severity-levels)
 - [Respond to findings](#respond-to-findings)
@@ -41,11 +44,11 @@ Severity levels
 
 Claude posts each finding as an inline comment on the lines concerned and marks it with one of three severity levels:
 
-| Marker | Severity     | Meaning                                                            |
-|:-------|:-------------|:-------------------------------------------------------------------|
-| 🔴     | Important    | A bug that should be fixed before merging                          |
-| 🟡     | Nit          | A minor issue, worth fixing but not blocking                       |
-| 🟣     | Pre-existing | A bug that exists in the codebase but wasn’t introduced by this PR |
+| Marker | Severity | Meaning |
+|:---|:---|:---|
+| 🔴 | Important | A bug that should be fixed before merging |
+| 🟡 | Nit | A minor issue, worth fixing but not blocking |
+| 🟣 | Pre-existing | A bug that exists in the codebase but wasn’t introduced by this PR |
 
 When the review recorded its reasoning, the finding has a collapsed **Why this was flagged** section. Expand it to read why Claude flagged the issue and how it verified the problem. To change what Claude flags in your repository or how it ranks severity, see [Customize Code Review](code-review-customize.md).
 
@@ -69,10 +72,10 @@ Check run output
 
 The **Details** link on the **Claude Code Review** check run opens the findings in one table sorted by severity, including any finding whose inline comment GitHub didn’t accept:
 
-| Severity     | File:Line                 | Issue                                                          |
-|--------------|---------------------------|----------------------------------------------------------------|
+| Severity | File:Line | Issue |
+|----|----|----|
 | 🔴 Important | `src/auth/session.ts:142` | Token refresh races with logout, leaving stale sessions active |
-| 🟡 Nit       | `src/auth/session.ts:88`  | `parseExpiry` silently returns 0 on malformed input            |
+| 🟡 Nit | `src/auth/session.ts:88` | `parseExpiry` silently returns 0 on malformed input |
 
 A finding that has a line but wasn’t posted as an inline comment appears as an annotation in the **Files changed** tab, on the lines concerned. Important findings show in red, nits in yellow, and pre-existing bugs in gray. The check run concludes as neutral, or as skipped after some pushes that change no files and [keep the earlier result](#when-a-push-keeps-the-earlier-result). It never concludes as a failure, so a finished review doesn’t fail a required check. If you don’t see findings, or a review didn’t run, see [Troubleshoot Code Review](code-review-troubleshooting.md).
 
@@ -164,13 +167,13 @@ Comment commands
 
 Post one of these commands as a comment on the pull request:
 
-| Command                                        | What it does                                                                                                                                                                   | When to use it                                                                                                                                                   |
-|:-----------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `@claude review`                               | Starts a single review without subscribing the PR to future pushes                                                                                                             | You want one review now, such as on a pull request in a repository set to **Manual**, or another review right away in the other modes                            |
-| `@claude review always`                        | Starts a review and subscribes the PR to push-triggered reviews going forward                                                                                                  | You want subsequent pushes to start reviews, such as on a high-priority PR in a repository set to **Manual**                                                     |
-| `@claude review once`                          | Same as `@claude review`: starts a single review without subscribing                                                                                                           | The same cases as `@claude review`                                                                                                                               |
-| `@claude review stop`                          | Ends the PR’s subscription to push-triggered reviews, without starting a review or canceling one that’s already running. Claude replies with a comment instead of a check run. | You subscribed a PR with `@claude review always` in a repository set to **Manual** or **Once after PR creation**, and no longer want each push to start a review |
-| `@claude review off` or `@claude review pause` | Same as `@claude review stop`                                                                                                                                                  | The same cases as `@claude review stop`                                                                                                                          |
+| Command | What it does | When to use it |
+|:---|:---|:---|
+| `@claude review` | Starts a single review without subscribing the PR to future pushes | You want one review now, such as on a pull request in a repository set to **Manual**, or another review right away in the other modes |
+| `@claude review always` | Starts a review and subscribes the PR to push-triggered reviews going forward | You want subsequent pushes to start reviews, such as on a high-priority PR in a repository set to **Manual** |
+| `@claude review once` | Same as `@claude review`: starts a single review without subscribing | The same cases as `@claude review` |
+| `@claude review stop` | Ends the PR’s subscription to push-triggered reviews, without starting a review or canceling one that’s already running. Claude replies with a comment instead of a check run. | You subscribed a PR with `@claude review always` in a repository set to **Manual** or **Once after PR creation**, and no longer want each push to start a review |
+| `@claude review off` or `@claude review pause` | Same as `@claude review stop` | The same cases as `@claude review stop` |
 
 In a repository set to **After every push**, you can’t stop reviews with a comment, because pushes there start reviews with or without a subscription. To stop pushes from starting reviews on one pull request there, convert it to a [draft](#review-drafts-and-pull-requests-from-forks). When you mark it ready for review again, a review starts. For any comment command to take effect, all of these conditions have to hold:
 

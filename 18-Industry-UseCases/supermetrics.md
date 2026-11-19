@@ -2,7 +2,7 @@
 title: "Supermetrics: manage ad campaigns in a Claude conversation | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/supermetrics"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:34Z"
+fetched_at: "2026-11-18T06:29:30Z"
 tags: ["case-studies"]
 ---
 
@@ -80,6 +80,9 @@ Their recent product release Supermetrics Studio turns the same analysis into so
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -87,6 +90,3 @@ Their recent product release Supermetrics Studio turns the same analysis into so
 
 
 ### Rocket Money on building agents that fix their own code
-
-
-### How Rocket Money built its personal finance agent with Claude

@@ -2,7 +2,7 @@
 title: "Code - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/code"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-08T06:24:56Z"
+fetched_at: "2026-11-16T06:24:43Z"
 tags: ["api"]
 ---
 
@@ -40,7 +40,7 @@ List Claude Code Artifacts owned by organizations under the parent organization.
 
 GET/v1/compliance/apps/code/artifacts/{artifact_id}/versions/{version_id}
 
-Streams the content of one version of an Artifact as the response body, in chunks with no `Content-Length`. With `multi_file_format=zip`, a version with more than one file, other than a Claude Doc's (an Artifact whose `artifact_type` is `claude_docs`), comes back as a ZIP archive of its files.
+Streams the content of one version of an Artifact as the response body, in chunks with no `Content-Length`. With `multi_file_format=zip`, a version with more than one file, other than a Claude Doc's or a Claude Sheet's (an Artifact whose `artifact_type` is `claude_docs` or `claude_sheets`), comes back as a ZIP archive of its files.
 
 ##### [Download Code Artifact Content](https://platform.claude.com/docs/en/api/http/compliance/apps/code/artifacts/download)
 

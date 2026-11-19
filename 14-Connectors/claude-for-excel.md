@@ -2,7 +2,7 @@
 title: "Claude for Microsoft 365 | Claude by Anthropic"
 source_url: "https://www.claude.com/claude-for-powerpoint"
 category: "14-Connectors"
-fetched_at: "2026-11-09T06:25:41Z"
+fetched_at: "2026-11-18T06:27:25Z"
 tags: ["connectors"]
 ---
 
@@ -25,8 +25,6 @@ Build slides in your template, edit what you've selected, and generate native ch
 ## Claude for Word
 
 Edit with tracked changes, respond to comment threads, and update content using company styles.
-
-Beta
 
 ## Claude for Outlook
 
@@ -86,7 +84,7 @@ Find 30 minutes with everyone on this thread next week
 
 Blog post
 
-Claude for Excel, PowerPoint, and Word are now generally available on all paid plans, with Claude for Outlook joining in beta.
+Claude for Excel, PowerPoint, Word, and Outlook are generally available on all paid plans.
 
 [Read blog](https://www.claude.com/resources/articles/collaborate-with-claude-across-excel-powerpoint-word-and-outlook)
 
@@ -172,7 +170,7 @@ Pull context from outside sources directly from the sidebar.
 
 ### Where is this available?
 
-Claude for Excel, PowerPoint, and Word are generally available on all paid Claude plans. Claude for Outlook is in beta on all paid plans.
+Claude for Excel, PowerPoint, Word, and Outlook are generally available on all paid Claude plans.
 
 ### Can I connect through my cloud provider?
 

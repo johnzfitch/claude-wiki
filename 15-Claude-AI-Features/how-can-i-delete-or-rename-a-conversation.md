@@ -2,7 +2,7 @@
 title: "Delete or rename a conversation | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8230524-how-can-i-delete-or-rename-a-conversation"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:00Z"
+fetched_at: "2026-11-18T06:28:11Z"
 tags: ["claude-ai"]
 ---
 
@@ -91,4 +91,4 @@ Learn more about **[how Anthropic deletes your data](https://privacy.claude.com/
 
 To delete all data associated with your Claude account, delete your account. Account deletion is permanent, and you won't be able to recover your account or conversation data.
 
-Learn more about **[deleting your Claude account](https://support.claude.com/en/articles/9028421-how-can-i-delete-my-claude-account)**.
+Learn more about **[deleting your Claude account](../21-Account-Support/how-can-i-delete-my-claude-account.md)**.

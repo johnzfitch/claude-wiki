@@ -2,8 +2,8 @@
 title: "Create a marketplace - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugin-marketplaces"
 category: "08-Plugins-Skills"
-fetched_at: "2026-11-09T06:25:40Z"
-last_modified: "Sun, 08 Nov 2026 19:52:07 GMT"
+fetched_at: "2026-11-18T06:27:36Z"
+last_modified: "Wed, 18 Nov 2026 02:19:33 GMT"
 tags: ["claude-code", "plugins"]
 ---
 
@@ -46,10 +46,7 @@ These cases are covered on other pages:
 
 Start with [Create a marketplace](#create-a-marketplace) to build one on your own machine and install a plugin from it, then [add more plugin entries](#add-plugin-entries).
 
-
-[​](#create-a-marketplace)
-
-Create a marketplace
+## [](#create-a-marketplace)Create a marketplace
 
 The following steps create a marketplace on your machine, add a plugin to it, register it in Claude Code, and install the plugin from it. That is the whole loop, and it’s the same loop your users go through once you host the marketplace somewhere they can reach. Run every command in your shell, from the directory where you want `my-marketplace/` created. You need a plugin to list. The example uses `my-first-plugin` from [Create your first plugin](plugins-create.md#create-your-first-plugin), a plugin with one skill that you run as `/my-first-plugin:hello`; build it first if you don’t have a plugin yet. To use a plugin of your own instead, substitute its directory and its `name` wherever the steps say `my-first-plugin`. For what a plugin directory can contain, see the [plugin directory explorer](plugins-components.md#explore-the-plugin-directory).
 
@@ -145,10 +142,7 @@ claude plugin details my-first-plugin
 
 The `Component inventory` section reads `Skills (1) hello`.To run the skill, start a session and enter `/my-first-plugin:hello`. Claude greets you. The command has the plugin’s name as a prefix, as every plugin skill’s name does.
 
-
-[​](#add-plugin-entries)
-
-Add plugin entries
+## [](#add-plugin-entries)Add plugin entries
 
 Every plugin you distribute is one object in the `plugins` array of `marketplace.json`. To add a second plugin, add a second object. These fields cover most entries:
 
@@ -158,27 +152,18 @@ Every plugin you distribute is one object in the `plugins` array of `marketplace
 
 For the full field list, see [Plugin entries](plugins-marketplace-reference.md#plugin-entries), which also covers the [`plugin.json`](plugins-reference.md) fields an entry can set and when they apply.
 
-
-[​](#rules-for-plugin-entries)
-
-Rules for plugin entries
+## [](#rules-for-plugin-entries)Rules for plugin entries
 
 Most failed installs from a new marketplace come from a relative path written from the wrong directory, or from an entry name that differs from the `name` in the plugin’s `plugin.json`.
 
-
-[​](#write-relative-paths-from-the-marketplace-root)
-
-Write relative paths from the marketplace root
+### [](#write-relative-paths-from-the-marketplace-root)Write relative paths from the marketplace root
 
 The marketplace root is the directory that contains `.claude-plugin/`. In [the walkthrough](#create-a-marketplace), that’s `my-marketplace/`, so the entry’s `source` is `"./plugins/my-first-plugin"`. The path doesn’t start inside `.claude-plugin/`, so don’t use `..` to leave it. A path with `..` and a path to a missing directory fail at different commands:
 
 - **A path with `..`**: `claude plugin validate` reports the entry as invalid. The message begins `Path contains "..": ./../plugins/my-first-plugin`.
 - **A path to a directory that doesn’t exist**: `claude plugin validate` passes. `claude plugin install` fails with `Source path does not exist: <path>`, and `<path>` is the absolute location Claude Code checked.
 
-
-[​](#keep-the-entry-name-and-the-manifest-name-the-same)
-
-Keep the entry name and the manifest name the same
+### [](#keep-the-entry-name-and-the-manifest-name-the-same)Keep the entry name and the manifest name the same
 
 A marketplace plugin has an entry `name` in `marketplace.json` and a `name` in its own `plugin.json`, called the manifest name. Each name appears in different places:
 
@@ -187,10 +172,7 @@ A marketplace plugin has an entry `name` in `marketplace.json` and a `name` in i
 
 When the two names differ and someone installs by the manifest name, Claude Code reports `Plugin "<manifest-name>" not found in marketplace "<marketplace>"`. Keep the two names the same. For more on how Claude Code uses the two names, see [Plugin loading reference](plugins-loading.md#find-where-a-plugin-came-from).
 
-
-[​](#keep-unused-submodules-out-of-the-clone)
-
-Keep unused submodules out of the clone
+### [](#keep-unused-submodules-out-of-the-clone)Keep unused submodules out of the clone
 
 When someone adds your marketplace, Claude Code clones the repository and fetches only the git submodules that hold plugin files. Requires Claude Code v2.1.295 or later. You decide which submodules Claude Code fetches by where you put each plugin:
 
@@ -199,10 +181,7 @@ When someone adds your marketplace, Claude Code clones the repository and fetche
 
 If a plugin at the root runs a file from a submodule, write the file’s path out in the plugin’s hook or server configuration, such as `${CLAUDE_PLUGIN_ROOT}/vendor/tool/run.sh`. Claude Code reads those paths to find out whether the plugin needs the submodules. It can’t see a path that a script builds while it runs. For the full rule, see [Git submodules in the marketplace repository](plugins-marketplace-reference.md#git-submodules-in-the-marketplace-repository).
 
-
-[​](#choose-a-plugin-source)
-
-Choose a plugin source
+## [](#choose-a-plugin-source)Choose a plugin source
 
 Each plugin entry in `marketplace.json` has a `source` that tells Claude Code where to fetch that one plugin. Pick the source by where the plugin’s files are stored. The table lists the sources most marketplace owners use.
 
@@ -221,17 +200,11 @@ In a `git-subdir` source, `url` takes a git URL or an `owner/repo` GitHub shorth
 
 For the fields of every source type, and for pinning a git-based source to a `ref` or `sha`, see [Plugin sources](plugins-marketplace-reference.md#plugin-sources).
 
-
-[​](#validate-and-test)
-
-Validate and test
+## [](#validate-and-test)Validate and test
 
 As you add plugins, run `claude plugin validate ./my-marketplace` in your shell after every edit, and install from the marketplace on your own machine before you share it. Validation and installation catch different problems.
 
-
-[​](#problems-that-validation-reports)
-
-Problems that validation reports
+### [](#problems-that-validation-reports)Problems that validation reports
 
 `claude plugin validate` reads only files inside the marketplace directory. It reports:
 
@@ -244,10 +217,7 @@ Problems that validation reports
 
 For every message `validate` can print, see [Validation messages](plugins-marketplace-reference.md#validation-messages). For its flags and exit codes, see [`plugin validate`](plugins-cli-reference.md#plugin-validate).
 
-
-[​](#problems-that-surface-when-you-add-or-install)
-
-Problems that surface when you add or install
+### [](#problems-that-surface-when-you-add-or-install)Problems that surface when you add or install
 
 Problems that `claude plugin validate` doesn’t report appear when you add the marketplace or install from it:
 
@@ -256,31 +226,19 @@ Problems that `claude plugin validate` doesn’t report appear when you add the 
   - Claude Code first fetches a `github`, `git-subdir`, or other remote source when you install the plugin, so a wrong `repo` or `path` appears then.
   - A relative `source` whose directory doesn’t exist also fails at install, with `Source path does not exist: <path>`.
 
-
-[​](#test-an-edit-to-a-plugin)
-
-Test an edit to a plugin
+### [](#test-an-edit-to-a-plugin)Test an edit to a plugin
 
 In [the walkthrough](#create-a-marketplace), you added `my-marketplace` from a local directory with a relative-path `source`. With that setup, Claude Code reads the plugin’s files directly from `my-marketplace/plugins/`. Your edits take effect at the next session start or when you run `/reload-plugins` in a session, with no change to the plugin’s `version`. People who install from your hosted marketplace get a copy in the plugin cache instead. For how they receive a new version, see [Keep users up to date](plugins-host-marketplace.md#keep-users-up-to-date).
 
-
-[​](#remove-the-marketplace-to-start-over)
-
-Remove the marketplace to start over
+### [](#remove-the-marketplace-to-start-over)Remove the marketplace to start over
 
 To remove everything and start over, run `claude plugin marketplace remove my-marketplace` in your shell. The command removes the marketplace and uninstalls its plugins.
 
-
-[​](#host-your-marketplace)
-
-Host your marketplace
+## [](#host-your-marketplace)Host your marketplace
 
 Once you can install a plugin from the marketplace on your own machine, as in [Create a marketplace](#create-a-marketplace), push the marketplace directory to a git host. Before you push, give the marketplace a top-level `name` that other authors are unlikely to pick, because a user [can’t have two marketplaces with the same name](plugins-marketplace-reference.md#marketplace-file). Your teammates then run `claude plugin marketplace add <owner>/<repo>` in their shell for a GitHub repository, or the same command with the repository URL. They then install a plugin by name as in [the walkthrough](#create-a-marketplace). For private-repository access, updates, versioning, and renaming or removing entries, see [Host and maintain a marketplace](plugins-host-marketplace.md).
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 - [Host and maintain a marketplace](plugins-host-marketplace.md): pick a host, keep users up to date, and rename or remove plugins safely
 - [Marketplace reference](plugins-marketplace-reference.md): `marketplace.json` fields and source types

@@ -2,7 +2,7 @@
 title: "Multiagent orchestration - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-05T06:37:22Z"
+fetched_at: "2026-11-13T06:36:51Z"
 tags: ["agents", "api", "subagents"]
 ---
 
@@ -23,18 +23,23 @@ Multiagent orchestration
 Feature of  
 [Managed Agents](managed-agents-overview.md)
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Models](#feature-availability)  
+- All models
 
-[Beta header](#feature-beta-headers)  
-- `managed-agents-2026-04-01`
-  
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+
+[Beta header](#feature-availability)  
+- 
+  Copy`managed-agents-2026-04-01`
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Multiagent orchestration lets one agent coordinate with others to complete complex work. Agents can act in parallel with their own isolated context, which helps improve output quality and can also improve time to completion.
 
@@ -596,7 +601,7 @@ Each consultation runs as a platform-spawned thread named `anthropic.advisor` th
 4.  `session.thread_status_idle` (`stop_reason: end_turn`)
 5.  `session.thread_status_terminated`
 
-No `agent.tool_use` events are emitted for a consultation, and no `agent.thread_message_sent` event appears on the session’s event stream, because the consultation input is composed by the platform rather than sent by the agent. If you list the advisor thread’s own events, the advice also appears there as an `agent.thread_message_sent` event. The advice delivery (event 3) is not guaranteed to arrive before the advisor thread’s idle and terminated events, so don’t treat those as a signal that the advice has already been delivered.
+A consultation emits no `agent.tool_use` events, and no `agent.thread_message_sent` event appears on the session’s event stream. The platform composes the consultation input, so the agent doesn’t send it. If you list the advisor thread’s own events, the advice also appears there as an `agent.thread_message_sent` event. The advice delivery (event 3) is not guaranteed to arrive before the advisor thread’s idle and terminated events, so don’t treat those as a signal that the advice has already been delivered.
 
 Whether your client can read the advice is the advisor model’s policy. It mirrors the [result variants](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#result-variants) split on the Messages API advisor tool. An advisor model that returns plaintext results there delivers readable text here. One that returns redacted results delivers a `[{"type": "redacted"}]` placeholder on every client surface, while the agent still reads the full advice server-side. The preceding example uses the newest Opus model available to you as the advisor. It returns redacted results, so your client sees only the placeholder. To read the advice on the event stream, use an advisor that returns plaintext, such as Claude Opus 4.8. A model’s policy can change with no change to the API, so handle both `text` and `redacted` blocks. Some agent models pair only with redacted-result advisors; see the advisor tool’s [Model compatibility](../Agents-Tools/agents-and-tools-tool-use-advisor-tool.md#model-compatibility) section. Advisor thinking is never surfaced. Clients cannot send `redacted` blocks themselves; an event containing one is rejected with a 400 validation error.
 
@@ -660,26 +665,61 @@ The update doesn’t change sessions that already exist. To use the new block, c
 
 ## Availability
 
-Multiagent orchestration is in beta on every model.
+Multiagent orchestration
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Multiagent orchestration are the same across all supported platforms.
 
-- All supported platforms
+Claude API
 
-### Required beta headers
+Status  
+Beta
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Managed Agents
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Beta header  
+Requires
 
-Header
+managed-agents-2026-04-01
 
-- `managed-agents-2026-04-01`
-  
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Managed Agents
+
+Beta header  
+Requires
+
+managed-agents-2026-04-01
+
+Models  
+- All models
 
 ### Data handling
 
@@ -693,8 +733,8 @@ Applicable endpoints
 
 Zero data retentionNot eligible
 
-Sessions are stateful resources; transcripts persist until you delete them. Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for ZDR, except for self-hosted Managed Agents. Sessions are stateful resources; transcripts persist until you delete them. [Learn more](managed-agents-self-hosted-data-and-access.md#how-long-data-is-kept)
 
 HIPAANot eligible
 
-Applies to all Managed Agents sub-features, including Self-hosted sandboxes.
+Not eligible for HIPAA. Applies to all Managed Agents sub-features.

@@ -2,7 +2,7 @@
 title: "How do I log out of all active sessions? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/10310342-how-do-i-log-out-of-all-active-sessions"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:06Z"
+fetched_at: "2026-11-18T06:27:46Z"
 tags: ["claude-ai", "claude-code"]
 ---
 
@@ -43,7 +43,7 @@ This action will immediately sign you out of your account across all devices whe
 
 - Claude Code, including tokens created with `setup-token` for continuous integration (CI)
 
-- Claude in your tools, such as Claude in Chrome, Claude in Slack, and \[placeholder: public names for what the thread calls “Claude for Sheets” and “Claude for Teams”\]
+- Claude in your tools, such as Claude in Chrome and Claude in Slack
 
 To regain access to your account on any device, you'll need to authenticate again using either Google login or a login link sent to your email address.
 
@@ -55,7 +55,6 @@ Logging out of all active sessions also logs you out of Claude Code. To log out 
 
 If you used your Claude account to authenticate into Claude Code, you can see and log out of those sign-ins in **Settings \> Account**, where they're listed with your other sessions. If they aren't listed there, manage your authorization tokens in **Settings \> Claude Code**. To remove a token and log out of Claude Code, click the trash can icon.
 
-
 ## Unable to access your account?
 
-If you're unable to sign into your account to log out of all sessions, contact our Support team by clicking on the message icon in the bottom right of any Help Center page. For additional information, refer to **[How to get support](how-to-get-support-claude-help-center.md)**.
+If you're unable to sign into your account to log out of all sessions, contact our Support team by clicking on the message icon in the bottom right of any Help Center page. For additional information, refer to **[How to get support](https://support.claude.com/en/articles/9015913)**.

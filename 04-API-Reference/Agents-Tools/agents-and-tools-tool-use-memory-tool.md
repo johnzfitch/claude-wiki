@@ -2,7 +2,7 @@
 title: "Memory tool - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool"
 category: "04-API-Reference/Agents-Tools"
-fetched_at: "2026-11-05T06:34:44Z"
+fetched_at: "2026-11-13T06:35:18Z"
 tags: ["api", "prompting", "security"]
 ---
 
@@ -23,11 +23,14 @@ Let Claude store and retrieve information across conversations by implementing t
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 The memory tool lets Claude store and retrieve information across conversations in a directory of memory files. Claude can create, read, update, and delete files that persist between sessions, building up knowledge over time without keeping everything in the context window.
 
@@ -579,15 +582,69 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Memory tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Memory tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Models
+Availability requirements for Memory tool are the same across all supported platforms.
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

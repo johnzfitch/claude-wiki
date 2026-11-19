@@ -1,9 +1,9 @@
 ---
 title: "Subscriptions - Model Context Protocol"
-source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns/subscriptions"
+source_url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/patterns/subscriptions"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:24:56Z"
-last_modified: "Sat, 31 Oct 2026 01:43:50 GMT"
+fetched_at: "2026-11-10T06:32:00Z"
+last_modified: "Tue, 10 Nov 2026 00:04:26 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

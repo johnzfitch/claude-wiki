@@ -2,8 +2,8 @@
 title: "Key Changes - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/2025-11-25/changelog"
 category: "06-MCP-Tools/Spec-Archive"
-fetched_at: "2026-10-31T06:25:25Z"
-last_modified: "Fri, 30 Oct 2026 20:49:10 GMT"
+fetched_at: "2026-11-10T06:28:34Z"
+last_modified: "Mon, 09 Nov 2026 23:05:03 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

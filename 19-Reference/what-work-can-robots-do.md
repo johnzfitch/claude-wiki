@@ -2,13 +2,15 @@
 title: "Can we predict the jobs robots will do? \\ Anthropic"
 source_url: "https://www.anthropic.com/research/what-work-can-robots-do"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:27:02Z"
+fetched_at: "2026-11-14T06:26:30Z"
 tags: ["news-research"]
 ---
 
+### 01Key findings
+
 # What work can robots do?
 
-[Download the PDF](https://cdn.sanity.io/files/4zrzovbb/website/401a473469db99fd39bba1ca6d9a5653a70e2f12.pdf)
+[Download the PDF](https://assets.claude.com/401a473469db99fd39bba1ca6d9a5653a70e2f12.pdf)
 
 - [01Key findings](#key-findings)
 - [02Introduction](#introduction)
@@ -23,22 +25,23 @@ tags: ["news-research"]
 - [11References](#references)
 - [12Data sources](#data-sources)
 
-- Published
+Published  
+Sep 30, 2026
 
-  Sep 30, 2026
+Authors  
+- Russell Legate-Yang
+- Maxim Massenkoff
 
-- Team
+Team  
+[Economics](team-economics.md)
 
-  [Economics](team-economics.md)
+Topics  
+- [Robotics](https://www.anthropic.com/search?topic=robotics)
+- [Labor market](https://www.anthropic.com/search?topic=labor-market)
+- [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
 
-- Topics
-
-  - [Robotics](https://www.anthropic.com/search?topic=robotics)
-  - [Labor market](https://www.anthropic.com/search?topic=labor-market)
-  - [Economic Futures](https://www.anthropic.com/search?topic=economic-futures)
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-
-  See more...
+See more...
 
 Related articles
 
@@ -224,7 +227,7 @@ Much remains uncertain about how robots and AI could reshape the economy. Growth
 
 ## **Appendix**
 
-Available [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/d27288375b0ac486cb9da0a30a94423b36ff0443.pdf).
+Available [here](https://assets.claude.com/d27288375b0ac486cb9da0a30a94423b36ff0443.pdf).
 
 #### Data availability
 
@@ -674,6 +677,14 @@ Webb, Michael. 2020. "The Impact of Artificial Intelligence on the Labor Market.
 
 ## Authors & acknowledgements
 
+- [Russell Legate-Yang\*→](https://www.anthropic.com/search?author=russell-legate-yang)
+
+- [Maxim Massenkoff\*→](https://www.anthropic.com/search?author=maxim-massenkoff)
+
+  Co-author of this article.
+
+\*Lead authors. Contributed equally to this report
+
 ### Contributors
 
 Russell Legate-Yang and Maxim Massenkoff.
@@ -686,10 +697,12 @@ James Akl, Tess Cotter, Sholto Douglas, Adam Farina, Megan Giacobetti, Ryan Hell
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{legateyang2026robots,
  author = {Legate-Yang, Russell and Massenkoff, Maxim},
  title = {What work can robots do?},
  date = {2026-09-30},
  year = {2026},
  url = {https://www.anthropic.com/research/what-work-can-robots-do}
+}
+```

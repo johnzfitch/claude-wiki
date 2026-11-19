@@ -2,7 +2,7 @@
 title: "Prompting Claude Haiku 5.5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-11-06T06:33:47Z"
+fetched_at: "2026-11-14T06:25:34Z"
 tags: ["agents", "prompting", "search"]
 ---
 
@@ -34,25 +34,25 @@ Existing Claude Haiku 4.5 prompts should perform well without changes. Start wit
 
 
 
-For the breaking API changes when migrating from Claude Haiku 4.5, see the [migration guide](../20-Models/models-haiku-5-5-migration-guide.md).
+For the breaking API changes when migrating from Claude Haiku 4.5, see the [Claude Haiku 5.5 migration guide](../20-Models/models-haiku-5-5-migration-guide.md).
 
-Several sections on this page suggest text to add to your system prompt. Add it to new conversations only. A request that sends thinking blocks back after `system` changed can return a 400 error, so a stored conversation resumed with the new system prompt can fail. To change instructions partway through a conversation, [put them in the newest turn](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#changing-context). On the Claude API, Amazon Bedrock, Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed), and Claude Models on Google Cloud (Google managed), you can instead [append a system message to the conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#new-instructions).
+Several sections on this page suggest text to add to your system prompt. Add it to new conversations only. If you resume a stored conversation with a new system prompt and send its thinking blocks back, the request can return a 400 error. To change instructions partway through a conversation, [put them in the newest turn](../04-API-Reference/Guides/build-with-claude-preserved-thinking-change-tools-or-instructions.md#changing-context). On [platforms that support mid-conversation system messages](../04-API-Reference/Guides/build-with-claude-mid-conversation-system-messages.md#feature-availability), you can instead [append a system message to the conversation](../04-API-Reference/Guides/build-with-claude-preserved-thinking-change-tools-or-instructions.md#new-instructions).
 
 ## Use effort to control thinking
 
-[Effort](../04-API-Reference/Guides/build-with-claude-effort.md) is the main control for how much Claude Haiku 5.5 thinks. It replaces the thinking budget (`budget_tokens`) that Claude Haiku 4.5 used, so there’s no old setting to carry over. Compare two or three of these levels on your own evals:
+[Effort](../04-API-Reference/Guides/build-with-claude-effort.md) is the main control for how much Claude Haiku 5.5 thinks. Claude Haiku 4.5 uses a thinking budget (`budget_tokens`) instead, so there’s no effort setting to carry over. On Claude Haiku 5.5, a request that sets `budget_tokens` returns a 400 error. Compare two or three of these levels on your own evals:
 
 - `low` is the cheapest and fastest level. Use it for chat, short tool tasks, and simple, high-volume requests. In long agent prompts, the model is more likely to skip a search, stop early, or skip a check at this level.
 - `medium` is the default. Start here for most work, including agentic coding.
 - `high` suits knowledge work, longer agent tasks, and strict instruction following.
 - `xhigh` and `max` are for work where a quality gain on your evals justifies the cost. Thinking and replies get much longer at these levels, so also run your evals on Claude Sonnet 5.5 and compare performance, cost, and speed.
 
-Claude Haiku 5.5 is the first Haiku model with effort levels. Thinking works as follows:
+Thinking works as follows:
 
 - Thinking is on by default and counts toward `max_tokens`, which can go up to 128,000. A `max_tokens` value sized for Claude Haiku 4.5 requests that ran without thinking can cut the reply off, so leave room for thinking.
 - To get less thinking, lower the effort level. In Anthropic’s testing, telling the model in the prompt to answer directly didn’t stop it from thinking. You can also turn thinking off with `thinking: {"type": "disabled"}`. This works at `low`, `medium`, and `high` only. At `xhigh` and `max`, the request returns a 400 error.
 - At `xhigh` effort in multi-turn chats, the model sometimes writes its whole answer in its thinking and ends the turn with no visible text. If you see this behavior, check each response for an empty reply.
-- Changing the top-level `effort` value between requests invalidates the prompt cache for the conversation’s messages. Where your platform supports it, you can change the level partway through a conversation with a [per-message effort change](../04-API-Reference/Guides/build-with-claude-effort.md#change-effort-mid-conversation-beta) (beta), which keeps the cache. A change holds for every later turn until another one replaces it. It needs the `mid-conversation-output-config-2026-07-01` beta header and adaptive thinking, which is the default. With thinking off, a per-message effort change returns a 400 error.
+- Changing the top-level `output_config.effort` value between requests invalidates the prompt cache for the conversation’s messages. On [supported platforms](../04-API-Reference/Guides/build-with-claude-effort-per-message.md#feature-availability), you can change the level partway through a conversation with a [per-message effort](../04-API-Reference/Guides/build-with-claude-effort-per-message.md) change, which keeps the cache. A change holds for every later turn until another one replaces it. It needs the `mid-conversation-output-config-2026-07-01` beta header and adaptive thinking, the default thinking mode. With thinking off, a per-message effort change returns a 400 error.
 
 ## Accurate search results
 
@@ -64,12 +64,12 @@ The current date is {{current_date}}.
 
 
 
-Render the date once, when the conversation starts, and send the same `system` and `tools` on every later request in that conversation (see [Keep earlier turns unchanged](../20-Models/models-haiku-5-5-migration-guide.md#keep-earlier-turns-unchanged)). When a conversation continues on a later day, [give the new date in the newest turn](../04-API-Reference/Guides/build-with-claude-preserved-thinking.md#changing-context) instead.
+Render the date once, when the conversation starts, and send the same `system` and `tools` on every later request in that conversation (see [Keep earlier turns unchanged](../20-Models/models-haiku-5-5-migration-guide.md#keep-earlier-turns-unchanged)). When a conversation continues on a later day, [give the new date in the newest turn](../04-API-Reference/Guides/build-with-claude-preserved-thinking-change-tools-or-instructions.md#changing-context) instead.
 
 The model also sometimes needs an extra nudge to search. This occurs most at `low` effort and with long system prompts. To fix it, add this text directly after the date:
 
 ``` block
-Your training data ends well before today's date. Records, office holders, prices, versions, rules and anything "latest" may have changed since then, so search for those before you answer, even when you feel sure. Facts that can't change need no search. When the answer depends on where the user is, put the user's country or region in the search query.
+Your training data ends well before today's date. Records, office holders, prices, versions, rules, and anything "latest" may have changed since then, so search for those before you answer, even when you feel sure. Facts that can't change need no search. When the answer depends on where the user is, put the user's country or region in the search query.
 ```
 
 
@@ -116,7 +116,7 @@ Raising effort also reduces early stopping, on its own or together with this tex
 At `low` and `medium` effort, Claude Haiku 5.5 sometimes reports a code change as done without running a check. If you see the model report results without checking its work, add this paragraph, or one like it, to your system prompt:
 
 ```python
-When you change code that can be run, built, or type-checked, run a real check that exercises the change before reporting it done: the project's tests, type-checker, or build, or the changed command itself. A syntax-only check, or a check command that failed to start, does not count; if all that is missing is the project's declared dependencies, install them with its own package manager and lockfile (e.g. npm install, pip install -r requirements.txt), never via sudo or the system package manager, unless told not to. Only if no real check can run here, say which one you did not run and why instead of reporting the change as done.
+When you change code that can be run, built, or type-checked, run a real check that exercises the change before reporting it done: the project's tests, type-checker, or build, or the changed command itself. A syntax-only check, or a check command that failed to start, does not count; if all that is missing is the project's declared dependencies, install them with its own package manager and lockfile (for example, npm install or pip install -r requirements.txt), never through sudo or the system package manager, unless told not to. Only if no real check can run here, say which one you did not run and why instead of reporting the change as done.
 ```
 
 
@@ -158,6 +158,6 @@ Claude Haiku 5.5 runs safety classifiers that can decline a request. A declined 
 - `bio`: the request could enable biological harm, such as dangerous lab methods. Everyday health and educational questions aren’t affected. If the `bio` classifier blocks your organization’s life sciences work, you can apply to the [Life Sciences Verification Program](../19-Reference/life-sciences-verification-program.md).
 - `general_harms`: the request falls under a usage-policy area other than the previous three. Benign work can also trigger this category.
 
-If you’re moving from Claude Haiku 4.5, these refusals are new.
+Claude Haiku 4.5 doesn’t return these refusals.
 
-Claude Haiku 5.5 has no [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback) (beta). If a request is declined, handle `stop_reason: "refusal"` in your client. Sending the same request to Claude Haiku 5.5 again usually returns another refusal.
+Claude Haiku 5.5 has no [server-side fallback](../04-API-Reference/Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback). If a request is declined, handle `stop_reason: "refusal"` in your client. Sending the same request to Claude Haiku 5.5 again usually returns another refusal.

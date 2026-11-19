@@ -2,7 +2,7 @@
 title: "Peter H. Yoon1 , Januka S. Athukoralage1 , Emmanuel Ameisen1 ,"
 source_url: "https://www-cdn.anthropic.com/22573675ada52a8ca8a97a1a4b4326b2f208a071.pdf"
 category: "19-Reference"
-fetched_at: "2026-09-26T06:40:49Z"
+fetched_at: "2026-11-18T06:28:33Z"
 tags: ["news-research"]
 ---
 
@@ -149,9 +149,9 @@ at partner protein-coding genes rather than ncDNA features, we examined the sess
                      0
                                                     17th family
                      1                              nominated
+
+
   Follow-up task #
-
-
                      2
                      3
                      4
@@ -328,98 +328,40 @@ C                                                                               
                                                                                                                                                                                                                                                                            MarsHill RT
 
 
-                                                                                                              before the RT domain
-                                                                                                               N-terminal residues
-
-
-                                                                                                                                                                                                                                          TM-score to solved
+                                                                                                               N-terminal residues                                                                                                        TM-score to solved
                                                                                                                                      400
 
-
-                                                                                                                                                                                                                                            RT structures
                       DGR, BPP-1 (PDB 8UBE)                     Retron, Ec86 (PDB 7V9X)                                                                                                                                                                        0.5
 
+
+                                                                                                              before the RT domain                                                                                                          RT structures
                                                                                                                                      200
 
 
                                                                                                                                                                                                                                                                0.0
-                                                                                                                                       0
-
-
-                                                                                                                                                                                                                                                                          re
-
-
-                                                                                                                                                                                                                                                                                     TD
-                                                                                                                                                ed -
-
-
-                                                                                                                                                                               R
-
-
-                                                                                                                                                                                        i
-
-
-                                                                                                                                                                                                 n
-
-
-                                                                                                                                                                                                            T
-                                                                                                                                              tro II
-
-
-                                                                                                                                                                                       Ab
-                                                                                                                                             at R
-
-
-                                                                                                                                                                                                                                                                         co
-                                                                                                                                                                                                 ro
-
-                                                                                                                                                                                                          AR
-                                                                                                                                                                          DG
+                                                                                                                                       0                                                                                                                                  re
+                                                                                                                                           G                                   R        i
+                                                                                                                                                                                       Ab        n          T                                                                        TD
+                                                                                                                                             ro                           DG                     ro       AR                                                             co       N
                                                                                                                                            in up
-
-
-                                                                                                                                                                                                                                                                                  N
+                                                                                                                                              tro II                               or         et                                                                     T
                                                                                                                                        as CR n
-                                                                                                                                           ci P
-
-
-                                                                                                                                                                                              et
-
-
-                                                                                                                                                                                                                                                                     T
-                                                                                                                                         so IS
-
-
-                                                                                                                                                                                   or
-                                                                                                                                             ro
-
-
-                                                                                                                                                                                             R
-
-
-                                                                                                                                                                                                                                                                     R
-                                                                                                                                           G
-
-
-                                                                                                                                                                                   G
-                                 NART (AF2)                           ART, MarsHill (AF2)
-
-
-                                                                                                                                                                               U
+                                                                                                                                         so IS                                     G         R                                                                       R
+                                 NART (AF2)                           ART, MarsHill (AF2)                                                  ci P
+                                                                                                                                             at R                              U
+                                                                                                                                                ed -
                        RT domain               N-terminal region (NTD in ART)             YxDD motif
 
 F                                      repeat array              NTD                     RT                   G
                                                                                                                                                                                    1             2           3                 4           5
                                                                                                                                       ART, MarsHill                                                                                                                               RT
                        100                                                                                                                                                              213           197         210               173 nt, repeat to repeat
-         to SA1 ART
-          % Identity
+
+          % Identity    75                                                                                                                                1 ATTTTATATAGAATAATATAAAATAGATCATATGAATACGTATGATCTTAATTAAAATT
 
 
-                        75                                                                                                                                1 ATTTTATATAGAATAATATAAAATAGATCATATGAATACGTATGATCTTAATTAAAATT
                                                                                                                                             Repeats
-
-
+         to SA1 ART
                                                                                                                                                           2 AAGCTATATCTTATTAAATTAAGGTAATCATATGAATACGTATGATTTAAATTTATTTA
                         50                                                                                                                                3 AGTTTTTCTATAATTAATTTATAGACATTATATGAATACGTATAATGATTATTTATTTA
                                                                                                                                                           4 AGTTATTCTATAATTAATTTATAGACATTATATGAATACGTATAATGTAATAATTATTT
@@ -431,46 +373,30 @@ H                                                                               
 
                                                                                                                                                                                                                                    100
                       7–10
+
 Copies in the array
-
-
                                                                                                                                                                           60
- (Diverse ARTs)
+
+
+                                                                                                                                                             % Identity
+                                                                                                                                                                                                                      % Identity
+                         6
+                                                                                                                                                                          40
 
 
                                                                                                                                                            above chance
-                                                                                                                                                             % Identity
-
-
-                                                                                                                                                                                                                      % Identity
-
-
-                         6
-                                                                                                                                                                          40
                          5                                                                                                                                                                                                          50
+
+
+ (Diverse ARTs)
                                                                                                                                                                           20
                          4
                                                                                                                                                                            0
                          3                                                                                                                                                                                                           0
-                                                                                                                                                                                             s
-
-
-                                                                                                                                                                                                      er
-                                                                                                                                                                               at
-
-
-                                 0                     1                        2             −40 −20    0          20                40                                                                                                     −40 −20                       0    20       40
-                                                                                                                                                                                        nk
-                                                                                                                                                                             pe
-
-
-                                                                                                                                                                                                     ac
-                                                                                                                                                                                       fla
-
-
-                                         Position in the array (kb)                       Position from repeat core (nt)                                                                                                                 Position from repeat core (nt)
-                                                                                                                                                                                                 sp
-                                                                                                                                                                           re
+                                                                                                                                                                           re                s        er
+                                 0                     1                        2             −40 −20    0          20                40                                     pe         nk           ac                                      −40 −20                       0    20       40
+                                                                                                                                                                               at      fla
+                                         Position in the array (kb)                       Position from repeat core (nt)                                                                         sp                                      Position from repeat core (nt)
 
 
 Figure 2. Features of array-associated reverse transcriptase loci. (A) Maximum-likelihood tree of 774 RT domains,
@@ -557,15 +483,13 @@ D                                                                               
                                                   abundant RNAs                       1                     2              3
               Infection, 15 min
  Public
-
-
                                                              30,000
                                                 S. lentus
                                                                    0
               Native locus                                       300                                                                    SA1, potential RNA species                                             repeat           spacer
+
+
  This study
-
-
                                                   E. coli                                                                                      201 nt              201 nt                                223 nt                       355 nt
                                                                    0
                 J23119        pBAD                               700
@@ -693,21 +617,22 @@ and F). gLM2, which reads the sequence on both sides of a base, predicted every 
 
                                                                                                                                                                                                                           detects repeat array (%)
                                                 8
-                       (mean of the 10 in B)
 
 
+                         claims asserted
                                                                                                                                                                                                               partner
+
 
                                                                                                                               claims asserted (%)
                                                                                              Mythos 5.1                                              75                                                                                               75
-                         claims asserted
-
-
                                                                                              Mythos 5                                                                                                                                                                                                                     Opus 5.5
                                                                                                                                                                                                               5′ tract
                                                 6                                            Opus 5
+                                                                                                                                                     50                                                                                               50
 
-                                                                                             Opus 4.8                                                50                                                                                               50                                                                  Mythos 5.1
+
+                       (mean of the 10 in B)
+                                                                                             Opus 4.8                                                                                                                                                                                                                     Mythos 5.1
                                                 4                                            Sonnet 5                                                                                                                                                                                                                     Opus 5
                                                                                              Opus 4.6
                                                                                                                                                      25                                                                                               25
@@ -725,15 +650,14 @@ and F). gLM2, which reads the sequence on both sides of a base, predicted every 
  F                                                      most capable models          other models           G                                                                                                                                        H
                                                                                                                                                                                                                                                                                       100
                                                                                                                                                                    Detects Repeat Array (%)                                                                                                       Mythos 5
-     locus DNA in context (nt)
 
 
-                                                                                                                                                                                                                                                           detects repeat array (%)
+     locus DNA in context (nt)                                                                                                                                                                                                                             detects repeat array (%)
                                  10,000                                                                                                             100                                                      Mythos 5
                                                                                           Opus 4.8                                                            higher with
+
+
                                                                                                                     ≥200 nt of DNA in context
-
-
                                                                                           Sonnet 5                                                            DNA in context                                                                                                           75
                                                                                                                                                                                                              Opus 5.5
                                                                                           Opus 4.6
@@ -741,25 +665,12 @@ and F). gLM2, which reads the sequence on both sides of a base, predicted every 
                                                                                           Opus 5.5                                                                                                                                                                                                                      models, pooled
                                                                                           Mythos 5                                                                                                           Opus 5                                                                    50
                                          100                                              Opus 5                                                     50
-                                                                                          Mythos 5.1
+                                                                                          Mythos 5.1                                                                             nc
                                                                                                                                                                                       e
-                                                                                                                                                                                 nc
                                                                                                                                                                               re
-
-
-                                                                                                                                                                                                                                                                                       25
                                                                                                                                                                              ffe
-
-
-                                                                                                                                                                                                                                                                                                   other models, pooled
-                                                                                                                                                                            di
-
-
-                                               10                                                                                                    25
-                                                                                                                                                                        no
-
-
-                                                                                                                                                                                                             Sonnet 5
+                                                                                                                                                                            di                                                                                                         25          other models, pooled
+                                               10                                                                                                    25                 no                                   Sonnet 5
                                                                                                                                                                                                              Opus 4.6
                                     none
                                                                                                                                                       0                                                      Opus 4.8                                                                   0
@@ -816,23 +727,18 @@ the longest contiguous stretch of locus DNA in the model’s context, for the fo
                                                                                                                                                                                                                          as read
             Flank L0050, 14 repeats                                                                                                             RT                           copies 2 to 14
                                                                                                                                                                                                                          copies shuffled
-                             above chance (nats)
 
 
-                    Evo 2                           1                                                                                                                  1                                             1
                                 Log-likelihood
-
-
+                    Evo 2                           1                                                                                                                  1                                             1
                 next base
 
 
-                                                                                                                                                         Mean (nats)
-
-
-                                                                                                                                                                                                       Mean (nats)
+                                                                                                                                                         Mean (nats)                                   Mean (nats)
                                                     0                                                                                                                  0                                             0
 
 
+                             above chance (nats)
                    gLM2                             1                                                                                                                  1                                             1
               hidden base
                                                     0                                                                                                                  0                                             0
@@ -848,20 +754,12 @@ the longest contiguous stretch of locus DNA in the model’s context, for the fo
                                                     2                                                                                                                  2                                             2
       Claude Mythos 5
            repeat-signal 1
-                                                                                                                                                         Mean (a.u.)
 
 
-                                                                                                                                                                                                       Mean (a.u.)
-                             Activation
+                                                                                                                                                         Mean (a.u.)                                   Mean (a.u.)
+                             Activation             0                                                                                                                  0                                             0
 
-
-                                                                                                                                                                                                                     0
-                               (a.u.)
-
-
-                                                    0                                                                                                                  0
-
-                                                    2                                                                                                                  2                                             2
+                               (a.u.)               2                                                                                                                  2                                             2
       Claude Mythos 5
            repeat-signal 2
                                                     0                                                                                                                  0                                             0
@@ -948,25 +846,16 @@ A
 
                                                                                      Neighbor census
                                   30                                                                                                                                                  Tasks seeded by the mission
+
+
          Tokens used (millions)
-
-
                                                                                                                                 ART   ThiF
                                   20
                                                                                                                                                      DEDDh
 
-
                                                                          Classify
-                                                      Search
-
-
-                                  10
-                                       Profiles
-
-
-                                                                Curate
-
-
+                                  10                  Search
+                                       Profiles                 Curate
                                    0
                                                                Survey                                                                                Deep dives (16), largest first
 
@@ -1094,67 +983,27 @@ polymerase-linked lineage without one. (C) Tests run by the agents to refute the
 
 
                                                                                     16
-A                                                                                                           B
-
-
-                              48
-                              47
-
-                                                                         49
-                              46
-
-
+A                             48
+                                                                                                            B
+                              47                                         49
                                                                          50
-                               45
-
-
-                                                                        51
-                               44
-
-
-                                                                        52
-                                43
-
-
+                              46
+                               45                                       51
+                               44                                       52
                                                                        53
-                                 42
-
-
-                                                                      54
-                                  41
-
-
+                                43
+                                 4237                                 54
                                                                      55
-                                   40
-
-
-                                                                    56
-                                   37
-
-                                    39
-
-
-                                                                  57
-                                      38
-
-
+                                  41
+                                   40                               56
+                                    39                            57
                                                                  58
-                                      L0 6
-
-
-                                                              6 9
-                                         3
-
-
-                                                               5
-                                          3 5
-
-
-                                                            61 0
-                              3
-
+                                      38 3                     5
+                                      L0 6                    6 9
+                              3           3 5               61 0
+                            3 4                                                         62 3
                                            3
-                      32    3 4                                                         62 3
+                      32
                         L1 3                                                              6 4
                            0                                                                6                              Retrons
                         31
@@ -1186,40 +1035,13 @@ polymerase-linked lineage without one. (C) Tests run by the agents to refute the
               11          09 8                       geNomad call                        8 7                                              89/97
                              0 2                     Repeat array                      89 8
                               L0
-                                                                            90 1
-                                       05 6
-
-
-                          07                            Copies                                                                          NART
-                                         0
-
-
-                                                                              9 2
-                                                                                                                                                                             Group II introns
-                                                                               9
-                                     04
-
-
-                                                                                 93
-                                    03
-
-
-                                                  N-terminal domain
-                                                                                  94 L08
-                               T_ 02
-
-
-                                                                                                                                                                DGRs
+                          07             0              Copies              90 1                                                        NART
+                                       05 6                                   9 2                                                                                            Group II introns
+                                     04           N-terminal domain            9
+                                    03                                           93                                                                             DGRs
+                             AR                        Partner                    94 L08                                                          ART
+                               T_ 02                                                95
                                  01
-
-
-                                                                                    95
-
-
-                                                       Partner                                                                                    ART
-                             AR
-
-
                                            Virus      Plasmid      Chromosome
                              Array found      Not found       Not assessed (<1.5 kb upstream)
                                   Partner type I     II    III     Other gene       None
@@ -1258,10 +1080,7 @@ classes shaded. (C) Schematics of diverse ART loci.
 
                                4
             Retrons
-
-
-                        Bits
-           106 of 110          2
+           106 of 110   Bits   2
 
                                0
 
@@ -1297,7 +1116,6 @@ B                                                                               
 
 
                                                                                                             TM-score to ART RT core
-
                Retron Ec86                                              DGR BPP-1
                 (PDB 7V9X)                                           (PDB 8UBE)
          TM-score 0.74, RMSD 2.7 Å                             TM-score 0.69, RMSD 2.9 Å                                               0.5
@@ -1327,9 +1145,9 @@ TM-scores of the ART family RT core against 16 solved RT structures, by class.
                         100
 
                                                                            Closest retron clade (32)                                                             NART         NTD, 164                         RT
+
+
       NTD, % Identity
-
-
                                                                                                                                                        ART NTD profile, 4 of 29
                                                                                                                                                                                                   Aligned block, 44 columns
                                                                                          NART (29)                                                     Reverse search, 0 of 71
@@ -1375,9 +1193,9 @@ G                                                                               
 
 
                         NART (29)
+
+
                                                                                                                     Mean pLDDT
-
-
                                                                                                                                                                                                                       N region
                                                                                                                                   50
                                                                                                                                                                                                                       Rest of the RT
@@ -1387,36 +1205,16 @@ G                                                                               
                                                                                                 ≥ 0.8
                          ART (87)
                                                                                                                                    0
-                                                                                                                                                                     (2 RT
-
-
-                                                                                                                                                                                           03 T
-                                                                                                                                                (3 n
-
-
-                                                                                                  0.4
-                                                                                                                                             e tro
-
-
-                                                                                                                                                                                         (1 AR
-                                                                                                                                                                       9)
-
-
-                                                                                                                                                                                             )
-                                                                                                                                                  2)
-
-
-                                                                                                                                                                       A
-                                                                                                                                           ad re
-
-
                                                                                                                                                                      N
+                                                                                                  0.4                                   lo s                           A
+                                                                                                                                                                     (2 RT               (1 AR
                                                                                                                                          cl est
-                                                                                                                                           s
-                                                                                                                                        lo
+                                                                                                                                           ad re                       9)                  03 T
+                                                                                                                                                                                             )
+                                                                                                                                             e tro
+                                                                                                                                                (3 n
+                                                                                                                                                  2)
                                                                                                                                        C
-
-
                                                                                                   0
 
 
@@ -1438,9 +1236,9 @@ Mean pLDDT of the N-terminal region and of the rest of the RT in each model, by 
                                                  1            2     3
 
                                                                                                                                                            105
+
+
      Fraction of library maximum
-
-
                                                                                  5 min          15 min        55 min
 
 
@@ -1523,9 +1321,9 @@ E                                                                               
                                                                                                                                   ρ = 0.35                                                                 ρ = 0.55
                                                                                                                          80       Partner more                                                             Partner more
                                                                                                                                   conserved                                                                conserved
+
+
                                                                                                    % Identity, partner
-
-
                                                                                                                          40
 
 

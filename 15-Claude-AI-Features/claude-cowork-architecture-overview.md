@@ -2,7 +2,7 @@
 title: "Claude Cowork architecture overview | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/14479288-claude-cowork-architecture-overview"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:02Z"
+fetched_at: "2026-11-13T06:34:38Z"
 tags: ["claude-ai"]
 ---
 
@@ -17,7 +17,7 @@ This article is for Enterprise admins, but the architecture described here is th
 
 Claude Cowork runs in the cloud on Pro, Max, and Ultra plans, on Team plans (in beta), and on Enterprise plans when an owner enables it.
 
-The new Claude experience, which combines chat and Cowork, is rolling out to Pro, Max, and Ultra plans. On Team plans (in beta) and Enterprise plans, it's available where **Chat and Cowork unified** is turned on. Organizations that haven't turned it on keep chat and Cowork as separate options, so this article still applies. Enterprise owners can learn more in **[Set up and manage the new unified Claude experience for your Enterprise organization](https://support.claude.com/en/articles/17444462)**.
+The new Claude experience, which combines chat and Cowork, is rolling out to Pro, Max, and Ultra plans. On Team plans (in beta) and Enterprise plans, it's available where **Chat and Cowork unified** is turned on. Organizations that haven't turned it on keep chat and Cowork as separate options, so this article still applies. Enterprise owners can learn more in **[Set up and manage the new unified Claude experience for your Enterprise organization](../13-Enterprise-Admin/set-up-and-manage-the-new-unified-claude-experience-for-your-enterprise-organization.md)**.
 
 ------------------------------------------------------------------------
 
@@ -105,10 +105,10 @@ Not by default. Sessions in the cloud run in isolated environments on Anthropic'
 
 Yes. Cowork via Claude, Claude Desktop, and Claude Mobile is captured in Compliance API. Learn more about **[retrieving remote sessions in the Compliance API](../04-API-Reference/Other/manage-claude-compliance-content-data.md)**.  
 ​  
-If you're a Team or Enterprise plan admin, you can **[use OpenTelemetry (OTel) to monitor Claude Cowork activity](monitor-claude-cowork-activity-with-opentelemetry.md)** across your organization.
+If you're a Team or Enterprise plan admin, you can **[use OpenTelemetry (OTel) to monitor Claude Cowork activity](https://support.claude.com/en/articles/14477985-monitor-claude-cowork-activity-with-opentelemetry)** across your organization.
 
 ### Can endpoint detection (EDR) tools inspect activity inside the VM?
 
-For local sessions, yes, if you set it up. The VM is isolated from host-based security tools by design, so an EDR sensor on the host can't see inside it. Admins can run a sensor from an approved vendor inside the VM instead. This is in beta on macOS and Windows. Learn more about **[running your EDR sensor in Claude Cowork](run-your-endpoint-detection-and-response-edr-sensor-in-claude-cowork.md)**.
+For local sessions, yes, if you set it up. The VM is isolated from host-based security tools by design, so an EDR sensor on the host can't see inside it. Admins can run a sensor from an approved vendor inside the VM instead. This is in beta on macOS and Windows. Learn more about **[running your EDR sensor in Claude Cowork](https://support.claude.com/en/articles/17828685-run-your-endpoint-detection-and-response-edr-sensor-in-claude-cowork)**.
 
 Sessions in the cloud run entirely outside your endpoints, so EDR tools can't observe them. If your compliance posture depends on endpoint visibility, account for this before rolling out Cowork.

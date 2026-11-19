@@ -41,7 +41,7 @@ After working for the past few months with key partners like Notion, Quora, and 
 
 Claude can help with use cases including summarization, search, creative and collaborative writing, Q&A, coding, and more. Early customers report that Claude is much less likely to produce harmful outputs, easier to converse with, and more steerable - so you can get your desired output with less effort. Claude can also take direction on personality, tone, and behavior.
 
-We’re offering [two versions of Claude](https://www-cdn.anthropic.com/b0d46f8c8e2f4cca2833c17cb68435035c0bb5a9/apr-pricing-tokens_2023-05-10-213025_tnty.pdf) today: Claude and Claude Instant. Claude is a state-of-the-art high-performance model, while Claude Instant is a lighter, less expensive, and much faster option. We plan to introduce even more updates in the coming weeks. As we develop these systems, we'll continually work to make them more helpful, honest, and harmless as we learn more from our [safety research](an-ai-policy-tool-for-today-ambitiously-invest-in-nist.md) and our deployments.
+We’re offering [two versions of Claude](model-family-5d531fd7.md) today: Claude and Claude Instant. Claude is a state-of-the-art high-performance model, while Claude Instant is a lighter, less expensive, and much faster option. We plan to introduce even more updates in the coming weeks. As we develop these systems, we'll continually work to make them more helpful, honest, and harmless as we learn more from our [safety research](an-ai-policy-tool-for-today-ambitiously-invest-in-nist.md) and our deployments.
 
 ### Partner Testimonials
 

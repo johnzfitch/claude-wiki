@@ -2,7 +2,7 @@
 title: "Set up Salesforce in Claude for your organization | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization"
 category: "13-Enterprise-Admin"
-fetched_at: "2026-11-09T06:25:56Z"
+fetched_at: "2026-11-18T06:28:16Z"
 tags: ["enterprise"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Get started with Claude Duet | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/17631495-get-started-with-claude-duet"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:25:58Z"
+fetched_at: "2026-11-18T06:28:09Z"
 tags: ["claude-ai"]
 ---
 
@@ -21,7 +21,7 @@ To use Claude Duet, you need:
 
 - A Claude account in the US
 
-- An invitation from the waitlist
+- An invitation from the waitlist or from a Claude Duet user
 
 ## Why you might not have access yet
 
@@ -113,7 +113,7 @@ During the research preview, keep these limits in mind:
 
 - Some actions are off-limits even with your approval, such as trading securities, moving money between accounts, or accessing someone else’s account.
 
-- Some connectors, such as Slack, work with limits in Claude Duet. Microsoft 365 isn't available yet.
+- Some connectors, such as Slack, work with limits in Claude Duet.
 
 - Personal Finance isn’t available in Claude Duet.
 
@@ -151,7 +151,7 @@ Where to get help with a purchase depends on the problem:
 
 - **A Shop Pay charge or Shop Pay account problem:** Contact **[Shop support](https://help.shop.app/en/shop/report-issue/contact-the-shop-support-team)**.
 
-- **Claude Duet chose a different product, store, or option than you intended:** Contact us. Learn more about **[how to get support](https://support.claude.com/en/articles/9015913-how-to-get-support)**.
+- **Claude Duet chose a different product, store, or option than you intended:** Contact us. Learn more about **[how to get support](how-to-get-support.md)**.
 
 ## Send feedback
 

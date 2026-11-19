@@ -2,29 +2,25 @@
 title: "Understanding and addressing AI harms \\ Anthropic"
 source_url: "https://www.anthropic.com/news/our-approach-to-understanding-and-addressing-ai-harms"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:29Z"
+fetched_at: "2026-11-14T06:25:57Z"
 tags: ["news-research"]
 ---
 
 # Our approach to understanding and addressing AI harms
 
-- Published
+Published  
+Apr 21, 2025
 
-  Apr 21, 2025
+[Safeguards](safeguards.md)
 
-- Category
+Topics  
+- [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+- [Computer use](https://www.anthropic.com/search?topic=computer-use)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
 
-  [Safeguards](safeguards.md)
-
-- Topics
-
-  - [Measurement and mitigation](https://www.anthropic.com/search?topic=measurement-and-mitigation)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
-  - [Computer use](https://www.anthropic.com/search?topic=computer-use)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-
-  See more...
+See more...
 
 Related articles
 
@@ -40,7 +36,7 @@ As AI capabilities rapidly advance, understanding and addressing the full spectr
 
 Why is this approach important? As models continue to evolve, we need more comprehensive ways to think about and manage their potential impacts. We believe that considering different types of harms in a structured way helps us better understand the challenges ahead and informs our thinking about responsible AI development.
 
-Our approach complements our [Responsible Scaling Policy (RSP)](https://www-cdn.anthropic.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf), which focuses specifically on catastrophic risks. Identifying and addressing the full range of potential impacts requires a broader perspective. That's why we've built out a more comprehensive framework to assess harm that we can then proportionately manage and mitigate.
+Our approach complements our [Responsible Scaling Policy (RSP)](https://assets.claude.com/17310f6d70ae5627f55313ed067afc1a762a4068.pdf), which focuses specifically on catastrophic risks. Identifying and addressing the full range of potential impacts requires a broader perspective. That's why we've built out a more comprehensive framework to assess harm that we can then proportionately manage and mitigate.
 
 *  
 **\*Important note**: This approach is still evolving. We're sharing our current thinking while acknowledging it will continue to develop as we learn more. We welcome collaboration from across the AI ecosystem as we work to make these systems benefit humanity.*

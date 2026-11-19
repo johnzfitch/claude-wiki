@@ -2,7 +2,7 @@
 title: "Reducing latency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-latency"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-11-05T06:36:37Z"
+fetched_at: "2026-11-13T06:34:19Z"
 tags: ["api"]
 ---
 
@@ -85,7 +85,7 @@ message = client.messages.create(
 print(next(block.text for block in message.content if block.type == "text"))
 ```
 
-For more details about model metrics, see the [models overview](../../20-Models/about-claude-models-overview.md) page.
+For more details about model metrics, see [Models overview](../../20-Models/about-claude-models-overview.md).
 
 ### 2. Optimize prompt and output length
 
@@ -99,7 +99,7 @@ Here are some tips to help you optimize your prompts and outputs:
   Because of how LLMs count [tokens](../About/about-claude-glossary.md#tokens) instead of words, asking for an exact word count or a word count limit is not as effective a strategy as asking for paragraph or sentence count limits.
 - **Set appropriate output limits:** Use the `max_tokens` parameter to set a hard limit on the maximum length of the generated response. This prevents Claude from generating overly long outputs.
   
-  When the response reaches `max_tokens` tokens, the response will be cut off, perhaps mid-sentence or mid-word, so this is a blunt technique that might require post-processing and is usually most appropriate for multiple choice or short answer responses where the answer comes right at the beginning.
+  When the response reaches `max_tokens` tokens, the API cuts it off, perhaps mid-sentence or mid-word. This is a blunt technique that might require post-processing. It’s usually most appropriate for multiple-choice or short-answer responses where the answer comes right at the beginning.
 
 Finding the right balance among prompt clarity, output quality, and token count might require some experimentation.
 

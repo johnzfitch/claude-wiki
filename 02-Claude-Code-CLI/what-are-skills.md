@@ -2,7 +2,7 @@
 title: "What are skills? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/12512176-what-are-skills"
 category: "02-Claude-Code-CLI"
-fetched_at: "2026-11-09T06:25:51Z"
+fetched_at: "2026-11-18T06:27:46Z"
 tags: ["agents", "claude-code", "skills"]
 ---
 
@@ -85,7 +85,7 @@ The Agent Skills specification is published as an open standard at **[agentskill
 
 ### Skills vs. projects
 
-**[Projects](../15-Claude-AI-Features/what-are-projects.md)** provide static background knowledge that's always loaded when you start chats within them. Skills provide specialized procedures that activate dynamically when needed and work everywhere across Claude.
+**[Projects](https://support.claude.com/en/articles/9517075-what-are-projects)** provide static background knowledge that's always loaded when you start chats within them. Skills provide specialized procedures that activate dynamically when needed and work everywhere across Claude.
 
 ### Skills vs. MCP (Model Context Protocol)
 

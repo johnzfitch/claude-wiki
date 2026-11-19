@@ -2,7 +2,7 @@
 title: "NP-Hardness of Approximating the Closest Vector Problem"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/e2cdf9dad157f298842a1224779ac0a8999e1da5.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-07T06:39:13Z"
+fetched_at: "2026-11-18T06:28:37Z"
 tags: ["news-research"]
 ---
 
@@ -490,8 +490,8 @@ Theorem 7.1 (Scalar decoding). Let 2 ≤ m0 ≤ 28 and let F : Fm
                                                   8
 (iii) there is E0 with |E0 | ≤ q m0 −c3 and                          2     2 m0 , where 16 ≤ ĝ 2 ≤ q 0.02 .
                                                      P
-                                                          / 0 ∥F (x)∥2 ≤ ĝ q
-                                                         x∈E
+                                                          ∈E0 ∥F (x)∥2 ≤ ĝ q
+                                                         x/
 
 Then, with t̂ := ⌈ĝ 2 q c3 ⌉ (≤ 2q 0.03 ), there exist 1 ≤ r ≤ min(  t̂, 2ĝ 2 ) distinct
                                                                                         P polynomials     g1 , . . . , gr
@@ -599,17 +599,16 @@ q(1 − 3q −c3 ), so by Lemma 1.2,
 and suppose S ̸= ∅. For i ̸= j, vπ (γi − γj ) ≤ vπ (Bi Aj − Bj Ai ) ≤ deg(Bi Aj − Bj Ai ) ≤ 2H0 .
 Apply
     P Lemma        6.1 (β = 0, H = H0P    , weights āj ): some l ≤ 2H0 |S| + 2|S| − 1 ≤ 40q 0.13 ≤ L1 has
-vπ ( j∈S āj γjl ) < 0. But by (7.1), j∈S āj γjl = Pl − j ∈S            l
+vπ ( j∈S āj γjl ) < 0. But by (7.1), j∈S āj γjl = Pl − j /∈S āj γjl has vπ ≥ 0: a contradiction. So
                                                               P
-                                                                  / āj γj has vπ ≥ 0: a contradiction. So
 every γj is a polynomial (a priori of degree ≤ H0 ).
                   ¯                                 ¯                                                S
 P Degreel ≤ d. Let     P S := l{j : deg γj ≥ d¯+ 1}, ν := |S|, and suppose ν¯ ≥ 1. Set pl :=
-   j∈S āj γj = Pl −       / āj γj , of degree ≤ ld for 0 ≤ l ≤ L1 . Take Λ := 2ν d + 1; the window
-                         j ∈S
+   j∈S āj γj = Pl −      ∈S āj γj , of degree ≤ ld for 0 ≤ l ≤ L1 . Take Λ := 2ν d + 1; the window
+                         j/
 satisfies Λ + 2ν − 2 ≤ 2rd¯ + 2r ≤ 10q 0.07 ≤ L1 . Identity (6.1) for the S-family with offset Λ:
 the left-hand    side has degree ≤ ν(Λ + 2ν − 2)d,       ¯ while the right-hand side is nonzero of degree
-≥ Λ j∈S deg γj ≥ Λν(d¯ + 1). Hence Λ(d¯ + 1) ≤ (Λ + 2ν − 2)d,                ¯ i.e. Λ ≤ (2ν − 2)d¯ < Λ, a
+≥ Λ j∈S deg γj ≥ Λν(d¯ + 1). Hence Λ(d¯ + 1) ≤ (Λ + 2ν − 2)d,               ¯ i.e. Λ ≤ (2ν − 2)d¯ < Λ, a
      P
                                       ¯
 contradiction. So all deg γj ≤ d; set gj := γj .
@@ -669,15 +668,14 @@ mod-q support size). Each nonzero integer entry contributes ≥ 1 to ∥F (x)∥
 and Markov’s inequality gives |{x : tx > t̂}| ≤ q m0 −c3 .
 The θ-extension. Define F̃ : Fm       q
                                         0 +1 → Z[F ] by F̃ (x, θ ) := (ℓ ) F (x).
-                                                    q            0          θ0 ∗        By Lemma 2.2
+                                                    q            0          θ0 ∗         By Lemma 2.2
 (pointwise pushforward
               P ȷ−1         along the point-dependent map ℓθ0 ), F̃ is C̃-structured, where C̃ :=
-{c̃(x, θ0 ) =     θ    cȷ (x) : c ∈ C} is a linear code on Fm     0 +1 of coordinate degree ≤ d       ˜ :=
+{c̃(x, θ0 ) =     θ    cȷ (x) : c ∈ C} is a linear code on Fm     0 +1 of coordinate degree ≤ d           ˜ :=
                  ȷ 0                                            q
 d¯+ J − 1 ≤ q 0.04 . Augmentation is preserved. As for mass, ∥F̃ (x,   θ0 )∥22 ≤ ∥F (x)∥21 ≤ tx ∥F (x)∥22 ,
-so with E0′ := {x : tx > t̂} × Fq (of size ≤ q (m0 +1)−c3 ) we get (x,θ0 )∈E          2      2 m0 +1 , and
+so with E0′ := {x : tx > t̂} × Fq (of size ≤ q (m0 +1)−c3 ) we get (x,θ0 ) /∈E ′ ∥F̃ ∥2 ≤ t̂ĝ 2 q m0 +1 , and
                                                                     P
-                                                                             / ′ ∥F̃ ∥ ≤ t̂ĝ q
                                                                                          0
 16 ≤ t̂ĝ 2 ≤ 2q 0.016 ≤ q 0.02 . Apply Theorem 7.1 to F̃ (domain dimension m0 + 1 ≤ 28): we obtain
 r̃ ≤ t̂′ := ⌈t̂ĝ 2 q c3 ⌉ ≤ 2q 0.03 distinct polynomials                        ˜ nonzero integers ãj , and
@@ -688,8 +686,8 @@ X̃ with |X̃ | ≤ 3q (m0 +1)−c3 , such that F̃ = j ãj eg̃j off X̃ .
 Reconstruction. Call x good if: (a) tx ≤ t̂; (b) |{θ0 : (x, θ0 ) ∈ X̃ }| ≤ q 1−c3 /2 ; (c) for all
 j ̸= j ′ , g̃j (x, ·) ̸= g̃j ′ (x, ·) as polynomials in θ. The failure sets have sizes: (a) ≤ q m0 −c3 ; (b)
 ≤ 3q (m0 +1)−c3 /q 1−c3 /2 = 3q m0 −c3 /2 (Markov); (c) for each pair, some θ-coefficient of g̃j − g̃j ′ is a
-nonzero polynomial in x of degree ≤ d,            ˜ giving ≤ r̃2 dq
-                                                                 ˜ m0 −1 ≤ q m0 −0.89 (since r̃2 d˜ ≤ 4q 0.06 ·q 0.04 ≤
+nonzero polynomial in x of degree ≤ d,            ˜ giving ≤ r̃2 ˜
+                                                                dq m0 −1 ≤ q m0 −0.89 (since r̃2 d˜ ≤ 4q 0.06 ·q 0.04 ≤
 q 0.101 by the absorption rule).
      Fix a good x and let Sx := supp F (x) (so |Sx | = tx , with integer weights wv := F (x)v ̸= 0).
                                  / X̃ ; ℓθ0 is injective on Sx (this excludes the roots of at most 2t̂ nonzero
@@ -726,17 +724,16 @@ Globalization. Write g̃j (x, θ) =
 every good x the coefficients with i ≥ J vanish; since the good set has ≥ q m0 (1 − 5q −c3 /2 ) points
 and d˜ < q/2, these coefficients vanish identically. Set γ j := (γj,1 , . . . , γj,J ) (distinct tuples,
 degrees ≤ d),˜ bj := ãj and r := r̃. For every good x, F (x) = P bj eγ (x) with the tuples γ (x)
-                                                                         j     j          P          j
+                                                                      j      j          P           j
 pairwise distinct (by (c) and (8.2)). Hence at good x the augmentation gives j bj = 1 over
 Z, and ∥F (x)∥2 = j b2j ; averaging the mass bound over good points gives j b2j ≤ 2ĝ 2 and
-                     P                                                                  P
+                     P                                                                P
 
 r ≤ 2ĝ 2 . Let X be the non-good set: |X | ≤ q m0 −c3 + 3q m0 −c3 /2 + q m0 −0.89 ≤ 4q m0 −c3 /2 .
 Moment identities. For |k| ≤ L2 we have 2|k|d¯ ≤ 2qP         0.335 ≤ q − 1, so P exists (of degree
-                                                                                      k
-      ¯ and equals µk everywhere; at good x, µk (x) =
-≤ |k|d)                                                                      k
-                                                                j b̄j γ j (x) ; the difference of the two
+                                                                                    k
+≤ |k| ¯
+     d) and equals µk everywhere; at good x, µk (x) = j b̄j γ j (x)k ; the difference of the two
 polynomials has degree ≤ |k|d˜ ≤ q 0.34 < q(1 − 4q −c3 /2 ) and vanishes off X , hence is zero
 (Lemma 1.2).
 

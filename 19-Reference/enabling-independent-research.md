@@ -2,11 +2,11 @@
 title: "Enabling independent research on how people use Claude \\ Anthropic"
 source_url: "https://www.anthropic.com/research/enabling-independent-research"
 category: "19-Reference"
-fetched_at: "2026-11-01T06:24:50Z"
+fetched_at: "2026-11-14T06:26:02Z"
 tags: ["news-research", "search"]
 ---
 
-### Chapter 01: What the researchers learned
+### 01What the researchers learned
 
 # Enabling independent research on how people use Claude
 
@@ -15,24 +15,21 @@ tags: ["news-research", "search"]
 - [03Looking forward](#looking-forward)
 - [04 Appendix](#-appendix)
 
-- Published
+Published  
+Aug 26, 2026
 
-  Aug 26, 2026
+Team  
+[Societal Impacts](team-societal-impacts.md)
 
-- Team
+Topics  
+- [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
+- [Privacy](https://www.anthropic.com/search?topic=privacy)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Productivity](https://www.anthropic.com/search?topic=productivity)
 
-  [Societal Impacts](team-societal-impacts.md)
-
-- Topics
-
-  - [How people use AI](https://www.anthropic.com/search?topic=how-people-use-ai)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-  - [Privacy](https://www.anthropic.com/search?topic=privacy)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Productivity](https://www.anthropic.com/search?topic=productivity)
-
-  See more...
+See more...
 
 *Earlier this year, we ran a pilot giving external researchers access to aggregate, real-world Claude usage data. Three research groups designed their own studies for Anthropic Insights, our privacy-preserving analysis tool; we ran the data collection on their behalf, and they conducted their own independent analysis. In this post, we share high-level results from those studies and what we learned running this pilot. We’re also providing an [expression of interest form](https://docs.google.com/forms/d/e/1FAIpQLScujFA2mJXnLhrvE7wazD7drfHlfRmfnrjhMZRpeIFW_b6I7Q/viewform?usp=sharing&ouid=108982467493638405621) for researchers who may want to work with us in the future.*
 
@@ -50,7 +47,7 @@ Ensuring the transition to transformative AI goes well requires understanding it
 
 Researchers outside the labs have two options. They can draw on analyses the labs publish, which reflect real usage but often answer the lab’s questions, rather than their own. Or they can use public datasets, which they can study however they like, but skew toward more casual use, and may not reflect how most people actually use AI. Neither is sufficient for independent research on how AI is actually being used.
 
-This spring, we piloted a program in which three external research institutions designed and ran their own studies on Claude usage data through [Anthropic Insights](clio.md) (formerly named ‘Clio’), the privacy-preserving tool our own teams use to analyze usage patterns across millions of Claude conversations. We hope to scale this program in the future, so we also conducted an additional privacy audit of all data shared with third-party researchers to verify that our privacy protections held (see [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf)).
+This spring, we piloted a program in which three external research institutions designed and ran their own studies on Claude usage data through [Anthropic Insights](clio.md) (formerly named ‘Clio’), the privacy-preserving tool our own teams use to analyze usage patterns across millions of Claude conversations. We hope to scale this program in the future, so we also conducted an additional privacy audit of all data shared with third-party researchers to verify that our privacy protections held (see [Appendix](https://assets.claude.com/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf)).
 
 We believe this is the first time external researchers have run public independent studies on an AI company's own usage data. Below, we discuss what the external teams found, what we learned running the pilot, and what we are weighing as we decide how to expand the program more widely. We are also publicly releasing [the aggregate data from each project](https://huggingface.co/datasets/Anthropic/enabling-independent-research).
 
@@ -85,13 +82,13 @@ They are still completing their writeup. When it is public, we will add a link t
 
 ## What our team learned
 
-Sharing usage data is largely unprecedented in AI, so this pilot was as much an experiment in running such a program as it was a way to enable third-party research in a privacy-preserving way. Protecting our users’ privacy and the researchers’ independence were both paramount, and we achieved both. Anthropic Insights is designed for this—researchers never accessed raw conversations, only aggregated outputs after the same legal and privacy review as our internal work. However, all of this made the pilot slow for an AI lab’s normal research speed and resource intensive to run. Both factors present a challenge to effectively scaling it. For more details on how we ran this pilot, see the [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf). Below we discuss what we learned and how we addressed the challenges that arose.
+Sharing usage data is largely unprecedented in AI, so this pilot was as much an experiment in running such a program as it was a way to enable third-party research in a privacy-preserving way. Protecting our users’ privacy and the researchers’ independence were both paramount, and we achieved both. Anthropic Insights is designed for this—researchers never accessed raw conversations, only aggregated outputs after the same legal and privacy review as our internal work. However, all of this made the pilot slow for an AI lab’s normal research speed and resource intensive to run. Both factors present a challenge to effectively scaling it. For more details on how we ran this pilot, see the [Appendix](https://assets.claude.com/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf). Below we discuss what we learned and how we addressed the challenges that arose.
 
 **It is valuable to pursue the same problem from different perspectives.** Some of our partners’ research questions overlapped with work being pursued internally. For example, METR’s proposal was similar to our economics research on “[Agentic coding and persistent returns to expertise](claude-code-expertise.md).” We found this overlap valuable: it gave external researchers the chance to examine similar data and draw their own conclusions. Whether those align with ours is something we’ll follow as their study continues. We also connected METR with our Economics team and found that this connection improved both research teams’ work.
 
 **Research methods that work internally need to adapt for external partners.** When using Anthropic Insights, a researcher writes a question such as, “What type of guidance is this person asking for?” and Claude answers it for every conversation in the study. The answers are then aggregated into categories; researchers only see final categories and the percentage of conversations that fall under each one. Because we are relying on Claude’s judgments, the tool is sensitive to a question’s wording; a poorly phrased one can place conversations into categories that misrepresent them. Because no one can read the underlying conversations, these errors are hard to catch.
 
-Internally, we manage this by iterating on the questions many times over weeks. External partners couldn’t do that, since repeated privacy review before sharing each dataset would have made the study infeasible. Instead, we had them test their questions on WildChat, a public dataset of human-AI conversations where they could check the answers against the underlying conversations themselves. But WildChat skews toward casual and creative use, unlike Claude traffic, so some questions that performed well on WildChat produced misleading categories once applied to actual Claude conversations. We addressed this by providing guidance on how to interpret Anthropic Insight’s outputs (see [Appendix](https://www-cdn.anthropic.com/files/4zrzovbb/website/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf)). Going forward, we are exploring how external researchers can develop their questions and categories more effectively in advance.
+Internally, we manage this by iterating on the questions many times over weeks. External partners couldn’t do that, since repeated privacy review before sharing each dataset would have made the study infeasible. Instead, we had them test their questions on WildChat, a public dataset of human-AI conversations where they could check the answers against the underlying conversations themselves. But WildChat skews toward casual and creative use, unlike Claude traffic, so some questions that performed well on WildChat produced misleading categories once applied to actual Claude conversations. We addressed this by providing guidance on how to interpret Anthropic Insight’s outputs (see [Appendix](https://assets.claude.com/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf)). Going forward, we are exploring how external researchers can develop their questions and categories more effectively in advance.
 
 **Maintaining transparency about misuse without enabling it.** Some categories in our partners’ Anthropic Insights outputs surfaced violations of our Acceptable Use Policy or Terms of Service—for instance a category of people seeking guidance on a prohibited activity. We think the public should know about misuse of our platform, so we shared most of these violations. The exceptions were categories that described *how* users got around our safeguards rather than *what* they attempted. Less than 5% of categories and conversations were affected in each study, and in each case we told researchers which clusters we had altered or removed and why. As a standard practice, when Anthropic Insights surfaces such violations, we share the aggregated data with our Safeguards team for their review. This is also an important process for our work with external researchers moving forward.
 
@@ -105,7 +102,7 @@ The next step is for us to determine whether we can scale this program, both in 
 
 ##  Appendix
 
-The full appendix is [available here](https://www-cdn.anthropic.com/files/4zrzovbb/website/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf). It describes how we ran the program, including how we chose our three partners, the research primer we wrote to explain the program’s goals and what Anthropic Insights can do, and how each project moved from proposal to study design to analysis. It also includes details of our collaboration agreements, which explicitly say our partners are free to publish findings even when they are inconvenient for Anthropic. Furthermore, we cover the third-party privacy audit of this data, conducted by Imperial College London, and the privacy threat model we hold all released data to. We also include guidance on interpreting the data we are releasing from our partners’ Anthropic Insights research studies.
+The full appendix is [available here](https://assets.claude.com/37b4cdc86d875d5bdfa7667782a2a7a4fecf1740.pdf). It describes how we ran the program, including how we chose our three partners, the research primer we wrote to explain the program’s goals and what Anthropic Insights can do, and how each project moved from proposal to study design to analysis. It also includes details of our collaboration agreements, which explicitly say our partners are free to publish findings even when they are inconvenient for Anthropic. Furthermore, we cover the third-party privacy audit of this data, conducted by Imperial College London, and the privacy threat model we hold all released data to. We also include guidance on interpreting the data we are releasing from our partners’ Anthropic Insights research studies.
 
 ## Authors & acknowledgements
 

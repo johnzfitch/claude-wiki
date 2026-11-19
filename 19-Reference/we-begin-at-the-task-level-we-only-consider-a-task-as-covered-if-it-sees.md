@@ -2,8 +2,7 @@
 title: "We begin at the task level. We only consider a task as covered if it sees…"
 source_url: "https://www-cdn.anthropic.com/files/4zrzovbb/website/e5f77fc0e77c0185110b5e4b909602791ae76eae.pdf"
 category: "19-Reference"
-fetched_at: "2026-11-02T06:27:32Z"
-last_modified: "Thu, 05 Mar 2026 07:02:18 GMT"
+fetched_at: "2026-11-18T06:28:58Z"
 tags: ["news-research"]
 ---
 

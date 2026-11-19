@@ -2,8 +2,8 @@
 title: "Plugin security and trust - Claude Code Docs"
 source_url: "https://code.claude.com/docs/en/plugins/security"
 category: "08-Plugins-Skills"
-fetched_at: "2026-10-29T06:25:36Z"
-last_modified: "Thu, 29 Oct 2026 03:31:54 GMT"
+fetched_at: "2026-11-14T06:25:13Z"
+last_modified: "Sat, 14 Nov 2026 04:54:56 GMT"
 tags: ["claude-code", "plugins", "security"]
 ---
 
@@ -43,10 +43,7 @@ These cases are covered on other pages:
 
 Start with [what a plugin can do](#understand-what-a-plugin-can-do) and [which marketplaces are Anthropic’s](#marketplace-tiers), then [review the plugin before you install it](#review-a-plugin-before-you-install).
 
-
-[​](#understand-what-a-plugin-can-do)
-
-Understand what a plugin can do
+## [](#understand-what-a-plugin-can-do)Understand what a plugin can do
 
 A plugin can carry content that runs code on your machine with your user privileges and content that enters Claude’s context as instructions, so [review a plugin before you install it](#review-a-plugin-before-you-install). Here’s what an installed plugin can do:
 
@@ -65,10 +62,7 @@ Claude Code’s [permission rules](../02-Claude-Code-CLI/permissions.md) and [sa
 
 Installing a plugin also enables it, unless its manifest or marketplace entry sets [`defaultEnabled: false`](discover-plugins.md#choose-an-install-scope) and you haven’t enabled it yourself. To remove a plugin you no longer trust, see [Remove a plugin you no longer trust](#remove-a-plugin-you-no-longer-trust).
 
-
-[​](#marketplace-tiers)
-
-Identify Anthropic’s marketplaces by name
+## [](#marketplace-tiers)Identify Anthropic’s marketplaces by name
 
 A marketplace’s name places it in one of three tiers: official, community, or third-party. Claude Code accepts the official and community names only for marketplaces sourced from `github.com/anthropics/` repositories, so a third-party marketplace can’t present itself as an Anthropic one. A marketplace that a coworker or your organization publishes is third-party. The table lists which names fall in each tier:
 
@@ -80,10 +74,7 @@ A marketplace’s name places it in one of three tiers: official, community, or 
 
 Where the `claude-community` catalog pins a plugin to a commit SHA, which it does for nearly every entry, Claude Code refuses to install a different commit.
 
-
-[​](#official-marketplace-names)
-
-Official marketplace names
+### [](#official-marketplace-names)Official marketplace names
 
 These marketplace names make up the official tier:
 
@@ -104,10 +95,7 @@ These marketplace names make up the official tier:
 
 For how the official and community marketplaces differ and where to browse what each one lists, see [Anthropic’s marketplaces](plugins-anthropic-marketplaces.md).
 
-
-[​](#review-a-plugin-before-you-install)
-
-Review a plugin before you install
+## [](#review-a-plugin-before-you-install)Review a plugin before you install
 
 Before you install a plugin, look at what it adds and where it comes from.
 
@@ -141,10 +129,7 @@ Clone the repository that holds the plugin’s directory, then run `claude --plu
 
 After you install a plugin, run `claude plugin details <plugin name>` in your shell to print the same `Component inventory` for the installed copy under `~/.claude/plugins/cache/<marketplace>/<plugin>/<version>/`.
 
-
-[​](#remove-a-plugin-you-no-longer-trust)
-
-Remove a plugin you no longer trust
+### [](#remove-a-plugin-you-no-longer-trust)Remove a plugin you no longer trust
 
 In your shell, run [`claude plugin uninstall <plugin>`](plugins-cli-reference.md#plugin-uninstall) with the `--scope` you installed it at. Then check what the uninstall removed and what it left:
 
@@ -152,30 +137,21 @@ In your shell, run [`claude plugin uninstall <plugin>`](plugins-cli-reference.md
 - **Cached files**: the plugin’s files stay on disk under `~/.claude/plugins/cache/` for 14 days before a [background sweep removes them](plugins-loading.md#cleanup-of-previous-versions). After you uninstall your last plugin, orphaned directories stay until you install another. To delete the files now, remove the plugin’s directory under `~/.claude/plugins/cache/<marketplace>/<plugin>/` yourself.
 - **The marketplace**: if you don’t trust the marketplace’s owner either, [remove the marketplace](discover-plugins.md#manage-marketplaces) too, which uninstalls every plugin you installed from it.
 
-
-[​](#recognize-when-claude-code-refuses-or-warns)
-
-Recognize when Claude Code refuses or warns
+## [](#recognize-when-claude-code-refuses-or-warns)Recognize when Claude Code refuses or warns
 
 The details pane you open from the **Discover** or **Marketplaces** tab in `/plugin` shows the same trust warning for each plugin. Claude Code refuses instead of warning in cases such as those under [Untrusted marketplace sources and failed integrity checks](#untrusted-marketplace-sources-and-failed-integrity-checks).
 
-
-[​](#trust-warning-before-you-install)
-
-Trust warning before you install
+### [](#trust-warning-before-you-install)Trust warning before you install
 
 The warning reads the same whatever marketplace the plugin comes from:
 
 ```python
-Make sure you trust a plugin before installing, updating, or using it. Anthropic does not control what MCP servers, files, or other software are included in plugins and cannot verify that they will work as intended or that they won't change. See each plugin's homepage for more information.
+Plugins can run code on your computer, with access to your files and shell. Make sure you trust a plugin before installing, updating, or using it. Anthropic does not control what MCP servers, files, or other software are included in plugins and cannot verify that they will work as intended or that they won't change. See each plugin's homepage for more information.
 ```
 
 If your organization sets `pluginTrustMessage` in [managed settings](plugins-org.md), Claude Code appends that text to the warning.
 
-
-[​](#untrusted-marketplace-sources-and-failed-integrity-checks)
-
-Untrusted marketplace sources and failed integrity checks
+### [](#untrusted-marketplace-sources-and-failed-integrity-checks)Untrusted marketplace sources and failed integrity checks
 
 Claude Code refuses to load a marketplace or to install a plugin in these cases, each with its own error message:
 
@@ -184,10 +160,7 @@ Claude Code refuses to load a marketplace or to install a plugin in these cases,
 
 The `sha256` pin is separate from the community catalog’s commit SHA pin, which selects the git commit to check out.
 
-
-[​](#enforce-plugin-controls-for-your-organization)
-
-Enforce plugin controls for your organization
+## [](#enforce-plugin-controls-for-your-organization)Enforce plugin controls for your organization
 
 With [managed settings](plugins-org.md), an administrator can enforce these plugin controls:
 
@@ -199,10 +172,7 @@ With [managed settings](plugins-org.md), an administrator can enforce these plug
 
 The [control matrix](plugins-org.md#control-matrix) says what each key does and doesn’t cover.
 
-
-[​](#find-plugins-in-telemetry)
-
-Find plugins in telemetry
+## [](#find-plugins-in-telemetry)Find plugins in telemetry
 
 If your organization exports Claude Code’s [OpenTelemetry events](../13-Enterprise-Admin/monitoring-usage.md) to its own backend, the [marketplace tiers](#marketplace-tiers) decide which plugin names appear there:
 
@@ -211,10 +181,7 @@ If your organization exports Claude Code’s [OpenTelemetry events](../13-Enterp
 - **[Plugin installed event](../13-Enterprise-Admin/monitoring-usage.md#plugin-installed-event)**: unless you set `OTEL_LOG_TOOL_DETAILS=1`, the event omits the name fields for non-official plugins instead of reporting `third-party`.
 - **[Claude Code Analytics API](../04-API-Reference/Admin/platform-claude-com-http-beta-organization-analytics-plugins-list.md)**: Claude Code reports plugins from the official and community tiers by name and reports every other plugin as `third-party`.
 
-
-[​](#next-steps)
-
-Next steps
+## [](#next-steps)Next steps
 
 - [Manage plugins for your organization](plugins-org.md): restrict which marketplaces users can install from and require the ones you trust
 - [Install and manage plugins](discover-plugins.md): review a plugin’s details pane before you choose a scope

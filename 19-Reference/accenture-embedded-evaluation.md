@@ -2,29 +2,25 @@
 title: "Partnering with Accenture on embedded evaluation \\ Anthropic"
 source_url: "https://www.anthropic.com/news/accenture-embedded-evaluation"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:22Z"
+fetched_at: "2026-11-14T06:25:54Z"
 tags: ["evaluation", "news-research"]
 ---
 
 # Partnering with Accenture on embedded evaluation
 
-- Published
+Published  
+Sep 18, 2026
 
-  Sep 18, 2026
+[Partnerships](partnerships.md)
 
-- Category
+Topics  
+- [Partnerships](https://www.anthropic.com/search?topic=partnerships)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
+- [Transparency](https://www.anthropic.com/search?topic=transparency)
+- [Funding](https://www.anthropic.com/search?topic=funding)
 
-  [Partnerships](partnerships.md)
-
-- Topics
-
-  - [Partnerships](https://www.anthropic.com/search?topic=partnerships)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
-  - [Transparency](https://www.anthropic.com/search?topic=transparency)
-  - [Funding](https://www.anthropic.com/search?topic=funding)
-
-  See more...
+See more...
 
 Related articles
 
@@ -46,7 +42,7 @@ Embedded evaluation is new, and many of the details about how it will operate ar
 
 To be clear, independent embedded evaluators do not reduce our accountability, but help to make it more verifiable. The safety of our models remains our responsibility.
 
-There are, as yet, no standards for what information embedded evaluators should have access to, or how they should report what they find. There is also no settled system for funding independent evaluation. Long-term, we think funding should come from pooled or government sources, as we called for in our [Advanced AI Framework](https://www-cdn.anthropic.com/files/4zrzovbb/website/0a58d567024a8b448ff15158ebc3625328dfcc1f.pdf) in June. As neither exists today, we plan to work with different evaluators under different funding arrangements.
+There are, as yet, no standards for what information embedded evaluators should have access to, or how they should report what they find. There is also no settled system for funding independent evaluation. Long-term, we think funding should come from pooled or government sources, as we called for in our [Advanced AI Framework](https://assets.claude.com/0a58d567024a8b448ff15158ebc3625328dfcc1f.pdf) in June. As neither exists today, we plan to work with different evaluators under different funding arrangements.
 
 Given the importance and urgency of this work, Anthropic will fund Accenture's work directly. We are also in dialogue with [METR](https://metr.org/) and other nonprofit evaluators to pilot elements of embedded evaluation using their own funding. Ultimately, we believe frontier AI needs an ecosystem of evaluators operating with shared standards.
 

@@ -2,7 +2,7 @@
 title: "Troubleshoot CMEK - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/manage-claude/cmek-troubleshooting"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-09T06:26:04Z"
+fetched_at: "2026-11-17T06:24:48Z"
 tags: ["api"]
 ---
 
@@ -45,7 +45,7 @@ Fix the cause. [Two limits apply](manage-claude-cmek-key-lifecycle.md#restore-ac
 
 ### `cmek_key_network_blocked`
 
-``` block
+```
 The request to your key management service was blocked by its network access controls (for example, a KMS firewall or IP allowlist). Verify that your KMS network rules allow requests from Anthropic's published IP addresses, or contact Anthropic support if your configuration looks correct.
 ```
 
@@ -139,7 +139,9 @@ Claude Platform on AWS has no **Verify** step, so a problem with the key shows w
 | Cause | Fix |
 |----|----|
 | Key policy mismatch | Print the key policy with the [`get-key-policy` command](#aws-kms) and compare it with the [policy on the setup page](manage-claude-cmek-claude-platform-on-aws.md#prepare-the-key-policy). |
-| Condition mismatch | Any `EncryptionContext` or `aws:SourceArn` condition must include this workspace. |
+| The key policy leaves out the workspace | If your key policy lists workspaces, [add this workspace to each list](manage-claude-cmek-claude-platform-on-aws.md#add-a-workspace). If it doesn’t, check that the [`aws:SourceArn` condition](manage-claude-cmek-claude-platform-on-aws.md#source-arn-condition) matches this workspace’s ARN. Don’t remove that condition. |
+| The key policy has an `aws:SourceAccount` condition | Remove it from both service principal statements and keep `aws:SourceArn`. Anthropic’s calls to your key send only the source ARN. |
+| Key selected while creating a workspace | A key policy that lists workspaces can’t list one that doesn’t exist yet. Create the workspace without the key, then [add it to the key policy](manage-claude-cmek-claude-platform-on-aws.md#add-a-workspace). |
 | Key state or location | The key must be enabled, single-Region, and in the same AWS account and region as the workspace. |
 | Missing permissions | The principal you’re signed in as needs `kms:DescribeKey`, `kms:Encrypt`, and `kms:Decrypt` on the key. |
 
@@ -149,7 +151,7 @@ If attaching still fails, find the denied `kms:` event in CloudTrail in the key�
 
 ### The workspace doesn’t retain data
 
-``` block
+```
 CMEK keys can only be attached to workspaces in this organization that have inference data retention enabled.
 ```
 
@@ -167,7 +169,7 @@ In the Claude Console, select **Organization** from the dropdown menu at the top
 
 ### The workspace already has a key
 
-``` block
+```
 This workspace already has a different external key attached.
 ```
 
@@ -177,7 +179,7 @@ A workspace’s key can’t be replaced, so [create a new workspace](manage-clau
 
 ### Adding a key on claude.ai fails
 
-``` block
+```
 The encryption key couldn’t be added.
 ```
 

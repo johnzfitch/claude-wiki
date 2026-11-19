@@ -168,7 +168,7 @@ sequenceDiagram
 Each capability unlocks specific protocol features for use during the session. For
 example:
 
-* Implemented [server features](../Spec/draft-server.md) must be advertised in the
+* Implemented [server features](2025-06-18-server.md) must be advertised in the
   server's capabilities
 * Emitting resource subscription notifications requires the server to declare
   subscription support

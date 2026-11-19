@@ -2,7 +2,7 @@
 title: "Pictet Claude Code case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/pictet"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:29Z"
+fetched_at: "2026-11-18T06:29:24Z"
 tags: ["agents", "case-studies", "claude-code"]
 ---
 
@@ -99,13 +99,13 @@ His advice to other firms is the rollout’s own lesson: “Broad impact doesn�
 ## Related stories
 
 
+### Transforming e-commerce in Latin America
+
+
+### Scaling AI for over 12K employees
+
+
 ### How Qonto delegates financial admin for small businesses with Claude on Amazon Bedrock
 
 
 ### How Satispay’s engineers write 75% of their code with Claude
-
-
-### OffDeal powers every stage of M&A advisory with one Claude-based agent
-
-
-### Money Forward builds an AI-native engineering organization with Claude Code

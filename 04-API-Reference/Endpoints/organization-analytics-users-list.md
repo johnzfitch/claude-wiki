@@ -2,7 +2,7 @@
 title: "List User Activity - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/organization/analytics/users/list"
 category: "04-API-Reference/Endpoints"
-fetched_at: "2026-11-05T06:36:47Z"
+fetched_at: "2026-11-13T06:34:43Z"
 tags: ["api"]
 ---
 
@@ -143,7 +143,7 @@ Read more about versioning and our version history [here](versioning.md).
 
 
 
-data: array of [AnalyticsUserActivity](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_user_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 10 more }
+data: array of [AnalyticsUserActivity](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_user_activity) { chat_metrics, claude_code_metrics, cowork_metrics, 11 more }
 
 
 
@@ -297,7 +297,7 @@ chat_cowork_unified_metrics: optional [AnalyticsChatCoworkUnifiedMetrics](https:
 
 
 
-Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response on deployments that do not offer Chat and Cowork unified.
+Activity recorded while the member had Chat and Cowork unified (Cowork's features inside claude.ai chat) turned on, split into `chat` (chat activity) and `sessions` (Cowork activity). Omitted from the response where Chat and Cowork unified is not available.
 
 
 
@@ -314,6 +314,26 @@ sessions: [AnalyticsChatCoworkUnifiedSessionsMetrics](https://platform.claude.co
 
 
 Cowork session activity recorded while members had Chat and Cowork unified turned on.
+
+
+
+claude_tag_metrics: optional [AnalyticsClaudeTagMetrics](https://platform.claude.com/docs/en/api/http/organization/analytics#analytics_claude_tag_metrics) { active_day_count, active_message_count } or null
+
+
+
+Claude Tag activity in Slack by a user who has linked a Claude account. Activity by Slack users who have not linked an account appears only in the `/summaries` Claude Tag counts, so these rows do not add up to those counts. Omitted from the response on deployments that do not offer Claude Tag reporting.
+
+active_day_count: number or null
+
+
+
+1 on a day the user was active in Claude Tag in Slack, otherwise 0. Summed over the window in date-range mode, so it is the number of active days; on grouped rows, the total of each member's active days. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
+
+active_message_count: number or null
+
+
+
+Number of the user's Slack messages that made them active: @-mentions, direct messages, group direct message asks, and thread posts Claude answered. Other messages are not counted. Null when Claude Tag data cannot be read for the request. Otherwise, 0 on a row filtered by project, and null on any other row when no covered day was measured.
 
 
 
@@ -515,6 +535,10 @@ Response 200
           "write_tool_count": 0
         }
       },
+      "claude_tag_metrics": {
+        "active_day_count": 0,
+        "active_message_count": 0
+      },
       "last_activity_date": "2019-12-27",
       "rbac_group_id": "rbac_group_id",
       "rbac_group_name": "rbac_group_name"
@@ -685,6 +709,10 @@ Response 200
           "skills_used_count": 0,
           "write_tool_count": 0
         }
+      },
+      "claude_tag_metrics": {
+        "active_day_count": 0,
+        "active_message_count": 0
       },
       "last_activity_date": "2019-12-27",
       "rbac_group_id": "rbac_group_id",

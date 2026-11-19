@@ -2,7 +2,7 @@
 title: "Features overview - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/overview"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:25Z"
+fetched_at: "2026-11-13T06:33:56Z"
 tags: ["agents", "api"]
 ---
 
@@ -28,7 +28,7 @@ Features of the Claude Platform that work across its APIs. Each feature’s page
 
 
 
-You can discover which capabilities a model supports programmatically. The [Models API](../Endpoints/models-list.md) returns `max_input_tokens`, `max_tokens`, and a `capabilities` object for every available model.
+You can discover which capabilities a model supports programmatically. The [Models API](../Endpoints/models-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. returns `max_input_tokens`, `max_tokens`, and a `capabilities` object for every available model.
 
 | Feature | Description |
 |----|----|
@@ -41,14 +41,14 @@ You can discover which capabilities a model supports programmatically. The [Mode
 | [Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md) | Lets Claude navigate, read, and interact with webpages in your own browser environment. |
 | [Citations](build-with-claude-citations.md) | Claude’s answers about your documents cite the exact passages that support each claim. |
 | [Classifier refusals](build-with-claude-refusals-and-fallback.md) | Safety classifiers on some models can decline a request; the decline comes back as a normal response, not an error. |
-| Part of Classifier refusals: [Client-side fallback](build-with-claude-refusals-and-fallback.md#client-side-fallback) | A middleware in the Claude SDKs that retries a refused request on the fallback models you list. |
+| Part of Classifier refusals: [Client-side fallback](build-with-claude-refusals-and-fallback.md#client-side-fallback) | A middleware in the Anthropic SDKs that retries a refused request on the fallback models you list. |
 | Part of Classifier refusals: [Fallback credit](build-with-claude-fallback-credit.md) | Bills a retry of a refused request on another model as if the conversation had been on that model from the start, so you do not pay the prompt-cache write twice. |
 | Part of Classifier refusals: [Server-side fallback](build-with-claude-refusals-and-fallback.md#server-side-fallback) | The API retries a refused request on a fallback model within the same call and returns one response. |
 | [Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md) | Gives Claude screenshot, mouse, and keyboard control of a desktop environment. |
 | [Custom tools](../Agents-Tools/agents-and-tools-tool-use-implement-tool-use.md) | Tools you define with a name, description and input schema. Claude asks to call them; your code runs them and returns the result. |
 | [Data residency](../Other/manage-claude-data-residency.md) | Controls for where model inference runs (inference geo) and where data is stored at rest (workspace geo). |
 | [Effort](build-with-claude-effort.md) | A setting that controls how many tokens Claude spends on a response, trading thoroughness for token efficiency. |
-| Part of Effort: [Per-message effort](build-with-claude-effort.md#change-effort-mid-conversation-beta) | Changing the effort level for later turns of a conversation with a per-message `output_config`, which keeps the prompt cache. |
+| Part of Effort: [Per-message effort](build-with-claude-effort-per-message.md) | Changing the effort level for later turns of a conversation with a per-message `output_config`, which keeps the prompt cache. |
 | [Fast mode](build-with-claude-fast-mode.md) | Up to 2.5 times more output tokens per second from supported models, at premium pricing. |
 | [Files API](build-with-claude-files.md) | Upload a file once and refer to it by `file_id` in later requests, and download files that skills or the code execution tool create. |
 | [MCP connector](../Agents-Tools/agents-and-tools-mcp-connector.md) | Connect Claude to remote MCP servers so it can call their tools, without running your own MCP client. |
@@ -58,9 +58,9 @@ You can discover which capabilities a model supports programmatically. The [Mode
 | Part of Mid-conversation system messages: [Mid-conversation tool changes](build-with-claude-mid-conversation-system-messages.md#mid-conversation-tool-changes) | Offer or withdraw tools partway through a conversation without changing the tools array, so the cached prefix stays valid. |
 | Part of Mid-conversation system messages: [Turn-scoped system messages](build-with-claude-mid-conversation-system-messages.md#turn-scoped-system-messages) | A mid-conversation system message that applies only until the next user message, then stays in the history but renders nothing and costs no input tokens. |
 | [Multilingual support](build-with-claude-multilingual-support.md) | Claude works in many languages, with strong performance relative to English. |
-| [OpenTelemetry](../Other/manage-claude-opentelemetry.md) | Traces your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Claude SDK and the Claude API. |
+| [OpenTelemetry](../Other/manage-claude-opentelemetry.md) | Traces your Messages API requests, tool uses, and Managed Agents sessions with OpenTelemetry spans from the Anthropic SDK and the Claude API. |
 | Part of OpenTelemetry: [API tracing](../Other/manage-claude-opentelemetry-api.md) | OpenTelemetry spans that the Claude API sends to your observability platform for each model request and tool use that it runs. |
-| Part of OpenTelemetry: [SDK tracing](../Other/manage-claude-opentelemetry-sdk.md) | OpenTelemetry spans that the Claude SDK emits in your application for each request it sends and each tool that its tool runner runs. |
+| Part of OpenTelemetry: [SDK tracing](../Other/manage-claude-opentelemetry-sdk.md) | OpenTelemetry spans that the Anthropic SDK emits in your application for each request it sends and each tool that its tool runner runs. |
 | [Parallel tool use](../Agents-Tools/agents-and-tools-tool-use-parallel-tool-use.md) | Claude can call several tools in one response. |
 | [PDF support](build-with-claude-pdf-support.md) | Send PDFs to Claude so it can read the text, pictures, charts and tables in them. |
 | [Programmatic tool calling](../Agents-Tools/agents-and-tools-tool-use-programmatic-tool-calling.md) | Lets Claude call your tools from code in the code execution container, instead of one model round trip for each call. |
@@ -70,7 +70,7 @@ You can discover which capabilities a model supports programmatically. The [Mode
 | Part of Prompt caching: [Automatic caching](build-with-claude-prompt-caching.md#automatic-caching) | Prompt caching with one top-level `cache_control` field: the cache breakpoint goes on the last cacheable block and moves forward as the conversation grows. |
 | Part of Prompt caching: [Cache diagnostics](build-with-claude-cache-diagnostics.md) | Compares a request with your previous one and reports where the prompt prefix changed, to explain cache misses. |
 | Part of Prompt caching: [Explicit cache breakpoints](build-with-claude-prompt-caching.md#explicit-cache-breakpoints) | Prompt caching with `cache_control` on individual content blocks, to choose exactly what is cached. |
-| [SDK middleware](../Other/cli-sdks-libraries-middleware.md) | A hook in the Claude SDKs that runs your code before each request is sent and after its response is received. |
+| [SDK middleware](../Other/cli-sdks-libraries-middleware.md) | A hook in the Anthropic SDKs that runs your code before each request is sent and after its response is received. |
 | [Search results](build-with-claude-search-results.md) | Content blocks that hold your own search results, with a source and title, so Claude can cite them the same way it cites web search results. |
 | [Service tiers](../Endpoints/service-tiers.md) | Lets a request use your organization’s Priority Tier capacity. |
 | [Session budgets](../Other/managed-agents-budgets.md) | A hard spending limit in US dollars on one session, measured at public list prices. |
@@ -132,6 +132,7 @@ You can discover which capabilities a model supports programmatically. The [Mode
 | [Outcomes](../Other/managed-agents-define-outcomes.md) | A target result for a session, with a rubric that a separate grader uses to check the agent’s work until the target is met. |
 | [Permission policies](../Other/managed-agents-permission-policies.md) | Settings that control whether the agent’s built-in tools and MCP tools run automatically, wait for your approval, or are checked by the server on each call. |
 | [Scheduled deployments](../Other/managed-agents-scheduled-deployments.md) | Runs an agent on a cron schedule, so that the agent starts sessions by itself. |
+| [Self-hosted Claude Managed Agents](../Other/managed-agents-self-hosted.md) | The whole Managed Agents service on your own infrastructure: you host the API, the agent loop, the storage, and the sandboxes. |
 | [Self-hosted sandboxes](../Other/managed-agents-self-hosted-sandboxes.md) | Sandboxes on your own infrastructure that run the agent’s tool calls, while Claude still runs on Anthropic’s side. |
 | Part of Self-hosted sandboxes: [Self-hosted workers](../Other/managed-agents-self-hosted-sandboxes-workers.md) | A process that you run on your own infrastructure to claim sessions from a self-hosted environment’s queue and run their tool calls. |
 | [Session viewer](../Other/managed-agents-session-observability.md) | A session viewer in the Claude Console and per-session usage totals, to see what an agent did and what it used. |

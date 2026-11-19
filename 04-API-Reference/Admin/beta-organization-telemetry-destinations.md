@@ -2,7 +2,7 @@
 title: "Telemetry Destinations - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/beta/organization/telemetry_destinations"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-07T06:23:08Z"
+fetched_at: "2026-11-15T06:24:15Z"
 tags: ["api"]
 ---
 
@@ -26,7 +26,7 @@ cURLCLITypeScriptPythonJavaGoRubyC#PHPcURL
 
 POST/v1/organizations/telemetry_destinations
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Register an OpenTelemetry destination for the organization.
 
@@ -34,7 +34,7 @@ Register an OpenTelemetry destination for the organization.
 
 GET/v1/organizations/telemetry_destinations
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the organization's destinations, newest first, optionally only those that cover given workspaces.
 
@@ -42,7 +42,7 @@ List the organization's destinations, newest first, optionally only those that c
 
 GET/v1/organizations/telemetry_destinations/{destination_id}
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Read a destination's configuration, state, and most recent delivery results.
 
@@ -50,7 +50,7 @@ Read a destination's configuration, state, and most recent delivery results.
 
 POST/v1/organizations/telemetry_destinations/{destination_id}
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Change a telemetry destination's settings, its state, or which workspaces it covers.
 
@@ -58,7 +58,7 @@ Change a telemetry destination's settings, its state, or which workspaces it cov
 
 DELETE/v1/organizations/telemetry_destinations/{destination_id}
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Delete a destination and its workspace list.
 
@@ -66,7 +66,7 @@ Delete a destination and its workspace list.
 
 POST/v1/organizations/telemetry_destinations/{destination_id}/test
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Send one test span, named `anthropic.test`, to the destination with its registered headers, once and without retries, and report the destination's answer. The response is 200 whether or not the destination answered with a 2xx status: its `result` has the type `success`, or the type `failure` and the reason in `error`. The destination's configuration, `state` and `delivery_health` do not change. A disabled destination can be tested too. Wait 10 seconds between tests of one destination; a request that comes sooner may be answered with status 429.
 
@@ -804,7 +804,7 @@ One of the following:
 
 GET/v1/organizations/telemetry_destinations/{destination_id}/workspaces
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 List the workspaces on a destination's workspace list, newest entry first.
 
@@ -812,7 +812,7 @@ List the workspaces on a destination's workspace list, newest entry first.
 
 POST/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Add one workspace to a destination's workspace list.
 
@@ -820,6 +820,6 @@ Add one workspace to a destination's workspace list.
 
 DELETE/v1/organizations/telemetry_destinations/{destination_id}/workspaces/{workspace_id}
 
-Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. [How to send beta headers](../Endpoints/beta-headers.md)
+Requires `anthropic-beta: ``telemetry-destinations-2026-08-11`. Learn [how to send beta headers](../Endpoints/beta-headers.md).
 
 Remove one workspace from a destination's workspace list.

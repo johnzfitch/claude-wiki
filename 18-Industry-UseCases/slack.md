@@ -2,7 +2,7 @@
 title: "Slack Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/slack"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:32Z"
+fetched_at: "2026-11-18T06:29:28Z"
 tags: ["api", "case-studies", "slack"]
 ---
 
@@ -80,6 +80,9 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 ## Related stories
 
 
+### A conversation with Jaclyn Rice Nelson and Pooja Brown about scaling Tribe AI on Claude
+
+
 ### Zendesk built custom agents on Claude and reached 1 million agent executions in 7 weeks
 
 
@@ -87,6 +90,3 @@ By focusing on these deep-seated technical and efficiency improvements, Slack an
 
 
 ### How Atlassian builds AI agents teams can trust with Claude and Google Cloud
-
-
-### Rocket Money on building agents that fix their own code

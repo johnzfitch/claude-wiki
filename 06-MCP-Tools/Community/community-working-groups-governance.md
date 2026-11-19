@@ -2,11 +2,14 @@
 title: "Governance Working Group Charter - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/community/working-groups/governance"
 category: "06-MCP-Tools/Community"
-fetched_at: "2026-10-11T06:34:50Z"
+fetched_at: "2026-11-12T06:24:40Z"
+last_modified: "Wed, 11 Nov 2026 19:46:09 GMT"
 tags: ["mcp", "mcp-community"]
 ---
 
 ## On this page
+
+Back to top
 
 - [Group Type](#group-type)
 - [Mission Statement](#mission-statement)
@@ -25,7 +28,7 @@ tags: ["mcp", "mcp-community"]
 - [Charter Updates](#charter-updates)
 - [Changelog](#changelog)
 
-Working Group Charters
+Working Groups
 
 # Governance Working Group Charter
 
@@ -94,8 +97,8 @@ Related Groups
 
 Leadership
 
-| Role           | Name          | Organization                     | GitHub                                           | Term       |
-|----------------|---------------|----------------------------------|--------------------------------------------------|------------|
+| Role | Name | Organization | GitHub | Term |
+|----|----|----|----|----|
 | Lead (Interim) | Sarah Novotny | Independent (contract Anthropic) | [@sarahnovotny](https://github.com/sarahnovotny) | NTE 1-year |
 
 Sponsored by David Soria Parra ([@dsp-ant](https://github.com/dsp-ant)).
@@ -117,23 +120,23 @@ The current Lead serves an interim term of no more than one year from the charte
 
 Authority & Decision Rights
 
-| Decision Type                                                                       | Authority Level                                                    |
-|-------------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| Meeting logistics & scheduling                                                      | WG Leads (autonomous)                                              |
-| WG roadmap and review-queue submissions                                             | WG Leads (autonomous)                                              |
-| Proposal prioritisation within WG                                                   | WG Leads (autonomous)                                              |
-| Editorial revisions to existing governance docs (typos, clarifications, link fixes) | WG Leads (autonomous, with documented rationale)                   |
-| Substantive revisions to existing governance docs                                   | WG consensus → Core Maintainer approval                            |
-| New governance policy or new doc under `docs/community/`                            | WG consensus → Core Maintainer approval                            |
-| Changes to a page owned outside this WG                                             | Proposed to that owner; owner decides                              |
-| Code of Conduct content revision                                                    | WG consensus → Core Maintainer approval                            |
-| Code of Conduct individual incident handling                                        | Out of scope (handled elsewhere)                                   |
-| Contributor ladder structural changes                                               | WG consensus → Core Maintainer approval + community comment period |
-| Onboarding & mentorship culture and practice docs                                   | WG consensus (autonomous)                                          |
-| Surfacing community concerns to Core Maintainers                                    | WG consensus (advisory; non-binding)                               |
-| Scope expansion                                                                     | Core Maintainer approval required                                  |
-| Amendments to this charter                                                          | WG consensus → Core Maintainer approval                            |
-| WG Member approval                                                                  | WG Member sponsors (subject to org-diversity cap; see Membership)  |
+| Decision Type | Authority Level |
+|----|----|
+| Meeting logistics & scheduling | WG Leads (autonomous) |
+| WG roadmap and review-queue submissions | WG Leads (autonomous) |
+| Proposal prioritisation within WG | WG Leads (autonomous) |
+| Editorial revisions to existing governance docs (typos, clarifications, link fixes) | WG Leads (autonomous, with documented rationale) |
+| Substantive revisions to existing governance docs | WG consensus → Core Maintainer approval |
+| New governance policy or new doc under `docs/community/` | WG consensus → Core Maintainer approval |
+| Changes to a page owned outside this WG | Proposed to that owner; owner decides |
+| Code of Conduct content revision | WG consensus → Core Maintainer approval |
+| Code of Conduct individual incident handling | Out of scope (handled elsewhere) |
+| Contributor ladder structural changes | WG consensus → Core Maintainer approval + community comment period |
+| Onboarding & mentorship culture and practice docs | WG consensus (autonomous) |
+| Surfacing community concerns to Core Maintainers | WG consensus (advisory; non-binding) |
+| Scope expansion | Core Maintainer approval required |
+| Amendments to this charter | WG consensus → Core Maintainer approval |
+| WG Member approval | WG Member sponsors (subject to org-diversity cap; see Membership) |
 
 The “editorial vs. substantive” line is intentionally narrow: typos, clarifications, broken-link fixes, and rewordings that do not change meaning are editorial. Anything that changes the meaning, scope, or applicability of an existing rule is substantive. Pull request creation on the specification repository is limited to maintainers. WG Members who are not maintainers draft governance doc changes from a fork or a WG-owned repository; a maintainer in the WG opens the pull request and names the author.
 
@@ -144,21 +147,21 @@ Membership
 
 Membership eligibility follows the standard WG model defined in the [Working and Interest Groups](community-working-interest-groups.md) documentation. To become a WG Member: sustained participation over 3 months, meaningful contributions (for this WG: governance doc drafting, reviews, or discussion facilitation), nomination by an existing WG Member or Lead, and no objections from Leads, Core Maintainers, or Lead Maintainers within 7 days. One additional structural rule applies: **no more than 2 Leads from any single organisation**. This invariant is maintained throughout each term.
 
-| Name                     | Organization                                     | GitHub                                           | Discord       | Level     |
-|--------------------------|--------------------------------------------------|--------------------------------------------------|---------------|-----------|
-| Sarah Novotny            | Independent (contract Anthropic)                 | [@sarahnovotny](https://github.com/sarahnovotny) | @sarahnovotny | Lead      |
-| Andreas Schlapbach       | TBD                                              | [@schlpbch](https://github.com/schlpbch)         |               | WG Member |
-| Lin Sun                  | Solo.io                                          | [@linsun](https://github.com/linsun)             |               | WG Member |
-| Peder Holdgaard Pedersen | Saxo Bank / MCP Maintainer & Community Moderator | [@PederHP](https://github.com/PederHP)           | @pederhp      | WG Member |
+| Name | Organization | GitHub | Discord | Level |
+|----|----|----|----|----|
+| Sarah Novotny | Independent (contract Anthropic) | [@sarahnovotny](https://github.com/sarahnovotny) | @sarahnovotny | Lead |
+| Andreas Schlapbach | TBD | [@schlpbch](https://github.com/schlpbch) |  | WG Member |
+| Lin Sun | Solo.io | [@linsun](https://github.com/linsun) |  | WG Member |
+| Peder Holdgaard Pedersen | Saxo Bank / MCP Maintainer & Community Moderator | [@PederHP](https://github.com/PederHP) | @pederhp | WG Member |
 
 
 [​](#operations)
 
 Operations
 
-| Meeting         | Frequency | Duration | Purpose                                               |
-|-----------------|-----------|----------|-------------------------------------------------------|
-| Working Session | Monthly   | 60 min   | Doc work, member coordination, scheduled deliberation |
+| Meeting | Frequency | Duration | Purpose |
+|----|----|----|----|
+| Working Session | Monthly | 60 min | Doc work, member coordination, scheduled deliberation |
 
 The monthly working session is a standing slot and is not cancelled for lack of an agenda. Leads publish an agenda in `#governance-wg` at least 48 hours ahead when items are known. If three consecutive sessions draw neither attendance nor agenda items, the Leads propose a reduced cadence or retirement to the Core Maintainers. Meeting invites are created from a project account, so any attendee can start and record a session. The WG does not run office hours. Open Q&A happens in `#governance-wg` and at project-wide Core Maintainer office hours. Discord: `#governance-wg` GitHub Discussions: `Meeting Notes - Governance WG` (category to be created during charter setup). Discussions in the specification repository are reserved for meeting notes. The WG keeps its notes, roadmap, and meeting information in the standard shape expected of every group.
 
@@ -172,14 +175,14 @@ Deliverables & Success Metrics
 
 Active Work Items
 
-| Item                                                                | Status      | Target Date | Champion      |
-|---------------------------------------------------------------------|-------------|-------------|---------------|
-| Decision-recording convention: what is decided, who ratifies, where | Planning    | 2027-01-31  | Sarah Novotny |
-| Community values doc public under `docs/community/`                 | In progress | 2027-02-28  | Sarah Novotny |
-| Code of Conduct reporting and handling path formalised              | Planning    | 2027-03-31  | TBD           |
-| Onboarding & mentorship culture doc                                 | Planning    | 2027-04-30  | TBD           |
-| ”State of MCP Community” cadence + first published post             | Planning    | 2027-05-31  | TBD           |
-| ”Ways to contribute beyond code” page                               | Planning    | 2027-05-31  | TBD           |
+| Item | Status | Target Date | Champion |
+|----|----|----|----|
+| Decision-recording convention: what is decided, who ratifies, where | Planning | 2027-01-31 | Sarah Novotny |
+| Community values doc public under `docs/community/` | In progress | 2027-02-28 | Sarah Novotny |
+| Code of Conduct reporting and handling path formalised | Planning | 2027-03-31 | TBD |
+| Onboarding & mentorship culture doc | Planning | 2027-04-30 | TBD |
+| ”State of MCP Community” cadence + first published post | Planning | 2027-05-31 | TBD |
+| ”Ways to contribute beyond code” page | Planning | 2027-05-31 | TBD |
 
 
 [​](#success-criteria)
@@ -212,7 +215,7 @@ These criteria are deliberately conservative for v0.1 and may be revised as the 
 
 Charter Updates
 
-This charter is a v0.1 document and is expected to be revised as the group coalesces. Updates follow the [Charter Amendments](community-working-interest-groups.md#charter-amendments) process defined for all groups: proposal by a Lead or Core Maintainer, approval by Core Maintainers. Within the WG, amendment proposals are treated like any other substantive governance change — WG consensus first, then Core Maintainer approval. Editorial fixes (typos, broken links, rewordings that do not change meaning) may land autonomously per the editorial/substantive distinction above. All amendments are recorded in the Changelog below.
+This charter is a v0.1 document and is expected to be revised as the group coalesces. Updates follow the [charter amendment](community-working-interest-groups.md#amending-or-retiring-a-group) process defined for all groups: proposal by a Lead or Core Maintainer, approval by Core Maintainers. Within the WG, amendment proposals are treated like any other substantive governance change — WG consensus first, then Core Maintainer approval. Editorial fixes (typos, broken links, rewordings that do not change meaning) may land autonomously per the editorial/substantive distinction above. All amendments are recorded in the Changelog below.
 
 
 [​](#changelog)

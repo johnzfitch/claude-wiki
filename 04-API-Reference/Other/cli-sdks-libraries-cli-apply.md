@@ -2,7 +2,7 @@
 title: "Manage resources as code with ant apply - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply"
 category: "04-API-Reference/Other"
-fetched_at: "2026-11-06T06:27:15Z"
+fetched_at: "2026-11-14T06:25:03Z"
 tags: ["agents", "api"]
 ---
 

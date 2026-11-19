@@ -2,9 +2,11 @@
 title: "Measuring the persuasiveness of language models \\ Anthropic"
 source_url: "https://www.anthropic.com/research/measuring-model-persuasiveness"
 category: "19-Reference"
-fetched_at: "2026-10-24T06:26:35Z"
+fetched_at: "2026-11-14T06:26:02Z"
 tags: ["news-research", "search"]
 ---
+
+### 01Focusing on Less Polarized Issues to Evaluate Persuasiveness
 
 # Measuring the persuasiveness of language models
 
@@ -18,23 +20,20 @@ tags: ["news-research", "search"]
 - [08Building on Prior Research⁶](#building-on-prior-research)
 - [09Future Research Directions](#future-research-directions)
 
-- Published
+Published  
+Apr 9, 2024
 
-  Apr 9, 2024
+Team  
+[Societal Impacts](team-societal-impacts.md)
 
-- Team
+Topics  
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Scaling laws](https://www.anthropic.com/search?topic=scaling-laws)
+- [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
+- [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
+- [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
 
-  [Societal Impacts](team-societal-impacts.md)
-
-- Topics
-
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Scaling laws](https://www.anthropic.com/search?topic=scaling-laws)
-  - [Democratic integrity](https://www.anthropic.com/search?topic=democratic-integrity)
-  - [Limits on abuse](https://www.anthropic.com/search?topic=limits-on-abuse)
-  - [Claude Opus](https://www.anthropic.com/search?topic=claude-opus)
-
-  See more...
+See more...
 
 Related articles
 
@@ -155,7 +154,7 @@ url = {https://www.anthropic.com/news/measuring-model-persuasiveness},
 
 ### Policy Memo
 
-[Measuring the Persuasiveness of Language Models](https://www-cdn.anthropic.com/files/4zrzovbb/website/5f5bf833a83e4c85550768e8b16ff282f268d7a3.pdf)
+[Measuring the Persuasiveness of Language Models](https://assets.claude.com/5f5bf833a83e4c85550768e8b16ff282f268d7a3.pdf)
 
 ## Footnotes
 
@@ -181,10 +180,12 @@ Esin Durmus led the research, designed the experiments, ran the experiments, and
 
 Copy
 
-``` CodeBlock-module-scss-module__PbWBnq__code
+``` PbWBnq_code
 @online{durmus2024persuasion,
 author = {Esin Durmus and Liane Lovitt and Alex Tamkin and Stuart Ritchie and Jack Clark and Deep Ganguli},
 title = {Measuring the Persuasiveness of Language Models},
 date = {2024-04-09},
 year = {2024},
 url = {https://www.anthropic.com/news/measuring-model-persuasiveness},
+}
+```

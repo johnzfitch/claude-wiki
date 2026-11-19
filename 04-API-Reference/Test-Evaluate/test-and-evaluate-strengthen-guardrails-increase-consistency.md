@@ -2,7 +2,7 @@
 title: "Increase output consistency - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/increase-consistency"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-11-05T06:37:21Z"
+fetched_at: "2026-11-13T06:36:54Z"
 tags: ["api", "prompting"]
 ---
 
@@ -32,7 +32,7 @@ Here’s how to make Claude’s responses more consistent:
 
 Precisely define the output format you want using JSON, XML, or custom templates so that Claude follows every output formatting element you require.
 
-### Example: Standardizing customer feedback
+### Example: Standardizing customer feedback
 
 User
 
@@ -85,7 +85,7 @@ Prefilling is not supported on Claude 4.6 and later models and [Claude Mythos Pr
 
 Prefill the `Assistant` turn with the format you want. This trick bypasses Claude’s friendly preamble and enforces your structure.
 
-### Example: Daily sales report
+### Example: Daily sales report
 
 User
 
@@ -190,7 +190,7 @@ Assistant
 
 Provide examples of the output you want. This is more effective than abstract instructions.
 
-### Example: Generating consistent market intelligence
+### Example: Generating consistent market intelligence
 
 User
 
@@ -285,7 +285,7 @@ Assistant
 
 For tasks requiring consistent context (for example, chatbots, knowledge bases), use retrieval to ground Claude’s responses in a fixed information set.
 
-### Example: Enhancing IT support consistency
+### Example: Enhancing IT support consistency
 
 User
 
@@ -369,7 +369,7 @@ For role-based applications, maintaining consistent character requires deliberat
   When setting up the character, provide detailed information about the personality, background, and any specific traits or quirks. This helps the model better emulate and generalize the character’s traits.
 - **Prepare Claude for possible scenarios:** Provide a list of common scenarios and expected responses in your prompts. This “trains” Claude to handle diverse situations without breaking character.
 
-### Example: Enterprise chatbot for role prompting
+### Example: Enterprise chatbot for role prompting
 
 System
 

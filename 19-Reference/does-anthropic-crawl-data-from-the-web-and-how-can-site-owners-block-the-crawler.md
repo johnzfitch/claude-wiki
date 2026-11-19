@@ -2,14 +2,14 @@
 title: "Does Anthropic crawl data from the web, and how can site owners block the crawler? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
 category: "19-Reference"
-fetched_at: "2026-11-09T06:26:16Z"
+fetched_at: "2026-11-18T06:28:25Z"
 tags: ["news-research"]
 ---
 
 # Does Anthropic crawl data from the web, and how can site owners block the crawler?
 
 
-This page covers Anthropic's robots (crawlers and fetchers). For browsers hosted by Anthropic that Claude uses to complete tasks for users, including in Claude Duet (`Claude-Agent`), see **[How do Anthropic-hosted browsers identify themselves when they browse the web on a user's behalf?](https://support.claude.com/en/articles/18234133)**
+This page covers Anthropic's robots (crawlers and fetchers). For browsers hosted by Anthropic that Claude uses to complete tasks for users, including in Claude Duet (`Claude-Agent`), see **[How do Anthropic-hosted browsers identify themselves when they browse the web on a user's behalf?](../15-Claude-AI-Features/how-do-anthropic-hosted-browsers-identify-themselves-when-they-browse-the-web-on-a-user-s.md)**
 
 ## Block or limit Anthropic’s bots
 
@@ -57,7 +57,7 @@ ClaudeBot is our training crawler, and we treat rules that name it directly as m
 
 - **If your robots.txt file doesn’t mention ClaudeBot**, we follow the general setting described above.
 
-You can learn more about our data handling practices in our **[Privacy and legal](https://support.claude.com/en/collections/4078534-privacy-and-legal)** collection. If you have questions, or believe our crawlers aren’t working as described, reach out to **[\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#54373835213031363b2014353a203c263b243d377a373b39)** from an email that includes the domain you’re asking about.
+You can learn more about our data handling practices in our **[Privacy and legal](https://support.claude.com/en/collections/4078534-privacy-and-legal)** collection. If you have questions, or believe our crawlers aren’t working as described, reach out to **[\[email protected\]](https://support.claude.com/cdn-cgi/l/email-protection#b2d1ded3c7d6d7d0ddc6f2d3dcc6dac0ddc2dbd19cd1dddf)** from an email that includes the domain you’re asking about.
 
 You can be notified of substantial changes to this article by clicking here and completing the form:
 

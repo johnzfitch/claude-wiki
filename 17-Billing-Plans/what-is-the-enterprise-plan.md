@@ -2,7 +2,7 @@
 title: "What is the Enterprise plan? | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan"
 category: "17-Billing-Plans"
-fetched_at: "2026-11-09T06:26:05Z"
+fetched_at: "2026-11-18T06:28:17Z"
 tags: ["billing", "claude-code", "enterprise"]
 ---
 
@@ -127,7 +127,7 @@ Here's what to know about ACH payments:
 
 Enterprise is also available through the **[AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-nnvi6wff6ef6m)**.
 
-If your organization is currently on a Team plan and you're interested in upgrading to Enterprise, see this article for more information: **[Migrate your organization from Team to Enterprise](../13-Enterprise-Admin/migrate-your-organization-from-team-to-enterprise.md)**.
+If your organization is currently on a Team plan and you're interested in upgrading to Enterprise, see this article for more information: **[Migrate your organization from Team to Enterprise](https://support.claude.com/en/articles/13779868-migrate-your-organization-from-team-to-enterprise)**.
 
 ------------------------------------------------------------------------
 

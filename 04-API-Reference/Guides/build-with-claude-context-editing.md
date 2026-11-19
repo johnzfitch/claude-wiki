@@ -2,7 +2,7 @@
 title: "Context editing - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/context-editing"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:42Z"
+fetched_at: "2026-11-13T06:36:24Z"
 tags: ["api", "cli", "sdk"]
 ---
 
@@ -20,21 +20,28 @@ Automatically manage conversation context as it grows with context editing.
 
 Context editing
 
+Beta
+
 Feature of  
 [Messages API](build-with-claude-working-with-messages.md)
 
-[Status](#availability-feature-support)  
-Beta
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
-[Beta header](#feature-beta-headers)  
-- `context-management-2025-06-27`
-  
+[Beta header](#feature-availability)  
+- 
+  Copy`context-management-2025-06-27`
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 ## Overview
 
@@ -62,7 +69,7 @@ Share feedback on this feature through the [feedback form](https://forms.gle/YXC
 
 The `clear_tool_uses_20250919` strategy clears tool results when conversation context grows beyond your configured threshold. This is particularly useful for agentic workflows with heavy tool use. Older tool results (such as file contents or search results) are no longer needed once Claude has processed them.
 
-When activated, the API automatically clears the oldest tool results in chronological order. The API replaces each cleared result with placeholder text indicating to Claude that it was removed. By default, only tool results are cleared. You can optionally clear both tool results and tool calls (the tool use parameters) by setting `clear_tool_inputs` to true.
+When activated, the API automatically clears the oldest tool results in chronological order. The API replaces each cleared result with placeholder text indicating to Claude that it was removed. By default, only tool results are cleared. You can optionally clear both tool results and tool calls (the tool use parameters) by setting `clear_tool_inputs` to `true`.
 
 ### Thinking block clearing
 
@@ -70,16 +77,16 @@ The `clear_thinking_20251015` strategy manages `thinking` blocks from earlier as
 
 
 
-**Default behavior:** The default varies by model class.
+**Default behavior:** When a request doesn’t include the `clear_thinking_20251015` strategy, the default varies by model class.
 
-| Model class | Keep all prior thinking | Keep only the last turn’s thinking |
+| Model class | Keep all prior thinking | Keep thinking only for the turn in progress |
 |----|----|----|
 | Opus | Claude Opus 4.5 and later | Claude Opus 4.1 and earlier |
 | Sonnet | Claude Sonnet 4.6 and later | Claude Sonnet 4.5 (deprecated) and earlier |
 | Haiku | Claude Haiku 5.5 and later | Claude Haiku 4.5 and earlier |
 | Fable and Mythos | All models | (none) |
 
-Use this strategy to override the default. If your code runs across multiple model tiers, set `keep` explicitly rather than relying on the per-model default.
+Use this strategy to override the default. If your code runs across multiple model classes, include this strategy and set `keep` explicitly rather than relying on the per-model default.
 
 An assistant conversation turn might include multiple content blocks (for example, when using tools) and multiple thinking blocks (for example, with [interleaved thinking](build-with-claude-thinking.md#interleaved-thinking)).
 
@@ -87,7 +94,9 @@ An assistant conversation turn might include multiple content blocks (for exampl
 
 Context editing is applied server-side before the prompt reaches Claude. Your client application maintains the full, unmodified conversation history. You do not need to sync your client state with the edited version. Continue managing your full conversation history locally as you normally would.
 
-On Claude 5.1 and later models, server-side context management never invalidates thinking blocks. Client-side edits to earlier turns can invalidate the thinking blocks in every later assistant turn. See [Keeping the prefix unchanged](build-with-claude-preserved-thinking.md#prefix-check).
+On [models with preserved thinking](build-with-claude-preserved-thinking-prefix-checks.md#outcomes), server-side context management never invalidates thinking blocks. Client-side edits to earlier turns can invalidate the thinking blocks in every later assistant turn. See [What must stay the same, and why](build-with-claude-preserved-thinking-prefix-checks.md#prefix-check).
+
+The models with preserved thinking are Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5.
 
 ### Context editing and prompt caching
 
@@ -103,7 +112,7 @@ Context editing is available on all supported Claude models.
 
 ## Tool result clearing usage
 
-The simplest way to enable tool result clearing is to specify only the strategy type. All other [configuration options](#configuration-options-for-tool-result-clearing) use their default values:
+One way to enable tool result clearing is to specify only the strategy type. All other [configuration options](#configuration-options-for-tool-result-clearing) use their default values:
 
 cURL
 
@@ -250,11 +259,15 @@ The `clear_thinking_20251015` strategy supports the following configuration:
 
 | Configuration option | Default | Description |
 |----|----|----|
-| `keep` | Model-specific | Defines how many recent assistant turns with thinking blocks to preserve. Use `{type: "thinking_turns", value: N}` where N must be \> 0 to keep the last N turns, or `"all"` to keep all thinking blocks. Opus 4.5+, Sonnet 4.6+, and Haiku 5.5+: all turns. Fable and Mythos models: all turns. Earlier Opus/Sonnet and Haiku through Claude Haiku 4.5: last turn only. |
+| `keep` | `{type: "thinking_turns", value: 1}` | Defines how many recent assistant turns keep their thinking blocks. Use `{type: "thinking_turns", value: N}` where N must be \> 0 to keep the last N turns, or `"all"` to keep all thinking blocks. |
+
+A request that includes this strategy without `keep` gets `{type: "thinking_turns", value: 1}` on every model, including models whose [per-model default](#thinking-block-clearing) keeps all thinking. A request without this strategy gets the per-model default.
+
+N counts the assistant turn in progress and turns without thinking blocks. A user message that contains only `tool_result` blocks continues the turn in progress. Any other user message starts a new turn. When a request ends with a message that starts a new turn, a value of 1 clears the thinking from every earlier assistant turn.
 
 **Example configurations:**
 
-Keep thinking blocks from the last 3 assistant turns:
+Keep thinking blocks from the last 3 assistant turns, counting the turn in progress:
 
 cURL
 
@@ -410,7 +423,7 @@ print(response)
 |----|----|----|
 | `trigger` | 100,000 input tokens | Defines when the context editing strategy activates. Once the prompt exceeds this threshold, clearing starts. You can specify this value in either `input_tokens` or `tool_uses`. |
 | `keep` | 3 tool uses | Defines how many recent tool use/result pairs to keep after clearing occurs. The API removes the oldest tool interactions first, preserving the most recent ones. |
-| `clear_at_least` | None | Ensures a minimum number of tokens is cleared each time the strategy activates. If the API can’t clear at least the specified amount, the strategy will not be applied. This helps determine if context clearing is worth breaking your prompt cache. |
+| `clear_at_least` | None | Ensures a minimum number of tokens is cleared each time the strategy activates. If the API can’t clear at least the specified amount, the strategy isn’t applied. This helps determine whether context clearing is worth breaking your prompt cache. |
 | `exclude_tools` | None | List of tool names whose tool uses and results should never be cleared. Useful for preserving important context. |
 | `clear_tool_inputs` | `false` | Controls whether the tool call parameters are cleared along with the tool results. By default, only the tool results are cleared while keeping Claude’s original tool calls visible. |
 
@@ -788,7 +801,7 @@ The built-in summary prompt instructs Claude to create a structured continuation
 
 This structure allows Claude to resume work efficiently without losing important context or repeating mistakes.
 
-### View full default prompt
+### View full default prompt
 
 ```python
 You have been working on the task described above but have not yet completed it. Write a continuation summary that will allow you (or another instance of yourself) to resume work efficiently in a future context window where the conversation history will be replaced with this summary. Your summary should be structured, concise, and actionable. Include:
@@ -861,7 +874,7 @@ The SDK calculates total usage as 63,000 + 0 + 270,000 + 1,400 = 334,400 tokens.
 
 #### Tool use edge cases
 
-When the SDK triggers compaction while a tool use response is pending, it removes the tool use block from the message history before generating the summary. Claude will re-issue the tool call after resuming from the summary if still needed.
+When the SDK triggers compaction while a tool use response is pending, it removes the tool use block from the message history before generating the summary. After resuming from the summary, Claude reissues the tool call if it still needs it.
 
 ### Monitoring compaction
 
@@ -922,31 +935,109 @@ Reduce cost and latency by caching prompt prefixes, and learn how context editin
 
 ## Availability
 
-Context editing is in beta on every model and eligible for zero data retention.
+Context editing
 
-### API support
+Cloud platform
 
-StatusBeta
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Context editing are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](build-with-claude-claude-in-microsoft-foundry.md)
+Claude API
 
-### Required beta headers
+Status  
+Beta
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Messages API
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Beta header  
+Requires
 
-Header
+context-management-2025-06-27
 
-- `context-management-2025-06-27`
-  
+Models  
+- All models
+
+Amazon Bedrock
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+context-management-2025-06-27
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+context-management-2025-06-27
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+context-management-2025-06-27
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+context-management-2025-06-27
+
+Models  
+- All models
+
+Microsoft Foundry
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Beta header  
+Requires
+
+context-management-2025-06-27
+
+Models  
+- All models
 
 ### Data handling
 

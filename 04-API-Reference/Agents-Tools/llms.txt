@@ -1313,7 +1313,7 @@ When triggered, the skill equips Claude with:
 - **Streaming patterns:** Implementation details for building chat UIs and handling incremental display
 - **Batch processing:** Offline batch processing at 50 percent cost
 - **Prompt caching:** Prefix-stability design, breakpoint placement, and silent-invalidator audit
-- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), [Claude Haiku 5.5](../../20-Models/models-haiku-5-5-migration-guide.md), and [Claude Fable 5.1](../../20-Models/models-fable-5-1-migration-guide.md))
+- **Model migration:** Step-by-step guidance for migrating to newer Claude models (including the breaking changes and behavior shifts on [Claude Opus 5.5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Claude Sonnet 5.5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), [Claude Haiku 5.5](../../20-Models/models-haiku-5-5-migration-guide.md), and [Claude Fable 5.2](../../20-Models/models-fable-5-2-migration-guide.md))
 - **Preserved thinking migration:** Finding, measuring, and fixing the history edits that invalidate `thinking` blocks, available through the `/claude-api preserved-thinking-migration` subcommand
 - **Current model information:** Model IDs, context window sizes, and pricing
 - **Common pitfalls:** Detailed guidance on avoiding frequent mistakes when integrating with the API
@@ -1399,7 +1399,7 @@ Run in
 
 
 
-### Manual install commands
+### Manual install commands
 
 ``` block
 /plugin marketplace add anthropics/skills
@@ -1456,11 +1456,17 @@ The skill handles:
 - **Effort calibration**, recommending an `output_config.effort` starting point for the target model (for example, the default `high` on Claude Opus 5, and `xhigh` for coding and agentic use cases on Claude Opus 4.8 and Claude Opus 4.7)
 - **Prompt-behavior tuning**, flagging length-control, tool-triggering, subagent, and instruction-following prompts that might behave differently on the target model
 - **Silent default handling**, opting back into thinking summarization (`thinking.display: "summarized"`) when reasoning is surfaced to users on Claude Opus 4.8 and Claude Opus 4.7
-- **Refusal fallback configuration**, adding `stop_reason: "refusal"` handling before reading response content and setting up a [fallback retry path](../Guides/build-with-claude-refusals-and-fallback.md) when the target is Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, or Claude Sonnet 5.5 (the server-side `fallbacks` parameter, typically in its `"default"` mode, the SDK refusal-fallback middleware, or a fallback-credit retry), and updating fallback code written against earlier preview shapes
+- **Refusal fallback configuration**, in three parts:
+  - Adding `stop_reason: "refusal"` handling before reading response content.
+  - Updating fallback code written against earlier preview shapes.
+  - Setting up a [fallback retry path](../Guides/build-with-claude-refusals-and-fallback.md) for six target models. They are Claude Fable 5.2, Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, and Claude Sonnet 5.5. The path uses one of these:
+    - [Server-side fallback](../Guides/build-with-claude-refusals-and-fallback.md#server-side-fallback): the `fallbacks` parameter, typically in its `"default"` mode.
+    - [Client-side fallback with the SDK middleware](../Guides/build-with-claude-refusals-and-fallback.md#client-side-fallback).
+    - A retry that redeems a [fallback credit](../Guides/build-with-claude-fallback-credit.md).
 
 As it edits, the skill explains each change and its motivation inline. On completion, it produces a checklist of items that require manual verification (typically integration tests, length-control prompt tuning, and cost/rate-limit re-baselining).
 
-For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), [Migrating to Claude Sonnet 5.5 from Claude Sonnet 5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), [Claude Haiku 5.5 migration guide](../../20-Models/models-haiku-5-5-migration-guide.md), and [Claude Fable 5.1 and Claude Mythos 5.1 migration guide](../../20-Models/models-fable-5-1-migration-guide.md).
+For the full list of model-specific changes the skill applies, see [Migrating to Claude Opus 5.5 from Claude Opus 5](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-5), [Migrating to Claude Opus 5.5 from Claude Opus 4.8](../../20-Models/models-opus-5-5-migration-guide.md#migrating-from-claude-opus-4-8), [Migrating to Claude Sonnet 5.5 from Claude Sonnet 5](../../20-Models/models-sonnet-5-5-migration-guide.md#migrating-from-claude-sonnet-5), [Claude Haiku 5.5 migration guide](../../20-Models/models-haiku-5-5-migration-guide.md), and [Claude Fable 5.2 and Claude Mythos 5.2 migration guide](../../20-Models/models-fable-5-2-migration-guide.md).
 
 ## Checking an integration for preserved thinking
 
@@ -1481,7 +1487,7 @@ The skill works through five steps:
 1.  **Scope:** Checks whether your integration is affected, then sends three test requests to confirm that the API reports a deliberate edit.
 2.  **Find:** Captures a few of your own multi-turn sessions, diffs consecutive requests, and lists each place your code edits the prefix.
 3.  **Measure:** Replays the sessions with `"drop_block"` and reports which conversations lose `thinking` blocks, at which turn, and why.
-4.  **Fix:** Replaces one edit at a time with the matching pattern in [Make changes without editing the prefix](../Guides/build-with-claude-preserved-thinking.md#replace-prefix-edits), and measures again after each change.
+4.  **Fix:** Replaces each edit with the matching pattern in [Change tools or instructions without failing the prefix check](../Guides/build-with-claude-preserved-thinking-change-tools-or-instructions.md), and measures again after each one.
 5.  **Report:** Summarizes each cause, the change made for it, and the counts before and after.
 
 If your project has an eval, the skill also compares scores and token usage with and without dropped `thinking` blocks.
@@ -1839,14 +1845,21 @@ Agent Skills are modular capabilities that extend Claude’s functionality. Each
 
 Agent Skills
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryHosted on AnthropicAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft FoundryHosted on Anthropic
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -2183,43 +2196,49 @@ Learn how to write effective Skills that Claude can discover and use successfull
 
 ## Availability
 
-Agent Skills are available on every model.
+Agent Skills
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-List `skill_ids` in the `container` parameter and include the code execution tool, whose container the skills run in.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Models on Google Cloud (Anthropic managed)
 
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+APIs  
+- Messages API
+- Managed Agents
 
+Models  
+- All models
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
 Hosted on Anthropic deployments only; the skill version download endpoint (`GET /v1/skills/{skill_id}/versions/{version}/content`) is not supported on Foundry.
-
-[Managed Agents](../Other/managed-agents-overview.md)
-
-Usage
-
-Attach skills in the agent’s `skills` array, or load them from a GitHub repository mounted on the session.
-
-StatusAvailable
-
-Cloud platforms
-
-- All supported platforms
 
 ### Data handling
 
@@ -2296,7 +2315,7 @@ You need a [client SDK](../Other/cli-sdks-libraries-overview.md) for your langua
     For Linux environments, download the release binary directly.
 
     ``` shiki
-    VERSION=2.6.0
+    VERSION=2.9.0
     OS=$(uname -s | tr '[:upper:]' '[:lower:]')
     case $(uname -m) in
       x86_64) ARCH=amd64 ;;
@@ -2312,7 +2331,7 @@ You need a [client SDK](../Other/cli-sdks-libraries-overview.md) for your langua
 
     go install
 
-    You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+    You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
     ``` shiki
     go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -2320,7 +2339,7 @@ You need a [client SDK](../Other/cli-sdks-libraries-overview.md) for your langua
 
     
 
-    The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+    `go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
     ``` shiki
     export PATH="$PATH:$(go env GOPATH)/bin"
@@ -2379,7 +2398,7 @@ curl (Linux/WSL)
 For Linux environments, download the release binary directly.
 
 ```python
-VERSION=2.6.0
+VERSION=2.9.0
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 case $(uname -m) in
   x86_64) ARCH=amd64 ;;
@@ -2395,7 +2414,7 @@ You can find all releases on the [GitHub releases page](https://github.com/anthr
 
 go install
 
-You can also install the CLI from source using `go install`. Requires Go 1.25 or later.
+You can also install the CLI from source with `go install`, which requires Go 1.26.10 or later.
 
 ```python
 go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
@@ -2403,7 +2422,7 @@ go install github.com/anthropics/anthropic-cli/v2/cmd/ant@latest
 
 
 
-The binary is placed in `$(go env GOPATH)/bin`. Add it to your `PATH` if it isn’t already:
+`go install` places the binary in `$(go env GOPATH)/bin`. Add that directory to your `PATH` if it isn’t already there:
 
 ```python
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -2794,20 +2813,26 @@ Connect to remote MCP servers directly from the Messages API without an MCP clie
 
 MCP connector
 
-[Status](#availability-feature-support)  
 Beta
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft Foundry
 
-[Beta header](#feature-beta-headers)  
-Varies; see details
+[Beta header](#feature-availability)  
+- Varies; see details
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -3735,72 +3760,74 @@ The previous version of the MCP connector included tool configuration directly i
 
 ## Availability
 
-MCP connector is in beta on every model.
+MCP connector
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Pass `mcp_servers` and a matching `mcp_toolset` in `tools` on each request. For OAuth servers you get and refresh the access token yourself and pass it as `authorization_token`.
+Status  
+Beta
 
-StatusBeta
+APIs  
+- 
+  Messages API
+  requires either
+  mcp-client-2026-09-15
+  or
+  mcp-client-2025-11-20
+- Managed Agents
 
-Cloud platforms
+Models  
+- All models
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Claude Platform on AWS
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Status  
+Beta
 
-Usage
+APIs  
+- 
+  Messages API
+  requires
+  mcp-client-2025-11-20
+- Managed Agents
 
-Declare MCP servers on the agent. Each session supplies credentials by referencing a vault, so secrets stay out of the agent definition.
+Models  
+- All models
 
-StatusBeta
+Claude Models on Google Cloud (Anthropic managed)
 
-Cloud platforms
+Status  
+Beta
 
-- All supported platforms
+APIs  
+- 
+  Messages API
+  requires
+  mcp-client-2025-11-20
+- Managed Agents
 
-### Required beta headers
+Models  
+- All models
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+Microsoft Foundry
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Status  
+Beta
 
-Header
+API  
+- Messages API
 
-- `mcp-client-2026-09-15`
-  
-- or`mcp-client-2025-11-20`
-  
+Beta header  
+Requires
 
-APIs
+mcp-client-2025-11-20
 
-- [Messages API](../Guides/build-with-claude-working-with-messages.md)
-
-Cloud platforms
-
-- Claude API
-
-Header
-
-- `mcp-client-2025-11-20`
-  
-
-APIs
-
-- [Messages API](../Guides/build-with-claude-working-with-messages.md)
-
-Cloud platforms
-
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Models  
+- All models
 
 ### Data handling
 
@@ -5161,24 +5188,24 @@ Securely connect Claude to MCP servers running in your private network without o
 
 MCP tunnels
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Research preview
 
+[Models](#feature-availability)  
+- All models
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
 
-[Beta header](#feature-beta-headers)  
-Either (Messages API)
-- `mcp-client-2026-09-15`
-  
-- `mcp-client-2025-11-20`
-  
+[Beta header](#feature-availability)  
+- Varies; see details
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 MCP tunnels are in research preview
 
@@ -5384,42 +5411,28 @@ Use tunneled servers from the Messages API.
 
 ## Availability
 
-MCP tunnels are in research preview on every model.
+MCP tunnels
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusResearch preview
+Claude API
 
-Cloud platforms
+Status  
+Research preview
 
-- Claude API
+APIs  
+- 
+  Messages API
+  requires either
+  mcp-client-2026-09-15
+  or
+  mcp-client-2025-11-20
+- Managed Agents
 
-[Managed Agents](../Other/managed-agents-overview.md)
-
-StatusResearch preview
-
-Cloud platforms
-
-- Claude API
-
-### Required beta headers
-
-[Beta headers overview](../Endpoints/beta-headers.md)
-
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
-
-Header
-
-- `mcp-client-2026-09-15`
-  
-- or`mcp-client-2025-11-20`
-  
-
-APIs
-
-- [Messages API](../Guides/build-with-claude-working-with-messages.md)
+Models  
+- All models
 
 ### Data handling
 
@@ -5825,7 +5838,7 @@ Each upstream value must be exactly `scheme://host:port`. The port is mandatory.
 
 ## Tunnels API
 
-The Tunnels REST API lives at `/v1/tunnels` and supports creating, listing, and archiving tunnels, registering CA certificates, and revealing or rotating the tunnel token. See the [Tunnels API reference](../Endpoints/http-beta-tunnels-list.md) for all endpoints, request and response schemas, and examples.
+The Tunnels REST API lives at `/v1/tunnels` and supports creating, listing, and archiving tunnels, registering CA certificates, and revealing or rotating the tunnel token. See the [Tunnels API reference](../Endpoints/http-beta-tunnels-list.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. for all endpoints, request and response schemas, and examples.
 
 
 
@@ -5975,7 +5988,7 @@ If you believe your tunnel token, TLS keys, or proxy host has been compromised:
 
     ### Archive the tunnel
 
-    Archiving invalidates the tunnel token and detaches the domain. In the Console, [archive the tunnel](agents-and-tools-mcp-tunnels-console.md#archive-a-tunnel) from the **MCP tunnels** list. To archive over the API instead, see [Archive a tunnel](../Endpoints/http-beta-tunnels-archive.md).
+    Archiving invalidates the tunnel token and detaches the domain. In the Console, [archive the tunnel](agents-and-tools-mcp-tunnels-console.md#archive-a-tunnel) from the **MCP tunnels** list. To archive over the API instead, see [Archive a tunnel](../Endpoints/http-beta-tunnels-archive.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return..
 
 4.  4
 
@@ -9638,22 +9651,26 @@ Pair a faster executor model with a higher-intelligence advisor model that provi
 
 Advisor tool
 
-[Status](#availability-feature-support)  
 Beta
 
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+- Messages API
+- Managed Agents
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailable
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
 
-[Beta header](#feature-beta-headers)  
-Messages API
-- `advisor-tool-2026-03-01`
-  
+[Beta header](#feature-availability)  
+- Varies; see details
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -9673,7 +9690,7 @@ This pattern fits long-horizon agentic workloads (coding agents, computer use, m
 
 The advisor fits these configurations:
 
-- **You currently use Sonnet on complex tasks:** Add a higher-tier advisor. Opus keeps total cost similar or lower; Claude Fable 5.1 maximizes the quality lift.
+- **You currently use Sonnet on complex tasks:** Add a higher-tier advisor. Opus keeps total cost similar or lower; Claude Fable 5.2 maximizes the quality lift.
 - **You currently use Haiku and want a step up in intelligence:** Add an Opus or Fable advisor. Expect higher cost than Haiku alone, but lower than switching the executor to a larger model.
 
 Results are task-dependent. Evaluate on your own workload.
@@ -9752,9 +9769,11 @@ The advisor itself runs without tools and without context management. Its thinki
 
 [TABLE]
 
+The `max_uses` cap applies to a whole turn, and a turn can span several requests. A request continues the turn when it [resumes after `pause_turn`](#resuming-a-paused-turn) or when its last message contains only `tool_result` blocks. Advisor calls from earlier requests in that turn count against the cap.
+
 The `caching` object has the shape `{"type": "ephemeral", "ttl": "5m" | "1h"}`. Unlike `cache_control` on content blocks, this is not a breakpoint marker. It is an on/off switch. The server determines where cache boundaries go.
 
-The advisor tool also accepts the generic properties available on any tool definition: `cache_control`, `allowed_callers`, `defer_loading`, and `strict` (covered in [structured outputs](../Guides/build-with-claude-structured-outputs.md)). See [Tool definition properties](agents-and-tools-tool-use-tool-reference.md#tool-definition-properties) in the Tool reference for their semantics.
+The advisor tool also accepts the generic properties available on any tool definition: `cache_control`, `allowed_callers`, `defer_loading`, and `strict` (covered in [Structured outputs](../Guides/build-with-claude-structured-outputs.md)). See [Tool definition properties](agents-and-tools-tool-use-tool-reference.md#tool-definition-properties) in the Tool reference for their semantics.
 
 ## Response structure
 
@@ -9807,7 +9826,7 @@ The `advisor_tool_result.content` field is a discriminated union. For successful
 
 
 
-Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, Claude Mythos 5, and Claude Haiku 5.5 advisors return the encrypted `advisor_redacted_result`. Every other advisor model in [Model compatibility](#model-compatibility) returns the plaintext `advisor_result`. To read the advice text in your own responses, use an advisor that returns plaintext, such as `claude-opus-4-8`, where [Model compatibility](#model-compatibility) lists one for your executor. Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 executors pair only with advisors that return the encrypted form, so on those executors the advice text isn’t readable in the response.
+Claude Fable 5.2, Claude Mythos 5.2, Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, Claude Mythos 5, and Claude Haiku 5.5 advisors return the encrypted `advisor_redacted_result`. Every other advisor model in [Model compatibility](#model-compatibility) returns the plaintext `advisor_result`. To read the advice text in your own responses, use an advisor that returns plaintext, such as `claude-opus-4-8`, where [Model compatibility](#model-compatibility) lists one for your executor. Claude Fable 5.2, Claude Mythos 5.2, Claude Sonnet 5.5, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, Claude Opus 5, Claude Fable 5, and Claude Mythos 5 executors pair only with advisors that return the encrypted form, so on those executors the advice text isn’t readable in the response.
 
 Here is the same request sent twice, identical except for the advisor `model` in the tool definition, showing both variants.
 
@@ -9843,9 +9862,9 @@ With `"model": "claude-opus-5-5"`, the advice is encrypted:
 
 Both result variants carry a `stop_reason` field when you set [`max_tokens`](#capping-advisor-output) on the tool definition, and omit it when you do not. It holds the advisor sub-call’s stop reason, typically `"end_turn"`, or `"max_tokens"` when the cap is hit. The values match the top-level Messages API [`stop_reason`](../Guides/build-with-claude-handling-stop-reasons.md).
 
-With `advisor_result`, the `text` field contains human-readable advice. With `advisor_redacted_result`, the `encrypted_content` field contains an opaque blob that you cannot read. On the next turn, the server decrypts it and renders the plaintext into the executor’s prompt.
+With `advisor_result`, the `text` field contains human-readable advice. With `advisor_redacted_result`, the `encrypted_content` field contains an opaque blob that you cannot read. In the next request, the server decrypts it and renders the plaintext into the executor’s prompt.
 
-In both cases, round-trip the content verbatim on subsequent turns. If you switch advisor models mid-conversation, branch on `content.type` to handle both shapes.
+In both cases, round-trip the content verbatim in later requests. If you switch advisor models mid-conversation, branch on `content.type` to handle both shapes. A switch is an edit to `tools`, so read [Multi-turn conversations](#multi-turn-conversations) before you make one in a conversation that carries thinking blocks.
 
 ### Error results
 
@@ -9868,7 +9887,7 @@ The executor receives the error and continues without further advice. The reques
 
 | `error_code` | Meaning |
 |----|----|
-| `max_uses_exceeded` | The request reached the `max_uses` cap set on the tool definition. Further advisor calls in the same request return this error. |
+| `max_uses_exceeded` | The turn reached the [`max_uses`](#tool-parameters) cap set on the tool definition. Further advisor calls in the same turn return this error. |
 | `too_many_requests` | The advisor sub-inference was rate-limited. |
 | `overloaded` | The advisor sub-inference hit capacity limits. |
 | `prompt_too_long` | The transcript exceeded the advisor model’s context window. |
@@ -9880,7 +9899,11 @@ Advisor rate limits draw from the same per-model bucket as direct calls to the a
 
 ## Multi-turn conversations
 
-Pass the full assistant content, including `advisor_tool_result` blocks, back to the API on subsequent turns. Round-trip the result blocks verbatim: with the newest Opus model as the advisor, as in this example, the result block’s `content` is the encrypted `advisor_redacted_result` variant, and the server decrypts it and renders the advice into the executor’s prompt on the next turn (see [Result variants](#result-variants)). The mechanics are identical for any advisor model.
+Pass the full assistant content, including `advisor_tool_result` blocks, back to the API in later requests. Round-trip the result blocks verbatim. With the newest Opus model as the advisor, as in this example, the result block’s `content` is the encrypted `advisor_redacted_result` variant. In the next request, the server decrypts it and renders the advice into the executor’s prompt (see [Result variants](#result-variants)). The mechanics are identical for any advisor model.
+
+cURL
+
+CLI
 
 Python
 
@@ -9941,11 +9964,19 @@ response = client.beta.messages.create(
 )
 ```
 
-You can drop the advisor tool from `tools` on a follow-up turn while the message history still contains `advisor_tool_result` blocks. The request is accepted and the historical blocks are preserved; the model cannot call the advisor on that turn. You must still send the `advisor-tool-2026-03-01` beta header for those history blocks to be accepted.
+You can drop the advisor tool from `tools` in a follow-up request while the message history still contains `advisor_tool_result` blocks. The API accepts the request and keeps the historical blocks, but the model cannot call the advisor in that request. Two conditions apply:
+
+- **No advisor call is still pending.** See [Resuming a paused turn](#resuming-a-paused-turn).
+- **You still send the `advisor-tool-2026-03-01` beta header.** The API needs it to accept those history blocks. That header covers the `advisor_tool_result` blocks, not thinking blocks.
+
+**Exception: a history that also contains thinking blocks.** Removing the advisor tool is an [edit to `tools`](../Guides/build-with-claude-preserved-thinking-prefix-checks.md#what-counts-as-an-edit). So is changing its `model`, `max_uses`, `max_tokens`, or `caching`. An edit to `tools` invalidates the thinking blocks already in the history.
+
+- **What happens:** If the executor model [runs the prefix check](../Guides/build-with-claude-preserved-thinking-prefix-checks.md#enforcement), the request can get a [400 error](../Endpoints/errors.md#thinking-block-conversation-mismatch).
+- **How to continue:** Set `thinking.block_binding.prefix_mismatch_behavior` to `"drop_block"` on that request and on every later request in the conversation. The API then drops those thinking blocks. This setting is in beta and needs the `thinking-binding-controls-2026-08-01` beta header.
 
 
 
-The advisor tool has no built-in conversation-level cap. To limit advisor calls across a conversation, count them client-side. When you reach your ceiling, remove the advisor tool from your `tools` array. You do not need to strip `advisor_tool_result` blocks from your message history.
+The advisor tool has no built-in conversation-level cap. To limit advisor calls across a conversation, count them client-side. When you reach your ceiling, remove the advisor tool from your `tools` array. You do not need to strip `advisor_tool_result` blocks from your message history. If your history also contains thinking blocks, read the preceding exception first. In that case, unless you set `"drop_block"`, the request can get a [400 error](../Endpoints/errors.md#thinking-block-conversation-mismatch).
 
 ### Resuming a paused turn
 
@@ -9956,6 +9987,10 @@ A response can end with `stop_reason: "pause_turn"` while an advisor call is sti
 If a Haiku executor has not called the advisor in its first assistant turn, append a short reminder as an additional user message before the second assistant turn. In Anthropic’s internal behavioral evaluation on Claude Haiku 4.5 executors, this raised task pass rates by roughly 7 percentage points. On Sonnet executors, the plain-text nudge had no measurable effect in Anthropic’s testing. The call-timing considerations that follow are especially relevant for Sonnet. Do not apply the nudge to Opus executors: On Opus it slightly lowered pass rates.
 
 With the default `NUDGE_TURN` of 2, the reminder typically arrives after the model has oriented on the task but before it has committed to an approach.
+
+cURL
+
+CLI
 
 Python
 
@@ -10048,7 +10083,7 @@ Append the nudge as its own user message after the tool results rather than as a
 
 The plain-text nudge is highly salient on Claude Haiku 4.5 and Sonnet executors: 74 percent (Sonnet) to 98 percent (Claude Haiku 4.5) of nudged attempts in Anthropic’s testing called the advisor immediately at turn 2. If that lands before your executor has read the problem or gathered context, the resulting advisor call is low-context and can displace a better-timed later call. Measure your executor’s baseline first-call turn before adding the nudge. If the executor already calls the advisor reliably and its first call typically lands at turn N, set `NUDGE_TURN` greater than N. In Anthropic’s testing, a turn-2 nudge on workloads where the baseline first call was turn 7 or later correlated with a 3 to 4 percentage-point task-performance drop. On a browse workload where the baseline call rate was 86 percent, the same nudge raised engagement with no task-performance cost.
 
-To force a consult on a specific request instead of nudging, set `tool_choice` to `{"type": "tool", "name": "advisor"}`, subject to the constraints in [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). Forcing tool use cannot be combined with manual extended thinking (`thinking: {type: "enabled"}`): the API returns a `400 invalid_request_error` if you enable both. Adaptive thinking supports forced tool use. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 executors reject `tool_choice` types `tool` and `any`, so use the prompt nudge on those models instead.
+To force a consult on a specific request instead of nudging, set `tool_choice` to `{"type": "tool", "name": "advisor"}`, subject to the constraints in [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use). Forcing tool use cannot be combined with manual extended thinking (`thinking: {type: "enabled"}`): the API returns a `400 invalid_request_error` if you enable both. Adaptive thinking supports forced tool use. Claude Fable 5.2, Claude Mythos 5.2, Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 executors reject `tool_choice` types `tool` and `any`, so use the prompt nudge on those models instead.
 
 ## Streaming
 
@@ -10117,7 +10152,7 @@ There are two independent caching layers.
 
 ### Executor-side caching
 
-The `advisor_tool_result` block is cacheable like any other content block. A `cache_control` breakpoint placed after it on a subsequent turn hits. The executor’s prompt always contains the plaintext advice regardless of whether your client received `text` or `encrypted_content`, so caching behavior is identical for both result variants.
+The `advisor_tool_result` block is cacheable like any other content block. A `cache_control` breakpoint placed after it in a later request hits. The executor’s prompt always contains the plaintext advice regardless of whether your client received `text` or `encrypted_content`, so caching behavior is identical for both result variants.
 
 ### Advisor-side caching
 
@@ -10156,11 +10191,11 @@ The advisor’s prompt on the Nth call is the (N-1)th call’s prompt with one m
 
 **When to enable it:** The cache write costs more than the reads save when the advisor is called two or fewer times in each conversation. Caching breaks even at roughly three advisor calls and improves from there. Enable it for long agent loops, and keep it off for short tasks.
 
-**Keep it consistent:** Set `caching` once and leave it for the whole conversation. Toggling it off and on mid-conversation causes cache misses.
+**Keep it consistent:** Set `caching` once and leave it for the whole conversation. Toggling it off and on mid-conversation causes cache misses. Each toggle is also an edit to `tools`. That edit can make the next request return a 400 error. [Multi-turn conversations](#multi-turn-conversations) explains when this happens and what to set.
 
 
 
-[`clear_thinking`](../Guides/build-with-claude-context-editing.md) with a `keep` value other than `"all"` shifts the advisor’s quoted transcript each turn, causing advisor-side cache misses. This is a cost degradation only. Advice quality is unaffected. When thinking is on without explicit `clear_thinking` configuration, the API defaults to `keep: {type: "thinking_turns", value: 1}`, which triggers this behavior (the default on earlier Opus and Sonnet models and on Haiku models through Claude Haiku 4.5, whereas on Claude Opus 4.5 and later Opus models, Claude Sonnet 4.6 and later Sonnet models, and Claude Haiku 5.5, the default is to keep all turns). Set `keep: "all"` to preserve advisor cache stability.
+[`clear_thinking`](../Guides/build-with-claude-context-editing.md) with a `keep` value other than `"all"` shifts the advisor’s quoted transcript each turn, causing advisor-side cache misses. This is a cost degradation only. Advice quality is unaffected. When thinking is on without explicit `clear_thinking` configuration, Opus models before Claude Opus 4.5, Sonnet models before Claude Sonnet 4.6, and Haiku models through Claude Haiku 4.5 default to `keep: {type: "thinking_turns", value: 1}`, which triggers this behavior. Claude Opus 4.5 and later Opus models, Claude Sonnet 4.6 and later Sonnet models, Claude Haiku 5.5, and Claude Fable and Claude Mythos models keep all turns by default. Set `keep: "all"` to preserve advisor cache stability.
 
 ## Combining with other tools
 
@@ -10312,12 +10347,12 @@ Hard rule: your first write_file, edit_file, or state-changing bash call on a ta
 Advisor output is the advisor’s largest cost driver, and the top-level `max_tokens` does not bound it. The advisor receives both your system prompt and your user messages as quoted context about the executor’s task, so instructions that address the advisor directly are followed much more reliably than third-person descriptions. The most effective placement Anthropic tested is a line in the user message:
 
 ``` block
-(Advisor: please keep your guidance under 80 words — I need a focused starting point, not a comprehensive plan.)
+(Advisor: please keep your guidance under 80 words. I need a focused starting point, not a comprehensive plan.)
 ```
 
 
 
-This line can be prefixed programmatically by your agent framework before sending the request. The limit is a soft constraint. The advisor occasionally exceeds it, so ask for roughly 80 percent of your true ceiling.
+Your agent framework can prefix this line once and keep it there. The limit is a soft constraint. The advisor can exceed it, so ask for roughly 80 percent of your true ceiling.
 
 
 
@@ -10398,7 +10433,7 @@ For coding tasks, pairing a Sonnet executor at medium [effort](../Guides/build-w
 
 ### Cost control
 
-- For conversation-level budgets, count advisor calls client-side. When you reach your cap, remove the advisor tool from `tools`; you do not need to strip `advisor_tool_result` blocks from your message history (see the note in [Multi-turn conversations](#multi-turn-conversations)).
+- For conversation-level budgets, count advisor calls client-side. When you reach your cap, remove the advisor tool from `tools`. You do not need to strip `advisor_tool_result` blocks from your message history. If you send earlier thinking blocks back, removing the tool can return a 400 error. To avoid it, set `prefix_mismatch_behavior` to `"drop_block"`, as [Multi-turn conversations](#multi-turn-conversations) explains.
 - Enable `caching` only for conversations where you expect three or more advisor calls.
 
 ## Model compatibility
@@ -10409,7 +10444,7 @@ The executor model (the top-level `model` field) and the advisor model (the `mod
 
 Featured models
 
-Claude Fable 5.1
+Claude Fable 5.2
 
 Claude Opus 5.5
 
@@ -10418,6 +10453,8 @@ Claude Sonnet 5.5
 Claude Haiku 5.5
 
 Additional models
+
+Claude Fable 5.1
 
 Claude Fable 5
 
@@ -10435,23 +10472,29 @@ Claude Sonnet 4.6
 
 Claude Haiku 4.5
 
-Claude Fable 5.1
+Claude Fable 5.2
 
-[Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md) & [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md)For demanding reasoning and long-horizon agentic work
+[Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) & [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md)For demanding reasoning and long-horizon agentic work
 
 **Supported advisor models**
 
-- [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
-  claude-mythos-5-1
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
   )
-- [Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md) (
-  claude-fable-5-1
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
   )
 
 [Claude Opus 5.5](../../20-Models/models-opus-5-5-overview.md)For long-running agentic coding and knowledge work
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10475,6 +10518,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10501,6 +10550,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10535,10 +10590,33 @@ Claude Fable 5.1
   claude-haiku-5-5
   )
 
+[Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md) & [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md)
+
+**Supported advisor models**
+
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
+- [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
+  claude-mythos-5-1
+  )
+- [Claude Fable 5.1](../../20-Models/models-fable-5-1-overview.md) (
+  claude-fable-5-1
+  )
+
 [Claude Fable 5](../../20-Models/models-fable-5-overview.md) & [Claude Mythos 5](../../20-Models/models-mythos-5-overview.md)
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10562,6 +10640,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10585,6 +10669,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10617,6 +10707,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10649,6 +10745,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10690,6 +10792,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10728,6 +10836,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10772,6 +10886,12 @@ Claude Fable 5.1
 
 **Supported advisor models**
 
+- [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md) (
+  claude-mythos-5-2
+  )
+- [Claude Fable 5.2](../../20-Models/models-fable-5-2-overview.md) (
+  claude-fable-5-2
+  )
 - [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) (
   claude-mythos-5-1
   )
@@ -10816,7 +10936,7 @@ If you request an invalid pair, the API returns a `400 invalid_request_error` na
 
 ### Platform availability
 
-The advisor tool is available in beta on the Claude API, on [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), and on [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md). It is not currently available on Amazon Bedrock, Claude Models on Google Cloud (Google managed), or Microsoft Foundry.
+The advisor tool is available in beta on the Claude API, on [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md), and on [Claude Models on Google Cloud (Anthropic managed)](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md).
 
 ## Advisor on Claude Managed Agents
 
@@ -10850,63 +10970,68 @@ Control how many tokens Claude uses when responding with the `effort` parameter,
 
 ## Availability
 
-Advisor tool is in beta on select models and eligible for zero data retention.
+Advisor tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Add an advisor tool (type `advisor_20260301`) with the advisor model to the request’s `tools`. It takes `max_uses`, `max_tokens` and caching options.
+Status  
+Beta
 
-StatusBeta
+APIs  
+- 
+  Messages API
+  requires
+  advisor-tool-2026-03-01
+- Managed Agents
 
-Cloud platforms
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5, Haiku 4.5
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
+Claude Platform on AWS
 
-Models
+Status  
+Beta
 
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+APIs  
+- 
+  Messages API
+  requires
+  advisor-tool-2026-03-01
+- Managed Agents
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5, Haiku 4.5
 
-Usage
+Claude Models on Google Cloud (Anthropic managed)
 
-Set `advisor` to `{"type": "enabled", "model": …}` in the agent’s `multiagent` block. There are no `max_uses`, `max_tokens` or caching options, and advice arrives as thread events on the session’s event stream.
+Status  
+Beta
 
-StatusBeta
+API  
+- Messages API
 
-Cloud platforms
+Beta header  
+Requires
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+advisor-tool-2026-03-01
 
-Models
-
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
-
-### Required beta headers
-
-[Beta headers overview](../Endpoints/beta-headers.md)
-
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
-
-Header
-
-- `advisor-tool-2026-03-01`
-  
-
-APIs
-
-- [Messages API](../Guides/build-with-claude-working-with-messages.md)
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6
+- Claude Haiku 5.5, Haiku 4.5
 
 ### Data handling
 
@@ -10948,11 +11073,19 @@ Bash tool
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 The bash tool is a [client tool](agents-and-tools-tool-use-how-tool-use-works.md): Claude doesn’t run commands itself. When you include the tool in a request, Claude replies with a `tool_use` block that names the command to run. Your application runs that command in a bash session it owns and returns the output in a `tool_result` block.
 
@@ -11063,7 +11196,7 @@ A bash tool definition has two required fields, `type` and `name`, and the `name
 
 To handle `restart: true`, kill the shell process, start a new one, and return a `tool_result` that confirms the restart. A restarted session starts clean: the working directory, environment variables, and any running processes are gone.
 
-### Example usage
+### Example usage
 
 Run a command:
 
@@ -11327,7 +11460,7 @@ Claude determines which command to run. Your application owns everything else: t
 
 When a command fails or the session breaks, tell Claude what occurred. Return the message as the `tool_result` content and set `is_error` to `true`, which marks the tool call as failed. See [Handling errors with is_error](agents-and-tools-tool-use-handle-tool-calls.md#handling-errors-with-is-error).
 
-### Command execution timeout
+### Command execution timeout
 
 If a command takes too long to run:
 
@@ -11347,7 +11480,7 @@ If a command takes too long to run:
 
 
 
-### Command not found
+### Command not found
 
 If a command doesn’t exist:
 
@@ -11367,7 +11500,7 @@ If a command doesn’t exist:
 
 
 
-### Permission denied
+### Permission denied
 
 If there are permission issues:
 
@@ -11389,7 +11522,7 @@ If there are permission issues:
 
 ### Follow implementation best practices
 
-### Use command timeouts
+### Use command timeouts
 
 A command that never completes, such as one that waits for input, blocks the session forever because its sentinel line never arrives. Give every command a deadline. When the deadline passes, stop the shell and everything the command started, then restart the session:
 
@@ -11432,7 +11565,7 @@ def execute_with_timeout(session, command, timeout=30):
 
 The kill stops the hung command and everything it started. Return the message as an error `tool_result` (see [Handle errors](#handle-errors)), which marks the tool call as failed.
 
-### Maintain session state
+### Maintain session state
 
 Keep the bash session persistent to maintain environment variables and working directory:
 
@@ -11463,7 +11596,7 @@ commands = [
 ]
 ```
 
-### Handle large outputs
+### Handle large outputs
 
 Truncate large outputs to prevent token limit issues:
 
@@ -11494,7 +11627,7 @@ def truncate_output(output, max_lines=100):
     return output
 ```
 
-### Log all commands
+### Log all commands
 
 Keep an audit trail. Route every command through one wrapper that records the command before it runs and the output after it completes. A command that hangs or breaks the session still leaves a record:
 
@@ -11616,20 +11749,61 @@ Connect Claude to external tools and APIs. See where tools run, when Claude call
 
 ## Availability
 
-Bash tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Bash tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Bash tool are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 
@@ -11668,14 +11842,23 @@ Run the browser use tool or the computer use tool from the Python or TypeScript 
 
 Browser and computer use SDK toolsets
 
-[Status](#availability-feature-support)  
+[Status](#feature-availability)  
 Beta
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 With the browser and computer toolsets in the Python and TypeScript SDKs, you can build an agent that works in a web browser or on a desktop. It can use applications with no programmatic interface. Through the [browser use tool](agents-and-tools-tool-use-browser-use-tool.md), Claude navigates, reads, and interacts with webpages. Through the [computer use tool](agents-and-tools-tool-use-computer-use-tool.md), Claude receives screenshots of a desktop and uses the mouse and keyboard.
 
@@ -12634,50 +12817,102 @@ Guardrails for any application that reads untrusted content.
 
 ## Availability
 
-Browser and computer use SDK toolsets are in beta on select models.
+Browser and computer use SDK toolsets
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- Claude API
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+APIs  
+- Messages API
 
-Models
+- Managed Agents Not supported
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-StatusBeta
+Amazon Bedrock
 
-Cloud platforms
+Status  
+Beta
 
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-Models
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Claude Platform on AWS
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Status  
+Beta
 
-StatusNot available
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
 ---
 
@@ -12703,14 +12938,24 @@ Browser use tool
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 
 
@@ -13471,7 +13716,7 @@ Report a failed call to Claude as an ordinary error result: `is_error: true`, te
 
 Make error text specific, because Claude reads it and adapts: `Error: Navigation to https://example.com/status timed out after 30 seconds. The page may be unavailable.` gives Claude something to act on where a bare `Error: navigation failed` doesn’t. Other common cases:
 
-### Refused navigation scheme
+### Refused navigation scheme
 
 ```python
 {
@@ -13485,7 +13730,7 @@ Make error text specific, because Claude reads it and adapts: `Error: Navigation
 
 
 
-### Stale or unknown element reference
+### Stale or unknown element reference
 
 ```python
 {
@@ -13499,7 +13744,7 @@ Make error text specific, because Claude reads it and adapts: `Error: Navigation
 
 
 
-### Disabled or unimplemented member
+### Disabled or unimplemented member
 
 ```python
 {
@@ -13513,7 +13758,7 @@ Make error text specific, because Claude reads it and adapts: `Error: Navigation
 
 
 
-### Skipped after an earlier failure in the turn
+### Skipped after an earlier failure in the turn
 
 When the `left_click` on `ref_3` from [Batch actions](#batch-actions) fails with the stale-reference error shown earlier, the `type` and `key` calls after it each get this result:
 
@@ -13553,13 +13798,13 @@ The API validates the toolset entry and every member `tool_use` and `tool_result
 
 ## Pricing and data retention
 
-Browser use follows the standard [tool use pricing](agents-and-tools-tool-use-overview.md#pricing). When using the browser use tool:
+Browser use follows the standard [tool use pricing in the tool use overview](agents-and-tools-tool-use-overview.md#pricing). When using the browser use tool:
 
-**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request (about 6,670 on Claude Sonnet 5 and about 6,610 on the other supported models), which covers the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
+**Toolset definition overhead:** Declaring `browser_toolset_20260801` with its default members adds about 6,600 input tokens to a request: about 6,670 on Claude Sonnet 5 and about 6,610 on the other supported models. These tokens cover the member tool definitions and the tool use system prompt. Enabling all four optional members adds about 880 tokens, and disabling members with `configs` reduces the count. The response `usage` reports the exact count for a request, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
 
 **Additional token consumption:**
 
-- Screenshot and zoom images returned in tool results, billed as image input (see [Vision pricing](../Guides/build-with-claude-vision.md#evaluate-image-size))
+- Screenshot and zoom images returned in tool results, billed as image input (see [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size))
 - Text tool results returned to Claude, such as accessibility trees, page text, and console or network entries
 
 
@@ -13600,50 +13845,96 @@ Browse client toolsets and every other Anthropic-provided tool, with their versi
 
 ## Availability
 
-Browser use tool is available on select models and eligible for zero data retention.
+Browser use tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Amazon Bedrock
 
-StatusAvailable
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Amazon Bedrock (bedrock-runtime)
 
-Models
+API  
+- Messages API
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Claude Platform on AWS
 
-StatusNot available
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Azure)
+
+API  
+- Messages API
+
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
 
 ### Data handling
 
@@ -14417,11 +14708,17 @@ Run Python and Bash code in a sandboxed container to analyze data, generate file
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryHosted on AnthropicAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft FoundryHosted on Anthropic
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Claude can analyze data, create visualizations, perform complex calculations, run system commands, create and edit files, and process uploaded files directly within the API conversation. The code execution tool allows Claude to run Bash commands and manipulate files, including writing code, in a secure, sandboxed environment.
 
@@ -15130,18 +15427,45 @@ Learn how to use Agent Skills to extend Claude’s capabilities through the API.
 
 ## Availability
 
-Code execution tool is available on every model.
+Code execution tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Code execution tool are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 
@@ -15181,17 +15505,24 @@ Give Claude screenshot, mouse, and keyboard control of a desktop environment wit
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
+
 [APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+- Messages API
+- Managed Agents Not supported
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
-
-[Beta header](#feature-beta-headers)  
-Varies; see details
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 
 
@@ -15220,15 +15551,15 @@ To minimize risks, consider taking precautions such as:
 
 In some circumstances, Claude follows commands found in content even when they conflict with your instructions. For example, instructions on webpages or contained in images might override your instructions or cause Claude to make mistakes. Take precautions to isolate Claude from sensitive data and actions to avoid risks related to prompt injection.
 
-Anthropic has trained the model to resist these prompt injections and has added an extra layer of defense. If you use the computer use tools, classifiers will automatically scan what the tools return, such as screenshots, to flag potential prompt injections. When these classifiers identify a potential prompt injection, they will automatically steer the model to check whether the instruction really came from you before acting on it.
+Anthropic has trained the model to resist these prompt injections and has added an extra layer of defense. If you use the computer use tool, classifiers automatically scan what the tool returns, such as screenshots, to flag potential prompt injections. When these classifiers identify a potential prompt injection, they steer the model to check whether the instruction really came from you before acting on it.
 
 This extra protection isn’t ideal for every use case (for example, use cases without a human in the loop), so if you’d like to opt out and turn it off, [contact support](https://support.claude.com/en/). The precautions listed earlier remain important even with these classifiers in place.
 
-Inform end users of relevant risks and obtain their consent prior to enabling computer use in your own products.
+Inform end users of relevant risks and obtain their consent before enabling computer use in your own products.
 
 ## Quick start
 
-Add the computer use toolset to the `tools` array of a [Messages API](../Endpoints/messages-create.md) request as `{"type": "computer_toolset_20260801"}`. The request needs no beta header. This example also declares the [text editor tool](agents-and-tools-tool-use-text-editor-tool.md) and [bash tool](agents-and-tools-tool-use-bash-tool.md), which Claude typically uses alongside computer use:
+Add the computer use toolset to the `tools` array of a [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. request as `{"type": "computer_toolset_20260801"}`. The request needs no beta header. This example also declares the [text editor tool](agents-and-tools-tool-use-text-editor-tool.md) and [bash tool](agents-and-tools-tool-use-bash-tool.md), which Claude typically uses alongside computer use:
 
 cURL
 
@@ -15342,7 +15673,7 @@ Your application runs each call in order in your own environment, returns one `t
     - If Claude determines more actions are needed, it responds with another `tool_use` `stop_reason`; return to step 3.
     - Otherwise, it returns a text response to the user.
 
-The repetition of steps 3 and 4 without user input is referred to as the “agent loop” (that is, Claude responding with a tool use request and your application responding to Claude with the results of evaluating that request).
+Steps 3 and 4, repeated without user input, form the “agent loop”: Claude responds with a tool use request, and your application responds to Claude with the results of evaluating that request.
 
 ### Batch actions
 
@@ -15450,7 +15781,7 @@ Computer use requires a sandboxed computing environment where Claude can safely 
 
 2.  **Desktop environment:** A lightweight UI with window manager (Mutter) and panel (Tint2) running on Linux, which provides a consistent graphical interface for Claude to interact with.
 
-3.  **Applications:** Pre-installed Linux applications such as Firefox, LibreOffice, text editors, and file managers that Claude can use to complete tasks.
+3.  **Applications:** Preinstalled Linux applications such as Firefox, LibreOffice, text editors, and file managers that Claude can use to complete tasks.
 
 4.  **Tool implementations:** Integration code that translates Claude’s abstract tool requests (such as “move mouse” or “take screenshot”) into actual operations in the virtual environment.
 
@@ -15458,10 +15789,10 @@ Computer use requires a sandboxed computing environment where Claude can safely 
 
 When you use computer use, Claude doesn’t directly connect to this environment. Instead, your application:
 
-1.  Receives Claude’s tool use requests
-2.  Translates them into actions in your computing environment
-3.  Captures the results (such as screenshots and command outputs)
-4.  Returns these results to Claude
+1.  Receives Claude’s tool use requests.
+2.  Translates them into actions in your computing environment.
+3.  Captures the results (such as screenshots and command outputs).
+4.  Returns these results to Claude.
 
 For security and isolation, the reference implementation runs all of this inside a Docker container with appropriate port mappings for viewing and interacting with the environment.
 
@@ -15473,7 +15804,7 @@ Upgrading an existing `computer_20251124` integration? Start with [Migrate from 
 
 
 
-The [computer use reference implementation](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo) is a complete working example: a [containerized environment](https://github.com/anthropics/anthropic-quickstarts/blob/main/computer-use-demo/Dockerfile) suitable for computer use, implementations of [the computer use tools](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo/computer_use_demo/tools), an [agent loop](https://github.com/anthropics/anthropic-quickstarts/blob/main/computer-use-demo/computer_use_demo/loop.py) that calls the Claude API and runs the tools, and a web interface for the container, loop, and tools.
+The [computer use reference implementation](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo) is a complete working example: a [containerized environment](https://github.com/anthropics/claude-quickstarts/blob/main/computer-use-demo/Dockerfile) suitable for computer use, implementations of [the computer use tools](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo/computer_use_demo/tools), an [agent loop](https://github.com/anthropics/claude-quickstarts/blob/main/computer-use-demo/computer_use_demo/loop.py) that calls the Claude API and runs the tools, and a web interface for the container, loop, and tools. To use `computer_toolset_20260801`, choose a [model that supports it](#availability-feature-support), then select the toolset under **Tool Versions** in the web interface’s sidebar.
 
 ### Understand the agent loop
 
@@ -15529,7 +15860,7 @@ The loop continues until either Claude responds without requesting any tools (ta
 
 ### Optimize model performance with prompting
 
-1.  Specify simple, well-defined tasks and provide explicit instructions for each step.
+1.  Specify well-defined tasks and provide explicit instructions for each step.
 2.  Claude sometimes acts as if its actions succeeded without explicitly checking their results. To prevent this, you can prompt Claude with `After each step, take a screenshot and carefully evaluate if you have achieved the right outcome. State in one sentence what the screenshot shows and whether the step succeeded. If it didn't, try again. Only when you confirm a step was executed correctly should you move on to the next one.`
 3.  Some UI elements (such as dropdowns and scrollbars) might be tricky for Claude to manipulate using mouse movements. If you experience this, try prompting the model to use keyboard shortcuts.
 4.  For repeatable tasks or UI interactions, include example screenshots and tool calls of successful outcomes in your prompt.
@@ -15538,11 +15869,7 @@ The loop continues until either Claude responds without requesting any tools (ta
 7.  Claude uses the `zoom` action to inspect a region at full resolution when asked about small text or specific UI elements that aren’t legible at the screenshot’s default resolution, such as file names in a sidebar, tab titles, status-bar text, line numbers, or button labels. If Claude isn’t zooming when you expect, ask about a specific region or element rather than the screen as a whole.
 8.  If you want every [batch action](#batch-actions) to end with a screenshot, say so in the system prompt, for example, `End each group of actions with a screenshot so you can verify the result before continuing.`
 
-
-
-If you repeatedly encounter a clear set of issues or know in advance the tasks Claude will need to complete, use the system prompt to provide Claude with explicit tips or instructions on how to do the tasks successfully.
-
-
+If you repeatedly encounter a clear set of issues, or know in advance the tasks Claude has to complete, give Claude explicit tips or instructions for them in the system prompt.
 
 For agents that span multiple sessions, run end-to-end verification at the start of each session, not only after implementation. Browser-based checks catch regressions from prior sessions that code-level review alone misses. See [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents) for details.
 
@@ -15580,7 +15907,7 @@ Keep the following in mind when implementing the members:
 - **All members are enabled by default, including `zoom`.** If your environment can’t produce zoom images, withhold the member with `configs` (see [Tool parameters](#tool-parameters)) rather than leaving it enabled and returning errors. If Claude calls a member that you have withheld or don’t implement, return a `tool_result` with `is_error: true` for that block.
 - **Dispatch on the pair (`toolset_name`, `name`).** `toolset_name` is what marks a block as a computer action: a custom tool in the same request can share a member’s name, and a later toolset version can add members (see [Client toolsets](agents-and-tools-tool-use-tool-reference.md#client-toolsets)).
 
-### Example actions
+### Example actions
 
 Each example is a complete `tool_use` block as it appears in Claude’s response.
 
@@ -15729,7 +16056,7 @@ For tasks that stay inside webpages, you can also [declare the browser use tool 
 
 ### Build a custom computer use environment
 
-The [reference implementation](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo) is meant to help you get started with computer use. It includes all of the components needed to have Claude use a computer. However, you can build your own environment for computer use to suit your needs. You need:
+The [reference implementation](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo) is meant to help you get started with computer use. It includes all of the components needed to have Claude use a computer. However, you can build your own environment for computer use to suit your needs. You need:
 
 - A virtualized or containerized environment suitable for computer use with Claude
 - An implementation of the computer use tool’s actions
@@ -15744,7 +16071,7 @@ The computer use tool is implemented as a schema-less tool. When using this tool
 
     ### Set up your computing environment
 
-    Create a virtual display or connect to an existing display that Claude will interact with. This typically involves setting up Xvfb (X Virtual Framebuffer) or similar technology.
+    Create a virtual display or connect to an existing display that Claude interacts with. This typically involves setting up Xvfb (X Virtual Framebuffer) or similar technology.
 
 2.  2
 
@@ -15898,7 +16225,7 @@ Screenshots and zoom images that you return to the computer use toolset must alr
 
 
 
-Limits vary by model. Claude Opus 4.7 and later models, including every model that supports `computer_toolset_20260801`, accept up to 2,576 pixels on the long edge and 4,784 visual tokens total (`⌈width / 28⌉ × ⌈height / 28⌉`, approximately 3.75 megapixels); earlier models accept up to 1,568 pixels on the long edge and approximately 1.15 megapixels total (see [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size) for each model’s tier). The following example uses the earlier-model 1,568 px / 1.15 MP limits. For a high-resolution-tier model, size to the visual-token limit rather than a pixel total, for example with the resize helper in [Resize your image before uploading](../Guides/build-with-claude-vision-coordinates.md#resize-your-image-before-uploading).
+Limits vary by model. Claude Opus 4.7 and later models, including every model that supports `computer_toolset_20260801`, accept up to 2,576 pixels on the long edge and 4,784 visual tokens total (`⌈width / 28⌉ × ⌈height / 28⌉`, approximately 3.75 megapixels). Earlier models accept up to 1,568 pixels on the long edge and approximately 1.15 megapixels total. See [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size) for each model’s tier. The following example uses the earlier-model 1,568 px / 1.15 MP limits. For a high-resolution-tier model, size to the visual-token limit rather than a pixel total, for example with the resize helper in [Resize your image before uploading](../Guides/build-with-claude-vision-coordinates.md#resize-your-image-before-uploading).
 
 If your screen is larger than the limit, resize each screenshot before returning it and scale Claude’s returned coordinates back to the original screen space. Because the toolset takes no display dimensions, the resize and the coordinate scaling in your application code are all you need:
 
@@ -15967,13 +16294,18 @@ When you choose a display resolution and return screenshots:
 
 ### Manage screenshot history
 
-Long agent loops accumulate screenshots quickly (roughly 1,000–1,800 input tokens each). The API’s [request limits](../Guides/build-with-claude-vision.md#request-limits) also apply. Once a single request carries more than 20 images, every image in it is held to a stricter per-side limit. A loop that keeps its screenshot history reaches that count within a few dozen turns, so either resize each screenshot to stay under that limit or prune older screenshots to keep 20 or fewer in the request.
+Long agent loops accumulate screenshots quickly (roughly 1,000–1,800 input tokens each). The API’s [request limits](../Guides/build-with-claude-vision.md#request-limits) also apply.
+
+Once a single request carries more than 20 images, every image in it is held to a stricter per-side limit. A loop that keeps its screenshot history can reach that count. Either resize each screenshot to stay under that limit, or prune older screenshots to keep 20 or fewer in the request.
 
 To keep [Prompt caching](../Guides/build-with-claude-prompt-caching.md) effective while bounding context:
 
 - Place one `cache_control` breakpoint after the system prompt and tool definitions, and up to three more on the last `tool_result` block of each of the most recent turns, advancing them each turn. Within a [batch action](#batch-actions), markers on several blocks act as a single breakpoint, but each still counts toward the limit of four, so use at most one in any turn.
 - Prune old screenshots in *batches*, not one each turn. Dropping a screenshot every turn changes the prefix every turn and invalidates the cache. A reasonable default is to keep the last three screenshots and prune every 25 turns, so the prefix stays byte-identical between prune events; if your screenshots exceed the stricter limit, choose an interval that keeps each request at 20 or fewer images.
-- On Claude 5.1 and later models, avoid pruning on the client: removing an earlier screenshot from a request [invalidates every later thinking block](../Guides/build-with-claude-thinking.md#preserved-in-conversation) in that request and in every later request. Resize screenshots to stay under the stricter limit instead and use server-side [tool result clearing](../Guides/build-with-claude-context-editing.md#tool-result-clearing) to drop old ones from the context. If you must prune, keep [`prefix_mismatch_behavior: "drop_block"`](../Guides/build-with-claude-thinking.md#preserved-thinking-controls) set from then on; after each prune, Claude continues without the thinking produced since the pruned screenshot, on that request and every later one. On Claude Sonnet 5.5 and Claude Haiku 5.5, `block_binding` works only with `thinking: {"type": "adaptive"}`. With any other thinking setting on those models, keep the history append-only or strip every `thinking` and `redacted_thinking` block after the pruned screenshot.
+- Avoid client-side pruning on Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, and Claude Mythos 5.1. The same goes for Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5. On these models, removing an earlier screenshot from a request [invalidates every later thinking block already in the history](../Guides/build-with-claude-thinking.md#preserved-in-conversation) of that and every later request.
+  - **Instead:** Resize screenshots to stay under the stricter limit. [Tool result clearing](../Guides/build-with-claude-context-editing.md#tool-result-clearing) saves tokens, but cleared screenshots still count toward [request limits](../Guides/build-with-claude-vision.md#request-limits), so use [on-demand compaction](../Guides/build-with-claude-compaction-on-demand.md) before a loop reaches them.
+  - **If you must prune:** Keep [`prefix_mismatch_behavior: "drop_block"`](../Guides/build-with-claude-preserved-thinking-prefix-checks.md#preserved-thinking-controls) set from then on. After each prune, the API drops the invalidated thinking blocks, on that request and every later one. So Claude continues without the thinking that it produced after the pruned screenshot.
+  - **If you must prune on Claude Sonnet 5.5 or Claude Haiku 5.5:** `prefix_mismatch_behavior` works only with `thinking: {"type": "adaptive"}`. With any other thinking setting on those models, keep the history append-only or strip every `thinking` and `redacted_thinking` block after the pruned screenshot.
 
 ### Diagnose click issues
 
@@ -15992,7 +16324,7 @@ If clicks miss their targets, the cause is usually one of the following:
 
 ### Follow implementation best practices
 
-### Add action delays
+### Add action delays
 
 Some applications need time to respond to actions:
 
@@ -16020,7 +16352,7 @@ def click_and_wait(x, y, wait_time=0.5):
     time.sleep(wait_time)  # Allow UI to update
 ```
 
-### Validate actions before running them
+### Validate actions before running them
 
 Check that requested actions are safe and valid:
 
@@ -16054,7 +16386,7 @@ def validate_action(action_type, params):
     return True, None
 ```
 
-### Log actions for debugging
+### Log actions for debugging
 
 Keep a log of all actions for troubleshooting:
 
@@ -16088,7 +16420,7 @@ def log_action(action_type, params, result):
 
 ## Migrate from `computer_20251124`
 
-A `computer_20251124` integration works without changes on the models listed for that version under [Earlier tool versions](#earlier-tool-versions). Upgrade the integration before you move it to a model that doesn’t accept `computer_20251124`, such as a Claude 5.5 model on the Claude API.
+A `computer_20251124` integration works without changes on the models listed for that version under [Earlier tool versions](#earlier-tool-versions). Upgrade the integration before you move it to a model that doesn’t accept `computer_20251124`, such as Claude Opus 5.5 on the Claude API.
 
 To upgrade, make the following changes together:
 
@@ -16156,20 +16488,20 @@ The following pair shows a `tool_use` block before and after the change. The act
 
 ## Earlier tool versions
 
-Two earlier versions of the computer use tool are available in beta. Each requires its [beta header](../Endpoints/beta-headers.md) on every request, and their parameters are documented in the [beta Messages API reference](../Endpoints/beta-messages-create.md). With the SDK, pass the header through `betas` and use the beta namespace; only the computer use tool needs the header, not the bash or text editor tools in the same request.
+Two earlier versions of the computer use tool are available in beta. Each requires its [beta header](../Endpoints/beta-headers.md) on every request, and their parameters are documented in the [beta Messages API reference](../Endpoints/beta-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return.. With the SDK, pass the header through `betas` and use the beta namespace; only the computer use tool needs the header, not the bash or text editor tools in the same request.
 
 | Tool version | Beta header | Use with | Parameters |
 |----|----|----|----|
-| `computer_20251124` | `computer-use-2025-11-24` | Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.5 | [API reference](../Endpoints/beta-messages-create.md) |
-| `computer_20250124` | `computer-use-2025-01-24` | Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)), Claude Haiku 4.5, Claude Opus 4.1 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), Claude Sonnet 4 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), and Claude Opus 4 ([retired, except on Claude Models on Google Cloud (Google managed)](../../20-Models/about-claude-model-deprecations.md)) | [API reference](../Endpoints/beta-messages-create.md) |
+| `computer_20251124` | `computer-use-2025-11-24` | Claude Fable 5.1, Claude Mythos 5.1, Claude Fable 5, Claude Mythos 5, Claude Opus 5, Claude Sonnet 5, Claude Opus 4.8, Claude Opus 4.7, Claude Opus 4.6, Claude Sonnet 4.6, and Claude Opus 4.5 | [API reference](../Endpoints/beta-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. |
+| `computer_20250124` | `computer-use-2025-01-24` | Claude Sonnet 4.5 ([deprecated](../../20-Models/about-claude-model-deprecations.md)), Claude Haiku 4.5, Claude Opus 4.1 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), Claude Sonnet 4 ([retired, except on Claude Models on Google Cloud (Google managed) and Bedrock](../../20-Models/about-claude-model-deprecations.md)), and Claude Opus 4 ([retired, except on Claude Models on Google Cloud (Google managed)](../../20-Models/about-claude-model-deprecations.md)) | [API reference](../Endpoints/beta-messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. |
 
-On Amazon Bedrock, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5 also accept the `computer_20251124` tool with the `computer-use-2025-11-24` beta header.
+On Amazon Bedrock, Claude Fable 5.2, Claude Mythos 5.2, Claude Opus 5.5, Claude Sonnet 5.5, and Claude Haiku 5.5 also accept the `computer_20251124` tool with the `computer-use-2025-11-24` beta header. With Amazon Bedrock’s InvokeModel API, send `computer-use-2025-11-24` in the `anthropic_beta` array of the request body instead of in a header. For that API, see [Claude on Amazon Bedrock (`bedrock-runtime`)](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md).
 
 ------------------------------------------------------------------------
 
 ## Limitations
 
-1.  **Latency:** The current computer use latency for human-AI interactions might be too slow compared to regular human-directed computer actions. Focus on use cases where speed isn’t critical (for example, background information gathering, automated software testing) in trusted environments.
+1.  **Latency:** Computer use latency for human-AI interactions might be too slow compared with regular human-directed computer actions. Focus on use cases where speed isn’t critical (for example, background information gathering, automated software testing) in trusted environments.
 2.  **Computer vision accuracy and reliability:** Claude might make mistakes or hallucinate when outputting specific coordinates while generating actions. Claude’s [summarized thinking](../Guides/build-with-claude-thinking.md#summarized-thinking) output can help you understand the model’s reasoning and identify potential issues; set `display: "summarized"` on the thinking configuration, because the models that support the toolset omit thinking text by default.
 3.  **Tool selection accuracy and reliability:** Claude might make mistakes or hallucinate when selecting tools while generating actions or take unexpected actions to solve problems. Additionally, reliability might be lower when interacting with niche applications or multiple applications at once. Prompt the model carefully when requesting complex tasks.
 4.  **Scrolling reliability:** The scroll action supports direction control (up, down, left, right) and a specified amount. In applications where scrolling doesn’t take effect, keyboard alternatives such as Page Down can help.
@@ -16188,18 +16520,18 @@ Because your application controls where and how computer use data is stored, com
 
 ## Pricing
 
-Computer use follows the standard [tool use pricing](agents-and-tools-tool-use-overview.md#pricing). When using the computer use tool:
+Computer use follows the standard [tool use pricing in the tool use overview](agents-and-tools-tool-use-overview.md#pricing). When using the computer use tool:
 
-**Toolset definition overhead:** Declaring `computer_toolset_20260801` with its default members adds about 4,500 input tokens to a request (about 4,590 on Claude Sonnet 5 and about 4,520 on the other supported models), which covers the member tool definitions and the tool use system prompt. Disabling `zoom` with `configs` removes about 410 of those tokens. The exact count for a request is reported in the response `usage`, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
+**Toolset definition overhead:** Declaring `computer_toolset_20260801` with its default members adds about 4,500 input tokens to a request: about 4,590 on Claude Sonnet 5 and about 4,520 on the other supported models. These tokens cover the member tool definitions and the tool use system prompt. Disabling `zoom` with `configs` removes about 410 of those tokens. The response `usage` reports the exact count for a request, and you can estimate it in advance with the [token counting endpoint](../Guides/build-with-claude-token-counting.md).
 
 **Earlier tool versions:** The following figures apply to the `computer_20251124` and `computer_20250124` tool versions, not to `computer_toolset_20260801`:
 
 - System prompt overhead: 466–499 tokens added to the system prompt
-- Tool definition: about 735 input tokens per tool definition (measured with `computer_20250124`)
+- Tool definition: about 735 input tokens for each tool definition (measured with `computer_20250124`)
 
 **Additional token consumption:**
 
-- Screenshot and zoom images returned in tool results, billed as image input (see [Vision pricing](../Guides/build-with-claude-vision.md#evaluate-image-size))
+- Screenshot and zoom images returned in tool results, billed as image input (see [Resolution and token cost](../Guides/build-with-claude-vision.md#evaluate-image-size))
 - Tool execution results returned to Claude
 
 
@@ -16220,9 +16552,9 @@ Start from a partner’s driver, or write your own in Python or TypeScript. The 
 
 Fix the most common tool-use errors with symptom-to-fix diagnostic tables.
 
-[Reference implementation](https://github.com/anthropics/anthropic-quickstarts/tree/main/computer-use-demo)
+[Reference implementation](https://github.com/anthropics/claude-quickstarts/tree/main/computer-use-demo)
 
-Get started with the complete Docker-based implementation
+Get started with the complete Docker-based implementation.
 
 
 
@@ -16234,7 +16566,7 @@ Connect Claude to external tools and APIs. See where tools run, when Claude call
 
 [Best practices in detail](https://claude.com/blog/best-practices-for-computer-and-browser-use-with-claude)
 
-Benchmarked recommendations for resolution, thinking effort, and context management
+Benchmarked recommendations for resolution, thinking effort, and context management.
 
 [Browser use tool](agents-and-tools-tool-use-browser-use-tool.md)
 
@@ -16242,98 +16574,211 @@ Let Claude navigate, read, and interact with webpages in your own browser enviro
 
 ## Availability
 
-Computer use tool is available or in beta on select models and eligible for zero data retention and HIPAA readiness.
+Computer use tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Amazon Bedrock
 
-StatusAvailable
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- Claude Fable 5.1, Fable 5
+- Claude Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Amazon Bedrock (bedrock-runtime)
 
-Models
+API  
+- Messages API
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)Not supported
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)Not supported
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)Not supported
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)Not supported
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)Not supported
-- All other models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-StatusBeta
+Claude Platform on AWS
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)
+Claude Models on Google Cloud (Google managed)
 
-[Managed Agents](../Other/managed-agents-overview.md)
+API  
+- Messages API
 
-StatusNot available
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-### Required beta headers
+Microsoft Foundry (hosted on Azure)
 
-[Beta headers overview](../Endpoints/beta-headers.md)
+API  
+- Messages API
 
-Beta headers allow you to access experimental features and new model capabilities before they become part of the standard API.
+Models  
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- Claude Sonnet 5.5, Sonnet 5
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
-Header
+Microsoft Foundry (hosted on Anthropic)
 
-- `computer-use-2025-11-24`
-  
+API  
+- Messages API
 
-Models
-
-- [Claude Opus 4.7](../../20-Models/models-opus-4-7-overview.md)
-- [Claude Opus 4.6](../../20-Models/models-opus-4-6-overview.md)
-- [Claude Sonnet 4.6](../../20-Models/models-sonnet-4-6-overview.md)
-- [Claude Opus 4.5](../../20-Models/models-opus-4-5-overview.md)
-
-Header
-
-- `computer-use-2025-01-24`
-  
-
-Models
-
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)
-- [Claude Sonnet 4.5](../../20-Models/models-sonnet-4-5-overview.md)
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8
+- 
+  Claude Opus 4.7, Opus 4.6, Opus 4.5
+  Beta
+  requires
+  computer-use-2025-11-24
+- Claude Sonnet 5.5, Sonnet 5
+- 
+  Claude Sonnet 4.6
+  Beta
+  requires
+  computer-use-2025-11-24
+- 
+  Claude Sonnet 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
+- Claude Haiku 5.5
+- 
+  Claude Haiku 4.5
+  Beta
+  requires
+  computer-use-2025-01-24
 
 ### Data handling
 
@@ -16375,14 +16820,22 @@ Fine-grained tool streaming
 Feature of  
 [Message streaming](../Guides/build-with-claude-streaming.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Fine-grained tool streaming delivers a tool’s input to your client as Claude generates it, without server-side buffering or JSON validation. Skipping the buffering step reduces the time to the first fragment of a large parameter, such as a document or a block of code, and the fragments arrive through the same [Streaming messages](../Guides/build-with-claude-streaming.md) events as standard tool use.
 
@@ -16615,22 +17068,61 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Fine-grained tool streaming is available on every model and eligible for zero data retention and HIPAA readiness.
+Fine-grained tool streaming
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Availability requirements for Fine-grained tool streaming are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 
@@ -16683,7 +17175,7 @@ The response has a `stop_reason` of `tool_use` and one or more `tool_use` conten
 
 A `tool_use` block for a member of the [computer use](agents-and-tools-tool-use-computer-use-tool.md) or [browser use](agents-and-tools-tool-use-browser-use-tool.md) toolset also carries a `toolset_name` field (`"computer"` or `"browser"`). Its `name` is the member tool Claude is calling, such as `screenshot` or `navigate`, so dispatch those blocks on both fields.
 
-### Example API response with a \`tool_use\` content block
+### Example API response with a \`tool_use\` content block
 
 JSON
 
@@ -16754,7 +17246,7 @@ If you receive an error such as “tool_use ids were found without tool_result b
 
 Tool results often carry content from sources outside your control: webpages, inbound email, user uploads, third-party APIs. Treat that content as untrusted: an attacker who can influence it might embed instructions that try to redirect Claude (indirect prompt injection). Keep untrusted content inside `tool_result` blocks rather than `system` prompts or plain user `text` blocks, and see [Mitigate jailbreaks and prompt injections](../Test-Evaluate/test-and-evaluate-strengthen-guardrails-mitigate-jailbreaks.md#indirect-prompt-injection) for further hardening.
 
-### Example of tool result with images
+### Example of tool result with images
 
 JSON
 
@@ -16783,7 +17275,7 @@ JSON
 }
 ```
 
-### Example of empty tool result
+### Example of empty tool result
 
 JSON
 
@@ -16801,7 +17293,7 @@ JSON
 }
 ```
 
-### Example of tool result with documents
+### Example of tool result with documents
 
 JSON
 
@@ -16830,7 +17322,7 @@ JSON
 }
 ```
 
-### Example of text before and after a tool result
+### Example of text before and after a tool result
 
 For example, this causes a 400 error:
 
@@ -16882,7 +17374,7 @@ Messages contain arrays of `text`, `image`, `tool_use`, and `tool_result` blocks
 
 There are a few different types of errors that can occur when using tools with Claude:
 
-### Tool execution error
+### Tool execution error
 
 If the tool itself throws an error during execution (for example, a network error when fetching weather data), you can return the error message in the `content` along with `"is_error": true`:
 
@@ -16910,7 +17402,7 @@ Claude will then incorporate this error into its response to the user. For examp
 
 Write instructive error messages. Instead of generic errors such as `"failed"`, include what went wrong and what Claude should try next (for example, `"Rate limit exceeded. Retry after 60 seconds."`). This gives Claude the context it needs to recover or adapt without guessing.
 
-### Invalid tool name
+### Invalid tool name
 
 If Claude’s attempted use of a tool is invalid (for example, missing required parameters), it usually means that there wasn’t enough information for Claude to use the tool correctly. The best approach during development is to try the request again with more-detailed `description` values in your tool definitions.
 
@@ -16940,7 +17432,7 @@ If a tool request is invalid or missing parameters, Claude will retry 2–3 time
 
 To eliminate invalid tool calls entirely, use [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) with `strict: true` on your tool definitions. This guarantees that tool inputs always match your schema exactly, preventing missing parameters and type mismatches.
 
-### Server tool errors
+### Server tool errors
 
 When server tools encounter errors (for example, network issues with web search), Claude will transparently handle these errors and attempt to provide an alternative response or explanation to the user. Unlike client tools, you do not need to handle `is_error` results for server tools.
 
@@ -17105,11 +17597,15 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 Custom tools
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 Usage differs by product
 
@@ -17143,7 +17639,7 @@ Client tools are specified in the `tools` top-level parameter of the API request
 
 For the full set of optional properties available on any single tool definition, including `cache_control`, `strict`, `defer_loading`, and `allowed_callers`, see [Tool definition properties](agents-and-tools-tool-use-tool-reference.md#tool-definition-properties). A client toolset entry accepts `cache_control` and `allowed_callers` on the entry and sets `defer_loading` for each member; see [Client toolsets](agents-and-tools-tool-use-tool-reference.md#client-toolsets).
 
-### Example simple tool definition
+### Example simple tool definition
 
 JSON
 
@@ -17204,7 +17700,7 @@ To get the best performance out of Claude when using tools, follow these guideli
 - **Design tool responses to return only high-signal information.** Return semantic, stable identifiers (for example, slugs or UUIDs) rather than opaque internal references, and include only the fields Claude needs to reason about its next step. Bloated responses waste context and make it harder for Claude to extract what matters.
 - **Ask for an explanation, not reasoning.** If a parameter asks Claude why it is making the call, ask for a short explanation or the supporting evidence. A parameter that asks for the model’s thinking or step-by-step reasoning might lead to a `reasoning_extraction` refusal. See [Keep reasoning in thinking blocks](../Guides/build-with-claude-refusals-and-fallback.md#keep-reasoning-in-thinking-blocks).
 
-### Example of a good tool description
+### Example of a good tool description
 
 JSON
 
@@ -17227,7 +17723,7 @@ JSON
 }
 ```
 
-### Example poor tool description
+### Example poor tool description
 
 JSON
 
@@ -17344,7 +17840,7 @@ Not every model and setting supports forced tool use. Where it isn’t supported
 | Model or setting | Restriction | What to use instead |
 |----|----|----|
 | Manual [extended thinking](../Guides/build-with-claude-extended-thinking.md) (`thinking: {type: "enabled"}`) | `any` and `tool` are not supported and result in an error | `auto` or `none`. [Adaptive thinking](../Guides/build-with-claude-thinking.md) itself doesn’t block forced tool use (models with thinking on by default, such as Claude Opus 5 and Claude Haiku 5.5, accept it, but a forced call skips thinking: the response starts with the tool call and has no `thinking` block); the models in the next row reject forced tool use regardless of thinking settings |
-| Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) | `any` and `tool` return a [400 error](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
+| Claude Fable 5.2, [Claude Mythos 5.2](../../20-Models/models-mythos-5-2-overview.md), Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and [Claude Mythos 5.1](../../20-Models/models-mythos-5-1-overview.md) | `any` and `tool` return a 400 error. See [Forced tool use not supported](../Endpoints/errors.md#forced-tool-use-not-supported) | `auto` with [strict tool use](agents-and-tools-tool-use-strict-tool-use.md) to guarantee schema-valid tool inputs, or [structured outputs](../Guides/build-with-claude-structured-outputs.md) when you need a response in a fixed JSON shape. Prompting still influences which tool `auto` picks. `none` is also supported |
 
 On models that support it, the highlighted lines are the only difference from a standard tool use request:
 
@@ -17474,34 +17970,69 @@ Directory of Anthropic-provided tools and optional properties.
 
 ## Availability
 
-Custom tools are available on every model.
+Custom tools
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Define them in the request’s `tools`. Claude’s response contains `tool_use` blocks, and you send the results as `tool_result` blocks in the next request.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Amazon Bedrock
 
-- All supported platforms
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Amazon Bedrock (bedrock-runtime)
 
-Declare them on the agent with `type` `"custom"`. Calls arrive as `agent.custom_tool_use` events, and you reply with `user.custom_tool_result` events.
+API  
+- Messages API
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ---
 
@@ -17530,14 +18061,14 @@ Each approach targets a different source of context pressure. Pick the one that 
 
 | Approach | What it reduces | When it fits | Learn more |
 |----|----|----|----|
-| Tool search | Tool definitions loaded upfront | Large toolsets (20+ tools) where most tools aren’t needed every turn | [Tool search tool](agents-and-tools-tool-use-tool-search-tool.md) |
+| Tool search | Tool definitions loaded upfront | Many tools (10+), most of which aren’t needed every turn | [Tool search tool](agents-and-tools-tool-use-tool-search-tool.md) |
 | Programmatic tool calling | `tool_result` roundtrips | Chains of tool calls that can run as a single script | [Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md) |
-| Prompt caching | Token cost of repeated tool definitions | Stable toolsets across many requests | [Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md) |
+| Prompt caching | Token cost of repeated tool definitions | Stable tool definitions across many requests | [Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md) |
 | Context editing | Old `tool_result` blocks in history | Long conversations where early results are no longer relevant | [Context editing](../Guides/build-with-claude-context-editing.md) |
 
 ### Tool search
 
-Tool search keeps tool definitions out of the context window until Claude asks for them. Instead of sending 50 tool schemas upfront, you send a single `tool_search` tool and let Claude discover the rest on demand. This trades a small amount of latency (one extra turn to look up a tool) for a large reduction in baseline context usage.
+Tool search keeps tool definitions out of the context window until Claude asks for them. Instead of loading 50 tool schemas into context upfront, you mark them with `defer_loading: true`, add a tool search tool, and let Claude discover them on demand. This trades a small amount of latency (one extra turn to look up a tool) for a large reduction in baseline context usage.
 
 ### Programmatic tool calling
 
@@ -17545,7 +18076,7 @@ Programmatic tool calling collapses a sequence of tool calls into a single code 
 
 ### Prompt caching
 
-Prompt caching doesn’t reduce the number of tokens in context, but it reduces what you pay for them on subsequent requests. If your tool definitions are stable, cache them once and reuse the cached prefix across thousands of requests. This is the right choice when the toolset is large but fixed.
+Prompt caching doesn’t reduce the number of tokens in context, but it reduces what you pay for them on subsequent requests. If your tool definitions are stable, cache them once and reuse the cached prefix across thousands of requests. This is the right choice when your list of tools is large but fixed.
 
 ### Context editing
 
@@ -17553,12 +18084,12 @@ Context editing removes old `tool_result` blocks from the conversation history o
 
 ## Combining approaches
 
-These approaches compose. A long-running agent might use tool search to keep the toolset lean, prompt caching to amortize the cost of the remaining definitions, and context editing to trim stale results as the conversation grows. Each solves a different part of the problem, so there’s no conflict in using them together.
+You can use these approaches together, because each solves a different part of the problem. A long-running agent might use tool search to load fewer tool definitions, prompt caching to amortize the cost of the remaining definitions, and context editing to trim stale results as the conversation grows.
 
 A reasonable starting point for a high-volume agent:
 
 1.  Enable prompt caching on your tool definitions from the start. Cache writes carry a 25 percent markup over base input pricing, which pays back on the second request that hits the cache.
-2.  Add tool search once your toolset grows past roughly 20 tools or your baseline context usage becomes noticeable.
+2.  Add tool search once you have 10 or more tools or your baseline context usage becomes noticeable.
 3.  Add context editing once individual conversations start running long enough that early results become irrelevant.
 4.  Consider programmatic tool calling if you notice repetitive chains of small tool calls that could run as a single batch.
 
@@ -17610,11 +18141,14 @@ Let Claude store and retrieve information across conversations by implementing t
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 The memory tool lets Claude store and retrieve information across conversations in a directory of memory files. Claude can create, read, update, and delete files that persist between sessions, building up knowledge over time without keeping everything in the context window.
 
@@ -18166,15 +18700,69 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Memory tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Memory tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Models
+Availability requirements for Memory tool are the same across all supported platforms.
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 
@@ -18241,9 +18829,9 @@ Python
 client = anthropic.Anthropic()
 response = client.messages.create(
     model="claude-opus-5-5",
-    max_tokens=1024,
+    max_tokens=4096,
     tools=[{"type": "web_search_20260209", "name": "web_search"}],
-    messages=[{"role": "user", "content": "What's the latest on the Mars rover?"}],
+    messages=[{"role": "user", "content": "What is the latest on the Mars rover?"}],
 )
 print(response.content)
 ```
@@ -18366,7 +18954,7 @@ Add `strict: true` to your custom tool definitions to ensure Claude’s tool cal
 
 Each server tool’s page describes its own trigger boundary in more detail.
 
-### When required parameters are missing
+### When required parameters are missing
 
 If the user’s prompt doesn’t include enough information to fill all the required parameters for a tool, Claude Opus is much more likely to recognize that a parameter is missing and ask for it. Claude Sonnet might ask, especially when prompted to think before outputting a tool request. But it might also infer a reasonable value.
 
@@ -18485,9 +19073,9 @@ Connect to remote MCP servers from the Messages API without a separate MCP clien
 
 Tool use requests are priced based on:
 
-1.  The total number of input tokens sent to the model (including in the `tools` parameter)
-2.  The number of output tokens generated
-3.  For server-side tools, additional usage-based pricing (for example, web search charges per search performed)
+1.  The total number of input tokens sent to the model (including in the `tools` parameter).
+2.  The number of output tokens generated.
+3.  For server-side tools, additional usage-based pricing (for example, web search charges per search performed).
 
 Client-side tools are priced the same as any other Claude API request, although server-side tools can incur additional charges based on their specific usage.
 
@@ -18497,13 +19085,13 @@ The additional tokens from tool use come from:
 - `tool_use` content blocks in API requests and responses
 - `tool_result` content blocks in API requests
 
-When you use `tools`, the API also automatically includes a special system prompt for the model that enables tool use. The number of tool use tokens required for each model is listed in the following table (excluding the additional tokens listed earlier). Note that the table assumes at least 1 tool is provided. If no `tools` are provided, then a tool choice of `none` uses 0 additional system prompt tokens.
+When you use `tools`, the API also automatically includes a special system prompt for the model that enables tool use. The following table lists the number of tool use tokens that each model requires (excluding the additional tokens listed earlier). The table assumes that you provide at least one tool. If you provide no `tools`, a tool choice of `none` uses 0 additional system prompt tokens.
 
 [TABLE]
 
 These token counts are added to your normal input and output tokens to calculate the total cost of a request.
 
-See the [Models overview](../../20-Models/about-claude-models-overview.md#latest-models-comparison) table for current per-model prices.
+See the [All models](../../20-Models/about-claude-models-overview.md#all-models) table for current per-model prices.
 
 When you send a tool use prompt, like any other API request, the response includes both input and output token counts in the reported `usage` metrics.
 
@@ -18548,11 +19136,20 @@ Enable, format, and disable parallel tool calls, with message-history guidance a
 
 Parallel tool use
 
-[APIs](#feature-availability)  
-Messages APIOn by defaultManaged AgentsAlways on
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents[\* Beta](#availability-beta-on-claude-api)
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 By default, Claude may call multiple tools in a single response. This page covers how to run those calls, how to format the message history so parallelism keeps working, and how to disable parallel tool use when you need to. For the single-call flow, see [Handle tool calls](agents-and-tools-tool-use-handle-tool-calls.md).
 
@@ -18717,7 +19314,7 @@ The summary lines at the end restate the two formatting rules that keep parallel
 
 Claude 4 and later models make parallel tool calls by default when a request benefits from multiple tools. For all models, you can increase the likelihood of parallel tool calls with targeted prompting:
 
-### System prompts for parallel tool use
+### System prompts for parallel tool use
 
 For Claude 4 and later models, add this to your system prompt:
 
@@ -18737,7 +19334,7 @@ For maximum efficiency, whenever you perform multiple independent operations, in
 
 
 
-### User message prompting
+### User message prompting
 
 You can also encourage parallel tool use within specific user messages:
 
@@ -18825,7 +19422,7 @@ print(response.content)
 
 ### Exactly one tool call
 
-When `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Opus 5.5, Claude Sonnet 5.5, Claude Fable 5.1, and Claude Mythos 5.1 don’t support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
+When the `tool_choice` type is `any` or `tool`, setting `disable_parallel_tool_use: true` means Claude calls exactly one tool. Claude Fable 5.2, Claude Mythos 5.2, Claude Fable 5.1, Claude Mythos 5.1, Claude Opus 5.5, and Claude Sonnet 5.5 don’t support these `tool_choice` types (see [Forcing tool use](agents-and-tools-tool-use-implement-tool-use.md#forcing-tool-use)). The following example uses `any`. The same field works with `tool`:
 
 cURL
 
@@ -18985,39 +19582,61 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Parallel tool use is available or in beta, depending on the API.
+Parallel tool use
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-To turn it off, set `disable_parallel_tool_use: true` inside `tool_choice`.
+APIs  
+- Messages API
+- Managed Agents Beta
 
-StatusOn by default
+Models  
+- All models
 
-Cloud platforms
+Amazon Bedrock
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Amazon Bedrock (bedrock-runtime)
 
-Always on
+API  
+- Messages API
 
-StatusBeta
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+APIs  
+- Messages API
+- Managed Agents Beta
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ---
 
@@ -19043,14 +19662,21 @@ Programmatic tool calling
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All latest models
+- Limited support for other models; see details
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableMicrosoft FoundryHosted on AnthropicAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Microsoft FoundryHosted on Anthropic
 
 [Data handling](#feature-data-handling)  
-Not ZDR eligibleNot HIPAA eligible
+ZDRNot ZDR eligibleHIPAANot HIPAA eligible
 
 Programmatic tool calling allows Claude to write code that calls your tools programmatically within a [code execution](agents-and-tools-tool-use-code-execution-tool.md) container, rather than requiring round trips through the model for each tool call. This reduces latency for multi-tool workflows and decreases token consumption by allowing Claude to filter or process data before it reaches the model’s context window. On agentic search benchmarks such as [BrowseComp](https://arxiv.org/abs/2504.12516) and [DeepSearchQA](https://github.com/google-deepmind/deepsearchqa), which test multistep web research and complex information retrieval, adding programmatic tool calling on top of basic search tools improved performance by an average of 11 percent while using 24 percent fewer input tokens (see [Improved web search with dynamic filtering](https://claude.com/blog/improved-web-search-with-dynamic-filtering)).
 
@@ -19221,7 +19847,7 @@ Programmatic tool calling uses the same containers as code execution:
 - **Container creation:** A new container is created for each request unless you reuse an existing one.
 - **Container ID:** Returned in responses in the `container` field, along with an `expires_at` timestamp.
 - **Reuse:** Pass the container ID back on the next request to keep state. While a programmatic tool call is waiting for your result, the container ID is required on that request, not optional: the API rejects the request without it.
-- **Expiration:** `expires_at` tells you how long the container has left. Idle containers are currently reclaimed after about 5 minutes, and no container can be reused more than 30 days after it was created.
+- **Expiration:** Containers expire 30 days after creation. After about 5 minutes of inactivity a container is checkpointed, and sending a request with its ID inside the 30-day window restores it. The `expires_at` timestamp is a shorter rolling value and doesn’t report the 30-day limit.
 
 
 
@@ -19239,7 +19865,7 @@ Send a request with code execution and a tool that allows programmatic calling. 
 
 Provide detailed descriptions of your tool’s output format in the tool description. If you specify that the tool returns JSON, Claude attempts to deserialize and process the result in code. The more detail you provide about the output schema, the better Claude can handle the response programmatically.
 
-The request shape is identical to the [Quick start](#quick-start) example: include `code_execution` in your tools list, add `allowed_callers: ["code_execution_20260120"]` to any tool you want Claude to invoke from code, and send your user message. The remaining steps in this workflow use the user message `"Query customer purchase history from the last quarter and identify our top 5 customers by revenue"`.
+The request shape is identical to the [Quick start](#quick-start) example: include `code_execution` in your tools list, add `allowed_callers: ["code_execution_20260120"]` to any tool you want Claude to call from code, and send your user message. The remaining steps in this workflow use the user message `"Query customer purchase history from the last quarter and identify our top 5 customers by revenue"`.
 
 ### Step 2: API response with tool call
 
@@ -19315,6 +19941,8 @@ Python
 
 
 ```python
+client = anthropic.Anthropic()
+
 response = client.messages.create(
     model="claude-opus-5-5",
     max_tokens=4096,
@@ -19438,7 +20066,7 @@ print(f"Top region: {top_region[0]} with ${top_region[1]:,} in revenue")
 
 This pattern:
 
-- Reduces model round-trips from N (one for each region) to 1
+- Reduces model round trips from N (one for each region) to 1
 - Processes large result sets programmatically before returning to Claude
 - Saves tokens by only returning aggregated conclusions instead of raw data
 
@@ -19575,7 +20203,7 @@ If your tool result doesn’t arrive within about 4 minutes, the pending call ra
 
 To prevent timeouts:
 
-- Monitor the `expires_at` field in responses.
+- Monitor the `expires_at` field on paused responses.
 - Implement timeouts for your tool execution.
 - Consider breaking long operations into smaller chunks.
 
@@ -19670,7 +20298,7 @@ Programmatic tool calls are subject to the same rate limits as regular tool call
 
 ### Validate tool results before use
 
-When implementing user-defined tools that will be called programmatically:
+When implementing user-defined tools that Claude calls programmatically:
 
 - **Tool results are returned as strings:** They can contain any content, including code snippets or executable commands that might be processed by the execution environment.
 - **Validate external tool results:** If your tool returns data from external sources or accepts user input, be aware of code injection risks if the output is interpreted or run as code.
@@ -19679,11 +20307,11 @@ When implementing user-defined tools that will be called programmatically:
 
 Programmatic tool calling reduces token consumption in three ways:
 
-- **Tool results from programmatic calls are not added to Claude’s context** - only the final code output is
-- **Intermediate processing occurs in code** - filtering, aggregation, and other transformations don’t consume model tokens
-- **Multiple tool calls in one code execution** - reduces overhead compared to separate model turns
+- **Tool results from programmatic calls are not added to Claude’s context:** Only the final code output is.
+- **Intermediate processing occurs in code:** Filtering, aggregation, and other transformations don’t consume model tokens.
+- **Multiple tool calls in one code execution:** This reduces overhead compared to separate model turns.
 
-For example, calling 10 tools directly uses ~10x the tokens of calling them programmatically and returning a summary.
+For example, calling 10 tools directly uses roughly 10 times the tokens of calling them programmatically and returning a summary.
 
 In Anthropic’s internal evaluations on a production Claude model:
 
@@ -19711,7 +20339,7 @@ Token counting for programmatic tool calls: Tool results from programmatic calls
 
 ### When to use programmatic calling
 
-Programmatic tool calling trades a small fixed overhead (container startup, script generation) for large savings on tool-result tokens and model round-trips. Whether that trade is worthwhile depends on workload shape.
+Programmatic tool calling trades a small fixed overhead (container startup, script generation) for large savings on tool-result tokens and model round trips. Whether that trade is worthwhile depends on workload shape.
 
 **Strong fit:**
 
@@ -19721,7 +20349,7 @@ Programmatic tool calling trades a small fixed overhead (container startup, scri
 
 **Weak fit:**
 
-- Strictly sequential workflows where each call depends on Claude reasoning over the previous result, because the script cannot skip the model round-trip in that case
+- Strictly sequential workflows where each call depends on Claude reasoning over the previous result, because the script cannot skip the model round trip in that case
 - A small number of tool calls with small responses, especially on the first turn of a conversation, where container and script overhead can exceed the savings
 - Tools that require immediate user feedback between calls
 
@@ -19742,7 +20370,7 @@ If you are unsure, measure billed input tokens with and without `allowed_callers
 
 **Container expiration**
 
-- Respond to each programmatic tool call well before the paused response’s `expires_at` timestamp. Claude’s code stops waiting for a result after about 4 minutes, and idle containers are currently reclaimed after about 5 minutes.
+- Respond to each programmatic tool call well before the paused response’s `expires_at` timestamp. Claude’s code stops waiting for a result after about 4 minutes.
 - Consider implementing faster tool execution.
 
 **Tool result not parsed correctly**
@@ -19845,28 +20473,50 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Programmatic tool calling is available on select models.
+Programmatic tool calling
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+- Managed Agents Not supported
 
-Models
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5, Mythos Preview
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5
+- Claude Haiku 5.5
 
-- [Claude Haiku 4.5](../../20-Models/models-haiku-4-5-overview.md)Not supported
-- All other models
+Claude Platform on AWS
 
-[Managed Agents](../Other/managed-agents-overview.md)
+APIs  
+- Messages API
 
-StatusNot available
+- Managed Agents Not supported
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5
+- Claude Haiku 5.5
+
+Microsoft Foundry (hosted on Anthropic)
+
+API  
+- Messages API
+
+Models  
+- Claude Fable 5.2, Fable 5.1, Fable 5
+- Claude Mythos 5.2, Mythos 5.1, Mythos 5
+- Claude Opus 5.5, Opus 5, Opus 4.8, Opus 4.7, Opus 4.6, Opus 4.5
+- Claude Sonnet 5.5, Sonnet 5, Sonnet 4.6, Sonnet 4.5
+- Claude Haiku 5.5
 
 ### Data handling
 
@@ -19954,7 +20604,7 @@ client = anthropic.Anthropic()
 # Initial request with web search
 response = client.messages.create(
     model="claude-opus-5-5",
-    max_tokens=1024,
+    max_tokens=4096,
     messages=[
         {
             "role": "user",
@@ -19978,7 +20628,7 @@ if response.stop_reason == "pause_turn":
     # Send the continuation request
     continuation = client.messages.create(
         model="claude-opus-5-5",
-        max_tokens=1024,
+        max_tokens=4096,
         messages=messages,
         tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 10}],
     )
@@ -20106,7 +20756,7 @@ A follow-up that puts content before the results, answers only some of the clien
 
 To give Claude more input, send it as a separate user message after the turn completes.
 
-**How this differs from `pause_turn`:** A [`pause_turn` response](#the-server-side-loop-and-pause-turn) can also end with a `server_tool_use` block that has not run, but it never leaves a client `tool_use` block waiting on you, so you continue it by re-sending the assistant content as-is. A response that leaves a client `tool_use` block waiting on you never has a `stop_reason` of `pause_turn`: when Claude stops to call your tools, `stop_reason` is `tool_use`, and you continue it by sending the client `tool_result` blocks rather than by re-sending the response. In both cases the API runs the pending server tool at the start of the next request.
+**How this differs from `pause_turn`:** A [`pause_turn` response](#the-server-side-loop-and-pause-turn) can also end with a `server_tool_use` block that has not run, but it never leaves a client `tool_use` block waiting on you, so you continue it by re-sending the assistant content as-is. A response that leaves a client `tool_use` block waiting on you never has a `stop_reason` of `pause_turn`: when Claude stops to call your tools, `stop_reason` is `tool_use`, and you continue it by sending the response back with a new user message that holds the client `tool_result` blocks. In both cases the API runs the pending server tool at the start of the next request.
 
 The following example enables web fetch together with a user-defined `run_command` tool and handles the mixed response:
 
@@ -20157,7 +20807,7 @@ messages = [
 ]
 
 response = client.messages.create(
-    model="claude-opus-5-5", max_tokens=1024, tools=tools, messages=messages
+    model="claude-opus-5-5", max_tokens=4096, tools=tools, messages=messages
 )
 
 tool_results = [
@@ -20176,7 +20826,7 @@ if response.stop_reason == "tool_use" and tool_results:
     # Send back only the client tool_result blocks, with the same tools.
     continuation = client.messages.create(
         model="claude-opus-5-5",
-        max_tokens=1024,
+        max_tokens=4096,
         tools=tools,
         messages=[
             *messages,
@@ -20272,7 +20922,7 @@ You don’t need to add a `code_execution` tool for these versions: when dynamic
 
 Server-tool events stream as part of the normal server-sent events (SSE) flow. A `server_tool_use` block that Claude calls directly streams like a client `tool_use` block: a `content_block_start` event followed by `input_json_delta` events. The result block arrives complete in a single `content_block_start` event, with no deltas.
 
-See [Streaming](../Guides/build-with-claude-streaming.md) for the full event reference. Individual tool pages document tool-specific event names where they differ.
+See [Streaming messages](../Guides/build-with-claude-streaming.md) for the full event reference. Individual tool pages document tool-specific event names where they differ.
 
 ## Batch requests
 
@@ -20334,14 +20984,22 @@ Strict tool use
 Feature of  
 [Structured outputs](../Guides/build-with-claude-structured-outputs.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleQualifiedHIPAA eligible
+ZDRQualifiedZDR eligible (qualified)HIPAAHIPAA eligible
 
 Setting `strict: true` on a tool definition guarantees Claude’s tool inputs match your JSON Schema by constraining the model’s token sampling to schema-valid outputs (a technique called grammar-constrained sampling). This page covers why strict mode matters for agents, how to enable it, and common use cases. For the supported JSON Schema subset, see [JSON Schema limitations](../Guides/build-with-claude-structured-outputs.md#json-schema-limitations). For non-strict schema guidance, see [Define tools](agents-and-tools-tool-use-implement-tool-use.md).
 
@@ -20467,7 +21125,7 @@ The [computer use](agents-and-tools-tool-use-computer-use-tool.md) and [browser 
 
 ## Common use cases
 
-### Validated tool inputs
+### Validated tool inputs
 
 Ensure tool parameters exactly match your schema:
 
@@ -20528,7 +21186,7 @@ response = client.messages.create(
 print(response)
 ```
 
-### Agentic workflow with multiple validated tools
+### Agentic workflow with multiple validated tools
 
 Build reliable multistep agents with guaranteed tool parameters:
 
@@ -20635,26 +21293,61 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Strict tool use is available on every model and eligible for HIPAA readiness.
+Strict tool use
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Availability requirements for Strict tool use are the same across all supported platforms.
 
-Cloud platforms
+Claude API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+API  
+- Messages API
 
-Models
+Models  
+- All models
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 
@@ -20698,11 +21391,19 @@ Text editor tool
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[Models](#feature-availability)  
+- All models
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Claude can use an Anthropic-schema text editor tool to view and modify text files, helping you debug, fix, and improve your code or other text documents. This allows Claude to directly interact with your files, providing hands-on assistance rather than just suggesting changes.
 
@@ -20833,7 +21534,7 @@ Parameters:
 - `path`: The path to the file or directory to view
 - `view_range` (optional): An array of two integers specifying the start and end line numbers to view. Line numbers are 1-indexed, and -1 for the end line means read to the end of the file. This parameter only applies when viewing files, not directories.
 
-### Example view commands
+### Example view commands
 
 Example for viewing a file:
 
@@ -20878,7 +21579,7 @@ Parameters:
 - `old_str`: The text to replace (must match exactly, including whitespace and indentation)
 - `new_str`: The new text to insert in place of the old text
 
-### Example str_replace command
+### Example str_replace command
 
 ```python
 {
@@ -20906,7 +21607,7 @@ Parameters:
 - `path`: The path where the new file should be created
 - `file_text`: The content to write to the new file
 
-### Example create command
+### Example create command
 
 ```python
 {
@@ -20934,7 +21635,7 @@ Parameters:
 - `insert_line`: The line number after which to insert the text (0 for beginning of file)
 - `insert_text`: The text to insert
 
-### Example insert command
+### Example insert command
 
 ```python
 {
@@ -21327,7 +22028,7 @@ When implementing the text editor tool, keep in mind:
 
 When using the text editor tool, various errors might occur. Here is guidance on how to handle them:
 
-### File not found
+### File not found
 
 If Claude attempts to view or modify a file that doesn’t exist, return an appropriate error message in the `tool_result`:
 
@@ -21347,7 +22048,7 @@ If Claude attempts to view or modify a file that doesn’t exist, return an appr
 
 
 
-### Multiple matches for replacement
+### Multiple matches for replacement
 
 If Claude’s `str_replace` command matches multiple locations in the file, return an appropriate error message:
 
@@ -21367,7 +22068,7 @@ If Claude’s `str_replace` command matches multiple locations in the file, retu
 
 
 
-### No matches for replacement
+### No matches for replacement
 
 If Claude’s `str_replace` command doesn’t match any text in the file, return an appropriate error message:
 
@@ -21387,7 +22088,7 @@ If Claude’s `str_replace` command doesn’t match any text in the file, return
 
 
 
-### Permission errors
+### Permission errors
 
 If there are permission issues with creating, reading, or modifying files, return an appropriate error message:
 
@@ -21409,7 +22110,7 @@ If there are permission issues with creating, reading, or modifying files, retur
 
 ### Follow implementation best practices
 
-### Provide clear context
+### Provide clear context
 
 When asking Claude to fix or modify code, be specific about what files to examine or what issues to address. Clear context helps Claude identify the right files and make appropriate changes.
 
@@ -21417,7 +22118,7 @@ When asking Claude to fix or modify code, be specific about what files to examin
 
 **Better prompt:** “There’s a syntax error in my primes.py file that prevents it from running. Can you fix it?”
 
-### Be explicit about file paths
+### Be explicit about file paths
 
 Specify file paths clearly when needed, especially if you’re working with multiple files or files in different directories.
 
@@ -21425,7 +22126,7 @@ Specify file paths clearly when needed, especially if you’re working with mult
 
 **Better prompt:** “Can you check my utils/helpers.py file for any performance issues?”
 
-### Create backups before editing
+### Create backups before editing
 
 Implement a backup system in your application that creates copies of files before allowing Claude to edit them, especially for important or production code.
 
@@ -21456,7 +22157,7 @@ def backup_file(file_path):
             dst.write(src.read())
 ```
 
-### Handle unique text replacement carefully
+### Handle unique text replacement carefully
 
 The `str_replace` command requires an exact match for the text to be replaced. Your application should ensure that there is exactly one match for the old text or provide appropriate error messages.
 
@@ -21496,7 +22197,7 @@ def safe_replace(file_path, old_text, new_text):
         return "Successfully replaced text"
 ```
 
-### Verify changes
+### Verify changes
 
 After Claude makes changes to a file, verify the changes by running tests or checking that the code still works as expected.
 
@@ -21590,20 +22291,61 @@ Run shell commands with Claude.
 
 ## Availability
 
-Text editor tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Text editor tool
 
-### API support
+Cloud platform
 
-StatusAvailable
+Cloud platform: Claude API
 
-Cloud platforms
+Availability requirements for Text editor tool are the same across all supported platforms.
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+Claude API
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Amazon Bedrock (bedrock-runtime)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 
@@ -21842,13 +22584,13 @@ Set `defer_loading` for each member, never on the entry, and give every enabled 
 
 ## Tool definition properties
 
-Every tool in the `tools` array, including user-defined tools, accepts optional properties that control how the tool is loaded, who can call it, and how its inputs are validated. These properties compose: you can set `defer_loading` and `cache_control` and `strict` on the same tool.
+Every tool in the `tools` array, including user-defined tools, accepts optional properties that control how the tool is loaded, who can call it, and how its inputs are validated. You can combine these properties, with two exceptions: a tool with `defer_loading: true` can’t also carry `cache_control`, and a user-defined tool with `strict: true` can’t list a code execution caller in `allowed_callers`.
 
 | Property | Purpose | Available on | Detailed guide |
 |----|----|----|----|
 | `cache_control` | Set a prompt-cache breakpoint at this tool definition | All tools (on `computer_toolset_20260801` and `browser_toolset_20260801`, set it on the toolset entry itself, not inside member `configs`) | [Prompt caching](../Guides/build-with-claude-prompt-caching.md) |
 | `strict` | Guarantee schema validation on tool names and inputs | All tools except `mcp_toolset`, `computer_toolset_20260801`, and `browser_toolset_20260801` | [Strict tool use](agents-and-tools-tool-use-strict-tool-use.md) |
-| `defer_loading` | Exclude the tool from the initial system prompt; load it on demand when tool search returns a `tool_reference` for it | All tools (for `mcp_toolset`, see [tool configuration](agents-and-tools-mcp-connector.md#mcp-toolset-configuration)). On the computer use and browser use toolsets, set it per member inside `configs`; see [Client toolsets](#client-toolsets). | [Tool search tool](agents-and-tools-tool-use-tool-search-tool.md) |
+| `defer_loading` | Exclude the tool from the initial system prompt; load it on demand when tool search returns a `tool_reference` for it | All tools (for `mcp_toolset`, see [MCP toolset configuration](agents-and-tools-mcp-connector.md#mcp-toolset-configuration)). On the computer use and browser use toolsets, set it per member inside `configs`; see [Client toolsets](#client-toolsets). | [Tool search tool](agents-and-tools-tool-use-tool-search-tool.md) |
 | `allowed_callers` | Restrict which callers can call the tool | All tools except `mcp_toolset` (on `computer_toolset_20260801` and `browser_toolset_20260801`, only `["direct"]` is accepted; see [Client toolsets](#client-toolsets)) | [Programmatic tool calling](agents-and-tools-tool-use-programmatic-tool-calling.md#the-allowed-callers-field) |
 | `input_examples` | Provide example input objects to show Claude how to call the tool | User-defined and Anthropic-schema client tools, except `computer_toolset_20260801` and `browser_toolset_20260801`. Not available on server tools. | [Define tools](agents-and-tools-tool-use-implement-tool-use.md#providing-tool-use-examples) |
 | `eager_input_streaming` | Enable fine-grained input streaming (`true`) or keep standard buffered streaming (`false`) for this tool | User-defined tools only | [Fine-grained tool streaming](agents-and-tools-tool-use-fine-grained-tool-streaming.md) |
@@ -21868,11 +22610,7 @@ Omitting `"direct"` from the array (for example, `"allowed_callers": ["code_exec
 
 ### `defer_loading` and prompt caching
 
-Tools with `defer_loading: true` are stripped from the rendered tools section before the cache key is computed. They don’t appear in the system-prompt prefix at all. When tool search discovers a deferred tool and returns a `tool_reference` for it, the tool’s full definition is expanded inline at that point in the conversation body, not in the prefix.
-
-This means `defer_loading: true` preserves your prompt cache. You can add deferred tools to a request without invalidating an existing cache entry, and the cache remains valid across the turn where the tool is discovered and the turn where it’s called.
-
-To learn how to combine `defer_loading` with `cache_control` breakpoints, see the [Tool search tool prompt caching guidance](agents-and-tools-tool-use-tool-search-tool.md#prompt-caching).
+`defer_loading: true` preserves your prompt cache: tool search can load a deferred tool during a conversation without invalidating an existing cache entry. Put `cache_control` breakpoints on non-deferred tools. To learn how deferred tools keep the cache valid, see [`defer_loading` and cache preservation](agents-and-tools-tool-use-tool-use-with-prompt-caching.md#defer-loading-and-cache-preservation).
 
 ---
 
@@ -21895,14 +22633,17 @@ Use the SDK’s tool runner to handle the agentic loop, error wrapping, and type
 
 Tool runner
 
-[Status](#availability-feature-support)  
 Beta
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-All platforms
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- All platforms
 
 The tool runner handles the agentic loop, error wrapping, and type safety so you don’t have to. When you need human-in-the-loop approval, custom logging, or conditional execution, use the [manual loop](agents-and-tools-tool-use-handle-tool-calls.md) instead.
 
@@ -22320,30 +23061,90 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Tool runner is in beta on every model.
+Tool runner
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusBeta
+Claude API
 
-Cloud platforms
+Status  
+Beta
 
-- All supported platforms
+APIs  
+- Messages API
+- Managed Agents
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Models  
+- All models
 
-Usage
+Amazon Bedrock
 
-The Python, TypeScript and Go SDKs have a session tool runner that runs your tools for a session’s custom tool calls. The session itself runs the agent loop.
+Status  
+Beta
 
-StatusBeta
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- All models
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Amazon Bedrock (bedrock-runtime)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Platform on AWS
+
+Status  
+Beta
+
+APIs  
+- Messages API
+- Managed Agents
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Anthropic managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+Status  
+Beta
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ---
 
@@ -22369,14 +23170,23 @@ Scale to hundreds or thousands of tools by letting Claude search your tool catal
 Feature of  
 [Messages API](../Guides/build-with-claude-working-with-messages.md)
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsNot available
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableAmazon BedrockAvailableAmazon BedrockInvokeModelAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents Not supported
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Amazon Bedrock
+- Amazon Bedrockbedrock-runtime
+- Claude Platform on AWS
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 The tool search tool lets Claude work with hundreds or thousands of tools by discovering and loading them on demand. Instead of loading all tool definitions into the context window up front, Claude searches your tool catalog (including tool names, descriptions, argument names, and argument descriptions) and loads only the tools it needs.
 
@@ -22579,7 +23389,7 @@ The computer use and browser use toolsets (`computer_toolset_20260801` and `brow
 
 Both tool search variants (`regex` and `bm25`) search tool names, descriptions, argument names, and argument descriptions.
 
-Internally, the API excludes deferred tools from the system-prompt prefix. When Claude discovers a deferred tool through tool search, the API appends a `tool_reference` block inline in the conversation, then expands it into the full tool definition before passing it to Claude. The prefix is untouched, so prompt caching is preserved. The grammar for [strict mode](agents-and-tools-tool-use-strict-tool-use.md) (the rules that constrain tool-call output to match your schemas) builds from the full toolset, so `defer_loading` and strict mode compose without grammar recompilation.
+Internally, the API excludes deferred tools from the system-prompt prefix. When Claude discovers a deferred tool through tool search, the API appends a `tool_reference` block inline in the conversation, then expands it into the full tool definition before passing it to Claude. The grammar for [strict mode](agents-and-tools-tool-use-strict-tool-use.md) (the rules that constrain tool-call output to match your schemas) builds from the full list of tools, so using `defer_loading` with strict mode doesn’t make the API recompile the grammar.
 
 ## Response format
 
@@ -22737,7 +23547,7 @@ The API defines these `error_code` values:
 
 ### Common mistakes
 
-### 400 error: all tools are deferred
+### 400 error: all tools are deferred
 
 **Cause:** You set `defer_loading: true` on every tool, including the tool search tool.
 
@@ -22752,7 +23562,7 @@ The API defines these `error_code` values:
 
 
 
-### 400 error: missing tool definition
+### 400 error: missing tool definition
 
 **Cause:** A `tool_reference` points to a tool not in your `tools` array.
 
@@ -22771,7 +23581,7 @@ The API defines these `error_code` values:
 
 
 
-### Claude doesn’t find expected tools
+### Claude doesn’t find expected tools
 
 **Cause:** The regex pattern doesn’t match the tool’s name, description, argument names, or argument descriptions.
 
@@ -22792,7 +23602,7 @@ A tool with `defer_loading: true` can’t also carry `cache_control`: the API re
 
 ## Streaming
 
-With streaming enabled, you’ll receive tool search events as part of the stream:
+With streaming enabled, you receive tool search events as part of the stream:
 
 ```python
 event: content_block_start
@@ -22815,7 +23625,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "too
 
 ## Batch requests
 
-You can include the tool search tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md).
+You can include the tool search tool in the [Message Batches API](../Guides/build-with-claude-batch-processing.md).
 
 ## Limits and best practices
 
@@ -22832,7 +23642,7 @@ Use tool search when any of the following apply:
 
 - You have 10 or more tools available.
 - Your tool definitions consume more than 10k tokens.
-- Tool selection accuracy drops as your toolset grows.
+- Tool selection accuracy drops as you add more tools.
 - You aggregate multiple MCP servers (200+ tools).
 - Your tool library grows over time.
 
@@ -22885,41 +23695,66 @@ Specify tool schemas, write effective descriptions, and control when Claude call
 
 ## Availability
 
-Tool search tool is available on every model and eligible for zero data retention.
+Tool search tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-StatusAvailable
+Claude API
 
-Cloud platforms
+APIs  
+- Messages API
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Amazon Bedrock](../Guides/build-with-claude-claude-in-amazon-bedrock.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)
+- Managed Agents Not supported
 
-Models
+Models  
+- All models
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Amazon Bedrock
 
-StatusAvailable
+API  
+- Messages API
 
-Cloud platforms
+Models  
+- All models
 
-- [Amazon Bedrock](../Guides/build-with-claude-claude-on-amazon-bedrock-legacy.md)InvokeModel
+Amazon Bedrock (bedrock-runtime)
 
-Models
+API  
+- Messages API
 
-- [All models](../../20-Models/about-claude-models-overview.md)
+Models  
+- All models
 
+Note  
 On Amazon Bedrock it is not available through the Converse API.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Claude Platform on AWS
 
-StatusNot available
+APIs  
+- Messages API
+
+- Managed Agents Not supported
+
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Microsoft Foundry
+
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 
@@ -23002,9 +23837,9 @@ The [computer use](agents-and-tools-tool-use-computer-use-tool.md) and [browser 
 
 Deferred tools are not included in the system-prompt prefix. When the model discovers a deferred tool through [tool search](agents-and-tools-tool-use-tool-search-tool.md), the definition is appended inline as a `tool_reference` block in the conversation history. The prefix is untouched, so prompt caching is preserved.
 
-This means adding tools dynamically through tool search does not break your cache. You can start a conversation with a small set of always-loaded tools (cached), let the model discover additional tools as needed, and keep the same cache hit across every turn.
+You can start a conversation with a small set of always-loaded tools (cached), let the model discover additional tools as needed, and keep the same cache hit across every turn.
 
-`defer_loading` also acts independently of grammar construction for [strict mode](agents-and-tools-tool-use-strict-tool-use.md). The grammar builds from the full toolset regardless of which tools are deferred, so prompt caching and grammar caching are both preserved when tools load dynamically.
+`defer_loading` also acts independently of grammar construction for [strict mode](agents-and-tools-tool-use-strict-tool-use.md). The grammar builds from the full list of tools regardless of which tools are deferred, so prompt caching and grammar caching are both preserved when tools load dynamically.
 
 ## What invalidates your cache
 
@@ -23017,8 +23852,8 @@ The cache follows a prefix hierarchy (`tools` → `system` → `messages`), so a
 | Changing `tool_choice` | Messages cache |
 | Changing `disable_parallel_tool_use` | Messages cache |
 | Toggling images present/absent | Messages cache |
-| Changing thinking parameters | Messages cache always; tool and system caches too on models that render the thinking configuration ahead of them ([details](../Guides/build-with-claude-thinking.md#thinking-and-prompt-caching)) |
-| Changing `output_config.effort` | Same as thinking parameters; setting the model’s default explicitly is equivalent to omitting it |
+| Changing thinking parameters | Messages cache always; tool and system caches too on models that render the thinking configuration ahead of them (see [Thinking and prompt caching](../Guides/build-with-claude-thinking.md#thinking-and-prompt-caching)) |
+| Changing `output_config.effort` | Can invalidate the messages cache, and on some models the tool and system caches too (see [Thinking and prompt caching](../Guides/build-with-claude-thinking.md#thinking-and-prompt-caching)); sending the default explicitly equals omitting it |
 
 
 
@@ -23056,7 +23891,7 @@ Learn the full prompt caching model, including TTLs and pricing.
 
 
 
-[Tool search](agents-and-tools-tool-use-tool-search-tool.md)
+[Tool search tool](agents-and-tools-tool-use-tool-search-tool.md)
 
 Load tools on demand without breaking your cache.
 
@@ -23114,7 +23949,7 @@ Symptom-to-fix tables for the most common tool-use errors. Each fix cross-refere
 | Symptom | Likely cause | Fix |
 |----|----|----|
 | Every request is a cache miss | `tool_choice`, the thinking configuration, or `output_config.effort` varying between requests | Keep `tool_choice` stable or place the `cache_control` breakpoint before the variation point; hold the thinking configuration and effort level constant for the life of a cached conversation. See [Tool use with prompt caching](agents-and-tools-tool-use-tool-use-with-prompt-caching.md) and [Thinking and prompt caching](../Guides/build-with-claude-thinking.md#thinking-and-prompt-caching). |
-| Adding a tool mid-conversation breaks cache | Tool prepended to the tools array | Use `defer_loading: true` with tool search to append the tool inline instead of modifying the array head. |
+| Adding a tool mid-conversation breaks cache | Tool prepended to the tools array | Declare the tool with `defer_loading: true` from the first request and let tool search load it inline, instead of adding it to the array later. |
 
 ## Errors at request time
 
@@ -23178,14 +24013,21 @@ Fetch and read content from specific URLs to augment Claude’s context with liv
 
 Web fetch tool
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleNot HIPAA eligible
+ZDRZDR eligibleHIPAANot HIPAA eligible
 
 Usage differs by product
 
@@ -23224,7 +24066,7 @@ However, there is still residual risk that you should carefully consider when us
 If data exfiltration is a concern, consider:
 
 - Disabling the web fetch tool entirely
-- Using the `max_uses` parameter to limit the number of requests
+- Using the [`max_uses`](#max-uses) parameter to limit the number of fetches in a turn
 - Using the `allowed_domains` parameter to restrict to known safe domains
 - Using the `url_sources` parameter to stop client-side tool results from counting as a source (see [URL sources](#url-sources))
 
@@ -23347,7 +24189,7 @@ client = anthropic.Anthropic()
 
 response = client.messages.create(
     model="claude-opus-5-5",
-    max_tokens=1024,
+    max_tokens=4096,
     messages=[
         {
             "role": "user",
@@ -23372,7 +24214,7 @@ JSON
   "type": "web_fetch_20250910",
   "name": "web_fetch",
 
-  // Optional: Limit the number of fetches for each request
+  // Optional: Limit the number of fetches
   "max_uses": 10,
 
   // Optional: Only fetch from these domains
@@ -23400,7 +24242,9 @@ Later tool versions add two more optional parameters: `use_cache` requires `web_
 
 ### Max uses
 
-The `max_uses` parameter limits the number of web fetches performed. Failed fetches count against the limit. If Claude attempts more fetches than allowed, the `web_fetch_tool_result` is an error with the `max_uses_exceeded` error code. There is currently no default limit.
+The `max_uses` parameter limits the number of web fetches in a single turn. Failed fetches count against the limit. If Claude calls web fetch directly more times than allowed, the `web_fetch_tool_result` is an error with the `max_uses_exceeded` error code. If Claude calls web fetch from code execution more times than allowed, the code execution run ends with an error. There is no default limit.
+
+A turn can span several requests. A request continues a turn when it resumes after [`pause_turn`](agents-and-tools-tool-use-server-tools.md#the-server-side-loop-and-pause-turn) or when its last message contains only `tool_result` blocks. Fetches from earlier requests in that turn count against the limit, unless Claude ran them from code execution through [dynamic filtering](#dynamic-filtering).
 
 ### Domain filtering
 
@@ -23444,7 +24288,7 @@ The `use_cache` parameter controls whether cached content may be returned. Set `
 
 Requires `web_fetch_20260318` or later.
 
-The `response_inclusion` parameter controls how fetch result blocks appear in the API response when the result was consumed by a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same turn. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, reducing output token costs for agentic workflows that don’t need to echo raw page content back to the client. The default is `"full"`. Results from direct calls, or from code execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
+The `response_inclusion` parameter controls how fetch result blocks appear in the API response when a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same response consumed the result. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, for agentic workflows that don’t need the raw page content. Token usage is unaffected, because Claude reads the code’s output rather than these blocks. The default is `"full"`. The API always returns results from direct calls, or from code execution calls that paused before completing, in full so that you can send them back in the next request.
 
 ```python
 {
@@ -23774,7 +24618,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "web
 
 ## Batch requests
 
-You can include the web fetch tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md). Web fetch tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
+You can include the web fetch tool in the [Message Batches API](../Guides/build-with-claude-batch-processing.md). Web fetch tool calls through the Message Batches API are priced the same as those in regular Messages API requests.
 
 ## Usage and pricing
 
@@ -23828,45 +24672,56 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Web fetch tool is available on every model and eligible for zero data retention.
+Web fetch tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Add a `web_fetch` tool to the request’s `tools`. Settings such as `max_uses`, domain lists, `citations` and `max_content_tokens` go on that tool.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Models on Google Cloud (Anthropic managed)
 
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Azure
+API  
+- Messages API
 
+Models  
+- All models
+
+Microsoft Foundry (hosted on Azure)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
 Deployments hosted on Azure support only `web_fetch_20250910`: no dynamic filtering, response inclusion or cache bypass.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Microsoft Foundry (hosted on Anthropic)
 
-Usage
+API  
+- Messages API
 
-Part of the agent toolset, and on by default once the toolset is added. Domain lists (with no paths) and `max_content_tokens` go on the toolset’s `web_fetch` entry; `max_uses`, `citations` and `cache_control` are not available.
-
-StatusAvailable
-
-Cloud platforms
-
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+Models  
+- All models
 
 ### Data handling
 
@@ -23905,14 +24760,22 @@ Give Claude access to current web content with cited sources, optional dynamic f
 
 Web search tool
 
-[APIs](#feature-availability)  
-Messages APIAvailableManaged AgentsAvailable
+[Models](#feature-availability)  
+- All models
 
-[Cloud platforms](#availability-feature-support)  
-Claude APIAvailableClaude Platform on AWSAvailableClaude Models on Google CloudAnthropic managedAvailableClaude Models on Google CloudGoogle managedAvailableMicrosoft FoundryAvailable
+[APIs](#feature-availability)  
+- Messages API
+- Managed Agents
+
+[Cloud platforms](#feature-availability)  
+- Claude API
+- Claude Platform on AWS
+- Claude Models on Google CloudAnthropic managed
+- Claude Models on Google CloudGoogle managed
+- Microsoft Foundry
 
 [Data handling](#feature-data-handling)  
-ZDR eligibleHIPAA eligible
+ZDRZDR eligibleHIPAAHIPAA eligible
 
 Usage differs by product
 
@@ -23970,7 +24833,7 @@ Claude answers directly without searching when the request draws on stable knowl
 - Analysis of content already provided in the conversation
 - Conversational turns and greetings
 
-Triggering is steerable through your system prompt: you can encourage Claude to search more readily or to prefer answering directly. For a hard constraint, use `max_uses` to cap the number of searches for each request.
+Triggering is steerable through your system prompt: you can encourage Claude to search more readily or to prefer answering directly. To enforce a limit, use [`max_uses`](#max-uses) to cap the number of searches in a turn.
 
 ### Dynamic filtering
 
@@ -24062,7 +24925,7 @@ client = anthropic.Anthropic()
 
 response = client.messages.create(
     model="claude-opus-5-5",
-    max_tokens=1024,
+    max_tokens=4096,
     messages=[{"role": "user", "content": "What's the weather in NYC?"}],
     tools=[{"type": "web_search_20250305", "name": "web_search", "max_uses": 5}],
 )
@@ -24082,7 +24945,7 @@ JSON
   "type": "web_search_20250305",
   "name": "web_search",
 
-  // Optional: Limit the number of searches for each request
+  // Optional: Limit the number of searches
   "max_uses": 5,
 
   // Optional: Only include results from these domains.
@@ -24107,9 +24970,11 @@ All web search tool versions accept `allowed_callers`, which controls whether Cl
 
 ### Max uses
 
-The `max_uses` parameter limits the number of searches performed. If Claude attempts more searches than allowed, the `web_search_tool_result` is an error with the `max_uses_exceeded` error code.
+The `max_uses` parameter limits the number of searches in a single turn. Single-fact queries typically use 1–3 searches; comparative or multientity research can use 10 or more.
 
-Simple factual queries typically use 1–3 searches; comparative or multientity research can use 10 or more. For guidance on choosing a value, see [Server tools](agents-and-tools-tool-use-server-tools.md).
+Failed searches count against the limit. If Claude calls web search directly more times than allowed, the `web_search_tool_result` is an error with the `max_uses_exceeded` error code. If Claude calls web search from code execution more times than allowed, the code execution run ends with an error.
+
+A turn can span several requests. A request continues a turn when it resumes after [`pause_turn`](agents-and-tools-tool-use-server-tools.md#the-server-side-loop-and-pause-turn) or when its last message contains only `tool_result` blocks. Searches from earlier requests in that turn count against the limit, unless Claude ran them from code execution through [dynamic filtering](#dynamic-filtering).
 
 ### Domain filtering
 
@@ -24137,7 +25002,7 @@ On Claude Managed Agents, the `web_search` entry of the agent toolset also accep
 
 Requires `web_search_20260318` or later.
 
-The `response_inclusion` parameter controls how search result blocks appear in the API response when the result was consumed by a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same turn. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, reducing output token costs for agentic workflows that don’t need to echo raw search content back to the client. The default is `"full"`. Results from direct calls, or from code execution calls that paused before completing, are always returned in full so they can be sent back on the next turn.
+The `response_inclusion` parameter controls how search result blocks appear in the API response when a completed [code execution](agents-and-tools-tool-use-code-execution-tool.md) call in the same response consumed the result. Set `"response_inclusion": "excluded"` to drop those nested `server_tool_use` and result block pairs entirely from the response, for agentic workflows that don’t need the raw search content. Token usage is unaffected, because Claude reads the code’s output rather than these blocks. The default is `"full"`. The API always returns results from direct calls, or from code execution calls that paused before completing, in full so that you can send them back in the next request.
 
 JSON
 
@@ -24237,7 +25102,7 @@ Search results include:
 - `page_age`: When the site was last updated
 - `encrypted_content`: Encrypted content that you must pass back in multi-turn conversations
 
-To continue a conversation that contains search results, send the assistant’s content blocks back exactly as you received them, including each result’s `encrypted_content`. The API decrypts that content on later turns to restore the search results in Claude’s context. If `encrypted_content` is missing or modified, the request fails with a 400 validation error.
+To continue a conversation that contains search results, send the assistant’s content blocks back exactly as you received them, including each result’s `encrypted_content`. The API decrypts that content in later requests to restore the search results in Claude’s context. If `encrypted_content` is missing or modified, the request fails with a 400 validation error.
 
 ### Citations
 
@@ -24298,7 +25163,7 @@ To cache tool definitions across turns, see [Tool use with prompt caching](agent
 
 ## Streaming
 
-With streaming enabled, you’ll receive search events as part of the stream. There is a pause while the search runs:
+With streaming enabled, you receive search events as part of the stream. There is a pause while the search runs:
 
 Output
 
@@ -24331,7 +25196,7 @@ data: {"type": "content_block_start", "index": 2, "content_block": {"type": "web
 
 ## Batch requests
 
-You can include the web search tool in the [Messages Batches API](../Guides/build-with-claude-batch-processing.md). Web search tool calls through the Messages Batches API are priced the same as those in regular Messages API requests.
+You can include the web search tool in the [Message Batches API](../Guides/build-with-claude-batch-processing.md). Web search tool calls through the Message Batches API are priced the same as those in regular Messages API requests.
 
 To protect shared capacity, the Batches API throttles web search requests for each organization, so large batches with many searches might take longer to complete. You can see your organization’s web search rate limit on the [Rate limits](../Other/playground.md) page in the Claude Console. To request a higher limit, contact sales from that page.
 
@@ -24357,7 +25222,7 @@ Web search usage is charged in addition to token usage:
 
 Web search is available on the Claude API for **\$10 USD per 1,000 searches**, plus standard token costs for search-generated content. Web search results retrieved throughout a conversation are counted as input tokens, in search iterations run during a single turn and in subsequent conversation turns.
 
-Each web search counts as one use, regardless of the number of results returned. If an error occurs during web search, the web search will not be billed.
+Each web search counts as one use, regardless of the number of results returned. A web search that fails with an error is not billed.
 
 ## Next steps
 
@@ -24381,46 +25246,67 @@ Directory of Anthropic-provided tools and reference for optional tool definition
 
 ## Availability
 
-Web search tool is available on every model and eligible for zero data retention and HIPAA readiness.
+Web search tool
 
-### API support
+Cloud platform
 
-[Messages API](../Guides/build-with-claude-working-with-messages.md)
+Cloud platform: Claude API
 
-Usage
+Claude API
 
-Add a `web_search` tool to the request’s `tools`. Settings such as `max_uses`, domain lists and `user_location` go on that tool.
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Platform on AWS
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-anthropic-managed.md)Anthropic managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Anthropic
+APIs  
+- Messages API
+- Managed Agents
 
-StatusAvailable
+Models  
+- All models
 
-Cloud platforms
+Claude Models on Google Cloud (Anthropic managed)
 
-- [Claude Models on Google Cloud](../Guides/build-with-claude-claude-models-on-google-cloud-google-managed.md)Google managed
-- [Microsoft Foundry](../Guides/build-with-claude-claude-in-microsoft-foundry.md)Hosted on Azure
+API  
+- Messages API
 
+Models  
+- All models
+
+Claude Models on Google Cloud (Google managed)
+
+API  
+- Messages API
+
+Models  
+- All models
+
+Note  
 Only the basic web search tool (`web_search_20250305`), without dynamic filtering.
 
-[Managed Agents](../Other/managed-agents-overview.md)
+Microsoft Foundry (hosted on Azure)
 
-Usage
+API  
+- Messages API
 
-Part of the agent toolset, and on by default once the toolset is added. Domain lists and `user_location` go on the toolset’s `web_search` entry; `max_uses`, `citations` and `cache_control` are not available.
+Models  
+- All models
 
-StatusAvailable
+Note  
+Only the basic web search tool (`web_search_20250305`), without dynamic filtering.
 
-Cloud platforms
+Microsoft Foundry (hosted on Anthropic)
 
-- Claude API
-- [Claude Platform on AWS](../Guides/build-with-claude-claude-platform-on-aws.md)
+API  
+- Messages API
+
+Models  
+- All models
 
 ### Data handling
 

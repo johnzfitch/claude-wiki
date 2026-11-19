@@ -2,7 +2,7 @@
 title: "How the one-half result was found - transcript of Claude sub-agent E2"
 source_url: "https://www-cdn.anthropic.com/8a0d1add3c637b858a9a181e98c40e9548c3f44f.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-12T06:46:29Z"
+fetched_at: "2026-11-18T06:28:50Z"
 tags: ["agents", "news-research", "subagents"]
 ---
 
@@ -922,10 +922,10 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
          under γ → γ (ρ → 1 − ρˉ) and γ → −γ (ρ → 1 − ρ).
-                    ~
                                           ​                                                       ​
 
 
+                    ~
          Involution f (u) = f (−u); hf~(r) = hf (rˉ).
                                       ​                                                               ​                   ​
 
@@ -953,12 +953,10 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
          supp k in
-          [−L, L] and only n ≤ X := eL enter: W ∣Cc∞ (−L/2,L/2) is computable from primes ≤ X and Γ alone.
-                                                                ~
-                                                                                                                                                                                                                                                  ​
+          [−L, L] and only n ≤ X := eL enter: W ∣Cc∞ (−L/2,L/2) is computable from primes ≤ X and Γ alone.                                                                                                                                        ​
 
 
-                                                                         ~
+                                                                ~        ~
                                                                                                                                                                                       ​
 
 
@@ -1049,12 +1047,12 @@ How the one-half result was found - transcript of Claude sub-agent E2
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ​
 
 
-           an admissible test function (entire h, Gaussian decay on strips). [Cc∞ version: replace As by B         ^ (./(1/s)) with                                                                                                                                                                                                                                                                                                                 ​                                                                                                                               ​
+           an admissible test function (entire h, Gaussian decay on strips). [Cc∞ version: replace As by B          ^ (./(1/s)) with                                                                                                                                                                                                                                                                                                                ​                                                                                                                               ​
 
 
            B Gevrey so that B      ^ has exp(−∣x∣ ) decay; or approximate, see (d).]
                                                     1/2
-                                                                                                2      2
+                                                                                                 2     2
            Main term at the pair {γj , γj }: with y = δj , A := As (−iy) = As (iy) = ey /(2s ) (real, even on iR),                                                      ​                           ​                                                                                                                                                       ​                                                                           ​
 
 
@@ -1065,7 +1063,7 @@ How the one-half result was found - transcript of Claude sub-agent E2
              a b = A2 (−iy)(iy ) qj (γj ) qj (γj ) = −y 2 A2 qj (γj ) qj (γj ).                                             ​                                               ​                               ​                           ​       ​                                                                   ​               ​               ​                   ​       ​
 
 
-           Choose qj := pj ∗ cj where pj (r) := ∏i=j      (r − γi)(r − γi)(r + γi)(r + γi)
+           Choose qj := pj ∗ cj where pj (r) := ∏       i=j (r − γi)(r − γi)(r + γi)(r + γi)
                                                             ​                               ​                                       ​                                                                                   ​                                                                   ​                                   ​                                                       ​                                       ​                                           ​
 
 
@@ -1121,7 +1119,7 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
              aˉb = −δj2 A2 ∣wj vj ∣ < 0 and the pair contributes 2mj Re(aˉb) = −2mj δj2 eδj /s ∣wj vj ∣.
-                                                                                                  2  2
+                                                                                                   2 2
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ​
 
 
@@ -1129,7 +1127,7 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
            Everything else → 0 as s → 0:
-                                                             2    2
+                                                              2    2
              * on-line zeros γ real: ∣hj (γ)∣2 = e−(γ−tj ) /s (γ − tj )2 ∣qj (γ)∣2 ; the factor                                                                                 ​
                                                                                                                                                                                                                                                                                         ​
 
@@ -1146,7 +1144,7 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
          convergence).
-                                                                         2 2
+                                                                          2 2
                Relative to the main term (which GROWS like eδ /s ) even better.
              * other points of S -orbit: hj vanishes there (pj ) -- exactly 0.                                                                                                                          ​                                                                                                               ​
 
@@ -1158,16 +1156,16 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
          1>
-                                                           2    2     2           2
+                                                            2    2     2           2
                1/2 > ∣ Im γ∣, so ∣As (γ − tj )∣ = e−((x −y ))/(2s ) ≤ e−3/(8s ) → 0 faster than the main term grows                                     ​                                                                           ​
 
 
-                                                                  2
+                                                                   2
                iff 3/8 > δj2 , true (δj < 1/2). [ratio e−3/(8s )+… polynomial factors summable as before.] Hmm: main term
                                                                                         ​                                                       ​
 
 
-                      2   2                              2    2     2
+                      2   2                               2    2     2
                ∼ eδj /s , cross-contamination ∼ e−(x −y )/s with x ≥ 1,y < 1/2: ratio → 0. Fine. If ST is infinite (infinitely
                                         ​
 
@@ -1179,14 +1177,14 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
          Good.
-             * off-diagonal Gram entries W (fi, fj ), i =     j : S-orbit terms vanish identically (hi or hj vanishes at each point                                                                                                                    ​           ​                                                                                                                                                                                                                                                           ​                                       ​
+             * off-diagonal Gram entries W (fi, fj ), i =      j : S-orbit terms vanish identically (hi or hj vanishes at each point                                                                                                                   ​           ​                                                                                                                                                                                                                                                           ​                                       ​
 
 
          other
                than its own pair, and at γj the factor hi vanishes); on-line and far-off-line terms → 0 by Cauchy-Schwarz from                                                                      ​                                                                               ​
 
 
-                                                                        2    2
+                                                                         2    2
                the diagonal bounds. After normalising fj by e−δj /(2s ) the Gram matrix → diag(−2mj δj2 ∣wj vj ∣) < 0.                                                                                                                                                                              ​
                                                                                                                                                                                                                                                                                                                                             ​
 
@@ -1953,13 +1951,13 @@ How the one-half result was found - transcript of Claude sub-agent E2
                             ​
 
 
-              centre; cross Gram terms W (fi, fj ) = ∑ m hi(γ)hj (γ     ˉ) ≤ (∑ ∣hi∣2 )1/2 (∑ ∣hj ∣2 )1/2 restricted to overlap... use                                          ​                       ​                                           ​                       ​           ​   ​                                       ​                               ​
+              centre; cross Gram terms W (fi, fj ) = ∑ m hi(γ)hj (γ      ˉ) ≤ (∑ ∣hi∣2 )1/2 (∑ ∣hj ∣2 )1/2 restricted to overlap... use                                         ​                       ​                                           ​                       ​           ​   ​                                       ​                               ​
 
 
          Gershgorin:
-              diagonal ≤ −2δj2 + εj , off-diagonal row sums ≤ ∑i=j                            ^                           −3
-                                                                         [ ... ] small since BL (x) decays like (L∣x∣)
-                                                                                                        ​                    and ∣ti −  ​                                                                                                                                                       ​                                                           ​                                                                       ​
+              diagonal ≤ −2δj2 + εj , off-diagonal row sums ≤ ∑                                ^                          −3
+                                                                        i=j [ ... ] small since BL (x) decays like (L∣x∣)
+                                                                                                        ​                     and ∣ti − ​                                                                                                                                                       ​                                                           ​                                                                       ​
 
 
          tj ∣ ≥ 2: each
@@ -2006,9 +2004,8 @@ How the one-half result was found - transcript of Claude sub-agent E2
                             ​                                           ​                       ​
 
 
-           the SAME f : h(ζi)h(ζˉi) = (xi − iyi)2 B
                                                   ^L (xi − iyi)2 ∼ (x2 − y 2 − 2ixiyi) c(yiL)2 (1 + O(Lxi)), real part < 0
-                                                                ​
+           the SAME f : h(ζi)h(ζˉi) = (xi − iyi)2 B             ​
 
 
                                                                      i    i ​   ​   ​   ​       ​   ​   ​   ​   ​                               ​       ​       ​               ​
@@ -2436,10 +2433,9 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
                (P) nθ+ (W ∣V ) := #{eigenvalues > θ} ≤ n+ (ev∗ Q ev) ≤ n+ (Qreach ) = ndist
                              ​        ​                                                 ​
-                                                                                                   ′
-                                                                                                    ​
-                                                                                                         dist ′
-                                                                                              on (I ) + npair (I ). ​           ​       ​
+                                                                                                   ′     dist ′
+                                                                                              on (I ) + npair (I ).
+                                                                                                    ​               ​           ​       ​
 
 
               Riemann-von Mangoldt counts with multiplicity and counts BOTH members ρ, 1 − ρ of an off-line pair (same              ​
@@ -2451,18 +2447,15 @@ How the one-half result was found - transcript of Claude sub-agent E2
                                                 ​                   ​
 
 
-              Subtracting: ndist     ′
-                                            ​
-                                              ′
+              Subtracting: ndist     ′        ′
                               pair (I ) ≤ N(I ) − n+ (W ∣V ),
+                                            ​
                                                      θ
-                                                                ndist  ′
+                                                                ndist  ′                        ′
+                                                                  on (I ) ≥ 2 n+ (W ∣V ) − N(I ).
                                                                             ​
                                                                                θ
-                                                                                    ​
-                                                                                                ′
-                                                                  on (I ) ≥ 2 n+ (W ∣V ) − N(I ).
-                                                                                                ​      (*)
+                                                                                    ​           ​      (*)
                                                                                                         ​       ​
 
 
@@ -2564,8 +2557,8 @@ How the one-half result was found - transcript of Claude sub-agent E2
                                                                              ′            ′
                       Off-diagonal n =  n′ : the τ ′ -integral over I of eiτ (log n−log n ) times bounded x-integral: by the
            Montgomery-Vaughan
-                      Hilbert inequality ∣ ∑n=n       b b ′ /(log n − log n′ )∣ ≤ (3π/2) ∑ ∣bn ∣2 /δn , δn = min ∣ log n − log n′ ∣ ≥
-                                                 ′ n n
+                      Hilbert inequality ∣ ∑         b b ′ /(log n − log n′ )∣ ≤ (3π/2) ∑ ∣bn ∣2 /δn , δn = min ∣ log n − log n′ ∣ ≥
+                                               n=n′ n n
                                                                                                                 ​           ​               ​                                                                                            ​           ​           ​
 
 
@@ -2728,20 +2721,18 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
                Riemann–von Mangoldt gives
 
-                                                                  (N) N(I ′ ) ≥ ndist ′
-                                                                                          ​
-                                                                                              dist   ′
-                                                                                 on (I ) + 2 npair (I ),          ​
+                                                                  (N) N(I ′ ) ≥ ndist ′       dist   ′
+                                                                                 on (I ) + 2 npair (I ),
+                                                                                          ​                       ​
 
 
                and subtracting,
 
-                                                                  (∗) ndist ′
+                                                                  (∗) ndist ′                      ′
+                                                                       on (I ) ≥ 2 n+ (W ∣V ) − N(I ).
                                                                               ​
                                                                                     θ
-                                                                                              ​
-                                                                                                   ′
-                                                                       on (I ) ≥ 2 n+ (W ∣V ) − N(I ).    ​
+                                                                                              ​           ​
 
 
                The agent writes: "EVERY ROBUSTLY POSITIVE EIGENVALUE OF THE COMPRESSED WEIL
@@ -3276,9 +3267,9 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
            the Hermitian block [[0, m], [m, 0]] of signature (1, 1) in the two functionals. Hence A = ev∗ Q ev with
-               n+ (Q) = ndist    ​
-                                    ′      dist ′
-                              on (I ) + npair (I ),    and N(I ′ ) ≥ ndist       ′       dist ′
+               n+ (Q) = ndist       ′      dist ′
+                              on (I ) + npair (I ),
+                                 ​                     and N(I ′ ) ≥ ndist       ′       dist ′
                                                                           on (I ) + 2npair (I ).
                                                                              ​                                       (1)             ​                                                                               ​                               ​
 
@@ -3404,16 +3395,16 @@ How the one-half result was found - transcript of Claude sub-agent E2
                 Off-diagonal n =   n′ (first bracket) and all of the second bracket: the τ ′ -integral is ∫I eiτ w dτ ′ with w = log n ∓                                                                                                                                                       ​
 
 
-           log n′  = 0; the x-integral
+           log n′ =  0; the x-integral
                   contributes the bounded weight bn := 2π(L − log n)+ ≤ 2πL. By the Montgomery-Vaughan generalized                              ​                                                                           ​
 
 
            Hilbert inequality
-                    ∑n=n
+                    ∑ 
                     ​
 
 
-                       ′ un vn e
+                     n=n′ un vn e
                                ′
                                   ic(w)
                                         /w ≤ 3π(∑ ∣un ∣2 /δn )1/2 (∑ ∣vn ∣2 /δn )1/2 , δn := minn′ 
@@ -3490,11 +3481,9 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
               N0dist (T − D0 , 2T + D0 ) ≥ ndist
                          ​             ​
-                                                 ′
-                                                          ​
-                                                                2
+                                                 ′              2
                                             on (I ) ≥ [2λ/(1 + λ /3) − 1 − o(1)]N(I).
-                                                                        ​
+                                                          ​             ​
 
 
            Letting λ → 1:            lim inf T N0dist ([T , 2T ])/N([T , 2T ]) ≥ 2(3/4) − 1 = 1/2.
@@ -3840,10 +3829,9 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
            orthonormalisation).
-             (b) inertia inequality nθ+ (R) ≤ ndist​
-                                                        dist
+             (b) inertia inequality nθ+ (R) ≤ ndist     dist
                                                 on + npair on synthetic configurations with 0%, 25%, 100% on-line (exp7):
-                                                                        ​   ​
+                                                   ​                    ​   ​
 
 
            holds in every case, with the
@@ -4191,10 +4179,9 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
          decay].
-         (N) N(I ′ ) ≥ ndist     dist
-                                     ​              ​                            ​
-                                                                                        dist ′
+         (N) N(I ′ ) ≥ ndist     dist                                                   dist ′
                         on + 2 npair [R-vM counts ρ and 1 − ρ separately]. ⇒ N0 (I ) ≥ 2 n+ (W ∣V ) − N(I ).
+                                     ​              ​                            ​
                                                                                                     θ
                                                                                                          ​
                                                                                                                  ′
@@ -5384,8 +5371,8 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
            eigenvalue of the zero-side form strictly between u and 2u (or below u)" — robustly false due to interactions
-           (eigenvalues of Σ m uρ u∗ρ are NOT the multiplicities unless the uρ are orthogonal; ⟨uρ , uρ′ ⟩ = DL (γ − γ′ ) 
-                                                                    ​   ​                                                   = 0 for     ​                   ​           ​               ​
+           (eigenvalues of Σ m uρ u∗ρ are NOT the multiplicities unless the uρ are orthogonal; ⟨uρ , uρ′ ⟩ = DL (γ − γ′ ) =
+                                                                    ​   ​                                                    0 for     ​                   ​           ​               ​
 
 
            ∣γ − γ ∣ ≲ 1/L: zeros closer than the mean spacing ×(l/L) interact). Under RH Montgomery doesn't need
@@ -5892,15 +5879,10 @@ How the one-half result was found - transcript of Claude sub-agent E2
                                                        ~ 2     ~2
          and Theorem 4 reads: ndist                                           2
                                on ≥ 2n+ − N , n+ ≥ (tr R) / tr R = Nλ/(1 + λ /3).
-                   2 ~
-                                                    ​
+                                                    ​             ​         ​
 
 
-                                       ~
-                                                                  ​         ​
-
-
-                                                         ~
+                   2 ~                 ~                 ~
          Φ := FT(ϕ ), Φ := Φ/(La) (so Φ(0) = 1). A(δ) := Φ(−2iδ) = ∫ ϕ (u) e du/ ∫ ϕ2 ≥ 1.
                                                                        2     2δu
 
@@ -7202,12 +7184,10 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
                          ~              ~
-               tr A = tr R − tr E = tr R + O(θ0 );
-                          ~             ~
-                                                                                      ​
+               tr A = tr R − tr E = tr R + O(θ0 );                                    ​
 
 
-                                                       ~                     ~
+                          ~             ~              ~                     ~
                ∥A∥2F = ∥R − E∥2F ≤ ∥R∥2F + 2∥E∥op ∥R∥1 + ∥E∥1 ∥E∥op , ∥R∥1 ≤ ∥A∥1 + ∥E∥1 ,
                                       ​               ​               ​                           ​           ​                               ​           ​               ​               ​                   ​
 
@@ -7465,11 +7445,9 @@ How the one-half result was found - transcript of Claude sub-agent E2
                                                                                           ​
 
 
-              using only rank(Mon ) ≤ ndist                 dist     2
-                                                                          ​
-                                                                                ′
+              using only rank(Mon ) ≤ ndist                 dist     2          ′
                                          on , n+ (Mp ) ≤ npair , ∣ui∣ ≤ 1, N(I ) ≥ Non + 2npair , and the tail bound of Thm
-                                                                  ​                   ​           ​           ​       ​                                           ​               ​
+                                                                  ​       ​           ​           ​           ​       ​                                           ​               ​
 
 
            4/referee D for E.
@@ -7528,10 +7506,10 @@ How the one-half result was found - transcript of Claude sub-agent E2
 
 
               has n+ ≤ 1 and inertia is subadditive, so n+ (Mp ) ≤ b := ndist
-                             ​                                                  ​   ​
+                             ​
                                                                                      ′
                                                                              pair (I ); Riemann–von Mangoldt
-                                                                                                   ​
+                                                                                ​   ​              ​
 
 
               gives N(I ′ ) ≥ Non (I ′ ) + 2b with Non counted with multiplicity. (b) "The ONLY normalisation
@@ -7665,11 +7643,9 @@ How the one-half result was found - transcript of Claude sub-agent E2
                     ​              ​
 
 
-         minima match with equality). With c = 2 and R‑vM bookkeeping: ndist       ′
-                                                                                                ​
-                                                                                                         ′       2
+         minima match with equality). With c = 2 and R‑vM bookkeeping: ndist       ′                     ′       2
                                                                               on (I ) ≥ 4 ⋅ tr A − 2N(I ) − ∥A∥F ≥ (2 −
-                                                                                                                    ​
+                                                                                                ​                   ​
 
 
                                                                                         2

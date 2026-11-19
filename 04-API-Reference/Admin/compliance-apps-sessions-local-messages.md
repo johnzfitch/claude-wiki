@@ -2,7 +2,7 @@
 title: "Messages - Claude API Reference"
 source_url: "https://platform.claude.com/docs/en/api/compliance/apps/sessions/local/messages"
 category: "04-API-Reference/Admin"
-fetched_at: "2026-11-06T06:33:39Z"
+fetched_at: "2026-11-14T06:24:54Z"
 tags: ["api"]
 ---
 

@@ -2,29 +2,25 @@
 title: "Reflections on our Responsible Scaling Policy \\ Anthropic"
 source_url: "https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:13Z"
+fetched_at: "2026-11-14T06:26:36Z"
 tags: ["news-research"]
 ---
 
 # Reflections on our Responsible Scaling Policy
 
-- Published
+Published  
+May 20, 2024
 
-  May 20, 2024
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+- [Safeguards](https://www.anthropic.com/search?topic=safeguards)
+- [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
-  - [Safeguards](https://www.anthropic.com/search?topic=safeguards)
-  - [Red teaming](https://www.anthropic.com/search?topic=red-teaming)
-
-  See more...
+See more...
 
 Related articles
 
@@ -60,7 +56,7 @@ Our Frontier Red Team and Alignment Science teams have focused on threat modelin
 - There is reasonable disagreement amongst experts over which risks to prioritize and how new capabilities might cause harm, even in relatively established Chemical, Biological, Radiological, and Nuclear (CBRN) domains. Talking to a wide variety of experts in different sub-domains has been valuable, given the lack of consensus view.
 - Attempting to make threat models quantitative has been helpful for deciding which capabilities and scenarios to prioritize.
 
-Our Frontier Red Team, Alignment Science, Finetuning, and Alignment Stress Testing teams are focused on building evaluations and improving our overall methodology. Currently, we conduct pre-deployment testing in the domains of cybersecurity, CBRN, and Model Autonomy for frontier models which have reached 4x the compute of our most recently tested model (you can read a more detailed description of our most recent set of evaluations on Claude 3 Opus [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/210523b8e11b09c704c5e185fd362fe9e648d457.pdf)). We also test models mid-training if they reach this threshold, and re-test our most capable model every 3 months to account for finetuning improvements. Teams are also focused on building evaluations in a number of new domains to monitor for capabilities for which the ASL-3 standard will still be unsuitable, and identifying ways to make the overall testing process more robust. Some key reflections are:
+Our Frontier Red Team, Alignment Science, Finetuning, and Alignment Stress Testing teams are focused on building evaluations and improving our overall methodology. Currently, we conduct pre-deployment testing in the domains of cybersecurity, CBRN, and Model Autonomy for frontier models which have reached 4x the compute of our most recently tested model (you can read a more detailed description of our most recent set of evaluations on Claude 3 Opus [here](https://assets.claude.com/210523b8e11b09c704c5e185fd362fe9e648d457.pdf)). We also test models mid-training if they reach this threshold, and re-test our most capable model every 3 months to account for finetuning improvements. Teams are also focused on building evaluations in a number of new domains to monitor for capabilities for which the ASL-3 standard will still be unsuitable, and identifying ways to make the overall testing process more robust. Some key reflections are:
 
 - Fast iteration cycles with domain experts are especially valuable for recognizing when the difficulty level of a test is poorly calibrated or the task is divorced from the threat model in question.
 - We should increasingly aim to leverage and encourage the growing ecosystem of researchers and firms in this space. Many of the risks we aim to assess, particularly those involving autonomy or misalignment, are inherently complex and speculative, and our own testing and threat modeling is likely incomplete. It will also be valuable to develop a mature external ecosystem that can adequately assess the quality of our claims, as well as offer accessible evals as a service to less well-resourced companies. We have begun to test partnerships with external organizations in these areas.

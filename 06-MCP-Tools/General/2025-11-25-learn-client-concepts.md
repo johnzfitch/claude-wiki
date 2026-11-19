@@ -2,8 +2,8 @@
 title: "Understanding MCP clients - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/docs/2025-11-25/learn/client-concepts"
 category: "06-MCP-Tools/General"
-fetched_at: "2026-10-31T06:24:31Z"
-last_modified: "Sat, 31 Oct 2026 06:22:51 GMT"
+fetched_at: "2026-11-10T06:27:47Z"
+last_modified: "Tue, 10 Nov 2026 00:48:25 GMT"
 tags: ["cli", "mcp"]
 ---
 

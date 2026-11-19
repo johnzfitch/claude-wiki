@@ -2,7 +2,7 @@
 title: "This volume is Claude’s account of two of its own research runs and of the…"
 source_url: "https://www-cdn.anthropic.com/d7f3ecf1d01392d887f8bc974ca187e2a121b1ed.pdf"
 category: "19-Reference"
-fetched_at: "2026-08-13T06:47:25Z"
+fetched_at: "2026-11-18T06:28:54Z"
 tags: ["news-research", "search"]
 ---
 
@@ -235,7 +235,7 @@ of its launches are counted.
                                                                                     the push when asked)                           (theorem form) · localization: holds,
                                                                                                                                    finds the one gap and proposes the re-
                                                                                                                                    pair · gaps: makes the drop-the-matrix
-                                                                                  Two levers: raise the 34 ,                       repair rigorous
+                                                                                  Two levers: raise the 43 ,                       repair rigorous
                                                                                    or make pairs cheaper
                                                                    the pairs brief carries Montgomery’s m2 ≥ 2m−1                                         theorem form + repair become the paper’s main line
 
@@ -1056,10 +1056,9 @@ supp g ⊂ [−L, L] and h(r) = g(x)eirx dx,
                     = −γE g(0) +                              dy,
                                   0          1 − e−2y
 reproduced by N6 to 30 digits against 120 zeros and a Gaussian (and the x-side archimedean
-term to 23 digits). On the zero side a zero 12 + a + it with its symmetry partners contributes
-2 Re h(t+ ia) if a = 0 and 4 Re h(t+ ia) if a =
-                                              ̸ 0, where Re h(t+ ia) = g(x) cosh(ax) cos(tx) dx.
-                                                                      R
+term to 23 digits). On the zero side a zero 12 + a + it with its symmetry  partners contributes
+2 Re h(t+ ia) if a = 0 and 4 Re h(t+ ia) if a ̸= 0, where Re h(t+ ia) = g(x) cosh(ax) cos(tx) dx.
+                                                                       R
 
 N6’s Proposition 1 solves the strip-positive cone completely:
 
@@ -1501,7 +1500,8 @@ Since 2 cosh(v/2) = e|v|/2 + e−|v|/2 ,
                                                                       
                                   u
                             1
-                           Z               h1        Xs − 1         1       i
+                                           h1        Xs − 1         1
+                           Z                                                i
                        =        |h(τ )|2        Re          +                 dτ,         s = 21 + iτ,
                                            π           s      2π( 4 + τ 2 )
                                                                   1
@@ -2041,9 +2041,10 @@ For unit f ∈ V , far on-line zeros contribute   |hf (γ)|2 ≥ 0; far off-line
 
 2 Re hf (γ)hf (γ̄), with
 
-       |hf (t − iy)| = fd
-                        eyu (t)
-                   ≤ eyL/2 × decay of the transform of f eyu at distance ≥ D0 from I ,
+       |hf (t − iy)| = f e
+                        d yu (t)
+
+                    ≤ eyL/2 × decay of the transform of f eyu at distance ≥ D0 from I ,
                                                                                             
 
 f eyu being smooth and compactly supported. With a Cc∞ (Gevrey) taper that decay is of type
@@ -2944,9 +2945,8 @@ destroyed by interactions; simple on-line zeros come out only at 1/3; the coordi
 per-pair estimate sj ≥ 1 − o(1) was found unnecessary. The RH comparison 5/6 distinct and
 the Rudnick–Sarnak unconditionality were stated from memory without citation check. The
 run’s top caveat, inherited from the referees: everything rests on the prime-side upper bound
-for ∥R∥
-     e 2.
-        F
+for ∥ e
+     R∥2F .
 
 
 1    The problem as posed: off-line pair blocks and the negative
@@ -3701,8 +3701,8 @@ e    = 1, and
 
                                                                  φ2 (u) e2δu du
                                                             R
-                             A(δ) := Φ(−2iδ)
-                                     e       =                       R          ≥ 1,
+                             A(δ) := e
+                                     Φ(−2iδ) =                       R          ≥ 1,
                                                                        φ2
 
 which is exactly the brief’s A(δ) (its sinh(δL)/(δL) being the sharp-cutoff approximation), here
@@ -4438,21 +4438,20 @@ argument actually certifies from the data of A.
                                                                 77
 The tail.   From referee D’s tail estimate,
 
-                                             m∥uρ ∥2 =: θ0 ≤ 2A0 L2 log(4T ) T λ/2−1
+                                              m∥uρ ∥2 =: θ0 ≤ 2A0 L2 log(4T ) T λ/2−1
                                       X
                       ∥E∥op ≤
-                                       / ′
-                                      ρ∈I
+                                       ∈I ′
+                                      ρ/
 
 (in R
     e units, up to a factor L/(L2 a) < 1), and the same sum bounds | tr E| and the trace norm
 ∥E∥1 , since E is a sum of blocks of trace norm at most 2m∥uρ ∥2 . So tr A = tr R
                                                                                 e + O(θ0 ), and
 
-                     ∥A∥2F = ∥R          e 2 + 2∥E∥op ∥R∥
-                              e − E∥2 ≤ ∥R∥
-                                    F      F
-                                                       e 1 + ∥E∥1 ∥E∥op ,
+                     ∥A∥2F = ∥R          R∥2F + 2∥E∥op ∥ e
+                              e − E∥2 ≤ ∥ e
+                                    F                   R∥1 + ∥E∥1 ∥E∥op ,
                                         e 1 ≤ ∥A∥1 + ∥E∥1 ,
                                        ∥R∥
 
@@ -4489,14 +4488,14 @@ refereed for Theorem 4 — its Step 2, equivalently the re-derivation agent’s 
 referee D’s evaluation:
 
                tr R
-                  e = N (I) (1 + o(1)),                                e 2 = N (I) tλ (1 + o(1)),
-                                                                      ∥R∥ F
+                  e = N (I) (1 + o(1)),                                R∥2F = N (I) tλ (1 + o(1)),
+                                                                      ∥e
 
 where
-                                                bw + λ2 Jw    1 λ
-                                        tλ :=              −→  +
-                                                     2
-                                                   λaw        λ 3
+                                                 bw + λ2 Jw    1 λ
+                                        tλ :=               −→  +
+                                                      2
+                                                    λaw        λ 3
 as the taper parameter η = 1/ log l → 0 (aw , bw , Jw being referee D’s taper functionals),
 together with N (I ′ ) = N (I)(1 + O(T −1/2 )). Inserting these into (4.1),
 
@@ -4518,9 +4517,9 @@ because (t − 1)(t − 2) ≤ 0 on 1 ≤ t ≤ 2: at λ = 1, 0.667 against 0.50
 On the coordinator’s item (e): optimising c in (3.1) rather than fixing c = 2 gives, with x = ton
 and t = tλ ,
 
-                                                (2N − x)2
-                                        r ≥               − 2(N − x),
-                                                   tN
+                                                 (2N − x)2
+                                        r ≥                − 2(N − x),
+                                                    tN
 
                                                                 78
 which the adversary minimises at x = (2 − t)N to the same value (2 − t)N , while at x = N (no
@@ -4543,8 +4542,8 @@ Weil’s explicit formula, Riemann–von Mangoldt, PNT-strength Λ2 /n, Montgome
                 N0dist ([T, 2T ])   2                                             1 λ
       lim inf                     ≥ ,   and for support parameter λ,     ≥ 2−      − .
         T        N ([T, 2T ])       3                                             λ 3
-The constant 2/3 is sharp for the information {tr R,  e 2 , block structure}: take 2N/3 simple
-                                                  e ∥R∥
+The constant 2/3 is sharp for the information {tr e   R∥2 , block structure}: take 2N/3 simple
+                                                 R, ∥ e
 on-line zeros on the lattice (2π/l)Z (mutually orthogonal for the sinc kernel at λ = 1) plus
 N/6 tight off-line pairs (δ → 0) on the remaining sites; then
 
@@ -4627,10 +4626,9 @@ useless when aimed at n+ , carries the whole result when aimed at rank.)
 Higher moments, (b)(ii). On the zero side
 
                                 tr R
-                                   ek =                     Φ(γ
-                                                            e j − γj+1 ),
+                                   ek =                     Φ(γj − γj+1 ),
                                             X          Y
-
+                                                            e
                                           γ1 ,...,γk    j
 
 exact via (P) with complex γ allowed — a Rudnick–Sarnak-type smooth k-correlation statistic

@@ -2,30 +2,26 @@
 title: "Funding third-party model evaluations \\ Anthropic"
 source_url: "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations"
 category: "19-Reference"
-fetched_at: "2026-10-21T06:30:16Z"
+fetched_at: "2026-11-14T06:26:24Z"
 tags: ["evaluation", "news-research"]
 ---
 
 # A new initiative for developing third-party model evaluations
 
-- Published
+Published  
+Jul 1, 2024
 
-  Jul 1, 2024
+[Policy](policy.md)
 
-- Category
+Topics  
+- [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
+- [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
+- [Research programs](https://www.anthropic.com/search?topic=research-programs)
+- [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
+- [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
+- [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
 
-  [Policy](policy.md)
-
-- Topics
-
-  - [Safety evaluations](https://www.anthropic.com/search?topic=safety-evaluations)
-  - [Responsible Scaling Policy](https://www.anthropic.com/search?topic=responsible-scaling-policy)
-  - [Research programs](https://www.anthropic.com/search?topic=research-programs)
-  - [CBRN risks](https://www.anthropic.com/search?topic=cbrn-risks)
-  - [Cybersecurity](https://www.anthropic.com/search?topic=cybersecurity)
-  - [Benchmarks](https://www.anthropic.com/search?topic=benchmarks)
-
-  See more...
+See more...
 
 Related articles
 
@@ -59,7 +55,7 @@ We're seeking evaluations that help us measure the AI Safety Levels (ASLs) defin
 - **Chemical, biological, radiological and nuclear (CBRN) risks —** We're prioritizing evaluations that assess two critical capabilities: a) the potential for models to significantly enhance the abilities of non-experts or experts in creating CBRN threats, and b) the capacity to design novel, more harmful CBRN threats. A key challenge in this domain is ensuring that evaluations measure real-world risks accurately. Proposals should carefully consider how their evaluations target the correct uplift bottlenecks or advanced design criteria that could lead to genuine, catastrophic CBRN threats.
 - **Model autonomy —** Evaluations that assess models' capabilities for autonomous operation, focusing on three key areas:
   - **AI research and development:** Measuring models' proficiency in performing AI R&D tasks at junior, median, or expert research engineer levels.
-  - **Advanced autonomous behaviors:** For more information, see the [Autonomous Capabilities evaluations in our Responsible Scaling Policy](https://www-cdn.anthropic.com/1adf000c8f675958c2ee23805d91aaade1cd4613/responsible-scaling-policy.pdf) and [METR's public task suite.](https://github.com/METR/public-tasks)
+  - **Advanced autonomous behaviors:** For more information, see the [Autonomous Capabilities evaluations in our Responsible Scaling Policy](https://assets.claude.com/1adf000c8f675958c2ee23805d91aaade1cd4613.pdf) and [METR's public task suite.](https://github.com/METR/public-tasks)
   - **Self-replication and adaptation:** Assessing models' abilities to acquire computational and financial resources or exfiltrate weights.
 - **Other national security risks —** AI systems have the potential to significantly impact national security, defense, and intelligence operations of both state and non-state actors. We're committed to developing an early warning system to identify and assess these complex emerging risks. Given the sensitive nature of this domain, we invite interested parties to submit an application with your proposal, including the following points:
   - Defining detailed and comprehensive threat models for how misuse can be leveraged by different actors

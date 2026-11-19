@@ -2,7 +2,7 @@
 title: "Define success criteria and build evaluations - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/test-and-evaluate/develop-tests"
 category: "04-API-Reference/Test-Evaluate"
-fetched_at: "2026-11-05T06:36:57Z"
+fetched_at: "2026-11-13T06:37:03Z"
 tags: ["api", "evaluation"]
 ---
 
@@ -34,7 +34,7 @@ Good success criteria are:
     | Bad | Safe outputs |
     | Good | Less than 0.1% of outputs out of 10,000 trials flagged for toxicity by the content filter. |
 
-  ### Example metrics and measurement methods
+  ### Example metrics and measurement methods
 
   **Quantitative metrics:**
 
@@ -57,7 +57,7 @@ Good success criteria are:
 
 - **Relevant:** Align your criteria with your application’s purpose and user needs. Strong citation accuracy might be critical for medical apps but less so for casual chatbots.
 
-### Example task fidelity criteria for sentiment analysis
+### Example task fidelity criteria for sentiment analysis
 
 |  | Criteria |
 |----|----|
@@ -70,41 +70,41 @@ Good success criteria are:
 
 Here are some criteria that might be important for your use case. This list is non-exhaustive.
 
-### Task fidelity
+### Task fidelity
 
 How well does the model need to perform on the task? You might also need to consider edge case handling, such as how well the model needs to perform on rare or challenging inputs.
 
-### Consistency
+### Consistency
 
 How similar do the model’s responses need to be for similar types of input? If a user asks the same question twice, how important is it that they get semantically similar answers?
 
-### Relevance and coherence
+### Relevance and coherence
 
 How well does the model directly address the user’s questions or instructions? How important is it for the information to be presented in a logical, easy-to-follow manner?
 
-### Tone and style
+### Tone and style
 
 How well does the model’s output style match expectations? How appropriate is its language for the target audience?
 
-### Privacy preservation
+### Privacy preservation
 
 What is a successful metric for how the model handles personal or sensitive information? Can it follow instructions not to use or share certain details?
 
-### Context utilization
+### Context utilization
 
 How effectively does the model use provided context? How well does it reference and build upon information given in its history?
 
-### Latency
+### Latency
 
 What is the acceptable response time for the model? This depends on your application’s real-time requirements and user expectations.
 
-### Price
+### Price
 
 What is your budget for running the model? Consider factors such as the cost for each API call, the size of the model, and the frequency of usage.
 
 Most use cases need multidimensional evaluation along several success criteria.
 
-### Example multidimensional criteria for sentiment analysis
+### Example multidimensional criteria for sentiment analysis
 
 [TABLE]
 
@@ -117,7 +117,7 @@ Most use cases need multidimensional evaluation along several success criteria.
 ### Eval design principles
 
 1.  **Be task-specific:** Design evals that mirror your real-world task distribution. Don’t forget to factor in edge cases!
-    ### Example edge cases
+    ### Example edge cases
 
     - Irrelevant or nonexistent input data
     - Overly long input data or user input
@@ -128,7 +128,7 @@ Most use cases need multidimensional evaluation along several success criteria.
 
 ### Example evals
 
-### Task fidelity (sentiment analysis): exact match evaluation
+### Task fidelity (sentiment analysis): exact match evaluation
 
 **What it measures:** Exact match evals measure whether the model’s output matches a predefined correct answer, typically after normalizing whitespace and case. It’s a simple, unambiguous metric that’s perfect for tasks with clear-cut, categorical answers such as sentiment analysis (positive, negative, neutral).
 
@@ -196,7 +196,7 @@ accuracy = sum(
 print(f"Sentiment Analysis Accuracy: {accuracy * 100}%")
 ```
 
-### Consistency (FAQ bot): cosine similarity evaluation
+### Consistency (FAQ bot): cosine similarity evaluation
 
 **What it measures:** Cosine similarity measures the similarity between two vectors (in this case, sentence embeddings of the model’s output using [Sentence-BERT (SBERT)](https://sbert.net/)) by computing the cosine of the angle between them. Values closer to 1 indicate higher similarity. It’s ideal for evaluating consistency because similar questions should yield semantically similar answers, even if the wording varies.
 
@@ -277,7 +277,7 @@ for faq in faq_variations:
     print(f"FAQ Consistency Score: {similarity_score * 100}%")
 ```
 
-### Relevance and coherence (summarization): ROUGE-L evaluation
+### Relevance and coherence (summarization): ROUGE-L evaluation
 
 **What it measures:** ROUGE-L (Recall-Oriented Understudy for Gisting Evaluation - Longest Common Subsequence) evaluates the quality of generated summaries. It measures the length of the longest common subsequence between the candidate and reference summaries. High ROUGE-L scores indicate that the generated summary captures key information in a coherent order.
 
@@ -349,7 +349,7 @@ relevance_scores = [
 print(f"Average ROUGE-L F1 Score: {sum(relevance_scores) / len(relevance_scores)}")
 ```
 
-### Tone and style (customer service): LLM-based Likert scale
+### Tone and style (customer service): LLM-based Likert scale
 
 **What it measures:** The LLM-based Likert scale is a psychometric scale that uses an LLM to judge subjective attitudes or perceptions. Here, it’s used to rate the tone of responses on a scale from 1 to 5. It’s ideal for evaluating nuanced aspects such as empathy, professionalism, or patience that are difficult to quantify with traditional metrics.
 
@@ -431,7 +431,7 @@ tone_scores = [
 print(f"Average Tone Score: {sum(tone_scores) / len(tone_scores)}")
 ```
 
-### Privacy preservation (medical chatbot): LLM-based binary classification
+### Privacy preservation (medical chatbot): LLM-based binary classification
 
 **What it measures:** Binary classification determines if an input belongs to one of two classes. Here, it’s used to classify whether a response contains PHI. This method can account for context and identify subtle or implicit forms of PHI that rule-based systems might miss.
 
@@ -527,7 +527,7 @@ privacy_scores = [
 print(f"Privacy Preservation Score: {sum(privacy_scores) / len(privacy_scores) * 100}%")
 ```
 
-### Context utilization (conversation assistant): LLM-based ordinal scale
+### Context utilization (conversation assistant): LLM-based ordinal scale
 
 **What it measures:** Similar to the Likert scale, the ordinal scale measures on a fixed, ordered scale (1–5). It’s perfect for evaluating context utilization because it can capture the degree to which the model references and builds upon the conversation history, which is key for coherent, personalized interactions.
 
@@ -667,7 +667,7 @@ When deciding which method to use to grade evals, choose the fastest, most relia
 - **Be empirical or specific:** For example, instruct the LLM to output only ‘correct’ or ‘incorrect’, or to judge from a scale of 1–5. Purely qualitative evaluations are hard to assess quickly and at scale.
 - **Encourage reasoning:** Use a grader model with [thinking](../Guides/build-with-claude-thinking.md) on, so that it reasons before it produces an evaluation score. This increases evaluation performance, particularly for tasks requiring complex judgment.
 
-### Example: LLM-based grading
+### Example: LLM-based grading
 
 Python
 

@@ -1,28 +1,28 @@
 ---
-title: "Claude in Amazon Bedrock (Opus 4.7 and later) - Claude Platform Docs"
+title: "Claude in Amazon Bedrock (bedrock-mantle) - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/claude-in-amazon-bedrock"
 category: "04-API-Reference/Guides"
-fetched_at: "2026-11-05T06:36:00Z"
+fetched_at: "2026-11-13T06:33:54Z"
 tags: ["api", "authentication", "bedrock", "sdk"]
 ---
 
-# Claude in Amazon Bedrock (Opus 4.7 and later)
+# Claude in Amazon Bedrock (bedrock-mantle)
 
 Copy page
 
 
 
-Access Claude models through Amazon Bedrock with AWS-native authentication, billing, and security boundaries.
+Call Claude through the Messages API on Amazon Bedrock’s bedrock-mantle endpoint, with AWS-native authentication, billing, and security boundaries.
 
 Copy page
 
 
 
-This guide walks you through setting up and making API calls to Claude in Amazon Bedrock. Claude in Amazon Bedrock runs on AWS-managed infrastructure with zero operator access (Anthropic personnel have no access to the inference infrastructure), letting you build sensitive applications entirely inside the AWS security boundary while using the same Messages API shape you use with Anthropic’s first-party API.
+This guide walks you through setting up and making API calls to Claude in Amazon Bedrock. Claude in Amazon Bedrock runs on AWS-managed infrastructure with zero operator access: Anthropic personnel have no access to the inference infrastructure. You can build sensitive applications entirely inside the AWS security boundary, with the same Messages API shape you use with the Claude API.
 
 
 
-This page covers Claude in Amazon Bedrock, which serves Claude through the Messages API at `/anthropic/v1/messages` on AWS-managed infrastructure. The previous Amazon Bedrock integration (the `InvokeModel` and `Converse` APIs with ARN-versioned model identifiers) remains available and is documented at [Claude on Amazon Bedrock (Opus 4.6 and earlier)](build-with-claude-claude-on-amazon-bedrock-legacy.md). For an Anthropic-operated alternative on AWS with AWS Marketplace billing and typically same-day feature access, see [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md).
+This page covers Claude in Amazon Bedrock, which serves Claude through the Messages API at `/anthropic/v1/messages` on the `bedrock-mantle` endpoint. That endpoint runs on AWS-managed infrastructure. The `InvokeModel` and `Converse` APIs, on the `bedrock-runtime` endpoint, are documented at [Claude on Amazon Bedrock (`bedrock-runtime`)](build-with-claude-claude-on-amazon-bedrock-legacy.md). For an Anthropic-operated alternative on AWS with AWS Marketplace billing, see [Claude Platform on AWS](build-with-claude-claude-platform-on-aws.md).
 
 ## Access
 
@@ -89,7 +89,7 @@ For short-term access without IAM roles (12-hour maximum, least preferred):
 
 ## Install an SDK
 
-Anthropic’s [client SDKs](../Other/cli-sdks-libraries-overview.md) support Claude in Amazon Bedrock through a Bedrock-specific package or module.
+The [client SDK](../Other/cli-sdks-libraries-overview.md) supports Claude in Amazon Bedrock through a Bedrock-specific package or module.
 
 Python
 
@@ -115,9 +115,11 @@ pip install -U "anthropic[bedrock]"
 
 ## Making your first request
 
-The endpoint follows the pattern `https://bedrock-mantle.{region}.api.aws/anthropic/v1/messages`. Unlike the `InvokeModel`-based integration, this endpoint uses standard SSE streaming and the same request body shape as Anthropic’s first-party API.
+The endpoint follows the pattern `https://bedrock-mantle.{region}.api.aws/anthropic/v1/messages`. It uses standard SSE streaming and the same request body shape as the Claude API.
 
-The SDK resolves credentials and region using the standard AWS precedence: constructor arguments, then environment variables (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`, `AWS_REGION`), then the AWS config file and credential chain (SSO, assumed roles, ECS task role, IMDS).
+Pass the region when you create the client, or set the `AWS_REGION` environment variable. If you do neither, the Python, TypeScript, C#, Go, PHP, and Ruby SDKs try `AWS_DEFAULT_REGION`. The Java SDK reads the environment only when you call `BedrockMantleBackend.fromEnv()`, which uses the [default AWS Region provider chain](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/region-selection.html). That chain also checks your AWS config file and EC2 instance metadata.
+
+For credentials, the client uses what you pass when you create it. Otherwise, the `AWS_BEARER_TOKEN_BEDROCK` environment variable takes priority over the client’s AWS credential chain, which includes the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_SESSION_TOKEN` environment variables.
 
 cURL
 
@@ -161,7 +163,7 @@ You can also create the standard client with `Anthropic`: set `base_url` to `htt
 
 ## Supported models
 
-Model IDs in Claude in Amazon Bedrock carry an `anthropic.` provider prefix. Model capabilities and behaviors are documented on the [Models overview](../../20-Models/about-claude-models-overview.md) page.
+Model IDs in Claude in Amazon Bedrock carry an `anthropic.` provider prefix. For model capabilities and behaviors, see [Models overview](../../20-Models/about-claude-models-overview.md). Claude Fable 5.2 and Claude Mythos 5.2 aren’t available in Claude in Amazon Bedrock. Amazon Bedrock serves them on the `bedrock-runtime` endpoint only. For their model IDs, see [API model IDs](build-with-claude-claude-on-amazon-bedrock-legacy.md#api-model-ids). To see which endpoint serves each model, see [Endpoint availability by models](https://docs.aws.amazon.com/bedrock/latest/userguide/models-endpoint-availability.html) in the AWS documentation.
 
 | Model | Model ID | Access |
 |----|----|:---|
@@ -196,7 +198,7 @@ For the full feature list with Amazon Bedrock availability, see [Features overvi
 
 ### Supported feature highlights
 
-- [Messages API](../Endpoints/messages-create.md) (`/anthropic/v1/messages`)
+- [Messages API](../Endpoints/messages-create.md)Preview with links to the API reference available — press Tab until focus enters the card, Escape to return. (`/anthropic/v1/messages`)
 - [Prompt caching](build-with-claude-prompt-caching.md)
 - [Thinking](build-with-claude-thinking.md)
 - [Tool use](../Agents-Tools/agents-and-tools-tool-use-overview.md), including the [Bash tool](../Agents-Tools/agents-and-tools-tool-use-bash-tool.md), [Browser use tool](../Agents-Tools/agents-and-tools-tool-use-browser-use-tool.md), [Computer use tool](../Agents-Tools/agents-and-tools-tool-use-computer-use-tool.md), [Memory tool](../Agents-Tools/agents-and-tools-tool-use-memory-tool.md), and [Text editor tool](../Agents-Tools/agents-and-tools-tool-use-text-editor-tool.md)
@@ -219,7 +221,7 @@ Claude in Amazon Bedrock is available in the following AWS regions. Amazon Bedro
 - **Global:** dynamic routing across all available regions for maximum availability. No pricing premium.
 - **Regional:** the endpoint resolves to the single AWS region you specify, for data-residency requirements. Regional endpoints carry a 10 percent pricing premium over global endpoints. To route across multiple regions within a geography, use an [inference profile](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html) (US, EU, JP, or AU). Regions marked **In-region only** in the table support direct single-region routing without an inference profile.
 
-The global endpoint is available for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5.5, Claude Sonnet 5, Claude Haiku 5.5, and Claude Haiku 4.5. For Claude Fable 5.1, regional endpoints are available in `us-east-1` only.
+The global endpoint is available for Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 5.5, Claude Sonnet 5, Claude Haiku 5.5, and Claude Haiku 4.5.
 
 | AWS region       | Location                  | Endpoint types             |
 |------------------|---------------------------|----------------------------|

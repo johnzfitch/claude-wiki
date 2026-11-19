@@ -2,7 +2,7 @@
 title: "Auto-connect your organization’s apps to Claude | Claude Help Center"
 source_url: "https://support.claude.com/en/articles/15537633-auto-connect-your-organization-s-apps-to-claude"
 category: "15-Claude-AI-Features"
-fetched_at: "2026-11-09T06:26:06Z"
+fetched_at: "2026-11-18T06:28:03Z"
 tags: ["claude-ai", "enterprise"]
 ---
 
@@ -31,7 +31,7 @@ You decide which connectors are enabled, which groups or roles get them, and at 
 
 - Auth connectors once for your organization, and access is given to your team automatically.
 
-- Use **[role-based permissions](../17-Billing-Plans/set-up-role-based-permissions-on-enterprise-plans.md)** to choose exactly which roles get each connector, so different teams get the access that fits their work. See **Choose which roles get managed auth** below.
+- Use **[role-based permissions](https://support.claude.com/en/articles/13930458-set-up-role-based-permissions-on-enterprise-plans)** to choose exactly which roles get each connector, so different teams get the access that fits their work. See **Choose which roles get managed auth** below.
 
 - Choose which permissions Claude can request when members connect through your identity provider, and narrow that further for individual roles.
 

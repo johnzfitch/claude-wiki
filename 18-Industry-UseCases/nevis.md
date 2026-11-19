@@ -2,7 +2,7 @@
 title: "Nevis Claude Platform (API) case study | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/nevis"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:26:45Z"
+fetched_at: "2026-11-18T06:29:02Z"
 tags: ["api", "case-studies"]
 ---
 
@@ -30,9 +30,11 @@ saved per advisor on administrative tasks
 
 managed by wealth management firms using Nevis
 
-Introducing Claude Code
+Claude Code
 
-See Claude Code in action—from concept to commit in one seamless workflow.
+Anthropic's agentic coding tool. Claude Code understands your codebase, edits files, runs commands, and helps you ship faster.
+
+[Read more (opens in new tab)](../15-Claude-AI-Features/product-claude-code.md)
 
 [**Nevis**](https://www.neviswealth.com) is an AI platform for wealth management that helps financial advisors automate administrative tasks end-to-end. The company serves some of the fastest-growing wealth management firms in the US, supporting Registered Independent Advisors who collectively manage more than \$50 billion in client assets.
 
@@ -83,13 +85,13 @@ Looking ahead, Nevis plans to bring AI closer to their end clients. The company 
 ## Related stories
 
 
+### Transforming e-commerce in Latin America
+
+
+### Scaling AI for over 12K employees
+
+
 ### How Qonto delegates financial admin for small businesses with Claude on Amazon Bedrock
 
 
 ### Pictet turns weeks of work into hours with Claude Code
-
-
-### How Satispay’s engineers write 75% of their code with Claude
-
-
-### OffDeal powers every stage of M&A advisory with one Claude-based agent

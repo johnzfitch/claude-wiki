@@ -1,8 +1,8 @@
 # Plugins & Skills
 
-97 pages. The full text of every page is in [llms.txt](llms.txt).
+99 pages. The full text of every page is in [llms.txt](llms.txt).
 
-- [Add components to a plugin - Claude Code Docs](plugins-components.md) — Add skills, hooks, MCP servers, and every other component type to a Claude Code plugin, with an example that validates for each.
+- [Add components to a plugin - Claude Code Docs](plugins-components.md) — Add skills, hooks, MCP servers, and other component types to a Claude Code plugin, with an example that validates for each.
 - [Advanced Plugin Example](claude-code-plugins-plugin-dev-skills-plugin-structure-examples-advanced-plugin.md) — A complex, enterprise-grade plugin with MCP integration and advanced organization.
 - [Anthropic's marketplaces - Claude Code Docs](plugins-anthropic-marketplaces.md) — Anthropic’s official and community plugin marketplaces for Claude Code: their names, repositories, how you add each, and where to browse their plugins.
 - [Best practices for skill creators - Agent Skills](skill-creation-best-practices.md) — How to write skills that are well-scoped and calibrated to the task.
@@ -31,6 +31,7 @@
 - [Conversation Analyzer](claude-code-plugins-hookify-agents-conversation-analyzer.md) — You are a conversation analysis specialist that identifies problematic behaviors in Claude Code sessions that could be prevented with hooks.
 - [Create a Claude Code plugin - Claude Code Docs](plugins-create.md) — Build your first Claude Code plugin from an empty directory, test it without a marketplace, and convert an existing .claude/ setup.
 - [Create a marketplace - Claude Code Docs](plugin-marketplaces.md) — Build a plugin marketplace from a marketplace.json file and test it locally before you host it.
+- [Create a marketplace - Claude Code Docs](plugins-create-marketplace.md) — Build a plugin marketplace from a marketplace.json file and test it locally before you host it.
 - [Create a mod - Claude Code Docs](plugins-mods-create.md) — Have Claude write a Claude Code mod from a description, or write one yourself that counts tool calls and adds a command. Learn the reload and validate loop.
 - [Create Plugin Settings](claude-code-plugins-plugin-dev-skills-plugin-settings-examples-create-settings-command.md) — This command helps users create a .claude/my-plugin.local.md settings file.
 - [Draw in the interface with a mod - Claude Code Docs](plugins-mods-interface.md) — Draw panes, a band above the prompt, buttons, and text fields from a Claude Code mod, handle presses and input, and keep state between redraws and sessions.
@@ -65,11 +66,12 @@
 - [Plugin dependencies - Claude Code Docs](plugins-dependencies.md) — Declare the plugins your plugin depends on, with version ranges such as ^1.2, and see how Claude Code installs, resolves, and prunes them.
 - [Plugin loading reference - Claude Code Docs](plugins-loading.md) — Trace where Claude Code loads each plugin from, which settings file decides whether it loads, and why an update changed nothing.
 - [Plugin Manifest Reference](claude-code-plugins-plugin-dev-skills-plugin-structure-references-manifest-reference.md) — Complete reference for plugin.json configuration.
-- [Plugin manifest reference - Claude Code Docs](plugins-reference.md) — Complete reference for plugin.json: every field with its type and default, accepted path forms, and the userConfig and environment variable schemas.
+- [Plugin manifest reference - Claude Code Docs](plugins-reference.md) — Complete reference for plugin.json: fields with types and defaults, accepted path forms, and the userConfig and environment variable schemas.
 - [Plugin security and trust - Claude Code Docs](plugins-security.md) — Decide whether to trust a plugin before you install it, from what a plugin can do on your machine to how to review one and remove it.
 - [Plugin Structure Skill](claude-code-plugins-plugin-dev-skills-plugin-structure-readme.md) — Comprehensive guidance on Claude Code plugin architecture, directory layout, and best practices.
 - [Plugin Validator](claude-code-plugins-plugin-dev-agents-plugin-validator.md) — You are an expert plugin validator specializing in comprehensive validation of Claude Code plugin structure, configuration, and components.
 - [Plugin-Specific Command Features Reference](claude-code-plugins-plugin-dev-skills-command-development-references-plugin-features.md) — This reference covers features and patterns specific to commands bundled in Claude Code plugins.
+- [Plugins overview - Claude Code Docs](plugins-overview.md) — Understand what a Claude Code plugin is, when you need one instead of a standalone skill or MCP server, and which page to read to install or create one.
 - [Plugins overview - Claude Code Docs](plugins.md) — Understand what a Claude Code plugin is, when you need one instead of a standalone skill or MCP server, and which page to read to install or create one.
 - [Plugins | Claude Marketplace | Claude by Anthropic](claude-com-plugins.md) — Browse plugins that bundle tools, skills, and integrations for one-click installation.
 - [Pr Test Analyzer](claude-code-plugins-pr-review-toolkit-agents-pr-test-analyzer.md) — You are an expert test coverage analyst specializing in pull request review. Your primary responsibility is to ensure that PRs have adequate test coverage for…

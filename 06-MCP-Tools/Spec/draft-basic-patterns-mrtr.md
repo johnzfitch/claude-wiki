@@ -2,8 +2,8 @@
 title: "Multi Round-Trip Requests - Model Context Protocol"
 source_url: "https://modelcontextprotocol.io/specification/draft/basic/patterns/mrtr"
 category: "06-MCP-Tools/Spec"
-fetched_at: "2026-10-31T06:25:30Z"
-last_modified: "Fri, 30 Oct 2026 21:13:16 GMT"
+fetched_at: "2026-11-10T06:28:37Z"
+last_modified: "Mon, 09 Nov 2026 22:45:32 GMT"
 tags: ["mcp", "mcp-spec"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Prompting Claude Fable 5 - Claude Platform Docs"
 source_url: "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5"
 category: "10-Prompting-Guides"
-fetched_at: "2026-11-05T06:37:02Z"
+fetched_at: "2026-11-13T06:34:54Z"
 tags: ["agents", "prompting", "subagents"]
 ---
 

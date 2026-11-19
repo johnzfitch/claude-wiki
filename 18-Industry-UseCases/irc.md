@@ -2,7 +2,7 @@
 title: "The IRC turns fragmented health data into faster decisions with Claude | Claude by Anthropic"
 source_url: "https://www.claude.com/customers/irc"
 category: "18-Industry-UseCases"
-fetched_at: "2026-11-09T06:27:06Z"
+fetched_at: "2026-11-18T06:29:16Z"
 tags: ["case-studies", "rag"]
 ---
 
